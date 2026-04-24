@@ -302,15 +302,32 @@ async function pushGH(){
   const hd={'Authorization':`token ${token}`,'Content-Type':'application/json','Accept':'application/vnd.github.v3+json'};
   updGh('saving');
   try{
-    if(!ghSha){const r=await fetch(url,{headers:hd});if(r.ok)ghSha=(await r.json()).sha;}
-    const content=btoa(unescape(encodeURIComponent(JSON.stringify(db,null,2))));
-    const body={message:`CRM — ${new Date().toLocaleString('it-IT')}`,content};
-    if(ghSha)body.sha=ghSha;
+    // Recupera SHA attuale se non ce l'abbiamo
+    if(!ghSha){
+      const r=await fetch(url,{headers:hd});
+      if(r.ok) ghSha=(await r.json()).sha;
+      // 404 = file non esiste ancora, va bene
+    }
+    // Codifica UTF-8 → base64 senza usare escape() deprecato
+    const jsonStr=JSON.stringify(db,null,2);
+    const bytes=new TextEncoder().encode(jsonStr);
+    const b64=btoa(Array.from(bytes,b=>String.fromCharCode(b)).join(''));
+    const body={message:`CRM update — ${new Date().toLocaleString('it-IT')}`,content:b64};
+    if(ghSha) body.sha=ghSha;
     const res=await fetch(url,{method:'PUT',headers:hd,body:JSON.stringify(body)});
-    if(res.ok){ghSha=(await res.json()).content.sha;updGh('saved');}
-    else if(res.status===409||res.status===422){ghSha=null;setTimeout(pushGH,800);}
-    else{updGh('error');}
-  }catch(e){updGh('error');}
+    if(res.ok){
+      ghSha=(await res.json()).content.sha;
+      updGh('saved');
+    } else if(res.status===409||res.status===422){
+      // Conflitto SHA — rileggi e riprova
+      ghSha=null;
+      setTimeout(pushGH,1000);
+    } else {
+      const err=await res.json().catch(()=>({}));
+      console.error('pushGH error:',res.status,err.message);
+      updGh('error');
+    }
+  }catch(e){updGh('error');console.error('pushGH exception:',e);}
 }
 async function loadFromGH(){
   const{token,owner,repo}=ghs;
@@ -320,16 +337,51 @@ async function loadFromGH(){
   updGh('saving');
   try{
     const r=await fetch(url,{headers:{'Authorization':`token ${token}`,'Accept':'application/vnd.github.v3+json'}});
-    if(!r.ok){updGh('saved');refreshAll();return;}
+
+    // File non esiste ancora — ok, partiamo da zero
+    if(r.status===404){updGh('saved');refreshAll();toast('GitHub connesso — database vuoto, pronto per import');return;}
+
+    if(!r.ok){
+      const err=await r.json().catch(()=>({}));
+      throw new Error(`GitHub API: ${r.status} — ${err.message||'errore sconosciuto'}`);
+    }
+
     const d=await r.json();
     ghSha=d.sha;
-    const parsed=JSON.parse(decodeURIComponent(escape(atob(d.content.replace(/\n/g,'')))));
-    if(!parsed.contacts)throw new Error('Formato non valido');
+
+    // Decodifica base64 robusta (sostituisce escape/unescape deprecati)
+    const raw=d.content.replace(/\n/g,'');
+    let jsonStr;
+    try{
+      jsonStr=decodeURIComponent(Array.from(atob(raw),c=>'%'+c.charCodeAt(0).toString(16).padStart(2,'0')).join(''));
+    }catch(e){
+      jsonStr=atob(raw); // fallback ASCII
+    }
+
+    // File vuoto o non inizializzato
+    if(!jsonStr||!jsonStr.trim()||jsonStr.trim()==='{}'){
+      updGh('saved');refreshAll();
+      toast('GitHub connesso — database vuoto, pronto per import');
+      return;
+    }
+
+    const parsed=JSON.parse(jsonStr);
+
+    // Supporta sia {contacts:[...]} che array diretto [...]
+    const contacts=parsed.contacts||parsed;
+    if(!Array.isArray(contacts))throw new Error('Formato contatti non valido');
+
+    db.contacts=contacts;
     if(parsed.templates&&parsed.templates.length)db.templates=parsed.templates;
-    db.contacts=parsed.contacts;
+
     refreshAll();updGh('saved');
-    toast(`✓ ${db.contacts.length} contatti caricati`);
-  }catch(e){updGh('error');toast('Errore caricamento: '+e.message);}
+    toast(`✓ ${db.contacts.length} contatti caricati da GitHub`);
+  }catch(e){
+    updGh('error');
+    toast('Errore: '+e.message);
+    console.error('loadFromGH error:',e);
+    refreshAll(); // mostra comunque l'app
+  }
 }
 
 /* ── DELETE ALL ── */
