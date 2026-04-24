@@ -130,6 +130,11 @@ a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
 .empty{padding:2rem;text-align:center;color:var(--text2);font-size:14px}
 code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font-family:monospace}
 .rcnt{font-size:12px;color:var(--text2);margin-bottom:8px}
+.stat-link{cursor:pointer;transition:transform .15s,box-shadow .15s}
+.stat-link:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.1)}
+.country-link{cursor:pointer;color:var(--blue)!important;transition:opacity .15s}
+.country-link:hover{opacity:.7;text-decoration:underline}
+.cc-scroll{max-height:340px;overflow-y:auto;scrollbar-width:thin}
 @media(max-width:640px){.g2,.fg2{grid-template-columns:1fr}.fgf{grid-column:1}}
 </style>
 </head>
@@ -144,7 +149,6 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
   <div class="hdr-r">
     <div class="gh-pill"><div class="gh-dot" id="gh-dot"></div><span id="gh-lbl">GitHub</span></div>
     <button class="btn btg bts" onclick="openSettings()">⚙ GitHub</button>
-    <button class="btn btg bts" onclick="exportData()">⬇ Export</button>
     <button class="btn btd bts" onclick="confirmDeleteAll()">🗑 Cancella DB</button>
     <button class="btn btp" onclick="openAddContact()">+ Contatto</button>
   </div>
@@ -163,7 +167,7 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
   <div class="sgrid" id="stats"></div>
   <div class="g2">
     <div class="card"><div class="sh"><div class="st">Attività recente</div></div><div id="recent"></div></div>
-    <div class="card"><div class="sh"><div class="st">Per paese (top 10)</div></div><div id="cc"></div></div>
+    <div class="card"><div class="sh"><div class="st">Per paese</div></div><div id="cc" class="cc-scroll"></div></div>
   </div>
   <div class="card"><div class="sh"><div class="st">Pipeline</div></div><div id="pipeline"></div></div>
 </div>
@@ -172,10 +176,10 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
 <div id="page-contacts" class="page">
   <div class="filters">
     <input type="text" id="sq" placeholder="Cerca azienda, nome, email…" oninput="renderContacts()">
-    <select id="sc" onchange="renderContacts()"><option value="">Tutti i paesi</option></select>
     <select id="sr" onchange="renderContacts()"><option value="">Tutte le regioni</option></select>
-    <select id="ss" onchange="renderContacts()">
-      <option value="">Tutti gli stati</option>
+    <select id="sc" onchange="renderContacts()"><option value="">Tutti i paesi</option></select>
+    <select id="ss" onchange="window._pendingFilter=false;renderContacts()">
+      <option value="">Tutti i punti</option>
       <option value="new">Da contattare</option><option value="sent">Email inviata</option>
       <option value="followup">Follow-up</option><option value="replied">Risposto</option>
       <option value="client">Cliente</option><option value="cold">Non interessato</option>
@@ -478,15 +482,39 @@ function updateFilters(){
     [...prods].sort().map(p=>`<option value="${esc(p)}"${pv===p?' selected':''}>${esc(p)}</option>`).join('');
 }
 
+
+/* ── NAVIGAZIONE RAPIDA da Dashboard ── */
+function goToContacts({country='',region='',status=''}={}){
+  const sc=document.getElementById('sc');
+  const sr=document.getElementById('sr');
+  const ss=document.getElementById('ss');
+  if(sc) sc.value=country;
+  if(sr) sr.value=region;
+  // "pending" = mostriamo sia sent che followup — usiamo la searchbox
+  if(status==='pending'){
+    if(ss) ss.value='';
+    document.getElementById('sq').value='';
+    // Filtro custom: setta un flag temporaneo
+    window._pendingFilter=true;
+  } else {
+    if(ss) ss.value=status;
+    window._pendingFilter=false;
+    document.getElementById('sq').value='';
+  }
+  document.getElementById('sp').value='';
+  showPage('contacts', document.querySelectorAll('.nb')[1]);
+  renderContacts();
+}
+
 function renderStats(){
   const s={total:0,new:0,sent:0,followup:0,replied:0,client:0};
   db.contacts.forEach(c=>{s.total++;s[c.status]=(s[c.status]||0)+1;});
   document.getElementById('stats').innerHTML=`
-    <div class="stat"><div class="sl">Totale</div><div class="sv">${s.total}</div></div>
-    <div class="stat"><div class="sl">Da contattare</div><div class="sv bl">${s.new||0}</div></div>
-    <div class="stat"><div class="sl">In attesa</div><div class="sv am">${(s.sent||0)+(s.followup||0)}</div></div>
-    <div class="stat"><div class="sl">Risposte</div><div class="sv gr">${s.replied||0}</div></div>
-    <div class="stat"><div class="sl">Clienti</div><div class="sv co">${s.client||0}</div></div>`;
+    <div class="stat" style="cursor:default"><div class="sl">Totale</div><div class="sv">${s.total}</div></div>
+    <div class="stat stat-link" onclick="goToContacts({status:'new'})" title="Vai alla lista"><div class="sl">Da contattare</div><div class="sv bl">${s.new||0}</div></div>
+    <div class="stat stat-link" onclick="goToContacts({status:'followup'})" title="Vai alla lista"><div class="sl">In attesa (email)</div><div class="sv am">${(s.sent||0)+(s.followup||0)}</div></div>
+    <div class="stat stat-link" onclick="goToContacts({status:'replied'})" title="Vai alla lista"><div class="sl">Risposte</div><div class="sv gr">${s.replied||0}</div></div>
+    <div class="stat stat-link" onclick="goToContacts({status:'client'})" title="Vai alla lista"><div class="sl">Clienti</div><div class="sv co">${s.client||0}</div></div>`;
 }
 function renderRecent(){
   const el=document.getElementById('recent');
@@ -496,12 +524,15 @@ function renderRecent(){
 function renderCCChart(){
   const map={};
   db.contacts.forEach(c=>{if(c.country)map[c.country]=(map[c.country]||0)+1;});
-  const entries=Object.entries(map).sort((a,b)=>b[1]-a[1]).slice(0,10);
+  // Tutti i paesi, ordinati per numero di contatti
+  const entries=Object.entries(map).sort((a,b)=>b[1]-a[1]);
   const max=entries[0]?.[1]||1;
   const el=document.getElementById('cc');
   el.innerHTML=entries.length?entries.map(([c,n])=>`
-    <div class="brow"><div class="blbl">${esc(c)}</div>
-    <div class="btrk"><div class="bfll" style="width:${Math.round(n/max*100)}%">${n}</div></div></div>`).join('')
+    <div class="brow">
+      <div class="blbl country-link" onclick="goToContacts({country:'${esc(c)}'})" title="Filtra per ${esc(c)}">${esc(c)}</div>
+      <div class="btrk"><div class="bfll" style="width:${Math.round(n/max*100)}%">${n}</div></div>
+    </div>`).join('')
     :'<div class="empty" style="font-size:12px">Nessun dato</div>';
 }
 function renderPipeline(){
@@ -533,7 +564,8 @@ function getFiltered(){
     if(q&&!`${c.company} ${c.name} ${c.email} ${c.country} ${c.contactName}`.toLowerCase().includes(q))return false;
     if(country&&c.country!==country)return false;
     if(region&&c.region!==region)return false;
-    if(status&&c.status!==status)return false;
+    if(window._pendingFilter){if(c.status!=='sent'&&c.status!=='followup')return false;}
+    else if(status&&c.status!==status)return false;
     if(product&&!(c.products||[]).includes(product))return false;
     return true;
   });
