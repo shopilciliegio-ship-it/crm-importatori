@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wine CRM — Importatori & Distributori</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#ffffff;--bg2:#f5f5f3;--bg3:#eeece6;
+  --text:#1a1a18;--text2:#666660;--text3:#999990;
+  --border:rgba(0,0,0,0.12);--border2:rgba(0,0,0,0.22);
+  --blue-bg:#E6F1FB;--blue-text:#0C447C;--blue-mid:#185FA5;
+  --amber-bg:#FAEEDA;--amber-text:#633806;--amber-mid:#BA7517;
+  --green-bg:#EAF3DE;--green-text:#27500A;--green-mid:#3B6D11;
+  --coral-bg:#FAECE7;--coral-text:#712B13;--coral-mid:#993C1D;
+  --pink-bg:#FBEAF0;--pink-text:#72243E;
+  --teal-bg:#E1F5EE;--teal-text:#085041;
+  --gray-bg:#D3D1C7;--gray-text:#444441;
+  --radius:8px;--radius-lg:12px;
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    --bg:#1c1c1a;--bg2:#232320;--bg3:#2a2a27;
+    --text:#f0ede6;--text2:#a8a8a0;--text3:#666660;
+    --border:rgba(255,255,255,0.1);--border2:rgba(255,255,255,0.2);
+    --blue-bg:#0C447C;--blue-text:#B5D4F4;
+    --amber-bg:#633806;--amber-text:#FAC775;
+    --green-bg:#27500A;--green-text:#C0DD97;
+    --coral-bg:#712B13;--coral-text:#F5C4B3;
+    --pink-bg:#72243E;--pink-text:#F4C0D1;
+    --teal-bg:#085041;--teal-text:#9FE1CB;
+    --gray-bg:#444441;--gray-text:#D3D1C7;
+  }
+}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg3);color:var(--text);min-height:100vh;font-size:15px}
+.app{max-width:900px;margin:0 auto;padding:20px 16px}
+.header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:16px;border-bottom:0.5px solid var(--border)}
+.header-left h1{font-size:20px;font-weight:600;letter-spacing:-0.3px}
+.header-left p{font-size:12px;color:var(--text2);margin-top:2px}
+.header-right{display:flex;gap:8px;align-items:center}
+.nav{display:flex;gap:2px;background:var(--bg2);border-radius:var(--radius-lg);padding:4px;margin-bottom:20px;overflow-x:auto}
+.nav-btn{padding:7px 14px;border:none;background:none;cursor:pointer;font-size:13px;color:var(--text2);border-radius:var(--radius);white-space:nowrap;transition:all 0.15s;font-weight:500}
+.nav-btn.active{background:var(--bg);color:var(--text);box-shadow:0 1px 3px rgba(0,0,0,0.1)}
+.nav-btn:hover:not(.active){color:var(--text);background:rgba(0,0,0,0.04)}
+.tab-count{display:inline-block;padding:1px 6px;border-radius:10px;font-size:10px;background:var(--amber-bg);color:var(--amber-text);margin-left:4px;font-weight:600}
+.page{display:none}.page.active{display:block}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-bottom:16px}
+.stat{background:var(--bg);border-radius:var(--radius-lg);padding:14px 16px;border:0.5px solid var(--border)}
+.stat-label{font-size:11px;color:var(--text2);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px}
+.stat-val{font-size:24px;font-weight:600}
+.stat-val.blue{color:var(--blue-mid)}.stat-val.amber{color:var(--amber-mid)}.stat-val.green{color:var(--green-mid)}.stat-val.coral{color:var(--coral-mid)}
+.card{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--radius-lg);padding:1rem 1.25rem;margin-bottom:12px}
+.section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.section-title{font-size:14px;font-weight:600;color:var(--text)}
+.contact-row{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:0.5px solid var(--border);cursor:pointer;transition:background 0.1s}
+.contact-row:last-child{border-bottom:none}
+.contact-row:hover{background:var(--bg2);margin:0 -1.25rem;padding:10px 1.25rem;border-radius:8px}
+.avatar{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;flex-shrink:0}
+.av-blue{background:var(--blue-bg);color:var(--blue-text)}
+.av-teal{background:var(--teal-bg);color:var(--teal-text)}
+.av-amber{background:var(--amber-bg);color:var(--amber-text)}
+.av-coral{background:var(--coral-bg);color:var(--coral-text)}
+.av-pink{background:var(--pink-bg);color:var(--pink-text)}
+.av-green{background:var(--green-bg);color:var(--green-text)}
+.contact-info{flex:1;min-width:0}
+.contact-name{font-size:14px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.contact-sub{font-size:12px;color:var(--text2);margin-top:1px}
+.badge{display:inline-block;padding:3px 9px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap}
+.b-new{background:var(--blue-bg);color:var(--blue-text)}
+.b-sent{background:var(--amber-bg);color:var(--amber-text)}
+.b-followup{background:var(--pink-bg);color:var(--pink-text)}
+.b-replied{background:var(--green-bg);color:var(--green-text)}
+.b-client{background:var(--teal-bg);color:var(--teal-text)}
+.b-cold{background:var(--gray-bg);color:var(--gray-text)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.filters input,.filters select{font-size:13px;padding:7px 10px;border-radius:var(--radius);border:0.5px solid var(--border2);background:var(--bg);color:var(--text);cursor:pointer}
+.filters input{flex:1;min-width:140px}
+.btn{padding:8px 16px;border-radius:var(--radius);font-size:13px;font-weight:500;cursor:pointer;border:0.5px solid var(--border2);background:var(--bg);color:var(--text);transition:all 0.15s}
+.btn:hover{background:var(--bg2)}
+.btn-primary{background:var(--text);color:var(--bg);border-color:var(--text)}
+.btn-primary:hover{opacity:0.85}
+.btn-sm{padding:5px 10px;font-size:12px}
+.btn-danger{border-color:#E24B4A;color:#A32D2D}
+.btn-danger:hover{background:#FCEBEB}
+.btn-ghost{border-color:transparent;color:var(--text2)}
+.btn-ghost:hover{background:var(--bg2);color:var(--text)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-group{display:flex;flex-direction:column;gap:5px}
+.form-group.full{grid-column:1/-1}
+.form-group label{font-size:12px;color:var(--text2);font-weight:600;text-transform:uppercase;letter-spacing:0.4px}
+.form-group input,.form-group select,.form-group textarea{font-size:14px;padding:9px 11px;border-radius:var(--radius);border:0.5px solid var(--border2);background:var(--bg);color:var(--text);font-family:inherit}
+.form-group textarea{min-height:90px;resize:vertical;line-height:1.5}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--blue-mid);box-shadow:0 0 0 2px rgba(24,95,165,0.15)}
+.prod-grid{display:flex;flex-wrap:wrap;gap:6px;padding:10px;border:0.5px solid var(--border2);border-radius:var(--radius);background:var(--bg)}
+.prod-label{display:flex;align-items:center;gap:5px;font-size:12px;cursor:pointer;padding:3px 6px;border-radius:4px;transition:background 0.1s}
+.prod-label:hover{background:var(--bg2)}
+.prod-cb{cursor:pointer;accent-color:var(--blue-mid)}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center;z-index:1000;padding:16px}
+.modal{background:var(--bg);border-radius:var(--radius-lg);border:0.5px solid var(--border2);padding:1.5rem;width:580px;max-width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 8px 32px rgba(0,0,0,0.2)}
+.modal-title{font-size:17px;font-weight:600;margin-bottom:1.25rem}
+.modal-footer{display:flex;gap:8px;justify-content:flex-end;margin-top:1.25rem;padding-top:1rem;border-top:0.5px solid var(--border)}
+.divider{height:0.5px;background:var(--border);margin:1rem 0}
+.detail-field{display:flex;justify-content:space-between;align-items:flex-start;padding:8px 0;border-bottom:0.5px solid var(--border);font-size:13px}
+.detail-field:last-child{border-bottom:none}
+.detail-label{color:var(--text2);flex-shrink:0;width:110px;font-weight:500}
+.detail-val{color:var(--text);text-align:right;word-break:break-all}
+.tag{display:inline-block;padding:2px 8px;border-radius:12px;font-size:11px;background:var(--bg2);color:var(--text2);margin:2px;border:0.5px solid var(--border)}
+.status-selector{display:flex;gap:6px;flex-wrap:wrap}
+.status-btn{padding:5px 12px;border-radius:20px;font-size:12px;border:1.5px solid transparent;cursor:pointer;font-weight:600;opacity:0.6;transition:opacity 0.15s}
+.status-btn.active{opacity:1;border-color:currentColor}
+.status-btn:hover{opacity:1}
+.empty{padding:2rem;text-align:center;color:var(--text2);font-size:14px}
+.log-entry{font-size:12px;color:var(--text2);padding:5px 0;border-bottom:0.5px solid var(--border);line-height:1.4}
+.log-entry:last-child{border-bottom:none}
+.log-date{color:var(--text3);font-size:11px}
+.bar-row{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:13px}
+.bar-label{width:100px;color:var(--text2);text-align:right;flex-shrink:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar-track{flex:1;background:var(--bg2);border-radius:4px;height:18px;overflow:hidden}
+.bar-fill{height:100%;background:var(--blue-bg);border-radius:4px;display:flex;align-items:center;padding-left:6px;font-size:11px;font-weight:600;color:var(--blue-text);transition:width 0.3s}
+.email-preview{background:var(--bg2);border-radius:var(--radius);padding:12px;font-size:13px;white-space:pre-wrap;line-height:1.6;border:0.5px solid var(--border);color:var(--text);min-height:160px;cursor:text;outline:none}
+.email-preview:focus{border-color:var(--blue-mid)}
+.toast{position:fixed;bottom:20px;right:20px;background:var(--text);color:var(--bg);padding:10px 18px;border-radius:var(--radius);font-size:13px;z-index:9999;opacity:0;transform:translateY(10px);transition:all 0.2s;pointer-events:none}
+.toast.show{opacity:1;transform:none}
+a{color:var(--blue-mid);text-decoration:none}
+a:hover{text-decoration:underline}
+@media(max-width:600px){.form-grid{grid-template-columns:1fr}.header-right .btn span{display:none}}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="header">
+    <div class="header-left">
+      <h1>🍷 Wine CRM</h1>
+      <p>Importatori &amp; Distributori</p>
+    </div>
+    <div class="header-right">
+      <button class="btn btn-ghost btn-sm" onclick="exportData()" title="Esporta JSON">⬇ Export</button>
+      <button class="btn btn-ghost btn-sm" onclick="document.getElementById('import-file').click()" title="Importa JSON">⬆ Import</button>
+      <input type="file" id="import-file" accept=".json" style="display:none" onchange="importData(this)">
+      <button class="btn btn-primary" onclick="openAddContact()">+ Contatto</button>
+    </div>
+  </div>
+
+  <div class="nav">
+    <button class="nav-btn active" onclick="showPage('dashboard',this)">Dashboard</button>
+    <button class="nav-btn" onclick="showPage('contacts',this)">Contatti <span id="ct-count" style="background:var(--bg2);color:var(--text2);display:inline-block;padding:1px 6px;border-radius:10px;font-size:10px;margin-left:3px;font-weight:600">0</span></button>
+    <button class="nav-btn" onclick="showPage('followups',this)">Follow-up <span class="tab-count" id="fu-count">0</span></button>
+    <button class="nav-btn" onclick="showPage('templates',this)">Template email</button>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div id="page-dashboard" class="page active">
+    <div class="stat-grid" id="stats-grid"></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div class="card">
+        <div class="section-header"><div class="section-title">Attività recente</div></div>
+        <div id="recent-list"></div>
+      </div>
+      <div class="card">
+        <div class="section-header"><div class="section-title">Per paese</div></div>
+        <div id="country-chart"></div>
+      </div>
+    </div>
+    <div class="card" style="margin-top:12px">
+      <div class="section-header"><div class="section-title">Stato pipeline</div></div>
+      <div id="pipeline-chart"></div>
+    </div>
+  </div>
+
+  <!-- CONTATTI -->
+  <div id="page-contacts" class="page">
+    <div class="filters">
+      <input type="text" id="search-input" placeholder="Cerca nome, azienda, email..." oninput="renderContacts()">
+      <select id="filter-country" onchange="renderContacts()"><option value="">Tutti i paesi</option></select>
+      <select id="filter-status" onchange="renderContacts()">
+        <option value="">Tutti gli stati</option>
+        <option value="new">Da contattare</option>
+        <option value="sent">Email inviata</option>
+        <option value="followup">Follow-up</option>
+        <option value="replied">Risposto</option>
+        <option value="client">Cliente</option>
+        <option value="cold">Non interessato</option>
+      </select>
+      <select id="filter-product" onchange="renderContacts()"><option value="">Tutti i prodotti</option></select>
+    </div>
+    <div id="contacts-list"></div>
+  </div>
+
+  <!-- FOLLOW-UP -->
+  <div id="page-followups" class="page">
+    <div style="font-size:13px;color:var(--text2);margin-bottom:12px">Contatti con follow-up in attesa — clicca su un contatto per inviare l'email</div>
+    <div id="followup-list"></div>
+  </div>
+
+  <!-- TEMPLATE -->
+  <div id="page-templates" class="page">
+    <div class="section-header">
+      <div class="section-title">Template email</div>
+      <button class="btn btn-sm" onclick="openAddTemplate()">+ Nuovo template</button>
+    </div>
+    <div style="font-size:12px;color:var(--text2);margin-bottom:12px;padding:10px;background:var(--amber-bg);border-radius:var(--radius);color:var(--amber-text)">
+      Variabili disponibili: <strong>{{nome}}</strong> · <strong>{{azienda}}</strong> · <strong>{{paese}}</strong> · <strong>{{prodotti}}</strong> · <strong>{{citta}}</strong>
+    </div>
+    <div id="templates-list"></div>
+  </div>
+</div>
+
+<div id="modal-container"></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const COLORS = ['av-blue','av-teal','av-amber','av-coral','av-pink','av-green'];
+const STATUS_MAP = {
+  new:{label:'Da contattare',cls:'b-new'},
+  sent:{label:'Email inviata',cls:'b-sent'},
+  followup:{label:'Follow-up',cls:'b-followup'},
+  replied:{label:'Risposto',cls:'b-replied'},
+  client:{label:'Cliente',cls:'b-client'},
+  cold:{label:'Non interessato',cls:'b-cold'}
+};
+const PRODUCTS_LIST = [
+  'Rosso','Bianco','Rosé','Bollicine / Spumante','Prosecco','Barolo',
+  'Brunello','Amarone','Primitivo','Nero d\'Avola','Vermentino',
+  'Pinot Grigio','Organic / Bio','Natural Wine','Orange Wine','Grappa / Distillati'
+];
+const COUNTRIES = [
+  'Germania','USA','UK','Svizzera','Austria','Belgio','Paesi Bassi',
+  'Canada','Australia','Giappone','Cina','Svezia','Norvegia','Danimarca',
+  'Brasile','Messico','Singapore','Hong Kong','Francia','Spagna',
+  'Polonia','Rep. Ceca','Russia','Emirati Arabi','Corea del Sud'
+];
+
+let db = {contacts:[], templates:[]};
+
+function loadDB(){
+  try{
+    const raw = localStorage.getItem('wine_crm_v2');
+    if(raw) db = JSON.parse(raw);
+  } catch(e){}
+  if(!db.templates || db.templates.length === 0){
+    db.templates = [
+      {id:'t1',name:'Primo contatto',subject:'Proposta partnership — Vini italiani d\'eccellenza',body:`Gentile {{nome}},\n\nMi chiamo [Nome] e sono il responsabile export di [Nome Azienda].\n\nHo trovato il profilo di {{azienda}} su Best Wine Importers e, dopo aver approfondito la vostra realtà, credo che ci possa essere una sinergia interessante con la nostra produzione.\n\nSiamo un'azienda vinicola italiana specializzata in {{prodotti}}, con una forte vocazione all'export e un posizionamento nella fascia premium.\n\nLe invio in allegato il nostro catalogo e listino prezzi per la stagione corrente. Sarei lieto di organizzare una degustazione o una videochiamata per presentarci.\n\nRimango a disposizione per qualsiasi informazione.\n\nCordiali saluti,\n[Nome] [Cognome]\n[Titolo] — [Nome Azienda]\n[Tel] | [Email] | [Sito]`},
+      {id:'t2',name:'Follow-up 1 (7 giorni)',subject:'Re: Proposta partnership — [Nome Azienda]',body:`Gentile {{nome}},\n\nMi permetto di riprendere contatto riguardo alla mia email di qualche giorno fa sulla nostra proposta di collaborazione per {{azienda}}.\n\nCapisco che i suoi impegni possano essere numerosi — le chiedo solo un momento per confermare se ha ricevuto il materiale e se c'è interesse a proseguire la conversazione.\n\nSono disponibile per un breve call di 15 minuti a sua completa comodità.\n\nGrazie per il suo tempo.\n\nCordiali saluti,\n[Nome] [Cognome]\n[Nome Azienda] | [Tel]`},
+      {id:'t3',name:'Follow-up 2 (21 giorni)',subject:'Ultimi posti disponibili — Annata 2023',body:`Gentile {{nome}},\n\nDesidero informarla che le disponibilità della nostra annata 2023 stanno per esaurirsi. Prima di chiudere le allocazioni per il mercato {{paese}}, volevo darle l'opportunità di riservare i quantitativi di suo interesse.\n\nLa nostra selezione comprende: {{prodotti}}.\n\nSe desidera ricevere un'offerta personalizzata o fissare una degustazione, sono a sua disposizione entro questa settimana.\n\nCordiali saluti,\n[Nome] [Cognome]\n[Nome Azienda]`},
+      {id:'t4',name:'Conferma interesse / Invio listino',subject:'Listino prezzi e disponibilità — {{azienda}}',body:`Gentile {{nome}},\n\nGrazie per il suo interesse verso i nostri prodotti — sono molto lieto di poter approfondire la collaborazione con {{azienda}}.\n\nIn allegato troverà:\n• Listino prezzi aggiornato (Franco cantina / CIF)\n• Catalogo completo con schede tecniche\n• Disponibilità per la stagione corrente\n\nLe propongo di fissare una videochiamata nei prossimi giorni per rispondere a qualsiasi domanda e concordare i dettagli.\n\nResto in attesa di un suo riscontro.\n\nCordiali saluti,\n[Nome] [Cognome]\n[Nome Azienda]`}
+    ];
+    saveDB();
+  }
+  refreshAll();
+}
+
+function saveDB(){
+  try{ localStorage.setItem('wine_crm_v2', JSON.stringify(db)); } catch(e){}
+}
+
+function refreshAll(){
+  renderStats();
+  renderContacts();
+  renderFollowups();
+  renderTemplates();
+  renderRecentActivity();
+  renderCountryChart();
+  renderPipelineChart();
+  updateBadges();
+  updateCountryFilter();
+  updateProductFilter();
+}
+
+function updateBadges(){
+  document.getElementById('ct-count').textContent = db.contacts.length;
+  const fu = db.contacts.filter(c=>c.status==='followup'||c.status==='sent').length;
+  document.getElementById('fu-count').textContent = fu;
+}
+
+function updateCountryFilter(){
+  const sel = document.getElementById('filter-country');
+  const cur = sel.value;
+  const countries = [...new Set(db.contacts.map(c=>c.country).filter(Boolean))].sort();
+  sel.innerHTML = '<option value="">Tutti i paesi</option>' + countries.map(c=>`<option value="${esc(c)}"${cur===c?' selected':''}>${esc(c)}</option>`).join('');
+}
+
+function updateProductFilter(){
+  const sel = document.getElementById('filter-product');
+  const cur = sel.value;
+  const prods = new Set();
+  db.contacts.forEach(c=>(c.products||[]).forEach(p=>prods.add(p)));
+  const arr = [...prods].sort();
+  sel.innerHTML = '<option value="">Tutti i prodotti</option>' + arr.map(p=>`<option value="${esc(p)}"${cur===p?' selected':''}>${esc(p)}</option>`).join('');
+}
+
+function renderStats(){
+  const s = {total:0,new:0,sent:0,followup:0,replied:0,client:0,cold:0};
+  db.contacts.forEach(c=>{s.total++;s[c.status]=(s[c.status]||0)+1;});
+  document.getElementById('stats-grid').innerHTML = `
+    <div class="stat"><div class="stat-label">Totale</div><div class="stat-val">${s.total}</div></div>
+    <div class="stat"><div class="stat-label">Da contattare</div><div class="stat-val blue">${s.new||0}</div></div>
+    <div class="stat"><div class="stat-label">In attesa</div><div class="stat-val amber">${(s.sent||0)+(s.followup||0)}</div></div>
+    <div class="stat"><div class="stat-label">Risposte</div><div class="stat-val green">${s.replied||0}</div></div>
+    <div class="stat"><div class="stat-label">Clienti</div><div class="stat-val coral">${s.client||0}</div></div>
+  `;
+}
+
+function renderRecentActivity(){
+  const recent = [...db.contacts].filter(c=>c.updatedAt).sort((a,b)=>b.updatedAt-a.updatedAt).slice(0,6);
+  const el = document.getElementById('recent-list');
+  if(!recent.length){el.innerHTML='<div class="empty">Aggiungi il primo contatto →</div>';return;}
+  el.innerHTML = recent.map(c=>`
+    <div class="contact-row" onclick="openDetail('${c.id}')">
+      <div class="avatar ${COLORS[hash(c.company||c.name)%COLORS.length]}">${initials(c.name)}</div>
+      <div class="contact-info">
+        <div class="contact-name">${esc(c.name)}</div>
+        <div class="contact-sub">${esc(c.company||'')}${c.country?' · '+esc(c.country):''}</div>
+      </div>
+      <span class="badge ${STATUS_MAP[c.status]?.cls||'b-new'}">${STATUS_MAP[c.status]?.label||''}</span>
+    </div>`).join('');
+}
+
+function renderCountryChart(){
+  const map = {};
+  db.contacts.forEach(c=>{if(c.country)map[c.country]=(map[c.country]||0)+1;});
+  const entries = Object.entries(map).sort((a,b)=>b[1]-a[1]).slice(0,8);
+  const max = entries[0]?.[1]||1;
+  const el = document.getElementById('country-chart');
+  if(!entries.length){el.innerHTML='<div class="empty" style="font-size:12px">Nessun dato</div>';return;}
+  el.innerHTML = entries.map(([c,n])=>`
+    <div class="bar-row">
+      <div class="bar-label">${esc(c)}</div>
+      <div class="bar-track"><div class="bar-fill" style="width:${Math.round(n/max*100)}%">${n}</div></div>
+    </div>`).join('');
+}
+
+function renderPipelineChart(){
+  const order = ['new','sent','followup','replied','client','cold'];
+  const map = {};
+  db.contacts.forEach(c=>{map[c.status]=(map[c.status]||0)+1;});
+  const total = db.contacts.length||1;
+  const el = document.getElementById('pipeline-chart');
+  el.innerHTML = `<div style="display:flex;gap:6px;align-items:flex-end;height:60px">` +
+    order.map(s=>{
+      const n = map[s]||0;
+      const h = Math.max(4, Math.round(n/total*100));
+      const cls = {new:'blue-bg blue-text',sent:'amber-bg amber-text',followup:'pink-bg pink-text',replied:'green-bg green-text',client:'teal-bg teal-text',cold:'gray-bg gray-text'}[s]||'';
+      const [bg,tx] = cls.split(' ');
+      return `<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px">
+        <div style="font-size:11px;font-weight:600;color:var(--${tx})">${n}</div>
+        <div style="width:100%;height:${h}%;min-height:4px;background:var(--${bg});border-radius:4px 4px 0 0"></div>
+        <div style="font-size:10px;color:var(--text2);text-align:center;line-height:1.2">${STATUS_MAP[s].label.replace(' ','<br>')}</div>
+      </div>`;
+    }).join('') + '</div>';
+}
+
+function getFiltered(){
+  const q = (document.getElementById('search-input')?.value||'').toLowerCase();
+  const country = document.getElementById('filter-country')?.value||'';
+  const status = document.getElementById('filter-status')?.value||'';
+  const product = document.getElementById('filter-product')?.value||'';
+  return db.contacts.filter(c=>{
+    if(q && !`${c.name} ${c.company} ${c.email} ${c.country}`.toLowerCase().includes(q)) return false;
+    if(country && c.country!==country) return false;
+    if(status && c.status!==status) return false;
+    if(product && !(c.products||[]).includes(product)) return false;
+    return true;
+  });
+}
+
+function renderContacts(){
+  const list = getFiltered();
+  const el = document.getElementById('contacts-list');
+  if(!list.length){el.innerHTML='<div class="card"><div class="empty">Nessun contatto trovato</div></div>';return;}
+  el.innerHTML = `<div class="card">${list.map(c=>`
+    <div class="contact-row" onclick="openDetail('${c.id}')">
+      <div class="avatar ${COLORS[hash(c.company||c.name)%COLORS.length]}">${initials(c.name)}</div>
+      <div class="contact-info">
+        <div class="contact-name">${esc(c.name)} <span style="font-weight:400;color:var(--text2)">${esc(c.company||'')}</span></div>
+        <div class="contact-sub">${[c.country,c.city].filter(Boolean).map(esc).join(' · ')}${c.products&&c.products.length?' · '+c.products.slice(0,2).map(esc).join(', '):''}</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <span class="badge ${STATUS_MAP[c.status]?.cls||'b-new'}">${STATUS_MAP[c.status]?.label||''}</span>
+      </div>
+    </div>`).join('')}</div>`;
+}
+
+function renderFollowups(){
+  const list = db.contacts.filter(c=>c.status==='followup'||c.status==='sent').sort((a,b)=>(a.updatedAt||0)-(b.updatedAt||0));
+  const el = document.getElementById('followup-list');
+  if(!list.length){el.innerHTML='<div class="card"><div class="empty">Nessun follow-up pendente 🎉</div></div>';return;}
+  el.innerHTML = `<div class="card">${list.map(c=>{
+    const days = Math.floor((Date.now()-(c.updatedAt||Date.now()))/86400000);
+    return `<div class="contact-row" onclick="openDetail('${c.id}')">
+      <div class="avatar ${COLORS[hash(c.company||c.name)%COLORS.length]}">${initials(c.name)}</div>
+      <div class="contact-info">
+        <div class="contact-name">${esc(c.name)} — ${esc(c.company||'')}</div>
+        <div class="contact-sub">${esc(c.country||'')} · ${days>0?days+' giorni fa':'oggi'}</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0;display:flex;flex-direction:column;align-items:flex-end;gap:4px">
+        <span class="badge ${STATUS_MAP[c.status]?.cls||'b-new'}">${STATUS_MAP[c.status]?.label||''}</span>
+        <button class="btn btn-sm" onclick="event.stopPropagation();openEmailModal('${c.id}')" style="font-size:11px">Invia email</button>
+      </div>
+    </div>`;
+  }).join('')}</div>`;
+}
+
+function renderTemplates(){
+  const el = document.getElementById('templates-list');
+  if(!db.templates.length){el.innerHTML='<div class="empty">Nessun template</div>';return;}
+  el.innerHTML = db.templates.map(t=>`
+    <div class="card">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+        <div style="font-size:15px;font-weight:600">${esc(t.name)}</div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-sm" onclick="openAddTemplate('${t.id}')">Modifica</button>
+          <button class="btn btn-sm btn-danger" onclick="deleteTemplate('${t.id}')">Elimina</button>
+        </div>
+      </div>
+      <div style="font-size:12px;color:var(--text2);margin-bottom:8px">Oggetto: <span style="color:var(--text)">${esc(t.subject)}</span></div>
+      <div style="font-size:12px;color:var(--text2);background:var(--bg2);border-radius:6px;padding:10px;white-space:pre-wrap;line-height:1.6;max-height:90px;overflow:hidden">${esc(t.body.substring(0,320))}${t.body.length>320?'…':''}</div>
+    </div>`).join('');
+}
+
+function showPage(id,btn){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+
+/* ── MODAL ── */
+function showModal(html){
+  closeModal();
+  const bg = document.createElement('div');
+  bg.className='modal-overlay';
+  bg.innerHTML=`<div class="modal">${html}</div>`;
+  bg.addEventListener('click',e=>{if(e.target===bg)closeModal();});
+  document.getElementById('modal-container').appendChild(bg);
+}
+function closeModal(){const m=document.querySelector('.modal-overlay');if(m)m.remove();}
+
+/* ── ADD / EDIT CONTACT ── */
+function openAddContact(editId){
+  const c = editId ? db.contacts.find(x=>x.id===editId) : null;
+  showModal(`
+    <div class="modal-title">${c?'Modifica':'Nuovo'} contatto</div>
+    <div class="form-grid">
+      <div class="form-group"><label>Nome referente *</label><input id="f-name" placeholder="Mario Rossi" value="${esc(c?.name||'')}"></div>
+      <div class="form-group"><label>Azienda *</label><input id="f-company" placeholder="Wine Import GmbH" value="${esc(c?.company||'')}"></div>
+      <div class="form-group"><label>Email</label><input id="f-email" type="email" placeholder="mario@esempio.com" value="${esc(c?.email||'')}"></div>
+      <div class="form-group"><label>Telefono</label><input id="f-phone" placeholder="+49 89 1234567" value="${esc(c?.phone||'')}"></div>
+      <div class="form-group"><label>Paese</label>
+        <input id="f-country" placeholder="Germania" list="country-list" value="${esc(c?.country||'')}">
+        <datalist id="country-list">${COUNTRIES.map(x=>`<option value="${esc(x)}">`).join('')}</datalist>
+      </div>
+      <div class="form-group"><label>Città / Regione</label><input id="f-city" placeholder="Monaco di Baviera" value="${esc(c?.city||'')}"></div>
+      <div class="form-group"><label>Sito web</label><input id="f-website" placeholder="www.esempio.com" value="${esc(c?.website||'')}"></div>
+      <div class="form-group"><label>Stato</label>
+        <select id="f-status">
+          ${Object.entries(STATUS_MAP).map(([k,v])=>`<option value="${k}"${(c?.status||'new')===k?' selected':''}>${v.label}</option>`).join('')}
+        </select>
+      </div>
+      <div class="form-group full"><label>Prodotti di interesse</label>
+        <div class="prod-grid">
+          ${PRODUCTS_LIST.map(p=>`<label class="prod-label"><input type="checkbox" class="prod-cb" value="${esc(p)}"${(c?.products||[]).includes(p)?' checked':''}> ${esc(p)}</label>`).join('')}
+        </div>
+      </div>
+      <div class="form-group full"><label>Note</label><textarea id="f-notes" placeholder="Note libere...">${esc(c?.notes||'')}</textarea></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" onclick="closeModal()">Annulla</button>
+      <button class="btn btn-primary" onclick="saveContact('${editId||''}')">Salva</button>
+    </div>
+  `);
+}
+
+function saveContact(editId){
+  const name = document.getElementById('f-name').value.trim();
+  const company = document.getElementById('f-company').value.trim();
+  if(!name){toast('Il nome è obbligatorio');return;}
+  const products = [...document.querySelectorAll('.prod-cb:checked')].map(x=>x.value);
+  const contact = {
+    id: editId||'c'+Date.now(),
+    name, company,
+    email: document.getElementById('f-email').value.trim(),
+    phone: document.getElementById('f-phone').value.trim(),
+    country: document.getElementById('f-country').value.trim(),
+    city: document.getElementById('f-city').value.trim(),
+    website: document.getElementById('f-website').value.trim(),
+    status: document.getElementById('f-status').value,
+    products,
+    notes: document.getElementById('f-notes').value.trim(),
+    updatedAt: Date.now(),
+    createdAt: editId ? (db.contacts.find(c=>c.id===editId)?.createdAt||Date.now()) : Date.now()
+  };
+  if(editId){const i=db.contacts.findIndex(c=>c.id===editId);if(i>=0)db.contacts[i]=contact;}
+  else db.contacts.push(contact);
+  saveDB(); closeModal(); refreshAll();
+  toast(editId?'Contatto aggiornato':'Contatto aggiunto ✓');
+}
+
+/* ── DETAIL ── */
+function openDetail(id){
+  const c = db.contacts.find(x=>x.id===id);
+  if(!c) return;
+  const av = COLORS[hash(c.company||c.name)%COLORS.length];
+  const logHtml = (c.log||[]).slice(-5).reverse().map(e=>`<div class="log-entry"><span class="log-date">${new Date(e.ts).toLocaleDateString('it-IT')}</span> — ${esc(e.msg)}</div>`).join('');
+  showModal(`
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:1.25rem">
+      <div class="avatar ${av}" style="width:50px;height:50px;font-size:16px">${initials(c.name)}</div>
+      <div style="flex:1">
+        <div style="font-size:18px;font-weight:600">${esc(c.name)}</div>
+        <div style="font-size:13px;color:var(--text2)">${esc(c.company||'')}</div>
+      </div>
+      <span class="badge ${STATUS_MAP[c.status]?.cls||'b-new'}">${STATUS_MAP[c.status]?.label||''}</span>
+    </div>
+    <div>
+      ${drow('Email', c.email?`<a href="mailto:${esc(c.email)}">${esc(c.email)}</a>`:'—')}
+      ${drow('Telefono', c.phone||'—')}
+      ${drow('Paese / Città', [c.country,c.city].filter(Boolean).map(esc).join(', ')||'—')}
+      ${drow('Sito', c.website?`<a href="${c.website.startsWith('http')?'':'https://'}${esc(c.website)}" target="_blank">${esc(c.website)}</a>`:'—')}
+      ${drow('Prodotti', c.products&&c.products.length?c.products.map(p=>`<span class="tag">${esc(p)}</span>`).join(''):'—')}
+    </div>
+    ${c.notes?`<div class="divider"></div><div style="font-size:12px;color:var(--text2);font-weight:600;margin-bottom:6px">NOTE</div><div style="font-size:13px;line-height:1.6;white-space:pre-wrap">${esc(c.notes)}</div>`:''}
+    <div class="divider"></div>
+    <div style="font-size:12px;color:var(--text2);font-weight:600;margin-bottom:8px">CAMBIA STATO</div>
+    <div class="status-selector">
+      ${Object.entries(STATUS_MAP).map(([k,v])=>`<button class="status-btn badge ${v.cls}${c.status===k?' active':''}" onclick="changeStatus('${id}','${k}')">${v.label}</button>`).join('')}
+    </div>
+    ${logHtml?`<div class="divider"></div><div style="font-size:12px;color:var(--text2);font-weight:600;margin-bottom:6px">LOG ATTIVITÀ</div>${logHtml}`:''}
+    <div class="modal-footer">
+      <button class="btn btn-danger btn-sm" onclick="deleteContact('${id}')">Elimina</button>
+      <button class="btn btn-sm" onclick="openAddContact('${id}');void 0">Modifica</button>
+      <button class="btn btn-primary btn-sm" onclick="openEmailModal('${id}')">✉ Prepara email</button>
+    </div>
+  `);
+}
+
+function drow(label,val){return `<div class="detail-field"><span class="detail-label">${label}</span><span class="detail-val">${val}</span></div>`;}
+
+function changeStatus(id,status){
+  const c = db.contacts.find(x=>x.id===id);
+  if(!c) return;
+  c.status=status; c.updatedAt=Date.now();
+  c.log = c.log||[];
+  c.log.push({ts:Date.now(),msg:`Stato → ${STATUS_MAP[status].label}`});
+  saveDB(); refreshAll(); closeModal(); openDetail(id);
+}
+
+function deleteContact(id){
+  if(!confirm('Eliminare questo contatto?')) return;
+  db.contacts=db.contacts.filter(c=>c.id!==id);
+  saveDB(); closeModal(); refreshAll();
+  toast('Contatto eliminato');
+}
+
+/* ── EMAIL ── */
+function openEmailModal(id){
+  const c = db.contacts.find(x=>x.id===id);
+  if(!c) return;
+  showModal(`
+    <div class="modal-title">✉ Prepara email — ${esc(c.name)}</div>
+    <div class="form-group" style="margin-bottom:10px">
+      <label>Template</label>
+      <select id="tpl-sel" onchange="applyTemplate('${id}')">${db.templates.map((t,i)=>`<option value="${i}">${esc(t.name)}</option>`).join('')}</select>
+    </div>
+    <div class="form-group" style="margin-bottom:10px">
+      <label>Destinatario</label>
+      <input id="em-to" value="${esc(c.email||'')}" placeholder="email@esempio.com">
+    </div>
+    <div class="form-group" style="margin-bottom:10px">
+      <label>Oggetto</label>
+      <input id="em-subj">
+    </div>
+    <div class="form-group" style="margin-bottom:10px">
+      <label>Corpo email</label>
+      <textarea id="em-body" style="min-height:220px;font-size:13px;line-height:1.6"></textarea>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" onclick="closeModal()">Annulla</button>
+      <button class="btn" onclick="copyEmail()">Copia testo</button>
+      <button class="btn btn-primary" onclick="sendEmail('${id}')">Apri nel client email</button>
+    </div>
+  `);
+  applyTemplate(id);
+}
+
+function fillTpl(text,c){
+  return text
+    .replace(/\{\{nome\}\}/g,c.name||'')
+    .replace(/\{\{azienda\}\}/g,c.company||'')
+    .replace(/\{\{paese\}\}/g,c.country||'')
+    .replace(/\{\{citta\}\}/g,c.city||'')
+    .replace(/\{\{prodotti\}\}/g,(c.products||[]).join(', ')||'[prodotti]');
+}
+
+function applyTemplate(id){
+  const c = db.contacts.find(x=>x.id===id);
+  const idx = parseInt(document.getElementById('tpl-sel')?.value||'0');
+  const t = db.templates[idx];
+  if(!t||!c) return;
+  document.getElementById('em-subj').value = fillTpl(t.subject,c);
+  document.getElementById('em-body').value = fillTpl(t.body,c);
+}
+
+function sendEmail(id){
+  const c = db.contacts.find(x=>x.id===id);
+  const to = encodeURIComponent(document.getElementById('em-to').value||c?.email||'');
+  const subj = encodeURIComponent(document.getElementById('em-subj').value);
+  const body = encodeURIComponent(document.getElementById('em-body').value);
+  window.location.href = `mailto:${to}?subject=${subj}&body=${body}`;
+  if(c&&c.status==='new'){
+    c.status='sent'; c.updatedAt=Date.now();
+    c.log=c.log||[]; c.log.push({ts:Date.now(),msg:'Prima email inviata'});
+    saveDB(); refreshAll();
+  }
+  closeModal(); toast('Email aperta nel client ✓');
+}
+
+function copyEmail(){
+  const subj = document.getElementById('em-subj').value;
+  const body = document.getElementById('em-body').value;
+  navigator.clipboard?.writeText(`Oggetto: ${subj}\n\n${body}`).then(()=>toast('Testo copiato negli appunti ✓'));
+}
+
+/* ── TEMPLATES CRUD ── */
+function openAddTemplate(editId){
+  const t = editId ? db.templates.find(x=>x.id===editId) : null;
+  showModal(`
+    <div class="modal-title">${t?'Modifica':'Nuovo'} template</div>
+    <div class="form-grid">
+      <div class="form-group full"><label>Nome template</label><input id="t-name" value="${esc(t?.name||'')}"></div>
+      <div class="form-group full"><label>Oggetto</label><input id="t-subj" value="${esc(t?.subject||'')}"></div>
+      <div class="form-group full"><label>Corpo email</label><textarea id="t-body" style="min-height:220px">${esc(t?.body||'')}</textarea></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" onclick="closeModal()">Annulla</button>
+      <button class="btn btn-primary" onclick="saveTemplate('${editId||''}')">Salva template</button>
+    </div>
+  `);
+}
+
+function saveTemplate(editId){
+  const name=document.getElementById('t-name').value.trim();
+  const subject=document.getElementById('t-subj').value.trim();
+  const body=document.getElementById('t-body').value.trim();
+  if(!name){toast('Inserisci un nome');return;}
+  const t={id:editId||'t'+Date.now(),name,subject,body};
+  if(editId){const i=db.templates.findIndex(x=>x.id===editId);if(i>=0)db.templates[i]=t;}
+  else db.templates.push(t);
+  saveDB(); closeModal(); renderTemplates();
+  toast('Template salvato ✓');
+}
+
+function deleteTemplate(id){
+  if(!confirm('Eliminare questo template?')) return;
+  db.templates=db.templates.filter(t=>t.id!==id);
+  saveDB(); renderTemplates(); toast('Template eliminato');
+}
+
+/* ── EXPORT / IMPORT ── */
+function exportData(){
+  const blob = new Blob([JSON.stringify(db,null,2)],{type:'application/json'});
+  const a = document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download=`wine-crm-backup-${new Date().toISOString().slice(0,10)}.json`;
+  a.click();
+  toast('Backup esportato ✓');
+}
+
+function importData(input){
+  const file = input.files[0];
+  if(!file) return;
+  const r = new FileReader();
+  r.onload = e=>{
+    try{
+      const data = JSON.parse(e.target.result);
+      if(!data.contacts) throw new Error('Formato non valido');
+      if(!confirm(`Importare ${data.contacts.length} contatti? I dati attuali verranno sostituiti.`)) return;
+      db = data;
+      saveDB(); refreshAll();
+      toast(`Importati ${data.contacts.length} contatti ✓`);
+    } catch(err){ toast('Errore: file non valido'); }
+  };
+  r.readAsText(file);
+  input.value='';
+}
+
+/* ── UTILS ── */
+function initials(n){if(!n)return'?';const p=n.trim().split(/\s+/);return(p[0][0]+(p[1]?p[1][0]:'')).toUpperCase();}
+function hash(s){let h=0;for(let i=0;i<(s||'').length;i++){h=Math.imul(31,h)+s.charCodeAt(i)|0;}return Math.abs(h);}
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function toast(msg){const el=document.getElementById('toast');el.textContent=msg;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),2500);}
+
+loadDB();
+</script>
+</body>
+</html>
