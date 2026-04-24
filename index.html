@@ -253,22 +253,15 @@ let db={contacts:[],templates:[]};
 let ghs={};
 let ghSha=null,saveTimer=null,pending=null;
 
-/* ── INIT ── */
-function init(){
-  // Migrazione da versioni precedenti (wine_crm_v3, wine_crm_v2, wcrm4)
-  const OLD_KEYS=['wcrm4','wine_crm_v3','wine_crm_v2'];
-  for(const key of OLD_KEYS){
-    try{
-      const r=localStorage.getItem(key);
-      if(r){const parsed=JSON.parse(r);if(parsed.contacts?.length>0){db=parsed;break;}}
-    }catch(e){}
-  }
-  // Salva sempre nella chiave corrente
-  if(db.contacts?.length>0) localStorage.setItem('wcrm5',JSON.stringify(db));
-  try{const r=localStorage.getItem('wcrm5');if(r&&!db.contacts?.length)db=JSON.parse(r);}catch(e){}
-  try{const r=localStorage.getItem('ghset')||localStorage.getItem('gh_settings');if(r)ghs=JSON.parse(r);}catch(e){}
+/* ── INIT: al caricamento pagina legge da GitHub ── */
+async function init(){
+  try{const r=localStorage.getItem('ghcfg');if(r)ghs=JSON.parse(r);}catch(e){}
   if(!db.templates||!db.templates.length)db.templates=defTpl();
-  updGh('idle');refreshAll();
+  if(ghs.token&&ghs.owner&&ghs.repo){
+    await loadFromGH();  // carica contatti.json da GitHub
+  } else {
+    updGh('idle');refreshAll();
+  }
 }
 function defTpl(){return[
   {id:'t1',name:'Primo contatto',subject:"Proposta partnership — Vini italiani d'eccellenza",
@@ -283,22 +276,28 @@ function defTpl(){return[
 
 /* ── SAVE / GH ── */
 function saveDB(){
-
-  if(ghs.token&&ghs.owner&&ghs.repo){
-    clearTimeout(saveTimer);saveTimer=setTimeout(pushGH,3000);updGh('pending');
-  }
+  if(!ghs.token||!ghs.owner||!ghs.repo){updGh('error');return;}
+  clearTimeout(saveTimer);
+  saveTimer=setTimeout(pushGH,2000);
+  updGh('pending');
 }
 function updGh(s){
   const d=document.getElementById('gh-dot'),l=document.getElementById('gh-lbl');
   if(!d)return;
   d.className='gh-dot '+s;
-  l.textContent={idle:ghs.token?'GitHub pronto':'GitHub',pending:'In salvataggio…',
-    saving:'Salvataggio…',saved:'Salvato ✓',error:'Errore ✗'}[s]||s;
+  const cfg=ghs.token&&ghs.owner&&ghs.repo;
+  l.textContent={
+    idle: cfg?`${ghs.owner}/${ghs.repo}`:'⚠ GitHub non configurato',
+    pending:'Salvataggio…',
+    saving:'Salvataggio…',
+    saved:'✓ Salvato',
+    error:'✗ Errore — verifica token'
+  }[s]||s;
 }
 async function pushGH(){
-  const{token,owner,repo,path:fp}=ghs;
+  const{token,owner,repo}=ghs;
   if(!token||!owner||!repo)return;
-  const path=fp||'data/crm.json';
+  const path='data/contatti.json';
   const url=`https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
   const hd={'Authorization':`token ${token}`,'Content-Type':'application/json','Accept':'application/vnd.github.v3+json'};
   updGh('saving');
@@ -314,19 +313,23 @@ async function pushGH(){
   }catch(e){updGh('error');}
 }
 async function loadFromGH(){
-  const{token,owner,repo,path:fp}=ghs;
-  if(!token||!owner||!repo){toast('Configura GitHub prima');return;}
-  const path=fp||'data/crm.json';
+  const{token,owner,repo}=ghs;
+  if(!token||!owner||!repo){updGh('error');return;}
+  const path='data/contatti.json';
   const url=`https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
+  updGh('saving');
   try{
     const r=await fetch(url,{headers:{'Authorization':`token ${token}`,'Accept':'application/vnd.github.v3+json'}});
-    if(!r.ok){toast('File non trovato su GitHub (verrà creato dopo il primo import)');return;}
-    const d=await r.json();ghSha=d.sha;
+    if(!r.ok){updGh('saved');refreshAll();return;}
+    const d=await r.json();
+    ghSha=d.sha;
     const parsed=JSON.parse(decodeURIComponent(escape(atob(d.content.replace(/\n/g,'')))));
     if(!parsed.contacts)throw new Error('Formato non valido');
-
-    refreshAll();toast(`✓ Caricati ${db.contacts.length} contatti da GitHub`);updGh('saved');
-  }catch(e){toast('Errore: '+e.message);}
+    if(parsed.templates&&parsed.templates.length)db.templates=parsed.templates;
+    db.contacts=parsed.contacts;
+    refreshAll();updGh('saved');
+    toast(`✓ ${db.contacts.length} contatti caricati`);
+  }catch(e){updGh('error');toast('Errore caricamento: '+e.message);}
 }
 
 /* ── DELETE ALL ── */
@@ -346,7 +349,11 @@ function confirmDeleteAll(){
   `);
 }
 function doDeleteAll(){
-  db.contacts=[];saveDB();closeModal();refreshAll();toast('Database svuotato ✓');
+  db.contacts=[];
+  closeModal();refreshAll();
+  // Push immediato su GitHub
+  clearTimeout(saveTimer);
+  pushGH().then(()=>toast('Database svuotato e sincronizzato ✓'));
 }
 
 /* ── SETTINGS ── */
@@ -354,12 +361,12 @@ function openSettings(){
   showModal(`
     <div class="mt">⚙ Impostazioni GitHub</div>
     <p style="font-size:13px;color:var(--text2);margin-bottom:1rem;line-height:1.6">
-      Il CRM salva ogni modifica automaticamente su GitHub come <code>data/crm.json</code>.<br>
+      I dati vengono caricati da GitHub all'avvio e salvati automaticamente ad ogni modifica in <code>data/contatti.json</code>.<br>
       Genera un token su <a href="https://github.com/settings/tokens/new" target="_blank">github.com/settings/tokens/new</a> con permesso <code>repo</code>.
     </p>
     <div class="fg2">
       <div class="fg fgf"><label>Personal Access Token</label>
-        <input id="gt" type="password" placeholder="ghp_xxxx…" value="${esc(ghs.token||'')}">
+        <input id="gt" type="password" placeholder="ghp_xxxxxxxxxxxx" value="${esc(ghs.token||'')}">
       </div>
       <div class="fg"><label>Owner (username)</label>
         <input id="go" placeholder="shopilciliegio-ship-it" value="${esc(ghs.owner||'shopilciliegio-ship-it')}">
@@ -367,24 +374,22 @@ function openSettings(){
       <div class="fg"><label>Repository</label>
         <input id="gr" placeholder="crm-importatori" value="${esc(ghs.repo||'crm-importatori')}">
       </div>
-      <div class="fg"><label>Percorso file</label>
-        <input id="gp" placeholder="data/crm.json" value="${esc(ghs.path||'data/crm.json')}">
-      </div>
     </div>
-    <div class="mf" style="justify-content:space-between">
-      <button class="btn btg" onclick="loadFromGH();closeModal()">⬇ Carica da GitHub</button>
-      <div style="display:flex;gap:8px">
-        <button class="btn" onclick="closeModal()">Annulla</button>
-        <button class="btn btp" onclick="saveSettings()">Salva</button>
-      </div>
+    <div style="background:var(--blue-bg);padding:10px 14px;border-radius:var(--r);font-size:12px;color:var(--blue-tx);margin-bottom:1rem">
+      Il database viene salvato in: <code>data/contatti.json</code>
+    </div>
+    <div class="mf">
+      <button class="btn" onclick="closeModal()">Annulla</button>
+      <button class="btn btp" onclick="saveSettings()">Salva e connetti</button>
     </div>
   `);
 }
 function saveSettings(){
-  ghs={token:gv('gt'),owner:gv('go'),repo:gv('gr'),path:gv('gp')||'data/crm.json'};
-  localStorage.setItem('ghset',JSON.stringify(ghs));
-  ghSha=null;closeModal();updGh('idle');toast('Impostazioni salvate ✓');
-  if(ghs.token)setTimeout(pushGH,500);
+  ghs={token:gv('gt'),owner:gv('go'),repo:gv('gr')};
+  localStorage.setItem('ghcfg',JSON.stringify(ghs));
+  ghSha=null;closeModal();
+  toast('Impostazioni salvate — carico i dati…');
+  loadFromGH();
 }
 function gv(id){return(document.getElementById(id)?.value||'').trim();}
 
@@ -900,7 +905,7 @@ function exportData(){
   const blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'});
   const a=document.createElement('a');
   a.href=URL.createObjectURL(blob);
-  a.download=`wine-crm-${new Date().toISOString().slice(0,10)}.json`;
+  a.download=`contatti-backup-${new Date().toISOString().slice(0,10)}.json`;
   a.click();toast('Export scaricato ✓');
 }
 
