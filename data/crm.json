@@ -1,0 +1,29 @@
+{
+  "contacts": [],
+  "templates": [
+    {
+      "id": "t1",
+      "name": "Primo contatto",
+      "subject": "Proposta partnership — Vini italiani d'eccellenza",
+      "body": "Gentile {{contatto}},\n\nMi chiamo [Nome] e sono il responsabile export di [Azienda].\nHo trovato il profilo di {{azienda}} su Best Wine Importers e credo ci possa essere una sinergia interessante con la nostra produzione.\n\nSiamo specializzati in {{prodotti}} e abbiamo un forte posizionamento nel segmento premium.\n\nLe invio in allegato il nostro catalogo e listino prezzi. Sarei lieto di organizzare una degustazione o una videochiamata.\n\nCordiali saluti,\n[Nome] — [Azienda]\n[Tel] | [Email]"
+    },
+    {
+      "id": "t2",
+      "name": "Follow-up 1 (7 giorni)",
+      "subject": "Re: Proposta partnership — [Azienda]",
+      "body": "Gentile {{contatto}},\n\nMi permetto di riprendere contatto riguardo alla mia email di qualche giorno fa.\n\nLe chiedo solo un momento per confermare se c'è interesse a proseguire la conversazione. Sono disponibile per un breve call di 15 minuti a sua comodità.\n\nGrazie,\n[Nome] — [Azienda]"
+    },
+    {
+      "id": "t3",
+      "name": "Follow-up 2 (21 giorni)",
+      "subject": "Ultimi posti — Annata 2023",
+      "body": "Gentile {{contatto}},\n\nLe disponibilità della nostra annata 2023 per il mercato {{paese}} si stanno esaurendo.\n\nLa nostra selezione comprende: {{prodotti}}.\n\nSe desidera ricevere un'offerta personalizzata, sono a disposizione entro questa settimana.\n\nCordiali saluti,\n[Nome] — [Azienda]"
+    },
+    {
+      "id": "t4",
+      "name": "Conferma interesse",
+      "subject": "Listino prezzi aggiornato — {{azienda}}",
+      "body": "Gentile {{contatto}},\n\nGrazie per l'interesse verso i nostri prodotti!\n\nIn allegato troverà:\n• Listino prezzi (Franco Cantina / CIF)\n• Catalogo completo con schede tecniche\n• Disponibilità stagione corrente\n\nResto disponibile per qualsiasi domanda.\n\nCordiali saluti,\n[Nome] — [Azienda]"
+    }
+  ]
+}
