@@ -1,5 +1,978 @@
 {
-  "contacts": [],
+  "contacts": [
+    {
+      "id": "c17770246715220vuis",
+      "name": "",
+      "company": "+244 222 333 750",
+      "email": "-",
+      "phone": "info@cincosentidos.co.ao",
+      "country": "Cinco Sentidos",
+      "city": "",
+      "region": "",
+      "website": "Carlos Gameiro",
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "employees": "-",
+      "sales": "cincosentidos.co.ao",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1777024671522,
+      "updatedAt": 1777024671522,
+      "log": [
+        {
+          "ts": 1777024671522,
+          "msg": "Importato dal file Excel"
+        }
+      ]
+    },
+    {
+      "id": "c1777024671522rm6og",
+      "name": "",
+      "company": "+244 923 536 518",
+      "email": "300",
+      "phone": "ddm@ddmangola.com",
+      "country": "Ddm - Distribuidora De Mercadorias, S.a",
+      "city": "",
+      "region": "",
+      "website": "Irina Pearson",
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "employees": "$4.21M",
+      "sales": "ddmangola.com",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1777024671522,
+      "updatedAt": 1777024671522,
+      "log": [
+        {
+          "ts": 1777024671522,
+          "msg": "Importato dal file Excel"
+        }
+      ]
+    },
+    {
+      "id": "c17770246715220aa6l",
+      "name": "",
+      "company": "+244 924 429 425",
+      "email": "100",
+      "phone": "geral@multiafrica.com",
+      "country": "Multiafrica - Comercio Restauracao E Hotelaria, Lda",
+      "city": "",
+      "region": "",
+      "website": "",
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "employees": "$953.707",
+      "sales": "multiafrica.com",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1777024671522,
+      "updatedAt": 1777024671522,
+      "log": [
+        {
+          "ts": 1777024671522,
+          "msg": "Importato dal file Excel"
+        }
+      ]
+    },
+    {
+      "id": "c1777024671522ifwy7",
+      "name": "",
+      "company": "+244 222 326 964",
+      "email": "15",
+      "phone": "geral@niproser.com",
+      "country": "Niproser Angola Lda",
+      "city": "",
+      "region": "",
+      "website": "Paula Dantas",
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "employees": "$4.03M",
+      "sales": "niproser.com",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1777024671522,
+      "updatedAt": 1777024671522,
+      "log": [
+        {
+          "ts": 1777024671522,
+          "msg": "Importato dal file Excel"
+        }
+      ]
+    },
+    {
+      "id": "c177702467152246egp",
+      "name": "",
+      "company": "+267 310 5304",
+      "email": "11",
+      "phone": "info@finebrands.co.bw",
+      "country": "Fine Brands",
+      "city": "",
+      "region": "",
+      "website": "Eve-tendai Mpofu",
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "employees": "$4.43M",
+      "sales": "finebrands.co.bw",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1777024671522,
+      "updatedAt": 1777024671522,
+      "log": [
+        {
+          "ts": 1777024671522,
+          "msg": "Importato dal file Excel"
+        }
+      ]
+    },
+    {
+      "id": "c17770246715225uk62",
+      "name": "",
+      "company": "+267 395 2639",
+      "email": "3",
+      "phone": "events@lengau.co.bw",
+      "country": "Lengau",
+      "city": "",
+      "region": "",
+      "website": "Setheo Gulubane",
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "employees": "$1.02M",
+      "sales": "lengau.co.bw",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1777024671522,
+      "updatedAt": 1777024671522,
+      "log": [
+        {
+          "ts": 1777024671522,
+          "msg": "Importato dal file Excel"
+        }
+      ]
+    },
+    {
+      "id": "c1777024671522yo71i",
+      "name": "",
+      "company": "+237 6 78 23 72 98",
+      "email": "70",
+      "phone": "focali@groupefocali.com",
+      "country": "Focali S.a",
+      "city": "",
+      "region": "",
+      "website": "Manuella Sabouang",
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "employees": "$6.04M",
+      "sales": "groupefocali.com",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1777024671522,
+      "updatedAt": 1777024671522,
+      "log": [
+        {
+          "ts": 1777024671522,
+          "msg": "Importato dal file Excel"
+        }
+      ]
+    },
+    {
+      "id": "c1777024671522ktmae",
+      "name": "",
+      "company": "+241 11 76 21 08",
+      "email": "1983",
+      "phone": "contact@cecagadis.com",
+      "country": "Compagnie D'exploitations Commerciales Africaines - Societe Gabonaise De Distribution",
+      "city": "",
+      "region": "",
+      "website": "Isabelle Essonghe",
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "employees": "$291.99M",
+      "sales": "cecagadis.com",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1777024671522,
+      "updatedAt": 1777024671522,
+      "log": [
+        {
+          "ts": 1777024671522,
+          "msg": "Importato dal file Excel"
+        }
+      ]
+    },
+    {
+      "id": "c17770246715224bel2",
+      "name": "",
+      "company": "+241 11 72 46 76",
+      "email": "750",
+      "phone": "commercial@priximport.com",
+      "country": "Prix Import S.a",
+      "city": "",
+      "region": "",
+      "website": "Jad Moukarzel",
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "employees": "$42.72M",
+      "sales": "priximport.com",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1777024671522,
+      "updatedAt": 1777024671522,
+      "log": [
+        {
+          "ts": 1777024671522,
+          "msg": "Importato dal file Excel"
+        }
+      ]
+    },
+    {
+      "id": "c1777024671522uihz3",
+      "name": "",
+      "company": "+233 30 291 1725",
+      "email": "85",
+      "phone": "info@matcomafrica.com",
+      "country": "Gold Coast Matcom Ltd",
+      "city": "",
+      "region": "",
+      "website": "Albert Tamakloe",
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "employees": "$1.27M",
+      "sales": "matcomafrica.com",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1777024671522,
+      "updatedAt": 1777024671522,
+      "log": [
+        {
+          "ts": 1777024671522,
+          "msg": "Importato dal file Excel"
+        }
+      ]
+    },
+    {
+      "id": "c1777024671522pb4l1",
+      "name": "",
+      "company": "+254 114 879661",
+      "email": "10",
+      "phone": "info@africaconsulting.com",
+      "country": "De Vries Africa Consulting Ltd",
+      "city": "",
+      "region": "",
+      "website": "beverly.mbaika@africaconsulting.com",
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "employees": "$396.764",
+      "sales": "africaconsulting.com",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1777024671522,
+      "updatedAt": 1777024671522,
+      "log": [
+        {
+          "ts": 1777024671522,
+          "msg": "Importato dal file Excel"
+        }
+      ]
+    },
+    {
+      "id": "c1777024671522beewe",
+      "name": "",
+      "company": "+254 705 570066",
+      "email": "1",
+      "phone": "sales@jayswines.com",
+      "country": "Jays Wines",
+      "city": "",
+      "region": "",
+      "website": "njorogedr@jayswines.com",
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "employees": "$71.837",
+      "sales": "jayswines.com",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1777024671522,
+      "updatedAt": 1777024671522,
+      "log": [
+        {
+          "ts": 1777024671522,
+          "msg": "Importato dal file Excel"
+        }
+      ]
+    },
+    {
+      "id": "c1777024671522ddh31",
+      "name": "",
+      "company": "+254 20 4979000",
+      "email": "500",
+      "phone": "info@kwal.co.ke",
+      "country": "Kenya Wine Agencies Limited",
+      "city": "",
+      "region": "",
+      "website": "bosireh@kwal.co.ke",
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "employees": "$2.75M",
+      "sales": "kwal.co.ke",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1777024671522,
+      "updatedAt": 1777024671522,
+      "log": [
+        {
+          "ts": 1777024671522,
+          "msg": "Importato dal file Excel"
+        }
+      ]
+    },
+    {
+      "id": "c1777024671522n8bsx",
+      "name": "",
+      "company": "+254 780 487288",
+      "email": "38",
+      "phone": "info@siddhambeverages.com",
+      "country": "Siddham Beverages Ltd.",
+      "city": "",
+      "region": "",
+      "website": "",
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "employees": "$3.91M",
+      "sales": "siddhambeverages.com",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1777024671522,
+      "updatedAt": 1777024671522,
+      "log": [
+        {
+          "ts": 1777024671522,
+          "msg": "Importato dal file Excel"
+        }
+      ]
+    },
+    {
+      "id": "c1777024671522kvcmr",
+      "name": "",
+      "company": "+254 721 533592",
+      "email": "125",
+      "phone": "sales@swkenya.com",
+      "country": "Slater & Whittaker Ltd",
+      "city": "",
+      "region": "",
+      "website": "Madhvi Ruparel",
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "employees": "$4.33M",
+      "sales": "swkenya.com",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1777024671522,
+      "updatedAt": 1777024671522,
+      "log": [
+        {
+          "ts": 1777024671522,
+          "msg": "Importato dal file Excel"
+        }
+      ]
+    },
+    {
+      "id": "c1777024671522o3vsy",
+      "name": "",
+      "company": "+254 20 2055555",
+      "email": "5",
+      "phone": "info@soys.co.ke",
+      "country": "Soy's Limited",
+      "city": "",
+      "region": "",
+      "website": "Sawan Kotecha",
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "employees": "$4.24M",
+      "sales": "soys.co.ke",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1777024671522,
+      "updatedAt": 1777024671522,
+      "log": [
+        {
+          "ts": 1777024671522,
+          "msg": "Importato dal file Excel"
+        }
+      ]
+    },
+    {
+      "id": "c1777024671522dubo2",
+      "name": "",
+      "company": "+254 114 178421",
+      "email": "75",
+      "phone": "care@twc-africa.com",
+      "country": "The Wine Company Limited",
+      "city": "",
+      "region": "",
+      "website": "Taj Bedi",
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "employees": "$4.33M",
+      "sales": "twc-africa.com",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1777024671522,
+      "updatedAt": 1777024671522,
+      "log": [
+        {
+          "ts": 1777024671522,
+          "msg": "Importato dal file Excel"
+        }
+      ]
+    },
+    {
+      "id": "c17770246715227tw4j",
+      "name": "",
+      "company": "+254 798 499985",
+      "email": "150",
+      "phone": "customer.care@wowbeverages.co.ke",
+      "country": "Wow Beverages Limited",
+      "city": "",
+      "region": "",
+      "website": "Mike Ruto",
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "employees": "$4.33M",
+      "sales": "wowbeverages.co.ke",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1777024671522,
+      "updatedAt": 1777024671522,
+      "log": [
+        {
+          "ts": 1777024671522,
+          "msg": "Importato dal file Excel"
+        }
+      ]
+    },
+    {
+      "id": "c1777024671522p949c",
+      "name": "",
+      "company": "+230 433 1050",
+      "email": "30",
+      "phone": "cavemoka@easterntrading.mu",
+      "country": "Eastern Trading (l'esprit Du Vin Ltee Et Vincoeur Limitee)",
+      "city": "",
+      "region": "",
+      "website": "",
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "employees": "$402.247",
+      "sales": "easterntrading.mu",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1777024671522,
+      "updatedAt": 1777024671522,
+      "log": [
+        {
+          "ts": 1777024671522,
+          "msg": "Importato dal file Excel"
+        }
+      ]
+    },
+    {
+      "id": "c17770246715224e1k5",
+      "name": "",
+      "company": "+230 696 7950",
+      "email": "350",
+      "phone": "info@oxenham.mu",
+      "country": "Eureka E.c.oxenham & Cy Ltd",
+      "city": "",
+      "region": "",
+      "website": "",
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "employees": "$24.07M",
+      "sales": "oxenham.mu",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1777024671522,
+      "updatedAt": 1777024671522,
+      "log": [
+        {
+          "ts": 1777024671522,
+          "msg": "Importato dal file Excel"
+        }
+      ]
+    },
+    {
+      "id": "c1777024671522pbwxi",
+      "name": "",
+      "company": "+230 209 3000",
+      "email": "400",
+      "phone": "grays@grays.mu",
+      "country": "Grays Inc. Ltd",
+      "city": "",
+      "region": "",
+      "website": "krawoo@grays.mu",
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "employees": "$56.25M",
+      "sales": "grays.mu",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1777024671522,
+      "updatedAt": 1777024671522,
+      "log": [
+        {
+          "ts": 1777024671522,
+          "msg": "Importato dal file Excel"
+        }
+      ]
+    },
+    {
+      "id": "c1777024671522irprf",
+      "name": "",
+      "company": "+230 5764 5737",
+      "email": "7",
+      "phone": "joechane@vinum-pro.com",
+      "country": "Landscape Plus Ltd",
+      "city": "",
+      "region": "",
+      "website": "",
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "employees": "$86.724",
+      "sales": "vinum-pro.com",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1777024671522,
+      "updatedAt": 1777024671522,
+      "log": [
+        {
+          "ts": 1777024671522,
+          "msg": "Importato dal file Excel"
+        }
+      ]
+    },
+    {
+      "id": "c17770246715222i80m",
+      "name": "",
+      "company": "+230 261 6612",
+      "email": "20",
+      "phone": "online@natureland.mu",
+      "country": "Natureland Products Ltd.",
+      "city": "",
+      "region": "",
+      "website": "",
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "employees": "$1.48M",
+      "sales": "naturelandonline.com",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1777024671522,
+      "updatedAt": 1777024671522,
+      "log": [
+        {
+          "ts": 1777024671522,
+          "msg": "Importato dal file Excel"
+        }
+      ]
+    },
+    {
+      "id": "c177702467152236ce8",
+      "name": "",
+      "company": "+230 601 2000",
+      "email": "1787",
+      "phone": "contact@phoenixbev.mu",
+      "country": "Phoenix Beverages Ltd",
+      "city": "",
+      "region": "",
+      "website": "btheys@phoenixbev.mu",
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "employees": "$227.74M",
+      "sales": "phoenixbeveragesgroup.mu",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1777024671522,
+      "updatedAt": 1777024671522,
+      "log": [
+        {
+          "ts": 1777024671522,
+          "msg": "Importato dal file Excel"
+        }
+      ]
+    },
+    {
+      "id": "c17770246715228zhoe",
+      "name": "",
+      "company": "+230 286 0776",
+      "email": "23",
+      "phone": "commercial@sogerepmauritius.com",
+      "country": "Sogerep Mauritius Ltd",
+      "city": "",
+      "region": "",
+      "website": "",
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "employees": "$1.79M",
+      "sales": "sogerepmauritius.com",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1777024671522,
+      "updatedAt": 1777024671522,
+      "log": [
+        {
+          "ts": 1777024671522,
+          "msg": "Importato dal file Excel"
+        }
+      ]
+    },
+    {
+      "id": "c1777024671522i9lzo",
+      "name": "",
+      "company": "+27 51 492 1168",
+      "email": "18",
+      "phone": "sales@boozetown.co.za",
+      "country": "Booze Town Liquor Store",
+      "city": "",
+      "region": "",
+      "website": "",
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "employees": "$1.65M",
+      "sales": "boozetown.co.za",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1777024671522,
+      "updatedAt": 1777024671522,
+      "log": [
+        {
+          "ts": 1777024671522,
+          "msg": "Importato dal file Excel"
+        }
+      ]
+    },
+    {
+      "id": "c1777024671522i2wk7",
+      "name": "",
+      "company": "+27 11 746 4200",
+      "email": "315",
+      "phone": "info@halewood.co.za",
+      "country": "Halewood International South Africa (pty) Ltd",
+      "city": "",
+      "region": "",
+      "website": "",
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "employees": "$6.18M",
+      "sales": "halewood.co.za",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1777024671522,
+      "updatedAt": 1777024671522,
+      "log": [
+        {
+          "ts": 1777024671522,
+          "msg": "Importato dal file Excel"
+        }
+      ]
+    },
+    {
+      "id": "c17770246715220zk4d",
+      "name": "",
+      "company": "+27 21 905 9066",
+      "email": "6",
+      "phone": "marketing@liq.co.za",
+      "country": "Liquidity Holdings (pty) Ltd",
+      "city": "",
+      "region": "",
+      "website": "",
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "employees": "$896.768",
+      "sales": "liquidity.co.za",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1777024671522,
+      "updatedAt": 1777024671522,
+      "log": [
+        {
+          "ts": 1777024671522,
+          "msg": "Importato dal file Excel"
+        }
+      ]
+    },
+    {
+      "id": "c1777024671522pdrn4",
+      "name": "",
+      "company": "+27 31 701 0872",
+      "email": "8",
+      "phone": "info@meanderfinewines.co.za",
+      "country": "Meander Fine Wines Pty Ltd",
+      "city": "",
+      "region": "",
+      "website": "",
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "employees": "$2.1M",
+      "sales": "",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1777024671522,
+      "updatedAt": 1777024671522,
+      "log": [
+        {
+          "ts": 1777024671522,
+          "msg": "Importato dal file Excel"
+        }
+      ]
+    },
+    {
+      "id": "c1777024671522rh15k",
+      "name": "",
+      "company": "+27 16 362 3223",
+      "email": "106",
+      "phone": "modelliquor@telkomsa.net",
+      "country": "Model Liquor Distributors (pty) Ltd",
+      "city": "",
+      "region": "",
+      "website": "",
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "employees": "$2.1M",
+      "sales": "modelliquor.co.za",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1777024671522,
+      "updatedAt": 1777024671522,
+      "log": [
+        {
+          "ts": 1777024671522,
+          "msg": "Importato dal file Excel"
+        }
+      ]
+    },
+    {
+      "id": "c1777024671522d65b6",
+      "name": "",
+      "company": "+27 11 496 2947",
+      "email": "40",
+      "phone": "caren@nicholsonsmith.co.za",
+      "country": "Nicholson Smith Agencies Cc",
+      "city": "",
+      "region": "",
+      "website": "",
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "employees": "$1.1M",
+      "sales": "nicholsonsmith.co.za",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1777024671522,
+      "updatedAt": 1777024671522,
+      "log": [
+        {
+          "ts": 1777024671522,
+          "msg": "Importato dal file Excel"
+        }
+      ]
+    },
+    {
+      "id": "c1777024671522awfjv",
+      "name": "",
+      "company": "+27 21 434 4302",
+      "email": "700",
+      "phone": "eastleighliquor@gmail.com",
+      "country": "Robinson Liquors (pty) Ltd",
+      "city": "",
+      "region": "",
+      "website": "",
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "employees": "$20.14M",
+      "sales": "greenpoint.ultraliquors.co.za",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1777024671522,
+      "updatedAt": 1777024671522,
+      "log": [
+        {
+          "ts": 1777024671522,
+          "msg": "Importato dal file Excel"
+        }
+      ]
+    },
+    {
+      "id": "c1777024671522uxse1",
+      "name": "",
+      "company": "+27 21 887 7272",
+      "email": "50",
+      "phone": "info@smcbrands.com",
+      "country": "S M C Brands Sa (pty) Ltd",
+      "city": "",
+      "region": "",
+      "website": "",
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "employees": "$20.14M",
+      "sales": "smcbrands.com",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1777024671522,
+      "updatedAt": 1777024671522,
+      "log": [
+        {
+          "ts": 1777024671522,
+          "msg": "Importato dal file Excel"
+        }
+      ]
+    },
+    {
+      "id": "c17770246715224xwxp",
+      "name": "",
+      "company": "+27 21 797 5450",
+      "email": "98",
+      "phone": "info@rgbc.co.za",
+      "country": "The Really Great Brand Company (pty) Ltd",
+      "city": "",
+      "region": "",
+      "website": "christiaanv@rgbc.co.za",
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "employees": "$20.14M",
+      "sales": "rgbc.co.za",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1777024671522,
+      "updatedAt": 1777024671522,
+      "log": [
+        {
+          "ts": 1777024671522,
+          "msg": "Importato dal file Excel"
+        }
+      ]
+    },
+    {
+      "id": "c1777024671522n1h3q",
+      "name": "",
+      "company": "+27 22 448 1008",
+      "email": "28",
+      "phone": "anton@thewinekollective.co.za",
+      "country": "The Wine Kollective",
+      "city": "",
+      "region": "",
+      "website": "",
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "employees": "$568.829",
+      "sales": "thewinekollective.co.za",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1777024671522,
+      "updatedAt": 1777024671522,
+      "log": [
+        {
+          "ts": 1777024671522,
+          "msg": "Importato dal file Excel"
+        }
+      ]
+    },
+    {
+      "id": "c17770246715222kau0",
+      "name": "",
+      "company": "+27 13 751 2242",
+      "email": "9",
+      "phone": "orders@wineonwheels.co.za",
+      "country": "Wine On Wheels",
+      "city": "",
+      "region": "",
+      "website": "neil@wineonwheels.co.za",
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "employees": "$930.592",
+      "sales": "wineonwheels.co.za",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1777024671522,
+      "updatedAt": 1777024671522,
+      "log": [
+        {
+          "ts": 1777024671522,
+          "msg": "Importato dal file Excel"
+        }
+      ]
+    }
+  ],
   "templates": [
     {
       "id": "t1",
