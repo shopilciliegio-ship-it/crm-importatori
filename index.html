@@ -255,8 +255,18 @@ let ghSha=null,saveTimer=null,pending=null;
 
 /* ── INIT ── */
 function init(){
-  try{const r=localStorage.getItem('wcrm4');if(r)db=JSON.parse(r);}catch(e){}
-  try{const r=localStorage.getItem('ghset');if(r)ghs=JSON.parse(r);}catch(e){}
+  // Migrazione da versioni precedenti (wine_crm_v3, wine_crm_v2, wcrm4)
+  const OLD_KEYS=['wcrm4','wine_crm_v3','wine_crm_v2'];
+  for(const key of OLD_KEYS){
+    try{
+      const r=localStorage.getItem(key);
+      if(r){const parsed=JSON.parse(r);if(parsed.contacts?.length>0){db=parsed;break;}}
+    }catch(e){}
+  }
+  // Salva sempre nella chiave corrente
+  if(db.contacts?.length>0) localStorage.setItem('wcrm5',JSON.stringify(db));
+  try{const r=localStorage.getItem('wcrm5');if(r&&!db.contacts?.length)db=JSON.parse(r);}catch(e){}
+  try{const r=localStorage.getItem('ghset')||localStorage.getItem('gh_settings');if(r)ghs=JSON.parse(r);}catch(e){}
   if(!db.templates||!db.templates.length)db.templates=defTpl();
   updGh('idle');refreshAll();
 }
@@ -273,7 +283,7 @@ function defTpl(){return[
 
 /* ── SAVE / GH ── */
 function saveDB(){
-  localStorage.setItem('wcrm4',JSON.stringify(db));
+
   if(ghs.token&&ghs.owner&&ghs.repo){
     clearTimeout(saveTimer);saveTimer=setTimeout(pushGH,3000);updGh('pending');
   }
@@ -314,7 +324,7 @@ async function loadFromGH(){
     const d=await r.json();ghSha=d.sha;
     const parsed=JSON.parse(decodeURIComponent(escape(atob(d.content.replace(/\n/g,'')))));
     if(!parsed.contacts)throw new Error('Formato non valido');
-    db=parsed;localStorage.setItem('wcrm4',JSON.stringify(db));
+
     refreshAll();toast(`✓ Caricati ${db.contacts.length} contatti da GitHub`);updGh('saved');
   }catch(e){toast('Errore: '+e.message);}
 }
@@ -715,20 +725,24 @@ function parseXlsx(wb, filename){
     const rows=XLSX.utils.sheet_to_json(ws,{header:1,defval:'',raw:false});
     if(!rows||rows.length<2) return;
 
-    // Rileva indici colonne dall'header (prima riga)
-    const hdr=rows[0].map(h=>String(h||'').trim().toLowerCase());
-    const hi=(name,fb)=>{const i=hdr.indexOf(name);return i>=0?i:fb;};
-    const IDX={
-      country: hi('country',1),
-      company: hi('company',2),
-      phone:   hi('phone',3),
-      email:   hi('email',4),
-      employees:hi('employees',5),
-      sales:   hi('sales',6),
-      website: hi('website',7),
-    };
+    // Formato BWI (Best Wine Importers): NO riga header
+    // col0=paese, col1=azienda, col2=tel, col3=email, col4=dipendenti, col5=vendite, col6=sito
+    // Alcuni file potrebbero avere header esplicito — gestiamo entrambi
+    const firstRowLower=rows[0].map(h=>String(h||'').trim().toLowerCase());
+    const hasHeader=firstRowLower.some(h=>['company','country','phone','email','website'].includes(h));
+    let IDX, dataRows;
+    if(hasHeader){
+      const hi=(name,fb)=>{const i=firstRowLower.indexOf(name);return i>=0?i:fb;};
+      IDX={country:hi('country',0),company:hi('company',1),phone:hi('phone',2),
+           email:hi('email',3),employees:hi('employees',4),sales:hi('sales',5),website:hi('website',6)};
+      dataRows=rows.slice(1);
+    } else {
+      // Formato BWI standard: dati da riga 0, colonne fisse
+      IDX={country:0,company:1,phone:2,email:3,employees:4,sales:5,website:6};
+      dataRows=rows;
+    }
 
-    rows.slice(1).forEach(row=>{
+    dataRows.forEach(row=>{
       const g=i=>String(row[i]||'').trim().replace(/^-$|^None$|^null$|^undefined$/i,'');
 
       const company=g(IDX.company);
@@ -750,8 +764,10 @@ function parseXlsx(wb, filename){
       seenLocal.add(key);
 
       // Dati referente nelle colonne extra (Name: / Job Title: / E-Mail:)
+      // Nel formato BWI senza header, partono da col 7; con header da col 8
       let cName='',cTitle='',cEmail='';
-      for(let i=8;i<row.length-1;i++){
+      const cStart=hasHeader?8:7;
+      for(let i=cStart;i<row.length-1;i++){
         const cell=String(row[i]||'').trim();
         const next=String(row[i+1]||'').trim();
         if(cell==='Name:'&&next) cName=next;
