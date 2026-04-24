@@ -2170,8 +2170,8 @@
       "region": "Sud America",
       "city": "",
       "website": "borbon.com.bo",
-      "contactName": "",
-      "contactTitle": "",
+      "contactName": "Francisco Pérez",
+      "contactTitle": "General Manager",
       "contactEmail": "",
       "employees": "7",
       "sales": "$2.24M",
@@ -2179,11 +2179,15 @@
       "products": [],
       "notes": "",
       "createdAt": 1777048563659,
-      "updatedAt": 1777048563659,
+      "updatedAt": 1777050259676,
       "log": [
         {
           "ts": 1777048563659,
           "msg": "Importato da XLSX"
+        },
+        {
+          "ts": 1777050259676,
+          "msg": "Aggiornato da XLSX: contactName: \"\" → \"Francisco Pérez\", contactTitle: \"\" → \"General Manager\""
         }
       ]
     },
@@ -2197,8 +2201,8 @@
       "region": "Sud America",
       "city": "",
       "website": "cruzimex.com",
-      "contactName": "",
-      "contactTitle": "",
+      "contactName": "Pedro Miguel Cruz",
+      "contactTitle": "General Manager",
       "contactEmail": "",
       "employees": "171",
       "sales": "$11.47M",
@@ -2206,11 +2210,15 @@
       "products": [],
       "notes": "",
       "createdAt": 1777048563659,
-      "updatedAt": 1777048563659,
+      "updatedAt": 1777050259676,
       "log": [
         {
           "ts": 1777048563659,
           "msg": "Importato da XLSX"
+        },
+        {
+          "ts": 1777050259676,
+          "msg": "Aggiornato da XLSX: contactName: \"\" → \"Pedro Miguel Cruz\", contactTitle: \"\" → \"General Manager\""
         }
       ]
     },
@@ -2224,20 +2232,24 @@
       "region": "Sud America",
       "city": "",
       "website": "dym-bo.com",
-      "contactName": "",
-      "contactTitle": "",
-      "contactEmail": "",
+      "contactName": "Kathia Irala Hurtado",
+      "contactTitle": "Key Account Manager",
+      "contactEmail": "kirala@dym-bo.com",
       "employees": "74",
       "sales": "",
       "status": "new",
       "products": [],
       "notes": "",
       "createdAt": 1777048563659,
-      "updatedAt": 1777048563659,
+      "updatedAt": 1777050259676,
       "log": [
         {
           "ts": 1777048563659,
           "msg": "Importato da XLSX"
+        },
+        {
+          "ts": 1777050259676,
+          "msg": "Aggiornato da XLSX: contactName: \"\" → \"Kathia Irala Hurtado\", contactTitle: \"\" → \"Key Account Manager\", contactEmail: \"\" → \"kirala@dym-bo.com\""
         }
       ]
     },
@@ -2251,20 +2263,24 @@
       "region": "Sud America",
       "city": "",
       "website": "elitebrands.com.bo",
-      "contactName": "",
-      "contactTitle": "",
-      "contactEmail": "",
+      "contactName": "Helmuth Flores Arnez",
+      "contactTitle": "General Manager",
+      "contactEmail": "helmuth.flores@elitebrands.com.bo",
       "employees": "",
       "sales": "",
       "status": "new",
       "products": [],
       "notes": "",
       "createdAt": 1777048563659,
-      "updatedAt": 1777048563659,
+      "updatedAt": 1777050259676,
       "log": [
         {
           "ts": 1777048563659,
           "msg": "Importato da XLSX"
+        },
+        {
+          "ts": 1777050259676,
+          "msg": "Aggiornato da XLSX: contactName: \"\" → \"Helmuth Flores Arnez\", contactTitle: \"\" → \"General Manager\", contactEmail: \"\" → \"helmuth.flores@elitebrands.com.bo\""
         }
       ]
     },
@@ -2278,8 +2294,8 @@
       "region": "Sud America",
       "city": "",
       "website": "camachohermanos.com",
-      "contactName": "",
-      "contactTitle": "",
+      "contactName": "Victor Camacho",
+      "contactTitle": "Commercial Director",
       "contactEmail": "",
       "employees": "",
       "sales": "",
@@ -2287,11 +2303,15 @@
       "products": [],
       "notes": "",
       "createdAt": 1777048563659,
-      "updatedAt": 1777048563659,
+      "updatedAt": 1777050259676,
       "log": [
         {
           "ts": 1777048563659,
           "msg": "Importato da XLSX"
+        },
+        {
+          "ts": 1777050259676,
+          "msg": "Aggiornato da XLSX: contactName: \"\" → \"Victor Camacho\", contactTitle: \"\" → \"Commercial Director\""
         }
       ]
     },
@@ -2305,8 +2325,8 @@
       "region": "Sud America",
       "city": "",
       "website": "minoil.com.bo",
-      "contactName": "",
-      "contactTitle": "",
+      "contactName": "Roly Mauricio Ribera Montero",
+      "contactTitle": "Import Executive",
       "contactEmail": "",
       "employees": "338",
       "sales": "$31.01M",
@@ -2314,11 +2334,15 @@
       "products": [],
       "notes": "",
       "createdAt": 1777048563659,
-      "updatedAt": 1777048563659,
+      "updatedAt": 1777050259676,
       "log": [
         {
           "ts": 1777048563659,
           "msg": "Importato da XLSX"
+        },
+        {
+          "ts": 1777050259676,
+          "msg": "Aggiornato da XLSX: contactName: \"\" → \"Roly Mauricio Ribera Montero\", contactTitle: \"\" → \"Import Executive\""
         }
       ]
     },
@@ -2332,8 +2356,8 @@
       "region": "Sud America",
       "city": "",
       "website": "",
-      "contactName": "",
-      "contactTitle": "",
+      "contactName": "Victor Vega",
+      "contactTitle": "General Manager",
       "contactEmail": "",
       "employees": "",
       "sales": "",
@@ -2341,11 +2365,15 @@
       "products": [],
       "notes": "",
       "createdAt": 1777048563659,
-      "updatedAt": 1777048563659,
+      "updatedAt": 1777050259676,
       "log": [
         {
           "ts": 1777048563659,
           "msg": "Importato da XLSX"
+        },
+        {
+          "ts": 1777050259676,
+          "msg": "Aggiornato da XLSX: contactName: \"\" → \"Victor Vega\", contactTitle: \"\" → \"General Manager\""
         }
       ]
     },
@@ -2359,8 +2387,8 @@
       "region": "Sud America",
       "city": "",
       "website": "elpasaportedelvino.com",
-      "contactName": "",
-      "contactTitle": "",
+      "contactName": "Veronica Gutierre",
+      "contactTitle": "Manager",
       "contactEmail": "",
       "employees": "5",
       "sales": "$416.310",
@@ -2368,11 +2396,15 @@
       "products": [],
       "notes": "",
       "createdAt": 1777048563659,
-      "updatedAt": 1777048563659,
+      "updatedAt": 1777050259676,
       "log": [
         {
           "ts": 1777048563659,
           "msg": "Importato da XLSX"
+        },
+        {
+          "ts": 1777050259676,
+          "msg": "Aggiornato da XLSX: contactName: \"\" → \"Veronica Gutierre\", contactTitle: \"\" → \"Manager\""
         }
       ]
     },
@@ -2386,8 +2418,8 @@
       "region": "Sud America",
       "city": "",
       "website": "proesabol.com",
-      "contactName": "",
-      "contactTitle": "",
+      "contactName": "Nelson Rocabado Cari",
+      "contactTitle": "Purchasing Analyst",
       "contactEmail": "",
       "employees": "360",
       "sales": "",
@@ -2395,11 +2427,15 @@
       "products": [],
       "notes": "",
       "createdAt": 1777048563659,
-      "updatedAt": 1777048563659,
+      "updatedAt": 1777050259676,
       "log": [
         {
           "ts": 1777048563659,
           "msg": "Importato da XLSX"
+        },
+        {
+          "ts": 1777050259676,
+          "msg": "Aggiornato da XLSX: contactName: \"\" → \"Nelson Rocabado Cari\", contactTitle: \"\" → \"Purchasing Analyst\""
         }
       ]
     },
