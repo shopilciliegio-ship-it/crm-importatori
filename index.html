@@ -179,7 +179,7 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
     <select id="sr" onchange="renderContacts()"><option value="">Tutte le regioni</option></select>
     <select id="sc" onchange="renderContacts()"><option value="">Tutti i paesi</option></select>
     <select id="ss" onchange="window._pendingFilter=false;renderContacts()">
-      <option value="">Tutti i punti</option>
+      <option value="">Situazione contatto</option>
       <option value="new">Da contattare</option><option value="sent">Email inviata</option>
       <option value="followup">Follow-up</option><option value="replied">Risposto</option>
       <option value="client">Cliente</option><option value="cold">Non interessato</option>
@@ -876,39 +876,71 @@ function parseXlsx(wb, filename){
 }
 
 function dedupVsDB(incoming){
-  const exE=new Set(db.contacts.map(c=>(c.email||'').toLowerCase()).filter(Boolean));
-  const exK=new Set(db.contacts.map(c=>`${(c.company||'').toLowerCase()}|${(c.country||'').toLowerCase()}`));
-  const newOnes=[],dupes=[];
-  const locE=new Set(),locK=new Set();
+  // Campi che vengono aggiornati se il contatto esiste già
+  const UPDATE_FIELDS=['email','phone','website','contactName','contactTitle','contactEmail','employees','sales'];
+
+  const newOnes=[], updates=[], identical=[];
+  const localKeys=new Set();
+
   incoming.forEach(c=>{
-    const ek=(c.email||'').toLowerCase();
     const ck=`${(c.company||'').toLowerCase()}|${(c.country||'').toLowerCase()}`;
-    if((ek&&(exE.has(ek)||locE.has(ek)))||(exK.has(ck)||locK.has(ck))){dupes.push(c);}
-    else{newOnes.push(c);if(ek)locE.add(ek);locK.add(ck);}
+    // Salta duplicati interni al file che si sta importando
+    if(localKeys.has(ck)) return;
+    localKeys.add(ck);
+
+    // Cerca nel DB esistente per company+country (chiave principale)
+    const existing=db.contacts.find(x=>
+      `${(x.company||'').toLowerCase()}|${(x.country||'').toLowerCase()}`===ck
+    );
+
+    if(!existing){
+      newOnes.push(c);
+    } else {
+      // Controlla se qualche campo è cambiato
+      const changed=UPDATE_FIELDS.some(f=>{
+        const incomingVal=(c[f]||'').toString().trim();
+        const existingVal=(existing[f]||'').toString().trim();
+        return incomingVal && incomingVal!==existingVal;
+      });
+      if(changed){
+        // Porta con sé l'id del contatto esistente per l'update
+        updates.push({...c, _existingId: existing.id});
+      } else {
+        identical.push(c);
+      }
+    }
   });
-  return{newOnes,dupes};
+
+  return{newOnes, updates, identical};
 }
 
 function showPreview(incoming,filename){
-  const{newOnes,dupes}=dedupVsDB(incoming);
-  pending=newOnes;
+  const{newOnes,updates,identical}=dedupVsDB(incoming);
+  pending={newOnes,updates};
+
+  // Distribuzione per paese (nuovi + aggiornati)
   const byCountry={};
-  newOnes.forEach(c=>{byCountry[c.country]=(byCountry[c.country]||0)+1;});
+  [...newOnes,...updates].forEach(c=>{byCountry[c.country]=(byCountry[c.country]||0)+1;});
   const rows=Object.entries(byCountry).sort((a,b)=>b[1]-a[1])
     .map(([c,n])=>`<tr><td>${esc(c)}</td><td style="text-align:right;font-weight:700;padding-right:12px">${n}</td></tr>`).join('');
+
   const byRegion={};
   newOnes.forEach(c=>{byRegion[c.region]=(byRegion[c.region]||0)+1;});
-  const rrows=Object.entries(byRegion).map(([r,n])=>`<span style="background:var(--blue-bg);color:var(--blue-tx);padding:3px 10px;border-radius:20px;font-size:12px;font-weight:600">${esc(r)}: ${n}</span>`).join(' ');
+  const rrows=Object.entries(byRegion)
+    .map(([r,n])=>`<span style="background:var(--blue-bg);color:var(--blue-tx);padding:3px 10px;border-radius:20px;font-size:12px;font-weight:600">${esc(r)}: ${n}</span>`).join(' ');
+
+  const hasAction=newOnes.length||updates.length;
 
   document.getElementById('imp-prev').innerHTML=`
     <div style="margin-top:14px">
       <div class="imp-pills">
         <span class="ip ip-n">✓ ${newOnes.length} nuovi</span>
-        <span class="ip ip-d">⚠ ${dupes.length} duplicati</span>
+        ${updates.length?`<span class="ip" style="background:var(--blue-bg);color:var(--blue-tx)">↑ ${updates.length} da aggiornare</span>`:''}
+        <span class="ip ip-d">= ${identical.length} già aggiornati</span>
         <span class="ip ip-f">📂 ${esc(filename)}</span>
       </div>
-      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px">${rrows}</div>
-      ${newOnes.length?`
+      ${rrows?`<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px">${rrows}</div>`:''}
+      ${hasAction?`
         <div style="font-size:13px;font-weight:600;margin-bottom:6px">Distribuzione per paese:</div>
         <div class="imp-wrap">
           <table class="imp-tbl">
@@ -917,33 +949,68 @@ function showPreview(incoming,filename){
           </table>
         </div>
         <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
-          <button class="btn btp" onclick="confirmImport()">✓ Importa ${newOnes.length} contatti</button>
+          <button class="btn btp" onclick="confirmImport()">
+            ✓ ${newOnes.length?`Aggiungi ${newOnes.length}`:''}${newOnes.length&&updates.length?' + ':''}${updates.length?`Aggiorna ${updates.length}`:''}
+          </button>
           <button class="btn btg" onclick="pending=null;document.getElementById('imp-prev').innerHTML=''">Annulla</button>
         </div>`
-      :'<p style="margin-top:10px;font-size:13px;color:var(--text2)">Tutti i contatti sono già nel database.</p>'}
+      :'<p style="margin-top:10px;font-size:13px;color:var(--green-tx);font-weight:500">✓ Tutti i contatti sono già aggiornati.</p>'}
     </div>`;
 }
 
 function confirmImport(){
-  if(!pending?.length) return;
+  if(!pending) return;
+  const{newOnes,updates}=pending;
   const now=Date.now();
-  const mapped=pending.map(c=>({
-    id:'c'+now+Math.random().toString(36).slice(2,8),
-    company:c.company||'',name:c.contactName||'',
-    email:c.email||'',phone:c.phone||'',
-    country:c.country||'',region:c.region||'',city:'',
-    website:c.website||'',
-    contactName:c.contactName||'',contactTitle:c.contactTitle||'',contactEmail:c.contactEmail||'',
-    employees:c.employees||'',sales:c.sales||'',
-    status:'new',products:[],notes:'',
-    createdAt:now,updatedAt:now,
-    log:[{ts:now,msg:'Importato da XLSX'}]
-  }));
-  db.contacts=[...db.contacts,...mapped];
+  let addedCount=0, updatedCount=0;
+
+  // 1. Aggiungi nuovi contatti
+  if(newOnes?.length){
+    const mapped=newOnes.map(c=>({
+      id:'c'+now+Math.random().toString(36).slice(2,8),
+      company:c.company||'',name:c.contactName||'',
+      email:c.email||'',phone:c.phone||'',
+      country:c.country||'',region:c.region||'',city:'',
+      website:c.website||'',
+      contactName:c.contactName||'',contactTitle:c.contactTitle||'',contactEmail:c.contactEmail||'',
+      employees:c.employees||'',sales:c.sales||'',
+      status:'new',products:[],notes:'',
+      createdAt:now,updatedAt:now,
+      log:[{ts:now,msg:'Importato da XLSX'}]
+    }));
+    db.contacts=[...db.contacts,...mapped];
+    addedCount=mapped.length;
+  }
+
+  // 2. Aggiorna contatti esistenti (solo i campi che sono cambiati)
+  const UPDATE_FIELDS=['email','phone','website','contactName','contactTitle','contactEmail','employees','sales'];
+  if(updates?.length){
+    updates.forEach(c=>{
+      const idx=db.contacts.findIndex(x=>x.id===c._existingId);
+      if(idx<0) return;
+      const existing=db.contacts[idx];
+      const changes=[];
+      UPDATE_FIELDS.forEach(f=>{
+        const v=(c[f]||'').toString().trim();
+        if(v&&v!==(existing[f]||'').toString().trim()){
+          changes.push(`${f}: "${existing[f]||''}" → "${v}"`);
+          existing[f]=v;
+        }
+      });
+      if(changes.length){
+        existing.updatedAt=now;
+        existing.log=existing.log||[];
+        existing.log.push({ts:now,msg:'Aggiornato da XLSX: '+changes.join(', ')});
+        updatedCount++;
+      }
+    });
+  }
+
   saveDB();refreshAll();
   document.getElementById('imp-prev').innerHTML='';
   pending=null;
-  toast(`✓ Importati ${mapped.length} contatti!`);
+  const msg=`✓ ${addedCount? addedCount+' aggiunti':''}${addedCount&&updatedCount?' + ':''}${updatedCount?updatedCount+' aggiornati':''}`;
+  toast(msg||'Nessuna modifica');
   showPage('contacts',document.querySelectorAll('.nb')[1]);
 }
 
