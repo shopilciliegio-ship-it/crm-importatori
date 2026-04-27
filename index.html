@@ -185,7 +185,7 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
 <div id="page-contacts" class="page">
   <div class="filters">
     <input type="text" id="sq" placeholder="Cerca azienda, nome, email…" oninput="renderContacts()">
-    <select id="sr" onchange="renderContacts()"><option value="">Tutte le regioni</option></select>
+    <select id="sr" onchange="updateCountryFilter();renderContacts()"><option value="">Tutte le regioni</option></select>
     <select id="sc" onchange="renderContacts()"><option value="">Tutti i paesi</option></select>
     <select id="ss" onchange="window._pendingFilter=false;renderContacts()">
       <option value="">Situazione contatto</option>
@@ -496,20 +496,14 @@ function updateBadges(){
   document.getElementById('fu-n').textContent=db.contacts.filter(c=>c.status==='followup'||c.status==='sent').length;
 }
 function updateFilters(){
-  // PAESI — solo valori con lunghezza ragionevole (esclude aziende finite lì per errore)
-  const sc=document.getElementById('sc');const cv=sc.value;
-  const countries=[...new Set(
-    db.contacts.map(c=>(c.country||'').trim())
-      .filter(c=>c.length>0&&c.length<=50&&!/^\d/.test(c))
-  )].sort();
-  sc.innerHTML='<option value="">Tutti i paesi</option>'+
-    countries.map(c=>`<option value="${esc(c)}"${cv===c?' selected':''}>${esc(c)}</option>`).join('');
-
-  // REGIONI
+  // REGIONI — sempre da tutto il DB
   const sr=document.getElementById('sr');const rv=sr.value;
   const regions=[...new Set(db.contacts.map(c=>(c.region||'').trim()).filter(Boolean))].sort();
   sr.innerHTML='<option value="">Tutte le regioni</option>'+
     regions.map(r=>`<option value="${esc(r)}"${rv===r?' selected':''}>${esc(r)}</option>`).join('');
+
+  // PAESI — filtrati per regione selezionata (cascata)
+  updateCountryFilter();
 
   // PRODOTTI
   const sp=document.getElementById('sp');const pv=sp.value;
@@ -518,14 +512,40 @@ function updateFilters(){
     [...prods].sort().map(p=>`<option value="${esc(p)}"${pv===p?' selected':''}>${esc(p)}</option>`).join('');
 }
 
+function updateCountryFilter(){
+  const sc=document.getElementById('sc');if(!sc)return;
+  const cv=sc.value;
+  const selectedRegion=document.getElementById('sr')?.value||'';
+
+  // Se c'è una regione selezionata, mostra solo i paesi di quella regione
+  const source = selectedRegion
+    ? db.contacts.filter(c=>(c.region||'').trim()===selectedRegion)
+    : db.contacts;
+
+  const countries=[...new Set(
+    source.map(c=>(c.country||'').trim())
+      .filter(c=>c.length>0&&c.length<=50&&!/^\d/.test(c))
+  )].sort();
+
+  sc.innerHTML='<option value="">Tutti i paesi</option>'+
+    countries.map(c=>`<option value="${esc(c)}"${cv===c?' selected':''}>${esc(c)}</option>`).join('');
+
+  // Se il paese selezionato non è più disponibile, resettalo
+  if(cv && !countries.includes(cv)){
+    sc.value='';
+    renderContacts();
+  }
+}
+
 
 /* ── NAVIGAZIONE RAPIDA da Dashboard ── */
 function goToContacts({country='',region='',status=''}={}){
   const sc=document.getElementById('sc');
   const sr=document.getElementById('sr');
   const ss=document.getElementById('ss');
-  if(sc) sc.value=country;
   if(sr) sr.value=region;
+  updateCountryFilter(); // aggiorna paesi in base alla regione
+  if(sc) sc.value=country;
   // "pending" = mostriamo sia sent che followup — usiamo la searchbox
   if(status==='pending'){
     if(ss) ss.value='';
@@ -1670,7 +1690,10 @@ function exportData(){
 function showModal(html){
   closeModal();
   const bg=document.createElement('div');bg.className='mo';
-  bg.innerHTML=`<div class="mc">${html}</div>`;
+  bg.innerHTML=`<div class="mc">
+    <button onclick="closeModal()" style="position:absolute;top:14px;right:16px;background:none;border:none;cursor:pointer;font-size:20px;color:var(--text2);line-height:1;padding:4px 6px;border-radius:4px;z-index:10" title="Chiudi">✕</button>
+    <div style="position:relative">${html}</div>
+  </div>`;
   bg.addEventListener('click',e=>{if(e.target===bg)closeModal();});
   document.getElementById('modals').appendChild(bg);
 }
