@@ -130,6 +130,15 @@ a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
 .empty{padding:2rem;text-align:center;color:var(--text2);font-size:14px}
 code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font-family:monospace}
 .rcnt{font-size:12px;color:var(--text2);margin-bottom:8px}
+.sel-bar{display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--blue-bg);border-radius:var(--r);margin-bottom:10px;flex-wrap:wrap}
+.sel-bar-info{font-size:13px;font-weight:600;color:var(--blue-tx);flex:1}
+.crow-cb{width:17px;height:17px;cursor:pointer;accent-color:var(--blue);flex-shrink:0;margin-right:2px}
+.cr.selected{background:var(--blue-bg);margin:0 -1.25rem;padding:9px 1.25rem;border-radius:7px}
+.cr.selected:hover{background:var(--blue-bg)}
+.send-prog{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;z-index:2000}
+.send-prog-box{background:var(--bg);border-radius:var(--rl);padding:2rem;width:420px;max-width:92vw;text-align:center;box-shadow:0 16px 48px rgba(0,0,0,.3)}
+.prog-bar-track{background:var(--bg2);border-radius:8px;height:10px;overflow:hidden;margin:16px 0 8px}
+.prog-bar-fill{height:100%;background:var(--blue);border-radius:8px;transition:width .3s}
 .stat-link{cursor:pointer;transition:transform .15s,box-shadow .15s}
 .stat-link:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.1)}
 .country-link{cursor:pointer;color:var(--blue)!important;transition:opacity .15s}
@@ -186,7 +195,8 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
     </select>
     <select id="sp" onchange="renderContacts()"><option value="">Tutti i prodotti</option></select>
   </div>
-  <div class="rcnt" id="rcnt"></div>
+  <div id="rcnt-wrap"></div>
+  <div id="sel-bar-wrap"></div>
   <div id="cl"></div>
 </div>
 
@@ -256,6 +266,7 @@ const CLIST=['Germania','USA','UK','Svizzera','Austria','Belgio','Paesi Bassi','
 let db={contacts:[],templates:[]};
 let ghs={};
 let brv={}; // brevo config
+let sel=new Set(); // contatti selezionati
 let ghSha=null,saveTimer=null,pending=null;
 
 /* ── INIT: al caricamento pagina legge da GitHub ── */
@@ -597,10 +608,53 @@ function getFiltered(){
 }
 function renderContacts(){
   const list=getFiltered();
-  document.getElementById('rcnt').textContent=`${list.length} contatti${list.length!==db.contacts.length?' su '+db.contacts.length+' totali':''}`;
+
+  // Header: count + seleziona tutti
+  const total=db.contacts.length;
+  const allSelected=list.length>0&&list.every(c=>sel.has(c.id));
+  document.getElementById('rcnt-wrap').innerHTML=`
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap">
+      <label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:13px;color:var(--text2);user-select:none">
+        <input type="checkbox" id="cb-all" ${allSelected&&list.length?'checked':''} 
+          onchange="toggleSelectAll(this.checked)"
+          style="width:16px;height:16px;accent-color:var(--blue);cursor:pointer">
+        Seleziona tutti
+      </label>
+      <span class="rcnt">${list.length} contatti${list.length!==total?' su '+total+' totali':''}</span>
+    </div>`;
+
+  // Barra invio massivo (visibile solo se ci sono selezioni)
+  const selInList=list.filter(c=>sel.has(c.id));
+  const selBar=document.getElementById('sel-bar-wrap');
+  if(sel.size>0){
+    selBar.innerHTML=`
+      <div class="sel-bar">
+        <span class="sel-bar-info">✓ ${sel.size} contatt${sel.size===1?'o':'i'} selezionat${sel.size===1?'o':'i'}</span>
+        <button class="btn btg bts" onclick="sel.clear();renderContacts()">✕ Deseleziona tutto</button>
+        <button class="btn btp bts" onclick="openBulkSend()">✉ Invia a ${sel.size} contatt${sel.size===1?'o':'i'}</button>
+      </div>`;
+  } else {
+    selBar.innerHTML='';
+  }
+
+  // Lista contatti con checkbox
   const el=document.getElementById('cl');
-  el.innerHTML=list.length?`<div class="card">${list.map(crow).join('')}</div>`
+  el.innerHTML=list.length
+    ?`<div class="card">${list.map(c=>crow(c)).join('')}</div>`
     :'<div class="card"><div class="empty">Nessun risultato</div></div>';
+}
+
+function toggleSelectAll(checked){
+  const list=getFiltered();
+  if(checked) list.forEach(c=>sel.add(c.id));
+  else list.forEach(c=>sel.delete(c.id));
+  renderContacts();
+}
+
+function toggleSelect(id, e){
+  e.stopPropagation();
+  if(sel.has(id)) sel.delete(id); else sel.add(id);
+  renderContacts();
 }
 function renderFollowups(){
   const list=db.contacts.filter(c=>c.status==='followup'||c.status==='sent')
@@ -619,7 +673,11 @@ function renderFollowups(){
   }).join('')}</div>`:'<div class="card"><div class="empty">Nessun follow-up 🎉</div></div>';
 }
 function crow(c){
-  return `<div class="cr" onclick="openDetail('${c.id}')">
+  const checked=sel.has(c.id);
+  return `<div class="cr${checked?' selected':''}" onclick="openDetail('${c.id}')">
+    <input type="checkbox" class="crow-cb" ${checked?'checked':''}
+      onclick="toggleSelect('${c.id}',event)"
+      onchange="toggleSelect('${c.id}',event)">
     <div class="av ${AV[hsh(c.company)%6]}">${ini(c.name||c.company)}</div>
     <div class="ci">
       <div class="cn">${esc(c.company)}<span style="font-weight:400;color:var(--text2)">${c.name?' · '+esc(c.name):''}</span></div>
@@ -1053,6 +1111,247 @@ function copyEmailText(){
   navigator.clipboard?.writeText(`Oggetto: ${subj}\n\n${body}`).then(()=>toast('Testo copiato ✓'));
 }
 
+
+/* ═══════════════════════════════════════════════════
+   INVIO MASSIVO
+═══════════════════════════════════════════════════ */
+
+function openBulkSend(){
+  if(!sel.size){toast('Nessun contatto selezionato');return;}
+  const contacts=db.contacts.filter(c=>sel.has(c.id));
+  const withEmail=contacts.filter(c=>c.contactEmail||c.email);
+  const noEmail=contacts.filter(c=>!c.contactEmail&&!c.email);
+
+  // Esempio per anteprima: primo contatto con email
+  const example=withEmail[0];
+
+  showModal(`
+    <div class="mt">✉ Invio massivo — ${contacts.length} contatti</div>
+
+    <div style="display:flex;gap:8px;margin-bottom:14px">
+      <div style="flex:1;background:var(--green-bg);border-radius:var(--r);padding:10px;text-align:center">
+        <div style="font-size:22px;font-weight:700;color:var(--green-tx)">${withEmail.length}</div>
+        <div style="font-size:11px;color:var(--green-tx);font-weight:600">Con email</div>
+      </div>
+      ${noEmail.length?`<div style="flex:1;background:var(--amber-bg);border-radius:var(--r);padding:10px;text-align:center">
+        <div style="font-size:22px;font-weight:700;color:var(--amber-tx)">${noEmail.length}</div>
+        <div style="font-size:11px;color:var(--amber-tx);font-weight:600">Senza email (saltati)</div>
+      </div>`:''}
+    </div>
+
+    <!-- BRAND -->
+    <div style="display:flex;gap:8px;margin-bottom:14px">
+      <button id="bulk-sw" onclick="bulkSelectBrand('sienawine')"
+        style="flex:1;padding:10px;border-radius:var(--r);border:2px solid #8B1A1A;background:#1a1a1a;color:#fff;cursor:pointer;font-size:12px;font-weight:700">
+        🍷 Siena Wine
+      </button>
+      <button id="bulk-cil" onclick="bulkSelectBrand('ciliegio')"
+        style="flex:1;padding:10px;border-radius:var(--r);border:2px solid var(--brd2);background:var(--bg2);color:var(--text);cursor:pointer;font-size:12px;font-weight:700">
+        ☀ Il Ciliegio
+      </button>
+    </div>
+    <input type="hidden" id="bulk-brand" value="sienawine">
+
+    <!-- TEMPLATE -->
+    <div class="fg" style="margin-bottom:8px"><label>Template</label>
+      <select id="bulk-tpl" onchange="updateBulkPreview()">
+        ${db.templates.map((t,i)=>`<option value="${i}">${esc(t.name)}</option>`).join('')}
+      </select>
+    </div>
+
+    <div class="fg" style="margin-bottom:8px"><label>Oggetto</label>
+      <input id="bulk-subj" value="${esc(db.templates[0]?.subject||'')}">
+    </div>
+
+    <!-- DELAY -->
+    <div class="fg" style="margin-bottom:12px">
+      <label>Delay tra email (secondi) — aspetto casuale tra 1 e 2 sec</label>
+      <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text2)">
+        <span>Min:</span>
+        <input id="bulk-dmin" type="number" value="1" min="0.5" max="5" step="0.5" style="width:70px">
+        <span>Max:</span>
+        <input id="bulk-dmax" type="number" value="2" min="1" max="10" step="0.5" style="width:70px">
+        <span>secondi</span>
+      </div>
+    </div>
+
+    ${example?`
+    <!-- ANTEPRIMA -->
+    <div style="font-size:12px;color:var(--text2);margin-bottom:6px;font-weight:600">
+      ANTEPRIMA (su: ${esc(example.company)})
+    </div>
+    <div style="border:0.5px solid var(--brd2);border-radius:var(--r);overflow:hidden;margin-bottom:12px">
+      <iframe id="bulk-preview" style="width:100%;height:320px;border:none;background:#fff"></iframe>
+    </div>`:''}
+
+    <div class="mf">
+      <button class="btn" onclick="closeModal()">Annulla</button>
+      <button class="btn btp" onclick="confirmBulkSend()" ${!withEmail.length?'disabled':''}>
+        ✉ Invia a ${withEmail.length} contatti
+      </button>
+    </div>
+  `);
+
+  // Popola anteprima dopo render
+  setTimeout(()=>updateBulkPreview(), 100);
+}
+
+function bulkSelectBrand(brand){
+  document.getElementById('bulk-brand').value=brand;
+  const sw=document.getElementById('bulk-sw');
+  const cil=document.getElementById('bulk-cil');
+  if(brand==='sienawine'){
+    sw.style.cssText='flex:1;padding:10px;border-radius:8px;border:2px solid #8B1A1A;background:#1a1a1a;color:#fff;cursor:pointer;font-size:12px;font-weight:700';
+    cil.style.cssText='flex:1;padding:10px;border-radius:8px;border:2px solid var(--brd2);background:var(--bg2);color:var(--text);cursor:pointer;font-size:12px;font-weight:700';
+  } else {
+    cil.style.cssText='flex:1;padding:10px;border-radius:8px;border:2px solid #B8941A;background:#2c2c2c;color:#fff;cursor:pointer;font-size:12px;font-weight:700';
+    sw.style.cssText='flex:1;padding:10px;border-radius:8px;border:2px solid var(--brd2);background:var(--bg2);color:var(--text);cursor:pointer;font-size:12px;font-weight:700';
+  }
+  updateBulkPreview();
+}
+
+function updateBulkPreview(){
+  const tplIdx=parseInt(document.getElementById('bulk-tpl')?.value||'0');
+  const brand=document.getElementById('bulk-brand')?.value||'sienawine';
+  const t=db.templates[tplIdx];
+  if(!t) return;
+
+  // Aggiorna oggetto
+  const subjEl=document.getElementById('bulk-subj');
+  if(subjEl&&!subjEl.dataset.edited) subjEl.value=t.subject;
+
+  // Aggiorna anteprima con primo contatto disponibile
+  const example=db.contacts.find(c=>sel.has(c.id)&&(c.contactEmail||c.email));
+  const iframe=document.getElementById('bulk-preview');
+  if(!iframe||!example) return;
+
+  const filled=fillTplForContact(t.body, example);
+  const html=buildHtmlEmail(filled, brand, example.contactName||example.name);
+  iframe.srcdoc=html;
+}
+
+function fillTplForContact(body, c){
+  return body
+    .replace(/\{\{contatto\}\}/g, c.contactName||c.name||'')
+    .replace(/\{\{nome\}\}/g, c.contactName||c.name||'')
+    .replace(/\{\{azienda\}\}/g, c.company||'')
+    .replace(/\{\{paese\}\}/g, c.country||'')
+    .replace(/\{\{citta\}\}/g, c.city||'')
+    .replace(/\{\{prodotti\}\}/g, (c.products||[]).join(', ')||'[prodotti]');
+}
+
+async function confirmBulkSend(){
+  if(!brv.apiKey){toast('Configura prima Brevo nelle impostazioni');openSettings();return;}
+  const tplIdx=parseInt(document.getElementById('bulk-tpl')?.value||'0');
+  const brand=document.getElementById('bulk-brand')?.value||'sienawine';
+  const subjTemplate=document.getElementById('bulk-subj')?.value||db.templates[tplIdx]?.subject||'';
+  const bodyTemplate=db.templates[tplIdx]?.body||'';
+  const dMin=parseFloat(document.getElementById('bulk-dmin')?.value||'1')*1000;
+  const dMax=parseFloat(document.getElementById('bulk-dmax')?.value||'2')*1000;
+
+  const contacts=db.contacts.filter(c=>sel.has(c.id));
+  const withEmail=contacts.filter(c=>c.contactEmail||c.email);
+  const noEmail=contacts.filter(c=>!c.contactEmail&&!c.email);
+
+  closeModal();
+
+  // Mostra progress overlay
+  const prog=document.createElement('div');
+  prog.className='send-prog';
+  prog.id='bulk-prog';
+  prog.innerHTML=`
+    <div class="send-prog-box">
+      <div style="font-size:16px;font-weight:700;margin-bottom:8px">Invio in corso…</div>
+      <div style="font-size:13px;color:var(--text2)" id="prog-status">Preparazione…</div>
+      <div class="prog-bar-track"><div class="prog-bar-fill" id="prog-fill" style="width:0%"></div></div>
+      <div style="font-size:12px;color:var(--text3)" id="prog-counter">0 / ${withEmail.length}</div>
+      <button class="btn btd bts" style="margin-top:16px" onclick="window._stopBulk=true">✕ Interrompi</button>
+    </div>`;
+  document.body.appendChild(prog);
+  window._stopBulk=false;
+
+  const results={sent:[],failed:[],skipped:noEmail};
+
+  for(let i=0;i<withEmail.length;i++){
+    if(window._stopBulk) break;
+
+    const c=withEmail[i];
+    const toEmail=c.contactEmail||c.email;
+    const toName=c.contactName||c.name||'';
+    const subject=fillTplForContact(subjTemplate,c);
+    const body=fillTplForContact(bodyTemplate,c);
+
+    // Aggiorna UI
+    document.getElementById('prog-status').textContent=
+      `Invio a ${esc(c.company)} (${esc(toEmail)})…`;
+    document.getElementById('prog-fill').style.width=`${Math.round(i/withEmail.length*100)}%`;
+    document.getElementById('prog-counter').textContent=`${i} / ${withEmail.length}`;
+
+    const result=await sendViaBrevo(c.id, toEmail, toName, subject, body, brand);
+    if(result?.ok) results.sent.push({c, email:toEmail});
+    else results.failed.push({c, email:toEmail, error:result?.error});
+
+    // Delay casuale tra min e max
+    if(i < withEmail.length-1 && !window._stopBulk){
+      const delay=dMin+Math.random()*(dMax-dMin);
+      await new Promise(r=>setTimeout(r,delay));
+    }
+  }
+
+  // Rimuovi progress overlay
+  document.getElementById('bulk-prog')?.remove();
+  sel.clear();
+  refreshAll();
+  showBulkReport(results, window._stopBulk);
+}
+
+function showBulkReport(results, interrupted){
+  const {sent, failed, skipped}=results;
+  const sentRows=sent.slice(0,50).map(({c,email})=>`
+    <tr><td>✓</td><td>${esc(c.company)}</td><td style="color:var(--text2)">${esc(email)}</td></tr>`).join('');
+  const failRows=failed.map(({c,email,error})=>`
+    <tr><td style="color:var(--red)">✗</td><td>${esc(c.company)}</td><td style="color:var(--red-tx);font-size:11px">${esc(error||'')}</td></tr>`).join('');
+  const skipRows=skipped.map(c=>`
+    <tr><td style="color:var(--amber)">—</td><td>${esc(c.company)}</td><td style="color:var(--text3)">email mancante</td></tr>`).join('');
+
+  showModal(`
+    <div class="mt">${interrupted?'⚠ Invio interrotto':'✓ Invio completato'}</div>
+    <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap">
+      <div style="flex:1;min-width:80px;background:var(--green-bg);border-radius:var(--r);padding:12px;text-align:center">
+        <div style="font-size:26px;font-weight:700;color:var(--green-tx)">${sent.length}</div>
+        <div style="font-size:11px;color:var(--green-tx);font-weight:600">Inviate</div>
+      </div>
+      ${failed.length?`<div style="flex:1;min-width:80px;background:var(--red-bg);border-radius:var(--r);padding:12px;text-align:center">
+        <div style="font-size:26px;font-weight:700;color:var(--red-tx)">${failed.length}</div>
+        <div style="font-size:11px;color:var(--red-tx);font-weight:600">Fallite</div>
+      </div>`:''}
+      ${skipped.length?`<div style="flex:1;min-width:80px;background:var(--amber-bg);border-radius:var(--r);padding:12px;text-align:center">
+        <div style="font-size:26px;font-weight:700;color:var(--amber-tx)">${skipped.length}</div>
+        <div style="font-size:11px;color:var(--amber-tx);font-weight:600">Saltati</div>
+      </div>`:''}
+    </div>
+
+    ${sent.length||failed.length||skipped.length?`
+    <div style="max-height:280px;overflow-y:auto;border-radius:var(--r);border:0.5px solid var(--brd)">
+      <table style="width:100%;font-size:12px;border-collapse:collapse">
+        <thead><tr style="background:var(--bg2)">
+          <th style="padding:6px 8px;text-align:left;width:24px"></th>
+          <th style="padding:6px 8px;text-align:left">Azienda</th>
+          <th style="padding:6px 8px;text-align:left">Email / Nota</th>
+        </tr></thead>
+        <tbody>
+          ${sentRows}${failRows}${skipRows}
+          ${sent.length>50?`<tr><td colspan="3" style="padding:8px;text-align:center;color:var(--text2)">…e altri ${sent.length-50} inviati</td></tr>`:''}
+        </tbody>
+      </table>
+    </div>`:''}
+
+    <div class="mf">
+      <button class="btn btp" onclick="closeModal()">Chiudi</button>
+    </div>
+  `);
+}
+
 /* ── TEMPLATES ── */
 function renderTemplates(){
   const el=document.getElementById('tpl-list');
@@ -1381,6 +1680,8 @@ function showPage(id,btn){
   document.querySelectorAll('.nb').forEach(b=>b.classList.remove('active'));
   document.getElementById('page-'+id).classList.add('active');
   if(btn)btn.classList.add('active');
+  // Reset selezione quando si cambia tab
+  if(id!=='contacts'&&sel.size>0){sel.clear();}
 }
 
 /* ── UTILS ── */
