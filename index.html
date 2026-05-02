@@ -403,8 +403,7 @@ async function loadFromGH(){
     }
     const d=await r.json();
     ghSha[layer]=d.sha;
-    const raw=d.content.replace(/
-/g,'');
+    const raw=d.content.replace(/\n/g,'');
     let jsonStr;
     try{
       jsonStr=decodeURIComponent(Array.from(atob(raw),c=>'%'+c.charCodeAt(0).toString(16).padStart(2,'0')).join(''));
