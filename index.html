@@ -194,16 +194,24 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
 <!-- CONTATTI -->
 <div id="page-contacts" class="page">
   <div class="filters">
-    <input type="text" id="sq" placeholder="Cerca azienda, nome, email…" oninput="renderContacts()">
-    <select id="sr" onchange="updateCountryFilter();renderContacts()"><option value="">Tutte le regioni</option></select>
+    <input type="text" id="sq" placeholder="Cerca…" oninput="renderContacts()">
     <select id="sc" onchange="renderContacts()"><option value="">Tutti i paesi</option></select>
+    <select id="sr" onchange="updateCountryFilter();renderContacts()"><option value="">Tutte le regioni</option></select>
+    <select id="sp" onchange="renderContacts()"><option value="">Tutti i prodotti</option></select>
+    <select id="sv" onchange="renderContacts()" style="display:none">
+      <option value="">Verifica email</option>
+      <option value="valido">✓ Valido</option>
+      <option value="non_valido">✗ Non valido</option>
+      <option value="sospetta">⚠ Sospetta</option>
+      <option value="da_verificare">? Da verificare</option>
+      <option value="sconosciuto">— Sconosciuto</option>
+    </select>
     <select id="ss" onchange="window._pendingFilter=false;renderContacts()">
       <option value="">Situazione contatto</option>
       <option value="new">Da contattare</option><option value="sent">Email inviata</option>
       <option value="followup">Follow-up</option><option value="replied">Risposto</option>
       <option value="client">Cliente</option><option value="cold">Non interessato</option>
     </select>
-    <select id="sp" onchange="renderContacts()"><option value="">Tutti i prodotti</option></select>
   </div>
   <div id="rcnt-wrap"></div>
   <div id="sel-bar-wrap"></div>
@@ -257,10 +265,7 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
 <div id="page-templates" class="page">
   <div class="sh" style="margin-bottom:8px">
     <div class="st" id="tpl-title">Template email</div>
-    <div style="display:flex;gap:6px">
-      <button class="btn btg bts" onclick="resetDefaultTemplates()" title="Ripristina template di default">↺ Default</button>
-      <button class="btn bts" onclick="openAddTemplate()">+ Nuovo</button>
-    </div>
+    <button class="btn bts" onclick="openAddTemplate()">+ Nuovo</button>
   </div>
   <div style="font-size:12px;color:var(--amber-tx);background:var(--amber-bg);padding:10px 14px;border-radius:var(--r);margin-bottom:12px">
     Variabili disponibili: <code>{{contatto}}</code> <code>{{azienda}}</code> <code>{{paese}}</code> <code>{{prodotti}}</code> <code>{{citta}}</code>
@@ -331,16 +336,17 @@ async function switchLayer(newLayer){
 async function init(){
   try{const r=localStorage.getItem('ghcfg');if(r)ghs=JSON.parse(r);}catch(e){}
   try{const r=localStorage.getItem('brvcfg');if(r)brv=JSON.parse(r);}catch(e){}
-  if(!(isClienti()?dbC:db).templates||!(isClienti()?dbC:db).templates.length)(isClienti()?dbC:db).templates=defTpl();
+  // Inizializza template per entrambi i layer indipendentemente da quello attivo
+  if(!db.templates||!db.templates.length) db.templates=defTplImportatori();
+  if(!dbC.templates||!dbC.templates.length) dbC.templates=defTplClienti();
   if(ghs.token&&ghs.owner&&ghs.repo){
-    await loadFromGH();  // carica contatti.json da GitHub
+    await loadFromGH();
   } else {
     updGh('idle');refreshAll();
   }
 }
 function defTpl(){
-  if(isClienti()) return defTplClienti();
-  return defTplImportatori();
+  return isClienti()?defTplClienti():defTplImportatori();
 }
 
 function defTplImportatori(){return[
@@ -571,19 +577,37 @@ function updateBadges(){
 }
 function updateFilters(){
   if(isClienti()){
-    // ── FILTRI CLIENTI: paese + lingua ──
+    // ── FILTRI CLIENTI: paese / lingua / verifica / situazione ──
+
+    // Paese
     const sc=document.getElementById('sc');const cv=sc?.value||'';
     const countries=[...new Set(dbC.contacts.map(c=>(c.country||'').trim()).filter(c=>c.length>0&&c.length<=50&&!/^\d/.test(c)))].sort();
     if(sc) sc.innerHTML='<option value="">Tutti i paesi</option>'+countries.map(c=>`<option value="${esc(c)}"${cv===c?' selected':''}>${esc(c)}</option>`).join('');
 
+    // Lingua — nel posto di sr (regioni)
     const sr=document.getElementById('sr');const rv=sr?.value||'';
     const lingue=[...new Set(dbC.contacts.map(c=>(c.lingua||'').trim()).filter(Boolean))].sort();
-    if(sr) sr.innerHTML='<option value="">Tutte le lingue</option>'+lingue.map(l=>`<option value="${esc(l)}"${rv===l?' selected':''}>${esc(l)}</option>`).join('');
+    if(sr){
+      sr.innerHTML='<option value="">Tutte le lingue</option>'+lingue.map(l=>`<option value="${esc(l)}"${rv===l?' selected':''}>${esc(l)}</option>`).join('');
+      // Aggiorna label
+      const opt=sr.querySelector('option[value=""]');
+      if(opt) opt.textContent='Tutte le lingue';
+    }
 
+    // Nascondi prodotti, mostra verifica
     const sp=document.getElementById('sp');
-    if(sp) sp.innerHTML='<option value="">— (non usato)</option>';
+    if(sp) sp.style.display='none';
+    const sv=document.getElementById('sv');
+    if(sv) sv.style.display='';
+
     return;
   }
+
+  // ── IMPORTATORI: mostra prodotti, nascondi verifica ──
+  const sv=document.getElementById('sv');
+  if(sv) sv.style.display='none';
+  const spEl=document.getElementById('sp');
+  if(spEl) spEl.style.display='';
 
   // ── FILTRI IMPORTATORI ──
   const sr=document.getElementById('sr');const rv=sr?.value||'';
@@ -705,6 +729,8 @@ function getFiltered(){
       if(q&&!`${c.nome} ${c.cognome} ${c.email} ${c.country} ${c.lingua}`.toLowerCase().includes(q))return false;
       if(country&&c.country!==country)return false;
       if(regionOrLang&&c.lingua!==regionOrLang)return false;
+      const verifica=document.getElementById('sv')?.value||'';
+      if(verifica&&c.statoEmail!==verifica)return false;
     } else {
       if(q&&!`${c.company} ${c.name} ${c.email} ${c.country} ${c.contactName}`.toLowerCase().includes(q))return false;
       if(country&&c.country!==country)return false;
@@ -789,13 +815,22 @@ function renderFollowups(){
 function crow(c){
   const checked=sel.has(c.id);
   if(isClienti()){
-    // ── CLIENTE PRIVATO ──
+    const SE_MAP={
+      valido:     {icon:'✓',tx:'#27500A',bg:'#EAF3DE'},
+      non_valido: {icon:'✗',tx:'#A32D2D',bg:'#FCEBEB'},
+      sospetta:   {icon:'⚠',tx:'#633806',bg:'#FAEEDA'},
+      da_verificare:{icon:'?',tx:'#0C447C',bg:'#E6F1FB'},
+      sconosciuto:{icon:'—',tx:'#666',bg:'#eee'},
+    };
+    const se=SE_MAP[c.statoEmail||'sconosciuto']||SE_MAP.sconosciuto;
     return `<div class="cr${checked?' selected':''}" onclick="openDetail('${c.id}')">
       <input type="checkbox" class="crow-cb" ${checked?'checked':''}
         onclick="toggleSelect('${c.id}',event)" onchange="toggleSelect('${c.id}',event)">
       <div class="av ${AV[hsh((c.nome||'')+c.cognome)%6]}">${ini((c.nome||'')+' '+(c.cognome||''))}</div>
       <div class="ci">
-        <div class="cn">${esc(c.nome||'')} <strong>${esc(c.cognome||'')}</strong></div>
+        <div class="cn">${esc(c.nome||'')} <strong>${esc(c.cognome||'')}</strong>
+          <span style="font-size:10px;padding:1px 6px;border-radius:10px;font-weight:700;margin-left:4px;background:${se.bg};color:${se.tx}">${se.icon} ${esc(c.statoEmail||'—')}</span>
+        </div>
         <div class="cs">${[c.country,c.lingua].filter(Boolean).map(esc).join(' · ')} · ${esc(c.email||'')}</div>
       </div>
       <span class="badge ${SM[c.status]?.c||'bn'}">${SM[c.status]?.l||''}</span>
@@ -836,6 +871,7 @@ function openDetail(id){
         ${dr('Email',c.email?`<a href="mailto:${esc(c.email)}">${esc(c.email)}</a>`:'—')}
         ${dr('Paese',c.country||'—')}
         ${dr('Lingua',c.lingua||'—')}
+        ${dr('Verifica email',c.statoEmail||'—')}
       </div>
       ${c.notes?`<div class="divhr"></div><div style="font-size:12px;color:var(--text2);font-weight:700;margin-bottom:6px">NOTE</div><div style="font-size:13px;line-height:1.6;white-space:pre-wrap">${esc(c.notes)}</div>`:''}
       ${c.emailsSent?`<div class="divhr"></div>
@@ -1690,16 +1726,23 @@ function parseXlsxClienti(wb, filename){
       const email=g(IDX.email).toLowerCase();
       const lingua=g(IDX.lingua)||g(IDX.browser).split('-')[0]||'en';
       const country=g(IDX.country);
-      const valido=g(IDX.valido);
+      const valido=g(IDX.valido); // Valido / Non Valido / Sospetta / Da verificare / Sconosciuto
 
+      // Salta solo righe senza email o senza @
       if(!email||!email.includes('@')) return;
-      // Salta non validi espliciti
-      if(valido&&(valido.toLowerCase()==='non valido'||valido.toLowerCase()==='sospetta')) return;
       if(seen.has(email)) return;
       seen.add(email);
 
-      contacts.push({nome,cognome,email,lingua,country,
-        company:nome+' '+cognome, name:nome+' '+cognome}); // compat
+      // Normalizza lo stato email
+      const vLow=(valido||'').toLowerCase();
+      let statoEmail='sconosciuto';
+      if(vLow==='valido') statoEmail='valido';
+      else if(vLow==='non valido') statoEmail='non_valido';
+      else if(vLow==='sospetta') statoEmail='sospetta';
+      else if(vLow==='da verificare'||vLow==='sconosciuto') statoEmail='da_verificare';
+
+      contacts.push({nome,cognome,email,lingua,country,statoEmail,
+        company:nome+' '+cognome, name:nome+' '+cognome});
     });
   });
   return contacts;
@@ -1854,8 +1897,8 @@ function confirmImport(){
           id:'c'+now+Math.random().toString(36).slice(2,8),
           nome:c.nome||'',cognome:c.cognome||'',
           email:c.email||'',lingua:c.lingua||'en',
-          country:c.country||'',
-          company:(c.nome||'')+' '+(c.cognome||''), // compat
+          country:c.country||'',statoEmail:c.statoEmail||'sconosciuto',
+          company:(c.nome||'')+' '+(c.cognome||''),
           name:(c.nome||'')+' '+(c.cognome||''),
           status:'new',products:[],notes:'',
           createdAt:now,updatedAt:now,
