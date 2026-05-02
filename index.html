@@ -218,19 +218,11 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
 
 <!-- IMPORT -->
 <div id="page-import" class="page">
-  <div class="card">
-    <div class="sh"><div class="st">Importa file XLSX multi-foglio</div></div>
-    <p style="font-size:13px;color:var(--text2);margin-bottom:12px;line-height:1.7">
-      Carica direttamente i tuoi file XLSX dal formato <strong>Best Wine Importers</strong>.<br>
-      Il CRM legge <strong>tutti i fogli</strong> e assegna automaticamente paese e regione.<br>
-      La regione viene rilevata dal nome del file:
+  <div class="card" id="import-card-imp">
+    <div class="sh"><div class="st">Importa Importatori — XLSX multi-foglio</div></div>
+    <p style="font-size:13px;color:var(--text2);margin-bottom:14px;line-height:1.7">
+      Carica i file XLSX dal formato <strong>Best Wine Importers</strong>. Il CRM legge tutti i fogli, usa il nome del foglio come paese e rileva la regione dal nome del file (<code>Oceania.xlsx</code>, <code>Africa.xlsx</code>, ecc.).
     </p>
-    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;font-size:12px">
-      <span style="background:var(--blue-bg);color:var(--blue-tx);padding:3px 10px;border-radius:20px;font-weight:600">Oceania.xlsx → Oceania</span>
-      <span style="background:var(--green-bg);color:var(--green-tx);padding:3px 10px;border-radius:20px;font-weight:600">Africa.xlsx → Africa</span>
-      <span style="background:var(--amber-bg);color:var(--amber-tx);padding:3px 10px;border-radius:20px;font-weight:600">South_America.xlsx → Sud America</span>
-      <span style="background:var(--coral-bg);color:var(--coral-tx);padding:3px 10px;border-radius:20px;font-weight:600">Europe.xlsx → Europa</span>
-    </div>
     <div class="drop-zone" id="dz"
       onclick="document.getElementById('fi').click()"
       ondragover="dzO(event)" ondragleave="dzL()" ondrop="dzD(event)">
@@ -241,13 +233,34 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
     <input type="file" id="fi" accept=".xlsx,.xls,.json" style="display:none" onchange="handleFile(this)">
     <div id="imp-prev"></div>
   </div>
+
+  <div class="card" id="import-card-cli" style="display:none">
+    <div class="sh"><div class="st">Importa Clienti Privati — XLSX o CSV</div></div>
+    <p style="font-size:13px;color:var(--text2);margin-bottom:14px;line-height:1.7">
+      Carica il file con i tuoi clienti privati. Colonne riconosciute automaticamente:<br>
+      <strong>Nome · Cognome · Email · Lingua · Paese</strong><br>
+      Le email marcate "Non Valido" o "Sospetta" vengono saltate automaticamente.
+    </p>
+    <div class="drop-zone" id="dz-cli"
+      onclick="document.getElementById('fi').click()"
+      ondragover="dzO(event)" ondragleave="dzL()" ondrop="dzD(event)">
+      <div style="font-size:2.2rem;margin-bottom:10px">📂</div>
+      <div style="font-size:15px;font-weight:600">Trascina qui il file XLSX</div>
+      <div style="font-size:12px;margin-top:5px">oppure clicca per selezionare · Colonne: Nome, Cognome, Email, Lingua, Paese</div>
+    </div>
+    <input type="file" id="fi" accept=".xlsx,.xls,.json" style="display:none" onchange="handleFile(this)">
+    <div id="imp-prev"></div>
+  </div>
 </div>
 
 <!-- TEMPLATES -->
 <div id="page-templates" class="page">
   <div class="sh" style="margin-bottom:8px">
-    <div class="st">Template email</div>
-    <button class="btn bts" onclick="openAddTemplate()">+ Nuovo</button>
+    <div class="st" id="tpl-title">Template email</div>
+    <div style="display:flex;gap:6px">
+      <button class="btn btg bts" onclick="resetDefaultTemplates()" title="Ripristina template di default">↺ Default</button>
+      <button class="btn bts" onclick="openAddTemplate()">+ Nuovo</button>
+    </div>
   </div>
   <div style="font-size:12px;color:var(--amber-tx);background:var(--amber-bg);padding:10px 14px;border-radius:var(--r);margin-bottom:12px">
     Variabili disponibili: <code>{{contatto}}</code> <code>{{azienda}}</code> <code>{{paese}}</code> <code>{{prodotti}}</code> <code>{{citta}}</code>
@@ -305,6 +318,11 @@ async function switchLayer(newLayer){
   } else {
     refreshAll();
   }
+  // Mostra card import corretta
+  const cardImp = document.getElementById('import-card-imp');
+  const cardCli = document.getElementById('import-card-cli');
+  if(cardImp) cardImp.style.display = newLayer==='clienti'?'none':'block';
+  if(cardCli) cardCli.style.display = newLayer==='clienti'?'block':'none';
   // Torna alla dashboard
   showPage('dashboard', document.querySelector('.nb'));
 }
@@ -320,15 +338,42 @@ async function init(){
     updGh('idle');refreshAll();
   }
 }
-function defTpl(){return[
-  {id:'t1',name:'Primo contatto',subject:"Proposta partnership — Vini italiani d'eccellenza",
-   body:"Gentile {{contatto}},\n\nMi chiamo [Nome], responsabile export di [Azienda].\nHo trovato il profilo di {{azienda}} su Best Wine Importers e ritengo ci possa essere una sinergia con la nostra produzione.\n\nSiamo specializzati in {{prodotti}}, nel segmento premium.\n\nAllego catalogo e listino prezzi. Sarei lieto di organizzare una videochiamata.\n\nCordiali saluti,\n[Nome] — [Azienda]\n[Tel] | [Email]"},
-  {id:'t2',name:'Follow-up 1 (7 gg)',subject:'Re: Proposta partnership — [Azienda]',
-   body:"Gentile {{contatto}},\n\nMi permetto di riprendere contatto.\nLe chiedo solo conferma se ha ricevuto il materiale e se c'è interesse a procedere.\n\nSono disponibile per un call di 15 min a sua comodità.\n\n[Nome] — [Azienda]"},
-  {id:'t3',name:'Follow-up 2 (21 gg)',subject:'Ultimi quantitativi — Annata 2023',
-   body:"Gentile {{contatto}},\n\nLe disponibilità per il mercato {{paese}} si stanno esaurendo.\nLa nostra selezione: {{prodotti}}.\n\nSe desidera riservare, sono disponibile entro questa settimana.\n\n[Nome] — [Azienda]"},
-  {id:'t4',name:'Conferma interesse',subject:'Listino prezzi — {{azienda}}',
-   body:"Gentile {{contatto}},\n\nGrazie per l'interesse! Allego:\n• Listino prezzi (Franco Cantina / CIF)\n• Catalogo con schede tecniche\n• Disponibilità corrente\n\nResto a disposizione.\n\n[Nome] — [Azienda]"}
+function defTpl(){
+  if(isClienti()) return defTplClienti();
+  return defTplImportatori();
+}
+
+function defTplImportatori(){return[
+  {id:'t1',name:'Primo contatto',
+   subject:"Proposta partnership — Vini italiani d'eccellenza",
+   body:"Gentile {{contatto}},\n\nMi chiamo [Nome], responsabile export di [Azienda].\nHo trovato il profilo di {{azienda}} su Best Wine Importers e ritengo ci possa essere una sinergia con la nostra produzione.\n\nSiamo specializzati in {{prodotti}}, nel segmento premium.\n\nAllego catalogo e listino prezzi. Sono disponibile per una videochiamata a sua comodità.\n\nCordiali saluti,\n[Nome] — [Azienda]\n[Tel] | [Email]"},
+  {id:'t2',name:'Follow-up 1 (7 gg)',
+   subject:'Re: Proposta partnership — [Azienda]',
+   body:"Gentile {{contatto}},\n\nMi permetto di riprendere contatto riguardo alla mia precedente email.\nLe chiedo solo conferma se ha ricevuto il materiale e se c'è interesse a procedere.\n\nSono disponibile per un call di 15 minuti a sua comodità.\n\n[Nome] — [Azienda]"},
+  {id:'t3',name:'Follow-up 2 (21 gg)',
+   subject:'Ultimi quantitativi disponibili — Annata 2023',
+   body:"Gentile {{contatto}},\n\nLe disponibilità della nostra selezione per il mercato {{paese}} si stanno esaurendo.\nVorrei darle l'opportunità di riservare i quantitativi di suo interesse prima della chiusura delle allocazioni.\n\nResto disponibile entro questa settimana.\n\n[Nome] — [Azienda]"},
+  {id:'t4',name:'Conferma interesse',
+   subject:'Listino prezzi e disponibilità — {{azienda}}',
+   body:"Gentile {{contatto}},\n\nGrazie per l'interesse verso la nostra produzione!\n\nIn allegato troverà:\n• Listino prezzi aggiornato (Franco Cantina / CIF)\n• Catalogo completo con schede tecniche\n• Disponibilità stagione corrente\n\nResto a disposizione per qualsiasi domanda.\n\n[Nome] — [Azienda]"}
+];}
+
+function defTplClienti(){return[
+  {id:'c1',name:'Benvenuto — Offerta speciale',
+   subject:'Un pensiero speciale per te da Il Ciliegio 🍷',
+   body:"Caro {{contatto}},\n\nTi scriviamo dall'Azienda Agricola Il Ciliegio per ringraziarti di far parte della nostra comunità di appassionati.\n\nAbbiamo preparato per te una selezione esclusiva delle nostre migliori etichette, disponibile a condizioni speciali riservate ai nostri clienti più affezionati.\n\nScopri la nostra proposta su www.ilciliegio.com oppure contattaci direttamente — saremo felici di guidarti nella scelta.\n\nA presto,\nIl team de Il Ciliegio\nAzienda Agricola"},
+  {id:'c2',name:'Offerta stagionale',
+   subject:'La nuova annata è arrivata — riservata a te ✨',
+   body:"Caro {{contatto}},\n\nSiamo entusiasti di annunciarti l'arrivo della nuova annata de Il Ciliegio.\n\nCome nostro cliente, hai accesso in anteprima alla nuova selezione, con la possibilità di acquistare a prezzi dedicati prima dell'apertura al pubblico.\n\nI quantitativi sono limitati. Visita www.ilciliegio.com o rispondi a questa email per prenotare la tua selezione.\n\nTi aspettiamo!\nIl Ciliegio — Azienda Agricola"},
+  {id:'c3',name:'Follow-up 1 (7 gg)',
+   subject:"Hai avuto modo di dare un'occhiata? — Il Ciliegio",
+   body:"Caro {{contatto}},\n\nTi scrivo brevemente per assicurarmi che tu abbia ricevuto la nostra proposta di qualche giorno fa.\n\nSe hai domande sulla selezione o desideri ricevere ulteriori informazioni, sono qui per aiutarti.\n\nUn caro saluto,\nIl Ciliegio — Azienda Agricola"},
+  {id:'c4',name:'Follow-up 2 — Ultimi pezzi',
+   subject:"Ultimi pezzi disponibili — non perdere l'occasione",
+   body:"Caro {{contatto}},\n\nTi scrivo perché le scorte della selezione che ti avevo proposto si stanno esaurendo rapidamente.\n\nSe desideri approfittare dell'offerta riservata, ti chiedo di farmi sapere entro i prossimi giorni.\n\nSarò felice di gestire personalmente il tuo ordine.\n\nCon i migliori saluti,\nIl Ciliegio — Azienda Agricola"},
+  {id:'c5',name:'Auguri e offerta festiva',
+   subject:'Buone Feste da Il Ciliegio 🎄',
+   body:"Caro {{contatto}},\n\nIn occasione delle feste, tutto il team de Il Ciliegio ti augura un periodo sereno e ricco di momenti speciali.\n\nAbbiamo selezionato per te le nostre etichette più eleganti, perfette per brindare o regalare a chi ami.\n\nScopri la confezione regalo Il Ciliegio su www.ilciliegio.com — consegna in tutta Europa.\n\nBuone Feste!\nIl Ciliegio — Azienda Agricola"}
 ];}
 
 /* ── SAVE / GH ── */
@@ -1538,8 +1583,18 @@ function showBulkReport(results, interrupted){
   `);
 }
 
+function resetDefaultTemplates(){
+  const adb=isClienti()?dbC:db;
+  if(!confirm('Ripristinare i template predefiniti? I template personalizzati verranno eliminati.')) return;
+  adb.templates=defTpl();
+  saveDB();renderTemplates();
+  toast('Template ripristinati ✓');
+}
+
 /* ── TEMPLATES ── */
 function renderTemplates(){
+  const titleEl=document.getElementById('tpl-title');
+  if(titleEl) titleEl.textContent=isClienti()?'Template — Clienti Il Ciliegio':'Template — Importatori';
   const el=document.getElementById('tpl-list');
   el.innerHTML=(isClienti()?dbC:db).templates.length?(isClienti()?dbC:db).templates.map(t=>`
     <div class="card">
