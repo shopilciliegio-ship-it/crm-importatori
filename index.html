@@ -164,11 +164,12 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
       <button class="layer-btn active" id="layer-btn-imp" onclick="switchLayer('importatori')">🏢 Importatori</button>
       <button class="layer-btn" id="layer-btn-cli" onclick="switchLayer('clienti')">👤 Clienti Privati</button>
     </div>
-    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.53</div>
+    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.54</div>
   </div>
   <div class="hdr-r">
     <div class="gh-pill"><div class="gh-dot" id="gh-dot"></div><span id="gh-lbl">GitHub</span></div>
     <button class="btn btg bts" onclick="openSettings()">⚙ GitHub</button>
+    <button class="btn btg bts" onclick="fixExistingRegions()" title="Corregge regioni sbagliate (es. Suriname→Sud America)">🗺 Fix regioni</button>
     <button class="btn btd bts" onclick="confirmDeleteAll()">🗑 Cancella DB</button>
     <button class="btn btp" onclick="openAddContact()">+ Contatto</button>
   </div>
@@ -572,7 +573,7 @@ function gv(id){return(document.getElementById(id)?.value||'').trim();}
 /* ── REFRESH ── */
 function refreshAll(){
   renderStats();renderContacts();renderFollowups();
-  renderTemplates();renderRecent();renderCCChart();renderPipeline();
+  renderTemplates();renderRegionChart();renderCCChart();renderPipeline();
   updateBadges();updateFilters();
 }
 function updateBadges(){
@@ -694,10 +695,44 @@ function renderStats(){
     <div class="stat stat-link" onclick="goToContacts({status:'replied'})" title="Vai alla lista"><div class="sl">Risposte</div><div class="sv gr">${s.replied||0}</div></div>
     <div class="stat stat-link" onclick="goToContacts({status:'client'})" title="Vai alla lista"><div class="sl">Clienti</div><div class="sv co">${s.client||0}</div></div>`;
 }
-function renderRecent(){
-  const el=document.getElementById('recent');
-  const list=[...(isClienti()?dbC:db).contacts].sort((a,b)=>(b.updatedAt||0)-(a.updatedAt||0)).slice(0,7);
-  el.innerHTML=list.length?list.map(crow).join(''):'<div class="empty">Nessun contatto ancora</div>';
+function renderRegionChart(){
+  const el=document.getElementById('rc');
+  if(!el) return;
+  const adb=isClienti()?dbC:db;
+  const map={};
+  adb.contacts.forEach(c=>{
+    const r=(c.region||'').trim()||'—';
+    map[r]=(map[r]||0)+1;
+  });
+  const entries=Object.entries(map).sort((a,b)=>b[1]-a[1]);
+  const max=entries[0]?.[1]||1;
+  if(!entries.length){el.innerHTML='<div class="empty" style="font-size:12px">Nessun dato</div>';return;}
+
+  // Colori per regione
+  const rColors={
+    'Sud America':  ['var(--amber-bg)','var(--amber-tx)'],
+    'Oceania':      ['var(--teal-bg)','var(--teal-tx)'],
+    'Europa':       ['var(--blue-bg)','var(--blue-tx)'],
+    'Africa':       ['var(--coral-bg)','var(--coral-tx)'],
+    'Asia':         ['var(--pink-bg)','var(--pink-tx)'],
+    'Nord America': ['var(--green-bg)','var(--green-tx)'],
+    'Medio Oriente':['var(--amber-bg)','var(--amber-tx)'],
+    'Scandinavia':  ['var(--blue-bg)','var(--blue-tx)'],
+    'Caraibi':      ['var(--teal-bg)','var(--teal-tx)'],
+  };
+
+  el.innerHTML = entries.map(([r,n])=>{
+    const [bg,tx]=rColors[r]||['var(--bg2)','var(--text2)'];
+    const pct=Math.round(n/max*100);
+    return `<div class="brow" style="cursor:pointer" onclick="goToContacts({region:'${r.replace(/'/g,"\'")}'})" title="Filtra per ${r}">
+      <div class="blbl" style="color:${tx};font-weight:600">${esc(r)}</div>
+      <div class="btrk">
+        <div style="height:100%;width:${pct}%;background:${bg};border-radius:4px;
+          display:flex;align-items:center;padding-left:6px;
+          font-size:11px;font-weight:700;color:${tx}">${n}</div>
+      </div>
+    </div>`;
+  }).join('');
 }
 function renderCCChart(){
   const map={};
@@ -1537,6 +1572,30 @@ function copyEmailText(){
 }
 
 
+
+// Corregge le regioni sbagliate nei contatti già importati
+// (es. region='Suriname' → region='Sud America')
+function fixExistingRegions(){
+  const adb=isClienti()?dbC:db;
+  let fixed=0;
+  adb.contacts.forEach(c=>{
+    const correct=regionFromCountry(c.country)||c.region||'';
+    // Se la regione è uguale al paese (errore) o è vuota, la corregge
+    if(c.country&&(c.region===c.country||!c.region||c.region==='Unknown')){
+      if(correct&&correct!==c.region){
+        c.region=correct;
+        fixed++;
+      }
+    }
+  });
+  if(fixed>0){
+    saveDB();refreshAll();
+    toast(`✓ Corrette ${fixed} regioni`);
+  } else {
+    toast('Tutte le regioni sono già corrette');
+  }
+}
+
 /* ═══════════════════════════════════════════════════
    INVIO MASSIVO
 ═══════════════════════════════════════════════════ */
@@ -1855,17 +1914,89 @@ function delTpl(id){
 /* ═══════════════════════════════════════
    IMPORT XLSX — MULTI-SHEET
 ═══════════════════════════════════════ */
+// Mappa paese → regione (usata come fallback quando il nome file non indica la regione)
+const COUNTRY_REGION = {
+  // Sud America
+  'Argentina':'Sud America','Bolivia':'Sud America','Brazil':'Sud America',
+  'Brasil':'Sud America','Chile':'Sud America','Colombia':'Sud America',
+  'Ecuador':'Sud America','El Salvador':'Sud America','Guatemala':'Sud America',
+  'Honduras':'Sud America','Mexico':'Sud America','Messico':'Sud America',
+  'Nicaragua':'Sud America','Panama':'Sud America','Paraguay':'Sud America',
+  'Peru':'Sud America','Perù':'Sud America','Suriname':'Sud America',
+  'Uruguay':'Sud America','Venezuela':'Sud America','Costa Rica':'Sud America',
+  'Dominican Republic':'Sud America','Cuba':'Sud America','Haiti':'Sud America',
+  'Jamaica':'Sud America','Trinidad and Tobago':'Sud America',
+  // Nord America
+  'United States':'Nord America','USA':'Nord America','Canada':'Nord America',
+  // Europa
+  'Albania':'Europa','Andorra':'Europa','Austria':'Europa','Belgium':'Europa',
+  'Belgio':'Europa','Bosnia and Herzegovina':'Europa','Bulgaria':'Europa',
+  'Croatia':'Europa','Croazia':'Europa','Cyprus':'Europa','Cipro':'Europa',
+  'Czech Republic':'Europa','Rep. Ceca':'Europa','Denmark':'Europa',
+  'Danimarca':'Europa','Estonia':'Europa','Finland':'Europa','Finlandia':'Europa',
+  'France':'Europa','Francia':'Europa','Germany':'Europa','Germania':'Europa',
+  'Greece':'Europa','Grecia':'Europa','Hungary':'Europa','Ungheria':'Europa',
+  'Iceland':'Europa','Irlanda':'Europa','Ireland':'Europa','Italy':'Europa',
+  'Italia':'Europa','Kosovo':'Europa','Latvia':'Europa','Lithuania':'Europa',
+  'Luxembourg':'Europa','Lussemburgo':'Europa','Malta':'Europa',
+  'Moldova':'Europa','Montenegro':'Europa','Netherlands':'Europa',
+  'Paesi Bassi':'Europa','North Macedonia':'Europa','Norway':'Europa',
+  'Norvegia':'Europa','Poland':'Europa','Polonia':'Europa','Portugal':'Europa',
+  'Portogallo':'Europa','Romania':'Europa','Russia':'Europa','Serbia':'Europa',
+  'Slovakia':'Europa','Slovacchia':'Europa','Slovenia':'Europa','Spain':'Europa',
+  'Spagna':'Europa','Sweden':'Europa','Svezia':'Europa','Switzerland':'Europa',
+  'Svizzera':'Europa','Ukraine':'Europa','Ucraina':'Europa',
+  'United Kingdom':'Europa','UK':'Europa','GB':'Europa',
+  // Oceania
+  'Australia':'Oceania','New Zealand':'Oceania','Nuova Zelanda':'Oceania',
+  'Fiji':'Oceania','Papua New Guinea':'Oceania','Vanuatu':'Oceania',
+  'Solomon Islands':'Oceania','Samoa':'Oceania','Tonga':'Oceania',
+  // Asia
+  'China':'Asia','Cina':'Asia','Japan':'Asia','Giappone':'Asia',
+  'South Korea':'Asia','Korea':'Asia','Corea del Sud':'Asia',
+  'India':'Asia','Indonesia':'Asia','Malaysia':'Asia','Philippines':'Asia',
+  'Filippine':'Asia','Singapore':'Asia','Thailand':'Asia','Tailandia':'Asia',
+  'Vietnam':'Asia','Taiwan':'Asia','Hong Kong':'Asia','Bangladesh':'Asia',
+  'Sri Lanka':'Asia','Myanmar':'Asia','Cambodia':'Asia','Nepal':'Asia',
+  'Pakistan':'Asia','Kazakhstan':'Asia','Uzbekistan':'Asia',
+  // Medio Oriente
+  'United Arab Emirates':'Medio Oriente','UAE':'Medio Oriente',
+  'Emirati Arabi':'Medio Oriente','Saudi Arabia':'Medio Oriente',
+  'Arabia Saudita':'Medio Oriente','Israel':'Medio Oriente','Israele':'Medio Oriente',
+  'Qatar':'Medio Oriente','Kuwait':'Medio Oriente','Bahrain':'Medio Oriente',
+  'Oman':'Medio Oriente','Jordan':'Medio Oriente','Giordania':'Medio Oriente',
+  'Lebanon':'Medio Oriente','Libano':'Medio Oriente','Turkey':'Medio Oriente',
+  'Turchia':'Medio Oriente','Iran':'Medio Oriente','Iraq':'Medio Oriente',
+  // Africa
+  'South Africa':'Africa','Sudafrica':'Africa','Kenya':'Africa',
+  'Nigeria':'Africa','Ethiopia':'Africa','Etiopia':'Africa',
+  'Tanzania':'Africa','Uganda':'Africa','Ghana':'Africa','Senegal':'Africa',
+  'Morocco':'Africa','Marocco':'Africa','Tunisia':'Africa','Algeria':'Africa',
+  'Egypt':'Africa','Egitto':'Africa','Angola':'Africa','Mozambique':'Africa',
+  'Zimbabwe':'Africa','Zambia':'Africa','Botswana':'Africa','Namibia':'Africa',
+  'Cameroon':'Africa','Ivory Coast':'Africa','Madagascar':'Africa',
+  'Mauritius':'Africa','Rwanda':'Africa','Ethiopia':'Africa',
+  // Caraibi / America Centrale
+  'Barbados':'Caraibi','Belize':'Caraibi','Bermuda':'Caraibi',
+};
+
 function detectRegion(fname){
   const f=(fname||'').toLowerCase();
-  if(/south.?am|sud.?am|latin|latam|argentina|brazil|chile|colombia/.test(f)) return 'Sud America';
-  if(/oceania|pacific|australia|new.?zeal/.test(f)) return 'Oceania';
-  if(/africa|kenya|nigeria|ethiopia|tanzania|egypt|ghana/.test(f)) return 'Africa';
-  if(/europe|europa|germany|france|spain|uk\.xlsx|uk_/.test(f)) return 'Europa';
-  if(/asia|china|japan|korea|india|vietnam|thailand|singapore/.test(f)) return 'Asia';
+  if(/south.?am|sud.?am|latin|latam|argentina|brazil|chile|colombia|peru|ecuador|uruguay|paraguay|venezuela|bolivia|suriname/.test(f)) return 'Sud America';
+  if(/oceania|pacific|australia|new.?zeal|fiji/.test(f)) return 'Oceania';
+  if(/africa|kenya|nigeria|ethiopia|tanzania|egypt|ghana|south.?afr/.test(f)) return 'Africa';
+  if(/europe|europa/.test(f)) return 'Europa';
+  if(/asia|china|japan|korea|india|vietnam|thailand|singapore|taiwan|hong.?kong/.test(f)) return 'Asia';
   if(/north.?am|usa|canada/.test(f)) return 'Nord America';
-  if(/middle.?east|mena|uae|saudi/.test(f)) return 'Medio Oriente';
+  if(/middle.?east|mena|uae|saudi|gulf/.test(f)) return 'Medio Oriente';
   if(/scandinav|nordic|sweden|norway|denmark|finland/.test(f)) return 'Scandinavia';
   return '';
+}
+
+// Assegna regione da paese se la regione non è stata rilevata dal nome file
+function regionFromCountry(country){
+  if(!country) return '';
+  return COUNTRY_REGION[country] || COUNTRY_REGION[country.trim()] || '';
 }
 
 function parseXlsx(wb, filename){
@@ -2024,7 +2155,7 @@ function parseXlsxImportatori(wb, filename){
           instagram:   g(r, C.instagram),
           twitter:     g(r, C.twitter),
           youtube:     g(r, C.youtube),
-          region:      region || sheetName,
+          region:      region || regionFromCountry(g(r, C.country) || sheetName) || sheetName,
           contacts,
           contactName:  contacts[0]?.name  || '',
           contactTitle: contacts[0]?.title || '',
@@ -2070,10 +2201,10 @@ function parseXlsxImportatori(wb, filename){
         }] : [];
 
         allContacts.push({
-          compId:    '',   // vecchio formato non ha CompId
+          compId:    '',
           company,
           country,
-          region:    region || sheetName,
+          region:    region || regionFromCountry(country) || sheetName,
           phone:     g(row, 2),
           email,           // email aziendale
           employees: g(row, 4),
