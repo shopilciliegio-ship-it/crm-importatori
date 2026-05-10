@@ -837,14 +837,18 @@ function crow(c){
     </div>`;
   }
   // ── IMPORTATORE ──
+  const firstContact = c.contacts?.[0];
+  const nContacts = c.contacts?.length||0;
   return `<div class="cr${checked?' selected':''}" onclick="openDetail('${c.id}')">
     <input type="checkbox" class="crow-cb" ${checked?'checked':''}
       onclick="toggleSelect('${c.id}',event)"
       onchange="toggleSelect('${c.id}',event)">
-    <div class="av ${AV[hsh(c.company)%6]}">${ini(c.name||c.company)}</div>
+    <div class="av ${AV[hsh(c.company)%6]}">${ini(c.company)}</div>
     <div class="ci">
-      <div class="cn">${esc(c.company)}<span style="font-weight:400;color:var(--text2)">${c.name?' · '+esc(c.name):''}</span></div>
-      <div class="cs">${[c.country,c.region].filter(Boolean).map(esc).join(' · ')}${c.products?.length?' · '+c.products.slice(0,2).map(esc).join(', '):''}</div>
+      <div class="cn">${esc(c.company)}${c.brandName&&c.brandName!==c.company?` <span style="font-weight:400;color:var(--text2)">· ${esc(c.brandName)}</span>`:''}
+        ${nContacts>0?`<span style="font-size:10px;background:var(--blue-bg);color:var(--blue-tx);padding:1px 6px;border-radius:10px;font-weight:700;margin-left:4px">${nContacts} contatt${nContacts===1?'o':'i'}</span>`:''}
+      </div>
+      <div class="cs">${[c.city||c.country,c.type?.split(',')[0]].filter(Boolean).map(esc).join(' · ')}${c.prodType?' · '+esc(c.prodType.split(',').slice(0,2).join(', ')):''}</div>
     </div>
     <span class="badge ${SM[c.status]?.c||'bn'}">${SM[c.status]?.l||''}</span>
   </div>`;
@@ -901,40 +905,68 @@ function openDetail(id){
     return;
   }
 
-  // ── DETAIL IMPORTATORE (originale) ──
-  const log=(c.log||[]).slice(-6).reverse().map(e=>`<div class="log-e"><span style="color:var(--text3);font-size:11px">${new Date(e.ts).toLocaleDateString('it-IT')}</span> — ${esc(e.msg)}</div>`).join('');
+  // ── DETAIL IMPORTATORE ──
   showModal(`
     <div style="display:flex;align-items:center;gap:13px;margin-bottom:1.25rem">
-      <div class="av ${AV[hsh(c.company)%6]}" style="width:48px;height:48px;font-size:16px">${ini(c.name||c.company)}</div>
-      <div style="flex:1">
+      <div class="av ${AV[hsh(c.company)%6]}" style="width:48px;height:48px;font-size:16px">${ini(c.company)}</div>
+      <div style="flex:1;min-width:0">
         <div style="font-size:18px;font-weight:700">${esc(c.company)}</div>
-        <div style="font-size:13px;color:var(--text2)">${esc(c.name||'')}${c.contactTitle?' · '+esc(c.contactTitle):''}</div>
+        ${c.brandName&&c.brandName!==c.company?`<div style="font-size:13px;color:var(--text2)">Brand: ${esc(c.brandName)}</div>`:''}
+        <div style="font-size:12px;color:var(--text2);margin-top:2px">${[c.type,c.city,c.country].filter(Boolean).map(esc).join(' · ')}</div>
       </div>
       <span class="badge ${SM[c.status]?.c||'bn'}">${SM[c.status]?.l||''}</span>
     </div>
+
+    <!-- INFO AZIENDA -->
     <div>
-      ${dr('Email',c.email?`<a href="mailto:${esc(c.email)}">${esc(c.email)}</a>`:'—')}
+      ${dr('Email az.',c.email?`<a href="mailto:${esc(c.email)}">${esc(c.email)}</a>`:'—')}
       ${dr('Telefono',c.phone||'—')}
-      ${dr('Paese / Regione',[c.country,c.region].filter(Boolean).map(esc).join(' · ')||'—')}
-      ${dr('Città',c.city||'—')}
-      ${dr('Sito',c.website?`<a href="${c.website.startsWith('http')?'':'https://'}${esc(c.website)}" target="_blank">${esc(c.website)}</a>`:'—')}
-      ${c.contactName?dr('Referente',esc(c.contactName)+(c.contactTitle?' ('+esc(c.contactTitle)+')':'')):''}
-      ${c.contactEmail?dr('Email ref.',`<a href="mailto:${esc(c.contactEmail)}">${esc(c.contactEmail)}</a>`):''}
+      ${dr('Sito',c.website?`<a href="${c.website.startsWith('http')?'':' https://'}${esc(c.website)}" target="_blank">${esc(c.website)}</a>`:'—')}
+      ${dr('Tipo',c.type||'—')}
+      ${dr('Prodotti',c.prodType||'—')}
+      ${dr('Paese / Città',[c.country,c.city,c.state].filter(Boolean).map(esc).join(', ')||'—')}
+      ${c.address?dr('Indirizzo',[c.address,c.postalCode].filter(Boolean).map(esc).join(' ')):''}
       ${c.employees?dr('Dipendenti',esc(c.employees)):''}
       ${c.sales?dr('Fatturato',esc(c.sales)):''}
-      ${dr('Prodotti',c.products?.length?c.products.map(p=>`<span class="tag">${esc(p)}</span>`).join(''):'—')}
+      ${c.founded?dr('Fondato',esc(c.founded)):''}
     </div>
+
+    <!-- SOCIAL -->
+    ${(c.linkedinCo||c.facebook||c.instagram||c.twitter||c.youtube)?`
+    <div class="divhr"></div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      ${c.linkedinCo?`<a href="${esc(c.linkedinCo)}" target="_blank" style="font-size:12px;padding:4px 10px;border-radius:20px;background:var(--blue-bg);color:var(--blue-tx);font-weight:600;text-decoration:none">LinkedIn</a>`:''}
+      ${c.facebook?`<a href="${esc(c.facebook)}" target="_blank" style="font-size:12px;padding:4px 10px;border-radius:20px;background:var(--bg2);color:var(--text2);font-weight:600;text-decoration:none">Facebook</a>`:''}
+      ${c.instagram?`<a href="${esc(c.instagram)}" target="_blank" style="font-size:12px;padding:4px 10px;border-radius:20px;background:var(--pink-bg);color:var(--pink-tx);font-weight:600;text-decoration:none">Instagram</a>`:''}
+      ${c.twitter?`<a href="${esc(c.twitter)}" target="_blank" style="font-size:12px;padding:4px 10px;border-radius:20px;background:var(--bg2);color:var(--text2);font-weight:600;text-decoration:none">Twitter/X</a>`:''}
+      ${c.youtube?`<a href="${esc(c.youtube)}" target="_blank" style="font-size:12px;padding:4px 10px;border-radius:20px;background:var(--coral-bg);color:var(--coral-tx);font-weight:600;text-decoration:none">YouTube</a>`:''}
+    </div>`:''}
+
+    <!-- CONTATTI INDIVIDUALI -->
+    ${(c.contacts&&c.contacts.length)?`
+    <div class="divhr"></div>
+    <div style="font-size:12px;color:var(--text2);font-weight:700;margin-bottom:8px">CONTATTI (${c.contacts.length})</div>
+    ${c.contacts.map((ct,i)=>`
+      <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:0.5px solid var(--brd);cursor:pointer" onclick="openEmailToContact('${c.id}',${i})">
+        <div style="flex:1">
+          <div style="font-size:13px;font-weight:600">${esc(ct.name||'—')}</div>
+          <div style="font-size:12px;color:var(--text2)">${esc(ct.title||'')}${ct.email?' · <a href="mailto:'+esc(ct.email)+'" onclick="event.stopPropagation()">'+esc(ct.email)+'</a>':''}</div>
+        </div>
+        ${ct.linkedin?`<a href="${esc(ct.linkedin)}" target="_blank" onclick="event.stopPropagation()" style="font-size:11px;padding:3px 8px;border-radius:12px;background:var(--blue-bg);color:var(--blue-tx);font-weight:600;text-decoration:none;flex-shrink:0">in</a>`:''}
+        <button class="btn bts" style="font-size:11px;flex-shrink:0" onclick="event.stopPropagation();openEmailToContact('${c.id}',${i})">✉</button>
+      </div>`).join('')}`:''}
+
     ${c.notes?`<div class="divhr"></div><div style="font-size:12px;color:var(--text2);font-weight:700;margin-bottom:6px">NOTE</div><div style="font-size:13px;line-height:1.6;white-space:pre-wrap">${esc(c.notes)}</div>`:''}
     ${c.emailsSent?`<div class="divhr"></div>
-      <div style="display:flex;gap:12px;font-size:13px">
-        <div style="flex:1;background:var(--blue-bg);border-radius:var(--r);padding:10px 14px;text-align:center">
+      <div style="display:flex;gap:12px">
+        <div style="flex:1;background:var(--blue-bg);border-radius:var(--r);padding:10px;text-align:center">
           <div style="font-size:20px;font-weight:700;color:var(--blue-tx)">${c.emailsSent||0}</div>
           <div style="font-size:11px;color:var(--blue-tx)">Email inviate</div>
         </div>
-        ${c.lastEmailSent?`<div style="flex:2;background:var(--bg2);border-radius:var(--r);padding:10px 14px">
+        ${c.lastEmailSent?`<div style="flex:2;background:var(--bg2);border-radius:var(--r);padding:10px">
           <div style="font-size:11px;color:var(--text2);font-weight:700;margin-bottom:3px">ULTIMA EMAIL</div>
           <div style="font-size:12px">${new Date(c.lastEmailSent).toLocaleDateString('it-IT')}</div>
-          <div style="font-size:11px;color:var(--text2);margin-top:2px">${esc(c.lastEmailSubject||'')}</div>
+          <div style="font-size:11px;color:var(--text2)">${esc(c.lastEmailSubject||'')}</div>
         </div>`:''}
       </div>`:''}
     <div class="divhr"></div>
@@ -1226,13 +1258,21 @@ async function sendViaBrevo(contactId, toEmail, toName, subject, bodyText, brand
 }
 
 /* ── EMAIL ── */
-function openEmailModal(id){
+function openEmailModal(id, overrideEmail, overrideName, contactIdx){
   const c=(isClienti()?dbC:db).contacts.find(x=>x.id===id);if(!c)return;
-  const toEmail = isClienti()?(c.email||''):(c.contactEmail||c.email||'');
-  const toName  = isClienti()?((c.nome||'')+' '+(c.cognome||'')).trim():(c.contactName||c.name||'');
+  const toEmail = overrideEmail || (isClienti()?(c.email||''):(c.contactEmail||c.email||''));
+  const toName  = overrideName  || (isClienti()?((c.nome||'')+' '+(c.cognome||'')).trim():(c.contactName||c.name||''));
 
   showModal(`
-    <div class="mt">✉ Invia Email — ${esc(c.company)}</div>
+    <div class="mt">✉ Email — ${esc(isClienti()?(c.nome+' '+c.cognome):c.company)}</div>
+    ${(!isClienti()&&c.contacts&&c.contacts.length>1)?`
+    <div style="margin-bottom:12px">
+      <div style="font-size:12px;color:var(--text2);font-weight:700;margin-bottom:6px">SELEZIONA DESTINATARIO</div>
+      <select id="contact-sel" onchange="switchEmailContact('${c.id}')" style="width:100%;font-size:13px;padding:8px;border-radius:var(--r);border:.5px solid var(--brd2);background:var(--bg);color:var(--text)">
+        <option value="-1">— Email aziendale (${esc(c.email||'nessuna')})</option>
+        ${(c.contacts||[]).map((ct,i)=>`<option value="${i}"${typeof contactIdx!=='undefined'&&contactIdx===i?' selected':''}>${esc(ct.name)} · ${esc(ct.title||'')}${ct.email?' ('+esc(ct.email)+')':''}</option>`).join('')}
+      </select>
+    </div>`:''}
 
     <!-- BRAND SELECTOR -->
     <div style="display:flex;gap:8px;margin-bottom:16px">
@@ -1627,6 +1667,30 @@ function resetDefaultTemplates(){
   toast('Template ripristinati ✓');
 }
 
+
+
+function switchEmailContact(contactId){
+  const c = (isClienti()?dbC:db).contacts.find(x=>x.id===contactId);
+  if(!c) return;
+  const sel = document.getElementById('contact-sel');
+  if(!sel) return;
+  const idx = parseInt(sel.value);
+  const ct = idx >= 0 ? c.contacts[idx] : null;
+  const toEl = document.getElementById('em-to');
+  const nameEl = document.getElementById('em-toname');
+  if(toEl) toEl.value = ct?.email || c.email || '';
+  if(nameEl) nameEl.value = ct?.name || c.contactName || '';
+}
+
+function openEmailToContact(contactId, contactIdx){
+  const c = (isClienti()?dbC:db).contacts.find(x=>x.id===contactId);
+  if(!c) return;
+  const ct = c.contacts?.[contactIdx] || {};
+  closeModal();
+  // Apri email modal preimpostato su quel contatto
+  openEmailModal(contactId, ct.email||c.email, (ct.name||c.contactName), contactIdx);
+}
+
 /* ── TEMPLATES ── */
 function renderTemplates(){
   const titleEl=document.getElementById('tpl-title');
@@ -1749,94 +1813,156 @@ function parseXlsxClienti(wb, filename){
 }
 
 function parseXlsxImportatori(wb, filename){
-  const region=detectRegion(filename);
-  const contacts=[];
-  const seenLocal=new Set();
+  const region = detectRegion(filename);
+  // Mappa colonne per nome header
+  const allContacts = [];
 
-  wb.SheetNames.forEach(sheetName=>{
-    const ws=wb.Sheets[sheetName];
+  wb.SheetNames.forEach(sheetName => {
+    const ws = wb.Sheets[sheetName];
     if(!ws) return;
-    const rows=XLSX.utils.sheet_to_json(ws,{header:1,defval:'',raw:false});
-    if(!rows||rows.length<2) return;
+    const rows = XLSX.utils.sheet_to_json(ws, {header:1, defval:'', raw:false});
+    if(!rows || rows.length < 2) return;
 
-    const firstRowLower=rows[0].map(h=>String(h||'').trim().toLowerCase());
-    const hasHeader=firstRowLower.some(h=>['company','country','phone','email','website'].includes(h));
-    let IDX, dataRows;
-    if(hasHeader){
-      const hi=(name,fb)=>{const i=firstRowLower.indexOf(name);return i>=0?i:fb;};
-      IDX={country:hi('country',0),company:hi('company',1),phone:hi('phone',2),
-           email:hi('email',3),employees:hi('employees',4),sales:hi('sales',5),website:hi('website',6)};
-      dataRows=rows.slice(1);
-    } else {
-      IDX={country:0,company:1,phone:2,email:3,employees:4,sales:5,website:6};
-      dataRows=rows;
-    }
+    // Header dalla prima riga
+    const hdr = rows[0].map(h => String(h||'').trim());
+    const col = name => hdr.findIndex(h => h.toLowerCase() === name.toLowerCase());
 
-    dataRows.forEach(row=>{
-      const g=i=>String(row[i]||'').trim().replace(/^-$|^None$|^null$|^undefined$/i,'');
-      const company=g(IDX.company);
-      if(!company||company.toLowerCase()==='company'||company.length<2) return;
-      let country=g(IDX.country);
-      if(!country||country.toLowerCase()===company.toLowerCase()||
-         country.toLowerCase()==='country'||country===sheetName.toLowerCase()){
-        country=sheetName;
-      }
-      if(company.toLowerCase()===country.toLowerCase()) return;
-      const email=g(IDX.email);
-      const key=email?email.toLowerCase():`${company.toLowerCase()}|${country.toLowerCase()}`;
-      if(seenLocal.has(key)) return;
-      seenLocal.add(key);
-      let cName='',cTitle='',cEmail='';
-      const cStart=hasHeader?8:7;
-      for(let i=cStart;i<row.length-1;i++){
-        const cell=String(row[i]||'').trim();
-        const next=String(row[i+1]||'').trim();
-        if(cell==='Name:'&&next) cName=next;
-        if(cell==='Job Title:'&&next) cTitle=next;
-        if(cell==='E-Mail:'&&next) cEmail=next;
-      }
-      contacts.push({company,country,region:region||sheetName,
-        phone:g(IDX.phone),email,employees:g(IDX.employees),
-        sales:g(IDX.sales),website:g(IDX.website),
-        contactName:cName,contactTitle:cTitle,contactEmail:cEmail});
+    const C = {
+      companyName:      col('CompanyName'),
+      brandName:        col('BrandName'),
+      compId:           col('CompId'),
+      country:          col('Country'),
+      city:             col('City'),
+      state:            col('State'),
+      address:          col('StreetAddress'),
+      postalCode:       col('PostalCode'),
+      website:          col('Website'),
+      type:             col('Type'),
+      prodType:         col('ProdType'),
+      employees:        col('Employee'),
+      sales:            col('Sales'),
+      companyEmail:     col('Company_Email'),
+      phone:            col('Phone'),
+      founded:          col('Founded'),
+      regNumber:        col('RegistrationNumber'),
+      linkedinCompany:  col('Linkedin'),
+      facebook:         col('Facebook'),
+      instagram:        col('Instagram'),
+      twitter:          col('Twitter'),
+      youtube:          col('Youtube'),
+      contactName:      col('Contact_Name'),
+      contactTitle:     col('Contact_Title'),
+      contactEmail:     col('Contact_Email'),
+      contactPhone:     col('Contact_Phone'),
+      contactLinkedin:  col('Contact_Linkedin'),
+    };
+
+    const g = (row, idx) => idx >= 0 ? String(row[idx]||'').trim().replace(/^None$/i,'') : '';
+
+    // Raggruppa righe per CompId (o CompanyName se CompId mancante)
+    const groups = {};
+    rows.slice(1).forEach(row => {
+      const compId = g(row, C.compId) || g(row, C.companyName);
+      if(!compId) return;
+      if(!groups[compId]) groups[compId] = [];
+      groups[compId].push(row);
+    });
+
+    // Costruisci un contatto per ogni gruppo
+    Object.entries(groups).forEach(([compId, rowList]) => {
+      const r = rowList[0]; // dati azienda dalla prima riga
+
+      // Accorpa tutti i contatti individuali (una entry per persona)
+      const contacts = rowList
+        .map(row => ({
+          name:     g(row, C.contactName),
+          title:    g(row, C.contactTitle),
+          email:    g(row, C.contactEmail),
+          phone:    g(row, C.contactPhone),
+          linkedin: g(row, C.contactLinkedin),
+        }))
+        .filter(c => c.name || c.email); // solo righe con almeno nome o email
+
+      allContacts.push({
+        compId,
+        company:     g(r, C.companyName),
+        brandName:   g(r, C.brandName),
+        country:     g(r, C.country) || sheetName,
+        city:        g(r, C.city),
+        state:       g(r, C.state),
+        address:     g(r, C.address),
+        postalCode:  g(r, C.postalCode),
+        website:     g(r, C.website),
+        type:        g(r, C.type),
+        prodType:    g(r, C.prodType),
+        employees:   g(r, C.employees),
+        sales:       g(r, C.sales),
+        email:       g(r, C.companyEmail),
+        phone:       g(r, C.phone),
+        founded:     g(r, C.founded),
+        regNumber:   g(r, C.regNumber),
+        linkedinCo:  g(r, C.linkedinCompany),
+        facebook:    g(r, C.facebook),
+        instagram:   g(r, C.instagram),
+        twitter:     g(r, C.twitter),
+        youtube:     g(r, C.youtube),
+        region:      region || sheetName,
+        contacts,    // array di {name, title, email, phone, linkedin}
+        // Campi compat legacy
+        contactName:  contacts[0]?.name  || '',
+        contactTitle: contacts[0]?.title || '',
+        contactEmail: contacts[0]?.email || '',
+      });
     });
   });
-  return contacts;
+
+  return allContacts;
 }
 
 function dedupVsDB(incoming){
-  const adb=isClienti()?dbC:db;
-  const UPDATE_FIELDS=isClienti()
-    ?['email','country','lingua']
-    :['email','phone','website','contactName','contactTitle','contactEmail','employees','sales'];
-  const keyOf=c=>isClienti()
-    ?(c.email||'').toLowerCase()
-    :(c.email?c.email.toLowerCase():`${(c.company||'').toLowerCase()}|${(c.country||'').toLowerCase()}`);
-  const existingKey=c=>isClienti()
-    ?(c.email||'').toLowerCase()
-    :(c.email?c.email.toLowerCase():`${(c.company||'').toLowerCase()}|${(c.country||'').toLowerCase()}`);
+  const adb = isClienti() ? dbC : db;
 
-  const newOnes=[],updates=[],identical=[];
-  const localKeys=new Set();
+  // Campi aggiornabili
+  const UPD_IMP = ['email','phone','website','employees','sales','contacts',
+                   'type','prodType','city','address','facebook','instagram',
+                   'twitter','linkedin','linkedinCo','founded'];
+  const UPD_CLI = ['email','country','lingua'];
+  const UPDATE_FIELDS = isClienti() ? UPD_CLI : UPD_IMP;
 
-  incoming.forEach(c=>{
-    const ck=keyOf(c);
-    if(!ck||localKeys.has(ck)) return;
+  // Chiave univoca per identificare il contatto
+  const keyOf = c => isClienti()
+    ? (c.email||'').toLowerCase()
+    : (c.compId ? String(c.compId).toLowerCase()
+       : `${(c.company||'').toLowerCase()}|${(c.country||'').toLowerCase()}`);
+
+  const newOnes = [], updates = [], identical = [];
+  const localKeys = new Set();
+
+  incoming.forEach(c => {
+    const ck = keyOf(c);
+    if(!ck || localKeys.has(ck)) return;
     localKeys.add(ck);
-    const existing=adb.contacts.find(x=>existingKey(x)===ck);
+
+    const existing = adb.contacts.find(x => keyOf(x) === ck);
     if(!existing){
       newOnes.push(c);
     } else {
-      const changed=UPDATE_FIELDS.some(f=>{
-        const iv=(c[f]||'').toString().trim();
-        const ev=(existing[f]||'').toString().trim();
-        return iv&&iv!==ev;
+      const changed = UPDATE_FIELDS.some(f => {
+        if(f === 'contacts'){
+          // Controlla se ci sono nuovi contatti da aggiungere
+          const incomingNames = new Set((c.contacts||[]).map(x=>(x.name||'').toLowerCase()));
+          const existingNames = new Set((existing.contacts||[]).map(x=>(x.name||'').toLowerCase()));
+          return [...incomingNames].some(n => n && !existingNames.has(n));
+        }
+        const iv = (c[f]||'').toString().trim();
+        const ev = (existing[f]||'').toString().trim();
+        return iv && iv !== ev;
       });
-      if(changed) updates.push({...c,_existingId:existing.id});
+      if(changed) updates.push({...c, _existingId: existing.id});
       else identical.push(c);
     }
   });
-  return{newOnes,updates,identical};
+  return {newOnes, updates, identical};
 }
 
 function showPreview(incoming,filename){
@@ -1906,16 +2032,39 @@ function confirmImport(){
         };
       }
       return {
-        id:'c'+now+Math.random().toString(36).slice(2,8),
-        company:c.company||'',name:c.contactName||'',
-        email:c.email||'',phone:c.phone||'',
-        country:c.country||'',region:c.region||'',city:'',
-        website:c.website||'',
-        contactName:c.contactName||'',contactTitle:c.contactTitle||'',contactEmail:c.contactEmail||'',
-        employees:c.employees||'',sales:c.sales||'',
-        status:'new',products:[],notes:'',
-        createdAt:now,updatedAt:now,
-        log:[{ts:now,msg:'Importato da XLSX'}]
+        id:       'c'+now+Math.random().toString(36).slice(2,8),
+        compId:   c.compId||'',
+        company:  c.company||'',
+        brandName:c.brandName||'',
+        email:    c.email||'',
+        phone:    c.phone||'',
+        country:  c.country||'',
+        region:   c.region||'',
+        city:     c.city||'',
+        state:    c.state||'',
+        address:  c.address||'',
+        postalCode:c.postalCode||'',
+        website:  c.website||'',
+        type:     c.type||'',
+        prodType: c.prodType||'',
+        employees:c.employees||'',
+        sales:    c.sales||'',
+        founded:  c.founded||'',
+        regNumber:c.regNumber||'',
+        linkedinCo:c.linkedinCo||'',
+        facebook: c.facebook||'',
+        instagram:c.instagram||'',
+        twitter:  c.twitter||'',
+        youtube:  c.youtube||'',
+        contacts: c.contacts||[],
+        // Legacy compat per email modal
+        contactName:  c.contacts?.[0]?.name  || '',
+        contactTitle: c.contacts?.[0]?.title || '',
+        contactEmail: c.contacts?.[0]?.email || '',
+        name: c.contacts?.[0]?.name || '',
+        status:'new', products:[], notes:'',
+        createdAt:now, updatedAt:now,
+        log:[{ts:now, msg:`Importato da XLSX (${c.contacts?.length||0} contatti)`}]
       };
     });
     (isClienti()?dbC:db).contacts=[...(isClienti()?dbC:db).contacts,...mapped];
