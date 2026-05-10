@@ -164,7 +164,7 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
       <button class="layer-btn active" id="layer-btn-imp" onclick="switchLayer('importatori')">🏢 Importatori</button>
       <button class="layer-btn" id="layer-btn-cli" onclick="switchLayer('clienti')">👤 Clienti Privati</button>
     </div>
-    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.48</div>
+    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.49</div>
   </div>
   <div class="hdr-r">
     <div class="gh-pill"><div class="gh-dot" id="gh-dot"></div><span id="gh-lbl">GitHub</span></div>
@@ -195,10 +195,10 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
 <!-- CONTATTI -->
 <div id="page-contacts" class="page">
   <div class="filters">
-    <input type="text" id="sq" placeholder="Cerca…" oninput="renderContacts()">
+    <input type="text" id="sq" placeholder="Cerca azienda, nome, email…" oninput="renderContacts()" style="min-width:180px">
     <select id="sc" onchange="renderContacts()"><option value="">Tutti i paesi</option></select>
     <select id="sr" onchange="updateCountryFilter();renderContacts()"><option value="">Tutte le regioni</option></select>
-    <select id="sp" onchange="renderContacts()"><option value="">Tutti i prodotti</option></select>
+    <select id="sp" onchange="renderContacts()"><option value="">Tutti i tipi</option></select>
     <select id="sv" onchange="renderContacts()" style="display:none">
       <option value="">Verifica email</option>
       <option value="valido">✓ Valido</option>
@@ -209,9 +209,12 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
     </select>
     <select id="ss" onchange="window._pendingFilter=false;renderContacts()">
       <option value="">Situazione contatto</option>
-      <option value="new">Da contattare</option><option value="sent">Email inviata</option>
-      <option value="followup">Follow-up</option><option value="replied">Risposto</option>
-      <option value="client">Cliente</option><option value="cold">Non interessato</option>
+      <option value="new">Da contattare</option>
+      <option value="sent">Email inviata</option>
+      <option value="followup">Follow-up</option>
+      <option value="replied">Risposto</option>
+      <option value="client">Cliente</option>
+      <option value="cold">Non interessato</option>
     </select>
   </div>
   <div id="rcnt-wrap"></div>
@@ -604,11 +607,22 @@ function updateFilters(){
     return;
   }
 
-  // ── IMPORTATORI: mostra prodotti, nascondi verifica ──
+  // ── IMPORTATORI: popola Tipo, nascondi verifica ──
   const sv=document.getElementById('sv');
   if(sv) sv.style.display='none';
   const spEl=document.getElementById('sp');
-  if(spEl) spEl.style.display='';
+  if(spEl){
+    spEl.style.display='';
+    const pv=spEl.value;
+    // Estrai tutti i tipi unici (il campo type è comma-separated)
+    const typeSet=new Set();
+    db.contacts.forEach(c=>{
+      (c.type||'').split(',').map(t=>t.trim()).filter(Boolean).forEach(t=>typeSet.add(t));
+    });
+    const types=[...typeSet].sort();
+    spEl.innerHTML='<option value="">Tutti i tipi</option>'+
+      types.map(t=>`<option value="${esc(t)}"${pv===t?' selected':''}>${esc(t)}</option>`).join('');
+  }
 
   // ── FILTRI IMPORTATORI ──
   const sr=document.getElementById('sr');const rv=sr?.value||'';
@@ -647,13 +661,15 @@ function updateCountryFilter(){
 
 
 /* ── NAVIGAZIONE RAPIDA da Dashboard ── */
-function goToContacts({country='',region='',status=''}={}){
+function goToContacts({country='',region='',status='',tipo=''}={}){
   const sc=document.getElementById('sc');
   const sr=document.getElementById('sr');
   const ss=document.getElementById('ss');
+  const sp=document.getElementById('sp');
   if(sr) sr.value=region;
-  updateCountryFilter(); // aggiorna paesi in base alla regione
+  updateCountryFilter();
   if(sc) sc.value=country;
+  if(sp) sp.value=tipo;
   // "pending" = mostriamo sia sent che followup — usiamo la searchbox
   if(status==='pending'){
     if(ss) ss.value='';
@@ -733,10 +749,11 @@ function getFiltered(){
       const verifica=document.getElementById('sv')?.value||'';
       if(verifica&&c.statoEmail!==verifica)return false;
     } else {
-      if(q&&!`${c.company} ${c.name} ${c.email} ${c.country} ${c.contactName}`.toLowerCase().includes(q))return false;
+      if(q&&!`${c.company} ${c.brandName||''} ${c.email} ${c.country} ${c.city||''} ${(c.contacts||[]).map(x=>x.name).join(' ')}`.toLowerCase().includes(q))return false;
       if(country&&c.country!==country)return false;
       if(regionOrLang&&c.region!==regionOrLang)return false;
-      if(product&&!(c.products||[]).includes(product))return false;
+      // Tipo: il campo type è comma-separated, cerca se contiene il tipo selezionato
+      if(product&&!(c.type||'').split(',').map(t=>t.trim()).includes(product))return false;
     }
     if(window._pendingFilter){if(c.status!=='sent'&&c.status!=='followup')return false;}
     else if(status&&c.status!==status)return false;
@@ -922,14 +939,17 @@ function openDetail(id){
     <div>
       ${dr('Email az.',c.email?`<a href="mailto:${esc(c.email)}">${esc(c.email)}</a>`:'—')}
       ${dr('Telefono',c.phone||'—')}
-      ${dr('Sito',c.website?`<a href="${c.website.startsWith('http')?'':' https://'}${esc(c.website)}" target="_blank">${esc(c.website)}</a>`:'—')}
+      ${dr('Sito',c.website?`<a href="${c.website.startsWith('http')?c.website:'https://'+c.website}" target="_blank">${esc(c.website)}</a>`:'—')}
       ${dr('Tipo',c.type||'—')}
       ${dr('Prodotti',c.prodType||'—')}
-      ${dr('Paese / Città',[c.country,c.city,c.state].filter(Boolean).map(esc).join(', ')||'—')}
+      ${dr('Paese',c.country||'—')}
+      ${dr('Città / Prov.',[c.city,c.state].filter(Boolean).map(esc).join(', ')||'—')}
       ${c.address?dr('Indirizzo',[c.address,c.postalCode].filter(Boolean).map(esc).join(' ')):''}
       ${c.employees?dr('Dipendenti',esc(c.employees)):''}
       ${c.sales?dr('Fatturato',esc(c.sales)):''}
-      ${c.founded?dr('Fondato',esc(c.founded)):''}
+      ${c.founded?dr('Anno fond.',esc(c.founded)):''}
+      ${c.regNumber?dr('Nr. Reg.',esc(c.regNumber)):''}
+      ${c.compId?dr('ID',esc(c.compId)):''}
     </div>
 
     <!-- SOCIAL -->
@@ -999,39 +1019,93 @@ function delContact(id){
 /* ── ADD/EDIT ── */
 function openAddContact(editId){
   if(isClienti()) return openAddCliente(editId);
+  const adb=db;
+  const c=editId?adb.contacts.find(x=>x.id===editId):null;
 
-  const c=editId?(isClienti()?dbC:db).contacts.find(x=>x.id===editId):null;
+  // Genera HTML per i contatti individuali
+  const contactsArr = c?.contacts||[{name:'',title:'',email:'',phone:'',linkedin:''}];
+  const contactRows = contactsArr.map((ct,i)=>contactRowHtml(ct,i)).join('');
+
   showModal(`
-    <div class="mt">${c?'Modifica':'Nuovo'} contatto</div>
+    <div class="mt">${c?'Modifica':'Nuovo'} importatore</div>
+    <div style="font-size:12px;color:var(--text2);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin:0 0 8px">Anagrafica azienda</div>
     <div class="fg2">
-      <div class="fg"><label>Azienda *</label><input id="fa" value="${esc(c?.company||'')}"></div>
-      <div class="fg"><label>Nome referente</label><input id="fn" value="${esc(c?.name||'')}"></div>
-      <div class="fg"><label>Email</label><input id="fe" type="email" value="${esc(c?.email||'')}"></div>
+      <div class="fg"><label>Ragione sociale *</label><input id="fa" value="${esc(c?.company||'')}"></div>
+      <div class="fg"><label>Brand name</label><input id="fbrand" value="${esc(c?.brandName||'')}"></div>
+      <div class="fg"><label>Email aziendale</label><input id="fe" type="email" value="${esc(c?.email||'')}"></div>
       <div class="fg"><label>Telefono</label><input id="fp" value="${esc(c?.phone||'')}"></div>
-      <div class="fg"><label>Paese</label>
-        <input id="fco" list="fcl" value="${esc(c?.country||'')}">
-        <datalist id="fcl">${CLIST.map(x=>`<option value="${esc(x)}">`).join('')}</datalist>
-      </div>
-      <div class="fg"><label>Regione</label><input id="frg" placeholder="Oceania, Africa, Europa…" value="${esc(c?.region||'')}"></div>
-      <div class="fg"><label>Città</label><input id="fci" value="${esc(c?.city||'')}"></div>
       <div class="fg"><label>Sito web</label><input id="fw" value="${esc(c?.website||'')}"></div>
-      <div class="fg"><label>Email contatto diretto</label><input id="fce" type="email" value="${esc(c?.contactEmail||'')}"></div>
-      <div class="fg"><label>Ruolo contatto</label><input id="fct" value="${esc(c?.contactTitle||'')}"></div>
-      <div class="fg"><label>Stato</label>
+      <div class="fg"><label>Tipo</label><input id="ftype" placeholder="Importer, Distributor…" value="${esc(c?.type||'')}"></div>
+      <div class="fg fgf"><label>Prodotti trattati</label><input id="fprod" placeholder="Wine, Beer, Spirits…" value="${esc(c?.prodType||'')}"></div>
+      <div class="fg"><label>Paese</label><input id="fco" list="fcl2" value="${esc(c?.country||'')}"><datalist id="fcl2">${CLIST.map(x=>`<option value="${esc(x)}">`).join('')}</datalist></div>
+      <div class="fg"><label>Città</label><input id="fci" value="${esc(c?.city||'')}"></div>
+      <div class="fg"><label>Stato / Provincia</label><input id="fstate" value="${esc(c?.state||'')}"></div>
+      <div class="fg"><label>Indirizzo</label><input id="faddr" value="${esc(c?.address||'')}"></div>
+      <div class="fg"><label>CAP</label><input id="fzip" value="${esc(c?.postalCode||'')}"></div>
+      <div class="fg"><label>Dipendenti</label><input id="femp" value="${esc(c?.employees||'')}"></div>
+      <div class="fg"><label>Fatturato</label><input id="fsales" value="${esc(c?.sales||'')}"></div>
+      <div class="fg"><label>Anno fondazione</label><input id="ffound" value="${esc(c?.founded||'')}"></div>
+      <div class="fg"><label>Nr. Registrazione</label><input id="freg" value="${esc(c?.regNumber||'')}"></div>
+      <div class="fg"><label>Regione CRM</label><input id="frg" placeholder="Oceania, Europa…" value="${esc(c?.region||'')}"></div>
+      <div class="fg"><label>Situazione contatto</label>
         <select id="fst">${Object.entries(SM).map(([k,v2])=>`<option value="${k}"${(c?.status||'new')===k?' selected':''}>${v2.l}</option>`).join('')}</select>
       </div>
-      <div class="fg"><label>Dipendenti</label><input id="femp" value="${esc(c?.employees||'')}"></div>
-      <div class="fg fgf"><label>Prodotti di interesse</label>
-        <div class="pgrid">${PRODS.map(p=>`<label class="pl"><input type="checkbox" class="pcb" value="${esc(p)}"${(c?.products||[]).includes(p)?' checked':''}> ${esc(p)}</label>`).join('')}</div>
-      </div>
-      <div class="fg fgf"><label>Note</label><textarea id="fno">${esc(c?.notes||'')}</textarea></div>
     </div>
+
+    <div style="font-size:12px;color:var(--text2);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin:12px 0 8px">Social azienda</div>
+    <div class="fg2">
+      <div class="fg"><label>LinkedIn azienda</label><input id="flinco" value="${esc(c?.linkedinCo||'')}"></div>
+      <div class="fg"><label>Facebook</label><input id="ffb" value="${esc(c?.facebook||'')}"></div>
+      <div class="fg"><label>Instagram</label><input id="finsta" value="${esc(c?.instagram||'')}"></div>
+      <div class="fg"><label>Twitter / X</label><input id="ftwit" value="${esc(c?.twitter||'')}"></div>
+      <div class="fg"><label>YouTube</label><input id="fyt" value="${esc(c?.youtube||'')}"></div>
+    </div>
+
+    <div style="font-size:12px;color:var(--text2);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin:12px 0 8px">
+      Contatti individuali
+      <button type="button" class="btn bts" style="font-size:11px;margin-left:8px" onclick="addContactRow()">+ Aggiungi</button>
+    </div>
+    <div id="contacts-rows">${contactRows}</div>
+
+    <div style="margin-top:12px">
+      <div class="fg"><label>Note</label><textarea id="fno">${esc(c?.notes||'')}</textarea></div>
+    </div>
+
     <div class="mf">
       <button class="btn" onclick="closeModal()">Annulla</button>
       <button class="btn btp" onclick="saveContact('${editId||''}')">Salva</button>
     </div>
   `);
 }
+
+function contactRowHtml(ct, i){
+  return `<div class="contact-edit-row" id="crow-${i}" style="background:var(--bg2);border-radius:var(--r);padding:10px 12px;margin-bottom:8px;position:relative">
+    <button type="button" onclick="removeContactRow(${i})" style="position:absolute;top:8px;right:10px;background:none;border:none;cursor:pointer;font-size:16px;color:var(--text3)" title="Rimuovi">✕</button>
+    <div class="fg2">
+      <div class="fg"><label>Nome</label><input class="ct-name" value="${esc(ct.name||'')}"></div>
+      <div class="fg"><label>Ruolo / Job title</label><input class="ct-title" value="${esc(ct.title||'')}"></div>
+      <div class="fg"><label>Email diretta</label><input class="ct-email" type="email" value="${esc(ct.email||'')}"></div>
+      <div class="fg"><label>Telefono diretto</label><input class="ct-phone" value="${esc(ct.phone||'')}"></div>
+      <div class="fg fgf"><label>LinkedIn personale</label><input class="ct-linkedin" value="${esc(ct.linkedin||'')}"></div>
+    </div>
+  </div>`;
+}
+
+let _contactRowCount = 0;
+function addContactRow(){
+  _contactRowCount++;
+  const id = Date.now() + _contactRowCount;
+  const container = document.getElementById('contacts-rows');
+  if(!container) return;
+  const div = document.createElement('div');
+  div.innerHTML = contactRowHtml({},id);
+  container.appendChild(div.firstElementChild);
+}
+
+function removeContactRow(i){
+  document.getElementById(`crow-${i}`)?.remove();
+}
+
 
 function openAddCliente(editId){
   const c=editId?dbC.contacts.find(x=>x.id===editId):null;
@@ -1065,39 +1139,82 @@ function saveContact(editId){
   const adb = isClienti()?dbC:db;
 
   if(isClienti()){
-    // ── CLIENTE PRIVATO ──
     const nome=gv('fa');const cognome=gv('fcog');const email=gv('fe');
     if(!nome||!email){toast('Nome e email obbligatori');return;}
     const contact={
       id:editId||'c'+Date.now(),
-      nome,cognome,email,
-      country:gv('fco'),lingua:document.getElementById('fling')?.value||'en',
-      // campi compat per funzionalità condivise
-      company:nome+' '+cognome,
-      name:nome+' '+cognome,
+      nome,cognome,email,lingua:document.getElementById('fling')?.value||'en',
+      country:gv('fco'),statoEmail:gv('fsv')||'sconosciuto',
+      company:(nome)+' '+(cognome),name:(nome)+' '+(cognome),
       status:document.getElementById('fst').value,
-      notes:gv('fno'),products:[],
+      products:[],notes:gv('fno'),
       updatedAt:Date.now(),
       createdAt:editId?(adb.contacts.find(c=>c.id===editId)?.createdAt||Date.now()):Date.now()
     };
     if(editId){const i=adb.contacts.findIndex(c=>c.id===editId);if(i>=0)adb.contacts[i]=contact;}
     else adb.contacts.push(contact);
+
   } else {
-    // ── IMPORTATORE ──
-    const company=gv('fa');if(!company){toast('Azienda obbligatoria');return;}
-    const products=[...document.querySelectorAll('.pcb:checked')].map(x=>x.value);
+    // ── IMPORTATORE: salva tutti i 27 campi + contatti individuali ──
+    const company=gv('fa');
+    if(!company){toast('Ragione sociale obbligatoria');return;}
+
+    // Raccogli i contatti individuali dalle righe del form
+    const contactRows=[...document.querySelectorAll('.contact-edit-row')];
+    const contacts=contactRows.map(row=>({
+      name:  row.querySelector('.ct-name')?.value.trim()||'',
+      title: row.querySelector('.ct-title')?.value.trim()||'',
+      email: row.querySelector('.ct-email')?.value.trim()||'',
+      phone: row.querySelector('.ct-phone')?.value.trim()||'',
+      linkedin: row.querySelector('.ct-linkedin')?.value.trim()||'',
+    })).filter(c=>c.name||c.email);
+
+    const existing = editId ? adb.contacts.find(c=>c.id===editId) : null;
     const contact={
-      id:editId||'c'+Date.now(),
-      company,name:gv('fn'),email:gv('fe'),phone:gv('fp'),
-      country:gv('fco'),region:gv('frg'),city:gv('fci'),website:gv('fw'),
-      contactName:gv('fn'),contactTitle:gv('fct'),contactEmail:gv('fce'),
-      employees:gv('femp'),status:document.getElementById('fst').value,
-      products,notes:gv('fno'),updatedAt:Date.now(),
-      createdAt:editId?(adb.contacts.find(c=>c.id===editId)?.createdAt||Date.now()):Date.now()
+      id:        editId||'c'+Date.now(),
+      compId:    existing?.compId||editId||'c'+Date.now(),
+      company,
+      brandName: gv('fbrand'),
+      email:     gv('fe'),
+      phone:     gv('fp'),
+      website:   gv('fw'),
+      type:      gv('ftype'),
+      prodType:  gv('fprod'),
+      country:   gv('fco'),
+      city:      gv('fci'),
+      state:     gv('fstate'),
+      address:   gv('faddr'),
+      postalCode:gv('fzip'),
+      employees: gv('femp'),
+      sales:     gv('fsales'),
+      founded:   gv('ffound'),
+      regNumber: gv('freg'),
+      region:    gv('frg'),
+      linkedinCo:gv('flinco'),
+      facebook:  gv('ffb'),
+      instagram: gv('finsta'),
+      twitter:   gv('ftwit'),
+      youtube:   gv('fyt'),
+      contacts,
+      // Legacy compat
+      contactName:  contacts[0]?.name||'',
+      contactTitle: contacts[0]?.title||'',
+      contactEmail: contacts[0]?.email||'',
+      name: contacts[0]?.name||'',
+      status: document.getElementById('fst').value,
+      products:[], notes:gv('fno'),
+      emailsSent:    existing?.emailsSent||0,
+      lastEmailSent: existing?.lastEmailSent||null,
+      lastEmailSubject: existing?.lastEmailSubject||'',
+      log: existing?.log||[],
+      updatedAt: Date.now(),
+      createdAt: existing?.createdAt||Date.now()
     };
+
     if(editId){const i=adb.contacts.findIndex(c=>c.id===editId);if(i>=0)adb.contacts[i]=contact;}
     else adb.contacts.push(contact);
   }
+
   saveDB();closeModal();refreshAll();toast(editId?'Aggiornato ✓':'Aggiunto ✓');
 }
 
