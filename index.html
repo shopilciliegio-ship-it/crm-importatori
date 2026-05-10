@@ -164,7 +164,7 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
       <button class="layer-btn active" id="layer-btn-imp" onclick="switchLayer('importatori')">🏢 Importatori</button>
       <button class="layer-btn" id="layer-btn-cli" onclick="switchLayer('clienti')">👤 Clienti Privati</button>
     </div>
-    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.49</div>
+    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.50</div>
   </div>
   <div class="hdr-r">
     <div class="gh-pill"><div class="gh-dot" id="gh-dot"></div><span id="gh-lbl">GitHub</span></div>
@@ -877,9 +877,11 @@ function openDetail(id){
   const adb=isClienti()?dbC:db;
   const c=adb.contacts.find(x=>x.id===id);if(!c)return;
 
+  // Log attività — usato da entrambi i blocchi
+  const log=(c.log||[]).slice(-6).reverse().map(e=>`<div class="log-e"><span style="color:var(--text3);font-size:11px">${new Date(e.ts).toLocaleDateString('it-IT')}</span> — ${esc(e.msg)}</div>`).join('');
+
   if(isClienti()){
     // ── DETAIL CLIENTE ──
-    const log=(c.log||[]).slice(-6).reverse().map(e=>`<div class="log-e"><span style="color:var(--text3);font-size:11px">${new Date(e.ts).toLocaleDateString('it-IT')}</span> — ${esc(e.msg)}</div>`).join('');
     showModal(`
       <div style="display:flex;align-items:center;gap:13px;margin-bottom:1.25rem">
         <div class="av ${AV[hsh((c.nome||'')+c.cognome)%6]}" style="width:48px;height:48px;font-size:16px">${ini((c.nome||'')+' '+(c.cognome||''))}</div>
