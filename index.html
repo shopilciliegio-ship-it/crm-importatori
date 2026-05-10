@@ -164,7 +164,7 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
       <button class="layer-btn active" id="layer-btn-imp" onclick="switchLayer('importatori')">🏢 Importatori</button>
       <button class="layer-btn" id="layer-btn-cli" onclick="switchLayer('clienti')">👤 Clienti Privati</button>
     </div>
-    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.51</div>
+    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.53</div>
   </div>
   <div class="hdr-r">
     <div class="gh-pill"><div class="gh-dot" id="gh-dot"></div><span id="gh-lbl">GitHub</span></div>
@@ -1932,106 +1932,161 @@ function parseXlsxClienti(wb, filename){
 
 function parseXlsxImportatori(wb, filename){
   const region = detectRegion(filename);
-  // Mappa colonne per nome header
   const allContacts = [];
 
   wb.SheetNames.forEach(sheetName => {
     const ws = wb.Sheets[sheetName];
     if(!ws) return;
     const rows = XLSX.utils.sheet_to_json(ws, {header:1, defval:'', raw:false});
-    if(!rows || rows.length < 2) return;
+    if(!rows || rows.length < 1) return;
 
-    // Header dalla prima riga
-    const hdr = rows[0].map(h => String(h||'').trim());
-    const col = name => hdr.findIndex(h => h.toLowerCase() === name.toLowerCase());
+    const firstRow = rows[0].map(h => String(h||'').trim());
 
-    const C = {
-      companyName:      col('CompanyName'),
-      brandName:        col('BrandName'),
-      compId:           col('CompId'),
-      country:          col('Country'),
-      city:             col('City'),
-      state:            col('State'),
-      address:          col('StreetAddress'),
-      postalCode:       col('PostalCode'),
-      website:          col('Website'),
-      type:             col('Type'),
-      prodType:         col('ProdType'),
-      employees:        col('Employee'),
-      sales:            col('Sales'),
-      companyEmail:     col('Company_Email'),
-      phone:            col('Phone'),
-      founded:          col('Founded'),
-      regNumber:        col('RegistrationNumber'),
-      linkedinCompany:  col('Linkedin'),
-      facebook:         col('Facebook'),
-      instagram:        col('Instagram'),
-      twitter:          col('Twitter'),
-      youtube:          col('Youtube'),
-      contactName:      col('Contact_Name'),
-      contactTitle:     col('Contact_Title'),
-      contactEmail:     col('Contact_Email'),
-      contactPhone:     col('Contact_Phone'),
-      contactLinkedin:  col('Contact_Linkedin'),
-    };
+    // ── FORMATO NUOVO (27 colonne con header: CompanyName, CompId, …) ──
+    const isNewFormat = firstRow.some(h =>
+      ['companyname','compid','company_email','contact_name'].includes(h.toLowerCase())
+    );
 
-    const g = (row, idx) => idx >= 0 ? String(row[idx]||'').trim().replace(/^None$/i,'') : '';
+    if(isNewFormat){
+      const col = name => firstRow.findIndex(h => h.toLowerCase() === name.toLowerCase());
+      const C = {
+        companyName:     col('CompanyName'),
+        brandName:       col('BrandName'),
+        compId:          col('CompId'),
+        country:         col('Country'),
+        city:            col('City'),
+        state:           col('State'),
+        address:         col('StreetAddress'),
+        postalCode:      col('PostalCode'),
+        website:         col('Website'),
+        type:            col('Type'),
+        prodType:        col('ProdType'),
+        employees:       col('Employee'),
+        sales:           col('Sales'),
+        companyEmail:    col('Company_Email'),
+        phone:           col('Phone'),
+        founded:         col('Founded'),
+        regNumber:       col('RegistrationNumber'),
+        linkedinCompany: col('Linkedin'),
+        facebook:        col('Facebook'),
+        instagram:       col('Instagram'),
+        twitter:         col('Twitter'),
+        youtube:         col('Youtube'),
+        contactName:     col('Contact_Name'),
+        contactTitle:    col('Contact_Title'),
+        contactEmail:    col('Contact_Email'),
+        contactPhone:    col('Contact_Phone'),
+        contactLinkedin: col('Contact_Linkedin'),
+      };
+      const g = (row, idx) => idx >= 0 ? String(row[idx]||'').trim().replace(/^None$/i,'') : '';
 
-    // Raggruppa righe per CompId (o CompanyName se CompId mancante)
-    const groups = {};
-    rows.slice(1).forEach(row => {
-      const compId = g(row, C.compId) || g(row, C.companyName);
-      if(!compId) return;
-      if(!groups[compId]) groups[compId] = [];
-      groups[compId].push(row);
-    });
-
-    // Costruisci un contatto per ogni gruppo
-    Object.entries(groups).forEach(([compId, rowList]) => {
-      const r = rowList[0]; // dati azienda dalla prima riga
-
-      // Accorpa tutti i contatti individuali (una entry per persona)
-      const contacts = rowList
-        .map(row => ({
-          name:     g(row, C.contactName),
-          title:    g(row, C.contactTitle),
-          email:    g(row, C.contactEmail),
-          phone:    g(row, C.contactPhone),
-          linkedin: g(row, C.contactLinkedin),
-        }))
-        .filter(c => c.name || c.email); // solo righe con almeno nome o email
-
-      allContacts.push({
-        compId,
-        company:     g(r, C.companyName),
-        brandName:   g(r, C.brandName),
-        country:     g(r, C.country) || sheetName,
-        city:        g(r, C.city),
-        state:       g(r, C.state),
-        address:     g(r, C.address),
-        postalCode:  g(r, C.postalCode),
-        website:     g(r, C.website),
-        type:        g(r, C.type),
-        prodType:    g(r, C.prodType),
-        employees:   g(r, C.employees),
-        sales:       g(r, C.sales),
-        email:       g(r, C.companyEmail),
-        phone:       g(r, C.phone),
-        founded:     g(r, C.founded),
-        regNumber:   g(r, C.regNumber),
-        linkedinCo:  g(r, C.linkedinCompany),
-        facebook:    g(r, C.facebook),
-        instagram:   g(r, C.instagram),
-        twitter:     g(r, C.twitter),
-        youtube:     g(r, C.youtube),
-        region:      region || sheetName,
-        contacts,    // array di {name, title, email, phone, linkedin}
-        // Campi compat legacy
-        contactName:  contacts[0]?.name  || '',
-        contactTitle: contacts[0]?.title || '',
-        contactEmail: contacts[0]?.email || '',
+      // Raggruppa per CompId (o CompanyName se mancante)
+      const groups = {};
+      rows.slice(1).forEach(row => {
+        const compId = g(row, C.compId) || g(row, C.companyName);
+        if(!compId) return;
+        if(!groups[compId]) groups[compId] = [];
+        groups[compId].push(row);
       });
-    });
+
+      Object.entries(groups).forEach(([compId, rowList]) => {
+        const r = rowList[0];
+        const contacts = rowList
+          .map(row => ({
+            name:     g(row, C.contactName),
+            title:    g(row, C.contactTitle),
+            email:    g(row, C.contactEmail),
+            phone:    g(row, C.contactPhone),
+            linkedin: g(row, C.contactLinkedin),
+          }))
+          .filter(c => c.name || c.email);
+
+        allContacts.push({
+          compId,
+          company:     g(r, C.companyName),
+          brandName:   g(r, C.brandName),
+          country:     g(r, C.country) || sheetName,
+          city:        g(r, C.city),
+          state:       g(r, C.state),
+          address:     g(r, C.address),
+          postalCode:  g(r, C.postalCode),
+          website:     g(r, C.website),
+          type:        g(r, C.type),
+          prodType:    g(r, C.prodType),
+          employees:   g(r, C.employees),
+          sales:       g(r, C.sales),
+          email:       g(r, C.companyEmail),
+          phone:       g(r, C.phone),
+          founded:     g(r, C.founded),
+          regNumber:   g(r, C.regNumber),
+          linkedinCo:  g(r, C.linkedinCompany),
+          facebook:    g(r, C.facebook),
+          instagram:   g(r, C.instagram),
+          twitter:     g(r, C.twitter),
+          youtube:     g(r, C.youtube),
+          region:      region || sheetName,
+          contacts,
+          contactName:  contacts[0]?.name  || '',
+          contactTitle: contacts[0]?.title || '',
+          contactEmail: contacts[0]?.email || '',
+        });
+      });
+
+    } else {
+      // ── FORMATO VECCHIO (BWI originale: nessun header, col fisse) ──
+      // Col 0=Paese, 1=Azienda, 2=Tel, 3=Email az., 4=Dipendenti,
+      // 5=Fatturato, 6=Sito, poi coppie label/valore: Name:/Nome, Job Title:/Ruolo, E-Mail:/EmailPersonale
+      const g = (row, i) => i < row.length ? String(row[i]||'').trim().replace(/^-$|^None$/i,'') : '';
+
+      const seen = new Set();
+      rows.forEach(row => {
+        const country  = g(row, 0) || sheetName;
+        const company  = g(row, 1);
+        if(!company || company.length < 2) return;
+        if(company.toLowerCase() === country.toLowerCase()) return;
+
+        const email = g(row, 3);
+        const key   = email ? email.toLowerCase() : `${company.toLowerCase()}|${country.toLowerCase()}`;
+        if(seen.has(key)) return;
+        seen.add(key);
+
+        // Cerca le label nella parte destra della riga (col 7 in poi)
+        let cName='', cTitle='', cEmail='';
+        for(let i = 7; i < row.length - 1; i++){
+          const cell = String(row[i]||'').trim();
+          const next = String(row[i+1]||'').trim();
+          if(cell === 'Name:'      && next) cName  = next;
+          if(cell === 'Job Title:' && next) cTitle = next;
+          if(cell === 'E-Mail:'   && next) cEmail = next;
+        }
+
+        // Costruisce array contacts (anche se email personale è vuota)
+        const contacts = (cName || cEmail) ? [{
+          name:     cName,
+          title:    cTitle,
+          email:    cEmail,   // ← email personale preziosa
+          phone:    '',
+          linkedin: '',
+        }] : [];
+
+        allContacts.push({
+          compId:    '',   // vecchio formato non ha CompId
+          company,
+          country,
+          region:    region || sheetName,
+          phone:     g(row, 2),
+          email,           // email aziendale
+          employees: g(row, 4),
+          sales:     g(row, 5),
+          website:   g(row, 6),
+          contacts,
+          // Legacy
+          contactName:  cName,
+          contactTitle: cTitle,
+          contactEmail: cEmail,
+        });
+      });
+    }
   });
 
   return allContacts;
@@ -2040,37 +2095,56 @@ function parseXlsxImportatori(wb, filename){
 function dedupVsDB(incoming){
   const adb = isClienti() ? dbC : db;
 
-  // Campi aggiornabili
   const UPD_IMP = ['email','phone','website','employees','sales','contacts',
-                   'type','prodType','city','address','facebook','instagram',
-                   'twitter','linkedin','linkedinCo','founded'];
-  const UPD_CLI = ['email','country','lingua'];
+                   'type','prodType','city','state','address','postalCode',
+                   'brandName','facebook','instagram','twitter','linkedinCo',
+                   'youtube','founded','regNumber'];
+  const UPD_CLI = ['email','country','lingua','statoEmail'];
   const UPDATE_FIELDS = isClienti() ? UPD_CLI : UPD_IMP;
 
-  // Chiave univoca per identificare il contatto
-  const keyOf = c => isClienti()
+  // ── Trova un record esistente nel DB che corrisponde al contatto in arrivo ──
+  // Per importatori: cerca prima per compId, poi fallback su company+country
+  // Questo gestisce sia i record nuovi (con compId) che i vecchi (senza)
+  const findExisting = c => {
+    if(isClienti()){
+      const ek = (c.email||'').toLowerCase();
+      return ek ? adb.contacts.find(x=>(x.email||'').toLowerCase()===ek) : null;
+    }
+    const inCompId  = String(c.compId||'').trim().toLowerCase();
+    const inCompKey = `${(c.company||'').toLowerCase()}|${(c.country||'').toLowerCase()}`;
+    return adb.contacts.find(x=>{
+      // 1. Match esatto per compId (record nuovo vs nuovo)
+      const xCompId = String(x.compId||'').trim().toLowerCase();
+      if(inCompId && xCompId && inCompId === xCompId) return true;
+      // 2. Fallback: company+country (record nuovo vs vecchio senza compId)
+      const xCompKey = `${(x.company||'').toLowerCase()}|${(x.country||'').toLowerCase()}`;
+      return inCompKey === xCompKey;
+    });
+  };
+
+  // Chiave locale per dedup interno al file (evita doppioni nello stesso XLSX)
+  const localKey = c => isClienti()
     ? (c.email||'').toLowerCase()
-    : (c.compId ? String(c.compId).toLowerCase()
-       : `${(c.company||'').toLowerCase()}|${(c.country||'').toLowerCase()}`);
+    : (String(c.compId||'').trim() ||
+       `${(c.company||'').toLowerCase()}|${(c.country||'').toLowerCase()}`);
 
   const newOnes = [], updates = [], identical = [];
   const localKeys = new Set();
 
   incoming.forEach(c => {
-    const ck = keyOf(c);
-    if(!ck || localKeys.has(ck)) return;
-    localKeys.add(ck);
+    const lk = localKey(c);
+    if(!lk || localKeys.has(lk)) return;
+    localKeys.add(lk);
 
-    const existing = adb.contacts.find(x => keyOf(x) === ck);
+    const existing = findExisting(c);
     if(!existing){
       newOnes.push(c);
     } else {
       const changed = UPDATE_FIELDS.some(f => {
         if(f === 'contacts'){
-          // Controlla se ci sono nuovi contatti da aggiungere
-          const incomingNames = new Set((c.contacts||[]).map(x=>(x.name||'').toLowerCase()));
-          const existingNames = new Set((existing.contacts||[]).map(x=>(x.name||'').toLowerCase()));
-          return [...incomingNames].some(n => n && !existingNames.has(n));
+          const inNames = new Set((c.contacts||[]).map(x=>(x.name||'').toLowerCase()).filter(Boolean));
+          const exNames = new Set((existing.contacts||[]).map(x=>(x.name||'').toLowerCase()).filter(Boolean));
+          return [...inNames].some(n => !exNames.has(n));
         }
         const iv = (c[f]||'').toString().trim();
         const ev = (existing[f]||'').toString().trim();
