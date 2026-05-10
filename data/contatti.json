@@ -17578,6 +17578,105 @@
       "notes": "",
       "updatedAt": 1777290236222,
       "createdAt": 1777288624782
+    },
+    {
+      "id": "c1778436967633178ogj",
+      "compId": "20595",
+      "company": "King’s Enterprises N.v.",
+      "brandName": "King’s Enterprises N.v.",
+      "email": "info@kings.sr",
+      "phone": "+597 422-292",
+      "country": "Suriname",
+      "region": "Suriname",
+      "city": "Paramaribo",
+      "state": "Paramaribo, Centrum",
+      "address": "145 Frederik Derbystraat",
+      "postalCode": "",
+      "website": "https://www.kings.sr",
+      "type": "Importer, Distributor, Wholesaler, Retailer, Online Store",
+      "prodType": "Wine, Beer, Spirits, Sparkling Wine",
+      "employees": "200",
+      "sales": "1,960,000",
+      "founded": "1985",
+      "regNumber": "27732",
+      "linkedinCo": "Https://www.linkedin.com/company/king%27senterprises/",
+      "facebook": "https://www.facebook.com/KingsDutyFree/",
+      "instagram": "https://www.instagram.com/kingsdrankenpaleis",
+      "twitter": "",
+      "youtube": "https://www.youtube.com/@Kingsenterprisesnv",
+      "contacts": [
+        {
+          "name": "Rushen Kartaram",
+          "title": "Operations Manager",
+          "email": "",
+          "phone": "",
+          "linkedin": "https://www.linkedin.com/in/rushen-kartaram-a97027142/"
+        },
+        {
+          "name": "Ravish Kartaram",
+          "title": "Business Development Manager",
+          "email": "",
+          "phone": "",
+          "linkedin": "https://www.linkedin.com/in/ravish-kartaram-36aa7090/"
+        }
+      ],
+      "contactName": "Rushen Kartaram",
+      "contactTitle": "Operations Manager",
+      "contactEmail": "",
+      "name": "Rushen Kartaram",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1778436967633,
+      "updatedAt": 1778436967633,
+      "log": [
+        {
+          "ts": 1778436967633,
+          "msg": "Importato da XLSX (2 contatti)"
+        }
+      ]
+    },
+    {
+      "id": "c1778436967633zfa2bv",
+      "compId": "30730",
+      "company": "Tulip Supermarkt",
+      "brandName": "Tulip Supermarkt",
+      "email": "info@tulip-supermarket.com",
+      "phone": "+597 521-060",
+      "country": "Suriname",
+      "region": "Suriname",
+      "city": "Paramaribo",
+      "state": "Paramaribo",
+      "address": "131-135 Tourtonnelaan",
+      "postalCode": "",
+      "website": "https://tulip-supermarket.com",
+      "type": "Retailer",
+      "prodType": "Wine, Beer, Spirits, Sparkling Wine",
+      "employees": "125",
+      "sales": "16,774,920",
+      "founded": "1998",
+      "regNumber": "31399",
+      "linkedinCo": "",
+      "facebook": "https://www.facebook.com/tulipsupermarket/",
+      "instagram": "https://www.instagram.com/tulipsupermarket/",
+      "twitter": "",
+      "youtube": "",
+      "contacts": [],
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "name": "",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1778436967633,
+      "updatedAt": 1778436967633,
+      "log": [
+        {
+          "ts": 1778436967633,
+          "msg": "Importato da XLSX (0 contatti)"
+        }
+      ]
     }
   ],
   "templates": [
