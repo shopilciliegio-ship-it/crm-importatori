@@ -1,5 +1,204 @@
 {
-  "contacts": [],
+  "contacts": [
+    {
+      "id": "c1778517427641u2mcbg",
+      "compId": "22483",
+      "company": "Cayman Wine Boutique Ltd.",
+      "brandName": "Cayman Wine Boutique Ltd.",
+      "email": "info@caymanwineboutique.com",
+      "phone": "",
+      "country": "Cayman Islands",
+      "region": "Cayman Islands",
+      "city": "Grand Cayman",
+      "state": "Grand Cayman",
+      "address": "Caribbean Plaza, 5 West Bay Road",
+      "postalCode": "",
+      "website": "https://caymanwineboutique.com",
+      "type": "Retailer, Online Store",
+      "prodType": "Wine, Spirits, Sparkling Wine",
+      "employees": "6",
+      "sales": "90,658",
+      "founded": "2014",
+      "regNumber": "",
+      "linkedinCo": "",
+      "facebook": "https://www.facebook.com/cayman-wine-boutique-221103271365553/",
+      "instagram": "https://www.instagram.com/thetastingroom.cayman",
+      "twitter": "",
+      "youtube": "",
+      "contacts": [],
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "name": "",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1778517427641,
+      "updatedAt": 1778517427641,
+      "log": [
+        {
+          "ts": 1778517427641,
+          "msg": "Importato da XLSX (0 contatti)"
+        }
+      ]
+    },
+    {
+      "id": "c1778517427641cu6587",
+      "compId": "22526",
+      "company": "Blackbeard’s Trading Company Limited",
+      "brandName": "Blackbeard’s Trading Company Limited",
+      "email": "info@blackbeards.ky",
+      "phone": "+1 345-640-7260",
+      "country": "Cayman Islands",
+      "region": "Cayman Islands",
+      "city": "George Town",
+      "state": "George Town",
+      "address": "412 Eastern Avenue",
+      "postalCode": "KY1-1104",
+      "website": "https://www.blackbeards.ky",
+      "type": "Retailer, Online Store",
+      "prodType": "Wine, Beer, Spirits, Cider, Sparkling Wine",
+      "employees": "30",
+      "sales": "1,893,823",
+      "founded": "2006",
+      "regNumber": "",
+      "linkedinCo": "",
+      "facebook": "https://www.facebook.com/blackbeardsliquors",
+      "instagram": "https://www.instagram.com/blackbeardsliquors/",
+      "twitter": "",
+      "youtube": "",
+      "contacts": [],
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "name": "",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1778517427641,
+      "updatedAt": 1778517427641,
+      "log": [
+        {
+          "ts": 1778517427641,
+          "msg": "Importato da XLSX (0 contatti)"
+        }
+      ]
+    },
+    {
+      "id": "c17785174276410jat3u",
+      "compId": "22527",
+      "company": "Vino Veritas",
+      "brandName": "Vino Veritas",
+      "email": "info@vino.ky",
+      "phone": "",
+      "country": "Cayman Islands",
+      "region": "Cayman Islands",
+      "city": "George Town",
+      "state": "Grand Cayman",
+      "address": "125 Roberts Drive",
+      "postalCode": "KY1-1009",
+      "website": "https://www.vino.ky",
+      "type": "Distributor, Wholesaler, Online Store",
+      "prodType": "Wine, Sparkling Wine",
+      "employees": "3",
+      "sales": "271,452",
+      "founded": "",
+      "regNumber": "",
+      "linkedinCo": "",
+      "facebook": "",
+      "instagram": "",
+      "twitter": "",
+      "youtube": "",
+      "contacts": [
+        {
+          "name": "Logioia Roberto",
+          "title": "Owner & Founder",
+          "email": "",
+          "phone": "*",
+          "linkedin": "https://www.linkedin.com/in/roberto-logioia-83252b277/"
+        }
+      ],
+      "contactName": "Logioia Roberto",
+      "contactTitle": "Owner & Founder",
+      "contactEmail": "",
+      "name": "Logioia Roberto",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1778517427641,
+      "updatedAt": 1778517427641,
+      "log": [
+        {
+          "ts": 1778517427641,
+          "msg": "Importato da XLSX (1 contatti)"
+        }
+      ]
+    },
+    {
+      "id": "c17785174276415zf7l5",
+      "compId": "131787",
+      "company": "Cayman Distributors Ltd.",
+      "brandName": "Cayman Distributors Ltd.",
+      "email": "sales@cdg.ky",
+      "phone": "+1 345-945-2222",
+      "country": "Cayman Islands",
+      "region": "Cayman Islands",
+      "city": "George Town",
+      "state": "George Town",
+      "address": "226 Eastern Avenue",
+      "postalCode": "",
+      "website": "https://www.cdg.ky",
+      "type": "Distributor, Wholesaler, Retailer",
+      "prodType": "Wine, Beer, Spirits",
+      "employees": "125",
+      "sales": "11,467,227",
+      "founded": "1967",
+      "regNumber": "",
+      "linkedinCo": "https://www.linkedin.com/company/cayman-distributor's-group/",
+      "facebook": "",
+      "instagram": "",
+      "twitter": "",
+      "youtube": "",
+      "contacts": [
+        {
+          "name": "Alex McClenaghan",
+          "title": "General Manager",
+          "email": "",
+          "phone": "",
+          "linkedin": "https://www.linkedin.com/in/alex-mcclenaghan-8434a164/"
+        },
+        {
+          "name": "Greg Whisenant",
+          "title": "Sales And Marketing Manager Wine",
+          "email": "",
+          "phone": "",
+          "linkedin": "https://www.linkedin.com/in/greg-whisenant-0700341a6/"
+        },
+        {
+          "name": "George Nistor",
+          "title": "Wine Specialist",
+          "email": "",
+          "phone": "",
+          "linkedin": "https://www.linkedin.com/in/george-nistor-949168152/"
+        }
+      ],
+      "contactName": "Alex McClenaghan",
+      "contactTitle": "General Manager",
+      "contactEmail": "",
+      "name": "Alex McClenaghan",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1778517427641,
+      "updatedAt": 1778517427641,
+      "log": [
+        {
+          "ts": 1778517427641,
+          "msg": "Importato da XLSX (3 contatti)"
+        }
+      ]
+    }
+  ],
   "templates": [
     {
       "id": "t1",
