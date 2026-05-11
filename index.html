@@ -164,7 +164,7 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
       <button class="layer-btn active" id="layer-btn-imp" onclick="switchLayer('importatori')">🏢 Importatori</button>
       <button class="layer-btn" id="layer-btn-cli" onclick="switchLayer('clienti')">👤 Clienti Privati</button>
     </div>
-    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.55</div>
+    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.56</div>
   </div>
   <div class="hdr-r">
     <div class="gh-pill"><div class="gh-dot" id="gh-dot"></div><span id="gh-lbl">GitHub</span></div>
@@ -197,8 +197,8 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
 <div id="page-contacts" class="page">
   <div class="filters">
     <input type="text" id="sq" placeholder="Cerca azienda, nome, email…" oninput="renderContacts()" style="min-width:180px">
-    <select id="sc" onchange="renderContacts()"><option value="">Tutti i paesi</option></select>
     <select id="sr" onchange="updateCountryFilter();renderContacts()"><option value="">Tutte le regioni</option></select>
+    <select id="sc" onchange="renderContacts()"><option value="">Tutti i paesi</option></select>
     <select id="sp" onchange="renderContacts()"><option value="">Tutti i tipi</option></select>
     <select id="sv" onchange="renderContacts()" style="display:none">
       <option value="">Verifica email</option>
@@ -615,8 +615,14 @@ function updateFilters(){
   if(spEl){
     spEl.style.display='';
     const pv=spEl.value;
-    // Estrai tutti i tipi unici (il campo type è comma-separated)
-    const typeSet=new Set();
+    // Tipi predefiniti (sempre presenti anche se non ancora nel DB)
+    const DEFAULT_TYPES=[
+      'Importer','Distributor','Wholesaler','Retailer',
+      'Online Store','Restaurant','Hotel','Bar','Supermarket',
+      'Wine Shop','Agent','Broker','Producer','Other'
+    ];
+    // Merge con i tipi effettivamente presenti nel DB
+    const typeSet=new Set(DEFAULT_TYPES);
     db.contacts.forEach(c=>{
       (c.type||'').split(',').map(t=>t.trim()).filter(Boolean).forEach(t=>typeSet.add(t));
     });
