@@ -164,7 +164,7 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
       <button class="layer-btn active" id="layer-btn-imp" onclick="switchLayer('importatori')">🏢 Importatori</button>
       <button class="layer-btn" id="layer-btn-cli" onclick="switchLayer('clienti')">👤 Clienti Privati</button>
     </div>
-    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.54</div>
+    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.55</div>
   </div>
   <div class="hdr-r">
     <div class="gh-pill"><div class="gh-dot" id="gh-dot"></div><span id="gh-lbl">GitHub</span></div>
@@ -187,7 +187,7 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
 <div id="page-dashboard" class="page active">
   <div class="sgrid" id="stats"></div>
   <div class="g2">
-    <div class="card"><div class="sh"><div class="st">Attività recente</div></div><div id="recent"></div></div>
+    <div class="card"><div class="sh"><div class="st">Per regione</div></div><div id="rc"></div></div>
     <div class="card"><div class="sh"><div class="st">Per paese</div></div><div id="cc" class="cc-scroll"></div></div>
   </div>
   <div class="card"><div class="sh"><div class="st">Pipeline</div></div><div id="pipeline"></div></div>
@@ -1579,10 +1579,14 @@ function fixExistingRegions(){
   const adb=isClienti()?dbC:db;
   let fixed=0;
   adb.contacts.forEach(c=>{
-    const correct=regionFromCountry(c.country)||c.region||'';
-    // Se la regione è uguale al paese (errore) o è vuota, la corregge
-    if(c.country&&(c.region===c.country||!c.region||c.region==='Unknown')){
-      if(correct&&correct!==c.region){
+    const correct=regionFromCountry(c.country)||regionFromCountry(c.region)||'';
+    // Corregge se: regione = paese, regione vuota, Unknown,
+    // o la regione è un nome di paese (es. "Cayman Islands" invece di "Caraibi")
+    const regionLooksLikeCountry = c.region && c.region===c.country;
+    const regionIsEmpty = !c.region||c.region==='Unknown'||c.region==='—';
+    const regionInCountryMap = c.region && COUNTRY_REGION[c.region];
+    if(correct && (regionLooksLikeCountry||regionIsEmpty||regionInCountryMap)){
+      if(correct!==c.region){
         c.region=correct;
         fixed++;
       }
@@ -1592,7 +1596,7 @@ function fixExistingRegions(){
     saveDB();refreshAll();
     toast(`✓ Corrette ${fixed} regioni`);
   } else {
-    toast('Tutte le regioni sono già corrette');
+    toast('Tutte le regioni sono già corrette ✓');
   }
 }
 
@@ -1977,12 +1981,17 @@ const COUNTRY_REGION = {
   'Cameroon':'Africa','Ivory Coast':'Africa','Madagascar':'Africa',
   'Mauritius':'Africa','Rwanda':'Africa','Ethiopia':'Africa',
   // Caraibi / America Centrale
+  'Cayman Islands':'Caraibi','Isole Cayman':'Caraibi',
+  'Cayman':'Caraibi','Grand Cayman':'Caraibi',
   'Barbados':'Caraibi','Belize':'Caraibi','Bermuda':'Caraibi',
+  'Bahamas':'Caraibi','Puerto Rico':'Caraibi','Aruba':'Caraibi',
+  'Curaçao':'Caraibi','Curacao':'Caraibi',
 };
 
 function detectRegion(fname){
   const f=(fname||'').toLowerCase();
   if(/south.?am|sud.?am|latin|latam|argentina|brazil|chile|colombia|peru|ecuador|uruguay|paraguay|venezuela|bolivia|suriname/.test(f)) return 'Sud America';
+  if(/cayman|caribbean|caraibi|barbados|bahamas|jamaica|trinidad|cuba|haiti/.test(f)) return 'Caraibi';
   if(/oceania|pacific|australia|new.?zeal|fiji/.test(f)) return 'Oceania';
   if(/africa|kenya|nigeria|ethiopia|tanzania|egypt|ghana|south.?afr/.test(f)) return 'Africa';
   if(/europe|europa/.test(f)) return 'Europa';
@@ -2155,7 +2164,7 @@ function parseXlsxImportatori(wb, filename){
           instagram:   g(r, C.instagram),
           twitter:     g(r, C.twitter),
           youtube:     g(r, C.youtube),
-          region:      region || regionFromCountry(g(r, C.country) || sheetName) || sheetName,
+          region:      region || regionFromCountry(g(r, C.country)) || regionFromCountry(sheetName) || sheetName,
           contacts,
           contactName:  contacts[0]?.name  || '',
           contactTitle: contacts[0]?.title || '',
@@ -2204,7 +2213,7 @@ function parseXlsxImportatori(wb, filename){
           compId:    '',
           company,
           country,
-          region:    region || regionFromCountry(country) || sheetName,
+          region:    region || regionFromCountry(country) || regionFromCountry(sheetName) || sheetName,
           phone:     g(row, 2),
           email,           // email aziendale
           employees: g(row, 4),
