@@ -165,7 +165,7 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
       <button class="layer-btn active" id="layer-btn-imp" onclick="switchLayer('importatori')">🏢 Importatori</button>
       <button class="layer-btn" id="layer-btn-cli" onclick="switchLayer('clienti')">👤 Clienti Privati</button>
     </div>
-    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.60</div>
+    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.61</div>
   </div>
   <div class="hdr-r">
     <div class="gh-pill"><div class="gh-dot" id="gh-dot"></div><span id="gh-lbl">GitHub</span></div>
@@ -275,7 +275,10 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
 <div id="page-templates" class="page">
   <div class="sh" style="margin-bottom:8px">
     <div class="st" id="tpl-title">Template email</div>
-    <button class="btn bts" onclick="openAddTemplate()">+ Nuovo</button>
+    <div style="display:flex;gap:6px">
+      <button class="btn btg bts" onclick="resetToDefaultTemplates()" title="Ripristina template di default">↺ Ripristina default</button>
+      <button class="btn bts" onclick="openAddTemplate()">+ Nuovo</button>
+    </div>
   </div>
   <div style="font-size:12px;color:var(--amber-tx);background:var(--amber-bg);padding:10px 14px;border-radius:var(--r);margin-bottom:12px">
     Variabili disponibili: <code>{{contatto}}</code> <code>{{azienda}}</code> <code>{{paese}}</code> <code>{{prodotti}}</code> <code>{{citta}}</code>
@@ -309,6 +312,20 @@ let brv={};
 let sel=new Set();
 let ghSha={importatori:null,clienti:null};
 let saveTimer=null,pending=null;
+
+
+function _migrateTemplatesIfNeeded(){
+  // Controlla importatori
+  const oldSignals = ['Proposta partnership','Best Wine Importers','Vini italiani'];
+  const hasOld = db.templates.some(t =>
+    oldSignals.some(s => (t.subject||'').includes(s) || (t.body||'').includes(s))
+  );
+  if(hasOld){
+    db.templates = defTplImportatori();
+    saveDB();
+    console.log('Template importatori migrati ai nuovi Siena Wine');
+  }
+}
 
 /* ── LAYER HELPERS ── */
 function activeDB(){ return layer==='clienti'?dbC:db; }
@@ -354,6 +371,8 @@ async function init(){
   } else {
     updGh('idle');refreshAll();
   }
+  // Migrazione template: se i template caricati sono quelli vecchi, aggiorna
+  _migrateTemplatesIfNeeded();
 }
 function defTpl(){
   return isClienti()?defTplClienti():defTplImportatori();
@@ -2106,6 +2125,17 @@ function openEmailToContact(contactId, contactIdx){
   closeModal();
   // Apri email modal preimpostato su quel contatto
   openEmailModal(contactId, ct.email||c.email, (ct.name||c.contactName), contactIdx);
+}
+
+
+function resetToDefaultTemplates(){
+  const label = isClienti() ? 'clienti Il Ciliegio' : 'importatori Siena Wine';
+  if(!confirm(`Sostituire i template attuali con i default ${label}?`)) return;
+  const adb = isClienti() ? dbC : db;
+  adb.templates = isClienti() ? defTplClienti() : defTplImportatori();
+  saveDB();
+  renderTemplates();
+  toast('✓ Template ripristinati');
 }
 
 /* ── TEMPLATES ── */
