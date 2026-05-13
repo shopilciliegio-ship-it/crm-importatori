@@ -165,7 +165,7 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
       <button class="layer-btn active" id="layer-btn-imp" onclick="switchLayer('importatori')">🏢 Importatori</button>
       <button class="layer-btn" id="layer-btn-cli" onclick="switchLayer('clienti')">👤 Clienti Privati</button>
     </div>
-    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.58</div>
+    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.59</div>
   </div>
   <div class="hdr-r">
     <div class="gh-pill"><div class="gh-dot" id="gh-dot"></div><span id="gh-lbl">GitHub</span></div>
@@ -1804,20 +1804,30 @@ function copyEmailText(){
 function fixExistingRegions(){
   const adb=isClienti()?dbC:db;
   let fixed=0;
+
+  // Lista delle regioni VALIDE — tutto il resto è sbagliato
+  const VALID_REGIONS=new Set([
+    'Sud America','Oceania','Europa','Africa','Asia',
+    'Nord America','Medio Oriente','Scandinavia','Caraibi'
+  ]);
+
   adb.contacts.forEach(c=>{
-    const correct=regionFromCountry(c.country)||regionFromCountry(c.region)||'';
-    // Corregge se: regione = paese, regione vuota, Unknown,
-    // o la regione è un nome di paese (es. "Cayman Islands" invece di "Caraibi")
-    const regionLooksLikeCountry = c.region && c.region===c.country;
-    const regionIsEmpty = !c.region||c.region==='Unknown'||c.region==='—';
-    const regionInCountryMap = c.region && COUNTRY_REGION[c.region];
-    if(correct && (regionLooksLikeCountry||regionIsEmpty||regionInCountryMap)){
-      if(correct!==c.region){
-        c.region=correct;
-        fixed++;
-      }
+    const correct = regionFromCountry(c.country) || '';
+    if(!correct) return; // paese non in mappa, non toccare
+
+    // Corregge se la regione attuale NON è una regione valida
+    // (copre: vuoto, Unknown, nome paese, nome paese con underscore, ecc.)
+    const regionIsInvalid = !c.region
+      || !VALID_REGIONS.has(c.region)
+      || c.region==='Unknown'
+      || c.region==='—';
+
+    if(regionIsInvalid && correct !== c.region){
+      c.region = correct;
+      fixed++;
     }
   });
+
   if(fixed>0){
     saveDB();refreshAll();
     toast(`✓ Corrette ${fixed} regioni`);
@@ -2144,9 +2154,9 @@ function delTpl(id){
 /* ═══════════════════════════════════════
    IMPORT XLSX — MULTI-SHEET
 ═══════════════════════════════════════ */
-// Mappa paese → regione (usata come fallback quando il nome file non indica la regione)
+// Mappa paese → regione — copertura completa BWI
 const COUNTRY_REGION = {
-  // Sud America
+  // ── SUD AMERICA ──
   'Argentina':'Sud America','Bolivia':'Sud America','Brazil':'Sud America',
   'Brasil':'Sud America','Chile':'Sud America','Colombia':'Sud America',
   'Ecuador':'Sud America','El Salvador':'Sud America','Guatemala':'Sud America',
@@ -2156,71 +2166,124 @@ const COUNTRY_REGION = {
   'Uruguay':'Sud America','Venezuela':'Sud America','Costa Rica':'Sud America',
   'Dominican Republic':'Sud America','Cuba':'Sud America','Haiti':'Sud America',
   'Jamaica':'Sud America','Trinidad and Tobago':'Sud America',
-  // Nord America
+  'Trinidad And Tobago':'Sud America','Belize':'Sud America',
+  'Guyana':'Sud America','French Guiana':'Sud America',
+  'Martinique':'Sud America','Guadeloupe':'Sud America',
+
+  // ── NORD AMERICA ──
   'United States':'Nord America','USA':'Nord America','Canada':'Nord America',
-  // Europa
-  'Albania':'Europa','Andorra':'Europa','Austria':'Europa','Belgium':'Europa',
-  'Belgio':'Europa','Bosnia and Herzegovina':'Europa','Bulgaria':'Europa',
-  'Croatia':'Europa','Croazia':'Europa','Cyprus':'Europa','Cipro':'Europa',
-  'Czech Republic':'Europa','Rep. Ceca':'Europa','Denmark':'Europa',
-  'Danimarca':'Europa','Estonia':'Europa','Finland':'Europa','Finlandia':'Europa',
-  'France':'Europa','Francia':'Europa','Germany':'Europa','Germania':'Europa',
-  'Greece':'Europa','Grecia':'Europa','Hungary':'Europa','Ungheria':'Europa',
-  'Iceland':'Europa','Irlanda':'Europa','Ireland':'Europa','Italy':'Europa',
-  'Italia':'Europa','Kosovo':'Europa','Latvia':'Europa','Lithuania':'Europa',
-  'Luxembourg':'Europa','Lussemburgo':'Europa','Malta':'Europa',
-  'Moldova':'Europa','Montenegro':'Europa','Netherlands':'Europa',
-  'Paesi Bassi':'Europa','North Macedonia':'Europa','Norway':'Europa',
-  'Norvegia':'Europa','Poland':'Europa','Polonia':'Europa','Portugal':'Europa',
-  'Portogallo':'Europa','Romania':'Europa','Russia':'Europa','Serbia':'Europa',
-  'Slovakia':'Europa','Slovacchia':'Europa','Slovenia':'Europa','Spain':'Europa',
-  'Spagna':'Europa','Sweden':'Europa','Svezia':'Europa','Switzerland':'Europa',
-  'Svizzera':'Europa','Ukraine':'Europa','Ucraina':'Europa',
+
+  // ── CARAIBI ──
+  'Cayman Islands':'Caraibi','Isole Cayman':'Caraibi',
+  'Barbados':'Caraibi','Bermuda':'Caraibi','Bahamas':'Caraibi',
+  'Puerto Rico':'Caraibi','Aruba':'Caraibi','Curaçao':'Caraibi',
+  'Curacao':'Caraibi','Saint Lucia':'Caraibi','Grenada':'Caraibi',
+  'Antigua and Barbuda':'Caraibi','Antigua And Barbuda':'Caraibi',
+  'Saint Kitts and Nevis':'Caraibi','Dominica':'Caraibi',
+  'Virgin Islands':'Caraibi','Turks and Caicos Islands':'Caraibi',
+
+  // ── EUROPA ──
+  'Albania':'Europa','Andorra':'Europa','Austria':'Europa',
+  'Belgium':'Europa','Belgio':'Europa',
+  'Bosnia and Herzegovina':'Europa','Bosnia And Herzegovina':'Europa',
+  'Bulgaria':'Europa','Croatia':'Europa','Croazia':'Europa',
+  'Cyprus':'Europa','Cipro':'Europa',
+  'Czech Republic':'Europa','Czechia':'Europa','Rep. Ceca':'Europa',
+  'Denmark':'Europa','Danimarca':'Europa',
+  'Estonia':'Europa','Finland':'Europa','Finlandia':'Europa',
+  'France':'Europa','Francia':'Europa',
+  'Germany':'Europa','Germania':'Europa',
+  'Greece':'Europa','Grecia':'Europa',
+  'Hungary':'Europa','Ungheria':'Europa',
+  'Iceland':'Europa','Islanda':'Europa',
+  'Ireland':'Europa','Irlanda':'Europa',
+  'Italy':'Europa','Italia':'Europa',
+  'Kosovo':'Europa','Latvia':'Europa','Lithuania':'Europa',
+  'Luxembourg':'Europa','Lussemburgo':'Europa',
+  'Malta':'Europa','Moldova':'Europa','Montenegro':'Europa',
+  'Netherlands':'Europa','Paesi Bassi':'Europa',
+  'North Macedonia':'Europa','Macedonia':'Europa',
+  'Norway':'Europa','Norvegia':'Europa',
+  'Poland':'Europa','Polonia':'Europa',
+  'Portugal':'Europa','Portogallo':'Europa',
+  'Romania':'Europa','Russia':'Europa',
+  'Serbia':'Europa','Slovakia':'Europa','Slovacchia':'Europa',
+  'Slovenia':'Europa','Spain':'Europa','Spagna':'Europa',
+  'Sweden':'Europa','Svezia':'Europa',
+  'Switzerland':'Europa','Svizzera':'Europa',
+  'Ukraine':'Europa','Ucraina':'Europa',
   'United Kingdom':'Europa','UK':'Europa','GB':'Europa',
-  // Oceania
+  'Belarus':'Europa','Liechtenstein':'Europa','Monaco':'Europa',
+  'San Marino':'Europa','Vatican City':'Europa',
+  'Faroe Islands':'Europa','Gibraltar':'Europa',
+  'Andorra':'Europa','Kosovo':'Europa',
+
+  // ── SCANDINAVIA ──
+  // (inclusa in Europa ma separabile se preferisci)
+
+  // ── OCEANIA ──
   'Australia':'Oceania','New Zealand':'Oceania','Nuova Zelanda':'Oceania',
-  'Fiji':'Oceania','Papua New Guinea':'Oceania','Vanuatu':'Oceania',
-  'Solomon Islands':'Oceania','Samoa':'Oceania','Tonga':'Oceania',
-  // Asia
+  'Fiji':'Oceania','Papua New Guinea':'Oceania','Papua Nuova Guinea':'Oceania',
+  'Vanuatu':'Oceania','Solomon Islands':'Oceania','Samoa':'Oceania',
+  'Tonga':'Oceania','Micronesia':'Oceania','Palau':'Oceania',
+  'Marshall Islands':'Oceania','Kiribati':'Oceania','Nauru':'Oceania',
+  'Tuvalu':'Oceania','French Polynesia':'Oceania',
+  'New Caledonia':'Oceania','Guam':'Oceania',
+
+  // ── ASIA ──
   'China':'Asia','Cina':'Asia','Japan':'Asia','Giappone':'Asia',
   'South Korea':'Asia','Korea':'Asia','Corea del Sud':'Asia',
-  'India':'Asia','Indonesia':'Asia','Malaysia':'Asia','Philippines':'Asia',
-  'Filippine':'Asia','Singapore':'Asia','Thailand':'Asia','Tailandia':'Asia',
-  'Vietnam':'Asia','Taiwan':'Asia','Hong Kong':'Asia','Bangladesh':'Asia',
-  'Sri Lanka':'Asia','Myanmar':'Asia','Cambodia':'Asia','Nepal':'Asia',
-  'Pakistan':'Asia','Kazakhstan':'Asia','Uzbekistan':'Asia',
-  // Medio Oriente
+  'India':'Asia','Indonesia':'Asia','Malaysia':'Asia',
+  'Philippines':'Asia','Filippine':'Asia',
+  'Singapore':'Asia','Thailand':'Asia','Tailandia':'Asia',
+  'Vietnam':'Asia','Taiwan':'Asia','Hong Kong':'Asia',
+  'Bangladesh':'Asia','Sri Lanka':'Asia','Myanmar':'Asia',
+  'Cambodia':'Asia','Nepal':'Asia','Pakistan':'Asia',
+  'Kazakhstan':'Asia','Uzbekistan':'Asia','Mongolia':'Asia',
+  'Laos':'Asia','Brunei':'Asia','Timor-Leste':'Asia',
+  'Maldives':'Asia','Bhutan':'Asia','Afghanistan':'Asia',
+  'Tajikistan':'Asia','Kyrgyzstan':'Asia','Turkmenistan':'Asia',
+  'Azerbaijan':'Asia','Georgia':'Asia','Armenia':'Asia',
+
+  // ── MEDIO ORIENTE ──
   'United Arab Emirates':'Medio Oriente','UAE':'Medio Oriente',
-  'Emirati Arabi':'Medio Oriente','Saudi Arabia':'Medio Oriente',
-  'Arabia Saudita':'Medio Oriente','Israel':'Medio Oriente','Israele':'Medio Oriente',
-  'Qatar':'Medio Oriente','Kuwait':'Medio Oriente','Bahrain':'Medio Oriente',
-  'Oman':'Medio Oriente','Jordan':'Medio Oriente','Giordania':'Medio Oriente',
-  'Lebanon':'Medio Oriente','Libano':'Medio Oriente','Turkey':'Medio Oriente',
-  'Turchia':'Medio Oriente','Iran':'Medio Oriente','Iraq':'Medio Oriente',
-  // Africa
-  'South Africa':'Africa','Sudafrica':'Africa','Kenya':'Africa',
-  'Nigeria':'Africa','Ethiopia':'Africa','Etiopia':'Africa',
-  'Tanzania':'Africa','Uganda':'Africa','Ghana':'Africa','Senegal':'Africa',
-  'Morocco':'Africa','Marocco':'Africa','Tunisia':'Africa','Algeria':'Africa',
-  'Egypt':'Africa','Egitto':'Africa','Angola':'Africa','Mozambique':'Africa',
-  'Zimbabwe':'Africa','Zambia':'Africa','Botswana':'Africa','Namibia':'Africa',
-  'Cameroon':'Africa','Ivory Coast':'Africa','Madagascar':'Africa',
-  'Mauritius':'Africa','Rwanda':'Africa','Ethiopia':'Africa',
-  // Caraibi / America Centrale
-  'Cayman Islands':'Caraibi','Isole Cayman':'Caraibi',
-  'Cayman':'Caraibi','Grand Cayman':'Caraibi',
-  'Barbados':'Caraibi','Belize':'Caraibi','Bermuda':'Caraibi',
-  'Bahamas':'Caraibi','Puerto Rico':'Caraibi','Aruba':'Caraibi',
-  'Curaçao':'Caraibi','Curacao':'Caraibi',
-};
+  'Emirati Arabi':'Medio Oriente',
+  'Saudi Arabia':'Medio Oriente','Arabia Saudita':'Medio Oriente',
+  'Israel':'Medio Oriente','Israele':'Medio Oriente',
+  'Qatar':'Medio Oriente','Kuwait':'Medio Oriente',
+  'Bahrain':'Medio Oriente','Oman':'Medio Oriente',
+  'Jordan':'Medio Oriente','Giordania':'Medio Oriente',
+  'Lebanon':'Medio Oriente','Libano':'Medio Oriente',
+  'Turkey':'Medio Oriente','Turchia':'Medio Oriente',
+  'Iran':'Medio Oriente','Iraq':'Medio Oriente',
+  'Syria':'Medio Oriente','Yemen':'Medio Oriente',
+  'Palestine':'Medio Oriente','Libya':'Medio Oriente',
 
-
-// Priorità job title per selezione destinatario email
-// P1=acquisto, P2=management, P3=owner/founder
-const JOB_PRIORITY = {
-  1: ["sales manager", "buyer", "purchasing manager", "managing partner", "sales representative", "sales director", "commercial director", "sales", "commercial", "commercial manager", "wine buyer", "senior buyer", "purchasing", "import manager", "sales consultant", "regional sales manager", "product manager", "area sales manager", "marketing manager", "purchasing director", "wine manager", "purchaser", "national sales manager", "head of sales", "buying manager", "wine sales specialist", "director of sales", "wine sales", "purchase manager", "director of sales", "buying director", "head of sales", "general sales manager", "wine importer"],
-  2: ["managing director", "manager", "director", "general manager", "administrator", "in charge", "operations manager", "wine merchant", "representative", "chief executive officer", "account manager", "executive director", "business owner", "co-founder", "representative director", "general director", "director of operations", "president & ceo", "wine director", "sales specialist", "wine sales representative", "director of operations", "procurement manager", "logistics manager", "owner/ manager", "co-owner", "operation manager", "senior brand manager", "chief operating officer", "regional manager", "sales assistant", "sales agent", "ceo & founder", "junior buyer", "portfolio manager", "area manager", "senior sales manager", "founder and ceo", "business manager", "managing director/ owner"],
-  3: ["owner", "ceo", "president", "founder", "co-owner", "sommelier", "partner", "co-founder", "wine consultant", "brand manager", "store manager", "business development manager", "category manager", "key account manager", "wine specialist", "vice president", "sales associate", "president and ceo", "sales executive", "administrative", "administrative manager", "brand ambassador", "administrative assistant"],
+  // ── AFRICA ──
+  'South Africa':'Africa','Sudafrica':'Africa',
+  'Kenya':'Africa','Nigeria':'Africa',
+  'Ethiopia':'Africa','Etiopia':'Africa',
+  'Tanzania':'Africa','Uganda':'Africa','Ghana':'Africa',
+  'Senegal':'Africa','Morocco':'Africa','Marocco':'Africa',
+  'Tunisia':'Africa','Algeria':'Africa',
+  'Egypt':'Africa','Egitto':'Africa',
+  'Angola':'Africa','Mozambique':'Africa',
+  'Zimbabwe':'Africa','Zambia':'Africa',
+  'Botswana':'Africa','Namibia':'Africa',
+  'Cameroon':'Africa','Ivory Coast':'Africa',"Côte d'Ivoire":'Africa',
+  'Madagascar':'Africa','Mauritius':'Africa',
+  'Rwanda':'Africa','Malawi':'Africa','Mali':'Africa',
+  'Burkina Faso':'Africa','Niger':'Africa','Chad':'Africa',
+  'Sudan':'Africa','Somalia':'Africa','Eritrea':'Africa',
+  'Djibouti':'Africa','Comoros':'Africa','Seychelles':'Africa',
+  'Cape Verde':'Africa','São Tomé and Príncipe':'Africa',
+  'Equatorial Guinea':'Africa','Gabon':'Africa',
+  'Republic of the Congo':'Africa','Democratic Republic of the Congo':'Africa',
+  'Central African Republic':'Africa','South Sudan':'Africa',
+  'Sierra Leone':'Africa','Liberia':'Africa','Guinea':'Africa',
+  'Guinea-Bissau':'Africa','Gambia':'Africa','Benin':'Africa',
+  'Togo':'Africa','Lesotho':'Africa','Eswatini':'Africa',
+  'Swaziland':'Africa',
 };
 
 function detectRegion(fname){
@@ -2399,7 +2462,14 @@ function parseXlsxImportatori(wb, filename){
           instagram:   g(r, C.instagram),
           twitter:     g(r, C.twitter),
           youtube:     g(r, C.youtube),
-          region:      region || regionFromCountry(g(r, C.country)) || regionFromCountry(sheetName) || sheetName,
+          region:      (()=>{
+            const VALID=['Sud America','Oceania','Europa','Africa','Asia','Nord America','Medio Oriente','Scandinavia','Caraibi'];
+            const r1=region;
+            const r2=regionFromCountry(g(r, C.country));
+            const r3=regionFromCountry(sheetName);
+            // Usa la prima che è una regione valida
+            return [r1,r2,r3].find(x=>x&&VALID.includes(x)) || r2 || r3 || sheetName;
+          })(),
           contacts,
           contactName:  contacts[0]?.name  || '',
           contactTitle: contacts[0]?.title || '',
@@ -2448,7 +2518,11 @@ function parseXlsxImportatori(wb, filename){
           compId:    '',
           company,
           country,
-          region:    region || regionFromCountry(country) || regionFromCountry(sheetName) || sheetName,
+          region:    (()=>{
+            const VALID=['Sud America','Oceania','Europa','Africa','Asia','Nord America','Medio Oriente','Scandinavia','Caraibi'];
+            return [region, regionFromCountry(country), regionFromCountry(sheetName)]
+              .find(x=>x&&VALID.includes(x)) || regionFromCountry(country) || sheetName;
+          })(),
           phone:     g(row, 2),
           email,           // email aziendale
           employees: g(row, 4),
