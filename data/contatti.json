@@ -438,27 +438,27 @@
   "templates": [
     {
       "id": "t1",
-      "name": "Primo contatto",
-      "subject": "Proposta partnership — Vini italiani d'eccellenza",
-      "body": "Gentile {{contatto}},\n\nMi chiamo [Nome], responsabile export di [Azienda].\nHo trovato il profilo di {{azienda}} su Best Wine Importers e ritengo ci possa essere una sinergia con la nostra produzione.\n\nSiamo specializzati in {{prodotti}}, nel segmento premium.\n\nAllego catalogo e listino prezzi. Sarei lieto di organizzare una videochiamata.\n\nCordiali saluti,\n[Nome] — [Azienda]\n[Tel] | [Email]"
+      "name": "#1 — First Contact",
+      "subject": "Italian wines — proven in the US market",
+      "body": "{{dear}}\n\nMy name is Luca Pattaro — I represent Siena Wine and Small Vineyards International, the global arm of Small Vineyards, a curated portfolio of Italian family wineries that has been successfully distributed across the United States for years through August Imports.\n\nWe are now bringing the same selection{{owner_mention}} — and the same operational model — to international markets.\n\nFor {{azienda}}, this means a single partner for a portfolio spanning Tuscany, Piedmont, Veneto, Sicily, Puglia and beyond: from Chianti Classico to Brunello, Barolo to Nero d'Avola.\n\nWould you have 20 minutes for a call this week?\n\nBest regards,\nLuca Pattaro\nExport Manager — Siena Wine | Small Vineyards International\nluca@sienawine.it | +39 331 1347899\nwww.sienawine.it"
     },
     {
       "id": "t2",
-      "name": "Follow-up 1 (7 gg)",
-      "subject": "Re: Proposta partnership — [Azienda]",
-      "body": "Gentile {{contatto}},\n\nMi permetto di riprendere contatto.\nLe chiedo solo conferma se ha ricevuto il materiale e se c'è interesse a procedere.\n\nSono disponibile per un call di 15 min a sua comodità.\n\n[Nome] — [Azienda]"
+      "name": "#2 — Follow-up (day 7)",
+      "subject": "One portfolio, all of Italy",
+      "body": "{{dear}}\n\nFollowing up on my previous email — I wanted to share a bit more about what we offer.\n\nSmall Vineyards International brings together over 20 family-owned Italian producers, carefully selected and already performing well in the US market. The range covers virtually every major Italian wine region:\n\n• Tuscany: Chianti Classico, Brunello, Morellino di Scansano\n• Piedmont: Barolo, Barbera, Moscato\n• Veneto: Soave, Valpolicella, Prosecco\n• Sicily & South: Nero d'Avola, Primitivo, Negroamaro\n• And more to come.\n\nAll orders, documents, logistics and communication go through a single point of contact: us.\n\nHappy to send the full portfolio and price list — shall I?\n\nBest,\nLuca Pattaro\nSiena Wine | Small Vineyards International\nluca@sienawine.it | +39 331 1347899\nwww.sienawine.it"
     },
     {
       "id": "t3",
-      "name": "Follow-up 2 (21 gg)",
-      "subject": "Ultimi quantitativi — Annata 2023",
-      "body": "Gentile {{contatto}},\n\nLe disponibilità per il mercato {{paese}} si stanno esaurendo.\nLa nostra selezione: {{prodotti}}.\n\nSe desidera riservare, sono disponibile entro questa settimana.\n\n[Nome] — [Azienda]"
+      "name": "#3 — Follow-up (day 21)",
+      "subject": "One contact. One invoice. All of Italy.",
+      "body": "{{dear}}\n\nWorking with multiple small Italian producers means multiple contacts, invoices, shipments and conversations. We solve that.\n\nThrough Siena Wine, {{azienda}} gets:\n\n✔ A single point of contact for the entire portfolio\n✔ Consolidated orders and shipments\n✔ Full documentation support\n✔ A selection proven to sell — validated by years of success in the US\n\nWe are not asking you to take a risk on unknown producers. These wines have a track record. We are simply making them available to you.\n\nWould you like to schedule a 20-minute call to see if there is a fit?\n\nBest,\nLuca Pattaro\nSiena Wine | Small Vineyards International\nluca@sienawine.it | +39 331 1347899\nwww.sienawine.it"
     },
     {
       "id": "t4",
-      "name": "Conferma interesse",
-      "subject": "Listino prezzi — {{azienda}}",
-      "body": "Gentile {{contatto}},\n\nGrazie per l'interesse! Allego:\n• Listino prezzi (Franco Cantina / CIF)\n• Catalogo con schede tecniche\n• Disponibilità corrente\n\nResto a disposizione.\n\n[Nome] — [Azienda]"
+      "name": "#4 — Break-up (day 35)",
+      "subject": "Closing the loop — {{azienda}}",
+      "body": "{{dear}}\n\nI have reached out a few times without hearing back — I completely understand, timing is everything in this business.\n\nI will not send further emails, but wanted to leave you with one thought: if you are ever looking to add a curated Italian portfolio with a proven US track record, a single operational contact, and wineries that genuinely over-deliver for their price point — we are here.\n\nYou can explore the portfolio anytime at www.sienawine.it\n\nWishing {{azienda}} continued success.\n\nLuca Pattaro\nSiena Wine | Small Vineyards International\nluca@sienawine.it | +39 331 1347899"
     }
   ]
 }
