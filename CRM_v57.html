@@ -164,10 +164,12 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
       <button class="layer-btn active" id="layer-btn-imp" onclick="switchLayer('importatori')">🏢 Importatori</button>
       <button class="layer-btn" id="layer-btn-cli" onclick="switchLayer('clienti')">👤 Clienti Privati</button>
     </div>
+    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.57</div>
   </div>
   <div class="hdr-r">
     <div class="gh-pill"><div class="gh-dot" id="gh-dot"></div><span id="gh-lbl">GitHub</span></div>
     <button class="btn btg bts" onclick="openSettings()">⚙ GitHub</button>
+    <button class="btn btg bts" onclick="fixExistingRegions()" title="Corregge regioni sbagliate (es. Suriname→Sud America)">🗺 Fix regioni</button>
     <button class="btn btd bts" onclick="confirmDeleteAll()">🗑 Cancella DB</button>
     <button class="btn btp" onclick="openAddContact()">+ Contatto</button>
   </div>
@@ -185,7 +187,7 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
 <div id="page-dashboard" class="page active">
   <div class="sgrid" id="stats"></div>
   <div class="g2">
-    <div class="card"><div class="sh"><div class="st">Attività recente</div></div><div id="recent"></div></div>
+    <div class="card"><div class="sh"><div class="st">Per regione</div></div><div id="rc"></div></div>
     <div class="card"><div class="sh"><div class="st">Per paese</div></div><div id="cc" class="cc-scroll"></div></div>
   </div>
   <div class="card"><div class="sh"><div class="st">Pipeline</div></div><div id="pipeline"></div></div>
@@ -194,10 +196,10 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
 <!-- CONTATTI -->
 <div id="page-contacts" class="page">
   <div class="filters">
-    <input type="text" id="sq" placeholder="Cerca…" oninput="renderContacts()">
-    <select id="sc" onchange="renderContacts()"><option value="">Tutti i paesi</option></select>
+    <input type="text" id="sq" placeholder="Cerca azienda, nome, email…" oninput="renderContacts()" style="min-width:180px">
     <select id="sr" onchange="updateCountryFilter();renderContacts()"><option value="">Tutte le regioni</option></select>
-    <select id="sp" onchange="renderContacts()"><option value="">Tutti i prodotti</option></select>
+    <select id="sc" onchange="renderContacts()"><option value="">Tutti i paesi</option></select>
+    <select id="sp" onchange="renderContacts()"><option value="">Tutti i tipi</option></select>
     <select id="sv" onchange="renderContacts()" style="display:none">
       <option value="">Verifica email</option>
       <option value="valido">✓ Valido</option>
@@ -208,9 +210,12 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
     </select>
     <select id="ss" onchange="window._pendingFilter=false;renderContacts()">
       <option value="">Situazione contatto</option>
-      <option value="new">Da contattare</option><option value="sent">Email inviata</option>
-      <option value="followup">Follow-up</option><option value="replied">Risposto</option>
-      <option value="client">Cliente</option><option value="cold">Non interessato</option>
+      <option value="new">Da contattare</option>
+      <option value="sent">Email inviata</option>
+      <option value="followup">Follow-up</option>
+      <option value="replied">Risposto</option>
+      <option value="client">Cliente</option>
+      <option value="cold">Non interessato</option>
     </select>
   </div>
   <div id="rcnt-wrap"></div>
@@ -350,18 +355,86 @@ function defTpl(){
 }
 
 function defTplImportatori(){return[
-  {id:'t1',name:'Primo contatto',
-   subject:"Proposta partnership — Vini italiani d'eccellenza",
-   body:"Gentile {{contatto}},\n\nMi chiamo [Nome], responsabile export di [Azienda].\nHo trovato il profilo di {{azienda}} su Best Wine Importers e ritengo ci possa essere una sinergia con la nostra produzione.\n\nSiamo specializzati in {{prodotti}}, nel segmento premium.\n\nAllego catalogo e listino prezzi. Sono disponibile per una videochiamata a sua comodità.\n\nCordiali saluti,\n[Nome] — [Azienda]\n[Tel] | [Email]"},
-  {id:'t2',name:'Follow-up 1 (7 gg)',
-   subject:'Re: Proposta partnership — [Azienda]',
-   body:"Gentile {{contatto}},\n\nMi permetto di riprendere contatto riguardo alla mia precedente email.\nLe chiedo solo conferma se ha ricevuto il materiale e se c'è interesse a procedere.\n\nSono disponibile per un call di 15 minuti a sua comodità.\n\n[Nome] — [Azienda]"},
-  {id:'t3',name:'Follow-up 2 (21 gg)',
-   subject:'Ultimi quantitativi disponibili — Annata 2023',
-   body:"Gentile {{contatto}},\n\nLe disponibilità della nostra selezione per il mercato {{paese}} si stanno esaurendo.\nVorrei darle l'opportunità di riservare i quantitativi di suo interesse prima della chiusura delle allocazioni.\n\nResto disponibile entro questa settimana.\n\n[Nome] — [Azienda]"},
-  {id:'t4',name:'Conferma interesse',
-   subject:'Listino prezzi e disponibilità — {{azienda}}',
-   body:"Gentile {{contatto}},\n\nGrazie per l'interesse verso la nostra produzione!\n\nIn allegato troverà:\n• Listino prezzi aggiornato (Franco Cantina / CIF)\n• Catalogo completo con schede tecniche\n• Disponibilità stagione corrente\n\nResto a disposizione per qualsiasi domanda.\n\n[Nome] — [Azienda]"}
+  {id:'t1',name:'#1 — First Contact',
+   subject:'Italian wines — proven in the US market',
+   body:`{{dear}}
+
+My name is Luca Pattaro — I represent Siena Wine and Small Vineyards International, the global arm of Small Vineyards, a curated portfolio of Italian family wineries that has been successfully distributed across the United States for years through August Imports.
+
+We are now bringing the same selection{{owner_mention}} — and the same operational model — to international markets.
+
+For {{azienda}}, this means a single partner for a portfolio spanning Tuscany, Piedmont, Veneto, Sicily, Puglia and beyond: from Chianti Classico to Brunello, Barolo to Nero d\'Avola.
+
+Would you have 20 minutes for a call this week?
+
+Best regards,
+Luca Pattaro
+Export Manager — Siena Wine | Small Vineyards International
+luca@sienawine.it | +39 331 1347899
+www.sienawine.it`},
+
+  {id:'t2',name:'#2 — Follow-up (day 7)',
+   subject:'One portfolio, all of Italy',
+   body:`{{dear}}
+
+Following up on my previous email — I wanted to share a bit more about what we offer.
+
+Small Vineyards International brings together over 20 family-owned Italian producers, carefully selected and already performing well in the US market. The range covers virtually every major Italian wine region:
+
+• Tuscany: Chianti Classico, Brunello, Morellino di Scansano
+• Piedmont: Barolo, Barbera, Moscato
+• Veneto: Soave, Valpolicella, Prosecco
+• Sicily & South: Nero d\'Avola, Primitivo, Negroamaro
+• And more to come.
+
+All orders, documents, logistics and communication go through a single point of contact: us.
+
+Happy to send the full portfolio and price list — shall I?
+
+Best,
+Luca Pattaro
+Siena Wine | Small Vineyards International
+luca@sienawine.it | +39 331 1347899
+www.sienawine.it`},
+
+  {id:'t3',name:'#3 — Follow-up (day 21)',
+   subject:'One contact. One invoice. All of Italy.',
+   body:`{{dear}}
+
+Working with multiple small Italian producers means multiple contacts, invoices, shipments and conversations. We solve that.
+
+Through Siena Wine, {{azienda}} gets:
+
+✔ A single point of contact for the entire portfolio
+✔ Consolidated orders and shipments
+✔ Full documentation support
+✔ A selection proven to sell — validated by years of success in the US
+
+We are not asking you to take a risk on unknown producers. These wines have a track record. We are simply making them available to you.
+
+Would you like to schedule a 20-minute call to see if there is a fit?
+
+Best,
+Luca Pattaro
+Siena Wine | Small Vineyards International
+luca@sienawine.it | +39 331 1347899
+www.sienawine.it`},
+
+  {id:'t4',name:'#4 — Break-up (day 35)',
+   subject:'Closing the loop — {{azienda}}',
+   body:`{{dear}}
+
+I have reached out a few times without hearing back — I completely understand, timing is everything in this business.
+
+I will not send further emails, but wanted to leave you with one thought: if you are ever looking to add a curated Italian portfolio with a proven US track record, a single operational contact, and wineries that genuinely over-deliver for their price point — we are here.
+
+You can explore the portfolio anytime at www.sienawine.it
+
+Wishing {{azienda}} continued success.
+
+Luca Pattaro
+Siena Wine | Small Vineyards International
+luca@sienawine.it | +39 331 1347899`}
 ];}
 
 function defTplClienti(){return[
@@ -568,7 +641,7 @@ function gv(id){return(document.getElementById(id)?.value||'').trim();}
 /* ── REFRESH ── */
 function refreshAll(){
   renderStats();renderContacts();renderFollowups();
-  renderTemplates();renderRecent();renderCCChart();renderPipeline();
+  renderTemplates();renderRegionChart();renderCCChart();renderPipeline();
   updateBadges();updateFilters();
 }
 function updateBadges(){
@@ -603,20 +676,35 @@ function updateFilters(){
     return;
   }
 
-  // ── IMPORTATORI: mostra prodotti, nascondi verifica ──
+  // ── IMPORTATORI: popola Tipo, nascondi verifica ──
   const sv=document.getElementById('sv');
   if(sv) sv.style.display='none';
   const spEl=document.getElementById('sp');
-  if(spEl) spEl.style.display='';
+  if(spEl){
+    spEl.style.display='';
+    const pv=spEl.value;
+    // Tipi predefiniti (sempre presenti anche se non ancora nel DB)
+    const DEFAULT_TYPES=[
+      'Importer','Distributor','Wholesaler','Retailer',
+      'Online Store','Restaurant','Hotel','Bar','Supermarket',
+      'Wine Shop','Agent','Broker','Producer','Other'
+    ];
+    // Merge con i tipi effettivamente presenti nel DB
+    const typeSet=new Set(DEFAULT_TYPES);
+    db.contacts.forEach(c=>{
+      (c.type||'').split(',').map(t=>t.trim()).filter(Boolean).forEach(t=>typeSet.add(t));
+    });
+    const types=[...typeSet].sort();
+    spEl.innerHTML='<option value="">Tutti i tipi</option>'+
+      types.map(t=>`<option value="${esc(t)}"${pv===t?' selected':''}>${esc(t)}</option>`).join('');
+  }
 
   // ── FILTRI IMPORTATORI ──
   const sr=document.getElementById('sr');const rv=sr?.value||'';
   const regions=[...new Set(db.contacts.map(c=>(c.region||'').trim()).filter(Boolean))].sort();
   if(sr) sr.innerHTML='<option value="">Tutte le regioni</option>'+regions.map(r=>`<option value="${esc(r)}"${rv===r?' selected':''}>${esc(r)}</option>`).join('');
   updateCountryFilter();
-  const sp=document.getElementById('sp');const pv=sp?.value||'';
-  const prods=new Set();db.contacts.forEach(c=>(c.products||[]).forEach(p=>prods.add(p)));
-  if(sp) sp.innerHTML='<option value="">Tutti i prodotti</option>'+ [...prods].sort().map(p=>`<option value="${esc(p)}"${pv===p?' selected':''}>${esc(p)}</option>`).join('');
+
 }
 
 function updateCountryFilter(){
@@ -646,13 +734,15 @@ function updateCountryFilter(){
 
 
 /* ── NAVIGAZIONE RAPIDA da Dashboard ── */
-function goToContacts({country='',region='',status=''}={}){
+function goToContacts({country='',region='',status='',tipo=''}={}){
   const sc=document.getElementById('sc');
   const sr=document.getElementById('sr');
   const ss=document.getElementById('ss');
+  const sp=document.getElementById('sp');
   if(sr) sr.value=region;
-  updateCountryFilter(); // aggiorna paesi in base alla regione
+  updateCountryFilter();
   if(sc) sc.value=country;
+  if(sp) sp.value=tipo;
   // "pending" = mostriamo sia sent che followup — usiamo la searchbox
   if(status==='pending'){
     if(ss) ss.value='';
@@ -679,10 +769,44 @@ function renderStats(){
     <div class="stat stat-link" onclick="goToContacts({status:'replied'})" title="Vai alla lista"><div class="sl">Risposte</div><div class="sv gr">${s.replied||0}</div></div>
     <div class="stat stat-link" onclick="goToContacts({status:'client'})" title="Vai alla lista"><div class="sl">Clienti</div><div class="sv co">${s.client||0}</div></div>`;
 }
-function renderRecent(){
-  const el=document.getElementById('recent');
-  const list=[...(isClienti()?dbC:db).contacts].sort((a,b)=>(b.updatedAt||0)-(a.updatedAt||0)).slice(0,7);
-  el.innerHTML=list.length?list.map(crow).join(''):'<div class="empty">Nessun contatto ancora</div>';
+function renderRegionChart(){
+  const el=document.getElementById('rc');
+  if(!el) return;
+  const adb=isClienti()?dbC:db;
+  const map={};
+  adb.contacts.forEach(c=>{
+    const r=(c.region||'').trim()||'—';
+    map[r]=(map[r]||0)+1;
+  });
+  const entries=Object.entries(map).sort((a,b)=>b[1]-a[1]);
+  const max=entries[0]?.[1]||1;
+  if(!entries.length){el.innerHTML='<div class="empty" style="font-size:12px">Nessun dato</div>';return;}
+
+  // Colori per regione
+  const rColors={
+    'Sud America':  ['var(--amber-bg)','var(--amber-tx)'],
+    'Oceania':      ['var(--teal-bg)','var(--teal-tx)'],
+    'Europa':       ['var(--blue-bg)','var(--blue-tx)'],
+    'Africa':       ['var(--coral-bg)','var(--coral-tx)'],
+    'Asia':         ['var(--pink-bg)','var(--pink-tx)'],
+    'Nord America': ['var(--green-bg)','var(--green-tx)'],
+    'Medio Oriente':['var(--amber-bg)','var(--amber-tx)'],
+    'Scandinavia':  ['var(--blue-bg)','var(--blue-tx)'],
+    'Caraibi':      ['var(--teal-bg)','var(--teal-tx)'],
+  };
+
+  el.innerHTML = entries.map(([r,n])=>{
+    const [bg,tx]=rColors[r]||['var(--bg2)','var(--text2)'];
+    const pct=Math.round(n/max*100);
+    return `<div class="brow" style="cursor:pointer" onclick="goToContacts({region:'${r.replace(/'/g,"\'")}'})" title="Filtra per ${r}">
+      <div class="blbl" style="color:${tx};font-weight:600">${esc(r)}</div>
+      <div class="btrk">
+        <div style="height:100%;width:${pct}%;background:${bg};border-radius:4px;
+          display:flex;align-items:center;padding-left:6px;
+          font-size:11px;font-weight:700;color:${tx}">${n}</div>
+      </div>
+    </div>`;
+  }).join('');
 }
 function renderCCChart(){
   const map={};
@@ -732,10 +856,11 @@ function getFiltered(){
       const verifica=document.getElementById('sv')?.value||'';
       if(verifica&&c.statoEmail!==verifica)return false;
     } else {
-      if(q&&!`${c.company} ${c.name} ${c.email} ${c.country} ${c.contactName}`.toLowerCase().includes(q))return false;
+      if(q&&!`${c.company} ${c.brandName||''} ${c.email} ${c.country} ${c.city||''} ${(c.contacts||[]).map(x=>x.name).join(' ')}`.toLowerCase().includes(q))return false;
       if(country&&c.country!==country)return false;
       if(regionOrLang&&c.region!==regionOrLang)return false;
-      if(product&&!(c.products||[]).includes(product))return false;
+      // Tipo: il campo type è comma-separated, cerca se contiene il tipo selezionato
+      if(product&&!(c.type||'').split(',').map(t=>t.trim()).includes(product))return false;
     }
     if(window._pendingFilter){if(c.status!=='sent'&&c.status!=='followup')return false;}
     else if(status&&c.status!==status)return false;
@@ -837,14 +962,18 @@ function crow(c){
     </div>`;
   }
   // ── IMPORTATORE ──
+  const firstContact = c.contacts?.[0];
+  const nContacts = c.contacts?.length||0;
   return `<div class="cr${checked?' selected':''}" onclick="openDetail('${c.id}')">
     <input type="checkbox" class="crow-cb" ${checked?'checked':''}
       onclick="toggleSelect('${c.id}',event)"
       onchange="toggleSelect('${c.id}',event)">
-    <div class="av ${AV[hsh(c.company)%6]}">${ini(c.name||c.company)}</div>
+    <div class="av ${AV[hsh(c.company)%6]}">${ini(c.company)}</div>
     <div class="ci">
-      <div class="cn">${esc(c.company)}<span style="font-weight:400;color:var(--text2)">${c.name?' · '+esc(c.name):''}</span></div>
-      <div class="cs">${[c.country,c.region].filter(Boolean).map(esc).join(' · ')}${c.products?.length?' · '+c.products.slice(0,2).map(esc).join(', '):''}</div>
+      <div class="cn">${esc(c.company)}${c.brandName&&c.brandName!==c.company?` <span style="font-weight:400;color:var(--text2)">· ${esc(c.brandName)}</span>`:''}
+        ${nContacts>0?`<span style="font-size:10px;background:var(--blue-bg);color:var(--blue-tx);padding:1px 6px;border-radius:10px;font-weight:700;margin-left:4px">${nContacts} contatt${nContacts===1?'o':'i'}</span>`:''}
+      </div>
+      <div class="cs">${[c.city||c.country,c.type?.split(',')[0]].filter(Boolean).map(esc).join(' · ')}${c.prodType?' · '+esc(c.prodType.split(',').slice(0,2).join(', ')):''}</div>
     </div>
     <span class="badge ${SM[c.status]?.c||'bn'}">${SM[c.status]?.l||''}</span>
   </div>`;
@@ -855,9 +984,11 @@ function openDetail(id){
   const adb=isClienti()?dbC:db;
   const c=adb.contacts.find(x=>x.id===id);if(!c)return;
 
+  // Log attività — usato da entrambi i blocchi
+  const log=(c.log||[]).slice(-6).reverse().map(e=>`<div class="log-e"><span style="color:var(--text3);font-size:11px">${new Date(e.ts).toLocaleDateString('it-IT')}</span> — ${esc(e.msg)}</div>`).join('');
+
   if(isClienti()){
     // ── DETAIL CLIENTE ──
-    const log=(c.log||[]).slice(-6).reverse().map(e=>`<div class="log-e"><span style="color:var(--text3);font-size:11px">${new Date(e.ts).toLocaleDateString('it-IT')}</span> — ${esc(e.msg)}</div>`).join('');
     showModal(`
       <div style="display:flex;align-items:center;gap:13px;margin-bottom:1.25rem">
         <div class="av ${AV[hsh((c.nome||'')+c.cognome)%6]}" style="width:48px;height:48px;font-size:16px">${ini((c.nome||'')+' '+(c.cognome||''))}</div>
@@ -901,40 +1032,71 @@ function openDetail(id){
     return;
   }
 
-  // ── DETAIL IMPORTATORE (originale) ──
-  const log=(c.log||[]).slice(-6).reverse().map(e=>`<div class="log-e"><span style="color:var(--text3);font-size:11px">${new Date(e.ts).toLocaleDateString('it-IT')}</span> — ${esc(e.msg)}</div>`).join('');
+  // ── DETAIL IMPORTATORE ──
   showModal(`
     <div style="display:flex;align-items:center;gap:13px;margin-bottom:1.25rem">
-      <div class="av ${AV[hsh(c.company)%6]}" style="width:48px;height:48px;font-size:16px">${ini(c.name||c.company)}</div>
-      <div style="flex:1">
+      <div class="av ${AV[hsh(c.company)%6]}" style="width:48px;height:48px;font-size:16px">${ini(c.company)}</div>
+      <div style="flex:1;min-width:0">
         <div style="font-size:18px;font-weight:700">${esc(c.company)}</div>
-        <div style="font-size:13px;color:var(--text2)">${esc(c.name||'')}${c.contactTitle?' · '+esc(c.contactTitle):''}</div>
+        ${c.brandName&&c.brandName!==c.company?`<div style="font-size:13px;color:var(--text2)">Brand: ${esc(c.brandName)}</div>`:''}
+        <div style="font-size:12px;color:var(--text2);margin-top:2px">${[c.type,c.city,c.country].filter(Boolean).map(esc).join(' · ')}</div>
       </div>
       <span class="badge ${SM[c.status]?.c||'bn'}">${SM[c.status]?.l||''}</span>
     </div>
+
+    <!-- INFO AZIENDA -->
     <div>
-      ${dr('Email',c.email?`<a href="mailto:${esc(c.email)}">${esc(c.email)}</a>`:'—')}
+      ${dr('Email az.',c.email?`<a href="mailto:${esc(c.email)}">${esc(c.email)}</a>`:'—')}
       ${dr('Telefono',c.phone||'—')}
-      ${dr('Paese / Regione',[c.country,c.region].filter(Boolean).map(esc).join(' · ')||'—')}
-      ${dr('Città',c.city||'—')}
-      ${dr('Sito',c.website?`<a href="${c.website.startsWith('http')?'':'https://'}${esc(c.website)}" target="_blank">${esc(c.website)}</a>`:'—')}
-      ${c.contactName?dr('Referente',esc(c.contactName)+(c.contactTitle?' ('+esc(c.contactTitle)+')':'')):''}
-      ${c.contactEmail?dr('Email ref.',`<a href="mailto:${esc(c.contactEmail)}">${esc(c.contactEmail)}</a>`):''}
+      ${dr('Sito',c.website?`<a href="${c.website.startsWith('http')?c.website:'https://'+c.website}" target="_blank">${esc(c.website)}</a>`:'—')}
+      ${dr('Tipo',c.type||'—')}
+      ${dr('Prodotti',c.prodType||'—')}
+      ${dr('Paese',c.country||'—')}
+      ${dr('Città / Prov.',[c.city,c.state].filter(Boolean).map(esc).join(', ')||'—')}
+      ${c.address?dr('Indirizzo',[c.address,c.postalCode].filter(Boolean).map(esc).join(' ')):''}
       ${c.employees?dr('Dipendenti',esc(c.employees)):''}
       ${c.sales?dr('Fatturato',esc(c.sales)):''}
-      ${dr('Prodotti',c.products?.length?c.products.map(p=>`<span class="tag">${esc(p)}</span>`).join(''):'—')}
+      ${c.founded?dr('Anno fond.',esc(c.founded)):''}
+      ${c.regNumber?dr('Nr. Reg.',esc(c.regNumber)):''}
+      ${c.compId?dr('ID',esc(c.compId)):''}
     </div>
+
+    <!-- SOCIAL -->
+    ${(c.linkedinCo||c.facebook||c.instagram||c.twitter||c.youtube)?`
+    <div class="divhr"></div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      ${c.linkedinCo?`<a href="${esc(c.linkedinCo)}" target="_blank" style="font-size:12px;padding:4px 10px;border-radius:20px;background:var(--blue-bg);color:var(--blue-tx);font-weight:600;text-decoration:none">LinkedIn</a>`:''}
+      ${c.facebook?`<a href="${esc(c.facebook)}" target="_blank" style="font-size:12px;padding:4px 10px;border-radius:20px;background:var(--bg2);color:var(--text2);font-weight:600;text-decoration:none">Facebook</a>`:''}
+      ${c.instagram?`<a href="${esc(c.instagram)}" target="_blank" style="font-size:12px;padding:4px 10px;border-radius:20px;background:var(--pink-bg);color:var(--pink-tx);font-weight:600;text-decoration:none">Instagram</a>`:''}
+      ${c.twitter?`<a href="${esc(c.twitter)}" target="_blank" style="font-size:12px;padding:4px 10px;border-radius:20px;background:var(--bg2);color:var(--text2);font-weight:600;text-decoration:none">Twitter/X</a>`:''}
+      ${c.youtube?`<a href="${esc(c.youtube)}" target="_blank" style="font-size:12px;padding:4px 10px;border-radius:20px;background:var(--coral-bg);color:var(--coral-tx);font-weight:600;text-decoration:none">YouTube</a>`:''}
+    </div>`:''}
+
+    <!-- CONTATTI INDIVIDUALI -->
+    ${(c.contacts&&c.contacts.length)?`
+    <div class="divhr"></div>
+    <div style="font-size:12px;color:var(--text2);font-weight:700;margin-bottom:8px">CONTATTI (${c.contacts.length})</div>
+    ${c.contacts.map((ct,i)=>`
+      <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:0.5px solid var(--brd);cursor:pointer" onclick="openEmailToContact('${c.id}',${i})">
+        <div style="flex:1">
+          <div style="font-size:13px;font-weight:600">${esc(ct.name||'—')}</div>
+          <div style="font-size:12px;color:var(--text2)">${esc(ct.title||'')}${ct.email?' · <a href="mailto:'+esc(ct.email)+'" onclick="event.stopPropagation()">'+esc(ct.email)+'</a>':''}</div>
+        </div>
+        ${ct.linkedin?`<a href="${esc(ct.linkedin)}" target="_blank" onclick="event.stopPropagation()" style="font-size:11px;padding:3px 8px;border-radius:12px;background:var(--blue-bg);color:var(--blue-tx);font-weight:600;text-decoration:none;flex-shrink:0">in</a>`:''}
+        <button class="btn bts" style="font-size:11px;flex-shrink:0" onclick="event.stopPropagation();openEmailToContact('${c.id}',${i})">✉</button>
+      </div>`).join('')}`:''}
+
     ${c.notes?`<div class="divhr"></div><div style="font-size:12px;color:var(--text2);font-weight:700;margin-bottom:6px">NOTE</div><div style="font-size:13px;line-height:1.6;white-space:pre-wrap">${esc(c.notes)}</div>`:''}
     ${c.emailsSent?`<div class="divhr"></div>
-      <div style="display:flex;gap:12px;font-size:13px">
-        <div style="flex:1;background:var(--blue-bg);border-radius:var(--r);padding:10px 14px;text-align:center">
+      <div style="display:flex;gap:12px">
+        <div style="flex:1;background:var(--blue-bg);border-radius:var(--r);padding:10px;text-align:center">
           <div style="font-size:20px;font-weight:700;color:var(--blue-tx)">${c.emailsSent||0}</div>
           <div style="font-size:11px;color:var(--blue-tx)">Email inviate</div>
         </div>
-        ${c.lastEmailSent?`<div style="flex:2;background:var(--bg2);border-radius:var(--r);padding:10px 14px">
+        ${c.lastEmailSent?`<div style="flex:2;background:var(--bg2);border-radius:var(--r);padding:10px">
           <div style="font-size:11px;color:var(--text2);font-weight:700;margin-bottom:3px">ULTIMA EMAIL</div>
           <div style="font-size:12px">${new Date(c.lastEmailSent).toLocaleDateString('it-IT')}</div>
-          <div style="font-size:11px;color:var(--text2);margin-top:2px">${esc(c.lastEmailSubject||'')}</div>
+          <div style="font-size:11px;color:var(--text2)">${esc(c.lastEmailSubject||'')}</div>
         </div>`:''}
       </div>`:''}
     <div class="divhr"></div>
@@ -966,39 +1128,93 @@ function delContact(id){
 /* ── ADD/EDIT ── */
 function openAddContact(editId){
   if(isClienti()) return openAddCliente(editId);
+  const adb=db;
+  const c=editId?adb.contacts.find(x=>x.id===editId):null;
 
-  const c=editId?(isClienti()?dbC:db).contacts.find(x=>x.id===editId):null;
+  // Genera HTML per i contatti individuali
+  const contactsArr = c?.contacts||[{name:'',title:'',email:'',phone:'',linkedin:''}];
+  const contactRows = contactsArr.map((ct,i)=>contactRowHtml(ct,i)).join('');
+
   showModal(`
-    <div class="mt">${c?'Modifica':'Nuovo'} contatto</div>
+    <div class="mt">${c?'Modifica':'Nuovo'} importatore</div>
+    <div style="font-size:12px;color:var(--text2);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin:0 0 8px">Anagrafica azienda</div>
     <div class="fg2">
-      <div class="fg"><label>Azienda *</label><input id="fa" value="${esc(c?.company||'')}"></div>
-      <div class="fg"><label>Nome referente</label><input id="fn" value="${esc(c?.name||'')}"></div>
-      <div class="fg"><label>Email</label><input id="fe" type="email" value="${esc(c?.email||'')}"></div>
+      <div class="fg"><label>Ragione sociale *</label><input id="fa" value="${esc(c?.company||'')}"></div>
+      <div class="fg"><label>Brand name</label><input id="fbrand" value="${esc(c?.brandName||'')}"></div>
+      <div class="fg"><label>Email aziendale</label><input id="fe" type="email" value="${esc(c?.email||'')}"></div>
       <div class="fg"><label>Telefono</label><input id="fp" value="${esc(c?.phone||'')}"></div>
-      <div class="fg"><label>Paese</label>
-        <input id="fco" list="fcl" value="${esc(c?.country||'')}">
-        <datalist id="fcl">${CLIST.map(x=>`<option value="${esc(x)}">`).join('')}</datalist>
-      </div>
-      <div class="fg"><label>Regione</label><input id="frg" placeholder="Oceania, Africa, Europa…" value="${esc(c?.region||'')}"></div>
-      <div class="fg"><label>Città</label><input id="fci" value="${esc(c?.city||'')}"></div>
       <div class="fg"><label>Sito web</label><input id="fw" value="${esc(c?.website||'')}"></div>
-      <div class="fg"><label>Email contatto diretto</label><input id="fce" type="email" value="${esc(c?.contactEmail||'')}"></div>
-      <div class="fg"><label>Ruolo contatto</label><input id="fct" value="${esc(c?.contactTitle||'')}"></div>
-      <div class="fg"><label>Stato</label>
+      <div class="fg"><label>Tipo</label><input id="ftype" placeholder="Importer, Distributor…" value="${esc(c?.type||'')}"></div>
+      <div class="fg fgf"><label>Prodotti trattati</label><input id="fprod" placeholder="Wine, Beer, Spirits…" value="${esc(c?.prodType||'')}"></div>
+      <div class="fg"><label>Paese</label><input id="fco" list="fcl2" value="${esc(c?.country||'')}"><datalist id="fcl2">${CLIST.map(x=>`<option value="${esc(x)}">`).join('')}</datalist></div>
+      <div class="fg"><label>Città</label><input id="fci" value="${esc(c?.city||'')}"></div>
+      <div class="fg"><label>Stato / Provincia</label><input id="fstate" value="${esc(c?.state||'')}"></div>
+      <div class="fg"><label>Indirizzo</label><input id="faddr" value="${esc(c?.address||'')}"></div>
+      <div class="fg"><label>CAP</label><input id="fzip" value="${esc(c?.postalCode||'')}"></div>
+      <div class="fg"><label>Dipendenti</label><input id="femp" value="${esc(c?.employees||'')}"></div>
+      <div class="fg"><label>Fatturato</label><input id="fsales" value="${esc(c?.sales||'')}"></div>
+      <div class="fg"><label>Anno fondazione</label><input id="ffound" value="${esc(c?.founded||'')}"></div>
+      <div class="fg"><label>Nr. Registrazione</label><input id="freg" value="${esc(c?.regNumber||'')}"></div>
+      <div class="fg"><label>Regione CRM</label><input id="frg" placeholder="Oceania, Europa…" value="${esc(c?.region||'')}"></div>
+      <div class="fg"><label>Situazione contatto</label>
         <select id="fst">${Object.entries(SM).map(([k,v2])=>`<option value="${k}"${(c?.status||'new')===k?' selected':''}>${v2.l}</option>`).join('')}</select>
       </div>
-      <div class="fg"><label>Dipendenti</label><input id="femp" value="${esc(c?.employees||'')}"></div>
-      <div class="fg fgf"><label>Prodotti di interesse</label>
-        <div class="pgrid">${PRODS.map(p=>`<label class="pl"><input type="checkbox" class="pcb" value="${esc(p)}"${(c?.products||[]).includes(p)?' checked':''}> ${esc(p)}</label>`).join('')}</div>
-      </div>
-      <div class="fg fgf"><label>Note</label><textarea id="fno">${esc(c?.notes||'')}</textarea></div>
     </div>
+
+    <div style="font-size:12px;color:var(--text2);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin:12px 0 8px">Social azienda</div>
+    <div class="fg2">
+      <div class="fg"><label>LinkedIn azienda</label><input id="flinco" value="${esc(c?.linkedinCo||'')}"></div>
+      <div class="fg"><label>Facebook</label><input id="ffb" value="${esc(c?.facebook||'')}"></div>
+      <div class="fg"><label>Instagram</label><input id="finsta" value="${esc(c?.instagram||'')}"></div>
+      <div class="fg"><label>Twitter / X</label><input id="ftwit" value="${esc(c?.twitter||'')}"></div>
+      <div class="fg"><label>YouTube</label><input id="fyt" value="${esc(c?.youtube||'')}"></div>
+    </div>
+
+    <div style="font-size:12px;color:var(--text2);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin:12px 0 8px">
+      Contatti individuali
+      <button type="button" class="btn bts" style="font-size:11px;margin-left:8px" onclick="addContactRow()">+ Aggiungi</button>
+    </div>
+    <div id="contacts-rows">${contactRows}</div>
+
+    <div style="margin-top:12px">
+      <div class="fg"><label>Note</label><textarea id="fno">${esc(c?.notes||'')}</textarea></div>
+    </div>
+
     <div class="mf">
       <button class="btn" onclick="closeModal()">Annulla</button>
       <button class="btn btp" onclick="saveContact('${editId||''}')">Salva</button>
     </div>
   `);
 }
+
+function contactRowHtml(ct, i){
+  return `<div class="contact-edit-row" id="crow-${i}" style="background:var(--bg2);border-radius:var(--r);padding:10px 12px;margin-bottom:8px;position:relative">
+    <button type="button" onclick="removeContactRow(${i})" style="position:absolute;top:8px;right:10px;background:none;border:none;cursor:pointer;font-size:16px;color:var(--text3)" title="Rimuovi">✕</button>
+    <div class="fg2">
+      <div class="fg"><label>Nome</label><input class="ct-name" value="${esc(ct.name||'')}"></div>
+      <div class="fg"><label>Ruolo / Job title</label><input class="ct-title" value="${esc(ct.title||'')}"></div>
+      <div class="fg"><label>Email diretta</label><input class="ct-email" type="email" value="${esc(ct.email||'')}"></div>
+      <div class="fg"><label>Telefono diretto</label><input class="ct-phone" value="${esc(ct.phone||'')}"></div>
+      <div class="fg fgf"><label>LinkedIn personale</label><input class="ct-linkedin" value="${esc(ct.linkedin||'')}"></div>
+    </div>
+  </div>`;
+}
+
+let _contactRowCount = 0;
+function addContactRow(){
+  _contactRowCount++;
+  const id = Date.now() + _contactRowCount;
+  const container = document.getElementById('contacts-rows');
+  if(!container) return;
+  const div = document.createElement('div');
+  div.innerHTML = contactRowHtml({},id);
+  container.appendChild(div.firstElementChild);
+}
+
+function removeContactRow(i){
+  document.getElementById(`crow-${i}`)?.remove();
+}
+
 
 function openAddCliente(editId){
   const c=editId?dbC.contacts.find(x=>x.id===editId):null;
@@ -1032,42 +1248,155 @@ function saveContact(editId){
   const adb = isClienti()?dbC:db;
 
   if(isClienti()){
-    // ── CLIENTE PRIVATO ──
     const nome=gv('fa');const cognome=gv('fcog');const email=gv('fe');
     if(!nome||!email){toast('Nome e email obbligatori');return;}
     const contact={
       id:editId||'c'+Date.now(),
-      nome,cognome,email,
-      country:gv('fco'),lingua:document.getElementById('fling')?.value||'en',
-      // campi compat per funzionalità condivise
-      company:nome+' '+cognome,
-      name:nome+' '+cognome,
+      nome,cognome,email,lingua:document.getElementById('fling')?.value||'en',
+      country:gv('fco'),statoEmail:gv('fsv')||'sconosciuto',
+      company:(nome)+' '+(cognome),name:(nome)+' '+(cognome),
       status:document.getElementById('fst').value,
-      notes:gv('fno'),products:[],
+      products:[],notes:gv('fno'),
       updatedAt:Date.now(),
       createdAt:editId?(adb.contacts.find(c=>c.id===editId)?.createdAt||Date.now()):Date.now()
     };
     if(editId){const i=adb.contacts.findIndex(c=>c.id===editId);if(i>=0)adb.contacts[i]=contact;}
     else adb.contacts.push(contact);
+
   } else {
-    // ── IMPORTATORE ──
-    const company=gv('fa');if(!company){toast('Azienda obbligatoria');return;}
-    const products=[...document.querySelectorAll('.pcb:checked')].map(x=>x.value);
+    // ── IMPORTATORE: salva tutti i 27 campi + contatti individuali ──
+    const company=gv('fa');
+    if(!company){toast('Ragione sociale obbligatoria');return;}
+
+    // Raccogli i contatti individuali dalle righe del form
+    const contactRows=[...document.querySelectorAll('.contact-edit-row')];
+    const contacts=contactRows.map(row=>({
+      name:  row.querySelector('.ct-name')?.value.trim()||'',
+      title: row.querySelector('.ct-title')?.value.trim()||'',
+      email: row.querySelector('.ct-email')?.value.trim()||'',
+      phone: row.querySelector('.ct-phone')?.value.trim()||'',
+      linkedin: row.querySelector('.ct-linkedin')?.value.trim()||'',
+    })).filter(c=>c.name||c.email);
+
+    const existing = editId ? adb.contacts.find(c=>c.id===editId) : null;
     const contact={
-      id:editId||'c'+Date.now(),
-      company,name:gv('fn'),email:gv('fe'),phone:gv('fp'),
-      country:gv('fco'),region:gv('frg'),city:gv('fci'),website:gv('fw'),
-      contactName:gv('fn'),contactTitle:gv('fct'),contactEmail:gv('fce'),
-      employees:gv('femp'),status:document.getElementById('fst').value,
-      products,notes:gv('fno'),updatedAt:Date.now(),
-      createdAt:editId?(adb.contacts.find(c=>c.id===editId)?.createdAt||Date.now()):Date.now()
+      id:        editId||'c'+Date.now(),
+      compId:    existing?.compId||editId||'c'+Date.now(),
+      company,
+      brandName: gv('fbrand'),
+      email:     gv('fe'),
+      phone:     gv('fp'),
+      website:   gv('fw'),
+      type:      gv('ftype'),
+      prodType:  gv('fprod'),
+      country:   gv('fco'),
+      city:      gv('fci'),
+      state:     gv('fstate'),
+      address:   gv('faddr'),
+      postalCode:gv('fzip'),
+      employees: gv('femp'),
+      sales:     gv('fsales'),
+      founded:   gv('ffound'),
+      regNumber: gv('freg'),
+      region:    gv('frg'),
+      linkedinCo:gv('flinco'),
+      facebook:  gv('ffb'),
+      instagram: gv('finsta'),
+      twitter:   gv('ftwit'),
+      youtube:   gv('fyt'),
+      contacts,
+      // Legacy compat
+      contactName:  contacts[0]?.name||'',
+      contactTitle: contacts[0]?.title||'',
+      contactEmail: contacts[0]?.email||'',
+      name: contacts[0]?.name||'',
+      status: document.getElementById('fst').value,
+      products:[], notes:gv('fno'),
+      emailsSent:    existing?.emailsSent||0,
+      lastEmailSent: existing?.lastEmailSent||null,
+      lastEmailSubject: existing?.lastEmailSubject||'',
+      log: existing?.log||[],
+      updatedAt: Date.now(),
+      createdAt: existing?.createdAt||Date.now()
     };
+
     if(editId){const i=adb.contacts.findIndex(c=>c.id===editId);if(i>=0)adb.contacts[i]=contact;}
     else adb.contacts.push(contact);
   }
+
   saveDB();closeModal();refreshAll();toast(editId?'Aggiornato ✓':'Aggiunto ✓');
 }
 
+
+
+/* ─── SELEZIONE CONTATTO PER EMAIL ───────────────────────────
+   Riceve l'array contacts[] di un importatore e restituisce:
+   { primary, secondary }
+   primary  = contatto a cui inviare la mail
+   secondary= contatto da menzionare nell'apertura (owner/founder)
+   Se nessun contatto ha priorità, usa il primo disponibile
+──────────────────────────────────────────────────────────── */
+function getPriorityScore(title){
+  if(!title) return 99;
+  const t = title.toLowerCase();
+  for(const [p, titles] of Object.entries(JOB_PRIORITY)){
+    if(titles.some(pt => t.includes(pt) || pt.includes(t))) return parseInt(p);
+  }
+  return 98; // ha un titolo ma non è nella lista → usa comunque
+}
+
+function selectBestContact(contacts){
+  if(!contacts || !contacts.length) return {primary:null, secondary:null};
+
+  // Assegna punteggio a ogni contatto
+  const scored = contacts
+    .filter(c => c.name || c.email)
+    .map(c => ({...c, score: getPriorityScore(c.title)}))
+    .sort((a,b) => a.score - b.score);
+
+  if(!scored.length) return {primary:null, secondary:null};
+
+  const primary = scored[0];
+
+  // Secondary: cerca il contatto con priorità più alta DIVERSO dal primary
+  // Logica:
+  // - Se primary è P1 → secondary è il primo P2 o P3 (owner/manager da menzionare)
+  // - Se primary è P2 → secondary è il primo P3 (owner da menzionare)
+  // - Se primary è P3 → nessun secondary (owner scrive a se stesso)
+  let secondary = null;
+  if(primary.score <= 1){
+    // Primary è P1 → cerca P2 o P3 come secondary
+    secondary = scored.find(c => c !== primary && c.score >= 2) || null;
+  } else if(primary.score <= 2){
+    // Primary è P2 → cerca P3 come secondary
+    secondary = scored.find(c => c !== primary && c.score >= 3) || null;
+  }
+
+  return {primary, secondary};
+}
+
+// Estrae solo il PRIMO NOME da un nome completo
+function firstName(fullName){
+  if(!fullName) return '';
+  const parts = fullName.trim().split(/\s+/);
+  return parts[0] || '';
+}
+
+// Costruisce la riga di apertura personalizzata
+function buildDearLine(primary, secondary, companyName){
+  if(!primary || !primary.name){
+    return `Dear ${esc(companyName||'')} Team,`;
+  }
+  const fn = firstName(primary.name);
+  return `Dear ${esc(fn)},`;
+}
+
+// Costruisce la menzione dell'owner/secondary nell'apertura
+function buildOwnerMention(secondary){
+  if(!secondary || !secondary.name) return '';
+  const fn = firstName(secondary.name);
+  return ` — and after seeing what you and ${esc(fn)} have built`;
+}
 
 /* ═══════════════════════════════════════════════════
    BREVO — INVIO EMAIL
@@ -1226,13 +1555,35 @@ async function sendViaBrevo(contactId, toEmail, toName, subject, bodyText, brand
 }
 
 /* ── EMAIL ── */
-function openEmailModal(id){
+function openEmailModal(id, overrideEmail, overrideName, contactIdx){
   const c=(isClienti()?dbC:db).contacts.find(x=>x.id===id);if(!c)return;
-  const toEmail = isClienti()?(c.email||''):(c.contactEmail||c.email||'');
-  const toName  = isClienti()?((c.nome||'')+' '+(c.cognome||'')).trim():(c.contactName||c.name||'');
+  // Selezione intelligente del destinatario per importatori
+  let toEmail, toName, _primary = null, _mention = null;
+  if(isClienti()){
+    toEmail = overrideEmail || c.email || '';
+    toName  = overrideName  || ((c.nome||'')+' '+(c.cognome||'')).trim();
+  } else if(overrideEmail){
+    toEmail = overrideEmail;
+    toName  = overrideName || '';
+  } else {
+    // Seleziona il contatto migliore in base alla priorità job title
+    const {primary, mention} = selectContacts(c.contacts||[]);
+    _primary = primary;
+    _mention = mention;
+    toEmail = primary?.email || c.contactEmail || c.email || '';
+    toName  = primary?.name  || c.contactName  || c.name  || '';
+  }
 
   showModal(`
-    <div class="mt">✉ Invia Email — ${esc(c.company)}</div>
+    <div class="mt">✉ Email — ${esc(isClienti()?(c.nome+' '+c.cognome):c.company)}</div>
+    ${(!isClienti()&&c.contacts&&c.contacts.length>1)?`
+    <div style="margin-bottom:12px">
+      <div style="font-size:12px;color:var(--text2);font-weight:700;margin-bottom:6px">SELEZIONA DESTINATARIO</div>
+      <select id="contact-sel" onchange="switchEmailContact('${c.id}')" style="width:100%;font-size:13px;padding:8px;border-radius:var(--r);border:.5px solid var(--brd2);background:var(--bg);color:var(--text)">
+        <option value="-1">— Email aziendale (${esc(c.email||'nessuna')})</option>
+        ${(c.contacts||[]).map((ct,i)=>`<option value="${i}"${typeof contactIdx!=='undefined'&&contactIdx===i?' selected':''}>${esc(ct.name)} · ${esc(ct.title||'')}${ct.email?' ('+esc(ct.email)+')':''}</option>`).join('')}
+      </select>
+    </div>`:''}
 
     <!-- BRAND SELECTOR -->
     <div style="display:flex;gap:8px;margin-bottom:16px">
@@ -1378,6 +1729,34 @@ function copyEmailText(){
   navigator.clipboard?.writeText(`Oggetto: ${subj}\n\n${body}`).then(()=>toast('Testo copiato ✓'));
 }
 
+
+
+// Corregge le regioni sbagliate nei contatti già importati
+// (es. region='Suriname' → region='Sud America')
+function fixExistingRegions(){
+  const adb=isClienti()?dbC:db;
+  let fixed=0;
+  adb.contacts.forEach(c=>{
+    const correct=regionFromCountry(c.country)||regionFromCountry(c.region)||'';
+    // Corregge se: regione = paese, regione vuota, Unknown,
+    // o la regione è un nome di paese (es. "Cayman Islands" invece di "Caraibi")
+    const regionLooksLikeCountry = c.region && c.region===c.country;
+    const regionIsEmpty = !c.region||c.region==='Unknown'||c.region==='—';
+    const regionInCountryMap = c.region && COUNTRY_REGION[c.region];
+    if(correct && (regionLooksLikeCountry||regionIsEmpty||regionInCountryMap)){
+      if(correct!==c.region){
+        c.region=correct;
+        fixed++;
+      }
+    }
+  });
+  if(fixed>0){
+    saveDB();refreshAll();
+    toast(`✓ Corrette ${fixed} regioni`);
+  } else {
+    toast('Tutte le regioni sono già corrette ✓');
+  }
+}
 
 /* ═══════════════════════════════════════════════════
    INVIO MASSIVO
@@ -1627,6 +2006,30 @@ function resetDefaultTemplates(){
   toast('Template ripristinati ✓');
 }
 
+
+
+function switchEmailContact(contactId){
+  const c = (isClienti()?dbC:db).contacts.find(x=>x.id===contactId);
+  if(!c) return;
+  const sel = document.getElementById('contact-sel');
+  if(!sel) return;
+  const idx = parseInt(sel.value);
+  const ct = idx >= 0 ? c.contacts[idx] : null;
+  const toEl = document.getElementById('em-to');
+  const nameEl = document.getElementById('em-toname');
+  if(toEl) toEl.value = ct?.email || c.email || '';
+  if(nameEl) nameEl.value = ct?.name || c.contactName || '';
+}
+
+function openEmailToContact(contactId, contactIdx){
+  const c = (isClienti()?dbC:db).contacts.find(x=>x.id===contactId);
+  if(!c) return;
+  const ct = c.contacts?.[contactIdx] || {};
+  closeModal();
+  // Apri email modal preimpostato su quel contatto
+  openEmailModal(contactId, ct.email||c.email, (ct.name||c.contactName), contactIdx);
+}
+
 /* ── TEMPLATES ── */
 function renderTemplates(){
   const titleEl=document.getElementById('tpl-title');
@@ -1673,17 +2076,103 @@ function delTpl(id){
 /* ═══════════════════════════════════════
    IMPORT XLSX — MULTI-SHEET
 ═══════════════════════════════════════ */
+// Mappa paese → regione (usata come fallback quando il nome file non indica la regione)
+const COUNTRY_REGION = {
+  // Sud America
+  'Argentina':'Sud America','Bolivia':'Sud America','Brazil':'Sud America',
+  'Brasil':'Sud America','Chile':'Sud America','Colombia':'Sud America',
+  'Ecuador':'Sud America','El Salvador':'Sud America','Guatemala':'Sud America',
+  'Honduras':'Sud America','Mexico':'Sud America','Messico':'Sud America',
+  'Nicaragua':'Sud America','Panama':'Sud America','Paraguay':'Sud America',
+  'Peru':'Sud America','Perù':'Sud America','Suriname':'Sud America',
+  'Uruguay':'Sud America','Venezuela':'Sud America','Costa Rica':'Sud America',
+  'Dominican Republic':'Sud America','Cuba':'Sud America','Haiti':'Sud America',
+  'Jamaica':'Sud America','Trinidad and Tobago':'Sud America',
+  // Nord America
+  'United States':'Nord America','USA':'Nord America','Canada':'Nord America',
+  // Europa
+  'Albania':'Europa','Andorra':'Europa','Austria':'Europa','Belgium':'Europa',
+  'Belgio':'Europa','Bosnia and Herzegovina':'Europa','Bulgaria':'Europa',
+  'Croatia':'Europa','Croazia':'Europa','Cyprus':'Europa','Cipro':'Europa',
+  'Czech Republic':'Europa','Rep. Ceca':'Europa','Denmark':'Europa',
+  'Danimarca':'Europa','Estonia':'Europa','Finland':'Europa','Finlandia':'Europa',
+  'France':'Europa','Francia':'Europa','Germany':'Europa','Germania':'Europa',
+  'Greece':'Europa','Grecia':'Europa','Hungary':'Europa','Ungheria':'Europa',
+  'Iceland':'Europa','Irlanda':'Europa','Ireland':'Europa','Italy':'Europa',
+  'Italia':'Europa','Kosovo':'Europa','Latvia':'Europa','Lithuania':'Europa',
+  'Luxembourg':'Europa','Lussemburgo':'Europa','Malta':'Europa',
+  'Moldova':'Europa','Montenegro':'Europa','Netherlands':'Europa',
+  'Paesi Bassi':'Europa','North Macedonia':'Europa','Norway':'Europa',
+  'Norvegia':'Europa','Poland':'Europa','Polonia':'Europa','Portugal':'Europa',
+  'Portogallo':'Europa','Romania':'Europa','Russia':'Europa','Serbia':'Europa',
+  'Slovakia':'Europa','Slovacchia':'Europa','Slovenia':'Europa','Spain':'Europa',
+  'Spagna':'Europa','Sweden':'Europa','Svezia':'Europa','Switzerland':'Europa',
+  'Svizzera':'Europa','Ukraine':'Europa','Ucraina':'Europa',
+  'United Kingdom':'Europa','UK':'Europa','GB':'Europa',
+  // Oceania
+  'Australia':'Oceania','New Zealand':'Oceania','Nuova Zelanda':'Oceania',
+  'Fiji':'Oceania','Papua New Guinea':'Oceania','Vanuatu':'Oceania',
+  'Solomon Islands':'Oceania','Samoa':'Oceania','Tonga':'Oceania',
+  // Asia
+  'China':'Asia','Cina':'Asia','Japan':'Asia','Giappone':'Asia',
+  'South Korea':'Asia','Korea':'Asia','Corea del Sud':'Asia',
+  'India':'Asia','Indonesia':'Asia','Malaysia':'Asia','Philippines':'Asia',
+  'Filippine':'Asia','Singapore':'Asia','Thailand':'Asia','Tailandia':'Asia',
+  'Vietnam':'Asia','Taiwan':'Asia','Hong Kong':'Asia','Bangladesh':'Asia',
+  'Sri Lanka':'Asia','Myanmar':'Asia','Cambodia':'Asia','Nepal':'Asia',
+  'Pakistan':'Asia','Kazakhstan':'Asia','Uzbekistan':'Asia',
+  // Medio Oriente
+  'United Arab Emirates':'Medio Oriente','UAE':'Medio Oriente',
+  'Emirati Arabi':'Medio Oriente','Saudi Arabia':'Medio Oriente',
+  'Arabia Saudita':'Medio Oriente','Israel':'Medio Oriente','Israele':'Medio Oriente',
+  'Qatar':'Medio Oriente','Kuwait':'Medio Oriente','Bahrain':'Medio Oriente',
+  'Oman':'Medio Oriente','Jordan':'Medio Oriente','Giordania':'Medio Oriente',
+  'Lebanon':'Medio Oriente','Libano':'Medio Oriente','Turkey':'Medio Oriente',
+  'Turchia':'Medio Oriente','Iran':'Medio Oriente','Iraq':'Medio Oriente',
+  // Africa
+  'South Africa':'Africa','Sudafrica':'Africa','Kenya':'Africa',
+  'Nigeria':'Africa','Ethiopia':'Africa','Etiopia':'Africa',
+  'Tanzania':'Africa','Uganda':'Africa','Ghana':'Africa','Senegal':'Africa',
+  'Morocco':'Africa','Marocco':'Africa','Tunisia':'Africa','Algeria':'Africa',
+  'Egypt':'Africa','Egitto':'Africa','Angola':'Africa','Mozambique':'Africa',
+  'Zimbabwe':'Africa','Zambia':'Africa','Botswana':'Africa','Namibia':'Africa',
+  'Cameroon':'Africa','Ivory Coast':'Africa','Madagascar':'Africa',
+  'Mauritius':'Africa','Rwanda':'Africa','Ethiopia':'Africa',
+  // Caraibi / America Centrale
+  'Cayman Islands':'Caraibi','Isole Cayman':'Caraibi',
+  'Cayman':'Caraibi','Grand Cayman':'Caraibi',
+  'Barbados':'Caraibi','Belize':'Caraibi','Bermuda':'Caraibi',
+  'Bahamas':'Caraibi','Puerto Rico':'Caraibi','Aruba':'Caraibi',
+  'Curaçao':'Caraibi','Curacao':'Caraibi',
+};
+
+
+// Priorità job title per selezione destinatario email
+// P1=acquisto, P2=management, P3=owner/founder
+const JOB_PRIORITY = {
+  1: ["sales manager", "buyer", "purchasing manager", "managing partner", "sales representative", "sales director", "commercial director", "sales", "commercial", "commercial manager", "wine buyer", "senior buyer", "purchasing", "import manager", "sales consultant", "regional sales manager", "product manager", "area sales manager", "marketing manager", "purchasing director", "wine manager", "purchaser", "national sales manager", "head of sales", "buying manager", "wine sales specialist", "director of sales", "wine sales", "purchase manager", "director of sales", "buying director", "head of sales", "general sales manager", "wine importer"],
+  2: ["managing director", "manager", "director", "general manager", "administrator", "in charge", "operations manager", "wine merchant", "representative", "chief executive officer", "account manager", "executive director", "business owner", "co-founder", "representative director", "general director", "director of operations", "president & ceo", "wine director", "sales specialist", "wine sales representative", "director of operations", "procurement manager", "logistics manager", "owner/ manager", "co-owner", "operation manager", "senior brand manager", "chief operating officer", "regional manager", "sales assistant", "sales agent", "ceo & founder", "junior buyer", "portfolio manager", "area manager", "senior sales manager", "founder and ceo", "business manager", "managing director/ owner"],
+  3: ["owner", "ceo", "president", "founder", "co-owner", "sommelier", "partner", "co-founder", "wine consultant", "brand manager", "store manager", "business development manager", "category manager", "key account manager", "wine specialist", "vice president", "sales associate", "president and ceo", "sales executive", "administrative", "administrative manager", "brand ambassador", "administrative assistant"],
+};
+
 function detectRegion(fname){
   const f=(fname||'').toLowerCase();
-  if(/south.?am|sud.?am|latin|latam|argentina|brazil|chile|colombia/.test(f)) return 'Sud America';
-  if(/oceania|pacific|australia|new.?zeal/.test(f)) return 'Oceania';
-  if(/africa|kenya|nigeria|ethiopia|tanzania|egypt|ghana/.test(f)) return 'Africa';
-  if(/europe|europa|germany|france|spain|uk\.xlsx|uk_/.test(f)) return 'Europa';
-  if(/asia|china|japan|korea|india|vietnam|thailand|singapore/.test(f)) return 'Asia';
+  if(/south.?am|sud.?am|latin|latam|argentina|brazil|chile|colombia|peru|ecuador|uruguay|paraguay|venezuela|bolivia|suriname/.test(f)) return 'Sud America';
+  if(/cayman|caribbean|caraibi|barbados|bahamas|jamaica|trinidad|cuba|haiti/.test(f)) return 'Caraibi';
+  if(/oceania|pacific|australia|new.?zeal|fiji/.test(f)) return 'Oceania';
+  if(/africa|kenya|nigeria|ethiopia|tanzania|egypt|ghana|south.?afr/.test(f)) return 'Africa';
+  if(/europe|europa/.test(f)) return 'Europa';
+  if(/asia|china|japan|korea|india|vietnam|thailand|singapore|taiwan|hong.?kong/.test(f)) return 'Asia';
   if(/north.?am|usa|canada/.test(f)) return 'Nord America';
-  if(/middle.?east|mena|uae|saudi/.test(f)) return 'Medio Oriente';
+  if(/middle.?east|mena|uae|saudi|gulf/.test(f)) return 'Medio Oriente';
   if(/scandinav|nordic|sweden|norway|denmark|finland/.test(f)) return 'Scandinavia';
   return '';
+}
+
+// Assegna regione da paese se la regione non è stata rilevata dal nome file
+function regionFromCountry(country){
+  if(!country) return '';
+  return COUNTRY_REGION[country] || COUNTRY_REGION[country.trim()] || '';
 }
 
 function parseXlsx(wb, filename){
@@ -1749,94 +2238,230 @@ function parseXlsxClienti(wb, filename){
 }
 
 function parseXlsxImportatori(wb, filename){
-  const region=detectRegion(filename);
-  const contacts=[];
-  const seenLocal=new Set();
+  const region = detectRegion(filename);
+  const allContacts = [];
 
-  wb.SheetNames.forEach(sheetName=>{
-    const ws=wb.Sheets[sheetName];
+  wb.SheetNames.forEach(sheetName => {
+    const ws = wb.Sheets[sheetName];
     if(!ws) return;
-    const rows=XLSX.utils.sheet_to_json(ws,{header:1,defval:'',raw:false});
-    if(!rows||rows.length<2) return;
+    const rows = XLSX.utils.sheet_to_json(ws, {header:1, defval:'', raw:false});
+    if(!rows || rows.length < 1) return;
 
-    const firstRowLower=rows[0].map(h=>String(h||'').trim().toLowerCase());
-    const hasHeader=firstRowLower.some(h=>['company','country','phone','email','website'].includes(h));
-    let IDX, dataRows;
-    if(hasHeader){
-      const hi=(name,fb)=>{const i=firstRowLower.indexOf(name);return i>=0?i:fb;};
-      IDX={country:hi('country',0),company:hi('company',1),phone:hi('phone',2),
-           email:hi('email',3),employees:hi('employees',4),sales:hi('sales',5),website:hi('website',6)};
-      dataRows=rows.slice(1);
+    const firstRow = rows[0].map(h => String(h||'').trim());
+
+    // ── FORMATO NUOVO (27 colonne con header: CompanyName, CompId, …) ──
+    const isNewFormat = firstRow.some(h =>
+      ['companyname','compid','company_email','contact_name'].includes(h.toLowerCase())
+    );
+
+    if(isNewFormat){
+      const col = name => firstRow.findIndex(h => h.toLowerCase() === name.toLowerCase());
+      const C = {
+        companyName:     col('CompanyName'),
+        brandName:       col('BrandName'),
+        compId:          col('CompId'),
+        country:         col('Country'),
+        city:            col('City'),
+        state:           col('State'),
+        address:         col('StreetAddress'),
+        postalCode:      col('PostalCode'),
+        website:         col('Website'),
+        type:            col('Type'),
+        prodType:        col('ProdType'),
+        employees:       col('Employee'),
+        sales:           col('Sales'),
+        companyEmail:    col('Company_Email'),
+        phone:           col('Phone'),
+        founded:         col('Founded'),
+        regNumber:       col('RegistrationNumber'),
+        linkedinCompany: col('Linkedin'),
+        facebook:        col('Facebook'),
+        instagram:       col('Instagram'),
+        twitter:         col('Twitter'),
+        youtube:         col('Youtube'),
+        contactName:     col('Contact_Name'),
+        contactTitle:    col('Contact_Title'),
+        contactEmail:    col('Contact_Email'),
+        contactPhone:    col('Contact_Phone'),
+        contactLinkedin: col('Contact_Linkedin'),
+      };
+      const g = (row, idx) => idx >= 0 ? String(row[idx]||'').trim().replace(/^None$/i,'') : '';
+
+      // Raggruppa per CompId (o CompanyName se mancante)
+      const groups = {};
+      rows.slice(1).forEach(row => {
+        const compId = g(row, C.compId) || g(row, C.companyName);
+        if(!compId) return;
+        if(!groups[compId]) groups[compId] = [];
+        groups[compId].push(row);
+      });
+
+      Object.entries(groups).forEach(([compId, rowList]) => {
+        const r = rowList[0];
+        const contacts = rowList
+          .map(row => ({
+            name:     g(row, C.contactName),
+            title:    g(row, C.contactTitle),
+            email:    g(row, C.contactEmail),
+            phone:    g(row, C.contactPhone),
+            linkedin: g(row, C.contactLinkedin),
+          }))
+          .filter(c => c.name || c.email);
+
+        allContacts.push({
+          compId,
+          company:     g(r, C.companyName),
+          brandName:   g(r, C.brandName),
+          country:     g(r, C.country) || sheetName,
+          city:        g(r, C.city),
+          state:       g(r, C.state),
+          address:     g(r, C.address),
+          postalCode:  g(r, C.postalCode),
+          website:     g(r, C.website),
+          type:        g(r, C.type),
+          prodType:    g(r, C.prodType),
+          employees:   g(r, C.employees),
+          sales:       g(r, C.sales),
+          email:       g(r, C.companyEmail),
+          phone:       g(r, C.phone),
+          founded:     g(r, C.founded),
+          regNumber:   g(r, C.regNumber),
+          linkedinCo:  g(r, C.linkedinCompany),
+          facebook:    g(r, C.facebook),
+          instagram:   g(r, C.instagram),
+          twitter:     g(r, C.twitter),
+          youtube:     g(r, C.youtube),
+          region:      region || regionFromCountry(g(r, C.country)) || regionFromCountry(sheetName) || sheetName,
+          contacts,
+          contactName:  contacts[0]?.name  || '',
+          contactTitle: contacts[0]?.title || '',
+          contactEmail: contacts[0]?.email || '',
+        });
+      });
+
     } else {
-      IDX={country:0,company:1,phone:2,email:3,employees:4,sales:5,website:6};
-      dataRows=rows;
-    }
+      // ── FORMATO VECCHIO (BWI originale: nessun header, col fisse) ──
+      // Col 0=Paese, 1=Azienda, 2=Tel, 3=Email az., 4=Dipendenti,
+      // 5=Fatturato, 6=Sito, poi coppie label/valore: Name:/Nome, Job Title:/Ruolo, E-Mail:/EmailPersonale
+      const g = (row, i) => i < row.length ? String(row[i]||'').trim().replace(/^-$|^None$/i,'') : '';
 
-    dataRows.forEach(row=>{
-      const g=i=>String(row[i]||'').trim().replace(/^-$|^None$|^null$|^undefined$/i,'');
-      const company=g(IDX.company);
-      if(!company||company.toLowerCase()==='company'||company.length<2) return;
-      let country=g(IDX.country);
-      if(!country||country.toLowerCase()===company.toLowerCase()||
-         country.toLowerCase()==='country'||country===sheetName.toLowerCase()){
-        country=sheetName;
-      }
-      if(company.toLowerCase()===country.toLowerCase()) return;
-      const email=g(IDX.email);
-      const key=email?email.toLowerCase():`${company.toLowerCase()}|${country.toLowerCase()}`;
-      if(seenLocal.has(key)) return;
-      seenLocal.add(key);
-      let cName='',cTitle='',cEmail='';
-      const cStart=hasHeader?8:7;
-      for(let i=cStart;i<row.length-1;i++){
-        const cell=String(row[i]||'').trim();
-        const next=String(row[i+1]||'').trim();
-        if(cell==='Name:'&&next) cName=next;
-        if(cell==='Job Title:'&&next) cTitle=next;
-        if(cell==='E-Mail:'&&next) cEmail=next;
-      }
-      contacts.push({company,country,region:region||sheetName,
-        phone:g(IDX.phone),email,employees:g(IDX.employees),
-        sales:g(IDX.sales),website:g(IDX.website),
-        contactName:cName,contactTitle:cTitle,contactEmail:cEmail});
-    });
+      const seen = new Set();
+      rows.forEach(row => {
+        const country  = g(row, 0) || sheetName;
+        const company  = g(row, 1);
+        if(!company || company.length < 2) return;
+        if(company.toLowerCase() === country.toLowerCase()) return;
+
+        const email = g(row, 3);
+        const key   = email ? email.toLowerCase() : `${company.toLowerCase()}|${country.toLowerCase()}`;
+        if(seen.has(key)) return;
+        seen.add(key);
+
+        // Cerca le label nella parte destra della riga (col 7 in poi)
+        let cName='', cTitle='', cEmail='';
+        for(let i = 7; i < row.length - 1; i++){
+          const cell = String(row[i]||'').trim();
+          const next = String(row[i+1]||'').trim();
+          if(cell === 'Name:'      && next) cName  = next;
+          if(cell === 'Job Title:' && next) cTitle = next;
+          if(cell === 'E-Mail:'   && next) cEmail = next;
+        }
+
+        // Costruisce array contacts (anche se email personale è vuota)
+        const contacts = (cName || cEmail) ? [{
+          name:     cName,
+          title:    cTitle,
+          email:    cEmail,   // ← email personale preziosa
+          phone:    '',
+          linkedin: '',
+        }] : [];
+
+        allContacts.push({
+          compId:    '',
+          company,
+          country,
+          region:    region || regionFromCountry(country) || regionFromCountry(sheetName) || sheetName,
+          phone:     g(row, 2),
+          email,           // email aziendale
+          employees: g(row, 4),
+          sales:     g(row, 5),
+          website:   g(row, 6),
+          contacts,
+          // Legacy
+          contactName:  cName,
+          contactTitle: cTitle,
+          contactEmail: cEmail,
+        });
+      });
+    }
   });
-  return contacts;
+
+  return allContacts;
 }
 
 function dedupVsDB(incoming){
-  const adb=isClienti()?dbC:db;
-  const UPDATE_FIELDS=isClienti()
-    ?['email','country','lingua']
-    :['email','phone','website','contactName','contactTitle','contactEmail','employees','sales'];
-  const keyOf=c=>isClienti()
-    ?(c.email||'').toLowerCase()
-    :(c.email?c.email.toLowerCase():`${(c.company||'').toLowerCase()}|${(c.country||'').toLowerCase()}`);
-  const existingKey=c=>isClienti()
-    ?(c.email||'').toLowerCase()
-    :(c.email?c.email.toLowerCase():`${(c.company||'').toLowerCase()}|${(c.country||'').toLowerCase()}`);
+  const adb = isClienti() ? dbC : db;
 
-  const newOnes=[],updates=[],identical=[];
-  const localKeys=new Set();
+  const UPD_IMP = ['email','phone','website','employees','sales','contacts',
+                   'type','prodType','city','state','address','postalCode',
+                   'brandName','facebook','instagram','twitter','linkedinCo',
+                   'youtube','founded','regNumber'];
+  const UPD_CLI = ['email','country','lingua','statoEmail'];
+  const UPDATE_FIELDS = isClienti() ? UPD_CLI : UPD_IMP;
 
-  incoming.forEach(c=>{
-    const ck=keyOf(c);
-    if(!ck||localKeys.has(ck)) return;
-    localKeys.add(ck);
-    const existing=adb.contacts.find(x=>existingKey(x)===ck);
+  // ── Trova un record esistente nel DB che corrisponde al contatto in arrivo ──
+  // Per importatori: cerca prima per compId, poi fallback su company+country
+  // Questo gestisce sia i record nuovi (con compId) che i vecchi (senza)
+  const findExisting = c => {
+    if(isClienti()){
+      const ek = (c.email||'').toLowerCase();
+      return ek ? adb.contacts.find(x=>(x.email||'').toLowerCase()===ek) : null;
+    }
+    const inCompId  = String(c.compId||'').trim().toLowerCase();
+    const inCompKey = `${(c.company||'').toLowerCase()}|${(c.country||'').toLowerCase()}`;
+    return adb.contacts.find(x=>{
+      // 1. Match esatto per compId (record nuovo vs nuovo)
+      const xCompId = String(x.compId||'').trim().toLowerCase();
+      if(inCompId && xCompId && inCompId === xCompId) return true;
+      // 2. Fallback: company+country (record nuovo vs vecchio senza compId)
+      const xCompKey = `${(x.company||'').toLowerCase()}|${(x.country||'').toLowerCase()}`;
+      return inCompKey === xCompKey;
+    });
+  };
+
+  // Chiave locale per dedup interno al file (evita doppioni nello stesso XLSX)
+  const localKey = c => isClienti()
+    ? (c.email||'').toLowerCase()
+    : (String(c.compId||'').trim() ||
+       `${(c.company||'').toLowerCase()}|${(c.country||'').toLowerCase()}`);
+
+  const newOnes = [], updates = [], identical = [];
+  const localKeys = new Set();
+
+  incoming.forEach(c => {
+    const lk = localKey(c);
+    if(!lk || localKeys.has(lk)) return;
+    localKeys.add(lk);
+
+    const existing = findExisting(c);
     if(!existing){
       newOnes.push(c);
     } else {
-      const changed=UPDATE_FIELDS.some(f=>{
-        const iv=(c[f]||'').toString().trim();
-        const ev=(existing[f]||'').toString().trim();
-        return iv&&iv!==ev;
+      const changed = UPDATE_FIELDS.some(f => {
+        if(f === 'contacts'){
+          const inNames = new Set((c.contacts||[]).map(x=>(x.name||'').toLowerCase()).filter(Boolean));
+          const exNames = new Set((existing.contacts||[]).map(x=>(x.name||'').toLowerCase()).filter(Boolean));
+          return [...inNames].some(n => !exNames.has(n));
+        }
+        const iv = (c[f]||'').toString().trim();
+        const ev = (existing[f]||'').toString().trim();
+        return iv && iv !== ev;
       });
-      if(changed) updates.push({...c,_existingId:existing.id});
+      if(changed) updates.push({...c, _existingId: existing.id});
       else identical.push(c);
     }
   });
-  return{newOnes,updates,identical};
+  return {newOnes, updates, identical};
 }
 
 function showPreview(incoming,filename){
@@ -1906,16 +2531,39 @@ function confirmImport(){
         };
       }
       return {
-        id:'c'+now+Math.random().toString(36).slice(2,8),
-        company:c.company||'',name:c.contactName||'',
-        email:c.email||'',phone:c.phone||'',
-        country:c.country||'',region:c.region||'',city:'',
-        website:c.website||'',
-        contactName:c.contactName||'',contactTitle:c.contactTitle||'',contactEmail:c.contactEmail||'',
-        employees:c.employees||'',sales:c.sales||'',
-        status:'new',products:[],notes:'',
-        createdAt:now,updatedAt:now,
-        log:[{ts:now,msg:'Importato da XLSX'}]
+        id:       'c'+now+Math.random().toString(36).slice(2,8),
+        compId:   c.compId||'',
+        company:  c.company||'',
+        brandName:c.brandName||'',
+        email:    c.email||'',
+        phone:    c.phone||'',
+        country:  c.country||'',
+        region:   c.region||'',
+        city:     c.city||'',
+        state:    c.state||'',
+        address:  c.address||'',
+        postalCode:c.postalCode||'',
+        website:  c.website||'',
+        type:     c.type||'',
+        prodType: c.prodType||'',
+        employees:c.employees||'',
+        sales:    c.sales||'',
+        founded:  c.founded||'',
+        regNumber:c.regNumber||'',
+        linkedinCo:c.linkedinCo||'',
+        facebook: c.facebook||'',
+        instagram:c.instagram||'',
+        twitter:  c.twitter||'',
+        youtube:  c.youtube||'',
+        contacts: c.contacts||[],
+        // Legacy compat per email modal
+        contactName:  c.contacts?.[0]?.name  || '',
+        contactTitle: c.contacts?.[0]?.title || '',
+        contactEmail: c.contacts?.[0]?.email || '',
+        name: c.contacts?.[0]?.name || '',
+        status:'new', products:[], notes:'',
+        createdAt:now, updatedAt:now,
+        log:[{ts:now, msg:`Importato da XLSX (${c.contacts?.length||0} contatti)`}]
       };
     });
     (isClienti()?dbC:db).contacts=[...(isClienti()?dbC:db).contacts,...mapped];
