@@ -130,6 +130,7 @@ a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
 .empty{padding:2rem;text-align:center;color:var(--text2);font-size:14px}
 code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font-family:monospace}
 .rcnt{font-size:12px;color:var(--text2);margin-bottom:8px}
+#sort-by{background:var(--blue-bg);color:var(--blue-tx);border-color:var(--blue-tx);font-weight:600}
 .layer-toggle{display:flex;gap:0;border-radius:var(--rl);overflow:hidden;border:1.5px solid var(--brd2);flex-shrink:0}
 .layer-btn{padding:8px 18px;border:none;background:var(--bg2);color:var(--text2);cursor:pointer;font-size:13px;font-weight:600;font-family:inherit;transition:all .15s;white-space:nowrap}
 .layer-btn.active{background:var(--text);color:var(--bg)}
@@ -164,7 +165,7 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
       <button class="layer-btn active" id="layer-btn-imp" onclick="switchLayer('importatori')">🏢 Importatori</button>
       <button class="layer-btn" id="layer-btn-cli" onclick="switchLayer('clienti')">👤 Clienti Privati</button>
     </div>
-    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.57</div>
+    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.58</div>
   </div>
   <div class="hdr-r">
     <div class="gh-pill"><div class="gh-dot" id="gh-dot"></div><span id="gh-lbl">GitHub</span></div>
@@ -196,10 +197,14 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
 <!-- CONTATTI -->
 <div id="page-contacts" class="page">
   <div class="filters">
-    <input type="text" id="sq" placeholder="Cerca azienda, nome, email…" oninput="renderContacts()" style="min-width:180px">
+    <input type="text" id="sq" placeholder="Cerca…" oninput="renderContacts()" style="max-width:120px;min-width:80px">
     <select id="sr" onchange="updateCountryFilter();renderContacts()"><option value="">Tutte le regioni</option></select>
     <select id="sc" onchange="renderContacts()"><option value="">Tutti i paesi</option></select>
     <select id="sp" onchange="renderContacts()"><option value="">Tutti i tipi</option></select>
+    <select id="sortby" onchange="renderContacts()" title="Ordina per">
+      <option value="employees">↓ Dipendenti</option>
+      <option value="sales">↓ Fatturato</option>
+    </select>
     <select id="sv" onchange="renderContacts()" style="display:none">
       <option value="">Verifica email</option>
       <option value="valido">✓ Valido</option>
@@ -841,14 +846,33 @@ function renderPipeline(){
 }
 
 /* ── CONTACTS LIST ── */
+
+// Converte stringhe come "1,234" o "$27.64M" o "42" in numero per il sort
+function parseNumeric(val){
+  if(!val) return -1;
+  const s = String(val).replace(/,/g,'').trim();
+  // Gestisce suffissi: K, M, B
+  const m = s.match(/^\$?([\d.]+)\s*([KMBkmb]?)$/);
+  if(!m) return -1;
+  let n = parseFloat(m[1]);
+  if(isNaN(n)) return -1;
+  const suffix = m[2].toUpperCase();
+  if(suffix==='K') n *= 1_000;
+  if(suffix==='M') n *= 1_000_000;
+  if(suffix==='B') n *= 1_000_000_000;
+  return n;
+}
+
 function getFiltered(){
   const q=(gv('sq')).toLowerCase();
   const country=document.getElementById('sc')?.value||'';
   const regionOrLang=document.getElementById('sr')?.value||'';
   const status=document.getElementById('ss')?.value||'';
   const product=document.getElementById('sp')?.value||'';
+  const sortBy=document.getElementById('sortby')?.value||'employees';
   const adb=isClienti()?dbC:db;
-  return adb.contacts.filter(c=>{
+
+  let list = adb.contacts.filter(c=>{
     if(isClienti()){
       if(q&&!`${c.nome} ${c.cognome} ${c.email} ${c.country} ${c.lingua}`.toLowerCase().includes(q))return false;
       if(country&&c.country!==country)return false;
@@ -859,13 +883,27 @@ function getFiltered(){
       if(q&&!`${c.company} ${c.brandName||''} ${c.email} ${c.country} ${c.city||''} ${(c.contacts||[]).map(x=>x.name).join(' ')}`.toLowerCase().includes(q))return false;
       if(country&&c.country!==country)return false;
       if(regionOrLang&&c.region!==regionOrLang)return false;
-      // Tipo: il campo type è comma-separated, cerca se contiene il tipo selezionato
       if(product&&!(c.type||'').split(',').map(t=>t.trim()).includes(product))return false;
     }
     if(window._pendingFilter){if(c.status!=='sent'&&c.status!=='followup')return false;}
     else if(status&&c.status!==status)return false;
     return true;
   });
+
+  // Ordina: dal più grande al più piccolo per il campo selezionato
+  // I contatti senza dati (parseNumeric = -1) vanno in fondo
+  if(!isClienti()){
+    list.sort((a,b)=>{
+      const va = parseNumeric(a[sortBy]);
+      const vb = parseNumeric(b[sortBy]);
+      if(va === -1 && vb === -1) return 0;
+      if(va === -1) return 1;   // a va in fondo
+      if(vb === -1) return -1;  // b va in fondo
+      return vb - va;           // ordine decrescente
+    });
+  }
+
+  return list;
 }
 function renderContacts(){
   // Aggiorna label filtri in base al layer
@@ -973,7 +1011,9 @@ function crow(c){
       <div class="cn">${esc(c.company)}${c.brandName&&c.brandName!==c.company?` <span style="font-weight:400;color:var(--text2)">· ${esc(c.brandName)}</span>`:''}
         ${nContacts>0?`<span style="font-size:10px;background:var(--blue-bg);color:var(--blue-tx);padding:1px 6px;border-radius:10px;font-weight:700;margin-left:4px">${nContacts} contatt${nContacts===1?'o':'i'}</span>`:''}
       </div>
-      <div class="cs">${[c.city||c.country,c.type?.split(',')[0]].filter(Boolean).map(esc).join(' · ')}${c.prodType?' · '+esc(c.prodType.split(',').slice(0,2).join(', ')):''}</div>
+      <div class="cs">${[c.city||c.country,c.type?.split(',')[0]].filter(Boolean).map(esc).join(' · ')}${c.prodType?' · '+esc(c.prodType.split(',').slice(0,2).join(', ')):''}
+        ${(c.employees&&c.employees!=='')||c.sales?`<span style="color:var(--text3);margin-left:4px">${c.employees?'👥 '+esc(c.employees):''}${c.employees&&c.sales?' · ':''}${c.sales?'💰 '+esc(c.sales):''}</span>`:''}
+      </div>
     </div>
     <span class="badge ${SM[c.status]?.c||'bn'}">${SM[c.status]?.l||''}</span>
   </div>`;
@@ -1336,6 +1376,34 @@ function saveContact(editId){
    secondary= contatto da menzionare nell'apertura (owner/founder)
    Se nessun contatto ha priorità, usa il primo disponibile
 ──────────────────────────────────────────────────────────── */
+
+// Converte stringhe numeriche come "1.2M", "$27.64M", "42", "1,200" in numero
+function parseNumeric(val){
+  if(!val) return -1;
+  const s = String(val).replace(/[,$€£\s]/g,'').toUpperCase();
+  const n = parseFloat(s);
+  if(isNaN(n)) return -1;
+  if(s.endsWith('B')) return n * 1_000_000_000;
+  if(s.endsWith('M')) return n * 1_000_000;
+  if(s.endsWith('K')) return n * 1_000;
+  return n;
+}
+
+
+// Converte valori testuali di employee/sales in numero per ordinamento
+function parseNumeric(val){
+  if(!val) return -1;
+  const s = String(val).trim().toUpperCase()
+    .replace(/[€$£¥,\s]/g,'')  // rimuovi simboli valuta e separatori
+    .replace(/\.(?=\d{3})/g,''); // rimuovi punto come separatore migliaia
+  let n = parseFloat(s);
+  if(isNaN(n)) return -1;
+  if(s.endsWith('B')) n *= 1_000_000_000;
+  else if(s.endsWith('M')) n *= 1_000_000;
+  else if(s.endsWith('K')) n *= 1_000;
+  return n;
+}
+
 function getPriorityScore(title){
   if(!title) return 99;
   const t = title.toLowerCase();
