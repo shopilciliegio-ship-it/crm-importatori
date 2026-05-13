@@ -165,7 +165,7 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
       <button class="layer-btn active" id="layer-btn-imp" onclick="switchLayer('importatori')">🏢 Importatori</button>
       <button class="layer-btn" id="layer-btn-cli" onclick="switchLayer('clienti')">👤 Clienti Privati</button>
     </div>
-    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.61</div>
+    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.62</div>
   </div>
   <div class="hdr-r">
     <div class="gh-pill"><div class="gh-dot" id="gh-dot"></div><span id="gh-lbl">GitHub</span></div>
@@ -387,7 +387,7 @@ My name is Luca Pattaro — I represent Siena Wine and Small Vineyards Internati
 
 We are now bringing the same selection{{owner_mention}} — and the same operational model — to international markets.
 
-For {{azienda}}, this means a single partner for a portfolio spanning Tuscany, Piedmont, Veneto, Sicily, Puglia and beyond: from Chianti Classico to Brunello, Barolo to Nero d\'Avola.
+For {{azienda}}, this means a single partner for a portfolio spanning Tuscany, Piedmont, Veneto, Sicily, Puglia and beyond: from Chianti Classico to Brunello, Barolo to Nero d'Avola.
 
 Would you have 20 minutes for a call this week?
 
@@ -408,7 +408,7 @@ Small Vineyards International brings together over 20 family-owned Italian produ
 • Tuscany: Chianti Classico, Brunello, Morellino di Scansano
 • Piedmont: Barolo, Barbera, Moscato
 • Veneto: Soave, Valpolicella, Prosecco
-• Sicily & South: Nero d\'Avola, Primitivo, Negroamaro
+• Sicily & South: Nero d'Avola, Primitivo, Negroamaro
 • And more to come.
 
 All orders, documents, logistics and communication go through a single point of contact: us.
@@ -1085,7 +1085,7 @@ function openDetail(id){
       <div class="mf">
         <button class="btn btd bts" onclick="delContact('${id}')">Elimina</button>
         <button class="btn bts" onclick="openAddContact('${id}')">Modifica</button>
-        <button class="btn btp bts" onclick="openEmailModal('${id}')">✉ Email</button>
+        <button class="btn btp bts" onclick=\"closeModal();setTimeout(()=>openEmailModal('${id}')">✉ Email</button>
       </div>
     `);
     return;
@@ -1167,7 +1167,7 @@ function openDetail(id){
     <div class="mf">
       <button class="btn btd bts" onclick="delContact('${id}')">Elimina</button>
       <button class="btn bts" onclick="openAddContact('${id}')">Modifica</button>
-      <button class="btn btp bts" onclick="openEmailModal('${id}')">✉ Email</button>
+      <button class="btn btp bts" onclick="closeModal();setTimeout(()=>openEmailModal('${id}'),50)">✉ Email</button>
     </div>
   `);
 }
@@ -1974,13 +1974,27 @@ function updateBulkPreview(){
 }
 
 function fillTplForContact(body, c){
+  // Selezione contatto ottimale per variabili personalizzate
+  const {primary, secondary} = (c.contacts&&c.contacts.length)
+    ? selectBestContact(c.contacts)
+    : {primary:null, secondary:null};
+
+  const dearLine     = buildDearLine(primary, secondary, c.company);
+  const ownerMention = buildOwnerMention(secondary);
+  const primaryName  = firstName(primary?.name || c.contactName || '');
+  const primaryTitle = primary?.title || c.contactTitle || '';
+
   return body
-    .replace(/\{\{contatto\}\}/g, c.contactName||c.name||'')
-    .replace(/\{\{nome\}\}/g, c.contactName||c.name||'')
-    .replace(/\{\{azienda\}\}/g, c.company||'')
-    .replace(/\{\{paese\}\}/g, c.country||'')
-    .replace(/\{\{citta\}\}/g, c.city||'')
-    .replace(/\{\{prodotti\}\}/g, (c.products||[]).join(', ')||'[prodotti]');
+    .replace(/\{\{dear\}\}/g,          dearLine)
+    .replace(/\{\{owner_mention\}\}/g,  ownerMention)
+    .replace(/\{\{owner\}\}/g,          firstName(secondary?.name||''))
+    .replace(/\{\{contatto\}\}/g,       primaryName || c.contactName || '')
+    .replace(/\{\{nome\}\}/g,           primaryName || c.name || '')
+    .replace(/\{\{job\}\}/g,            primaryTitle)
+    .replace(/\{\{azienda\}\}/g,        c.company||'')
+    .replace(/\{\{paese\}\}/g,          c.country||'')
+    .replace(/\{\{citta\}\}/g,          c.city||'')
+    .replace(/\{\{prodotti\}\}/g,       (c.products||[]).join(', ')||'');
 }
 
 async function confirmBulkSend(){
