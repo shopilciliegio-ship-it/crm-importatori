@@ -164,7 +164,7 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
       <button class="layer-btn active" id="layer-btn-imp" onclick="switchLayer('importatori')">🏢 Importatori</button>
       <button class="layer-btn" id="layer-btn-cli" onclick="switchLayer('clienti')">👤 Clienti Privati</button>
     </div>
-    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.56</div>
+    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.57</div>
   </div>
   <div class="hdr-r">
     <div class="gh-pill"><div class="gh-dot" id="gh-dot"></div><span id="gh-lbl">GitHub</span></div>
@@ -355,18 +355,86 @@ function defTpl(){
 }
 
 function defTplImportatori(){return[
-  {id:'t1',name:'Primo contatto',
-   subject:"Proposta partnership — Vini italiani d'eccellenza",
-   body:"Gentile {{contatto}},\n\nMi chiamo [Nome], responsabile export di [Azienda].\nHo trovato il profilo di {{azienda}} su Best Wine Importers e ritengo ci possa essere una sinergia con la nostra produzione.\n\nSiamo specializzati in {{prodotti}}, nel segmento premium.\n\nAllego catalogo e listino prezzi. Sono disponibile per una videochiamata a sua comodità.\n\nCordiali saluti,\n[Nome] — [Azienda]\n[Tel] | [Email]"},
-  {id:'t2',name:'Follow-up 1 (7 gg)',
-   subject:'Re: Proposta partnership — [Azienda]',
-   body:"Gentile {{contatto}},\n\nMi permetto di riprendere contatto riguardo alla mia precedente email.\nLe chiedo solo conferma se ha ricevuto il materiale e se c'è interesse a procedere.\n\nSono disponibile per un call di 15 minuti a sua comodità.\n\n[Nome] — [Azienda]"},
-  {id:'t3',name:'Follow-up 2 (21 gg)',
-   subject:'Ultimi quantitativi disponibili — Annata 2023',
-   body:"Gentile {{contatto}},\n\nLe disponibilità della nostra selezione per il mercato {{paese}} si stanno esaurendo.\nVorrei darle l'opportunità di riservare i quantitativi di suo interesse prima della chiusura delle allocazioni.\n\nResto disponibile entro questa settimana.\n\n[Nome] — [Azienda]"},
-  {id:'t4',name:'Conferma interesse',
-   subject:'Listino prezzi e disponibilità — {{azienda}}',
-   body:"Gentile {{contatto}},\n\nGrazie per l'interesse verso la nostra produzione!\n\nIn allegato troverà:\n• Listino prezzi aggiornato (Franco Cantina / CIF)\n• Catalogo completo con schede tecniche\n• Disponibilità stagione corrente\n\nResto a disposizione per qualsiasi domanda.\n\n[Nome] — [Azienda]"}
+  {id:'t1',name:'#1 — First Contact',
+   subject:'Italian wines — proven in the US market',
+   body:`{{dear}}
+
+My name is Luca Pattaro — I represent Siena Wine and Small Vineyards International, the global arm of Small Vineyards, a curated portfolio of Italian family wineries that has been successfully distributed across the United States for years through August Imports.
+
+We are now bringing the same selection{{owner_mention}} — and the same operational model — to international markets.
+
+For {{azienda}}, this means a single partner for a portfolio spanning Tuscany, Piedmont, Veneto, Sicily, Puglia and beyond: from Chianti Classico to Brunello, Barolo to Nero d\'Avola.
+
+Would you have 20 minutes for a call this week?
+
+Best regards,
+Luca Pattaro
+Export Manager — Siena Wine | Small Vineyards International
+luca@sienawine.it | +39 331 1347899
+www.sienawine.it`},
+
+  {id:'t2',name:'#2 — Follow-up (day 7)',
+   subject:'One portfolio, all of Italy',
+   body:`{{dear}}
+
+Following up on my previous email — I wanted to share a bit more about what we offer.
+
+Small Vineyards International brings together over 20 family-owned Italian producers, carefully selected and already performing well in the US market. The range covers virtually every major Italian wine region:
+
+• Tuscany: Chianti Classico, Brunello, Morellino di Scansano
+• Piedmont: Barolo, Barbera, Moscato
+• Veneto: Soave, Valpolicella, Prosecco
+• Sicily & South: Nero d\'Avola, Primitivo, Negroamaro
+• And more to come.
+
+All orders, documents, logistics and communication go through a single point of contact: us.
+
+Happy to send the full portfolio and price list — shall I?
+
+Best,
+Luca Pattaro
+Siena Wine | Small Vineyards International
+luca@sienawine.it | +39 331 1347899
+www.sienawine.it`},
+
+  {id:'t3',name:'#3 — Follow-up (day 21)',
+   subject:'One contact. One invoice. All of Italy.',
+   body:`{{dear}}
+
+Working with multiple small Italian producers means multiple contacts, invoices, shipments and conversations. We solve that.
+
+Through Siena Wine, {{azienda}} gets:
+
+✔ A single point of contact for the entire portfolio
+✔ Consolidated orders and shipments
+✔ Full documentation support
+✔ A selection proven to sell — validated by years of success in the US
+
+We are not asking you to take a risk on unknown producers. These wines have a track record. We are simply making them available to you.
+
+Would you like to schedule a 20-minute call to see if there is a fit?
+
+Best,
+Luca Pattaro
+Siena Wine | Small Vineyards International
+luca@sienawine.it | +39 331 1347899
+www.sienawine.it`},
+
+  {id:'t4',name:'#4 — Break-up (day 35)',
+   subject:'Closing the loop — {{azienda}}',
+   body:`{{dear}}
+
+I have reached out a few times without hearing back — I completely understand, timing is everything in this business.
+
+I will not send further emails, but wanted to leave you with one thought: if you are ever looking to add a curated Italian portfolio with a proven US track record, a single operational contact, and wineries that genuinely over-deliver for their price point — we are here.
+
+You can explore the portfolio anytime at www.sienawine.it
+
+Wishing {{azienda}} continued success.
+
+Luca Pattaro
+Siena Wine | Small Vineyards International
+luca@sienawine.it | +39 331 1347899`}
 ];}
 
 function defTplClienti(){return[
@@ -1260,6 +1328,76 @@ function saveContact(editId){
 }
 
 
+
+/* ─── SELEZIONE CONTATTO PER EMAIL ───────────────────────────
+   Riceve l'array contacts[] di un importatore e restituisce:
+   { primary, secondary }
+   primary  = contatto a cui inviare la mail
+   secondary= contatto da menzionare nell'apertura (owner/founder)
+   Se nessun contatto ha priorità, usa il primo disponibile
+──────────────────────────────────────────────────────────── */
+function getPriorityScore(title){
+  if(!title) return 99;
+  const t = title.toLowerCase();
+  for(const [p, titles] of Object.entries(JOB_PRIORITY)){
+    if(titles.some(pt => t.includes(pt) || pt.includes(t))) return parseInt(p);
+  }
+  return 98; // ha un titolo ma non è nella lista → usa comunque
+}
+
+function selectBestContact(contacts){
+  if(!contacts || !contacts.length) return {primary:null, secondary:null};
+
+  // Assegna punteggio a ogni contatto
+  const scored = contacts
+    .filter(c => c.name || c.email)
+    .map(c => ({...c, score: getPriorityScore(c.title)}))
+    .sort((a,b) => a.score - b.score);
+
+  if(!scored.length) return {primary:null, secondary:null};
+
+  const primary = scored[0];
+
+  // Secondary: cerca il contatto con priorità più alta DIVERSO dal primary
+  // Logica:
+  // - Se primary è P1 → secondary è il primo P2 o P3 (owner/manager da menzionare)
+  // - Se primary è P2 → secondary è il primo P3 (owner da menzionare)
+  // - Se primary è P3 → nessun secondary (owner scrive a se stesso)
+  let secondary = null;
+  if(primary.score <= 1){
+    // Primary è P1 → cerca P2 o P3 come secondary
+    secondary = scored.find(c => c !== primary && c.score >= 2) || null;
+  } else if(primary.score <= 2){
+    // Primary è P2 → cerca P3 come secondary
+    secondary = scored.find(c => c !== primary && c.score >= 3) || null;
+  }
+
+  return {primary, secondary};
+}
+
+// Estrae solo il PRIMO NOME da un nome completo
+function firstName(fullName){
+  if(!fullName) return '';
+  const parts = fullName.trim().split(/\s+/);
+  return parts[0] || '';
+}
+
+// Costruisce la riga di apertura personalizzata
+function buildDearLine(primary, secondary, companyName){
+  if(!primary || !primary.name){
+    return `Dear ${esc(companyName||'')} Team,`;
+  }
+  const fn = firstName(primary.name);
+  return `Dear ${esc(fn)},`;
+}
+
+// Costruisce la menzione dell'owner/secondary nell'apertura
+function buildOwnerMention(secondary){
+  if(!secondary || !secondary.name) return '';
+  const fn = firstName(secondary.name);
+  return ` — and after seeing what you and ${esc(fn)} have built`;
+}
+
 /* ═══════════════════════════════════════════════════
    BREVO — INVIO EMAIL
 ═══════════════════════════════════════════════════ */
@@ -1419,8 +1557,22 @@ async function sendViaBrevo(contactId, toEmail, toName, subject, bodyText, brand
 /* ── EMAIL ── */
 function openEmailModal(id, overrideEmail, overrideName, contactIdx){
   const c=(isClienti()?dbC:db).contacts.find(x=>x.id===id);if(!c)return;
-  const toEmail = overrideEmail || (isClienti()?(c.email||''):(c.contactEmail||c.email||''));
-  const toName  = overrideName  || (isClienti()?((c.nome||'')+' '+(c.cognome||'')).trim():(c.contactName||c.name||''));
+  // Selezione intelligente del destinatario per importatori
+  let toEmail, toName, _primary = null, _mention = null;
+  if(isClienti()){
+    toEmail = overrideEmail || c.email || '';
+    toName  = overrideName  || ((c.nome||'')+' '+(c.cognome||'')).trim();
+  } else if(overrideEmail){
+    toEmail = overrideEmail;
+    toName  = overrideName || '';
+  } else {
+    // Seleziona il contatto migliore in base alla priorità job title
+    const {primary, mention} = selectContacts(c.contacts||[]);
+    _primary = primary;
+    _mention = mention;
+    toEmail = primary?.email || c.contactEmail || c.email || '';
+    toName  = primary?.name  || c.contactName  || c.name  || '';
+  }
 
   showModal(`
     <div class="mt">✉ Email — ${esc(isClienti()?(c.nome+' '+c.cognome):c.company)}</div>
@@ -1992,6 +2144,15 @@ const COUNTRY_REGION = {
   'Barbados':'Caraibi','Belize':'Caraibi','Bermuda':'Caraibi',
   'Bahamas':'Caraibi','Puerto Rico':'Caraibi','Aruba':'Caraibi',
   'Curaçao':'Caraibi','Curacao':'Caraibi',
+};
+
+
+// Priorità job title per selezione destinatario email
+// P1=acquisto, P2=management, P3=owner/founder
+const JOB_PRIORITY = {
+  1: ["sales manager", "buyer", "purchasing manager", "managing partner", "sales representative", "sales director", "commercial director", "sales", "commercial", "commercial manager", "wine buyer", "senior buyer", "purchasing", "import manager", "sales consultant", "regional sales manager", "product manager", "area sales manager", "marketing manager", "purchasing director", "wine manager", "purchaser", "national sales manager", "head of sales", "buying manager", "wine sales specialist", "director of sales", "wine sales", "purchase manager", "director of sales", "buying director", "head of sales", "general sales manager", "wine importer"],
+  2: ["managing director", "manager", "director", "general manager", "administrator", "in charge", "operations manager", "wine merchant", "representative", "chief executive officer", "account manager", "executive director", "business owner", "co-founder", "representative director", "general director", "director of operations", "president & ceo", "wine director", "sales specialist", "wine sales representative", "director of operations", "procurement manager", "logistics manager", "owner/ manager", "co-owner", "operation manager", "senior brand manager", "chief operating officer", "regional manager", "sales assistant", "sales agent", "ceo & founder", "junior buyer", "portfolio manager", "area manager", "senior sales manager", "founder and ceo", "business manager", "managing director/ owner"],
+  3: ["owner", "ceo", "president", "founder", "co-owner", "sommelier", "partner", "co-founder", "wine consultant", "brand manager", "store manager", "business development manager", "category manager", "key account manager", "wine specialist", "vice president", "sales associate", "president and ceo", "sales executive", "administrative", "administrative manager", "brand ambassador", "administrative assistant"],
 };
 
 function detectRegion(fname){
