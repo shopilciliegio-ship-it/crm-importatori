@@ -165,7 +165,7 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
       <button class="layer-btn active" id="layer-btn-imp" onclick="switchLayer('importatori')">🏢 Importatori</button>
       <button class="layer-btn" id="layer-btn-cli" onclick="switchLayer('clienti')">👤 Clienti Privati</button>
     </div>
-    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.65</div>
+    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.66</div>
   </div>
   <div class="hdr-r">
     <div class="gh-pill"><div class="gh-dot" id="gh-dot"></div><span id="gh-lbl">GitHub</span></div>
@@ -1652,12 +1652,10 @@ async function sendViaBrevo(contactId, toEmail, toName, subject, bodyText, brand
 /* ── EMAIL ── */
 
 function openEmailFromDetail(id){
-  // Salva l'id, chiudi il modal corrente, apri email dopo 150ms
-  _pendingEmailId = id;
+  _pendingEmailId=id;
   closeModal();
-  window.setTimeout(function(){
-    openEmailModal(_pendingEmailId);
-  }, 150);
+  // Piccolo delay per assicurarsi che il modal precedente sia chiuso
+  requestAnimationFrame(()=>requestAnimationFrame(()=>openEmailModal(_pendingEmailId)));
 }
 
 function openEmailModal(id, overrideEmail, overrideName, contactIdx){
@@ -1717,10 +1715,10 @@ function openEmailModal(id, overrideEmail, overrideName, contactIdx){
       <textarea id="ebo" style="min-height:200px;font-size:13px;line-height:1.6;font-family:inherit"></textarea>
     </div>
     <div style="margin-bottom:10px">
-      <button class="btn btg bts" onclick="togglePreview('${id}')" id="prev-btn">👁 Anteprima</button>
+      <button class="btn btg bts" onclick="togglePreview('${id}')" id="prev-btn">👁 Anteprima HTML</button>
     </div>
-    <div id="email-preview-wrap" style="display:none;border:0.5px solid var(--brd2);border-radius:var(--r);overflow:auto;max-height:400px;margin-bottom:12px;background:#fff">
-      <div id="email-preview" style="min-height:200px"></div>
+    <div id="email-preview-wrap" style="display:none;border:0.5px solid var(--brd2);border-radius:var(--r);overflow:hidden;margin-bottom:12px">
+      <iframe id="email-preview" style="width:100%;height:380px;border:none;background:#fff"></iframe>
     </div>
     <div class="mf">
       <button class="btn" onclick="closeModal()">Annulla</button>
@@ -1756,19 +1754,20 @@ function selectBrand(brand, id){
 function togglePreview(id, forceRefresh){
   const wrap = document.getElementById('email-preview-wrap');
   const btn  = document.getElementById('prev-btn');
+  const c    = (isClienti()?dbC:db).contacts.find(x=>x.id===id);
   if(!wrap) return;
   if(wrap.style.display==='none'||forceRefresh){
     const brand = document.getElementById('em-brand')?.value||'sienawine';
     const body  = document.getElementById('ebo')?.value||'';
     const toName= document.getElementById('em-toname')?.value||'';
     const html  = buildHtmlEmail(body, brand, toName);
-    const div   = document.getElementById('email-preview');
-    if(div) div.innerHTML = html;
+    const iframe= document.getElementById('email-preview');
+    iframe.srcdoc = html;
     wrap.style.display='block';
     if(btn) btn.textContent='👁 Nascondi anteprima';
   } else {
     wrap.style.display='none';
-    if(btn) btn.textContent='👁 Anteprima';
+    if(btn) btn.textContent='👁 Anteprima HTML';
   }
 }
 
@@ -1953,8 +1952,8 @@ function openBulkSend(){
     <div style="font-size:12px;color:var(--text2);margin-bottom:6px;font-weight:600">
       ANTEPRIMA (su: ${esc(example.company)})
     </div>
-    <div style="border:0.5px solid var(--brd2);border-radius:var(--r);overflow:auto;max-height:320px;margin-bottom:12px;background:#fff">
-      <div id="bulk-preview" style="min-height:100px"></div>
+    <div style="border:0.5px solid var(--brd2);border-radius:var(--r);overflow:hidden;margin-bottom:12px">
+      <iframe id="bulk-preview" style="width:100%;height:320px;border:none;background:#fff"></iframe>
     </div>`:''}
 
     <div class="mf">
@@ -1995,12 +1994,12 @@ function updateBulkPreview(){
 
   // Aggiorna anteprima con primo contatto disponibile
   const example=(isClienti()?dbC:db).contacts.find(c=>sel.has(c.id)&&(c.contactEmail||c.email));
-  const prevDiv=document.getElementById('bulk-preview');
-  if(!prevDiv||!example) return;
+  const iframe=document.getElementById('bulk-preview');
+  if(!iframe||!example) return;
 
   const filled=fillTplForContact(t.body, example);
   const html=buildHtmlEmail(filled, brand, example.contactName||example.name);
-  prevDiv.innerHTML=html;
+  iframe.srcdoc=html;
 }
 
 function fillTplForContact(body, c){
