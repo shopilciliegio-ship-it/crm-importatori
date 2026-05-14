@@ -165,7 +165,7 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
       <button class="layer-btn active" id="layer-btn-imp" onclick="switchLayer('importatori')">🏢 Importatori</button>
       <button class="layer-btn" id="layer-btn-cli" onclick="switchLayer('clienti')">👤 Clienti Privati</button>
     </div>
-    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.63</div>
+    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.64</div>
   </div>
   <div class="hdr-r">
     <div class="gh-pill"><div class="gh-dot" id="gh-dot"></div><span id="gh-lbl">GitHub</span></div>
@@ -1086,7 +1086,7 @@ function openDetail(id){
       <div class="mf">
         <button class="btn btd bts" onclick="delContact('${id}')">Elimina</button>
         <button class="btn bts" onclick="openAddContact('${id}')">Modifica</button>
-        <button class="btn btp bts" onclick=\"closeModal();setTimeout(()=>openEmailModal('${id}')">✉ Email</button>
+        <button class="btn btp bts" onclick="openEmailFromDetail('${id}')">✉ Email</button>
       </div>
     `);
     return;
@@ -1168,7 +1168,7 @@ function openDetail(id){
     <div class="mf">
       <button class="btn btd bts" onclick="delContact('${id}')">Elimina</button>
       <button class="btn bts" onclick="openAddContact('${id}')">Modifica</button>
-      <button class="btn btp bts" onclick=\"openEmailFromDetail('${id}')\">✉ Email</button>
+      <button class="btn btp bts" onclick="openEmailFromDetail('${id}')">✉ Email</button>
     </div>
   `);
 }
@@ -1520,6 +1520,7 @@ const BRANDS = {
 };
 
 function buildHtmlEmail(body, brand, contactName){
+  try{
   const b = BRANDS[brand] || BRANDS.sienawine;
   // Nota: il greeting è già nel body via {{dear}} — non lo aggiungiamo due volte
   // Converti testo plain in paragrafi HTML
@@ -1538,7 +1539,7 @@ function buildHtmlEmail(body, brand, contactName){
       return `<p style="margin:0 0 16px;color:#333;font-size:15px;line-height:1.7">${esc(para).replace(/\n/g,'<br>')}</p>`;
     }).join('');
 
-  return `<!DOCTYPE html>
+  const _html=`<!DOCTYPE html>
 <html lang="en">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
 <body style="margin:0;padding:0;background:#f4f4f0;font-family:Georgia,'Times New Roman',serif">
@@ -1577,6 +1578,13 @@ function buildHtmlEmail(body, brand, contactName){
 </td></tr>
 </table>
 </body></html>`;
+  return _html;
+  }catch(e){
+    console.error('buildHtmlEmail error:',e);
+    return '<html><body style="font-family:serif;padding:40px;color:#333"><p>'+
+      (body||'').replace(/\n/g,'<br>')+
+      '</p></body></html>';
+  }
 }
 
 async function sendViaBrevo(contactId, toEmail, toName, subject, bodyText, brand){
@@ -1725,19 +1733,22 @@ function openEmailModal(id, overrideEmail, overrideName, contactIdx){
 
 
 function selectBrand(brand, id){
-  document.getElementById('em-brand').value = brand;
-  const sw = document.getElementById('btn-sw');
-  const cil = document.getElementById('btn-cil');
-  if(brand==='sienawine'){
-    sw.style.border='2px solid #8B1A1A';sw.style.background='#1a1a1a';sw.style.color='#fff';
-    cil.style.border='2px solid var(--brd2)';cil.style.background='var(--bg2)';cil.style.color='var(--text)';
-  } else {
-    cil.style.border='2px solid #B8941A';cil.style.background='#2c2c2c';cil.style.color='#fff';
-    sw.style.border='2px solid var(--brd2)';sw.style.background='var(--bg2)';sw.style.color='var(--text)';
+  const brandEl=document.getElementById('em-brand');
+  if(brandEl) brandEl.value=brand;
+  // IDs corretti dal modal HTML
+  const sw =document.getElementById('bulk-sw');
+  const cil=document.getElementById('bulk-cil');
+  if(sw&&cil){
+    if(brand==='sienawine'){
+      sw.style.cssText ='flex:1;padding:10px;border-radius:8px;border:2px solid #8B1A1A;background:#1a1a1a;color:#fff;cursor:pointer;font-size:12px;font-weight:700';
+      cil.style.cssText='flex:1;padding:10px;border-radius:8px;border:2px solid var(--brd2);background:var(--bg2);color:var(--text);cursor:pointer;font-size:12px;font-weight:700';
+    } else {
+      cil.style.cssText='flex:1;padding:10px;border-radius:8px;border:2px solid #B8941A;background:#2c2c2c;color:#fff;cursor:pointer;font-size:12px;font-weight:700';
+      sw.style.cssText ='flex:1;padding:10px;border-radius:8px;border:2px solid var(--brd2);background:var(--bg2);color:var(--text);cursor:pointer;font-size:12px;font-weight:700';
+    }
   }
-  // Aggiorna anteprima se aperta
-  const wrap = document.getElementById('email-preview-wrap');
-  if(wrap && wrap.style.display!=='none') togglePreview(id,true);
+  const wrap=document.getElementById('email-preview-wrap');
+  if(wrap&&wrap.style.display!=='none') togglePreview(id,true);
 }
 
 function togglePreview(id, forceRefresh){
@@ -1794,18 +1805,39 @@ async function doSendEmail(id){
   }
 }
 function applyTpl(id){
-  const c=(isClienti()?dbC:db).contacts.find(x=>x.id===id);
-  const t=(isClienti()?dbC:db).templates[parseInt(document.getElementById('tsel')?.value||'0')];
-  if(!t||!c)return;
-  const f=s=>s
-    .replace(/\{\{contatto\}\}/g,c.contactName||c.name||'')
-    .replace(/\{\{nome\}\}/g,c.contactName||c.name||'')
-    .replace(/\{\{azienda\}\}/g,c.company||'')
-    .replace(/\{\{paese\}\}/g,c.country||'')
-    .replace(/\{\{citta\}\}/g,c.city||'')
-    .replace(/\{\{prodotti\}\}/g,(c.products||[]).join(', ')||'[prodotti]');
-  document.getElementById('esu').value=f(t.subject);
-  document.getElementById('ebo').value=f(t.body);
+  const adb=isClienti()?dbC:db;
+  const c=adb.contacts.find(x=>x.id===id);
+  const tIdx=parseInt(document.getElementById('tsel')?.value||'0');
+  const t=adb.templates[tIdx];
+  if(!t||!c){return;}
+
+  // Contesto email (impostato in openEmailModal)
+  const ctx=window._emailCtx||{};
+  const prim=ctx.primary||null;
+  const sec=ctx.secondary||null;
+
+  const dearLine    =buildDearLine(prim,sec,c.company);
+  const ownerMention=buildOwnerMention(sec);
+  const primaryName =firstName(prim?.name||c.contactName||'');
+  const primaryTitle=prim?.title||c.contactTitle||'';
+  const secName     =firstName(sec?.name||'');
+
+  const f=s=>String(s||'')
+    .replace(/\{\{dear\}\}/g,          dearLine)
+    .replace(/\{\{owner_mention\}\}/g,  ownerMention)
+    .replace(/\{\{owner\}\}/g,          secName)
+    .replace(/\{\{contatto\}\}/g,       primaryName||c.contactName||'')
+    .replace(/\{\{nome\}\}/g,           primaryName||c.name||'')
+    .replace(/\{\{job\}\}/g,            primaryTitle)
+    .replace(/\{\{azienda\}\}/g,        c.company||'')
+    .replace(/\{\{paese\}\}/g,          c.country||'')
+    .replace(/\{\{citta\}\}/g,          c.city||'')
+    .replace(/\{\{prodotti\}\}/g,       (c.products||[]).join(', ')||'');
+
+  const subjEl=document.getElementById('esu');
+  const bodyEl=document.getElementById('ebo');
+  if(subjEl) subjEl.value=f(t.subject);
+  if(bodyEl) bodyEl.value=f(t.body);
 }
 function copyEmailText(){
   const subj=gv('esu');
