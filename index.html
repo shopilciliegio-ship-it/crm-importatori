@@ -165,7 +165,7 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
       <button class="layer-btn active" id="layer-btn-imp" onclick="switchLayer('importatori')">🏢 Importatori</button>
       <button class="layer-btn" id="layer-btn-cli" onclick="switchLayer('clienti')">👤 Clienti Privati</button>
     </div>
-    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.66</div>
+    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.67</div>
   </div>
   <div class="hdr-r">
     <div class="gh-pill"><div class="gh-dot" id="gh-dot"></div><span id="gh-lbl">GitHub</span></div>
@@ -1424,6 +1424,13 @@ function parseNumeric(val){
   return n;
 }
 
+// Job title priorities
+const JOB_PRIORITY = {
+  1: ['sales manager', 'buyer', 'purchasing manager', 'managing partner', 'sales representative', 'sales director', 'commercial director', 'sales', 'commercial', 'commercial manager', 'wine buyer', 'senior buyer', 'purchasing', 'import manager', 'sales consultant', 'regional sales manager', 'product manager', 'area sales manager', 'marketing manager', 'purchasing director', 'wine manager', 'purchaser', 'national sales manager', 'head of sales', 'buying manager', 'wine sales specialist', 'director of sales', 'wine sales', 'purchase manager', 'director of sales', 'buying director', 'head of sales', 'general sales manager', 'wine importer'],
+  2: ['managing director', 'manager', 'director', 'general manager', 'administrator', 'in charge', 'operations manager', 'wine merchant', 'representative', 'chief executive officer', 'account manager', 'executive director', 'business owner', 'co-founder', 'representative director', 'general director', 'director of operations', 'president & ceo', 'wine director', 'sales specialist', 'wine sales representative', 'director of operations', 'procurement manager', 'logistics manager', 'owner/ manager', 'co-owner', 'operation manager', 'senior brand manager', 'chief operating officer', 'regional manager', 'sales assistant', 'sales agent', 'ceo & founder', 'junior buyer', 'portfolio manager', 'area manager', 'senior sales manager', 'founder and ceo', 'business manager', 'managing director/ owner'],
+  3: ['owner', 'ceo', 'president', 'founder', 'co-owner', 'sommelier', 'partner', 'co-founder', 'wine consultant', 'brand manager', 'store manager', 'business development manager', 'category manager', 'key account manager', 'wine specialist', 'vice president', 'sales associate', 'president and ceo', 'sales executive', 'administrative', 'administrative manager', 'brand ambassador', 'administrative assistant'],
+};
+
 function getPriorityScore(title){
   if(!title) return 99;
   const t = title.toLowerCase();
@@ -1651,12 +1658,7 @@ async function sendViaBrevo(contactId, toEmail, toName, subject, bodyText, brand
 
 /* ── EMAIL ── */
 
-function openEmailFromDetail(id){
-  _pendingEmailId=id;
-  closeModal();
-  // Piccolo delay per assicurarsi che il modal precedente sia chiuso
-  requestAnimationFrame(()=>requestAnimationFrame(()=>openEmailModal(_pendingEmailId)));
-}
+function openEmailFromDetail(id){ openEmailModal(id); }
 
 function openEmailModal(id, overrideEmail, overrideName, contactIdx){
   const adb = isClienti()?dbC:db;
@@ -1732,6 +1734,49 @@ function openEmailModal(id, overrideEmail, overrideName, contactIdx){
 }
 
 
+
+function togglePreview(id, forceRefresh){
+  const wrap=document.getElementById('email-preview-wrap');
+  const btn=document.getElementById('prev-btn');
+  if(!wrap) return;
+  if(wrap.style.display==='none'||forceRefresh){
+    const brand=document.getElementById('em-brand')?.value||'sienawine';
+    const body=document.getElementById('ebo')?.value||'';
+    const b=BRANDS[brand]||BRANDS.sienawine;
+    const el=document.getElementById('email-preview');
+    if(el && body){
+      const paras=body.split('\n\n').filter(p=>p.trim());
+      const bh=paras.map(p=>{
+        if(p.startsWith('\u2022')||p.includes('\n\u2022')){
+          return '<ul style="margin:0 0 12px;padding-left:20px">'+
+            p.split('\n').filter(l=>l.trim()).map(l=>
+              '<li style="margin-bottom:4px">'+esc(l.replace(/^[\u2022\-]\s*/,''))+'</li>'
+            ).join('')+'</ul>';
+        }
+        return '<p style="margin:0 0 12px;line-height:1.7">'+
+          esc(p).replace(/\n/g,'<br>')+'</p>';
+      }).join('');
+      el.innerHTML=
+        '<div style="background:#f4f4f0;padding:20px;font-family:Georgia,serif">'+
+        '<div style="max-width:540px;margin:0 auto">'+
+        '<div style="background:'+b.bgColor+';padding:18px;text-align:center;border-radius:8px 8px 0 0">'+
+        '<img src="'+b.logoUrl+'" height="45" alt="'+b.name+'" style="max-height:45px" '+
+        'onerror="this.style.display=\'none\'">'+
+        '</div>'+
+        '<div style="background:'+b.accentColor+';height:3px"></div>'+
+        '<div style="background:#fff;padding:28px 32px;color:#333;font-size:14px">'+bh+'</div>'+
+        '<div style="background:'+b.accentColor+';height:2px"></div>'+
+        '<div style="background:'+b.bgColor+';padding:14px;text-align:center;border-radius:0 0 8px 8px">'+
+        '<span style="color:#fff;font-size:11px">'+b.name+'</span>'+
+        '</div></div></div>';
+    }
+    wrap.style.display='block';
+    if(btn) btn.textContent='\uD83D\uDC41 Nascondi';
+  } else {
+    wrap.style.display='none';
+    if(btn) btn.textContent='\uD83D\uDC41 Anteprima';
+  }
+}
 function selectBrand(brand, id){
   const brandEl=document.getElementById('em-brand');
   if(brandEl) brandEl.value=brand;
@@ -1751,25 +1796,6 @@ function selectBrand(brand, id){
   if(wrap&&wrap.style.display!=='none') togglePreview(id,true);
 }
 
-function togglePreview(id, forceRefresh){
-  const wrap = document.getElementById('email-preview-wrap');
-  const btn  = document.getElementById('prev-btn');
-  const c    = (isClienti()?dbC:db).contacts.find(x=>x.id===id);
-  if(!wrap) return;
-  if(wrap.style.display==='none'||forceRefresh){
-    const brand = document.getElementById('em-brand')?.value||'sienawine';
-    const body  = document.getElementById('ebo')?.value||'';
-    const toName= document.getElementById('em-toname')?.value||'';
-    const html  = buildHtmlEmail(body, brand, toName);
-    const iframe= document.getElementById('email-preview');
-    iframe.srcdoc = html;
-    wrap.style.display='block';
-    if(btn) btn.textContent='👁 Nascondi anteprima';
-  } else {
-    wrap.style.display='none';
-    if(btn) btn.textContent='👁 Anteprima HTML';
-  }
-}
 
 async function doSendEmail(id){
   const c = (isClienti()?dbC:db).contacts.find(x=>x.id===id);if(!c) return;
@@ -1993,13 +2019,26 @@ function updateBulkPreview(){
   if(subjEl&&!subjEl.dataset.edited) subjEl.value=t.subject;
 
   // Aggiorna anteprima con primo contatto disponibile
-  const example=(isClienti()?dbC:db).contacts.find(c=>sel.has(c.id)&&(c.contactEmail||c.email));
-  const iframe=document.getElementById('bulk-preview');
-  if(!iframe||!example) return;
-
+  const adb2=isClienti()?dbC:db;
+  const example=
+    adb2.contacts.find(c=>sel.has(c.id)&&(c.contactEmail||c.email||c.contacts?.length))||
+    adb2.contacts.find(c=>c.company&&(c.contactEmail||c.email||c.contacts?.length))||
+    adb2.contacts[0];
+  const prevDiv=document.getElementById('bulk-preview');
+  if(!prevDiv||!example) return;
   const filled=fillTplForContact(t.body, example);
-  const html=buildHtmlEmail(filled, brand, example.contactName||example.name);
-  iframe.srcdoc=html;
+  const b3=BRANDS[brand]||BRANDS.sienawine;
+  const paras3=filled.split('\n\n').filter(p=>p.trim());
+  const bh3=paras3.map(p=>'<p style="margin:0 0 10px;line-height:1.6;color:#333;font-size:13px">'+
+    esc(p).replace(/\n/g,'<br>')+'</p>').join('');
+  prevDiv.innerHTML=
+    '<div style="background:#f4f4f0;padding:14px;font-family:Georgia,serif">'+
+    '<div style="background:'+b3.bgColor+';padding:14px;text-align:center;border-radius:6px 6px 0 0">'+
+    '<img src="'+b3.logoUrl+'" height="36" alt="'+b3.name+'" style="max-height:36px" onerror="this.style.display=\'none\'">'+
+    '</div>'+
+    '<div style="background:'+b3.accentColor+';height:2px"></div>'+
+    '<div style="background:#fff;padding:20px 24px">'+bh3+'</div>'+
+    '</div>';
 }
 
 function fillTplForContact(body, c){
