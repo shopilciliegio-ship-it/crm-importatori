@@ -165,7 +165,7 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
       <button class="layer-btn active" id="layer-btn-imp" onclick="switchLayer('importatori')">🏢 Importatori</button>
       <button class="layer-btn" id="layer-btn-cli" onclick="switchLayer('clienti')">👤 Clienti Privati</button>
     </div>
-    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.71</div>
+    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.70</div>
   </div>
   <div class="hdr-r">
     <div class="gh-pill"><div class="gh-dot" id="gh-dot"></div><span id="gh-lbl">GitHub</span></div>
@@ -1575,9 +1575,9 @@ function buildHtmlEmail(body, brand, contactName){
     <p style="margin:0 0 8px;color:#ffffff;font-size:13px;font-weight:bold;letter-spacing:1px;text-transform:uppercase">${b.name}</p>
     <p style="margin:0 0 12px;color:${b.accentColor};font-size:12px;font-style:italic">${b.tagline}</p>
     <p style="margin:0;font-size:12px;color:#999;line-height:1.8">
-      <span style="color:#cccccc">${b.website.replace('https://','')}</span>
+      <a href="${b.website}" style="color:${b.accentColor};text-decoration:none">${b.website.replace('https://','')}</a>
       &nbsp;|&nbsp;
-      <span style="color:#999">${b.phone}</span>
+      <a href="tel:${b.phone}" style="color:#999;text-decoration:none">${b.phone}</a>
     </p>
   </td></tr>
 
@@ -1618,8 +1618,7 @@ async function sendViaBrevo(contactId, toEmail, toName, subject, bodyText, brand
         },
         to: [{ email: toEmail, name: toName||toEmail||'' }],
         subject: subject,
-        htmlContent: html,
-        textContent: bodyText.replace(/\{\{[^}]+\}\}/g,'').trim(),
+        htmlContent: htmlContent,
         tags: ['wine-crm', brand],
         headers: { 'X-CRM-ContactId': contactId }
       })
