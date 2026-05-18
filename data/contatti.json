@@ -464,17 +464,24 @@
       "contactTitle": "Import Manager",
       "contactEmail": "luca@ilciliegio.com",
       "name": "David Rosenberg",
-      "status": "new",
+      "status": "sent",
       "products": [],
       "notes": "",
       "createdAt": 1778703050435,
-      "updatedAt": 1778703050435,
+      "updatedAt": 1779094240354,
       "log": [
         {
           "ts": 1778703050435,
           "msg": "Importato da XLSX (2 contatti)"
+        },
+        {
+          "ts": 1779094240354,
+          "msg": "📧 Email inviata via Brevo — \"Italian wines — proven in the US market\" (ID: <202605180850.48246601101@smtp-relay.mailin.fr>)"
         }
-      ]
+      ],
+      "lastEmailSent": 1779094240354,
+      "lastEmailSubject": "Italian wines — proven in the US market",
+      "emailsSent": 1
     }
   ],
   "templates": [
