@@ -38,17 +38,24 @@
       "contactTitle": "Purchasing Manager",
       "contactEmail": "luca@ilciliegio.com",
       "name": "Michael Weber",
-      "status": "new",
+      "status": "sent",
       "products": [],
       "notes": "",
       "createdAt": 1778703050435,
-      "updatedAt": 1778703050435,
+      "updatedAt": 1779094229197,
       "log": [
         {
           "ts": 1778703050435,
           "msg": "Importato da XLSX (1 contatti)"
+        },
+        {
+          "ts": 1779094229197,
+          "msg": "📧 Email inviata via Brevo — \"Italian wines — proven in the US market\" (ID: <202605180850.78649880736@smtp-relay.mailin.fr>)"
         }
-      ]
+      ],
+      "lastEmailSent": 1779094229197,
+      "lastEmailSubject": "Italian wines — proven in the US market",
+      "emailsSent": 1
     },
     {
       "id": "c1778703050435gfkxsr",
@@ -95,17 +102,24 @@
       "contactTitle": "Wine Buyer",
       "contactEmail": "luca@ilciliegio.com",
       "name": "Sarah Mitchell",
-      "status": "new",
+      "status": "sent",
       "products": [],
       "notes": "",
       "createdAt": 1778703050435,
-      "updatedAt": 1778703050435,
+      "updatedAt": 1779094231076,
       "log": [
         {
           "ts": 1778703050435,
           "msg": "Importato da XLSX (2 contatti)"
+        },
+        {
+          "ts": 1779094231076,
+          "msg": "📧 Email inviata via Brevo — \"Italian wines — proven in the US market\" (ID: <202605180850.96892116464@smtp-relay.mailin.fr>)"
         }
-      ]
+      ],
+      "lastEmailSent": 1779094231076,
+      "lastEmailSubject": "Italian wines — proven in the US market",
+      "emailsSent": 1
     },
     {
       "id": "c17787030504350a6w5v",
@@ -152,17 +166,24 @@
       "contactTitle": "Commercial Director",
       "contactEmail": "luca@ilciliegio.com",
       "name": "Elena Dubois",
-      "status": "new",
+      "status": "sent",
       "products": [],
       "notes": "",
       "createdAt": 1778703050435,
-      "updatedAt": 1778703050435,
+      "updatedAt": 1779094232941,
       "log": [
         {
           "ts": 1778703050435,
           "msg": "Importato da XLSX (2 contatti)"
+        },
+        {
+          "ts": 1779094232941,
+          "msg": "📧 Email inviata via Brevo — \"Italian wines — proven in the US market\" (ID: <202605180850.13835988062@smtp-relay.mailin.fr>)"
         }
-      ]
+      ],
+      "lastEmailSent": 1779094232941,
+      "lastEmailSubject": "Italian wines — proven in the US market",
+      "emailsSent": 1
     },
     {
       "id": "c1778703050435bj8pmg",
@@ -209,17 +230,24 @@
       "contactTitle": "General Manager",
       "contactEmail": "luca@ilciliegio.com",
       "name": "Carlos Mendes",
-      "status": "new",
+      "status": "sent",
       "products": [],
       "notes": "",
       "createdAt": 1778703050435,
-      "updatedAt": 1778703050435,
+      "updatedAt": 1779094234377,
       "log": [
         {
           "ts": 1778703050435,
           "msg": "Importato da XLSX (2 contatti)"
+        },
+        {
+          "ts": 1779094234377,
+          "msg": "📧 Email inviata via Brevo — \"Italian wines — proven in the US market\" (ID: <202605180850.72732292952@smtp-relay.mailin.fr>)"
         }
-      ]
+      ],
+      "lastEmailSent": 1779094234377,
+      "lastEmailSubject": "Italian wines — proven in the US market",
+      "emailsSent": 1
     },
     {
       "id": "c1778703050435ctrosx",
@@ -259,17 +287,24 @@
       "contactTitle": "CEO",
       "contactEmail": "luca@ilciliegio.com",
       "name": "Hiroshi Tanaka",
-      "status": "new",
+      "status": "sent",
       "products": [],
       "notes": "",
       "createdAt": 1778703050435,
-      "updatedAt": 1778703050435,
+      "updatedAt": 1779094236265,
       "log": [
         {
           "ts": 1778703050435,
           "msg": "Importato da XLSX (1 contatti)"
+        },
+        {
+          "ts": 1779094236265,
+          "msg": "📧 Email inviata via Brevo — \"Italian wines — proven in the US market\" (ID: <202605180850.21215102675@smtp-relay.mailin.fr>)"
         }
-      ]
+      ],
+      "lastEmailSent": 1779094236265,
+      "lastEmailSubject": "Italian wines — proven in the US market",
+      "emailsSent": 1
     },
     {
       "id": "c1778703050435p7wl8x",
@@ -323,17 +358,24 @@
       "contactTitle": "Buyer",
       "contactEmail": "luca@ilciliegio.com",
       "name": "Anna Lindqvist",
-      "status": "new",
+      "status": "sent",
       "products": [],
       "notes": "",
       "createdAt": 1778703050435,
-      "updatedAt": 1778703050435,
+      "updatedAt": 1779094237669,
       "log": [
         {
           "ts": 1778703050435,
           "msg": "Importato da XLSX (3 contatti)"
+        },
+        {
+          "ts": 1779094237669,
+          "msg": "📧 Email inviata via Brevo — \"Italian wines — proven in the US market\" (ID: <202605180850.81857113955@smtp-relay.mailin.fr>)"
         }
-      ]
+      ],
+      "lastEmailSent": 1779094237669,
+      "lastEmailSubject": "Italian wines — proven in the US market",
+      "emailsSent": 1
     },
     {
       "id": "c1778703050435okbl0r",
