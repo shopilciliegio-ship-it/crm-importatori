@@ -165,7 +165,7 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
       <button class="layer-btn active" id="layer-btn-imp" onclick="switchLayer('importatori')">🏢 Importatori</button>
       <button class="layer-btn" id="layer-btn-cli" onclick="switchLayer('clienti')">👤 Clienti Privati</button>
     </div>
-    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.77</div>
+    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.78</div>
   </div>
   <div class="hdr-r">
     <div class="gh-pill"><div class="gh-dot" id="gh-dot"></div><span id="gh-lbl">GitHub</span></div>
@@ -1510,17 +1510,17 @@ function firstName(fullName){
 // 1+ contacts → Dear [Name] from [Company],
 function buildDearLine(primary, secondary, companyName){
   if(!primary || !primary.name){
-    return `Esteemed ${esc(companyName||'')} Team,`;
+    return `Esteemed ${companyName||''} Team,`;
   }
   const fn = firstName(primary.name);
-  return `Dear ${esc(fn)} from ${esc(companyName||'')},`;
+  return `Dear ${fn} from ${companyName||''},`;
 }
 
 // Costruisce la menzione dell'owner/secondary nell'apertura
 function buildOwnerMention(secondary){
   if(!secondary || !secondary.name) return '';
   const fn = firstName(secondary.name);
-  return ` — and after seeing what you and ${esc(fn)} have built`;
+  return ` — and after seeing what you and ${fn} have built`;
 }
 
 // Costruisce la riga "This is something you [and NAME] know very well."
@@ -1529,7 +1529,7 @@ function buildKnowWell(secondary){
     return 'This is something you know very well.';
   }
   const fn = firstName(secondary.name);
-  return `This is something you and ${esc(fn)} know very well.`;
+  return `This is something you and ${fn} know very well.`;
 }
 
 /* ═══════════════════════════════════════════════════
@@ -1892,7 +1892,7 @@ function applyTpl(id){
   const f=s=>String(s||'')
     .replace(/\{\{dear\}\}/g,          dearLine)
     .replace(/\{\{owner_mention\}\}/g,  ownerMention)
-    .replace(/\{\{know_well\}\}/g,      buildKnowWell(secondary))
+    .replace(/\{\{know_well\}\}/g,      knowWell)
     .replace(/\{\{owner\}\}/g,          secName)
     .replace(/\{\{contatto\}\}/g,       primaryName||c.contactName||'')
     .replace(/\{\{nome\}\}/g,           primaryName||c.name||'')
@@ -2189,7 +2189,7 @@ function fillTplForContact(body, c){
   return body
     .replace(/\{\{dear\}\}/g,          dearLine)
     .replace(/\{\{owner_mention\}\}/g,  ownerMention)
-    .replace(/\{\{know_well\}\}/g,      buildKnowWell(secondary))
+    .replace(/\{\{know_well\}\}/g,      knowWell)
     .replace(/\{\{owner\}\}/g,          firstName(secondary?.name||''))
     .replace(/\{\{contatto\}\}/g,       primaryName || c.contactName || '')
     .replace(/\{\{nome\}\}/g,           primaryName || c.name || '')
