@@ -165,7 +165,7 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
       <button class="layer-btn active" id="layer-btn-imp" onclick="switchLayer('importatori')">🏢 Importatori</button>
       <button class="layer-btn" id="layer-btn-cli" onclick="switchLayer('clienti')">👤 Clienti Privati</button>
     </div>
-    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.80</div>
+    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.81</div>
   </div>
   <div class="hdr-r">
     <div class="gh-pill"><div class="gh-dot" id="gh-dot"></div><span id="gh-lbl">GitHub</span></div>
@@ -374,11 +374,12 @@ async function saveTemplatesToGH(){
       if(r.ok){ const d=await r.json(); ghSha.templates=d.sha; }
     }
     const jsonStr=JSON.stringify(allTemplates,null,2);
-    const b64=btoa(unescape(encodeURIComponent(jsonStr)));
+    const b64=btoa(Array.from(new TextEncoder().encode(jsonStr),b=>String.fromCharCode(b)).join(''));
     const body={message:'Update templates',content:b64};
     if(ghSha.templates) body.sha=ghSha.templates;
     const res=await fetch(url,{method:'PUT',headers:hd,body:JSON.stringify(body)});
-    if(res.ok){ const d=await res.json(); ghSha.templates=d.content?.sha||ghSha.templates; }
+    if(res.ok){ const d=await res.json(); ghSha.templates=d.content?.sha||ghSha.templates; toast('📁 templates.json salvato su GitHub ✓'); }
+    else { const err=await res.json().catch(()=>({})); console.error('saveTemplatesToGH:',res.status,err); toast('⚠ Errore salvataggio templates: '+res.status); }
   }catch(e){ console.warn('saveTemplatesToGH error:',e); }
 }
 
@@ -2441,11 +2442,11 @@ function saveTpl(editId){
   const t={id:editId||'t'+Date.now(),name,subject:gv('ts'),body:document.getElementById('tb').value};
   if(editId){const i=(isClienti()?dbC:db).templates.findIndex(x=>x.id===editId);if(i>=0)(isClienti()?dbC:db).templates[i]=t;}
   else (isClienti()?dbC:db).templates.push(t);
-  saveDB();closeModal();renderTemplates();toast('Salvato ✓');
+  saveDB();saveTemplatesToGH();closeModal();renderTemplates();toast('Salvato ✓');
 }
 function delTpl(id){
   if(!confirm('Eliminare?'))return;
-  (isClienti()?dbC:db).templates=(isClienti()?dbC:db).templates.filter(t=>t.id!==id);saveDB();renderTemplates();
+  (isClienti()?dbC:db).templates=(isClienti()?dbC:db).templates.filter(t=>t.id!==id);saveDB();saveTemplatesToGH();renderTemplates();
 }
 
 /* ═══════════════════════════════════════
