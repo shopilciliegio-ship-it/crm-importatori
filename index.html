@@ -165,7 +165,7 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
       <button class="layer-btn active" id="layer-btn-imp" onclick="switchLayer('importatori')">🏢 Importatori</button>
       <button class="layer-btn" id="layer-btn-cli" onclick="switchLayer('clienti')">👤 Clienti Privati</button>
     </div>
-    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.79</div>
+    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.80</div>
   </div>
   <div class="hdr-r">
     <div class="gh-pill"><div class="gh-dot" id="gh-dot"></div><span id="gh-lbl">GitHub</span></div>
@@ -312,7 +312,7 @@ let ghs={};
 let brv={};
 let sel=new Set();
 let _pendingEmailId=null; // id contatto per apertura email da scheda
-let ghSha={importatori:null,clienti:null};
+let ghSha={importatori:null,clienti:null,templates:null};
 let saveTimer=null,pending=null;
 
 
@@ -327,10 +327,59 @@ function _migrateTemplatesIfNeeded(){
   const missingCTA = db.templates.length > 0 &&
     !db.templates.some(t => (t.body||'').includes('know_well'));
   if(hasOld || missingCTA){
-    db.templates = defTplImportatori();
+    // Imposta default solo se non caricati da GitHub
+    if(!ghSha.templates) db.templates = defTplImportatori();
     saveDB();
     console.log('Template importatori migrati ai nuovi Siena Wine');
   }
+}
+
+
+function ghPathTemplates(){ return 'data/templates.json'; }
+
+async function loadTemplatesFromGH(){
+  const{token,owner,repo}=ghs;
+  if(!token||!owner||!repo) return;
+  const url=`https://api.github.com/repos/${owner}/${repo}/contents/${ghPathTemplates()}`;
+  try{
+    const r=await fetch(url,{headers:{'Authorization':`token ${token}`,'Accept':'application/vnd.github.v3+json'}});
+    if(r.status===404){ return; } // file non esiste ancora — usa default
+    if(!r.ok) return;
+    const d=await r.json();
+    ghSha.templates=d.sha;
+    const raw=d.content.replace(/\n/g,'');
+    let jsonStr;
+    try{ jsonStr=decodeURIComponent(Array.from(atob(raw),c=>'%'+c.charCodeAt(0).toString(16).padStart(2,'0')).join('')); }
+    catch(e){ jsonStr=atob(raw); }
+    const parsed=JSON.parse(jsonStr);
+    if(Array.isArray(parsed)&&parsed.length){
+      db.templates=parsed;
+      dbC.templates=parsed.filter(t=>t.id&&t.id.startsWith('c'));
+      console.log(`✓ ${parsed.length} template caricati da GitHub`);
+    }
+  }catch(e){ console.warn('loadTemplatesFromGH error:',e); }
+}
+
+async function saveTemplatesToGH(){
+  const{token,owner,repo}=ghs;
+  if(!token||!owner||!repo) return;
+  // Salva tutti i template (importatori + clienti) in un unico file
+  const allTemplates=[...db.templates,...dbC.templates];
+  const url=`https://api.github.com/repos/${owner}/${repo}/contents/${ghPathTemplates()}`;
+  const hd={'Authorization':`token ${token}`,'Content-Type':'application/json','Accept':'application/vnd.github.v3+json'};
+  try{
+    // Recupera SHA se non ce l'abbiamo
+    if(!ghSha.templates){
+      const r=await fetch(url,{headers:hd});
+      if(r.ok){ const d=await r.json(); ghSha.templates=d.sha; }
+    }
+    const jsonStr=JSON.stringify(allTemplates,null,2);
+    const b64=btoa(unescape(encodeURIComponent(jsonStr)));
+    const body={message:'Update templates',content:b64};
+    if(ghSha.templates) body.sha=ghSha.templates;
+    const res=await fetch(url,{method:'PUT',headers:hd,body:JSON.stringify(body)});
+    if(res.ok){ const d=await res.json(); ghSha.templates=d.content?.sha||ghSha.templates; }
+  }catch(e){ console.warn('saveTemplatesToGH error:',e); }
 }
 
 /* ── LAYER HELPERS ── */
@@ -373,6 +422,7 @@ async function init(){
   if(!db.templates||!db.templates.length) db.templates=defTplImportatori();
   if(!dbC.templates||!dbC.templates.length) dbC.templates=defTplClienti();
   if(ghs.token&&ghs.owner&&ghs.repo){
+    await loadTemplatesFromGH(); // carica template prima dei contatti
     await loadFromGH();
   } else {
     updGh('idle');refreshAll();
