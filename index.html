@@ -165,7 +165,7 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
       <button class="layer-btn active" id="layer-btn-imp" onclick="switchLayer('importatori')">🏢 Importatori</button>
       <button class="layer-btn" id="layer-btn-cli" onclick="switchLayer('clienti')">👤 Clienti Privati</button>
     </div>
-    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.82</div>
+    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.83</div>
   </div>
   <div class="hdr-r">
     <div class="gh-pill"><div class="gh-dot" id="gh-dot"></div><span id="gh-lbl">GitHub</span></div>
@@ -2028,21 +2028,25 @@ async function syncBrevoEvents(){
   for(const {contact, evIdx, messageId} of toSync){
     try{
       // Recupera eventi per questo messageId
+      // Prima prova con messageId diretto
       const r=await fetch(
-        `https://api.brevo.com/v3/smtp/statistics/events?messageId=${encodeURIComponent(messageId)}&limit=20`,
+        `https://api.brevo.com/v3/smtp/emails/${encodeURIComponent(messageId)}`,
         {headers:{'api-key':brv.apiKey,'Accept':'application/json'}}
       );
       if(!r.ok) continue;
-      const data=await r.json();
-      const events=data.events||[];
+      const emailData=await r.json();
+      // Brevo restituisce eventi come array "events" o come campi diretti
+      const events=emailData.events||[];
+      // Aggiorna anche da campi diretti se presenti
+      if(emailData.status) events.push({event: emailData.status, date: emailData.date});
 
       const ev=contact.brevoEvents[evIdx];
       let changed=false;
 
       events.forEach(e=>{
-        const type=(e.event||e.eventType||'').toLowerCase();
-        if(type==='delivered'   &&!ev.delivered){ ev.delivered=true;   ev.deliveredAt=e.date;  changed=true; }
-        if(type==='opened'      &&!ev.opened)   { ev.opened=true;      ev.openedAt=e.date;     changed=true;
+        const type=(e.event||e.eventType||e.type||'').toLowerCase();
+        if((type==='delivered'||type==='request')&&!ev.delivered){ ev.delivered=true; ev.deliveredAt=e.date; changed=true; }
+        if((type==='opened'||type==='unique_opened')&&!ev.opened){ ev.opened=true; ev.openedAt=e.date; changed=true;
           // Prima apertura → aggiorna log
           if(!contact.log.some(l=>l.msg.includes('👁 Aperta')&&l.msg.includes(ev.subject?.slice(0,20)||''))){
             contact.log.push({ts:new Date(e.date).getTime()||Date.now(), msg:`👁 Aperta: ${ev.subject||''}`});
@@ -2070,12 +2074,14 @@ async function syncBrevoEvents(){
     await new Promise(r=>setTimeout(r,150));
   }
 
+  saveDB();
+  refreshAll();
   if(updated>0){
-    saveDB();
-    refreshAll();
-    toast(`✓ Sincronizzate ${updated} email — log contatti aggiornati`);
+    toast(`✓ Sync Brevo: ${updated} email con nuovi eventi`);
+  } else if(toSync.length>0){
+    toast(`📊 Sync OK — ${toSync.length} email verificate, nessun nuovo evento`);
   } else {
-    toast('Nessun nuovo evento da Brevo');
+    toast('ℹ Nessuna email tracciata — invia prima qualche email');
   }
 }
 
