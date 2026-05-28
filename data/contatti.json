@@ -38,17 +38,24 @@
       "contactTitle": "Purchasing Manager",
       "contactEmail": "luca@ilciliegio.com",
       "name": "Michael Weber",
-      "status": "new",
+      "status": "sent",
       "products": [],
       "notes": "",
       "createdAt": 1779456560974,
-      "updatedAt": 1779456560974,
+      "updatedAt": 1779985646238,
       "log": [
         {
           "ts": 1779456560974,
           "msg": "Importato da XLSX (1 contatti)"
+        },
+        {
+          "ts": 1779985646238,
+          "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202605281627.38209571955@smtp-relay.mailin.fr>)"
         }
-      ]
+      ],
+      "lastEmailSent": 1779985646238,
+      "lastEmailSubject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+      "emailsSent": 1
     },
     {
       "id": "c1779456560974vyjqwl",
@@ -323,17 +330,24 @@
       "contactTitle": "Buyer",
       "contactEmail": "luca@ilciliegio.com",
       "name": "Anna Lindqvist",
-      "status": "new",
+      "status": "sent",
       "products": [],
       "notes": "",
       "createdAt": 1779456560974,
-      "updatedAt": 1779456560974,
+      "updatedAt": 1779985647796,
       "log": [
         {
           "ts": 1779456560974,
           "msg": "Importato da XLSX (3 contatti)"
+        },
+        {
+          "ts": 1779985647796,
+          "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202605281627.21851791196@smtp-relay.mailin.fr>)"
         }
-      ]
+      ],
+      "lastEmailSent": 1779985647796,
+      "lastEmailSubject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+      "emailsSent": 1
     },
     {
       "id": "c1779456560974q2ev7o",
@@ -365,17 +379,24 @@
       "contactTitle": "",
       "contactEmail": "",
       "name": "",
-      "status": "new",
+      "status": "sent",
       "products": [],
       "notes": "",
       "createdAt": 1779456560974,
-      "updatedAt": 1779456560974,
+      "updatedAt": 1779985649779,
       "log": [
         {
           "ts": 1779456560974,
           "msg": "Importato da XLSX (0 contatti)"
+        },
+        {
+          "ts": 1779985649779,
+          "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202605281627.42658399634@smtp-relay.mailin.fr>)"
         }
-      ]
+      ],
+      "lastEmailSent": 1779985649779,
+      "lastEmailSubject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+      "emailsSent": 1
     },
     {
       "id": "c17794565609747egbhk",
