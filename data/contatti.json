@@ -273,17 +273,24 @@
       "contactTitle": "CEO",
       "contactEmail": "luca@ilciliegio.com",
       "name": "Hiroshi Tanaka",
-      "status": "new",
+      "status": "sent",
       "products": [],
       "notes": "",
       "createdAt": 1779456560974,
-      "updatedAt": 1779456560974,
+      "updatedAt": 1779986300732,
       "log": [
         {
           "ts": 1779456560974,
           "msg": "Importato da XLSX (1 contatti)"
+        },
+        {
+          "ts": 1779986300732,
+          "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202605281638.62958378527@smtp-relay.mailin.fr>)"
         }
-      ]
+      ],
+      "lastEmailSent": 1779986300732,
+      "lastEmailSubject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+      "emailsSent": 1
     },
     {
       "id": "c1779456560974jf2zs9",
