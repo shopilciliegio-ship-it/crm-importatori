@@ -234,6 +234,7 @@ async function sendViaBrevo(contactId, toEmail, toName, subject, bodyText, brand
           toEmail,
           toName,
           brand,
+          sequenceStep: c.brevoEvents.length + 1,
           delivered:false,opened:false,clicked:false,
           bounced:false,spam:false,unsubscribed:false,blocked:false
         });

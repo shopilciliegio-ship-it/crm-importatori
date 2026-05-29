@@ -152,7 +152,7 @@ function renderTemplates(){
   const titleEl=document.getElementById('tpl-title');
   if(titleEl) titleEl.textContent=isClienti()?'Template — Clienti Il Ciliegio':'Template — Importatori';
   const el=document.getElementById('tpl-list');
-  el.innerHTML=(isClienti()?dbC:db).templates.length?(isClienti()?dbC:db).templates.map(t=>`
+  el.innerHTML=(isClienti()?dbC:db).templates.length?[...(isClienti()?dbC:db).templates].sort((a,b)=>(a.name||'').localeCompare(b.name||'','it')).map(t=>`
     <div class="card">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
         <div style="font-size:15px;font-weight:600">${esc(t.name)}</div>
