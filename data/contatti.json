@@ -178,13 +178,14 @@
           "toEmail": "luca@ilciliegio.com",
           "toName": "Elena Dubois",
           "brand": "sienawine",
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-05-29T23:26:50.000+02:00"
         }
       ]
     },
@@ -373,13 +374,14 @@
           "toEmail": "luca@ilciliegio.com",
           "toName": "Anna Lindqvist",
           "brand": "sienawine",
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-05-29T23:26:53.000+02:00"
         }
       ]
     },
@@ -439,13 +441,14 @@
           "toEmail": "luca@ilciliegio.com",
           "toName": "",
           "brand": "sienawine",
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-05-29T23:26:52.000+02:00"
         }
       ]
     },
