@@ -112,21 +112,6 @@ function goToContacts({country='',region='',status='',tipo=''}={}){
   renderContacts();
 }
 
-function parseNumeric(val){
-  if(!val) return -1;
-  const s = String(val).replace(/,/g,'').trim();
-  // Gestisce suffissi: K, M, B
-  const m = s.match(/^\$?([\d.]+)\s*([KMBkmb]?)$/);
-  if(!m) return -1;
-  let n = parseFloat(m[1]);
-  if(isNaN(n)) return -1;
-  const suffix = m[2].toUpperCase();
-  if(suffix==='K') n *= 1_000;
-  if(suffix==='M') n *= 1_000_000;
-  if(suffix==='B') n *= 1_000_000_000;
-  return n;
-}
-
 function getFiltered(){
   const q=(gv('sq')).toLowerCase();
   const country=document.getElementById('sc')?.value||'';
@@ -647,19 +632,6 @@ function saveContact(editId){
    secondary= contatto da menzionare nell'apertura (owner/founder)
    Se nessun contatto ha priorità, usa il primo disponibile
 ──────────────────────────────────────────────────────────── */
-
-// Converte stringhe numeriche come "1.2M", "$27.64M", "42", "1,200" in numero
-function parseNumeric(val){
-  if(!val) return -1;
-  const s = String(val).replace(/[,$€£\s]/g,'').toUpperCase();
-  const n = parseFloat(s);
-  if(isNaN(n)) return -1;
-  if(s.endsWith('B')) return n * 1_000_000_000;
-  if(s.endsWith('M')) return n * 1_000_000;
-  if(s.endsWith('K')) return n * 1_000;
-  return n;
-}
-
 
 // Converte valori testuali di employee/sales in numero per ordinamento
 function parseNumeric(val){

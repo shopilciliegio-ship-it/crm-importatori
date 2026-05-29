@@ -8,8 +8,6 @@ function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').
 
 function toast(msg){const el=document.getElementById('toast');el.textContent=msg;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),2800);}
 
-init();
-
 function showModal(html){
   closeModal();
   const bg=document.createElement('div');bg.className='mo';
