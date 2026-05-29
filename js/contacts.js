@@ -214,86 +214,106 @@ function renderRegistro(){
   const adb=isClienti()?dbC:db;
   const sortBy=document.getElementById('reg-sort')?.value||'date';
   const filterStatus=document.getElementById('reg-filter')?.value||'';
+  const stOrd={spam:0,bounced:1,blocked:2,unsubscribed:3,cold:4,client:5,replied:6,sent:7,delivered:8,opened:9,clicked:10};
 
-  const items=[];
+  // Raggruppa per contatto
+  const groups=[];
   adb.contacts.forEach(c=>{
-    const evs=c.brevoEvents||[];
-    if(evs.length){
-      evs.forEach((ev,i)=>{
-        const st=getBrevoStatus(ev);
-        if(filterStatus&&st!==filterStatus) return;
-        items.push({c,ev,i,st});
-      });
-    } else if(c.status==='sent'||c.status==='followup'){
-      if(filterStatus&&filterStatus!=='sent') return;
-      const fakeEv={sentAt:c.updatedAt||c.lastEmailSent||0,subject:c.lastEmailSubject||'—',noTracking:true};
-      items.push({c,ev:fakeEv,i:-1,st:'sent'});
-    }
+    const evs=[...(c.brevoEvents||[])].sort((a,b)=>(a.sentAt||0)-(b.sentAt||0));
+    const legacyEv=(!evs.length&&(c.status==='sent'||c.status==='followup'))
+      ?{sentAt:c.lastEmailSent||0,subject:c.lastEmailSubject||'—',noTracking:true,sequenceStep:1}
+      :null;
+    const allEvs=legacyEv?[legacyEv]:evs;
+    if(!allEvs.length) return;
+    if(filterStatus&&!allEvs.some(ev=>getBrevoStatus(ev)===filterStatus)) return;
+    groups.push({c,evs:allEvs});
   });
 
-  const stOrd={spam:0,bounced:1,blocked:2,unsubscribed:3,cold:4,client:5,replied:6,sent:7,delivered:8,opened:9,clicked:10};
-  items.sort((a,b)=>{
-    if(sortBy==='status') return (stOrd[b.st]??7)-(stOrd[a.st]??7);
-    return (b.ev.sentAt||0)-(a.ev.sentAt||0);
+  groups.sort((a,b)=>{
+    if(sortBy==='status'){
+      const sa=getBrevoStatus(a.evs[a.evs.length-1]);
+      const sb=getBrevoStatus(b.evs[b.evs.length-1]);
+      return (stOrd[sa]??7)-(stOrd[sb]??7);
+    }
+    return Math.max(...b.evs.map(e=>e.sentAt||0))-Math.max(...a.evs.map(e=>e.sentAt||0));
   });
 
   const selBar=document.getElementById('reg-sel-bar');
   if(selBar){
     if(regSel.size>0){
-      selBar.innerHTML=`
-        <div class="sel-bar">
-          <span class="sel-bar-info">✓ ${regSel.size} email selezionat${regSel.size===1?'a':'e'}</span>
-          <button class="btn btg bts" onclick="regSel.clear();renderRegistro()">✕ Deseleziona</button>
-          <button class="btn btp bts" onclick="openFollowUpFromRegistro()">✉ Invia follow-up a ${regSel.size}</button>
-        </div>`;
+      selBar.innerHTML=`<div class="sel-bar">
+        <span class="sel-bar-info">✓ ${regSel.size} contatt${regSel.size===1?'o':'i'} selezionat${regSel.size===1?'o':'i'}</span>
+        <button class="btn btg bts" onclick="regSel.clear();renderRegistro()">✕ Deseleziona</button>
+        <button class="btn btp bts" onclick="openFollowUpFromRegistro()">✉ Follow-up a ${regSel.size}</button>
+      </div>`;
     } else { selBar.innerHTML=''; }
   }
 
   const el=document.getElementById('fl');
-  if(!items.length){
+  if(!groups.length){
     el.innerHTML='<div class="card"><div class="empty">Nessuna email inviata 🚀</div></div>';
     return;
   }
 
-  el.innerHTML=`<div class="card">${items.map(({c,ev,i,st})=>{
-    const sk=c.id+'|'+(ev.messageId||i);
-    const checked=regSel.has(sk);
-    const days=Math.floor((Date.now()-(ev.sentAt||0))/86400000);
+  el.innerHTML=`<div class="card">${groups.map(({c,evs})=>{
     const name=isClienti()?`${c.nome||''} ${c.cognome||''}`.trim():(c.company||'');
-    const sub=ev.noTracking
-      ?'<em style="color:var(--text3)">senza tracking</em>'
-      :esc(ev.subject||'—');
-    const dateStr=fmtDate(ev.sentAt);
-    const daysStr=days===0?'oggi':days===1?'ieri':days+' gg fa';
-    const cur=ev.manualStatus||'';
-    const manualOpts=`
-      <option value="" ${!cur?'selected':''}>— Stato</option>
-      <option value="replied"  ${cur==='replied'?'selected':''}>💬 Risposto</option>
-      <option value="client"   ${cur==='client'?'selected':''}>🤝 Cliente</option>
-      <option value="cold"     ${cur==='cold'?'selected':''}>❌ Non interessato</option>`;
+    const lastEv=evs[evs.length-1];
+    const lastSt=getBrevoStatus(lastEv);
+    const isTerminal=['replied','client','cold'].includes(lastSt);
+    const sk=c.id;
+    const checked=regSel.has(sk);
+    const lastSk=c.id+'|'+(lastEv.messageId||evs.indexOf(lastEv));
 
-    return `<div class="cr${checked?' selected':''}" onclick="openDetail('${c.id}')">
-      <input type="checkbox" class="crow-cb" ${checked?'checked':''}
-        onclick="regToggle('${sk}',event)" onchange="regToggle('${sk}',event)">
+    // Strip email steps — ogni email è un chip colorato
+    const strip=evs.map((ev,idx)=>{
+      const st=getBrevoStatus(ev);
+      const s=BREVO_STATUS[st]||BREVO_STATUS.sent;
+      const icon=STEP_ICON[st]||'📤';
+      const stepN=ev.sequenceStep||(idx+1);
+      const noTrackStyle=ev.noTracking?'opacity:0.6':'';
+      return `<span title="${s.l} — ${fmtDate(ev.sentAt)}"
+        style="display:inline-flex;align-items:center;gap:2px;padding:2px 7px;border-radius:10px;
+          font-size:11px;font-weight:700;background:${s.bg};color:${s.tx};white-space:nowrap;${noTrackStyle}">
+        #${stepN} ${icon} ${fmtDate(ev.sentAt)}
+      </span>`;
+    }).join(`<span style="color:var(--text3);font-size:10px;padding:0 1px">›</span>`);
+
+    const fuHtml=isTerminal?'':fuIndicator(evs);
+    const cur=lastEv.manualStatus||'';
+    const manualSel=isTerminal?'':`
+      <select onclick="event.stopPropagation()"
+        onchange="setManualStatus('${c.id}','${lastSk}',this.value)"
+        style="font-size:11px;padding:3px 5px;border-radius:var(--r);border:0.5px solid var(--brd2);background:var(--bg);color:var(--text);cursor:pointer">
+        <option value="" ${!cur?'selected':''}>— Stato</option>
+        <option value="replied"  ${cur==='replied'?'selected':''}>💬 Risposto</option>
+        <option value="client"   ${cur==='client'?'selected':''}>🤝 Cliente</option>
+        <option value="cold"     ${cur==='cold'?'selected':''}>❌ Non interessato</option>
+      </select>`;
+
+    const terminalBadge=(()=>{
+      const s=BREVO_STATUS[lastSt];
+      return s?`<span class="badge" style="background:${s.bg};color:${s.tx};font-size:11px">${s.l}</span>`:'';
+    })();
+
+    return `<div class="cr${checked&&!isTerminal?' selected':''}" onclick="openDetail('${c.id}')"
+      style="${isTerminal?'opacity:0.55':''}">
+      ${!isTerminal
+        ?`<input type="checkbox" class="crow-cb" ${checked?'checked':''}
+            onclick="regToggle('${sk}',event)" onchange="regToggle('${sk}',event)">`
+        :`<div style="width:17px;flex-shrink:0"></div>`
+      }
       <div class="av ${AV[hsh(name)%6]}">${ini(name)}</div>
       <div class="ci">
-        <div class="cn">${esc(name)}</div>
-        <div class="cs">${sub}</div>
-        <div style="font-size:11px;color:var(--text3);margin-top:2px">${dateStr} · ${daysStr}</div>
+        <div class="cn">${esc(name)}<span style="font-size:11px;color:var(--text2);font-weight:400;margin-left:6px">${esc(c.country||'')}</span></div>
+        <div style="display:flex;align-items:center;flex-wrap:wrap;gap:3px;margin-top:5px">
+          ${strip}
+          ${fuHtml}
+        </div>
       </div>
-      <div style="display:flex;align-items:center;gap:5px;flex-shrink:0;flex-wrap:wrap;justify-content:flex-end">
-        ${ev.noTracking?'':fuIndicator(ev)}
-        ${ev.noTracking
-          ?`<span class="badge bx" style="font-size:11px">Senza tracking</span>`
-          :breveStatusBadge(ev)
-        }
-        ${!ev.noTracking?`<select onclick="event.stopPropagation()"
-          onchange="setManualStatus('${c.id}','${sk}',this.value)"
-          style="font-size:11px;padding:3px 5px;border-radius:var(--r);border:0.5px solid var(--brd2);background:var(--bg);color:var(--text);cursor:pointer">
-          ${manualOpts}
-        </select>`:''}
-        <button class="btn bts" style="font-size:11px;flex-shrink:0"
-          onclick="event.stopPropagation();openEmailModal('${c.id}')">✉</button>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0">
+        ${isTerminal?terminalBadge:manualSel}
+        ${!isTerminal?`<button class="btn bts" style="font-size:11px"
+          onclick="event.stopPropagation();openEmailModal('${c.id}')">✉</button>`:''}
       </div>
     </div>`;
   }).join('')}</div>`;
@@ -306,9 +326,8 @@ function regToggle(sk,e){
 }
 
 function openFollowUpFromRegistro(){
-  const contactIds=new Set([...regSel].map(sk=>sk.split('|')[0]));
   sel.clear();
-  contactIds.forEach(id=>sel.add(id));
+  regSel.forEach(id=>sel.add(id));
   regSel.clear();
   openBulkSend();
 }
