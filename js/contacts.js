@@ -215,7 +215,6 @@ function renderRegistro(){
   const sortBy=document.getElementById('reg-sort')?.value||'date';
   const filterStatus=document.getElementById('reg-filter')?.value||'';
 
-  // Costruisce lista email inviate
   const items=[];
   adb.contacts.forEach(c=>{
     const evs=c.brevoEvents||[];
@@ -232,14 +231,12 @@ function renderRegistro(){
     }
   });
 
-  // Ordina
-  const stOrd={spam:0,bounced:1,blocked:2,unsubscribed:3,sent:4,delivered:5,opened:6,clicked:7};
+  const stOrd={spam:0,bounced:1,blocked:2,unsubscribed:3,cold:4,client:5,replied:6,sent:7,delivered:8,opened:9,clicked:10};
   items.sort((a,b)=>{
-    if(sortBy==='status') return (stOrd[b.st]??4)-(stOrd[a.st]??4);
+    if(sortBy==='status') return (stOrd[b.st]??7)-(stOrd[a.st]??7);
     return (b.ev.sentAt||0)-(a.ev.sentAt||0);
   });
 
-  // Barra selezione
   const selBar=document.getElementById('reg-sel-bar');
   if(selBar){
     if(regSel.size>0){
@@ -249,14 +246,12 @@ function renderRegistro(){
           <button class="btn btg bts" onclick="regSel.clear();renderRegistro()">✕ Deseleziona</button>
           <button class="btn btp bts" onclick="openFollowUpFromRegistro()">✉ Invia follow-up a ${regSel.size}</button>
         </div>`;
-    } else {
-      selBar.innerHTML='';
-    }
+    } else { selBar.innerHTML=''; }
   }
 
   const el=document.getElementById('fl');
   if(!items.length){
-    el.innerHTML='<div class="card"><div class="empty">Nessuna email inviata — inizia a spedire! 🚀</div></div>';
+    el.innerHTML='<div class="card"><div class="empty">Nessuna email inviata 🚀</div></div>';
     return;
   }
 
@@ -268,20 +263,36 @@ function renderRegistro(){
     const sub=ev.noTracking
       ?'<em style="color:var(--text3)">senza tracking</em>'
       :esc(ev.subject||'—');
+    const dateStr=fmtDate(ev.sentAt);
+    const daysStr=days===0?'oggi':days===1?'ieri':days+' gg fa';
+    const cur=ev.manualStatus||'';
+    const manualOpts=`
+      <option value="" ${!cur?'selected':''}>— Stato</option>
+      <option value="replied"  ${cur==='replied'?'selected':''}>💬 Risposto</option>
+      <option value="client"   ${cur==='client'?'selected':''}>🤝 Cliente</option>
+      <option value="cold"     ${cur==='cold'?'selected':''}>❌ Non interessato</option>`;
+
     return `<div class="cr${checked?' selected':''}" onclick="openDetail('${c.id}')">
       <input type="checkbox" class="crow-cb" ${checked?'checked':''}
         onclick="regToggle('${sk}',event)" onchange="regToggle('${sk}',event)">
       <div class="av ${AV[hsh(name)%6]}">${ini(name)}</div>
       <div class="ci">
         <div class="cn">${esc(name)}</div>
-        <div class="cs">${sub} · ${days===0?'oggi':days===1?'ieri':days+' gg fa'}</div>
+        <div class="cs">${sub}</div>
+        <div style="font-size:11px;color:var(--text3);margin-top:2px">${dateStr} · ${daysStr}</div>
       </div>
-      <div style="display:flex;align-items:center;gap:6px;flex-shrink:0">
+      <div style="display:flex;align-items:center;gap:5px;flex-shrink:0;flex-wrap:wrap;justify-content:flex-end">
+        ${ev.noTracking?'':fuIndicator(ev)}
         ${ev.noTracking
           ?`<span class="badge bx" style="font-size:11px">Senza tracking</span>`
           :breveStatusBadge(ev)
         }
-        <button class="btn bts" style="font-size:11px"
+        ${!ev.noTracking?`<select onclick="event.stopPropagation()"
+          onchange="setManualStatus('${c.id}','${sk}',this.value)"
+          style="font-size:11px;padding:3px 5px;border-radius:var(--r);border:0.5px solid var(--brd2);background:var(--bg);color:var(--text);cursor:pointer">
+          ${manualOpts}
+        </select>`:''}
+        <button class="btn bts" style="font-size:11px;flex-shrink:0"
           onclick="event.stopPropagation();openEmailModal('${c.id}')">✉</button>
       </div>
     </div>`;
