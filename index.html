@@ -165,7 +165,7 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
       <button class="layer-btn active" id="layer-btn-imp" onclick="switchLayer('importatori')">🏢 Importatori</button>
       <button class="layer-btn" id="layer-btn-cli" onclick="switchLayer('clienti')">👤 Clienti Privati</button>
     </div>
-    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.84</div>
+    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.83</div>
   </div>
   <div class="hdr-r">
     <div class="gh-pill"><div class="gh-dot" id="gh-dot"></div><span id="gh-lbl">GitHub</span></div>
@@ -180,7 +180,7 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
 <div class="nav">
   <button class="nb active" onclick="showPage('dashboard',this)">Dashboard</button>
   <button class="nb" onclick="showPage('contacts',this)">Contatti <span class="nbadge" id="ct-n">0</span></button>
-  <button class="nb" onclick="showPage('registro',this)">Registro <span class="nbadge" id="badge-registro" style="background:var(--amber-bg);color:var(--amber-tx)">0</span></button>
+  <button class="nb" onclick="showPage('followups',this)">Follow-up <span class="nbadge" id="fu-n" style="background:var(--amber-bg);color:var(--amber-tx)">0</span></button>
   <button class="nb" onclick="showPage('import',this)">Importa XLSX</button>
   <button class="nb" onclick="showPage('templates',this)">Template email</button>
 </div>
@@ -230,7 +230,7 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
 </div>
 
 <!-- FOLLOWUP -->
-<div id="page-registro" class="page">
+<div id="page-followups" class="page">
   <div style="font-size:13px;color:var(--text2);margin-bottom:12px">Ordinati dal più vecchio — clicca per inviare email</div>
   <div id="fl"></div>
 </div>
@@ -744,7 +744,7 @@ function gv(id){return(document.getElementById(id)?.value||'').trim();}
 
 /* ── REFRESH ── */
 function refreshAll(){
-  renderStats();renderContacts();renderRegistro();
+  renderStats();renderContacts();renderFollowups();
   renderTemplates();renderRegionChart();renderCCChart();renderPipeline();
   updateBadges();updateFilters();
 }
@@ -1732,9 +1732,6 @@ async function sendViaBrevo(contactId, toEmail, toName, subject, bodyText, brand
         c.lastEmailSent = Date.now();
         c.lastEmailSubject = subject;
         c.emailsSent = (c.emailsSent||0) + 1;
-        c.brevoEvents = c.brevoEvents||[];
-        c.brevoEvents.push({messageId:data.messageId,subject,sentAt:Date.now(),
-          delivered:false,opened:false,clicked:false,bounced:false,spam:false});
         saveDB();
         refreshAll();
       }
@@ -2032,14 +2029,16 @@ async function syncBrevoEvents(){
     try{
       // Recupera eventi per questo messageId
       // Prima prova con messageId diretto
-      const encId=encodeURIComponent(messageId);
       const r=await fetch(
-        `https://api.brevo.com/v3/smtp/statistics/events?messageId=${encId}&limit=50`,
+        `https://api.brevo.com/v3/smtp/emails/${encodeURIComponent(messageId)}`,
         {headers:{'api-key':brv.apiKey,'Accept':'application/json'}}
       );
       if(!r.ok) continue;
       const emailData=await r.json();
-      const events=Array.isArray(emailData)?emailData:(emailData.events||[]);
+      // Brevo restituisce eventi come array "events" o come campi diretti
+      const events=emailData.events||[];
+      // Aggiorna anche da campi diretti se presenti
+      if(emailData.status) events.push({event: emailData.status, date: emailData.date});
 
       const ev=contact.brevoEvents[evIdx];
       let changed=false;
@@ -2100,71 +2099,6 @@ function breveEventsBadge(c){
   return icons.length
     ? `<span style="font-size:14px;margin-left:6px">${icons.join('')}</span>`
     : '';
-}
-
-
-function renderRegistro(){
-  const el=document.getElementById('registro-list');
-  if(!el) return;
-  const adb=isClienti()?dbC:db;
-  const rows=[];
-  adb.contacts.forEach(c=>{
-    if(c.brevoEvents&&c.brevoEvents.length){
-      c.brevoEvents.forEach(ev=>rows.push({c,ev}));
-    } else if(c.lastEmailSent){
-      rows.push({c,ev:{subject:c.lastEmailSubject||'—',sentAt:c.lastEmailSent,
-        delivered:null,opened:null,clicked:null,bounced:null,spam:null,messageId:null}});
-    }
-  });
-  rows.sort((a,b)=>(b.ev.sentAt||0)-(a.ev.sentAt||0));
-  const badge=document.getElementById('badge-registro');
-  if(badge) badge.textContent=rows.length>0?rows.length:'';
-  if(!rows.length){
-    el.innerHTML='<div class="empty">Nessuna email inviata ancora.</div>';
-    return;
-  }
-  const fmt=ts=>{
-    if(!ts) return '—';
-    return new Date(typeof ts==='number'?ts:ts)
-      .toLocaleDateString('it-IT',{day:'2-digit',month:'2-digit',year:'2-digit',hour:'2-digit',minute:'2-digit'});
-  };
-  const badge2=ev=>{
-    if(!ev.messageId) return '<span style="color:var(--text3);font-size:11px">non tracciata</span>';
-    if(ev.bounced)    return '<span style="color:#e74c3c">⚠ Bounce</span>';
-    if(ev.spam)       return '<span style="color:#e74c3c">🚫 Spam</span>';
-    let s='<span style="color:#27ae60" title="Consegnata">✓</span>';
-    if(ev.opened)  s+=' <span style="color:#2980b9">👁</span>';
-    if(ev.clicked) s+=' <span style="color:#8e44ad">🔗</span>';
-    if(!ev.opened&&!ev.clicked) s+=' <span style="color:var(--text3);font-size:11px">inviata</span>';
-    return s;
-  };
-  const thead=`<thead><tr style="background:var(--bg2)">
-    <th style="padding:8px 12px;text-align:left;color:var(--text2);font-weight:600">Azienda</th>
-    <th style="padding:8px 12px;text-align:left;color:var(--text2);font-weight:600">Oggetto</th>
-    <th style="padding:8px 12px;text-align:left;color:var(--text2);font-weight:600">Inviata</th>
-    <th style="padding:8px 12px;text-align:center;color:var(--text2);font-weight:600">Apertura</th>
-    <th style="padding:8px 12px;text-align:center;color:var(--text2);font-weight:600">Stato</th>
-  </tr></thead>`;
-  const tbody=rows.map(({c,ev})=>{
-    const cid=c.id;
-    const name=esc(c.company||(c.nome+' '+(c.cognome||'')));
-    const country=esc(c.country||'');
-    const subj=esc((ev.subject||'').replace(/\{\{[^}]+\}\}/g,'').trim());
-    return `<tr style="border-bottom:0.5px solid var(--brd);cursor:pointer"
-      onclick="openDetail('${cid}')"
-      onmouseover="this.style.background='var(--bg2)'"
-      onmouseout="this.style.background=''">
-      <td style="padding:8px 12px">
-        <div style="font-weight:600">${name}</div>
-        <div style="font-size:11px;color:var(--text3)">${country}</div>
-      </td>
-      <td style="padding:8px 12px;color:var(--text2);max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${subj}</td>
-      <td style="padding:8px 12px;color:var(--text3);white-space:nowrap">${fmt(ev.sentAt)}</td>
-      <td style="padding:8px 12px;text-align:center;color:var(--text3)">${ev.opened?fmt(ev.openedAt):'—'}</td>
-      <td style="padding:8px 12px;text-align:center">${badge2(ev)}</td>
-    </tr>`;
-  }).join('');
-  el.innerHTML=`<table style="width:100%;border-collapse:collapse;font-size:13px">${thead}<tbody>${tbody}</tbody></table>`;
 }
 
 /* ═══════════════════════════════════════════════════
@@ -3166,15 +3100,8 @@ function showModal(html){
   const bg=document.createElement('div');bg.className='mo';
   bg.innerHTML=`<div class="mc">
     <button onclick="closeModal()" style="position:absolute;top:14px;right:16px;background:none;border:none;cursor:pointer;font-size:20px;color:var(--text2);line-height:1;padding:4px 6px;border-radius:4px;z-index:10" title="Chiudi">✕</button>
-    <div id="page-registro" class="page">
-  <div class="card">
-    <div class="sh">
-      <div class="st">Registro email inviate</div>
-      <button class="btn bts" onclick="syncBrevoEvents()">📊 Sync Brevo</button>
-    </div>
-    <div id="registro-list"><div class="empty">Nessuna email inviata ancora</div></div>
-  </div>
-</div>`;
+    <div style="position:relative">${html}</div>
+  </div>`;
   bg.addEventListener('click',e=>{if(e.target===bg)closeModal();});
   document.getElementById('modals').appendChild(bg);
 }
