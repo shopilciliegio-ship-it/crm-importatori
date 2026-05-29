@@ -46,7 +46,7 @@ async function init(){
 }
 
 function refreshAll(){
-  renderStats();renderContacts();renderFollowups();
+  renderStats();renderContacts();renderRegistro();
   renderTemplates();renderRegionChart();renderCCChart();renderPipeline();
   updateBadges();updateFilters();
 }

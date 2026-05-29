@@ -90,5 +90,11 @@ function renderPipeline(){
 
 function updateBadges(){
   document.getElementById('ct-n').textContent=(isClienti()?dbC:db).contacts.length;
-  document.getElementById('fu-n').textContent=(isClienti()?dbC:db).contacts.filter(c=>c.status==='followup'||c.status==='sent').length;
+  const adb=isClienti()?dbC:db;
+  let emailCount=0;
+  adb.contacts.forEach(c=>{
+    if(c.brevoEvents?.length) emailCount+=c.brevoEvents.length;
+    else if(c.status==='sent'||c.status==='followup') emailCount++;
+  });
+  document.getElementById('fu-n').textContent=emailCount;
 }

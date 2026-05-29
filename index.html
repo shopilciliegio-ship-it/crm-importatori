@@ -184,7 +184,7 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
 <div class="nav">
   <button class="nb active" onclick="showPage('dashboard',this)">Dashboard</button>
   <button class="nb" onclick="showPage('contacts',this)">Contatti <span class="nbadge" id="ct-n">0</span></button>
-  <button class="nb" onclick="showPage('followups',this)">Follow-up <span class="nbadge" id="fu-n" style="background:var(--amber-bg);color:var(--amber-tx)">0</span></button>
+  <button class="nb" onclick="showPage('followups',this)">Registro <span class="nbadge" id="fu-n" style="background:var(--amber-bg);color:var(--amber-tx)">0</span></button>
   <button class="nb" onclick="showPage('import',this)">Importa XLSX</button>
   <button class="nb" onclick="showPage('templates',this)">Template email</button>
 </div>
@@ -233,9 +233,29 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
   <div id="cl"></div>
 </div>
 
-<!-- FOLLOWUP -->
+<!-- REGISTRO -->
 <div id="page-followups" class="page">
-  <div style="font-size:13px;color:var(--text2);margin-bottom:12px">Ordinati dal più vecchio — clicca per inviare email</div>
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:8px">
+    <span style="font-size:13px;color:var(--text2)">Email inviate — seleziona per inviare follow-up</span>
+    <div style="display:flex;gap:7px;flex-wrap:wrap;align-items:center">
+      <select id="reg-sort" onchange="renderRegistro()" style="font-size:13px;padding:6px 10px;border-radius:var(--r);border:0.5px solid var(--brd2);background:var(--bg);color:var(--text)">
+        <option value="date">↓ Data invio</option>
+        <option value="status">↓ Stato</option>
+      </select>
+      <select id="reg-filter" onchange="renderRegistro()" style="font-size:13px;padding:6px 10px;border-radius:var(--r);border:0.5px solid var(--brd2);background:var(--bg);color:var(--text)">
+        <option value="">Tutti gli stati</option>
+        <option value="sent">📤 Inviata</option>
+        <option value="delivered">✓ Consegnata</option>
+        <option value="opened">👁 Aperta</option>
+        <option value="clicked">🔗 Link cliccato</option>
+        <option value="bounced">⚠ Bounce</option>
+        <option value="spam">🚫 Spam</option>
+        <option value="unsubscribed">🚫 Disiscritto</option>
+        <option value="blocked">🔒 Bloccata</option>
+      </select>
+    </div>
+  </div>
+  <div id="reg-sel-bar" style="margin-bottom:8px"></div>
   <div id="fl"></div>
 </div>
 

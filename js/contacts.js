@@ -210,21 +210,96 @@ function toggleSelect(id, e){
   renderContacts();
 }
 
-function renderFollowups(){
-  const list=(isClienti()?dbC:db).contacts.filter(c=>c.status==='followup'||c.status==='sent')
-    .sort((a,b)=>(a.updatedAt||0)-(b.updatedAt||0));
+function renderRegistro(){
+  const adb=isClienti()?dbC:db;
+  const sortBy=document.getElementById('reg-sort')?.value||'date';
+  const filterStatus=document.getElementById('reg-filter')?.value||'';
+
+  // Costruisce lista email inviate
+  const items=[];
+  adb.contacts.forEach(c=>{
+    const evs=c.brevoEvents||[];
+    if(evs.length){
+      evs.forEach((ev,i)=>{
+        const st=getBrevoStatus(ev);
+        if(filterStatus&&st!==filterStatus) return;
+        items.push({c,ev,i,st});
+      });
+    } else if(c.status==='sent'||c.status==='followup'){
+      if(filterStatus&&filterStatus!=='sent') return;
+      const fakeEv={sentAt:c.updatedAt||c.lastEmailSent||0,subject:c.lastEmailSubject||'—',noTracking:true};
+      items.push({c,ev:fakeEv,i:-1,st:'sent'});
+    }
+  });
+
+  // Ordina
+  const stOrd={spam:0,bounced:1,blocked:2,unsubscribed:3,sent:4,delivered:5,opened:6,clicked:7};
+  items.sort((a,b)=>{
+    if(sortBy==='status') return (stOrd[b.st]??4)-(stOrd[a.st]??4);
+    return (b.ev.sentAt||0)-(a.ev.sentAt||0);
+  });
+
+  // Barra selezione
+  const selBar=document.getElementById('reg-sel-bar');
+  if(selBar){
+    if(regSel.size>0){
+      selBar.innerHTML=`
+        <div class="sel-bar">
+          <span class="sel-bar-info">✓ ${regSel.size} email selezionat${regSel.size===1?'a':'e'}</span>
+          <button class="btn btg bts" onclick="regSel.clear();renderRegistro()">✕ Deseleziona</button>
+          <button class="btn btp bts" onclick="openFollowUpFromRegistro()">✉ Invia follow-up a ${regSel.size}</button>
+        </div>`;
+    } else {
+      selBar.innerHTML='';
+    }
+  }
+
   const el=document.getElementById('fl');
-  el.innerHTML=list.length?`<div class="card">${list.map(c=>{
-    const days=Math.floor((Date.now()-(c.updatedAt||Date.now()))/86400000);
-    return `<div class="cr" onclick="openDetail('${c.id}')">
-      <div class="av ${AV[hsh(c.company)%6]}">${ini(c.name||c.company)}</div>
-      <div class="ci"><div class="cn">${esc(c.company)} ${c.name?'· '+esc(c.name):''}</div>
-        <div class="cs">${esc(c.country||'')} · ${days>0?days+' gg fa':'oggi'}</div></div>
-      <div style="text-align:right;flex-shrink:0;display:flex;flex-direction:column;align-items:flex-end;gap:4px">
-        <span class="badge ${SM[c.status].c}">${SM[c.status].l}</span>
-        <button class="btn bts" style="font-size:11px" onclick="event.stopPropagation();openEmailModal('${c.id}')">✉</button>
-      </div></div>`;
-  }).join('')}</div>`:'<div class="card"><div class="empty">Nessun follow-up 🎉</div></div>';
+  if(!items.length){
+    el.innerHTML='<div class="card"><div class="empty">Nessuna email inviata — inizia a spedire! 🚀</div></div>';
+    return;
+  }
+
+  el.innerHTML=`<div class="card">${items.map(({c,ev,i,st})=>{
+    const sk=c.id+'|'+(ev.messageId||i);
+    const checked=regSel.has(sk);
+    const days=Math.floor((Date.now()-(ev.sentAt||0))/86400000);
+    const name=isClienti()?`${c.nome||''} ${c.cognome||''}`.trim():(c.company||'');
+    const sub=ev.noTracking
+      ?'<em style="color:var(--text3)">senza tracking</em>'
+      :esc(ev.subject||'—');
+    return `<div class="cr${checked?' selected':''}" onclick="openDetail('${c.id}')">
+      <input type="checkbox" class="crow-cb" ${checked?'checked':''}
+        onclick="regToggle('${sk}',event)" onchange="regToggle('${sk}',event)">
+      <div class="av ${AV[hsh(name)%6]}">${ini(name)}</div>
+      <div class="ci">
+        <div class="cn">${esc(name)}</div>
+        <div class="cs">${sub} · ${days===0?'oggi':days===1?'ieri':days+' gg fa'}</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;flex-shrink:0">
+        ${ev.noTracking
+          ?`<span class="badge bx" style="font-size:11px">Senza tracking</span>`
+          :breveStatusBadge(ev)
+        }
+        <button class="btn bts" style="font-size:11px"
+          onclick="event.stopPropagation();openEmailModal('${c.id}')">✉</button>
+      </div>
+    </div>`;
+  }).join('')}</div>`;
+}
+
+function regToggle(sk,e){
+  e.stopPropagation();
+  if(regSel.has(sk)) regSel.delete(sk); else regSel.add(sk);
+  renderRegistro();
+}
+
+function openFollowUpFromRegistro(){
+  const contactIds=new Set([...regSel].map(sk=>sk.split('|')[0]));
+  sel.clear();
+  contactIds.forEach(id=>sel.add(id));
+  regSel.clear();
+  openBulkSend();
 }
 
 function crow(c){
