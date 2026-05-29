@@ -38,15 +38,45 @@
       "contactTitle": "Purchasing Manager",
       "contactEmail": "luca@ilciliegio.com",
       "name": "Michael Weber",
-      "status": "new",
+      "status": "sent",
       "products": [],
       "notes": "",
       "createdAt": 1780089945042,
-      "updatedAt": 1780089945042,
+      "updatedAt": 1780092933308,
       "log": [
         {
           "ts": 1780089945042,
           "msg": "Importato da XLSX (1 contatti)"
+        },
+        {
+          "ts": 1780092933308,
+          "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202605292215.90093123899@smtp-relay.mailin.fr>)"
+        },
+        {
+          "ts": 1780093013314,
+          "msg": "👁 Aperta: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
+        }
+      ],
+      "lastEmailSent": 1780092933308,
+      "lastEmailSubject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+      "emailsSent": 1,
+      "brevoEvents": [
+        {
+          "messageId": "<202605292215.90093123899@smtp-relay.mailin.fr>",
+          "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+          "sentAt": 1780092933308,
+          "toEmail": "luca@ilciliegio.com",
+          "toName": "Michael Weber",
+          "brand": "sienawine",
+          "delivered": true,
+          "opened": true,
+          "clicked": false,
+          "bounced": false,
+          "spam": false,
+          "unsubscribed": false,
+          "blocked": false,
+          "openedAt": "2026-05-30T00:16:53.314+02:00",
+          "deliveredAt": "2026-05-30T00:15:35.000+02:00"
         }
       ]
     },
@@ -239,15 +269,40 @@
       "contactTitle": "General Manager",
       "contactEmail": "luca@ilciliegio.com",
       "name": "Carlos Mendes",
-      "status": "new",
+      "status": "sent",
       "products": [],
       "notes": "",
       "createdAt": 1780089945042,
-      "updatedAt": 1780089945042,
+      "updatedAt": 1780092935289,
       "log": [
         {
           "ts": 1780089945042,
           "msg": "Importato da XLSX (2 contatti)"
+        },
+        {
+          "ts": 1780092935289,
+          "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202605292215.65286629357@smtp-relay.mailin.fr>)"
+        }
+      ],
+      "lastEmailSent": 1780092935289,
+      "lastEmailSubject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+      "emailsSent": 1,
+      "brevoEvents": [
+        {
+          "messageId": "<202605292215.65286629357@smtp-relay.mailin.fr>",
+          "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+          "sentAt": 1780092935289,
+          "toEmail": "luca@ilciliegio.com",
+          "toName": "Carlos Mendes",
+          "brand": "sienawine",
+          "delivered": true,
+          "opened": false,
+          "clicked": false,
+          "bounced": false,
+          "spam": false,
+          "unsubscribed": false,
+          "blocked": false,
+          "deliveredAt": "2026-05-30T00:15:38.000+02:00"
         }
       ]
     },
@@ -507,15 +562,40 @@
       "contactTitle": "Import Manager",
       "contactEmail": "luca@ilciliegio.com",
       "name": "David Rosenberg",
-      "status": "new",
+      "status": "sent",
       "products": [],
       "notes": "",
       "createdAt": 1780089945042,
-      "updatedAt": 1780089945042,
+      "updatedAt": 1780092936789,
       "log": [
         {
           "ts": 1780089945042,
           "msg": "Importato da XLSX (2 contatti)"
+        },
+        {
+          "ts": 1780092936789,
+          "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202605292215.68896726900@smtp-relay.mailin.fr>)"
+        }
+      ],
+      "lastEmailSent": 1780092936789,
+      "lastEmailSubject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+      "emailsSent": 1,
+      "brevoEvents": [
+        {
+          "messageId": "<202605292215.68896726900@smtp-relay.mailin.fr>",
+          "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+          "sentAt": 1780092936789,
+          "toEmail": "luca@ilciliegio.com",
+          "toName": "David Rosenberg",
+          "brand": "sienawine",
+          "delivered": true,
+          "opened": false,
+          "clicked": false,
+          "bounced": false,
+          "spam": false,
+          "unsubscribed": false,
+          "blocked": false,
+          "deliveredAt": "2026-05-30T00:15:38.000+02:00"
         }
       ]
     }
@@ -541,13 +621,25 @@
     },
     {
       "id": "t3",
-      "name": "#3 — Follow-up (day 21) - Importer Siena Wine",
+      "name": "#3a — Follow-up opened(day 21) - Importer Siena Wine",
       "subject": "One contact. One invoice. All of Italy.",
       "body": "{{dear}}\n\nWorking with multiple small Italian producers means multiple contacts, invoices, shipments and conversations. We solve that.\n\nThrough Siena Wine, {{azienda}} gets:\n\n• A single point of contact for the entire portfolio\n• Consolidated orders and shipments\n• Full documentation support\n• A selection proven to sell — validated by years of US market success\n\nWe are not asking you to take a risk on unknown producers. These wines have a track record.\n\nBook a 20-minute call at your convenience: calendly.com/luca-sienawine/30min\n\nBest,\nLuca Pattaro\nSiena Wine | Small Vineyards International\nluca@sienawine.it | +39 331 1347899"
     },
     {
       "id": "t4",
-      "name": "#4 — Break-up (day 35) - Importer Siena Wine",
+      "name": "#4b — Break-up not opened (day 35) - Importer Siena Wine",
+      "subject": "Closing the loop — {{azienda}}",
+      "body": "{{dear}}\n\nI have reached out a few times without hearing back — I completely understand, timing is everything in this business.\n\nI will not send further emails, but wanted to leave you with one thought: if you are ever looking to add a curated Italian portfolio with a proven US track record, a single operational contact, and wineries that genuinely over-deliver for their price point — we are here.\n\nOur portfolio is always available at: www.sienawine.it/smallvineyardsinternational\n\nWishing {{azienda}} continued success.\n\nLuca Pattaro\nSiena Wine | Small Vineyards International\nluca@sienawine.it | +39 331 1347899"
+    },
+    {
+      "id": "t1780094169387",
+      "name": "#3b — Follow-up not opened (day 21) - Importer Siena Wine",
+      "subject": "One contact. One invoice. All of Italy.",
+      "body": "{{dear}}\n\nWorking with multiple small Italian producers means multiple contacts, invoices, shipments and conversations. We solve that.\n\nThrough Siena Wine, {{azienda}} gets:\n\n• A single point of contact for the entire portfolio\n• Consolidated orders and shipments\n• Full documentation support\n• A selection proven to sell — validated by years of US market success\n\nWe are not asking you to take a risk on unknown producers. These wines have a track record.\n\nBook a 20-minute call at your convenience: calendly.com/luca-sienawine/30min\n\nBest,\nLuca Pattaro\nSiena Wine | Small Vineyards International\nluca@sienawine.it | +39 331 1347899"
+    },
+    {
+      "id": "t1780094351675",
+      "name": "#4a — Break-up opened (day 35) - Importer Siena Wine",
       "subject": "Closing the loop — {{azienda}}",
       "body": "{{dear}}\n\nI have reached out a few times without hearing back — I completely understand, timing is everything in this business.\n\nI will not send further emails, but wanted to leave you with one thought: if you are ever looking to add a curated Italian portfolio with a proven US track record, a single operational contact, and wineries that genuinely over-deliver for their price point — we are here.\n\nOur portfolio is always available at: www.sienawine.it/smallvineyardsinternational\n\nWishing {{azienda}} continued success.\n\nLuca Pattaro\nSiena Wine | Small Vineyards International\nluca@sienawine.it | +39 331 1347899"
     }
