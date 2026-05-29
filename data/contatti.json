@@ -1,5 +1,440 @@
 {
-  "contacts": [],
+  "contacts": [
+    {
+      "id": "c1780089945042d89jlz",
+      "compId": "TEST001",
+      "company": "Vino & Co. GmbH",
+      "brandName": "Vino & Co.",
+      "email": "luca@ilciliegio.com",
+      "phone": "+49 89 1234567",
+      "country": "Germany",
+      "region": "Europa",
+      "city": "Munich",
+      "state": "Bavaria",
+      "address": "Weinstrasse 12",
+      "postalCode": "80333",
+      "website": "www.vinoeco.de",
+      "type": "Importer, Distributor",
+      "prodType": "Wine, Spirits",
+      "employees": "45",
+      "sales": "$8.2M",
+      "founded": "1998",
+      "regNumber": "HRB 12345",
+      "linkedinCo": "",
+      "facebook": "",
+      "instagram": "",
+      "twitter": "",
+      "youtube": "",
+      "contacts": [
+        {
+          "name": "Michael Weber",
+          "title": "Purchasing Manager",
+          "email": "luca@ilciliegio.com",
+          "phone": "+49 89 1234568",
+          "linkedin": ""
+        }
+      ],
+      "contactName": "Michael Weber",
+      "contactTitle": "Purchasing Manager",
+      "contactEmail": "luca@ilciliegio.com",
+      "name": "Michael Weber",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1780089945042,
+      "updatedAt": 1780089945042,
+      "log": [
+        {
+          "ts": 1780089945042,
+          "msg": "Importato da XLSX (1 contatti)"
+        }
+      ]
+    },
+    {
+      "id": "c17800899450425e8zmf",
+      "compId": "TEST002",
+      "company": "Pacific Wine Imports",
+      "brandName": "Pacific Wine",
+      "email": "info@ilciliegio.com",
+      "phone": "+61 2 9876 5432",
+      "country": "Australia",
+      "region": "Oceania",
+      "city": "Sydney",
+      "state": "NSW",
+      "address": "46 Harbour Rd",
+      "postalCode": "2000",
+      "website": "www.pacificwine.com.au",
+      "type": "Importer",
+      "prodType": "Wine, Sparkling Wine",
+      "employees": "28",
+      "sales": "$4.1M",
+      "founded": "2005",
+      "regNumber": "ABN 55123456",
+      "linkedinCo": "",
+      "facebook": "",
+      "instagram": "",
+      "twitter": "",
+      "youtube": "",
+      "contacts": [
+        {
+          "name": "Sarah Mitchell",
+          "title": "Wine Buyer",
+          "email": "luca@ilciliegio.com",
+          "phone": "+61 2 9876 5433",
+          "linkedin": ""
+        },
+        {
+          "name": "James Mitchell",
+          "title": "Owner",
+          "email": "luca@ilciliegio.com",
+          "phone": "+61 2 9876 5430",
+          "linkedin": ""
+        }
+      ],
+      "contactName": "Sarah Mitchell",
+      "contactTitle": "Wine Buyer",
+      "contactEmail": "luca@ilciliegio.com",
+      "name": "Sarah Mitchell",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1780089945042,
+      "updatedAt": 1780089945042,
+      "log": [
+        {
+          "ts": 1780089945042,
+          "msg": "Importato da XLSX (2 contatti)"
+        }
+      ]
+    },
+    {
+      "id": "c1780089945042cd8jq8",
+      "compId": "TEST003",
+      "company": "Grands Vins Selection",
+      "brandName": "GVS",
+      "email": "export@ilciliegio.com",
+      "phone": "+33 5 5611 2233",
+      "country": "France",
+      "region": "Europa",
+      "city": "Bordeaux",
+      "state": "Gironde",
+      "address": "14 Rue du Vin",
+      "postalCode": "33000",
+      "website": "www.grandsvins.fr",
+      "type": "Distributor, Wholesaler",
+      "prodType": "Wine",
+      "employees": "120",
+      "sales": "$22.5M",
+      "founded": "1972",
+      "regNumber": "FR 77 123456789",
+      "linkedinCo": "",
+      "facebook": "",
+      "instagram": "",
+      "twitter": "",
+      "youtube": "",
+      "contacts": [
+        {
+          "name": "Elena Dubois",
+          "title": "Commercial Director",
+          "email": "luca@ilciliegio.com",
+          "phone": "+33 5 5611 2234",
+          "linkedin": ""
+        },
+        {
+          "name": "Robert Dubois",
+          "title": "Managing Director",
+          "email": "luca@ilciliegio.com",
+          "phone": "+33 5 5611 2230",
+          "linkedin": ""
+        }
+      ],
+      "contactName": "Elena Dubois",
+      "contactTitle": "Commercial Director",
+      "contactEmail": "luca@ilciliegio.com",
+      "name": "Elena Dubois",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1780089945042,
+      "updatedAt": 1780089945042,
+      "log": [
+        {
+          "ts": 1780089945042,
+          "msg": "Importato da XLSX (2 contatti)"
+        }
+      ]
+    },
+    {
+      "id": "c17800899450425fj006",
+      "compId": "TEST004",
+      "company": "Vinos del Mundo SA",
+      "brandName": "Vinos del Mundo",
+      "email": "amministrazione@ilciliegio.com",
+      "phone": "+55 11 3456 7890",
+      "country": "Brazil",
+      "region": "Sud America",
+      "city": "São Paulo",
+      "state": "SP",
+      "address": "Av. Paulista 1000",
+      "postalCode": "01310-100",
+      "website": "www.vinosdelmundo.com.br",
+      "type": "Importer, Distributor",
+      "prodType": "Wine, Beer, Spirits",
+      "employees": "67",
+      "sales": "$11.3M",
+      "founded": "1995",
+      "regNumber": "CNPJ 12.345.678/0001-99",
+      "linkedinCo": "",
+      "facebook": "",
+      "instagram": "",
+      "twitter": "",
+      "youtube": "",
+      "contacts": [
+        {
+          "name": "Carlos Mendes",
+          "title": "General Manager",
+          "email": "luca@ilciliegio.com",
+          "phone": "+55 11 3456 7891",
+          "linkedin": ""
+        },
+        {
+          "name": "Ana Mendes",
+          "title": "Founder",
+          "email": "luca@ilciliegio.com",
+          "phone": "+55 11 3456 7892",
+          "linkedin": ""
+        }
+      ],
+      "contactName": "Carlos Mendes",
+      "contactTitle": "General Manager",
+      "contactEmail": "luca@ilciliegio.com",
+      "name": "Carlos Mendes",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1780089945042,
+      "updatedAt": 1780089945042,
+      "log": [
+        {
+          "ts": 1780089945042,
+          "msg": "Importato da XLSX (2 contatti)"
+        }
+      ]
+    },
+    {
+      "id": "c1780089945042m83gl2",
+      "compId": "TEST005",
+      "company": "Nippon Fine Wines",
+      "brandName": "NFW",
+      "email": "agriturismo@ilciliegio.com",
+      "phone": "+81 3 1234 5678",
+      "country": "Japan",
+      "region": "Asia",
+      "city": "Tokyo",
+      "state": "Tokyo",
+      "address": "2-5-1 Shibuya",
+      "postalCode": "150-0002",
+      "website": "www.nipponfinewines.jp",
+      "type": "Importer",
+      "prodType": "Wine, Sparkling Wine",
+      "employees": "19",
+      "sales": "$3.8M",
+      "founded": "2010",
+      "regNumber": "",
+      "linkedinCo": "",
+      "facebook": "",
+      "instagram": "",
+      "twitter": "",
+      "youtube": "",
+      "contacts": [
+        {
+          "name": "Hiroshi Tanaka",
+          "title": "CEO",
+          "email": "luca@ilciliegio.com",
+          "phone": "+81 3 1234 5679",
+          "linkedin": ""
+        }
+      ],
+      "contactName": "Hiroshi Tanaka",
+      "contactTitle": "CEO",
+      "contactEmail": "luca@ilciliegio.com",
+      "name": "Hiroshi Tanaka",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1780089945042,
+      "updatedAt": 1780089945042,
+      "log": [
+        {
+          "ts": 1780089945042,
+          "msg": "Importato da XLSX (1 contatti)"
+        }
+      ]
+    },
+    {
+      "id": "c1780089945042bhswr0",
+      "compId": "TEST006",
+      "company": "Nordic Wine Group",
+      "brandName": "NWG",
+      "email": "shop@ilciliegio.com",
+      "phone": "+46 8 1234 5678",
+      "country": "Sweden",
+      "region": "Europa",
+      "city": "Stockholm",
+      "state": "Stockholm",
+      "address": "Kungsgatan 20",
+      "postalCode": "111 35",
+      "website": "www.nordicwinegroup.se",
+      "type": "Distributor, Retailer",
+      "prodType": "Wine, Spirits",
+      "employees": "210",
+      "sales": "$38.7M",
+      "founded": "1988",
+      "regNumber": "556123-4567",
+      "linkedinCo": "https://linkedin.com/company/nwg",
+      "facebook": "",
+      "instagram": "",
+      "twitter": "",
+      "youtube": "",
+      "contacts": [
+        {
+          "name": "Anna Lindqvist",
+          "title": "Buyer",
+          "email": "luca@ilciliegio.com",
+          "phone": "+46 8 1234 5679",
+          "linkedin": ""
+        },
+        {
+          "name": "Lars Eriksson",
+          "title": "Purchasing Director",
+          "email": "luca@ilciliegio.com",
+          "phone": "+46 8 1234 5680",
+          "linkedin": ""
+        },
+        {
+          "name": "Erik Lindqvist",
+          "title": "Co-Founder",
+          "email": "luca@ilciliegio.com",
+          "phone": "+46 8 1234 5677",
+          "linkedin": ""
+        }
+      ],
+      "contactName": "Anna Lindqvist",
+      "contactTitle": "Buyer",
+      "contactEmail": "luca@ilciliegio.com",
+      "name": "Anna Lindqvist",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1780089945042,
+      "updatedAt": 1780089945042,
+      "log": [
+        {
+          "ts": 1780089945042,
+          "msg": "Importato da XLSX (3 contatti)"
+        }
+      ]
+    },
+    {
+      "id": "c1780089945042jcdhhv",
+      "compId": "TEST007",
+      "company": "Singapore Wines & Spirits Pte Ltd",
+      "brandName": "SWS",
+      "email": "luca@ilciliegio.com",
+      "phone": "+65 6234 5678",
+      "country": "Singapore",
+      "region": "Asia",
+      "city": "Singapore",
+      "state": "",
+      "address": "One Raffles Place",
+      "postalCode": "048616",
+      "website": "www.sws.com.sg",
+      "type": "Importer, Wholesaler",
+      "prodType": "Wine, Beer, Spirits",
+      "employees": "85",
+      "sales": "$15.2M",
+      "founded": "2001",
+      "regNumber": "200112345A",
+      "linkedinCo": "",
+      "facebook": "",
+      "instagram": "",
+      "twitter": "",
+      "youtube": "",
+      "contacts": [],
+      "contactName": "",
+      "contactTitle": "",
+      "contactEmail": "",
+      "name": "",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1780089945042,
+      "updatedAt": 1780089945042,
+      "log": [
+        {
+          "ts": 1780089945042,
+          "msg": "Importato da XLSX (0 contatti)"
+        }
+      ]
+    },
+    {
+      "id": "c17800899450427lhx6m",
+      "compId": "TEST008",
+      "company": "Cantina Imports USA LLC",
+      "brandName": "Cantina USA",
+      "email": "info@sienawine.it",
+      "phone": "+1 212 555 0100",
+      "country": "United States",
+      "region": "Nord America",
+      "city": "New York",
+      "state": "New York",
+      "address": "350 Fifth Avenue",
+      "postalCode": "10118",
+      "website": "www.cantinaimports.com",
+      "type": "Importer",
+      "prodType": "Wine",
+      "employees": "33",
+      "sales": "$6.9M",
+      "founded": "2008",
+      "regNumber": "EIN 12-3456789",
+      "linkedinCo": "https://linkedin.com/company/cantina-usa",
+      "facebook": "",
+      "instagram": "",
+      "twitter": "",
+      "youtube": "",
+      "contacts": [
+        {
+          "name": "David Rosenberg",
+          "title": "Import Manager",
+          "email": "luca@ilciliegio.com",
+          "phone": "+1 212 555 0101",
+          "linkedin": ""
+        },
+        {
+          "name": "Rachel Rosenberg",
+          "title": "President",
+          "email": "luca@ilciliegio.com",
+          "phone": "+1 212 555 0102",
+          "linkedin": ""
+        }
+      ],
+      "contactName": "David Rosenberg",
+      "contactTitle": "Import Manager",
+      "contactEmail": "luca@ilciliegio.com",
+      "name": "David Rosenberg",
+      "status": "new",
+      "products": [],
+      "notes": "",
+      "createdAt": 1780089945042,
+      "updatedAt": 1780089945042,
+      "log": [
+        {
+          "ts": 1780089945042,
+          "msg": "Importato da XLSX (2 contatti)"
+        }
+      ]
+    }
+  ],
   "templates": [
     {
       "id": "t1",
