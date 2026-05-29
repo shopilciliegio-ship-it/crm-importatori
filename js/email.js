@@ -226,6 +226,17 @@ async function sendViaBrevo(contactId, toEmail, toName, subject, bodyText, brand
         c.lastEmailSent = Date.now();
         c.lastEmailSubject = subject;
         c.emailsSent = (c.emailsSent||0) + 1;
+        c.brevoEvents = c.brevoEvents||[];
+        c.brevoEvents.push({
+          messageId: data.messageId,
+          subject,
+          sentAt: Date.now(),
+          toEmail,
+          toName,
+          brand,
+          delivered:false,opened:false,clicked:false,
+          bounced:false,spam:false,unsubscribed:false,blocked:false
+        });
         saveDB();
         refreshAll();
       }

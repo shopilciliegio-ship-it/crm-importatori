@@ -18,6 +18,7 @@ let layer='importatori';               // layer attivo
 let ghs={};
 let brv={};
 let sel=new Set();
+let regSel=new Set();
 let _pendingEmailId=null; // id contatto per apertura email da scheda
 let ghSha={importatori:null,clienti:null,templates:null};
 let saveTimer=null,pending=null;

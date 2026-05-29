@@ -1,84 +1,34 @@
 /* ═══ BREVO ═══ */
 
-async function syncBrevoEvents(){
-  if(!brv.apiKey){ toast('Configura prima Brevo nelle impostazioni'); return; }
-  const adb = isClienti()?dbC:db;
+const BREVO_STATUS = {
+  sent:         { l:'📤 Inviata',        bg:'var(--blue-bg)',  tx:'var(--blue-tx)' },
+  delivered:    { l:'✓ Consegnata',      bg:'var(--green-bg)', tx:'var(--green-tx)' },
+  opened:       { l:'👁 Aperta',          bg:'var(--amber-bg)',tx:'var(--amber-tx)' },
+  clicked:      { l:'🔗 Link cliccato',  bg:'var(--pink-bg)', tx:'var(--pink-tx)' },
+  bounced:      { l:'⚠ Bounce',          bg:'var(--red-bg)',  tx:'var(--red-tx)' },
+  spam:         { l:'🚫 Spam',           bg:'var(--red-bg)',  tx:'var(--red-tx)' },
+  unsubscribed: { l:'🚫 Disiscritto',    bg:'var(--red-bg)',  tx:'var(--red-tx)' },
+  blocked:      { l:'🔒 Bloccata',       bg:'var(--gray-bg)', tx:'var(--gray-tx)' },
+};
 
-  // Raccogli tutti i messageId da sincronizzare
-  const toSync = [];
-  adb.contacts.forEach(c=>{
-    (c.brevoEvents||[]).forEach((ev,i)=>{
-      if(ev.messageId) toSync.push({contact:c, evIdx:i, messageId:ev.messageId});
-    });
-  });
-
-  if(!toSync.length){ toast('Nessuna email da sincronizzare'); return; }
-
-  toast(`🔄 Sincronizzazione ${toSync.length} email...`);
-  let updated=0;
-
-  for(const {contact, evIdx, messageId} of toSync){
-    try{
-      // Recupera eventi per questo messageId
-      // Prima prova con messageId diretto
-      const r=await fetch(
-        `https://api.brevo.com/v3/smtp/emails/${encodeURIComponent(messageId)}`,
-        {headers:{'api-key':brv.apiKey,'Accept':'application/json'}}
-      );
-      if(!r.ok) continue;
-      const emailData=await r.json();
-      // Brevo restituisce eventi come array "events" o come campi diretti
-      const events=emailData.events||[];
-      // Aggiorna anche da campi diretti se presenti
-      if(emailData.status) events.push({event: emailData.status, date: emailData.date});
-
-      const ev=contact.brevoEvents[evIdx];
-      let changed=false;
-
-      events.forEach(e=>{
-        const type=(e.event||e.eventType||e.type||'').toLowerCase();
-        if((type==='delivered'||type==='request')&&!ev.delivered){ ev.delivered=true; ev.deliveredAt=e.date; changed=true; }
-        if((type==='opened'||type==='unique_opened')&&!ev.opened){ ev.opened=true; ev.openedAt=e.date; changed=true;
-          // Prima apertura → aggiorna log
-          if(!contact.log.some(l=>l.msg.includes('👁 Aperta')&&l.msg.includes(ev.subject?.slice(0,20)||''))){
-            contact.log.push({ts:new Date(e.date).getTime()||Date.now(), msg:`👁 Aperta: ${ev.subject||''}`});
-          }
-        }
-        if(type==='clicks'||type==='click') { ev.clicked=true; ev.clickedAt=e.date; changed=true;
-          if(!contact.log.some(l=>l.msg.includes('🔗 Click'))){
-            contact.log.push({ts:new Date(e.date).getTime()||Date.now(), msg:`🔗 Click: ${ev.subject||''}`});
-          }
-        }
-        if(type==='bounced'||type==='hardBounce'||type==='softBounce'){
-          ev.bounced=true; ev.bouncedAt=e.date; changed=true;
-          contact.log.push({ts:Date.now(), msg:`⚠ Bounce: ${ev.subject||''}`});
-        }
-        if(type==='spam'){ ev.spam=true; changed=true;
-          contact.log.push({ts:Date.now(), msg:`🚫 Spam: ${ev.subject||''}`});
-        }
-      });
-
-      if(changed) updated++;
-
-    } catch(e){ console.warn('Brevo sync error:', e); }
-
-    // Piccola pausa per non saturare l'API
-    await new Promise(r=>setTimeout(r,150));
-  }
-
-  saveDB();
-  refreshAll();
-  if(updated>0){
-    toast(`✓ Sync Brevo: ${updated} email con nuovi eventi`);
-  } else if(toSync.length>0){
-    toast(`📊 Sync OK — ${toSync.length} email verificate, nessun nuovo evento`);
-  } else {
-    toast('ℹ Nessuna email tracciata — invia prima qualche email');
-  }
+function getBrevoStatus(ev){
+  if(!ev) return 'sent';
+  if(ev.spam)         return 'spam';
+  if(ev.bounced)      return 'bounced';
+  if(ev.blocked)      return 'blocked';
+  if(ev.unsubscribed) return 'unsubscribed';
+  if(ev.clicked)      return 'clicked';
+  if(ev.opened)       return 'opened';
+  if(ev.delivered)    return 'delivered';
+  return 'sent';
 }
 
-// Badge eventi Brevo nella scheda contatto
+function breveStatusBadge(ev){
+  const s = BREVO_STATUS[getBrevoStatus(ev)] || BREVO_STATUS.sent;
+  return `<span class="badge" style="background:${s.bg};color:${s.tx};font-size:11px">${s.l}</span>`;
+}
 
+// Mini-icone nella lista contatti (ultima email)
 function breveEventsBadge(c){
   const evs=c.brevoEvents||[];
   if(!evs.length) return '';
@@ -94,6 +44,80 @@ function breveEventsBadge(c){
     : '';
 }
 
-/* ═══════════════════════════════════════════════════
-   INVIO MASSIVO
-═══════════════════════════════════════════════════ */
+async function syncBrevoEvents(){
+  if(!brv.apiKey){ toast('Configura prima Brevo nelle impostazioni'); return; }
+  const adb = isClienti()?dbC:db;
+
+  const toSync=[];
+  adb.contacts.forEach(c=>{
+    (c.brevoEvents||[]).forEach((ev,i)=>{
+      if(ev.messageId) toSync.push({contact:c, evIdx:i, messageId:ev.messageId});
+    });
+  });
+
+  if(!toSync.length){ toast('Nessuna email tracciata — invia prima qualche email'); return; }
+
+  toast(`🔄 Sincronizzazione ${toSync.length} email...`);
+  let updated=0;
+
+  for(const {contact, evIdx, messageId} of toSync){
+    try{
+      const r=await fetch(
+        `https://api.brevo.com/v3/smtp/statistics/events?messageId=${encodeURIComponent(messageId)}&limit=50`,
+        {headers:{'api-key':brv.apiKey,'Accept':'application/json'}}
+      );
+      if(!r.ok) continue;
+      const data=await r.json();
+      const events=data.events||[];
+
+      const ev=contact.brevoEvents[evIdx];
+      let changed=false;
+
+      events.forEach(e=>{
+        const type=(e.event||'').toLowerCase();
+        if((type==='delivered'||type==='requests')&&!ev.delivered){
+          ev.delivered=true; ev.deliveredAt=e.date; changed=true;
+        }
+        if((type==='opened'||type==='unique_opened')&&!ev.opened){
+          ev.opened=true; ev.openedAt=e.date; changed=true;
+          if(!contact.log.some(l=>l.msg.includes('👁 Aperta')&&l.msg.includes((ev.subject||'').slice(0,20)))){
+            contact.log.push({ts:new Date(e.date).getTime()||Date.now(),msg:`👁 Aperta: ${ev.subject||''}`});
+          }
+        }
+        if((type==='clicks'||type==='click')&&!ev.clicked){
+          ev.clicked=true; ev.clickedAt=e.date; changed=true;
+          if(!contact.log.some(l=>l.msg.includes('🔗 Click'))){
+            contact.log.push({ts:new Date(e.date).getTime()||Date.now(),msg:`🔗 Click: ${ev.subject||''}`});
+          }
+        }
+        if((type==='hardbounces'||type==='softbounces'||type==='bounced')&&!ev.bounced){
+          ev.bounced=true; ev.bouncedAt=e.date; changed=true;
+          contact.log.push({ts:Date.now(),msg:`⚠ Bounce: ${ev.subject||''}`});
+        }
+        if((type==='spamreports'||type==='spam')&&!ev.spam){
+          ev.spam=true; changed=true;
+          contact.log.push({ts:Date.now(),msg:`🚫 Spam: ${ev.subject||''}`});
+        }
+        if(type==='unsubscribed'&&!ev.unsubscribed){
+          ev.unsubscribed=true; changed=true;
+          contact.log.push({ts:Date.now(),msg:`🚫 Disiscritto: ${ev.subject||''}`});
+        }
+        if((type==='blocked'||type==='invalid')&&!ev.blocked){
+          ev.blocked=true; changed=true;
+          contact.log.push({ts:Date.now(),msg:`🔒 Bloccata: ${ev.subject||''}`});
+        }
+      });
+
+      if(changed) updated++;
+
+    }catch(e){ console.warn('Brevo sync error:',e); }
+    await new Promise(r=>setTimeout(r,120));
+  }
+
+  saveDB();
+  refreshAll();
+  toast(updated>0
+    ?`✓ Sync Brevo: ${updated} email aggiornate su ${toSync.length}`
+    :`📊 Sync OK — ${toSync.length} email verificate, nessun nuovo evento`
+  );
+}
