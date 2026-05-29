@@ -1683,7 +1683,2913 @@ function buildHtmlEmail(body, brand, contactName){
 </td></tr>
 </table>
 
-<script src="js/app.js"></script>
+<script>
+// Wrapper localStorage sicuro (funziona anche in sandbox/iframe)
+const _ls = {
+  get(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } },
+  set(k,v){ try{ localStorage.setItem(k,v); }catch(e){} },
+  remove(k){ try{ localStorage.removeItem(k); }catch(e){} }
+};
+
+
+const AV=['av0','av1','av2','av3','av4','av5'];
+const SM={
+  new:{l:'Da contattare',c:'bn'},sent:{l:'Email inviata',c:'bs'},
+  followup:{l:'Follow-up',c:'bf'},replied:{l:'Risposto',c:'br'},
+  client:{l:'Cliente',c:'bc'},cold:{l:'Non interessato',c:'bx'}
+};
+const PRODS=['Rosso','Bianco','Rosé','Bollicine/Spumante','Prosecco','Barolo','Brunello','Amarone',
+  'Primitivo',"Nero d'Avola",'Vermentino','Pinot Grigio','Organic/Bio','Natural Wine','Orange Wine','Grappa/Distillati'];
+const CLIST=['Germania','USA','UK','Svizzera','Austria','Belgio','Paesi Bassi','Canada','Australia',
+  'Giappone','Cina','Svezia','Norvegia','Danimarca','Brasile','Messico','Singapore','Hong Kong',
+  'Francia','Spagna','Polonia','Rep. Ceca','Emirati Arabi','Corea del Sud'];
+
+let db={contacts:[],templates:[]};     // importatori
+let dbC={contacts:[],templates:[]};    // clienti privati
+let layer='importatori';               // layer attivo
+let ghs={};
+let brv={};
+let sel=new Set();
+let _pendingEmailId=null; // id contatto per apertura email da scheda
+let ghSha={importatori:null,clienti:null,templates:null};
+let saveTimer=null,pending=null;
+
+
+function _migrateTemplatesIfNeeded(){
+  // Controlla importatori
+  const oldSignals = ['Proposta partnership','Best Wine Importers','Vini italiani',
+    'Listino prezzi e disponibilità','One partner. One invoice','piqued your interest']; // forza aggiornamento
+  const hasOld = db.templates.some(t =>
+    oldSignals.some(s => (t.subject||'').includes(s) || (t.body||'').includes(s))
+  );
+  // Forza aggiornamento se mancano le CTA nei template
+  const missingCTA = db.templates.length > 0 &&
+    !db.templates.some(t => (t.body||'').includes('know_well'));
+  if(hasOld || missingCTA){
+    // Imposta default solo se non caricati da GitHub
+    if(!ghSha.templates) db.templates = defTplImportatori();
+    saveDB();
+    console.log('Template importatori migrati ai nuovi Siena Wine');
+  }
+}
+
+
+function ghPathTemplates(){ return 'data/templates.json'; }
+
+async function loadTemplatesFromGH(){
+  const{token,owner,repo}=ghs;
+  if(!token||!owner||!repo) return;
+  const url=`https://api.github.com/repos/${owner}/${repo}/contents/${ghPathTemplates()}`;
+  try{
+    const r=await fetch(url,{headers:{'Authorization':`token ${token}`,'Accept':'application/vnd.github.v3+json'}});
+    if(r.status===404){ return; } // file non esiste ancora — usa default
+    if(!r.ok) return;
+    const d=await r.json();
+    ghSha.templates=d.sha;
+    const raw=d.content.replace(/\n/g,'');
+    let jsonStr;
+    try{ jsonStr=decodeURIComponent(Array.from(atob(raw),c=>'%'+c.charCodeAt(0).toString(16).padStart(2,'0')).join('')); }
+    catch(e){ jsonStr=atob(raw); }
+    const parsed=JSON.parse(jsonStr);
+    if(Array.isArray(parsed)&&parsed.length){
+      db.templates=parsed;
+      dbC.templates=parsed.filter(t=>t.id&&t.id.startsWith('c'));
+      console.log(`✓ ${parsed.length} template caricati da GitHub`);
+    }
+  }catch(e){ console.warn('loadTemplatesFromGH error:',e); }
+}
+
+async function saveTemplatesToGH(){
+  const{token,owner,repo}=ghs;
+  if(!token||!owner||!repo) return;
+  // Salva tutti i template (importatori + clienti) in un unico file
+  const allTemplates=[...db.templates,...dbC.templates];
+  const url=`https://api.github.com/repos/${owner}/${repo}/contents/${ghPathTemplates()}`;
+  const hd={'Authorization':`token ${token}`,'Content-Type':'application/json','Accept':'application/vnd.github.v3+json'};
+  try{
+    // Recupera SHA se non ce l'abbiamo
+    if(!ghSha.templates){
+      const r=await fetch(url,{headers:hd});
+      if(r.ok){ const d=await r.json(); ghSha.templates=d.sha; }
+    }
+    const jsonStr=JSON.stringify(allTemplates,null,2);
+    const b64=btoa(Array.from(new TextEncoder().encode(jsonStr),b=>String.fromCharCode(b)).join(''));
+    const body={message:'Update templates',content:b64};
+    if(ghSha.templates) body.sha=ghSha.templates;
+    const res=await fetch(url,{method:'PUT',headers:hd,body:JSON.stringify(body)});
+    if(res.ok){ const d=await res.json(); ghSha.templates=d.content?.sha||ghSha.templates; toast('📁 templates.json salvato su GitHub ✓'); }
+    else { const err=await res.json().catch(()=>({})); console.error('saveTemplatesToGH:',res.status,err); toast('⚠ Errore salvataggio templates: '+res.status); }
+  }catch(e){ console.warn('saveTemplatesToGH error:',e); }
+}
+
+/* ── LAYER HELPERS ── */
+function activeDB(){ return layer==='clienti'?dbC:db; }
+function ghPath(){ return layer==='clienti'?'data/clienti.json':'data/contatti.json'; }
+function isClienti(){ return layer==='clienti'; }
+
+async function switchLayer(newLayer){
+  if(newLayer===layer) return;
+  layer=newLayer;
+  sel.clear();
+  // Aggiorna UI toggle
+  document.getElementById('layer-btn-imp').classList.toggle('active', newLayer==='importatori');
+  document.getElementById('layer-btn-cli').classList.toggle('active', newLayer==='clienti');
+  document.getElementById('hdr-sub').textContent = newLayer==='clienti'
+    ?'Clienti Privati':'Importatori & Distributori';
+  // Aggiorna bottone +
+  document.querySelector('.btn.btp[onclick="openAddContact()"]').textContent =
+    newLayer==='clienti'?'+ Cliente':'+ Contatto';
+  // Carica dati del layer se non ancora caricati
+  if(isClienti()&&dbC.contacts.length===0&&ghs.token){
+    await loadFromGH();
+  } else {
+    refreshAll();
+  }
+  // Mostra card import corretta
+  const cardImp = document.getElementById('import-card-imp');
+  const cardCli = document.getElementById('import-card-cli');
+  if(cardImp) cardImp.style.display = newLayer==='clienti'?'none':'block';
+  if(cardCli) cardCli.style.display = newLayer==='clienti'?'block':'none';
+  // Torna alla dashboard
+  showPage('dashboard', document.querySelector('.nb'));
+}
+
+/* ── INIT: al caricamento pagina legge da GitHub ── */
+async function init(){
+  try{const r=_ls.get('ghcfg');if(r)ghs=JSON.parse(r);}catch(e){}
+  try{const r=_ls.get('brvcfg');if(r)brv=JSON.parse(r);}catch(e){}
+  // Inizializza template per entrambi i layer indipendentemente da quello attivo
+  if(!db.templates||!db.templates.length) db.templates=defTplImportatori();
+  if(!dbC.templates||!dbC.templates.length) dbC.templates=defTplClienti();
+  if(ghs.token&&ghs.owner&&ghs.repo){
+    await loadTemplatesFromGH(); // carica template prima dei contatti
+    await loadFromGH();
+  } else {
+    updGh('idle');refreshAll();
+  }
+  // Migrazione template: se i template caricati sono quelli vecchi, aggiorna
+  _migrateTemplatesIfNeeded();
+}
+function defTpl(){
+  return isClienti()?defTplClienti():defTplImportatori();
+}
+
+function defTplImportatori(){return[
+
+  {id:'t1', name:'#1 — First Contact',
+   subject:"Have you ever heard of Small Vineyards International? Not yet?",
+   body:`{{dear}}
+
+Importing Italian wines has become increasingly complex: too many producers, too many contacts, too many invoices — too much of everything.
+
+{{know_well}}
+
+Siena Wine, through Small Vineyards International, simplifies all of this.
+
+A curated portfolio of family-run Italian wineries — from Chianti to Brunello, from Barolo to Nero d'Avola — built on over 20 years of proven success in the US market with August Imports.
+
+One partner. One invoice. All the best products from Italy.
+
+Have we piqued your interest?
+
+Discover more about us and the portfolio: www.sienawine.it/smallvineyardsinternational
+
+Best regards,
+Luca Pattaro
+Siena Wine | Small Vineyards International
+luca@sienawine.it | +39 331 1347899`},
+
+  {id:'t2a', name:'#2a — Follow-up opened (day 7)',
+   subject:"{{azienda}} — a few more reasons to consider us",
+   body:`{{dear}}
+
+Thank you for taking a look at our previous email.
+
+I wanted to share a bit more about what makes Small Vineyards International different.
+
+Our portfolio already performs in the US market — these are not unknown names. They are producers with a track record, selected over 20 years by August Imports. We are now bringing the same model internationally.
+
+For {{azienda}}, the practical benefits are clear:
+
+• One contact for orders, documents and logistics
+• Consolidated invoicing across the entire portfolio
+• Flexible quantities — no need to commit to large volumes upfront
+• Full technical support and marketing materials included
+
+Download our brochure and full portfolio: www.sienawine.it/brochure
+
+Would you like me to send you the current price list as well?
+
+Best,
+Luca Pattaro
+Siena Wine | Small Vineyards International
+luca@sienawine.it | +39 331 1347899`},
+
+  {id:'t2b', name:'#2b — Follow-up not opened (day 7)',
+   subject:"Still importing Italian wines the hard way?",
+   body:`{{dear}}
+
+I reached out last week about Small Vineyards International — I am not sure my email found its way to you, so I wanted to try once more.
+
+We represent a curated portfolio of Italian family wineries, built on 20+ years of proven success in the US market. One partner, one invoice, all of Italy.
+
+If simplifying your Italian wine sourcing is something worth 2 minutes of your time, everything is here: www.sienawine.it/smallvineyardsinternational
+
+Best,
+Luca Pattaro
+Siena Wine | Small Vineyards International
+luca@sienawine.it | +39 331 1347899`},
+
+  {id:'t3', name:'#3 — Follow-up (day 21)',
+   subject:"One contact. One invoice. All of Italy.",
+   body:`{{dear}}
+
+Working with multiple small Italian producers means multiple contacts, invoices, shipments and conversations. We solve that.
+
+Through Siena Wine, {{azienda}} gets:
+
+• A single point of contact for the entire portfolio
+• Consolidated orders and shipments
+• Full documentation support
+• A selection proven to sell — validated by years of US market success
+
+We are not asking you to take a risk on unknown producers. These wines have a track record.
+
+Book a 20-minute call at your convenience: calendly.com/luca-sienawine/30min
+
+Best,
+Luca Pattaro
+Siena Wine | Small Vineyards International
+luca@sienawine.it | +39 331 1347899`},
+
+  {id:'t4', name:'#4 — Break-up (day 35)',
+   subject:"Closing the loop — {{azienda}}",
+   body:`{{dear}}
+
+I have reached out a few times without hearing back — I completely understand, timing is everything in this business.
+
+I will not send further emails, but wanted to leave you with one thought: if you are ever looking to add a curated Italian portfolio with a proven US track record, a single operational contact, and wineries that genuinely over-deliver for their price point — we are here.
+
+Our portfolio is always available at: www.sienawine.it/smallvineyardsinternational
+
+Wishing {{azienda}} continued success.
+
+Luca Pattaro
+Siena Wine | Small Vineyards International
+luca@sienawine.it | +39 331 1347899`}
+
+];}
+
+function defTplClienti(){return[
+  {id:'c1',name:'Benvenuto — Offerta speciale',
+   subject:'Un pensiero speciale per te da Il Ciliegio 🍷',
+   body:"Caro {{contatto}},\n\nTi scriviamo dall'Azienda Agricola Il Ciliegio per ringraziarti di far parte della nostra comunità di appassionati.\n\nAbbiamo preparato per te una selezione esclusiva delle nostre migliori etichette, disponibile a condizioni speciali riservate ai nostri clienti più affezionati.\n\nScopri la nostra proposta su www.ilciliegio.com oppure contattaci direttamente — saremo felici di guidarti nella scelta.\n\nA presto,\nIl team de Il Ciliegio\nAzienda Agricola"},
+  {id:'c2',name:'Offerta stagionale',
+   subject:'La nuova annata è arrivata — riservata a te ✨',
+   body:"Caro {{contatto}},\n\nSiamo entusiasti di annunciarti l'arrivo della nuova annata de Il Ciliegio.\n\nCome nostro cliente, hai accesso in anteprima alla nuova selezione, con la possibilità di acquistare a prezzi dedicati prima dell'apertura al pubblico.\n\nI quantitativi sono limitati. Visita www.ilciliegio.com o rispondi a questa email per prenotare la tua selezione.\n\nTi aspettiamo!\nIl Ciliegio — Azienda Agricola"},
+  {id:'c3',name:'Follow-up 1 (7 gg)',
+   subject:"Hai avuto modo di dare un'occhiata? — Il Ciliegio",
+   body:"Caro {{contatto}},\n\nTi scrivo brevemente per assicurarmi che tu abbia ricevuto la nostra proposta di qualche giorno fa.\n\nSe hai domande sulla selezione o desideri ricevere ulteriori informazioni, sono qui per aiutarti.\n\nUn caro saluto,\nIl Ciliegio — Azienda Agricola"},
+  {id:'c4',name:'Follow-up 2 — Ultimi pezzi',
+   subject:"Ultimi pezzi disponibili — non perdere l'occasione",
+   body:"Caro {{contatto}},\n\nTi scrivo perché le scorte della selezione che ti avevo proposto si stanno esaurendo rapidamente.\n\nSe desideri approfittare dell'offerta riservata, ti chiedo di farmi sapere entro i prossimi giorni.\n\nSarò felice di gestire personalmente il tuo ordine.\n\nCon i migliori saluti,\nIl Ciliegio — Azienda Agricola"},
+  {id:'c5',name:'Auguri e offerta festiva',
+   subject:'Buone Feste da Il Ciliegio 🎄',
+   body:"Caro {{contatto}},\n\nIn occasione delle feste, tutto il team de Il Ciliegio ti augura un periodo sereno e ricco di momenti speciali.\n\nAbbiamo selezionato per te le nostre etichette più eleganti, perfette per brindare o regalare a chi ami.\n\nScopri la confezione regalo Il Ciliegio su www.ilciliegio.com — consegna in tutta Europa.\n\nBuone Feste!\nIl Ciliegio — Azienda Agricola"}
+];}
+
+/* ── SAVE / GH ── */
+function saveDB(){
+  if(!ghs.token||!ghs.owner||!ghs.repo){updGh('error');return;}
+  clearTimeout(saveTimer);
+  saveTimer=setTimeout(pushGH,2000);
+  updGh('pending');
+}
+function getActiveDB(){ return isClienti()?dbC:db; }
+function setActiveContacts(arr){ if(isClienti()) dbC.contacts=arr; else db.contacts=arr; }
+function updGh(s){
+  const d=document.getElementById('gh-dot'),l=document.getElementById('gh-lbl');
+  if(!d)return;
+  d.className='gh-dot '+s;
+  const cfg=ghs.token&&ghs.owner&&ghs.repo;
+  l.textContent={
+    idle: cfg?`${ghs.owner}/${ghs.repo}`:'⚠ GitHub non configurato',
+    pending:'Salvataggio…',
+    saving:'Salvataggio…',
+    saved:'✓ Salvato',
+    error:'✗ Errore — verifica token'
+  }[s]||s;
+}
+async function pushGH(){
+  const{token,owner,repo}=ghs;
+  if(!token||!owner||!repo)return;
+  const path=ghPath();
+  const url=`https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
+  const hd={'Authorization':`token ${token}`,'Content-Type':'application/json','Accept':'application/vnd.github.v3+json'};
+  updGh('saving');
+  try{
+    // Recupera SHA attuale se non ce l'abbiamo
+    if(!ghSha[layer]){
+      const r=await fetch(url,{headers:hd});
+      if(r.ok) ghSha[layer]=(await r.json()).sha;
+      // 404 = file non esiste ancora, va bene
+    }
+    // Codifica UTF-8 → base64 senza usare escape() deprecato
+    const jsonStr=JSON.stringify(isClienti()?dbC:db,null,2);
+    const bytes=new TextEncoder().encode(jsonStr);
+    const b64=btoa(Array.from(bytes,b=>String.fromCharCode(b)).join(''));
+    const body={message:`CRM update — ${new Date().toLocaleString('it-IT')}`,content:b64};
+    if(ghSha[layer]) body.sha=ghSha[layer];
+    const res=await fetch(url,{method:'PUT',headers:hd,body:JSON.stringify(body)});
+    if(res.ok){
+      ghSha[layer]=(await res.json()).content.sha;
+      updGh('saved');
+    } else if(res.status===409||res.status===422){
+      // Conflitto SHA — rileggi e riprova
+      ghSha={importatori:null,clienti:null};
+      setTimeout(pushGH,1000);
+    } else {
+      const err=await res.json().catch(()=>({}));
+      console.error('pushGH error:',res.status,err.message);
+      updGh('error');
+    }
+  }catch(e){updGh('error');console.error('pushGH exception:',e);}
+}
+async function loadFromGH(){
+  const{token,owner,repo}=ghs;
+  if(!token||!owner||!repo){updGh('error');return;}
+  const path=ghPath();
+  const url=`https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
+  updGh('saving');
+  try{
+    const r=await fetch(url,{headers:{'Authorization':`token ${token}`,'Accept':'application/vnd.github.v3+json'}});
+    if(r.status===404){updGh('saved');refreshAll();toast('GitHub connesso — database vuoto, pronto per import');return;}
+    if(!r.ok){
+      const err=await r.json().catch(()=>({}));
+      throw new Error(`GitHub API: ${r.status} — ${err.message||'errore sconosciuto'}`);
+    }
+    const d=await r.json();
+    ghSha[layer]=d.sha;
+    const raw=d.content.replace(/\n/g,'');
+    let jsonStr;
+    try{
+      jsonStr=decodeURIComponent(Array.from(atob(raw),c=>'%'+c.charCodeAt(0).toString(16).padStart(2,'0')).join(''));
+    }catch(e){jsonStr=atob(raw);}
+    if(!jsonStr||!jsonStr.trim()||jsonStr.trim()==='{}'){
+      updGh('saved');refreshAll();
+      toast('GitHub connesso — database vuoto, pronto per import');return;
+    }
+    const parsed=JSON.parse(jsonStr);
+    const contacts=parsed.contacts||parsed;
+    if(!Array.isArray(contacts))throw new Error('Formato contatti non valido');
+    // Popola il db del layer attivo
+    if(isClienti()){
+      dbC.contacts=contacts;
+      if(parsed.templates&&parsed.templates.length)dbC.templates=parsed.templates;
+    } else {
+      db.contacts=contacts;
+      if(parsed.templates&&parsed.templates.length)(isClienti()?dbC:db).templates=parsed.templates;
+    }
+    refreshAll();updGh('saved');
+    toast(`✓ ${contacts.length} ${isClienti()?'clienti':'contatti'} caricati`);
+  }catch(e){
+    updGh('error');toast('Errore: '+e.message);console.error('loadFromGH error:',e);refreshAll();
+  }
+}
+
+/* ── DELETE ALL ── */
+function confirmDeleteAll(){
+  showModal(`
+    <div class="mt" style="color:var(--red)">🗑 Cancella tutto il database</div>
+    <div class="danger-box">
+      <p style="font-size:14px;font-weight:600;margin-bottom:8px">Attenzione — operazione irreversibile</p>
+      <p style="font-size:13px;line-height:1.6">Verranno eliminati <strong>${(isClienti()?dbC:db).contacts.length} contatti</strong>. Questa azione aggiorna anche GitHub al prossimo salvataggio automatico.</p>
+    </div>
+    <p style="font-size:13px;margin-bottom:12px">Scrivi <strong>CANCELLA</strong> per confermare:</p>
+    <div class="fg fgf"><input id="del-c" placeholder="CANCELLA" oninput="document.getElementById('del-b').disabled=this.value!=='CANCELLA'"></div>
+    <div class="mf">
+      <button class="btn" onclick="closeModal()">Annulla</button>
+      <button class="btn btd" id="del-b" disabled onclick="doDeleteAll()">Cancella tutto</button>
+    </div>
+  `);
+}
+function doDeleteAll(){
+  (isClienti()?dbC:db).contacts=[];
+  closeModal();refreshAll();
+  // Push immediato su GitHub
+  clearTimeout(saveTimer);
+  pushGH().then(()=>toast('Database svuotato e sincronizzato ✓'));
+}
+
+/* ── SETTINGS ── */
+function openSettings(){
+  const brvOk=brv.apiKey&&brv.senderEmail;
+  showModal(`
+    <div class="mt">⚙ Impostazioni</div>
+
+    <div style="font-size:13px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px">GitHub — Database</div>
+    <p style="font-size:13px;color:var(--text2);margin-bottom:10px;line-height:1.6">
+      I dati si caricano da GitHub all'avvio e si salvano automaticamente ad ogni modifica in <code>data/contatti.json</code>.<br>
+      Token su <a href="https://github.com/settings/tokens/new" target="_blank">github.com/settings/tokens/new</a> con permesso <code>repo</code>.
+    </p>
+    <div class="fg2" style="margin-bottom:1.25rem">
+      <div class="fg fgf"><label>Personal Access Token</label>
+        <input id="gt" type="password" placeholder="ghp_xxxx…" value="${esc(ghs.token||'')}">
+      </div>
+      <div class="fg"><label>Owner</label>
+        <input id="go" placeholder="shopilciliegio-ship-it" value="${esc(ghs.owner||'shopilciliegio-ship-it')}">
+      </div>
+      <div class="fg"><label>Repository</label>
+        <input id="gr" placeholder="crm-importatori" value="${esc(ghs.repo||'crm-importatori')}">
+      </div>
+    </div>
+
+    <div style="height:0.5px;background:var(--brd);margin:0 0 1.25rem"></div>
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+      <div style="font-size:13px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.5px">Brevo — Invio Email</div>
+      ${brvOk?'<span style="background:var(--green-bg);color:var(--green-tx);padding:2px 8px;border-radius:12px;font-size:11px;font-weight:700">✓ Configurato</span>':'<span style="background:var(--amber-bg);color:var(--amber-tx);padding:2px 8px;border-radius:12px;font-size:11px;font-weight:700">Non configurato</span>'}
+    </div>
+    <p style="font-size:13px;color:var(--text2);margin-bottom:10px;line-height:1.6">
+      API Key su <a href="https://app.brevo.com/settings/keys/api" target="_blank">app.brevo.com → Settings → API Keys</a>.
+    </p>
+    <div class="fg2">
+      <div class="fg fgf"><label>API Key Brevo</label>
+        <input id="bk" type="password" placeholder="xkeysib-…" value="${esc(brv.apiKey||'')}">
+      </div>
+      <div class="fg"><label>Email mittente verificata</label>
+        <input id="be" placeholder="luca@sienawine.it" value="${esc(brv.senderEmail||'luca@sienawine.it')}">
+      </div>
+      <div class="fg"><label>Nome mittente</label>
+        <input id="bn" placeholder="Luca Pattaro | Siena Wine Srl" value="${esc(brv.senderName||'Luca Pattaro | Siena Wine Srl')}">
+      </div>
+    </div>
+
+    <div class="mf">
+      <button class="btn" onclick="closeModal()">Annulla</button>
+      <button class="btn btp" onclick="saveSettings()">Salva e connetti</button>
+    </div>
+  `);
+}
+function saveSettings(){
+  ghs={token:gv('gt'),owner:gv('go'),repo:gv('gr')};
+  _ls.set('ghcfg',JSON.stringify(ghs));
+  brv={apiKey:gv('bk'),senderEmail:gv('be'),senderName:gv('bn')};
+  _ls.set('brvcfg',JSON.stringify(brv));
+  ghSha={importatori:null,clienti:null};closeModal();
+  toast('Impostazioni salvate — connessione in corso…');
+  loadFromGH();
+}
+function gv(id){return(document.getElementById(id)?.value||'').trim();}
+
+/* ── REFRESH ── */
+function refreshAll(){
+  renderStats();renderContacts();renderRegistro();
+  renderTemplates();renderRegionChart();renderCCChart();renderPipeline();
+  updateBadges();updateFilters();
+}
+function updateBadges(){
+  document.getElementById('ct-n').textContent=(isClienti()?dbC:db).contacts.length;
+  document.getElementById('fu-n').textContent=(isClienti()?dbC:db).contacts.filter(c=>c.status==='followup'||c.status==='sent').length;
+}
+function updateFilters(){
+  if(isClienti()){
+    // ── FILTRI CLIENTI: paese / lingua / verifica / situazione ──
+
+    // Paese
+    const sc=document.getElementById('sc');const cv=sc?.value||'';
+    const countries=[...new Set(dbC.contacts.map(c=>(c.country||'').trim()).filter(c=>c.length>0&&c.length<=50&&!/^\d/.test(c)))].sort();
+    if(sc) sc.innerHTML='<option value="">Tutti i paesi</option>'+countries.map(c=>`<option value="${esc(c)}"${cv===c?' selected':''}>${esc(c)}</option>`).join('');
+
+    // Lingua — nel posto di sr (regioni)
+    const sr=document.getElementById('sr');const rv=sr?.value||'';
+    const lingue=[...new Set(dbC.contacts.map(c=>(c.lingua||'').trim()).filter(Boolean))].sort();
+    if(sr){
+      sr.innerHTML='<option value="">Tutte le lingue</option>'+lingue.map(l=>`<option value="${esc(l)}"${rv===l?' selected':''}>${esc(l)}</option>`).join('');
+      // Aggiorna label
+      const opt=sr.querySelector('option[value=""]');
+      if(opt) opt.textContent='Tutte le lingue';
+    }
+
+    // Nascondi prodotti, mostra verifica
+    const sp=document.getElementById('sp');
+    if(sp) sp.style.display='none';
+    const sv=document.getElementById('sv');
+    if(sv) sv.style.display='';
+
+    return;
+  }
+
+  // ── IMPORTATORI: popola Tipo, nascondi verifica ──
+  const sv=document.getElementById('sv');
+  if(sv) sv.style.display='none';
+  const spEl=document.getElementById('sp');
+  if(spEl){
+    spEl.style.display='';
+    const pv=spEl.value;
+    // Tipi predefiniti (sempre presenti anche se non ancora nel DB)
+    const DEFAULT_TYPES=[
+      'Importer','Distributor','Wholesaler','Retailer',
+      'Online Store','Restaurant','Hotel','Bar','Supermarket',
+      'Wine Shop','Agent','Broker','Producer','Other'
+    ];
+    // Merge con i tipi effettivamente presenti nel DB
+    const typeSet=new Set(DEFAULT_TYPES);
+    db.contacts.forEach(c=>{
+      (c.type||'').split(',').map(t=>t.trim()).filter(Boolean).forEach(t=>typeSet.add(t));
+    });
+    const types=[...typeSet].sort();
+    spEl.innerHTML='<option value="">Tutti i tipi</option>'+
+      types.map(t=>`<option value="${esc(t)}"${pv===t?' selected':''}>${esc(t)}</option>`).join('');
+  }
+
+  // ── FILTRI IMPORTATORI ──
+  const sr=document.getElementById('sr');const rv=sr?.value||'';
+  const regions=[...new Set(db.contacts.map(c=>(c.region||'').trim()).filter(Boolean))].sort();
+  if(sr) sr.innerHTML='<option value="">Tutte le regioni</option>'+regions.map(r=>`<option value="${esc(r)}"${rv===r?' selected':''}>${esc(r)}</option>`).join('');
+  updateCountryFilter();
+
+}
+
+function updateCountryFilter(){
+  const sc=document.getElementById('sc');if(!sc)return;
+  const cv=sc.value;
+  const selectedRegion=document.getElementById('sr')?.value||'';
+
+  // Se c'è una regione selezionata, mostra solo i paesi di quella regione
+  const source = selectedRegion
+    ? (isClienti()?dbC:db).contacts.filter(c=>(c.region||'').trim()===selectedRegion)
+    : (isClienti()?dbC:db).contacts;
+
+  const countries=[...new Set(
+    source.map(c=>(c.country||'').trim())
+      .filter(c=>c.length>0&&c.length<=50&&!/^\d/.test(c))
+  )].sort();
+
+  sc.innerHTML='<option value="">Tutti i paesi</option>'+
+    countries.map(c=>`<option value="${esc(c)}"${cv===c?' selected':''}>${esc(c)}</option>`).join('');
+
+  // Se il paese selezionato non è più disponibile, resettalo
+  if(cv && !countries.includes(cv)){
+    sc.value='';
+    renderContacts();
+  }
+}
+
+
+/* ── NAVIGAZIONE RAPIDA da Dashboard ── */
+function goToContacts({country='',region='',status='',tipo=''}={}){
+  const sc=document.getElementById('sc');
+  const sr=document.getElementById('sr');
+  const ss=document.getElementById('ss');
+  const sp=document.getElementById('sp');
+  if(sr) sr.value=region;
+  updateCountryFilter();
+  if(sc) sc.value=country;
+  if(sp) sp.value=tipo;
+  // "pending" = mostriamo sia sent che followup — usiamo la searchbox
+  if(status==='pending'){
+    if(ss) ss.value='';
+    document.getElementById('sq').value='';
+    // Filtro custom: setta un flag temporaneo
+    window._pendingFilter=true;
+  } else {
+    if(ss) ss.value=status;
+    window._pendingFilter=false;
+    document.getElementById('sq').value='';
+  }
+  document.getElementById('sp').value='';
+  showPage('contacts', document.querySelectorAll('.nb')[1]);
+  renderContacts();
+}
+
+function renderStats(){
+  const s={total:0,new:0,sent:0,followup:0,replied:0,client:0};
+  (isClienti()?dbC:db).contacts.forEach(c=>{s.total++;s[c.status]=(s[c.status]||0)+1;});
+  document.getElementById('stats').innerHTML=`
+    <div class="stat" style="cursor:default"><div class="sl">Totale</div><div class="sv">${s.total}</div></div>
+    <div class="stat stat-link" onclick="goToContacts({status:'new'})" title="Vai alla lista"><div class="sl">Da contattare</div><div class="sv bl">${s.new||0}</div></div>
+    <div class="stat stat-link" onclick="goToContacts({status:'followup'})" title="Vai alla lista"><div class="sl">In attesa (email)</div><div class="sv am">${(s.sent||0)+(s.followup||0)}</div></div>
+    <div class="stat stat-link" onclick="goToContacts({status:'replied'})" title="Vai alla lista"><div class="sl">Risposte</div><div class="sv gr">${s.replied||0}</div></div>
+    <div class="stat stat-link" onclick="goToContacts({status:'client'})" title="Vai alla lista"><div class="sl">Clienti</div><div class="sv co">${s.client||0}</div></div>`;
+}
+function renderRegionChart(){
+  const el=document.getElementById('rc');
+  if(!el) return;
+  const adb=isClienti()?dbC:db;
+  const map={};
+  adb.contacts.forEach(c=>{
+    const r=(c.region||'').trim()||'—';
+    map[r]=(map[r]||0)+1;
+  });
+  const entries=Object.entries(map).sort((a,b)=>b[1]-a[1]);
+  const max=entries[0]?.[1]||1;
+  if(!entries.length){el.innerHTML='<div class="empty" style="font-size:12px">Nessun dato</div>';return;}
+
+  // Colori per regione
+  const rColors={
+    'Sud America':  ['var(--amber-bg)','var(--amber-tx)'],
+    'Oceania':      ['var(--teal-bg)','var(--teal-tx)'],
+    'Europa':       ['var(--blue-bg)','var(--blue-tx)'],
+    'Africa':       ['var(--coral-bg)','var(--coral-tx)'],
+    'Asia':         ['var(--pink-bg)','var(--pink-tx)'],
+    'Nord America': ['var(--green-bg)','var(--green-tx)'],
+    'Medio Oriente':['var(--amber-bg)','var(--amber-tx)'],
+    'Scandinavia':  ['var(--blue-bg)','var(--blue-tx)'],
+    'Caraibi':      ['var(--teal-bg)','var(--teal-tx)'],
+  };
+
+  el.innerHTML = entries.map(([r,n])=>{
+    const [bg,tx]=rColors[r]||['var(--bg2)','var(--text2)'];
+    const pct=Math.round(n/max*100);
+    return `<div class="brow" style="cursor:pointer" onclick="goToContacts({region:'${r.replace(/'/g,"\'")}'})" title="Filtra per ${r}">
+      <div class="blbl" style="color:${tx};font-weight:600">${esc(r)}</div>
+      <div class="btrk">
+        <div style="height:100%;width:${pct}%;background:${bg};border-radius:4px;
+          display:flex;align-items:center;padding-left:6px;
+          font-size:11px;font-weight:700;color:${tx}">${n}</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+function renderCCChart(){
+  const map={};
+  (isClienti()?dbC:db).contacts.forEach(c=>{if(c.country)map[c.country]=(map[c.country]||0)+1;});
+  // Tutti i paesi, ordinati per numero di contatti
+  const entries=Object.entries(map).sort((a,b)=>b[1]-a[1]);
+  const max=entries[0]?.[1]||1;
+  const el=document.getElementById('cc');
+  el.innerHTML=entries.length?entries.map(([c,n])=>`
+    <div class="brow">
+      <div class="blbl country-link" onclick="goToContacts({country:'${esc(c)}'})" title="Filtra per ${esc(c)}">${esc(c)}</div>
+      <div class="btrk"><div class="bfll" style="width:${Math.round(n/max*100)}%">${n}</div></div>
+    </div>`).join('')
+    :'<div class="empty" style="font-size:12px">Nessun dato</div>';
+}
+function renderPipeline(){
+  const order=['new','sent','followup','replied','client','cold'];
+  const cm={new:'blue-bg blue-tx',sent:'amber-bg amber-tx',followup:'pink-bg pink-tx',
+    replied:'green-bg green-tx',client:'teal-bg teal-tx',cold:'gray-bg gray-tx'};
+  const map={};(isClienti()?dbC:db).contacts.forEach(c=>{map[c.status]=(map[c.status]||0)+1;});
+  const tot=(isClienti()?dbC:db).contacts.length||1;
+  document.getElementById('pipeline').innerHTML='<div style="display:flex;gap:6px;align-items:flex-end;height:70px">'+
+    order.map(s=>{
+      const n=map[s]||0,h=Math.max(4,Math.round(n/tot*100));
+      const[bg,tx]=cm[s].split(' ');
+      return `<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px">
+        <div style="font-size:11px;font-weight:700;color:var(--${tx})">${n}</div>
+        <div style="width:100%;height:${h}%;min-height:4px;background:var(--${bg});border-radius:4px 4px 0 0"></div>
+        <div style="font-size:10px;color:var(--text2);text-align:center;line-height:1.2">${SM[s].l.replace(' ','<br>')}</div>
+      </div>`;
+    }).join('')+'</div>';
+}
+
+/* ── CONTACTS LIST ── */
+
+// Converte stringhe come "1,234" o "$27.64M" o "42" in numero per il sort
+function parseNumeric(val){
+  if(!val) return -1;
+  const s = String(val).replace(/,/g,'').trim();
+  // Gestisce suffissi: K, M, B
+  const m = s.match(/^\$?([\d.]+)\s*([KMBkmb]?)$/);
+  if(!m) return -1;
+  let n = parseFloat(m[1]);
+  if(isNaN(n)) return -1;
+  const suffix = m[2].toUpperCase();
+  if(suffix==='K') n *= 1_000;
+  if(suffix==='M') n *= 1_000_000;
+  if(suffix==='B') n *= 1_000_000_000;
+  return n;
+}
+
+function getFiltered(){
+  const q=(gv('sq')).toLowerCase();
+  const country=document.getElementById('sc')?.value||'';
+  const regionOrLang=document.getElementById('sr')?.value||'';
+  const status=document.getElementById('ss')?.value||'';
+  const product=document.getElementById('sp')?.value||'';
+  const sortBy=document.getElementById('sortby')?.value||'employees';
+  const adb=isClienti()?dbC:db;
+
+  let list = adb.contacts.filter(c=>{
+    if(isClienti()){
+      if(q&&!`${c.nome} ${c.cognome} ${c.email} ${c.country} ${c.lingua}`.toLowerCase().includes(q))return false;
+      if(country&&c.country!==country)return false;
+      if(regionOrLang&&c.lingua!==regionOrLang)return false;
+      const verifica=document.getElementById('sv')?.value||'';
+      if(verifica&&c.statoEmail!==verifica)return false;
+    } else {
+      if(q&&!`${c.company} ${c.brandName||''} ${c.email} ${c.country} ${c.city||''} ${(c.contacts||[]).map(x=>x.name).join(' ')}`.toLowerCase().includes(q))return false;
+      if(country&&c.country!==country)return false;
+      if(regionOrLang&&c.region!==regionOrLang)return false;
+      if(product&&!(c.type||'').split(',').map(t=>t.trim()).includes(product))return false;
+    }
+    if(window._pendingFilter){if(c.status!=='sent'&&c.status!=='followup')return false;}
+    else if(status&&c.status!==status)return false;
+    return true;
+  });
+
+  // Ordina: dal più grande al più piccolo per il campo selezionato
+  // I contatti senza dati (parseNumeric = -1) vanno in fondo
+  if(!isClienti()){
+    list.sort((a,b)=>{
+      const va = parseNumeric(a[sortBy]);
+      const vb = parseNumeric(b[sortBy]);
+      if(va === -1 && vb === -1) return 0;
+      if(va === -1) return 1;   // a va in fondo
+      if(vb === -1) return -1;  // b va in fondo
+      return vb - va;           // ordine decrescente
+    });
+  }
+
+  return list;
+}
+function renderContacts(){
+  // Aggiorna label filtri in base al layer
+  const srEl=document.querySelector('#sr option[value=""]');
+  const spEl=document.querySelector('#sp option[value=""]');
+  if(srEl) srEl.textContent=isClienti()?'Tutte le lingue':'Tutte le regioni';
+  if(spEl) spEl.style.display=isClienti()?'none':'';
+
+  const list=getFiltered();
+  const total=(isClienti()?dbC:db).contacts.length;
+  const allSelected=list.length>0&&list.every(c=>sel.has(c.id));
+  document.getElementById('rcnt-wrap').innerHTML=`
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap">
+      <label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:13px;color:var(--text2);user-select:none">
+        <input type="checkbox" id="cb-all" ${allSelected&&list.length?'checked':''} 
+          onchange="toggleSelectAll(this.checked)"
+          style="width:16px;height:16px;accent-color:var(--blue);cursor:pointer">
+        Seleziona tutti
+      </label>
+      <span class="rcnt">${list.length} contatti${list.length!==total?' su '+total+' totali':''}</span>
+    </div>`;
+
+  // Barra invio massivo (visibile solo se ci sono selezioni)
+  const selInList=list.filter(c=>sel.has(c.id));
+  const selBar=document.getElementById('sel-bar-wrap');
+  if(sel.size>0){
+    selBar.innerHTML=`
+      <div class="sel-bar">
+        <span class="sel-bar-info">✓ ${sel.size} contatt${sel.size===1?'o':'i'} selezionat${sel.size===1?'o':'i'}</span>
+        <button class="btn btg bts" onclick="sel.clear();renderContacts()">✕ Deseleziona tutto</button>
+        <button class="btn btp bts" onclick="openBulkSend()">✉ Invia a ${sel.size} contatt${sel.size===1?'o':'i'}</button>
+      </div>`;
+  } else {
+    selBar.innerHTML='';
+  }
+
+  // Lista contatti con checkbox
+  const el=document.getElementById('cl');
+  el.innerHTML=list.length
+    ?`<div class="card">${list.map(c=>crow(c)).join('')}</div>`
+    :'<div class="card"><div class="empty">Nessun risultato</div></div>';
+}
+
+function toggleSelectAll(checked){
+  const list=getFiltered();
+  if(checked) list.forEach(c=>sel.add(c.id));
+  else list.forEach(c=>sel.delete(c.id));
+  renderContacts();
+}
+
+function toggleSelect(id, e){
+  e.stopPropagation();
+  if(sel.has(id)) sel.delete(id); else sel.add(id);
+  renderContacts();
+}
+function renderFollowups(){
+  const list=(isClienti()?dbC:db).contacts.filter(c=>c.status==='followup'||c.status==='sent')
+    .sort((a,b)=>(a.updatedAt||0)-(b.updatedAt||0));
+  const el=document.getElementById('fl');
+  el.innerHTML=list.length?`<div class="card">${list.map(c=>{
+    const days=Math.floor((Date.now()-(c.updatedAt||Date.now()))/86400000);
+    return `<div class="cr" onclick="openDetail('${c.id}')">
+      <div class="av ${AV[hsh(c.company)%6]}">${ini(c.name||c.company)}</div>
+      <div class="ci"><div class="cn">${esc(c.company)} ${c.name?'· '+esc(c.name):''}</div>
+        <div class="cs">${esc(c.country||'')} · ${days>0?days+' gg fa':'oggi'}</div></div>
+      <div style="text-align:right;flex-shrink:0;display:flex;flex-direction:column;align-items:flex-end;gap:4px">
+        <span class="badge ${SM[c.status].c}">${SM[c.status].l}</span>
+        <button class="btn bts" style="font-size:11px" onclick="event.stopPropagation();openEmailModal('${c.id}')">✉</button>
+      </div></div>`;
+  }).join('')}</div>`:'<div class="card"><div class="empty">Nessun follow-up 🎉</div></div>';
+}
+function crow(c){
+  const checked=sel.has(c.id);
+  if(isClienti()){
+    const SE_MAP={
+      valido:     {icon:'✓',tx:'#27500A',bg:'#EAF3DE'},
+      non_valido: {icon:'✗',tx:'#A32D2D',bg:'#FCEBEB'},
+      sospetta:   {icon:'⚠',tx:'#633806',bg:'#FAEEDA'},
+      da_verificare:{icon:'?',tx:'#0C447C',bg:'#E6F1FB'},
+      sconosciuto:{icon:'—',tx:'#666',bg:'#eee'},
+    };
+    const se=SE_MAP[c.statoEmail||'sconosciuto']||SE_MAP.sconosciuto;
+    return `<div class="cr${checked?' selected':''}" onclick="openDetail('${c.id}')">
+      <input type="checkbox" class="crow-cb" ${checked?'checked':''}
+        onclick="toggleSelect('${c.id}',event)" onchange="toggleSelect('${c.id}',event)">
+      <div class="av ${AV[hsh((c.nome||'')+c.cognome)%6]}">${ini((c.nome||'')+' '+(c.cognome||''))}</div>
+      <div class="ci">
+        <div class="cn">${esc(c.nome||'')} <strong>${esc(c.cognome||'')}</strong>
+          <span style="font-size:10px;padding:1px 6px;border-radius:10px;font-weight:700;margin-left:4px;background:${se.bg};color:${se.tx}">${se.icon} ${esc(c.statoEmail||'—')}</span>
+        </div>
+        <div class="cs">${[c.country,c.lingua].filter(Boolean).map(esc).join(' · ')} · ${esc(c.email||'')}</div>
+      </div>
+      <span class="badge ${SM[c.status]?.c||'bn'}">${SM[c.status]?.l||''}</span>
+    </div>`;
+  }
+  // ── IMPORTATORE ──
+  const firstContact = c.contacts?.[0];
+  const nContacts = c.contacts?.length||0;
+  return `<div class="cr${checked?' selected':''}" onclick="openDetail('${c.id}')">
+    <input type="checkbox" class="crow-cb" ${checked?'checked':''}
+      onclick="toggleSelect('${c.id}',event)"
+      onchange="toggleSelect('${c.id}',event)">
+    <div class="av ${AV[hsh(c.company)%6]}">${ini(c.company)}</div>
+    <div class="ci">
+      <div class="cn">${esc(c.company)}${c.brandName&&c.brandName!==c.company?` <span style="font-weight:400;color:var(--text2)">· ${esc(c.brandName)}</span>`:''}${breveEventsBadge(c)}
+        ${nContacts>0?`<span style="font-size:10px;background:var(--blue-bg);color:var(--blue-tx);padding:1px 6px;border-radius:10px;font-weight:700;margin-left:4px">${nContacts} contatt${nContacts===1?'o':'i'}</span>`:''}
+      </div>
+      <div class="cs">${[c.city||c.country,c.type?.split(',')[0]].filter(Boolean).map(esc).join(' · ')}${c.prodType?' · '+esc(c.prodType.split(',').slice(0,2).join(', ')):''}
+        ${(c.employees&&c.employees!=='')||c.sales?`<span style="color:var(--text3);margin-left:4px">${c.employees?'👥 '+esc(c.employees):''}${c.employees&&c.sales?' · ':''}${c.sales?'💰 '+esc(c.sales):''}</span>`:''}
+      </div>
+    </div>
+    <span class="badge ${SM[c.status]?.c||'bn'}">${SM[c.status]?.l||''}</span>
+  </div>`;
+}
+
+/* ── DETAIL ── */
+function openDetail(id){
+  const adb=isClienti()?dbC:db;
+  const c=adb.contacts.find(x=>x.id===id);if(!c)return;
+
+  // Log attività — usato da entrambi i blocchi
+  const log=(c.log||[]).slice(-6).reverse().map(e=>`<div class="log-e"><span style="color:var(--text3);font-size:11px">${new Date(e.ts).toLocaleDateString('it-IT')}</span> — ${esc(e.msg)}</div>`).join('');
+
+  if(isClienti()){
+    // ── DETAIL CLIENTE ──
+    showModal(`
+      <div style="display:flex;align-items:center;gap:13px;margin-bottom:1.25rem">
+        <div class="av ${AV[hsh((c.nome||'')+c.cognome)%6]}" style="width:48px;height:48px;font-size:16px">${ini((c.nome||'')+' '+(c.cognome||''))}</div>
+        <div style="flex:1">
+          <div style="font-size:18px;font-weight:700">${esc(c.nome||'')} ${esc(c.cognome||'')}</div>
+          <div style="font-size:13px;color:var(--text2)">${esc(c.email||'')}</div>
+        </div>
+        <span class="badge ${SM[c.status]?.c||'bn'}">${SM[c.status]?.l||''}</span>
+      </div>
+      <div>
+        ${dr('Email',c.email?`<a href="mailto:${esc(c.email)}">${esc(c.email)}</a>`:'—')}
+        ${dr('Paese',c.country||'—')}
+        ${dr('Lingua',c.lingua||'—')}
+        ${dr('Verifica email',c.statoEmail||'—')}
+      </div>
+      ${c.notes?`<div class="divhr"></div><div style="font-size:12px;color:var(--text2);font-weight:700;margin-bottom:6px">NOTE</div><div style="font-size:13px;line-height:1.6;white-space:pre-wrap">${esc(c.notes)}</div>`:''}
+      ${c.emailsSent?`<div class="divhr"></div>
+        <div style="display:flex;gap:12px;font-size:13px">
+          <div style="flex:1;background:var(--blue-bg);border-radius:var(--r);padding:10px 14px;text-align:center">
+            <div style="font-size:20px;font-weight:700;color:var(--blue-tx)">${c.emailsSent||0}</div>
+            <div style="font-size:11px;color:var(--blue-tx)">Email inviate</div>
+          </div>
+          ${c.lastEmailSent?`<div style="flex:2;background:var(--bg2);border-radius:var(--r);padding:10px 14px">
+            <div style="font-size:11px;color:var(--text2);font-weight:700;margin-bottom:3px">ULTIMA EMAIL</div>
+            <div style="font-size:12px">${new Date(c.lastEmailSent).toLocaleDateString('it-IT')}</div>
+            <div style="font-size:11px;color:var(--text2);margin-top:2px">${esc(c.lastEmailSubject||'')}</div>
+          </div>`:''}
+        </div>`:''}
+      <div class="divhr"></div>
+      <div style="font-size:12px;color:var(--text2);font-weight:700;margin-bottom:8px">CAMBIA STATO</div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        ${Object.entries(SM).map(([k,v2])=>`<button class="sbtn badge ${v2.c}${c.status===k?' active':''}" onclick="chStatus('${id}','${k}')">${v2.l}</button>`).join('')}
+      </div>
+      ${log?`<div class="divhr"></div><div style="font-size:12px;color:var(--text2);font-weight:700;margin-bottom:6px">LOG</div>${log}`:''}
+      <div class="mf">
+        <button class="btn btd bts" onclick="delContact('${id}')">Elimina</button>
+        <button class="btn bts" onclick="openAddContact('${id}')">Modifica</button>
+        <button class="btn btp bts" onclick="openEmailFromDetail('${id}')">✉ Email</button>
+      </div>
+    `);
+    return;
+  }
+
+  // ── DETAIL IMPORTATORE ──
+  showModal(`
+    <div style="display:flex;align-items:center;gap:13px;margin-bottom:1.25rem">
+      <div class="av ${AV[hsh(c.company)%6]}" style="width:48px;height:48px;font-size:16px">${ini(c.company)}</div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:18px;font-weight:700">${esc(c.company)}</div>
+        ${c.brandName&&c.brandName!==c.company?`<div style="font-size:13px;color:var(--text2)">Brand: ${esc(c.brandName)}</div>`:''}
+        <div style="font-size:12px;color:var(--text2);margin-top:2px">${[c.type,c.city,c.country].filter(Boolean).map(esc).join(' · ')}</div>
+      </div>
+      <span class="badge ${SM[c.status]?.c||'bn'}">${SM[c.status]?.l||''}</span>
+    </div>
+
+    <!-- INFO AZIENDA -->
+    <div>
+      ${dr('Email az.',c.email?`<a href="mailto:${esc(c.email)}">${esc(c.email)}</a>`:'—')}
+      ${dr('Telefono',c.phone||'—')}
+      ${dr('Sito',c.website?`<a href="${c.website.startsWith('http')?c.website:'https://'+c.website}" target="_blank">${esc(c.website)}</a>`:'—')}
+      ${dr('Tipo',c.type||'—')}
+      ${dr('Prodotti',c.prodType||'—')}
+      ${dr('Paese',c.country||'—')}
+      ${dr('Città / Prov.',[c.city,c.state].filter(Boolean).map(esc).join(', ')||'—')}
+      ${c.address?dr('Indirizzo',[c.address,c.postalCode].filter(Boolean).map(esc).join(' ')):''}
+      ${c.employees?dr('Dipendenti',esc(c.employees)):''}
+      ${c.sales?dr('Fatturato',esc(c.sales)):''}
+      ${c.founded?dr('Anno fond.',esc(c.founded)):''}
+      ${c.regNumber?dr('Nr. Reg.',esc(c.regNumber)):''}
+      ${c.compId?dr('ID',esc(c.compId)):''}
+    </div>
+
+    <!-- SOCIAL -->
+    ${(c.linkedinCo||c.facebook||c.instagram||c.twitter||c.youtube)?`
+    <div class="divhr"></div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      ${c.linkedinCo?`<a href="${esc(c.linkedinCo)}" target="_blank" style="font-size:12px;padding:4px 10px;border-radius:20px;background:var(--blue-bg);color:var(--blue-tx);font-weight:600;text-decoration:none">LinkedIn</a>`:''}
+      ${c.facebook?`<a href="${esc(c.facebook)}" target="_blank" style="font-size:12px;padding:4px 10px;border-radius:20px;background:var(--bg2);color:var(--text2);font-weight:600;text-decoration:none">Facebook</a>`:''}
+      ${c.instagram?`<a href="${esc(c.instagram)}" target="_blank" style="font-size:12px;padding:4px 10px;border-radius:20px;background:var(--pink-bg);color:var(--pink-tx);font-weight:600;text-decoration:none">Instagram</a>`:''}
+      ${c.twitter?`<a href="${esc(c.twitter)}" target="_blank" style="font-size:12px;padding:4px 10px;border-radius:20px;background:var(--bg2);color:var(--text2);font-weight:600;text-decoration:none">Twitter/X</a>`:''}
+      ${c.youtube?`<a href="${esc(c.youtube)}" target="_blank" style="font-size:12px;padding:4px 10px;border-radius:20px;background:var(--coral-bg);color:var(--coral-tx);font-weight:600;text-decoration:none">YouTube</a>`:''}
+    </div>`:''}
+
+    <!-- CONTATTI INDIVIDUALI -->
+    ${(c.contacts&&c.contacts.length)?`
+    <div class="divhr"></div>
+    <div style="font-size:12px;color:var(--text2);font-weight:700;margin-bottom:8px">CONTATTI (${c.contacts.length})</div>
+    ${c.contacts.map((ct,i)=>`
+      <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:0.5px solid var(--brd);cursor:pointer" onclick="openEmailToContact('${c.id}',${i})">
+        <div style="flex:1">
+          <div style="font-size:13px;font-weight:600">${esc(ct.name||'—')}</div>
+          <div style="font-size:12px;color:var(--text2)">${esc(ct.title||'')}${ct.email?' · <a href="mailto:'+esc(ct.email)+'" onclick="event.stopPropagation()">'+esc(ct.email)+'</a>':''}</div>
+        </div>
+        ${ct.linkedin?`<a href="${esc(ct.linkedin)}" target="_blank" onclick="event.stopPropagation()" style="font-size:11px;padding:3px 8px;border-radius:12px;background:var(--blue-bg);color:var(--blue-tx);font-weight:600;text-decoration:none;flex-shrink:0">in</a>`:''}
+        <button class="btn bts" style="font-size:11px;flex-shrink:0" onclick="event.stopPropagation();openEmailToContact('${c.id}',${i})">✉</button>
+      </div>`).join('')}`:''}
+
+    ${c.notes?`<div class="divhr"></div><div style="font-size:12px;color:var(--text2);font-weight:700;margin-bottom:6px">NOTE</div><div style="font-size:13px;line-height:1.6;white-space:pre-wrap">${esc(c.notes)}</div>`:''}
+    ${c.emailsSent?`<div class="divhr"></div>
+      <div style="display:flex;gap:12px">
+        <div style="flex:1;background:var(--blue-bg);border-radius:var(--r);padding:10px;text-align:center">
+          <div style="font-size:20px;font-weight:700;color:var(--blue-tx)">${c.emailsSent||0}</div>
+          <div style="font-size:11px;color:var(--blue-tx)">Email inviate</div>
+        </div>
+        ${c.lastEmailSent?`<div style="flex:2;background:var(--bg2);border-radius:var(--r);padding:10px">
+          <div style="font-size:11px;color:var(--text2);font-weight:700;margin-bottom:3px">ULTIMA EMAIL</div>
+          <div style="font-size:12px">${new Date(c.lastEmailSent).toLocaleDateString('it-IT')}</div>
+          <div style="font-size:11px;color:var(--text2)">${esc(c.lastEmailSubject||'')}</div>
+        </div>`:''}
+      </div>`:''}
+    <div class="divhr"></div>
+    <div style="font-size:12px;color:var(--text2);font-weight:700;margin-bottom:8px">CAMBIA STATO</div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap">
+      ${Object.entries(SM).map(([k,v2])=>`<button class="sbtn badge ${v2.c}${c.status===k?' active':''}" onclick="chStatus('${id}','${k}')">${v2.l}</button>`).join('')}
+    </div>
+    ${log?`<div class="divhr"></div><div style="font-size:12px;color:var(--text2);font-weight:700;margin-bottom:6px">LOG</div>${log}`:''}
+    <div class="mf">
+      <button class="btn btd bts" onclick="delContact('${id}')">Elimina</button>
+      <button class="btn bts" onclick="openAddContact('${id}')">Modifica</button>
+      <button class="btn btp bts" onclick="openEmailFromDetail('${id}')">✉ Email</button>
+    </div>
+  `);
+}
+function dr(l,v2){return `<div class="df"><span class="dl">${l}</span><span class="dv">${v2}</span></div>`;}
+function chStatus(id,s){
+  const c=(isClienti()?dbC:db).contacts.find(x=>x.id===id);if(!c)return;
+  c.status=s;c.updatedAt=Date.now();
+  c.log=c.log||[];c.log.push({ts:Date.now(),msg:`Stato → ${SM[s].l}`});
+  saveDB();refreshAll();closeModal();openDetail(id);
+}
+function delContact(id){
+  if(!confirm('Eliminare questo contatto?'))return;
+  (isClienti()?dbC:db).contacts=(isClienti()?dbC:db).contacts.filter(c=>c.id!==id);
+  saveDB();closeModal();refreshAll();toast('Eliminato');
+}
+
+/* ── ADD/EDIT ── */
+function openAddContact(editId){
+  if(isClienti()) return openAddCliente(editId);
+  const adb=db;
+  const c=editId?adb.contacts.find(x=>x.id===editId):null;
+
+  // Genera HTML per i contatti individuali
+  const contactsArr = c?.contacts||[{name:'',title:'',email:'',phone:'',linkedin:''}];
+  const contactRows = contactsArr.map((ct,i)=>contactRowHtml(ct,i)).join('');
+
+  showModal(`
+    <div class="mt">${c?'Modifica':'Nuovo'} importatore</div>
+    <div style="font-size:12px;color:var(--text2);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin:0 0 8px">Anagrafica azienda</div>
+    <div class="fg2">
+      <div class="fg"><label>Ragione sociale *</label><input id="fa" value="${esc(c?.company||'')}"></div>
+      <div class="fg"><label>Brand name</label><input id="fbrand" value="${esc(c?.brandName||'')}"></div>
+      <div class="fg"><label>Email aziendale</label><input id="fe" type="email" value="${esc(c?.email||'')}"></div>
+      <div class="fg"><label>Telefono</label><input id="fp" value="${esc(c?.phone||'')}"></div>
+      <div class="fg"><label>Sito web</label><input id="fw" value="${esc(c?.website||'')}"></div>
+      <div class="fg"><label>Tipo</label><input id="ftype" placeholder="Importer, Distributor…" value="${esc(c?.type||'')}"></div>
+      <div class="fg fgf"><label>Prodotti trattati</label><input id="fprod" placeholder="Wine, Beer, Spirits…" value="${esc(c?.prodType||'')}"></div>
+      <div class="fg"><label>Paese</label><input id="fco" list="fcl2" value="${esc(c?.country||'')}"><datalist id="fcl2">${CLIST.map(x=>`<option value="${esc(x)}">`).join('')}</datalist></div>
+      <div class="fg"><label>Città</label><input id="fci" value="${esc(c?.city||'')}"></div>
+      <div class="fg"><label>Stato / Provincia</label><input id="fstate" value="${esc(c?.state||'')}"></div>
+      <div class="fg"><label>Indirizzo</label><input id="faddr" value="${esc(c?.address||'')}"></div>
+      <div class="fg"><label>CAP</label><input id="fzip" value="${esc(c?.postalCode||'')}"></div>
+      <div class="fg"><label>Dipendenti</label><input id="femp" value="${esc(c?.employees||'')}"></div>
+      <div class="fg"><label>Fatturato</label><input id="fsales" value="${esc(c?.sales||'')}"></div>
+      <div class="fg"><label>Anno fondazione</label><input id="ffound" value="${esc(c?.founded||'')}"></div>
+      <div class="fg"><label>Nr. Registrazione</label><input id="freg" value="${esc(c?.regNumber||'')}"></div>
+      <div class="fg"><label>Regione CRM</label><input id="frg" placeholder="Oceania, Europa…" value="${esc(c?.region||'')}"></div>
+      <div class="fg"><label>Situazione contatto</label>
+        <select id="fst">${Object.entries(SM).map(([k,v2])=>`<option value="${k}"${(c?.status||'new')===k?' selected':''}>${v2.l}</option>`).join('')}</select>
+      </div>
+    </div>
+
+    <div style="font-size:12px;color:var(--text2);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin:12px 0 8px">Social azienda</div>
+    <div class="fg2">
+      <div class="fg"><label>LinkedIn azienda</label><input id="flinco" value="${esc(c?.linkedinCo||'')}"></div>
+      <div class="fg"><label>Facebook</label><input id="ffb" value="${esc(c?.facebook||'')}"></div>
+      <div class="fg"><label>Instagram</label><input id="finsta" value="${esc(c?.instagram||'')}"></div>
+      <div class="fg"><label>Twitter / X</label><input id="ftwit" value="${esc(c?.twitter||'')}"></div>
+      <div class="fg"><label>YouTube</label><input id="fyt" value="${esc(c?.youtube||'')}"></div>
+    </div>
+
+    <div style="font-size:12px;color:var(--text2);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin:12px 0 8px">
+      Contatti individuali
+      <button type="button" class="btn bts" style="font-size:11px;margin-left:8px" onclick="addContactRow()">+ Aggiungi</button>
+    </div>
+    <div id="contacts-rows">${contactRows}</div>
+
+    <div style="margin-top:12px">
+      <div class="fg"><label>Note</label><textarea id="fno">${esc(c?.notes||'')}</textarea></div>
+    </div>
+
+    <div class="mf">
+      <button class="btn" onclick="closeModal()">Annulla</button>
+      <button class="btn btp" onclick="saveContact('${editId||''}')">Salva</button>
+    </div>
+  `);
+}
+
+function contactRowHtml(ct, i){
+  return `<div class="contact-edit-row" id="crow-${i}" style="background:var(--bg2);border-radius:var(--r);padding:10px 12px;margin-bottom:8px;position:relative">
+    <button type="button" onclick="removeContactRow(${i})" style="position:absolute;top:8px;right:10px;background:none;border:none;cursor:pointer;font-size:16px;color:var(--text3)" title="Rimuovi">✕</button>
+    <div class="fg2">
+      <div class="fg"><label>Nome</label><input class="ct-name" value="${esc(ct.name||'')}"></div>
+      <div class="fg"><label>Ruolo / Job title</label><input class="ct-title" value="${esc(ct.title||'')}"></div>
+      <div class="fg"><label>Email diretta</label><input class="ct-email" type="email" value="${esc(ct.email||'')}"></div>
+      <div class="fg"><label>Telefono diretto</label><input class="ct-phone" value="${esc(ct.phone||'')}"></div>
+      <div class="fg fgf"><label>LinkedIn personale</label><input class="ct-linkedin" value="${esc(ct.linkedin||'')}"></div>
+    </div>
+  </div>`;
+}
+
+let _contactRowCount = 0;
+function addContactRow(){
+  _contactRowCount++;
+  const id = Date.now() + _contactRowCount;
+  const container = document.getElementById('contacts-rows');
+  if(!container) return;
+  const div = document.createElement('div');
+  div.innerHTML = contactRowHtml({},id);
+  container.appendChild(div.firstElementChild);
+}
+
+function removeContactRow(i){
+  document.getElementById(`crow-${i}`)?.remove();
+}
+
+
+function openAddCliente(editId){
+  const c=editId?dbC.contacts.find(x=>x.id===editId):null;
+  showModal(`
+    <div class="mt">${c?'Modifica':'Nuovo'} cliente</div>
+    <div class="fg2">
+      <div class="fg"><label>Nome *</label><input id="fa" value="${esc(c?.nome||'')}"></div>
+      <div class="fg"><label>Cognome *</label><input id="fcog" value="${esc(c?.cognome||'')}"></div>
+      <div class="fg fgf"><label>Email *</label><input id="fe" type="email" value="${esc(c?.email||'')}"></div>
+      <div class="fg"><label>Paese</label>
+        <input id="fco" list="fcl2" value="${esc(c?.country||'')}">
+        <datalist id="fcl2">${CLIST.map(x=>`<option value="${esc(x)}">`).join('')}</datalist>
+      </div>
+      <div class="fg"><label>Lingua</label>
+        <select id="fling">
+          ${['it','en','de','fr','es','pt','ru','zh','ja','ar','nl','pl','sv'].map(l=>`<option value="${l}"${(c?.lingua||'en')===l?' selected':''}>${l}</option>`).join('')}
+        </select>
+      </div>
+      <div class="fg"><label>Situazione contatto</label>
+        <select id="fst">${Object.entries(SM).map(([k,v2])=>`<option value="${k}"${(c?.status||'new')===k?' selected':''}>${v2.l}</option>`).join('')}</select>
+      </div>
+      <div class="fg fgf"><label>Note</label><textarea id="fno">${esc(c?.notes||'')}</textarea></div>
+    </div>
+    <div class="mf">
+      <button class="btn" onclick="closeModal()">Annulla</button>
+      <button class="btn btp" onclick="saveContact('${editId||''}')">Salva</button>
+    </div>
+  `);
+}
+function saveContact(editId){
+  const adb = isClienti()?dbC:db;
+
+  if(isClienti()){
+    const nome=gv('fa');const cognome=gv('fcog');const email=gv('fe');
+    if(!nome||!email){toast('Nome e email obbligatori');return;}
+    const contact={
+      id:editId||'c'+Date.now(),
+      nome,cognome,email,lingua:document.getElementById('fling')?.value||'en',
+      country:gv('fco'),statoEmail:gv('fsv')||'sconosciuto',
+      company:(nome)+' '+(cognome),name:(nome)+' '+(cognome),
+      status:document.getElementById('fst').value,
+      products:[],notes:gv('fno'),
+      updatedAt:Date.now(),
+      createdAt:editId?(adb.contacts.find(c=>c.id===editId)?.createdAt||Date.now()):Date.now()
+    };
+    if(editId){const i=adb.contacts.findIndex(c=>c.id===editId);if(i>=0)adb.contacts[i]=contact;}
+    else adb.contacts.push(contact);
+
+  } else {
+    // ── IMPORTATORE: salva tutti i 27 campi + contatti individuali ──
+    const company=gv('fa');
+    if(!company){toast('Ragione sociale obbligatoria');return;}
+
+    // Raccogli i contatti individuali dalle righe del form
+    const contactRows=[...document.querySelectorAll('.contact-edit-row')];
+    const contacts=contactRows.map(row=>({
+      name:  row.querySelector('.ct-name')?.value.trim()||'',
+      title: row.querySelector('.ct-title')?.value.trim()||'',
+      email: row.querySelector('.ct-email')?.value.trim()||'',
+      phone: row.querySelector('.ct-phone')?.value.trim()||'',
+      linkedin: row.querySelector('.ct-linkedin')?.value.trim()||'',
+    })).filter(c=>c.name||c.email);
+
+    const existing = editId ? adb.contacts.find(c=>c.id===editId) : null;
+    const contact={
+      id:        editId||'c'+Date.now(),
+      compId:    existing?.compId||editId||'c'+Date.now(),
+      company,
+      brandName: gv('fbrand'),
+      email:     gv('fe'),
+      phone:     gv('fp'),
+      website:   gv('fw'),
+      type:      gv('ftype'),
+      prodType:  gv('fprod'),
+      country:   gv('fco'),
+      city:      gv('fci'),
+      state:     gv('fstate'),
+      address:   gv('faddr'),
+      postalCode:gv('fzip'),
+      employees: gv('femp'),
+      sales:     gv('fsales'),
+      founded:   gv('ffound'),
+      regNumber: gv('freg'),
+      region:    gv('frg'),
+      linkedinCo:gv('flinco'),
+      facebook:  gv('ffb'),
+      instagram: gv('finsta'),
+      twitter:   gv('ftwit'),
+      youtube:   gv('fyt'),
+      contacts,
+      // Legacy compat
+      contactName:  contacts[0]?.name||'',
+      contactTitle: contacts[0]?.title||'',
+      contactEmail: contacts[0]?.email||'',
+      name: contacts[0]?.name||'',
+      status: document.getElementById('fst').value,
+      products:[], notes:gv('fno'),
+      emailsSent:    existing?.emailsSent||0,
+      lastEmailSent: existing?.lastEmailSent||null,
+      lastEmailSubject: existing?.lastEmailSubject||'',
+      log: existing?.log||[],
+      updatedAt: Date.now(),
+      createdAt: existing?.createdAt||Date.now()
+    };
+
+    if(editId){const i=adb.contacts.findIndex(c=>c.id===editId);if(i>=0)adb.contacts[i]=contact;}
+    else adb.contacts.push(contact);
+  }
+
+  saveDB();closeModal();refreshAll();toast(editId?'Aggiornato ✓':'Aggiunto ✓');
+}
+
+
+
+/* ─── SELEZIONE CONTATTO PER EMAIL ───────────────────────────
+   Riceve l'array contacts[] di un importatore e restituisce:
+   { primary, secondary }
+   primary  = contatto a cui inviare la mail
+   secondary= contatto da menzionare nell'apertura (owner/founder)
+   Se nessun contatto ha priorità, usa il primo disponibile
+──────────────────────────────────────────────────────────── */
+
+// Converte stringhe numeriche come "1.2M", "$27.64M", "42", "1,200" in numero
+function parseNumeric(val){
+  if(!val) return -1;
+  const s = String(val).replace(/[,$€£\s]/g,'').toUpperCase();
+  const n = parseFloat(s);
+  if(isNaN(n)) return -1;
+  if(s.endsWith('B')) return n * 1_000_000_000;
+  if(s.endsWith('M')) return n * 1_000_000;
+  if(s.endsWith('K')) return n * 1_000;
+  return n;
+}
+
+
+// Converte valori testuali di employee/sales in numero per ordinamento
+function parseNumeric(val){
+  if(!val) return -1;
+  const s = String(val).trim().toUpperCase()
+    .replace(/[€$£¥,\s]/g,'')  // rimuovi simboli valuta e separatori
+    .replace(/\.(?=\d{3})/g,''); // rimuovi punto come separatore migliaia
+  let n = parseFloat(s);
+  if(isNaN(n)) return -1;
+  if(s.endsWith('B')) n *= 1_000_000_000;
+  else if(s.endsWith('M')) n *= 1_000_000;
+  else if(s.endsWith('K')) n *= 1_000;
+  return n;
+}
+
+// Job title priorities
+const JOB_PRIORITY = {
+  1: ['sales manager', 'buyer', 'purchasing manager', 'managing partner', 'sales representative', 'sales director', 'commercial director', 'sales', 'commercial', 'commercial manager', 'wine buyer', 'senior buyer', 'purchasing', 'import manager', 'sales consultant', 'regional sales manager', 'product manager', 'area sales manager', 'marketing manager', 'purchasing director', 'wine manager', 'purchaser', 'national sales manager', 'head of sales', 'buying manager', 'wine sales specialist', 'director of sales', 'wine sales', 'purchase manager', 'director of sales', 'buying director', 'head of sales', 'general sales manager', 'wine importer'],
+  2: ['managing director', 'manager', 'director', 'general manager', 'administrator', 'in charge', 'operations manager', 'wine merchant', 'representative', 'chief executive officer', 'account manager', 'executive director', 'business owner', 'co-founder', 'representative director', 'general director', 'director of operations', 'president & ceo', 'wine director', 'sales specialist', 'wine sales representative', 'director of operations', 'procurement manager', 'logistics manager', 'owner/ manager', 'co-owner', 'operation manager', 'senior brand manager', 'chief operating officer', 'regional manager', 'sales assistant', 'sales agent', 'ceo & founder', 'junior buyer', 'portfolio manager', 'area manager', 'senior sales manager', 'founder and ceo', 'business manager', 'managing director/ owner'],
+  3: ['owner', 'ceo', 'president', 'founder', 'co-owner', 'sommelier', 'partner', 'co-founder', 'wine consultant', 'brand manager', 'store manager', 'business development manager', 'category manager', 'key account manager', 'wine specialist', 'vice president', 'sales associate', 'president and ceo', 'sales executive', 'administrative', 'administrative manager', 'brand ambassador', 'administrative assistant'],
+};
+
+function getPriorityScore(title){
+  if(!title) return 99;
+  const t = title.toLowerCase();
+  for(const [p, titles] of Object.entries(JOB_PRIORITY)){
+    if(titles.some(pt => t.includes(pt) || pt.includes(t))) return parseInt(p);
+  }
+  return 98; // ha un titolo ma non è nella lista → usa comunque
+}
+
+function selectBestContact(contacts){
+  if(!contacts || !contacts.length) return {primary:null, secondary:null};
+
+  // Assegna punteggio a ogni contatto
+  const scored = contacts
+    .filter(c => c.name || c.email)
+    .map(c => ({...c, score: getPriorityScore(c.title)}))
+    .sort((a,b) => a.score - b.score);
+
+  if(!scored.length) return {primary:null, secondary:null};
+
+  const primary = scored[0];
+
+  // Secondary: cerca il contatto con priorità più alta DIVERSO dal primary
+  // Logica:
+  // - Se primary è P1 → secondary è il primo P2 o P3 (owner/manager da menzionare)
+  // - Se primary è P2 → secondary è il primo P3 (owner da menzionare)
+  // - Se primary è P3 → nessun secondary (owner scrive a se stesso)
+  let secondary = null;
+  if(primary.score <= 1){
+    // Primary è P1 → cerca P2 o P3 come secondary
+    secondary = scored.find(c => c !== primary && c.score >= 2) || null;
+  } else if(primary.score <= 2){
+    // Primary è P2 → cerca P3 come secondary
+    secondary = scored.find(c => c !== primary && c.score >= 3) || null;
+  }
+
+  return {primary, secondary};
+}
+
+// Estrae solo il PRIMO NOME da un nome completo
+function firstName(fullName){
+  if(!fullName) return '';
+  const parts = fullName.trim().split(/\s+/);
+  return parts[0] || '';
+}
+
+// Costruisce la riga di apertura personalizzata
+// No contact  → Esteemed [Company] Team,
+// 1+ contacts → Dear [Name] from [Company],
+function buildDearLine(primary, secondary, companyName){
+  if(!primary || !primary.name){
+    return `Esteemed ${companyName||''} Team,`;
+  }
+  const fn = firstName(primary.name);
+  return `Dear ${fn} from ${companyName||''},`;
+}
+
+// Costruisce la menzione dell'owner/secondary nell'apertura
+function buildOwnerMention(secondary){
+  if(!secondary || !secondary.name) return '';
+  const fn = firstName(secondary.name);
+  return ` — and after seeing what you and ${fn} have built`;
+}
+
+// Costruisce la riga "This is something you [and NAME] know very well."
+function buildKnowWell(secondary){
+  if(!secondary || !secondary.name){
+    return 'This is something you know very well.';
+  }
+  const fn = firstName(secondary.name);
+  return `This is something you and ${fn} know very well.`;
+}
+
+/* ═══════════════════════════════════════════════════
+   BREVO — INVIO EMAIL
+═══════════════════════════════════════════════════ */
+
+const BRANDS = {
+  sienawine: {
+    name: 'Siena Wine',
+    senderEmail: 'luca@sienawine.it',
+    senderName: 'Luca Pattaro | Siena Wine Srl',
+    logoUrl: 'https://shopilciliegio-ship-it.github.io/crm-importatori/assets/logo_sienawine.png',
+    logoAlt: 'Siena Wine',
+    logoWidth: '160',
+    accentColor: '#8B1A1A',
+    bgColor: '#1a1a1a',
+    website: 'https://www.sienawine.it',
+    phone: '+39 331 1347899',
+    tagline: 'Siena Wine: Pleasure in a bottle',
+  },
+  ciliegio: {
+    name: 'Il Ciliegio',
+    senderEmail: 'export@ilciliegio.com',
+    senderName: 'Il Ciliegio — Azienda Agricola',
+    logoUrl: 'https://shopilciliegio-ship-it.github.io/crm-importatori/assets/logo_ciliegio.png',
+    logoAlt: 'Il Ciliegio — Azienda Agricola',
+    logoWidth: '180',
+    accentColor: '#B8941A',
+    bgColor: '#2c2c2c',
+    website: 'https://www.ilciliegio.com',
+    phone: '+39 331 1347899',
+    tagline: 'Vini artigianali toscani di eccellenza',
+  }
+};
+
+function buildHtmlEmail(body, brand, contactName){
+  try{
+  const b = BRANDS[brand] || BRANDS.sienawine;
+  // Nota: il greeting è già nel body via {{dear}} — non lo aggiungiamo due volte
+  // Converti testo plain in paragrafi HTML
+  const bodyHtml = body
+    .split('\n\n')
+    .map(para => para.trim())
+    .filter(Boolean)
+    .map(para => {
+      // Lista puntata
+      if(para.includes('\n•') || para.startsWith('•')){
+        const items = para.split('\n').map(l=>l.trim()).filter(Boolean);
+        return '<ul style="margin:0 0 16px;padding-left:20px">'+
+          items.map(i=>`<li style="margin-bottom:6px;color:#333;font-size:15px;line-height:1.6">${esc(i.replace(/^[•\-]\s*/,''))}</li>`).join('')+
+          '</ul>';
+      }
+      return `<p style="margin:0 0 16px;color:#333;font-size:15px;line-height:1.7">${esc(para).replace(/\n/g,'<br>')}</p>`;
+    }).join('');
+
+  const _html=`<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
+<body style="margin:0;padding:0;background:#f4f4f0;font-family:Georgia,'Times New Roman',serif">
+<table width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f0;padding:32px 16px">
+<tr><td align="center">
+<table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%">
+
+  <!-- HEADER -->
+  <tr><td style="background:${b.bgColor};border-radius:12px 12px 0 0;padding:32px;text-align:center">
+    <img src="${b.logoUrl}" width="${b.logoWidth}" alt="${b.logoAlt}" style="display:block;margin:0 auto;max-width:${b.logoWidth}px">
+  </td></tr>
+
+  <!-- GOLD DIVIDER -->
+  <tr><td style="background:${b.accentColor};height:4px;font-size:0">&nbsp;</td></tr>
+
+  <!-- BODY -->
+  <tr><td style="background:#ffffff;padding:40px 48px">
+    ${bodyHtml}
+  </td></tr>
+
+  <!-- GOLD DIVIDER -->
+  <tr><td style="background:${b.accentColor};height:3px;font-size:0">&nbsp;</td></tr>
+
+  <!-- FOOTER -->
+  <tr><td style="background:${b.bgColor};border-radius:0 0 12px 12px;padding:28px 40px;text-align:center">
+    <p style="margin:0 0 8px;color:#ffffff;font-size:13px;font-weight:bold;letter-spacing:1px;text-transform:uppercase">${b.name}</p>
+    <p style="margin:0 0 12px;color:${b.accentColor};font-size:12px;font-style:italic">${b.tagline}</p>
+    <p style="margin:0;font-size:12px;color:#999;line-height:1.8">
+      <span style="color:#cccccc">${b.website.replace('https://','')}</span>
+      &nbsp;|&nbsp;
+      <span style="color:#999">${b.phone}</span>
+    </p>
+  </td></tr>
+
+</table>
+</td></tr>
+</table>
+</body></html>`;
+  return _html;
+  }catch(e){
+    console.error('buildHtmlEmail error:',e);
+    return '<html><body style="font-family:serif;padding:40px;color:#333"><p>'+
+      (body||'').replace(/\n/g,'<br>')+
+      '</p></body></html>';
+  }
+}
+
+async function sendViaBrevo(contactId, toEmail, toName, subject, bodyText, brand){
+  if(!brv.apiKey){
+    toast('⚠ Configura prima Brevo nelle impostazioni');
+    openSettings();
+    return false;
+  }
+  const b = BRANDS[brand] || BRANDS.sienawine;
+  const htmlContent = buildHtmlEmail(bodyText, brand, toName);
+
+  try{
+    const res = await fetch('https://api.brevo.com/v3/smtp/email',{
+      method: 'POST',
+      headers: {
+        'api-key': brv.apiKey,
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        sender: {
+          name: brv.senderName || b.senderName,
+          email: brv.senderEmail || b.senderEmail
+        },
+        to: [{ email: toEmail, name: toName||toEmail||'' }],
+        subject: subject,
+        htmlContent: htmlContent,
+        textContent: bodyText.replace(/\{\{[^}]+\}\}/g,'').trim(),
+        tags: ['wine-crm', brand],
+        headers: { 'X-CRM-ContactId': contactId }
+      })
+    });
+
+    const data = await res.json();
+
+    if(res.ok && data.messageId){
+      // Aggiorna stato contatto
+      const c = (isClienti()?dbC:db).contacts.find(x=>x.id===contactId);
+      if(c){
+        const wasNew = c.status==='new';
+        if(wasNew || c.status==='followup') c.status='sent';
+        c.updatedAt = Date.now();
+        c.log = c.log||[];
+        c.log.push({
+          ts: Date.now(),
+          msg: `📧 Email inviata via Brevo — "${subject}" (ID: ${data.messageId})`
+        });
+        c.lastEmailSent = Date.now();
+        c.lastEmailSubject = subject;
+        c.emailsSent = (c.emailsSent||0) + 1;
+        c.brevoEvents = c.brevoEvents||[];
+        c.brevoEvents.push({messageId:data.messageId,subject,sentAt:Date.now(),
+          delivered:false,opened:false,clicked:false,bounced:false,spam:false});
+        saveDB();
+        refreshAll();
+      }
+      return {ok:true, messageId: data.messageId};
+    } else {
+      const errMsg = data.message || JSON.stringify(data);
+      throw new Error(errMsg);
+    }
+  } catch(e){
+    console.error('Brevo error:', e);
+    toast('✗ Errore invio: '+e.message);
+    return {ok:false, error:e.message};
+  }
+}
+
+/* ── EMAIL ── */
+
+function openEmailFromDetail(id){ openEmailModal(id); }
+
+function openEmailModal(id, overrideEmail, overrideName, contactIdx){
+  const adb = isClienti()?dbC:db;
+  const c = adb.contacts.find(x=>x.id===id);
+  if(!c) return;
+
+  let toEmail, toName, bestPrimary=null, bestSecondary=null;
+
+  if(isClienti()){
+    toEmail = overrideEmail || c.email || '';
+    toName  = overrideName  || ((c.nome||'')+' '+(c.cognome||'')).trim();
+  } else {
+    const {primary, secondary} = selectBestContact(c.contacts||[]);
+    bestPrimary   = primary;
+    bestSecondary = secondary;
+    toEmail = overrideEmail || primary?.email || c.contactEmail || c.email || '';
+    toName  = overrideName  || primary?.name  || c.contactName  || c.name  || '';
+  }
+
+  // Rendi disponibili per applyTpl
+  window._emailCtx = { primary: bestPrimary, secondary: bestSecondary, contact: c };
+
+  showModal(`
+    <div class="mt">✉ Email — ${esc(isClienti()?(c.nome+' '+c.cognome):c.company)}</div>
+
+    ${(!isClienti()&&c.contacts&&c.contacts.length>1)?`
+    <div style="margin-bottom:12px">
+      <div style="font-size:12px;color:var(--text2);font-weight:700;margin-bottom:6px">SELEZIONA DESTINATARIO</div>
+      <select id="contact-sel" onchange="switchEmailContact('${c.id}')"
+        style="width:100%;font-size:13px;padding:8px;border-radius:var(--r);border:.5px solid var(--brd2);background:var(--bg);color:var(--text)">
+        <option value="-1">— Email aziendale (${esc(c.email||'nessuna')})</option>
+        ${(c.contacts||[]).map((ct,i)=>`<option value="${i}"${bestPrimary&&ct.name===bestPrimary.name?' selected':''}>${esc(ct.name||'—')} · ${esc(ct.title||'')}${ct.email?' ('+esc(ct.email)+')':''}</option>`).join('')}
+      </select>
+    </div>`:''}
+
+    <div class="fg2">
+      <div class="fg fgf"><label>A</label><input id="em-to" value="${esc(toEmail)}"></div>
+      <div class="fg"><label>Nome destinatario</label><input id="em-toname" value="${esc(toName)}"></div>
+    </div>
+    <div class="fg" style="margin-bottom:8px"><label>Template</label>
+      <select id="tsel" onchange="applyTpl('${id}')">${adb.templates.map((t,i)=>`<option value="${i}">${esc(t.name)}</option>`).join('')}</select>
+    </div>
+    <div style="display:flex;gap:8px;margin-bottom:10px">
+      <button id="bulk-sw" onclick="selectBrand('sienawine','${id}')"
+        style="flex:1;padding:10px;border-radius:var(--r);border:2px solid #8B1A1A;background:#1a1a1a;color:#fff;cursor:pointer;font-size:12px;font-weight:700">
+        🍷 Siena Wine
+      </button>
+      <button id="bulk-cil" onclick="selectBrand('ciliegio','${id}')"
+        style="flex:1;padding:10px;border-radius:var(--r);border:2px solid var(--brd2);background:var(--bg2);color:var(--text);cursor:pointer;font-size:12px;font-weight:700">
+        ☀ Il Ciliegio
+      </button>
+    </div>
+    <input type="hidden" id="em-brand" value="sienawine">
+    <div class="fg" style="margin-bottom:8px"><label>Oggetto</label><input id="esu"></div>
+    <div class="fg" style="margin-bottom:8px"><label>Testo email</label>
+      <textarea id="ebo" style="min-height:200px;font-size:13px;line-height:1.6;font-family:inherit"></textarea>
+    </div>
+    <div style="margin-bottom:10px">
+      <button class="btn btg bts" onclick="togglePreview('${id}')" id="prev-btn">👁 Anteprima HTML</button>
+    </div>
+    <div id="email-preview-wrap" style="display:none;border:0.5px solid var(--brd2);border-radius:var(--r);overflow:auto;max-height:400px;margin-bottom:12px"><div id="email-preview"></div></div>
+    <div class="mf">
+      <button class="btn" onclick="closeModal()">Annulla</button>
+      <button class="btn btg" onclick="copyEmailText()">Copia testo</button>
+      <button class="btn btp" id="send-btn" onclick="doSendEmail('${id}')">
+        ${brv.apiKey?'✉ Invia con Brevo':'✉ Apri client email'}
+      </button>
+    </div>
+  `);
+  applyTpl(id);
+  // Apri preview automaticamente dopo aver compilato il template
+  setTimeout(()=>togglePreview(id, true), 80);
+}
+
+
+
+function togglePreview(id, forceRefresh){
+  const wrap=document.getElementById('email-preview-wrap');
+  const btn=document.getElementById('prev-btn');
+  if(!wrap) return;
+  if(wrap.style.display==='none'||forceRefresh){
+    const brand=document.getElementById('em-brand')?.value||'sienawine';
+    const body=document.getElementById('ebo')?.value||'';
+    const b=BRANDS[brand]||BRANDS.sienawine;
+    const el=document.getElementById('email-preview');
+    if(el && body){
+      const paras=body.split('\n\n').filter(p=>p.trim());
+      const bh=paras.map(p=>{
+        if(p.startsWith('\u2022')||p.includes('\n\u2022')){
+          return '<ul style="margin:0 0 12px;padding-left:20px">'+
+            p.split('\n').filter(l=>l.trim()).map(l=>
+              '<li style="margin-bottom:4px">'+esc(l.replace(/^[\u2022\-]\s*/,''))+'</li>'
+            ).join('')+'</ul>';
+        }
+        return '<p style="margin:0 0 12px;line-height:1.7">'+
+          esc(p).replace(/\n/g,'<br>')+'</p>';
+      }).join('');
+      el.innerHTML=
+        '<div style="background:#f4f4f0;padding:20px;font-family:Georgia,serif">'+
+        '<div style="max-width:540px;margin:0 auto">'+
+        '<div style="background:'+b.bgColor+';padding:18px;text-align:center;border-radius:8px 8px 0 0">'+
+        '<img src="'+b.logoUrl+'" height="45" alt="'+b.name+'" style="max-height:45px" '+
+        'onerror="this.style.display=\'none\'">'+
+        '</div>'+
+        '<div style="background:'+b.accentColor+';height:3px"></div>'+
+        '<div style="background:#fff;padding:28px 32px;color:#333;font-size:14px">'+bh+'</div>'+
+        '<div style="background:'+b.accentColor+';height:2px"></div>'+
+        '<div style="background:'+b.bgColor+';padding:14px;text-align:center;border-radius:0 0 8px 8px">'+
+        '<span style="color:#fff;font-size:11px">'+b.name+'</span>'+
+        '</div></div></div>';
+    }
+    wrap.style.display='block';
+    if(btn) btn.textContent='\uD83D\uDC41 Nascondi';
+  } else {
+    wrap.style.display='none';
+    if(btn) btn.textContent='\uD83D\uDC41 Anteprima';
+  }
+}
+function selectBrand(brand, id){
+  const brandEl=document.getElementById('em-brand');
+  if(brandEl) brandEl.value=brand;
+  // IDs corretti dal modal HTML
+  const sw =document.getElementById('bulk-sw');
+  const cil=document.getElementById('bulk-cil');
+  if(sw&&cil){
+    if(brand==='sienawine'){
+      sw.style.cssText ='flex:1;padding:10px;border-radius:8px;border:2px solid #8B1A1A;background:#1a1a1a;color:#fff;cursor:pointer;font-size:12px;font-weight:700';
+      cil.style.cssText='flex:1;padding:10px;border-radius:8px;border:2px solid var(--brd2);background:var(--bg2);color:var(--text);cursor:pointer;font-size:12px;font-weight:700';
+    } else {
+      cil.style.cssText='flex:1;padding:10px;border-radius:8px;border:2px solid #B8941A;background:#2c2c2c;color:#fff;cursor:pointer;font-size:12px;font-weight:700';
+      sw.style.cssText ='flex:1;padding:10px;border-radius:8px;border:2px solid var(--brd2);background:var(--bg2);color:var(--text);cursor:pointer;font-size:12px;font-weight:700';
+    }
+  }
+  const wrap=document.getElementById('email-preview-wrap');
+  if(wrap&&wrap.style.display!=='none') togglePreview(id,true);
+}
+
+
+async function doSendEmail(id){
+  const c = (isClienti()?dbC:db).contacts.find(x=>x.id===id);if(!c) return;
+  const toEmail = gv('em-to');
+  const toName  = gv('em-toname');
+  const subject = gv('esu');
+  const body    = document.getElementById('ebo').value;
+  const brand   = document.getElementById('em-brand')?.value||'sienawine';
+
+  if(!toEmail){toast('Inserisci un indirizzo email');return;}
+  if(!subject){toast('Inserisci un oggetto');return;}
+
+  if(brv.apiKey){
+    // Invio via Brevo
+    const btn = document.getElementById('send-btn');
+    if(btn){btn.disabled=true;btn.textContent='Invio in corso…';}
+    const result = await sendViaBrevo(id, toEmail, toName, subject, body, brand);
+    if(result.ok){
+      closeModal();
+      toast(`✓ Email inviata a ${toEmail}`);
+    } else {
+      if(btn){btn.disabled=false;btn.textContent='✉ Invia con Brevo';}
+    }
+  } else {
+    // Fallback: apri client email
+    window.location.href=`mailto:${encodeURIComponent(toEmail)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    if(c&&c.status==='new'){
+      c.status='sent';c.updatedAt=Date.now();
+      c.log=c.log||[];c.log.push({ts:Date.now(),msg:'Email aperta nel client'});
+      saveDB();refreshAll();
+    }
+    closeModal();
+  }
+}
+function applyTpl(id){
+  const adb=isClienti()?dbC:db;
+  const c=adb.contacts.find(x=>x.id===id);
+  const tIdx=parseInt(document.getElementById('tsel')?.value||'0');
+  const t=adb.templates[tIdx];
+  if(!t||!c){return;}
+
+  // Contesto email (impostato in openEmailModal)
+  const ctx=window._emailCtx||{};
+  const prim=ctx.primary||null;
+  const sec=ctx.secondary||null;
+
+  const dearLine    =buildDearLine(prim,sec,c.company);
+  const ownerMention=buildOwnerMention(sec);
+  const knowWell    =buildKnowWell(sec);
+  const primaryName =firstName(prim?.name||c.contactName||'');
+  const primaryTitle=prim?.title||c.contactTitle||'';
+  const secName     =firstName(sec?.name||'');
+
+  const f=s=>String(s||'')
+    .replace(/\{\{dear\}\}/g,          dearLine)
+    .replace(/\{\{owner_mention\}\}/g,  ownerMention)
+    .replace(/\{\{know_well\}\}/g,      knowWell)
+    .replace(/\{\{owner\}\}/g,          secName)
+    .replace(/\{\{contatto\}\}/g,       primaryName||c.contactName||'')
+    .replace(/\{\{nome\}\}/g,           primaryName||c.name||'')
+    .replace(/\{\{job\}\}/g,            primaryTitle)
+    .replace(/\{\{azienda\}\}/g,        c.company||'')
+    .replace(/\{\{paese\}\}/g,          c.country||'')
+    .replace(/\{\{citta\}\}/g,          c.city||'')
+    .replace(/\{\{prodotti\}\}/g,       (c.products||[]).join(', ')||'');
+
+  const subjEl=document.getElementById('esu');
+  const bodyEl=document.getElementById('ebo');
+  if(subjEl) subjEl.value=f(t.subject);
+  if(bodyEl) bodyEl.value=f(t.body);
+}
+function copyEmailText(){
+  const subj=gv('esu');
+  const body=document.getElementById('ebo')?.value||'';
+  navigator.clipboard?.writeText(`Oggetto: ${subj}\n\n${body}`).then(()=>toast('Testo copiato ✓'));
+}
+
+
+
+// Corregge le regioni sbagliate nei contatti già importati
+// (es. region='Suriname' → region='Sud America')
+function fixExistingRegions(){
+  const adb=isClienti()?dbC:db;
+  let fixed=0;
+
+  // Lista delle regioni VALIDE — tutto il resto è sbagliato
+  const VALID_REGIONS=new Set([
+    'Sud America','Oceania','Europa','Africa','Asia',
+    'Nord America','Medio Oriente','Scandinavia','Caraibi'
+  ]);
+
+  adb.contacts.forEach(c=>{
+    const correct = regionFromCountry(c.country) || '';
+    if(!correct) return; // paese non in mappa, non toccare
+
+    // Corregge se la regione attuale NON è una regione valida
+    // (copre: vuoto, Unknown, nome paese, nome paese con underscore, ecc.)
+    const regionIsInvalid = !c.region
+      || !VALID_REGIONS.has(c.region)
+      || c.region==='Unknown'
+      || c.region==='—';
+
+    if(regionIsInvalid && correct !== c.region){
+      c.region = correct;
+      fixed++;
+    }
+  });
+
+  if(fixed>0){
+    saveDB();refreshAll();
+    toast(`✓ Corrette ${fixed} regioni`);
+  } else {
+    toast('Tutte le regioni sono già corrette ✓');
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════
+   SINCRONIZZAZIONE BREVO — aperture, click, bounce
+═══════════════════════════════════════════════════ */
+
+
+function renderRegistro(){
+  const el=document.getElementById('registro-list');
+  if(!el) return;
+  const adb=isClienti()?dbC:db;
+  const rows=[];
+  adb.contacts.forEach(c=>{
+    if(c.brevoEvents&&c.brevoEvents.length){
+      c.brevoEvents.forEach(ev=>rows.push({c,ev}));
+    } else if(c.lastEmailSent){
+      rows.push({c,ev:{subject:c.lastEmailSubject||'—',sentAt:c.lastEmailSent,
+        delivered:null,opened:null,clicked:null,bounced:null,spam:null,messageId:null}});
+    }
+  });
+  rows.sort((a,b)=>(b.ev.sentAt||0)-(a.ev.sentAt||0));
+  const badge=document.getElementById('badge-registro');
+  if(badge) badge.textContent=rows.length>0?rows.length:'';
+  if(!rows.length){
+    el.innerHTML='<div class="empty">Nessuna email inviata ancora.</div>';
+    return;
+  }
+  const fmt=ts=>{
+    if(!ts) return '—';
+    return new Date(typeof ts==='number'?ts:ts)
+      .toLocaleDateString('it-IT',{day:'2-digit',month:'2-digit',year:'2-digit',hour:'2-digit',minute:'2-digit'});
+  };
+  const badge2=ev=>{
+    if(!ev.messageId) return '<span style="color:var(--text3);font-size:11px">non tracciata</span>';
+    if(ev.bounced) return '<span style="color:#e74c3c">⚠ Bounce</span>';
+    if(ev.spam)    return '<span style="color:#e74c3c">🚫 Spam</span>';
+    let s='<span style="color:#27ae60">✓</span>';
+    if(ev.opened)  s+=' <span style="color:#2980b9" title="Aperta il '+fmt(ev.openedAt)+'">👁</span>';
+    if(ev.clicked) s+=' <span style="color:#8e44ad" title="Click il '+fmt(ev.clickedAt)+'">🔗</span>';
+    if(!ev.opened&&!ev.clicked) s+=' <span style="color:var(--text3);font-size:11px">inviata</span>';
+    return s;
+  };
+  const thead=`<thead><tr style="background:var(--bg2)">
+    <th style="padding:8px 12px;text-align:left;color:var(--text2);font-weight:600">Azienda</th>
+    <th style="padding:8px 12px;text-align:left;color:var(--text2);font-weight:600">Oggetto</th>
+    <th style="padding:8px 12px;text-align:left;color:var(--text2);font-weight:600">Inviata</th>
+    <th style="padding:8px 12px;text-align:center;color:var(--text2);font-weight:600">Apertura</th>
+    <th style="padding:8px 12px;text-align:center;color:var(--text2);font-weight:600">Stato</th>
+  </tr></thead>`;
+  const tbody=rows.map(({c,ev})=>{
+    const cid=c.id;
+    return `<tr style="border-bottom:0.5px solid var(--brd);cursor:pointer"
+      onclick="openDetail('${cid}')"
+      onmouseover="this.style.background='var(--bg2)'"
+      onmouseout="this.style.background=''">
+      <td style="padding:8px 12px">
+        <div style="font-weight:600">${esc(c.company||(c.nome+' '+(c.cognome||'')))}</div>
+        <div style="font-size:11px;color:var(--text3)">${esc(c.country||'')}</div>
+      </td>
+      <td style="padding:8px 12px;color:var(--text2);max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">
+        ${esc((ev.subject||'').replace(/{{[^}]+}}/g,'').trim())}
+      </td>
+      <td style="padding:8px 12px;color:var(--text3);white-space:nowrap">${fmt(ev.sentAt)}</td>
+      <td style="padding:8px 12px;text-align:center;color:var(--text3)">${ev.opened?fmt(ev.openedAt):'—'}</td>
+      <td style="padding:8px 12px;text-align:center">${badge2(ev)}</td>
+    </tr>`;
+  }).join('');
+  el.innerHTML=`<table style="width:100%;border-collapse:collapse;font-size:13px">${thead}<tbody>${tbody}</tbody></table>`;
+}
+
+async function syncBrevoEvents(){
+  if(!brv.apiKey){ toast('Configura prima Brevo nelle impostazioni'); return; }
+  const adb = isClienti()?dbC:db;
+
+  // Raccogli tutti i messageId da sincronizzare
+  const toSync = [];
+  adb.contacts.forEach(c=>{
+    (c.brevoEvents||[]).forEach((ev,i)=>{
+      if(ev.messageId) toSync.push({contact:c, evIdx:i, messageId:ev.messageId});
+    });
+  });
+
+  if(!toSync.length){ toast('Nessuna email da sincronizzare'); return; }
+
+  toast(`🔄 Sincronizzazione ${toSync.length} email...`);
+  let updated=0;
+
+  for(const {contact, evIdx, messageId} of toSync){
+    try{
+      // Recupera eventi per questo messageId
+      // Prima prova con messageId diretto
+      const r=await fetch(
+        `https://api.brevo.com/v3/smtp/statistics/events?messageId=${encodeURIComponent(messageId)}&limit=50`,
+        {headers:{'api-key':brv.apiKey,'Accept':'application/json'}}
+      );
+      if(!r.ok) continue;
+      const emailData=await r.json();
+      // Brevo restituisce eventi come array "events" o come campi diretti
+      const events=emailData.events||[];
+      // Aggiorna anche da campi diretti se presenti
+      if(emailData.status) events.push({event: emailData.status, date: emailData.date});
+
+      const ev=contact.brevoEvents[evIdx];
+      let changed=false;
+
+      events.forEach(e=>{
+        const type=(e.event||e.eventType||e.type||'').toLowerCase();
+        if((type==='delivered'||type==='request')&&!ev.delivered){ ev.delivered=true; ev.deliveredAt=e.date; changed=true; }
+        if((type==='opened'||type==='unique_opened')&&!ev.opened){ ev.opened=true; ev.openedAt=e.date; changed=true;
+          // Prima apertura → aggiorna log
+          if(!contact.log.some(l=>l.msg.includes('👁 Aperta')&&l.msg.includes(ev.subject?.slice(0,20)||''))){
+            contact.log.push({ts:new Date(e.date).getTime()||Date.now(), msg:`👁 Aperta: ${ev.subject||''}`});
+          }
+        }
+        if(type==='clicks'||type==='click') { ev.clicked=true; ev.clickedAt=e.date; changed=true;
+          if(!contact.log.some(l=>l.msg.includes('🔗 Click'))){
+            contact.log.push({ts:new Date(e.date).getTime()||Date.now(), msg:`🔗 Click: ${ev.subject||''}`});
+          }
+        }
+        if(type==='bounced'||type==='hardBounce'||type==='softBounce'){
+          ev.bounced=true; ev.bouncedAt=e.date; changed=true;
+          contact.log.push({ts:Date.now(), msg:`⚠ Bounce: ${ev.subject||''}`});
+        }
+        if(type==='spam'){ ev.spam=true; changed=true;
+          contact.log.push({ts:Date.now(), msg:`🚫 Spam: ${ev.subject||''}`});
+        }
+      });
+
+      if(changed) updated++;
+
+    } catch(e){ console.warn('Brevo sync error:', e); }
+
+    // Piccola pausa per non saturare l'API
+    await new Promise(r=>setTimeout(r,150));
+  }
+
+  saveDB();
+  refreshAll();
+  if(updated>0){
+    toast(`✓ Sync Brevo: ${updated} email con nuovi eventi`);
+  } else if(toSync.length>0){
+    toast(`📊 Sync OK — ${toSync.length} email verificate, nessun nuovo evento`);
+  } else {
+    toast('ℹ Nessuna email tracciata — invia prima qualche email');
+  }
+}
+
+// Badge eventi Brevo nella scheda contatto
+function breveEventsBadge(c){
+  const evs=c.brevoEvents||[];
+  if(!evs.length) return '';
+  const last=evs[evs.length-1];
+  const icons=[];
+  if(last.delivered) icons.push('<span title="Consegnata" style="color:#27ae60">✓</span>');
+  if(last.opened)    icons.push('<span title="Aperta" style="color:#2980b9">👁</span>');
+  if(last.clicked)   icons.push('<span title="Link cliccato" style="color:#8e44ad">🔗</span>');
+  if(last.bounced)   icons.push('<span title="Bounce" style="color:#e74c3c">⚠</span>');
+  if(last.spam)      icons.push('<span title="Spam" style="color:#e74c3c">🚫</span>');
+  return icons.length
+    ? `<span style="font-size:14px;margin-left:6px">${icons.join('')}</span>`
+    : '';
+}
+
+/* ═══════════════════════════════════════════════════
+   INVIO MASSIVO
+═══════════════════════════════════════════════════ */
+
+function openBulkSend(){
+  if(!sel.size){toast('Nessun contatto selezionato');return;}
+  const contacts=(isClienti()?dbC:db).contacts.filter(c=>sel.has(c.id));
+  const withEmail=contacts.filter(c=>c.contactEmail||c.email);
+  const noEmail=contacts.filter(c=>!c.contactEmail&&!c.email);
+
+  // Esempio per anteprima: primo contatto con email
+  const example=withEmail[0];
+
+  showModal(`
+    <div class="mt">✉ Invio massivo — ${contacts.length} contatti</div>
+
+    <div style="display:flex;gap:8px;margin-bottom:14px">
+      <div style="flex:1;background:var(--green-bg);border-radius:var(--r);padding:10px;text-align:center">
+        <div style="font-size:22px;font-weight:700;color:var(--green-tx)">${withEmail.length}</div>
+        <div style="font-size:11px;color:var(--green-tx);font-weight:600">Con email</div>
+      </div>
+      ${noEmail.length?`<div style="flex:1;background:var(--amber-bg);border-radius:var(--r);padding:10px;text-align:center">
+        <div style="font-size:22px;font-weight:700;color:var(--amber-tx)">${noEmail.length}</div>
+        <div style="font-size:11px;color:var(--amber-tx);font-weight:600">Senza email (saltati)</div>
+      </div>`:''}
+    </div>
+
+    <!-- BRAND -->
+    <div style="display:flex;gap:8px;margin-bottom:14px">
+      <button id="bulk-sw" onclick="bulkSelectBrand('sienawine')"
+        style="flex:1;padding:10px;border-radius:var(--r);border:2px solid #8B1A1A;background:#1a1a1a;color:#fff;cursor:pointer;font-size:12px;font-weight:700">
+        🍷 Siena Wine
+      </button>
+      <button id="bulk-cil" onclick="bulkSelectBrand('ciliegio')"
+        style="flex:1;padding:10px;border-radius:var(--r);border:2px solid var(--brd2);background:var(--bg2);color:var(--text);cursor:pointer;font-size:12px;font-weight:700">
+        ☀ Il Ciliegio
+      </button>
+    </div>
+    <input type="hidden" id="bulk-brand" value="sienawine">
+
+    <!-- TEMPLATE -->
+    <div class="fg" style="margin-bottom:8px"><label>Template</label>
+      <select id="bulk-tpl" onchange="updateBulkPreview()">
+        ${(isClienti()?dbC:db).templates.map((t,i)=>`<option value="${i}">${esc(t.name)}</option>`).join('')}
+      </select>
+    </div>
+
+    <div class="fg" style="margin-bottom:8px"><label>Oggetto</label>
+      <input id="bulk-subj" value="${esc((isClienti()?dbC:db).templates[0]?.subject||'')}">
+    </div>
+
+    <!-- DELAY -->
+    <div class="fg" style="margin-bottom:12px">
+      <label>Delay tra email (secondi) — aspetto casuale tra 1 e 2 sec</label>
+      <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text2)">
+        <span>Min:</span>
+        <input id="bulk-dmin" type="number" value="1" min="0.5" max="5" step="0.5" style="width:70px">
+        <span>Max:</span>
+        <input id="bulk-dmax" type="number" value="2" min="1" max="10" step="0.5" style="width:70px">
+        <span>secondi</span>
+      </div>
+    </div>
+
+    ${example?`
+    <!-- ANTEPRIMA -->
+    <div style="font-size:12px;color:var(--text2);margin-bottom:6px;font-weight:600">
+      ANTEPRIMA (su: ${esc(example.company)})
+    </div>
+    <div style="border:0.5px solid var(--brd2);border-radius:var(--r);overflow:auto;max-height:320px;margin-bottom:12px">
+      <div id="bulk-preview" style="min-height:200px;overflow:auto"></div>
+    </div>`:''}
+
+    <div class="mf">
+      <button class="btn" onclick="closeModal()">Annulla</button>
+      <button class="btn btp" onclick="confirmBulkSend()" ${!withEmail.length?'disabled':''}>
+        ✉ Invia a ${withEmail.length} contatti
+      </button>
+    </div>
+  `);
+
+  // Popola anteprima dopo render
+  setTimeout(()=>updateBulkPreview(), 100);
+}
+
+function bulkSelectBrand(brand){
+  document.getElementById('bulk-brand').value=brand;
+  const sw=document.getElementById('bulk-sw');
+  const cil=document.getElementById('bulk-cil');
+  if(brand==='sienawine'){
+    sw.style.cssText='flex:1;padding:10px;border-radius:8px;border:2px solid #8B1A1A;background:#1a1a1a;color:#fff;cursor:pointer;font-size:12px;font-weight:700';
+    cil.style.cssText='flex:1;padding:10px;border-radius:8px;border:2px solid var(--brd2);background:var(--bg2);color:var(--text);cursor:pointer;font-size:12px;font-weight:700';
+  } else {
+    cil.style.cssText='flex:1;padding:10px;border-radius:8px;border:2px solid #B8941A;background:#2c2c2c;color:#fff;cursor:pointer;font-size:12px;font-weight:700';
+    sw.style.cssText='flex:1;padding:10px;border-radius:8px;border:2px solid var(--brd2);background:var(--bg2);color:var(--text);cursor:pointer;font-size:12px;font-weight:700';
+  }
+  updateBulkPreview();
+}
+
+function updateBulkPreview(){
+  const tplIdx=parseInt(document.getElementById('bulk-tpl')?.value||'0');
+  const brand=document.getElementById('bulk-brand')?.value||'sienawine';
+  const t=(isClienti()?dbC:db).templates[tplIdx];
+  if(!t) return;
+
+  // Aggiorna oggetto
+  const subjEl=document.getElementById('bulk-subj');
+  if(subjEl&&!subjEl.dataset.edited) subjEl.value=t.subject;
+
+  // Aggiorna anteprima con primo contatto disponibile
+  const adb2=isClienti()?dbC:db;
+  const example=
+    adb2.contacts.find(c=>sel.has(c.id)&&(c.contactEmail||c.email||c.contacts?.length))||
+    adb2.contacts.find(c=>c.company&&(c.contactEmail||c.email||c.contacts?.length))||
+    adb2.contacts[0];
+  const prevDiv=document.getElementById('bulk-preview');
+  if(!prevDiv||!example) return;
+  const filled=fillTplForContact(t.body, example);
+  const b3=BRANDS[brand]||BRANDS.sienawine;
+  const paras3=filled.split('\n\n').filter(p=>p.trim());
+  const bh3=paras3.map(p=>'<p style="margin:0 0 10px;line-height:1.6;color:#333;font-size:13px">'+
+    esc(p).replace(/\n/g,'<br>')+'</p>').join('');
+  prevDiv.innerHTML=
+    '<div style="background:#f4f4f0;padding:14px;font-family:Georgia,serif">'+
+    '<div style="background:'+b3.bgColor+';padding:14px;text-align:center;border-radius:6px 6px 0 0">'+
+    '<img src="'+b3.logoUrl+'" height="36" alt="'+b3.name+'" style="max-height:36px" onerror="this.style.display=\'none\'">'+
+    '</div>'+
+    '<div style="background:'+b3.accentColor+';height:2px"></div>'+
+    '<div style="background:#fff;padding:20px 24px">'+bh3+'</div>'+
+    '</div>';
+}
+
+function fillTplForContact(body, c){
+  // Selezione contatto ottimale per variabili personalizzate
+  const {primary, secondary} = (c.contacts&&c.contacts.length)
+    ? selectBestContact(c.contacts)
+    : {primary:null, secondary:null};
+
+  const dearLine     = buildDearLine(primary, secondary, c.company);
+  const ownerMention = buildOwnerMention(secondary);
+  const primaryName  = firstName(primary?.name || c.contactName || '');
+  const primaryTitle = primary?.title || c.contactTitle || '';
+
+  return body
+    .replace(/\{\{dear\}\}/g,          dearLine)
+    .replace(/\{\{owner_mention\}\}/g,  ownerMention)
+    .replace(/\{\{know_well\}\}/g,      buildKnowWell(secondary))
+    .replace(/\{\{owner\}\}/g,          firstName(secondary?.name||''))
+    .replace(/\{\{contatto\}\}/g,       primaryName || c.contactName || '')
+    .replace(/\{\{nome\}\}/g,           primaryName || c.name || '')
+    .replace(/\{\{job\}\}/g,            primaryTitle)
+    .replace(/\{\{azienda\}\}/g,        c.company||'')
+    .replace(/\{\{paese\}\}/g,          c.country||'')
+    .replace(/\{\{citta\}\}/g,          c.city||'')
+    .replace(/\{\{prodotti\}\}/g,       (c.products||[]).join(', ')||'');
+}
+
+async function confirmBulkSend(){
+  if(!brv.apiKey){toast('Configura prima Brevo nelle impostazioni');openSettings();return;}
+  const tplIdx=parseInt(document.getElementById('bulk-tpl')?.value||'0');
+  const brand=document.getElementById('bulk-brand')?.value||'sienawine';
+  const subjTemplate=document.getElementById('bulk-subj')?.value||(isClienti()?dbC:db).templates[tplIdx]?.subject||'';
+  const bodyTemplate=(isClienti()?dbC:db).templates[tplIdx]?.body||'';
+  const dMin=parseFloat(document.getElementById('bulk-dmin')?.value||'1')*1000;
+  const dMax=parseFloat(document.getElementById('bulk-dmax')?.value||'2')*1000;
+
+  const contacts=(isClienti()?dbC:db).contacts.filter(c=>sel.has(c.id));
+  const withEmail=contacts.filter(c=>c.contactEmail||c.email);
+  const noEmail=contacts.filter(c=>!c.contactEmail&&!c.email);
+
+  closeModal();
+
+  // Mostra progress overlay
+  const prog=document.createElement('div');
+  prog.className='send-prog';
+  prog.id='bulk-prog';
+  prog.innerHTML=`
+    <div class="send-prog-box">
+      <div style="font-size:16px;font-weight:700;margin-bottom:8px">Invio in corso…</div>
+      <div style="font-size:13px;color:var(--text2)" id="prog-status">Preparazione…</div>
+      <div class="prog-bar-track"><div class="prog-bar-fill" id="prog-fill" style="width:0%"></div></div>
+      <div style="font-size:12px;color:var(--text3)" id="prog-counter">0 / ${withEmail.length}</div>
+      <button class="btn btd bts" style="margin-top:16px" onclick="window._stopBulk=true">✕ Interrompi</button>
+    </div>`;
+  document.body.appendChild(prog);
+  window._stopBulk=false;
+
+  const results={sent:[],failed:[],skipped:noEmail};
+
+  for(let i=0;i<withEmail.length;i++){
+    if(window._stopBulk) break;
+
+    const c=withEmail[i];
+    const toEmail=c.contactEmail||c.email;
+    const toName=c.contactName||c.name||'';
+    const subject=fillTplForContact(subjTemplate,c);
+    const body=fillTplForContact(bodyTemplate,c);
+
+    // Aggiorna UI
+    document.getElementById('prog-status').textContent=
+      `Invio a ${esc(c.company)} (${esc(toEmail)})…`;
+    document.getElementById('prog-fill').style.width=`${Math.round(i/withEmail.length*100)}%`;
+    document.getElementById('prog-counter').textContent=`${i} / ${withEmail.length}`;
+
+    const result=await sendViaBrevo(c.id, toEmail, toName, subject, body, brand);
+    if(result?.ok) results.sent.push({c, email:toEmail});
+    else results.failed.push({c, email:toEmail, error:result?.error});
+
+    // Delay casuale tra min e max
+    if(i < withEmail.length-1 && !window._stopBulk){
+      const delay=dMin+Math.random()*(dMax-dMin);
+      await new Promise(r=>setTimeout(r,delay));
+    }
+  }
+
+  // Rimuovi progress overlay
+  document.getElementById('bulk-prog')?.remove();
+  sel.clear();
+  refreshAll();
+  showBulkReport(results, window._stopBulk);
+}
+
+function showBulkReport(results, interrupted){
+  const {sent, failed, skipped}=results;
+  const sentRows=sent.slice(0,50).map(({c,email})=>`
+    <tr><td>✓</td><td>${esc(c.company)}</td><td style="color:var(--text2)">${esc(email)}</td></tr>`).join('');
+  const failRows=failed.map(({c,email,error})=>`
+    <tr><td style="color:var(--red)">✗</td><td>${esc(c.company)}</td><td style="color:var(--red-tx);font-size:11px">${esc(error||'')}</td></tr>`).join('');
+  const skipRows=skipped.map(c=>`
+    <tr><td style="color:var(--amber)">—</td><td>${esc(c.company)}</td><td style="color:var(--text3)">email mancante</td></tr>`).join('');
+
+  showModal(`
+    <div class="mt">${interrupted?'⚠ Invio interrotto':'✓ Invio completato'}</div>
+    <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap">
+      <div style="flex:1;min-width:80px;background:var(--green-bg);border-radius:var(--r);padding:12px;text-align:center">
+        <div style="font-size:26px;font-weight:700;color:var(--green-tx)">${sent.length}</div>
+        <div style="font-size:11px;color:var(--green-tx);font-weight:600">Inviate</div>
+      </div>
+      ${failed.length?`<div style="flex:1;min-width:80px;background:var(--red-bg);border-radius:var(--r);padding:12px;text-align:center">
+        <div style="font-size:26px;font-weight:700;color:var(--red-tx)">${failed.length}</div>
+        <div style="font-size:11px;color:var(--red-tx);font-weight:600">Fallite</div>
+      </div>`:''}
+      ${skipped.length?`<div style="flex:1;min-width:80px;background:var(--amber-bg);border-radius:var(--r);padding:12px;text-align:center">
+        <div style="font-size:26px;font-weight:700;color:var(--amber-tx)">${skipped.length}</div>
+        <div style="font-size:11px;color:var(--amber-tx);font-weight:600">Saltati</div>
+      </div>`:''}
+    </div>
+
+    ${sent.length||failed.length||skipped.length?`
+    <div style="max-height:280px;overflow-y:auto;border-radius:var(--r);border:0.5px solid var(--brd)">
+      <table style="width:100%;font-size:12px;border-collapse:collapse">
+        <thead><tr style="background:var(--bg2)">
+          <th style="padding:6px 8px;text-align:left;width:24px"></th>
+          <th style="padding:6px 8px;text-align:left">Azienda</th>
+          <th style="padding:6px 8px;text-align:left">Email / Nota</th>
+        </tr></thead>
+        <tbody>
+          ${sentRows}${failRows}${skipRows}
+          ${sent.length>50?`<tr><td colspan="3" style="padding:8px;text-align:center;color:var(--text2)">…e altri ${sent.length-50} inviati</td></tr>`:''}
+        </tbody>
+      </table>
+    </div>`:''}
+
+    <div class="mf">
+      <button class="btn btp" onclick="closeModal()">Chiudi</button>
+    </div>
+  `);
+}
+
+function resetDefaultTemplates(){
+  const adb=isClienti()?dbC:db;
+  if(!confirm('Ripristinare i template predefiniti? I template personalizzati verranno eliminati.')) return;
+  adb.templates=defTpl();
+  saveDB();renderTemplates();
+  toast('Template ripristinati ✓');
+}
+
+
+
+function switchEmailContact(contactId){
+  const c = (isClienti()?dbC:db).contacts.find(x=>x.id===contactId);
+  if(!c) return;
+  const sel = document.getElementById('contact-sel');
+  if(!sel) return;
+  const idx = parseInt(sel.value);
+  const ct = idx >= 0 ? c.contacts[idx] : null;
+  const toEl = document.getElementById('em-to');
+  const nameEl = document.getElementById('em-toname');
+  if(toEl) toEl.value = ct?.email || c.email || '';
+  if(nameEl) nameEl.value = ct?.name || c.contactName || '';
+}
+
+function openEmailToContact(contactId, contactIdx){
+  const c = (isClienti()?dbC:db).contacts.find(x=>x.id===contactId);
+  if(!c) return;
+  const ct = c.contacts?.[contactIdx] || {};
+  closeModal();
+  // Apri email modal preimpostato su quel contatto
+  openEmailModal(contactId, ct.email||c.email, (ct.name||c.contactName), contactIdx);
+}
+
+
+function resetToDefaultTemplates(){
+  const label = isClienti() ? 'clienti Il Ciliegio' : 'importatori Siena Wine';
+  if(!confirm(`Sostituire i template attuali con i default ${label}?`)) return;
+  const adb = isClienti() ? dbC : db;
+  adb.templates = isClienti() ? defTplClienti() : defTplImportatori();
+  saveDB();
+  renderTemplates();
+  toast('✓ Template ripristinati');
+}
+
+/* ── TEMPLATES ── */
+function renderTemplates(){
+  const titleEl=document.getElementById('tpl-title');
+  if(titleEl) titleEl.textContent=isClienti()?'Template — Clienti Il Ciliegio':'Template — Importatori';
+  const el=document.getElementById('tpl-list');
+  el.innerHTML=(isClienti()?dbC:db).templates.length?(isClienti()?dbC:db).templates.map(t=>`
+    <div class="card">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+        <div style="font-size:15px;font-weight:600">${esc(t.name)}</div>
+        <div style="display:flex;gap:6px">
+          <button class="btn bts" onclick="openAddTemplate('${t.id}')">Modifica</button>
+          <button class="btn bts btd" onclick="delTpl('${t.id}')">Elimina</button>
+        </div>
+      </div>
+      <div style="font-size:12px;color:var(--text2);margin-bottom:7px">Oggetto: <span style="color:var(--text)">${esc(t.subject)}</span></div>
+      <div style="font-size:12px;background:var(--bg2);border-radius:6px;padding:10px;white-space:pre-wrap;line-height:1.6;max-height:90px;overflow:hidden;color:var(--text2)">${esc(t.body.slice(0,280))}${t.body.length>280?'…':''}</div>
+    </div>`).join(''):'<div class="empty">Nessun template</div>';
+}
+function openAddTemplate(editId){
+  const t=editId?(isClienti()?dbC:db).templates.find(x=>x.id===editId):null;
+  showModal(`
+    <div class="mt">${t?'Modifica':'Nuovo'} template</div>
+    <div class="fg fgf"><label>Nome</label><input id="tn" value="${esc(t?.name||'')}"></div>
+    <div class="fg fgf"><label>Oggetto</label><input id="ts" value="${esc(t?.subject||'')}"></div>
+    <div class="fg fgf"><label>Corpo</label><textarea id="tb" style="min-height:220px">${esc(t?.body||'')}</textarea></div>
+    <div class="mf">
+      <button class="btn" onclick="closeModal()">Annulla</button>
+      <button class="btn btp" onclick="saveTpl('${editId||''}')">Salva</button>
+    </div>
+  `);
+}
+function saveTpl(editId){
+  const name=gv('tn');if(!name){toast('Nome obbligatorio');return;}
+  const t={id:editId||'t'+Date.now(),name,subject:gv('ts'),body:document.getElementById('tb').value};
+  if(editId){const i=(isClienti()?dbC:db).templates.findIndex(x=>x.id===editId);if(i>=0)(isClienti()?dbC:db).templates[i]=t;}
+  else (isClienti()?dbC:db).templates.push(t);
+  saveDB();saveTemplatesToGH();closeModal();renderTemplates();toast('Salvato ✓');
+}
+function delTpl(id){
+  if(!confirm('Eliminare?'))return;
+  (isClienti()?dbC:db).templates=(isClienti()?dbC:db).templates.filter(t=>t.id!==id);saveDB();saveTemplatesToGH();renderTemplates();
+}
+
+/* ═══════════════════════════════════════
+   IMPORT XLSX — MULTI-SHEET
+═══════════════════════════════════════ */
+// Mappa paese → regione — copertura completa BWI
+const COUNTRY_REGION = {
+  // ── SUD AMERICA ──
+  'Argentina':'Sud America','Bolivia':'Sud America','Brazil':'Sud America',
+  'Brasil':'Sud America','Chile':'Sud America','Colombia':'Sud America',
+  'Ecuador':'Sud America','El Salvador':'Sud America','Guatemala':'Sud America',
+  'Honduras':'Sud America','Mexico':'Sud America','Messico':'Sud America',
+  'Nicaragua':'Sud America','Panama':'Sud America','Paraguay':'Sud America',
+  'Peru':'Sud America','Perù':'Sud America','Suriname':'Sud America',
+  'Uruguay':'Sud America','Venezuela':'Sud America','Costa Rica':'Sud America',
+  'Dominican Republic':'Sud America','Cuba':'Sud America','Haiti':'Sud America',
+  'Jamaica':'Sud America','Trinidad and Tobago':'Sud America',
+  'Trinidad And Tobago':'Sud America','Belize':'Sud America',
+  'Guyana':'Sud America','French Guiana':'Sud America',
+  'Martinique':'Sud America','Guadeloupe':'Sud America',
+
+  // ── NORD AMERICA ──
+  'United States':'Nord America','USA':'Nord America','Canada':'Nord America',
+
+  // ── CARAIBI ──
+  'Cayman Islands':'Caraibi','Isole Cayman':'Caraibi',
+  'Barbados':'Caraibi','Bermuda':'Caraibi','Bahamas':'Caraibi',
+  'Puerto Rico':'Caraibi','Aruba':'Caraibi','Curaçao':'Caraibi',
+  'Curacao':'Caraibi','Saint Lucia':'Caraibi','Grenada':'Caraibi',
+  'Antigua and Barbuda':'Caraibi','Antigua And Barbuda':'Caraibi',
+  'Saint Kitts and Nevis':'Caraibi','Dominica':'Caraibi',
+  'Virgin Islands':'Caraibi','Turks and Caicos Islands':'Caraibi',
+
+  // ── EUROPA ──
+  'Albania':'Europa','Andorra':'Europa','Austria':'Europa',
+  'Belgium':'Europa','Belgio':'Europa',
+  'Bosnia and Herzegovina':'Europa','Bosnia And Herzegovina':'Europa',
+  'Bulgaria':'Europa','Croatia':'Europa','Croazia':'Europa',
+  'Cyprus':'Europa','Cipro':'Europa',
+  'Czech Republic':'Europa','Czechia':'Europa','Rep. Ceca':'Europa',
+  'Denmark':'Europa','Danimarca':'Europa',
+  'Estonia':'Europa','Finland':'Europa','Finlandia':'Europa',
+  'France':'Europa','Francia':'Europa',
+  'Germany':'Europa','Germania':'Europa',
+  'Greece':'Europa','Grecia':'Europa',
+  'Hungary':'Europa','Ungheria':'Europa',
+  'Iceland':'Europa','Islanda':'Europa',
+  'Ireland':'Europa','Irlanda':'Europa',
+  'Italy':'Europa','Italia':'Europa',
+  'Kosovo':'Europa','Latvia':'Europa','Lithuania':'Europa',
+  'Luxembourg':'Europa','Lussemburgo':'Europa',
+  'Malta':'Europa','Moldova':'Europa','Montenegro':'Europa',
+  'Netherlands':'Europa','Paesi Bassi':'Europa',
+  'North Macedonia':'Europa','Macedonia':'Europa',
+  'Norway':'Europa','Norvegia':'Europa',
+  'Poland':'Europa','Polonia':'Europa',
+  'Portugal':'Europa','Portogallo':'Europa',
+  'Romania':'Europa','Russia':'Europa',
+  'Serbia':'Europa','Slovakia':'Europa','Slovacchia':'Europa',
+  'Slovenia':'Europa','Spain':'Europa','Spagna':'Europa',
+  'Sweden':'Europa','Svezia':'Europa',
+  'Switzerland':'Europa','Svizzera':'Europa',
+  'Ukraine':'Europa','Ucraina':'Europa',
+  'United Kingdom':'Europa','UK':'Europa','GB':'Europa',
+  'Belarus':'Europa','Liechtenstein':'Europa','Monaco':'Europa',
+  'San Marino':'Europa','Vatican City':'Europa',
+  'Faroe Islands':'Europa','Gibraltar':'Europa',
+  'Andorra':'Europa','Kosovo':'Europa',
+
+  // ── SCANDINAVIA ──
+  // (inclusa in Europa ma separabile se preferisci)
+
+  // ── OCEANIA ──
+  'Australia':'Oceania','New Zealand':'Oceania','Nuova Zelanda':'Oceania',
+  'Fiji':'Oceania','Papua New Guinea':'Oceania','Papua Nuova Guinea':'Oceania',
+  'Vanuatu':'Oceania','Solomon Islands':'Oceania','Samoa':'Oceania',
+  'Tonga':'Oceania','Micronesia':'Oceania','Palau':'Oceania',
+  'Marshall Islands':'Oceania','Kiribati':'Oceania','Nauru':'Oceania',
+  'Tuvalu':'Oceania','French Polynesia':'Oceania',
+  'New Caledonia':'Oceania','Guam':'Oceania',
+
+  // ── ASIA ──
+  'China':'Asia','Cina':'Asia','Japan':'Asia','Giappone':'Asia',
+  'South Korea':'Asia','Korea':'Asia','Corea del Sud':'Asia',
+  'India':'Asia','Indonesia':'Asia','Malaysia':'Asia',
+  'Philippines':'Asia','Filippine':'Asia',
+  'Singapore':'Asia','Thailand':'Asia','Tailandia':'Asia',
+  'Vietnam':'Asia','Taiwan':'Asia','Hong Kong':'Asia',
+  'Bangladesh':'Asia','Sri Lanka':'Asia','Myanmar':'Asia',
+  'Cambodia':'Asia','Nepal':'Asia','Pakistan':'Asia',
+  'Kazakhstan':'Asia','Uzbekistan':'Asia','Mongolia':'Asia',
+  'Laos':'Asia','Brunei':'Asia','Timor-Leste':'Asia',
+  'Maldives':'Asia','Bhutan':'Asia','Afghanistan':'Asia',
+  'Tajikistan':'Asia','Kyrgyzstan':'Asia','Turkmenistan':'Asia',
+  'Azerbaijan':'Asia','Georgia':'Asia','Armenia':'Asia',
+
+  // ── MEDIO ORIENTE ──
+  'United Arab Emirates':'Medio Oriente','UAE':'Medio Oriente',
+  'Emirati Arabi':'Medio Oriente',
+  'Saudi Arabia':'Medio Oriente','Arabia Saudita':'Medio Oriente',
+  'Israel':'Medio Oriente','Israele':'Medio Oriente',
+  'Qatar':'Medio Oriente','Kuwait':'Medio Oriente',
+  'Bahrain':'Medio Oriente','Oman':'Medio Oriente',
+  'Jordan':'Medio Oriente','Giordania':'Medio Oriente',
+  'Lebanon':'Medio Oriente','Libano':'Medio Oriente',
+  'Turkey':'Medio Oriente','Turchia':'Medio Oriente',
+  'Iran':'Medio Oriente','Iraq':'Medio Oriente',
+  'Syria':'Medio Oriente','Yemen':'Medio Oriente',
+  'Palestine':'Medio Oriente','Libya':'Medio Oriente',
+
+  // ── AFRICA ──
+  'South Africa':'Africa','Sudafrica':'Africa',
+  'Kenya':'Africa','Nigeria':'Africa',
+  'Ethiopia':'Africa','Etiopia':'Africa',
+  'Tanzania':'Africa','Uganda':'Africa','Ghana':'Africa',
+  'Senegal':'Africa','Morocco':'Africa','Marocco':'Africa',
+  'Tunisia':'Africa','Algeria':'Africa',
+  'Egypt':'Africa','Egitto':'Africa',
+  'Angola':'Africa','Mozambique':'Africa',
+  'Zimbabwe':'Africa','Zambia':'Africa',
+  'Botswana':'Africa','Namibia':'Africa',
+  'Cameroon':'Africa','Ivory Coast':'Africa',"Côte d'Ivoire":'Africa',
+  'Madagascar':'Africa','Mauritius':'Africa',
+  'Rwanda':'Africa','Malawi':'Africa','Mali':'Africa',
+  'Burkina Faso':'Africa','Niger':'Africa','Chad':'Africa',
+  'Sudan':'Africa','Somalia':'Africa','Eritrea':'Africa',
+  'Djibouti':'Africa','Comoros':'Africa','Seychelles':'Africa',
+  'Cape Verde':'Africa','São Tomé and Príncipe':'Africa',
+  'Equatorial Guinea':'Africa','Gabon':'Africa',
+  'Republic of the Congo':'Africa','Democratic Republic of the Congo':'Africa',
+  'Central African Republic':'Africa','South Sudan':'Africa',
+  'Sierra Leone':'Africa','Liberia':'Africa','Guinea':'Africa',
+  'Guinea-Bissau':'Africa','Gambia':'Africa','Benin':'Africa',
+  'Togo':'Africa','Lesotho':'Africa','Eswatini':'Africa',
+  'Swaziland':'Africa',
+};
+
+function detectRegion(fname){
+  const f=(fname||'').toLowerCase();
+  if(/south.?am|sud.?am|latin|latam|argentina|brazil|chile|colombia|peru|ecuador|uruguay|paraguay|venezuela|bolivia|suriname/.test(f)) return 'Sud America';
+  if(/cayman|caribbean|caraibi|barbados|bahamas|jamaica|trinidad|cuba|haiti/.test(f)) return 'Caraibi';
+  if(/oceania|pacific|australia|new.?zeal|fiji/.test(f)) return 'Oceania';
+  if(/africa|kenya|nigeria|ethiopia|tanzania|egypt|ghana|south.?afr/.test(f)) return 'Africa';
+  if(/europe|europa/.test(f)) return 'Europa';
+  if(/asia|china|japan|korea|india|vietnam|thailand|singapore|taiwan|hong.?kong/.test(f)) return 'Asia';
+  if(/north.?am|usa|canada/.test(f)) return 'Nord America';
+  if(/middle.?east|mena|uae|saudi|gulf/.test(f)) return 'Medio Oriente';
+  if(/scandinav|nordic|sweden|norway|denmark|finland/.test(f)) return 'Scandinavia';
+  return '';
+}
+
+// Assegna regione da paese se la regione non è stata rilevata dal nome file
+function regionFromCountry(country){
+  if(!country) return '';
+  return COUNTRY_REGION[country] || COUNTRY_REGION[country.trim()] || '';
+}
+
+function parseXlsx(wb, filename){
+  if(isClienti()) return parseXlsxClienti(wb, filename);
+  return parseXlsxImportatori(wb, filename);
+}
+
+function parseXlsxClienti(wb, filename){
+  const contacts=[];
+  const seen=new Set();
+
+  wb.SheetNames.forEach(sheetName=>{
+    const ws=wb.Sheets[sheetName];
+    if(!ws) return;
+    const rows=XLSX.utils.sheet_to_json(ws,{header:1,defval:'',raw:false});
+    if(!rows||rows.length<1) return;
+
+    // Rileva header
+    const hdr=rows[0].map(h=>String(h||'').trim().toLowerCase());
+    const hi=(names,fb)=>{
+      for(const n of names){const i=hdr.indexOf(n);if(i>=0)return i;}
+      return fb;
+    };
+    const hasHeader=hdr.some(h=>['nome','cognome','email','name','firstname','surname'].includes(h));
+    const IDX={
+      nome:    hi(['nome','name','firstname','first_name'],0),
+      cognome: hi(['cognome','surname','lastname','last_name'],1),
+      email:   hi(['email','e-mail','mail'],2),
+      lingua:  hi(['lingua','language','lang'],3),
+      browser: hi(['linguabrowser','browser','browserlang'],4),
+      country: hi(['paese','country','nazione'],5),
+      valido:  hi(['valido','valid','stato'],6),
+    };
+    const dataRows=hasHeader?rows.slice(1):rows;
+
+    dataRows.forEach(row=>{
+      const g=i=>String(row[i]||'').trim();
+      const nome=g(IDX.nome);
+      const cognome=g(IDX.cognome);
+      const email=g(IDX.email).toLowerCase();
+      const lingua=g(IDX.lingua)||g(IDX.browser).split('-')[0]||'en';
+      const country=g(IDX.country);
+      const valido=g(IDX.valido); // Valido / Non Valido / Sospetta / Da verificare / Sconosciuto
+
+      // Salta solo righe senza email o senza @
+      if(!email||!email.includes('@')) return;
+      if(seen.has(email)) return;
+      seen.add(email);
+
+      // Normalizza lo stato email
+      const vLow=(valido||'').toLowerCase();
+      let statoEmail='sconosciuto';
+      if(vLow==='valido') statoEmail='valido';
+      else if(vLow==='non valido') statoEmail='non_valido';
+      else if(vLow==='sospetta') statoEmail='sospetta';
+      else if(vLow==='da verificare'||vLow==='sconosciuto') statoEmail='da_verificare';
+
+      contacts.push({nome,cognome,email,lingua,country,statoEmail,
+        company:nome+' '+cognome, name:nome+' '+cognome});
+    });
+  });
+  return contacts;
+}
+
+function parseXlsxImportatori(wb, filename){
+  const region = detectRegion(filename);
+  const allContacts = [];
+
+  wb.SheetNames.forEach(sheetName => {
+    const ws = wb.Sheets[sheetName];
+    if(!ws) return;
+    const rows = XLSX.utils.sheet_to_json(ws, {header:1, defval:'', raw:false});
+    if(!rows || rows.length < 1) return;
+
+    const firstRow = rows[0].map(h => String(h||'').trim());
+
+    // ── FORMATO NUOVO (27 colonne con header: CompanyName, CompId, …) ──
+    const isNewFormat = firstRow.some(h =>
+      ['companyname','compid','company_email','contact_name'].includes(h.toLowerCase())
+    );
+
+    if(isNewFormat){
+      const col = name => firstRow.findIndex(h => h.toLowerCase() === name.toLowerCase());
+      const C = {
+        companyName:     col('CompanyName'),
+        brandName:       col('BrandName'),
+        compId:          col('CompId'),
+        country:         col('Country'),
+        city:            col('City'),
+        state:           col('State'),
+        address:         col('StreetAddress'),
+        postalCode:      col('PostalCode'),
+        website:         col('Website'),
+        type:            col('Type'),
+        prodType:        col('ProdType'),
+        employees:       col('Employee'),
+        sales:           col('Sales'),
+        companyEmail:    col('Company_Email'),
+        phone:           col('Phone'),
+        founded:         col('Founded'),
+        regNumber:       col('RegistrationNumber'),
+        linkedinCompany: col('Linkedin'),
+        facebook:        col('Facebook'),
+        instagram:       col('Instagram'),
+        twitter:         col('Twitter'),
+        youtube:         col('Youtube'),
+        contactName:     col('Contact_Name'),
+        contactTitle:    col('Contact_Title'),
+        contactEmail:    col('Contact_Email'),
+        contactPhone:    col('Contact_Phone'),
+        contactLinkedin: col('Contact_Linkedin'),
+      };
+      const g = (row, idx) => idx >= 0 ? String(row[idx]||'').trim().replace(/^None$/i,'') : '';
+
+      // Raggruppa per CompId (o CompanyName se mancante)
+      const groups = {};
+      rows.slice(1).forEach(row => {
+        const compId = g(row, C.compId) || g(row, C.companyName);
+        if(!compId) return;
+        if(!groups[compId]) groups[compId] = [];
+        groups[compId].push(row);
+      });
+
+      Object.entries(groups).forEach(([compId, rowList]) => {
+        const r = rowList[0];
+        const contacts = rowList
+          .map(row => ({
+            name:     g(row, C.contactName),
+            title:    g(row, C.contactTitle),
+            email:    g(row, C.contactEmail),
+            phone:    g(row, C.contactPhone),
+            linkedin: g(row, C.contactLinkedin),
+          }))
+          .filter(c => c.name || c.email);
+
+        allContacts.push({
+          compId,
+          company:     g(r, C.companyName),
+          brandName:   g(r, C.brandName),
+          country:     g(r, C.country) || sheetName,
+          city:        g(r, C.city),
+          state:       g(r, C.state),
+          address:     g(r, C.address),
+          postalCode:  g(r, C.postalCode),
+          website:     g(r, C.website),
+          type:        g(r, C.type),
+          prodType:    g(r, C.prodType),
+          employees:   g(r, C.employees),
+          sales:       g(r, C.sales),
+          email:       g(r, C.companyEmail),
+          phone:       g(r, C.phone),
+          founded:     g(r, C.founded),
+          regNumber:   g(r, C.regNumber),
+          linkedinCo:  g(r, C.linkedinCompany),
+          facebook:    g(r, C.facebook),
+          instagram:   g(r, C.instagram),
+          twitter:     g(r, C.twitter),
+          youtube:     g(r, C.youtube),
+          region:      (()=>{
+            const VALID=['Sud America','Oceania','Europa','Africa','Asia','Nord America','Medio Oriente','Scandinavia','Caraibi'];
+            const r1=region;
+            const r2=regionFromCountry(g(r, C.country));
+            const r3=regionFromCountry(sheetName);
+            // Usa la prima che è una regione valida
+            return [r1,r2,r3].find(x=>x&&VALID.includes(x)) || r2 || r3 || sheetName;
+          })(),
+          contacts,
+          contactName:  contacts[0]?.name  || '',
+          contactTitle: contacts[0]?.title || '',
+          contactEmail: contacts[0]?.email || '',
+        });
+      });
+
+    } else {
+      // ── FORMATO VECCHIO (BWI originale: nessun header, col fisse) ──
+      // Col 0=Paese, 1=Azienda, 2=Tel, 3=Email az., 4=Dipendenti,
+      // 5=Fatturato, 6=Sito, poi coppie label/valore: Name:/Nome, Job Title:/Ruolo, E-Mail:/EmailPersonale
+      const g = (row, i) => i < row.length ? String(row[i]||'').trim().replace(/^-$|^None$/i,'') : '';
+
+      const seen = new Set();
+      rows.forEach(row => {
+        const country  = g(row, 0) || sheetName;
+        const company  = g(row, 1);
+        if(!company || company.length < 2) return;
+        if(company.toLowerCase() === country.toLowerCase()) return;
+
+        const email = g(row, 3);
+        const key   = email ? email.toLowerCase() : `${company.toLowerCase()}|${country.toLowerCase()}`;
+        if(seen.has(key)) return;
+        seen.add(key);
+
+        // Cerca le label nella parte destra della riga (col 7 in poi)
+        let cName='', cTitle='', cEmail='';
+        for(let i = 7; i < row.length - 1; i++){
+          const cell = String(row[i]||'').trim();
+          const next = String(row[i+1]||'').trim();
+          if(cell === 'Name:'      && next) cName  = next;
+          if(cell === 'Job Title:' && next) cTitle = next;
+          if(cell === 'E-Mail:'   && next) cEmail = next;
+        }
+
+        // Costruisce array contacts (anche se email personale è vuota)
+        const contacts = (cName || cEmail) ? [{
+          name:     cName,
+          title:    cTitle,
+          email:    cEmail,   // ← email personale preziosa
+          phone:    '',
+          linkedin: '',
+        }] : [];
+
+        allContacts.push({
+          compId:    '',
+          company,
+          country,
+          region:    (()=>{
+            const VALID=['Sud America','Oceania','Europa','Africa','Asia','Nord America','Medio Oriente','Scandinavia','Caraibi'];
+            return [region, regionFromCountry(country), regionFromCountry(sheetName)]
+              .find(x=>x&&VALID.includes(x)) || regionFromCountry(country) || sheetName;
+          })(),
+          phone:     g(row, 2),
+          email,           // email aziendale
+          employees: g(row, 4),
+          sales:     g(row, 5),
+          website:   g(row, 6),
+          contacts,
+          // Legacy
+          contactName:  cName,
+          contactTitle: cTitle,
+          contactEmail: cEmail,
+        });
+      });
+    }
+  });
+
+  return allContacts;
+}
+
+function dedupVsDB(incoming){
+  const adb = isClienti() ? dbC : db;
+
+  const UPD_IMP = ['email','phone','website','employees','sales','contacts',
+                   'type','prodType','city','state','address','postalCode',
+                   'brandName','facebook','instagram','twitter','linkedinCo',
+                   'youtube','founded','regNumber'];
+  const UPD_CLI = ['email','country','lingua','statoEmail'];
+  const UPDATE_FIELDS = isClienti() ? UPD_CLI : UPD_IMP;
+
+  // ── Trova un record esistente nel DB che corrisponde al contatto in arrivo ──
+  // Per importatori: cerca prima per compId, poi fallback su company+country
+  // Questo gestisce sia i record nuovi (con compId) che i vecchi (senza)
+  const findExisting = c => {
+    if(isClienti()){
+      const ek = (c.email||'').toLowerCase();
+      return ek ? adb.contacts.find(x=>(x.email||'').toLowerCase()===ek) : null;
+    }
+    const inCompId  = String(c.compId||'').trim().toLowerCase();
+    const inCompKey = `${(c.company||'').toLowerCase()}|${(c.country||'').toLowerCase()}`;
+    return adb.contacts.find(x=>{
+      // 1. Match esatto per compId (record nuovo vs nuovo)
+      const xCompId = String(x.compId||'').trim().toLowerCase();
+      if(inCompId && xCompId && inCompId === xCompId) return true;
+      // 2. Fallback: company+country (record nuovo vs vecchio senza compId)
+      const xCompKey = `${(x.company||'').toLowerCase()}|${(x.country||'').toLowerCase()}`;
+      return inCompKey === xCompKey;
+    });
+  };
+
+  // Chiave locale per dedup interno al file (evita doppioni nello stesso XLSX)
+  const localKey = c => isClienti()
+    ? (c.email||'').toLowerCase()
+    : (String(c.compId||'').trim() ||
+       `${(c.company||'').toLowerCase()}|${(c.country||'').toLowerCase()}`);
+
+  const newOnes = [], updates = [], identical = [];
+  const localKeys = new Set();
+
+  incoming.forEach(c => {
+    const lk = localKey(c);
+    if(!lk || localKeys.has(lk)) return;
+    localKeys.add(lk);
+
+    const existing = findExisting(c);
+    if(!existing){
+      newOnes.push(c);
+    } else {
+      const changed = UPDATE_FIELDS.some(f => {
+        if(f === 'contacts'){
+          const inNames = new Set((c.contacts||[]).map(x=>(x.name||'').toLowerCase()).filter(Boolean));
+          const exNames = new Set((existing.contacts||[]).map(x=>(x.name||'').toLowerCase()).filter(Boolean));
+          return [...inNames].some(n => !exNames.has(n));
+        }
+        const iv = (c[f]||'').toString().trim();
+        const ev = (existing[f]||'').toString().trim();
+        return iv && iv !== ev;
+      });
+      if(changed) updates.push({...c, _existingId: existing.id});
+      else identical.push(c);
+    }
+  });
+  return {newOnes, updates, identical};
+}
+
+function showPreview(incoming,filename){
+  const{newOnes,updates,identical}=dedupVsDB(incoming);
+  pending={newOnes,updates};
+
+  // Distribuzione per paese (nuovi + aggiornati)
+  const byCountry={};
+  [...newOnes,...updates].forEach(c=>{byCountry[c.country]=(byCountry[c.country]||0)+1;});
+  const rows=Object.entries(byCountry).sort((a,b)=>b[1]-a[1])
+    .map(([c,n])=>`<tr><td>${esc(c)}</td><td style="text-align:right;font-weight:700;padding-right:12px">${n}</td></tr>`).join('');
+
+  const byRegion={};
+  newOnes.forEach(c=>{byRegion[c.region]=(byRegion[c.region]||0)+1;});
+  const rrows=Object.entries(byRegion)
+    .map(([r,n])=>`<span style="background:var(--blue-bg);color:var(--blue-tx);padding:3px 10px;border-radius:20px;font-size:12px;font-weight:600">${esc(r)}: ${n}</span>`).join(' ');
+
+  const hasAction=newOnes.length||updates.length;
+
+  document.getElementById('imp-prev').innerHTML=`
+    <div style="margin-top:14px">
+      <div class="imp-pills">
+        <span class="ip ip-n">✓ ${newOnes.length} nuovi</span>
+        ${updates.length?`<span class="ip" style="background:var(--blue-bg);color:var(--blue-tx)">↑ ${updates.length} da aggiornare</span>`:''}
+        <span class="ip ip-d">= ${identical.length} già aggiornati</span>
+        <span class="ip ip-f">📂 ${esc(filename)}</span>
+      </div>
+      ${rrows?`<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px">${rrows}</div>`:''}
+      ${hasAction?`
+        <div style="font-size:13px;font-weight:600;margin-bottom:6px">Distribuzione per paese:</div>
+        <div class="imp-wrap">
+          <table class="imp-tbl">
+            <thead><tr><th>Paese</th><th style="text-align:right;padding-right:12px">Contatti</th></tr></thead>
+            <tbody>${rows}</tbody>
+          </table>
+        </div>
+        <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn btp" onclick="confirmImport()">
+            ✓ ${newOnes.length?`Aggiungi ${newOnes.length}`:''}${newOnes.length&&updates.length?' + ':''}${updates.length?`Aggiorna ${updates.length}`:''}
+          </button>
+          <button class="btn btg" onclick="pending=null;document.getElementById('imp-prev').innerHTML=''">Annulla</button>
+        </div>`
+      :'<p style="margin-top:10px;font-size:13px;color:var(--green-tx);font-weight:500">✓ Tutti i contatti sono già aggiornati.</p>'}
+    </div>`;
+}
+
+function confirmImport(){
+  if(!pending) return;
+  const{newOnes,updates}=pending;
+  const now=Date.now();
+  let addedCount=0, updatedCount=0;
+
+  // 1. Aggiungi nuovi contatti
+  if(newOnes?.length){
+    const mapped=newOnes.map(c=>{
+      if(isClienti()){
+        return {
+          id:'c'+now+Math.random().toString(36).slice(2,8),
+          nome:c.nome||'',cognome:c.cognome||'',
+          email:c.email||'',lingua:c.lingua||'en',
+          country:c.country||'',statoEmail:c.statoEmail||'sconosciuto',
+          company:(c.nome||'')+' '+(c.cognome||''),
+          name:(c.nome||'')+' '+(c.cognome||''),
+          status:'new',products:[],notes:'',
+          createdAt:now,updatedAt:now,
+          log:[{ts:now,msg:'Importato da XLSX'}]
+        };
+      }
+      return {
+        id:       'c'+now+Math.random().toString(36).slice(2,8),
+        compId:   c.compId||'',
+        company:  c.company||'',
+        brandName:c.brandName||'',
+        email:    c.email||'',
+        phone:    c.phone||'',
+        country:  c.country||'',
+        region:   c.region||'',
+        city:     c.city||'',
+        state:    c.state||'',
+        address:  c.address||'',
+        postalCode:c.postalCode||'',
+        website:  c.website||'',
+        type:     c.type||'',
+        prodType: c.prodType||'',
+        employees:c.employees||'',
+        sales:    c.sales||'',
+        founded:  c.founded||'',
+        regNumber:c.regNumber||'',
+        linkedinCo:c.linkedinCo||'',
+        facebook: c.facebook||'',
+        instagram:c.instagram||'',
+        twitter:  c.twitter||'',
+        youtube:  c.youtube||'',
+        contacts: c.contacts||[],
+        // Legacy compat per email modal
+        contactName:  c.contacts?.[0]?.name  || '',
+        contactTitle: c.contacts?.[0]?.title || '',
+        contactEmail: c.contacts?.[0]?.email || '',
+        name: c.contacts?.[0]?.name || '',
+        status:'new', products:[], notes:'',
+        createdAt:now, updatedAt:now,
+        log:[{ts:now, msg:`Importato da XLSX (${c.contacts?.length||0} contatti)`}]
+      };
+    });
+    (isClienti()?dbC:db).contacts=[...(isClienti()?dbC:db).contacts,...mapped];
+    addedCount=mapped.length;
+  }
+
+  // 2. Aggiorna contatti esistenti (solo i campi che sono cambiati)
+  const UPDATE_FIELDS=['email','phone','website','contactName','contactTitle','contactEmail','employees','sales'];
+  if(updates?.length){
+    updates.forEach(c=>{
+      const idx=db.contacts.findIndex(x=>x.id===c._existingId);
+      if(idx<0) return;
+      const existing=db.contacts[idx];
+      const changes=[];
+      UPDATE_FIELDS.forEach(f=>{
+        const v=(c[f]||'').toString().trim();
+        if(v&&v!==(existing[f]||'').toString().trim()){
+          changes.push(`${f}: "${existing[f]||''}" → "${v}"`);
+          existing[f]=v;
+        }
+      });
+      if(changes.length){
+        existing.updatedAt=now;
+        existing.log=existing.log||[];
+        existing.log.push({ts:now,msg:'Aggiornato da XLSX: '+changes.join(', ')});
+        updatedCount++;
+      }
+    });
+  }
+
+  saveDB();refreshAll();
+  document.getElementById('imp-prev').innerHTML='';
+  pending=null;
+  const msg=`✓ ${addedCount? addedCount+' aggiunti':''}${addedCount&&updatedCount?' + ':''}${updatedCount?updatedCount+' aggiornati':''}`;
+  toast(msg||'Nessuna modifica');
+  showPage('contacts',document.querySelectorAll('.nb')[1]);
+}
+
+/* ── DRAG & DROP ── */
+function dzO(e){e.preventDefault();document.getElementById('dz').classList.add('over');}
+function dzL(){document.getElementById('dz').classList.remove('over');}
+function dzD(e){e.preventDefault();dzL();processFile(e.dataTransfer.files[0]);}
+function handleFile(input){processFile(input.files[0]);input.value='';}
+
+function processFile(file){
+  if(!file) return;
+  const ext=file.name.split('.').pop().toLowerCase();
+  if(ext==='json'){
+    const r=new FileReader();
+    r.onload=e=>{
+      try{
+        const d=JSON.parse(e.target.result);
+        const arr=d.contacts||d;
+        if(!Array.isArray(arr))throw new Error('Formato non valido');
+        showPreview(arr,file.name);
+      }catch(err){toast('JSON non valido: '+err.message);}
+    };
+    r.readAsText(file);
+  } else if(ext==='xlsx'||ext==='xls'){
+    const r=new FileReader();
+    r.onload=e=>{
+      try{
+        const wb=XLSX.read(e.target.result,{type:'array'});
+        const contacts=parseXlsx(wb,file.name);
+        if(!contacts.length){toast('Nessun contatto trovato nel file');return;}
+        toast(`📊 ${contacts.length} contatti trovati in ${wb.SheetNames.length} fogli (${wb.SheetNames.join(', ')})`);
+        showPreview(contacts,file.name);
+      }catch(err){toast('Errore: '+err.message);console.error(err);}
+    };
+    r.readAsArrayBuffer(file);
+  } else {
+    toast('Usa .xlsx o .json');
+  }
+}
+
+/* ── EXPORT ── */
+function exportData(){
+  const blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download=`contatti-backup-${new Date().toISOString().slice(0,10)}.json`;
+  a.click();toast('Export scaricato ✓');
+}
+
+/* ── MODAL ── */
+function showModal(html){
+  closeModal();
+  const bg=document.createElement('div');bg.className='mo';
+  bg.innerHTML=`<div class="mc">
+    <button onclick="closeModal()" style="position:absolute;top:14px;right:16px;background:none;border:none;cursor:pointer;font-size:20px;color:var(--text2);line-height:1;padding:4px 6px;border-radius:4px;z-index:10" title="Chiudi">✕</button>
+    <div style="position:relative">${html}</div>
+  </div>`;
+  bg.addEventListener('click',e=>{if(e.target===bg)closeModal();});
+  document.getElementById('modals').appendChild(bg);
+}
+function closeModal(){document.querySelector('.mo')?.remove();}
+function showPage(id,btn){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nb').forEach(b=>b.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  if(btn)btn.classList.add('active');
+  // Reset selezione quando si cambia tab
+  if(id!=='contacts'&&sel.size>0){sel.clear();}
+}
+
+/* ── UTILS ── */
+function ini(n){if(!n)return'?';const p=n.trim().split(/\s+/);return(p[0][0]+(p[1]?p[1][0]:p[0][1]||'')).toUpperCase();}
+function hsh(s){let h=0;for(let i=0;i<(s||'').length;i++)h=Math.imul(31,h)+s.charCodeAt(i)|0;return Math.abs(h);}
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function toast(msg){const el=document.getElementById('toast');el.textContent=msg;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),2800);}
+
+init();
+
+</script>
 
 </body>
 </html>
