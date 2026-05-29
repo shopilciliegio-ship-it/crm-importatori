@@ -82,4 +82,5 @@ function doDeleteAll(){
   pushGH().then(()=>toast('Database svuotato e sincronizzato ✓'));
 }
 
-/* ── SETTINGS ── */
+// Avvia app
+init(); // script in fondo al body, DOM già pronto
