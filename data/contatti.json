@@ -51,6 +51,10 @@
         {
           "ts": 1780092933308,
           "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202605292215.90093123899@smtp-relay.mailin.fr>)"
+        },
+        {
+          "ts": 1780093013314,
+          "msg": "👁 Aperta: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
         }
       ],
       "lastEmailSent": 1780092933308,
@@ -64,13 +68,15 @@
           "toEmail": "luca@ilciliegio.com",
           "toName": "Michael Weber",
           "brand": "sienawine",
-          "delivered": false,
-          "opened": false,
+          "delivered": true,
+          "opened": true,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "openedAt": "2026-05-30T00:16:53.314+02:00",
+          "deliveredAt": "2026-05-30T00:15:35.000+02:00"
         }
       ]
     },
@@ -289,13 +295,14 @@
           "toEmail": "luca@ilciliegio.com",
           "toName": "Carlos Mendes",
           "brand": "sienawine",
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-05-30T00:15:38.000+02:00"
         }
       ]
     },
@@ -581,13 +588,14 @@
           "toEmail": "luca@ilciliegio.com",
           "toName": "David Rosenberg",
           "brand": "sienawine",
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-05-30T00:15:38.000+02:00"
         }
       ]
     }
