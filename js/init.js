@@ -38,6 +38,7 @@ async function init(){
   if(ghs.token&&ghs.owner&&ghs.repo){
     await loadTemplatesFromGH(); // carica template prima dei contatti
     await loadFromGH();
+    await loadOrdiniFromGH();
   } else {
     updGh('idle');refreshAll();
   }
@@ -49,6 +50,7 @@ function refreshAll(){
   renderStats();renderContacts();renderRegistro();
   renderTemplates();renderRegionChart();renderCCChart();renderPipeline();
   updateBadges();updateFilters();
+  if(typeof renderOrdini==='function') renderOrdini();
 }
 
 function saveDB(){

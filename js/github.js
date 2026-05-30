@@ -218,7 +218,7 @@ function saveSettings(){
   localStorage.setItem('ghcfg',JSON.stringify(ghs));
   brv={apiKey:gv('bk'),senderEmail:gv('be'),senderName:gv('bn')};
   localStorage.setItem('brvcfg',JSON.stringify(brv));
-  ghSha={importatori:null,clienti:null};closeModal();
+  ghSha={importatori:null,clienti:null,templates:null,ordini:null};closeModal();
   toast('Impostazioni salvate — connessione in corso…');
   loadFromGH();
 }
