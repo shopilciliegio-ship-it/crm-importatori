@@ -562,7 +562,7 @@
       "contactTitle": "Import Manager",
       "contactEmail": "luca@ilciliegio.com",
       "name": "David Rosenberg",
-      "status": "sent",
+      "status": "cold",
       "products": [],
       "notes": "",
       "createdAt": 1780089945042,
@@ -575,6 +575,10 @@
         {
           "ts": 1780092936789,
           "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202605292215.68896726900@smtp-relay.mailin.fr>)"
+        },
+        {
+          "ts": 1780096701595,
+          "msg": "❌ Non interessato: aggiornato manualmente"
         }
       ],
       "lastEmailSent": 1780092936789,
@@ -595,7 +599,8 @@
           "spam": false,
           "unsubscribed": false,
           "blocked": false,
-          "deliveredAt": "2026-05-30T00:15:38.000+02:00"
+          "deliveredAt": "2026-05-30T00:15:38.000+02:00",
+          "manualStatus": "cold"
         }
       ]
     }
