@@ -14,11 +14,12 @@ const CLIST=['Germania','USA','UK','Svizzera','Austria','Belgio','Paesi Bassi','
 
 let db={contacts:[],templates:[]};     // importatori
 let dbC={contacts:[],templates:[]};    // clienti privati
+let dbO={orders:[],lastImportedAt:null}; // ordini
 let layer='importatori';               // layer attivo
 let ghs={};
 let brv={};
 let sel=new Set();
 let regSel=new Set();
 let _pendingEmailId=null; // id contatto per apertura email da scheda
-let ghSha={importatori:null,clienti:null,templates:null};
-let saveTimer=null,pending=null;
+let ghSha={importatori:null,clienti:null,templates:null,ordini:null};
+let saveTimer=null,saveOrdTimer=null,pending=null;
