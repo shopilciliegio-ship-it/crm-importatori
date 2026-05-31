@@ -1,5 +1,8 @@
 /* ═══ ORDINI ═══ */
 
+/* Timeout per polling dopo trigger import */
+let _importPollTimer = null;
+
 const ORD_STATUS = {
   ricevuto:     {l:'Ricevuto',         c:'var(--blue-bg)',   t:'var(--blue-tx)'},
   preparazione: {l:'In preparazione',  c:'var(--amber-bg)',  t:'var(--amber-tx)'},
@@ -13,19 +16,43 @@ const ORD_STATUS = {
 
 function uidOrd(){ return 'ord_'+Date.now().toString(36)+Math.random().toString(36).slice(2,6); }
 
+/* ─ Helper: costruisce oggetto ordine completo ─ */
+function _mkOrder({customerName,customerEmail='',customerPhone='',amount=0,currency='EUR',
+  orderDate,emailSubject='',shipmentCode='',shippingAddress='',gmailMessageId='',numberOfCartons=null,note=''}){
+  const now = Date.now();
+  return {
+    id: uidOrd(),
+    customerName,
+    customerEmail,
+    customerPhone,
+    amount,
+    currency,
+    orderDate: orderDate||now,
+    emailSubject,
+    shipmentCode,
+    shippingAddress,
+    numberOfCartons,
+    gmailMessageId,
+    trackingNumber: '',
+    carrier: 'MBE',
+    shippingDate: null,
+    status: 'ricevuto',
+    statusHistory: [{status:'ricevuto', date:now, note}],
+    emailsSent: [],
+    notes: '',
+    createdAt: now,
+    updatedAt: now
+  };
+}
+
 /* ─ Parsing oggetto email ─ */
 function parseOrderFromSubject(subject){
-  // Pattern atteso: 🍷 New Order — NOME COGNOME — 294.05 EUR
-  // Il prezzo è opzionale (può mancare o variare nel formato)
-  const s = subject.trim();
-
-  // Estrai nome: tutto ciò che sta tra il primo — e il secondo — (o fine stringa)
+  // Rimuove prefissi di forward/risposta (Gmail IT usa "I:" per inoltro)
+  const s = subject.trim().replace(/^(I:|Fw:|Fwd:|R:|Re:|Inoltrato:)\s+/i,'').trim();
   const m = s.match(/New\s+Order\s*[—\-–]+\s*([^—\-–]+?)(?:\s*[—\-–]+\s*([\d.,]+)\s*(EUR|USD|GBP)?)?$/i);
-  if(!m || !m[1]) return null;
-
+  if(!m||!m[1]) return null;
   const customerName = m[1].trim();
   if(!customerName) return null;
-
   return {
     customerName,
     amount: m[2] ? parseFloat(m[2].replace(',','.')) : 0,
@@ -34,7 +61,7 @@ function parseOrderFromSubject(subject){
   };
 }
 
-/* ─ Import da soggetti email incollati ─ */
+/* ─ Import da soggetti email incollati manualmente ─ */
 function importFromSubjects(){
   const raw = document.getElementById('ord-subjects')?.value||'';
   const lines = raw.split('\n').map(l=>l.trim()).filter(Boolean);
@@ -46,29 +73,16 @@ function importFromSubjects(){
   for(const line of lines){
     const parsed = parseOrderFromSubject(line);
     if(!parsed){ skipped++; continue; }
-
-    // Dedup: stesso oggetto email esatto → stesso ordine
     const exists = dbO.orders.some(o => o.emailSubject === parsed.rawSubject);
     if(exists){ skipped++; continue; }
-
-    dbO.orders.unshift({
-      id: uidOrd(),
+    dbO.orders.unshift(_mkOrder({
       customerName: parsed.customerName,
-      customerEmail: '',
       amount: parsed.amount,
       currency: parsed.currency,
-      orderDate: now,
       emailSubject: parsed.rawSubject,
-      trackingNumber: '',
-      carrier: 'MBE',
-      shippingDate: null,
-      status: 'ricevuto',
-      statusHistory: [{status:'ricevuto', date:now, note:'Importato da email'}],
-      emailsSent: [],
-      notes: '',
-      createdAt: now,
-      updatedAt: now
-    });
+      orderDate: now,
+      note: 'Importato da email'
+    }));
     imported++;
   }
 
@@ -149,6 +163,8 @@ async function pushOrdiniGH(){
 
 /* ─ Render lista ordini ─ */
 function renderOrdini(){
+  renderGmailStatus();
+
   const sq = (document.getElementById('ord-sq')?.value||'').toLowerCase();
   const sf = document.getElementById('ord-ss')?.value||'';
 
@@ -160,13 +176,11 @@ function renderOrdini(){
   );
   if(sf) orders=orders.filter(o=>o.status===sf);
 
-  // Aggiorna data ultimo import
   const liEl=document.getElementById('ord-last-import');
   if(liEl) liEl.textContent = dbO.lastImportedAt
     ? new Date(dbO.lastImportedAt).toLocaleDateString('it-IT',{day:'numeric',month:'long',year:'numeric'})
     : 'mai';
 
-  // Stats
   const statsEl=document.getElementById('ord-stats');
   if(statsEl){
     const tot=dbO.orders.length;
@@ -180,11 +194,9 @@ function renderOrdini(){
       `<div class="stat"><div class="sl">Problemi</div><div class="sv co">${prob}</div></div>`;
   }
 
-  // Badge tab
   const bn=document.getElementById('ord-n');
   if(bn) bn.textContent=dbO.orders.filter(o=>!['consegnato','annullato'].includes(o.status)).length||'';
 
-  // Lista
   const el=document.getElementById('ord-list');
   if(!el) return;
 
@@ -204,7 +216,7 @@ function renderOrdini(){
       <div class="av av2" style="font-size:10px">${ini(o.customerName)}</div>
       <div class="ci">
         <div class="cn">${esc(o.customerName)}${hasMissingEmail?'<span style="color:var(--amber);font-size:10px;margin-left:5px">⚠ email mancante</span>':''}</div>
-        <div class="cs">${date} · €${o.amount.toFixed(2)} ${o.currency||'EUR'}</div>
+        <div class="cs">${date} · €${o.amount.toFixed(2)} ${o.currency||'EUR'}${o.shipmentCode?' · <span style="font-family:monospace;font-size:10px">'+esc(o.shipmentCode)+'</span>':''}</div>
       </div>
       <div style="display:flex;align-items:center;gap:4px;flex-shrink:0">
         ${tracking}
@@ -247,9 +259,13 @@ function openOrdineDetail(id){
     ${dr('Stato', `<span class="badge" style="background:${st.c};color:${st.t}">${st.l}</span>`)}
     ${dr('Data ordine', date)}
     ${dr('Importo', `<strong>€${o.amount.toFixed(2)}</strong> ${o.currency||'EUR'}`)}
+    ${o.shipmentCode?dr('Codice spedizione', `<span style="font-family:monospace;font-weight:700;font-size:15px">${esc(o.shipmentCode)}</span>`):''}
     ${dr('Email cliente', o.customerEmail?`<a href="mailto:${esc(o.customerEmail)}">${esc(o.customerEmail)}</a>`:'<span style="color:var(--amber)">⚠ mancante</span>')}
+    ${o.customerPhone?dr('Telefono', `<a href="tel:${esc(o.customerPhone)}">${esc(o.customerPhone)}</a>`):''}
     ${o.trackingNumber?dr('Tracking', `<span style="font-family:monospace">${esc(o.trackingNumber)}</span> ${trackingLink}`):''}
     ${o.shippingDate?dr('Data spedizione', new Date(o.shippingDate).toLocaleDateString('it-IT',{day:'numeric',month:'long',year:'numeric'})):''}
+    ${o.shippingAddress?dr('Indirizzo spedizione', `<span style="font-size:12px;color:var(--text2)">${esc(o.shippingAddress)}</span>`):''}
+    ${o.numberOfCartons?dr('Colli MBE', `<strong>${o.numberOfCartons}</strong> colli`):''}
     ${o.emailSubject?dr('Oggetto email', `<span style="font-size:11px;color:var(--text2)">${esc(o.emailSubject)}</span>`):''}
     ${o.notes?dr('Note', esc(o.notes)):''}
 
@@ -262,8 +278,14 @@ function openOrdineDetail(id){
       <div class="fg"><label>Email cliente</label>
         <input id="ord-email" type="email" placeholder="email@cliente.com" value="${esc(o.customerEmail||'')}">
       </div>
+      <div class="fg"><label>Telefono</label>
+        <input id="ord-phone" placeholder="+39 333 1234567" value="${esc(o.customerPhone||'')}">
+      </div>
       <div class="fg fgf"><label>Tracking number</label>
         <input id="ord-tracking" placeholder="Es. 1Z999AA10123456784" value="${esc(o.trackingNumber||'')}">
+      </div>
+      <div class="fg fgf"><label>Indirizzo spedizione</label>
+        <input id="ord-address" placeholder="Via Roma 1, 20100 Milano, Italy" value="${esc(o.shippingAddress||'')}">
       </div>
       <div class="fg fgf"><label>Note (opzionale)</label>
         <input id="ord-note" placeholder="Es. Pacco in dogana a Milano">
@@ -293,11 +315,15 @@ async function saveOrdineUpdate(id){
   const newStatus=gv('ord-new-status')||o.status;
   const newTracking=(document.getElementById('ord-tracking')?.value||'').trim();
   const newEmail=(document.getElementById('ord-email')?.value||'').trim();
+  const newPhone=(document.getElementById('ord-phone')?.value||'').trim();
+  const newAddress=(document.getElementById('ord-address')?.value||'').trim();
   const note=(document.getElementById('ord-note')?.value||'').trim();
   const sendEmail=document.getElementById('ord-send-email')?.checked;
 
   if(newEmail) o.customerEmail=newEmail;
   if(newTracking) o.trackingNumber=newTracking;
+  if(newPhone) o.customerPhone=newPhone;
+  if(newAddress) o.shippingAddress=newAddress;
 
   const statusChanged=newStatus!==o.status;
   if(statusChanged){
@@ -305,7 +331,6 @@ async function saveOrdineUpdate(id){
     o.statusHistory=o.statusHistory||[];
     o.statusHistory.push({status:newStatus, date:Date.now(), note:note||''});
     if(newStatus==='spedito'&&!o.shippingDate) o.shippingDate=Date.now();
-
     if(sendEmail&&o.customerEmail){
       await sendOrdineStatusEmail(o);
     }
@@ -337,14 +362,17 @@ function openAddOrdine(){
       <div class="fg"><label>Email cliente</label>
         <input id="no-email" type="email" placeholder="mario@example.com">
       </div>
+      <div class="fg"><label>Telefono</label>
+        <input id="no-phone" placeholder="+39 333 1234567">
+      </div>
       <div class="fg"><label>Importo (€)</label>
         <input id="no-amount" type="number" step="0.01" min="0" placeholder="150.00">
       </div>
       <div class="fg"><label>Data ordine</label>
         <input id="no-date" type="date" value="${new Date().toISOString().slice(0,10)}">
       </div>
-      <div class="fg fgf"><label>Oggetto email originale (opzionale)</label>
-        <input id="no-subject" placeholder="🍷 New Order — Mario Rossi — 150.00 EUR">
+      <div class="fg fgf"><label>Indirizzo spedizione</label>
+        <input id="no-address" placeholder="Via Roma 1, 20100 Milano, Italy">
       </div>
     </div>
     <div class="mf">
@@ -357,33 +385,22 @@ function openAddOrdine(){
 function doAddOrdine(){
   const name=(document.getElementById('no-name')?.value||'').trim();
   const email=(document.getElementById('no-email')?.value||'').trim();
+  const phone=(document.getElementById('no-phone')?.value||'').trim();
   const amount=parseFloat(document.getElementById('no-amount')?.value||'0')||0;
   const dateVal=document.getElementById('no-date')?.value;
-  const subject=(document.getElementById('no-subject')?.value||'').trim();
+  const address=(document.getElementById('no-address')?.value||'').trim();
 
   if(!name){ toast('Inserisci il nome del cliente'); return; }
 
-  const orderDate=dateVal?new Date(dateVal).getTime():Date.now();
-  const now=Date.now();
-
-  dbO.orders.unshift({
-    id:uidOrd(),
-    customerName:name,
-    customerEmail:email,
-    amount:amount,
-    currency:'EUR',
-    orderDate:orderDate,
-    emailSubject:subject,
-    trackingNumber:'',
-    carrier:'MBE',
-    shippingDate:null,
-    status:'ricevuto',
-    statusHistory:[{status:'ricevuto',date:now,note:'Aggiunto manualmente'}],
-    emailsSent:[],
-    notes:'',
-    createdAt:now,
-    updatedAt:now
-  });
+  dbO.orders.unshift(_mkOrder({
+    customerName: name,
+    customerEmail: email,
+    customerPhone: phone,
+    amount,
+    orderDate: dateVal ? new Date(dateVal).getTime() : Date.now(),
+    shippingAddress: address,
+    note: 'Aggiunto manualmente'
+  }));
 
   closeModal();
   saveOrdineDB();
@@ -514,4 +531,45 @@ export@ilciliegio.com | +39 331 1347899`;
     console.error('sendOrdineStatusEmail:',e);
     toast('⚠ Errore invio email: '+e.message);
   }
+}
+
+
+/* ═══ IMPORT ORDINI (GitHub Actions) ═══ */
+
+/* ─ Aggiorna UI sezione import ─ */
+function renderGmailStatus(){
+  const el = document.getElementById('gmail-status');
+  if(!el) return;
+  const lastStr = dbO.lastImportedAt
+    ? new Date(dbO.lastImportedAt).toLocaleString('it-IT',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'})
+    : 'mai';
+  el.innerHTML = `<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:4px 0">
+    <button class="btn btp bts" onclick="triggerGmailImport()" style="font-size:12px">⟳ Importa ora da Gmail</button>
+    <span style="font-size:12px;color:var(--text2)">Automatico ogni mattina alle 7:00 · ultimo: <strong>${lastStr}</strong></span>
+  </div>`;
+}
+
+/* ─ Triggera GitHub Actions workflow via API ─ */
+async function triggerGmailImport(){
+  const{token,owner,repo}=ghs;
+  if(!token||!owner||!repo){ toast('⚙ Configura GitHub nelle Impostazioni'); return; }
+
+  const url=`https://api.github.com/repos/${owner}/${repo}/actions/workflows/import_ordini.yml/dispatches`;
+  try{
+    const r = await fetch(url,{
+      method:'POST',
+      headers:{'Authorization':`token ${token}`,'Accept':'application/vnd.github.v3+json','Content-Type':'application/json'},
+      body:JSON.stringify({ref:'main'})
+    });
+    if(r.ok||r.status===204){
+      toast('✓ Import avviato — aggiorno tra ~60 secondi…');
+      clearTimeout(_importPollTimer);
+      _importPollTimer = setTimeout(async()=>{
+        await loadOrdiniFromGH();
+        toast('✓ Ordini aggiornati');
+      }, 65000);
+    } else {
+      toast('⚠ Errore avvio workflow: '+r.status);
+    }
+  }catch(e){ toast('⚠ '+e.message); }
 }

@@ -1,0 +1,30 @@
+name: Import Ordini da Gmail
+
+on:
+  schedule:
+    - cron: '0 6 * * *'   # 06:00 UTC = 07:00 CET / 08:00 CEST
+  workflow_dispatch:        # trigger manuale dal CRM o da GitHub UI
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Installa dipendenze
+        run: pip install -r scripts/requirements.txt
+
+      - name: Importa ordini
+        env:
+          GMAIL_USER:         ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          GH_TOKEN:           ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO:            ${{ github.repository }}
+        run: python scripts/import_ordini.py

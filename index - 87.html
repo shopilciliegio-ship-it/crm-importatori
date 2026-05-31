@@ -188,22 +188,34 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
 
   <div class="card" style="margin-bottom:12px">
     <div class="sh" style="margin-bottom:10px">
-      <div class="st">📧 Importa da email</div>
+      <div class="st">📧 Importa ordini</div>
       <div style="font-size:12px;color:var(--text2)">
         Ultimo import: <span id="ord-last-import" style="font-weight:600">mai</span>
         <span class="nbadge" id="ord-n" style="margin-left:6px"></span>
       </div>
     </div>
-    <p style="font-size:12px;color:var(--text2);margin-bottom:8px;line-height:1.6">
-      Incolla gli oggetti delle email ricevute da Shopify (uno per riga):<br>
-      <code>🍷 New Order — NOME COGNOME — 294.05 EUR</code>
-    </p>
-    <textarea id="ord-subjects" rows="3"
-      placeholder="🍷 New Order — MARIO ROSSI — 150.00 EUR&#10;🍷 New Order — ANNA BIANCHI — 230.50 EUR"
-      style="width:100%;font-size:12px;padding:9px 11px;border:0.5px solid var(--brd2);border-radius:var(--r);background:var(--bg);color:var(--text);font-family:monospace;resize:vertical;line-height:1.5"></textarea>
-    <div style="display:flex;justify-content:flex-end;margin-top:8px">
-      <button class="btn btp bts" onclick="importFromSubjects()">Importa ordini</button>
-    </div>
+
+    <!-- Gmail connect section — popolata da renderGmailStatus() -->
+    <div id="gmail-status" style="margin-bottom:8px"></div>
+
+    <!-- Import manuale come fallback -->
+    <details>
+      <summary style="font-size:12px;color:var(--text2);cursor:pointer;user-select:none;padding:4px 0;list-style:none">
+        <span style="color:var(--blue)">⌨ Import manuale</span> — incolla oggetti email (uno per riga)
+      </summary>
+      <div style="margin-top:10px">
+        <p style="font-size:12px;color:var(--text2);margin-bottom:8px;line-height:1.6">
+          Formato riconosciuto (con o senza prefisso "I:"):<br>
+          <code>🍷 New Order — NOME COGNOME — 294.05 EUR</code>
+        </p>
+        <textarea id="ord-subjects" rows="3"
+          placeholder="🍷 New Order — MARIO ROSSI — 150.00 EUR&#10;I: 🍷 New Order — ANNA BIANCHI — 230.50 EUR"
+          style="width:100%;font-size:12px;padding:9px 11px;border:0.5px solid var(--brd2);border-radius:var(--r);background:var(--bg);color:var(--text);font-family:monospace;resize:vertical;line-height:1.5"></textarea>
+        <div style="display:flex;justify-content:flex-end;margin-top:8px">
+          <button class="btn btp bts" onclick="importFromSubjects()">Importa ordini</button>
+        </div>
+      </div>
+    </details>
   </div>
 
   <div class="filters" style="margin-bottom:10px">
