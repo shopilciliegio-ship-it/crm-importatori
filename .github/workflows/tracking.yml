@@ -1,44 +1,30 @@
-name: 📦 Tracking ordini automatico
-
-# ━━━ START / STOP ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-#  Per ATTIVARE l'automazione completa:
-#    1. Decommentare il blocco "schedule" qui sotto
-#    2. Cambiare "if: false" in "if: true" nel job check-tracking
-#    3. Aggiungere i secrets nel repo (Settings → Secrets → Actions):
-#       GH_TOKEN, BREVO_API_KEY, TRACK17_API_KEY
-#       SENDER_EMAIL, SENDER_NAME
-#  Per esecuzione MANUALE (test): usa il pulsante "Run workflow" su GitHub
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+name: Tracking ordini automatico
 
 on:
-  # Esecuzione manuale da GitHub Actions UI (sempre disponibile)
   workflow_dispatch:
     inputs:
       dry_run:
-        description: "Dry run (mostra solo cosa farebbe, senza salvare)"
+        description: "Dry run — mostra solo cosa farebbe, senza salvare né inviare email"
         required: false
         default: "false"
         type: choice
         options: ["false", "true"]
 
-  # Automazione giornaliera — DISABILITATA: rimuovi il # per attivare
-  # schedule:
-  #   - cron: '0 6 * * *'   # ogni giorno alle 07:00 CET (06:00 UTC)
+  schedule:
+    - cron: '0 7 * * *'   # ogni giorno alle 07:00 UTC (08:00 CET / 09:00 CEST)
+
+permissions:
+  contents: write
 
 jobs:
   check-tracking:
     name: Controlla tracking spedizioni
     runs-on: ubuntu-latest
 
-    # ⚠ STOP GLOBALE — cambia in "if: true" per attivare il job
-    if: false
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Set up Python 3.11
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
@@ -47,31 +33,13 @@ jobs:
 
       - name: Esegui script tracking
         env:
-          GH_TOKEN:         ${{ secrets.GH_TOKEN }}
-          GH_OWNER:         ${{ github.repository_owner }}
-          GH_REPO:          ${{ github.event.repository.name }}
-          BREVO_API_KEY:    ${{ secrets.BREVO_API_KEY }}
-          TRACK17_API_KEY:  ${{ secrets.TRACK17_API_KEY }}
-          SENDER_EMAIL:     ${{ secrets.SENDER_EMAIL }}
-          SENDER_NAME:      ${{ secrets.SENDER_NAME }}
-        run: |
-          # Imposta ENABLED=True nello script a runtime
-          # (così il flag nel file sorgente rimane False come default sicuro)
-          python - <<'PYEOF'
-          import importlib.util, sys, os
-
-          # Override ENABLED a True se non è un dry_run
-          dry_run = os.environ.get("DRY_RUN", "false").lower() == "true"
-
-          spec = importlib.util.spec_from_file_location("tracking", "scripts/check_tracking.py")
-          mod  = importlib.util.module_from_spec(spec)
-          mod.ENABLED = not dry_run
-          spec.loader.exec_module(mod)
-          mod.run()
-          PYEOF
-        env:
-          DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
-
-      - name: Risultato
-        if: always()
-        run: echo "✓ Script completato"
+          GH_TOKEN:          ${{ secrets.GITHUB_TOKEN }}
+          GH_OWNER:          ${{ github.repository_owner }}
+          GH_REPO:           ${{ github.event.repository.name || 'crm-importatori' }}
+          BREVO_API_KEY:     ${{ secrets.BREVO_API_KEY }}
+          TRACK17_API_KEY:   ${{ secrets.TRACK17_API_KEY }}
+          SENDER_EMAIL:      ${{ secrets.SENDER_EMAIL }}
+          SENDER_NAME:       ${{ secrets.SENDER_NAME }}
+          TRACKING_ENABLED:  "true"
+          DRY_RUN:           ${{ github.event.inputs.dry_run || 'false' }}
+        run: python scripts/check_tracking.py
