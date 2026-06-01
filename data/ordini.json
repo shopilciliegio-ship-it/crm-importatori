@@ -59,35 +59,6 @@
       "updatedAt": 1780314564497
     },
     {
-      "id": "ord_mpv5bpn5ocz9",
-      "customerName": "LUCA PATTARO",
-      "customerEmail": "",
-      "customerPhone": "",
-      "amount": 260.2,
-      "currency": "EUR",
-      "orderDate": 1780230920000,
-      "emailSubject": "🍷 New Order — LUCA PATTARO — 260.20 EUR",
-      "shipmentCode": "",
-      "shippingAddress": "",
-      "numberOfCartons": null,
-      "gmailMessageId": "<DB9PR08MB6682775E507E2D2685A4DA56BF142@DB9PR08MB6682.eurprd08.prod.outlook.com>",
-      "trackingNumber": "",
-      "carrier": "MBE",
-      "shippingDate": null,
-      "status": "ricevuto",
-      "statusHistory": [
-        {
-          "status": "ricevuto",
-          "date": 1780314564497,
-          "note": "Importato da Gmail (GitHub Actions)"
-        }
-      ],
-      "emailsSent": [],
-      "notes": "",
-      "createdAt": 1780314564497,
-      "updatedAt": 1780314564497
-    },
-    {
       "id": "ord_mpv5bpn5fjc2",
       "customerName": "LUCA PATTARO",
       "customerEmail": "hokutazzo@gmail.com",
