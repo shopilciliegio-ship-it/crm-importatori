@@ -12,15 +12,14 @@ from datetime import datetime, timezone
 import requests
 
 # ── Config da env (GitHub Secrets) ──────────────────────────────────────────
-MBE_USERNAME = os.environ['MBE_USERNAME']   # ciliegio.it3299.mol
+MBE_EMAIL    = os.environ['MBE_EMAIL']
 MBE_PASSWORD = os.environ['MBE_PASSWORD']
 GH_TOKEN     = os.environ['GH_TOKEN']
 GH_REPO      = os.environ['GH_REPO']
 DATA_PATH    = 'data/ordini.json'
 
-KEYCLOAK_TOKEN_URL = 'https://oauth.mbe-hub.com/realms/mbe-hub/protocol/openid-connect/token'
-MBE_API_BASE       = 'https://api.mbeonline.it'
-CUSTOMER_ID        = 2173924
+MBE_API_BASE  = 'https://api.mbeonline.it'
+CUSTOMER_ID   = 2173924
 
 # Endpoint per Wine USA + Wine Europa
 MBE_ENDPOINTS = [
@@ -36,27 +35,43 @@ STATUS_MAP = {
 TERMINAL_STATUSES = {'consegnato', 'annullato'}
 
 
-# ── Auth Keycloak (ROPC) ─────────────────────────────────────────────────────
+# ── Auth via Playwright (browser headless) ───────────────────────────────────
 
 def get_token() -> str:
-    r = requests.post(
-        KEYCLOAK_TOKEN_URL,
-        data={
-            'grant_type': 'password',
-            'client_id':  'mbe-mol-fe',
-            'username':   MBE_USERNAME,
-            'password':   MBE_PASSWORD,
-            'scope':      'openid',
-        },
-        timeout=30,
-    )
-    if not r.ok:
-        raise RuntimeError(
-            f'Auth MBE fallita ({r.status_code}): {r.text[:200]}\n'
-            'Se il messaggio è "grant_type not allowed", il client MBE non supporta ROPC — '
-            'contatta supporto o usa il refresh_token manuale.'
+    from playwright.sync_api import sync_playwright
+
+    with sync_playwright() as pw:
+        browser = pw.chromium.launch(headless=True)
+        page    = browser.new_page()
+
+        print('  Apertura MBEonline...')
+        page.goto('https://www.mbeonline.it', timeout=30_000)
+
+        # Attende il form login Keycloak
+        page.wait_for_selector('#username', timeout=15_000)
+        page.fill('#username', MBE_EMAIL)
+        page.fill('#password', MBE_PASSWORD)
+        page.click('[type=submit]')
+
+        # Attende che il token sia disponibile in localStorage
+        page.wait_for_function(
+            "!!localStorage.getItem('mol-token')",
+            timeout=30_000
         )
-    return r.json()['access_token']
+
+        token_data = page.evaluate(
+            "JSON.parse(localStorage.getItem('mol-token'))"
+        )
+        browser.close()
+
+    access_token = (token_data or {}).get('access_token', '')
+    if not access_token:
+        raise RuntimeError(
+            'Login MBE fallito — nessun access_token in localStorage.\n'
+            'Verifica che MBE_EMAIL e MBE_PASSWORD siano corretti nei GitHub Secrets.'
+        )
+    print('  Login MBE via browser: OK')
+    return access_token
 
 
 # ── Fetch spedizioni ──────────────────────────────────────────────────────────
