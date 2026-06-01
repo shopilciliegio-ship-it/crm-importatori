@@ -1,0 +1,150 @@
+{
+  "orders": [
+    {
+      "id": "ord_mpv5bpn5my68",
+      "customerName": "LUCA PATTARO",
+      "customerEmail": "",
+      "customerPhone": "",
+      "amount": 194.0,
+      "currency": "EUR",
+      "orderDate": 1780230919000,
+      "emailSubject": "🍷 New Order — LUCA PATTARO — 194.00 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "",
+      "numberOfCartons": null,
+      "gmailMessageId": "<DB9PR08MB6682D5684730C83E1AB3AC0BBF142@DB9PR08MB6682.eurprd08.prod.outlook.com>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "shippingDate": null,
+      "status": "ricevuto",
+      "statusHistory": [
+        {
+          "status": "ricevuto",
+          "date": 1780314564497,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1780314564497,
+      "updatedAt": 1780314564497
+    },
+    {
+      "id": "ord_mpv5bpn5xy5n",
+      "customerName": "BULA BULA",
+      "customerEmail": "",
+      "customerPhone": "",
+      "amount": 196.4,
+      "currency": "EUR",
+      "orderDate": 1780230921000,
+      "emailSubject": "🍷 New Order — BULA BULA — 196.40 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "",
+      "numberOfCartons": null,
+      "gmailMessageId": "<DB9PR08MB66824E4860E6E0873E658326BF142@DB9PR08MB6682.eurprd08.prod.outlook.com>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "shippingDate": null,
+      "status": "ricevuto",
+      "statusHistory": [
+        {
+          "status": "ricevuto",
+          "date": 1780314564497,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1780314564497,
+      "updatedAt": 1780314564497
+    },
+    {
+      "id": "ord_mpv5bpn5ocz9",
+      "customerName": "LUCA PATTARO",
+      "customerEmail": "",
+      "customerPhone": "",
+      "amount": 260.2,
+      "currency": "EUR",
+      "orderDate": 1780230920000,
+      "emailSubject": "🍷 New Order — LUCA PATTARO — 260.20 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "",
+      "numberOfCartons": null,
+      "gmailMessageId": "<DB9PR08MB6682775E507E2D2685A4DA56BF142@DB9PR08MB6682.eurprd08.prod.outlook.com>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "shippingDate": null,
+      "status": "ricevuto",
+      "statusHistory": [
+        {
+          "status": "ricevuto",
+          "date": 1780314564497,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1780314564497,
+      "updatedAt": 1780314564497
+    },
+    {
+      "id": "ord_mpv5bpn5fjc2",
+      "customerName": "LUCA PATTARO",
+      "customerEmail": "hokutazzo@gmail.com",
+      "customerPhone": "",
+      "amount": 294.05,
+      "currency": "EUR",
+      "orderDate": 1780230918000,
+      "emailSubject": "🍷 New Order — LUCA PATTARO — 294.05 EUR",
+      "shipmentCode": "MERCHANT",
+      "shippingAddress": "VIA UOPINI 94, TOWN OF HUBBARD 53035 WISCONSIN (DODGE COUNTY)",
+      "numberOfCartons": null,
+      "gmailMessageId": "<DB9PR08MB66828056015E52A98D23636EBF142@DB9PR08MB6682.eurprd08.prod.outlook.com>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "shippingDate": null,
+      "status": "ricevuto",
+      "statusHistory": [
+        {
+          "status": "ricevuto",
+          "date": 1780314564497,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1780314564497,
+      "updatedAt": 1780314564497
+    },
+    {
+      "id": "ord_mpv5bpn5tqbw",
+      "customerName": "LORA CURRIE",
+      "customerEmail": "lorahenke@aol.com",
+      "customerPhone": "",
+      "amount": 240.4,
+      "currency": "EUR",
+      "orderDate": 1780230916000,
+      "emailSubject": "🍷 New Order — LORA CURRIE — 240.40 EUR",
+      "shipmentCode": "MERCHANT",
+      "shippingAddress": "5333 SHORELINE CIR, SANFORD 32771 FLORIDA (SEMINOLE COUNTY)",
+      "numberOfCartons": null,
+      "gmailMessageId": "<DB9PR08MB668261D530FBFE77EA142B19BF142@DB9PR08MB6682.eurprd08.prod.outlook.com>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "shippingDate": null,
+      "status": "ricevuto",
+      "statusHistory": [
+        {
+          "status": "ricevuto",
+          "date": 1780314564497,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1780314564497,
+      "updatedAt": 1780314564497
+    }
+  ],
+  "lastImportedAt": 1780314564497
+}
