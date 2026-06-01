@@ -1,11 +1,40 @@
 {
   "orders": [
     {
+      "id": "ord_mpvpkyylwz2h",
+      "customerName": "JILL BANKS",
+      "customerEmail": "",
+      "customerPhone": "",
+      "amount": 233.8,
+      "currency": "EUR",
+      "orderDate": 1780348588797,
+      "emailSubject": "🍷 New Order — JILL BANKS — 233.80 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "",
+      "numberOfCartons": null,
+      "gmailMessageId": "",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "shippingDate": null,
+      "status": "ricevuto",
+      "statusHistory": [
+        {
+          "status": "ricevuto",
+          "date": 1780348588797,
+          "note": "Importato da email"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1780348588797,
+      "updatedAt": 1780348588797
+    },
+    {
       "id": "ord_mpv5bpn5my68",
       "customerName": "LUCA PATTARO",
       "customerEmail": "",
       "customerPhone": "",
-      "amount": 194.0,
+      "amount": 194,
       "currency": "EUR",
       "orderDate": 1780230919000,
       "emailSubject": "🍷 New Order — LUCA PATTARO — 194.00 EUR",
@@ -146,5 +175,5 @@
       "updatedAt": 1780314564497
     }
   ],
-  "lastImportedAt": 1780314564497
+  "lastImportedAt": 1780348588797
 }
