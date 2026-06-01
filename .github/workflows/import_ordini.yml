@@ -28,3 +28,11 @@ jobs:
           GH_TOKEN:           ${{ secrets.GITHUB_TOKEN }}
           GH_REPO:            ${{ github.repository }}
         run: python scripts/import_ordini.py
+
+      - name: Fetch tracking MBE
+        env:
+          MBE_USERNAME: ${{ secrets.MBE_USERNAME }}
+          MBE_PASSWORD: ${{ secrets.MBE_PASSWORD }}
+          GH_TOKEN:     ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO:      ${{ github.repository }}
+        run: python scripts/fetch_mbe_tracking.py
