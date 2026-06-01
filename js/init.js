@@ -68,10 +68,9 @@ async function init(){
 }
 
 function refreshAll(){
-  renderStats();renderContacts();renderRegistro();
+  renderStats();renderContacts();renderRegistro();renderFollowups();
   renderTemplates();renderRegionChart();renderCCChart();renderPipeline();
   updateBadges();updateFilters();
-  // renderOrdini opzionale — presente solo in v86+
   try{ if(typeof renderOrdini==='function') renderOrdini(); }catch(e){ console.warn('renderOrdini:',e); }
 }
 
