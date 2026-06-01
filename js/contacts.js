@@ -795,6 +795,30 @@ function fixExistingRegions(){
 }
 
 
+function renderFollowups(){
+  const list=(isClienti()?dbC:db).contacts
+    .filter(c=>c.status==='followup'||c.status==='sent')
+    .sort((a,b)=>(a.updatedAt||0)-(b.updatedAt||0));
+  const el=document.getElementById('fl');
+  if(!el) return;
+  el.innerHTML=list.length
+    ? `<div class="card">${list.map(c=>{
+        const days=Math.floor((Date.now()-(c.updatedAt||Date.now()))/86400000);
+        return `<div class="cr" onclick="openDetail('${c.id}')">
+          <div class="av ${AV[hsh(c.company)%6]}">${ini(c.name||c.company)}</div>
+          <div class="ci">
+            <div class="cn">${esc(c.company)}${c.name?' · '+esc(c.name):''}</div>
+            <div class="cs">${esc(c.country||'')} · ${days>0?days+' gg fa':'oggi'}</div>
+          </div>
+          <div style="text-align:right;flex-shrink:0;display:flex;flex-direction:column;align-items:flex-end;gap:4px">
+            <span class="badge ${SM[c.status]?.c||'bn'}">${SM[c.status]?.l||''}</span>
+            <button class="btn bts" style="font-size:11px" onclick="event.stopPropagation();openEmailModal('${c.id}')">✉</button>
+          </div>
+        </div>`;
+      }).join('')}</div>`
+    : '<div class="card"><div class="empty">Nessun follow-up 🎉</div></div>';
+}
+
 /* ═══════════════════════════════════════════════════
    SINCRONIZZAZIONE BREVO — aperture, click, bounce
 ═══════════════════════════════════════════════════ */
