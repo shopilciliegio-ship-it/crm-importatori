@@ -136,7 +136,7 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
 .layer-toggle{display:flex;gap:0;border-radius:var(--rl);overflow:hidden;border:1.5px solid var(--brd2);flex-shrink:0}
 .layer-btn{padding:8px 18px;border:none;background:var(--bg2);color:var(--text2);cursor:pointer;font-size:13px;font-weight:600;font-family:inherit;transition:all .15s;white-space:nowrap}
 .layer-btn.active{background:var(--text);color:var(--bg)}
-.layer-btn:first-child{border-right:1px solid var(--brd2)}
+.layer-btn:not(:last-child){border-right:1px solid var(--brd2)}
 .sel-bar{display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--blue-bg);border-radius:var(--r);margin-bottom:10px;flex-wrap:wrap}
 .sel-bar-info{font-size:13px;font-weight:600;color:var(--blue-tx);flex:1}
 .crow-cb{width:17px;height:17px;cursor:pointer;accent-color:var(--blue);flex-shrink:0;margin-right:2px}
@@ -168,6 +168,7 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
     <div class="layer-toggle">
       <button class="layer-btn active" id="layer-btn-imp" onclick="switchLayer('importatori')">🏢 Importatori</button>
       <button class="layer-btn" id="layer-btn-cli" onclick="switchLayer('clienti')">👤 Clienti Privati</button>
+      <button class="layer-btn" id="layer-btn-ord" onclick="switchLayer('ordini')">📦 Ordini</button>
     </div>
     <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.86</div>
   </div>
@@ -181,13 +182,69 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
   </div>
 </div>
 
+<!-- SEZIONE ORDINI — visibile solo quando layer='ordini', fuori dal sistema .page -->
+<div id="section-ordini" style="display:none">
+  <div class="sgrid" id="ord-stats"></div>
+
+  <div class="card" style="margin-bottom:12px">
+    <div class="sh" style="margin-bottom:10px">
+      <div class="st">📧 Importa ordini</div>
+      <div style="font-size:12px;color:var(--text2)">
+        Ultimo import: <span id="ord-last-import" style="font-weight:600">mai</span>
+        <span class="nbadge" id="ord-n" style="margin-left:6px"></span>
+      </div>
+    </div>
+
+    <!-- Gmail connect section — popolata da renderGmailStatus() -->
+    <div id="gmail-status" style="margin-bottom:8px"></div>
+
+    <!-- Import manuale come fallback -->
+    <details>
+      <summary style="font-size:12px;color:var(--text2);cursor:pointer;user-select:none;padding:4px 0;list-style:none">
+        <span style="color:var(--blue)">⌨ Import manuale</span> — incolla oggetti email (uno per riga)
+      </summary>
+      <div style="margin-top:10px">
+        <p style="font-size:12px;color:var(--text2);margin-bottom:8px;line-height:1.6">
+          Formato riconosciuto (con o senza prefisso "I:"):<br>
+          <code>🍷 New Order — NOME COGNOME — 294.05 EUR</code>
+        </p>
+        <textarea id="ord-subjects" rows="3"
+          placeholder="🍷 New Order — MARIO ROSSI — 150.00 EUR&#10;I: 🍷 New Order — ANNA BIANCHI — 230.50 EUR"
+          style="width:100%;font-size:12px;padding:9px 11px;border:0.5px solid var(--brd2);border-radius:var(--r);background:var(--bg);color:var(--text);font-family:monospace;resize:vertical;line-height:1.5"></textarea>
+        <div style="display:flex;justify-content:flex-end;margin-top:8px">
+          <button class="btn btp bts" onclick="importFromSubjects()">Importa ordini</button>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <div class="filters" style="margin-bottom:10px">
+    <input type="text" id="ord-sq" placeholder="Cerca cliente, tracking…" oninput="renderOrdini()" style="max-width:180px">
+    <select id="ord-ss" onchange="renderOrdini()">
+      <option value="">Tutti gli stati</option>
+      <option value="ricevuto">Ricevuto</option>
+      <option value="preparazione">In preparazione</option>
+      <option value="spedito">Spedito</option>
+      <option value="in_transito">In transito</option>
+      <option value="dogana">In dogana</option>
+      <option value="consegnato">Consegnato</option>
+      <option value="problema">Problema</option>
+      <option value="annullato">Annullato</option>
+    </select>
+    <button class="btn bts" onclick="openAddOrdine()">+ Ordine manuale</button>
+  </div>
+
+  <div class="card" style="padding:0.75rem 1.25rem">
+    <div id="ord-list"><div class="empty">Nessun ordine — importa dalla sezione qui sopra</div></div>
+  </div>
+</div>
+
 <div class="nav">
   <button class="nb active" onclick="showPage('dashboard',this)">Dashboard</button>
   <button class="nb" onclick="showPage('contacts',this)">Contatti <span class="nbadge" id="ct-n">0</span></button>
   <button class="nb" onclick="showPage('followups',this)">Follow-up <span class="nbadge" id="fu-n" style="background:var(--amber-bg);color:var(--amber-tx)">0</span></button>
   <button class="nb" onclick="showPage('import',this)">Importa XLSX</button>
   <button class="nb" onclick="showPage('templates',this)">Template email</button>
-  <button class="nb" onclick="showPage('ordini',this)">📦 Ordini <span class="nbadge" id="ord-n"></span></button>
 </div>
 
 <!-- DASHBOARD -->
@@ -292,52 +349,6 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
   <div id="tpl-list"></div>
 </div>
 
-<!-- ORDINI -->
-<div id="page-ordini" class="page">
-  <div class="sgrid" id="ord-stats"></div>
-
-  <!-- Import da email -->
-  <div class="card" style="margin-bottom:12px">
-    <div class="sh" style="margin-bottom:10px">
-      <div class="st">📧 Importa da email</div>
-      <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text2)">
-        Ultimo import: <span id="ord-last-import" style="font-weight:600">mai</span>
-      </div>
-    </div>
-    <p style="font-size:12px;color:var(--text2);margin-bottom:8px;line-height:1.6">
-      Incolla gli oggetti delle email (uno per riga). Formato riconosciuto:<br>
-      <code>🍷 New Order — NOME COGNOME — 294.05 EUR</code>
-    </p>
-    <textarea id="ord-subjects" rows="3"
-      placeholder="🍷 New Order — MARIO ROSSI — 150.00 EUR&#10;🍷 New Order — ANNA BIANCHI — 230.50 EUR"
-      style="width:100%;font-size:12px;padding:9px 11px;border:0.5px solid var(--brd2);border-radius:var(--r);background:var(--bg);color:var(--text);font-family:monospace;resize:vertical;line-height:1.5"></textarea>
-    <div style="display:flex;justify-content:flex-end;margin-top:8px">
-      <button class="btn btp bts" onclick="importFromSubjects()">Importa ordini</button>
-    </div>
-  </div>
-
-  <!-- Filtri + azione -->
-  <div class="filters" style="margin-bottom:10px">
-    <input type="text" id="ord-sq" placeholder="Cerca cliente, tracking…" oninput="renderOrdini()" style="max-width:180px">
-    <select id="ord-ss" onchange="renderOrdini()">
-      <option value="">Tutti gli stati</option>
-      <option value="ricevuto">Ricevuto</option>
-      <option value="preparazione">In preparazione</option>
-      <option value="spedito">Spedito</option>
-      <option value="in_transito">In transito</option>
-      <option value="dogana">In dogana</option>
-      <option value="consegnato">Consegnato</option>
-      <option value="problema">Problema</option>
-      <option value="annullato">Annullato</option>
-    </select>
-    <button class="btn bts" onclick="openAddOrdine()">+ Ordine manuale</button>
-  </div>
-
-  <!-- Lista ordini -->
-  <div class="card" style="padding:0.75rem 1.25rem">
-    <div id="ord-list"><div class="empty">Caricamento…</div></div>
-  </div>
-</div>
 
 </div>
 <div id="modals"></div>
