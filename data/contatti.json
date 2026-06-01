@@ -1,7 +1,7 @@
 {
   "contacts": [
     {
-      "id": "c1780089945042d89jlz",
+      "id": "c1780347089148s3fqdw",
       "compId": "TEST001",
       "company": "Vino & Co. GmbH",
       "brandName": "Vino & Co.",
@@ -38,50 +38,20 @@
       "contactTitle": "Purchasing Manager",
       "contactEmail": "luca@ilciliegio.com",
       "name": "Michael Weber",
-      "status": "sent",
+      "status": "new",
       "products": [],
       "notes": "",
-      "createdAt": 1780089945042,
-      "updatedAt": 1780092933308,
+      "createdAt": 1780347089148,
+      "updatedAt": 1780347089148,
       "log": [
         {
-          "ts": 1780089945042,
+          "ts": 1780347089148,
           "msg": "Importato da XLSX (1 contatti)"
-        },
-        {
-          "ts": 1780092933308,
-          "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202605292215.90093123899@smtp-relay.mailin.fr>)"
-        },
-        {
-          "ts": 1780093013314,
-          "msg": "👁 Aperta: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
-        }
-      ],
-      "lastEmailSent": 1780092933308,
-      "lastEmailSubject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
-      "emailsSent": 1,
-      "brevoEvents": [
-        {
-          "messageId": "<202605292215.90093123899@smtp-relay.mailin.fr>",
-          "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
-          "sentAt": 1780092933308,
-          "toEmail": "luca@ilciliegio.com",
-          "toName": "Michael Weber",
-          "brand": "sienawine",
-          "delivered": true,
-          "opened": true,
-          "clicked": false,
-          "bounced": false,
-          "spam": false,
-          "unsubscribed": false,
-          "blocked": false,
-          "openedAt": "2026-05-30T00:16:53.314+02:00",
-          "deliveredAt": "2026-05-30T00:15:35.000+02:00"
         }
       ]
     },
     {
-      "id": "c17800899450425e8zmf",
+      "id": "c17803470891489xp9ei",
       "compId": "TEST002",
       "company": "Pacific Wine Imports",
       "brandName": "Pacific Wine",
@@ -128,17 +98,17 @@
       "status": "new",
       "products": [],
       "notes": "",
-      "createdAt": 1780089945042,
-      "updatedAt": 1780089945042,
+      "createdAt": 1780347089148,
+      "updatedAt": 1780347089148,
       "log": [
         {
-          "ts": 1780089945042,
+          "ts": 1780347089148,
           "msg": "Importato da XLSX (2 contatti)"
         }
       ]
     },
     {
-      "id": "c1780089945042cd8jq8",
+      "id": "c17803470891481abgvz",
       "compId": "TEST003",
       "company": "Grands Vins Selection",
       "brandName": "GVS",
@@ -182,50 +152,20 @@
       "contactTitle": "Commercial Director",
       "contactEmail": "luca@ilciliegio.com",
       "name": "Elena Dubois",
-      "status": "sent",
+      "status": "new",
       "products": [],
       "notes": "",
-      "createdAt": 1780089945042,
-      "updatedAt": 1780090007043,
+      "createdAt": 1780347089148,
+      "updatedAt": 1780347089148,
       "log": [
         {
-          "ts": 1780089945042,
+          "ts": 1780347089148,
           "msg": "Importato da XLSX (2 contatti)"
-        },
-        {
-          "ts": 1780090007043,
-          "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202605292126.11642740864@smtp-relay.mailin.fr>)"
-        },
-        {
-          "ts": 1780090274393,
-          "msg": "👁 Aperta: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
-        }
-      ],
-      "lastEmailSent": 1780090007043,
-      "lastEmailSubject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
-      "emailsSent": 1,
-      "brevoEvents": [
-        {
-          "messageId": "<202605292126.11642740864@smtp-relay.mailin.fr>",
-          "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
-          "sentAt": 1780090007043,
-          "toEmail": "luca@ilciliegio.com",
-          "toName": "Elena Dubois",
-          "brand": "sienawine",
-          "delivered": true,
-          "opened": true,
-          "clicked": false,
-          "bounced": false,
-          "spam": false,
-          "unsubscribed": false,
-          "blocked": false,
-          "deliveredAt": "2026-05-29T23:26:50.000+02:00",
-          "openedAt": "2026-05-29T23:31:14.393+02:00"
         }
       ]
     },
     {
-      "id": "c17800899450425fj006",
+      "id": "c17803470891483kaya2",
       "compId": "TEST004",
       "company": "Vinos del Mundo SA",
       "brandName": "Vinos del Mundo",
@@ -269,45 +209,20 @@
       "contactTitle": "General Manager",
       "contactEmail": "luca@ilciliegio.com",
       "name": "Carlos Mendes",
-      "status": "sent",
+      "status": "new",
       "products": [],
       "notes": "",
-      "createdAt": 1780089945042,
-      "updatedAt": 1780092935289,
+      "createdAt": 1780347089148,
+      "updatedAt": 1780347089148,
       "log": [
         {
-          "ts": 1780089945042,
+          "ts": 1780347089148,
           "msg": "Importato da XLSX (2 contatti)"
-        },
-        {
-          "ts": 1780092935289,
-          "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202605292215.65286629357@smtp-relay.mailin.fr>)"
-        }
-      ],
-      "lastEmailSent": 1780092935289,
-      "lastEmailSubject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
-      "emailsSent": 1,
-      "brevoEvents": [
-        {
-          "messageId": "<202605292215.65286629357@smtp-relay.mailin.fr>",
-          "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
-          "sentAt": 1780092935289,
-          "toEmail": "luca@ilciliegio.com",
-          "toName": "Carlos Mendes",
-          "brand": "sienawine",
-          "delivered": true,
-          "opened": false,
-          "clicked": false,
-          "bounced": false,
-          "spam": false,
-          "unsubscribed": false,
-          "blocked": false,
-          "deliveredAt": "2026-05-30T00:15:38.000+02:00"
         }
       ]
     },
     {
-      "id": "c1780089945042m83gl2",
+      "id": "c1780347089148d1wo4p",
       "compId": "TEST005",
       "company": "Nippon Fine Wines",
       "brandName": "NFW",
@@ -347,17 +262,17 @@
       "status": "new",
       "products": [],
       "notes": "",
-      "createdAt": 1780089945042,
-      "updatedAt": 1780089945042,
+      "createdAt": 1780347089148,
+      "updatedAt": 1780347089148,
       "log": [
         {
-          "ts": 1780089945042,
+          "ts": 1780347089148,
           "msg": "Importato da XLSX (1 contatti)"
         }
       ]
     },
     {
-      "id": "c1780089945042bhswr0",
+      "id": "c1780347089148mntrzn",
       "compId": "TEST006",
       "company": "Nordic Wine Group",
       "brandName": "NWG",
@@ -408,50 +323,20 @@
       "contactTitle": "Buyer",
       "contactEmail": "luca@ilciliegio.com",
       "name": "Anna Lindqvist",
-      "status": "sent",
+      "status": "new",
       "products": [],
       "notes": "",
-      "createdAt": 1780089945042,
-      "updatedAt": 1780090008950,
+      "createdAt": 1780347089148,
+      "updatedAt": 1780347089148,
       "log": [
         {
-          "ts": 1780089945042,
+          "ts": 1780347089148,
           "msg": "Importato da XLSX (3 contatti)"
-        },
-        {
-          "ts": 1780090008950,
-          "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202605292126.16555919951@smtp-relay.mailin.fr>)"
-        },
-        {
-          "ts": 1780090202932,
-          "msg": "👁 Aperta: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
-        }
-      ],
-      "lastEmailSent": 1780090008950,
-      "lastEmailSubject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
-      "emailsSent": 1,
-      "brevoEvents": [
-        {
-          "messageId": "<202605292126.16555919951@smtp-relay.mailin.fr>",
-          "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
-          "sentAt": 1780090008950,
-          "toEmail": "luca@ilciliegio.com",
-          "toName": "Anna Lindqvist",
-          "brand": "sienawine",
-          "delivered": true,
-          "opened": true,
-          "clicked": false,
-          "bounced": false,
-          "spam": false,
-          "unsubscribed": false,
-          "blocked": false,
-          "deliveredAt": "2026-05-29T23:26:53.000+02:00",
-          "openedAt": "2026-05-29T23:30:02.932+02:00"
         }
       ]
     },
     {
-      "id": "c1780089945042jcdhhv",
+      "id": "c1780347089148m9nd9t",
       "compId": "TEST007",
       "company": "Singapore Wines & Spirits Pte Ltd",
       "brandName": "SWS",
@@ -480,45 +365,20 @@
       "contactTitle": "",
       "contactEmail": "",
       "name": "",
-      "status": "sent",
+      "status": "new",
       "products": [],
       "notes": "",
-      "createdAt": 1780089945042,
-      "updatedAt": 1780090010538,
+      "createdAt": 1780347089148,
+      "updatedAt": 1780347089148,
       "log": [
         {
-          "ts": 1780089945042,
+          "ts": 1780347089148,
           "msg": "Importato da XLSX (0 contatti)"
-        },
-        {
-          "ts": 1780090010538,
-          "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202605292126.70780064377@smtp-relay.mailin.fr>)"
-        }
-      ],
-      "lastEmailSent": 1780090010538,
-      "lastEmailSubject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
-      "emailsSent": 1,
-      "brevoEvents": [
-        {
-          "messageId": "<202605292126.70780064377@smtp-relay.mailin.fr>",
-          "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
-          "sentAt": 1780090010538,
-          "toEmail": "luca@ilciliegio.com",
-          "toName": "",
-          "brand": "sienawine",
-          "delivered": true,
-          "opened": false,
-          "clicked": false,
-          "bounced": false,
-          "spam": false,
-          "unsubscribed": false,
-          "blocked": false,
-          "deliveredAt": "2026-05-29T23:26:52.000+02:00"
         }
       ]
     },
     {
-      "id": "c17800899450427lhx6m",
+      "id": "c17803470891481kmw0s",
       "compId": "TEST008",
       "company": "Cantina Imports USA LLC",
       "brandName": "Cantina USA",
@@ -562,45 +422,15 @@
       "contactTitle": "Import Manager",
       "contactEmail": "luca@ilciliegio.com",
       "name": "David Rosenberg",
-      "status": "cold",
+      "status": "new",
       "products": [],
       "notes": "",
-      "createdAt": 1780089945042,
-      "updatedAt": 1780092936789,
+      "createdAt": 1780347089148,
+      "updatedAt": 1780347089148,
       "log": [
         {
-          "ts": 1780089945042,
+          "ts": 1780347089148,
           "msg": "Importato da XLSX (2 contatti)"
-        },
-        {
-          "ts": 1780092936789,
-          "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202605292215.68896726900@smtp-relay.mailin.fr>)"
-        },
-        {
-          "ts": 1780096701595,
-          "msg": "❌ Non interessato: aggiornato manualmente"
-        }
-      ],
-      "lastEmailSent": 1780092936789,
-      "lastEmailSubject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
-      "emailsSent": 1,
-      "brevoEvents": [
-        {
-          "messageId": "<202605292215.68896726900@smtp-relay.mailin.fr>",
-          "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
-          "sentAt": 1780092936789,
-          "toEmail": "luca@ilciliegio.com",
-          "toName": "David Rosenberg",
-          "brand": "sienawine",
-          "delivered": true,
-          "opened": false,
-          "clicked": false,
-          "bounced": false,
-          "spam": false,
-          "unsubscribed": false,
-          "blocked": false,
-          "deliveredAt": "2026-05-30T00:15:38.000+02:00",
-          "manualStatus": "cold"
         }
       ]
     }
