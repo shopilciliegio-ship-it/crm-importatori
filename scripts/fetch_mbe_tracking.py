@@ -37,6 +37,26 @@ TERMINAL_STATUSES = {'consegnato', 'annullato'}
 
 # ── Auth via Playwright (browser headless) ───────────────────────────────────
 
+_SCREENSHOT_DIR = '/tmp'
+
+
+def _find_token_in_storage(page) -> dict | None:
+    """Cerca access_token in localStorage e sessionStorage su qualsiasi chiave."""
+    for store in ('localStorage', 'sessionStorage'):
+        entries = page.evaluate(f"Object.entries({store})")
+        keys = [k for k, _ in entries]
+        print(f'  {store} keys: {keys}')
+        for key, raw in entries:
+            try:
+                parsed = json.loads(raw)
+                if isinstance(parsed, dict) and parsed.get('access_token'):
+                    print(f'  Token trovato in {store}["{key}"]')
+                    return parsed
+            except Exception:
+                pass
+    return None
+
+
 def get_token() -> str:
     from playwright.sync_api import sync_playwright
 
@@ -46,28 +66,39 @@ def get_token() -> str:
 
         print('  Apertura MBEonline...')
         page.goto('https://www.mbeonline.it', timeout=30_000)
+        page.screenshot(path=f'{_SCREENSHOT_DIR}/mbe_01_homepage.png')
 
-        # Attende il form login Keycloak
         page.wait_for_selector('#username', timeout=15_000)
+        page.screenshot(path=f'{_SCREENSHOT_DIR}/mbe_02_login_form.png')
+
         page.fill('#username', MBE_EMAIL)
         page.fill('#password', MBE_PASSWORD)
         page.click('[type=submit]')
 
-        # Attende che il token sia disponibile in localStorage
-        page.wait_for_function(
-            "!!localStorage.getItem('mol-token')",
-            timeout=30_000
-        )
+        # Attende navigazione post-login (Keycloak redirect)
+        try:
+            page.wait_for_load_state('networkidle', timeout=30_000)
+        except Exception:
+            pass
 
-        token_data = page.evaluate(
-            "JSON.parse(localStorage.getItem('mol-token'))"
-        )
+        page.screenshot(path=f'{_SCREENSHOT_DIR}/mbe_03_after_login.png')
+        print(f'  URL dopo login: {page.url}')
+
+        token_data = _find_token_in_storage(page)
+
+        # Se non trovato subito, attende 5 s e riprova (JS async post-redirect)
+        if not token_data:
+            page.wait_for_timeout(5_000)
+            page.screenshot(path=f'{_SCREENSHOT_DIR}/mbe_04_after_wait.png')
+            token_data = _find_token_in_storage(page)
+
         browser.close()
 
     access_token = (token_data or {}).get('access_token', '')
     if not access_token:
         raise RuntimeError(
-            'Login MBE fallito — nessun access_token in localStorage.\n'
+            'Login MBE fallito — nessun access_token in localStorage/sessionStorage.\n'
+            'Controlla gli screenshot negli Artifacts del workflow per diagnosticare.\n'
             'Verifica che MBE_EMAIL e MBE_PASSWORD siano corretti nei GitHub Secrets.'
         )
     print('  Login MBE via browser: OK')
