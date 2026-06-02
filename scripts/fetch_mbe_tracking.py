@@ -247,6 +247,42 @@ def crm_status_from_mbe(mbe_shipment: dict) -> str:
     return STATUS_MAP.get(status_id, 'spedito')
 
 
+def fmt_address(addr: dict) -> str:
+    parts = [
+        addr.get('address') or addr.get('street') or addr.get('streetAddress', ''),
+        addr.get('city', ''),
+        addr.get('zip') or addr.get('postalCode', ''),
+        addr.get('stateOrProvince') or addr.get('state', ''),
+        addr.get('country', ''),
+    ]
+    return ', '.join(p for p in parts if p)
+
+
+def enrich_from_mbe(order: dict, mbe: dict) -> bool:
+    """Arricchisce campi vuoti dell'ordine con dati da addressTo MBE. Ritorna True se cambiato."""
+    addr    = mbe.get('addressTo', {})
+    changed = False
+
+    if not order.get('customerEmail') and addr.get('email'):
+        order['customerEmail'] = addr['email']
+        print(f'    + email: {addr["email"]}')
+        changed = True
+
+    if not order.get('customerPhone') and addr.get('phone'):
+        order['customerPhone'] = addr['phone']
+        print(f'    + telefono: {addr["phone"]}')
+        changed = True
+
+    if not order.get('shippingAddress'):
+        addr_str = fmt_address(addr)
+        if addr_str:
+            order['shippingAddress'] = addr_str
+            print(f'    + indirizzo: {addr_str}')
+            changed = True
+
+    return changed
+
+
 # ── Main ─────────────────────────────────────────────────────────────────────
 
 def main():
@@ -271,54 +307,112 @@ def main():
     now_ms  = int(datetime.now(timezone.utc).timestamp() * 1000)
     updated = 0
 
-    for order in orders:
-        if order.get('status') in TERMINAL_STATUSES:
-            continue
+    # Debug: mostra campi addressTo del primo risultato (utile per verificare email/telefono)
+    if shipments:
+        print(f'  [debug] addressTo keys: {list(shipments[0].get("addressTo", {}).keys())}')
 
+    for order in orders:
         mbe = lookup.get(norm(order.get('customerName', '')))
         if not mbe:
             continue
 
-        packages       = mbe.get('shipmentPackages', [])
-        tracking_num   = mbe.get('shipmentTrackingNumber', '')
-        mbe_tracking   = mbe.get('mbeTracking', '')
-        courier        = mbe.get('courierName', 'UPS')
-        ship_date      = mbe.get('shipmentDate')          # "YYYY-MM-DD"
-        new_status     = crm_status_from_mbe(mbe)
-        status_label   = (packages[0].get('trackingLastStatusMbeName', '') if packages else '')
-
         changed = False
 
-        if tracking_num and order.get('trackingNumber') != tracking_num:
-            order['trackingNumber']    = tracking_num
-            order['mbeTrackingNumber'] = mbe_tracking
-            order['carrier']           = courier
+        # Arricchimento dati anagrafici (email, telefono, indirizzo) — sempre, anche per terminal
+        if enrich_from_mbe(order, mbe):
             changed = True
 
-        if ship_date and not order.get('shippingDate'):
-            order['shippingDate'] = ship_date
-            changed = True
+        # Aggiornamento tracking e status (solo ordini non terminal)
+        if order.get('status') not in TERMINAL_STATUSES:
+            packages     = mbe.get('shipmentPackages', [])
+            tracking_num = mbe.get('shipmentTrackingNumber', '')
+            mbe_tracking = mbe.get('mbeTracking', '')
+            courier      = mbe.get('courierName', 'UPS')
+            ship_date    = mbe.get('shipmentDate')
+            new_status   = crm_status_from_mbe(mbe)
+            status_label = (packages[0].get('trackingLastStatusMbeName', '') if packages else '')
 
-        if new_status != order.get('status'):
-            order['status'] = new_status
-            order.setdefault('statusHistory', []).append({
-                'status': new_status,
-                'date':   now_ms,
-                'note':   f'MBE: {status_label}' if status_label else 'Aggiornato da MBE',
-            })
-            changed = True
+            if tracking_num and order.get('trackingNumber') != tracking_num:
+                order['trackingNumber']    = tracking_num
+                order['mbeTrackingNumber'] = mbe_tracking
+                order['carrier']           = courier
+                changed = True
+
+            if ship_date and not order.get('shippingDate'):
+                order['shippingDate'] = ship_date
+                changed = True
+
+            if new_status != order.get('status'):
+                order['status'] = new_status
+                order.setdefault('statusHistory', []).append({
+                    'status': new_status,
+                    'date':   now_ms,
+                    'note':   f'MBE: {status_label}' if status_label else 'Aggiornato da MBE',
+                })
+                changed = True
+
+            if changed:
+                print(f'  ✓ {order["customerName"]} → {tracking_num} [{new_status}]')
+            else:
+                print(f'  = {order["customerName"]} (nessuna variazione)')
 
         if changed:
             order['updatedAt'] = now_ms
             updated += 1
-            print(f'  ✓ {order["customerName"]} → {tracking_num} [{new_status}]')
-        else:
-            print(f'  = {order["customerName"]} (nessuna variazione)')
 
-    if updated > 0:
+    # ── Import inverso: spedizioni MBE senza ordine corrispondente ────────────
+    matched_names = {norm(o.get('customerName', '')) for o in orders}
+    created = 0
+
+    for s in shipments:
+        name = norm(s.get('addressTo', {}).get('companyName', ''))
+        if not name or name in matched_names:
+            continue
+
+        addr         = s.get('addressTo', {})
+        new_status   = crm_status_from_mbe(s)
+        packages     = s.get('shipmentPackages', [])
+        status_label = (packages[0].get('trackingLastStatusMbeName', '') if packages else '')
+        mbe_id       = (s.get('mbeTracking') or '').replace('/', '-').replace(' ', '_')
+        order_id     = f'ord_mbe_{mbe_id}' if mbe_id else f'ord_mbe_{now_ms}_{created}'
+
+        stub = {
+            'id':                order_id,
+            'customerName':      addr.get('companyName', ''),
+            'customerEmail':     addr.get('email', ''),
+            'customerPhone':     addr.get('phone', ''),
+            'shippingAddress':   fmt_address(addr),
+            'amount':            0.0,
+            'currency':          'EUR',
+            'orderDate':         now_ms,
+            'emailSubject':      '',
+            'shopifyOrderId':    '',
+            'gmailMessageId':    '',
+            'trackingNumber':    s.get('shipmentTrackingNumber', ''),
+            'mbeTrackingNumber': s.get('mbeTracking', ''),
+            'carrier':           s.get('courierName', 'MBE'),
+            'shippingDate':      s.get('shipmentDate'),
+            'status':            new_status,
+            'statusHistory': [{
+                'status': new_status,
+                'date':   now_ms,
+                'note':   f'Importato da MBE — {status_label}' if status_label else 'Importato da MBE',
+            }],
+            'emailsSent': [],
+            'notes':      '',
+            'source':     'mbe',
+            'createdAt':  now_ms,
+            'updatedAt':  now_ms,
+        }
+        orders.append(stub)
+        matched_names.add(name)   # evita duplicati se companyName appare due volte
+        created += 1
+        print(f'  + Nuovo da MBE: {addr.get("companyName")} [{new_status}] {s.get("shipmentTrackingNumber","")}')
+
+    if updated > 0 or created > 0:
         db['orders'] = orders
         save_ordini(db, sha)
-        print(f'\n✓ {updated} ordini aggiornati e salvati.')
+        print(f'\n✓ {updated} aggiornati, {created} nuovi ordini da MBE.')
     else:
         print('\nNessuna variazione da salvare.')
 
