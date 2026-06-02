@@ -86,7 +86,6 @@ def get_token() -> str:
         page.fill('#password', MBE_PASSWORD)
         page.click('[type=submit]')
 
-        # Attende navigazione dopo credenziali
         try:
             page.wait_for_load_state('networkidle', timeout=15_000)
         except Exception:
@@ -94,39 +93,42 @@ def get_token() -> str:
 
         _debug_page(page, '01_after_credentials')
 
-        # Rileva schermata 2FA: qualsiasi input di testo non username/password
+        # Schermata scelta metodo 2FA (Google TOTP vs Email)
         try:
-            page.wait_for_selector(
-                'input:not([type=password]):not([id=username]):not([id=password])',
-                timeout=5_000,
-            )
-            _debug_page(page, '02_2fa_screen')
-            print('  Schermata 2FA rilevata.')
+            page.wait_for_selector('[name="secondFactorChoiceGoogle"]', timeout=5_000)
+            print('  Schermata scelta 2FA — scelgo Google Authenticator...')
+            # CSS attribute selector funziona su <input> e <button>
+            page.click('[name="secondFactorChoiceGoogle"]')
+            try:
+                page.wait_for_load_state('networkidle', timeout=10_000)
+            except Exception:
+                pass
+            _debug_page(page, '02_after_google_choice')
+        except PWTimeout:
+            print('  Nessuna schermata di scelta 2FA.')
 
+        # Schermata inserimento codice TOTP
+        try:
+            page.wait_for_selector(_OTP_SELECTOR, timeout=10_000)
+            _debug_page(page, '03_otp_input')
+            print('  Schermata OTP — inserimento codice TOTP...')
             if not MBE_TOTP_SECRET:
                 raise RuntimeError(
-                    'MBE richiede 2FA ma MBE_TOTP_SECRET non è impostato nei GitHub Secrets.'
+                    'MBE richiede 2FA TOTP ma MBE_TOTP_SECRET non è impostato nei GitHub Secrets.'
                 )
             code = pyotp.TOTP(MBE_TOTP_SECRET).now()
-            # Riempi il primo input visibile (quello del codice 2FA)
-            otp_input = page.locator(
-                'input:not([type=password]):not([id=username]):not([id=password])'
-            ).first
-            otp_input.fill(code)
+            page.locator(_OTP_SELECTOR).first.fill(code)
             page.click('[type=submit]')
             print('  OTP inserito, attendo login...')
-
             try:
                 page.wait_for_load_state('networkidle', timeout=30_000)
             except Exception:
                 pass
-            _debug_page(page, '03_after_otp')
-
+            _debug_page(page, '04_after_otp')
         except PWTimeout:
-            print('  Nessuna schermata 2FA rilevata.')
+            print('  Nessuna schermata OTP.')
 
         token_data = _find_token_in_storage(page)
-
         if not token_data:
             page.wait_for_timeout(5_000)
             token_data = _find_token_in_storage(page)
