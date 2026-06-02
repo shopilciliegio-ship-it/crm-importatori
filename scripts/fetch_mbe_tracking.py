@@ -125,25 +125,26 @@ def get_token() -> str:
         else:
             print('  Nessuna schermata di scelta 2FA.')
 
-        # Schermata inserimento codice TOTP
-        try:
-            page.wait_for_selector(_OTP_SELECTOR, timeout=10_000)
-            _debug_page(page, '03_otp_input')
-            print('  Schermata OTP — inserimento codice TOTP...')
+        # Schermata OTP: 6 input[type=text] separati (una cifra ciascuno) + submit #kc-login
+        # Il campo #otp è hidden (aggregatore JS) — non usarlo direttamente
+        digit_inputs = page.locator('input[type="text"]').all()
+        if digit_inputs:
+            print(f'  Schermata OTP — {len(digit_inputs)} digit fields, inserimento TOTP...')
             if not MBE_TOTP_SECRET:
                 raise RuntimeError(
                     'MBE richiede 2FA TOTP ma MBE_TOTP_SECRET non è impostato nei GitHub Secrets.'
                 )
             code = pyotp.TOTP(MBE_TOTP_SECRET).now()
-            page.locator(_OTP_SELECTOR).first.fill(code)
-            page.click('[type=submit]')
-            print('  OTP inserito, attendo login...')
+            for i, inp in enumerate(digit_inputs[:6]):
+                inp.fill(code[i])
+            page.click('#kc-login')
+            print('  OTP inviato, attendo login...')
             try:
                 page.wait_for_load_state('networkidle', timeout=30_000)
             except Exception:
                 pass
-            _debug_page(page, '04_after_otp')
-        except PWTimeout:
+            _debug_page(page, '03_after_otp')
+        else:
             print('  Nessuna schermata OTP.')
 
         token_data = _find_token_in_storage(page)
