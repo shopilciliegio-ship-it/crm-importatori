@@ -100,21 +100,27 @@
       "shippingAddress": "",
       "numberOfCartons": null,
       "gmailMessageId": "",
-      "trackingNumber": "",
-      "carrier": "MBE",
-      "shippingDate": null,
-      "status": "ricevuto",
+      "trackingNumber": "1Z9376E1A803482468",
+      "carrier": "UPS",
+      "shippingDate": "2026-05-27",
+      "status": "spedito",
       "statusHistory": [
         {
           "status": "ricevuto",
           "date": 1780348588797,
           "note": "Importato da email"
+        },
+        {
+          "status": "spedito",
+          "date": 1780411897593,
+          "note": "MBE: Shipment created"
         }
       ],
       "emailsSent": [],
       "notes": "",
       "createdAt": 1780348588797,
-      "updatedAt": 1780351877879
+      "updatedAt": 1780411897593,
+      "mbeTrackingNumber": "IT3299-8V-0000006DG3"
     },
     {
       "id": "ord_mpv5bpn5fjc2",
