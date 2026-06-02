@@ -39,3 +39,11 @@ jobs:
           GH_TOKEN:     ${{ secrets.GITHUB_TOKEN }}
           GH_REPO:      ${{ github.repository }}
         run: python scripts/fetch_mbe_tracking.py
+
+      - name: Salva screenshot debug MBE
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mbe-debug-screenshots
+          path: /tmp/mbe_*.png
+          if-no-files-found: ignore
