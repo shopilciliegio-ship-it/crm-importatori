@@ -38,14 +38,12 @@ TERMINAL_STATUSES = {'consegnato', 'annullato'}
 # ── Auth via Playwright (browser headless) ───────────────────────────────────
 
 _SCREENSHOT_DIR = '/tmp'
+_OTP_SELECTOR   = '#otp, input[name="otp"], input[autocomplete="one-time-code"]'
 
 
 def _find_token_in_storage(page) -> dict | None:
-    """Cerca access_token in localStorage e sessionStorage su qualsiasi chiave."""
     for store in ('localStorage', 'sessionStorage'):
         entries = page.evaluate(f"Object.entries({store})")
-        keys = [k for k, _ in entries]
-        print(f'  {store} keys: {keys}')
         for key, raw in entries:
             try:
                 parsed = json.loads(raw)
@@ -58,7 +56,10 @@ def _find_token_in_storage(page) -> dict | None:
 
 
 def get_token() -> str:
-    from playwright.sync_api import sync_playwright
+    import pyotp
+    from playwright.sync_api import sync_playwright, TimeoutError as PWTimeout
+
+    MBE_TOTP_SECRET = os.environ.get('MBE_TOTP_SECRET', '')
 
     with sync_playwright() as pw:
         browser = pw.chromium.launch(headless=True)
@@ -66,30 +67,38 @@ def get_token() -> str:
 
         print('  Apertura MBEonline...')
         page.goto('https://www.mbeonline.it', timeout=30_000)
-        page.screenshot(path=f'{_SCREENSHOT_DIR}/mbe_01_homepage.png')
 
         page.wait_for_selector('#username', timeout=15_000)
-        page.screenshot(path=f'{_SCREENSHOT_DIR}/mbe_02_login_form.png')
-
         page.fill('#username', MBE_EMAIL)
         page.fill('#password', MBE_PASSWORD)
         page.click('[type=submit]')
 
-        # Attende navigazione post-login (Keycloak redirect)
+        # Rileva schermata 2FA (Keycloak TOTP)
+        try:
+            page.wait_for_selector(_OTP_SELECTOR, timeout=10_000)
+            print('  2FA TOTP richiesta, generazione OTP...')
+            if not MBE_TOTP_SECRET:
+                raise RuntimeError(
+                    'MBE richiede 2FA ma MBE_TOTP_SECRET non è impostato nei GitHub Secrets.'
+                )
+            code = pyotp.TOTP(MBE_TOTP_SECRET).now()
+            page.locator(_OTP_SELECTOR).first.fill(code)
+            page.click('[type=submit]')
+            print('  OTP inserito.')
+        except PWTimeout:
+            print('  Nessuna 2FA rilevata, continuo...')
+
+        # Attende navigazione post-login
         try:
             page.wait_for_load_state('networkidle', timeout=30_000)
         except Exception:
             pass
 
-        page.screenshot(path=f'{_SCREENSHOT_DIR}/mbe_03_after_login.png')
-        print(f'  URL dopo login: {page.url}')
-
         token_data = _find_token_in_storage(page)
 
-        # Se non trovato subito, attende 5 s e riprova (JS async post-redirect)
+        # JS post-redirect asincrono: secondo tentativo dopo 5 s
         if not token_data:
             page.wait_for_timeout(5_000)
-            page.screenshot(path=f'{_SCREENSHOT_DIR}/mbe_04_after_wait.png')
             token_data = _find_token_in_storage(page)
 
         browser.close()
@@ -97,9 +106,8 @@ def get_token() -> str:
     access_token = (token_data or {}).get('access_token', '')
     if not access_token:
         raise RuntimeError(
-            'Login MBE fallito — nessun access_token in localStorage/sessionStorage.\n'
-            'Controlla gli screenshot negli Artifacts del workflow per diagnosticare.\n'
-            'Verifica che MBE_EMAIL e MBE_PASSWORD siano corretti nei GitHub Secrets.'
+            'Login MBE fallito — nessun access_token trovato.\n'
+            'Verifica MBE_EMAIL, MBE_PASSWORD e MBE_TOTP_SECRET nei GitHub Secrets.'
         )
     print('  Login MBE via browser: OK')
     return access_token
