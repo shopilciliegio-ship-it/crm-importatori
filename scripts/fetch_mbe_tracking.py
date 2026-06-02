@@ -55,6 +55,19 @@ def _find_token_in_storage(page) -> dict | None:
     return None
 
 
+def _debug_page(page, label: str) -> None:
+    page.screenshot(path=f'{_SCREENSHOT_DIR}/mbe_{label}.png')
+    print(f'  [{label}] URL: {page.url}')
+    # Stampa tutti gli <input> visibili per identificare i selettori
+    inputs = page.evaluate("""() => {
+        return Array.from(document.querySelectorAll('input')).map(el => ({
+            id: el.id, name: el.name, type: el.type,
+            autocomplete: el.autocomplete, placeholder: el.placeholder
+        }));
+    }""")
+    print(f'  [{label}] inputs: {inputs}')
+
+
 def get_token() -> str:
     import pyotp
     from playwright.sync_api import sync_playwright, TimeoutError as PWTimeout
@@ -73,30 +86,47 @@ def get_token() -> str:
         page.fill('#password', MBE_PASSWORD)
         page.click('[type=submit]')
 
-        # Rileva schermata 2FA (Keycloak TOTP)
+        # Attende navigazione dopo credenziali
         try:
-            page.wait_for_selector(_OTP_SELECTOR, timeout=10_000)
-            print('  2FA TOTP richiesta, generazione OTP...')
+            page.wait_for_load_state('networkidle', timeout=15_000)
+        except Exception:
+            pass
+
+        _debug_page(page, '01_after_credentials')
+
+        # Rileva schermata 2FA: qualsiasi input di testo non username/password
+        try:
+            page.wait_for_selector(
+                'input:not([type=password]):not([id=username]):not([id=password])',
+                timeout=5_000,
+            )
+            _debug_page(page, '02_2fa_screen')
+            print('  Schermata 2FA rilevata.')
+
             if not MBE_TOTP_SECRET:
                 raise RuntimeError(
                     'MBE richiede 2FA ma MBE_TOTP_SECRET non è impostato nei GitHub Secrets.'
                 )
             code = pyotp.TOTP(MBE_TOTP_SECRET).now()
-            page.locator(_OTP_SELECTOR).first.fill(code)
+            # Riempi il primo input visibile (quello del codice 2FA)
+            otp_input = page.locator(
+                'input:not([type=password]):not([id=username]):not([id=password])'
+            ).first
+            otp_input.fill(code)
             page.click('[type=submit]')
-            print('  OTP inserito.')
-        except PWTimeout:
-            print('  Nessuna 2FA rilevata, continuo...')
+            print('  OTP inserito, attendo login...')
 
-        # Attende navigazione post-login
-        try:
-            page.wait_for_load_state('networkidle', timeout=30_000)
-        except Exception:
-            pass
+            try:
+                page.wait_for_load_state('networkidle', timeout=30_000)
+            except Exception:
+                pass
+            _debug_page(page, '03_after_otp')
+
+        except PWTimeout:
+            print('  Nessuna schermata 2FA rilevata.')
 
         token_data = _find_token_in_storage(page)
 
-        # JS post-redirect asincrono: secondo tentativo dopo 5 s
         if not token_data:
             page.wait_for_timeout(5_000)
             token_data = _find_token_in_storage(page)
