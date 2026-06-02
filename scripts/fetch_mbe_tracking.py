@@ -93,18 +93,36 @@ def get_token() -> str:
 
         _debug_page(page, '01_after_credentials')
 
-        # Schermata scelta metodo 2FA (Google TOTP vs Email)
-        try:
-            page.wait_for_selector('[name="secondFactorChoiceGoogle"]', timeout=5_000)
-            print('  Schermata scelta 2FA — scelgo Google Authenticator...')
-            # CSS attribute selector funziona su <input> e <button>
-            page.click('[name="secondFactorChoiceGoogle"]')
+        # Schermata scelta metodo 2FA — rilevata tramite count() (funziona con hidden input)
+        if page.locator('[name="secondFactorChoiceGoogle"]').count() > 0:
+            print('  Schermata scelta 2FA rilevata — scelgo Google Authenticator...')
+
+            # Debug: mostra button e link presenti sulla pagina
+            elements = page.evaluate("""() => Array.from(
+                document.querySelectorAll('button, input[type=submit], a')
+            ).map(el => ({
+                tag: el.tagName, name: el.getAttribute('name') || '',
+                type: el.getAttribute('type') || '',
+                text: el.textContent.trim().substring(0, 50)
+            }))""")
+            print(f'  clickable elements: {elements}')
+
+            # Clicca via JS — gestisce sia <button name=...> che <input type=hidden name=...>
+            clicked = page.evaluate("""() => {
+                const sel = '[name="secondFactorChoiceGoogle"]';
+                const el = document.querySelector('button' + sel)
+                        || document.querySelector(sel);
+                if (el) { el.click(); return el.tagName + '[' + el.type + ']'; }
+                return null;
+            }""")
+            print(f'  Elemento cliccato: {clicked}')
+
             try:
                 page.wait_for_load_state('networkidle', timeout=10_000)
             except Exception:
                 pass
             _debug_page(page, '02_after_google_choice')
-        except PWTimeout:
+        else:
             print('  Nessuna schermata di scelta 2FA.')
 
         # Schermata inserimento codice TOTP
