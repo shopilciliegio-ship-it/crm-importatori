@@ -135,12 +135,13 @@ def build_email_content(order: dict) -> tuple[str, str] | None:
         )
 
     elif status == 'dogana':
+        track_follow = f"Puoi seguire l'avanzamento su: {track_url}\n" if track_url else ''
         subject = 'Il tuo ordine è in fase di sdoganamento'
         body = (
             f"Caro {nome},\n\n"
             f"il tuo ordine è attualmente in fase di sdoganamento. "
             f"Questo processo richiede normalmente 2-5 giorni lavorativi.\n\n"
-            f"{'Puoi seguire l\\'avanzamento su: ' + track_url + chr(10) if track_url else ''}"
+            f"{track_follow}"
             f"Non è richiesto alcun intervento da parte tua — "
             f"ti aggiorneremo appena l'ordine riparte.\n\n"
             f"Grazie per la pazienza!\n\n"
