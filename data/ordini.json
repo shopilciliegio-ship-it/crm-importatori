@@ -97,7 +97,7 @@
       "orderDate": 1780348588797,
       "emailSubject": "🍷 New Order — JILL BANKS — 233.80 EUR",
       "shipmentCode": "",
-      "shippingAddress": "",
+      "shippingAddress": "29744 AWBREY LN STE A, EUGENE",
       "numberOfCartons": null,
       "gmailMessageId": "",
       "trackingNumber": "1Z9376E1A803482468",
@@ -119,7 +119,7 @@
       "emailsSent": [],
       "notes": "",
       "createdAt": 1780348588797,
-      "updatedAt": 1780411897593,
+      "updatedAt": 1780415614441,
       "mbeTrackingNumber": "IT3299-8V-0000006DG3"
     },
     {
@@ -179,6 +179,1356 @@
       "notes": "",
       "createdAt": 1780314564497,
       "updatedAt": 1780314564497
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-0000006F09",
+      "customerName": "PAMELLA ESTES",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "7615 E HODIN DR, SPOKANE VALLEY",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1Z9376E1A817300557",
+      "mbeTrackingNumber": "IT3299-8V-0000006F09",
+      "carrier": "UPS",
+      "shippingDate": "2026-06-01",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-0000006F07",
+      "customerName": "KAVIN HARIHARAN",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "700 PRESIDIO AVE APT 304, SAN FRANCISCO",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1Z9376E1A817212545",
+      "mbeTrackingNumber": "IT3299-8V-0000006F07",
+      "carrier": "UPS",
+      "shippingDate": "2026-06-01",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-0V-0000006EPQ",
+      "customerName": "CHRIS CONNOR",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "30 SUNNYSIDE ROAD, LIVERPOOL",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1Z50X8766834688422",
+      "mbeTrackingNumber": "IT3299-0V-0000006EPQ",
+      "carrier": "UPS",
+      "shippingDate": "2026-05-29",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — In Transit"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-0000006E3J",
+      "customerName": "MICHELLE GOODLETT",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "917SW SEA GREEN STREET, PALM CITY",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1ZRY6787A819578352",
+      "mbeTrackingNumber": "IT3299-8V-0000006E3J",
+      "carrier": "UPS",
+      "shippingDate": "2026-05-28",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Shipment created"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-0000006E3G",
+      "customerName": "MICHAEL FORBES",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "276 WHITTINGTON ST, MANCHESTER",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1ZRY6787A899690302",
+      "mbeTrackingNumber": "IT3299-8V-0000006E3G",
+      "carrier": "UPS",
+      "shippingDate": "2026-05-28",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Shipment created"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-0000006DP8",
+      "customerName": "MARIA LEGARRETA AND ERIC LEGARRETA",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "6092 RIVER PARK PLACE, EL PASO",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1ZRY6787A816147519",
+      "mbeTrackingNumber": "IT3299-8V-0000006DP8",
+      "carrier": "UPS",
+      "shippingDate": "2026-05-27",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Shipment created"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-0000006C0T",
+      "customerName": "PEONY MINASSIAN",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "1461 SUNSHINE DR, GLENDALE",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1Z9376E1A828281656",
+      "mbeTrackingNumber": "IT3299-8V-0000006C0T",
+      "carrier": "UPS",
+      "shippingDate": "2026-05-21",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Shipment created"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-0000006C0P",
+      "customerName": "JASON HEALEY",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "25703 HAWTHORNE PL, STEVENSON RANCH",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1Z9376E1A803536034",
+      "mbeTrackingNumber": "IT3299-8V-0000006C0P",
+      "carrier": "UPS",
+      "shippingDate": "2026-05-21",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Shipment created"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-0000006BU3",
+      "customerName": "GARY KERN",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "10765 PINEWALK FOREST CIRCLE, ALPHARETTA",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1ZRY6787A898041792",
+      "mbeTrackingNumber": "IT3299-8V-0000006BU3",
+      "carrier": "UPS",
+      "shippingDate": "2026-05-21",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Shipment created"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-0000006B54",
+      "customerName": "LUISA DOWD",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "5210 AVEMORE PONE RD, CHARLOTTESVILLE",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1ZRY6787A897079736",
+      "mbeTrackingNumber": "IT3299-8V-0000006B54",
+      "carrier": "UPS",
+      "shippingDate": "2026-05-20",
+      "status": "in_transito",
+      "statusHistory": [
+        {
+          "status": "in_transito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Shipment in transit to reach its final destination"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-0000006AKO",
+      "customerName": "FAITH JENKINS",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "2121 VINTAGE TOLLGATE DR, THOMPSONS STATION",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1ZRY6787A804366064",
+      "mbeTrackingNumber": "IT3299-8V-0000006AKO",
+      "carrier": "UPS",
+      "shippingDate": "2026-05-18",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Shipment created"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-00000069TF",
+      "customerName": "KATHRYN HARRISON",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "664 BURKSHIRE AVE, CARDIFF BY THE SEA",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1Z9376E1A823660193",
+      "mbeTrackingNumber": "IT3299-8V-00000069TF",
+      "carrier": "UPS",
+      "shippingDate": "2026-05-15",
+      "status": "problema",
+      "statusHistory": [
+        {
+          "status": "problema",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Delivery exception: shipment cannot be delivered - attempt nr. <number>"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-0V-00000069SD",
+      "customerName": "MERCEDES SANTIAGO SOBRINO",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "C. RIO XARES 18, ORENSE",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1Z50X8766890513666",
+      "mbeTrackingNumber": "IT3299-0V-00000069SD",
+      "carrier": "UPS",
+      "shippingDate": "2026-05-15",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Delivered"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-00000069K3",
+      "customerName": "PHAM DUC",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "2 LE BLANC LANE, MERRIMACK",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1ZRY6787A803955572",
+      "mbeTrackingNumber": "IT3299-8V-00000069K3",
+      "carrier": "UPS",
+      "shippingDate": "2026-05-14",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Shipment created"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-00000069IY",
+      "customerName": "TANMY VAASSEN",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "3108 LINE ROAD, CUBA CITY",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1ZRY6787A898672119",
+      "mbeTrackingNumber": "IT3299-8V-00000069IY",
+      "carrier": "UPS",
+      "shippingDate": "2026-05-14",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Shipment created"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-0V-00000068RB",
+      "customerName": "ADAM MILLS",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "4 BROMFIELD GROVE, WREXHAM",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1Z50X8766822405571",
+      "mbeTrackingNumber": "IT3299-0V-00000068RB",
+      "carrier": "UPS",
+      "shippingDate": "2026-05-13",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Delivered"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-0000006871",
+      "customerName": "ROBERT SMITH",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "12 LADYSLIPPER LANE, FORESTDALE",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1ZRY6787A899871901",
+      "mbeTrackingNumber": "IT3299-8V-0000006871",
+      "carrier": "UPS",
+      "shippingDate": "2026-05-11",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Shipment created"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-0V-00000067KZ",
+      "customerName": "GARY GRIFFITHS",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "23 BEAUMONT ROAD, TOTTON",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "381155081082",
+      "mbeTrackingNumber": "IT3299-0V-00000067KZ",
+      "carrier": "FedEx",
+      "shippingDate": "2026-05-08",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Delivered"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-00000062ME",
+      "customerName": "LORI SHANNON",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "1362 NICKLAUS LN, MARION",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1ZRY6787A898602793",
+      "mbeTrackingNumber": "IT3299-8V-00000062ME",
+      "carrier": "UPS",
+      "shippingDate": "2026-04-21",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Shipment created"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-00000062MA",
+      "customerName": "ROSE MARIE CROTTI",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "62 GROVE RD, SCOTT TOWNSHIP",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1ZRY6787A896194185",
+      "mbeTrackingNumber": "IT3299-8V-00000062MA",
+      "carrier": "UPS",
+      "shippingDate": "2026-04-21",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Shipment created"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-00000062M1",
+      "customerName": "AL FINELLA",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "403 AUTUMN DRIVE, MOSCOW",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1ZRY6787A801716422",
+      "mbeTrackingNumber": "IT3299-8V-00000062M1",
+      "carrier": "UPS",
+      "shippingDate": "2026-04-21",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Shipment created"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-00000062LW",
+      "customerName": "SUSAN CARPINET",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "25 WEST FIRST STREET, WYOMING",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1ZRY6787A897707744",
+      "mbeTrackingNumber": "IT3299-8V-00000062LW",
+      "carrier": "UPS",
+      "shippingDate": "2026-04-21",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Shipment created"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-00000062L8",
+      "customerName": "JOE CROTTI",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "1674 KOLLY RD APT 905, CHARLESTON",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1ZRY6787A897882082",
+      "mbeTrackingNumber": "IT3299-8V-00000062L8",
+      "carrier": "UPS",
+      "shippingDate": "2026-04-21",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Shipment created"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-00000061I9",
+      "customerName": "BRETT FLETCHER",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "21786 Q RD, HOLTON",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1Z9376E1A812389310",
+      "mbeTrackingNumber": "IT3299-8V-00000061I9",
+      "carrier": "UPS",
+      "shippingDate": "2026-04-20",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Shipment created"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-00000061I7",
+      "customerName": "MATTHEW OCHS",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "35207 GROESBECK HWY, CLINTON TOWNSHIP",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1ZRY6787A814058842",
+      "mbeTrackingNumber": "IT3299-8V-00000061I7",
+      "carrier": "UPS",
+      "shippingDate": "2026-04-20",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Shipment created"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-0000005ZFY",
+      "customerName": "ASHLEIGH COLE",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "106 STEEPLECHASE, BELTON",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1ZRY6787A810502789",
+      "mbeTrackingNumber": "IT3299-8V-0000005ZFY",
+      "carrier": "UPS",
+      "shippingDate": "2026-04-09",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Shipment created"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-0000005Z74",
+      "customerName": "JENNIFER PATINO",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "10033 NE 125TH CT APT/UNIT 15-3, KIRKLAND",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1Z9376E1A809827012",
+      "mbeTrackingNumber": "IT3299-8V-0000005Z74",
+      "carrier": "UPS",
+      "shippingDate": "2026-04-08",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Shipment created"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-0000005YGA",
+      "customerName": "LUISE REYES",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "120 GREENHURST CIR, HOLLY SPRINGS",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1ZRY6787A819553422",
+      "mbeTrackingNumber": "IT3299-8V-0000005YGA",
+      "carrier": "UPS",
+      "shippingDate": "2026-04-02",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Shipment created"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-0000005XNX",
+      "customerName": "BRITT BROADHURST",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "14080 TORREY PINES DRIVE, AUBURN",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1Z9376E1A835513132",
+      "mbeTrackingNumber": "IT3299-8V-0000005XNX",
+      "carrier": "UPS",
+      "shippingDate": "2026-03-30",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Shipment created"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-0000005XA9",
+      "customerName": "JAMES POTTER",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "4727 COLLEGE ST, JACKSONVILLE",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1ZRY6787A818133431",
+      "mbeTrackingNumber": "IT3299-8V-0000005XA9",
+      "carrier": "UPS",
+      "shippingDate": "2026-03-27",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Shipment created"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-0000005XA6",
+      "customerName": "MARIA LEGARRETA",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "6097 RIVER PARK EL PASO, EL PASO",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1ZRY6787A816964609",
+      "mbeTrackingNumber": "IT3299-8V-0000005XA6",
+      "carrier": "UPS",
+      "shippingDate": "2026-03-27",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Shipment created"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-0000005XA1",
+      "customerName": "TERESITA M NAVARRO",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "6830 GATO RD, EL PASO",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1ZRY6787A819414591",
+      "mbeTrackingNumber": "IT3299-8V-0000005XA1",
+      "carrier": "UPS",
+      "shippingDate": "2026-03-27",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Shipment created"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-0V-0000005X66",
+      "customerName": "ZEKE PONTO C/O AUGUST IMPORTS",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "2742 ALKI AVE S.W., SEATTLE",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "399999124909",
+      "mbeTrackingNumber": "IT3299-0V-0000005X66",
+      "carrier": "FedEx",
+      "shippingDate": "2026-03-27",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Not delivered"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-0000005VVZ",
+      "customerName": "JEANNE MARIE WENGAL",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "3 BROOK HOLLOW RD, MILFORD",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1ZRY6787A897306481",
+      "mbeTrackingNumber": "IT3299-8V-0000005VVZ",
+      "carrier": "UPS",
+      "shippingDate": "2026-03-20",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Shipment created"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-0000005SIN",
+      "customerName": "ANATALIA KLEIN",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "1 HARTSHORN AVE, TROY",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1ZRY6787A806678330",
+      "mbeTrackingNumber": "IT3299-8V-0000005SIN",
+      "carrier": "UPS",
+      "shippingDate": "2026-03-06",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Shipment created"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-0000005Q4E",
+      "customerName": "DOUGLAS SMITH",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "6082 ROCK RD, VERONA",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1ZRY6787A803514833",
+      "mbeTrackingNumber": "IT3299-8V-0000005Q4E",
+      "carrier": "UPS",
+      "shippingDate": "2026-02-20",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Shipment created"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-0000005PXO",
+      "customerName": "LISA BURTCH",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "3120 COLORADO AVE S, MINNEAPOLIS",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1ZRY6787A895070122",
+      "mbeTrackingNumber": "IT3299-8V-0000005PXO",
+      "carrier": "UPS",
+      "shippingDate": "2026-02-20",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Shipment created"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-0000005P86",
+      "customerName": "AMY ROBERTS",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "7590 NEW PARIS GETTYSBURG RD, NEW PARIS",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1ZRY6787A898938270",
+      "mbeTrackingNumber": "IT3299-8V-0000005P86",
+      "carrier": "UPS",
+      "shippingDate": "2026-02-13",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Shipment created"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-0000005NYH",
+      "customerName": "TONY CASAGRANDE",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "7214 GRACEFIELD LANE, DALLAS",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1ZRY6787A895954212",
+      "mbeTrackingNumber": "IT3299-8V-0000005NYH",
+      "carrier": "UPS",
+      "shippingDate": "2026-02-04",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Shipment created"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-0000005HIE",
+      "customerName": "DANIEL KORALEWSKI",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "8528 W. ECKEL LANE, WEST ALLIS",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1ZRY6787A896081369",
+      "mbeTrackingNumber": "IT3299-8V-0000005HIE",
+      "carrier": "UPS",
+      "shippingDate": "2025-12-19",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Shipment created"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-0V-0000005FWF",
+      "customerName": "PAMELA CRUZETA",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "NIEUWSTRAAT 11R, BEVERWIJK",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1Z50X8766892221450",
+      "mbeTrackingNumber": "IT3299-0V-0000005FWF",
+      "carrier": "UPS",
+      "shippingDate": "2025-12-17",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Delivered"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-0000005FB9",
+      "customerName": "GINO MALLAMACI",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "50 ROUTE 9 NORTH, MORGANVILLE",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1ZRY6787A802063162",
+      "mbeTrackingNumber": "IT3299-8V-0000005FB9",
+      "carrier": "UPS",
+      "shippingDate": "2025-12-16",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Shipment created"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-0000005FB2",
+      "customerName": "YILIAM SILBIGER",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "4933 BOY SCOUT RANCH ROAD, BARTOW",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1ZRY6787A896058984",
+      "mbeTrackingNumber": "IT3299-8V-0000005FB2",
+      "carrier": "UPS",
+      "shippingDate": "2025-12-16",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Shipment created"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-0V-0000005EEN",
+      "customerName": "CECILIA SATTMANN",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "ANNASTRASSE 16, KASSEL",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1Z50X8766821740399",
+      "mbeTrackingNumber": "IT3299-0V-0000005EEN",
+      "carrier": "UPS",
+      "shippingDate": "2025-12-15",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Delivered"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-0000005D6H",
+      "customerName": "RONALD JAKUBCZYK",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "9 DEVEREAUX DRIVE, ALLEGANY",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780415614441,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1ZRY6787A898828291",
+      "mbeTrackingNumber": "IT3299-8V-0000005D6H",
+      "carrier": "UPS",
+      "shippingDate": "2025-12-12",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780415614441,
+          "note": "Importato da MBE — Shipment created"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780415614441,
+      "updatedAt": 1780415614441
     }
   ],
   "lastImportedAt": 1780397305300
