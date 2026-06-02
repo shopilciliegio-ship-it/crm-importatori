@@ -34,10 +34,11 @@ jobs:
 
       - name: Fetch tracking MBE
         env:
-          MBE_EMAIL:    ${{ secrets.MBE_EMAIL }}
-          MBE_PASSWORD: ${{ secrets.MBE_PASSWORD }}
-          GH_TOKEN:     ${{ secrets.GITHUB_TOKEN }}
-          GH_REPO:      ${{ github.repository }}
+          MBE_EMAIL:       ${{ secrets.MBE_EMAIL }}
+          MBE_PASSWORD:    ${{ secrets.MBE_PASSWORD }}
+          MBE_TOTP_SECRET: ${{ secrets.MBE_TOTP_SECRET }}
+          GH_TOKEN:        ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO:         ${{ github.repository }}
         run: python scripts/fetch_mbe_tracking.py
 
       - name: Salva screenshot debug MBE
