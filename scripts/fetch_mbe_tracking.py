@@ -376,6 +376,17 @@ def main():
         mbe_id       = (s.get('mbeTracking') or '').replace('/', '-').replace(' ', '_')
         order_id     = f'ord_mbe_{mbe_id}' if mbe_id else f'ord_mbe_{now_ms}_{created}'
 
+        # Converti shipmentDate "YYYY-MM-DD" in ms timestamp per orderDate
+        ship_date_str = s.get('shipmentDate')  # es. "2026-05-15"
+        try:
+            order_date_ms = int(
+                datetime.strptime(ship_date_str, '%Y-%m-%d')
+                .replace(tzinfo=timezone.utc)
+                .timestamp() * 1000
+            ) if ship_date_str else now_ms
+        except (ValueError, TypeError):
+            order_date_ms = now_ms
+
         stub = {
             'id':                order_id,
             'customerName':      addr.get('companyName', ''),
@@ -384,18 +395,18 @@ def main():
             'shippingAddress':   fmt_address(addr),
             'amount':            0.0,
             'currency':          'EUR',
-            'orderDate':         now_ms,
+            'orderDate':         order_date_ms,
             'emailSubject':      '',
             'shopifyOrderId':    '',
             'gmailMessageId':    '',
             'trackingNumber':    s.get('shipmentTrackingNumber', ''),
             'mbeTrackingNumber': s.get('mbeTracking', ''),
             'carrier':           s.get('courierName', 'MBE'),
-            'shippingDate':      s.get('shipmentDate'),
+            'shippingDate':      ship_date_str,
             'status':            new_status,
             'statusHistory': [{
                 'status': new_status,
-                'date':   now_ms,
+                'date':   order_date_ms,
                 'note':   f'Importato da MBE — {status_label}' if status_label else 'Importato da MBE',
             }],
             'emailsSent': [],
@@ -405,9 +416,9 @@ def main():
             'updatedAt':  now_ms,
         }
         orders.append(stub)
-        matched_names.add(name)   # evita duplicati se companyName appare due volte
+        matched_names.add(name)
         created += 1
-        print(f'  + Nuovo da MBE: {addr.get("companyName")} [{new_status}] {s.get("shipmentTrackingNumber","")}')
+        print(f'  + Nuovo da MBE: {addr.get("companyName")} [{new_status}] {s.get("shipmentTrackingNumber","")} (data: {ship_date_str})')
 
     if updated > 0 or created > 0:
         db['orders'] = orders
