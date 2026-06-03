@@ -1529,6 +1529,66 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780415614441
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-0000006FDN",
+      "customerName": "GRACIELA MORENO",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "4304 SAN AUGUSTIN, LAREDO",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780444800000,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1ZRY6787A897238788",
+      "mbeTrackingNumber": "IT3299-8V-0000006FDN",
+      "carrier": "UPS",
+      "shippingDate": "2026-06-03",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780444800000,
+          "note": "Importato da MBE"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780485256521,
+      "updatedAt": 1780485256521
+    },
+    {
+      "id": "ord_mbe_IT3299-8V-0000006FDJ",
+      "customerName": "DANIEL ABRAIRA",
+      "customerEmail": "",
+      "customerPhone": "",
+      "shippingAddress": "19153 SE FEARNLEY DR, JUPITER",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780444800000,
+      "emailSubject": "",
+      "shopifyOrderId": "",
+      "gmailMessageId": "",
+      "trackingNumber": "1ZRY6787A801048243",
+      "mbeTrackingNumber": "IT3299-8V-0000006FDJ",
+      "carrier": "UPS",
+      "shippingDate": "2026-06-03",
+      "status": "spedito",
+      "statusHistory": [
+        {
+          "status": "spedito",
+          "date": 1780444800000,
+          "note": "Importato da MBE"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "source": "mbe",
+      "createdAt": 1780485256521,
+      "updatedAt": 1780485256521
     }
   ],
   "lastImportedAt": 1780397305300
