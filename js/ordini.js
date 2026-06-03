@@ -35,6 +35,7 @@ function _mkOrder({customerName,customerEmail='',customerPhone='',amount=0,curre
     gmailMessageId,
     trackingNumber: '',
     carrier: 'MBE',
+    shippingType: null,
     shippingDate: null,
     status: 'ricevuto',
     statusHistory: [{status:'ricevuto', date:now, note}],
@@ -212,11 +213,12 @@ function renderOrdini(){
       ?`<span style="font-size:11px;font-family:monospace;background:var(--bg2);padding:2px 6px;border-radius:4px;margin-right:6px">${esc(o.trackingNumber)}</span>`
       :'';
     const hasMissingEmail = !o.customerEmail&&!['annullato'].includes(o.status);
+    const hasMissingType = !o.shippingType&&['spedito','in_transito','dogana'].includes(o.status);
     return `<div class="cr" onclick="openOrdineDetail('${o.id}')">
       <div class="av av2" style="font-size:10px">${ini(o.customerName)}</div>
       <div class="ci">
-        <div class="cn">${esc(o.customerName)}${hasMissingEmail?'<span style="color:var(--amber);font-size:10px;margin-left:5px">⚠ email mancante</span>':''}</div>
-        <div class="cs">${date} · €${o.amount.toFixed(2)} ${o.currency||'EUR'}${o.shipmentCode?' · <span style="font-family:monospace;font-size:10px">'+esc(o.shipmentCode)+'</span>':''}</div>
+        <div class="cn">${esc(o.customerName)}${hasMissingEmail?'<span style="color:var(--amber);font-size:10px;margin-left:5px">⚠ email</span>':''}${hasMissingType?'<span style="color:var(--amber);font-size:10px;margin-left:5px">⚠ tipo sped.</span>':''}</div>
+        <div class="cs">${date} · €${o.amount.toFixed(2)} ${o.currency||'EUR'}${o.shipmentCode?' · <span style="font-family:monospace;font-size:10px">'+esc(o.shipmentCode)+'</span>':''}${o.shippingType?' · <span style="font-size:10px;opacity:.7">'+o.shippingType+'</span>':''}</div>
       </div>
       <div style="display:flex;align-items:center;gap:4px;flex-shrink:0">
         ${tracking}
@@ -248,9 +250,8 @@ function openOrdineDetail(id){
     return `<div class="log-e">📧 ${esc(e.type)} — ${d}</div>`;
   }).join('');
 
-  const trackingLink=o.trackingNumber
-    ?`<a href="https://www.17track.net/en/track?nums=${encodeURIComponent(o.trackingNumber)}" target="_blank" style="font-size:12px">🔗 17track</a>`
-     +(o.carrier==='MBE'?` &nbsp;<a href="https://www.mbeonline.it/tracking" target="_blank" style="font-size:12px">MBE</a>`:'')
+  const trackingLink=o.trackingNumber&&o.carrier==='MBE'
+    ?`<a href="https://www.mbeonline.it/tracking" target="_blank" style="font-size:12px">🔗 MBE tracking</a>`
     :'';
 
   showModal(`
@@ -263,6 +264,7 @@ function openOrdineDetail(id){
     ${dr('Email cliente', o.customerEmail?`<a href="mailto:${esc(o.customerEmail)}">${esc(o.customerEmail)}</a>`:'<span style="color:var(--amber)">⚠ mancante</span>')}
     ${o.customerPhone?dr('Telefono', `<a href="tel:${esc(o.customerPhone)}">${esc(o.customerPhone)}</a>`):''}
     ${o.trackingNumber?dr('Tracking', `<span style="font-family:monospace">${esc(o.trackingNumber)}</span> ${trackingLink}`):''}
+    ${(()=>{const stl={standard:'Standard',express:'Express'};const v=o.shippingType?`<span class="badge" style="background:var(--blue-bg);color:var(--blue-tx)">${stl[o.shippingType]||o.shippingType}</span>`:'<span style="color:var(--amber);font-size:12px">⚠ tipo non specificato</span>';return dr('Tipologia spedizione',v);})()}
     ${o.shippingDate?dr('Data spedizione', new Date(o.shippingDate).toLocaleDateString('it-IT',{day:'numeric',month:'long',year:'numeric'})):''}
     ${o.shippingAddress?dr('Indirizzo spedizione', `<span style="font-size:12px;color:var(--text2)">${esc(o.shippingAddress)}</span>`):''}
     ${o.numberOfCartons?dr('Colli MBE', `<strong>${o.numberOfCartons}</strong> colli`):''}
@@ -281,6 +283,13 @@ function openOrdineDetail(id){
       <div class="fg"><label>Telefono</label>
         <input id="ord-phone" placeholder="+39 333 1234567" value="${esc(o.customerPhone||'')}">
       </div>
+      <div class="fg"><label>Tipologia spedizione</label>
+        <select id="ord-shipping-type">
+          <option value="">Non specificata</option>
+          <option value="standard"${o.shippingType==='standard'?' selected':''}>Standard</option>
+          <option value="express"${o.shippingType==='express'?' selected':''}>Express</option>
+        </select>
+      </div>
       <div class="fg fgf"><label>Tracking number</label>
         <input id="ord-tracking" placeholder="Es. 1Z999AA10123456784" value="${esc(o.trackingNumber||'')}">
       </div>
@@ -298,6 +307,7 @@ function openOrdineDetail(id){
       </div>
     </div>
 
+    ${typeof getReminderStatusHtml==='function'?getReminderStatusHtml(o):''}
     ${history?`<div class="divhr"></div><div style="font-size:11px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">Storico stati</div><div>${history}</div>`:''}
     ${emailsSent?`<div class="divhr"></div><div style="font-size:11px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">Email inviate</div><div>${emailsSent}</div>`:''}
 
@@ -317,6 +327,7 @@ async function saveOrdineUpdate(id){
   const newEmail=(document.getElementById('ord-email')?.value||'').trim();
   const newPhone=(document.getElementById('ord-phone')?.value||'').trim();
   const newAddress=(document.getElementById('ord-address')?.value||'').trim();
+  const newShippingType=gv('ord-shipping-type')||'';
   const note=(document.getElementById('ord-note')?.value||'').trim();
   const sendEmail=document.getElementById('ord-send-email')?.checked;
 
@@ -324,6 +335,7 @@ async function saveOrdineUpdate(id){
   if(newTracking) o.trackingNumber=newTracking;
   if(newPhone) o.customerPhone=newPhone;
   if(newAddress) o.shippingAddress=newAddress;
+  o.shippingType=newShippingType||null;
 
   const statusChanged=newStatus!==o.status;
   if(statusChanged){
@@ -371,6 +383,13 @@ function openAddOrdine(){
       <div class="fg"><label>Data ordine</label>
         <input id="no-date" type="date" value="${new Date().toISOString().slice(0,10)}">
       </div>
+      <div class="fg"><label>Tipologia spedizione</label>
+        <select id="no-shipping-type">
+          <option value="">Non specificata</option>
+          <option value="standard">Standard</option>
+          <option value="express">Express</option>
+        </select>
+      </div>
       <div class="fg fgf"><label>Indirizzo spedizione</label>
         <input id="no-address" placeholder="Via Roma 1, 20100 Milano, Italy">
       </div>
@@ -388,11 +407,12 @@ function doAddOrdine(){
   const phone=(document.getElementById('no-phone')?.value||'').trim();
   const amount=parseFloat(document.getElementById('no-amount')?.value||'0')||0;
   const dateVal=document.getElementById('no-date')?.value;
+  const shippingType=gv('no-shipping-type')||null;
   const address=(document.getElementById('no-address')?.value||'').trim();
 
   if(!name){ toast('Inserisci il nome del cliente'); return; }
 
-  dbO.orders.unshift(_mkOrder({
+  const newOrd=_mkOrder({
     customerName: name,
     customerEmail: email,
     customerPhone: phone,
@@ -400,7 +420,9 @@ function doAddOrdine(){
     orderDate: dateVal ? new Date(dateVal).getTime() : Date.now(),
     shippingAddress: address,
     note: 'Aggiunto manualmente'
-  }));
+  });
+  newOrd.shippingType=shippingType||null;
+  dbO.orders.unshift(newOrd);
 
   closeModal();
   saveOrdineDB();
@@ -414,9 +436,7 @@ async function sendOrdineStatusEmail(o){
   if(!o.customerEmail){ toast('⚠ Email cliente mancante'); return; }
 
   const nome=o.customerName.split(/\s+/)[0]||o.customerName;
-  const trackUrl=o.trackingNumber
-    ?`https://www.17track.net/en/track?nums=${encodeURIComponent(o.trackingNumber)}`
-    :'';
+  const trackLine=o.trackingNumber?`Numero tracking: ${o.trackingNumber}\n`:'';
 
   let subject='', body='';
 
@@ -427,8 +447,7 @@ async function sendOrdineStatusEmail(o){
 
 il tuo ordine è stato spedito ed è ora in viaggio verso di te! 🍷
 
-${o.trackingNumber?`Numero di tracking: ${o.trackingNumber}\nSeguilo in tempo reale: ${trackUrl}\n`:''}
-La spedizione dovrebbe arrivare entro 7-10 giorni lavorativi. Ti aggiorneremo ad ogni cambio di stato.
+${trackLine}La spedizione dovrebbe arrivare entro 7-10 giorni lavorativi. Ti aggiorneremo ad ogni cambio di stato.
 
 Grazie per aver scelto i nostri vini!
 
@@ -443,8 +462,7 @@ export@ilciliegio.com | +39 331 1347899`;
 
 il tuo ordine è in viaggio e procede regolarmente verso la destinazione. 📦
 
-${o.trackingNumber?`Tracking: ${o.trackingNumber}\nAggiornamenti: ${trackUrl}\n`:''}
-Tempi stimati: 5-10 giorni lavorativi dalla data di spedizione.
+${trackLine}Tempi stimati: 5-10 giorni lavorativi dalla data di spedizione.
 
 A presto!
 
@@ -459,8 +477,7 @@ export@ilciliegio.com | +39 331 1347899`;
 
 il tuo ordine è attualmente in fase di sdoganamento. Questo processo richiede normalmente 2-5 giorni lavorativi.
 
-${o.trackingNumber?`Puoi seguire l'avanzamento su: ${trackUrl}\n`:''}
-Non è richiesto alcun intervento da parte tua — ti aggiorneremo appena l'ordine riparte.
+${trackLine}Non è richiesto alcun intervento da parte tua — ti aggiorneremo appena l'ordine riparte.
 
 Grazie per la pazienza!
 
