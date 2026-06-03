@@ -26,6 +26,7 @@ async function switchLayer(newLayer){
   if(isOrd){
     document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
     try{ if(typeof renderOrdini==='function') renderOrdini(); }catch(e){ console.warn('renderOrdini:',e); }
+    try{ if(typeof renderReminderTemplatesPanel==='function') renderReminderTemplatesPanel(); }catch(e){}
     return;
   }
 
@@ -60,6 +61,9 @@ async function init(){
     // loadOrdiniFromGH è opzionale — presente solo se js/ordini.js è caricato
     if(typeof loadOrdiniFromGH==='function'){
       try{ await loadOrdiniFromGH(); }catch(e){ console.warn('loadOrdiniFromGH:',e); }
+    }
+    if(typeof loadReminderTemplates==='function'){
+      try{ await loadReminderTemplates(); }catch(e){ console.warn('loadReminderTemplates:',e); }
     }
   } else {
     updGh('idle');refreshAll();

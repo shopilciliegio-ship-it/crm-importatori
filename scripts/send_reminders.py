@@ -1,0 +1,279 @@
+"""
+Invio reminder email temporizzati — Il Ciliegio CRM
+Eseguito dopo fetch_mbe_tracking.py nel workflow import_ordini.yml
+
+Logica reminder:
+  day0  → Conferma spedizione (tutti, appena shippingDate impostata)
+  day10 → Reminder 10 giorni (Standard + Express)
+  day20 → Reminder 20 giorni (solo Standard)
+
+Notifiche immediate su cambio stato MBE:
+  consegnato / dogana / problema → email appena compare, senza aspettare
+
+Se shippingType mancante → skip day10/day20 con warning nel log.
+"""
+
+import base64
+import html
+import json
+import os
+from datetime import datetime, timezone
+
+import requests
+
+# ── Config ───────────────────────────────────────────────────────────────────
+BREVO_API_KEY = os.environ['BREVO_API_KEY']
+GH_TOKEN      = os.environ['GH_TOKEN']
+GH_REPO       = os.environ['GH_REPO']
+
+DATA_PATH      = 'data/ordini.json'
+TEMPLATES_PATH = 'data/email-reminders-templates.json'
+
+SENDER_NAME  = 'Il Ciliegio — Azienda Agricola'
+SENDER_EMAIL = 'export@ilciliegio.com'
+LOGO_URL     = 'https://shopilciliegio-ship-it.github.io/crm-importatori/assets/logo_ciliegio.png'
+ACCENT       = '#B8941A'
+BG           = '#2c2c2c'
+WEBSITE      = 'www.ilciliegio.com'
+PHONE        = '+39 331 1347899'
+TAGLINE      = 'Vini artigianali toscani di eccellenza'
+
+DAY_MS          = 24 * 3600 * 1000
+STATI_TERMINALI = {'consegnato', 'annullato'}
+
+_GH_HEADERS = {
+    'Authorization': f'token {GH_TOKEN}',
+    'Accept':        'application/vnd.github.v3+json',
+}
+_BREVO_HEADERS = {
+    'api-key':      BREVO_API_KEY,
+    'Content-Type': 'application/json',
+    'Accept':       'application/json',
+}
+
+
+# ── GitHub helpers ────────────────────────────────────────────────────────────
+
+def gh_get(path: str) -> tuple[dict | list, str | None]:
+    url = f'https://api.github.com/repos/{GH_REPO}/contents/{path}'
+    r   = requests.get(url, headers=_GH_HEADERS)
+    if r.status_code == 404:
+        return {}, None
+    r.raise_for_status()
+    data    = r.json()
+    content = base64.b64decode(data['content']).decode('utf-8')
+    return json.loads(content), data['sha']
+
+
+def gh_put(path: str, data: dict, sha: str | None, message: str) -> None:
+    url     = f'https://api.github.com/repos/{GH_REPO}/contents/{path}'
+    content = base64.b64encode(
+        json.dumps(data, ensure_ascii=False, indent=2).encode('utf-8')
+    ).decode('utf-8')
+    body = {'message': message, 'content': content}
+    if sha:
+        body['sha'] = sha
+    requests.put(url, headers=_GH_HEADERS, json=body).raise_for_status()
+
+
+# ── Template rendering ────────────────────────────────────────────────────────
+
+def render_template(tpl: dict, order: dict) -> tuple[str, str]:
+    nome     = (order.get('customerName') or '').split()[0] or order.get('customerName', '')
+    tracking = order.get('trackingNumber', '') or ''
+    tracking_line = f'Numero tracking: {tracking}\n' if tracking else ''
+
+    ctx = {
+        'nome':          nome,
+        'tracking':      tracking,
+        'tracking_line': tracking_line,
+    }
+
+    subject = tpl.get('subject', '')
+    body    = tpl.get('body', '')
+    for k, v in ctx.items():
+        subject = subject.replace('{' + k + '}', str(v))
+        body    = body.replace('{' + k + '}', str(v))
+
+    return subject, body
+
+
+# ── Email HTML builder ────────────────────────────────────────────────────────
+
+def _body_to_html(plain: str) -> str:
+    paras = [p.strip() for p in plain.split('\n\n') if p.strip()]
+    parts = []
+    for p in paras:
+        escaped = html.escape(p).replace('\n', '<br>')
+        parts.append(
+            f'<p style="margin:0 0 16px;color:#333;font-size:15px;line-height:1.7">{escaped}</p>'
+        )
+    return ''.join(parts)
+
+
+def build_html_email(body_text: str) -> str:
+    body_html = _body_to_html(body_text)
+    return f"""<!DOCTYPE html>
+<html lang="it">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
+<body style="margin:0;padding:0;background:#f4f4f0;font-family:Georgia,'Times New Roman',serif">
+<table width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f0;padding:32px 16px">
+<tr><td align="center">
+<table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%">
+  <tr><td style="background:{BG};border-radius:12px 12px 0 0;padding:32px;text-align:center">
+    <img src="{LOGO_URL}" width="180" alt="Il Ciliegio" style="display:block;margin:0 auto;max-width:180px">
+  </td></tr>
+  <tr><td style="background:{ACCENT};height:4px;font-size:0">&nbsp;</td></tr>
+  <tr><td style="background:#ffffff;padding:40px 48px">{body_html}</td></tr>
+  <tr><td style="background:{ACCENT};height:3px;font-size:0">&nbsp;</td></tr>
+  <tr><td style="background:{BG};border-radius:0 0 12px 12px;padding:28px 40px;text-align:center">
+    <p style="margin:0 0 8px;color:#ffffff;font-size:13px;font-weight:bold;letter-spacing:1px;text-transform:uppercase">Il Ciliegio</p>
+    <p style="margin:0 0 12px;color:{ACCENT};font-size:12px;font-style:italic">{TAGLINE}</p>
+    <p style="margin:0;font-size:12px;color:#999;line-height:1.8">
+      <span style="color:#ccc">{WEBSITE}</span>&nbsp;|&nbsp;<span style="color:#999">{PHONE}</span>
+    </p>
+  </td></tr>
+</table>
+</td></tr>
+</table>
+</body></html>"""
+
+
+# ── Brevo send ────────────────────────────────────────────────────────────────
+
+def send_email(order: dict, reminder_type: str, subject: str, body_text: str) -> str | None:
+    to_email = (order.get('customerEmail') or '').strip()
+    if not to_email:
+        print(f'    ⚠ {order.get("customerName","?")} — email cliente mancante, skip')
+        return None
+
+    payload = {
+        'sender':      {'name': SENDER_NAME, 'email': SENDER_EMAIL},
+        'to':          [{'email': to_email, 'name': order.get('customerName', '')}],
+        'subject':     subject,
+        'textContent': body_text,
+        'htmlContent': build_html_email(body_text),
+        'tags':        ['wine-crm', 'ordini', reminder_type],
+        'headers':     {'X-CRM-OrderId': order['id']},
+    }
+
+    r = requests.post('https://api.brevo.com/v3/smtp/email', headers=_BREVO_HEADERS, json=payload)
+    if r.ok:
+        msg_id = r.json().get('messageId', '')
+        print(f'    ✓ "{reminder_type}" → {to_email}')
+        return msg_id
+    print(f'    ✗ Brevo {r.status_code}: {r.text[:120]}')
+    return None
+
+
+# ── Logica reminder ───────────────────────────────────────────────────────────
+
+def sent_types(order: dict) -> set[str]:
+    return {e.get('type', '') for e in (order.get('emailsSent') or [])}
+
+
+def should_send(order: dict, reminder_type: str, now_ms: int) -> tuple[bool, str]:
+    """Restituisce (va_inviato, motivo_skip)."""
+    already       = sent_types(order)
+    status        = order.get('status', '')
+    shipping_type = order.get('shippingType')
+    shipping_date = order.get('shippingDate')
+
+    if reminder_type in already:
+        return False, 'già inviata'
+
+    if reminder_type == 'day0':
+        if not shipping_date:
+            return False, 'shippingDate mancante'
+        return True, ''
+
+    if reminder_type in ('day10', 'day20'):
+        if status in STATI_TERMINALI:
+            return False, f'ordine terminato ({status})'
+        if not shipping_date:
+            return False, 'shippingDate mancante'
+
+        days_since = (now_ms - shipping_date) / DAY_MS
+
+        if shipping_type is None:
+            return False, 'shippingType mancante — inserire nel CRM'
+
+        threshold = 10 if reminder_type == 'day10' else 20
+        if days_since < threshold:
+            return False, f'troppo presto ({days_since:.1f}gg < {threshold}gg)'
+
+        if reminder_type == 'day20' and shipping_type != 'standard':
+            return False, f'day20 solo Standard (questo: {shipping_type})'
+
+        return True, ''
+
+    if reminder_type in ('consegnato', 'dogana', 'problema'):
+        if status != reminder_type:
+            return False, f'status attuale è {status}'
+        return True, ''
+
+    return False, 'tipo sconosciuto'
+
+
+# ── Main ──────────────────────────────────────────────────────────────────────
+
+def main():
+    print('=== Send Reminders — Il Ciliegio ===')
+
+    db,        sha_db = gh_get(DATA_PATH)
+    templates, _      = gh_get(TEMPLATES_PATH)
+
+    if not templates:
+        print('✗ Template non trovati in ' + TEMPLATES_PATH)
+        print('  Salva i template dal CRM prima di eseguire questo script.')
+        return
+
+    orders  = db.get('orders') or []
+    now_ms  = int(datetime.now(timezone.utc).timestamp() * 1000)
+
+    active = [o for o in orders if o.get('status') not in ('ricevuto', 'preparazione', 'annullato')]
+    print(f'Ordini attivi: {len(active)} / {len(orders)}')
+
+    changed = 0
+
+    for order in active:
+        name   = order.get('customerName', '?')
+        status = order.get('status', '')
+        stype  = order.get('shippingType') or '?'
+        print(f'\n  {name} | status={status} | type={stype}')
+
+        for rtype in ['day0', 'day10', 'day20', 'consegnato', 'dogana', 'problema']:
+            ok, reason = should_send(order, rtype, now_ms)
+            if not ok:
+                if reason != 'già inviata':
+                    print(f'    {rtype}: skip — {reason}')
+                continue
+
+            tpl = templates.get(rtype)
+            if not tpl:
+                print(f'    {rtype}: template mancante')
+                continue
+
+            subject, body = render_template(tpl, order)
+            msg_id = send_email(order, rtype, subject, body)
+
+            if msg_id:
+                order.setdefault('emailsSent', []).append({
+                    'type':      rtype,
+                    'sentAt':    now_ms,
+                    'messageId': msg_id,
+                })
+                order['updatedAt'] = now_ms
+                changed += 1
+
+    if changed > 0:
+        db['orders'] = orders
+        now_str = datetime.now().strftime('%d/%m/%Y %H:%M')
+        gh_put(DATA_PATH, db, sha_db, f'Reminder email — {changed} inviate — {now_str}')
+        print(f'\n✓ {changed} email inviate, ordini.json aggiornato.')
+    else:
+        print('\nNessuna email da inviare.')
+
+
+if __name__ == '__main__':
+    main()

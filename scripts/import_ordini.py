@@ -179,14 +179,25 @@ def parse_fieramente_pdf(pdf_bytes: bytes) -> dict:
     m = re.search(r'NUMBER\s+OF\s+CARTONS\s*[\n\s]+(\d+)', text, re.I)
     number_of_cartons = int(m.group(1)) if m else None
 
+    # SHIPPING INSTRUCTIONS (STANDARD o EXPRESS 30)
+    m_si = re.search(r'SHIPPING\s+INSTRUCTIONS\s*\n\s*([^\n]+)', text, re.I)
+    shipping_instr = m_si.group(1).strip() if m_si else ''
+    if 'EXPRESS' in shipping_instr.upper():
+        shipping_type = 'express'
+    elif 'STANDARD' in shipping_instr.upper():
+        shipping_type = 'standard'
+    else:
+        shipping_type = None
+
     result = {
         'shipmentCode':    shipment_code,
         'customerEmail':   customer_email,
         'customerPhone':   customer_phone,
         'shippingAddress': shipping_address,
         'numberOfCartons': number_of_cartons,
+        'shippingType':    shipping_type,
     }
-    print(f'    PDF → code={shipment_code} email={customer_email} colli={number_of_cartons}')
+    print(f'    PDF → code={shipment_code} email={customer_email} colli={number_of_cartons} tipo={shipping_type}')
     return result
 
 
@@ -284,6 +295,7 @@ def main():
             'shipmentCode':    o.get('shipmentCode', ''),
             'shippingAddress': o.get('shippingAddress', ''),
             'numberOfCartons': o.get('numberOfCartons'),
+            'shippingType':    o.get('shippingType', None),
             'gmailMessageId':  o.get('gmailMessageId', ''),
             'trackingNumber':  '',
             'carrier':         'MBE',
