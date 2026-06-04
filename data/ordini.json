@@ -1178,7 +1178,7 @@
     {
       "id": "ord_mbe_IT3299-8V-0000005VVZ",
       "customerName": "JEANNE MARIE WENGAL",
-      "customerEmail": "",
+      "customerEmail": "jmwengal@gmail.com",
       "customerPhone": "",
       "shippingAddress": "3 BROOK HOLLOW RD, MILFORD",
       "amount": 0,
@@ -1191,19 +1191,32 @@
       "mbeTrackingNumber": "IT3299-8V-0000005VVZ",
       "carrier": "UPS",
       "shippingDate": "2026-03-20",
-      "status": "spedito",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "spedito",
           "date": 1780415614441,
           "note": "Importato da MBE — Shipment created"
+        },
+        {
+          "status": "consegnato",
+          "date": 1780573306668,
+          "note": ""
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "consegnato",
+          "sentAt": 1780573306668,
+          "messageId": "manual-skip",
+          "manual": true
+        }
+      ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780415614441
+      "updatedAt": 1780573306668,
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005SIN",
