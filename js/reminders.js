@@ -128,7 +128,7 @@ function renderReminderTemplatesPanel(){
         <input id="rtpl-sub-${t.type}" value="${esc(tpl.subject||'')}" style="font-size:12px">
       </div>
       <div class="fg fgf" style="margin-top:4px">
-        <label style="font-size:11px;color:var(--text2)">Corpo email <span style="font-weight:400">— placeholder: {nome}, {tracking_line}</span></label>
+        <label style="font-size:11px;color:var(--text2)">Corpo email <span style="font-weight:400">— placeholder: {nome}, {tracking_line}, {fieramente_url}</span></label>
         <textarea id="rtpl-body-${t.type}" rows="5" style="font-size:12px;width:100%;padding:8px 10px;border:0.5px solid var(--brd2);border-radius:var(--r);background:var(--bg);color:var(--text);font-family:monospace;resize:vertical;line-height:1.5">${esc(tpl.body||'')}</textarea>
       </div>
     </div>`;
