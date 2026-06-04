@@ -638,7 +638,7 @@
     {
       "id": "ord_mbe_IT3299-0V-00000068RB",
       "customerName": "ADAM MILLS",
-      "customerEmail": "",
+      "customerEmail": "adamm9875@gmail.com",
       "customerPhone": "",
       "shippingAddress": "4 BROMFIELD GROVE, WREXHAM",
       "amount": 0,
@@ -651,19 +651,32 @@
       "mbeTrackingNumber": "IT3299-0V-00000068RB",
       "carrier": "UPS",
       "shippingDate": "2026-05-13",
-      "status": "spedito",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "spedito",
           "date": 1780415614441,
           "note": "Importato da MBE — Delivered"
+        },
+        {
+          "status": "consegnato",
+          "date": 1780573865555,
+          "note": ""
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "consegnato",
+          "sentAt": 1780573865555,
+          "messageId": "manual-skip",
+          "manual": true
+        }
+      ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780415614441
+      "updatedAt": 1780573865555,
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006871",
