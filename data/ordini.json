@@ -578,7 +578,7 @@
     {
       "id": "ord_mbe_IT3299-8V-00000069K3",
       "customerName": "PHAM DUC",
-      "customerEmail": "",
+      "customerEmail": "dpham603@gmail.com",
       "customerPhone": "",
       "shippingAddress": "2 LE BLANC LANE, MERRIMACK",
       "amount": 0,
@@ -591,19 +591,32 @@
       "mbeTrackingNumber": "IT3299-8V-00000069K3",
       "carrier": "UPS",
       "shippingDate": "2026-05-14",
-      "status": "spedito",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "spedito",
           "date": 1780415614441,
           "note": "Importato da MBE — Shipment created"
+        },
+        {
+          "status": "consegnato",
+          "date": 1780573978923,
+          "note": ""
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "consegnato",
+          "sentAt": 1780573978923,
+          "messageId": "manual-skip",
+          "manual": true
+        }
+      ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780415614441
+      "updatedAt": 1780573978923,
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-00000069IY",
