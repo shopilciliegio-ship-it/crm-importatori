@@ -1458,7 +1458,7 @@
       "mbeTrackingNumber": "IT3299-0V-0000005X66",
       "carrier": "FedEx",
       "shippingDate": "2026-03-27",
-      "status": "problema",
+      "status": "annullato",
       "statusHistory": [
         {
           "status": "spedito",
@@ -1469,13 +1469,25 @@
           "status": "problema",
           "date": 1780573326931,
           "note": ""
+        },
+        {
+          "status": "annullato",
+          "date": 1780574553395,
+          "note": ""
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "annullato",
+          "sentAt": 1780574553395,
+          "messageId": "manual-skip",
+          "manual": true
+        }
+      ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780573326931,
+      "updatedAt": 1780574553395,
       "shippingType": "express"
     },
     {
