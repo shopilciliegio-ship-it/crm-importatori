@@ -33,7 +33,7 @@ LOG_PATH       = 'data/email-log.json'
 BCC_EMAIL = 'lucapattaro75@virgilio.it'
 
 SENDER_NAME  = 'Il Ciliegio — Azienda Agricola'
-SENDER_EMAIL = 'export@ilciliegio.com'
+SENDER_EMAIL = 'luca@sienawine.it'
 LOGO_URL     = 'https://shopilciliegio-ship-it.github.io/crm-importatori/assets/logo_ciliegio.png'
 ACCENT       = '#B8941A'
 BG           = '#2c2c2c'
