@@ -1,35 +1,6 @@
 {
   "orders": [
     {
-      "id": "ord_mpwil4us9x0m",
-      "customerName": "LUCA PATTARO",
-      "customerEmail": "",
-      "customerPhone": "",
-      "amount": 194,
-      "currency": "EUR",
-      "orderDate": 1780230919000,
-      "emailSubject": "🍷 New Order — LUCA PATTARO — 194.00 EUR",
-      "shipmentCode": "",
-      "shippingAddress": "",
-      "numberOfCartons": null,
-      "gmailMessageId": "<DB9PR08MB6682D5684730C83E1AB3AC0BBF142@DB9PR08MB6682.eurprd08.prod.outlook.com>",
-      "trackingNumber": "",
-      "carrier": "MBE",
-      "shippingDate": null,
-      "status": "ricevuto",
-      "statusHistory": [
-        {
-          "status": "ricevuto",
-          "date": 1780397305300,
-          "note": "Importato da Gmail (GitHub Actions)"
-        }
-      ],
-      "emailsSent": [],
-      "notes": "",
-      "createdAt": 1780397305300,
-      "updatedAt": 1780397305300
-    },
-    {
       "id": "ord_mpvpkyylwz2h",
       "customerName": "JILL BANKS",
       "customerEmail": "myhouse_injc@hotmail.com",
