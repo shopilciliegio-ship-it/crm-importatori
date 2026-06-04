@@ -29,10 +29,21 @@ jobs:
           GH_REPO:            ${{ github.repository }}
         run: python scripts/import_ordini.py
 
+      - name: Fetch tracking Fieramente
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO:  ${{ github.repository }}
+          # FIERAMENTE_USER e FIERAMENTE_PASS opzionali — fallback hardcoded nello script
+        run: python scripts/fetch_fieramente_tracking.py
+
+      # ── MBE tracking — DORMIENTE (dati indietro rispetto a Fieramente) ──────
+      # Riattivare aggiungendo le 2 righe Playwright e rimuovendo i due "if: false"
       - name: Installa Playwright browser
+        if: false
         run: playwright install chromium --with-deps
 
       - name: Fetch tracking MBE
+        if: false
         env:
           MBE_EMAIL:       ${{ secrets.MBE_EMAIL }}
           MBE_PASSWORD:    ${{ secrets.MBE_PASSWORD }}
@@ -40,6 +51,7 @@ jobs:
           GH_TOKEN:        ${{ secrets.GITHUB_TOKEN }}
           GH_REPO:         ${{ github.repository }}
         run: python scripts/fetch_mbe_tracking.py
+      # ────────────────────────────────────────────────────────────────────────
 
       - name: Invia reminder email temporizzati
         env:
@@ -49,7 +61,7 @@ jobs:
         run: python scripts/send_reminders.py
 
       - name: Salva screenshot debug MBE
-        if: always()
+        if: false
         uses: actions/upload-artifact@v4
         with:
           name: mbe-debug-screenshots

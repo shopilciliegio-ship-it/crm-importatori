@@ -9,6 +9,7 @@ const ORD_STATUS = {
   spedito:      {l:'Spedito',          c:'var(--teal-bg)',   t:'var(--teal-tx)'},
   in_transito:  {l:'In transito',      c:'var(--blue-bg)',   t:'var(--blue-tx)'},
   dogana:       {l:'In dogana',        c:'var(--amber-bg)',  t:'var(--amber-tx)'},
+  in_consegna:  {l:'In consegna',      c:'var(--teal-bg)',   t:'var(--teal-tx)'},
   consegnato:   {l:'Consegnato',       c:'var(--green-bg)',  t:'var(--green-tx)'},
   problema:     {l:'Problema',         c:'var(--red-bg)',    t:'var(--red-tx)'},
   annullato:    {l:'Annullato',        c:'var(--gray-bg)',   t:'var(--gray-tx)'},
@@ -186,7 +187,7 @@ function renderOrdini(){
   const statsEl=document.getElementById('ord-stats');
   if(statsEl){
     const tot=dbO.orders.length;
-    const transit=dbO.orders.filter(o=>['spedito','in_transito','dogana'].includes(o.status)).length;
+    const transit=dbO.orders.filter(o=>['spedito','in_transito','dogana','in_consegna'].includes(o.status)).length;
     const cons=dbO.orders.filter(o=>o.status==='consegnato').length;
     const prob=dbO.orders.filter(o=>o.status==='problema').length;
     statsEl.innerHTML=
@@ -214,7 +215,7 @@ function renderOrdini(){
       ?`<span style="font-size:11px;font-family:monospace;background:var(--bg2);padding:2px 6px;border-radius:4px;margin-right:6px">${esc(o.trackingNumber)}</span>`
       :'';
     const hasMissingEmail = !o.customerEmail&&!['annullato'].includes(o.status);
-    const hasMissingType = !o.shippingType&&['spedito','in_transito','dogana'].includes(o.status);
+    const hasMissingType = !o.shippingType&&['spedito','in_transito','dogana','in_consegna'].includes(o.status);
     return `<div class="cr" onclick="openOrdineDetail('${o.id}')">
       <div class="av av2" style="font-size:10px">${ini(o.customerName)}</div>
       <div class="ci">

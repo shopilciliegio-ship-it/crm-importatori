@@ -90,25 +90,55 @@ function saveDB(){
 
 function confirmDeleteAll(){
   showModal(`
-    <div class="mt" style="color:var(--red)">🗑 Cancella tutto il database</div>
+    <div class="mt" style="color:var(--red)">🗑 Cancella database</div>
+    <div class="danger-box" style="margin-bottom:14px">
+      <p style="font-size:13px;font-weight:600;margin:0">Scegli quale database cancellare — operazione irreversibile.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:16px">
+      <button class="btn btd bts" onclick="_confirmDeleteTarget('importatori')">🗑 Cancella Importatori (${db.contacts.length} contatti)</button>
+      <button class="btn btd bts" onclick="_confirmDeleteTarget('clienti')">🗑 Cancella Clienti (${dbC.contacts.length} contatti)</button>
+      <button class="btn btd bts" onclick="_confirmDeleteTarget('ordini')">🗑 Cancella Ordini (${(dbO.orders||[]).length} ordini)</button>
+    </div>
+    <div class="mf"><button class="btn" onclick="closeModal()">Annulla</button></div>
+  `);
+}
+
+function _confirmDeleteTarget(target){
+  const labels={importatori:'Importatori',clienti:'Clienti',ordini:'Ordini'};
+  const count=target==='ordini'?(dbO.orders||[]).length:target==='clienti'?dbC.contacts.length:db.contacts.length;
+  showModal(`
+    <div class="mt" style="color:var(--red)">🗑 Cancella ${labels[target]}</div>
     <div class="danger-box">
       <p style="font-size:14px;font-weight:600;margin-bottom:8px">Attenzione — operazione irreversibile</p>
-      <p style="font-size:13px;line-height:1.6">Verranno eliminati <strong>${(isClienti()?dbC:db).contacts.length} contatti</strong>. Questa azione aggiorna anche GitHub al prossimo salvataggio automatico.</p>
+      <p style="font-size:13px;line-height:1.6">Verranno eliminati <strong>${count} ${target==='ordini'?'ordini':'contatti'}</strong>.</p>
     </div>
     <p style="font-size:13px;margin-bottom:12px">Scrivi <strong>CANCELLA</strong> per confermare:</p>
     <div class="fg fgf"><input id="del-c" placeholder="CANCELLA" oninput="document.getElementById('del-b').disabled=this.value!=='CANCELLA'"></div>
     <div class="mf">
-      <button class="btn" onclick="closeModal()">Annulla</button>
-      <button class="btn btd" id="del-b" disabled onclick="doDeleteAll()">Cancella tutto</button>
+      <button class="btn" onclick="confirmDeleteAll()">← Indietro</button>
+      <button class="btn btd" id="del-b" disabled onclick="_doDeleteTarget('${target}')">Cancella</button>
     </div>
   `);
 }
 
-function doDeleteAll(){
-  (isClienti()?dbC:db).contacts=[];
-  closeModal();refreshAll();
-  clearTimeout(saveTimer);
-  pushGH().then(()=>toast('Database svuotato e sincronizzato ✓'));
+function _doDeleteTarget(target){
+  if(target==='importatori'){
+    db.contacts=[];
+    closeModal();refreshAll();
+    clearTimeout(saveTimer);
+    pushGH().then(()=>toast('✓ Database Importatori svuotato'));
+  } else if(target==='clienti'){
+    dbC.contacts=[];
+    closeModal();refreshAll();
+    clearTimeout(saveTimer);
+    pushGH().then(()=>toast('✓ Database Clienti svuotato'));
+  } else if(target==='ordini'){
+    dbO.orders=[];dbO.lastImportedAt=null;
+    closeModal();
+    if(typeof renderOrdini==='function') renderOrdini();
+    if(typeof saveOrdineDB==='function') saveOrdineDB();
+    toast('✓ Database Ordini svuotato');
+  }
 }
 
 // Avvia app
