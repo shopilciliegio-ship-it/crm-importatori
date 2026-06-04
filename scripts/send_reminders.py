@@ -197,7 +197,7 @@ def should_send(order: dict, reminder_type: str, now_ms: int) -> tuple[bool, str
         if not shipping_date:
             return False, 'shippingDate mancante'
 
-        days_since = (now_ms - shipping_date) / DAY_MS
+        days_since = (now_ms - int(shipping_date)) / DAY_MS
 
         if shipping_type is None:
             return False, 'shippingType mancante — inserire nel CRM'
