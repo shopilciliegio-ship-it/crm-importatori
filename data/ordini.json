@@ -665,7 +665,7 @@
       "mbeTrackingNumber": "IT3299-8V-00000069IY",
       "carrier": "UPS",
       "shippingDate": "2026-05-14",
-      "status": "problema",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "spedito",
@@ -676,13 +676,24 @@
           "status": "problema",
           "date": 1780573965525,
           "note": ""
+        },
+        {
+          "status": "dogana",
+          "date": 1780574536651,
+          "note": ""
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "In dogana",
+          "sentAt": 1780574536808,
+          "messageId": "<202606041202.41175896752@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780573965525,
+      "updatedAt": 1780574536808,
       "shippingType": "standard"
     },
     {
