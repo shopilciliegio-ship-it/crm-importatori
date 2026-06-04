@@ -47,35 +47,6 @@
       "shippingType": "standard"
     },
     {
-      "id": "ord_mpv5bpn5fjc2",
-      "customerName": "LUCA PATTARO",
-      "customerEmail": "hokutazzo@gmail.com",
-      "customerPhone": "",
-      "amount": 294.05,
-      "currency": "EUR",
-      "orderDate": 1780230918000,
-      "emailSubject": "🍷 New Order — LUCA PATTARO — 294.05 EUR",
-      "shipmentCode": "MERCHANT",
-      "shippingAddress": "VIA UOPINI 94, TOWN OF HUBBARD 53035 WISCONSIN (DODGE COUNTY)",
-      "numberOfCartons": null,
-      "gmailMessageId": "<DB9PR08MB66828056015E52A98D23636EBF142@DB9PR08MB6682.eurprd08.prod.outlook.com>",
-      "trackingNumber": "",
-      "carrier": "MBE",
-      "shippingDate": null,
-      "status": "ricevuto",
-      "statusHistory": [
-        {
-          "status": "ricevuto",
-          "date": 1780314564497,
-          "note": "Importato da Gmail (GitHub Actions)"
-        }
-      ],
-      "emailsSent": [],
-      "notes": "",
-      "createdAt": 1780314564497,
-      "updatedAt": 1780314564497
-    },
-    {
       "id": "ord_mpv5bpn5tqbw",
       "customerName": "LORA CURRIE",
       "customerEmail": "lorahenke@aol.com",
