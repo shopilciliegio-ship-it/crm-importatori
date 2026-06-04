@@ -758,7 +758,7 @@
     {
       "id": "ord_mbe_IT3299-8V-00000062MA",
       "customerName": "ROSE MARIE CROTTI",
-      "customerEmail": "",
+      "customerEmail": "crottirm@yahoo.com",
       "customerPhone": "",
       "shippingAddress": "62 GROVE RD, SCOTT TOWNSHIP",
       "amount": 0,
@@ -771,19 +771,32 @@
       "mbeTrackingNumber": "IT3299-8V-00000062MA",
       "carrier": "UPS",
       "shippingDate": "2026-04-21",
-      "status": "spedito",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "spedito",
           "date": 1780415614441,
           "note": "Importato da MBE — Shipment created"
+        },
+        {
+          "status": "consegnato",
+          "date": 1780573575882,
+          "note": ""
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "consegnato",
+          "sentAt": 1780573575882,
+          "messageId": "manual-skip",
+          "manual": true
+        }
+      ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780415614441
+      "updatedAt": 1780573575882,
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-00000062M1",
