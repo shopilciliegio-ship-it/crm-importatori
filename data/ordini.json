@@ -1497,19 +1497,32 @@
       "mbeTrackingNumber": "IT3299-0V-0000005EEN",
       "carrier": "UPS",
       "shippingDate": "2025-12-15",
-      "status": "spedito",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "spedito",
           "date": 1780415614441,
           "note": "Importato da MBE — Delivered"
+        },
+        {
+          "status": "consegnato",
+          "date": 1780573027971,
+          "note": ""
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "consegnato",
+          "sentAt": 1780573027971,
+          "messageId": "manual-skip",
+          "manual": true
+        }
+      ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780415614441
+      "updatedAt": 1780573027971,
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005D6H",
