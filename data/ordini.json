@@ -172,18 +172,24 @@
       "trackingNumber": "",
       "carrier": "MBE",
       "shippingDate": null,
-      "status": "ricevuto",
+      "status": "preparazione",
       "statusHistory": [
         {
           "status": "ricevuto",
           "date": 1780314564497,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "preparazione",
+          "date": 1780575586147,
+          "note": ""
         }
       ],
       "emailsSent": [],
       "notes": "",
       "createdAt": 1780314564497,
-      "updatedAt": 1780314564497
+      "updatedAt": 1780575586147,
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006F09",
