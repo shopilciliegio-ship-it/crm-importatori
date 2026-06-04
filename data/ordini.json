@@ -818,7 +818,7 @@
     {
       "id": "ord_mbe_IT3299-8V-00000062LW",
       "customerName": "SUSAN CARPINET",
-      "customerEmail": "",
+      "customerEmail": "geb43@aol.com",
       "customerPhone": "",
       "shippingAddress": "25 WEST FIRST STREET, WYOMING",
       "amount": 0,
@@ -831,19 +831,32 @@
       "mbeTrackingNumber": "IT3299-8V-00000062LW",
       "carrier": "UPS",
       "shippingDate": "2026-04-21",
-      "status": "spedito",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "spedito",
           "date": 1780415614441,
           "note": "Importato da MBE — Shipment created"
+        },
+        {
+          "status": "consegnato",
+          "date": 1780573525674,
+          "note": ""
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "consegnato",
+          "sentAt": 1780573525674,
+          "messageId": "manual-skip",
+          "manual": true
+        }
+      ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780415614441
+      "updatedAt": 1780573525674,
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-00000062L8",
