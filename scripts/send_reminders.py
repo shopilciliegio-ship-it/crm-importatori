@@ -17,6 +17,7 @@ import base64
 import html
 import json
 import os
+import re
 from datetime import datetime, timezone
 
 import requests
@@ -82,14 +83,18 @@ def gh_put(path: str, data: dict, sha: str | None, message: str) -> None:
 # ── Template rendering ────────────────────────────────────────────────────────
 
 def render_template(tpl: dict, order: dict) -> tuple[str, str]:
-    nome     = (order.get('customerName') or '').split()[0] or order.get('customerName', '')
-    tracking = order.get('trackingNumber', '') or ''
-    tracking_line = f'Numero tracking: {tracking}\n' if tracking else ''
+    nome        = (order.get('customerName') or '').split()[0] or order.get('customerName', '')
+    tracking    = order.get('trackingNumber', '') or ''
+    mbe_code    = (order.get('shipmentCode') or '').strip()
+    fier_url    = f'https://track.fieramente.biz/#/tracking/{mbe_code}' if mbe_code else ''
+    tracking_line = f'Tracking number: {tracking} — {fier_url}\n' if tracking and fier_url \
+                    else (f'Tracking number: {tracking}\n' if tracking else '')
 
     ctx = {
         'nome':          nome,
         'tracking':      tracking,
         'tracking_line': tracking_line,
+        'fieramente_url': fier_url,
     }
 
     subject = tpl.get('subject', '')
@@ -103,11 +108,19 @@ def render_template(tpl: dict, order: dict) -> tuple[str, str]:
 
 # ── Email HTML builder ────────────────────────────────────────────────────────
 
+_FIER_URL_RE = re.compile(r'(https://track\.fieramente\.biz/#/tracking/[A-Za-z0-9_-]+)')
+
 def _body_to_html(plain: str) -> str:
     paras = [p.strip() for p in plain.split('\n\n') if p.strip()]
     parts = []
     for p in paras:
         escaped = html.escape(p).replace('\n', '<br>')
+        # Rende cliccabili i link Fieramente tracking
+        escaped = _FIER_URL_RE.sub(
+            r'<a href="\1" style="color:#B8941A;font-weight:600;text-decoration:none">'
+            r'🔗 Track your shipment on Fieramente</a>',
+            escaped
+        )
         parts.append(
             f'<p style="margin:0 0 16px;color:#333;font-size:15px;line-height:1.7">{escaped}</p>'
         )
