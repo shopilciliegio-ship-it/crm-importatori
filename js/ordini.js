@@ -163,6 +163,64 @@ async function pushOrdiniGH(){
   }catch(e){ updGh('error'); console.error('pushOrdiniGH:',e); }
 }
 
+/* ─ Pallini fase email per la riga lista ─ */
+function _phaseDots(order){
+  const sent=new Set((order.emailsSent||[]).filter(e=>!e.manual).map(e=>e.type));
+  const status=order.status;
+  const isExpress=order.shippingType==='express';
+  const phases=[
+    {type:'order_received'},
+    {type:'day0'},
+    {type:'day10'},
+    {type:'day20',hideExpress:true},
+    {type:'dogana',sb:true},
+    {type:'in_consegna',sb:true},
+    {type:'consegnato',sb:true},
+    {type:'problema',sb:true,warn:true},
+  ];
+  const dots=phases.filter(p=>!(p.hideExpress&&isExpress)).map(p=>{
+    let bg;
+    if(sent.has(p.type))          bg=p.warn?'#c0392b':'#2a9d5c';
+    else if(p.sb&&status===p.type) bg='#e67e22';
+    else                           bg='var(--brd2)';
+    const sched=(typeof REMINDER_SCHEDULE!=='undefined'?REMINDER_SCHEDULE:[]).find(r=>r.type===p.type);
+    return `<span title="${sched?esc(sched.label):p.type}" style="display:inline-block;width:7px;height:7px;border-radius:50%;background:${bg}"></span>`;
+  }).join('');
+  return `<div style="display:flex;gap:2px;align-items:center">${dots}</div>`;
+}
+
+/* ─ Timeline unificata stati + email ─ */
+function _buildTimeline(order){
+  const TYPE_LABELS={order_received:'Conferma ricezione',day0:'Conferma spedizione',day10:'Reminder 10gg',day20:'Reminder 20gg',dogana:'In dogana',in_consegna:'In consegna',consegnato:'Consegnato',problema:'Problema spedizione'};
+  const events=[];
+  for(const h of (order.statusHistory||[])){
+    const st=ORD_STATUS[h.status]||{l:h.status,c:'var(--bg2)',t:'var(--text2)'};
+    events.push({date:h.date,kind:'status',label:st.l,note:h.note,c:st.c,t:st.t});
+  }
+  for(const e of (order.emailsSent||[])){
+    if(e.manual) continue;
+    events.push({date:e.sentAt,kind:'email',label:e.subject||TYPE_LABELS[e.type]||e.type,note:e.to});
+  }
+  events.sort((a,b)=>a.date-b.date);
+  if(!events.length) return '';
+  return events.map(ev=>{
+    const d=new Date(ev.date).toLocaleString('it-IT',{day:'numeric',month:'short',year:'2-digit',hour:'2-digit',minute:'2-digit'});
+    if(ev.kind==='email') return `<div class="log-e" style="display:flex;gap:8px;align-items:flex-start">
+      <span style="font-size:13px;margin-top:1px">📧</span>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:12px;font-weight:600">${esc(ev.label)}</div>
+        ${ev.note?`<div style="font-size:11px;color:var(--text3)">→ ${esc(ev.note)}</div>`:''}
+        <div style="font-size:10px;color:var(--text3)">${d}</div>
+      </div></div>`;
+    return `<div class="log-e" style="display:flex;gap:8px;align-items:flex-start">
+      <span class="badge" style="background:${ev.c};color:${ev.t};font-size:10px;padding:2px 6px;white-space:nowrap;flex-shrink:0">${esc(ev.label)}</span>
+      <div style="flex:1;min-width:0">
+        ${ev.note?`<div style="font-size:11px;color:var(--text3)">${esc(ev.note)}</div>`:''}
+        <div style="font-size:10px;color:var(--text3)">${d}</div>
+      </div></div>`;
+  }).join('');
+}
+
 /* ─ Render lista ordini ─ */
 function renderOrdini(){
   renderEmailToggle();
@@ -211,19 +269,16 @@ function renderOrdini(){
   el.innerHTML=orders.map(o=>{
     const st=ORD_STATUS[o.status]||ORD_STATUS.ricevuto;
     const date=new Date(o.orderDate).toLocaleDateString('it-IT',{day:'numeric',month:'short',year:'2-digit'});
-    const tracking=o.trackingNumber
-      ?`<span style="font-size:11px;font-family:monospace;background:var(--bg2);padding:2px 6px;border-radius:4px;margin-right:6px">${esc(o.trackingNumber)}</span>`
-      :'';
     const hasMissingEmail = !o.customerEmail&&!['annullato'].includes(o.status);
     const hasMissingType = !o.shippingType&&['spedito','in_transito','dogana','in_consegna'].includes(o.status);
     return `<div class="cr" onclick="openOrdineDetail('${o.id}')">
       <div class="av av2" style="font-size:10px">${ini(o.customerName)}</div>
       <div class="ci">
         <div class="cn">${esc(o.customerName)}${hasMissingEmail?'<span style="color:var(--amber);font-size:10px;margin-left:5px">⚠ email</span>':''}${hasMissingType?'<span style="color:var(--amber);font-size:10px;margin-left:5px">⚠ tipo sped.</span>':''}</div>
-        <div class="cs">${date} · €${o.amount.toFixed(2)} ${o.currency||'EUR'}${o.shipmentCode?' · <span style="font-family:monospace;font-size:10px">'+esc(o.shipmentCode)+'</span>':''}${o.shippingType?' · <span style="font-size:10px;opacity:.7">'+o.shippingType+'</span>':''}</div>
+        <div class="cs">${date} · €${o.amount.toFixed(2)} ${o.currency||'EUR'}${o.shippingType?' · <span style="font-size:10px;opacity:.7">'+o.shippingType+'</span>':''}</div>
       </div>
-      <div style="display:flex;align-items:center;gap:4px;flex-shrink:0">
-        ${tracking}
+      <div style="display:flex;align-items:center;gap:6px;flex-shrink:0">
+        ${_phaseDots(o)}
         <span class="badge" style="background:${st.c};color:${st.t}">${st.l}</span>
       </div>
     </div>`;
@@ -241,18 +296,7 @@ function openOrdineDetail(id){
     `<option value="${k}"${o.status===k?' selected':''}>${v.l}</option>`
   ).join('');
 
-  const history=(o.statusHistory||[]).slice().reverse().map(h=>{
-    const d=new Date(h.date).toLocaleString('it-IT',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
-    const hs=ORD_STATUS[h.status]||{l:h.status};
-    return `<div class="log-e"><strong>${hs.l}</strong> — ${d}${h.note?'<br><span style="color:var(--text3);font-size:11px">'+esc(h.note)+'</span>':''}</div>`;
-  }).join('');
-
-  const emailsSent=(o.emailsSent||[]).slice().reverse().map(e=>{
-    const d=new Date(e.sentAt).toLocaleString('it-IT',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
-    const subj=e.subject?`<br><span style="color:var(--text3);font-size:11px;font-style:italic">${esc(e.subject)}</span>`:'';
-    const to=e.to?`<br><span style="color:var(--text3);font-size:11px">→ ${esc(e.to)}</span>`:'';
-    return `<div class="log-e">📧 <strong>${esc(e.type)}</strong> — ${d}${subj}${to}</div>`;
-  }).join('');
+  const timeline=_buildTimeline(o);
 
   const trackingLink=o.trackingNumber&&o.carrier==='MBE'
     ?`<a href="https://www.mbeonline.it/tracking" target="_blank" style="font-size:12px">🔗 MBE tracking</a>`
@@ -311,9 +355,8 @@ function openOrdineDetail(id){
       </div>
     </div>
 
+    ${timeline?`<div class="divhr"></div><div style="font-size:11px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">Timeline</div><div>${timeline}</div>`:''}
     ${typeof getReminderStatusHtml==='function'?getReminderStatusHtml(o):''}
-    ${history?`<div class="divhr"></div><div style="font-size:11px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">Storico stati</div><div>${history}</div>`:''}
-    ${emailsSent?`<div class="divhr"></div><div style="font-size:11px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">Email inviate</div><div>${emailsSent}</div>`:''}
 
     <div class="mf">
       <button class="btn btd bts" onclick="deleteOrdine('${id}')">🗑 Elimina</button>
