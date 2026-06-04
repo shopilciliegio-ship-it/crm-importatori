@@ -247,7 +247,9 @@ function openOrdineDetail(id){
 
   const emailsSent=(o.emailsSent||[]).slice().reverse().map(e=>{
     const d=new Date(e.sentAt).toLocaleString('it-IT',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
-    return `<div class="log-e">📧 ${esc(e.type)} — ${d}</div>`;
+    const subj=e.subject?`<br><span style="color:var(--text3);font-size:11px;font-style:italic">${esc(e.subject)}</span>`:'';
+    const to=e.to?`<br><span style="color:var(--text3);font-size:11px">→ ${esc(e.to)}</span>`:'';
+    return `<div class="log-e">📧 <strong>${esc(e.type)}</strong> — ${d}${subj}${to}</div>`;
   }).join('');
 
   const trackingLink=o.trackingNumber&&o.carrier==='MBE'
