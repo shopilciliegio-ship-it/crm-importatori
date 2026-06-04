@@ -211,8 +211,8 @@ def should_send(order: dict, reminder_type: str, now_ms: int) -> tuple[bool, str
         return True, ''
 
     if reminder_type in ('day10', 'day20'):
-        if status in STATI_TERMINALI:
-            return False, f'ordine terminato ({status})'
+        if status in STATI_TERMINALI or status == 'in_consegna':
+            return False, f'già in consegna/terminato ({status}) — skip reminder temporizzato'
         if not shipping_date:
             return False, 'shippingDate mancante'
 
