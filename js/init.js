@@ -65,6 +65,9 @@ async function init(){
     if(typeof loadReminderTemplates==='function'){
       try{ await loadReminderTemplates(); }catch(e){ console.warn('loadReminderTemplates:',e); }
     }
+    if(typeof loadSettingsFromGH==='function'){
+      try{ await loadSettingsFromGH(); }catch(e){ console.warn('loadSettingsFromGH:',e); }
+    }
   } else {
     updGh('idle');refreshAll();
   }

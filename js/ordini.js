@@ -164,6 +164,7 @@ async function pushOrdiniGH(){
 
 /* ─ Render lista ordini ─ */
 function renderOrdini(){
+  renderEmailToggle();
   renderGmailStatus();
 
   const sq = (document.getElementById('ord-sq')?.value||'').toLowerCase();
@@ -345,6 +346,13 @@ async function saveOrdineUpdate(id){
     o.statusHistory=o.statusHistory||[];
     o.statusHistory.push({status:newStatus, date:Date.now(), note:note||''});
     if(newStatus==='spedito'&&!o.shippingDate) o.shippingDate=Date.now();
+    if(['consegnato','annullato'].includes(newStatus)){
+      const alreadySkipped=(o.emailsSent||[]).some(e=>e.type===newStatus);
+      if(!alreadySkipped){
+        o.emailsSent=o.emailsSent||[];
+        o.emailsSent.push({type:newStatus, sentAt:Date.now(), messageId:'manual-skip', manual:true});
+      }
+    }
     if(sendEmail&&o.customerEmail){
       await sendOrdineStatusEmail(o);
     }
@@ -550,6 +558,60 @@ export@ilciliegio.com | +39 331 1347899`;
     console.error('sendOrdineStatusEmail:',e);
     toast('⚠ Errore invio email: '+e.message);
   }
+}
+
+
+/* ═══ SETTINGS — email auto-send toggle ═══ */
+
+async function loadSettingsFromGH(){
+  const{token,owner,repo}=ghs;
+  if(!token||!owner||!repo){ renderEmailToggle(); return; }
+  const url=`https://api.github.com/repos/${owner}/${repo}/contents/data/crm-settings.json`;
+  try{
+    const r=await fetch(url,{headers:{'Authorization':`token ${token}`,'Accept':'application/vnd.github.v3+json'}});
+    if(r.status===404){ renderEmailToggle(); return; }
+    if(!r.ok) return;
+    const d=await r.json();
+    ghSha.settings=d.sha;
+    const raw=d.content.replace(/\n/g,'');
+    let jsonStr;
+    try{ jsonStr=decodeURIComponent(Array.from(atob(raw),c=>'%'+c.charCodeAt(0).toString(16).padStart(2,'0')).join('')); }
+    catch(e){ jsonStr=atob(raw); }
+    dbSettings=JSON.parse(jsonStr);
+    renderEmailToggle();
+  }catch(e){ console.warn('loadSettingsFromGH:',e); }
+}
+
+async function pushSettingsGH(){
+  const{token,owner,repo}=ghs;
+  if(!token||!owner||!repo) return;
+  const path='data/crm-settings.json';
+  const url=`https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
+  const hd={'Authorization':`token ${token}`,'Content-Type':'application/json','Accept':'application/vnd.github.v3+json'};
+  if(!ghSha.settings){
+    const r=await fetch(url,{headers:hd});
+    if(r.ok) ghSha.settings=(await r.json()).sha;
+  }
+  const bytes=new TextEncoder().encode(JSON.stringify(dbSettings,null,2));
+  const b64=btoa(Array.from(bytes,b=>String.fromCharCode(b)).join(''));
+  const body={message:`CRM settings — ${new Date().toLocaleString('it-IT')}`,content:b64};
+  if(ghSha.settings) body.sha=ghSha.settings;
+  const res=await fetch(url,{method:'PUT',headers:hd,body:JSON.stringify(body)});
+  if(res.ok) ghSha.settings=(await res.json()).content.sha;
+}
+
+async function toggleEmailAutoSend(){
+  dbSettings.emailAutoSend=!dbSettings.emailAutoSend;
+  renderEmailToggle();
+  await pushSettingsGH();
+  toast(dbSettings.emailAutoSend?'✓ Invio automatico email ATTIVATO':'⏸ Invio automatico email DISATTIVATO');
+}
+
+function renderEmailToggle(){
+  const el=document.getElementById('email-autosend-toggle');
+  if(!el) return;
+  const on=dbSettings.emailAutoSend===true;
+  el.innerHTML=`<button onclick="toggleEmailAutoSend()" style="font-size:12px;font-weight:700;padding:7px 16px;border-radius:20px;border:none;cursor:pointer;background:${on?'#2a9d5c':'#c0392b'};color:#fff;letter-spacing:.3px">${on?'🟢 Invio email automatico: ON':'🔴 Invio email automatico: OFF'}</button>`;
 }
 
 

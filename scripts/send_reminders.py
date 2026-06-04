@@ -235,6 +235,11 @@ def should_send(order: dict, reminder_type: str, now_ms: int) -> tuple[bool, str
 def main():
     print('=== Send Reminders — Il Ciliegio ===')
 
+    settings, _ = gh_get('data/crm-settings.json')
+    if not settings.get('emailAutoSend', False):
+        print('⏸ Invio automatico email disabilitato (toggle OFF nel CRM). Nessuna email inviata.')
+        return
+
     db,        sha_db = gh_get(DATA_PATH)
     templates, _      = gh_get(TEMPLATES_PATH)
 
