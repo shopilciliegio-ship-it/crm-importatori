@@ -1148,7 +1148,7 @@
     {
       "id": "ord_mbe_IT3299-0V-0000005X66",
       "customerName": "ZEKE PONTO C/O AUGUST IMPORTS",
-      "customerEmail": "",
+      "customerEmail": "zponto@augustimports.com",
       "customerPhone": "",
       "shippingAddress": "2742 ALKI AVE S.W., SEATTLE",
       "amount": 0,
@@ -1161,19 +1161,25 @@
       "mbeTrackingNumber": "IT3299-0V-0000005X66",
       "carrier": "FedEx",
       "shippingDate": "2026-03-27",
-      "status": "spedito",
+      "status": "problema",
       "statusHistory": [
         {
           "status": "spedito",
           "date": 1780415614441,
           "note": "Importato da MBE — Not delivered"
+        },
+        {
+          "status": "problema",
+          "date": 1780573326931,
+          "note": ""
         }
       ],
       "emailsSent": [],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780415614441
+      "updatedAt": 1780573326931,
+      "shippingType": "express"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005VVZ",
