@@ -968,7 +968,7 @@
     {
       "id": "ord_mbe_IT3299-8V-0000005Z74",
       "customerName": "JENNIFER PATINO",
-      "customerEmail": "",
+      "customerEmail": "jenniferpatino7@outlook.com",
       "customerPhone": "",
       "shippingAddress": "10033 NE 125TH CT APT/UNIT 15-3, KIRKLAND",
       "amount": 0,
@@ -981,19 +981,32 @@
       "mbeTrackingNumber": "IT3299-8V-0000005Z74",
       "carrier": "UPS",
       "shippingDate": "2026-04-08",
-      "status": "spedito",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "spedito",
           "date": 1780415614441,
           "note": "Importato da MBE — Shipment created"
+        },
+        {
+          "status": "consegnato",
+          "date": 1780573451562,
+          "note": ""
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "consegnato",
+          "sentAt": 1780573451562,
+          "messageId": "manual-skip",
+          "manual": true
+        }
+      ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780415614441
+      "updatedAt": 1780573451562,
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005YGA",
