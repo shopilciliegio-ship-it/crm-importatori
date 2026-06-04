@@ -3,14 +3,14 @@
     {
       "id": "ord_mpzhlcdu21tb",
       "customerName": "LISA CHRISTIAN",
-      "customerEmail": "",
-      "customerPhone": "",
+      "customerEmail": "lisa.slp86@gmail.com",
+      "customerPhone": "+12148035455",
       "amount": 124.4,
       "currency": "EUR",
       "orderDate": 1780571922000,
       "emailSubject": "🍷 New Order — LISA CHRISTIAN — 124.40 EUR",
       "shipmentCode": "",
-      "shippingAddress": "",
+      "shippingAddress": "1313 RIO GRANDE DR, 75013 ALLEN, TEXAS (COLLIN COUNTY)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202606041118.26350675959@smtp-relay.mailin.fr>",
@@ -28,19 +28,19 @@
       "emailsSent": [],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1780584674203
+      "updatedAt": 1780585261434
     },
     {
       "id": "ord_mpzhlcdubeyc",
       "customerName": "WHITNEY BECK",
-      "customerEmail": "",
-      "customerPhone": "",
+      "customerEmail": "wawabeck1@att.net",
+      "customerPhone": "+14693870806",
       "amount": 117.8,
       "currency": "EUR",
       "orderDate": 1780571738000,
       "emailSubject": "🍷 New Order — WHITNEY BECK — 117.80 EUR",
       "shipmentCode": "",
-      "shippingAddress": "",
+      "shippingAddress": "5702 OVERTON DR, 75002 ALLEN, TEXAS (COLLIN COUNTY)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202606041115.91309215577@smtp-relay.mailin.fr>",
@@ -58,7 +58,7 @@
       "emailsSent": [],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1780584674203
+      "updatedAt": 1780585261434
     },
     {
       "id": "ord_mpzhlcdub8mu",
@@ -2127,5 +2127,5 @@
       "shippingType": "standard"
     }
   ],
-  "lastImportedAt": 1780584674203
+  "lastImportedAt": 1780585261434
 }
