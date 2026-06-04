@@ -373,11 +373,9 @@ def main():
             gh_put(LOG_PATH, {'log': existing + log_new}, log_sha,
                    f'Email log — {len(log_new)} entries — {now_str}')
             print(f'\n✓ {sent} email inviate, ordini.json aggiornato.')
+            print(f'✓ email-log.json aggiornato ({len(log_new)} nuove righe).')
         else:
             print('\nNessuna email da inviare.')
-        print(f'✓ email-log.json aggiornato ({len(log_new)} nuove righe).')
-    else:
-        print('\nNessuna email da inviare.')
 
 
 if __name__ == '__main__':
