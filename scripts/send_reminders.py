@@ -28,6 +28,9 @@ GH_REPO       = os.environ['GH_REPO']
 
 DATA_PATH      = 'data/ordini.json'
 TEMPLATES_PATH = 'data/email-reminders-templates.json'
+LOG_PATH       = 'data/email-log.json'
+
+BCC_EMAIL = 'lucapattaro75@virgilio.it'
 
 SENDER_NAME  = 'Il Ciliegio — Azienda Agricola'
 SENDER_EMAIL = 'export@ilciliegio.com'
@@ -150,6 +153,7 @@ def send_email(order: dict, reminder_type: str, subject: str, body_text: str) ->
     payload = {
         'sender':      {'name': SENDER_NAME, 'email': SENDER_EMAIL},
         'to':          [{'email': to_email, 'name': order.get('customerName', '')}],
+        'bcc':         [{'email': BCC_EMAIL}],
         'subject':     subject,
         'textContent': body_text,
         'htmlContent': build_html_email(body_text),
@@ -234,7 +238,8 @@ def main():
     active = [o for o in orders if o.get('status') not in ('ricevuto', 'preparazione', 'annullato')]
     print(f'Ordini attivi: {len(active)} / {len(orders)}')
 
-    changed = 0
+    changed   = 0
+    log_new   = []
 
     for order in active:
         name   = order.get('customerName', '?')
@@ -255,22 +260,37 @@ def main():
                 continue
 
             subject, body = render_template(tpl, order)
+            to_email = (order.get('customerEmail') or '').strip()
             msg_id = send_email(order, rtype, subject, body)
 
             if msg_id:
-                order.setdefault('emailsSent', []).append({
+                entry = {
                     'type':      rtype,
+                    'to':        to_email,
+                    'subject':   subject,
                     'sentAt':    now_ms,
                     'messageId': msg_id,
-                })
+                }
+                order.setdefault('emailsSent', []).append(entry)
                 order['updatedAt'] = now_ms
                 changed += 1
+                log_new.append({
+                    'orderId':      order['id'],
+                    'customerName': order.get('customerName', ''),
+                    **entry,
+                })
 
     if changed > 0:
         db['orders'] = orders
         now_str = datetime.now().strftime('%d/%m/%Y %H:%M')
         gh_put(DATA_PATH, db, sha_db, f'Reminder email — {changed} inviate — {now_str}')
         print(f'\n✓ {changed} email inviate, ordini.json aggiornato.')
+
+        log_data, log_sha = gh_get(LOG_PATH)
+        existing = log_data.get('log', []) if isinstance(log_data, dict) else []
+        log_data = {'log': existing + log_new}
+        gh_put(LOG_PATH, log_data, log_sha, f'Email log — {len(log_new)} entries — {now_str}')
+        print(f'✓ email-log.json aggiornato ({len(log_new)} nuove righe).')
     else:
         print('\nNessuna email da inviare.')
 
