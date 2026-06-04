@@ -12,7 +12,7 @@
   "day10": {
     "label": "Reminder 10 giorni (Standard e Express)",
     "subject": "Shipping update — your order",
-    "body": "Dear {nome},\n\nhere is an update on your shipment, which has been on its way for 10 days now.\n\nAt this stage, your order is likely crossing the ocean, going through mountains or awaiting customs clearance. We will write to you as soon as we receive any news from the carrier.\n\nIf you have any questions, feel free to reply to this email.\n\nLuca Pattaro\nIl Ciliegio — Viticoltori in Monteriggioni dal 1952\nshop@ilciliegio.com | +39 331 1347899"
+    "body": "Dear {nome},\n\nhere is an update on your shipment, which has been on its way for 10 days now.\n\nAt this stage, your order is likely crossing the ocean, going through mountains or preparing for customs clearance. We will write to you as soon as we receive any news from the carrier.\n\nIf you have any questions, feel free to reply to this email.\n\nLuca Pattaro\nIl Ciliegio — Viticoltori in Monteriggioni dal 1952\nshop@ilciliegio.com | +39 331 1347899"
   },
   "day20": {
     "label": "Reminder 20 giorni (solo Standard)",
