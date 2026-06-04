@@ -12,7 +12,7 @@
       "shipmentCode": "",
       "shippingAddress": "",
       "numberOfCartons": null,
-      "shippingType": null,
+      "shippingType": "standard",
       "gmailMessageId": "<202606041118.26350675959@smtp-relay.mailin.fr>",
       "trackingNumber": "",
       "carrier": "MBE",
@@ -28,7 +28,7 @@
       "emailsSent": [],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1780577033970
+      "updatedAt": 1780584674203
     },
     {
       "id": "ord_mpzhlcdubeyc",
@@ -42,7 +42,7 @@
       "shipmentCode": "",
       "shippingAddress": "",
       "numberOfCartons": null,
-      "shippingType": null,
+      "shippingType": "standard",
       "gmailMessageId": "<202606041115.91309215577@smtp-relay.mailin.fr>",
       "trackingNumber": "",
       "carrier": "MBE",
@@ -58,13 +58,13 @@
       "emailsSent": [],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1780577033970
+      "updatedAt": 1780584674203
     },
     {
       "id": "ord_mpzhlcdub8mu",
       "customerName": "ANDREW WAYRYNEN",
       "customerEmail": "andrew.wayrynen@maritime.edu",
-      "customerPhone": "",
+      "customerPhone": "+19788793721",
       "amount": 117.8,
       "currency": "EUR",
       "orderDate": 1780568654000,
@@ -88,7 +88,7 @@
       "emailsSent": [],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1780577033970
+      "updatedAt": 1780584674203
     },
     {
       "id": "ord_mpvpkyylwz2h",
@@ -2127,5 +2127,5 @@
       "shippingType": "standard"
     }
   ],
-  "lastImportedAt": 1780577033970
+  "lastImportedAt": 1780584674203
 }
