@@ -537,19 +537,30 @@
       "mbeTrackingNumber": "IT3299-8V-00000069TF",
       "carrier": "UPS",
       "shippingDate": "2026-05-15",
-      "status": "problema",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "problema",
           "date": 1780415614441,
           "note": "Importato da MBE — Delivery exception: shipment cannot be delivered - attempt nr. <number>"
+        },
+        {
+          "status": "dogana",
+          "date": 1780574529498,
+          "note": ""
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "In dogana",
+          "sentAt": 1780574529801,
+          "messageId": "<202606041202.99550443117@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780574125418,
+      "updatedAt": 1780574529801,
       "shippingType": "standard"
     },
     {
