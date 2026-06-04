@@ -1058,7 +1058,7 @@
     {
       "id": "ord_mbe_IT3299-8V-0000005XA9",
       "customerName": "JAMES POTTER",
-      "customerEmail": "",
+      "customerEmail": "bpotter73@att.net",
       "customerPhone": "",
       "shippingAddress": "4727 COLLEGE ST, JACKSONVILLE",
       "amount": 0,
@@ -1071,19 +1071,32 @@
       "mbeTrackingNumber": "IT3299-8V-0000005XA9",
       "carrier": "UPS",
       "shippingDate": "2026-03-27",
-      "status": "spedito",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "spedito",
           "date": 1780415614441,
           "note": "Importato da MBE — Shipment created"
+        },
+        {
+          "status": "consegnato",
+          "date": 1780573401891,
+          "note": ""
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "consegnato",
+          "sentAt": 1780573401891,
+          "messageId": "manual-skip",
+          "manual": true
+        }
+      ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780415614441
+      "updatedAt": 1780573401891,
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005XA6",
