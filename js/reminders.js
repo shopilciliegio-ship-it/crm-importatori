@@ -3,12 +3,13 @@
 const REM_PATH = 'data/email-reminders-templates.json';
 
 const REMINDER_SCHEDULE = [
-  { type: 'day0',       label: 'Conferma spedizione (giorno 0)', days: 0,    types: ['standard','express'] },
-  { type: 'day10',      label: 'Reminder 10 giorni',             days: 10,   types: ['standard','express'] },
-  { type: 'day20',      label: 'Reminder 20 giorni (solo Standard)', days: 20, types: ['standard'] },
-  { type: 'consegnato', label: 'Ordine consegnato',              days: null, types: ['standard','express'] },
-  { type: 'dogana',     label: 'In dogana',                      days: null, types: ['standard','express'] },
-  { type: 'problema',   label: 'Problema spedizione',            days: null, types: ['standard','express'] },
+  { type: 'order_received', label: 'Conferma ricezione ordine', days: null, types: ['standard','express'], trigger: 'Ordine importato da Gmail (entro 7gg)' },
+  { type: 'day0',       label: 'Conferma spedizione',           days: 0,    types: ['standard','express'], trigger: 'Data spedizione impostata da Fieramente/MBE' },
+  { type: 'day10',      label: 'Reminder 10 giorni',            days: 10,   types: ['standard','express'], trigger: '10 giorni dalla data di spedizione' },
+  { type: 'day20',      label: 'Reminder 20 giorni',            days: 20,   types: ['standard'],           trigger: '20 giorni dalla spedizione — solo Standard' },
+  { type: 'consegnato', label: 'Ordine consegnato',             days: null, types: ['standard','express'], trigger: 'Fieramente status → Delivered (5)' },
+  { type: 'dogana',     label: 'In dogana',                     days: null, types: ['standard','express'], trigger: 'Fieramente status → Customs clearance (3/8)' },
+  { type: 'problema',   label: 'Problema spedizione',           days: null, types: ['standard','express'], trigger: 'Fieramente/MBE status → Problema' },
 ];
 
 /* ─ Carica template da GitHub ─ */
@@ -68,26 +69,30 @@ function getReminderStatusHtml(order){
   const rows=REMINDER_SCHEDULE.map(r=>{
     if(sentMap[r.type]){
       const d=new Date(sentMap[r.type].sentAt).toLocaleDateString('it-IT',{day:'numeric',month:'short'});
-      return _remRow(r.label,`✓ ${d}`,'var(--green)');
+      return _remRow(r.label,`✓ ${d}`,r.trigger,'var(--green)');
+    }
+
+    if(r.type==='order_received'){
+      return _remRow(r.label,'prossima esecuzione script',r.trigger,'var(--amber)');
     }
 
     if(r.type==='day0'){
-      if(!sd) return _remRow(r.label,'in attesa spedizione','var(--text3)');
-      return _remRow(r.label,'prossima esecuzione script','var(--amber)');
+      if(!sd) return _remRow(r.label,'in attesa spedizione',r.trigger,'var(--text3)');
+      return _remRow(r.label,'prossima esecuzione script',r.trigger,'var(--amber)');
     }
 
     if(r.days===null){
-      if(['consegnato','annullato'].includes(status)) return _remRow(r.label,'non applicabile','var(--text3)');
-      return _remRow(r.label,'al cambio stato','var(--text3)');
+      if(['consegnato','annullato'].includes(status)) return _remRow(r.label,'non applicabile',r.trigger,'var(--text3)');
+      return _remRow(r.label,'al cambio stato',r.trigger,'var(--text3)');
     }
 
-    if(['consegnato','annullato'].includes(status)) return _remRow(r.label,'non necessaria','var(--text3)');
-    if(!stype) return _remRow(r.label,'⚠ tipo spedizione mancante','var(--red)');
-    if(!r.types.includes(stype)) return _remRow(r.label,`solo Standard (questo: ${stype})`,'var(--text3)');
-    if(!sd) return _remRow(r.label,'in attesa spedizione','var(--text3)');
+    if(['consegnato','annullato'].includes(status)) return _remRow(r.label,'non necessaria',r.trigger,'var(--text3)');
+    if(!stype) return _remRow(r.label,'⚠ tipo spedizione mancante',r.trigger,'var(--red)');
+    if(!r.types.includes(stype)) return _remRow(r.label,`solo Standard (questo: ${stype})`,r.trigger,'var(--text3)');
+    if(!sd) return _remRow(r.label,'in attesa spedizione',r.trigger,'var(--text3)');
     const rem=r.days-daysSince;
-    if(rem<=0) return _remRow(r.label,'prossima esecuzione script','var(--amber)');
-    return _remRow(r.label,`tra ${Math.ceil(rem)} giorni`,'var(--text3)');
+    if(rem<=0) return _remRow(r.label,'prossima esecuzione script',r.trigger,'var(--amber)');
+    return _remRow(r.label,`tra ${Math.ceil(rem)} giorni`,r.trigger,'var(--text3)');
   }).join('');
 
   return `<div class="divhr"></div>
@@ -95,9 +100,12 @@ function getReminderStatusHtml(order){
     <div style="background:var(--bg2);border-radius:var(--r);padding:10px 14px">${rows}</div>`;
 }
 
-function _remRow(label,status,color){
+function _remRow(label,status,trigger,color){
   return `<div style="display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid var(--brd2)">
-    <span style="font-size:12px;color:var(--text2)">${label}</span>
+    <div>
+      <div style="font-size:12px;color:var(--text2)">${label}</div>
+      <div style="font-size:10px;color:var(--text3);font-style:italic">${trigger}</div>
+    </div>
     <span style="font-size:11px;color:${color};white-space:nowrap;margin-left:8px">${status}</span>
   </div>`;
 }
@@ -107,19 +115,13 @@ function renderReminderTemplatesPanel(){
   const el=document.getElementById('reminder-templates-panel');
   if(!el) return;
 
-  const TYPES=[
-    {type:'day0',      label:'Giorno 0 — Conferma spedizione'},
-    {type:'day10',     label:'Giorno 10 — Reminder (Standard + Express)'},
-    {type:'day20',     label:'Giorno 20 — Reminder (solo Standard)'},
-    {type:'consegnato',label:'Ordine consegnato'},
-    {type:'dogana',    label:'In dogana'},
-    {type:'problema',  label:'Problema spedizione'},
-  ];
-
-  const content=TYPES.map((t,i)=>{
+  const content=REMINDER_SCHEDULE.map((t,i)=>{
     const tpl=dbRemT[t.type]||{};
     return `<div style="${i>0?'margin-top:16px':''}">
-      <div style="font-size:12px;font-weight:700;color:var(--text);margin-bottom:6px">📧 ${esc(t.label)}</div>
+      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:2px">
+        <div style="font-size:12px;font-weight:700;color:var(--text)">📧 ${esc(t.label)}</div>
+        <div style="font-size:10px;color:var(--text3);font-style:italic">Trigger: ${esc(t.trigger)}</div>
+      </div>
       <div class="fg fgf">
         <label style="font-size:11px;color:var(--text2)">Oggetto</label>
         <input id="rtpl-sub-${t.type}" value="${esc(tpl.subject||'')}" style="font-size:12px">
@@ -140,13 +142,12 @@ function renderReminderTemplatesPanel(){
 }
 
 async function doSaveReminderTemplates(){
-  const types=['day0','day10','day20','consegnato','dogana','problema'];
-  for(const t of types){
-    const sub =document.getElementById(`rtpl-sub-${t}`)?.value||'';
-    const body=document.getElementById(`rtpl-body-${t}`)?.value||'';
-    if(!dbRemT[t]) dbRemT[t]={};
-    dbRemT[t].subject=sub;
-    dbRemT[t].body=body;
+  for(const t of REMINDER_SCHEDULE){
+    const sub =document.getElementById(`rtpl-sub-${t.type}`)?.value||'';
+    const body=document.getElementById(`rtpl-body-${t.type}`)?.value||'';
+    if(!dbRemT[t.type]) dbRemT[t.type]={};
+    dbRemT[t.type].subject=sub;
+    dbRemT[t.type].body=body;
   }
   await saveReminderTemplates();
 }
