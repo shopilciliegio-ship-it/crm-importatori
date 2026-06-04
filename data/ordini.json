@@ -194,7 +194,7 @@
     {
       "id": "ord_mbe_IT3299-8V-0000006F09",
       "customerName": "PAMELLA ESTES",
-      "customerEmail": "",
+      "customerEmail": "pamella93@hotmail.com",
       "customerPhone": "",
       "shippingAddress": "7615 E HODIN DR, SPOKANE VALLEY",
       "amount": 0,
@@ -207,19 +207,25 @@
       "mbeTrackingNumber": "IT3299-8V-0000006F09",
       "carrier": "UPS",
       "shippingDate": "2026-06-01",
-      "status": "spedito",
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "spedito",
           "date": 1780415614441,
           "note": "Importato da MBE"
+        },
+        {
+          "status": "in_transito",
+          "date": 1780575667907,
+          "note": ""
         }
       ],
       "emailsSent": [],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780415614441
+      "updatedAt": 1780575667907,
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006F07",
