@@ -30,7 +30,7 @@ DATA_PATH      = 'data/ordini.json'
 TEMPLATES_PATH = 'data/email-reminders-templates.json'
 LOG_PATH       = 'data/email-log.json'
 
-BCC_EMAIL = 'lucapattaro75@virgilio.it'
+BCC_EMAIL = 'hokutazzo@gmail.com'
 
 SENDER_NAME  = 'Il Ciliegio — Azienda Agricola'
 SENDER_EMAIL = 'luca@sienawine.it'
