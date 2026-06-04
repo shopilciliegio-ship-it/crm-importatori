@@ -608,11 +608,21 @@ async function toggleEmailAutoSend(){
   toast(dbSettings.emailAutoSend?'✓ Invio automatico email ATTIVATO':'⏸ Invio automatico email DISATTIVATO');
 }
 
+async function toggleTestMode(){
+  dbSettings.testMode=!dbSettings.testMode;
+  renderEmailToggle();
+  await pushSettingsGH();
+  toast(dbSettings.testMode?'🧪 Test mode ON — email solo a te':'👥 Modalità produzione — email ai clienti');
+}
+
 function renderEmailToggle(){
   const el=document.getElementById('email-autosend-toggle');
   if(!el) return;
   const on=dbSettings.emailAutoSend===true;
-  el.innerHTML=`<button onclick="toggleEmailAutoSend()" style="font-size:12px;font-weight:700;padding:7px 16px;border-radius:20px;border:none;cursor:pointer;background:${on?'#2a9d5c':'#c0392b'};color:#fff;letter-spacing:.3px">${on?'🟢 Invio email automatico: ON':'🔴 Invio email automatico: OFF'}</button>`;
+  const test=dbSettings.testMode!==false;
+  const mainBtn=`<button onclick="toggleEmailAutoSend()" style="font-size:12px;font-weight:700;padding:7px 16px;border-radius:20px;border:none;cursor:pointer;background:${on?'#2a9d5c':'#c0392b'};color:#fff;letter-spacing:.3px">${on?'🟢 Email: ON':'🔴 Email: OFF'}</button>`;
+  const testBtn=on?`<button onclick="toggleTestMode()" style="font-size:12px;font-weight:700;padding:7px 16px;border-radius:20px;border:none;cursor:pointer;background:${test?'#e67e22':'#2980b9'};color:#fff;letter-spacing:.3px">${test?'🧪 Test mode':'👥 Clienti reali'}</button>`:'';
+  el.innerHTML=`<div style="display:flex;align-items:center;gap:8px">${mainBtn}${testBtn}</div>`;
 }
 
 

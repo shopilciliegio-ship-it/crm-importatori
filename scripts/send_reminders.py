@@ -144,28 +144,39 @@ def build_html_email(body_text: str) -> str:
 
 # ── Brevo send ────────────────────────────────────────────────────────────────
 
-def send_email(order: dict, reminder_type: str, subject: str, body_text: str) -> str | None:
+def send_email(order: dict, reminder_type: str, subject: str, body_text: str,
+               test_mode: bool = False) -> str | None:
     to_email = (order.get('customerEmail') or '').strip()
     if not to_email:
         print(f'    ⚠ {order.get("customerName","?")} — email cliente mancante, skip')
         return None
 
+    if test_mode:
+        actual_to   = BCC_EMAIL
+        actual_subj = f'[TEST → {to_email}] {subject}'
+        actual_bcc  = []
+        print(f'    🧪 TEST "{reminder_type}" → {BCC_EMAIL} (reale: {to_email})')
+    else:
+        actual_to   = to_email
+        actual_subj = subject
+        actual_bcc  = [{'email': BCC_EMAIL}]
+        print(f'    ✓ "{reminder_type}" → {to_email}')
+
     payload = {
         'sender':      {'name': SENDER_NAME, 'email': SENDER_EMAIL},
-        'to':          [{'email': to_email, 'name': order.get('customerName', '')}],
-        'bcc':         [{'email': BCC_EMAIL}],
-        'subject':     subject,
+        'to':          [{'email': actual_to, 'name': order.get('customerName', '')}],
+        'subject':     actual_subj,
         'textContent': body_text,
         'htmlContent': build_html_email(body_text),
-        'tags':        ['wine-crm', 'ordini', reminder_type],
+        'tags':        ['wine-crm', 'ordini', reminder_type] + (['test'] if test_mode else []),
         'headers':     {'X-CRM-OrderId': order['id']},
     }
+    if actual_bcc:
+        payload['bcc'] = actual_bcc
 
     r = requests.post('https://api.brevo.com/v3/smtp/email', headers=_BREVO_HEADERS, json=payload)
     if r.ok:
-        msg_id = r.json().get('messageId', '')
-        print(f'    ✓ "{reminder_type}" → {to_email}')
-        return msg_id
+        return r.json().get('messageId', '')
     print(f'    ✗ Brevo {r.status_code}: {r.text[:120]}')
     return None
 
@@ -258,6 +269,12 @@ def main():
         print('⏸ Invio automatico email disabilitato (toggle OFF nel CRM). Nessuna email inviata.')
         return
 
+    test_mode = settings.get('testMode', True)
+    if test_mode:
+        print(f'🧪 TEST MODE attivo — email inviate solo a {BCC_EMAIL}')
+    else:
+        print('👥 Modalità produzione — email inviate ai clienti reali')
+
     db,        sha_db = gh_get(DATA_PATH)
     templates, _      = gh_get(TEMPLATES_PATH)
 
@@ -286,7 +303,7 @@ def main():
             continue
         subject, body = render_template(tpl, order)
         to_email = (order.get('customerEmail') or '').strip()
-        msg_id = send_email(order, 'order_received', subject, body)
+        msg_id = send_email(order, 'order_received', subject, body, test_mode)
         if msg_id:
             entry = {
                 'type':      'order_received',
@@ -320,7 +337,7 @@ def main():
 
             subject, body = render_template(tpl, order)
             to_email = (order.get('customerEmail') or '').strip()
-            msg_id = send_email(order, rtype, subject, body)
+            msg_id = send_email(order, rtype, subject, body, test_mode)
 
             if msg_id:
                 entry = {
