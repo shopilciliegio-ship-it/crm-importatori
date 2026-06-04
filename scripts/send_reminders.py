@@ -221,6 +221,9 @@ def should_send(order: dict, reminder_type: str, now_ms: int) -> tuple[bool, str
     if reminder_type == 'day0':
         if not shipping_date:
             return False, 'shippingDate mancante'
+        days_since = (now_ms - to_ms(shipping_date)) / DAY_MS
+        if days_since > 3:
+            return False, f'finestra scaduta ({days_since:.0f}gg dalla spedizione) — skip'
         return True, ''
 
     if reminder_type in ('day10', 'day20'):
@@ -237,6 +240,8 @@ def should_send(order: dict, reminder_type: str, now_ms: int) -> tuple[bool, str
         threshold = 10 if reminder_type == 'day10' else 20
         if days_since < threshold:
             return False, f'troppo presto ({days_since:.1f}gg < {threshold}gg)'
+        if days_since > threshold + 3:
+            return False, f'finestra scaduta ({days_since:.0f}gg > {threshold+3}gg) — skip'
 
         if reminder_type == 'day20' and shipping_type != 'standard':
             return False, f'day20 solo Standard (questo: {shipping_type})'
