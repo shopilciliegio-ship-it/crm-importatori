@@ -458,7 +458,7 @@
     {
       "id": "ord_mbe_IT3299-8V-0000006B54",
       "customerName": "LUISA DOWD",
-      "customerEmail": "",
+      "customerEmail": "LDowd@AugustImports.com",
       "customerPhone": "",
       "shippingAddress": "5210 AVEMORE PONE RD, CHARLOTTESVILLE",
       "amount": 0,
@@ -471,19 +471,32 @@
       "mbeTrackingNumber": "IT3299-8V-0000006B54",
       "carrier": "UPS",
       "shippingDate": "2026-05-20",
-      "status": "in_transito",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "in_transito",
           "date": 1780415614441,
           "note": "Importato da MBE — Shipment in transit to reach its final destination"
+        },
+        {
+          "status": "consegnato",
+          "date": 1780574852019,
+          "note": ""
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "consegnato",
+          "sentAt": 1780574852019,
+          "messageId": "manual-skip",
+          "manual": true
+        }
+      ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780415614441
+      "updatedAt": 1780574852019,
+      "shippingType": "express"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006AKO",
