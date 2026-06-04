@@ -352,16 +352,36 @@ def main():
 
     # Dedup e costruzione record
     imported = 0
+    patched  = 0
     now_ms   = int(datetime.now(timezone.utc).timestamp() * 1000)
 
+    # Campi che aggiorniamo se mancanti su ordini già presenti
+    PATCHABLE = ('customerEmail', 'customerPhone', 'shippingType', 'shippingAddress', 'shipmentCode')
+
     for o in new_orders_raw:
-        already = any(
-            (ex.get('gmailMessageId') and ex['gmailMessageId'] == o['gmailMessageId'])
-            or ex.get('emailSubject') == o.get('emailSubject')
-            for ex in existing
+        existing_rec = next(
+            (ex for ex in existing if
+             (ex.get('gmailMessageId') and ex['gmailMessageId'] == o['gmailMessageId'])
+             or ex.get('emailSubject') == o.get('emailSubject')),
+            None
         )
-        if already:
-            print(f'  Skip (già presente): {o["customerName"]}')
+
+        if existing_rec:
+            # Aggiorna i campi vuoti senza toccare il resto
+            updated_fields = []
+            for field in PATCHABLE:
+                if not existing_rec.get(field) and o.get(field):
+                    existing_rec[field] = o[field]
+                    updated_fields.append(field)
+            if existing_rec.get('amount', 0) == 0 and o.get('amount', 0) > 0:
+                existing_rec['amount'] = o['amount']
+                updated_fields.append('amount')
+            if updated_fields:
+                existing_rec['updatedAt'] = now_ms
+                patched += 1
+                print(f'  ↻ {existing_rec["customerName"]}: aggiornato {", ".join(updated_fields)}')
+            else:
+                print(f'  Skip (già completo): {existing_rec["customerName"]}')
             continue
 
         record = {
@@ -393,11 +413,11 @@ def main():
         imported += 1
         print(f'  + {o["customerName"]} — {o.get("shipmentCode","?")} — €{o["amount"]}')
 
-    if imported > 0:
+    if imported > 0 or patched > 0:
         db['orders']         = existing
         db['lastImportedAt'] = now_ms
         save_ordini(db, sha)
-        print(f'\n✓ {imported} ordini importati e salvati.')
+        print(f'\n✓ {imported} nuovi ordini, {patched} aggiornati.')
     else:
         print('\nNessun nuovo ordine da importare.')
 
