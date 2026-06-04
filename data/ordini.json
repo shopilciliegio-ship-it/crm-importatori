@@ -1,6 +1,36 @@
 {
   "orders": [
     {
+      "id": "ord_mpzcqy0lplku",
+      "customerName": "ANDREW WAYRYNEN",
+      "customerEmail": "andrew.wayrynen@maritime.edu",
+      "customerPhone": "",
+      "amount": 117.8,
+      "currency": "EUR",
+      "orderDate": 1780568654000,
+      "emailSubject": "🍷 New Order — ANDREW WAYRYNEN — 117.80 EUR",
+      "shipmentCode": "MERCHANT",
+      "shippingAddress": "154 WEST SECOND, BOSTON 02127 MASSACHUSETTS (SUFFOLK COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "express",
+      "gmailMessageId": "<DB9PR08MB66828874DFB4DF142967E896BF102@DB9PR08MB6682.eurprd08.prod.outlook.com>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "shippingDate": null,
+      "status": "ricevuto",
+      "statusHistory": [
+        {
+          "status": "ricevuto",
+          "date": 1780568897205,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1780568897205,
+      "updatedAt": 1780568897205
+    },
+    {
       "id": "ord_mpwil4us9x0m",
       "customerName": "LUCA PATTARO",
       "customerEmail": "",
@@ -1596,5 +1626,5 @@
       "updatedAt": 1780485256521
     }
   ],
-  "lastImportedAt": 1780397305300
+  "lastImportedAt": 1780568897205
 }
