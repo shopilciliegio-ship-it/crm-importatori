@@ -200,6 +200,9 @@ def should_send(order: dict, reminder_type: str, now_ms: int) -> tuple[bool, str
     if reminder_type == 'order_received':
         if status == 'annullato':
             return False, 'ordine annullato'
+        days_old = (now_ms - int(order.get('createdAt') or 0)) / DAY_MS
+        if days_old > 7:
+            return False, f'ordine vecchio ({days_old:.0f}gg) — skip welcome'
         return True, ''
 
     if reminder_type == 'day0':
