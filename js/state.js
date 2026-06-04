@@ -22,5 +22,6 @@ let brv={};
 let sel=new Set();
 let regSel=new Set();
 let _pendingEmailId=null; // id contatto per apertura email da scheda
-let ghSha={importatori:null,clienti:null,templates:null,ordini:null,reminders:null};
+let ghSha={importatori:null,clienti:null,templates:null,ordini:null,reminders:null,settings:null};
+let dbSettings={emailAutoSend:false};
 let saveTimer=null,saveOrdTimer=null,pending=null;
