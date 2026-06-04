@@ -224,7 +224,7 @@
     {
       "id": "ord_mbe_IT3299-8V-0000006F07",
       "customerName": "KAVIN HARIHARAN",
-      "customerEmail": "",
+      "customerEmail": "kavinhariharan3@gmail.com",
       "customerPhone": "",
       "shippingAddress": "700 PRESIDIO AVE APT 304, SAN FRANCISCO",
       "amount": 0,
@@ -249,7 +249,8 @@
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780415614441
+      "updatedAt": 1780575639437,
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-0V-0000006EPQ",
