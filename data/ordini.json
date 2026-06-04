@@ -938,7 +938,7 @@
     {
       "id": "ord_mbe_IT3299-8V-0000005ZFY",
       "customerName": "ASHLEIGH COLE",
-      "customerEmail": "",
+      "customerEmail": "thecolefamilt1@att.net",
       "customerPhone": "",
       "shippingAddress": "106 STEEPLECHASE, BELTON",
       "amount": 0,
@@ -951,19 +951,32 @@
       "mbeTrackingNumber": "IT3299-8V-0000005ZFY",
       "carrier": "UPS",
       "shippingDate": "2026-04-09",
-      "status": "spedito",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "spedito",
           "date": 1780415614441,
           "note": "Importato da MBE — Shipment created"
+        },
+        {
+          "status": "consegnato",
+          "date": 1780573463716,
+          "note": ""
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "consegnato",
+          "sentAt": 1780573463716,
+          "messageId": "manual-skip",
+          "manual": true
+        }
+      ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780415614441
+      "updatedAt": 1780573463716,
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005Z74",
