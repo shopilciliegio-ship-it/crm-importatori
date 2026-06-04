@@ -30,35 +30,6 @@
       "updatedAt": 1780397305300
     },
     {
-      "id": "ord_mpwil4us7gwe",
-      "customerName": "BULA BULA",
-      "customerEmail": "",
-      "customerPhone": "",
-      "amount": 196.4,
-      "currency": "EUR",
-      "orderDate": 1780230921000,
-      "emailSubject": "🍷 New Order — BULA BULA — 196.40 EUR",
-      "shipmentCode": "",
-      "shippingAddress": "",
-      "numberOfCartons": null,
-      "gmailMessageId": "<DB9PR08MB66824E4860E6E0873E658326BF142@DB9PR08MB6682.eurprd08.prod.outlook.com>",
-      "trackingNumber": "",
-      "carrier": "MBE",
-      "shippingDate": null,
-      "status": "ricevuto",
-      "statusHistory": [
-        {
-          "status": "ricevuto",
-          "date": 1780397305300,
-          "note": "Importato da Gmail (GitHub Actions)"
-        }
-      ],
-      "emailsSent": [],
-      "notes": "",
-      "createdAt": 1780397305300,
-      "updatedAt": 1780397305300
-    },
-    {
       "id": "ord_mpwil4usvu4v",
       "customerName": "LUCA PATTARO",
       "customerEmail": "",
