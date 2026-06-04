@@ -1268,7 +1268,7 @@
     {
       "id": "ord_mbe_IT3299-8V-0000005PXO",
       "customerName": "LISA BURTCH",
-      "customerEmail": "",
+      "customerEmail": "sunshine921@yahoo.com",
       "customerPhone": "",
       "shippingAddress": "3120 COLORADO AVE S, MINNEAPOLIS",
       "amount": 0,
@@ -1281,19 +1281,32 @@
       "mbeTrackingNumber": "IT3299-8V-0000005PXO",
       "carrier": "UPS",
       "shippingDate": "2026-02-20",
-      "status": "spedito",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "spedito",
           "date": 1780415614441,
           "note": "Importato da MBE — Shipment created"
+        },
+        {
+          "status": "consegnato",
+          "date": 1780573213131,
+          "note": ""
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "consegnato",
+          "sentAt": 1780573213131,
+          "messageId": "manual-skip",
+          "manual": true
+        }
+      ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780415614441
+      "updatedAt": 1780573213131,
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005P86",
