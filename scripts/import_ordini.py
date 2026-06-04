@@ -68,8 +68,9 @@ def _decode_header(raw: str) -> str:
     return out
 
 
-def _get_body_text(msg) -> str:
-    """Estrae testo dal corpo email (plain text o HTML strippato)."""
+def _get_body_info(msg) -> tuple[str, list[str]]:
+    """Restituisce (testo_body, lista_email_da_mailto_link)."""
+    import html as _html
     plain, html_src = '', ''
     for part in msg.walk():
         ct = part.get_content_type()
@@ -82,22 +83,28 @@ def _get_body_text(msg) -> str:
             plain += decoded
         elif ct == 'text/html':
             html_src += decoded
+
+    # Estrae email da href="mailto:..." prima di strippare l'HTML
+    mailto_emails = re.findall(r'href=["\']mailto:([^"\'>\s]+)', html_src, re.I)
+
     if plain:
-        return plain
+        return plain, mailto_emails
+
     if html_src:
-        # Strip HTML minimale
-        import html as _html
         text = re.sub(r'<style[^>]*>.*?</style>', '', html_src, flags=re.S | re.I)
         text = re.sub(r'<script[^>]*>.*?</script>', '', text, flags=re.S | re.I)
-        text = re.sub(r'<(?:br|p|div|tr|td|th|li|h\d)[^>]*/?>','\n', text, flags=re.I)
-        text = re.sub(r'<[^>]+>', ' ', text)
+        # <td> e <th> → spazio (stessa riga), <tr> <br> <p> <div> → a capo
+        text = re.sub(r'<(?:br|p|div|tr|li|h\d)[^>]*/?>','\n', text, flags=re.I)
+        text = re.sub(r'<(?:td|th)[^>]*>', ' ', text, flags=re.I)
+        text = re.sub(r'<[^>]+>', '', text)
         text = _html.unescape(text)
         text = re.sub(r'[ \t]+', ' ', text)
-        return text.strip()
-    return ''
+        return text.strip(), mailto_emails
+
+    return '', mailto_emails
 
 
-def _parse_body(text: str) -> dict:
+def _parse_body(text: str, mailto_emails: list[str] | None = None) -> dict:
     """Estrae campi ordine dal corpo email nel formato Il Ciliegio."""
     result = {}
 
@@ -106,20 +113,35 @@ def _parse_body(text: str) -> dict:
     if m:
         result['customerName'] = m.group(1).strip()
 
-    # Email    lisa.slp86@gmail.com
-    m = re.search(r'^Email\s+([\w._%+\-]+@[\w.\-]+\.[a-zA-Z]{2,})$', text, re.M | re.I)
+    # Email — stesso riga o riga successiva (celle HTML diventano righe separate)
+    m = re.search(r'Email\s+([\w._%+\-]+@[\w.\-]+\.[a-zA-Z]{2,})', text, re.I)
+    if not m:
+        m = re.search(r'Email\s*\n\s*([\w._%+\-]+@[\w.\-]+\.[a-zA-Z]{2,})', text, re.I)
     if m:
         result['customerEmail'] = m.group(1).strip()
+    elif mailto_emails:
+        # Fallback: prima email da href="mailto:..." non di sistema
+        customer_email = next(
+            (e for e in mailto_emails if not any(s in e.lower() for s in SKIP_EMAILS)), ''
+        )
+        if customer_email:
+            result['customerEmail'] = customer_email
+    if not result.get('customerEmail'):
+        # Ultimo fallback: prima email qualsiasi nel testo
+        all_emails = re.findall(r'\b[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,6}\b', text)
+        result['customerEmail'] = next(
+            (e for e in all_emails if not any(s in e.lower() for s in SKIP_EMAILS)), ''
+        )
 
     # Phone    +1 2148035455
-    m = re.search(r'^Phone\s+(\+?[\d\s\-().]+)$', text, re.M | re.I)
+    m = re.search(r'Phone\s+(\+?[\d\s\-().]+?)(?:\n|$)', text, re.I)
     if m:
         phone = re.sub(r'[^\d+]', '', m.group(1))
         if len(phone) >= 7:
             result['customerPhone'] = phone
 
     # Address    1313 RIO GRANDE DR, 75013 ALLEN, TEXAS (COLLIN COUNTY)
-    m = re.search(r'^Address\s+(.+)$', text, re.M | re.I)
+    m = re.search(r'Address\s+(.+?)(?:\n|$)', text, re.I)
     if m:
         result['shippingAddress'] = m.group(1).strip()
 
@@ -167,8 +189,8 @@ def _parse_email(msg) -> dict | None:
         order_date = int(datetime.now(timezone.utc).timestamp() * 1000)
 
     # Corpo email
-    body_text   = _get_body_text(msg)
-    body_fields = _parse_body(body_text)
+    body_text, mailto_emails = _get_body_info(msg)
+    body_fields = _parse_body(body_text, mailto_emails)
 
     # Allegato PDF
     pdf_bytes = None
