@@ -293,13 +293,20 @@ def main():
     orders  = db.get('orders') or []
     now_ms  = int(datetime.now(timezone.utc).timestamp() * 1000)
 
-    # In test mode: pulisce entry order_received salvate erroneamente da run precedenti
+    # In test mode: pulisce TUTTI gli entry non-manuali degli ordini attivi
+    # (rimuove tutto ciò che fu salvato da test run precedenti, mai da produzione reale)
     if test_mode:
+        cleaned = 0
         for o in orders:
+            if o.get('status') in STATI_TERMINALI:
+                continue  # non tocca i terminali
             before = len(o.get('emailsSent') or [])
-            o['emailsSent'] = [e for e in (o.get('emailsSent') or []) if e.get('type') != 'order_received']
+            o['emailsSent'] = [e for e in (o.get('emailsSent') or []) if e.get('manual')]
             if len(o['emailsSent']) < before:
                 o['updatedAt'] = now_ms
+                cleaned += 1
+        if cleaned:
+            print(f'🧹 Pulizia: rimossi entry test da {cleaned} ordini attivi')
 
     active = [o for o in orders if o.get('status') not in ('ricevuto', 'preparazione', 'annullato')]
     print(f'Ordini attivi: {len(active)} / {len(orders)}')
@@ -363,7 +370,12 @@ def main():
     now_str = datetime.now().strftime('%d/%m/%Y %H:%M')
 
     if test_mode:
-        print(f'\n🧪 Test completato: {sent} email inviate a {BCC_EMAIL}. Nessuna modifica a ordini.json.')
+        # Salva la pulizia degli entry corrotti (ma non i nuovi invii)
+        if cleaned:
+            db['orders'] = orders
+            gh_put(DATA_PATH, db, sha_db, f'Test mode: pulizia entry da {cleaned} ordini — {now_str}')
+            print(f'✓ Pulizia salvata su ordini.json.')
+        print(f'\n🧪 Test completato: {sent} email inviate a {BCC_EMAIL}. emailsSent non modificato.')
     else:
         if sent > 0:
             db['orders'] = orders
