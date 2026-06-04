@@ -172,6 +172,17 @@ def send_email(order: dict, reminder_type: str, subject: str, body_text: str) ->
 
 # ── Logica reminder ───────────────────────────────────────────────────────────
 
+def to_ms(value) -> int:
+    """Converte shippingDate in millisecondi — accetta int, float, stringa numerica o 'YYYY-MM-DD'."""
+    if isinstance(value, (int, float)):
+        return int(value)
+    s = str(value).strip()
+    try:
+        return int(s)
+    except ValueError:
+        return int(datetime.fromisoformat(s).replace(tzinfo=timezone.utc).timestamp() * 1000)
+
+
 def sent_types(order: dict) -> set[str]:
     return {e.get('type', '') for e in (order.get('emailsSent') or [])}
 
@@ -197,7 +208,7 @@ def should_send(order: dict, reminder_type: str, now_ms: int) -> tuple[bool, str
         if not shipping_date:
             return False, 'shippingDate mancante'
 
-        days_since = (now_ms - int(shipping_date)) / DAY_MS
+        days_since = (now_ms - to_ms(shipping_date)) / DAY_MS
 
         if shipping_type is None:
             return False, 'shippingType mancante — inserire nel CRM'
