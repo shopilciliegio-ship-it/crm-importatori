@@ -351,20 +351,31 @@
       "mbeTrackingNumber": "IT3299-8V-0000006DP8",
       "carrier": "UPS",
       "shippingDate": "2026-05-27",
-      "status": "spedito",
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "spedito",
           "date": 1780415614441,
           "note": "Importato da MBE — Shipment created"
+        },
+        {
+          "status": "in_transito",
+          "date": 1780575438531,
+          "note": ""
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "In transito",
+          "sentAt": 1780575438775,
+          "messageId": "<202606041217.42222620122@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780575388491,
-      "shippingType": null
+      "updatedAt": 1780575438776,
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006C0T",
