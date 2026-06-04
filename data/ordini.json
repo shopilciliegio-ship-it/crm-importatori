@@ -103,7 +103,7 @@
       "trackingNumber": "1Z9376E1A803482468",
       "carrier": "UPS",
       "shippingDate": "2026-05-27",
-      "status": "spedito",
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "ricevuto",
@@ -114,12 +114,17 @@
           "status": "spedito",
           "date": 1780411897593,
           "note": "MBE: Shipment created"
+        },
+        {
+          "status": "in_transito",
+          "date": 1780567668144,
+          "note": "MBE: Shipment in transit to reach its final destination"
         }
       ],
       "emailsSent": [],
       "notes": "",
       "createdAt": 1780348588797,
-      "updatedAt": 1780415614441,
+      "updatedAt": 1780567668144,
       "mbeTrackingNumber": "IT3299-8V-0000006DG3"
     },
     {
