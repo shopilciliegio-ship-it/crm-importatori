@@ -230,7 +230,17 @@ def should_send(order: dict, reminder_type: str, now_ms: int) -> tuple[bool, str
 
         return True, ''
 
-    if reminder_type in ('consegnato', 'dogana', 'problema'):
+    if reminder_type == 'consegnato':
+        if status != 'consegnato':
+            return False, f'status attuale è {status}'
+        # Non inviare per spedizioni antecedenti al 13/05/2026
+        ship_ms = to_ms(order.get('shippingDate') or order.get('orderDate'))
+        cutoff  = 1747094400000  # 2026-05-13 00:00 UTC in ms
+        if ship_ms and ship_ms < cutoff:
+            return False, 'spedizione precedente al 13/05/2026 — skip'
+        return True, ''
+
+    if reminder_type in ('dogana', 'problema'):
         if status != reminder_type:
             return False, f'status attuale è {status}'
         return True, ''
