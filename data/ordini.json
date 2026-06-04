@@ -1367,7 +1367,7 @@
       "mbeTrackingNumber": "IT3299-8V-0000005XA6",
       "carrier": "UPS",
       "shippingDate": "2026-03-27",
-      "status": "problema",
+      "status": "annullato",
       "statusHistory": [
         {
           "status": "spedito",
@@ -1378,13 +1378,25 @@
           "status": "problema",
           "date": 1780573384218,
           "note": ""
+        },
+        {
+          "status": "annullato",
+          "date": 1780574547755,
+          "note": ""
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "annullato",
+          "sentAt": 1780574547755,
+          "messageId": "manual-skip",
+          "manual": true
+        }
+      ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780573384218,
+      "updatedAt": 1780574547755,
       "shippingType": "standard"
     },
     {
