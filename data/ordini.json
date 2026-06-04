@@ -278,7 +278,7 @@
     {
       "id": "ord_mbe_IT3299-8V-0000006E3J",
       "customerName": "MICHELLE GOODLETT",
-      "customerEmail": "",
+      "customerEmail": "mgoodlett@comcast.net",
       "customerPhone": "",
       "shippingAddress": "917SW SEA GREEN STREET, PALM CITY",
       "amount": 0,
@@ -303,7 +303,8 @@
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780415614441
+      "updatedAt": 1780575521189,
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006E3G",
