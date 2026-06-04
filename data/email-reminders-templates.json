@@ -19,6 +19,11 @@
     "subject": "Your wine is still on its way — update",
     "body": "Dear {nome},\n\n20 days have passed since your order was shipped. Standard shipments to some destinations can take up to 30 days for customs clearance and final delivery.\n\nWe are monitoring the situation and will update you as soon as the carrier provides any news.\n\nThank you for your patience!\n\nLuca Pattaro\nIl Ciliegio — Viticoltori in Monteriggioni dal 1952\nshop@ilciliegio.com | +39 331 1347899"
   },
+  "in_consegna": {
+    "label": "In consegna (dogana superata)",
+    "subject": "Your wine is out for delivery! 🍷",
+    "body": "Dear {nome},\n\ngreat news — your order has cleared customs and UPS is now delivering it to your address!\n\n{tracking_line}\nPlease note that a signature from an adult (21+) is required upon delivery. Make sure someone is available to sign for the package, as carriers may not leave wine shipments unattended.\n\nIf you need to reschedule the delivery or pick it up at a UPS location, you can do so directly through the UPS tracking link above.\n\nWe are almost there — thank you for your patience!\n\nLuca Pattaro\nIl Ciliegio — Viticoltori in Monteriggioni dal 1952\nshop@ilciliegio.com | +39 331 1347899"
+  },
   "consegnato": {
     "label": "Ordine consegnato",
     "subject": "Your order has been delivered! 🍷 Enjoy!",

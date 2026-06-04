@@ -240,7 +240,7 @@ def should_send(order: dict, reminder_type: str, now_ms: int) -> tuple[bool, str
             return False, 'spedizione precedente al 13/05/2026 — skip'
         return True, ''
 
-    if reminder_type in ('dogana', 'problema'):
+    if reminder_type in ('in_consegna', 'dogana', 'problema'):
         if status != reminder_type:
             return False, f'status attuale è {status}'
         return True, ''
@@ -306,7 +306,7 @@ def main():
         stype  = order.get('shippingType') or '?'
         print(f'\n  {name} | status={status} | type={stype}')
 
-        for rtype in ['day0', 'day10', 'day20', 'consegnato', 'dogana', 'problema']:
+        for rtype in ['day0', 'day10', 'day20', 'in_consegna', 'consegnato', 'dogana', 'problema']:
             ok, reason = should_send(order, rtype, now_ms)
             if not ok:
                 if reason != 'già inviata':
