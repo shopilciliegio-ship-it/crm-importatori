@@ -186,7 +186,7 @@ function _phaseDots(order){
   ];
 
   function _isPending(p){
-    if(p.type==='order_received') return daysOld<=7&&!['consegnato','annullato'].includes(status);
+    if(p.type==='order_received') return ['ricevuto','preparazione'].includes(status);
     if(p.type==='day0')  return sd&&daysSince<=3;
     if(p.type==='day10') return sd&&daysSince>=10&&daysSince<=13&&!['consegnato','annullato','dogana','in_consegna'].includes(status);
     if(p.type==='day20') return sd&&isStandard&&daysSince>=20&&daysSince<=23&&!['consegnato','annullato','dogana','in_consegna'].includes(status);
