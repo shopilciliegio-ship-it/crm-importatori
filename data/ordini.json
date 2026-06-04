@@ -428,7 +428,7 @@
     {
       "id": "ord_mbe_IT3299-8V-0000006BU3",
       "customerName": "GARY KERN",
-      "customerEmail": "",
+      "customerEmail": "gbklittleman@aol.com",
       "customerPhone": "",
       "shippingAddress": "10765 PINEWALK FOREST CIRCLE, ALPHARETTA",
       "amount": 0,
@@ -441,19 +441,25 @@
       "mbeTrackingNumber": "IT3299-8V-0000006BU3",
       "carrier": "UPS",
       "shippingDate": "2026-05-21",
-      "status": "spedito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "spedito",
           "date": 1780415614441,
           "note": "Importato da MBE — Shipment created"
+        },
+        {
+          "status": "dogana",
+          "date": 1780575332872,
+          "note": ""
         }
       ],
       "emailsSent": [],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780415614441
+      "updatedAt": 1780575332872,
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006B54",
