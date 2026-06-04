@@ -1,6 +1,96 @@
 {
   "orders": [
     {
+      "id": "ord_mpzhlcdu21tb",
+      "customerName": "LISA CHRISTIAN",
+      "customerEmail": "",
+      "customerPhone": "",
+      "amount": 124.4,
+      "currency": "EUR",
+      "orderDate": 1780571922000,
+      "emailSubject": "🍷 New Order — LISA CHRISTIAN — 124.40 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "",
+      "numberOfCartons": null,
+      "shippingType": null,
+      "gmailMessageId": "<202606041118.26350675959@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1780577033970,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1780577033970,
+      "updatedAt": 1780577033970
+    },
+    {
+      "id": "ord_mpzhlcdubeyc",
+      "customerName": "WHITNEY BECK",
+      "customerEmail": "",
+      "customerPhone": "",
+      "amount": 117.8,
+      "currency": "EUR",
+      "orderDate": 1780571738000,
+      "emailSubject": "🍷 New Order — WHITNEY BECK — 117.80 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "",
+      "numberOfCartons": null,
+      "shippingType": null,
+      "gmailMessageId": "<202606041115.91309215577@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1780577033970,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1780577033970,
+      "updatedAt": 1780577033970
+    },
+    {
+      "id": "ord_mpzhlcdub8mu",
+      "customerName": "ANDREW WAYRYNEN",
+      "customerEmail": "andrew.wayrynen@maritime.edu",
+      "customerPhone": "",
+      "amount": 117.8,
+      "currency": "EUR",
+      "orderDate": 1780568654000,
+      "emailSubject": "🍷 New Order — ANDREW WAYRYNEN — 117.80 EUR",
+      "shipmentCode": "MERCHANT",
+      "shippingAddress": "154 WEST SECOND, BOSTON 02127 MASSACHUSETTS (SUFFOLK COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "express",
+      "gmailMessageId": "<DB9PR08MB66828874DFB4DF142967E896BF102@DB9PR08MB6682.eurprd08.prod.outlook.com>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1780577033970,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1780577033970,
+      "updatedAt": 1780577033970
+    },
+    {
       "id": "ord_mpvpkyylwz2h",
       "customerName": "JILL BANKS",
       "customerEmail": "myhouse_injc@hotmail.com",
@@ -2037,5 +2127,5 @@
       "shippingType": "standard"
     }
   ],
-  "lastImportedAt": 1780397305300
+  "lastImportedAt": 1780577033970
 }
