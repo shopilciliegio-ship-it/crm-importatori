@@ -878,7 +878,7 @@
     {
       "id": "ord_mbe_IT3299-8V-00000061I9",
       "customerName": "BRETT FLETCHER",
-      "customerEmail": "",
+      "customerEmail": "brett.fletcher69@gmail.com",
       "customerPhone": "",
       "shippingAddress": "21786 Q RD, HOLTON",
       "amount": 0,
@@ -891,19 +891,32 @@
       "mbeTrackingNumber": "IT3299-8V-00000061I9",
       "carrier": "UPS",
       "shippingDate": "2026-04-20",
-      "status": "spedito",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "spedito",
           "date": 1780415614441,
           "note": "Importato da MBE — Shipment created"
+        },
+        {
+          "status": "consegnato",
+          "date": 1780573494449,
+          "note": ""
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "consegnato",
+          "sentAt": 1780573494449,
+          "messageId": "manual-skip",
+          "manual": true
+        }
+      ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780415614441
+      "updatedAt": 1780573494449,
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-00000061I7",
