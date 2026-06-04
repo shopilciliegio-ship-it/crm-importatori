@@ -40,7 +40,7 @@ def fetch_new_emails(since_date: datetime) -> list[dict]:
     mail.login(GMAIL_USER, GMAIL_APP_PASSWORD)
     mail.select('inbox')
 
-    criteria = f'(SINCE {since_str} SUBJECT "New Order")'
+    criteria = f'(SINCE {since_str} OR SUBJECT "New Order" SUBJECT "New Paid Order")'
     _, nums = mail.search(None, criteria)
 
     orders = []
@@ -68,34 +68,109 @@ def _decode_header(raw: str) -> str:
     return out
 
 
+def _get_body_text(msg) -> str:
+    """Estrae testo dal corpo email (plain text o HTML strippato)."""
+    plain, html_src = '', ''
+    for part in msg.walk():
+        ct = part.get_content_type()
+        payload = part.get_payload(decode=True)
+        if not payload:
+            continue
+        charset = part.get_content_charset() or 'utf-8'
+        decoded = payload.decode(charset, errors='replace')
+        if ct == 'text/plain':
+            plain += decoded
+        elif ct == 'text/html':
+            html_src += decoded
+    if plain:
+        return plain
+    if html_src:
+        # Strip HTML minimale
+        import html as _html
+        text = re.sub(r'<style[^>]*>.*?</style>', '', html_src, flags=re.S | re.I)
+        text = re.sub(r'<script[^>]*>.*?</script>', '', text, flags=re.S | re.I)
+        text = re.sub(r'<(?:br|p|div|tr|td|th|li|h\d)[^>]*/?>','\n', text, flags=re.I)
+        text = re.sub(r'<[^>]+>', ' ', text)
+        text = _html.unescape(text)
+        text = re.sub(r'[ \t]+', ' ', text)
+        return text.strip()
+    return ''
+
+
+def _parse_body(text: str) -> dict:
+    """Estrae campi ordine dal corpo email nel formato Il Ciliegio."""
+    result = {}
+
+    # Name    LISA CHRISTIAN
+    m = re.search(r'^Name\s+(.+)$', text, re.M | re.I)
+    if m:
+        result['customerName'] = m.group(1).strip()
+
+    # Email    lisa.slp86@gmail.com
+    m = re.search(r'^Email\s+([\w._%+\-]+@[\w.\-]+\.[a-zA-Z]{2,})$', text, re.M | re.I)
+    if m:
+        result['customerEmail'] = m.group(1).strip()
+
+    # Phone    +1 2148035455
+    m = re.search(r'^Phone\s+(\+?[\d\s\-().]+)$', text, re.M | re.I)
+    if m:
+        phone = re.sub(r'[^\d+]', '', m.group(1))
+        if len(phone) >= 7:
+            result['customerPhone'] = phone
+
+    # Address    1313 RIO GRANDE DR, 75013 ALLEN, TEXAS (COLLIN COUNTY)
+    m = re.search(r'^Address\s+(.+)$', text, re.M | re.I)
+    if m:
+        result['shippingAddress'] = m.group(1).strip()
+
+    # FINAL TOTAL: €124.40
+    m = re.search(r'FINAL\s+TOTAL\s*:\s*[€$£]?\s*([\d,.]+)', text, re.I)
+    if m:
+        try:
+            amount = float(m.group(1).replace(',', '.'))
+            if amount > 0:
+                result['amount'] = amount
+        except ValueError:
+            pass
+
+    # Shipping type: "Shipping (USA Wine Standard)" o "Shipping (... Express ...)"
+    m = re.search(r'Shipping\s*\([^)]*?(Standard|Express)[^)]*\)', text, re.I)
+    if m:
+        result['shippingType'] = m.group(1).lower()
+
+    return result
+
+
 def _parse_email(msg) -> dict | None:
     subject_raw = _decode_header(msg.get('Subject', ''))
     date_raw    = msg.get('Date', '')
     msg_id      = msg.get('Message-ID', '').strip()
 
-    # Rimuove prefisso forward
     subject = re.sub(r'^(I:|Fw:|Fwd:|R:|Re:|Inoltrato:)\s+', '', subject_raw, flags=re.I).strip()
 
-    # Pattern: "🍷 New Order — NOME COGNOME — 294.05 EUR"
+    # Supporta sia "New Order" che "New Paid Order"; amount opzionale nel soggetto
     m = re.search(
-        r'New\s+Order\s*[—\-–]+\s*(.+?)\s*[—\-–]+\s*([\d.,]+)\s*(EUR|USD|GBP)?',
+        r'New(?:\s+Paid)?\s+Order\s*[—\-–]+\s*(.+?)(?:\s*[—\-–]+\s*([\d.,]+)\s*(EUR|USD|GBP)?)?$',
         subject, re.I
     )
     if not m:
         return None
 
     customer_name = m.group(1).strip()
-    amount        = float(m.group(2).replace(',', '.'))
+    amount        = float(m.group(2).replace(',', '.')) if m.group(2) else 0.0
     currency      = (m.group(3) or 'EUR').upper()
 
-    # Data ordine
     try:
         from email.utils import parsedate_to_datetime
         order_date = int(parsedate_to_datetime(date_raw).timestamp() * 1000)
     except Exception:
         order_date = int(datetime.now(timezone.utc).timestamp() * 1000)
 
-    # Cerca allegato PDF
+    # Corpo email
+    body_text   = _get_body_text(msg)
+    body_fields = _parse_body(body_text)
+
+    # Allegato PDF
     pdf_bytes = None
     for part in msg.walk():
         if part.get_content_type() == 'application/pdf':
@@ -103,24 +178,30 @@ def _parse_email(msg) -> dict | None:
             break
 
     order = {
-        'customerName':    customer_name,
+        'customerName':    body_fields.get('customerName') or customer_name,
         'amount':          amount,
         'currency':        currency,
         'orderDate':       order_date,
         'emailSubject':    subject,
         'gmailMessageId':  msg_id,
-        'customerEmail':   '',
-        'customerPhone':   '',
+        'customerEmail':   body_fields.get('customerEmail', ''),
+        'customerPhone':   body_fields.get('customerPhone', ''),
         'shipmentCode':    '',
-        'shippingAddress': '',
+        'shippingAddress': body_fields.get('shippingAddress', ''),
         'numberOfCartons': None,
+        'shippingType':    body_fields.get('shippingType'),
     }
 
+    # Amount: body ha priorità su soggetto se soggetto = 0
+    if body_fields.get('amount') and order['amount'] == 0.0:
+        order['amount'] = body_fields['amount']
+
+    # PDF: ha priorità su body per i campi che contiene
     if pdf_bytes:
         pdf_fields = parse_fieramente_pdf(pdf_bytes)
-        order.update({k: v for k, v in pdf_fields.items() if v is not None})
+        order.update({k: v for k, v in pdf_fields.items() if v is not None and v != ''})
     else:
-        print(f'    ⚠ Nessun PDF allegato per {customer_name}')
+        print(f'    ⚠ Nessun PDF — dati da corpo email')
 
     return order
 
