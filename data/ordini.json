@@ -308,7 +308,7 @@
     {
       "id": "ord_mbe_IT3299-8V-0000006E3G",
       "customerName": "MICHAEL FORBES",
-      "customerEmail": "",
+      "customerEmail": "michael.forbes617@gmail.com",
       "customerPhone": "",
       "shippingAddress": "276 WHITTINGTON ST, MANCHESTER",
       "amount": 0,
@@ -333,7 +333,8 @@
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780415614441
+      "updatedAt": 1780575478203,
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006DP8",
