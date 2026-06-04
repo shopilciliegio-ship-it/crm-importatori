@@ -16,5 +16,36 @@
       "createdAt": 1777722426491
     }
   ],
-  "templates": []
+  "templates": [
+    {
+      "id": "c1",
+      "name": "Benvenuto — Offerta speciale",
+      "subject": "Un pensiero speciale per te da Il Ciliegio 🍷",
+      "body": "Caro {{contatto}},\n\nTi scriviamo dall'Azienda Agricola Il Ciliegio per ringraziarti di far parte della nostra comunità di appassionati.\n\nAbbiamo preparato per te una selezione esclusiva delle nostre migliori etichette, disponibile a condizioni speciali riservate ai nostri clienti più affezionati.\n\nScopri la nostra proposta su www.ilciliegio.com oppure contattaci direttamente — saremo felici di guidarti nella scelta.\n\nA presto,\nIl team de Il Ciliegio\nAzienda Agricola"
+    },
+    {
+      "id": "c2",
+      "name": "Offerta stagionale",
+      "subject": "La nuova annata è arrivata — riservata a te ✨",
+      "body": "Caro {{contatto}},\n\nSiamo entusiasti di annunciarti l'arrivo della nuova annata de Il Ciliegio.\n\nCome nostro cliente, hai accesso in anteprima alla nuova selezione, con la possibilità di acquistare a prezzi dedicati prima dell'apertura al pubblico.\n\nI quantitativi sono limitati. Visita www.ilciliegio.com o rispondi a questa email per prenotare la tua selezione.\n\nTi aspettiamo!\nIl Ciliegio — Azienda Agricola"
+    },
+    {
+      "id": "c3",
+      "name": "Follow-up 1 (7 gg)",
+      "subject": "Hai avuto modo di dare un'occhiata? — Il Ciliegio",
+      "body": "Caro {{contatto}},\n\nTi scrivo brevemente per assicurarmi che tu abbia ricevuto la nostra proposta di qualche giorno fa.\n\nSe hai domande sulla selezione o desideri ricevere ulteriori informazioni, sono qui per aiutarti.\n\nUn caro saluto,\nIl Ciliegio — Azienda Agricola"
+    },
+    {
+      "id": "c4",
+      "name": "Follow-up 2 — Ultimi pezzi",
+      "subject": "Ultimi pezzi disponibili — non perdere l'occasione",
+      "body": "Caro {{contatto}},\n\nTi scrivo perché le scorte della selezione che ti avevo proposto si stanno esaurendo rapidamente.\n\nSe desideri approfittare dell'offerta riservata, ti chiedo di farmi sapere entro i prossimi giorni.\n\nSarò felice di gestire personalmente il tuo ordine.\n\nCon i migliori saluti,\nIl Ciliegio — Azienda Agricola"
+    },
+    {
+      "id": "c5",
+      "name": "Auguri e offerta festiva",
+      "subject": "Buone Feste da Il Ciliegio 🎄",
+      "body": "Caro {{contatto}},\n\nIn occasione delle feste, tutto il team de Il Ciliegio ti augura un periodo sereno e ricco di momenti speciali.\n\nAbbiamo selezionato per te le nostre etichette più eleganti, perfette per brindare o regalare a chi ami.\n\nScopri la confezione regalo Il Ciliegio su www.ilciliegio.com — consegna in tutta Europa.\n\nBuone Feste!\nIl Ciliegio — Azienda Agricola"
+    }
+  ]
 }
