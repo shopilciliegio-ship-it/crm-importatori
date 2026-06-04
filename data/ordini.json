@@ -908,7 +908,7 @@
     {
       "id": "ord_mbe_IT3299-8V-00000061I7",
       "customerName": "MATTHEW OCHS",
-      "customerEmail": "",
+      "customerEmail": "mattochas10@gmail.com",
       "customerPhone": "",
       "shippingAddress": "35207 GROESBECK HWY, CLINTON TOWNSHIP",
       "amount": 0,
@@ -921,19 +921,32 @@
       "mbeTrackingNumber": "IT3299-8V-00000061I7",
       "carrier": "UPS",
       "shippingDate": "2026-04-20",
-      "status": "spedito",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "spedito",
           "date": 1780415614441,
           "note": "Importato da MBE — Shipment created"
+        },
+        {
+          "status": "consegnato",
+          "date": 1780573481514,
+          "note": ""
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "consegnato",
+          "sentAt": 1780573481514,
+          "messageId": "manual-skip",
+          "manual": true
+        }
+      ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780415614441
+      "updatedAt": 1780573481514,
+      "shippingType": "express"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005ZFY",
