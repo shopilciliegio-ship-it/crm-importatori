@@ -130,6 +130,18 @@ def main():
         for s in fier_list if s.get('mbe_code')
     }
 
+    # Fallback per email: esclude email ambigue (stesso cliente, più ordini attivi)
+    from collections import Counter
+    email_counts = Counter(
+        s['customer_email'].strip().lower()
+        for s in fier_list if s.get('customer_email')
+    )
+    fier_by_email = {
+        s['customer_email'].strip().lower(): s
+        for s in fier_list
+        if s.get('customer_email') and email_counts[s['customer_email'].strip().lower()] == 1
+    }
+
     db, sha_db = gh_get(DATA_PATH)
     orders     = db.get('orders') or []
     now_ms     = int(datetime.now(timezone.utc).timestamp() * 1000)
@@ -137,9 +149,18 @@ def main():
 
     for order in orders:
         code = (order.get('shipmentCode') or '').strip().upper()
-        if not code:
-            continue
-        fier = fier_by_code.get(code)
+        fier = fier_by_code.get(code) if code else None
+
+        if not fier:
+            email = (order.get('customerEmail') or '').strip().lower()
+            fier  = fier_by_email.get(email) if email else None
+            if fier:
+                # Salva il codice per i prossimi run (evita lookup per email)
+                mbe_code = (fier.get('mbe_code') or '').strip()
+                if mbe_code and not order.get('shipmentCode'):
+                    order['shipmentCode'] = mbe_code
+                    print(f'  {order.get("customerName","?")}: shipmentCode → {mbe_code} (match email)')
+
         if not fier:
             continue
 
