@@ -22,12 +22,12 @@
   "in_consegna": {
     "label": "In consegna (dogana superata)",
     "subject": "Your wine is out for delivery! 🍷",
-    "body": "Dear {nome},\n\ngreat news — your order has cleared customs and UPS is now delivering it to your address!\n\n{tracking_line}\nPlease note that a signature from an adult (21+) is required upon delivery. Make sure someone is available to sign for the package, as carriers may not leave wine shipments unattended.\n\nIf you need to reschedule the delivery or pick it up at a UPS location, you can do so directly through the UPS tracking link above.\n\nWe are almost there — thank you for your patience!\n\nLuca Pattaro\nIl Ciliegio — Viticoltori in Monteriggioni dal 1952\nshop@ilciliegio.com | +39 331 1347899"
+    "body": "Dear {nome},\nyour order has cleared customs, and UPS is now delivering it to your address!\n\n{tracking_line}\nPlease note that a signature from an adult (21+) is required upon delivery. Make sure someone is available to sign for the package, as carriers may not leave wine shipments unattended.\n\nIf you need to reschedule the delivery or pick it up at a UPS location, you can do so directly through the UPS tracking link above.\n\nWe are almost there — thank you for your patience!\n\nLuca Pattaro\nIl Ciliegio — Viticoltori in Monteriggioni dal 1952\nshop@ilciliegio.com | +39 331 1347899"
   },
   "consegnato": {
     "label": "Ordine consegnato",
     "subject": "Your order has been delivered! 🍷 Enjoy!",
-    "body": "Dear {nome},\n\ngreat news! Your order has been successfully delivered. 🎉\n\nWe hope you enjoy Il Ciliegio products. If you have any questions or feedback, do not hesitate to contact us — your opinion is very valuable to us.\n\nBest regards,\nLuca Pattaro\nIl Ciliegio — Viticoltori in Monteriggioni dal 1952\nshop@ilciliegio.com | +39 331 1347899"
+    "body": "Dear {nome},\ngreat news!\nYour order has been successfully delivered. 🎉\n\nWe hope you enjoy Il Ciliegio products.\nIf you have any questions or feedback, do not hesitate to contact us — your opinion is very valuable to us.\n\nBest regards,\nLuca Pattaro\nIl Ciliegio — Viticoltori in Monteriggioni dal 1952\nshop@ilciliegio.com | +39 331 1347899"
   },
   "dogana": {
     "label": "In dogana",
@@ -37,6 +37,6 @@
   "problema": {
     "label": "Problema spedizione",
     "subject": "⚠ Important update on your shipment",
-    "body": "Dear {nome},\n\nI am reaching out regarding your order.\nUnfortunately, an issue has occurred with the shipment, and we are already actively monitoring the situation.\n\nOur team is working to resolve the matter, and we will keep you updated as soon as possible.\n\nFor any urgent questions, please reply directly to this email.\n\nLuca Pattaro\nIl Ciliegio — Viticoltori in Monteriggioni dal 1952\nshop@ilciliegio.com | +39 331 1347899"
+    "body": "Dear {nome},\nI am reaching out regarding your order.\nUnfortunately, an issue has occurred with the shipment, and we are already actively monitoring the situation.\nOur team is working to resolve the matter, and we will keep you updated as soon as possible.\nFor any urgent questions, please reply directly to this email.\n\nFor your convenience {tracking_line}\n\nLuca Pattaro\nIl Ciliegio — Viticoltori in Monteriggioni dal 1952\nshop@ilciliegio.com | +39 331 1347899"
   }
 }
