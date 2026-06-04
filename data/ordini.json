@@ -1088,7 +1088,7 @@
     {
       "id": "ord_mbe_IT3299-8V-0000005XA6",
       "customerName": "MARIA LEGARRETA",
-      "customerEmail": "",
+      "customerEmail": "lupitacaravco@gmail.com",
       "customerPhone": "",
       "shippingAddress": "6097 RIVER PARK EL PASO, EL PASO",
       "amount": 0,
@@ -1101,19 +1101,25 @@
       "mbeTrackingNumber": "IT3299-8V-0000005XA6",
       "carrier": "UPS",
       "shippingDate": "2026-03-27",
-      "status": "spedito",
+      "status": "problema",
       "statusHistory": [
         {
           "status": "spedito",
           "date": 1780415614441,
           "note": "Importato da MBE — Shipment created"
+        },
+        {
+          "status": "problema",
+          "date": 1780573384218,
+          "note": ""
         }
       ],
       "emailsSent": [],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780415614441
+      "updatedAt": 1780573384218,
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005XA1",
