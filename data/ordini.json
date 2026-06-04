@@ -338,7 +338,7 @@
     {
       "id": "ord_mbe_IT3299-8V-0000006DP8",
       "customerName": "MARIA LEGARRETA AND ERIC LEGARRETA",
-      "customerEmail": "",
+      "customerEmail": "lupitacaraveo@gmail.com",
       "customerPhone": "",
       "shippingAddress": "6092 RIVER PARK PLACE, EL PASO",
       "amount": 0,
@@ -363,7 +363,8 @@
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780415614441
+      "updatedAt": 1780575388491,
+      "shippingType": null
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006C0T",
