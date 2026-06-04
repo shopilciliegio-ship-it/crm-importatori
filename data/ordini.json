@@ -698,7 +698,7 @@
     {
       "id": "ord_mbe_IT3299-0V-00000067KZ",
       "customerName": "GARY GRIFFITHS",
-      "customerEmail": "",
+      "customerEmail": "tr11shg@gmail.com",
       "customerPhone": "",
       "shippingAddress": "23 BEAUMONT ROAD, TOTTON",
       "amount": 0,
@@ -711,19 +711,25 @@
       "mbeTrackingNumber": "IT3299-0V-00000067KZ",
       "carrier": "FedEx",
       "shippingDate": "2026-05-08",
-      "status": "spedito",
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "spedito",
           "date": 1780415614441,
           "note": "Importato da MBE — Delivered"
+        },
+        {
+          "status": "in_transito",
+          "date": 1780573628194,
+          "note": ""
         }
       ],
       "emailsSent": [],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780415614441
+      "updatedAt": 1780573628194,
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-00000062ME",
