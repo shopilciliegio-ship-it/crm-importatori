@@ -168,6 +168,12 @@ function _phaseDots(order){
   const sent=new Set((order.emailsSent||[]).filter(e=>!e.manual).map(e=>e.type));
   const status=order.status;
   const isExpress=order.shippingType==='express';
+  const isStandard=order.shippingType==='standard';
+  const now=Date.now();
+  const sd=order.shippingDate?+order.shippingDate:null;
+  const daysSince=sd?(now-sd)/86400000:null;
+  const daysOld=(now-(order.orderDate||0))/86400000;
+
   const phases=[
     {type:'order_received'},
     {type:'day0'},
@@ -178,10 +184,20 @@ function _phaseDots(order){
     {type:'consegnato',sb:true},
     {type:'problema',sb:true,warn:true},
   ];
+
+  function _isPending(p){
+    if(p.type==='order_received') return daysOld<=7&&!['consegnato','annullato'].includes(status);
+    if(p.type==='day0')  return sd&&daysSince<=3;
+    if(p.type==='day10') return sd&&daysSince>=10&&daysSince<=13&&!['consegnato','annullato','dogana','in_consegna'].includes(status);
+    if(p.type==='day20') return sd&&isStandard&&daysSince>=20&&daysSince<=23&&!['consegnato','annullato','dogana','in_consegna'].includes(status);
+    return false;
+  }
+
   const dots=phases.filter(p=>!(p.hideExpress&&isExpress)).map(p=>{
     let bg;
-    if(sent.has(p.type))          bg=p.warn?'#c0392b':'#2a9d5c';
+    if(sent.has(p.type))           bg=p.warn?'#c0392b':'#2a9d5c';
     else if(p.sb&&status===p.type) bg='#e67e22';
+    else if(_isPending(p))         bg='#e67e22';
     else                           bg='var(--brd2)';
     const sched=(typeof REMINDER_SCHEDULE!=='undefined'?REMINDER_SCHEDULE:[]).find(r=>r.type===p.type);
     return `<span title="${sched?esc(sched.label):p.type}" style="display:inline-block;width:7px;height:7px;border-radius:50%;background:${bg}"></span>`;
