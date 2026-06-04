@@ -7,6 +7,7 @@ const REMINDER_SCHEDULE = [
   { type: 'day0',       label: 'Conferma spedizione',           days: 0,    types: ['standard','express'], trigger: 'Data spedizione impostata da Fieramente/MBE' },
   { type: 'day10',      label: 'Reminder 10 giorni',            days: 10,   types: ['standard','express'], trigger: '10 giorni dalla data di spedizione' },
   { type: 'day20',      label: 'Reminder 20 giorni',            days: 20,   types: ['standard'],           trigger: '20 giorni dalla spedizione — solo Standard' },
+  { type: 'in_consegna',label: 'In consegna — dogana superata', days: null, types: ['standard','express'], trigger: 'Fieramente status → From US warehouse / Picked up by UPS (4/9)' },
   { type: 'consegnato', label: 'Ordine consegnato',             days: null, types: ['standard','express'], trigger: 'Fieramente status → Delivered (5)' },
   { type: 'dogana',     label: 'In dogana',                     days: null, types: ['standard','express'], trigger: 'Fieramente status → Customs clearance (3/8)' },
   { type: 'problema',   label: 'Problema spedizione',           days: null, types: ['standard','express'], trigger: 'Fieramente/MBE status → Problema' },

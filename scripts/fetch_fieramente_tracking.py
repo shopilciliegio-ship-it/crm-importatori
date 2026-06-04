@@ -41,7 +41,7 @@ STATUS_MAP = {
     '6': 'ricevuto',
     '7': 'spedito',
     '8': 'dogana',
-    '9': 'in_transito',
+    '9': 'in_consegna',
 }
 
 STATUS_RANK = {s: i for i, s in enumerate([
