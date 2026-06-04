@@ -848,7 +848,7 @@
     {
       "id": "ord_mbe_IT3299-8V-00000062L8",
       "customerName": "JOE CROTTI",
-      "customerEmail": "",
+      "customerEmail": "joefitcoach@gmail.com",
       "customerPhone": "",
       "shippingAddress": "1674 KOLLY RD APT 905, CHARLESTON",
       "amount": 0,
@@ -861,19 +861,32 @@
       "mbeTrackingNumber": "IT3299-8V-00000062L8",
       "carrier": "UPS",
       "shippingDate": "2026-04-21",
-      "status": "spedito",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "spedito",
           "date": 1780415614441,
           "note": "Importato da MBE — Shipment created"
+        },
+        {
+          "status": "consegnato",
+          "date": 1780573513810,
+          "note": ""
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "consegnato",
+          "sentAt": 1780573513810,
+          "messageId": "manual-skip",
+          "manual": true
+        }
+      ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780415614441
+      "updatedAt": 1780573513810,
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-00000061I9",
