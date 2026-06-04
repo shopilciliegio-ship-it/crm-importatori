@@ -1,4 +1,9 @@
 {
+  "order_received": {
+    "label": "Conferma ricezione ordine",
+    "subject": "Thank you for your order! 🍷",
+    "body": "Dear {nome},\n\nthank you so much for your order! We are thrilled to have you as a customer.\n\nWe have received your order and our team will process it as soon as possible. Once your wine is ready, we will hand it over to our shipping partner, who will take care of all the export and customs documentation.\n\nYou will receive a separate email as soon as your order is on its way.\n\nIn the meantime, if you have any questions do not hesitate to reply to this email — we are always happy to help.\n\nWarm regards,\n\nLuca Pattaro\nIl Ciliegio — Viticoltori in Monteriggioni dal 1952\nshop@ilciliegio.com | +39 331 1347899"
+  },
   "day0": {
     "label": "Conferma spedizione (Giorno 0)",
     "subject": "Your wine is on its way! 🍷",

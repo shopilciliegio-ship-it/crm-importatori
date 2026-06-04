@@ -197,6 +197,11 @@ def should_send(order: dict, reminder_type: str, now_ms: int) -> tuple[bool, str
     if reminder_type in already:
         return False, 'già inviata'
 
+    if reminder_type == 'order_received':
+        if status == 'annullato':
+            return False, 'ordine annullato'
+        return True, ''
+
     if reminder_type == 'day0':
         if not shipping_date:
             return False, 'shippingDate mancante'
@@ -256,6 +261,31 @@ def main():
 
     changed   = 0
     log_new   = []
+
+    # ── order_received: gira su tutti gli ordini non annullati ───────────────
+    new_orders = [o for o in orders if o.get('status') != 'annullato']
+    for order in new_orders:
+        ok, reason = should_send(order, 'order_received', now_ms)
+        if not ok:
+            continue
+        tpl = templates.get('order_received')
+        if not tpl:
+            continue
+        subject, body = render_template(tpl, order)
+        to_email = (order.get('customerEmail') or '').strip()
+        msg_id = send_email(order, 'order_received', subject, body)
+        if msg_id:
+            entry = {
+                'type':      'order_received',
+                'to':        to_email,
+                'subject':   subject,
+                'sentAt':    now_ms,
+                'messageId': msg_id,
+            }
+            order.setdefault('emailsSent', []).append(entry)
+            order['updatedAt'] = now_ms
+            changed += 1
+            log_new.append({'orderId': order['id'], 'customerName': order.get('customerName', ''), **entry})
 
     for order in active:
         name   = order.get('customerName', '?')
