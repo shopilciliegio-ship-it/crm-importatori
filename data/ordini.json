@@ -2107,7 +2107,7 @@
     {
       "id": "ord_mbe_IT3299-8V-0000006FDJ",
       "customerName": "DANIEL ABRAIRA",
-      "customerEmail": "",
+      "customerEmail": "abraira2040@gmail.com",
       "customerPhone": "",
       "shippingAddress": "19153 SE FEARNLEY DR, JUPITER",
       "amount": 0,
@@ -2120,19 +2120,25 @@
       "mbeTrackingNumber": "IT3299-8V-0000006FDJ",
       "carrier": "UPS",
       "shippingDate": "2026-06-03",
-      "status": "spedito",
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "spedito",
           "date": 1780444800000,
           "note": "Importato da MBE"
+        },
+        {
+          "status": "in_transito",
+          "date": 1780575684099,
+          "note": ""
         }
       ],
       "emailsSent": [],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780485256521,
-      "updatedAt": 1780485256521
+      "updatedAt": 1780575684099,
+      "shippingType": "standard"
     }
   ],
   "lastImportedAt": 1780397305300
