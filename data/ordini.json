@@ -90,7 +90,7 @@
     {
       "id": "ord_mpvpkyylwz2h",
       "customerName": "JILL BANKS",
-      "customerEmail": "",
+      "customerEmail": "myhouse_injc@hotmail.com",
       "customerPhone": "",
       "amount": 233.8,
       "currency": "EUR",
@@ -103,7 +103,7 @@
       "trackingNumber": "1Z9376E1A803482468",
       "carrier": "UPS",
       "shippingDate": "2026-05-27",
-      "status": "in_transito",
+      "status": "spedito",
       "statusHistory": [
         {
           "status": "ricevuto",
@@ -119,13 +119,19 @@
           "status": "in_transito",
           "date": 1780567668144,
           "note": "MBE: Shipment in transit to reach its final destination"
+        },
+        {
+          "status": "spedito",
+          "date": 1780575722939,
+          "note": ""
         }
       ],
       "emailsSent": [],
       "notes": "",
       "createdAt": 1780348588797,
-      "updatedAt": 1780567668144,
-      "mbeTrackingNumber": "IT3299-8V-0000006DG3"
+      "updatedAt": 1780575722939,
+      "mbeTrackingNumber": "IT3299-8V-0000006DG3",
+      "shippingType": "standard"
     },
     {
       "id": "ord_mpv5bpn5fjc2",
