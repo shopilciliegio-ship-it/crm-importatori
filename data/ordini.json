@@ -711,7 +711,7 @@
       "mbeTrackingNumber": "IT3299-0V-00000067KZ",
       "carrier": "FedEx",
       "shippingDate": "2026-05-08",
-      "status": "in_transito",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "spedito",
@@ -722,13 +722,30 @@
           "status": "in_transito",
           "date": 1780573628194,
           "note": ""
+        },
+        {
+          "status": "consegnato",
+          "date": 1780573811795,
+          "note": ""
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "consegnato",
+          "sentAt": 1780573811795,
+          "messageId": "manual-skip",
+          "manual": true
+        },
+        {
+          "type": "Consegnato",
+          "sentAt": 1780573812023,
+          "messageId": "<202606041150.70244249628@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780573628194,
+      "updatedAt": 1780573812023,
       "shippingType": "standard"
     },
     {
