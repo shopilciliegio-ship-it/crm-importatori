@@ -1118,7 +1118,7 @@
     {
       "id": "ord_mbe_IT3299-8V-0000005XA1",
       "customerName": "TERESITA M NAVARRO",
-      "customerEmail": "",
+      "customerEmail": "navarrote@yahoo.com",
       "customerPhone": "",
       "shippingAddress": "6830 GATO RD, EL PASO",
       "amount": 0,
@@ -1131,19 +1131,32 @@
       "mbeTrackingNumber": "IT3299-8V-0000005XA1",
       "carrier": "UPS",
       "shippingDate": "2026-03-27",
-      "status": "spedito",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "spedito",
           "date": 1780415614441,
           "note": "Importato da MBE — Shipment created"
+        },
+        {
+          "status": "consegnato",
+          "date": 1780573341763,
+          "note": ""
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "consegnato",
+          "sentAt": 1780573341763,
+          "messageId": "manual-skip",
+          "manual": true
+        }
+      ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780415614441
+      "updatedAt": 1780573341763,
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-0V-0000005X66",
