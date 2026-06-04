@@ -488,7 +488,7 @@
     {
       "id": "ord_mbe_IT3299-8V-0000006AKO",
       "customerName": "FAITH JENKINS",
-      "customerEmail": "",
+      "customerEmail": "sandfgordon26@gmail.com",
       "customerPhone": "",
       "shippingAddress": "2121 VINTAGE TOLLGATE DR, THOMPSONS STATION",
       "amount": 0,
@@ -501,19 +501,25 @@
       "mbeTrackingNumber": "IT3299-8V-0000006AKO",
       "carrier": "UPS",
       "shippingDate": "2026-05-18",
-      "status": "spedito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "spedito",
           "date": 1780415614441,
           "note": "Importato da MBE — Shipment created"
+        },
+        {
+          "status": "dogana",
+          "date": 1780574180715,
+          "note": ""
         }
       ],
       "emailsSent": [],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780415614441
+      "updatedAt": 1780574180715,
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-00000069TF",
