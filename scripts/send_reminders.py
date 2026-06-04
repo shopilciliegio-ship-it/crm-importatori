@@ -209,9 +209,11 @@ def should_send(order: dict, reminder_type: str, now_ms: int) -> tuple[bool, str
         return False, 'già inviata'
 
     if reminder_type == 'order_received':
-        if status == 'annullato':
-            return False, 'ordine annullato'
-        days_old = (now_ms - int(order.get('createdAt') or 0)) / DAY_MS
+        if status in STATI_TERMINALI or status == 'annullato':
+            return False, f'ordine terminato ({status})'
+        # Usa orderDate (data reale ordine), non createdAt (data import nel CRM)
+        order_date = int(order.get('orderDate') or order.get('createdAt') or 0)
+        days_old = (now_ms - order_date) / DAY_MS
         if days_old > 7:
             return False, f'ordine vecchio ({days_old:.0f}gg) — skip welcome'
         return True, ''
@@ -271,9 +273,9 @@ def main():
 
     test_mode = settings.get('testMode', True)
     if test_mode:
-        print(f'🧪 TEST MODE attivo — email inviate solo a {BCC_EMAIL}')
+        print(f'🧪 TEST MODE — email a {BCC_EMAIL}, niente salvato in emailsSent')
     else:
-        print('👥 Modalità produzione — email inviate ai clienti reali')
+        print('👥 Produzione — email ai clienti reali, tutto registrato')
 
     db,        sha_db = gh_get(DATA_PATH)
     templates, _      = gh_get(TEMPLATES_PATH)
@@ -286,15 +288,38 @@ def main():
     orders  = db.get('orders') or []
     now_ms  = int(datetime.now(timezone.utc).timestamp() * 1000)
 
+    # In test mode: pulisce entry order_received salvate erroneamente da run precedenti
+    if test_mode:
+        for o in orders:
+            before = len(o.get('emailsSent') or [])
+            o['emailsSent'] = [e for e in (o.get('emailsSent') or []) if e.get('type') != 'order_received']
+            if len(o['emailsSent']) < before:
+                o['updatedAt'] = now_ms
+
     active = [o for o in orders if o.get('status') not in ('ricevuto', 'preparazione', 'annullato')]
     print(f'Ordini attivi: {len(active)} / {len(orders)}')
 
-    changed   = 0
-    log_new   = []
+    sent   = 0
+    log_new = []
 
-    # ── order_received: gira su tutti gli ordini non annullati ───────────────
-    new_orders = [o for o in orders if o.get('status') != 'annullato']
-    for order in new_orders:
+    def _record_send(order, rtype, to_email, subject, msg_id):
+        """Salva in emailsSent solo in modalità produzione."""
+        nonlocal sent
+        entry = {
+            'type':      rtype,
+            'to':        to_email,
+            'subject':   subject,
+            'sentAt':    now_ms,
+            'messageId': msg_id,
+        }
+        if not test_mode:
+            order.setdefault('emailsSent', []).append(entry)
+            order['updatedAt'] = now_ms
+        sent += 1
+        log_new.append({'orderId': order['id'], 'customerName': order.get('customerName', ''), **entry})
+
+    # ── order_received: tutti gli ordini non annullati ────────────────────────
+    for order in [o for o in orders if o.get('status') != 'annullato']:
         ok, reason = should_send(order, 'order_received', now_ms)
         if not ok:
             continue
@@ -305,18 +330,9 @@ def main():
         to_email = (order.get('customerEmail') or '').strip()
         msg_id = send_email(order, 'order_received', subject, body, test_mode)
         if msg_id:
-            entry = {
-                'type':      'order_received',
-                'to':        to_email,
-                'subject':   subject,
-                'sentAt':    now_ms,
-                'messageId': msg_id,
-            }
-            order.setdefault('emailsSent', []).append(entry)
-            order['updatedAt'] = now_ms
-            changed += 1
-            log_new.append({'orderId': order['id'], 'customerName': order.get('customerName', ''), **entry})
+            _record_send(order, 'order_received', to_email, subject, msg_id)
 
+    # ── Reminder temporizzati e notifiche stato ───────────────────────────────
     for order in active:
         name   = order.get('customerName', '?')
         status = order.get('status', '')
@@ -329,43 +345,31 @@ def main():
                 if reason != 'già inviata':
                     print(f'    {rtype}: skip — {reason}')
                 continue
-
             tpl = templates.get(rtype)
             if not tpl:
                 print(f'    {rtype}: template mancante')
                 continue
-
             subject, body = render_template(tpl, order)
             to_email = (order.get('customerEmail') or '').strip()
             msg_id = send_email(order, rtype, subject, body, test_mode)
-
             if msg_id:
-                entry = {
-                    'type':      rtype,
-                    'to':        to_email,
-                    'subject':   subject,
-                    'sentAt':    now_ms,
-                    'messageId': msg_id,
-                }
-                order.setdefault('emailsSent', []).append(entry)
-                order['updatedAt'] = now_ms
-                changed += 1
-                log_new.append({
-                    'orderId':      order['id'],
-                    'customerName': order.get('customerName', ''),
-                    **entry,
-                })
+                _record_send(order, rtype, to_email, subject, msg_id)
 
-    if changed > 0:
-        db['orders'] = orders
-        now_str = datetime.now().strftime('%d/%m/%Y %H:%M')
-        gh_put(DATA_PATH, db, sha_db, f'Reminder email — {changed} inviate — {now_str}')
-        print(f'\n✓ {changed} email inviate, ordini.json aggiornato.')
+    now_str = datetime.now().strftime('%d/%m/%Y %H:%M')
 
-        log_data, log_sha = gh_get(LOG_PATH)
-        existing = log_data.get('log', []) if isinstance(log_data, dict) else []
-        log_data = {'log': existing + log_new}
-        gh_put(LOG_PATH, log_data, log_sha, f'Email log — {len(log_new)} entries — {now_str}')
+    if test_mode:
+        print(f'\n🧪 Test completato: {sent} email inviate a {BCC_EMAIL}. Nessuna modifica a ordini.json.')
+    else:
+        if sent > 0:
+            db['orders'] = orders
+            gh_put(DATA_PATH, db, sha_db, f'Reminder email — {sent} inviate — {now_str}')
+            log_data, log_sha = gh_get(LOG_PATH)
+            existing = log_data.get('log', []) if isinstance(log_data, dict) else []
+            gh_put(LOG_PATH, {'log': existing + log_new}, log_sha,
+                   f'Email log — {len(log_new)} entries — {now_str}')
+            print(f'\n✓ {sent} email inviate, ordini.json aggiornato.')
+        else:
+            print('\nNessuna email da inviare.')
         print(f'✓ email-log.json aggiornato ({len(log_new)} nuove righe).')
     else:
         print('\nNessuna email da inviare.')
