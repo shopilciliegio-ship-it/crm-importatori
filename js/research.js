@@ -102,29 +102,49 @@ ${webText ? webText.slice(0, 1800) : '(non disponibile o irraggiungibile)'}`;
 
 /* ── MODAL ── */
 
-function openResearchModal(country) {
+function openResearchModal(country, forceAll) {
   if (!rsch.serperKey || !rsch.groqKey) {
     toast('Configura le API key Serper e Groq nelle Impostazioni');
     openSettings();
     return;
   }
-  const contacts = db.contacts.filter(c => c.country === country);
-  if (!contacts.length) { toast('Nessun contatto per ' + country); return; }
+  const allContacts = db.contacts.filter(c => c.country === country);
+  if (!allContacts.length) { toast('Nessun contatto per ' + country); return; }
 
-  const alreadyDone = contacts.filter(c => c.research).length;
-  const alreadyNote = alreadyDone
-    ? `<div style="font-size:12px;color:var(--text2);margin-top:4px">${alreadyDone} già analizzati (verranno sovrascritti)</div>`
+  const alreadyDone = allContacts.filter(c => c.research).length;
+  const toAnalyze   = forceAll ? allContacts : allContacts.filter(c => !c.research);
+  const skipped     = allContacts.length - toAnalyze.length;
+
+  // Se sono tutti già analizzati e non forceAll, proponi scelta
+  if (!forceAll && alreadyDone > 0 && toAnalyze.length === 0) {
+    showModal(`
+      <div class="mt">🔬 Analisi AI — ${esc(country)}</div>
+      <div style="font-size:13px;color:var(--text2);margin-bottom:16px">
+        Tutti i ${allContacts.length} contatti sono già stati analizzati.
+      </div>
+      <div class="mf">
+        <button class="btn" onclick="closeModal()">Annulla</button>
+        <button class="btn btp" onclick="closeModal();openResearchModal('${esc(country)}',true)">Ri-analizza tutti</button>
+      </div>
+    `);
+    return;
+  }
+
+  const skipNote = skipped > 0
+    ? `<div style="font-size:12px;color:var(--green-tx);background:var(--green-bg);padding:4px 10px;border-radius:20px;display:inline-block">✓ ${skipped} già analizzati — saltati</div>`
     : '';
 
   showModal(`
     <div class="mt">🔬 Analisi AI — ${esc(country)}</div>
-    <div style="font-size:13px;color:var(--text2);margin-bottom:4px">${contacts.length} contatti da analizzare</div>
-    ${alreadyNote}
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap">
+      <span style="font-size:13px;color:var(--text2)">${toAnalyze.length} da analizzare</span>
+      ${skipNote}
+    </div>
 
-    <div style="background:var(--bg2);border-radius:8px;padding:12px;margin:14px 0 10px">
+    <div style="background:var(--bg2);border-radius:8px;padding:12px;margin:4px 0 10px">
       <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--text2);margin-bottom:7px">
         <span id="rsch-lbl" style="font-style:italic">In attesa di avvio...</span>
-        <span id="rsch-cnt" style="font-weight:700;color:var(--text1)">0 / ${contacts.length}</span>
+        <span id="rsch-cnt" style="font-weight:700;color:var(--text1)">0 / ${toAnalyze.length}</span>
       </div>
       <div style="background:var(--brd);border-radius:4px;height:7px;overflow:hidden">
         <div id="rsch-bar" style="width:0%;height:100%;background:var(--accent);transition:width .25s;border-radius:4px"></div>
@@ -132,7 +152,6 @@ function openResearchModal(country) {
     </div>
 
     <div id="rsch-results" style="max-height:320px;overflow-y:auto;display:flex;flex-direction:column;gap:6px;padding-right:2px"></div>
-
     <div id="rsch-summary" style="display:none;background:var(--bg2);border-radius:8px;padding:12px;margin-top:12px;font-size:13px;line-height:1.7"></div>
 
     <div class="mf" style="margin-top:14px">
@@ -142,7 +161,7 @@ function openResearchModal(country) {
   `);
 
   _researchCancel = false;
-  _runResearch(contacts, country);
+  _runResearch(toAnalyze, country);
 }
 
 async function _runResearch(contacts, country) {
