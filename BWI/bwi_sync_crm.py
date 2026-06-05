@@ -373,7 +373,7 @@ def main():
         print(f"   Filtrato a {len(xlsx_companies):,} aziende da questo run (manifest)")
     else:
         print(f"   Manifest non trovato — sync di tutte le {len(xlsx_companies):,} aziende")
-        print(f"   ⚠ Prima esecuzione: potrebbe aggiungere molti contatti al CRM")
+        print(f"   Prima esecuzione: potrebbe aggiungere molti contatti al CRM")
 
     # 3. Carica CRM
     print(f"\n2. Carico crm.json...")
