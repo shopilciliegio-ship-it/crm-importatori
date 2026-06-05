@@ -148,7 +148,9 @@ async function loadFromGH(){
     let jsonStr;
     const raw=(d.content||'').replace(/\n/g,'');
     if(!raw&&d.download_url){
-      const rawR=await fetch(d.download_url,{headers:{'Authorization':`token ${token}`}});
+      // download_url non vuole Authorization: causa CORS preflight su raw.githubusercontent.com
+      // I repo privati hanno già il token embedded nella URL; i pubblici non ne hanno bisogno
+      const rawR=await fetch(d.download_url);
       if(!rawR.ok) throw new Error(`Download diretto: ${rawR.status}`);
       jsonStr=await rawR.text();
     } else {
