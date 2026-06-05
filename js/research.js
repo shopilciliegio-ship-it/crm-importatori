@@ -78,26 +78,47 @@ ${searchText || '(nessun risultato trovato)'}
 --- TESTO DAL SITO WEB ---
 ${webText ? webText.slice(0, 1800) : '(non disponibile o irraggiungibile)'}`;
 
-  try {
-    const r = await fetch('https://api.groq.com/openai/v1/chat/completions', {
-      method: 'POST',
-      headers: { 'Authorization': `Bearer ${rsch.groqKey}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: 'llama-3.3-70b-versatile',
-        messages: [
-          { role: 'system', content: RESEARCH_SYSTEM_PROMPT },
-          { role: 'user',   content: prompt }
-        ],
-        temperature: 0.1,
-        max_tokens: 450
-      })
-    });
-    if (!r.ok) { console.warn('Groq error:', r.status); return {}; }
-    const content = (await r.json()).choices?.[0]?.message?.content?.trim() || '';
-    const m = content.match(/\{[\s\S]*\}/);
-    if (m) return JSON.parse(m[0]);
-    return {};
-  } catch(e) { console.warn('Groq exception:', e); return {}; }
+  const body = JSON.stringify({
+    model: 'llama-3.3-70b-versatile',
+    messages: [
+      { role: 'system', content: RESEARCH_SYSTEM_PROMPT },
+      { role: 'user',   content: prompt }
+    ],
+    temperature: 0.1,
+    max_tokens: 450
+  });
+
+  // Retry con backoff su 429 (rate limit Groq: ~30 req/min)
+  for (let attempt = 0; attempt < 4; attempt++) {
+    try {
+      const r = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${rsch.groqKey}`, 'Content-Type': 'application/json' },
+        body
+      });
+
+      if (r.status === 429) {
+        // Leggi il retry-after dall'header se disponibile, altrimenti backoff progressivo
+        const retryAfter = parseInt(r.headers.get('retry-after') || '0') || 0;
+        const wait = retryAfter > 0 ? retryAfter * 1000 : [15000, 30000, 60000][attempt] || 60000;
+        const lbl = document.getElementById('rsch-lbl');
+        if (lbl) lbl.textContent = `⏳ Rate limit Groq — attendo ${Math.round(wait/1000)}s (tentativo ${attempt+1}/4)...`;
+        await new Promise(res => setTimeout(res, wait));
+        continue;
+      }
+
+      if (!r.ok) { console.warn('Groq error:', r.status, await r.text().catch(()=>'')); return {}; }
+
+      const content = (await r.json()).choices?.[0]?.message?.content?.trim() || '';
+      const m = content.match(/\{[\s\S]*\}/);
+      if (m) return JSON.parse(m[0]);
+      return {};
+    } catch(e) {
+      console.warn('Groq exception:', e);
+      if (attempt < 3) await new Promise(res => setTimeout(res, 5000));
+    }
+  }
+  return {};
 }
 
 /* ── MODAL ── */
@@ -205,8 +226,8 @@ async function _runResearch(contacts, country) {
     if (bar) bar.style.width = pct + '%';
     if (cnt) cnt.textContent = `${done} / ${total}`;
 
-    // Rate limit: ~1.1s/contatto (Serper: 2500 ricerche/mese gratis)
-    await new Promise(res => setTimeout(res, 700));
+    // 2.5s tra contatti → ~24 req/min, sotto il limite Groq di 30 req/min
+    await new Promise(res => setTimeout(res, 2500));
   }
 
   _researchRunning = false;
