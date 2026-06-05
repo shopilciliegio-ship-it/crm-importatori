@@ -152,15 +152,40 @@
       "contactTitle": "Commercial Director",
       "contactEmail": "luca@ilciliegio.com",
       "name": "Elena Dubois",
-      "status": "new",
+      "status": "sent",
       "products": [],
       "notes": "",
       "createdAt": 1780347089148,
-      "updatedAt": 1780347089148,
+      "updatedAt": 1780652002997,
       "log": [
         {
           "ts": 1780347089148,
           "msg": "Importato da XLSX (2 contatti)"
+        },
+        {
+          "ts": 1780652002997,
+          "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202606050933.27423085295@smtp-relay.mailin.fr>)"
+        }
+      ],
+      "lastEmailSent": 1780652002997,
+      "lastEmailSubject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+      "emailsSent": 1,
+      "brevoEvents": [
+        {
+          "messageId": "<202606050933.27423085295@smtp-relay.mailin.fr>",
+          "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+          "sentAt": 1780652002997,
+          "toEmail": "luca@ilciliegio.com",
+          "toName": "Elena Dubois",
+          "brand": "sienawine",
+          "sequenceStep": 1,
+          "delivered": false,
+          "opened": false,
+          "clicked": false,
+          "bounced": false,
+          "spam": false,
+          "unsubscribed": false,
+          "blocked": false
         }
       ]
     },
@@ -323,15 +348,40 @@
       "contactTitle": "Buyer",
       "contactEmail": "luca@ilciliegio.com",
       "name": "Anna Lindqvist",
-      "status": "new",
+      "status": "sent",
       "products": [],
       "notes": "",
       "createdAt": 1780347089148,
-      "updatedAt": 1780347089148,
+      "updatedAt": 1780652004252,
       "log": [
         {
           "ts": 1780347089148,
           "msg": "Importato da XLSX (3 contatti)"
+        },
+        {
+          "ts": 1780652004252,
+          "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202606050933.36114510437@smtp-relay.mailin.fr>)"
+        }
+      ],
+      "lastEmailSent": 1780652004252,
+      "lastEmailSubject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+      "emailsSent": 1,
+      "brevoEvents": [
+        {
+          "messageId": "<202606050933.36114510437@smtp-relay.mailin.fr>",
+          "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+          "sentAt": 1780652004252,
+          "toEmail": "luca@ilciliegio.com",
+          "toName": "Anna Lindqvist",
+          "brand": "sienawine",
+          "sequenceStep": 1,
+          "delivered": false,
+          "opened": false,
+          "clicked": false,
+          "bounced": false,
+          "spam": false,
+          "unsubscribed": false,
+          "blocked": false
         }
       ]
     },
@@ -365,15 +415,40 @@
       "contactTitle": "",
       "contactEmail": "",
       "name": "",
-      "status": "new",
+      "status": "sent",
       "products": [],
       "notes": "",
       "createdAt": 1780347089148,
-      "updatedAt": 1780347089148,
+      "updatedAt": 1780652005746,
       "log": [
         {
           "ts": 1780347089148,
           "msg": "Importato da XLSX (0 contatti)"
+        },
+        {
+          "ts": 1780652005746,
+          "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202606050933.11859768017@smtp-relay.mailin.fr>)"
+        }
+      ],
+      "lastEmailSent": 1780652005746,
+      "lastEmailSubject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+      "emailsSent": 1,
+      "brevoEvents": [
+        {
+          "messageId": "<202606050933.11859768017@smtp-relay.mailin.fr>",
+          "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+          "sentAt": 1780652005746,
+          "toEmail": "luca@ilciliegio.com",
+          "toName": "",
+          "brand": "sienawine",
+          "sequenceStep": 1,
+          "delivered": false,
+          "opened": false,
+          "clicked": false,
+          "bounced": false,
+          "spam": false,
+          "unsubscribed": false,
+          "blocked": false
         }
       ]
     },
