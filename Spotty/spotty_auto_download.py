@@ -23,7 +23,7 @@ SCRIPT_DIR  = os.path.dirname(os.path.abspath(__file__))
 OUTPUT_FILE = os.path.join(SCRIPT_DIR, "utentiregistrati_latest.csv")
 
 SPOTTY_USER = os.environ.get("SPOTTY_USER", "ilciliegio.com")
-SPOTTY_PASS = os.environ.get("SPOTTY_PASS", "Hotel1000!")
+SPOTTY_PASS = os.environ.get("SPOTTY_PASS", "")
 
 HEADERS = {
     "User-Agent": (

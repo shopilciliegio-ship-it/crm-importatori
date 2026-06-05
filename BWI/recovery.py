@@ -23,9 +23,9 @@ from openpyxl.styles import Font, PatternFill, Alignment
 # ============================================================
 # COPIA QUI LE STESSE CREDENZIALI DI bestwine_scraper.py
 # ============================================================
-COOKIE = "_ga=GA1.1.586675849.1777477552; intercom-id-hhkybma9=c648fe74-a61c-4ff3-9ce2-322bd40941ae; intercom-session-hhkybma9=; intercom-device-id-hhkybma9=0ddcf177-5992-4260-a48a-1a5a863ff96d; _gcl_au=1.1.303388429.1776775811.1595798605.1778427736.1778427736; token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiaW5mb0BzaWVuYXdpbmUuaXQiLCJ1c2VySWQiOjEzMjI5LCJzZXNzaW9uSWQiOiIzNGE2ODVkNTVjMGE0OGI3MGFmOTUzZjc2MGQyOGU5NCIsImlhdCI6MTc3ODY2OTA0OSwiZXhwIjoxNzc4NjcwODQ5LCJpc3MiOiJiZXN0d2luZWltcG9ydGVycy5jb20ifQ.emmWbzJBnUkG8j1Hjqj9qs15K3f4m3ZkbaVkNMLTMwM; tokenRef=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiaW5mb0BzaWVuYXdpbmUuaXQiLCJ1c2VySWQiOjEzMjI5LCJzZXNzaW9uSWQiOiIzNGE2ODVkNTVjMGE0OGI3MGFmOTUzZjc2MGQyOGU5NCIsImlhdCI6MTc3ODY2OTA0OSwiZXhwIjoxNzc4NzU1NDQ5LCJpc3MiOiJiZXN0d2luZWltcG9ydGVycy5jb20ifQ.jQPwLBIQVbIsdE6w0XKpuSdIPW0mOrfIO5rJkGXyel8; jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMzIyOSwicm9sZSI6ImRlbW8iLCJpYXQiOjE3Nzg2NjkwNDksImV4cCI6MTc3ODY5Nzg0OX0.DJ8m40GpCPQuO8k0ec-xDE_P-BI4jY06a128Q6S_ae4; _ga_4B4PSNEGMV=GS2.1.s1778669058$o16$g1$t1778669059$j59$l0$h1336576990$dxzdBGTcfkMAsdAak0ysOHi5vnxxO4OBjDw"
+COOKIE = ""  # incolla qui il cookie di sessione BWI (non committare)
 
-BDN_ACCESS = "$2a$10$TA5cyMC/Kj5dq2uP4QGxU.Vo2cwkveKaxqh3nli6OcBg19JykAtuq"  # es. $2a$10$kPV3v...
+BDN_ACCESS = ""  # incolla qui il BDN access token (non committare)
 BDN_ID     = "13229"       # es. 13229
 BDN_NAME   = "info@sienawine.it"     # es. info@sienawine.it
 # ============================================================
