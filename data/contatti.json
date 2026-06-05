@@ -38,15 +38,40 @@
       "contactTitle": "Purchasing Manager",
       "contactEmail": "luca@ilciliegio.com",
       "name": "Michael Weber",
-      "status": "new",
+      "status": "sent",
       "products": [],
       "notes": "",
       "createdAt": 1780347089148,
-      "updatedAt": 1780347089148,
+      "updatedAt": 1780653452767,
       "log": [
         {
           "ts": 1780347089148,
           "msg": "Importato da XLSX (1 contatti)"
+        },
+        {
+          "ts": 1780653452767,
+          "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202606050957.84019958884@smtp-relay.mailin.fr>)"
+        }
+      ],
+      "lastEmailSent": 1780653452767,
+      "lastEmailSubject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+      "emailsSent": 1,
+      "brevoEvents": [
+        {
+          "messageId": "<202606050957.84019958884@smtp-relay.mailin.fr>",
+          "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+          "sentAt": 1780653452767,
+          "toEmail": "luca@ilciliegio.com",
+          "toName": "Michael Weber",
+          "brand": "sienawine",
+          "sequenceStep": 1,
+          "delivered": false,
+          "opened": false,
+          "clicked": false,
+          "bounced": false,
+          "spam": false,
+          "unsubscribed": false,
+          "blocked": false
         }
       ]
     },
@@ -240,15 +265,40 @@
       "contactTitle": "General Manager",
       "contactEmail": "luca@ilciliegio.com",
       "name": "Carlos Mendes",
-      "status": "new",
+      "status": "sent",
       "products": [],
       "notes": "",
       "createdAt": 1780347089148,
-      "updatedAt": 1780347089148,
+      "updatedAt": 1780653454709,
       "log": [
         {
           "ts": 1780347089148,
           "msg": "Importato da XLSX (2 contatti)"
+        },
+        {
+          "ts": 1780653454709,
+          "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202606050957.75471958727@smtp-relay.mailin.fr>)"
+        }
+      ],
+      "lastEmailSent": 1780653454709,
+      "lastEmailSubject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+      "emailsSent": 1,
+      "brevoEvents": [
+        {
+          "messageId": "<202606050957.75471958727@smtp-relay.mailin.fr>",
+          "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+          "sentAt": 1780653454709,
+          "toEmail": "luca@ilciliegio.com",
+          "toName": "Carlos Mendes",
+          "brand": "sienawine",
+          "sequenceStep": 1,
+          "delivered": false,
+          "opened": false,
+          "clicked": false,
+          "bounced": false,
+          "spam": false,
+          "unsubscribed": false,
+          "blocked": false
         }
       ]
     },
@@ -510,15 +560,40 @@
       "contactTitle": "Import Manager",
       "contactEmail": "luca@ilciliegio.com",
       "name": "David Rosenberg",
-      "status": "new",
+      "status": "sent",
       "products": [],
       "notes": "",
       "createdAt": 1780347089148,
-      "updatedAt": 1780347089148,
+      "updatedAt": 1780653456351,
       "log": [
         {
           "ts": 1780347089148,
           "msg": "Importato da XLSX (2 contatti)"
+        },
+        {
+          "ts": 1780653456351,
+          "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202606050957.82301882289@smtp-relay.mailin.fr>)"
+        }
+      ],
+      "lastEmailSent": 1780653456351,
+      "lastEmailSubject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+      "emailsSent": 1,
+      "brevoEvents": [
+        {
+          "messageId": "<202606050957.82301882289@smtp-relay.mailin.fr>",
+          "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+          "sentAt": 1780653456351,
+          "toEmail": "luca@ilciliegio.com",
+          "toName": "David Rosenberg",
+          "brand": "sienawine",
+          "sequenceStep": 1,
+          "delivered": false,
+          "opened": false,
+          "clicked": false,
+          "bounced": false,
+          "spam": false,
+          "unsubscribed": false,
+          "blocked": false
         }
       ]
     }
