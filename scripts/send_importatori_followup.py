@@ -170,6 +170,17 @@ def render_template(tpl: dict, c: dict) -> tuple[str, str]:
 
 # ── HTML email builder ────────────────────────────────────────────────────────
 
+_URL_RE = re.compile(r'(https?://[^\s<]+|(?:www\.|calendly\.com/)[^\s<]+)')
+
+def _linkify(escaped_text: str) -> str:
+    def _repl(m: re.Match) -> str:
+        url = m.group(1).replace('&amp;', '&')
+        href = url if url.startswith('http') else 'https://' + url
+        return (f'<a href="{href}" style="color:{ACCENT};font-weight:600;'
+                f'text-decoration:none">{m.group(1)}</a>')
+    return _URL_RE.sub(_repl, escaped_text)
+
+
 def _body_to_html(plain: str) -> str:
     paras = [p.strip() for p in plain.split('\n\n') if p.strip()]
     parts = []
@@ -179,16 +190,16 @@ def _body_to_html(plain: str) -> str:
         others = [l for l in lines if not l.strip().startswith('•')]
         if bulls and len(bulls) >= len(others):
             if others:
-                intro = html.escape(' '.join(others))
+                intro = _linkify(html.escape(' '.join(others)))
                 parts.append(f'<p style="margin:0 0 8px;color:#333;font-size:15px;line-height:1.7">{intro}</p>')
             items = ''.join(
                 f'<li style="color:#333;font-size:14px;line-height:1.8;padding:1px 0">'
-                f'{html.escape(l.lstrip("• ").strip())}</li>'
+                f'{_linkify(html.escape(l.lstrip("• ").strip()))}</li>'
                 for l in bulls
             )
             parts.append(f'<ul style="margin:0 0 16px;padding-left:20px">{items}</ul>')
         else:
-            escaped = html.escape(p).replace('\n', '<br>')
+            escaped = _linkify(html.escape(p)).replace('\n', '<br>')
             parts.append(
                 f'<p style="margin:0 0 16px;color:#333;font-size:15px;line-height:1.7">{escaped}</p>'
             )
@@ -250,8 +261,6 @@ def send_email(to_email: str, to_name: str, subject: str, body_text: str,
         'htmlContent': build_html_email(body_text),
         'tags':        ['wine-crm', 'importatori', f'step{step}'] + (['test'] if test_mode else []),
         'headers':     {'X-CRM-ContactId': contact_id},
-        'trackClicks': False,
-        'trackOpens':  False,
     }
     if actual_bcc:
         payload['bcc'] = actual_bcc
