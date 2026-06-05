@@ -1,25 +1,34 @@
 /* ═══ CONTACTS ═══ */
 
 let _cliOffset = 0;
+let _impOffset = 0;
 const CLI_PAGE_SIZE = 100;
+const IMP_PAGE_SIZE = 100;
 
-function loadMoreClienti(){
+function _loadMoreContacts(isClienti){
   const fullList = getFiltered();
-  const batch = fullList.slice(_cliOffset, _cliOffset + CLI_PAGE_SIZE);
-  _cliOffset += batch.length;
+  const pageSize = isClienti ? CLI_PAGE_SIZE : IMP_PAGE_SIZE;
+  const offset   = isClienti ? _cliOffset : _impOffset;
+  const batch    = fullList.slice(offset, offset + pageSize);
+  if(isClienti) _cliOffset += batch.length; else _impOffset += batch.length;
   const cardsEl = document.getElementById('cl-cards');
   if(cardsEl) cardsEl.insertAdjacentHTML('beforeend', batch.map(c=>crow(c)).join(''));
+  const newOff = isClienti ? _cliOffset : _impOffset;
   const lm = document.getElementById('load-more-wrap');
   if(lm){
-    if(fullList.length > _cliOffset){
-      lm.innerHTML = `<button class="btn" onclick="loadMoreClienti()" style="font-size:13px">
-        Carica altri ${Math.min(CLI_PAGE_SIZE, fullList.length-_cliOffset)} &nbsp;·&nbsp; ${fullList.length-_cliOffset} rimanenti
+    if(fullList.length > newOff){
+      const fn = isClienti ? 'loadMoreClienti()' : 'loadMoreImportatori()';
+      lm.innerHTML = `<button class="btn" onclick="${fn}" style="font-size:13px">
+        Carica altri ${Math.min(pageSize, fullList.length-newOff)} &nbsp;·&nbsp; ${fullList.length-newOff} rimanenti
       </button>`;
     } else {
       lm.remove();
     }
   }
 }
+
+function loadMoreClienti(){    _loadMoreContacts(true);  }
+function loadMoreImportatori(){ _loadMoreContacts(false); }
 
 function updateFilters(){
   if(isClienti()){
@@ -206,10 +215,11 @@ function renderContacts(){
   if(svEl) svEl.style.display='none'; // rimpiazzato da squal per clienti
 
   const fullList=getFiltered();
-  _cliOffset=0; // reset paginazione ad ogni re-render
+  _cliOffset=0; _impOffset=0; // reset paginazione ad ogni re-render
   const isC=isClienti();
-  const list=isC ? fullList.slice(0,CLI_PAGE_SIZE) : fullList;
-  if(isC) _cliOffset=list.length;
+  const pageSize = isC ? CLI_PAGE_SIZE : IMP_PAGE_SIZE;
+  const list=fullList.slice(0, pageSize);
+  if(isC) _cliOffset=list.length; else _impOffset=list.length;
   const total=(isC?dbC:db).contacts.length;
   const allSelected=list.length>0&&list.every(c=>sel.has(c.id));
 
@@ -270,22 +280,18 @@ function renderContacts(){
     selBar.innerHTML='';
   }
 
-  // Lista contatti con checkbox (+ paginazione per clienti)
+  // Lista contatti con checkbox + paginazione (sia importatori che clienti)
   const el=document.getElementById('cl');
-  if(isC){
-    const hasMore=fullList.length>_cliOffset;
-    el.innerHTML=list.length
-      ?`<div class="card" id="cl-cards">${list.map(c=>crow(c)).join('')}</div>`
-        +(hasMore?`<div id="load-more-wrap" style="text-align:center;padding:12px">
-            <button class="btn" onclick="loadMoreClienti()" style="font-size:13px">
-              Carica altri ${Math.min(CLI_PAGE_SIZE,fullList.length-_cliOffset)} &nbsp;·&nbsp; ${fullList.length-_cliOffset} rimanenti
-            </button></div>`:'')
-      :'<div class="card"><div class="empty">Nessun risultato</div></div>';
-  } else {
-    el.innerHTML=list.length
-      ?`<div class="card">${list.map(c=>crow(c)).join('')}</div>`
-      :'<div class="card"><div class="empty">Nessun risultato</div></div>';
-  }
+  const curOff = isC ? _cliOffset : _impOffset;
+  const hasMore = fullList.length > curOff;
+  const loadFn  = isC ? 'loadMoreClienti()' : 'loadMoreImportatori()';
+  el.innerHTML=list.length
+    ?`<div class="card" id="cl-cards">${list.map(c=>crow(c)).join('')}</div>`
+      +(hasMore?`<div id="load-more-wrap" style="text-align:center;padding:12px">
+          <button class="btn" onclick="${loadFn}" style="font-size:13px">
+            Carica altri ${Math.min(pageSize,fullList.length-curOff)} &nbsp;·&nbsp; ${fullList.length-curOff} rimanenti
+          </button></div>`:'')
+    :'<div class="card"><div class="empty">Nessun risultato</div></div>';
 }
 
 function toggleSelectAll(checked){
