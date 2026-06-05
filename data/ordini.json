@@ -1,6 +1,36 @@
 {
   "orders": [
     {
+      "id": "ord_mq12fqsu08v6",
+      "customerName": "MARK MADISON",
+      "customerEmail": "mmad6199@aol.com",
+      "customerPhone": "+17276472667",
+      "amount": 456.7,
+      "currency": "EUR",
+      "orderDate": 1780662572000,
+      "emailSubject": "🍷 New Order — MARK MADISON — 456.70 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "514 NORTH MADISON AVENUE, 33755 CLEARWATER, FLORIDA (PINELLAS COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202606051229.85277646007@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1780672510830,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1780672510830,
+      "updatedAt": 1780672510830
+    },
+    {
       "id": "ord_mpzhlcdu21tb",
       "customerName": "LISA CHRISTIAN",
       "customerEmail": "lisa.slp86@gmail.com",
@@ -2578,5 +2608,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1780585261434
+  "lastImportedAt": 1780672510830
 }
