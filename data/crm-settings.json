@@ -1,4 +1,6 @@
 {
   "emailAutoSend": true,
-  "testMode": false
+  "testMode": false,
+  "emailAutoSendImportatori": false,
+  "testModeImportatori": true
 }

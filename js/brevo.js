@@ -12,12 +12,13 @@ const BREVO_STATUS = {
   replied:      { l:'💬 Risposto',        bg:'var(--teal-bg)', tx:'var(--teal-tx)' },
   client:       { l:'🤝 Cliente',         bg:'var(--green-bg)',tx:'var(--green-tx)' },
   cold:         { l:'❌ Non interessato', bg:'var(--gray-bg)', tx:'var(--gray-tx)' },
+  blacklisted:  { l:'🚫 Blacklist',       bg:'var(--red-bg)',  tx:'var(--red-tx)' },
 };
 
 const STEP_ICON = {
   sent:'📤', delivered:'✓', opened:'👁', clicked:'🔗',
   bounced:'⚠', spam:'🚫', unsubscribed:'🚫', blocked:'🔒',
-  replied:'💬', client:'🤝', cold:'❌',
+  replied:'💬', client:'🤝', cold:'❌', blacklisted:'🚫',
 };
 
 function getBrevoStatus(ev){
@@ -63,7 +64,7 @@ function fuIndicator(evs){
   if(!step1) return '';
   const lastEv = evs[evs.length-1];
   const lastSt = getBrevoStatus(lastEv);
-  if(['replied','client','cold','bounced','spam','unsubscribed','blocked'].includes(lastSt)) return '';
+  if(['replied','client','cold','blacklisted','bounced','spam','unsubscribed','blocked'].includes(lastSt)) return '';
   const days = Math.floor((Date.now()-(step1.sentAt||0))/86400000);
   const nSteps = evs.length;
   let label, dueDay;
@@ -87,9 +88,10 @@ function setManualStatus(contactId, sk, status){
   const ev = (c.brevoEvents||[]).find(e=>(e.messageId||'')===messageId);
   if(!ev) return;
   ev.manualStatus = status||null;
-  if(status==='replied')     c.status='replied';
-  else if(status==='client') c.status='client';
-  else if(status==='cold')   c.status='cold';
+  if(status==='replied')          c.status='replied';
+  else if(status==='client')      c.status='client';
+  else if(status==='cold')        c.status='cold';
+  else if(status==='blacklisted') c.status='blacklisted';
   c.log = c.log||[];
   if(status){
     const s = BREVO_STATUS[status]||{l:status};
@@ -113,12 +115,12 @@ async function processAutoFollowUps(){
   const toSend = [];
 
   adb.contacts.forEach(c=>{
-    if(['replied','client','cold'].includes(c.status)) return;
+    if(['replied','client','cold','blacklisted'].includes(c.status)) return;
     const evs = [...(c.brevoEvents||[])].sort((a,b)=>(a.sentAt||0)-(b.sentAt||0));
     if(!evs.length) return;
     // Salta se l'ultima email ha uno stato terminale manuale
     const lastEv = evs[evs.length-1];
-    if(['replied','client','cold'].includes(lastEv.manualStatus)) return;
+    if(['replied','client','cold','blacklisted'].includes(lastEv.manualStatus)) return;
 
     const step1 = evs.find(e=>(e.sequenceStep||1)===1)||evs[0];
     const daysSince1 = Math.floor((Date.now()-(step1.sentAt||0))/86400000);
