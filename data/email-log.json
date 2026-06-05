@@ -998,6 +998,123 @@
       "subject": "Your wine is on its way! 🍷",
       "sentAt": 1780589312253,
       "messageId": "<202606041609.26910219512@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mq12fqsu08v6",
+      "customerName": "MARK MADISON",
+      "type": "order_received",
+      "to": "mmad6199@aol.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1780672518803,
+      "messageId": "<202606051515.86444640535@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mpzhlcdu21tb",
+      "customerName": "LISA CHRISTIAN",
+      "type": "order_received",
+      "to": "lisa.slp86@gmail.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1780672518803,
+      "messageId": "<202606051515.43860599920@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mpzhlcdubeyc",
+      "customerName": "WHITNEY BECK",
+      "type": "order_received",
+      "to": "wawabeck1@att.net",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1780672518803,
+      "messageId": "<202606051515.32527638760@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mpzhlcdub8mu",
+      "customerName": "ANDREW WAYRYNEN",
+      "type": "order_received",
+      "to": "andrew.wayrynen@maritime.edu",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1780672518803,
+      "messageId": "<202606051515.64745513990@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mpv5bpn5tqbw",
+      "customerName": "LORA CURRIE",
+      "type": "order_received",
+      "to": "lorahenke@aol.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1780672518803,
+      "messageId": "<202606051515.46214198784@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mbe_IT3299-8V-0000006C0T",
+      "customerName": "PEONY MINASSIAN",
+      "type": "consegnato",
+      "to": "peonyminass@gmail.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1780672518803,
+      "messageId": "<202606051515.17355534135@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mbe_IT3299-8V-0000006C0P",
+      "customerName": "JASON HEALEY",
+      "type": "consegnato",
+      "to": "jahealy2@yahoo.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1780672518803,
+      "messageId": "<202606051515.75101829691@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mbe_IT3299-8V-0000006BU3",
+      "customerName": "GARY KERN",
+      "type": "dogana",
+      "to": "gbklittleman@aol.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1780672518803,
+      "messageId": "<202606051515.81202232824@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mbe_IT3299-8V-0000006AKO",
+      "customerName": "FAITH JENKINS",
+      "type": "dogana",
+      "to": "sandfgordon26@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1780672518803,
+      "messageId": "<202606051515.55116648247@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mbe_IT3299-8V-00000069TF",
+      "customerName": "KATHRYN HARRISON",
+      "type": "consegnato",
+      "to": "kthar664@gmail.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1780672518803,
+      "messageId": "<202606051515.55402771674@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mbe_IT3299-8V-00000069IY",
+      "customerName": "TANMY VAASSEN",
+      "type": "dogana",
+      "to": "tvaassen@yousc.net",
+      "subject": "Your order is going through customs",
+      "sentAt": 1780672518803,
+      "messageId": "<202606051515.46340056720@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mbe_IT3299-8V-0000006FDN",
+      "customerName": "GRACIELA MORENO",
+      "type": "day0",
+      "to": "g06mrn@yahoo.com",
+      "subject": "Your wine is on its way! 🍷",
+      "sentAt": 1780672518803,
+      "messageId": "<202606051515.37635408981@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mbe_IT3299-8V-0000006FDJ",
+      "customerName": "DANIEL ABRAIRA",
+      "type": "day0",
+      "to": "abraira2040@gmail.com",
+      "subject": "Your wine is on its way! 🍷",
+      "sentAt": 1780672518803,
+      "messageId": "<202606051515.70933824279@smtp-relay.mailin.fr>"
     }
   ]
 }
