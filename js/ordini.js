@@ -163,9 +163,49 @@ async function pushOrdiniGH(){
   }catch(e){ updGh('error'); console.error('pushOrdiniGH:',e); }
 }
 
+/* ─ Sync silenzioso eventi Brevo per ordini (bounce detection) ─ */
+async function syncOrdiniBrevoEventsQuiet(){
+  if(!brv.apiKey) return;
+  const cutoff=Date.now()-14*86400000; // ultime 2 settimane
+  const toSync=[];
+  (dbO.orders||[]).forEach(o=>{
+    (o.emailsSent||[]).forEach((e,i)=>{
+      if(e.messageId&&e.messageId!=='manual-skip'&&!e.bounced&&(e.sentAt||0)>cutoff)
+        toSync.push({order:o, evIdx:i, messageId:e.messageId});
+    });
+  });
+  if(!toSync.length) return;
+  let newBounces=0;
+  for(const {order,evIdx,messageId} of toSync){
+    try{
+      const r=await fetch(
+        `https://api.brevo.com/v3/smtp/statistics/events?messageId=${encodeURIComponent(messageId)}&limit=50`,
+        {headers:{'api-key':brv.apiKey,'Accept':'application/json'}}
+      );
+      if(!r.ok) continue;
+      const data=await r.json();
+      const ev=order.emailsSent[evIdx];
+      (data.events||[]).forEach(e=>{
+        const type=(e.event||'').toLowerCase();
+        if(!ev.delivered&&(type==='delivered'||type==='requests')){ev.delivered=true;ev.deliveredAt=e.date;}
+        if(!ev.bounced&&(type==='hardbounces'||type==='softbounces'||type==='bounced')){
+          ev.bounced=true;ev.bouncedAt=e.date;
+          order.statusHistory=order.statusHistory||[];
+          order.statusHistory.push({status:'problema',date:Date.now(),
+            note:`⚠ Email bounce (${ev.type||''}): ${order.customerEmail||''}`});
+          newBounces++;
+        }
+      });
+    }catch(e){ console.warn('Brevo ordini sync:',e); }
+    await new Promise(r=>setTimeout(r,150));
+  }
+  if(newBounces>0){ saveOrdineDB(); renderOrdini(); toast(`⚠ ${newBounces} bounce email ordini — controlla i destinatari`); }
+}
+
 /* ─ Pallini fase email per la riga lista ─ */
 function _phaseDots(order){
   const sent=new Set((order.emailsSent||[]).filter(e=>!e.manual).map(e=>e.type));
+  const bounced=new Set((order.emailsSent||[]).filter(e=>!e.manual&&e.bounced).map(e=>e.type));
   const status=order.status;
   const isExpress=order.shippingType==='express';
   const isStandard=order.shippingType==='standard';
@@ -194,13 +234,14 @@ function _phaseDots(order){
   }
 
   const dots=phases.filter(p=>!(p.hideExpress&&isExpress)).map(p=>{
-    let bg;
-    if(sent.has(p.type))           bg=p.warn?'#c0392b':'#2a9d5c';
-    else if(p.sb&&status===p.type) bg='#e67e22';
-    else if(_isPending(p))         bg='#e67e22';
-    else                           bg='var(--brd2)';
+    let bg, title='';
     const sched=(typeof REMINDER_SCHEDULE!=='undefined'?REMINDER_SCHEDULE:[]).find(r=>r.type===p.type);
-    return `<span title="${sched?esc(sched.label):p.type}" style="display:inline-block;width:7px;height:7px;border-radius:50%;background:${bg}"></span>`;
+    if(bounced.has(p.type)){       bg='#e74c3c'; title=(sched?.label||p.type)+' — ⚠ BOUNCE'; }
+    else if(sent.has(p.type))    { bg=p.warn?'#c0392b':'#2a9d5c'; title=sched?.label||p.type; }
+    else if(p.sb&&status===p.type){ bg='#e67e22'; title=sched?.label||p.type; }
+    else if(_isPending(p))        { bg='#e67e22'; title=sched?.label||p.type; }
+    else                          { bg='var(--brd2)'; title=sched?.label||p.type; }
+    return `<span title="${esc(title)}" style="display:inline-block;width:7px;height:7px;border-radius:50%;background:${bg}"></span>`;
   }).join('');
   return `<div style="display:flex;gap:2px;align-items:center">${dots}</div>`;
 }

@@ -176,6 +176,59 @@ async function runAutoFollowUp(){
 
 /* ── SYNC BREVO ── */
 
+// Versione silenziosa: gira in background all'avvio, toast solo se trova eventi nuovi
+async function syncBrevoEventsQuiet(){
+  if(!brv.apiKey) return;
+  const cutoff = Date.now() - 14*86400000; // solo ultime 2 settimane
+  const toSync = [];
+  db.contacts.forEach(c=>{
+    (c.brevoEvents||[]).forEach((ev,i)=>{
+      if(ev.messageId && (ev.sentAt||0)>cutoff
+        && !ev.bounced && !ev.spam && !ev.unsubscribed && !ev.blocked)
+        toSync.push({contact:c, evIdx:i, messageId:ev.messageId});
+    });
+  });
+  if(!toSync.length) return;
+  let updated=0;
+  for(const {contact,evIdx,messageId} of toSync){
+    try{
+      const r=await fetch(
+        `https://api.brevo.com/v3/smtp/statistics/events?messageId=${encodeURIComponent(messageId)}&limit=50`,
+        {headers:{'api-key':brv.apiKey,'Accept':'application/json'}}
+      );
+      if(!r.ok) continue;
+      const data=await r.json();
+      const events=data.events||[];
+      const ev=contact.brevoEvents[evIdx];
+      let changed=false;
+      events.forEach(e=>{
+        const type=(e.event||'').toLowerCase();
+        if((type==='delivered'||type==='requests')&&!ev.delivered){ev.delivered=true;ev.deliveredAt=e.date;changed=true;}
+        if((type==='opened'||type==='unique_opened')&&!ev.opened){
+          ev.opened=true;ev.openedAt=e.date;changed=true;
+          if(!contact.log.some(l=>l.msg.includes('👁 Aperta')&&l.msg.includes((ev.subject||'').slice(0,20))))
+            contact.log.push({ts:new Date(e.date).getTime()||Date.now(),msg:`👁 Aperta: ${ev.subject||''}`});
+        }
+        if((type==='clicks'||type==='click')&&!ev.clicked){
+          ev.clicked=true;ev.clickedAt=e.date;changed=true;
+          if(!contact.log.some(l=>l.msg.includes('🔗 Click')))
+            contact.log.push({ts:new Date(e.date).getTime()||Date.now(),msg:`🔗 Click: ${ev.subject||''}`});
+        }
+        if((type==='hardbounces'||type==='softbounces'||type==='bounced')&&!ev.bounced){
+          ev.bounced=true;ev.bouncedAt=e.date;changed=true;
+          contact.log.push({ts:Date.now(),msg:`⚠ Bounce: ${ev.subject||''}`});
+        }
+        if((type==='spamreports'||type==='spam')&&!ev.spam){ev.spam=true;changed=true;contact.log.push({ts:Date.now(),msg:`🚫 Spam: ${ev.subject||''}`});}
+        if(type==='unsubscribed'&&!ev.unsubscribed){ev.unsubscribed=true;changed=true;contact.log.push({ts:Date.now(),msg:`🚫 Disiscritto: ${ev.subject||''}`});}
+        if((type==='blocked'||type==='invalid')&&!ev.blocked){ev.blocked=true;changed=true;contact.log.push({ts:Date.now(),msg:`🔒 Bloccata: ${ev.subject||''}`});}
+      });
+      if(changed) updated++;
+    }catch(e){ console.warn('Brevo quiet sync:',e); }
+    await new Promise(r=>setTimeout(r,150));
+  }
+  if(updated>0){ saveDB(); refreshAll(); toast(`⚠ Sync Brevo: ${updated} nuovi eventi rilevati`); }
+}
+
 async function syncBrevoEvents(){
   if(!brv.apiKey){ toast('Configura prima Brevo nelle impostazioni'); return; }
   const adb = isClienti()?dbC:db;
