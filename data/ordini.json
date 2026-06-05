@@ -25,10 +25,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "mmad6199@aol.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1780672518803,
+          "messageId": "<202606051515.86444640535@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1780672510830,
-      "updatedAt": 1780672510830
+      "updatedAt": 1780672518803
     },
     {
       "id": "ord_mpzhlcdu21tb",
@@ -55,10 +63,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "lisa.slp86@gmail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1780672518803,
+          "messageId": "<202606051515.43860599920@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1780598739759
+      "updatedAt": 1780672518803
     },
     {
       "id": "ord_mpzhlcdubeyc",
@@ -85,10 +101,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "wawabeck1@att.net",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1780672518803,
+          "messageId": "<202606051515.32527638760@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1780598739759
+      "updatedAt": 1780672518803
     },
     {
       "id": "ord_mpzhlcdub8mu",
@@ -115,10 +139,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "andrew.wayrynen@maritime.edu",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1780672518803,
+          "messageId": "<202606051515.64745513990@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1780598739759
+      "updatedAt": 1780672518803
     },
     {
       "id": "ord_mpvpkyylwz2h",
@@ -195,10 +227,18 @@
           "note": ""
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "lorahenke@aol.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1780672518803,
+          "messageId": "<202606051515.46214198784@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1780314564497,
-      "updatedAt": 1780598739759,
+      "updatedAt": 1780672518803,
       "shippingType": "standard"
     },
     {
@@ -447,11 +487,19 @@
           "note": "Auto Fieramente (era: dogana)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "consegnato",
+          "to": "peonyminass@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1780672518803,
+          "messageId": "<202606051515.17355534135@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780646997369,
+      "updatedAt": 1780672518803,
       "shippingType": "standard",
       "shipmentCode": "MINASSIANP"
     },
@@ -489,11 +537,19 @@
           "note": "Auto Fieramente (era: dogana)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "consegnato",
+          "to": "jahealy2@yahoo.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1780672518803,
+          "messageId": "<202606051515.75101829691@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780646997369,
+      "updatedAt": 1780672518803,
       "shippingType": "standard",
       "shipmentCode": "HEALEYJ"
     },
@@ -526,11 +582,19 @@
           "note": ""
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "dogana",
+          "to": "gbklittleman@aol.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1780672518803,
+          "messageId": "<202606051515.81202232824@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780598739759,
+      "updatedAt": 1780672518803,
       "shippingType": "standard",
       "shipmentCode": "KERNG"
     },
@@ -620,11 +684,19 @@
           "note": ""
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "dogana",
+          "to": "sandfgordon26@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1780672518803,
+          "messageId": "<202606051515.55116648247@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780598739759,
+      "updatedAt": 1780672518803,
       "shippingType": "standard",
       "shipmentCode": "JENKINSF"
     },
@@ -662,11 +734,19 @@
           "note": "Auto Fieramente (era: dogana)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "consegnato",
+          "to": "kthar664@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1780672518803,
+          "messageId": "<202606051515.55402771674@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780646997369,
+      "updatedAt": 1780672518803,
       "shippingType": "standard",
       "shipmentCode": "HARRISONK"
     },
@@ -820,11 +900,19 @@
           "note": ""
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "dogana",
+          "to": "tvaassen@yousc.net",
+          "subject": "Your order is going through customs",
+          "sentAt": 1780672518803,
+          "messageId": "<202606051515.46340056720@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780598739759,
+      "updatedAt": 1780672518803,
       "shippingType": "standard",
       "shipmentCode": "VAASSENT"
     },
@@ -2562,11 +2650,19 @@
           "note": ""
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "day0",
+          "to": "g06mrn@yahoo.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1780672518803,
+          "messageId": "<202606051515.37635408981@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780485256521,
-      "updatedAt": 1780598739759,
+      "updatedAt": 1780672518803,
       "shippingType": "standard",
       "shipmentCode": "MORENOG"
     },
@@ -2599,11 +2695,19 @@
           "note": ""
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "day0",
+          "to": "abraira2040@gmail.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1780672518803,
+          "messageId": "<202606051515.70933824279@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780485256521,
-      "updatedAt": 1780598739759,
+      "updatedAt": 1780672518803,
       "shippingType": "standard",
       "shipmentCode": "ABRAIRAD"
     }
