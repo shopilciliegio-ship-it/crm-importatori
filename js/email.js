@@ -110,6 +110,13 @@ const BRANDS = {
   }
 };
 
+function _linkify(text, accentColor){
+  return text.replace(/(https?:\/\/[^\s<]+|(?:www\.|calendly\.com\/)[^\s<]+)/g, url => {
+    const href = url.startsWith('http') ? url : 'https://' + url;
+    return `<a href="${href}" style="color:${accentColor||'#8B1A1A'};font-weight:600;text-decoration:none">${url}</a>`;
+  });
+}
+
 function buildHtmlEmail(body, brand, contactName){
   try{
   const b = BRANDS[brand] || BRANDS.sienawine;
@@ -124,10 +131,10 @@ function buildHtmlEmail(body, brand, contactName){
       if(para.includes('\n•') || para.startsWith('•')){
         const items = para.split('\n').map(l=>l.trim()).filter(Boolean);
         return '<ul style="margin:0 0 16px;padding-left:20px">'+
-          items.map(i=>`<li style="margin-bottom:6px;color:#333;font-size:15px;line-height:1.6">${esc(i.replace(/^[•\-]\s*/,''))}</li>`).join('')+
+          items.map(i=>`<li style="margin-bottom:6px;color:#333;font-size:15px;line-height:1.6">${_linkify(esc(i.replace(/^[•\-]\s*/,'')), b.accentColor)}</li>`).join('')+
           '</ul>';
       }
-      return `<p style="margin:0 0 16px;color:#333;font-size:15px;line-height:1.7">${esc(para).replace(/\n/g,'<br>')}</p>`;
+      return `<p style="margin:0 0 16px;color:#333;font-size:15px;line-height:1.7">${_linkify(esc(para), b.accentColor).replace(/\n/g,'<br>')}</p>`;
     }).join('');
 
   const _html=`<!DOCTYPE html>
