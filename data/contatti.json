@@ -292,6 +292,10 @@
         {
           "ts": 1780653784103,
           "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202606051003.74682251356@smtp-relay.mailin.fr>)"
+        },
+        {
+          "ts": 1780654096355,
+          "msg": "🔗 Click: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
         }
       ],
       "lastEmailSent": 1780653784103,
@@ -324,13 +328,16 @@
           "toName": "Carlos Mendes",
           "brand": "sienawine",
           "sequenceStep": 2,
-          "delivered": false,
-          "opened": false,
-          "clicked": false,
+          "delivered": true,
+          "opened": true,
+          "clicked": true,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "clickedAt": "2026-06-05T12:08:16.355+02:00",
+          "openedAt": "2026-06-05T12:03:22.737+02:00",
+          "deliveredAt": "2026-06-05T12:03:05.000+02:00"
         }
       ]
     },
