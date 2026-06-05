@@ -70,6 +70,13 @@ async function init(){
     if(typeof loadSettingsFromGH==='function'){
       try{ await loadSettingsFromGH(); }catch(e){ console.warn('loadSettingsFromGH:',e); }
     }
+    // Sync silenzioso bounce Brevo (3s di ritardo per non bloccare il render iniziale)
+    if(brv.apiKey){
+      setTimeout(()=>{
+        if(typeof syncBrevoEventsQuiet==='function') syncBrevoEventsQuiet().catch(()=>{});
+        if(typeof syncOrdiniBrevoEventsQuiet==='function') syncOrdiniBrevoEventsQuiet().catch(()=>{});
+      }, 3000);
+    }
   } else {
     updGh('idle');refreshAll();
   }
