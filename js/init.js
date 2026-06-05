@@ -18,10 +18,12 @@ async function switchLayer(newLayer){
     : newLayer==='clienti' ? 'Clienti Privati' : 'Importatori & Distributori';
 
   // Sezione ordini vs CRM normale
-  const navEl  = document.querySelector('.nav');
-  const ordSec = document.getElementById('section-ordini');
+  const navEl   = document.querySelector('.nav');
+  const ordSec  = document.getElementById('section-ordini');
+  const impTgl  = document.getElementById('email-autosend-imp-toggle');
   if(navEl)  navEl.style.display  = isOrd ? 'none' : '';
   if(ordSec) ordSec.style.display = isOrd ? 'block' : 'none';
+  if(impTgl) impTgl.style.display = newLayer==='importatori' ? 'flex' : 'none';
 
   if(isOrd){
     document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
@@ -75,9 +77,10 @@ async function init(){
 }
 
 function refreshAll(){
-  renderStats();renderContacts();renderRegistro();renderFollowups();
+  renderStats();renderContacts();renderRegistro();
   renderTemplates();renderRegionChart();renderCCChart();renderPipeline();
   updateBadges();updateFilters();
+  try{ if(typeof renderEmailToggleImp==='function') renderEmailToggleImp(); }catch(e){}
   try{ if(typeof renderOrdini==='function') renderOrdini(); }catch(e){ console.warn('renderOrdini:',e); }
 }
 

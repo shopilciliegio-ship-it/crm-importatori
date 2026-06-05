@@ -259,7 +259,7 @@ function renderRegistro(){
     const name=isClienti()?`${c.nome||''} ${c.cognome||''}`.trim():(c.company||'');
     const lastEv=evs[evs.length-1];
     const lastSt=getBrevoStatus(lastEv);
-    const isTerminal=['replied','client','cold'].includes(lastSt);
+    const isTerminal=['replied','client','cold','blacklisted'].includes(lastSt);
     const sk=c.id;
     const checked=regSel.has(sk);
     const lastSk=c.id+'|'+(lastEv.messageId||evs.indexOf(lastEv));
@@ -285,9 +285,10 @@ function renderRegistro(){
         onchange="setManualStatus('${c.id}','${lastSk}',this.value)"
         style="font-size:11px;padding:3px 5px;border-radius:var(--r);border:0.5px solid var(--brd2);background:var(--bg);color:var(--text);cursor:pointer">
         <option value="" ${!cur?'selected':''}>— Stato</option>
-        <option value="replied"  ${cur==='replied'?'selected':''}>💬 Risposto</option>
-        <option value="client"   ${cur==='client'?'selected':''}>🤝 Cliente</option>
-        <option value="cold"     ${cur==='cold'?'selected':''}>❌ Non interessato</option>
+        <option value="replied"     ${cur==='replied'?'selected':''}>💬 Risposto</option>
+        <option value="client"      ${cur==='client'?'selected':''}>🤝 Cliente</option>
+        <option value="cold"        ${cur==='cold'?'selected':''}>❌ Non interessato</option>
+        <option value="blacklisted" ${cur==='blacklisted'?'selected':''}>🚫 Blacklist</option>
       </select>`;
 
     const terminalBadge=(()=>{
@@ -817,6 +818,32 @@ function renderFollowups(){
         </div>`;
       }).join('')}</div>`
     : '<div class="card"><div class="empty">Nessun follow-up 🎉</div></div>';
+}
+
+/* ═══ SETTINGS — toggle email importatori ═══ */
+
+async function toggleEmailAutoSendImp(){
+  dbSettings.emailAutoSendImportatori=!dbSettings.emailAutoSendImportatori;
+  renderEmailToggleImp();
+  await pushSettingsGH();
+  toast(dbSettings.emailAutoSendImportatori?'✓ Email importatori ATTIVATE':'⏸ Email importatori DISATTIVATE');
+}
+
+async function toggleTestModeImp(){
+  dbSettings.testModeImportatori=!dbSettings.testModeImportatori;
+  renderEmailToggleImp();
+  await pushSettingsGH();
+  toast(dbSettings.testModeImportatori?'🧪 Test mode ON — email solo a te':'👥 Produzione — email ai contatti reali');
+}
+
+function renderEmailToggleImp(){
+  const el=document.getElementById('email-autosend-imp-toggle');
+  if(!el) return;
+  const on  =dbSettings.emailAutoSendImportatori===true;
+  const test=dbSettings.testModeImportatori!==false;
+  const mainBtn=`<button onclick="toggleEmailAutoSendImp()" style="font-size:12px;font-weight:700;padding:7px 16px;border-radius:20px;border:none;cursor:pointer;background:${on?'#2a9d5c':'#c0392b'};color:#fff;letter-spacing:.3px">${on?'🟢 Email imp.: ON':'🔴 Email imp.: OFF'}</button>`;
+  const testBtn=on?`<button onclick="toggleTestModeImp()" style="font-size:12px;font-weight:700;padding:7px 16px;border-radius:20px;border:none;cursor:pointer;background:${test?'#e67e22':'#2980b9'};color:#fff;letter-spacing:.3px">${test?'🧪 Test mode':'👥 Contatti reali'}</button>`:'';
+  el.innerHTML=`<div style="display:flex;align-items:center;gap:8px">${mainBtn}${testBtn}</div>`;
 }
 
 /* ═══════════════════════════════════════════════════

@@ -170,7 +170,7 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
       <button class="layer-btn" id="layer-btn-cli" onclick="switchLayer('clienti')">👤 Clienti Privati</button>
       <button class="layer-btn" id="layer-btn-ord" onclick="switchLayer('ordini')">📦 Ordini</button>
     </div>
-    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.91</div>
+    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.92</div>
   </div>
   <div class="hdr-r">
     <div class="gh-pill"><div class="gh-dot" id="gh-dot"></div><span id="gh-lbl">GitHub</span></div>
@@ -252,10 +252,12 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
   </details>
 </div>
 
+<div id="email-autosend-imp-toggle" style="display:flex;align-items:center;justify-content:flex-end;margin-bottom:10px"></div>
+
 <div class="nav">
   <button class="nb active" onclick="showPage('dashboard',this)">Dashboard</button>
   <button class="nb" onclick="showPage('contacts',this)">Contatti <span class="nbadge" id="ct-n">0</span></button>
-  <button class="nb" onclick="showPage('followups',this)">Follow-up <span class="nbadge" id="fu-n" style="background:var(--amber-bg);color:var(--amber-tx)">0</span></button>
+  <button class="nb" onclick="showPage('followups',this)">Workflow <span class="nbadge" id="fu-n" style="background:var(--amber-bg);color:var(--amber-tx)">0</span></button>
   <button class="nb" onclick="showPage('import',this)">Importa XLSX</button>
   <button class="nb" onclick="showPage('templates',this)">Template email</button>
 </div>
@@ -297,6 +299,7 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
       <option value="replied">Risposto</option>
       <option value="client">Cliente</option>
       <option value="cold">Non interessato</option>
+      <option value="blacklisted">🚫 Blacklist</option>
     </select>
   </div>
   <div id="rcnt-wrap"></div>
@@ -304,9 +307,26 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
   <div id="cl"></div>
 </div>
 
-<!-- FOLLOWUP -->
+<!-- WORKFLOW -->
 <div id="page-followups" class="page">
-  <div style="font-size:13px;color:var(--text2);margin-bottom:12px">Ordinati dal più vecchio — clicca per inviare email</div>
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap">
+    <span style="font-size:13px;color:var(--text2);flex:1">Contatti contattati — timeline email, aperture, click</span>
+    <select id="reg-sort" onchange="renderRegistro()" style="font-size:12px;padding:4px 8px;border-radius:var(--r);border:0.5px solid var(--brd2);background:var(--bg);color:var(--text)">
+      <option value="date">↓ Più recente</option>
+      <option value="status">↓ Per stato</option>
+    </select>
+    <select id="reg-filter" onchange="renderRegistro()" style="font-size:12px;padding:4px 8px;border-radius:var(--r);border:0.5px solid var(--brd2);background:var(--bg);color:var(--text)">
+      <option value="">Tutti gli stati</option>
+      <option value="sent">📤 Inviata</option>
+      <option value="opened">👁 Aperta</option>
+      <option value="clicked">🔗 Cliccata</option>
+      <option value="replied">💬 Risposto</option>
+      <option value="bounced">⚠ Bounce</option>
+      <option value="cold">❌ Cold</option>
+      <option value="blacklisted">🚫 Blacklist</option>
+    </select>
+  </div>
+  <div id="reg-sel-bar"></div>
   <div id="fl"></div>
 </div>
 
