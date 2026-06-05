@@ -32,22 +32,12 @@ function loadMoreImportatori(){ _loadMoreContacts(false); }
 
 function updateFilters(){
   if(isClienti()){
-    // ── FILTRI CLIENTI: paese / lingua / verifica / situazione ──
+    // ── FILTRI CLIENTI: regione / paese / verifica / situazione ──
 
-    // Paese
-    const sc=document.getElementById('sc');const cv=sc?.value||'';
-    const countries=[...new Set(dbC.contacts.map(c=>(c.country||'').trim()).filter(c=>c.length>0&&c.length<=50&&!/^\d/.test(c)))].sort();
-    if(sc) sc.innerHTML='<option value="">Tutti i paesi</option>'+countries.map(c=>`<option value="${esc(c)}"${cv===c?' selected':''}>${esc(c)}</option>`).join('');
-
-    // Lingua — nel posto di sr (regioni)
+    // Regione (stesso comportamento importatori: sr → cascade → sc)
     const sr=document.getElementById('sr');const rv=sr?.value||'';
-    const lingue=[...new Set(dbC.contacts.map(c=>(c.lingua||'').trim()).filter(Boolean))].sort();
-    if(sr){
-      sr.innerHTML='<option value="">Tutte le lingue</option>'+lingue.map(l=>`<option value="${esc(l)}"${rv===l?' selected':''}>${esc(l)}</option>`).join('');
-      // Aggiorna label
-      const opt=sr.querySelector('option[value=""]');
-      if(opt) opt.textContent='Tutte le lingue';
-    }
+    const regions=[...new Set(dbC.contacts.map(c=>(c.region||'').trim()).filter(Boolean))].sort();
+    if(sr) sr.innerHTML='<option value="">Tutte le regioni</option>'+regions.map(r=>`<option value="${esc(r)}"${rv===r?' selected':''}>${esc(r)}</option>`).join('');
 
     // Nascondi prodotti, mostra verifica
     const sp=document.getElementById('sp');
@@ -55,6 +45,7 @@ function updateFilters(){
     const sv=document.getElementById('sv');
     if(sv) sv.style.display='';
 
+    updateCountryFilter();
     return;
   }
 
@@ -156,7 +147,7 @@ function getFiltered(){
       const fn=c.firstName||c.nome||''; const ln=c.lastName||c.cognome||'';
       if(q&&!`${fn} ${ln} ${c.email||''} ${c.country||''} ${c.languageBrowser||c.lingua||''}`.toLowerCase().includes(q))return false;
       if(country&&c.country!==country)return false;
-      if(regionOrLang&&(c.languageBrowser||c.lingua||'')!==regionOrLang)return false;
+      if(regionOrLang&&c.region!==regionOrLang)return false;
       const qual=document.getElementById('squal')?.value||'';
       if(qual&&c.quality!==qual)return false;
       const ship=document.getElementById('sship')?.value||'';
@@ -213,7 +204,7 @@ function renderContacts(){
   // Aggiorna label filtri in base al layer
   const srEl=document.querySelector('#sr option[value=""]');
   const spEl=document.querySelector('#sp option[value=""]');
-  if(srEl) srEl.textContent=isClienti()?'Tutte le lingue':'Tutte le regioni';
+  if(srEl) srEl.textContent='Tutte le regioni';
   if(spEl) spEl.style.display=isClienti()?'none':'';
 
   // Mostra/nascondi filtro BWI
@@ -699,6 +690,39 @@ function delContact(id){
   if(!confirm('Eliminare questo contatto?'))return;
   (isClienti()?dbC:db).contacts=(isClienti()?dbC:db).contacts.filter(c=>c.id!==id);
   saveDB();closeModal();refreshAll();toast('Eliminato');
+}
+
+function deleteNonShippable(){
+  const toDelete=dbC.contacts.filter(c=>c.shippable===false);
+  if(!toDelete.length){toast('Nessun contatto non spedibile trovato');return;}
+  // Raggruppa per paese
+  const byCountry={};
+  toDelete.forEach(c=>{const k=c.country||'?';byCountry[k]=(byCountry[k]||0)+1;});
+  const rows=Object.entries(byCountry).sort((a,b)=>b[1]-a[1])
+    .map(([c,n])=>`<div style="display:flex;justify-content:space-between;padding:3px 0;font-size:13px;border-bottom:0.5px solid var(--brd)">
+      <span>🚫 ${esc(c)}</span><span style="font-weight:700;color:#c62828">${n}</span></div>`).join('');
+  showModal(`
+    <div class="mt">🗑 Elimina contatti non spedibili</div>
+    <p style="font-size:13px;color:var(--text2);margin-bottom:12px">
+      Verranno eliminati definitivamente <strong>${toDelete.length} contatti</strong> da paesi dove non puoi spedire vino:
+    </p>
+    <div style="max-height:260px;overflow-y:auto;margin-bottom:14px;border:1px solid var(--brd);border-radius:8px;padding:6px 10px">
+      ${rows}
+    </div>
+    <p style="font-size:12px;color:var(--text3)">Questa operazione non è reversibile. I contatti verranno rimossi dal database e salvati su GitHub.</p>
+    <div class="mf">
+      <button class="btn" onclick="closeModal()">Annulla</button>
+      <button class="btn btd" onclick="confirmDeleteNonShippable()">Elimina ${toDelete.length} contatti</button>
+    </div>
+  `);
+}
+
+function confirmDeleteNonShippable(){
+  const before=dbC.contacts.length;
+  dbC.contacts=dbC.contacts.filter(c=>c.shippable!==false);
+  const deleted=before-dbC.contacts.length;
+  saveDB();closeModal();refreshAll();
+  toast(`✓ Eliminati ${deleted} contatti da paesi non spedibili`);
 }
 
 /* ── ADD/EDIT ── */
