@@ -77,6 +77,12 @@ function updGh(s){
 async function pushGH(){
   const{token,owner,repo}=ghs;
   if(!token||!owner||!repo)return;
+  // Guard: non salvare mai un array di contatti vuoto — previene data loss da race condition
+  const activeContacts=(isClienti()?dbC:db).contacts;
+  if(!activeContacts||activeContacts.length===0){
+    console.warn('pushGH: skip — contacts vuoto, salvataggio bloccato per sicurezza');
+    updGh('saved');return;
+  }
   const path=ghPath();
   const url=`https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
   const hd={'Authorization':`token ${token}`,'Content-Type':'application/json','Accept':'application/vnd.github.v3+json'};
