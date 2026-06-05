@@ -161,10 +161,11 @@ async function _pushImportatoriOverrides(token,owner,repo){
     const snap=_baseSnap[c.id];
     if(!snap) continue;
     const diff={};
-    if((c.status||'')!==(snap.status||''))           diff.status=c.status;
-    if((c.notes||'')!==(snap.notes||''))             diff.notes=c.notes;
-    if(JSON.stringify(c.log||[])!==snap.log)         diff.log=c.log||[];
+    if((c.status||'')!==(snap.status||''))                    diff.status=c.status;
+    if((c.notes||'')!==(snap.notes||''))                     diff.notes=c.notes;
+    if(JSON.stringify(c.log||[])!==snap.log)                 diff.log=c.log||[];
     if(JSON.stringify(c.brevoEvents||[])!==snap.brevoEvents) diff.brevoEvents=c.brevoEvents||[];
+    if(JSON.stringify(c.research||null)!==snap.research)     diff.research=c.research||null;
     if(Object.keys(diff).length) newOv[c.id]=diff;
   }
   const url=`https://api.github.com/repos/${owner}/${repo}/contents/${OVERRIDES_PATH}`;
@@ -247,7 +248,8 @@ async function loadFromGH(){
           status:c.status||'',
           notes:c.notes||'',
           log:JSON.stringify(c.log||[]),
-          brevoEvents:JSON.stringify(c.brevoEvents||[])
+          brevoEvents:JSON.stringify(c.brevoEvents||[]),
+          research:JSON.stringify(c.research||null)
         };
       }
       db.contacts=contacts;
@@ -347,6 +349,7 @@ function exportData(){
 
 function openSettings(){
   const brvOk=brv.apiKey&&brv.senderEmail;
+  const rschOk=rsch.serperKey&&rsch.groqKey;
   showModal(`
     <div class="mt">⚙ Impostazioni</div>
 
@@ -387,6 +390,24 @@ function openSettings(){
       </div>
     </div>
 
+    <div style="height:0.5px;background:var(--brd);margin:0 0 1.25rem"></div>
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+      <div style="font-size:13px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.5px">AI Research — Analisi Importatori</div>
+      ${rschOk?'<span style="background:var(--green-bg);color:var(--green-tx);padding:2px 8px;border-radius:12px;font-size:11px;font-weight:700">✓ Configurato</span>':'<span style="background:var(--amber-bg);color:var(--amber-tx);padding:2px 8px;border-radius:12px;font-size:11px;font-weight:700">Non configurato</span>'}
+    </div>
+    <p style="font-size:13px;color:var(--text2);margin-bottom:10px;line-height:1.6">
+      Ricerca Google via <a href="https://serper.dev" target="_blank">Serper.dev</a> + analisi AI via <a href="https://console.groq.com" target="_blank">Groq</a>.
+      Usa il pulsante 🔬 nella dashboard accanto a ogni paese.
+    </p>
+    <div class="fg2">
+      <div class="fg fgf"><label>API Key Serper</label>
+        <input id="sk" type="password" placeholder="b7b583d…" value="${esc(rsch.serperKey||'')}">
+      </div>
+      <div class="fg"><label>API Key Groq</label>
+        <input id="gk" type="password" placeholder="gsk_…" value="${esc(rsch.groqKey||'')}">
+      </div>
+    </div>
+
     <div class="mf">
       <button class="btn" onclick="closeModal()">Annulla</button>
       <button class="btn btp" onclick="saveSettings()">Salva e connetti</button>
@@ -399,6 +420,8 @@ function saveSettings(){
   localStorage.setItem('ghcfg',JSON.stringify(ghs));
   brv={apiKey:gv('bk'),senderEmail:gv('be'),senderName:gv('bn')};
   localStorage.setItem('brvcfg',JSON.stringify(brv));
+  rsch={serperKey:gv('sk'),groqKey:gv('gk')};
+  localStorage.setItem('rschcfg',JSON.stringify(rsch));
   ghSha={importatori:null,clienti:null,templates:null,ordini:null,overrides:null};closeModal();
   toast('Impostazioni salvate — connessione in corso…');
   loadFromGH();

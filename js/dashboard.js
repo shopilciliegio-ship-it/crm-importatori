@@ -71,8 +71,9 @@ function showCountriesForRegion(region){
   el.innerHTML=entries.length
     ? entries.map(([c,n])=>`
       <div class="brow">
-        <div class="blbl country-link" onclick="goToContacts({country:'${esc(c)}'})" title="Apri contatti di ${esc(c)}">${esc(c)}</div>
+        <div class="blbl country-link" onclick="goToContacts({country:'${esc(c)}'})" title="Apri contatti di ${esc(c)}">${esc(c)}${_countryResearchBadge(c)}</div>
         <div class="btrk"><div class="bfll" style="width:${Math.round(n/max*100)}%">${n}</div></div>
+        <button class="btn" style="font-size:11px;padding:2px 8px;flex-shrink:0;margin-left:4px" onclick="event.stopPropagation();openResearchModal('${esc(c)}')" title="Analisi AI importatori">🔬</button>
       </div>`).join('')
     : '<div class="empty" style="font-size:12px">Nessun paese</div>';
 }
@@ -88,8 +89,9 @@ function renderCCChart(){
   if(titleEl) titleEl.textContent='Per paese';
   el.innerHTML=entries.length?entries.map(([c,n])=>`
     <div class="brow">
-      <div class="blbl country-link" onclick="goToContacts({country:'${esc(c)}'})" title="Apri contatti di ${esc(c)}">${esc(c)}</div>
+      <div class="blbl country-link" onclick="goToContacts({country:'${esc(c)}'})" title="Apri contatti di ${esc(c)}">${esc(c)}${_countryResearchBadge(c)}</div>
       <div class="btrk"><div class="bfll" style="width:${Math.round(n/max*100)}%">${n}</div></div>
+      <button class="btn" style="font-size:11px;padding:2px 8px;flex-shrink:0;margin-left:4px" onclick="event.stopPropagation();openResearchModal('${esc(c)}')" title="Analisi AI importatori">🔬</button>
     </div>`).join('')
     :'<div class="empty" style="font-size:12px">Nessun dato</div>';
 }
@@ -110,6 +112,20 @@ function renderPipeline(){
         <div style="font-size:10px;color:var(--text2);text-align:center;line-height:1.2">${SM[s].l.replace(' ','<br>')}</div>
       </div>`;
     }).join('')+'</div>';
+}
+
+/* ── RESEARCH COUNTRY BADGE ── */
+
+function _countryResearchBadge(country) {
+  if (isClienti()) return '';
+  const contacts = db.contacts.filter(c => c.country === country && c.research);
+  if (!contacts.length) return '';
+  const total = db.contacts.filter(c => c.country === country).length;
+  const si = contacts.filter(c => c.research.raccomandato === 'si').length;
+  const avgAff = Math.round(contacts.reduce((s,c) => s + (c.research.affidabilita||0), 0) / contacts.length);
+  const stars = '★'.repeat(avgAff);
+  const [bg,tx] = si > 0 ? ['#e8f5e9','#2e7d32'] : ['#f5f5f5','#666'];
+  return `<span style="font-size:10px;background:${bg};color:${tx};padding:1px 5px;border-radius:10px;margin-left:5px;font-weight:700" title="${contacts.length}/${total} analizzati, ${si} raccomandati">${stars} ${si}✓</span>`;
 }
 
 /* ── CONTACTS LIST ── */
