@@ -15,6 +15,9 @@ Secret (env var o passati da shell):
     GROQ_API_KEY     -> chiave Groq
 """
 
+import sys, io
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+
 import argparse
 import json
 import os
@@ -228,8 +231,8 @@ def main():
         aff  = analysis.get("affidabilita", "?")
         vino = analysis.get("vino_italiano", "?")
         rec  = analysis.get("raccomandato", "?")
-        stars = "★" * int(aff) if isinstance(aff, int) else str(aff)
-        print(f"       affidabilità:{stars}  vino_it:{vino:<12}  raccomandato:{rec}")
+        stars = str(aff) + "/5"
+        print(f"       aff:{stars}  vino_it:{vino:<12}  rec:{rec}")
 
         # Salva incrementalmente ogni 10 aziende
         if (i + 1) % 10 == 0 or (i + 1) == len(contacts):
@@ -244,7 +247,7 @@ def main():
     print(f"  RISULTATI {args.country.upper()}")
     print(f"{'='*55}")
     print(f"  Analizzate:    {len(results)} / {len(contacts)}")
-    print(f"  Raccomandate:  {rec_si} sì,  {rec_forse} forse")
+    print(f"  Raccomandate:  {rec_si} si,  {rec_forse} forse")
     print(f"  Vino italiano: {vino_conf} confermate/probabili")
     print(f"  Output:        {output_file}")
 
