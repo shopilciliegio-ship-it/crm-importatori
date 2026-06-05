@@ -192,6 +192,8 @@ def send_email(order: dict, reminder_type: str, subject: str, body_text: str,
         'htmlContent': build_html_email(body_text),
         'tags':        ['wine-crm', 'ordini', reminder_type] + (['test'] if test_mode else []),
         'headers':     {'X-CRM-OrderId': order['id']},
+        'trackClicks': False,
+        'trackOpens':  False,
     }
     if actual_bcc:
         payload['bcc'] = actual_bcc
@@ -373,6 +375,8 @@ def send_daily_digest(orders: list, log_new: list, now_ms: int, test_mode: bool)
         'htmlContent': html_content,
         'textContent': f'CRM Report {now_str}\nEmail inviate: {len(log_new)}\nCambi stato: {len(changes)}\nOrdini attivi: {len(active_orders)}',
         'tags':        ['wine-crm', 'digest'],
+        'trackClicks': False,
+        'trackOpens':  False,
     }
     r = requests.post('https://api.brevo.com/v3/smtp/email', headers=_BREVO_HEADERS, json=payload)
     if r.ok:
