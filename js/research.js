@@ -3,6 +3,41 @@
 let _researchRunning = false;
 let _researchCancel  = false;
 
+/* ── QUOTA GIORNALIERA ── */
+const GROQ_DAILY_LIMIT = 305;
+
+function _getUsage() {
+  const today = new Date().toISOString().slice(0, 10);
+  const stored = JSON.parse(localStorage.getItem('rschDailyUsage') || '{}');
+  if (stored.date !== today) return { date: today, calls: 0 };
+  return stored;
+}
+
+function _incrementUsage() {
+  const u = _getUsage();
+  u.calls++;
+  localStorage.setItem('rschDailyUsage', JSON.stringify(u));
+  _updateQuotaBar();
+  return u.calls;
+}
+
+function getRemainingCalls() {
+  return Math.max(0, GROQ_DAILY_LIMIT - _getUsage().calls);
+}
+
+function _updateQuotaBar() {
+  const u = _getUsage();
+  const pct = Math.min(100, Math.round(u.calls / GROQ_DAILY_LIMIT * 100));
+  const rem = GROQ_DAILY_LIMIT - u.calls;
+  const el = document.getElementById('rsch-quota-bar');
+  const lbl = document.getElementById('rsch-quota-lbl');
+  if (el) {
+    el.style.width = pct + '%';
+    el.style.background = pct > 85 ? 'var(--coral-tx)' : pct > 60 ? '#f59e0b' : 'var(--accent)';
+  }
+  if (lbl) lbl.textContent = `${Math.max(0, rem)} analisi disponibili oggi`;
+}
+
 const RESEARCH_SYSTEM_PROMPT = `Sei un analista specializzato nel mercato del vino italiano.
 Analizza le informazioni sull'azienda e rispondi SOLO con un oggetto JSON valido (niente testo fuori dal JSON):
 
@@ -98,7 +133,7 @@ ${webText ? webText.slice(0, 1800) : '(non disponibile o irraggiungibile)'}`;
       });
 
       if (r.status === 429) {
-        // Leggi il retry-after dall'header se disponibile, altrimenti backoff progressivo
+        // Rate limit: non conta sul budget giornaliero, aspetta e riprova
         const retryAfter = parseInt(r.headers.get('retry-after') || '0') || 0;
         const wait = retryAfter > 0 ? retryAfter * 1000 : [15000, 30000, 60000][attempt] || 60000;
         const lbl = document.getElementById('rsch-lbl');
@@ -106,6 +141,9 @@ ${webText ? webText.slice(0, 1800) : '(non disponibile o irraggiungibile)'}`;
         await new Promise(res => setTimeout(res, wait));
         continue;
       }
+
+      // Chiamata reale ricevuta (successo o errore): conta sul budget giornaliero
+      _incrementUsage();
 
       if (!r.ok) { console.warn('Groq error:', r.status, await r.text().catch(()=>'')); return {}; }
 
@@ -151,28 +189,66 @@ function openResearchModal(country, forceAll) {
     return;
   }
 
+  const remaining = getRemainingCalls();
+  const canAnalyze = Math.min(toAnalyze.length, remaining);
+
+  // Quota esaurita
+  if (remaining === 0) {
+    const u = _getUsage();
+    showModal(`
+      <div class="mt">🔬 Analisi AI — ${esc(country)}</div>
+      <div style="background:#fce4ec;border-radius:10px;padding:16px;text-align:center;margin-bottom:16px">
+        <div style="font-size:32px;margin-bottom:8px">📊</div>
+        <div style="font-size:15px;font-weight:700;color:#c62828;margin-bottom:4px">Quota giornaliera esaurita</div>
+        <div style="font-size:13px;color:#c62828">${u.calls} / ${GROQ_DAILY_LIMIT} analisi usate oggi</div>
+        <div style="font-size:12px;color:var(--text2);margin-top:8px">La quota si resetta a mezzanotte.</div>
+      </div>
+      <div class="mf"><button class="btn btp" onclick="closeModal()">OK</button></div>
+    `);
+    return;
+  }
+
+  const u = _getUsage();
+  const usedPct = Math.min(100, Math.round(u.calls / GROQ_DAILY_LIMIT * 100));
+  const barColor = usedPct > 85 ? 'var(--coral-tx)' : usedPct > 60 ? '#f59e0b' : 'var(--accent)';
+
   const skipNote = skipped > 0
-    ? `<div style="font-size:12px;color:var(--green-tx);background:var(--green-bg);padding:4px 10px;border-radius:20px;display:inline-block">✓ ${skipped} già analizzati — saltati</div>`
+    ? `<span style="font-size:12px;color:var(--green-tx);background:var(--green-bg);padding:3px 9px;border-radius:20px">✓ ${skipped} già analizzati — saltati</span>`
+    : '';
+  const capNote = canAnalyze < toAnalyze.length
+    ? `<span style="font-size:12px;color:#e65100;background:#fff3e0;padding:3px 9px;border-radius:20px">⚠ quota: solo ${canAnalyze} analizzabili oggi</span>`
     : '';
 
   showModal(`
     <div class="mt">🔬 Analisi AI — ${esc(country)}</div>
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap">
-      <span style="font-size:13px;color:var(--text2)">${toAnalyze.length} da analizzare</span>
-      ${skipNote}
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap">
+      <span style="font-size:13px;color:var(--text2)">${canAnalyze} da analizzare</span>
+      ${skipNote}${capNote}
     </div>
 
-    <div style="background:var(--bg2);border-radius:8px;padding:12px;margin:4px 0 10px">
+    <!-- Quota bar -->
+    <div style="background:var(--bg2);border-radius:8px;padding:10px 12px;margin-bottom:10px">
+      <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text2);margin-bottom:5px">
+        <span id="rsch-quota-lbl">${remaining} analisi disponibili oggi</span>
+        <span style="color:var(--text3)">${u.calls} / ${GROQ_DAILY_LIMIT} usate</span>
+      </div>
+      <div style="background:var(--brd);border-radius:4px;height:5px;overflow:hidden">
+        <div id="rsch-quota-bar" style="width:${usedPct}%;height:100%;background:${barColor};border-radius:4px;transition:width .3s"></div>
+      </div>
+    </div>
+
+    <!-- Progresso analisi -->
+    <div style="background:var(--bg2);border-radius:8px;padding:12px;margin-bottom:10px">
       <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--text2);margin-bottom:7px">
         <span id="rsch-lbl" style="font-style:italic">In attesa di avvio...</span>
-        <span id="rsch-cnt" style="font-weight:700;color:var(--text1)">0 / ${toAnalyze.length}</span>
+        <span id="rsch-cnt" style="font-weight:700;color:var(--text1)">0 / ${canAnalyze}</span>
       </div>
       <div style="background:var(--brd);border-radius:4px;height:7px;overflow:hidden">
         <div id="rsch-bar" style="width:0%;height:100%;background:var(--accent);transition:width .25s;border-radius:4px"></div>
       </div>
     </div>
 
-    <div id="rsch-results" style="max-height:320px;overflow-y:auto;display:flex;flex-direction:column;gap:6px;padding-right:2px"></div>
+    <div id="rsch-results" style="max-height:280px;overflow-y:auto;display:flex;flex-direction:column;gap:6px;padding-right:2px"></div>
     <div id="rsch-summary" style="display:none;background:var(--bg2);border-radius:8px;padding:12px;margin-top:12px;font-size:13px;line-height:1.7"></div>
 
     <div class="mf" style="margin-top:14px">
@@ -182,7 +258,7 @@ function openResearchModal(country, forceAll) {
   `);
 
   _researchCancel = false;
-  _runResearch(toAnalyze, country);
+  _runResearch(toAnalyze.slice(0, canAnalyze), country);
 }
 
 async function _runResearch(contacts, country) {
@@ -193,6 +269,14 @@ async function _runResearch(contacts, country) {
 
   for (const c of contacts) {
     if (_researchCancel) break;
+
+    // Controlla quota prima di ogni contatto
+    if (getRemainingCalls() <= 0) {
+      _researchCancel = true;
+      const lbl = document.getElementById('rsch-lbl');
+      if (lbl) lbl.textContent = '📊 Quota giornaliera esaurita';
+      break;
+    }
 
     const lbl = document.getElementById('rsch-lbl');
     if (lbl) lbl.textContent = `Analizzando: ${(c.company||'').slice(0,45)}`;
@@ -245,14 +329,19 @@ async function _runResearch(contacts, country) {
   const summary = document.getElementById('rsch-summary');
   if (summary) {
     summary.style.display = 'block';
+    const quotaLeft = getRemainingCalls();
+    const quotaLine = `<br><span style="color:var(--text3)">📊 Quota rimanente oggi: <strong>${quotaLeft}</strong> / ${GROQ_DAILY_LIMIT}</span>`;
+    const quotaExhausted = quotaLeft === 0
+      ? `<br><span style="color:#c62828;font-weight:700">⚠ Quota giornaliera esaurita — riprova domani</span>` : '';
     summary.innerHTML = _researchCancel
-      ? `<strong>Analisi interrotta</strong> — ${done} / ${total} analizzati`
+      ? `<strong>Analisi interrotta</strong> — ${done} / ${total} analizzati${quotaLine}${quotaExhausted}`
       : `<strong>Analisi completata</strong> — ${done} contatti analizzati<br>
          <span style="color:#2e7d32">✅ Raccomandati: <strong>${stats.si}</strong></span> &nbsp;·&nbsp;
          <span style="color:#e65100">🟡 Forse: <strong>${stats.forse}</strong></span> &nbsp;·&nbsp;
          <span style="color:#c62828">❌ No: <strong>${stats.no}</strong></span><br>
          🍷 Vino italiano confermato/probabile: <strong>${stats.vino}</strong>
-         ${errors ? `<br><span style="color:var(--text3)">⚠ ${errors} senza risposta API</span>` : ''}`;
+         ${errors ? `<br><span style="color:var(--text3)">⚠ ${errors} senza risposta API</span>` : ''}
+         ${quotaLine}${quotaExhausted}`;
   }
 
   renderDashboard();
