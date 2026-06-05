@@ -2,5 +2,8 @@
   "emailAutoSend": true,
   "testMode": false,
   "emailAutoSendImportatori": false,
-  "testModeImportatori": true
+  "testModeImportatori": true,
+  "emailAutoSendClienti": false,
+  "testModeClienti": true,
+  "waveBatchSize": 500
 }
