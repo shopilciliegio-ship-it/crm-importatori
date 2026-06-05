@@ -99,7 +99,7 @@
       "currency": "EUR",
       "orderDate": 1780348588797,
       "emailSubject": "🍷 New Order — JILL BANKS — 233.80 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "BANKSJ",
       "shippingAddress": "29744 AWBREY LN STE A, EUGENE",
       "numberOfCartons": null,
       "gmailMessageId": "",
@@ -205,7 +205,8 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780598739759,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "shipmentCode": "ESTESP"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006F07",
@@ -241,7 +242,8 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780598739759,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "shipmentCode": "HARIHARANK"
     },
     {
       "id": "ord_mbe_IT3299-0V-0000006EPQ",
@@ -277,7 +279,8 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780598739759,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "shipmentCode": "CONNORRC"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006E3J",
@@ -308,7 +311,8 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780598739759,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "shipmentCode": "1379"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006E3G",
@@ -339,7 +343,8 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780598739759,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "shipmentCode": "FORBESM"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006DP8",
@@ -375,7 +380,8 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780598739759,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "shipmentCode": "LEGARRETAMBIS"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006C0T",
@@ -393,7 +399,7 @@
       "mbeTrackingNumber": "IT3299-8V-0000006C0T",
       "carrier": "UPS",
       "shippingDate": "2026-05-21",
-      "status": "dogana",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "spedito",
@@ -404,14 +410,20 @@
           "status": "dogana",
           "date": 1780575377211,
           "note": ""
+        },
+        {
+          "status": "consegnato",
+          "date": 1780646997369,
+          "note": "Auto Fieramente (era: dogana)"
         }
       ],
       "emailsSent": [],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780598739759,
-      "shippingType": "standard"
+      "updatedAt": 1780646997369,
+      "shippingType": "standard",
+      "shipmentCode": "MINASSIANP"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006C0P",
@@ -429,7 +441,7 @@
       "mbeTrackingNumber": "IT3299-8V-0000006C0P",
       "carrier": "UPS",
       "shippingDate": "2026-05-21",
-      "status": "dogana",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "spedito",
@@ -440,14 +452,20 @@
           "status": "dogana",
           "date": 1780575360403,
           "note": ""
+        },
+        {
+          "status": "consegnato",
+          "date": 1780646997369,
+          "note": "Auto Fieramente (era: dogana)"
         }
       ],
       "emailsSent": [],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780598739759,
-      "shippingType": "standard"
+      "updatedAt": 1780646997369,
+      "shippingType": "standard",
+      "shipmentCode": "HEALEYJ"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006BU3",
@@ -483,7 +501,8 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780598739759,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "shipmentCode": "KERNG"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006B54",
@@ -576,7 +595,8 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780598739759,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "shipmentCode": "JENKINSF"
     },
     {
       "id": "ord_mbe_IT3299-8V-00000069TF",
@@ -594,7 +614,7 @@
       "mbeTrackingNumber": "IT3299-8V-00000069TF",
       "carrier": "UPS",
       "shippingDate": "2026-05-15",
-      "status": "dogana",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "problema",
@@ -605,14 +625,20 @@
           "status": "dogana",
           "date": 1780574529498,
           "note": ""
+        },
+        {
+          "status": "consegnato",
+          "date": 1780646997369,
+          "note": "Auto Fieramente (era: dogana)"
         }
       ],
       "emailsSent": [],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780598739759,
-      "shippingType": "standard"
+      "updatedAt": 1780646997369,
+      "shippingType": "standard",
+      "shipmentCode": "HARRISONK"
     },
     {
       "id": "ord_mbe_IT3299-0V-00000069SD",
@@ -669,7 +695,8 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "shipmentCode": "SOBRINOMS"
     },
     {
       "id": "ord_mbe_IT3299-8V-00000069K3",
@@ -726,7 +753,8 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "shipmentCode": "PHAMD"
     },
     {
       "id": "ord_mbe_IT3299-8V-00000069IY",
@@ -767,7 +795,8 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780598739759,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "shipmentCode": "VAASSENT"
     },
     {
       "id": "ord_mbe_IT3299-0V-00000068RB",
@@ -824,7 +853,8 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "shipmentCode": "MILLSA"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006871",
@@ -881,7 +911,8 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "shipmentCode": "SW1361"
     },
     {
       "id": "ord_mbe_IT3299-0V-00000067KZ",
@@ -2506,7 +2537,8 @@
       "source": "mbe",
       "createdAt": 1780485256521,
       "updatedAt": 1780598739759,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "shipmentCode": "MORENOG"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006FDJ",
@@ -2542,7 +2574,8 @@
       "source": "mbe",
       "createdAt": 1780485256521,
       "updatedAt": 1780598739759,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "shipmentCode": "ABRAIRAD"
     }
   ],
   "lastImportedAt": 1780585261434
