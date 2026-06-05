@@ -225,7 +225,7 @@ def build_html_email(body_text: str) -> str:
     <p style="margin:0 0 8px;color:#ffffff;font-size:13px;font-weight:bold;letter-spacing:1px;text-transform:uppercase">Siena Wine</p>
     <p style="margin:0 0 12px;color:{ACCENT};font-size:12px;font-style:italic">Small Vineyards International</p>
     <p style="margin:0;font-size:12px;color:#999;line-height:1.8">
-      <span style="color:#ccc">{WEBSITE}</span>&nbsp;|&nbsp;<span style="color:#999">{PHONE}</span>
+      <a href="https://{WEBSITE}" style="color:#ccc;text-decoration:none">{WEBSITE}</a>&nbsp;|&nbsp;<span style="color:#999">{PHONE}</span>
     </p>
   </td></tr>
 </table>
