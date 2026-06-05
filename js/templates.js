@@ -208,6 +208,7 @@ const COUNTRY_REGION = {
   'Uruguay':'Sud America','Venezuela':'Sud America','Costa Rica':'Sud America',
   'Dominican Republic':'Sud America','Cuba':'Sud America','Haiti':'Sud America',
   'Jamaica':'Sud America','Trinidad and Tobago':'Sud America',
+  'Distrito Nacional':'Sud America',
   'Trinidad And Tobago':'Sud America','Belize':'Sud America',
   'Guyana':'Sud America','French Guiana':'Sud America',
   'Martinique':'Sud America','Guadeloupe':'Sud America',
@@ -223,6 +224,12 @@ const COUNTRY_REGION = {
   'Antigua and Barbuda':'Caraibi','Antigua And Barbuda':'Caraibi',
   'Saint Kitts and Nevis':'Caraibi','Dominica':'Caraibi',
   'Virgin Islands':'Caraibi','Turks and Caicos Islands':'Caraibi',
+  'Sint Maarten':'Caraibi','Saint Martin':'Caraibi',
+  'Santo Domingo':'Caraibi','Tortola':'Caraibi',
+  'Gustavia':'Caraibi','Saint-Paul':'Caraibi',
+  'Kingstown':'Caraibi','Saint Thomas':'Caraibi',
+  'Saint Vincent and the Grenadines':'Caraibi','Anguilla':'Caraibi',
+  'Montserrat':'Caraibi','Bonaire':'Caraibi','Sint Eustatius':'Caraibi',
 
   // ── EUROPA ──
   'Albania':'Europa','Andorra':'Europa','Austria':'Europa',
@@ -259,6 +266,8 @@ const COUNTRY_REGION = {
   'San Marino':'Europa','Vatican City':'Europa',
   'Faroe Islands':'Europa','Gibraltar':'Europa',
   'Andorra':'Europa','Kosovo':'Europa',
+  'Bosnia (Federacija Bosanska)':'Europa','Republika Srpska':'Europa',
+  'Douglas':'Europa','Isle of Man':'Europa',
 
   // ── SCANDINAVIA ──
   // (inclusa in Europa ma separabile se preferisci)
@@ -284,6 +293,7 @@ const COUNTRY_REGION = {
   'Kazakhstan':'Asia','Uzbekistan':'Asia','Mongolia':'Asia',
   'Laos':'Asia','Brunei':'Asia','Timor-Leste':'Asia',
   'Maldives':'Asia','Bhutan':'Asia','Afghanistan':'Asia',
+  'Macao':'Asia','Macau':'Asia',
   'Tajikistan':'Asia','Kyrgyzstan':'Asia','Turkmenistan':'Asia',
   'Azerbaijan':'Asia','Georgia':'Asia','Armenia':'Asia',
 

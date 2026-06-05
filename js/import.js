@@ -18,7 +18,7 @@ function detectRegion(fname){
 
 function regionFromCountry(country){
   if(!country) return '';
-  return COUNTRY_REGION[country] || COUNTRY_REGION[country.trim()] || '';
+  return COUNTRY_REGION[country] || COUNTRY_REGION[country.trim()] || 'Altro';
 }
 
 function parseXlsx(wb, filename){
