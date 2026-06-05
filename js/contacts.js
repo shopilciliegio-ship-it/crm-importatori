@@ -878,41 +878,6 @@ const JOB_PRIORITY = {
   3: ['owner', 'ceo', 'president', 'founder', 'co-owner', 'sommelier', 'partner', 'co-founder', 'wine consultant', 'brand manager', 'store manager', 'business development manager', 'category manager', 'key account manager', 'wine specialist', 'vice president', 'sales associate', 'president and ceo', 'sales executive', 'administrative', 'administrative manager', 'brand ambassador', 'administrative assistant'],
 };
 
-function fixExistingRegions(){
-  const adb=isClienti()?dbC:db;
-  let fixed=0;
-
-  // Lista delle regioni VALIDE — tutto il resto è sbagliato
-  const VALID_REGIONS=new Set([
-    'Sud America','Oceania','Europa','Africa','Asia',
-    'Nord America','Medio Oriente','Scandinavia','Caraibi'
-  ]);
-
-  adb.contacts.forEach(c=>{
-    const correct = regionFromCountry(c.country) || '';
-    if(!correct) return; // paese non in mappa, non toccare
-
-    // Corregge se la regione attuale NON è una regione valida
-    // (copre: vuoto, Unknown, nome paese, nome paese con underscore, ecc.)
-    const regionIsInvalid = !c.region
-      || !VALID_REGIONS.has(c.region)
-      || c.region==='Unknown'
-      || c.region==='—';
-
-    if(regionIsInvalid && correct !== c.region){
-      c.region = correct;
-      fixed++;
-    }
-  });
-
-  if(fixed>0){
-    saveDB();refreshAll();
-    toast(`✓ Corrette ${fixed} regioni`);
-  } else {
-    toast('Tutte le regioni sono già corrette ✓');
-  }
-}
-
 
 function renderFollowups(){
   const list=(isClienti()?dbC:db).contacts
