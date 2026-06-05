@@ -100,10 +100,17 @@ async function pushGH(){
       if(r.ok) ghSha[layer]=(await r.json()).sha;
       // 404 = file non esiste ancora, va bene
     }
-    // Codifica UTF-8 → base64 senza usare escape() deprecato
+    // Codifica UTF-8 → base64 (chunked per file grandi, evita crash su 29MB+)
     const jsonStr=JSON.stringify(isClienti()?dbC:db,null,2);
     const bytes=new TextEncoder().encode(jsonStr);
-    const b64=btoa(Array.from(bytes,b=>String.fromCharCode(b)).join(''));
+    if(bytes.length>5*1024*1024){
+      toast(`⚠ File ${(bytes.length/1024/1024).toFixed(1)} MB — salvataggio in corso, potrebbe essere lento`);
+    }
+    const CHUNK=65536;
+    let binary='';
+    for(let i=0;i<bytes.length;i+=CHUNK)
+      binary+=String.fromCharCode.apply(null,bytes.subarray(i,Math.min(i+CHUNK,bytes.length)));
+    const b64=btoa(binary);
     const body={message:`CRM update — ${new Date().toLocaleString('it-IT')}`,content:b64};
     if(ghSha[layer]) body.sha=ghSha[layer];
     const res=await fetch(url,{method:'PUT',headers:hd,body:JSON.stringify(body)});
