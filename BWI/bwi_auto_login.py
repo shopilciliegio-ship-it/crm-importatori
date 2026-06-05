@@ -20,7 +20,7 @@ FRONT     = "https://app.bestwineimporters.com"
 
 def do_login(email: str | None = None, password: str | None = None):
     email    = email    or os.environ.get("BWI_EMAIL",    "info@sienawine.it")
-    password = password or os.environ.get("BWI_PASSWORD", "260690557")
+    password = password or os.environ.get("BWI_PASSWORD", "")
 
     b64 = base64.b64encode(f"{email}:{password}".encode()).decode()
     login_headers = {

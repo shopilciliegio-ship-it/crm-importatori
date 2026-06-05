@@ -1,0 +1,22 @@
+# Debug e output temporanei degli script Python
+Spotty/debug_*.html
+Spotty/utentiregistrati_latest.csv
+BWI/test_login*.py
+BWI/debug_*.html
+
+# Dipendenze Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
