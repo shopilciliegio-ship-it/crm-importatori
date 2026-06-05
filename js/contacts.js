@@ -1,5 +1,26 @@
 /* ═══ CONTACTS ═══ */
 
+let _cliOffset = 0;
+const CLI_PAGE_SIZE = 100;
+
+function loadMoreClienti(){
+  const fullList = getFiltered();
+  const batch = fullList.slice(_cliOffset, _cliOffset + CLI_PAGE_SIZE);
+  _cliOffset += batch.length;
+  const cardsEl = document.getElementById('cl-cards');
+  if(cardsEl) cardsEl.insertAdjacentHTML('beforeend', batch.map(c=>crow(c)).join(''));
+  const lm = document.getElementById('load-more-wrap');
+  if(lm){
+    if(fullList.length > _cliOffset){
+      lm.innerHTML = `<button class="btn" onclick="loadMoreClienti()" style="font-size:13px">
+        Carica altri ${Math.min(CLI_PAGE_SIZE, fullList.length-_cliOffset)} &nbsp;·&nbsp; ${fullList.length-_cliOffset} rimanenti
+      </button>`;
+    } else {
+      lm.remove();
+    }
+  }
+}
+
 function updateFilters(){
   if(isClienti()){
     // ── FILTRI CLIENTI: paese / lingua / verifica / situazione ──
@@ -123,11 +144,17 @@ function getFiltered(){
 
   let list = adb.contacts.filter(c=>{
     if(isClienti()){
-      if(q&&!`${c.nome} ${c.cognome} ${c.email} ${c.country} ${c.lingua}`.toLowerCase().includes(q))return false;
+      const fn=c.firstName||c.nome||''; const ln=c.lastName||c.cognome||'';
+      if(q&&!`${fn} ${ln} ${c.email||''} ${c.country||''} ${c.languageBrowser||c.lingua||''}`.toLowerCase().includes(q))return false;
       if(country&&c.country!==country)return false;
-      if(regionOrLang&&c.lingua!==regionOrLang)return false;
+      if(regionOrLang&&(c.languageBrowser||c.lingua||'')!==regionOrLang)return false;
+      const qual=document.getElementById('squal')?.value||'';
+      if(qual&&c.quality!==qual)return false;
+      const ship=document.getElementById('sship')?.value||'';
+      if(ship==='yes'&&!c.shippable)return false;
+      if(ship==='no'&&c.shippable!==false)return false;
       const verifica=document.getElementById('sv')?.value||'';
-      if(verifica&&c.statoEmail!==verifica)return false;
+      if(verifica&&!c.quality&&c.statoEmail!==verifica)return false;
     } else {
       if(q&&!`${c.company} ${c.brandName||''} ${c.email} ${c.country} ${c.city||''} ${(c.contacts||[]).map(x=>x.name).join(' ')}`.toLowerCase().includes(q))return false;
       if(country&&c.country!==country)return false;
@@ -170,8 +197,20 @@ function renderContacts(){
   const bwiWrap=document.getElementById('sbwi-wrap');
   if(bwiWrap) bwiWrap.style.display=isClienti()?'none':'';
 
-  const list=getFiltered();
-  const total=(isClienti()?dbC:db).contacts.length;
+  // Mostra/nascondi filtri clienti (qualità + spedibilità)
+  const qualWrap=document.getElementById('squal-wrap');
+  if(qualWrap) qualWrap.style.display=isClienti()?'':'none';
+  const sortbyEl=document.getElementById('sortby');
+  if(sortbyEl) sortbyEl.style.display=isClienti()?'none':'';
+  const svEl=document.getElementById('sv');
+  if(svEl) svEl.style.display='none'; // rimpiazzato da squal per clienti
+
+  const fullList=getFiltered();
+  _cliOffset=0; // reset paginazione ad ogni re-render
+  const isC=isClienti();
+  const list=isC ? fullList.slice(0,CLI_PAGE_SIZE) : fullList;
+  if(isC) _cliOffset=list.length;
+  const total=(isC?dbC:db).contacts.length;
   const allSelected=list.length>0&&list.every(c=>sel.has(c.id));
 
   // Badge BWI notifica (solo importatori)
@@ -188,16 +227,33 @@ function renderContacts(){
     }
   }
 
+  // Stats bar clienti
+  let clientiStats='';
+  if(isC && dbC.contacts.length>0){
+    const nValid  = dbC.contacts.filter(c=>c.quality==='valid'  &&c.shippable).length;
+    const nSusp   = dbC.contacts.filter(c=>c.quality==='suspect'&&c.shippable).length;
+    const nWave1  = dbC.contacts.filter(c=>c.waveStatus==='wave1_sent').length;
+    const nInv    = dbC.contacts.filter(c=>c.quality==='invalid').length;
+    clientiStats=`<div style="font-size:12px;background:#f0faf0;border:1px solid #c3e6c3;border-radius:8px;padding:6px 12px;display:flex;gap:12px;flex-wrap:wrap;margin-bottom:6px">
+      <a href="#" style="color:#2e7d32;font-weight:700;text-decoration:none"
+        onclick="event.preventDefault();document.getElementById('squal').value='valid';document.getElementById('sship').value='yes';renderContacts()">🟢 ${nValid} pronti</a>
+      <a href="#" style="color:#e65100;font-weight:700;text-decoration:none"
+        onclick="event.preventDefault();document.getElementById('squal').value='suspect';document.getElementById('sship').value='yes';renderContacts()">🟡 ${nSusp} da verificare</a>
+      ${nInv?`<span style="color:#c62828;font-weight:700">🔴 ${nInv} invalidi</span>`:''}
+      ${nWave1?`<span style="color:#1565c0;font-weight:700">📧 ${nWave1} wave 1 inviati</span>`:''}
+    </div>`;
+  }
+
   document.getElementById('rcnt-wrap').innerHTML=`
-    ${bwiNotice}
-    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap;${bwiNotice?'margin-top:8px':''}">
+    ${bwiNotice}${clientiStats}
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap;${bwiNotice||clientiStats?'margin-top:4px':''}">
       <label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:13px;color:var(--text2);user-select:none">
         <input type="checkbox" id="cb-all" ${allSelected&&list.length?'checked':''}
           onchange="toggleSelectAll(this.checked)"
           style="width:16px;height:16px;accent-color:var(--blue);cursor:pointer">
         Seleziona tutti
       </label>
-      <span class="rcnt">${list.length} contatti${list.length!==total?' su '+total+' totali':''}</span>
+      <span class="rcnt">${fullList.length} contatti${fullList.length!==total?' su '+total+' totali':''}${isC&&fullList.length>_cliOffset?' · mostrati '+_cliOffset:''}</span>
     </div>`;
 
   // Barra invio massivo (visibile solo se ci sono selezioni)
@@ -214,11 +270,22 @@ function renderContacts(){
     selBar.innerHTML='';
   }
 
-  // Lista contatti con checkbox
+  // Lista contatti con checkbox (+ paginazione per clienti)
   const el=document.getElementById('cl');
-  el.innerHTML=list.length
-    ?`<div class="card">${list.map(c=>crow(c)).join('')}</div>`
-    :'<div class="card"><div class="empty">Nessun risultato</div></div>';
+  if(isC){
+    const hasMore=fullList.length>_cliOffset;
+    el.innerHTML=list.length
+      ?`<div class="card" id="cl-cards">${list.map(c=>crow(c)).join('')}</div>`
+        +(hasMore?`<div id="load-more-wrap" style="text-align:center;padding:12px">
+            <button class="btn" onclick="loadMoreClienti()" style="font-size:13px">
+              Carica altri ${Math.min(CLI_PAGE_SIZE,fullList.length-_cliOffset)} &nbsp;·&nbsp; ${fullList.length-_cliOffset} rimanenti
+            </button></div>`:'')
+      :'<div class="card"><div class="empty">Nessun risultato</div></div>';
+  } else {
+    el.innerHTML=list.length
+      ?`<div class="card">${list.map(c=>crow(c)).join('')}</div>`
+      :'<div class="card"><div class="empty">Nessun risultato</div></div>';
+  }
 }
 
 function toggleSelectAll(checked){
@@ -360,25 +427,41 @@ function openFollowUpFromRegistro(){
 function crow(c){
   const checked=sel.has(c.id);
   if(isClienti()){
-    const SE_MAP={
-      valido:     {icon:'✓',tx:'#27500A',bg:'#EAF3DE'},
-      non_valido: {icon:'✗',tx:'#A32D2D',bg:'#FCEBEB'},
-      sospetta:   {icon:'⚠',tx:'#633806',bg:'#FAEEDA'},
-      da_verificare:{icon:'?',tx:'#0C447C',bg:'#E6F1FB'},
-      sconosciuto:{icon:'—',tx:'#666',bg:'#eee'},
-    };
+    const fn=c.firstName||c.nome||'';
+    const ln=c.lastName||c.cognome||'';
+
+    // Quality badge — SpottyWifi (quality) o vecchio formato (statoEmail)
+    const QMAP={valid:{icon:'🟢',label:'ok',tx:'#2e7d32',bg:'#e8f5e9'},suspect:{icon:'🟡',label:'sospetto',tx:'#e65100',bg:'#fff3e0'},invalid:{icon:'🔴',label:'invalido',tx:'#c62828',bg:'#ffebee'}};
+    const qStyle=QMAP[c.quality];
+    const SE_MAP={valido:{icon:'✓',tx:'#27500A',bg:'#EAF3DE'},non_valido:{icon:'✗',tx:'#A32D2D',bg:'#FCEBEB'},sospetta:{icon:'⚠',tx:'#633806',bg:'#FAEEDA'},da_verificare:{icon:'?',tx:'#0C447C',bg:'#E6F1FB'},sconosciuto:{icon:'—',tx:'#666',bg:'#eee'}};
     const se=SE_MAP[c.statoEmail||'sconosciuto']||SE_MAP.sconosciuto;
+    const qualBadge=qStyle
+      ?`<span style="font-size:10px;padding:1px 6px;border-radius:10px;font-weight:700;margin-left:4px;background:${qStyle.bg};color:${qStyle.tx}" title="${(c.qualityFlags||[]).join(', ')}">${qStyle.icon} ${qStyle.label}</span>`
+      :`<span style="font-size:10px;padding:1px 6px;border-radius:10px;font-weight:700;margin-left:4px;background:${se.bg};color:${se.tx}">${se.icon} ${esc(c.statoEmail||'—')}</span>`;
+
+    // Country badge (🚫 se non spedibile, grigio se spedibile)
+    const countryBadge=c.quality!=null
+      ?(c.shippable===false
+        ?`<span style="font-size:10px;padding:1px 5px;border-radius:10px;margin-left:4px;background:#f5f5f5;color:#aaa">🚫 ${esc(c.country||'?')}</span>`
+        :`<span style="font-size:10px;color:#aaa;margin-left:5px">${esc(c.country||'')}</span>`)
+      :`<span style="font-size:10px;color:var(--text2);margin-left:4px">${esc(c.country||'')}</span>`;
+
+    // Wave badge
+    const waveLabel={wave1_sent:'📧 Wave 1',wave2_sent:'📧 Wave 2'}[c.waveStatus||'']||'';
+    const waveBadge=waveLabel?`<span class="badge" style="background:#e3f2fd;color:#1565c0;font-size:10px;white-space:nowrap">${waveLabel}</span>`:'';
+
+    // Data registrazione
+    const regDate=c.registeredAt?new Date(c.registeredAt).toLocaleDateString('it-IT',{day:'2-digit',month:'short',year:'2-digit'}):'';
+
     return `<div class="cr${checked?' selected':''}" onclick="openDetail('${c.id}')">
       <input type="checkbox" class="crow-cb" ${checked?'checked':''}
         onclick="toggleSelect('${c.id}',event)" onchange="toggleSelect('${c.id}',event)">
-      <div class="av ${AV[hsh((c.nome||'')+c.cognome)%6]}">${ini((c.nome||'')+' '+(c.cognome||''))}</div>
+      <div class="av ${AV[hsh(fn+ln)%6]}">${ini(fn+' '+ln)}</div>
       <div class="ci">
-        <div class="cn">${esc(c.nome||'')} <strong>${esc(c.cognome||'')}</strong>
-          <span style="font-size:10px;padding:1px 6px;border-radius:10px;font-weight:700;margin-left:4px;background:${se.bg};color:${se.tx}">${se.icon} ${esc(c.statoEmail||'—')}</span>
-        </div>
-        <div class="cs">${[c.country,c.lingua].filter(Boolean).map(esc).join(' · ')} · ${esc(c.email||'')}</div>
+        <div class="cn">${esc(fn)} <strong>${esc(ln)}</strong>${qualBadge}${countryBadge}</div>
+        <div class="cs">${esc(c.email||'')}${regDate?' · '+regDate:''}</div>
       </div>
-      <span class="badge ${SM[c.status]?.c||'bn'}">${SM[c.status]?.l||''}</span>
+      ${waveBadge}
     </div>`;
   }
   // ── IMPORTATORE ──
