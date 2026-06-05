@@ -1,9 +1,13 @@
 /* ═══ GITHUB ═══ */
 
 // Traccia quali layer sono stati caricati da GH in questa sessione.
-// Usato da pushGH per distinguere race-condition (mai caricato + vuoto)
-// da cancellazione volontaria (caricato + poi svuotato dall'utente).
 const _layersLoaded = new Set();
+
+// Override architecture per importatori (file da 29 MB):
+// contatti.json  = read-only base, aggiornato solo da BWI sync (GitHub Actions)
+// contatti-overrides.json = solo modifiche utente (status/notes/log/brevoEvents), < 50 KB
+const OVERRIDES_PATH = 'data/contatti-overrides.json';
+let _baseSnap = {}; // {id: {status, notes, log_s, brevoEvents_s}} — snapshot prima degli override
 
 function ghPathTemplates(){ return 'data/templates.json'; }
 
@@ -79,35 +83,56 @@ function updGh(s){
   }[s]||s;
 }
 
+async function _loadImportatoriOverrides(token,owner,repo,contacts){
+  const url=`https://api.github.com/repos/${owner}/${repo}/contents/${OVERRIDES_PATH}`;
+  try{
+    const r=await fetch(url,{headers:{'Authorization':`token ${token}`,'Accept':'application/vnd.github.v3+json'}});
+    if(r.status===404){ghSha.overrides=null;return;} // nessun override ancora
+    if(!r.ok) return;
+    const d=await r.json();
+    ghSha.overrides=d.sha;
+    const raw=(d.content||'').replace(/\n/g,'');
+    if(!raw) return;
+    let jsonStr;
+    try{ jsonStr=decodeURIComponent(Array.from(atob(raw),c=>'%'+c.charCodeAt(0).toString(16).padStart(2,'0')).join('')); }
+    catch(e){ jsonStr=atob(raw); }
+    const overrides=JSON.parse(jsonStr);
+    const byId=Object.fromEntries(contacts.map(c=>[c.id,c]));
+    let applied=0;
+    for(const [id,changes] of Object.entries(overrides)){
+      if(byId[id]){ Object.assign(byId[id],changes); applied++; }
+    }
+    if(applied) console.log(`Override applicati: ${applied} contatti`);
+  }catch(e){ console.warn('_loadImportatoriOverrides:',e); }
+}
+
 async function pushGH(){
   const{token,owner,repo}=ghs;
   if(!token||!owner||!repo)return;
   // Guard: blocca solo se il layer NON è ancora stato caricato da GH E i contatti sono vuoti.
-  // Previene data loss da race condition pre-load; permette cancellazione intenzionale post-load.
   const activeContacts=(isClienti()?dbC:db).contacts;
   if(!_layersLoaded.has(layer)&&(!activeContacts||activeContacts.length===0)){
-    console.warn('pushGH: skip — layer non ancora caricato, salvataggio bloccato per sicurezza');
+    console.warn('pushGH: skip — layer non ancora caricato');
     updGh('saved');return;
   }
+  // Importatori: salva solo le differenze utente in contatti-overrides.json (< 50KB invece di 29MB)
+  if(!isClienti()){
+    await _pushImportatoriOverrides(token,owner,repo);
+    return;
+  }
+  // Clienti / altri layer: salva file completo
   const path=ghPath();
   const url=`https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
   const hd={'Authorization':`token ${token}`,'Content-Type':'application/json','Accept':'application/vnd.github.v3+json'};
   updGh('saving');
   try{
-    // Recupera SHA attuale se non ce l'abbiamo
     if(!ghSha[layer]){
       const r=await fetch(url,{headers:hd});
       if(r.ok) ghSha[layer]=(await r.json()).sha;
-      // 404 = file non esiste ancora, va bene
     }
-    // Codifica UTF-8 → base64 (chunked per file grandi, evita crash su 29MB+)
     const jsonStr=JSON.stringify(isClienti()?dbC:db,null,2);
     const bytes=new TextEncoder().encode(jsonStr);
-    if(bytes.length>5*1024*1024){
-      toast(`⚠ File ${(bytes.length/1024/1024).toFixed(1)} MB — salvataggio in corso, potrebbe essere lento`);
-    }
-    const CHUNK=65536;
-    let binary='';
+    const CHUNK=65536; let binary='';
     for(let i=0;i<bytes.length;i+=CHUNK)
       binary+=String.fromCharCode.apply(null,bytes.subarray(i,Math.min(i+CHUNK,bytes.length)));
     const b64=btoa(binary);
@@ -118,8 +143,7 @@ async function pushGH(){
       ghSha[layer]=(await res.json()).content.sha;
       updGh('saved');
     } else if(res.status===409||res.status===422){
-      // Conflitto SHA — rileggi e riprova
-      ghSha={importatori:null,clienti:null};
+      ghSha={importatori:null,clienti:null,templates:null,ordini:null,overrides:null};
       setTimeout(pushGH,1000);
     } else {
       const err=await res.json().catch(()=>({}));
@@ -127,6 +151,49 @@ async function pushGH(){
       updGh('error');
     }
   }catch(e){updGh('error');console.error('pushGH exception:',e);}
+}
+
+async function _pushImportatoriOverrides(token,owner,repo){
+  updGh('saving');
+  // Calcola solo le differenze rispetto al base caricato da GitHub
+  const newOv={};
+  for(const c of db.contacts){
+    const snap=_baseSnap[c.id];
+    if(!snap) continue;
+    const diff={};
+    if((c.status||'')!==(snap.status||''))           diff.status=c.status;
+    if((c.notes||'')!==(snap.notes||''))             diff.notes=c.notes;
+    if(JSON.stringify(c.log||[])!==snap.log)         diff.log=c.log||[];
+    if(JSON.stringify(c.brevoEvents||[])!==snap.brevoEvents) diff.brevoEvents=c.brevoEvents||[];
+    if(Object.keys(diff).length) newOv[c.id]=diff;
+  }
+  const url=`https://api.github.com/repos/${owner}/${repo}/contents/${OVERRIDES_PATH}`;
+  const hd={'Authorization':`token ${token}`,'Content-Type':'application/json','Accept':'application/vnd.github.v3+json'};
+  try{
+    if(!ghSha.overrides){
+      const r=await fetch(url,{headers:hd});
+      if(r.ok) ghSha.overrides=(await r.json()).sha;
+    }
+    const jsonStr=JSON.stringify(newOv,null,2);
+    const bytes=new TextEncoder().encode(jsonStr);
+    const CHUNK=65536; let binary='';
+    for(let i=0;i<bytes.length;i+=CHUNK)
+      binary+=String.fromCharCode.apply(null,bytes.subarray(i,Math.min(i+CHUNK,bytes.length)));
+    const b64=btoa(binary);
+    const body={message:`CRM overrides — ${new Date().toLocaleString('it-IT')}`,content:b64};
+    if(ghSha.overrides) body.sha=ghSha.overrides;
+    const res=await fetch(url,{method:'PUT',headers:hd,body:JSON.stringify(body)});
+    if(res.ok){
+      ghSha.overrides=(await res.json()).content.sha;
+      updGh('saved');
+      console.log(`overrides salvati: ${Object.keys(newOv).length} contatti modificati`);
+    } else if(res.status===409||res.status===422){
+      ghSha.overrides=null; setTimeout(()=>_pushImportatoriOverrides(token,owner,repo),1000);
+    } else {
+      const err=await res.json().catch(()=>({}));
+      console.error('pushGH overrides error:',res.status,err.message); updGh('error');
+    }
+  }catch(e){updGh('error');console.error('_pushImportatoriOverrides:',e);}
 }
 
 async function loadFromGH(){
@@ -169,13 +236,28 @@ async function loadFromGH(){
     if(isClienti()){
       dbC.contacts=contacts;
       if(parsed.templates&&parsed.templates.length)dbC.templates=parsed.templates;
+      _layersLoaded.add(layer);
+      refreshAll();updGh('saved');
+      toast(`✓ ${contacts.length} clienti caricati`);
     } else {
+      // Importatori: snapshot base → carica override → applica
+      _baseSnap={};
+      for(const c of contacts){
+        _baseSnap[c.id]={
+          status:c.status||'',
+          notes:c.notes||'',
+          log:JSON.stringify(c.log||[]),
+          brevoEvents:JSON.stringify(c.brevoEvents||[])
+        };
+      }
       db.contacts=contacts;
-      if(parsed.templates&&parsed.templates.length)(isClienti()?dbC:db).templates=parsed.templates;
+      if(parsed.templates&&parsed.templates.length)db.templates=parsed.templates;
+      // Carica e applica override (file piccolo, < 50KB)
+      await _loadImportatoriOverrides(token,owner,repo,contacts);
+      _layersLoaded.add(layer);
+      refreshAll();updGh('saved');
+      toast(`✓ ${contacts.length} importatori caricati`);
     }
-    _layersLoaded.add(layer);
-    refreshAll();updGh('saved');
-    toast(`✓ ${contacts.length} ${isClienti()?'clienti':'contatti'} caricati`);
   }catch(e){
     updGh('error');toast('Errore: '+e.message);console.error('loadFromGH error:',e);refreshAll();
   }
@@ -317,7 +399,7 @@ function saveSettings(){
   localStorage.setItem('ghcfg',JSON.stringify(ghs));
   brv={apiKey:gv('bk'),senderEmail:gv('be'),senderName:gv('bn')};
   localStorage.setItem('brvcfg',JSON.stringify(brv));
-  ghSha={importatori:null,clienti:null,templates:null,ordini:null};closeModal();
+  ghSha={importatori:null,clienti:null,templates:null,ordini:null,overrides:null};closeModal();
   toast('Impostazioni salvate — connessione in corso…');
   loadFromGH();
 }
