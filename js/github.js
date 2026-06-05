@@ -1,5 +1,10 @@
 /* ═══ GITHUB ═══ */
 
+// Traccia quali layer sono stati caricati da GH in questa sessione.
+// Usato da pushGH per distinguere race-condition (mai caricato + vuoto)
+// da cancellazione volontaria (caricato + poi svuotato dall'utente).
+const _layersLoaded = new Set();
+
 function ghPathTemplates(){ return 'data/templates.json'; }
 
 async function loadTemplatesFromGH(){
@@ -77,10 +82,11 @@ function updGh(s){
 async function pushGH(){
   const{token,owner,repo}=ghs;
   if(!token||!owner||!repo)return;
-  // Guard: non salvare mai un array di contatti vuoto — previene data loss da race condition
+  // Guard: blocca solo se il layer NON è ancora stato caricato da GH E i contatti sono vuoti.
+  // Previene data loss da race condition pre-load; permette cancellazione intenzionale post-load.
   const activeContacts=(isClienti()?dbC:db).contacts;
-  if(!activeContacts||activeContacts.length===0){
-    console.warn('pushGH: skip — contacts vuoto, salvataggio bloccato per sicurezza');
+  if(!_layersLoaded.has(layer)&&(!activeContacts||activeContacts.length===0)){
+    console.warn('pushGH: skip — layer non ancora caricato, salvataggio bloccato per sicurezza');
     updGh('saved');return;
   }
   const path=ghPath();
@@ -124,20 +130,27 @@ async function loadFromGH(){
   updGh('saving');
   try{
     const r=await fetch(url,{headers:{'Authorization':`token ${token}`,'Accept':'application/vnd.github.v3+json'}});
-    if(r.status===404){updGh('saved');refreshAll();toast('GitHub connesso — database vuoto, pronto per import');return;}
+    if(r.status===404){updGh('saved');refreshAll();_layersLoaded.add(layer);toast('GitHub connesso — database vuoto, pronto per import');return;}
     if(!r.ok){
       const err=await r.json().catch(()=>({}));
       throw new Error(`GitHub API: ${r.status} — ${err.message||'errore sconosciuto'}`);
     }
     const d=await r.json();
     ghSha[layer]=d.sha;
-    const raw=d.content.replace(/\n/g,'');
+    // File > 1 MB: GitHub Contents API restituisce content vuoto — usa download_url
     let jsonStr;
-    try{
-      jsonStr=decodeURIComponent(Array.from(atob(raw),c=>'%'+c.charCodeAt(0).toString(16).padStart(2,'0')).join(''));
-    }catch(e){jsonStr=atob(raw);}
+    const raw=(d.content||'').replace(/\n/g,'');
+    if(!raw&&d.download_url){
+      const rawR=await fetch(d.download_url,{headers:{'Authorization':`token ${token}`}});
+      if(!rawR.ok) throw new Error(`Download diretto: ${rawR.status}`);
+      jsonStr=await rawR.text();
+    } else {
+      try{
+        jsonStr=decodeURIComponent(Array.from(atob(raw),c=>'%'+c.charCodeAt(0).toString(16).padStart(2,'0')).join(''));
+      }catch(e){jsonStr=atob(raw);}
+    }
     if(!jsonStr||!jsonStr.trim()||jsonStr.trim()==='{}'){
-      updGh('saved');refreshAll();
+      updGh('saved');refreshAll();_layersLoaded.add(layer);
       toast('GitHub connesso — database vuoto, pronto per import');return;
     }
     const parsed=JSON.parse(jsonStr);
@@ -151,6 +164,7 @@ async function loadFromGH(){
       db.contacts=contacts;
       if(parsed.templates&&parsed.templates.length)(isClienti()?dbC:db).templates=parsed.templates;
     }
+    _layersLoaded.add(layer);
     refreshAll();updGh('saved');
     toast(`✓ ${contacts.length} ${isClienti()?'clienti':'contatti'} caricati`);
   }catch(e){
