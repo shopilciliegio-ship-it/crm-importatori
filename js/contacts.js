@@ -484,7 +484,7 @@ function crow(c){
       onchange="toggleSelect('${c.id}',event)">
     <div class="av ${AV[hsh(c.company)%6]}">${ini(c.company)}</div>
     <div class="ci">
-      <div class="cn">${esc(c.company)}${c.brandName&&c.brandName!==c.company?` <span style="font-weight:400;color:var(--text2)">· ${esc(c.brandName)}</span>`:''}${breveEventsBadge(c)}${bwiChip}
+      <div class="cn">${esc(c.company)}${c.brandName&&c.brandName!==c.company?` <span style="font-weight:400;color:var(--text2)">· ${esc(c.brandName)}</span>`:''}${breveEventsBadge(c)}${bwiChip}${researchBadge(c.research)}
         ${nContacts>0?`<span style="font-size:10px;background:var(--blue-bg);color:var(--blue-tx);padding:1px 6px;border-radius:10px;font-weight:700;margin-left:4px">${nContacts} contatt${nContacts===1?'o':'i'}</span>`:''}
       </div>
       <div class="cs">${[c.city||c.country,c.type?.split(',')[0]].filter(Boolean).map(esc).join(' · ')}${c.prodType?' · '+esc(c.prodType.split(',').slice(0,2).join(', ')):''}

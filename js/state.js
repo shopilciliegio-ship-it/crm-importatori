@@ -19,6 +19,7 @@ let dbRemT={};                         // template email reminder
 let layer='importatori';               // layer attivo
 let ghs={};
 let brv={};
+let rsch=JSON.parse(localStorage.getItem('rschcfg')||'{}'); // serperKey, groqKey
 let sel=new Set();
 let regSel=new Set();
 let _pendingEmailId=null; // id contatto per apertura email da scheda
