@@ -133,12 +133,12 @@ async function processAutoFollowUps(){
     } else if(nSteps===2 && daysSince1>=21){
       // Invia FU giorno 21
       const step2 = evs.find(e=>(e.sequenceStep||0)===2)||evs[1];
-      const tpl = findTpl(step2?.opened?'t3a':'t3b', 't3');
+      const tpl = findTpl(step2?.opened?'t3a':'t3b');
       if(tpl) toSend.push({c, tpl, nextStep:3, label:'FU giorno 21'});
     } else if(nSteps===3 && daysSince1>=35){
       // Invia FU giorno 35
       const step3 = evs.find(e=>(e.sequenceStep||0)===3)||evs[2];
-      const tpl = findTpl(step3?.opened?'t4a':'t4b', 't4');
+      const tpl = findTpl(step3?.opened?'t4a':'t4b');
       if(tpl) toSend.push({c, tpl, nextStep:4, label:'FU giorno 35'});
     }
   });

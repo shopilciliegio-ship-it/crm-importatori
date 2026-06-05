@@ -357,7 +357,7 @@ def should_send_followup(c: dict, templates: list, now_ms: int) -> tuple[str | N
             return None, None, 0
         step2  = next((e for e in evs if (e.get('sequenceStep') or 0) == 2), evs[1])
         opened = step2.get('opened', False)
-        tpl = find_tpl(templates, 't3' if opened else None, name_hint='3a' if opened else '3b')
+        tpl = find_tpl(templates, 't3a' if opened else 't3b')
         return 'day21', tpl, 3
 
     elif n_steps == 3 and days >= 35:
@@ -366,7 +366,7 @@ def should_send_followup(c: dict, templates: list, now_ms: int) -> tuple[str | N
             return None, None, 0
         step3  = next((e for e in evs if (e.get('sequenceStep') or 0) == 3), evs[2])
         opened = step3.get('opened', False)
-        tpl = find_tpl(templates, 't4' if not opened else None, name_hint='4a' if opened else '4b')
+        tpl = find_tpl(templates, 't4a' if opened else 't4b')
         return 'day35', tpl, 4
 
     return None, None, 0
