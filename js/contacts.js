@@ -173,6 +173,14 @@ function getFiltered(){
       if(bwiF==='new'&&c.bwiStatus!=='new')return false;
       if(bwiF==='updated'&&c.bwiStatus!=='updated')return false;
       if(bwiF==='bwi'&&!c.bwiCompId)return false;
+      const rschF=document.getElementById('srsch')?.value||'';
+      if(rschF==='any'&&!c.research)return false;
+      if(rschF==='si'&&c.research?.raccomandato!=='si')return false;
+      if(rschF==='forse'&&c.research?.raccomandato!=='forse')return false;
+      if(rschF==='no'&&c.research?.raccomandato!=='no')return false;
+      if(rschF==='5'&&(c.research?.affidabilita||0)<5)return false;
+      if(rschF==='4'&&(c.research?.affidabilita||0)<4)return false;
+      if(rschF==='3'&&(c.research?.affidabilita||0)<3)return false;
     }
     if(window._pendingFilter){if(c.status!=='sent'&&c.status!=='followup')return false;}
     else if(status&&c.status!==status)return false;
@@ -183,12 +191,18 @@ function getFiltered(){
   // I contatti senza dati (parseNumeric = -1) vanno in fondo
   if(!isClienti()){
     list.sort((a,b)=>{
-      const va = parseNumeric(a[sortBy]);
-      const vb = parseNumeric(b[sortBy]);
+      let va, vb;
+      if(sortBy==='research'){
+        va = a.research?.affidabilita ?? -1;
+        vb = b.research?.affidabilita ?? -1;
+      } else {
+        va = parseNumeric(a[sortBy]);
+        vb = parseNumeric(b[sortBy]);
+      }
       if(va === -1 && vb === -1) return 0;
-      if(va === -1) return 1;   // a va in fondo
-      if(vb === -1) return -1;  // b va in fondo
-      return vb - va;           // ordine decrescente
+      if(va === -1) return 1;
+      if(vb === -1) return -1;
+      return vb - va;
     });
   }
 
@@ -211,6 +225,8 @@ function renderContacts(){
   if(qualWrap) qualWrap.style.display=isClienti()?'':'none';
   const sortbyEl=document.getElementById('sortby');
   if(sortbyEl) sortbyEl.style.display=isClienti()?'none':'';
+  const srschEl=document.getElementById('srsch');
+  if(srschEl) srschEl.style.display=isClienti()?'none':'';
   const svEl=document.getElementById('sv');
   if(svEl) svEl.style.display='none'; // rimpiazzato da squal per clienti
 
@@ -604,6 +620,9 @@ function openDetail(id){
       </div>`).join('')}`:''}
 
     ${c.notes?`<div class="divhr"></div><div style="font-size:12px;color:var(--text2);font-weight:700;margin-bottom:6px">NOTE</div><div style="font-size:13px;line-height:1.6;white-space:pre-wrap">${esc(c.notes)}</div>`:''}
+
+    ${_researchDetailBlock(c)}
+
     ${c.emailsSent?`<div class="divhr"></div>
       <div style="display:flex;gap:12px">
         <div style="flex:1;background:var(--blue-bg);border-radius:var(--r);padding:10px;text-align:center">
@@ -628,6 +647,45 @@ function openDetail(id){
       <button class="btn btp bts" onclick="openEmailFromDetail('${id}')">✉ Email</button>
     </div>
   `);
+}
+
+function _researchDetailBlock(c){
+  const r = c.research;
+  if(!r) return '';
+  const REC_STYLE = {
+    si:    'background:#e8f5e9;color:#2e7d32',
+    forse: 'background:#fff3e0;color:#e65100',
+    no:    'background:#fce4ec;color:#c62828'
+  };
+  const VINO_LABEL = {
+    si:'🍷 Sì, confermato', probabile:'🍷 Probabile',
+    forse:'Forse', non_risulta:'Non risulta', no:'No'
+  };
+  const stars = '★'.repeat(r.affidabilita||0) + '☆'.repeat(5-(r.affidabilita||0));
+  const recStyle = REC_STYLE[r.raccomandato] || 'background:var(--bg2);color:var(--text2)';
+  const date = r.analyzed_at ? new Date(r.analyzed_at).toLocaleDateString('it-IT',{day:'2-digit',month:'short',year:'2-digit'}) : '';
+  return `<div class="divhr"></div>
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+    <div style="font-size:12px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.5px">🔬 Analisi AI</div>
+    ${date?`<span style="font-size:11px;color:var(--text3)">${date}</span>`:''}
+    <button class="btn bts" style="font-size:11px;padding:2px 8px;margin-left:auto" onclick="closeModal();openResearchModal('${esc(c.country||'')}')">Ri-analizza paese</button>
+  </div>
+  <div style="background:var(--bg2);border-radius:10px;padding:14px 16px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap">
+      <span style="font-size:22px;letter-spacing:-2px;color:#f59e0b">${stars}</span>
+      <span style="font-size:13px;font-weight:700">${r.affidabilita||'?'}/5</span>
+      <span style="padding:3px 12px;border-radius:20px;font-size:12px;font-weight:700;${recStyle}">${
+        r.raccomandato==='si' ? '✅ Raccomandato' :
+        r.raccomandato==='forse' ? '🟡 Da valutare' : '❌ Non idoneo'
+      }</span>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px 16px;font-size:12px;margin-bottom:10px">
+      <div><span style="color:var(--text3)">Vino italiano</span><br><strong>${esc(VINO_LABEL[r.vino_italiano]||r.vino_italiano||'—')}</strong></div>
+      <div><span style="color:var(--text3)">Tipo business</span><br><strong>${esc(r.tipo_business||'—')}</strong></div>
+      <div><span style="color:var(--text3)">Mercato target</span><br><strong>${esc(r.mercato_target||'—')}</strong></div>
+    </div>
+    ${r.note?`<div style="font-size:12px;color:var(--text2);line-height:1.5;border-top:0.5px solid var(--brd);padding-top:8px">${esc(r.note)}</div>`:''}
+  </div>`;
 }
 
 function chStatus(id,s){
