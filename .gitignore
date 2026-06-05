@@ -1,3 +1,6 @@
+# Output research agent (possono essere grandi)
+data/research_*.json
+
 # Debug e output temporanei degli script Python
 Spotty/debug_*.html
 Spotty/utentiregistrati_latest.csv
