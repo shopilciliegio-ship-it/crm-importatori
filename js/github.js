@@ -235,8 +235,11 @@ async function loadFromGH(){
     if(!Array.isArray(contacts))throw new Error('Formato contatti non valido');
     // Popola il db del layer attivo
     if(isClienti()){
-      // Assegna region dai country se mancante (stessa logica importatori)
-      contacts.forEach(c=>{ if(!c.region) c.region=regionFromCountry(c.country||''); });
+      // Normalizza codici ISO → nomi leggibili, poi assegna region
+      contacts.forEach(c=>{
+        if(c.country && ISO2NAME[c.country.trim()]) c.country=ISO2NAME[c.country.trim()];
+        if(!c.region) c.region=regionFromCountry(c.country||'');
+      });
       dbC.contacts=contacts;
       if(parsed.templates&&parsed.templates.length)dbC.templates=parsed.templates;
       _layersLoaded.add(layer);

@@ -196,6 +196,58 @@ function delTpl(id){
 /* ═══════════════════════════════════════
    IMPORT XLSX — MULTI-SHEET
 ═══════════════════════════════════════ */
+
+// Mappa codice ISO 2 lettere → nome leggibile (usata per normalizzare clienti SpottyWifi)
+const ISO2NAME = {
+  'AF':'Afghanistan','AL':'Albania','DZ':'Algeria','AO':'Angola',
+  'AR':'Argentina','AM':'Armenia','AU':'Australia','AT':'Austria',
+  'AZ':'Azerbaigian','BS':'Bahamas','BH':'Bahrain','BD':'Bangladesh',
+  'BY':'Bielorussia','BE':'Belgio','BZ':'Belize','BJ':'Benin',
+  'BO':'Bolivia','BA':'Bosnia Erzegovina','BW':'Botswana','BR':'Brasile',
+  'BN':'Brunei','BG':'Bulgaria','BF':'Burkina Faso','KH':'Cambogia',
+  'CM':'Cameroon','CA':'Canada','CV':'Capo Verde','TD':'Ciad',
+  'CL':'Cile','CN':'Cina','CO':'Colombia','KM':'Comore',
+  'CG':'Congo','CD':'Congo (RDC)','KR':'Corea del Sud','CR':'Costa Rica',
+  'CI':'Costa d\'Avorio','HR':'Croazia','CU':'Cuba','CY':'Cipro',
+  'DK':'Danimarca','DO':'Rep. Dominicana','EC':'Ecuador','EG':'Egitto',
+  'SV':'El Salvador','AE':'Emirati Arabi','ER':'Eritrea','ET':'Etiopia',
+  'FI':'Finlandia','FR':'Francia','GA':'Gabon','GM':'Gambia',
+  'GE':'Georgia','DE':'Germania','GH':'Ghana','JM':'Giamaica',
+  'JP':'Giappone','JO':'Giordania','GR':'Grecia','GT':'Guatemala',
+  'GN':'Guinea','GW':'Guinea-Bissau','GY':'Guyana','HT':'Haiti',
+  'HN':'Honduras','HK':'Hong Kong','HU':'Ungheria','IN':'India',
+  'ID':'Indonesia','IR':'Iran','IQ':'Iraq','IE':'Irlanda',
+  'IS':'Islanda','IL':'Israele','IT':'Italia','KZ':'Kazakhstan',
+  'KE':'Kenya','KG':'Kirghizistan','KW':'Kuwait','LA':'Laos',
+  'LS':'Lesotho','LV':'Lettonia','LB':'Libano','LY':'Libia',
+  'LI':'Liechtenstein','LT':'Lituania','LU':'Lussemburgo',
+  'MO':'Macao','MK':'Macedonia del Nord','MG':'Madagascar',
+  'MW':'Malawi','MY':'Malaysia','MV':'Maldive','ML':'Mali',
+  'MT':'Malta','MA':'Marocco','MR':'Mauritania','MU':'Mauritius',
+  'MX':'Messico','MD':'Moldavia','MC':'Monaco','MN':'Mongolia',
+  'ME':'Montenegro','MZ':'Mozambico','MM':'Myanmar','NA':'Namibia',
+  'NP':'Nepal','NI':'Nicaragua','NE':'Niger','NG':'Nigeria',
+  'NO':'Norvegia','NZ':'Nuova Zelanda','NL':'Paesi Bassi',
+  'PK':'Pakistan','PA':'Panama','PG':'Papua Nuova Guinea',
+  'PY':'Paraguay','PE':'Perù','PH':'Filippine','PL':'Polonia',
+  'PT':'Portogallo','QA':'Qatar','GB':'Gran Bretagna','CZ':'Rep. Ceca',
+  'RO':'Romania','RW':'Ruanda','RU':'Russia','SA':'Arabia Saudita',
+  'SN':'Senegal','RS':'Serbia','SL':'Sierra Leone','SG':'Singapore',
+  'SK':'Slovacchia','SI':'Slovenia','SO':'Somalia','ES':'Spagna',
+  'LK':'Sri Lanka','SD':'Sudan','SS':'Sudan del Sud','SR':'Suriname',
+  'SE':'Svezia','CH':'Svizzera','SY':'Siria','TW':'Taiwan',
+  'TJ':'Tagikistan','TZ':'Tanzania','TH':'Tailandia','TL':'Timor Est',
+  'TG':'Togo','TT':'Trinidad e Tobago','TN':'Tunisia','TR':'Turchia',
+  'TM':'Turkmenistan','UG':'Uganda','UA':'Ucraina','US':'USA',
+  'UY':'Uruguay','UZ':'Uzbekistan','VE':'Venezuela','VN':'Vietnam',
+  'YE':'Yemen','ZM':'Zambia','ZW':'Zimbabwe','XK':'Kosovo',
+  'MF':'Saint Martin','SX':'Sint Maarten','GP':'Guadalupa',
+  'MQ':'Martinica','GF':'Guyana Francese','PF':'Polinesia Francese',
+  'NC':'Nuova Caledonia','RE':'Réunion','PM':'Saint-Pierre-et-Miquelon',
+  // Alias comuni
+  'UK':'Gran Bretagna','UAE':'Emirati Arabi',
+};
+
 // Mappa paese → regione — copertura completa BWI
 const COUNTRY_REGION = {
   // ── SUD AMERICA ──
