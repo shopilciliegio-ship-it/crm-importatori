@@ -1,25 +1,18 @@
 """
 BestWineImporters - Scraper Aziende e Contatti
 ================================================
-Istruzioni:
-1. Apri Chrome su app.bestwineimporters.com e loggati
-2. Premi F12 -> Network -> filtra Fetch/XHR
-3. Ricarica la pagina
-4. Clicca su "customSearch/" -> Headers -> Request Headers
-5. Copia i valori qui sotto (Cookie, Bdn-Access, ecc.)
-6. Nel terminale esegui: pip install requests openpyxl
-7. Esegui: python bestwine_scraper.py
+Il login avviene in automatico tramite bwi_auto_login.py.
+Non serve più copiare cookie o token a mano.
 
-I file Excel verranno salvati nella cartella "bestwine_output",
-uno per ogni nazione trovata (es. bestwine_Italy.xlsx).
+Uso interattivo:   python bestwine_scraper.py
+Uso automatico:    python bestwine_scraper.py --auto 2
+  (modalità 2 = nuove+aggiornate, usato dal cron settimanale)
 
-RIPRESA AUTOMATICA: se lo script viene interrotto, rilancia
-semplicemente e ripartirà da dove si era fermato.
-
-AGGIORNAMENTO: le righe nuove aggiunte in esecuzioni successive
-vengono evidenziate in verde chiaro per distinguerle dalle precedenti.
+I file Excel vengono salvati in "bestwine_output/",
+uno per ogni nazione (es. bestwine_Italy.xlsx).
 """
 
+import sys
 import requests
 import time
 import os
@@ -29,15 +22,18 @@ from requests.adapters import HTTPAdapter
 from openpyxl import Workbook, load_workbook
 from openpyxl.styles import Font, PatternFill, Alignment
 
-# ============================================================
-# CONFIGURA QUI I TUOI DATI DI AUTENTICAZIONE
-# ============================================================
+# Auto-login — sovrascrive i valori qui sotto all'avvio di main()
+try:
+    from bwi_auto_login import do_login as _bwi_login
+    _AUTO_LOGIN = True
+except ImportError:
+    _AUTO_LOGIN = False
 
-COOKIE = "_ga=GA1.1.586675849.1777477552; intercom-id-hhkybma9=c648fe74-a61c-4ff3-9ce2-322bd40941ae; intercom-device-id-hhkybma9=0ddcf177-5992-4260-a48a-1a5a863ff96d; _gcl_au=1.1.303388429.1776775811.1595798605.1778427736.1778427736; intercom-session-hhkybma9=; _ga_4B4PSNEGMV=GS2.1.s1780501582$o30$g0$t1780501582$j60$l0$h1648834377$dM_f44gGFTNNx0qefNrsWg3wYWEr_aJ5WFA; token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiaW5mb0BzaWVuYXdpbmUuaXQiLCJ1c2VySWQiOjEzMjI5LCJzZXNzaW9uSWQiOiIxZWFkYjcyMjU5MzVkNWM5MzMzMDk4NTc3MmQ2NWM3MiIsImlhdCI6MTc4MDUwMTU5NCwiZXhwIjoxNzgwNTAzMzk0LCJpc3MiOiJiZXN0d2luZWltcG9ydGVycy5jb20ifQ.ciFlNd_6dmHOA574AKNRemvLhRkuOgbzBoVZso5Vwig; tokenRef=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiaW5mb0BzaWVuYXdpbmUuaXQiLCJ1c2VySWQiOjEzMjI5LCJzZXNzaW9uSWQiOiIxZWFkYjcyMjU5MzVkNWM5MzMzMDk4NTc3MmQ2NWM3MiIsImlhdCI6MTc4MDUwMTU5NCwiZXhwIjoxNzgwNTg3OTk0LCJpc3MiOiJiZXN0d2luZWltcG9ydGVycy5jb20ifQ.ubQJ1_se37YAZ1_tjuez7aBS_HE_kT6qlBAdjUOxMEM; jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMzIyOSwicm9sZSI6ImRlbW8iLCJpYXQiOjE3ODA1MDE1OTQsImV4cCI6MTc4MDUzMDM5NH0.Liu82HlTME8w75S7_axLlLUVSfkM_YL2q037sh9zlKk"
-
-BDN_ACCESS = "$2a$10$LUaoIjz2Ubg8CqVM2qDRHOwRvmBwmM0dJVXGcW.RZMzPxVs2k5E0e"  # es. $2a$10$kPV3v...
-BDN_ID     = "13229"       # es. 13229
-BDN_NAME   = "info@sienawine.it"     # es. info@sienawine.it
+# Valori di fallback (usati solo se auto-login non disponibile)
+COOKIE     = ""
+BDN_ACCESS = ""
+BDN_ID     = "13229"
+BDN_NAME   = "info@sienawine.it"
 
 # ============================================================
 # FILTRI DI RICERCA
@@ -521,20 +517,47 @@ def process_company(comp, workbooks, is_update_run, counter):
 
 
 def main():
-    global MODALITA, SOLO_PAESE, ULTIME_N, _errori_consecutivi
+    global MODALITA, SOLO_PAESE, ULTIME_N, _errori_consecutivi, HEADERS
+
+    # ── AUTO-LOGIN ────────────────────────────────────────────────────
+    if _AUTO_LOGIN:
+        print("🔑 Auto-login BWI...", flush=True)
+        try:
+            _sess, _h = _bwi_login()
+            HEADERS = _h
+            print("   Login OK")
+        except Exception as e:
+            print(f"   Login FALLITO: {e}")
+            raise SystemExit(1)
+    else:
+        print("⚠  bwi_auto_login non disponibile — usa token statici nel file.")
+
+    # ── MODALITÀ: da riga di comando o interattiva ────────────────────
+    # --auto N  salta il menu (N = 1-4, usato dal cron GitHub Actions)
+    auto_mode = None
+    if "--auto" in sys.argv:
+        try:
+            auto_mode = sys.argv[sys.argv.index("--auto") + 1]
+        except IndexError:
+            auto_mode = "2"
 
     print("=" * 60)
     print("  BestWineImporters - Scraper")
     print("=" * 60)
     print()
-    print("  Scegli modalità:")
-    print("  [1] TUTTO              — scarica tutto il database")
-    print("  [2] NUOVE + AGGIORNATE — nuove E modificate (uso settimanale)")
-    print("  [3] Solo NUOVE         — solo /createdcomp")
-    print("  [4] Solo AGGIORNATE    — solo /updatedcomp")
-    print(f"  [5] Default dal file ({MODALITA.upper()})")
-    print()
-    scelta = input("  Scelta [1-5, invio = default]: ").strip()
+
+    if auto_mode:
+        scelta = auto_mode
+        print(f"  Modalità automatica: [{scelta}]")
+    else:
+        print("  Scegli modalità:")
+        print("  [1] TUTTO              — scarica tutto il database")
+        print("  [2] NUOVE + AGGIORNATE — nuove E modificate (uso settimanale)")
+        print("  [3] Solo NUOVE         — solo /createdcomp")
+        print("  [4] Solo AGGIORNATE    — solo /updatedcomp")
+        print(f"  [5] Default dal file ({MODALITA.upper()})")
+        print()
+        scelta = input("  Scelta [1-5, invio = default]: ").strip()
 
     if scelta == "1":
         MODALITA = "tutto"
@@ -542,15 +565,17 @@ def main():
         MODALITA = "nuove+aggiornate"
     elif scelta == "3":
         MODALITA = "nuove"
-        n = input("  Quante? [invio = tutte]: ").strip()
-        if n.isdigit(): ULTIME_N = int(n)
+        if not auto_mode:
+            n = input("  Quante? [invio = tutte]: ").strip()
+            if n.isdigit(): ULTIME_N = int(n)
     elif scelta == "4":
         MODALITA = "aggiornate"
-        n = input("  Quante? [invio = tutte]: ").strip()
-        if n.isdigit(): ULTIME_N = int(n)
+        if not auto_mode:
+            n = input("  Quante? [invio = tutte]: ").strip()
+            if n.isdigit(): ULTIME_N = int(n)
     # else: usa default
 
-    if MODALITA == "tutto":
+    if MODALITA == "tutto" and not auto_mode:
         paese = input("  Filtra per paese? [invio = tutti, es: France]: ").strip()
         SOLO_PAESE = paese
     else:
@@ -640,6 +665,15 @@ def main():
         print(f"\n💾 Salvataggio finale...")
         save_all(workbooks)
         save_last_run()  # aggiorna timestamp solo se tutto ok
+
+        # Scrive manifest con i CompId elaborati in questo run
+        # → usato da bwi_sync_crm.py per un sync incrementale (non tutto l'archivio)
+        manifest_path = os.path.join(OUTPUT_FOLDER, "last_sync_ids.json")
+        with open(manifest_path, "w") as f:
+            import json as _json
+            _json.dump(list(seen_ids), f)
+        print(f"   Manifest: {len(seen_ids)} ID scritti in last_sync_ids.json")
+
         print(f"\n🎉 FATTO! {elaborated} aziende elaborate.")
         print(f"   ⏰ Prossimo run: verranno saltate le aziende precedenti a ora.")
         return
