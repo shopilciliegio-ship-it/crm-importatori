@@ -29,7 +29,7 @@ from openpyxl import load_workbook
 # ── PATH ─────────────────────────────────────────────────────────────
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT  = os.path.dirname(SCRIPT_DIR)
-CRM_FILE   = os.path.join(REPO_ROOT, "data", "crm.json")
+CRM_FILE   = os.path.join(REPO_ROOT, "data", "contatti.json")
 ALL_XLSX   = os.path.join(SCRIPT_DIR, "bestwine_output", "bestwine_ALL.xlsx")
 
 # ── BREVO ─────────────────────────────────────────────────────────────
