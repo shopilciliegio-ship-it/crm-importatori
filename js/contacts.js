@@ -133,6 +133,10 @@ function getFiltered(){
       if(country&&c.country!==country)return false;
       if(regionOrLang&&c.region!==regionOrLang)return false;
       if(product&&!(c.type||'').split(',').map(t=>t.trim()).includes(product))return false;
+      const bwiF=document.getElementById('sbwi')?.value||'';
+      if(bwiF==='new'&&c.bwiStatus!=='new')return false;
+      if(bwiF==='updated'&&c.bwiStatus!=='updated')return false;
+      if(bwiF==='bwi'&&!c.bwiCompId)return false;
     }
     if(window._pendingFilter){if(c.status!=='sent'&&c.status!=='followup')return false;}
     else if(status&&c.status!==status)return false;
@@ -162,13 +166,33 @@ function renderContacts(){
   if(srEl) srEl.textContent=isClienti()?'Tutte le lingue':'Tutte le regioni';
   if(spEl) spEl.style.display=isClienti()?'none':'';
 
+  // Mostra/nascondi filtro BWI
+  const bwiWrap=document.getElementById('sbwi-wrap');
+  if(bwiWrap) bwiWrap.style.display=isClienti()?'none':'';
+
   const list=getFiltered();
   const total=(isClienti()?dbC:db).contacts.length;
   const allSelected=list.length>0&&list.every(c=>sel.has(c.id));
+
+  // Badge BWI notifica (solo importatori)
+  let bwiNotice='';
+  if(!isClienti()){
+    const allContacts=(db||{contacts:[]}).contacts;
+    const nNew=allContacts.filter(c=>c.bwiStatus==='new').length;
+    const nUpd=allContacts.filter(c=>c.bwiStatus==='updated').length;
+    if(nNew||nUpd){
+      const parts=[];
+      if(nNew) parts.push(`<a href="#" onclick="event.preventDefault();document.getElementById('sbwi').value='new';renderContacts()" style="color:#2e7d32;font-weight:700;text-decoration:none">🆕 ${nNew} nuov${nNew===1?'o':'i'} da BWI</a>`);
+      if(nUpd) parts.push(`<a href="#" onclick="event.preventDefault();document.getElementById('sbwi').value='updated';renderContacts()" style="color:#e65100;font-weight:700;text-decoration:none">✏️ ${nUpd} aggiornat${nUpd===1?'o':'i'}</a>`);
+      bwiNotice=`<div style="font-size:12px;background:#f0faf0;border:1px solid #c3e6c3;border-radius:8px;padding:6px 12px;display:flex;gap:12px;align-items:center">${parts.join('<span style="color:#aaa">·</span>')}</div>`;
+    }
+  }
+
   document.getElementById('rcnt-wrap').innerHTML=`
-    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap">
+    ${bwiNotice}
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap;${bwiNotice?'margin-top:8px':''}">
       <label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:13px;color:var(--text2);user-select:none">
-        <input type="checkbox" id="cb-all" ${allSelected&&list.length?'checked':''} 
+        <input type="checkbox" id="cb-all" ${allSelected&&list.length?'checked':''}
           onchange="toggleSelectAll(this.checked)"
           style="width:16px;height:16px;accent-color:var(--blue);cursor:pointer">
         Seleziona tutti
@@ -360,13 +384,18 @@ function crow(c){
   // ── IMPORTATORE ──
   const firstContact = c.contacts?.[0];
   const nContacts = c.contacts?.length||0;
+  const bwiChip = c.bwiStatus==='new'
+    ? `<span style="font-size:10px;background:#e8f5e9;color:#2e7d32;padding:1px 7px;border-radius:10px;font-weight:700;margin-left:4px">🆕 NUOVO</span>`
+    : c.bwiStatus==='updated'
+    ? `<span style="font-size:10px;background:#fff3e0;color:#e65100;padding:1px 7px;border-radius:10px;font-weight:700;margin-left:4px">✏️ AGG.</span>`
+    : '';
   return `<div class="cr${checked?' selected':''}" onclick="openDetail('${c.id}')">
     <input type="checkbox" class="crow-cb" ${checked?'checked':''}
       onclick="toggleSelect('${c.id}',event)"
       onchange="toggleSelect('${c.id}',event)">
     <div class="av ${AV[hsh(c.company)%6]}">${ini(c.company)}</div>
     <div class="ci">
-      <div class="cn">${esc(c.company)}${c.brandName&&c.brandName!==c.company?` <span style="font-weight:400;color:var(--text2)">· ${esc(c.brandName)}</span>`:''}${breveEventsBadge(c)}
+      <div class="cn">${esc(c.company)}${c.brandName&&c.brandName!==c.company?` <span style="font-weight:400;color:var(--text2)">· ${esc(c.brandName)}</span>`:''}${breveEventsBadge(c)}${bwiChip}
         ${nContacts>0?`<span style="font-size:10px;background:var(--blue-bg);color:var(--blue-tx);padding:1px 6px;border-radius:10px;font-weight:700;margin-left:4px">${nContacts} contatt${nContacts===1?'o':'i'}</span>`:''}
       </div>
       <div class="cs">${[c.city||c.country,c.type?.split(',')[0]].filter(Boolean).map(esc).join(' · ')}${c.prodType?' · '+esc(c.prodType.split(',').slice(0,2).join(', ')):''}
