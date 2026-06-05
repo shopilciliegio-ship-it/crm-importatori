@@ -166,7 +166,7 @@ function buildHtmlEmail(body, brand, contactName){
     <p style="margin:0 0 8px;color:#ffffff;font-size:13px;font-weight:bold;letter-spacing:1px;text-transform:uppercase">${b.name}</p>
     <p style="margin:0 0 12px;color:${b.accentColor};font-size:12px;font-style:italic">${b.tagline}</p>
     <p style="margin:0;font-size:12px;color:#999;line-height:1.8">
-      <span style="color:#cccccc">${b.website.replace('https://','')}</span>
+      <a href="${b.website}" style="color:#cccccc;text-decoration:none">${b.website.replace('https://','')}</a>
       &nbsp;|&nbsp;
       <span style="color:#999">${b.phone}</span>
     </p>
