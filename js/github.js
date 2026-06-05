@@ -208,9 +208,7 @@ async function _pollBwiWorkflow(btn, maxAttempts=20){
 
       if(run.status==='completed'){
         if(run.conclusion==='success'){
-          toast('✓ BWI Sync completato — ricarico contatti…');
-          await loadFromGH();
-          toast('✓ Contatti BWI aggiornati nel CRM');
+          toast('✓ BWI Sync completato — premi ↻ per aggiornare i contatti');
         } else {
           toast('⚠ BWI Sync terminato con errore: '+run.conclusion);
         }
