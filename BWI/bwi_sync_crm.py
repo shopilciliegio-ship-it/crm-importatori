@@ -43,6 +43,70 @@ SENDER_NAME     = "Siena Wine CRM"
 COMPARE_FIELDS = ["company", "email", "phone", "website", "country", "city",
                   "employees", "sales", "brandName", "type", "prodType"]
 
+# ── MAPPA PAESE → REGIONE (sincronizzata con js/templates.js) ─────────
+COUNTRY_REGION = {
+    'Argentina':'Sud America','Bolivia':'Sud America','Brazil':'Sud America','Brasil':'Sud America',
+    'Chile':'Sud America','Colombia':'Sud America','Ecuador':'Sud America','El Salvador':'Sud America',
+    'Guatemala':'Sud America','Honduras':'Sud America','Mexico':'Sud America','Messico':'Sud America',
+    'Nicaragua':'Sud America','Panama':'Sud America','Paraguay':'Sud America','Peru':'Sud America',
+    'Suriname':'Sud America','Uruguay':'Sud America','Venezuela':'Sud America','Costa Rica':'Sud America',
+    'Dominican Republic':'Sud America','Cuba':'Sud America','Haiti':'Sud America','Jamaica':'Sud America',
+    'Trinidad and Tobago':'Sud America','Trinidad And Tobago':'Sud America','Belize':'Sud America',
+    'Guyana':'Sud America','French Guiana':'Sud America','Martinique':'Sud America',
+    'Guadeloupe':'Sud America','Distrito Nacional':'Sud America',
+    'United States':'Nord America','USA':'Nord America','Canada':'Nord America',
+    'Cayman Islands':'Caraibi','Barbados':'Caraibi','Bermuda':'Caraibi','Bahamas':'Caraibi',
+    'Puerto Rico':'Caraibi','Aruba':'Caraibi','Curacao':'Caraibi',
+    'Saint Lucia':'Caraibi','Grenada':'Caraibi','Antigua and Barbuda':'Caraibi',
+    'Antigua And Barbuda':'Caraibi','Saint Kitts and Nevis':'Caraibi','Dominica':'Caraibi',
+    'Virgin Islands':'Caraibi','Turks and Caicos Islands':'Caraibi','Sint Maarten':'Caraibi',
+    'Saint Martin':'Caraibi','Santo Domingo':'Caraibi','Tortola':'Caraibi','Gustavia':'Caraibi',
+    'Saint-Paul':'Caraibi','Kingstown':'Caraibi','Saint Thomas':'Caraibi',
+    'Saint Vincent and the Grenadines':'Caraibi','Anguilla':'Caraibi','Montserrat':'Caraibi',
+    'Albania':'Europa','Andorra':'Europa','Austria':'Europa','Belgium':'Europa','Belgio':'Europa',
+    'Bosnia and Herzegovina':'Europa','Bosnia And Herzegovina':'Europa',
+    'Bosnia (Federacija Bosanska)':'Europa','Republika Srpska':'Europa',
+    'Bulgaria':'Europa','Croatia':'Europa','Cyprus':'Europa','Czech Republic':'Europa',
+    'Czechia':'Europa','Denmark':'Europa','Estonia':'Europa','Finland':'Europa',
+    'France':'Europa','Germany':'Europa','Greece':'Europa','Hungary':'Europa',
+    'Iceland':'Europa','Ireland':'Europa','Italy':'Europa','Kosovo':'Europa',
+    'Latvia':'Europa','Lithuania':'Europa','Luxembourg':'Europa','Malta':'Europa',
+    'Moldova':'Europa','Montenegro':'Europa','Netherlands':'Europa','North Macedonia':'Europa',
+    'Norway':'Europa','Poland':'Europa','Portugal':'Europa','Romania':'Europa',
+    'Russia':'Europa','Serbia':'Europa','Slovakia':'Europa','Slovenia':'Europa',
+    'Spain':'Europa','Sweden':'Europa','Switzerland':'Europa','Ukraine':'Europa',
+    'United Kingdom':'Europa','UK':'Europa','GB':'Europa','Belarus':'Europa',
+    'Liechtenstein':'Europa','Monaco':'Europa','San Marino':'Europa','Faroe Islands':'Europa',
+    'Gibraltar':'Europa','Douglas':'Europa','Isle of Man':'Europa',
+    'Australia':'Oceania','New Zealand':'Oceania','Fiji':'Oceania',
+    'Papua New Guinea':'Oceania','French Polynesia':'Oceania','New Caledonia':'Oceania',
+    'China':'Asia','Japan':'Asia','South Korea':'Asia','Korea':'Asia','India':'Asia',
+    'Indonesia':'Asia','Malaysia':'Asia','Philippines':'Asia','Singapore':'Asia',
+    'Thailand':'Asia','Vietnam':'Asia','Taiwan':'Asia','Hong Kong':'Asia',
+    'Bangladesh':'Asia','Sri Lanka':'Asia','Myanmar':'Asia','Cambodia':'Asia',
+    'Nepal':'Asia','Pakistan':'Asia','Kazakhstan':'Asia','Uzbekistan':'Asia',
+    'Mongolia':'Asia','Laos':'Asia','Brunei':'Asia','Macao':'Asia','Macau':'Asia',
+    'Maldives':'Asia','Bhutan':'Asia','Afghanistan':'Asia','Tajikistan':'Asia',
+    'Kyrgyzstan':'Asia','Turkmenistan':'Asia','Azerbaijan':'Asia','Georgia':'Asia','Armenia':'Asia',
+    'United Arab Emirates':'Medio Oriente','UAE':'Medio Oriente','Saudi Arabia':'Medio Oriente',
+    'Israel':'Medio Oriente','Qatar':'Medio Oriente','Kuwait':'Medio Oriente',
+    'Bahrain':'Medio Oriente','Oman':'Medio Oriente','Jordan':'Medio Oriente',
+    'Lebanon':'Medio Oriente','Turkey':'Medio Oriente','Iran':'Medio Oriente',
+    'Iraq':'Medio Oriente','Syria':'Medio Oriente','Yemen':'Medio Oriente',
+    'South Africa':'Africa','Kenya':'Africa','Nigeria':'Africa','Ethiopia':'Africa',
+    'Tanzania':'Africa','Uganda':'Africa','Ghana':'Africa','Senegal':'Africa',
+    'Morocco':'Africa','Tunisia':'Africa','Algeria':'Africa','Egypt':'Africa',
+    'Angola':'Africa','Mozambique':'Africa','Zimbabwe':'Africa','Zambia':'Africa',
+    'Botswana':'Africa','Namibia':'Africa','Cameroon':'Africa','Madagascar':'Africa',
+    'Mauritius':'Africa','Rwanda':'Africa','Malawi':'Africa','Sudan':'Africa',
+}
+
+def region_from_country(country: str) -> str:
+    if not country:
+        return 'Altro'
+    c = country.strip()
+    return COUNTRY_REGION.get(c) or COUNTRY_REGION.get(c.title()) or 'Altro'
+
 # ─────────────────────────────────────────────────────────────────────
 
 def _s(v) -> str:
@@ -95,7 +159,7 @@ def load_xlsx_companies(xlsx_path: str) -> dict:
                     "brandName": r["BrandName"],
                     "country":   r["Country"],
                     "city":      r["City"],
-                    "region":    r["State"],
+                    "region":    region_from_country(r["Country"]),
                     "website":   r["Website"],
                     "email":     r["Company_Email"],
                     "phone":     r["Phone"],
@@ -233,7 +297,7 @@ def sync(crm_data: dict, xlsx_companies: dict, now_ms: int) -> dict:
                 "brandName":     xlsx_c.get("brandName",""),
                 "country":       xlsx_c.get("country",""),
                 "city":          xlsx_c.get("city",""),
-                "region":        xlsx_c.get("region",""),
+                "region":        region_from_country(xlsx_c.get("country","")),
                 "website":       xlsx_c.get("website",""),
                 "email":         xlsx_c.get("email",""),
                 "phone":         xlsx_c.get("phone",""),
