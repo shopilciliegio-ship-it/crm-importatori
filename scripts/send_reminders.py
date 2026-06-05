@@ -45,6 +45,15 @@ TAGLINE      = 'Vini artigianali toscani di eccellenza'
 DAY_MS          = 24 * 3600 * 1000
 STATI_TERMINALI = {'consegnato', 'annullato'}
 
+DIGEST_RECIPIENT = 'luca@ilciliegio.com'
+
+_STATUS_ORDER = ['ricevuto','preparazione','spedito','in_transito','dogana','in_consegna','consegnato','problema','annullato']
+_STATUS_EMOJI = {
+    'ricevuto':    '📥', 'preparazione': '📦', 'spedito':     '🚀',
+    'in_transito': '✈️',  'dogana':       '🛃', 'in_consegna': '🏠',
+    'consegnato':  '✅',  'problema':     '⚠️', 'annullato':   '❌',
+}
+
 _GH_HEADERS = {
     'Authorization': f'token {GH_TOKEN}',
     'Accept':        'application/vnd.github.v3+json',
@@ -222,9 +231,8 @@ def should_send(order: dict, reminder_type: str, now_ms: int) -> tuple[bool, str
         return False, 'già inviata'
 
     if reminder_type == 'order_received':
-        if status in STATI_TERMINALI or status == 'annullato':
-            return False, f'ordine terminato ({status})'
-        # Usa orderDate (data reale ordine), non createdAt (data import nel CRM)
+        if status not in ('ricevuto', 'preparazione'):
+            return False, f'ordine già spedito ({status}) — skip welcome'
         order_date = int(order.get('orderDate') or order.get('createdAt') or 0)
         days_old = (now_ms - order_date) / DAY_MS
         if days_old > 7:
@@ -277,6 +285,100 @@ def should_send(order: dict, reminder_type: str, now_ms: int) -> tuple[bool, str
         return True, ''
 
     return False, 'tipo sconosciuto'
+
+
+# ── Daily digest ─────────────────────────────────────────────────────────────
+
+def send_daily_digest(orders: list, log_new: list, now_ms: int, test_mode: bool) -> None:
+    from collections import Counter
+
+    now_str = datetime.now().strftime('%d/%m/%Y %H:%M')
+    day_ago = now_ms - DAY_MS
+
+    # Cambi stato nelle ultime 24h (da statusHistory)
+    changes = []
+    for o in orders:
+        for h in (o.get('statusHistory') or []):
+            if int(h.get('date', 0)) >= day_ago and h.get('status', '') != 'ricevuto':
+                changes.append({'name': o.get('customerName','?'), 'status': h.get('status','?'), 'note': h.get('note','')})
+    changes.sort(key=lambda x: x['status'])
+
+    # Distribuzione status (esclusi annullati)
+    active_orders = [o for o in orders if o.get('status') != 'annullato']
+    counts = Counter(o.get('status','?') for o in active_orders)
+    status_rows = sorted(counts.items(), key=lambda x: _STATUS_ORDER.index(x[0]) if x[0] in _STATUS_ORDER else 99)
+
+    # ── HTML ─────────────────────────────────────────────────────────────────
+    def _section(title: str, rows: list[str]) -> str:
+        if not rows:
+            return f'<h3 style="margin:24px 0 8px;color:#555;font-size:13px;text-transform:uppercase;letter-spacing:1px">{title}</h3><p style="color:#999;font-size:13px;margin:0">Nessuno</p>'
+        items = ''.join(f'<li style="padding:3px 0;color:#333;font-size:14px">{r}</li>' for r in rows)
+        return (f'<h3 style="margin:24px 0 8px;color:#555;font-size:13px;text-transform:uppercase;letter-spacing:1px">{title}</h3>'
+                f'<ul style="margin:0;padding-left:20px">{items}</ul>')
+
+    email_rows = [
+        f'<b>{e["customerName"]}</b> → <code style="background:#f0f0f0;padding:1px 5px;border-radius:3px">{e["type"]}</code>'
+        for e in log_new
+    ] if log_new else []
+
+    change_rows = [
+        f'<b>{c["name"]}</b>: {_STATUS_EMOJI.get(c["status"],"•")} {c["status"]}'
+        + (f' <span style="color:#999;font-size:12px">({c["note"]})</span>' if c["note"] else '')
+        for c in changes
+    ]
+
+    status_table = ''.join(
+        f'<tr><td style="padding:4px 12px 4px 0;color:#555;font-size:14px">{_STATUS_EMOJI.get(s,"•")} {s}</td>'
+        f'<td style="padding:4px 0;font-weight:bold;font-size:14px;color:#333">{n}</td></tr>'
+        for s, n in status_rows
+    )
+
+    mode_badge = (
+        '<span style="background:#e67e00;color:#fff;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:bold">TEST MODE</span>'
+        if test_mode else
+        '<span style="background:#27ae60;color:#fff;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:bold">PRODUZIONE</span>'
+    )
+
+    body_html = f"""
+    <p style="margin:0 0 4px;color:#999;font-size:12px">{now_str} &nbsp;{mode_badge}</p>
+    <h2 style="margin:0 0 20px;color:#222;font-size:20px;font-weight:bold">Resoconto giornaliero</h2>
+    {_section(f'📧 Email inviate ({len(log_new)})', email_rows)}
+    {_section(f'🔄 Cambi stato ultime 24h ({len(changes)})', change_rows)}
+    <h3 style="margin:24px 0 8px;color:#555;font-size:13px;text-transform:uppercase;letter-spacing:1px">📦 Ordini attivi ({len(active_orders)})</h3>
+    <table style="border-collapse:collapse"><tbody>{status_table}</tbody></table>
+    """
+
+    html_content = f"""<!DOCTYPE html><html lang="it">
+<head><meta charset="UTF-8"></head>
+<body style="margin:0;padding:0;background:#f4f4f0;font-family:Georgia,'Times New Roman',serif">
+<table width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f0;padding:32px 16px">
+<tr><td align="center">
+<table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%">
+  <tr><td style="background:{BG};border-radius:12px 12px 0 0;padding:20px 32px;text-align:center">
+    <img src="{LOGO_URL}" width="140" alt="Il Ciliegio" style="display:block;margin:0 auto">
+  </td></tr>
+  <tr><td style="background:{ACCENT};height:4px;font-size:0">&nbsp;</td></tr>
+  <tr><td style="background:#ffffff;padding:32px 40px">{body_html}</td></tr>
+  <tr><td style="background:{ACCENT};height:3px;font-size:0">&nbsp;</td></tr>
+  <tr><td style="background:{BG};border-radius:0 0 12px 12px;padding:16px 32px;text-align:center">
+    <p style="margin:0;color:#999;font-size:11px">Il Ciliegio CRM — report automatico</p>
+  </td></tr>
+</table></td></tr></table>
+</body></html>"""
+
+    payload = {
+        'sender':      {'name': SENDER_NAME, 'email': SENDER_EMAIL},
+        'to':          [{'email': DIGEST_RECIPIENT, 'name': 'Luca'}],
+        'subject':     f'📋 CRM Il Ciliegio — {now_str}',
+        'htmlContent': html_content,
+        'textContent': f'CRM Report {now_str}\nEmail inviate: {len(log_new)}\nCambi stato: {len(changes)}\nOrdini attivi: {len(active_orders)}',
+        'tags':        ['wine-crm', 'digest'],
+    }
+    r = requests.post('https://api.brevo.com/v3/smtp/email', headers=_BREVO_HEADERS, json=payload)
+    if r.ok:
+        print(f'✓ Digest inviato a {DIGEST_RECIPIENT}')
+    else:
+        print(f'⚠ Digest fallito: {r.status_code} {r.text[:100]}')
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────
@@ -401,6 +503,8 @@ def main():
             print(f'✓ email-log.json aggiornato ({len(log_new)} nuove righe).')
         else:
             print('\nNessuna email da inviare.')
+
+    send_daily_digest(orders, log_new, now_ms, test_mode)
 
 
 if __name__ == '__main__':
