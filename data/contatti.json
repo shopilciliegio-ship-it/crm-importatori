@@ -367,6 +367,10 @@
         {
           "ts": 1780652004252,
           "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202606050933.36114510437@smtp-relay.mailin.fr>)"
+        },
+        {
+          "ts": 1780652458977,
+          "msg": "👁 Aperta: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
         }
       ],
       "lastEmailSent": 1780652004252,
@@ -382,13 +386,14 @@
           "brand": "sienawine",
           "sequenceStep": 1,
           "delivered": true,
-          "opened": false,
+          "opened": true,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
           "blocked": false,
-          "deliveredAt": "2026-06-05T11:33:23.000+02:00"
+          "deliveredAt": "2026-06-05T11:33:23.000+02:00",
+          "openedAt": "2026-06-05T11:40:58.977+02:00"
         }
       ]
     },
