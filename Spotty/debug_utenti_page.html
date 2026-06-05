@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> WiFi Backend | Dashboard</title>
+        <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport' />
+        <meta name="apple-itunes-app" content="app-id=1550746252">
+        <!-- bootstrap 3.0.2 -->
+        <link href="http://admin.spottywifi.it/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!-- font Awesome -->
+        <link href="http://admin.spottywifi.it/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <!-- Ionicons -->
+        <link href="http://admin.spottywifi.it/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+        <!-- Theme style -->
+        <link href="http://admin.spottywifi.it/css/AdminLTE.css" rel="stylesheet" type="text/css" />
+
+		
+        <!-- daterange picker -->
+        <link href="http://admin.spottywifi.it/css/daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />
+		<link href="http://admin.spottywifi.it/css/jquery.tagit.css" rel="stylesheet" type="text/css" />
+        
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/spectrum-colorpicker2@2.0.0/dist/spectrum.min.css">
+		        
+        <link rel="icon" href="http://admin.spottywifi.it/favicon.ico" type="image/x-icon">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+	<!-- jQuery 2.0.2 -->
+	        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+
+
+        
+        <!-- jQuery UI 1.10.3 -->
+        <!-- /* DISABILITATO, viene richiamato da xcrud */
+		<script src="http://admin.spottywifi.it/js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
+         -->
+        <!-- Bootstrap -->
+        <script src="http://admin.spottywifi.it/js/bootstrap.min.js" type="text/javascript"></script>
+
+		<!-- initials.js -->
+		<script src="http://admin.spottywifi.it/js/initial.min.js" type="text/javascript"></script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/spectrum-colorpicker2@2.0.0/dist/spectrum.min.js"></script>
+
+
+
+		
+
+        <style>
+		/* iniziali */
+		img.profile {
+			border-radius: 14px !important;
+		}
+
+		</style>
+
+		<link href="http://admin.spottywifi.it/css/templates/chartist.css" rel="stylesheet" type="text/css" />
+		<link href="http://admin.spottywifi.it/css/templates/booking.css" rel="stylesheet" type="text/css" />
+		<link href="http://admin.spottywifi.it/css/templates/maps.css" rel="stylesheet" type="text/css" />
+    
+        
+    <script>
+      window.name = "spotty";
+    </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+        
+        <script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init ss us bi os hs es ns capture Bi calculateEventProperties cs register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty ps vs createPersonProfile gs Zr ys opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing ds debug O fs getPageViewId captureTraceFeedback captureTraceMetric Yr".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_5qNzfZ2aKDYBPJNH4KwLOoncjd7YKkfDEM4SjGfKj4J', {
+        api_host: 'https://eu.i.posthog.com',
+        defaults: '2025-11-30',
+        person_profiles: 'identified_only', // or 'always' to create profiles for anonymous users as well
+    })
+</script>
+
+    </head>
+    <body class="skin-blue">
+        <!-- header logo: style can be found in header.less -->
+        <header class="header">
+    <a href="index.html" class="logo" style="padding:0">
+    	       		<img src="http://admin.spottywifi.it/img/logo_backoffice.png" />
+       	    </a>
+
+
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top" role="navigation">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
+            <!-- <span class="sr-only">Toggle navigationx</span> -->
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+
+        <div class="navbar-right" style="float: right !important;">
+
+
+            <ul class="nav navbar-nav">
+                <!-- Messages: style can be found in dropdown.less-->
+                <!-- Notifications: style can be found in dropdown.less -->
+                                
+                        <li class="dropdown notifications-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-envelope"></i>
+                                <span class="label label-warning">2</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">Sono presenti <b>2</b> comunicazioni</li>
+                                <li>
+                                    <!-- inner menu: contains the actual data -->
+                                    <div style="position: relative; overflow: hidden; width: auto; height: 200px;" class="slimScrollDiv"><ul style="overflow: hidden; width: 100%; height: 200px;" class="menu"><li>
+                            <a href="http://admin.spottywifi.it/comunicazioni_cliente/">
+                                <i class="ion ion-ios7-person danger"></i> Info posizione e statistiche relative a Tripadvisor
+                            </a>
+                        </li><li>
+                            <a href="http://admin.spottywifi.it/comunicazioni_cliente/">
+                                <i class="ion ion-ios7-people info"></i> Adeguamento GDPR
+                            </a>
+                        </li></ul><div style="background: none repeat scroll 0% 0% rgb(0, 0, 0); width: 3px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 0px; z-index: 99; right: 1px; height: 156.863px;" class="slimScrollBar"></div><div style="width: 3px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 0px; background: none repeat scroll 0% 0% rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;" class="slimScrollRail"></div></div>
+                                </li>
+                                <li class="footer"><a href="http://admin.spottywifi.it/comunicazioni_cliente/">Visualizza tutte</a></li>
+                            </ul>
+                        </li>
+                <!-- User Account: style can be found in dropdown.less -->
+                <li class="dropdown user user-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="glyphicon glyphicon-user"></i>
+                        <span>Account <i class="caret"></i></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <!-- User image -->
+                        <li class="user-header">
+                            <!--<img src="http://cloud.spottywifi.it/users/2019/images/logo.png"  alt="User Image" />-->
+                            <p>
+                                Ristorante il Ciliegio                                <small>Codice HotSpot: SPOTTY2019</small>
+                                <small>Sei loggato come:</small>ilciliegio.com                            </p>
+                        </li>
+                        <!-- Menu Footer-->
+                        <li class="user-footer">
+                            
+                                                        
+                                                    
+                                                    <div class="pull-left">
+                                <a href="http://admin.spottywifi.it/profilo/" class="btn btn-default btn-flat">Profilo</a>
+                            </div>
+                        
+                        <div class="pull-left" style="margin-left: 10px;">
+                          <a href="http://admin.spottywifi.it/informazioni/" class="btn btn-default btn-flat">Informazioni</a>
+                        </div>
+
+                            <div class="pull-right">
+								<a href="http://admin.spottywifi.it/logout.php" class="btn btn-default btn-flat">Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+        <div class="wrapper row-offcanvas row-offcanvas-left">
+            <!-- Left side column. contains the logo and sidebar -->
+             
+<aside class="left-side sidebar-offcanvas">
+	<!-- sidebar: style can be found in sidebar.less -->
+	<section class="sidebar">
+		<!-- Sidebar user panel -->
+		<div class="user-panel">
+			<div class="pull-left info">
+				<p>Ristorante il Ciliegio</p>
+
+				<a href="#" id="codice_cliente">Codice Cliente: <strong>SPOTTY2019</strong></a><br />
+								<a href="#" id="codice_cliente">Codice MySpottyApp: <strong>W2V3H</strong></a>
+								
+				<div style="margin: 15px 0 5px;">
+									</div>
+				
+												<a href="https://spottywifi.freshdesk.com/support/home" target="_blank" style="font-size: 13px;"><i class="fa fa-info"></i>Supporto</a>
+							</div>
+		</div>
+
+		<!-- sidebar menu: : style can be found in sidebar.less -->
+		<ul class="sidebar-menu">
+			<li class="">
+				<a href="http://admin.spottywifi.it/dashboard/">
+					<i class="fa fa-dashboard"></i> <span>Dashboard</span>
+				</a>
+			</li>
+
+			<li class="">
+			   <a href="http://admin.spottywifi.it/superuser-clienti_opzioni/"><i class="fa fa-cog"></i> Configurazioni</a>
+			</li>
+
+						 <li class="treeview ">
+				<a href="#">
+					<i class="fa fa-wifi"></i>
+					<span>Utenti WiFi</span>
+					<i class="fa fa-angle-left pull-right"></i>
+				</a>
+				<ul class="treeview-menu">
+					
+<li class="active">
+    <a href="http://admin.spottywifi.it/wifi-utenti_registrati/" title="Utenti Registrati">
+        <i class="fa fa-caret-right"></i> <span>Utenti Registrati</span> 
+    </a>
+</li>
+<li class="">
+    <a href="http://admin.spottywifi.it/wifi-clienti_gruppi/" title="Gruppi Speciali">
+        <i class="fa fa-caret-right"></i> <span>Gruppi Speciali</span> 
+    </a>
+</li>
+<li class="">
+    <a href="http://admin.spottywifi.it/wifi-clienti_testi/" title="Gestione testo">
+        <i class="fa fa-caret-right"></i> <span>Gestione testo</span> 
+    </a>
+</li>
+<li class="">
+    <a href="http://admin.spottywifi.it/wifi-clienti_segmenti/" title="Gestione Segmenti">
+        <i class="fa fa-caret-right"></i> <span>Gestione Segmenti</span> 
+    </a>
+</li>
+<li class="">
+    <a href="http://admin.spottywifi.it/wifi-importa_utenti/" title="Importa utenti">
+        <i class="fa fa-caret-right"></i> <span>Importa utenti</span> 
+    </a>
+</li>
+<li class="">
+    <a href="http://admin.spottywifi.it/wifi-clienti_periodi/" title="Segmentazione per periodi">
+        <i class="fa fa-caret-right"></i> <span>Segmentazione per periodi</span> 
+    </a>
+</li>
+<li class="">
+    <a href="http://admin.spottywifi.it/wifi-clienti_blacklist/" title="Blacklist">
+        <i class="fa fa-caret-right"></i> <span>Blacklist</span> 
+    </a>
+</li>
+      <li>
+        <a href="https://www.spottywifi.net/Login?token=1a514cf9adb41cf82d455e38be160387&redirect=anteprima" target="new_spotty" title="Nuova amministrazione">
+          <i class="fa fa-caret-right"></i> <span>Gestione login</span>
+        </a>
+      </li>				</ul>
+
+							</li>
+			
+			
+						
+			<li class="treeview ">
+				<a href="#">
+					<img src="http://admin.spottywifi.it/img/wa.png" style="width: 20px; float:left; margin-right:8px;margin-top:-1px;">
+					<span>WhatsApp<small class="badge pull-right bg-green">new</small></span>
+					<!-- <i class="fa fa-mobile"></i>
+					<span>Whatsapp Marketing</span> -->
+					<i class="fa fa-angle-left pull-right"></i>
+				</a>
+				<ul class="treeview-menu">
+					<li class="">
+						  <a href="http://admin.spottywifi.it/whatsapp-wa_dashboard/" title="Dashboard" style="margin-left: 10px;">
+							<i class="fa fa-caret-right"></i> <span>Dashboard</span>
+						</a>
+					  </li>
+					<li class="">
+						  <a href="http://admin.spottywifi.it/whatsapp-wa_rinnovo_crediti/" title="Acquisto crediti" style="margin-left: 10px;">
+							<i class="fa fa-caret-right"></i> <span>Acquisto crediti</span>
+						</a>
+					  </li>
+					 					 <li>
+					   <a style="margin-left: 0 !important;"><i class="fa fa-paper-plane-o"></i><strong>Gestione Mess. Automatici</strong></a>
+					   </li> 
+					<li class="">
+						<a href="http://admin.spottywifi.it/whatsapp-wa_comunicazioni/" title="Messaggi automatici" style="margin-left: 10px;">
+						  <i class="fa fa-caret-right"></i> <span>Messaggi automatici</span>
+						</a>
+					  </li>
+					  
+						  <li>
+						  <a style="margin-left: 0 !important;"><i class="fa fa-paper-plane-o"></i><strong>Gestione Template</strong></a>
+						  </li>
+						<li class="">
+						  <a href="http://admin.spottywifi.it/whatsapp-wa_campagne_testo_kal/" title="" style="margin-left: 10px;">
+							  <i class="fa fa-caret-right"></i> <span>Template con testo</span>
+						  </a>
+						</li>
+						<li class="">
+							<a href="http://admin.spottywifi.it/whatsapp-wa_campagne_kal/" title="" style="margin-left: 10px;">
+								<i class="fa fa-caret-right"></i> <span>Template con immagine</span>
+							</a>
+						</li>
+						<li class="">
+							<a href="http://admin.spottywifi.it/whatsapp-wa_campagne_documento_kal/" title="" style="margin-left: 10px;">
+								<i class="fa fa-caret-right"></i> <span>Template con PDF</span>
+							</a>
+						</li>
+						<li class="">
+							<a href="http://admin.spottywifi.it/whatsapp-wa_campagne_video_kal/" title="" style="margin-left: 10px;">
+								<i class="fa fa-caret-right"></i> <span>Template con video</span>
+							</a>
+						</li>
+
+												</li>
+					
+						<li>
+							<a style="margin-left: 0 !important;"><i class="fa fa-paper-plane-o"></i><strong>Log Invii</strong></a>
+						</li>
+						<li class="">
+							<a href="http://admin.spottywifi.it/whatsapp-wa_log_automatici_kal/" title="Log" style="margin-left: 10px;">
+								<i class="fa fa-caret-right"></i> <span>Messaggi automatici</span>
+							</a>
+						</li>
+						<li class="">
+							<a href="http://admin.spottywifi.it/whatsapp-wa_log_campagne_kal/" title="Log" style="margin-left: 10px;">
+								<i class="fa fa-caret-right"></i> <span>Campagne</span>
+							</a>
+						</li>
+												<li>
+							<a style="margin-left: 0 !important;"><i class="fa fa-clock-o"></i><strong>Calendario invii</strong></a>
+						</li>
+						<li class="">
+							<a href="http://admin.spottywifi.it/whatsapp-wa_cron_planner/" title="" style="margin-left: 10px;">
+								<i class="fa fa-caret-right"></i> <span>Pianificazione invii</span>
+							</a>
+						</li>
+				</ul>
+			</li>
+						
+						
+			
+			
+			<li class="treeview ">
+				<a href="#">
+					<i class="fa fa-laptop"></i>
+					<span>Integrazione PMS</span>
+					<i class="fa fa-angle-left pull-right"></i>
+				</a>
+				<ul class="treeview-menu">
+					
+			<li>
+			     <a href="http://admin.spottywifi.it/pms-utenti_pms/dati_gestionale"><i class="fa fa-caret-right"></i> Check-in Clienti</a>
+			</li>				</ul>
+			</li>
+
+						<li>
+				<a href="http://admin.spottywifi.it/jpasta_landing" target="_blank">
+					<img src="http://admin.spottywifi.it/img/jpasta/ico-logo.png" style="width: 16px; float:left; margin-right:8px">
+					<span>Jpasta</span>
+				</a>
+				</li>
+
+
+										<li>
+			<a href="https://my.easytable.it/easytable/bf25940b-09c6-11ee-86b2-ba620d344fd2" target="_blank">
+				<img src="http://admin.spottywifi.it/img/easytable/logo-easy.png" style="width: 16px; float:left; margin-right:8px">
+				<span>Easytable</span>
+			</a>
+			</li>
+			
+			
+						
+												
+								
+					<!-- menu per popolare l'applcazione cliente -->
+							<li class="treeview ">
+								<a href="#">
+										<i class="fa fa-mobile"></i>
+										<span>MySpottyApp</span>&nbsp;
+										<i class="fa fa-angle-left pull-right"></i>
+								</a>
+								<ul class="treeview-menu">
+							
+<li class="">
+    <a href="http://admin.spottywifi.it/spottyapp-app_info/" title="Home: Info generali">
+        <i class="fa fa-caret-right"></i> <span>Home: Info generali</span> 
+    </a>
+</li>
+<li class="">
+    <a href="http://admin.spottywifi.it/spottyapp-app_hotel/" title="Home: La struttura">
+        <i class="fa fa-caret-right"></i> <span>Home: La struttura</span> 
+    </a>
+</li>
+<li class="">
+    <a href="http://admin.spottywifi.it/spottyapp-app_escursioni/" title="Escursioni">
+        <i class="fa fa-caret-right"></i> <span>Escursioni</span> 
+    </a>
+</li>
+<li class="">
+    <a href="http://admin.spottywifi.it/spottyapp-app_cosafare/" title="Cosa fare">
+        <i class="fa fa-caret-right"></i> <span>Cosa fare</span> 
+    </a>
+</li>
+<li class="">
+    <a href="http://admin.spottywifi.it/spottyapp-app_offerte/" title="Offerte">
+        <i class="fa fa-caret-right"></i> <span>Offerte</span> 
+    </a>
+</li>
+<li class="">
+    <a href="http://admin.spottywifi.it/spottyapp-app_servizi/" title="Servizi">
+        <i class="fa fa-caret-right"></i> <span>Servizi</span> 
+    </a>
+</li>
+<li class="">
+    <a href="http://admin.spottywifi.it/spottyapp-app_attivita/" title="Attività">
+        <i class="fa fa-caret-right"></i> <span>Attività</span> 
+    </a>
+</li>
+<li class="">
+    <a href="http://admin.spottywifi.it/spottyapp-app_infoutili/" title="Info utili">
+        <i class="fa fa-caret-right"></i> <span>Info utili</span> 
+    </a>
+</li>
+<li class="">
+    <a href="http://admin.spottywifi.it/spottyapp-wp_file/" title="File">
+        <i class="fa fa-caret-right"></i> <span>File</span> 
+    </a>
+</li>
+<li class="">
+    <a href="http://admin.spottywifi.it/spottyapp-wp_notifiche/step1/" title="Notifiche Push">
+        <i class="fa fa-caret-right"></i> <span>Notifiche Push</span> 
+    </a>
+</li>				
+														<li class="">
+								<a href="http://admin.spottywifi.it/appchat" title="App Chat">
+									<i class="fa fa-caret-right"></i> <span>App Chat<small class="badge pull-right bg-orange">Beta</small></span>
+								</a>
+							</li>
+							<li class="">
+								<a href="http://admin.spottywifi.it/spottyapp-app_qrcode" title="App Chat">
+									<i class="fa fa-caret-right"></i> <span>Genera QR Code</span> <small class="badge pull-right bg-red">new</small>
+								</a>
+							</li>
+																		</ul>
+									</li>
+											
+										<li class="">
+							<a href="https://api.spottywifi.app/privacy_manager/login.php?username=ilciliegio.com&password=" target="_blank">
+									<i class="fa fa-user-secret" aria-hidden="true"></i><span>Privacy</span>
+							</a>
+						</li>
+						
+
+
+						<!-- menu per popolare la welcome page cliente -->
+				  <li class="treeview ">
+					<a href="#">
+						<i class="fa fa-list-alt"></i>
+						<span>Welcome Page</span>&nbsp;
+						<i class="fa fa-angle-left pull-right"></i>
+					</a>
+					<ul class="treeview-menu">
+						
+<li class="">
+    <a href="http://admin.spottywifi.it/welcomepage2020-wp_home/" title="Immagine Top">
+        <i class="fa fa-caret-right"></i> <span>Immagine Top</span> 
+    </a>
+</li>
+<li class="">
+    <a href="http://admin.spottywifi.it/welcomepage2020-wp_moduli/" title="Gestione Moduli">
+        <i class="fa fa-caret-right"></i> <span>Gestione Moduli</span> 
+    </a>
+</li>
+<li class="">
+    <a href="http://admin.spottywifi.it/welcomepage2020-app_eventi/" title="Eventi">
+        <i class="fa fa-caret-right"></i> <span>Eventi</span> 
+    </a>
+</li>
+<li class="">
+    <a href="http://admin.spottywifi.it/welcomepage2020-app_servizi/" title="Servizi">
+        <i class="fa fa-caret-right"></i> <span>Servizi</span> 
+    </a>
+</li>
+<li class="">
+    <a href="http://admin.spottywifi.it/welcomepage2020-app_pdi/" title="Punti Di Interesse">
+        <i class="fa fa-caret-right"></i> <span>Punti Di Interesse</span> 
+    </a>
+</li>
+<li class="">
+    <a href="http://admin.spottywifi.it/welcomepage2020-app_territorio/" title="Territorio">
+        <i class="fa fa-caret-right"></i> <span>Territorio</span> 
+    </a>
+</li>
+<li class="">
+    <a href="http://admin.spottywifi.it/welcomepage2020-wp_qrcode/" title="Codice QR">
+        <i class="fa fa-caret-right"></i> <span>Codice QR</span> <small class="badge pull-right bg-red">new</small>
+    </a>
+</li>
+		<li>
+		 	<a href="http://cloud.spottywifi.it/welcomepage/index.php?encsrv=c3BvdHR5MjAxOQ=="
+		 	target="_blank"><i class="fa fa-caret-right"></i>Vedi Anteprima</a>
+		</li>					</ul>
+				</li>
+		
+			 			
+						
+					<li>
+				<a href="http://admin.spottywifi.it/concierge-brochure_concierge/"">
+					<i class="fa fa-newspaper-o"></i><span>CLARA Concierge</span>
+				</a>
+			</li>
+			
+
+
+
+			 				<li class="">
+					<!--<a href="http://admin.spottywifi.it/repmoodlogin.php" target="_blank" title="Reputation Mood">
+						<i class="fa fa-sun-o"></i>&nbsp;&nbsp;Reputation Mood<small class="badge pull-right bg-green">new</small>
+					</a>-->
+					<a href="https://app.reputationmood.com/react/login" target="_blank" title="Reputation Mood">
+						<i class="fa fa-sun-o"></i>&nbsp;&nbsp;Reputation Mood<small class="badge pull-right bg-green">new</small>
+					</a>
+				</li>
+						
+			
+
+
+			<li class="treeview ">
+				<a href="#">
+					<i class="fa fa-check-square-o"></i>
+					<span>Customer Satisfaction</span>
+					<i class="fa fa-angle-left pull-right"></i>
+				</a>
+				<ul class="treeview-menu">
+									
+<li class="">
+    <a href="http://admin.spottywifi.it/questionari-questionario/" title="Gestione Questionari">
+        <i class="fa fa-caret-right"></i> <span>Gestione Questionari</span> 
+    </a>
+</li>
+<li class="">
+    <a href="http://admin.spottywifi.it/questionari-domande/" title="Gestione Domande">
+        <i class="fa fa-caret-right"></i> <span>Gestione Domande</span> 
+    </a>
+</li>
+<li class="">
+    <a href="http://admin.spottywifi.it/questionari-richieste_giudizio_finale/" title="Questionari inviati">
+        <i class="fa fa-caret-right"></i> <span>Questionari inviati</span> 
+    </a>
+</li>
+<li class="">
+    <a href="http://admin.spottywifi.it/questionari-compilazioni_giudizio_finale/" title="Questionari compilati">
+        <i class="fa fa-caret-right"></i> <span>Questionari compilati</span> 
+    </a>
+</li><li>
+					<a style="margin-left: 0 !important;"><i class="fa fa-repeat"></i><strong>Recall manuali</strong></a>
+				</li>
+<li class="">
+    <a href="http://admin.spottywifi.it/questionari-invio_giudizio_finale/" title="Giudizio Finale">
+        <i class="fa fa-caret-right"></i> <span>Giudizio Finale</span> 
+    </a>
+</li>
+<li class="">
+    <a href="http://admin.spottywifi.it/questionari-invio_richiesta_recensioni/" title="Richiesta Recensioni">
+        <i class="fa fa-caret-right"></i> <span>Richiesta Recensioni</span> 
+    </a>
+</li>				</ul>
+			</li>
+
+						<!--
+<li class="">
+				<a href="http://admin.spottywifi.it/report/numeri_spotty/clid_R0FSaDczL2gxblMwOEVtdXdKbHdpQT09.htm" target="_blank"><i class="fa fa-lightbulb-o"></i> Business Intelligence</a>
+			   </li>
+-->
+			
+
+			<li class="treeview ">
+				<a href="#">
+					<i class="fa fa-line-chart"></i>
+					<span>Statistiche</span>
+					<i class="fa fa-angle-left pull-right"></i>
+				</a>
+			<ul class="treeview-menu">
+			  <li class="">
+								<a href="http://admin.spottywifi.it/graph-statistiche_connessioni/"><i class="fa fa-caret-right"></i> Traffico dati</a>
+			  </li>
+				  							<li>
+					   <a style="margin-left: 0 !important;"><i class="fa fa-check-square-o"></i><strong>Customer Satisfaction</strong></a>
+				</li>
+				<li class="">
+							<a href="http://admin.spottywifi.it/graph-statistiche_compilazioni/"><i class="fa fa-caret-right"></i> Compilazioni</a>
+						</li>
+						<li class="">
+							<a href="http://admin.spottywifi.it/graph-statistiche_gradimento/"><i class="fa fa-caret-right"></i> Andamento Soddisfazione</a>
+						</li>
+						<li class="">
+							<a href="http://admin.spottywifi.it/graph-statistiche_gradimento_soglie/"><i class="fa fa-caret-right"></i> Distribuzione Soglie</a>
+						</li>
+						<li class="">
+							<a href="http://admin.spottywifi.it/graph-statistiche_area/"><i class="fa fa-caret-right"></i> Gradimento per Aree</a>
+						</li>
+						<li class="">
+							<a href="http://admin.spottywifi.it/graph-statistiche_area_dettaglio/"><i class="fa fa-caret-right"></i> Dettaglio domande</a>
+						</li>
+																</ul>
+			</li>
+
+
+
+		   				<li class="treeview ">
+					<a href="#">
+						<i class="fa fa-comments"></i>
+						<span>Brand Reputation</span>
+						<i class="fa fa-angle-left pull-right"></i>
+					</a>
+					<ul class="treeview-menu">
+						<li class="">
+							<a href="http://admin.spottywifi.it/review-recensioni_url/"><i class="fa fa-caret-right"></i> Link Portali</a>
+						</li>
+						<!--
+<li class="">
+							<a href="http://admin.spottywifi.it/review-recensioni_statistiche/"><i class="fa fa-caret-right"></i> Statistiche TripAdvisor</a>
+						</li>
+-->
+
+						<!--
+<li class="">
+							<a href="http://admin.spottywifi.it/review-recensioni_panoramica/"><i class="fa fa-caret-right"></i> Web Reputation</a>
+						</li>
+-->
+
+					</ul>
+				</li>
+					    
+			<!-- Spotty Widget -->
+						
+								<li class="treeview ">
+					<a href="#">
+						<i class="fa fa-commenting"></i>
+						<span> Widget</span>
+						<i class="fa fa-angle-left pull-right"></i>
+					</a>
+					<ul class="treeview-menu">
+						<li class="">
+							<a href="http://admin.spottywifi.it/widget-widget_impostazioni/"><i class="fa fa-caret-right"></i> Impostazioni</a>
+						</li>
+						<li class="">
+							<a href="http://admin.spottywifi.it/widget-demo/demo.php?idc=R0FSaDczL2gxblMwOEVtdXdKbHdpQT09" target="_blank" onclick="javascript:alert('Per visualizzare il tuo Widget devi inserire\nUSER: test\nPASSWORD: test');"><i class="fa fa-caret-right"></i> Anteprima</a>
+						</li>
+					</ul>
+				</li>
+							
+						
+
+
+							<li class="">
+					<form action="https://spottywifi.email/customer/index.php/guest/index" method="post" target="_blank">
+						<input class="form-control" placeholder="Email" name="CustomerLogin[email]" id="CustomerLogin_email" value="info@ilciliegio.com" type="hidden" />
+						<input class="form-control" placeholder="Password" name="CustomerLogin[password]" id="CustomerLogin_password" value="6fc4ccef63e3a994a57c52d9933cd782" type="hidden" />
+						<input id="ytCustomerLogin_remember_me" type="hidden" value="1" name="CustomerLogin[remember_me]" />
+						<button type="submit" class="btn btn-flat btn-sidebar" style="width: 100%; text-align: left; background-color: #F4F4F4 !important; color: #555 !important; "><i class="glyphicon glyphicon-envelope"></i>&nbsp;&nbsp;eMail Marketing</button>
+					</form>
+				</li>
+
+
+
+		   
+			
+			<li class="">
+				<a href="javascript:alert('Disponibile con l'attivazione del modulo Spotty SMS Marketing');" title="Spotty SMS Marketing">
+					<i class="fa fa-mobile"></i> <span>SMS Marketing</span>
+				</a>
+			</li>
+			
+
+						 <li class="treeview ">
+				<a href="#">
+					<i class="fa fa-wrench"></i>
+					<span>Utilità <small class="badge pull-right bg-green">new</small></span>
+					<i class="fa fa-angle-left pull-right"></i>
+				</a>
+				<ul class="treeview-menu">
+					<li class="">
+						<a href="http://admin.spottywifi.it/utilita-log_connessioni/">
+							<i class="fa fa-caret-right"></i> <span>Log Connessioni</span>
+						</a>
+					</li>
+					<li class="">
+						<a href="http://admin.spottywifi.it/utilita-errori_login/">
+							<i class="fa fa-caret-right"></i> <span>Errori Login</span>
+						</a>
+					</li>
+					<li class="">
+						<a href="http://admin.spottywifi.it/utilita-attivita_utenti/">
+							<i class="fa fa-caret-right"></i> <span>Attività Utenti</span>
+						</a>
+					</li>
+
+					<li class="">
+						<a href="http://admin.spottywifi.it/utilita-log_recall/">
+							<i class="fa fa-caret-right"></i> <span>Log Recall</span>
+						</a>
+					</li>
+					<li class="">
+						<a href="http://admin.spottywifi.it/utilita-esporta_utenti/">
+							<i class="fa fa-caret-right"></i> <span>Esportazione utenti</span>
+						</a>
+					</li>
+										<li class="">
+						<a href="https://get.teamviewer.com/spottywifi" target="_blank">
+							<i class="fa fa-caret-right"></i> <span>Assistenza Remota</span>
+						</a>
+					</li>
+					
+					<li class="">
+						<a href="http://admin.spottywifi.it/utilita-limiti_banda/">
+							<i class="fa fa-caret-right"></i> <span>Modifica limiti di banda</span>
+						</a>
+					</li>
+
+					<li class="">
+						<a href="http://admin.spottywifi.it/utilita-mac_bypass/">
+							<i class="fa fa-caret-right"></i> <span>White List MAC address</span>
+						</a>
+					</li>
+								<li class="">
+										<a href="http://admin.spottywifi.it/utilita-utenti_attivi/">
+												<i class="fa fa-caret-right"></i> <span>Utenti attivi</span>
+										</a>
+								</li>
+								<li class="">
+										<a href="http://admin.spottywifi.it/utilita-log_accessi_hotspot/">
+												<i class="fa fa-caret-right"></i> <span>Log accessi hotspot</span>
+										</a>
+								</li>
+
+
+				</ul>
+			</li>
+
+			
+		
+						<li class="">
+				<a href="https://spottywifi.freshdesk.com/support/home" target="_blank"><i class="fa fa-info"></i>  Supporto</a>
+			</li>
+			
+						
+
+			
+		
+
+			
+
+
+
+			</ul>
+	</section>
+	<!-- /.sidebar -->
+
+</aside>
+<script src="https://www.qrcode-monkey.com/qrcode/api/qrcode-monkey.js"></script>
+
+
+            <!-- Right side column. Contains the navbar and content of the page -->
+            <aside class="right-side">                
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                        Utenti Registrati                        <small>elenco di tutti gli utenti registrati al sistema wi-fi</small>
+                    </h1>
+                </section>
+
+                <!-- Main content -->
+                <section class="content">
+                
+				<div class="usertable">
+					<link href="http://admin.spottywifi.it/xcrud/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet" type="text/css" /><link href="http://admin.spottywifi.it/xcrud/plugins/jcrop/jquery.Jcrop.min.css" rel="stylesheet" type="text/css" /><link href="http://admin.spottywifi.it/xcrud/plugins/timepicker/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css" /><link href="http://admin.spottywifi.it/xcrud/themes/bootstrap/xcrud.css" rel="stylesheet" type="text/css" /><div class="xcrud">
+        <div class="xcrud-container">
+        <div class="xcrud-ajax">
+            <input type="hidden" class="xcrud-data" name="key" value="0d5d5af849ffa3b035f7ab8494a0eba4cee54bf9" /><input type="hidden" class="xcrud-data" name="orderby" value="UtentiRegistrati.Id" /><input type="hidden" class="xcrud-data" name="order" value="desc" /><input type="hidden" class="xcrud-data" name="start" value="0" /><input type="hidden" class="xcrud-data" name="limit" value="10" /><input type="hidden" class="xcrud-data" name="instance" value="5805fca1c411b1d00074bbcee45df534a7beb8e6" /><input type="hidden" class="xcrud-data" name="task" value="list" />        <div class="xcrud-top-actions">
+            <div class="btn-group pull-right">
+                <a href="javascript:;" data-task="print" class="btn btn-default xcrud-in-new-window xcrud-action"><i class="glyphicon glyphicon-print"></i> Stampa</a><a href="javascript:;" data-task="csv" class="btn btn-default xcrud-in-new-window xcrud-action"><i class="glyphicon glyphicon-file"></i> Esporta in CSV</a>            </div>
+            			            
+            <div class="clearfix"></div>
+        </div>
+        <div class="xcrud-list-container">
+        <table class="xcrud-list table table-striped table-hover table-bordered">
+            <thead>
+                <tr class="xcrud-th"><th class="xcrud-num">&#35;</th><th data-order="desc" data-orderby="UtentiRegistrati.Immagine" class="xcrud-column xcrud-action"></th><th data-order="desc" data-orderby="UtentiRegistrati.Nome" class="xcrud-column xcrud-action">Nome</th><th data-order="desc" data-orderby="UtentiRegistrati.Cognome" class="xcrud-column xcrud-action">Cognome</th><th data-order="desc" data-orderby="UtentiRegistrati.Email" class="xcrud-column xcrud-action">Email</th><th data-order="desc" data-orderby="UtentiRegistrati.Password" class="xcrud-column xcrud-action">Password</th><th data-order="desc" data-orderby="UtentiRegistrati.Lingua" class="xcrud-column xcrud-action">Lingua</th><th data-order="desc" data-orderby="UtentiRegistrati.TipoVacanza" class="xcrud-column xcrud-action">Segmento</th><th data-order="desc" data-orderby="UtentiRegistrati.SottoSegmento" class="xcrud-column xcrud-action">SottoSegmento</th><th data-order="desc" data-orderby="UtentiRegistrati.DataInserimento" class="xcrud-column xcrud-action">Data Registrazione</th><th data-order="desc" data-orderby="UtentiRegistrati.DataRitorno" class="xcrud-column xcrud-action">Data Ritorno</th><th data-order="desc" data-orderby="UtentiRegistrati.DataCheckin" class="xcrud-column xcrud-action">Check-in</th><th data-order="desc" data-orderby="UtentiRegistrati.DataCheckout" class="xcrud-column xcrud-action">Check-out</th><th data-order="desc" data-orderby="UtentiRegistrati.Periodo" class="xcrud-column xcrud-action">Periodo</th><th data-order="desc" data-orderby="UtentiRegistrati.NumeroCamera" class="xcrud-column xcrud-action">Camera</th><th data-order="desc" data-orderby="UtentiRegistrati.Sorgente" class="xcrud-column xcrud-action">Sorgente</th><th data-order="desc" data-orderby="UtentiRegistrati.ModalitaLogin" class="xcrud-column xcrud-action">Login</th><th data-order="desc" data-orderby="UtentiRegistrati.RicezioneMessaggi" class="xcrud-column xcrud-action">C.S.</th><th data-order="desc" data-orderby="UtentiRegistrati.TrattamentoDatiMarketing" class="xcrud-column xcrud-action">GDPR Mktg</th><th data-order="desc" data-orderby="UtentiRegistrati.Valido" class="xcrud-column xcrud-action">Valido</th><th data-order="desc" data-orderby="UtentiRegistrati.Visibile" class="xcrud-column xcrud-action">Oblio GDPR</th><th class="xcrud-actions">&nbsp;</th></tr>            </thead>
+            <tbody>
+                <tr class="xcrud-row xcrud-row-0"><td class="xcrud-current xcrud-num">1</td><td class="align-center"><img data-name="TB" class="profile"/></td><td>Thamyris</td><td>Bredoff</td><td><a href="mailto:tbconrado@gmail.com" target="_blank">tbconrado@gmail.com</a></td><td>welcome</td><td class="align-center"><img src="http://admin.spottywifi.it/img/flags/en.png" class="flag_ico"><span style="display:none">en</span></td><td class="align-center"><span class="label" style="background-color:#37268a">Agenzia</span></td><td class="align-center"><span class="label" style="background-color:#a98a74">Agenzia Ciao Florence</span></td><td>05.06.2026 13:25:51</td><td></td><td></td><td></td><td class="align-center"></td><td></td><td class="align-center"><span class="label label-primary">WiFi</span></td><td class="align-center"><span class="label label-primary" style="background:#16B3EA;">Email</span></td><td class="align-center"><span class="label label-success">Sì</span></td><td class="align-center"><span class="label label-success">Sì</span></td><td class="align-center"><span class="label label-success">Valido</span></td><td class="align-center">
+			<form name="oblio9780869" onsubmit="return confirm('Vuoi applicare l\'oblio GDPR a questo utente? Tutti i dati sensibili saranno sostituiti con asterischi. Operazione non reversibile');" action="" method="post">
+				<input type="hidden" name="oblio_gdpr_action" value="1">
+				<input type="hidden" name="user_id" value="9780869">
+				<input type="submit" class="btn btn-warning btn-sm" value="Oblio GDPR">
+			</form></td><td class="xcrud-current xcrud-actions xcrud-fix"><span class="btn-group"><a class="btn btn-default btn-sm xcrud-action" href="#" title="abilitato" data-task="action" data-action="disabilita" data-primary="9780869"><i class="icon-checkmark glyphicon glyphicon-ok"></i></a><a class="btn btn-default btn-sm xcrud-action" href="#" title="Riceve messaggi - Click per disabilitare" data-task="action" data-action="disabilita_msg" data-primary="9780869"><i class="glyphicon glyphicon-envelope"></i></a><a class="xcrud-action btn btn-info btn-sm" title="Mostra" href="javascript:;" data-primary="9780869" data-task="view"><i class="glyphicon glyphicon-search"></i></a><a class="xcrud-action btn btn-warning btn-sm" title="Modifica" href="javascript:;" data-primary="9780869" data-task="edit"><i class="glyphicon glyphicon-edit "></i></a></span></td></tr><tr class="xcrud-row xcrud-row-1"><td class="xcrud-current xcrud-num">2</td><td class="align-center"><img data-name="ID" class="profile"/></td><td>Irene</td><td>Duan</td><td><a href="mailto:ab45699@gmail.com" target="_blank">ab45699@gmail.com</a></td><td>welcome</td><td class="align-center"><img src="http://admin.spottywifi.it/img/flags/en.png" class="flag_ico"><span style="display:none">en</span></td><td class="align-center"><span class="label" style="background-color:#37268a">Agenzia</span></td><td class="align-center"><span class="label" style="background-color:#3662f1">Agenzia Caf Tours</span></td><td>05.06.2026 13:09:06</td><td></td><td></td><td></td><td class="align-center"></td><td></td><td class="align-center"><span class="label label-primary">WiFi</span></td><td class="align-center"><span class="label label-primary" style="background:#16B3EA;">Email</span></td><td class="align-center"><span class="label label-success">Sì</span></td><td class="align-center"><span class="label label-success">Sì</span></td><td class="align-center"><span class="label label-success">Valido</span></td><td class="align-center">
+			<form name="oblio9780787" onsubmit="return confirm('Vuoi applicare l\'oblio GDPR a questo utente? Tutti i dati sensibili saranno sostituiti con asterischi. Operazione non reversibile');" action="" method="post">
+				<input type="hidden" name="oblio_gdpr_action" value="1">
+				<input type="hidden" name="user_id" value="9780787">
+				<input type="submit" class="btn btn-warning btn-sm" value="Oblio GDPR">
+			</form></td><td class="xcrud-current xcrud-actions xcrud-fix"><span class="btn-group"><a class="btn btn-default btn-sm xcrud-action" href="#" title="abilitato" data-task="action" data-action="disabilita" data-primary="9780787"><i class="icon-checkmark glyphicon glyphicon-ok"></i></a><a class="btn btn-default btn-sm xcrud-action" href="#" title="Riceve messaggi - Click per disabilitare" data-task="action" data-action="disabilita_msg" data-primary="9780787"><i class="glyphicon glyphicon-envelope"></i></a><a class="xcrud-action btn btn-info btn-sm" title="Mostra" href="javascript:;" data-primary="9780787" data-task="view"><i class="glyphicon glyphicon-search"></i></a><a class="xcrud-action btn btn-warning btn-sm" title="Modifica" href="javascript:;" data-primary="9780787" data-task="edit"><i class="glyphicon glyphicon-edit "></i></a></span></td></tr><tr class="xcrud-row xcrud-row-0"><td class="xcrud-current xcrud-num">3</td><td class="align-center"><img data-name="cr" class="profile"/></td><td>Carter</td><td>Reece</td><td><a href="mailto:carternreece@gnail.com" target="_blank">carternreece@gnail.com</a></td><td>welcome</td><td class="align-center"><img src="http://admin.spottywifi.it/img/flags/en.png" class="flag_ico"><span style="display:none">en</span></td><td class="align-center"><span class="label" style="background-color:#37268a">Agenzia</span></td><td class="align-center"><span class="label" style="background-color:#bcd56c">Altre Agenzie</span></td><td>05.06.2026 13:07:03</td><td></td><td></td><td></td><td class="align-center"></td><td></td><td class="align-center"><span class="label label-primary">WiFi</span></td><td class="align-center"><span class="label label-primary" style="background:#16B3EA;">Email</span></td><td class="align-center"><span class="label label-success">Sì</span></td><td class="align-center"><span class="label label-success">Sì</span></td><td class="align-center"><span class="label label-danger">Non Valido</span></td><td class="align-center">
+			<form name="oblio9780776" onsubmit="return confirm('Vuoi applicare l\'oblio GDPR a questo utente? Tutti i dati sensibili saranno sostituiti con asterischi. Operazione non reversibile');" action="" method="post">
+				<input type="hidden" name="oblio_gdpr_action" value="1">
+				<input type="hidden" name="user_id" value="9780776">
+				<input type="submit" class="btn btn-warning btn-sm" value="Oblio GDPR">
+			</form></td><td class="xcrud-current xcrud-actions xcrud-fix"><span class="btn-group"><a class="btn btn-default btn-sm xcrud-action" href="#" title="abilitato" data-task="action" data-action="disabilita" data-primary="9780776"><i class="icon-checkmark glyphicon glyphicon-ok"></i></a><a class="btn btn-default btn-sm xcrud-action" href="#" title="Riceve messaggi - Click per disabilitare" data-task="action" data-action="disabilita_msg" data-primary="9780776"><i class="glyphicon glyphicon-envelope"></i></a><a class="xcrud-action btn btn-info btn-sm" title="Mostra" href="javascript:;" data-primary="9780776" data-task="view"><i class="glyphicon glyphicon-search"></i></a><a class="xcrud-action btn btn-warning btn-sm" title="Modifica" href="javascript:;" data-primary="9780776" data-task="edit"><i class="glyphicon glyphicon-edit "></i></a></span></td></tr><tr class="xcrud-row xcrud-row-1"><td class="xcrud-current xcrud-num">4</td><td class="align-center"><img data-name="RM" class="profile"/></td><td>Radhika </td><td>Mann</td><td><a href="mailto:artsndraftz@gmail.com" target="_blank">artsndraftz@gmail.com</a></td><td>welcome</td><td class="align-center"><img src="http://admin.spottywifi.it/img/flags/en.png" class="flag_ico"><span style="display:none">en</span></td><td class="align-center"><span class="label" style="background-color:#37268a">Agenzia</span></td><td class="align-center"><span class="label" style="background-color:#a98a74">Agenzia Ciao Florence</span></td><td>04.06.2026 12:08:11</td><td></td><td></td><td></td><td class="align-center"></td><td></td><td class="align-center"><span class="label label-primary">WiFi</span></td><td class="align-center"><span class="label label-primary" style="background:#16B3EA;">Email</span></td><td class="align-center"><span class="label label-success">Sì</span></td><td class="align-center"><span class="label label-success">Sì</span></td><td class="align-center"><span class="label label-success">Valido</span></td><td class="align-center">
+			<form name="oblio9775215" onsubmit="return confirm('Vuoi applicare l\'oblio GDPR a questo utente? Tutti i dati sensibili saranno sostituiti con asterischi. Operazione non reversibile');" action="" method="post">
+				<input type="hidden" name="oblio_gdpr_action" value="1">
+				<input type="hidden" name="user_id" value="9775215">
+				<input type="submit" class="btn btn-warning btn-sm" value="Oblio GDPR">
+			</form></td><td class="xcrud-current xcrud-actions xcrud-fix"><span class="btn-group"><a class="btn btn-default btn-sm xcrud-action" href="#" title="abilitato" data-task="action" data-action="disabilita" data-primary="9775215"><i class="icon-checkmark glyphicon glyphicon-ok"></i></a><a class="btn btn-default btn-sm xcrud-action" href="#" title="Riceve messaggi - Click per disabilitare" data-task="action" data-action="disabilita_msg" data-primary="9775215"><i class="glyphicon glyphicon-envelope"></i></a><a class="xcrud-action btn btn-info btn-sm" title="Mostra" href="javascript:;" data-primary="9775215" data-task="view"><i class="glyphicon glyphicon-search"></i></a><a class="xcrud-action btn btn-warning btn-sm" title="Modifica" href="javascript:;" data-primary="9775215" data-task="edit"><i class="glyphicon glyphicon-edit "></i></a></span></td></tr><tr class="xcrud-row xcrud-row-0"><td class="xcrud-current xcrud-num">5</td><td class="align-center"><img data-name="FM" class="profile"/></td><td>Felisberto</td><td>Manuel Junior</td><td><a href="mailto:felisbertomjunior@gmail.com" target="_blank">felisbertomjunior@gmail.com</a></td><td>welcome</td><td class="align-center"><img src="http://admin.spottywifi.it/img/flags/en.png" class="flag_ico"><span style="display:none">en</span></td><td class="align-center"><span class="label" style="background-color:#37268a">Agenzia</span></td><td class="align-center"><span class="label" style="background-color:#a98a74">Agenzia Ciao Florence</span></td><td>04.06.2026 12:07:06</td><td></td><td></td><td></td><td class="align-center"></td><td></td><td class="align-center"><span class="label label-primary">WiFi</span></td><td class="align-center"><span class="label label-primary" style="background:#16B3EA;">Email</span></td><td class="align-center"><span class="label label-success">Sì</span></td><td class="align-center"><span class="label label-success">Sì</span></td><td class="align-center"><span class="label label-success">Valido</span></td><td class="align-center">
+			<form name="oblio9775211" onsubmit="return confirm('Vuoi applicare l\'oblio GDPR a questo utente? Tutti i dati sensibili saranno sostituiti con asterischi. Operazione non reversibile');" action="" method="post">
+				<input type="hidden" name="oblio_gdpr_action" value="1">
+				<input type="hidden" name="user_id" value="9775211">
+				<input type="submit" class="btn btn-warning btn-sm" value="Oblio GDPR">
+			</form></td><td class="xcrud-current xcrud-actions xcrud-fix"><span class="btn-group"><a class="btn btn-default btn-sm xcrud-action" href="#" title="abilitato" data-task="action" data-action="disabilita" data-primary="9775211"><i class="icon-checkmark glyphicon glyphicon-ok"></i></a><a class="btn btn-default btn-sm xcrud-action" href="#" title="Riceve messaggi - Click per disabilitare" data-task="action" data-action="disabilita_msg" data-primary="9775211"><i class="glyphicon glyphicon-envelope"></i></a><a class="xcrud-action btn btn-info btn-sm" title="Mostra" href="javascript:;" data-primary="9775211" data-task="view"><i class="glyphicon glyphicon-search"></i></a><a class="xcrud-action btn btn-warning btn-sm" title="Modifica" href="javascript:;" data-primary="9775211" data-task="edit"><i class="glyphicon glyphicon-edit "></i></a></span></td></tr><tr class="xcrud-row xcrud-row-1"><td class="xcrud-current xcrud-num">6</td><td class="align-center"><img data-name="CM" class="profile"/></td><td>Cintia</td><td>Manuel</td><td><a href="mailto:cintiamanuel2015@icloud.com" target="_blank">cintiamanuel2015@icloud.com</a></td><td>welcome</td><td class="align-center"><img src="http://admin.spottywifi.it/img/flags/en.png" class="flag_ico"><span style="display:none">en</span></td><td class="align-center"><span class="label" style="background-color:#37268a">Agenzia</span></td><td class="align-center"><span class="label" style="background-color:#a98a74">Agenzia Ciao Florence</span></td><td>04.06.2026 12:03:22</td><td></td><td></td><td></td><td class="align-center"></td><td></td><td class="align-center"><span class="label label-primary">WiFi</span></td><td class="align-center"><span class="label label-primary" style="background:#16B3EA;">Email</span></td><td class="align-center"><span class="label label-success">Sì</span></td><td class="align-center"><span class="label label-success">Sì</span></td><td class="align-center"><span class="label label-success">Valido</span></td><td class="align-center">
+			<form name="oblio9775195" onsubmit="return confirm('Vuoi applicare l\'oblio GDPR a questo utente? Tutti i dati sensibili saranno sostituiti con asterischi. Operazione non reversibile');" action="" method="post">
+				<input type="hidden" name="oblio_gdpr_action" value="1">
+				<input type="hidden" name="user_id" value="9775195">
+				<input type="submit" class="btn btn-warning btn-sm" value="Oblio GDPR">
+			</form></td><td class="xcrud-current xcrud-actions xcrud-fix"><span class="btn-group"><a class="btn btn-default btn-sm xcrud-action" href="#" title="abilitato" data-task="action" data-action="disabilita" data-primary="9775195"><i class="icon-checkmark glyphicon glyphicon-ok"></i></a><a class="btn btn-default btn-sm xcrud-action" href="#" title="Riceve messaggi - Click per disabilitare" data-task="action" data-action="disabilita_msg" data-primary="9775195"><i class="glyphicon glyphicon-envelope"></i></a><a class="xcrud-action btn btn-info btn-sm" title="Mostra" href="javascript:;" data-primary="9775195" data-task="view"><i class="glyphicon glyphicon-search"></i></a><a class="xcrud-action btn btn-warning btn-sm" title="Modifica" href="javascript:;" data-primary="9775195" data-task="edit"><i class="glyphicon glyphicon-edit "></i></a></span></td></tr><tr class="xcrud-row xcrud-row-0"><td class="xcrud-current xcrud-num">7</td><td class="align-center"><img data-name="pm" class="profile"/></td><td>Pareen</td><td>Mann</td><td><a href="mailto:mannpareen@gmail.com" target="_blank">mannpareen@gmail.com</a></td><td>welcome</td><td class="align-center"><img src="http://admin.spottywifi.it/img/flags/en.png" class="flag_ico"><span style="display:none">en</span></td><td class="align-center"><span class="label" style="background-color:#37268a">Agenzia</span></td><td class="align-center"><span class="label" style="background-color:#a98a74">Agenzia Ciao Florence</span></td><td>04.06.2026 12:01:18</td><td></td><td></td><td></td><td class="align-center"></td><td></td><td class="align-center"><span class="label label-primary">WiFi</span></td><td class="align-center"><span class="label label-primary" style="background:#16B3EA;">Email</span></td><td class="align-center"><span class="label label-success">Sì</span></td><td class="align-center"><span class="label label-success">Sì</span></td><td class="align-center"><span class="label label-success">Valido</span></td><td class="align-center">
+			<form name="oblio9775189" onsubmit="return confirm('Vuoi applicare l\'oblio GDPR a questo utente? Tutti i dati sensibili saranno sostituiti con asterischi. Operazione non reversibile');" action="" method="post">
+				<input type="hidden" name="oblio_gdpr_action" value="1">
+				<input type="hidden" name="user_id" value="9775189">
+				<input type="submit" class="btn btn-warning btn-sm" value="Oblio GDPR">
+			</form></td><td class="xcrud-current xcrud-actions xcrud-fix"><span class="btn-group"><a class="btn btn-default btn-sm xcrud-action" href="#" title="abilitato" data-task="action" data-action="disabilita" data-primary="9775189"><i class="icon-checkmark glyphicon glyphicon-ok"></i></a><a class="btn btn-default btn-sm xcrud-action" href="#" title="Riceve messaggi - Click per disabilitare" data-task="action" data-action="disabilita_msg" data-primary="9775189"><i class="glyphicon glyphicon-envelope"></i></a><a class="xcrud-action btn btn-info btn-sm" title="Mostra" href="javascript:;" data-primary="9775189" data-task="view"><i class="glyphicon glyphicon-search"></i></a><a class="xcrud-action btn btn-warning btn-sm" title="Modifica" href="javascript:;" data-primary="9775189" data-task="edit"><i class="glyphicon glyphicon-edit "></i></a></span></td></tr><tr class="xcrud-row xcrud-row-1"><td class="xcrud-current xcrud-num">8</td><td class="align-center"><img data-name="MG" class="profile"/></td><td>Martine </td><td>Grond</td><td><a href="mailto:martine.gr.contact@gmail.com" target="_blank">martine.gr.contact@gmail.com</a></td><td>welcome</td><td class="align-center"><img src="http://admin.spottywifi.it/img/flags/fr.png" class="flag_ico"><span style="display:none">fr</span></td><td class="align-center"><span class="label" style="background-color:#37268a">Agenzia</span></td><td class="align-center"><span class="label" style="background-color:#bcd56c">Altre Agenzie</span></td><td>03.06.2026 17:01:42</td><td></td><td></td><td></td><td class="align-center"></td><td></td><td class="align-center"><span class="label label-primary">WiFi</span></td><td class="align-center"><span class="label label-primary" style="background:#16B3EA;">Email</span></td><td class="align-center"><span class="label label-success">Sì</span></td><td class="align-center"><span class="label label-success">Sì</span></td><td class="align-center"><span class="label label-success">Valido</span></td><td class="align-center">
+			<form name="oblio9771895" onsubmit="return confirm('Vuoi applicare l\'oblio GDPR a questo utente? Tutti i dati sensibili saranno sostituiti con asterischi. Operazione non reversibile');" action="" method="post">
+				<input type="hidden" name="oblio_gdpr_action" value="1">
+				<input type="hidden" name="user_id" value="9771895">
+				<input type="submit" class="btn btn-warning btn-sm" value="Oblio GDPR">
+			</form></td><td class="xcrud-current xcrud-actions xcrud-fix"><span class="btn-group"><a class="btn btn-default btn-sm xcrud-action" href="#" title="abilitato" data-task="action" data-action="disabilita" data-primary="9771895"><i class="icon-checkmark glyphicon glyphicon-ok"></i></a><a class="btn btn-default btn-sm xcrud-action" href="#" title="Riceve messaggi - Click per disabilitare" data-task="action" data-action="disabilita_msg" data-primary="9771895"><i class="glyphicon glyphicon-envelope"></i></a><a class="xcrud-action btn btn-info btn-sm" title="Mostra" href="javascript:;" data-primary="9771895" data-task="view"><i class="glyphicon glyphicon-search"></i></a><a class="xcrud-action btn btn-warning btn-sm" title="Modifica" href="javascript:;" data-primary="9771895" data-task="edit"><i class="glyphicon glyphicon-edit "></i></a></span></td></tr><tr class="xcrud-row xcrud-row-0"><td class="xcrud-current xcrud-num">9</td><td class="align-center"><img data-name="SH" class="profile"/></td><td>Sydney</td><td>Harrison</td><td><a href="mailto:sydneygharrison@gmail.com" target="_blank">sydneygharrison@gmail.com</a></td><td>welcome</td><td class="align-center"><img src="http://admin.spottywifi.it/img/flags/en.png" class="flag_ico"><span style="display:none">en</span></td><td class="align-center"><span class="label" style="background-color:#37268a">Agenzia</span></td><td class="align-center"><span class="label" style="background-color:#a98a74">Agenzia Ciao Florence</span></td><td>03.06.2026 16:00:21</td><td></td><td></td><td></td><td class="align-center"></td><td></td><td class="align-center"><span class="label label-primary">WiFi</span></td><td class="align-center"><span class="label label-primary" style="background:#16B3EA;">Email</span></td><td class="align-center"><span class="label label-success">Sì</span></td><td class="align-center"><span class="label label-success">Sì</span></td><td class="align-center"><span class="label label-success">Valido</span></td><td class="align-center">
+			<form name="oblio9771531" onsubmit="return confirm('Vuoi applicare l\'oblio GDPR a questo utente? Tutti i dati sensibili saranno sostituiti con asterischi. Operazione non reversibile');" action="" method="post">
+				<input type="hidden" name="oblio_gdpr_action" value="1">
+				<input type="hidden" name="user_id" value="9771531">
+				<input type="submit" class="btn btn-warning btn-sm" value="Oblio GDPR">
+			</form></td><td class="xcrud-current xcrud-actions xcrud-fix"><span class="btn-group"><a class="btn btn-default btn-sm xcrud-action" href="#" title="abilitato" data-task="action" data-action="disabilita" data-primary="9771531"><i class="icon-checkmark glyphicon glyphicon-ok"></i></a><a class="btn btn-default btn-sm xcrud-action" href="#" title="Riceve messaggi - Click per disabilitare" data-task="action" data-action="disabilita_msg" data-primary="9771531"><i class="glyphicon glyphicon-envelope"></i></a><a class="xcrud-action btn btn-info btn-sm" title="Mostra" href="javascript:;" data-primary="9771531" data-task="view"><i class="glyphicon glyphicon-search"></i></a><a class="xcrud-action btn btn-warning btn-sm" title="Modifica" href="javascript:;" data-primary="9771531" data-task="edit"><i class="glyphicon glyphicon-edit "></i></a></span></td></tr><tr class="xcrud-row xcrud-row-1"><td class="xcrud-current xcrud-num">10</td><td class="align-center"><img data-name="MD" class="profile"/></td><td>Matthew</td><td>Dunaski</td><td><a href="mailto:mgd229034@icloud.com" target="_blank">mgd229034@icloud.com</a></td><td>welcome</td><td class="align-center"><img src="http://admin.spottywifi.it/img/flags/en.png" class="flag_ico"><span style="display:none">en</span></td><td class="align-center"><span class="label" style="background-color:#37268a">Agenzia</span></td><td class="align-center"><span class="label" style="background-color:#a98a74">Agenzia Ciao Florence</span></td><td>03.06.2026 16:00:09</td><td></td><td></td><td></td><td class="align-center"></td><td></td><td class="align-center"><span class="label label-primary">WiFi</span></td><td class="align-center"><span class="label label-primary" style="background:#16B3EA;">Email</span></td><td class="align-center"><span class="label label-danger">No</span></td><td class="align-center"><span class="label label-success">Sì</span></td><td class="align-center"><span class="label label-success">Valido</span></td><td class="align-center">
+			<form name="oblio9771530" onsubmit="return confirm('Vuoi applicare l\'oblio GDPR a questo utente? Tutti i dati sensibili saranno sostituiti con asterischi. Operazione non reversibile');" action="" method="post">
+				<input type="hidden" name="oblio_gdpr_action" value="1">
+				<input type="hidden" name="user_id" value="9771530">
+				<input type="submit" class="btn btn-warning btn-sm" value="Oblio GDPR">
+			</form></td><td class="xcrud-current xcrud-actions xcrud-fix"><span class="btn-group"><a class="btn btn-default btn-sm xcrud-action" href="#" title="abilitato" data-task="action" data-action="disabilita" data-primary="9771530"><i class="icon-checkmark glyphicon glyphicon-ok"></i></a><a class="btn btn-default btn-sm xcrud-action" href="#" title="Non vuole ricevere messaggi - Click per abilitare" data-task="action" data-action="abilita_msg" data-primary="9771530"><i class="glyphicon glyphicon-warning-sign"></i></a><a class="xcrud-action btn btn-info btn-sm" title="Mostra" href="javascript:;" data-primary="9771530" data-task="view"><i class="glyphicon glyphicon-search"></i></a><a class="xcrud-action btn btn-warning btn-sm" title="Modifica" href="javascript:;" data-primary="9771530" data-task="edit"><i class="glyphicon glyphicon-edit "></i></a></span></td></tr>            </tbody>
+            <tfoot>
+                            </tfoot>
+        </table>
+        
+  
+        </div>
+        <div class="xcrud-nav">
+            <div class="btn-group xcrud-limit-buttons" data-toggle="buttons-radio"><button type="button" class="btn btn-default active xcrud-action" data-limit="10">10</button><button type="button" class="btn btn-default xcrud-action" data-limit="25">25</button><button type="button" class="btn btn-default xcrud-action" data-limit="50">50</button><button type="button" class="btn btn-default xcrud-action" data-limit="100">100</button><button type="button" class="btn btn-default xcrud-action" data-limit="all">All</button></div>            <ul class="pagination"><li class="active"><span>1</span></li><li class=""><a href="javascript:;" class="xcrud-action" data-start="10">2</a></li><li class=""><a href="javascript:;" class="xcrud-action" data-start="20">3</a></li><li class=""><a href="javascript:;" class="xcrud-action" data-start="30">4</a></li><li class=""><a href="javascript:;" class="xcrud-action" data-start="40">5</a></li><li class=""><a href="javascript:;" class="xcrud-action" data-start="50">6</a></li><li class=""><a href="javascript:;" class="xcrud-action" data-start="60">7</a></li><li class="active"><span>&#133;</span></li><li class=""><a href="javascript:;" class="xcrud-action" data-start="7810">782</a></li><li class=""><a href="javascript:;" class="xcrud-action" data-start="7820">783</a></li></ul>            <a class="xcrud-search-toggle btn btn-default" href="javascript:;">Cerca</a><span class="xcrud-search form-inline" style="display:none;"><input class="xcrud-searchdata xcrud-search-active input-small form-control" name="phrase" data-type="text" style="" data-fieldtype="default" type="text" value="" /><select class="xcrud-daterange xcrud-searchdata input-small form-control" name="range" data-fieldtype="date" style="display:none"><option value="">- scegli il periodo -</option><option value="next_year" data-from="1798761600" data-to="1830297599">Prossimo anno</option><option value="next_month" data-from="1782864000" data-to="1785455999">Prossimo mese</option><option value="today" data-from="1780617600" data-to="1780703999">Oggi</option><option value="this_week_today" data-from="1780272000" data-to="1780703999">Questa settimana fino ad oggi</option><option value="this_week_full" data-from="1780272000" data-to="1780876799">Questa settimana intera</option><option value="last_week" data-from="1779667200" data-to="1780271999">La scorsa settimana</option><option value="last_2weeks" data-from="1779062400" data-to="1779667199">Le ultime due settimane</option><option value="this_month" data-from="1780272000" data-to="1780703999">Questo mese</option><option value="last_month" data-from="1777593600" data-to="1780617599">Lo scorso mese</option><option value="last_3months" data-from="1772323200" data-to="1780617599">Gli ultimi 3 mesi</option><option value="last_6months" data-from="1764547200" data-to="1780617599">Gli ultimi 6 mesi</option><option value="this_year" data-from="1767225600" data-to="1780703999">Quest&#039;anno</option><option value="last_year" data-from="1735689600" data-to="1767225599">Lo scorso anno</option></select><input class="xcrud-searchdata xcrud-datepicker-from  input-small form-control" name="phrase][from" style="display:none" data-type="datetime" data-fieldtype="date" type="text" value="" /><input class="xcrud-searchdata xcrud-datepicker-to  input-small form-control" name="phrase][to" style="display:none" data-type="datetime" data-fieldtype="date" type="text" value="" /><select class="xcrud-searchdata  input-small form-control" name="phrase" style="display:none" data-type="select" data-fieldtype="dropdown" data-fieldname="UtentiRegistrati.Sorgente"><option value="wifi">wifi</option><option value="importazione">importazione</option><option value="operatore">operatore</option><option value="integrazione">integrazione</option><option value="Codice QR">Codice QR</option></select><select class="xcrud-searchdata  input-small form-control" name="phrase" style="display:none" data-type="bool" data-fieldtype="bool" type="select"><option value="1">Si</option><option value="0" selected="">No</option></select><select class="xcrud-data xcrud-columns-select input-small form-control" name="column"><option value="">Tutti i campi</option><option value="UtentiRegistrati.Immagine" data-type="none"></option><option value="UtentiRegistrati.Nome" data-type="text">Nome</option><option value="UtentiRegistrati.Cognome" data-type="text">Cognome</option><option value="UtentiRegistrati.Email" data-type="text">Email</option><option value="UtentiRegistrati.Password" data-type="text">Password</option><option value="UtentiRegistrati.Lingua" data-type="text">Lingua</option><option value="UtentiRegistrati.TipoVacanza" data-type="text">Segmento</option><option value="UtentiRegistrati.SottoSegmento" data-type="text">SottoSegmento</option><option value="UtentiRegistrati.DataInserimento" data-type="datetime">Data Registrazione</option><option value="UtentiRegistrati.DataRitorno" data-type="datetime">Data Ritorno</option><option value="UtentiRegistrati.DataCheckin" data-type="date">Check-in</option><option value="UtentiRegistrati.DataCheckout" data-type="date">Check-out</option><option value="UtentiRegistrati.Periodo" data-type="none">Periodo</option><option value="UtentiRegistrati.NumeroCamera" data-type="text">Camera</option><option value="UtentiRegistrati.Sorgente" data-type="select">Sorgente</option><option value="UtentiRegistrati.ModalitaLogin" data-type="text">Login</option><option value="UtentiRegistrati.RicezioneMessaggi" data-type="bool">C.S.</option><option value="UtentiRegistrati.TrattamentoDatiMarketing" data-type="bool">GDPR Mktg</option><option value="UtentiRegistrati.Valido" data-type="bool">Valido</option><option value="UtentiRegistrati.Visibile" data-type="bool">Oblio GDPR</option></select><span class="btn-group"><a class="xcrud-action btn btn-primary" href="javascript:;" data-search="1">Vai</a></span></span>                    </div>
+                <div style="padding:10px">
+			<strong>Righe totali:</strong>&nbsp;7826		</div>
+				        </div>
+        <div class="xcrud-overlay"></div>
+    </div>
+</div><script src="http://admin.spottywifi.it/xcrud/plugins/jquery-ui/jquery-ui.min.js"></script><script src="http://admin.spottywifi.it/xcrud/plugins/tag-it.js"></script><script src="http://admin.spottywifi.it/xcrud/plugins/jcrop/jquery.Jcrop.min.js"></script><script src="http://admin.spottywifi.it/xcrud/plugins/timepicker/jquery-ui-timepicker-addon.js"></script><script src="http://admin.spottywifi.it/xcrud/editors/ckeditor/ckeditor.js?rand=341443811"></script><script src="//maps.google.com/maps/api/js?key=AIzaSyB--L_qczhHN5c8GcQUxIiQTHP1bk4Rwm4&language=it"></script><script src="http://admin.spottywifi.it/xcrud/plugins/xcrud.js"></script>
+            <script type="text/javascript">
+            <!--
+            
+           	var xcrud_config = {"url":"http:\/\/admin.spottywifi.it\/xcrud\/xcrud_ajax.php","editor_url":"http:\/\/admin.spottywifi.it\/xcrud\/editors\/ckeditor\/ckeditor.js?rand=753531722","editor_init_url":false,"force_editor":false,"date_first_day":1,"date_format":"dd.mm.yy","time_format":"HH:mm:ss","lang":null,"rtl":0};
+                            
+            -->
+            </script><script src="http://admin.spottywifi.it/xcrud/languages/datepicker/jquery.ui.datepicker-it.js"></script><script src="http://admin.spottywifi.it/xcrud/languages/timepicker/jquery-ui-timepicker-it.js"></script>				</div>
+
+                </section><!-- /.content -->
+            </aside><!-- /.right-side -->
+        </div><!-- ./wrapper -->
+
+		 <!-- InputMask -->
+        <script src="http://admin.spottywifi.it/js/plugins/input-mask/jquery.inputmask.js" type="text/javascript"></script>
+        <script src="http://admin.spottywifi.it/js/plugins/input-mask/jquery.inputmask.date.extensions.js" type="text/javascript"></script>
+        <script src="http://admin.spottywifi.it/js/plugins/input-mask/jquery.inputmask.extensions.js" type="text/javascript"></script>
+        <!-- daterangepicker -->
+       	<script src="http://admin.spottywifi.it/js/plugins/daterangepicker/moment.locale.js" type="text/javascript"></script>
+        <script src="http://admin.spottywifi.it/js/plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>
+
+        <!-- Bootstrap WYSIHTML5 -->
+        <script src="http://admin.spottywifi.it/js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>
+        <!-- iCheck -->
+        <script src="http://admin.spottywifi.it/js/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
+
+       <script src="http://admin.spottywifi.it/js/AdminLTE/app.js" type="text/javascript"></script>
+
+      <script src="http://admin.spottywifi.it/wa/js/emojiPicker.min.js"></script>
+      
+      
+          <script>
+              var beamer_config = {
+                product_id : "VqRMEjRg19513" //DO NOT CHANGE: This is your product code on Beamer
+              };
+          </script>
+          <script type="text/javascript" src="https://app.getbeamer.com/js/beamer-embed.js" defer="defer"></script>
+                      
+
+      <script type="text/javascript">
+        new EmojiPicker();
+
+        moment.locale('it', {
+		    months : ["Gennaio","Febbraio","Marzo","Aprile","Maggio","Giugno","Luglio","Agosto","Settembre","Ottobre","Novembre","Dicembre"],
+      		longDateFormat : {
+				LT: "h:mm A",
+		        LTS: "h:mm:ss A",
+		        L: "DD-MM-YYYY",
+		        l: "D/M/YYYY",
+		        LL: "MMMM Do YYYY",
+		        ll: "MMM D YYYY",
+		        LLL: "MMMM Do YYYY LT",
+		        lll: "MMM D YYYY LT",
+		        LLLL: "dddd, MMMM Do YYYY LT",
+		        llll: "ddd, MMM D YYYY LT"
+		    },
+		});
+
+
+        function cb(start, end) {
+	        $('#daterange-btn span').html(start.format('DD MMM YYYY') + ' - ' + end.format('DD MMM YYYY'));
+	    }
+	    /*cb(moment().subtract(29, 'days'), moment());*/
+        cb(moment(''), moment(''));
+
+$('#daterange-btn').daterangepicker({
+	ranges: {
+           'Oggi': [moment(), moment()],
+           'Ieri': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+           'Ultimi 7 giorni': [moment().subtract(6, 'days'), moment()],
+           'Ultimi 30 giorni': [moment().subtract(29, 'days'), moment()],
+           'Questo Mese': [moment().startOf('month'), moment().endOf('month')],
+           'Mese precedente': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')],
+           'Stagione estiva': [moment('2015-06-25').format('YYYY-MM-DD'), moment('2015-09-25').format('YYYY-MM-DD')]
+
+        },
+    "locale": {
+        "format": "DD-MM-YYYY",
+        "separator": " - ",
+        "applyLabel": "Applica",
+        "cancelLabel": "Annulla",
+        "fromLabel": "Dal",
+        "toLabel": "Al",
+        "customRangeLabel": "Date personalizzate",
+        "daysOfWeek": [
+            "Do",
+            "Lu",
+            "Ma",
+            "Me",
+            "Gi",
+            "Ve",
+            "Sa"
+        ],
+        "monthNames": [
+            "Gennaio",
+            "Febbraio",
+            "Marzo",
+            "Aprile",
+            "Maggio",
+            "Giugno",
+            "Luglio",
+            "Agosto",
+            "Settembre",
+            "Ottobre",
+            "Novembre",
+            "Dicembre"
+        ],
+        "firstDay": 1
+    },
+    "autoApply": true,
+    "opens": "right"
+},cb);
+
+$('#daterange-btn').on('apply.daterangepicker', function(ev, picker) {
+  window.location.href = picker.startDate.format('YYYY-MM-DD') + "~" + picker.endDate.format('YYYY-MM-DD');
+});
+
+
+      </script>
+
+      <script>
+		    $('.profile').initial({
+  				fontWeight:300,
+  				charCount:2,
+  				fontSize:14,
+  				width:28,
+  				height:28
+  				}
+  		  );
+		  </script>
+
+        
+
+        <script type="text/javascript">
+        $('body').on('hidden.bs.modal', '.modal', function () {
+		  $(this).removeData('bs.modal');
+		});
+        </script>
+        <!-- jQuery Knob -->
+        <script src="http://admin.spottywifi.it/js/plugins/jqueryKnob/jquery.knob.js" type="text/javascript"></script>
+
+        <!-- page script -->
+ 		<script type="text/javascript">
+            $(function() {
+                /* jQueryKnob */
+
+                $(".knob").knob({
+                    /*change : function (value) {
+                     //console.log("change : " + value);
+                     },
+                     release : function (value) {
+                     console.log("release : " + value);
+                     },
+                     cancel : function () {
+                     console.log("cancel : " + this.value);
+                     },*/
+                    draw: function() {
+
+                        // "tron" case
+                        if (this.$.data('skin') == 'tron') {
+
+                            var a = this.angle(this.cv)  // Angle
+                                    , sa = this.startAngle          // Previous start angle
+                                    , sat = this.startAngle         // Start angle
+                                    , ea                            // Previous end angle
+                                    , eat = sat + a                 // End angle
+                                    , r = true;
+
+                            this.g.lineWidth = this.lineWidth;
+
+                            this.o.cursor
+                                    && (sat = eat - 0.3)
+                                    && (eat = eat + 0.3);
+
+                            if (this.o.displayPrevious) {
+                                ea = this.startAngle + this.angle(this.value);
+                                this.o.cursor
+                                        && (sa = ea - 0.3)
+                                        && (ea = ea + 0.3);
+                                this.g.beginPath();
+                                this.g.strokeStyle = this.previousColor;
+                                this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sa, ea, false);
+                                this.g.stroke();
+                            }
+
+                            this.g.beginPath();
+                            this.g.strokeStyle = r ? this.o.fgColor : this.fgColor;
+                            this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sat, eat, false);
+                            this.g.stroke();
+
+                            this.g.lineWidth = 2;
+                            this.g.beginPath();
+                            this.g.strokeStyle = this.o.fgColor;
+                            this.g.arc(this.xy, this.xy, this.radius - this.lineWidth + 1 + this.lineWidth * 2 / 3, 0, 2 * Math.PI, false);
+                            this.g.stroke();
+
+                            return false;
+                        }
+                    }
+                });
+                /* END JQUERY KNOB */
+
+            });
+
+        </script>
+
+
+				<script>
+		      function copyToClipboard(target) {
+		        var element = document.getElementById(target);
+		        var text = element.innerHTML;
+		        CopyToClipboard(text);
+		        alert("Link copiato correttamente");
+		      }
+		      function CopyToClipboard (text) {
+		      	// Copies a string to the clipboard. Must be called from within an
+		      	// event handler such as click. May return false if it failed, but
+		      	// this is not always possible. Browser support for Chrome 43+,
+		      	// Firefox 42+, Safari 10+, Edge and IE 10+.
+		      	// IE: The clipboard feature may be disabled by an administrator. By
+		      	// default a prompt is shown the first time the clipboard is
+		      	// used (per session).
+		      	if (window.clipboardData && window.clipboardData.setData) {
+		      		// IE specific code path to prevent textarea being shown while dialog is visible.
+		      		return clipboardData.setData("Text", text);
+		        } else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
+		          var textarea = document.createElement("textarea");
+		          textarea.textContent = text;
+		          textarea.style.position = "fixed";  // Prevent scrolling to bottom of page in MS Edge.
+		          document.body.appendChild(textarea);
+		          textarea.select();
+		          try {
+		            return document.execCommand("copy");  // Security exception may be thrown by some browsers.
+		          } catch (ex) {
+		            console.warn("Copy to clipboard failed.", ex);
+		            return false;
+		          } finally {
+		            document.body.removeChild(textarea);
+		          }
+		      	}
+		      }
+
+					function copyToClipboard2(target) {
+						var element = document.getElementById(target);
+						var text = element.innerHTML;
+						CopyToClipboard(text);
+						alert("Link copiato correttamente");
+					}
+					function CopyToClipboard (text) {
+						// Copies a string to the clipboard. Must be called from within an
+						// event handler such as click. May return false if it failed, but
+						// this is not always possible. Browser support for Chrome 43+,
+						// Firefox 42+, Safari 10+, Edge and IE 10+.
+						// IE: The clipboard feature may be disabled by an administrator. By
+						// default a prompt is shown the first time the clipboard is
+						// used (per session).
+						if (window.clipboardData && window.clipboardData.setData) {
+							// IE specific code path to prevent textarea being shown while dialog is visible.
+							return clipboardData.setData("Text", text);
+						} else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
+							var textarea = document.createElement("textarea");
+							textarea.textContent = text;
+							textarea.style.position = "fixed";  // Prevent scrolling to bottom of page in MS Edge.
+							document.body.appendChild(textarea);
+							textarea.select();
+							try {
+								return document.execCommand("copy");  // Security exception may be thrown by some browsers.
+							} catch (ex) {
+								console.warn("Copy to clipboard failed.", ex);
+								return false;
+							} finally {
+								document.body.removeChild(textarea);
+							}
+						}
+					}
+
+
+
+
+          function copyToClipboard2021(target) {
+            var element = document.getElementById(target);
+            var text = element.innerHTML;
+            CopyToClipboard(text);
+            alert("Link copiato correttamente");
+          }
+          function CopyToClipboard2021(text) {
+            // Copies a string to the clipboard. Must be called from within an
+            // event handler such as click. May return false if it failed, but
+            // this is not always possible. Browser support for Chrome 43+,
+            // Firefox 42+, Safari 10+, Edge and IE 10+.
+            // IE: The clipboard feature may be disabled by an administrator. By
+            // default a prompt is shown the first time the clipboard is
+            // used (per session).
+            if (window.clipboardData && window.clipboardData.setData) {
+              // IE specific code path to prevent textarea being shown while dialog is visible.
+              return clipboardData.setData("Text", text);
+            } else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
+              var textarea = document.createElement("textarea");
+              textarea.textContent = text;
+              textarea.style.position = "fixed";  // Prevent scrolling to bottom of page in MS Edge.
+              document.body.appendChild(textarea);
+              textarea.select();
+              try {
+                return document.execCommand("copy");  // Security exception may be thrown by some browsers.
+              } catch (ex) {
+                console.warn("Copy to clipboard failed.", ex);
+                return false;
+              } finally {
+                document.body.removeChild(textarea);
+              }
+            }
+          }
+    		</script>
+
+    </body>
+</html>
