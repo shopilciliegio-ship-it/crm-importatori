@@ -1115,6 +1115,42 @@
       "subject": "Your wine is on its way! 🍷",
       "sentAt": 1780672518803,
       "messageId": "<202606051515.70933824279@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mpvpkyylwz2h",
+      "customerName": "JILL BANKS",
+      "type": "dogana",
+      "to": "myhouse_injc@hotmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1780754058497,
+      "messageId": "<202606061354.43669441319@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mbe_IT3299-8V-0000006DP8",
+      "customerName": "MARIA LEGARRETA AND ERIC LEGARRETA",
+      "type": "dogana",
+      "to": "lupitacaraveo@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1780754058497,
+      "messageId": "<202606061354.70045414915@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mbe_IT3299-8V-0000006BU3",
+      "customerName": "GARY KERN",
+      "type": "consegnato",
+      "to": "gbklittleman@aol.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1780754058497,
+      "messageId": "<202606061354.76683729872@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mbe_IT3299-8V-00000069IY",
+      "customerName": "TANMY VAASSEN",
+      "type": "consegnato",
+      "to": "tvaassen@yousq.net",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1780754058497,
+      "messageId": "<202606061354.90422219829@smtp-relay.mailin.fr>"
     }
   ]
 }
