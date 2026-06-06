@@ -204,10 +204,18 @@
           "note": "Auto Fieramente (era: spedito)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "dogana",
+          "to": "myhouse_injc@hotmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1780754058497,
+          "messageId": "<202606061354.43669441319@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1780348588797,
-      "updatedAt": 1780754056391,
+      "updatedAt": 1780754058497,
       "mbeTrackingNumber": "IT3299-8V-0000006DG3",
       "shippingType": "standard"
     },
@@ -465,11 +473,19 @@
           "note": "Auto Fieramente (era: in_transito)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "dogana",
+          "to": "lupitacaraveo@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1780754058497,
+          "messageId": "<202606061354.70045414915@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780754056391,
+      "updatedAt": 1780754058497,
       "shippingType": "standard",
       "shipmentCode": "LEGARRETAMBIS"
     },
@@ -627,12 +643,19 @@
           "messageId": "<202606051515.81202232824@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-06-05T17:15:23.000+02:00"
+        },
+        {
+          "type": "consegnato",
+          "to": "gbklittleman@aol.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1780754058497,
+          "messageId": "<202606061354.76683729872@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780754056391,
+      "updatedAt": 1780754058497,
       "shippingType": "standard",
       "shipmentCode": "KERNG"
     },
@@ -975,12 +998,19 @@
           "bouncedAt": "2026-06-05T17:15:29.000+02:00",
           "delivered": true,
           "deliveredAt": "2026-06-05T17:15:24.186+02:00"
+        },
+        {
+          "type": "consegnato",
+          "to": "tvaassen@yousq.net",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1780754058497,
+          "messageId": "<202606061354.90422219829@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780754056391,
+      "updatedAt": 1780754058497,
       "shippingType": "standard",
       "shipmentCode": "VAASSENT"
     },
