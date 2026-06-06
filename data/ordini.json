@@ -176,7 +176,7 @@
       "trackingNumber": "1Z9376E1A803482468",
       "carrier": "UPS",
       "shippingDate": "2026-05-27",
-      "status": "spedito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "ricevuto",
@@ -197,12 +197,17 @@
           "status": "spedito",
           "date": 1780575722939,
           "note": ""
+        },
+        {
+          "status": "dogana",
+          "date": 1780754056391,
+          "note": "Auto Fieramente (era: spedito)"
         }
       ],
       "emailsSent": [],
       "notes": "",
       "createdAt": 1780348588797,
-      "updatedAt": 1780598739759,
+      "updatedAt": 1780754056391,
       "mbeTrackingNumber": "IT3299-8V-0000006DG3",
       "shippingType": "standard"
     },
@@ -442,7 +447,7 @@
       "mbeTrackingNumber": "IT3299-8V-0000006DP8",
       "carrier": "UPS",
       "shippingDate": "2026-05-27",
-      "status": "in_transito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "spedito",
@@ -453,13 +458,18 @@
           "status": "in_transito",
           "date": 1780575438531,
           "note": ""
+        },
+        {
+          "status": "dogana",
+          "date": 1780754056391,
+          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780598739759,
+      "updatedAt": 1780754056391,
       "shippingType": "standard",
       "shipmentCode": "LEGARRETAMBIS"
     },
@@ -590,7 +600,7 @@
       "mbeTrackingNumber": "IT3299-8V-0000006BU3",
       "carrier": "UPS",
       "shippingDate": "2026-05-21",
-      "status": "dogana",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "spedito",
@@ -601,6 +611,11 @@
           "status": "dogana",
           "date": 1780575332872,
           "note": ""
+        },
+        {
+          "status": "consegnato",
+          "date": 1780754056391,
+          "note": "Auto Fieramente (era: dogana)"
         }
       ],
       "emailsSent": [
@@ -617,7 +632,7 @@
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780672518803,
+      "updatedAt": 1780754056391,
       "shippingType": "standard",
       "shipmentCode": "KERNG"
     },
@@ -921,7 +936,7 @@
       "mbeTrackingNumber": "IT3299-8V-00000069IY",
       "carrier": "UPS",
       "shippingDate": "2026-05-14",
-      "status": "dogana",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "spedito",
@@ -942,6 +957,11 @@
           "status": "problema",
           "date": 1780703964276,
           "note": "⚠ Email bounce (dogana): tvaassen@yousq.net"
+        },
+        {
+          "status": "consegnato",
+          "date": 1780754056391,
+          "note": "Auto Fieramente (era: dogana)"
         }
       ],
       "emailsSent": [
@@ -960,7 +980,7 @@
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780697259971,
+      "updatedAt": 1780754056391,
       "shippingType": "standard",
       "shipmentCode": "VAASSENT"
     },
