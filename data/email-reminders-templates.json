@@ -32,7 +32,7 @@
   "dogana": {
     "label": "In dogana",
     "subject": "Your order is going through customs",
-    "body": "Dear {nome},\nyour order is currently going through customs. This process usually takes 2–5 business days.\nNormally, no action is required on your part.\nIf you are required to pay taxes or duties, you will receive a message from customs with further information.\n\nWe will update you as soon as your order is on its way again.\nThanks for your help and your understanding!\nFor your convenience {tracking_line}\n\nLuca Pattaro\nIl Ciliegio — Viticoltori in Monteriggioni dal 1952\nshop@ilciliegio.com | +39 331 1347899"
+    "body": "Dear {nome},\nyour order is currently going through customs. This process usually takes 2–5 business days.\nNormally, no action is required on your part.\nIf you are required to pay taxes or duties, you will receive a message from customs with further information.\n\nWe will update you as soon as your order is on its way again.\nThanks for your help and your understanding!\nFor your convenience\n{tracking_line}\n\nLuca Pattaro\nIl Ciliegio — Viticoltori in Monteriggioni dal 1952\nshop@ilciliegio.com | +39 331 1347899"
   },
   "problema": {
     "label": "Problema spedizione",
