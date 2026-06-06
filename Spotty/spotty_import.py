@@ -285,9 +285,9 @@ def main():
     save_clienti(db)
 
     # Riepilogo
-    print(f'{'='*45}')
+    print(f"{'='*45}")
     print(f'IMPORTAZIONE COMPLETATA')
-    print(f'{'='*45}')
+    print(f"{'='*45}")
     print(f'  Nuovi aggiunti:     {stats["added"]}')
     print(f'  Già presenti:       {stats["skipped_existing"]}')
     print(f'  Blacklistati:       {stats["skipped_blacklist"]}')
@@ -298,7 +298,7 @@ def main():
     print()
     print(f'  Paese spedibile:    {stats["shippable"]}')
     print(f'  Totale contatti DB: {len(db["contacts"])}')
-    print(f'{'='*45}')
+    print(f"{'='*45}")
 
 
 if __name__ == '__main__':
