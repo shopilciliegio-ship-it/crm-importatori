@@ -154,6 +154,11 @@ async function pushGH(){
 }
 
 async function _pushImportatoriOverrides(token,owner,repo){
+  // Guard: non salvare se il base non è stato caricato (evita di azzerare overrides)
+  if(Object.keys(_baseSnap).length===0){
+    console.warn('_pushImportatoriOverrides: skip — _baseSnap vuoto, contatti non ancora caricati');
+    updGh('saved'); return;
+  }
   updGh('saving');
   // Calcola solo le differenze rispetto al base caricato da GitHub
   const newOv={};
