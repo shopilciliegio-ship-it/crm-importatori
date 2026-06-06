@@ -240,7 +240,7 @@ const ISO2NAME = {
   'TG':'Togo','TT':'Trinidad e Tobago','TN':'Tunisia','TR':'Turchia',
   'TM':'Turkmenistan','UG':'Uganda','UA':'Ucraina','US':'USA',
   'UY':'Uruguay','UZ':'Uzbekistan','VE':'Venezuela','VN':'Vietnam',
-  'YE':'Yemen','ZM':'Zambia','ZW':'Zimbabwe','XK':'Kosovo',
+  'YE':'Yemen','ZM':'Zambia','ZW':'Zimbabwe','XK':'Kosovo','ZA':'Sudafrica',
   'MF':'Saint Martin','SX':'Sint Maarten','GP':'Guadalupa',
   'MQ':'Martinica','GF':'Guyana Francese','PF':'Polinesia Francese',
   'NC':'Nuova Caledonia','RE':'Réunion','PM':'Saint-Pierre-et-Miquelon',
