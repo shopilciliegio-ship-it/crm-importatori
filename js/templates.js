@@ -264,9 +264,13 @@ const COUNTRY_REGION = {
   'Trinidad And Tobago':'Sud America','Belize':'Sud America',
   'Guyana':'Sud America','French Guiana':'Sud America',
   'Martinique':'Sud America','Guadeloupe':'Sud America',
+  // Nomi italiani / etichette generiche
+  'Brasile':'Sud America','Cile':'Sud America','Rep. Dominicana':'Sud America',
+  'LATAM':'Sud America',
 
   // ── NORD AMERICA ──
   'United States':'Nord America','USA':'Nord America','US':'Nord America','Canada':'Nord America','CA':'Nord America',
+  'HAW':'Nord America',
 
   // ── CARAIBI ──
   'Cayman Islands':'Caraibi','Isole Cayman':'Caraibi',
@@ -333,6 +337,10 @@ const COUNTRY_REGION = {
   'Gibraltar':'Europa','GI':'Europa',
   'Bosnia (Federacija Bosanska)':'Europa','Republika Srpska':'Europa',
   'Douglas':'Europa','Isle of Man':'Europa','IM':'Europa',
+  // Nomi italiani mancanti
+  'Gran Bretagna':'Europa','Bielorussia':'Europa','Lituania':'Europa',
+  'Macedonia del Nord':'Europa',
+  'SQ':'Europa', // codice lingua "sq" (albanese) finito nel campo paese
 
   // ── SCANDINAVIA ──
   // (inclusa in Europa ma separabile se preferisci)
@@ -382,9 +390,10 @@ const COUNTRY_REGION = {
   'Tajikistan':'Asia','TJ':'Asia',
   'Kyrgyzstan':'Asia','KG':'Asia',
   'Turkmenistan':'Asia','TM':'Asia',
-  'Azerbaijan':'Asia','AZ':'Asia',
+  'Azerbaijan':'Asia','AZ':'Asia','Azerbaigian':'Asia',
   'Georgia':'Asia','GE':'Asia',
   'Armenia':'Asia','AM':'Asia',
+  'HY':'Asia', // codice lingua "hy" (armeno) finito nel campo paese
 
   // ── MEDIO ORIENTE ──
   'United Arab Emirates':'Medio Oriente','AE':'Medio Oriente','UAE':'Medio Oriente','Emirati Arabi':'Medio Oriente',
