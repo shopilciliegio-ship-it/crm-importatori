@@ -4,7 +4,7 @@ let _researchRunning = false;
 let _researchCancel  = false;
 
 /* ── QUOTA GIORNALIERA ── */
-const GROQ_DAILY_LIMIT = 305;
+const AI_DAILY_LIMIT = 305;
 
 function _getUsage() {
   const today = new Date().toISOString().slice(0, 10);
@@ -22,13 +22,13 @@ function _incrementUsage() {
 }
 
 function getRemainingCalls() {
-  return Math.max(0, GROQ_DAILY_LIMIT - _getUsage().calls);
+  return Math.max(0, AI_DAILY_LIMIT - _getUsage().calls);
 }
 
 function _updateQuotaBar() {
   const u = _getUsage();
-  const pct = Math.min(100, Math.round(u.calls / GROQ_DAILY_LIMIT * 100));
-  const rem = GROQ_DAILY_LIMIT - u.calls;
+  const pct = Math.min(100, Math.round(u.calls / AI_DAILY_LIMIT * 100));
+  const rem = AI_DAILY_LIMIT - u.calls;
   const el = document.getElementById('rsch-quota-bar');
   const lbl = document.getElementById('rsch-quota-lbl');
   if (el) {
@@ -100,7 +100,7 @@ async function _rschFetchWebsite(url) {
 }
 
 async function _rschAnalyze(c, searchText, webText) {
-  if (!rsch.groqKey) return {};
+  if (!rsch.claudeKey) return {};
   const prompt = `Azienda: ${c.company||''}
 Paese: ${c.country||''} | Città: ${c.city||''}
 Tipo (BWI): ${c.type||''} | Prodotti: ${c.prodType||''}
@@ -114,21 +114,26 @@ ${searchText || '(nessun risultato trovato)'}
 ${webText ? webText.slice(0, 1800) : '(non disponibile o irraggiungibile)'}`;
 
   const body = JSON.stringify({
-    model: 'llama-3.3-70b-versatile',
+    model: 'claude-haiku-4-5',
+    system: RESEARCH_SYSTEM_PROMPT,
     messages: [
-      { role: 'system', content: RESEARCH_SYSTEM_PROMPT },
-      { role: 'user',   content: prompt }
+      { role: 'user', content: prompt }
     ],
     temperature: 0.1,
     max_tokens: 450
   });
 
-  // Retry con backoff su 429 (rate limit Groq: ~30 req/min)
+  // Retry con backoff su 429 (rate limit Claude — raro sui piani a pagamento)
   for (let attempt = 0; attempt < 4; attempt++) {
     try {
-      const r = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+      const r = await fetch('https://api.anthropic.com/v1/messages', {
         method: 'POST',
-        headers: { 'Authorization': `Bearer ${rsch.groqKey}`, 'Content-Type': 'application/json' },
+        headers: {
+          'x-api-key':                              rsch.claudeKey,
+          'anthropic-version':                      '2023-06-01',
+          'anthropic-dangerous-direct-browser-access': 'true',
+          'Content-Type':                           'application/json'
+        },
         body
       });
 
@@ -137,7 +142,7 @@ ${webText ? webText.slice(0, 1800) : '(non disponibile o irraggiungibile)'}`;
         const retryAfter = parseInt(r.headers.get('retry-after') || '0') || 0;
         const wait = retryAfter > 0 ? retryAfter * 1000 : [15000, 30000, 60000][attempt] || 60000;
         const lbl = document.getElementById('rsch-lbl');
-        if (lbl) lbl.textContent = `⏳ Rate limit Groq — attendo ${Math.round(wait/1000)}s (tentativo ${attempt+1}/4)...`;
+        if (lbl) lbl.textContent = `⏳ Rate limit Claude — attendo ${Math.round(wait/1000)}s (tentativo ${attempt+1}/4)...`;
         await new Promise(res => setTimeout(res, wait));
         continue;
       }
@@ -145,14 +150,15 @@ ${webText ? webText.slice(0, 1800) : '(non disponibile o irraggiungibile)'}`;
       // Chiamata reale ricevuta (successo o errore): conta sul budget giornaliero
       _incrementUsage();
 
-      if (!r.ok) { console.warn('Groq error:', r.status, await r.text().catch(()=>'')); return {}; }
+      if (!r.ok) { console.warn('Claude error:', r.status, await r.text().catch(()=>'')); return {}; }
 
-      const content = (await r.json()).choices?.[0]?.message?.content?.trim() || '';
+      const data    = await r.json();
+      const content = (data.content?.[0]?.text || '').trim();
       const m = content.match(/\{[\s\S]*\}/);
       if (m) return JSON.parse(m[0]);
       return {};
     } catch(e) {
-      console.warn('Groq exception:', e);
+      console.warn('Claude exception:', e);
       if (attempt < 3) await new Promise(res => setTimeout(res, 5000));
     }
   }
@@ -162,8 +168,8 @@ ${webText ? webText.slice(0, 1800) : '(non disponibile o irraggiungibile)'}`;
 /* ── MODAL ── */
 
 function openResearchModal(country, forceAll) {
-  if (!rsch.serperKey || !rsch.groqKey) {
-    toast('Configura le API key Serper e Groq nelle Impostazioni');
+  if (!rsch.serperKey || !rsch.claudeKey) {
+    toast('Configura le API key Serper e Claude nelle Impostazioni');
     openSettings();
     return;
   }
@@ -200,7 +206,7 @@ function openResearchModal(country, forceAll) {
       <div style="background:#fce4ec;border-radius:10px;padding:16px;text-align:center;margin-bottom:16px">
         <div style="font-size:32px;margin-bottom:8px">📊</div>
         <div style="font-size:15px;font-weight:700;color:#c62828;margin-bottom:4px">Quota giornaliera esaurita</div>
-        <div style="font-size:13px;color:#c62828">${u.calls} / ${GROQ_DAILY_LIMIT} analisi usate oggi</div>
+        <div style="font-size:13px;color:#c62828">${u.calls} / ${AI_DAILY_LIMIT} analisi usate oggi</div>
         <div style="font-size:12px;color:var(--text2);margin-top:8px">La quota si resetta a mezzanotte.</div>
       </div>
       <div class="mf"><button class="btn btp" onclick="closeModal()">OK</button></div>
@@ -209,7 +215,7 @@ function openResearchModal(country, forceAll) {
   }
 
   const u = _getUsage();
-  const usedPct = Math.min(100, Math.round(u.calls / GROQ_DAILY_LIMIT * 100));
+  const usedPct = Math.min(100, Math.round(u.calls / AI_DAILY_LIMIT * 100));
   const barColor = usedPct > 85 ? 'var(--coral-tx)' : usedPct > 60 ? '#f59e0b' : 'var(--accent)';
 
   const skipNote = skipped > 0
@@ -230,7 +236,7 @@ function openResearchModal(country, forceAll) {
     <div style="background:var(--bg2);border-radius:8px;padding:10px 12px;margin-bottom:10px">
       <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text2);margin-bottom:5px">
         <span id="rsch-quota-lbl">${remaining} analisi disponibili oggi</span>
-        <span style="color:var(--text3)">${u.calls} / ${GROQ_DAILY_LIMIT} usate</span>
+        <span style="color:var(--text3)">${u.calls} / ${AI_DAILY_LIMIT} usate</span>
       </div>
       <div style="background:var(--brd);border-radius:4px;height:5px;overflow:hidden">
         <div id="rsch-quota-bar" style="width:${usedPct}%;height:100%;background:${barColor};border-radius:4px;transition:width .3s"></div>
@@ -287,7 +293,7 @@ async function _runResearch(contacts, country) {
     // 2. Visita sito web (via proxy CORS)
     const webText = c.website ? await _rschFetchWebsite(c.website) : '';
 
-    // 3. Analisi AI via Groq
+    // 3. Analisi AI via Claude
     const analysis = await _rschAnalyze(c, searchText, webText);
 
     // Salva risultato nel contatto
@@ -310,7 +316,8 @@ async function _runResearch(contacts, country) {
     if (bar) bar.style.width = pct + '%';
     if (cnt) cnt.textContent = `${done} / ${total}`;
 
-    // 2.5s tra contatti → ~24 req/min, sotto il limite Groq di 30 req/min
+    // 2.5s tra contatti — i rate limit di Claude (piano a pagamento) sono ben più
+    // alti di quelli del piano gratuito Groq, questo ritmo è solo per UX/leggibilità
     await new Promise(res => setTimeout(res, 2500));
   }
 
@@ -330,7 +337,7 @@ async function _runResearch(contacts, country) {
   if (summary) {
     summary.style.display = 'block';
     const quotaLeft = getRemainingCalls();
-    const quotaLine = `<br><span style="color:var(--text3)">📊 Quota rimanente oggi: <strong>${quotaLeft}</strong> / ${GROQ_DAILY_LIMIT}</span>`;
+    const quotaLine = `<br><span style="color:var(--text3)">📊 Quota rimanente oggi: <strong>${quotaLeft}</strong> / ${AI_DAILY_LIMIT}</span>`;
     const quotaExhausted = quotaLeft === 0
       ? `<br><span style="color:#c62828;font-weight:700">⚠ Quota giornaliera esaurita — riprova domani</span>` : '';
     summary.innerHTML = _researchCancel

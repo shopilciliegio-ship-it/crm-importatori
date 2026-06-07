@@ -359,7 +359,7 @@ function exportData(){
 
 function openSettings(){
   const brvOk=brv.apiKey&&brv.senderEmail;
-  const rschOk=rsch.serperKey&&rsch.groqKey;
+  const rschOk=rsch.serperKey&&rsch.claudeKey;
   showModal(`
     <div class="mt">⚙ Impostazioni</div>
 
@@ -406,15 +406,15 @@ function openSettings(){
       ${rschOk?'<span style="background:var(--green-bg);color:var(--green-tx);padding:2px 8px;border-radius:12px;font-size:11px;font-weight:700">✓ Configurato</span>':'<span style="background:var(--amber-bg);color:var(--amber-tx);padding:2px 8px;border-radius:12px;font-size:11px;font-weight:700">Non configurato</span>'}
     </div>
     <p style="font-size:13px;color:var(--text2);margin-bottom:10px;line-height:1.6">
-      Ricerca Google via <a href="https://serper.dev" target="_blank">Serper.dev</a> + analisi AI via <a href="https://console.groq.com" target="_blank">Groq</a>.
+      Ricerca Google via <a href="https://serper.dev" target="_blank">Serper.dev</a> + analisi AI via <a href="https://console.anthropic.com" target="_blank">Claude (Anthropic)</a>.
       Usa il pulsante 🔬 nella dashboard accanto a ogni paese.
     </p>
     <div class="fg2">
       <div class="fg fgf"><label>API Key Serper</label>
         <input id="sk" type="password" placeholder="b7b583d…" value="${esc(rsch.serperKey||'')}">
       </div>
-      <div class="fg"><label>API Key Groq</label>
-        <input id="gk" type="password" placeholder="gsk_…" value="${esc(rsch.groqKey||'')}">
+      <div class="fg"><label>API Key Claude</label>
+        <input id="gk" type="password" placeholder="sk-ant-…" value="${esc(rsch.claudeKey||'')}">
       </div>
     </div>
 
@@ -430,7 +430,7 @@ function saveSettings(){
   localStorage.setItem('ghcfg',JSON.stringify(ghs));
   brv={apiKey:gv('bk'),senderEmail:gv('be'),senderName:gv('bn')};
   localStorage.setItem('brvcfg',JSON.stringify(brv));
-  rsch={serperKey:gv('sk'),groqKey:gv('gk')};
+  rsch={serperKey:gv('sk'),claudeKey:gv('gk')};
   localStorage.setItem('rschcfg',JSON.stringify(rsch));
   ghSha={importatori:null,clienti:null,templates:null,ordini:null,overrides:null};closeModal();
   toast('Impostazioni salvate — connessione in corso…');
