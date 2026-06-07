@@ -120,6 +120,50 @@
       "analyzed_at": "2026-06-07T13:17:01.481Z"
     }
   },
+  "c1780673710931cn6rk": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "no",
+      "tipo_business": "sconosciuto",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Discrepanza critica: Raon Co. risulta specializzata in tessuti/materiali (hemp, fabrics PU) su Kompass, non in vino. Siti dichiarati irraggiungibili. Possibile omonimia o dati BWI errati.",
+      "analyzed_at": "2026-06-07T15:05:13.467Z"
+    }
+  },
+  "c1780673710931cbz0f": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda sudcoreana senza traccia online (sito irraggiungibile, nessun risultato Google). Nessuna evidenza di focus su vini italiani. Dimensione modesta (54 dipendenti) e difficile verificare affidabilità.",
+      "analyzed_at": "2026-06-07T15:05:29.681Z"
+    }
+  },
+  "c1780673710931ic8ue": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Distributore coreano multi-categoria (birra, vino, spirits, sake) con 48 dipendenti e fatturato ~19,5M. Sito funzionante ma in coreano; catalogo generico include vini ma non specifica origine italiana. Mercato target: horeca locale (pub, izakaya, ristoranti). Contattare solo se interessati a penetrazione mercato coreano con vini generici.",
+      "analyzed_at": "2026-06-07T15:05:36.935Z"
+    }
+  },
+  "c1780673710931akb21": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "si",
+      "note": "Importatore consolidato in Corea del Sud con 39 dipendenti e fatturato solido (~7.7M). Citato in report ufficiali come uno dei principali player; distribuisce a horeca e retail. Probabile interesse per vini italiani dato contesto mediterraneo europeo.",
+      "analyzed_at": "2026-06-07T15:05:51.223Z"
+    }
+  },
   "c1780673710931u53p0": {
     "research": {
       "affidabilita": 4,
@@ -129,6 +173,17 @@
       "raccomandato": "forse",
       "note": "Importatore di vino con sede in Corea del Sud, presente in elenchi di distributori di vini di alta qualità, ma non si trovano informazioni specifiche su vini italiani",
       "analyzed_at": "2026-06-06T14:30:22.750Z"
+    }
+  },
+  "c1780673710931s0v0a": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Importatore coreano consolidato (31 dipendenti, ~11M fatturato) specializzato in vini artigianali. Nessuna menzione esplicita di vini italiani, ma portafoglio europeo (Côte des Bar). Mercato HORECA primario. Contattare se target Asia-Pacifico è prioritario.",
+      "analyzed_at": "2026-06-07T15:06:00.417Z"
     }
   },
   "c1780673710931c9rsc": {
@@ -142,6 +197,39 @@
       "analyzed_at": "2026-06-07T10:48:32.762Z"
     }
   },
+  "c17806737109314spyg": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "no",
+      "tipo_business": "importatore",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Azienda coreana specializzata in sake giapponese e spirits, non in vini italiani. Siti dichiarati non raggiungibili; presenze su social e festival confermano attività ma focus completamente su mercato asiatico e sake.",
+      "analyzed_at": "2026-06-07T15:06:14.734Z"
+    }
+  },
+  "c1780673710931q3ucg": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore sudcoreano consolidato (25 dipendenti, ~3.4M fatturato) con referenze internazionali (Starmont Wines). Portafoglio non specificamente focalizzato su vini italiani; contatti verificati e sito attivo.",
+      "analyzed_at": "2026-06-07T15:06:28.971Z"
+    }
+  },
+  "c17806737109315ecmm": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Importatore coreano consolidato (24 dipendenti, fatturato ~8.2M) di vini premium da tutto il mondo. Nessuna menzione esplicita di vini italiani, ma portafoglio internazionale suggerisce possibile interesse. Mercato asiatico con potenziale, ma richiede verifica diretta su focus geografico.",
+      "analyzed_at": "2026-06-07T15:06:43.442Z"
+    }
+  },
   "c1780673710931s6mep": {
     "research": {
       "affidabilita": 2,
@@ -151,6 +239,39 @@
       "raccomandato": "no",
       "note": "Dati scarsi, sito web non raggiungibile, nessuna informazione sui vini italiani",
       "analyzed_at": "2026-06-06T14:45:57.627Z"
+    }
+  },
+  "c1780673710931lv68n": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "distributore",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Azienda sudcoreana piccola (19 dipendenti) con sito non raggiungibile. Nessuna evidenza di specializzazione in vini italiani; risultati Google mostrano attività generiche di import/export. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-06-07T15:06:54.078Z"
+    }
+  },
+  "c1780673710931c2qrh": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda sudcoreana con sito web non funzionante/non raggiungibile. Nessuna evidenza di specializzazione in vini italiani; portafoglio generico (vino, birra, spirits). Fatturato modesto e dimensione piccola (19 dipendenti) suggeriscono operatività locale limitata.",
+      "analyzed_at": "2026-06-07T15:06:59.203Z"
+    }
+  },
+  "c1780673710931ubzlv": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "si",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "si",
+      "note": "Importatore specializzato in vini italiani dal 2002, leader nel mercato coreano. Azienda solida (18 dipendenti, fatturato ~7.5M) con presenza online e distribuzione multi-canale (horeca+retail).",
+      "analyzed_at": "2026-06-07T15:07:13.105Z"
     }
   },
   "c1780673710931ythr7": {
@@ -175,6 +296,50 @@
       "analyzed_at": "2026-06-06T15:00:14.743Z"
     }
   },
+  "c1780673710931pquqq": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Importatore sudcoreano con portafoglio diversificato (birra USA, rum filippino, vini generici). Nessuna evidenza di focus su vini italiani; catalogo mostra Monte La Reina, Château Juliet, Carolina Sangria - non italiani. Mercato locale (Korea) non strategico per esportatori italiani.",
+      "analyzed_at": "2026-06-07T15:07:18.891Z"
+    }
+  },
+  "c17806737109318brkv": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore solido (dal 1990, 35 anni esperienza) con portafoglio diversificato (sake, whisky, birra, vini). Catalogo include vini francesi e cileni ma nessuna menzione esplicita di vini italiani. Mercato primario è la Corea del Sud; contatto possibile solo se interessati a distribuire in Asia.",
+      "analyzed_at": "2026-06-07T15:07:26.069Z"
+    }
+  },
+  "c1780673710931pt51m": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Importatore coreano consolidato (14 dipendenti, fatturato ~38M) specializzato in vini europei di qualità. Presenze verificate su fonti autorevoli (Korea Herald, Fancy Food Show). Manca conferma esplicita di vini italiani nel portafoglio.",
+      "analyzed_at": "2026-06-07T15:07:40.529Z"
+    }
+  },
+  "c1780673710931cegf2": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore/distributore coreano consolidato (14 dipendenti, fatturato ~2.8M USD) con contatti verificati in documenti ufficiali IVV. Sito irraggiungibile limita valutazione; portfolio generico (vino/spumante) non specifica origine italiana. Vale la pena contattare via email/telefono per verificare interesse vini italiani.",
+      "analyzed_at": "2026-06-07T15:07:54.714Z"
+    }
+  },
   "c178067371093170itb": {
     "research": {
       "affidabilita": 2,
@@ -184,6 +349,28 @@
       "raccomandato": "forse",
       "note": "Importatore di vino con sede in Corea del Sud, ma mancano informazioni sul sito web e sui prodotti specifici, compresi i vini italiani.",
       "analyzed_at": "2026-06-06T15:14:37.699Z"
+    }
+  },
+  "c1780673710931uqw23": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "si",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "si",
+      "note": "Distributore coreano consolidato con portafoglio internazionale che include esplicitamente vini italiani (Barbera, Nebbiolo, Sangiovese). Sito professionale, 11 dipendenti, numero di registrazione verificato. Mercato retail/horeca in Corea del Sud.",
+      "analyzed_at": "2026-06-07T15:08:04.373Z"
+    }
+  },
+  "c1780673710931jqnqu": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore sudcoreano consolidato con storico di importazioni da Francia (Château Giscours) e Portogallo (José Maria da Fonseca). Sito non raggiungibile ma presenze verificate in database commerciali. Portafoglio europeo generico: verificare se include vini italiani prima di contattare.",
+      "analyzed_at": "2026-06-07T15:08:18.684Z"
     }
   },
   "c1780673710931i16r1": {
@@ -197,6 +384,39 @@
       "analyzed_at": "2026-06-07T11:24:14.104Z"
     }
   },
+  "c17806737109319gwiy": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore coreano con portafoglio europeo che include vini italiani (Toscana, Piemonte, Puglia, Sicilia). Fatturato modesto (489k) e team piccolo (10 dipendenti) suggeriscono operazione di nicchia. Sito funzionante ma info limitate su volumi/clientela.",
+      "analyzed_at": "2026-06-07T15:08:25.141Z"
+    }
+  },
+  "c1780673710931e0se0": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "importatore/distributore",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "forse",
+      "note": "Azienda sudcoreana con profilo importatore/distributore di vino, ma sito irraggiungibile e nessuna traccia online. Dimensione piccola (10 dipendenti). Verificare affidabilità prima di contattare; potenziale mercato asiatico per vini italiani se operativa.",
+      "analyzed_at": "2026-06-07T15:08:39.885Z"
+    }
+  },
+  "c1780673710931f3wfu": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore coreano consolidato (citato in studi di mercato 2013-2024), ma sito non raggiungibile e info limitate. Fatturato modesto (3,6M) con 9 dipendenti suggerisce PMI. Verificare se specializzato in vini italiani o portafoglio generico europeo.",
+      "analyzed_at": "2026-06-07T15:08:54.297Z"
+    }
+  },
   "c1780673710931zuthu": {
     "research": {
       "affidabilita": 4,
@@ -206,6 +426,28 @@
       "raccomandato": "forse",
       "note": "Azienda consolidata con storia di 24 anni, importatore di vini, ma non si trovano informazioni specifiche su vini italiani nel portafoglio",
       "analyzed_at": "2026-06-06T15:34:58.721Z"
+    }
+  },
+  "c1780673710931xp3xg": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "distributore",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Azienda piccola (8 dipendenti) con fatturato modesto. Sito irraggiungibile e nessuna traccia online. Impossibile verificare se commercializza vini italiani o se ha credibilità nel mercato coreano.",
+      "analyzed_at": "2026-06-07T15:08:59.318Z"
+    }
+  },
+  "c17806737109312q27s": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Sito poco professionale e confuso (mix di coreano/inglese, layout disordinato). Nessuna menzione esplicita di vini italiani; catalogo generico (wine, beer, cider, juice). Assenza di risultati Google e informazioni sul portafoglio prodotti specifico rendono impossibile valutare focus su vini italiani.",
+      "analyzed_at": "2026-06-07T15:09:06.124Z"
     }
   },
   "c17806737109314qovz": {
@@ -219,6 +461,28 @@
       "analyzed_at": "2026-06-07T11:39:22.694Z"
     }
   },
+  "c1780673710931iglbv": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda sudcoreana piccola (8 dipendenti) che distribuisce vini sudafricani. Nessuna evidenza di interesse per vini italiani; sito non raggiungibile. Scarsa affidabilità e fit con portafoglio italiano.",
+      "analyzed_at": "2026-06-07T15:09:11.029Z"
+    }
+  },
+  "c1780673710931gfeox": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda piccola (8 dipendenti) operante in Corea del Sud come importatore/distributore/retailer. Sito non raggiungibile e nessuna evidenza di specializzazione su vini italiani. Fatturato modesto (~1M USD). Contattare solo se target strategico è mercato coreano.",
+      "analyzed_at": "2026-06-07T15:09:16.498Z"
+    }
+  },
   "c1780673710931r52d0": {
     "research": {
       "affidabilita": 2,
@@ -228,6 +492,39 @@
       "raccomandato": "no",
       "note": "Dati scarsi, nessun risultato su Google, sito web non raggiungibile",
       "analyzed_at": "2026-06-06T15:50:35.604Z"
+    }
+  },
+  "c1780673710931zcah9": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore",
+      "mercato_target": "online",
+      "raccomandato": "forse",
+      "note": "Importatore online sudcoreano con fatturato modesto (4.7M). Sito irraggiungibile e assenza totale di tracce Google rendono difficile verificare specializzazione in vini italiani. Contattare solo se interessati al mercato asiatico con basso rischio.",
+      "analyzed_at": "2026-06-07T15:09:31.135Z"
+    }
+  },
+  "c1780673710931yd2y2": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "importatore",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Importatore sudcoreano specializzato in vini americani (California). Nessuna traccia di vini italiani nel portafoglio; sito funzionante ma piccola realtà (7 dipendenti, fatturato modesto).",
+      "analyzed_at": "2026-06-07T15:09:35.949Z"
+    }
+  },
+  "c1780673710931u4udu": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "importatore",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Importatore sudcoreano con portafoglio diversificato che include vini italiani (Le Trame, Cantina Tollo, Tintero). Sito funzionante ma con scarsa visibilità online (nessun risultato Google). Dimensione piccola (7 dipendenti, fatturato ~1,6M) suggerisce mercato locale/regionale.",
+      "analyzed_at": "2026-06-07T15:09:41.916Z"
     }
   },
   "c17806737109323njbs": {
@@ -241,6 +538,17 @@
       "analyzed_at": "2026-06-07T11:54:54.701Z"
     }
   },
+  "c17806737109321hl4q": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore coreano di vini con 6 dipendenti, citato in report ufficiali portoghesi su mercato vinicolo sudcoreano. Sito non raggiungibile limita verifica. Potenziale interessante se specializzato in vini europei/italiani, ma richiede contatto diretto per confermare portafoglio.",
+      "analyzed_at": "2026-06-07T15:09:55.491Z"
+    }
+  },
   "c1780673710932fy981": {
     "research": {
       "affidabilita": 4,
@@ -250,6 +558,72 @@
       "raccomandato": "forse",
       "note": "Importatore di vini con sede in Corea del Sud, presente su siti web di produttori di vino francese. Nessuna informazione diretta su vini italiani.",
       "analyzed_at": "2026-06-06T16:06:46.033Z"
+    }
+  },
+  "c17806737109326yota": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Azienda sudcoreana con sito irraggiungibile e zero traccia online. Fatturato molto basso (782k) per 5 dipendenti. Impossibile verificare se commercializza vini italiani.",
+      "analyzed_at": "2026-06-07T15:10:00.550Z"
+    }
+  },
+  "c178067371093286hvc": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore coreano di vini e spirits con 5 dipendenti. Partecipa a fiere internazionali (SIWSE 2025). Sito dichiarato non raggiungibile; info limitate su portafoglio specifico e focus su vini italiani.",
+      "analyzed_at": "2026-06-07T15:10:05.556Z"
+    }
+  },
+  "c1780673710932od7kl": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "forse",
+      "note": "Piccola azienda coreana (5 dipendenti) che dichiara importazione vini. Sito irraggiungibile e nessuna traccia online. Fatturato modesto (~2.7M). Verificare affidabilità prima di contattare.",
+      "analyzed_at": "2026-06-07T15:10:19.727Z"
+    }
+  },
+  "c1780673710932lmll2": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda sudcoreana con presenze frammentarie online. Risultati Google mostrano attività in settori eterogenei (chimica, ginseng, food generico). Nessuna evidenza di specializzazione in vini italiani; sito dichiarato irraggiungibile. Piccola dimensione (5 dipendenti) e fatturato modesto non giustificano contatto.",
+      "analyzed_at": "2026-06-07T15:10:34.374Z"
+    }
+  },
+  "c1780673710932fcwa2": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Importatore coreano con fatturato modesto (2,6M) e piccolo team (5 dipendenti). Presenze su social e wine events suggeriscono attività reale, ma siti dichiarati non raggiungibili. Contatti con produttori italiani (Fortevini, Divino Italy) indicano interesse per vini italiani; mercato target sembra horeca premium.",
+      "analyzed_at": "2026-06-07T15:10:50.682Z"
+    }
+  },
+  "c1780673710932a711x": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Importatore sudcoreano consolidato con partnership con cantine internazionali (Au Bon Climat, Delta Estate Wines). Portafoglio focalizzato su vini esteri (California, Nuova Zelanda). Nessuna evidenza esplicita di vini italiani nel catalogo.",
+      "analyzed_at": "2026-06-07T15:11:04.630Z"
     }
   },
   "c17806737109323feug": {
@@ -263,6 +637,50 @@
       "analyzed_at": "2026-06-06T16:25:23.712Z"
     }
   },
+  "c1780673710932lbd73": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda sudcoreana di piccole dimensioni (5 dipendenti, fatturato modesto). Sito irraggiungibile e nessuna traccia online. Impossibile verificare se commercializza vini italiani o se rappresenta un partner affidabile.",
+      "analyzed_at": "2026-06-07T15:11:14.634Z"
+    }
+  },
+  "c1780673710932vebg9": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore coreano attivo dal 2007 con portafoglio europeo (Francia, Spagna, Italia citata). Sito funzionante ma nessuna traccia Google. Fatturato modesto (492k) e team piccolo (5 dipendenti) suggeriscono scala locale. Contattare se target è mercato asiatico.",
+      "analyzed_at": "2026-06-07T15:11:20.940Z"
+    }
+  },
+  "c1780673710932ank8c": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda sudcoreana di piccole dimensioni (5 dipendenti) con sito minimalista e nessuna traccia Google. Portfolio generico (birra, spirits, spumante) senza evidenza di vini italiani. Affidabilità bassa.",
+      "analyzed_at": "2026-06-07T15:11:31.656Z"
+    }
+  },
+  "c1780673710932n4184": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "importatore|distributore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda sudcoreana piccola (5 dipendenti, fatturato ~776k USD) senza evidenze di specializzazione in vini italiani. Sito web minimalista e non funzionante in inglese; nessuna informazione sul portafoglio prodotti disponibile online.",
+      "analyzed_at": "2026-06-07T15:11:37.695Z"
+    }
+  },
   "c17806737109321vs0k": {
     "research": {
       "affidabilita": 2,
@@ -272,6 +690,50 @@
       "raccomandato": "no",
       "note": "Dati scarsi, sito web non raggiungibile, nessuna informazione sui vini italiani",
       "analyzed_at": "2026-06-06T16:37:59.817Z"
+    }
+  },
+  "c178067371093214189": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "si",
+      "note": "Importatore coreano consolidato dal 2008 con contatti verificati in fonti autorevoli (Contucci, Sensory). Citato come distributore di vini europei; probabilità alta di interesse per vini italiani. Contattare via email/telefono.",
+      "analyzed_at": "2026-06-07T15:11:51.961Z"
+    }
+  },
+  "c1780673710932nlnlz": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo retailer coreano (4 dipendenti) con portafoglio multi-paese (Cile, USA, Francia, Italia, Spagna). Sito datato (ultimi aggiornamenti 2016), nessuna traccia online. Non è distributore/importatore italiano.",
+      "analyzed_at": "2026-06-07T15:11:58.776Z"
+    }
+  },
+  "c1780673710932c8k03": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "forse",
+      "note": "Piccolo importatore coreano (4 dipendenti, fatturato modesto). Sito non raggiungibile e assenza di tracce online rendono difficile verificare specializzazione in vini italiani. Contatto possibile solo se target esplicito è Asia.",
+      "analyzed_at": "2026-06-07T15:12:13.217Z"
+    }
+  },
+  "c17806737109325jk9e": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "importatore",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda piccola (4 dipendenti) con sito irraggiungibile e nessuna traccia online. Impossibile verificare se importa vini italiani. Alto rischio di affidabilità.",
+      "analyzed_at": "2026-06-07T15:12:28.579Z"
     }
   },
   "c1780673710932bmpm2": {
@@ -285,6 +747,83 @@
       "analyzed_at": "2026-06-06T16:52:16.625Z"
     }
   },
+  "c178067371093286sid": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore riconosciuto in Corea del Sud (citato in report ufficiali portoghesi), ma sito irraggiungibile e fatturato molto basso (179k). Verificare se ancora attivo e se importa vini italiani oltre a portoghesi.",
+      "analyzed_at": "2026-06-07T15:12:43.198Z"
+    }
+  },
+  "c1780673710932fqgky": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "importatore|distributore",
+      "mercato_target": "horeca|retail",
+      "raccomandato": "no",
+      "note": "Azienda focalizzata su birre belghe e spirits premium, non su vini italiani. Sito non raggiungibile; solo 3 dipendenti e fatturato molto modesto (293k) suggeriscono operazione di piccola scala.",
+      "analyzed_at": "2026-06-07T15:12:58.134Z"
+    }
+  },
+  "c1780673710932occ3h": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore coreano con sito datato e poco professionale. Portafoglio include vini europei (Riesling, Moscato, Carmenere) ma nessuna menzione esplicita di vini italiani. Solo 3 dipendenti, fatturato sconosciuto. Riferimenti storici (2008) suggeriscono attività consolidata ma informazioni attuali scarse.",
+      "analyzed_at": "2026-06-07T15:13:04.946Z"
+    }
+  },
+  "c1780673710932yn8kn": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "importatore",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Azienda micro (3 dipendenti, fatturato molto basso) con sito irraggiungibile e zero traccia online. Impossibile verificare se importa vini italiani o la solidità commerciale.",
+      "analyzed_at": "2026-06-07T15:13:20.086Z"
+    }
+  },
+  "c17806737109324vwem": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "importatore",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Sito inaccessibile (blocco CAPTCHA), nessuna traccia Google, azienda micro (3 dipendenti). Impossibile verificare credibilità o portafoglio vini italiani.",
+      "analyzed_at": "2026-06-07T15:13:26.482Z"
+    }
+  },
+  "c1780673710932i42f3": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Importatore coreano specializzato in vini naturali con buona reputazione locale (citato in report Australia e guide Seoul). Sito non raggiungibile al momento. Piccola struttura (3 dipendenti) con fatturato modesto; focus su vini naturali non specifica origine italiana.",
+      "analyzed_at": "2026-06-07T15:13:41.299Z"
+    }
+  },
+  "c1780673710932lm9o7": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "forse",
+      "note": "Retailer online coreano con sito funzionante che cita esplicitamente Italia (Toscana, Piemonte) e vitigni italiani (Sangiovese, Nebbiolo). Piccola struttura (3 dipendenti, fatturato modesto ~316k). Assenza su Google e nessuna verifica esterna limitano affidabilità.",
+      "analyzed_at": "2026-06-07T15:13:48.213Z"
+    }
+  },
   "c17806737109320ps0c": {
     "research": {
       "affidabilita": 2,
@@ -296,6 +835,50 @@
       "analyzed_at": "2026-06-06T17:13:40.760Z"
     }
   },
+  "c1780673710932pvmax": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore/distributore sudcoreano con 3 dipendenti e fatturato modesto (~370k). Citato in report ufficiali portoghesi e indiani come player nel mercato vini coreano; sito non raggiungibile. Verificare se importa vini italiani specificamente.",
+      "analyzed_at": "2026-06-07T15:14:03.559Z"
+    }
+  },
+  "c1780673710932cgsn3": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "importatore",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Azienda micro (2 dipendenti, fatturato ~675k USD) con sito irraggiungibile e zero traccia online. Nessuna evidenza di focus su vini italiani. Affidabilità molto bassa.",
+      "analyzed_at": "2026-06-07T15:14:18.976Z"
+    }
+  },
+  "c17806737109325u5j1": {
+    "research": {
+      "affidabilita": 5,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Emart è il principale retailer coreano (spun-off da Shinsegae) con divisione Wine & Liquor consolidata. Importa vini e ha affiliate negli USA. Tuttavia, 1 dipendente nel record BWI suggerisce dati incompleti; contattare per verificare interesse in vini italiani premium.",
+      "analyzed_at": "2026-06-07T15:14:34.251Z"
+    }
+  },
+  "c1780673710932f58ud": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda solida (15 dipendenti, fatturato ~5.6M USD) con sito professionale e presenti su Kompass come importatore/distributore/retailer. Citata in ricerche per vini italiani DOC ma portafoglio ampio (francesi, australiani). Modello B2C prevalente (app, subscription, pickup shop) con B2B secondario.",
+      "analyzed_at": "2026-06-07T15:14:40.843Z"
+    }
+  },
   "c1780673710932uvoya": {
     "research": {
       "affidabilita": 2,
@@ -305,6 +888,39 @@
       "raccomandato": "forse",
       "note": "Dipendenti pochi, fatturato modesto, sito web non raggiungibile. Importatore di vino, ma non è chiaro se include vini italiani.",
       "analyzed_at": "2026-06-06T17:25:59.788Z"
+    }
+  },
+  "c1780673710932v5jla": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "importatore",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato minimo) con sito irraggiungibile e zero traccia online. Nessuna evidenza di specializzazione in vini italiani. Rischio affidabilità molto elevato.",
+      "analyzed_at": "2026-06-07T15:14:57.006Z"
+    }
+  },
+  "c1780673710932k7wqd": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda consolidata (dal 2013) con presenze in directory internazionali e contatti documentati. Importa vini e sake in Corea del Sud, ma nessuna evidenza esplicita di focus su vini italiani. Sito dichiarato non raggiungibile: verificare contatti diretti prima di investire tempo.",
+      "analyzed_at": "2026-06-07T15:15:03.153Z"
+    }
+  },
+  "c1780673710932r7nzy": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda sudcoreana con sito irraggiungibile e nessuna traccia online. Impossibile verificare credibilità, portafoglio prodotti o interesse specifico per vini italiani. Non prioritaria per contatti B2B.",
+      "analyzed_at": "2026-06-07T15:15:18.317Z"
     }
   },
   "c178067371093278yxe": {
