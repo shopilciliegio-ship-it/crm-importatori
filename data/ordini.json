@@ -404,11 +404,19 @@
           "note": "Auto Fieramente (era: spedito)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "dogana",
+          "to": "mgoodlett@comcast.net",
+          "subject": "Your order is going through customs",
+          "sentAt": 1780826486259,
+          "messageId": "<202606071001.14071679811@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780826484903,
+      "updatedAt": 1780826486259,
       "shippingType": "standard",
       "shipmentCode": "1379"
     },
@@ -441,11 +449,19 @@
           "note": "Auto Fieramente (era: spedito)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "consegnato",
+          "to": "michael.forbes617@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1780826486259,
+          "messageId": "<202606071001.10288886575@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780826484903,
+      "updatedAt": 1780826486259,
       "shippingType": "standard",
       "shipmentCode": "FORBESM"
     },
