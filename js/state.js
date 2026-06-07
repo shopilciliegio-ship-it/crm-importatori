@@ -19,10 +19,10 @@ let dbRemT={};                         // template email reminder
 let layer='importatori';               // layer attivo
 let ghs={};
 let brv={};
-let rsch=JSON.parse(localStorage.getItem('rschcfg')||'{}'); // serperKey, claudeKey
+let rschCfg={queue:[],dailyLimit:150}; // coda paesi per ricerca AI automatica server-side
 let sel=new Set();
 let regSel=new Set();
 let _pendingEmailId=null; // id contatto per apertura email da scheda
-let ghSha={importatori:null,clienti:null,templates:null,ordini:null,reminders:null,settings:null};
+let ghSha={importatori:null,clienti:null,templates:null,ordini:null,reminders:null,settings:null,researchConfig:null};
 let dbSettings={emailAutoSend:false};
 let saveTimer=null,saveOrdTimer=null,pending=null;

@@ -143,7 +143,7 @@ async function pushGH(){
       ghSha[layer]=(await res.json()).content.sha;
       updGh('saved');
     } else if(res.status===409||res.status===422){
-      ghSha={importatori:null,clienti:null,templates:null,ordini:null,overrides:null};
+      ghSha={importatori:null,clienti:null,templates:null,ordini:null,overrides:null,researchConfig:null};
       setTimeout(pushGH,1000);
     } else {
       const err=await res.json().catch(()=>({}));
@@ -359,7 +359,6 @@ function exportData(){
 
 function openSettings(){
   const brvOk=brv.apiKey&&brv.senderEmail;
-  const rschOk=rsch.serperKey&&rsch.claudeKey;
   showModal(`
     <div class="mt">⚙ Impostazioni</div>
 
@@ -400,24 +399,6 @@ function openSettings(){
       </div>
     </div>
 
-    <div style="height:0.5px;background:var(--brd);margin:0 0 1.25rem"></div>
-    <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
-      <div style="font-size:13px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.5px">AI Research — Analisi Importatori</div>
-      ${rschOk?'<span style="background:var(--green-bg);color:var(--green-tx);padding:2px 8px;border-radius:12px;font-size:11px;font-weight:700">✓ Configurato</span>':'<span style="background:var(--amber-bg);color:var(--amber-tx);padding:2px 8px;border-radius:12px;font-size:11px;font-weight:700">Non configurato</span>'}
-    </div>
-    <p style="font-size:13px;color:var(--text2);margin-bottom:10px;line-height:1.6">
-      Ricerca Google via <a href="https://serper.dev" target="_blank">Serper.dev</a> + analisi AI via <a href="https://console.anthropic.com" target="_blank">Claude (Anthropic)</a>.
-      Usa il pulsante 🔬 nella dashboard accanto a ogni paese.
-    </p>
-    <div class="fg2">
-      <div class="fg fgf"><label>API Key Serper</label>
-        <input id="sk" type="password" placeholder="b7b583d…" value="${esc(rsch.serperKey||'')}">
-      </div>
-      <div class="fg"><label>API Key Claude</label>
-        <input id="gk" type="password" placeholder="sk-ant-…" value="${esc(rsch.claudeKey||'')}">
-      </div>
-    </div>
-
     <div class="mf">
       <button class="btn" onclick="closeModal()">Annulla</button>
       <button class="btn btp" onclick="saveSettings()">Salva e connetti</button>
@@ -430,9 +411,7 @@ function saveSettings(){
   localStorage.setItem('ghcfg',JSON.stringify(ghs));
   brv={apiKey:gv('bk'),senderEmail:gv('be'),senderName:gv('bn')};
   localStorage.setItem('brvcfg',JSON.stringify(brv));
-  rsch={serperKey:gv('sk'),claudeKey:gv('gk')};
-  localStorage.setItem('rschcfg',JSON.stringify(rsch));
-  ghSha={importatori:null,clienti:null,templates:null,ordini:null,overrides:null};closeModal();
+  ghSha={importatori:null,clienti:null,templates:null,ordini:null,overrides:null,researchConfig:null};closeModal();
   toast('Impostazioni salvate — connessione in corso…');
   loadFromGH();
 }

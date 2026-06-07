@@ -21,9 +21,11 @@ async function switchLayer(newLayer){
   const navEl   = document.querySelector('.nav');
   const ordSec  = document.getElementById('section-ordini');
   const impTgl  = document.getElementById('email-autosend-imp-toggle');
+  const rschBnr = document.getElementById('research-queue-banner');
   if(navEl)  navEl.style.display  = isOrd ? 'none' : '';
   if(ordSec) ordSec.style.display = isOrd ? 'block' : 'none';
   if(impTgl) impTgl.style.display = newLayer==='importatori' ? 'flex' : 'none';
+  if(rschBnr) rschBnr.style.display = newLayer==='importatori' ? 'block' : 'none';
 
   if(isOrd){
     document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
@@ -70,6 +72,9 @@ async function init(){
     if(typeof loadSettingsFromGH==='function'){
       try{ await loadSettingsFromGH(); }catch(e){ console.warn('loadSettingsFromGH:',e); }
     }
+    if(typeof loadResearchConfigFromGH==='function'){
+      try{ await loadResearchConfigFromGH(); }catch(e){ console.warn('loadResearchConfigFromGH:',e); }
+    }
     // Sync silenzioso bounce Brevo (3s di ritardo per non bloccare il render iniziale)
     if(brv.apiKey){
       setTimeout(()=>{
@@ -88,6 +93,7 @@ function refreshAll(){
   renderTemplates();renderRegionChart();renderCCChart();renderPipeline();
   updateBadges();updateFilters();
   try{ if(typeof renderEmailToggleImp==='function') renderEmailToggleImp(); }catch(e){}
+  try{ if(typeof renderResearchBanner==='function') renderResearchBanner(); }catch(e){}
   try{ if(typeof renderOrdini==='function') renderOrdini(); }catch(e){ console.warn('renderOrdini:',e); }
 }
 
