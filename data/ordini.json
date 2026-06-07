@@ -391,19 +391,24 @@
       "mbeTrackingNumber": "IT3299-8V-0000006E3J",
       "carrier": "UPS",
       "shippingDate": "2026-05-28",
-      "status": "spedito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "spedito",
           "date": 1780415614441,
           "note": "Importato da MBE — Shipment created"
+        },
+        {
+          "status": "dogana",
+          "date": 1780826484903,
+          "note": "Auto Fieramente (era: spedito)"
         }
       ],
       "emailsSent": [],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780598739759,
+      "updatedAt": 1780826484903,
       "shippingType": "standard",
       "shipmentCode": "1379"
     },
@@ -423,19 +428,24 @@
       "mbeTrackingNumber": "IT3299-8V-0000006E3G",
       "carrier": "UPS",
       "shippingDate": "2026-05-28",
-      "status": "spedito",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "spedito",
           "date": 1780415614441,
           "note": "Importato da MBE — Shipment created"
+        },
+        {
+          "status": "consegnato",
+          "date": 1780826484903,
+          "note": "Auto Fieramente (era: spedito)"
         }
       ],
       "emailsSent": [],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780598739759,
+      "updatedAt": 1780826484903,
       "shippingType": "standard",
       "shipmentCode": "FORBESM"
     },
