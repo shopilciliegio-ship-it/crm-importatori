@@ -437,6 +437,14 @@ function openFollowUpFromRegistro(){
   openBulkSend();
 }
 
+function researchBadge(r){
+  if(!r) return '';
+  const REC=  {si:'#e8f5e9:#2e7d32', forse:'#fff3e0:#e65100', no:'#fce4ec:#c62828'};
+  const [bg,tx]=(REC[r.raccomandato]||'var(--bg2):var(--text2)').split(':');
+  const stars='★'.repeat(r.affidabilita||0);
+  return `<span style="font-size:10px;background:${bg};color:${tx};padding:1px 6px;border-radius:10px;margin-left:4px;font-weight:700">${stars} ${r.raccomandato||'?'}</span>`;
+}
+
 function crow(c){
   const checked=sel.has(c.id);
   if(isClienti()){
