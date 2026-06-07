@@ -331,7 +331,7 @@ function renderOrdini(){
     return `<div class="cr" onclick="openOrdineDetail('${o.id}')">
       <div class="av av2" style="font-size:10px">${ini(o.customerName)}</div>
       <div class="ci">
-        <div class="cn">${esc(o.customerName)}${hasMissingEmail?'<span style="color:var(--amber);font-size:10px;margin-left:5px">⚠ email</span>':''}${hasMissingType?'<span style="color:var(--amber);font-size:10px;margin-left:5px">⚠ tipo sped.</span>':''}</div>
+        <div class="cn">${esc(o.customerName)}${o.source==='shop'?'<span class="badge" style="background:var(--teal-bg);color:var(--teal-tx);font-size:9px;margin-left:5px">🛒 Shop Online</span>':''}${hasMissingEmail?'<span style="color:var(--amber);font-size:10px;margin-left:5px">⚠ email</span>':''}${hasMissingType&&o.source!=='shop'?'<span style="color:var(--amber);font-size:10px;margin-left:5px">⚠ tipo sped.</span>':''}</div>
         <div class="cs">${date} · €${o.amount.toFixed(2)} ${o.currency||'EUR'}${o.shippingType?' · <span style="font-size:10px;opacity:.7">'+o.shippingType+'</span>':''}</div>
       </div>
       <div style="display:flex;align-items:center;gap:6px;flex-shrink:0">
@@ -360,12 +360,15 @@ function openOrdineDetail(id){
     :'';
 
   showModal(`
-    <div class="mt">📦 ${esc(o.customerName)}</div>
+    <div class="mt">📦 ${esc(o.customerName)}${o.source==='shop'?' <span class="badge" style="background:var(--teal-bg);color:var(--teal-tx);font-size:11px;vertical-align:middle">🛒 Shop Online</span>':''}</div>
 
     ${dr('Stato', `<span class="badge" style="background:${st.c};color:${st.t}">${st.l}</span>`)}
+    ${o.orderNumber?dr('Nr. ordine', `<span style="font-family:monospace;font-weight:700">${esc(o.orderNumber)}</span>`):''}
     ${dr('Data ordine', date)}
     ${dr('Importo', `<strong>€${o.amount.toFixed(2)}</strong> ${o.currency||'EUR'}`)}
+    ${o.paymentType?dr('Pagamento', esc(o.paymentType)):''}
     ${o.shipmentCode?dr('Codice spedizione', `<span style="font-family:monospace;font-weight:700;font-size:15px">${esc(o.shipmentCode)}</span>`):''}
+    ${(o.carrier&&o.carrier!=='MBE')?dr('Corriere', esc(o.carrier)):''}
     ${dr('Email cliente', o.customerEmail?`<a href="mailto:${esc(o.customerEmail)}">${esc(o.customerEmail)}</a>`:'<span style="color:var(--amber)">⚠ mancante</span>')}
     ${o.customerPhone?dr('Telefono', `<a href="tel:${esc(o.customerPhone)}">${esc(o.customerPhone)}</a>`):''}
     ${o.trackingNumber?dr('Tracking', `<span style="font-family:monospace">${esc(o.trackingNumber)}</span> ${trackingLink}`):''}

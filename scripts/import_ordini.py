@@ -163,12 +163,102 @@ def _parse_body(text: str, mailto_emails: list[str] | None = None) -> dict:
     return result
 
 
+def _parse_shop_order_body(text: str) -> dict:
+    """Estrae i campi ordine dal corpo email del negozio online (Azienda Agricola Il Ciliegio).
+    Formato lineare senza PDF: indirizzi fatturazione/spedizione, pagamento, corriere, totali."""
+    result = {}
+
+    # Ordine #1390
+    m = re.search(r'Ordine\s*#\s*(\d+)', text, re.I)
+    if m:
+        result['orderNumber'] = '#' + m.group(1)
+
+    # Email cliente: prima email non di sistema nel corpo
+    all_emails = re.findall(r'\b[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,6}\b', text)
+    customer_email = next(
+        (e for e in all_emails if not any(s in e.lower() for s in SKIP_EMAILS)), ''
+    )
+    if customer_email:
+        result['customerEmail'] = customer_email
+
+    # Telefono: cifre subito prima dell'etichetta "Indirizzo di Spedizione" (cella affiancata)
+    m = re.search(r'(\d{8,15})\s+Indirizzo\s+di\s+Spedizione', text, re.I)
+    if m:
+        result['customerPhone'] = m.group(1)
+
+    # Nome destinatario + indirizzo: blocco subito sotto "Indirizzo di Spedizione"
+    m = re.search(
+        r'Indirizzo\s+di\s+Spedizione\s*\n\s*([^\n]+)\n((?:[^\n]+\n?)+?)'
+        r'(?=Tipo\s+di\s+Pagamento|Tipo\s+di\s+Spedizione|DATI\s+ARTICOLO|$)',
+        text, re.I
+    )
+    if m:
+        result['customerName'] = m.group(1).strip()
+        addr_lines = [l.strip() for l in m.group(2).split('\n') if l.strip()]
+        if addr_lines:
+            result['shippingAddress'] = ', '.join(addr_lines)
+
+    # Tipo di pagamento (es. PAYPAL) — sequenza di parole in maiuscolo dopo l'etichetta
+    # (?i:...) limita l'insensibilità al maiuscolo/minuscolo solo all'etichetta,
+    # cosicché [A-Z]{2,} catturi solo il valore realmente in maiuscolo (es. si ferma prima di "Tipo di Spedizione")
+    m = re.search(r'(?i:Tipo\s+di\s+Pagamento)\s*\n?\s*([A-Z]{2,}(?:\s+[A-Z]{2,})*)', text)
+    if m:
+        result['paymentType'] = m.group(1).strip().title()
+
+    # Corriere / tipo di spedizione (es. CORRIERE ITALIA)
+    m = re.search(r'(?i:Tipo\s+di\s+Spedizione)\s*\n?\s*([A-Z]{2,}(?:\s+[A-Z]{2,})*)', text)
+    if m:
+        result['carrier'] = m.group(1).strip().title()
+
+    # Totale Ordine    171,15 €
+    m = re.search(r'Totale\s+Ordine\s+([\d.,]+)\s*€', text, re.I)
+    if m:
+        try:
+            amount = float(m.group(1).replace(',', '.'))
+            if amount > 0:
+                result['amount'] = amount
+        except ValueError:
+            pass
+
+    return result
+
+
 def _parse_email(msg) -> dict | None:
     subject_raw = _decode_header(msg.get('Subject', ''))
     date_raw    = msg.get('Date', '')
     msg_id      = msg.get('Message-ID', '').strip()
 
     subject = re.sub(r'^(I:|Fw:|Fwd:|R:|Re:|Inoltrato:)\s+', '', subject_raw, flags=re.I).strip()
+
+    try:
+        from email.utils import parsedate_to_datetime
+        order_date = int(parsedate_to_datetime(date_raw).timestamp() * 1000)
+    except Exception:
+        order_date = int(datetime.now(timezone.utc).timestamp() * 1000)
+
+    # ── Ordini "Shop Online" (Azienda Agricola Il Ciliegio — corriere italiano, niente PDF) ──
+    m_shop = re.match(r'Invio\s+Ordine\s+Azienda\s+Agricola\s+Il\s+Ciliegio\s+(.+)$', subject, re.I)
+    if m_shop:
+        body_text, _ = _get_body_info(msg)
+        shop_fields = _parse_shop_order_body(body_text)
+        return {
+            'customerName':    shop_fields.get('customerName') or m_shop.group(1).strip(),
+            'amount':          shop_fields.get('amount', 0.0),
+            'currency':        'EUR',
+            'orderDate':       order_date,
+            'emailSubject':    subject,
+            'gmailMessageId':  msg_id,
+            'customerEmail':   shop_fields.get('customerEmail', ''),
+            'customerPhone':   shop_fields.get('customerPhone', ''),
+            'shipmentCode':    '',
+            'shippingAddress': shop_fields.get('shippingAddress', ''),
+            'numberOfCartons': None,
+            'shippingType':    None,
+            'source':          'shop',
+            'orderNumber':     shop_fields.get('orderNumber', ''),
+            'paymentType':     shop_fields.get('paymentType', ''),
+            'carrier':         shop_fields.get('carrier') or 'Corriere Italia',
+        }
 
     # Supporta sia "New Order" che "New Paid Order"; amount opzionale nel soggetto
     m = re.search(
@@ -181,12 +271,6 @@ def _parse_email(msg) -> dict | None:
     customer_name = m.group(1).strip()
     amount        = float(m.group(2).replace(',', '.')) if m.group(2) else 0.0
     currency      = (m.group(3) or 'EUR').upper()
-
-    try:
-        from email.utils import parsedate_to_datetime
-        order_date = int(parsedate_to_datetime(date_raw).timestamp() * 1000)
-    except Exception:
-        order_date = int(datetime.now(timezone.utc).timestamp() * 1000)
 
     # Corpo email
     body_text, mailto_emails = _get_body_info(msg)
@@ -378,7 +462,8 @@ def main():
     now_ms   = int(datetime.now(timezone.utc).timestamp() * 1000)
 
     # Campi che aggiorniamo se mancanti su ordini già presenti
-    PATCHABLE = ('customerEmail', 'customerPhone', 'shippingType', 'shippingAddress', 'shipmentCode')
+    PATCHABLE = ('customerEmail', 'customerPhone', 'shippingType', 'shippingAddress', 'shipmentCode',
+                 'orderNumber', 'paymentType', 'carrier')
 
     for o in new_orders_raw:
         existing_rec = next(
@@ -421,7 +506,10 @@ def main():
             'shippingType':    o.get('shippingType', None),
             'gmailMessageId':  o.get('gmailMessageId', ''),
             'trackingNumber':  '',
-            'carrier':         'MBE',
+            'carrier':         o.get('carrier', 'MBE'),
+            'source':          o.get('source', 'fieramente'),
+            'orderNumber':     o.get('orderNumber', ''),
+            'paymentType':     o.get('paymentType', ''),
             'shippingDate':    None,
             'status':          'preparazione',
             'statusHistory':   [{'status': 'preparazione', 'date': now_ms,
