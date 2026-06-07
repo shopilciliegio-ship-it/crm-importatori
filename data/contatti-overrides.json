@@ -99,14 +99,25 @@
     }
   },
   "c1780673710885ufsml": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1780871916681,
+        "msg": "Analisi AI modificata manualmente"
+      }
+    ],
     "research": {
       "affidabilita": 3,
       "vino_italiano": "forse",
       "tipo_business": "misto",
       "mercato_target": "misto",
-      "raccomandato": "forse",
+      "raccomandato": "si",
       "note": "Importatore malese di vini premium con 50 dipendenti e fatturato modesto (214k). Sito basic (Blogspot), ma presenti in network internazionali (Decanter Awards). Nessuna menzione esplicita di vini italiani; portafoglio generico 'boutique premium'. Vale verificare se trattano italiani.",
-      "analyzed_at": "2026-06-07T17:00:08.180Z"
+      "analyzed_at": "2026-06-07T17:00:08.180Z",
+      "edited_at": 1780871916681
     }
   },
   "c1780673710885pp5j4": {
