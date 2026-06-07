@@ -1151,6 +1151,24 @@
       "subject": "Your order has been delivered! 🍷 Enjoy!",
       "sentAt": 1780754058497,
       "messageId": "<202606061354.90422219829@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mbe_IT3299-8V-0000006E3J",
+      "customerName": "MICHELLE GOODLETT",
+      "type": "dogana",
+      "to": "mgoodlett@comcast.net",
+      "subject": "Your order is going through customs",
+      "sentAt": 1780826486259,
+      "messageId": "<202606071001.14071679811@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mbe_IT3299-8V-0000006E3G",
+      "customerName": "MICHAEL FORBES",
+      "type": "consegnato",
+      "to": "michael.forbes617@gmail.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1780826486259,
+      "messageId": "<202606071001.10288886575@smtp-relay.mailin.fr>"
     }
   ]
 }
