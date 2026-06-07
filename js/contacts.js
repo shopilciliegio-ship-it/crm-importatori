@@ -666,7 +666,10 @@ function _researchDetailBlock(c){
   return `<div class="divhr"></div>
   <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
     <div style="font-size:12px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.5px">🔬 Analisi AI</div>
-    ${date?`<span style="font-size:11px;color:var(--text3);margin-left:auto">${date}</span>`:''}
+    <div style="margin-left:auto;display:flex;align-items:center;gap:8px">
+      ${date?`<span style="font-size:11px;color:var(--text3)">${date}${r.edited_at?' · modificato a mano':''}</span>`:''}
+      <button class="btn bts" style="font-size:11px;padding:3px 10px" onclick="editResearchResult('${c.id}')">✏ Modifica</button>
+    </div>
   </div>
   <div style="background:var(--bg2);border-radius:10px;padding:14px 16px">
     <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap">
@@ -684,6 +687,46 @@ function _researchDetailBlock(c){
     </div>
     ${r.note?`<div style="font-size:12px;color:var(--text2);line-height:1.5;border-top:0.5px solid var(--brd);padding-top:8px">${esc(r.note)}</div>`:''}
   </div>`;
+}
+
+function editResearchResult(id){
+  const c=(isClienti()?dbC:db).contacts.find(x=>x.id===id);if(!c)return;
+  const r=c.research||{};
+  showModal(`
+    <div class="mt">Modifica analisi AI</div>
+    <div style="font-size:12px;color:var(--text2);line-height:1.5;margin-bottom:12px">Sovrascrivi la valutazione generata dall'AI con il tuo giudizio personale.</div>
+    <div class="fg">
+      <label>Affidabilità</label>
+      <select id="redaff">${[1,2,3,4,5].map(n=>`<option value="${n}"${(r.affidabilita||0)===n?' selected':''}>${'★'.repeat(n)}${'☆'.repeat(5-n)} — ${n}/5</option>`).join('')}</select>
+    </div>
+    <div class="fg">
+      <label>Raccomandazione</label>
+      <select id="redrec">
+        <option value="si"${r.raccomandato==='si'?' selected':''}>✅ Raccomandato</option>
+        <option value="forse"${r.raccomandato==='forse'?' selected':''}>🟡 Da valutare</option>
+        <option value="no"${r.raccomandato==='no'?' selected':''}>❌ Non idoneo</option>
+      </select>
+    </div>
+    <div class="fg">
+      <label>Note</label>
+      <textarea id="redno">${esc(r.note||'')}</textarea>
+    </div>
+    <div class="mf">
+      <button class="btn" onclick="closeModal()">Annulla</button>
+      <button class="btn btp" onclick="saveResearchEdit('${id}')">Salva</button>
+    </div>
+  `);
+}
+
+function saveResearchEdit(id){
+  const c=(isClienti()?dbC:db).contacts.find(x=>x.id===id);if(!c)return;
+  c.research=c.research||{};
+  c.research.affidabilita=parseInt(gv('redaff'),10);
+  c.research.raccomandato=gv('redrec');
+  c.research.note=gv('redno');
+  c.research.edited_at=Date.now();
+  c.log=c.log||[];c.log.push({ts:Date.now(),msg:'Analisi AI modificata manualmente'});
+  saveDB();refreshAll();closeModal();openDetail(id);
 }
 
 function chStatus(id,s){
