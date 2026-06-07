@@ -658,8 +658,7 @@ function _researchDetailBlock(c){
   return `<div class="divhr"></div>
   <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
     <div style="font-size:12px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.5px">🔬 Analisi AI</div>
-    ${date?`<span style="font-size:11px;color:var(--text3)">${date}</span>`:''}
-    <button class="btn bts" style="font-size:11px;padding:2px 8px;margin-left:auto" onclick="closeModal();openResearchModal('${esc(c.country||'')}')">Ri-analizza paese</button>
+    ${date?`<span style="font-size:11px;color:var(--text3);margin-left:auto">${date}</span>`:''}
   </div>
   <div style="background:var(--bg2);border-radius:10px;padding:14px 16px">
     <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap">

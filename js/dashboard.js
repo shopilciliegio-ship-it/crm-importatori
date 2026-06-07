@@ -73,7 +73,7 @@ function showCountriesForRegion(region){
       <div class="brow">
         <div class="blbl country-link" onclick="goToContacts({country:'${esc(c)}'})" title="Apri contatti di ${esc(c)}">${esc(c)}${_countryResearchBadge(c)}</div>
         <div class="btrk"><div class="bfll" style="width:${Math.round(n/max*100)}%">${n}</div></div>
-        ${!isClienti()?`<button class="btn" style="font-size:11px;padding:2px 8px;flex-shrink:0;margin-left:4px" onclick="event.stopPropagation();openResearchModal('${esc(c)}')" title="Analisi AI importatori">🔬</button>`:''}
+        ${_countryQueueFlag(c)}
       </div>`).join('')
     : '<div class="empty" style="font-size:12px">Nessun paese</div>';
 }
@@ -91,7 +91,7 @@ function renderCCChart(){
     <div class="brow">
       <div class="blbl country-link" onclick="goToContacts({country:'${esc(c)}'})" title="Apri contatti di ${esc(c)}">${esc(c)}${_countryResearchBadge(c)}</div>
       <div class="btrk"><div class="bfll" style="width:${Math.round(n/max*100)}%">${n}</div></div>
-      ${!isClienti()?`<button class="btn" style="font-size:11px;padding:2px 8px;flex-shrink:0;margin-left:4px" onclick="event.stopPropagation();openResearchModal('${esc(c)}')" title="Analisi AI importatori">🔬</button>`:''}
+      ${_countryQueueFlag(c)}
     </div>`).join('')
     :'<div class="empty" style="font-size:12px">Nessun dato</div>';
 }
@@ -126,6 +126,118 @@ function _countryResearchBadge(country) {
   const stars = '★'.repeat(avgAff);
   const [bg,tx] = si > 0 ? ['#e8f5e9','#2e7d32'] : ['#f5f5f5','#666'];
   return `<span style="font-size:10px;background:${bg};color:${tx};padding:1px 5px;border-radius:10px;margin-left:5px;font-weight:700" title="${contacts.length}/${total} analizzati, ${si} raccomandati">${stars} ${si}✓</span>`;
+}
+
+/* ── CODA RICERCA AI AUTOMATICA (server-side, GitHub Actions) ── */
+// data/research-config.json: {queue:[paesi in ordine FIFO], dailyLimit}
+// Lo script scripts/research_ai.py processa un paese alla volta ogni mattina
+// e salva i risultati come override — qui gestiamo solo il flag di selezione.
+
+function _countryResearchProgress(country){
+  const contacts = db.contacts.filter(c => c.country === country);
+  const done = contacts.filter(c => c.research).length;
+  return { done, total: contacts.length };
+}
+
+function _countryQueueFlag(country){
+  if (isClienti()) return '';
+  const inQueue = (rschCfg.queue||[]).includes(country);
+  const { done, total } = _countryResearchProgress(country);
+  const allDone = inQueue && total > 0 && done >= total;
+  const icon  = !inQueue ? '⚪' : (allDone ? '🟢' : '🟡');
+  const title = !inQueue
+    ? 'Aggiungi alla coda di ricerca AI automatica'
+    : allDone
+      ? `Ricerca completata (${done}/${total}) — clic per togliere dalla coda`
+      : `In coda di ricerca AI — ${done}/${total} analizzati — clic per togliere dalla coda`;
+  return `<button class="btn" style="font-size:13px;padding:2px 6px;flex-shrink:0;margin-left:4px;background:none;border:none;cursor:pointer"
+    onclick="event.stopPropagation();toggleResearchQueue('${esc(country)}',this)" title="${esc(title)}">${icon}</button>`;
+}
+
+async function toggleResearchQueue(country, btn){
+  rschCfg.queue = rschCfg.queue || [];
+  const idx = rschCfg.queue.indexOf(country);
+  if (idx >= 0) {
+    rschCfg.queue.splice(idx, 1);
+    toast(`${country} rimosso dalla coda di ricerca AI`);
+  } else {
+    rschCfg.queue.push(country);
+    toast(`${country} aggiunto alla coda di ricerca AI 🟡 — verrà processato automaticamente ogni mattina`);
+  }
+  await pushResearchConfigGH();
+  if (btn) btn.outerHTML = _countryQueueFlag(country);
+  renderResearchBanner();
+}
+
+async function loadResearchConfigFromGH(){
+  const{token,owner,repo}=ghs;
+  if(!token||!owner||!repo){ renderResearchBanner(); return; }
+  const url=`https://api.github.com/repos/${owner}/${repo}/contents/data/research-config.json`;
+  try{
+    const r=await fetch(url,{headers:{'Authorization':`token ${token}`,'Accept':'application/vnd.github.v3+json'}});
+    if(r.status===404){ renderResearchBanner(); return; }
+    if(!r.ok) return;
+    const d=await r.json();
+    ghSha.researchConfig=d.sha;
+    const raw=d.content.replace(/\n/g,'');
+    let jsonStr;
+    try{ jsonStr=decodeURIComponent(Array.from(atob(raw),c=>'%'+c.charCodeAt(0).toString(16).padStart(2,'0')).join('')); }
+    catch(e){ jsonStr=atob(raw); }
+    rschCfg=JSON.parse(jsonStr);
+    if(!Array.isArray(rschCfg.queue)) rschCfg.queue=[];
+    renderResearchBanner();
+  }catch(e){ console.warn('loadResearchConfigFromGH:',e); }
+}
+
+async function pushResearchConfigGH(){
+  const{token,owner,repo}=ghs;
+  if(!token||!owner||!repo) return;
+  const path='data/research-config.json';
+  const url=`https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
+  const hd={'Authorization':`token ${token}`,'Content-Type':'application/json','Accept':'application/vnd.github.v3+json'};
+  try{
+    if(!ghSha.researchConfig){
+      const r=await fetch(url,{headers:hd});
+      if(r.ok) ghSha.researchConfig=(await r.json()).sha;
+    }
+    const bytes=new TextEncoder().encode(JSON.stringify(rschCfg,null,2));
+    const b64=btoa(Array.from(bytes,b=>String.fromCharCode(b)).join(''));
+    const body={message:`Coda ricerca AI — ${new Date().toLocaleString('it-IT')}`,content:b64};
+    if(ghSha.researchConfig) body.sha=ghSha.researchConfig;
+    const res=await fetch(url,{method:'PUT',headers:hd,body:JSON.stringify(body)});
+    if(res.ok) ghSha.researchConfig=(await res.json()).content.sha;
+  }catch(e){ console.warn('pushResearchConfigGH:',e); }
+}
+
+function renderResearchBanner(){
+  const el=document.getElementById('research-queue-banner');
+  if(!el) return;
+  if(isClienti()){ el.innerHTML=''; return; }
+  const queue=rschCfg.queue||[];
+  if(!queue.length){
+    el.innerHTML=`<div class="card" style="padding:10px 16px;margin-bottom:10px;background:var(--bg2);font-size:13px;color:var(--text2)">
+      📭 Nessuna ricerca AI in coda — clicca la bandierina ⚪ accanto a un paese in "Per paese" per avviare ricerche automatiche giornaliere.
+    </div>`;
+    return;
+  }
+  let active=null, queuedAfter=0;
+  for(const country of queue){
+    const {done,total}=_countryResearchProgress(country);
+    if(done<total){
+      if(!active) active={country,done,total};
+      else queuedAfter++;
+    }
+  }
+  if(!active){
+    el.innerHTML=`<div class="card" style="padding:10px 16px;margin-bottom:10px;background:var(--green-bg);font-size:13px;color:var(--green-tx);font-weight:600">
+      ✅ Tutte le ricerche AI in coda sono complete — seleziona altri paesi per una nuova ricerca
+    </div>`;
+    return;
+  }
+  el.innerHTML=`<div class="card" style="padding:10px 16px;margin-bottom:10px;background:var(--amber-bg);font-size:13px;color:var(--amber-tx)">
+    🔬 Ricerca <strong>${esc(active.country)}</strong>: ${active.done} di ${active.total} in corso
+    ${queuedAfter>0?`&nbsp;·&nbsp;<strong>${queuedAfter}</strong> altre ricerche AI in coda`:''}
+  </div>`;
 }
 
 /* ── CONTACTS LIST ── */

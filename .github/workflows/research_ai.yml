@@ -1,0 +1,34 @@
+name: Ricerca AI Importatori
+
+on:
+  schedule:
+    - cron: '0 5 * * *'  # 05:00 UTC = 07:00 CEST (mattina presto in Italia)
+  workflow_dispatch:        # trigger manuale dal CRM o da GitHub UI
+
+permissions:
+  contents: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Installa dipendenze
+        run: pip install -r scripts/requirements.txt
+
+      - name: Ricerca AI importatori (paesi in coda, FIFO)
+        env:
+          SERPER_API_KEY: ${{ secrets.SERPER_API_KEY }}
+          CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
+          BREVO_API_KEY:  ${{ secrets.BREVO_API_KEY }}
+          GH_TOKEN:       ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO:        ${{ github.repository }}
+        run: python scripts/research_ai.py
