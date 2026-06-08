@@ -205,6 +205,19 @@ function getFiltered(){
       if(vb === -1) return -1;
       return vb - va;
     });
+  } else {
+    // Ordinamento clienti: cronologico (più vecchi prima) o alfabetico,
+    // applicabile insieme a qualsiasi altro filtro impostato sopra
+    const sortCli=document.getElementById('sortbycli')?.value||'';
+    if(sortCli==='chrono'){
+      list.sort((a,b)=>(a.registeredAt??a.importedAt??0)-(b.registeredAt??b.importedAt??0));
+    } else if(sortCli==='alpha'){
+      list.sort((a,b)=>{
+        const an=`${a.lastName||a.cognome||''} ${a.firstName||a.nome||''}`.trim().toLowerCase();
+        const bn=`${b.lastName||b.cognome||''} ${b.firstName||b.nome||''}`.trim().toLowerCase();
+        return an.localeCompare(bn);
+      });
+    }
   }
 
   return list;
