@@ -1196,6 +1196,15 @@
       "subject": "Thank you for your order! 🍷",
       "sentAt": 1780917389985,
       "messageId": "<202606081116.62065535419@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mq5eg9jb9j56",
+      "customerName": "DAISY CASTILLO",
+      "type": "order_received",
+      "to": "daiscastil@gmail.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1780934562742,
+      "messageId": "<202606081602.71010190282@smtp-relay.mailin.fr>"
     }
   ]
 }
