@@ -40,7 +40,7 @@ def fetch_new_emails(since_date: datetime) -> list[dict]:
     mail.login(GMAIL_USER, GMAIL_APP_PASSWORD)
     mail.select('inbox')
 
-    criteria = f'(SINCE {since_str} OR SUBJECT "New Order" SUBJECT "New Paid Order")'
+    criteria = f'(SINCE {since_str} OR (OR SUBJECT "New Order" SUBJECT "New Paid Order") SUBJECT "Invio Ordine")'
     _, nums = mail.search(None, criteria)
 
     orders = []
