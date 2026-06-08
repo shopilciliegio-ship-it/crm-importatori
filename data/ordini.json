@@ -367,11 +367,19 @@
           "note": ""
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "day10",
+          "to": "chrisconnor1098@gmail.com",
+          "subject": "Shipping update — your order",
+          "sentAt": 1780908857108,
+          "messageId": "<202606080854.13044468309@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780598739759,
+      "updatedAt": 1780908857108,
       "shippingType": "standard",
       "shipmentCode": "CONNORRC"
     },
