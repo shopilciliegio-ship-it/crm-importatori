@@ -1,6 +1,39 @@
 {
   "orders": [
     {
+      "id": "ord_mq5eg9jb9j56",
+      "customerName": "DAISY CASTILLO",
+      "customerEmail": "daiscastil@gmail.com",
+      "customerPhone": "+17022678212",
+      "amount": 107.9,
+      "currency": "EUR",
+      "orderDate": 1780920276000,
+      "emailSubject": "🍷 New Order — DAISY CASTILLO — 107.90 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "7677 MOJAVE WIND AVE, 89113 LAS VEGAS, NEVADA (CLARK COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202606081204.23092379427@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "source": "fieramente",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1780934555207,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1780934555207,
+      "updatedAt": 1780934555207
+    },
+    {
       "id": "ord_mq5486ml19i0",
       "customerName": "MIRIANA BONAZZA",
       "customerEmail": "miribruco52@gmail.com",
@@ -3046,5 +3079,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1780917382029
+  "lastImportedAt": 1780934555207
 }
