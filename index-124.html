@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wine CRM — Small Vineyards International</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<style>
+
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#fff;--bg2:#f5f5f3;--bg3:#edecea;
+  --text:#1a1a18;--text2:#666660;--text3:#aaa;
+  --brd:rgba(0,0,0,0.1);--brd2:rgba(0,0,0,0.2);
+  --blue:#185FA5;--blue-bg:#E6F1FB;--blue-tx:#0C447C;
+  --amber:#BA7517;--amber-bg:#FAEEDA;--amber-tx:#633806;
+  --green:#3B6D11;--green-bg:#EAF3DE;--green-tx:#27500A;
+  --coral:#993C1D;--coral-bg:#FAECE7;--coral-tx:#712B13;
+  --pink-bg:#FBEAF0;--pink-tx:#72243E;
+  --teal-bg:#E1F5EE;--teal-tx:#085041;
+  --gray-bg:#D3D1C7;--gray-tx:#444441;
+  --red:#E24B4A;--red-bg:#FCEBEB;--red-tx:#A32D2D;
+  --r:8px;--rl:12px;
+}
+@media(prefers-color-scheme:dark){:root{
+  --bg:#1c1c1a;--bg2:#252522;--bg3:#2a2a27;
+  --text:#f0ede6;--text2:#a0a09a;--text3:#666;
+  --brd:rgba(255,255,255,0.09);--brd2:rgba(255,255,255,0.18);
+  --blue:#5B9DD9;--blue-bg:#0C447C;--blue-tx:#B5D4F4;
+  --amber:#E09020;--amber-bg:#633806;--amber-tx:#FAC775;
+  --green:#6AAA28;--green-bg:#27500A;--green-tx:#C0DD97;
+  --coral:#D0603A;--coral-bg:#712B13;--coral-tx:#F5C4B3;
+  --pink-bg:#72243E;--pink-tx:#F4C0D1;
+  --teal-bg:#085041;--teal-tx:#9FE1CB;
+  --gray-bg:#444441;--gray-tx:#D3D1C7;
+  --red:#E24B4A;--red-bg:#501313;--red-tx:#F7C1C1;
+}}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg3);color:var(--text);min-height:100vh;font-size:15px}
+.app{max-width:980px;margin:0 auto;padding:20px 16px 60px}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;padding-bottom:14px;border-bottom:0.5px solid var(--brd2);gap:12px;flex-wrap:wrap}
+.hdr h1{font-size:19px;font-weight:700;letter-spacing:-.3px}
+.sub{font-size:12px;color:var(--text2);margin-top:1px}
+.hdr-r{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.gh-pill{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--text2);background:var(--bg2);padding:5px 10px;border-radius:20px;border:0.5px solid var(--brd)}
+.gh-dot{width:7px;height:7px;border-radius:50%;background:var(--gray-bg);flex-shrink:0;transition:background .3s}
+.gh-dot.saving{background:var(--amber);animation:pulse 1s infinite}
+.gh-dot.saved{background:var(--green)}.gh-dot.error{background:var(--red)}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.nav{display:flex;gap:2px;background:var(--bg2);border-radius:var(--rl);padding:4px;margin-bottom:18px;overflow-x:auto;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nb{padding:7px 13px;border:none;background:none;cursor:pointer;font-size:13px;color:var(--text2);border-radius:var(--r);white-space:nowrap;transition:all .15s;font-weight:500;font-family:inherit}
+.nb.active{background:var(--bg);color:var(--text);box-shadow:0 1px 4px rgba(0,0,0,.1)}
+.nb:hover:not(.active){color:var(--text);background:rgba(0,0,0,.04)}
+.nbadge{display:inline-block;padding:1px 6px;border-radius:10px;font-size:10px;font-weight:700;margin-left:3px;vertical-align:middle;background:var(--bg2);color:var(--text2)}
+.page{display:none}.page.active{display:block}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{background:var(--bg);border:0.5px solid var(--brd);border-radius:var(--rl);padding:1rem 1.25rem;margin-bottom:12px}
+.sh{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.st{font-size:14px;font-weight:600}
+.sgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;margin-bottom:14px}
+.stat{background:var(--bg);border-radius:var(--rl);padding:13px 15px;border:0.5px solid var(--brd)}
+.sl{font-size:11px;color:var(--text2);margin-bottom:5px;text-transform:uppercase;letter-spacing:.5px}
+.sv{font-size:24px;font-weight:700}
+.sv.bl{color:var(--blue)}.sv.am{color:var(--amber)}.sv.gr{color:var(--green)}.sv.co{color:var(--coral)}
+.cr{display:flex;align-items:center;gap:11px;padding:9px 0;border-bottom:0.5px solid var(--brd);cursor:pointer;transition:background .1s}
+.cr:last-child{border-bottom:none}
+.cr:hover{background:var(--bg2);margin:0 -1.25rem;padding:9px 1.25rem;border-radius:7px}
+.av{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+.av0{background:var(--blue-bg);color:var(--blue-tx)}.av1{background:var(--teal-bg);color:var(--teal-tx)}
+.av2{background:var(--amber-bg);color:var(--amber-tx)}.av3{background:var(--coral-bg);color:var(--coral-tx)}
+.av4{background:var(--pink-bg);color:var(--pink-tx)}.av5{background:var(--green-bg);color:var(--green-tx)}
+.ci{flex:1;min-width:0}
+.cn{font-size:14px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cs{font-size:12px;color:var(--text2);margin-top:1px}
+.badge{display:inline-block;padding:2px 9px;border-radius:20px;font-size:11px;font-weight:700;white-space:nowrap}
+.bn{background:var(--blue-bg);color:var(--blue-tx)}.bs{background:var(--amber-bg);color:var(--amber-tx)}
+.bf{background:var(--pink-bg);color:var(--pink-tx)}.br{background:var(--green-bg);color:var(--green-tx)}
+.bc{background:var(--teal-bg);color:var(--teal-tx)}.bx{background:var(--gray-bg);color:var(--gray-tx)}
+.filters{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:10px}
+.filters input,.filters select{font-size:13px;padding:7px 10px;border-radius:var(--r);border:0.5px solid var(--brd2);background:var(--bg);color:var(--text);font-family:inherit}
+.filters input{flex:1;min-width:130px}
+.filters input:focus,.filters select:focus{outline:none;border-color:var(--blue)}
+.btn{padding:8px 15px;border-radius:var(--r);font-size:13px;font-weight:500;cursor:pointer;border:0.5px solid var(--brd2);background:var(--bg);color:var(--text);transition:all .15s;font-family:inherit}
+.btn:hover{background:var(--bg2)}
+.btp{background:var(--text);color:var(--bg);border-color:var(--text)}.btp:hover{opacity:.85}
+.bts{padding:5px 10px;font-size:12px}
+.btd{border-color:var(--red);color:var(--red-tx)}.btd:hover{background:var(--red-bg)}
+.btg{border-color:transparent;color:var(--text2)}.btg:hover{background:var(--bg2);color:var(--text)}
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+.fg{display:flex;flex-direction:column;gap:5px;margin-bottom:12px}
+.fgf{grid-column:1/-1}
+.fg label{font-size:11px;color:var(--text2);font-weight:700;text-transform:uppercase;letter-spacing:.4px}
+.fg input,.fg select,.fg textarea{font-size:14px;padding:9px 11px;border-radius:var(--r);border:0.5px solid var(--brd2);background:var(--bg);color:var(--text);font-family:inherit}
+.fg textarea{min-height:80px;resize:vertical;line-height:1.5}
+.fg input:focus,.fg select:focus,.fg textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 2px rgba(24,95,165,.1)}
+.pgrid{display:flex;flex-wrap:wrap;gap:5px;padding:10px;border:0.5px solid var(--brd2);border-radius:var(--r)}
+.pl{display:flex;align-items:center;gap:5px;font-size:12px;cursor:pointer;padding:3px 6px;border-radius:4px}
+.pl:hover{background:var(--bg2)}.pl input{accent-color:var(--blue);cursor:pointer}
+.mo{position:fixed;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;z-index:1000;padding:16px}
+.mc{background:var(--bg);border-radius:var(--rl);border:0.5px solid var(--brd2);padding:1.5rem;width:600px;max-width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 12px 40px rgba(0,0,0,.25)}
+.mt{font-size:17px;font-weight:700;margin-bottom:1.25rem}
+.mf{display:flex;gap:8px;justify-content:flex-end;margin-top:1.25rem;padding-top:1rem;border-top:0.5px solid var(--brd)}
+.divhr{height:0.5px;background:var(--brd);margin:1rem 0}
+.df{display:flex;justify-content:space-between;align-items:flex-start;padding:7px 0;border-bottom:0.5px solid var(--brd);font-size:13px}
+.df:last-child{border-bottom:none}
+.dl{color:var(--text2);flex-shrink:0;width:120px;font-weight:500}
+.dv{color:var(--text);text-align:right;word-break:break-all}
+.tag{display:inline-block;padding:2px 8px;border-radius:12px;font-size:11px;background:var(--bg2);color:var(--text2);margin:2px;border:0.5px solid var(--brd)}
+.sbtn{padding:5px 11px;border-radius:20px;font-size:12px;border:1.5px solid transparent;cursor:pointer;font-weight:700;opacity:.55;transition:opacity .15s;font-family:inherit}
+.sbtn.active{opacity:1;border-color:currentColor}.sbtn:hover{opacity:1}
+.brow{display:flex;align-items:center;gap:8px;margin-bottom:7px;font-size:13px}
+.blbl{width:100px;color:var(--text2);text-align:right;flex-shrink:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.btrk{flex:1;background:var(--bg2);border-radius:4px;height:18px;overflow:hidden}
+.bfll{height:100%;background:var(--blue-bg);border-radius:4px;display:flex;align-items:center;padding-left:6px;font-size:11px;font-weight:700;color:var(--blue-tx)}
+.drop-zone{border:2px dashed var(--brd2);border-radius:var(--rl);padding:2.5rem 1rem;text-align:center;cursor:pointer;transition:all .2s;color:var(--text2)}
+.drop-zone:hover,.drop-zone.over{border-color:var(--blue);background:var(--blue-bg);color:var(--blue-tx)}
+.imp-pills{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.ip{padding:5px 13px;border-radius:20px;font-size:12px;font-weight:700}
+.ip-n{background:var(--green-bg);color:var(--green-tx)}
+.ip-d{background:var(--amber-bg);color:var(--amber-tx)}
+.ip-f{background:var(--blue-bg);color:var(--blue-tx)}
+.imp-wrap{max-height:260px;overflow-y:auto;border-radius:var(--r);border:0.5px solid var(--brd);margin-top:8px}
+.imp-tbl{width:100%;font-size:12px;border-collapse:collapse}
+.imp-tbl th{background:var(--bg2);padding:6px 8px;text-align:left;font-weight:700;position:sticky;top:0}
+.imp-tbl td{padding:5px 8px;border-bottom:0.5px solid var(--brd)}
+.log-e{font-size:12px;color:var(--text2);padding:5px 0;border-bottom:0.5px solid var(--brd);line-height:1.4}
+.log-e:last-child{border-bottom:none}
+.danger-box{border:1px solid var(--red);border-radius:var(--rl);padding:1rem 1.25rem;background:var(--red-bg);margin-bottom:1.25rem}
+.toast{position:fixed;bottom:22px;right:22px;background:var(--text);color:var(--bg);padding:10px 18px;border-radius:var(--r);font-size:13px;font-weight:500;z-index:9999;opacity:0;transform:translateY(8px);transition:all .2s;pointer-events:none;max-width:340px}
+.toast.show{opacity:1;transform:none}
+a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+.empty{padding:2rem;text-align:center;color:var(--text2);font-size:14px}
+code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font-family:monospace}
+.rcnt{font-size:12px;color:var(--text2);margin-bottom:8px}
+#sort-by{background:var(--blue-bg);color:var(--blue-tx);border-color:var(--blue-tx);font-weight:600}
+.layer-toggle{display:flex;gap:0;border-radius:var(--rl);overflow:hidden;border:1.5px solid var(--brd2);flex-shrink:0}
+.layer-btn{padding:8px 18px;border:none;background:var(--bg2);color:var(--text2);cursor:pointer;font-size:13px;font-weight:600;font-family:inherit;transition:all .15s;white-space:nowrap}
+.layer-btn.active{background:var(--text);color:var(--bg)}
+.layer-btn:not(:last-child){border-right:1px solid var(--brd2)}
+.sel-bar{display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--blue-bg);border-radius:var(--r);margin-bottom:10px;flex-wrap:wrap}
+.sel-bar-info{font-size:13px;font-weight:600;color:var(--blue-tx);flex:1}
+.crow-cb{width:17px;height:17px;cursor:pointer;accent-color:var(--blue);flex-shrink:0;margin-right:2px}
+.cr.selected{background:var(--blue-bg);margin:0 -1.25rem;padding:9px 1.25rem;border-radius:7px}
+.cr.selected:hover{background:var(--blue-bg)}
+.send-prog{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;z-index:2000}
+.send-prog-box{background:var(--bg);border-radius:var(--rl);padding:2rem;width:420px;max-width:92vw;text-align:center;box-shadow:0 16px 48px rgba(0,0,0,.3)}
+.prog-bar-track{background:var(--bg2);border-radius:8px;height:10px;overflow:hidden;margin:16px 0 8px}
+.prog-bar-fill{height:100%;background:var(--blue);border-radius:8px;transition:width .3s}
+.stat-link{cursor:pointer;transition:transform .15s,box-shadow .15s}
+.stat-link:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.1)}
+.country-link{cursor:pointer;color:var(--blue)!important;transition:opacity .15s}
+.country-link:hover{opacity:.7;text-decoration:underline}
+.cc-scroll{max-height:340px;overflow-y:auto;scrollbar-width:thin}
+@media(max-width:640px){.g2,.fg2{grid-template-columns:1fr}.fgf{grid-column:1}}
+
+</style>
+</head>
+<body>
+
+<div class="app">
+
+<div class="hdr">
+  <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+    <div>
+      <div style="font-size:19px;font-weight:700;letter-spacing:-.3px">🍷 Wine CRM</div>
+      <div class="sub" id="hdr-sub">Importatori &amp; Distributori</div>
+    </div>
+    <div class="layer-toggle">
+      <button class="layer-btn active" id="layer-btn-imp" onclick="switchLayer('importatori')">🏢 Importatori</button>
+      <button class="layer-btn" id="layer-btn-cli" onclick="switchLayer('clienti')">👤 Clienti Privati</button>
+      <button class="layer-btn" id="layer-btn-ord" onclick="switchLayer('ordini')">📦 Ordini</button>
+    </div>
+    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.124</div>
+  </div>
+  <div class="hdr-r">
+    <div class="gh-pill"><div class="gh-dot" id="gh-dot"></div><span id="gh-lbl">GitHub</span></div>
+    <button class="btn btg bts" onclick="openSettings()">⚙ GitHub</button>
+    <button class="btn bts" onclick="syncBrevoEvents()" title="Sincronizza aperture e click da Brevo">📊 Sync Brevo</button>
+<button class="btn btd bts" onclick="confirmDeleteAll()">🗑 Cancella DB…</button>
+    <button class="btn btp" onclick="openAddContact()">+ Contatto</button>
+  </div>
+</div>
+
+<!-- SEZIONE ORDINI — visibile solo quando layer='ordini', fuori dal sistema .page -->
+<div id="section-ordini" style="display:none">
+  <div style="display:flex;align-items:center;justify-content:flex-end;margin-bottom:10px">
+    <div id="email-autosend-toggle"></div>
+  </div>
+  <div class="sgrid" id="ord-stats"></div>
+
+  <div class="card" style="margin-bottom:12px">
+    <div class="sh" style="margin-bottom:10px">
+      <div class="st">📧 Importa ordini</div>
+      <div style="font-size:12px;color:var(--text2)">
+        Ultimo import: <span id="ord-last-import" style="font-weight:600">mai</span>
+        <span class="nbadge" id="ord-n" style="margin-left:6px"></span>
+      </div>
+    </div>
+
+    <!-- Gmail connect section — popolata da renderGmailStatus() -->
+    <div id="gmail-status" style="margin-bottom:8px"></div>
+
+    <!-- Import manuale come fallback -->
+    <details>
+      <summary style="font-size:12px;color:var(--text2);cursor:pointer;user-select:none;padding:4px 0;list-style:none">
+        <span style="color:var(--blue)">⌨ Import manuale</span> — incolla oggetti email (uno per riga)
+      </summary>
+      <div style="margin-top:10px">
+        <p style="font-size:12px;color:var(--text2);margin-bottom:8px;line-height:1.6">
+          Formato riconosciuto (con o senza prefisso "I:"):<br>
+          <code>🍷 New Order — NOME COGNOME — 294.05 EUR</code>
+        </p>
+        <textarea id="ord-subjects" rows="3"
+          placeholder="🍷 New Order — MARIO ROSSI — 150.00 EUR&#10;I: 🍷 New Order — ANNA BIANCHI — 230.50 EUR"
+          style="width:100%;font-size:12px;padding:9px 11px;border:0.5px solid var(--brd2);border-radius:var(--r);background:var(--bg);color:var(--text);font-family:monospace;resize:vertical;line-height:1.5"></textarea>
+        <div style="display:flex;justify-content:flex-end;margin-top:8px">
+          <button class="btn btp bts" onclick="importFromSubjects()">Importa ordini</button>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <div class="filters" style="margin-bottom:10px">
+    <input type="text" id="ord-sq" placeholder="Cerca cliente, tracking…" oninput="renderOrdini()" style="max-width:180px">
+    <select id="ord-ss" onchange="renderOrdini()">
+      <option value="">Tutti gli stati</option>
+      <option value="ricevuto">Ricevuto</option>
+      <option value="preparazione">In preparazione</option>
+      <option value="spedito">Spedito</option>
+      <option value="in_transito">In transito</option>
+      <option value="dogana">In dogana</option>
+      <option value="in_consegna">In consegna</option>
+      <option value="consegnato">Consegnato</option>
+      <option value="problema">Problema</option>
+      <option value="annullato">Annullato</option>
+    </select>
+    <button class="btn bts" onclick="openAddOrdine()">+ Ordine manuale</button>
+  </div>
+
+  <div class="card" style="padding:0.75rem 1.25rem">
+    <div id="ord-list"><div class="empty">Nessun ordine — importa dalla sezione qui sopra</div></div>
+  </div>
+
+  <details style="margin-top:12px">
+    <summary style="font-size:12px;color:var(--text2);cursor:pointer;user-select:none;padding:4px 0;list-style:none">
+      <span style="color:var(--blue)">📧 Template email reminder</span> — modifica il testo delle email automatiche
+    </summary>
+    <div class="card" style="margin-top:8px;padding:1.25rem" id="reminder-templates-panel">
+      <div class="empty" style="font-size:12px">Caricamento template…</div>
+    </div>
+  </details>
+</div>
+
+<div id="email-autosend-imp-toggle" style="display:flex;align-items:center;justify-content:flex-end;margin-bottom:10px"></div>
+<div id="research-queue-banner"></div>
+
+<div class="nav">
+  <button class="nb active" onclick="showPage('dashboard',this)">Dashboard</button>
+  <button class="nb" onclick="showPage('contacts',this)">Contatti <span class="nbadge" id="ct-n">0</span></button>
+  <button class="nb" onclick="showPage('followups',this)">Workflow <span class="nbadge" id="fu-n" style="background:var(--amber-bg);color:var(--amber-tx)">0</span></button>
+  <button class="nb" onclick="showPage('import',this)">Importa XLSX</button>
+  <button class="nb" onclick="showPage('templates',this)">Template email</button>
+</div>
+
+<!-- DASHBOARD -->
+<div id="page-dashboard" class="page active">
+  <div class="sgrid" id="stats"></div>
+  <div class="g2">
+    <div class="card"><div class="sh"><div class="st">Per regione</div></div><div id="rc"></div></div>
+    <div class="card"><div class="sh"><div class="st">Per paese</div></div><div id="cc" class="cc-scroll"></div></div>
+  </div>
+  <div class="card"><div class="sh"><div class="st">Pipeline</div></div><div id="pipeline"></div></div>
+</div>
+
+<!-- CONTATTI -->
+<div id="page-contacts" class="page">
+  <div class="filters">
+    <input type="text" id="sq" placeholder="Cerca…" oninput="renderContacts()" style="max-width:120px;min-width:80px">
+    <select id="sr" onchange="updateCountryFilter();renderContacts()"><option value="">Tutte le regioni</option></select>
+    <select id="sc" onchange="renderContacts()"><option value="">Tutti i paesi</option></select>
+    <select id="sp" onchange="renderContacts()"><option value="">Tutti i tipi</option></select>
+    <select id="sortby" onchange="renderContacts()" title="Ordina per">
+      <option value="employees">↓ Dipendenti</option>
+      <option value="sales">↓ Fatturato</option>
+      <option value="research">↓ Stelle AI</option>
+    </select>
+    <select id="srsch" onchange="renderContacts()">
+      <option value="">★ Tutte</option>
+      <option value="si">✅ Raccomandati</option>
+      <option value="forse">🟡 Forse</option>
+      <option value="no">❌ Non idonei</option>
+      <option value="any">🔬 Solo analizzati</option>
+      <option value="5">★★★★★ 5 stelle</option>
+      <option value="4">★★★★☆ 4+ stelle</option>
+      <option value="3">★★★☆☆ 3+ stelle</option>
+    </select>
+    <select id="sv" onchange="renderContacts()" style="display:none">
+      <option value="">Verifica email</option>
+      <option value="valido">✓ Valido</option>
+      <option value="non_valido">✗ Non valido</option>
+      <option value="sospetta">⚠ Sospetta</option>
+      <option value="da_verificare">? Da verificare</option>
+      <option value="sconosciuto">— Sconosciuto</option>
+    </select>
+    <select id="ss" onchange="window._pendingFilter=false;renderContacts()">
+      <option value="">Situazione contatto</option>
+      <option value="new">Da contattare</option>
+      <option value="sent">Email inviata</option>
+      <option value="followup">Follow-up</option>
+      <option value="replied">Risposto</option>
+      <option value="client">Cliente</option>
+      <option value="cold">Non interessato</option>
+      <option value="blacklisted">🚫 Blacklist</option>
+    </select>
+    <span id="sbwi-wrap">
+      <select id="sbwi" onchange="renderContacts()">
+        <option value="">Da BWI: tutti</option>
+        <option value="new">🆕 Nuovi da BWI</option>
+        <option value="updated">✏️ Aggiornati da BWI</option>
+        <option value="bwi">📋 Solo BWI</option>
+      </select>
+      <button id="bwi-sync-btn" class="btn bts" onclick="triggerBwiSync()"
+        style="font-size:12px;padding:4px 12px;white-space:nowrap">🔄 BWI Sync</button>
+    </span>
+    <span id="squal-wrap" style="display:none">
+      <select id="squal" onchange="renderContacts()">
+        <option value="">Qualità: tutti</option>
+        <option value="valid">🟢 Validi</option>
+        <option value="suspect">🟡 Sospetti</option>
+        <option value="invalid">🔴 Invalidi</option>
+      </select>
+      <select id="sship" onchange="renderContacts()">
+        <option value="">Spedibilità: tutti</option>
+        <option value="yes">✅ Spedibili</option>
+        <option value="no">🚫 Non spedibili</option>
+      </select>
+      <button class="btn btd bts" style="font-size:12px;padding:4px 10px" onclick="deleteNonShippable()" title="Elimina tutti i contatti da paesi non spedibili">🗑 Elimina non spedibili</button>
+    </span>
+  </div>
+  <div id="rcnt-wrap"></div>
+  <div id="sel-bar-wrap"></div>
+  <div id="cl"></div>
+</div>
+
+<!-- WORKFLOW -->
+<div id="page-followups" class="page">
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap">
+    <span style="font-size:13px;color:var(--text2);flex:1">Contatti contattati — timeline email, aperture, click</span>
+    <select id="reg-sort" onchange="renderRegistro()" style="font-size:12px;padding:4px 8px;border-radius:var(--r);border:0.5px solid var(--brd2);background:var(--bg);color:var(--text)">
+      <option value="date">↓ Più recente</option>
+      <option value="status">↓ Per stato</option>
+    </select>
+    <select id="reg-filter" onchange="renderRegistro()" style="font-size:12px;padding:4px 8px;border-radius:var(--r);border:0.5px solid var(--brd2);background:var(--bg);color:var(--text)">
+      <option value="">Tutti gli stati</option>
+      <option value="sent">📤 Inviata</option>
+      <option value="opened">👁 Aperta</option>
+      <option value="clicked">🔗 Cliccata</option>
+      <option value="replied">💬 Risposto</option>
+      <option value="bounced">⚠ Bounce</option>
+      <option value="cold">❌ Cold</option>
+      <option value="blacklisted">🚫 Blacklist</option>
+    </select>
+  </div>
+  <div id="reg-sel-bar"></div>
+  <div id="fl"></div>
+</div>
+
+<!-- IMPORT -->
+<div id="page-import" class="page">
+  <div class="card" id="import-card-imp">
+    <div class="sh"><div class="st">Importa Importatori — XLSX multi-foglio</div></div>
+    <p style="font-size:13px;color:var(--text2);margin-bottom:14px;line-height:1.7">
+      Carica i file XLSX dal formato <strong>Best Wine Importers</strong>. Il CRM legge tutti i fogli, usa il nome del foglio come paese e rileva la regione dal nome del file (<code>Oceania.xlsx</code>, <code>Africa.xlsx</code>, ecc.).
+    </p>
+    <div class="drop-zone" id="dz"
+      onclick="document.getElementById('fi').click()"
+      ondragover="dzO(event)" ondragleave="dzL()" ondrop="dzD(event)">
+      <div style="font-size:2.2rem;margin-bottom:10px">📂</div>
+      <div style="font-size:15px;font-weight:600">Trascina qui il file XLSX</div>
+      <div style="font-size:12px;margin-top:5px">oppure clicca per selezionare · Supporta .xlsx e .json</div>
+    </div>
+    <input type="file" id="fi" accept=".xlsx,.xls,.json" style="display:none" onchange="handleFile(this)">
+    <div id="imp-prev"></div>
+  </div>
+
+  <div class="card" id="import-card-cli" style="display:none">
+    <div class="sh"><div class="st">Importa Clienti Privati — XLSX o CSV</div></div>
+    <p style="font-size:13px;color:var(--text2);margin-bottom:14px;line-height:1.7">
+      Carica il file con i tuoi clienti privati. Colonne riconosciute automaticamente:<br>
+      <strong>Nome · Cognome · Email · Lingua · Paese</strong><br>
+      Le email marcate "Non Valido" o "Sospetta" vengono saltate automaticamente.
+    </p>
+    <div class="drop-zone" id="dz-cli"
+      onclick="document.getElementById('fi').click()"
+      ondragover="dzO(event)" ondragleave="dzL()" ondrop="dzD(event)">
+      <div style="font-size:2.2rem;margin-bottom:10px">📂</div>
+      <div style="font-size:15px;font-weight:600">Trascina qui il file XLSX</div>
+      <div style="font-size:12px;margin-top:5px">oppure clicca per selezionare · Colonne: Nome, Cognome, Email, Lingua, Paese</div>
+    </div>
+    <input type="file" id="fi" accept=".xlsx,.xls,.json" style="display:none" onchange="handleFile(this)">
+    <div id="imp-prev"></div>
+  </div>
+</div>
+
+<!-- TEMPLATES -->
+<div id="page-templates" class="page">
+  <div class="sh" style="margin-bottom:8px">
+    <div class="st" id="tpl-title">Template email</div>
+    <div style="display:flex;gap:6px">
+      <button class="btn btg bts" onclick="resetToDefaultTemplates()" title="Ripristina template di default">↺ Ripristina default</button>
+      <button class="btn bts" onclick="openAddTemplate()">+ Nuovo</button>
+    </div>
+  </div>
+  <div style="font-size:12px;color:var(--amber-tx);background:var(--amber-bg);padding:10px 14px;border-radius:var(--r);margin-bottom:12px">
+    Variabili disponibili: <code>{{contatto}}</code> <code>{{azienda}}</code> <code>{{paese}}</code> <code>{{prodotti}}</code> <code>{{citta}}</code>
+  </div>
+  <div id="tpl-list"></div>
+</div>
+
+
+</div>
+<div id="modals"></div>
+<div class="toast" id="toast"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="js/state.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/github.js"></script>
+<script src="js/templates.js"></script>
+<script src="js/contacts.js"></script>
+<script src="js/email.js"></script>
+<script src="js/bulk.js"></script>
+<script src="js/brevo.js"></script>
+<script src="js/import.js"></script>
+<script src="js/dashboard.js"></script><script src="js/reminders.js"></script>
+<script src="js/ordini.js"></script>
+<script src="js/init.js"></script>
+
+</body>
+</html>
