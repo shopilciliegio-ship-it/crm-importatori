@@ -285,9 +285,8 @@ def sync(crm_data: dict, xlsx_companies: dict, now_ms: int) -> dict:
                 existing["bwiSyncedAt"] = now_ms
                 stats["skipped"] += 1
 
-            # Rimuovi flag 'new' se il contatto ha ricevuto email
-            if existing.get("bwiStatus") == "new" and existing.get("brevoEvents"):
-                existing["bwiStatus"] = None
+            # Il badge NUOVO/AGGIORNATO scompare da solo dopo 4 mesi (vedi
+            # bwiBadgeStatus in js/contacts.js) — non serve più ripulirlo qui
         else:
             # Nuovo contatto
             new_c = {

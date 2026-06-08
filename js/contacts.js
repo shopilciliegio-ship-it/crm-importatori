@@ -5,6 +5,16 @@ let _impOffset = 0;
 const CLI_PAGE_SIZE = 100;
 const IMP_PAGE_SIZE = 100;
 
+const BWI_BADGE_MAX_AGE_MS = 4 * 30 * 24 * 60 * 60 * 1000; // 4 mesi
+
+// Il badge NUOVO/AGGIORNATO scompare da solo dopo 4 mesi dall'import/aggiornamento BWI
+// (non più legato all'invio della prima email)
+function bwiBadgeStatus(c){
+  if(c.bwiStatus==='new' && c.bwiImportedAt && (Date.now()-c.bwiImportedAt)<BWI_BADGE_MAX_AGE_MS) return 'new';
+  if(c.bwiStatus==='updated' && c.bwiUpdatedAt && (Date.now()-c.bwiUpdatedAt)<BWI_BADGE_MAX_AGE_MS) return 'updated';
+  return null;
+}
+
 function _loadMoreContacts(isClienti){
   const fullList = getFiltered();
   const pageSize = isClienti ? CLI_PAGE_SIZE : IMP_PAGE_SIZE;
@@ -161,8 +171,8 @@ function getFiltered(){
       if(regionOrLang&&c.region!==regionOrLang)return false;
       if(product&&!(c.type||'').split(',').map(t=>t.trim()).includes(product))return false;
       const bwiF=document.getElementById('sbwi')?.value||'';
-      if(bwiF==='new'&&c.bwiStatus!=='new')return false;
-      if(bwiF==='updated'&&c.bwiStatus!=='updated')return false;
+      if(bwiF==='new'&&bwiBadgeStatus(c)!=='new')return false;
+      if(bwiF==='updated'&&bwiBadgeStatus(c)!=='updated')return false;
       if(bwiF==='bwi'&&!c.bwiCompId)return false;
       const rschF=document.getElementById('srsch')?.value||'';
       if(rschF==='any'&&!c.research)return false;
@@ -234,8 +244,8 @@ function renderContacts(){
   let bwiNotice='';
   if(!isClienti()){
     const allContacts=(db||{contacts:[]}).contacts;
-    const nNew=allContacts.filter(c=>c.bwiStatus==='new').length;
-    const nUpd=allContacts.filter(c=>c.bwiStatus==='updated').length;
+    const nNew=allContacts.filter(c=>bwiBadgeStatus(c)==='new').length;
+    const nUpd=allContacts.filter(c=>bwiBadgeStatus(c)==='updated').length;
     if(nNew||nUpd){
       const parts=[];
       if(nNew) parts.push(`<a href="#" onclick="event.preventDefault();document.getElementById('sbwi').value='new';renderContacts()" style="color:#2e7d32;font-weight:700;text-decoration:none">🆕 ${nNew} nuov${nNew===1?'o':'i'} da BWI</a>`);
@@ -488,9 +498,10 @@ function crow(c){
   // ── IMPORTATORE ──
   const firstContact = c.contacts?.[0];
   const nContacts = c.contacts?.length||0;
-  const bwiChip = c.bwiStatus==='new'
+  const _bwiBadge = bwiBadgeStatus(c);
+  const bwiChip = _bwiBadge==='new'
     ? `<span style="font-size:10px;background:#e8f5e9;color:#2e7d32;padding:1px 7px;border-radius:10px;font-weight:700;margin-left:4px">🆕 NUOVO</span>`
-    : c.bwiStatus==='updated'
+    : _bwiBadge==='updated'
     ? `<span style="font-size:10px;background:#fff3e0;color:#e65100;padding:1px 7px;border-radius:10px;font-weight:700;margin-left:4px">✏️ AGG.</span>`
     : '';
   return `<div class="cr${checked?' selected':''}" onclick="openDetail('${c.id}')">
