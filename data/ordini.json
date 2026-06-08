@@ -28,10 +28,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "daiscastil@gmail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1780934562742,
+          "messageId": "<202606081602.71010190282@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1780934555207,
-      "updatedAt": 1780934555207
+      "updatedAt": 1780934562742
     },
     {
       "id": "ord_mq5486ml19i0",
