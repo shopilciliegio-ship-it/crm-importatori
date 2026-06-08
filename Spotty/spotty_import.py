@@ -34,7 +34,7 @@ DEFAULT_CSV  = os.path.join(SCRIPT_DIR, "utentiregistrati_latest.csv")
 
 # ── PAESI SPEDIBILI ──────────────────────────────────────────────────────────
 SHIPPABLE_COUNTRIES = {
-    'de','be','nl','lu','fr','dk','at','es','pt','se','ie','si',
+    'it','de','be','nl','lu','fr','dk','at','es','pt','se','ie','si',
     'fi','hr','gr','pl','cz','sk','hu','bg','ee','lv','lt','ro',
     'cy','mt','us','ca','gb','ch','no'
 }
