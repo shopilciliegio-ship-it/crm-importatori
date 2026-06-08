@@ -60,21 +60,23 @@ async function init(){
   if(!db.templates||!db.templates.length) db.templates=defTplImportatori();
   if(!dbC.templates||!dbC.templates.length) dbC.templates=defTplClienti();
   if(ghs.token&&ghs.owner&&ghs.repo){
-    await loadTemplatesFromGH();
-    await loadFromGH();
-    // loadOrdiniFromGH è opzionale — presente solo se js/ordini.js è caricato
-    if(typeof loadOrdiniFromGH==='function'){
-      try{ await loadOrdiniFromGH(); }catch(e){ console.warn('loadOrdiniFromGH:',e); }
-    }
-    if(typeof loadReminderTemplates==='function'){
-      try{ await loadReminderTemplates(); }catch(e){ console.warn('loadReminderTemplates:',e); }
-    }
-    if(typeof loadSettingsFromGH==='function'){
-      try{ await loadSettingsFromGH(); }catch(e){ console.warn('loadSettingsFromGH:',e); }
-    }
-    if(typeof loadResearchConfigFromGH==='function'){
-      try{ await loadResearchConfigFromGH(); }catch(e){ console.warn('loadResearchConfigFromGH:',e); }
-    }
+    // I template vanno caricati prima dei contatti (che possono sovrascriverli
+    // con quelli embedded nel file, se presenti) — questa catena resta sequenziale.
+    // Tutto il resto (ordini, reminder, impostazioni, ricerca) non condivide stato
+    // con questa catena, quindi può partire in parallelo invece di aspettare in coda.
+    const contactsChain = (async()=>{ await loadTemplatesFromGH(); await loadFromGH(); })();
+
+    const otherLoads = [];
+    if(typeof loadOrdiniFromGH==='function')
+      otherLoads.push(loadOrdiniFromGH().catch(e=>console.warn('loadOrdiniFromGH:',e)));
+    if(typeof loadReminderTemplates==='function')
+      otherLoads.push(loadReminderTemplates().catch(e=>console.warn('loadReminderTemplates:',e)));
+    if(typeof loadSettingsFromGH==='function')
+      otherLoads.push(loadSettingsFromGH().catch(e=>console.warn('loadSettingsFromGH:',e)));
+    if(typeof loadResearchConfigFromGH==='function')
+      otherLoads.push(loadResearchConfigFromGH().catch(e=>console.warn('loadResearchConfigFromGH:',e)));
+
+    await Promise.all([contactsChain, ...otherLoads]);
     // Sync silenzioso bounce Brevo (3s di ritardo per non bloccare il render iniziale)
     if(brv.apiKey){
       setTimeout(()=>{
