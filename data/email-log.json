@@ -1169,6 +1169,15 @@
       "subject": "Your order has been delivered! 🍷 Enjoy!",
       "sentAt": 1780826486259,
       "messageId": "<202606071001.10288886575@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mbe_IT3299-0V-0000006EPQ",
+      "customerName": "CHRIS CONNOR",
+      "type": "day10",
+      "to": "chrisconnor1098@gmail.com",
+      "subject": "Shipping update — your order",
+      "sentAt": 1780908857108,
+      "messageId": "<202606080854.13044468309@smtp-relay.mailin.fr>"
     }
   ]
 }
