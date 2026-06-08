@@ -1178,6 +1178,24 @@
       "subject": "Shipping update — your order",
       "sentAt": 1780908857108,
       "messageId": "<202606080854.13044468309@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mq5486ml19i0",
+      "customerName": "MIRIANA BONAZZA",
+      "type": "order_received",
+      "to": "miribruco52@gmail.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1780917389985,
+      "messageId": "<202606081116.94918819731@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mq5486ml258w",
+      "customerName": "Heather Douglas",
+      "type": "order_received",
+      "to": "chillerheather@gmail.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1780917389985,
+      "messageId": "<202606081116.62065535419@smtp-relay.mailin.fr>"
     }
   ]
 }
