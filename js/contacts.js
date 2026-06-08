@@ -305,6 +305,7 @@ function renderContacts(){
         <span class="sel-bar-info">✓ ${sel.size} contatt${sel.size===1?'o':'i'} selezionat${sel.size===1?'o':'i'}</span>
         <button class="btn btg bts" onclick="sel.clear();renderContacts()">✕ Deseleziona tutto</button>
         <button class="btn btp bts" onclick="openBulkSend()">✉ Invia a ${sel.size} contatt${sel.size===1?'o':'i'}</button>
+        <button class="btn btd bts" onclick="bulkDeleteSelected()">🗑 Elimina ${sel.size} contatt${sel.size===1?'o':'i'}</button>
       </div>`;
   } else {
     selBar.innerHTML='';
@@ -797,6 +798,31 @@ function confirmDeleteNonShippable(){
   const deleted=before-dbC.contacts.length;
   saveDB();closeModal();refreshAll();
   toast(`✓ Eliminati ${deleted} contatti da paesi non spedibili`);
+}
+
+function bulkDeleteSelected(){
+  if(!sel.size)return;
+  showModal(`
+    <div class="mt" style="color:var(--red)">🗑 Elimina contatti selezionati</div>
+    <div class="danger-box" style="margin-bottom:14px">
+      <p style="font-size:13px;line-height:1.6;margin:0">Verranno eliminati definitivamente <strong>${sel.size} contatt${sel.size===1?'o':'i'}</strong> dal database${isClienti()?' Clienti':' Importatori'}.</p>
+    </div>
+    <p style="font-size:12px;color:var(--text3)">Questa operazione non è reversibile. I contatti verranno rimossi e salvati su GitHub.</p>
+    <div class="mf">
+      <button class="btn" onclick="closeModal()">Annulla</button>
+      <button class="btn btd" onclick="confirmBulkDeleteSelected()">Elimina ${sel.size} contatt${sel.size===1?'o':'i'}</button>
+    </div>
+  `);
+}
+
+function confirmBulkDeleteSelected(){
+  const adb=isClienti()?dbC:db;
+  const before=adb.contacts.length;
+  adb.contacts=adb.contacts.filter(c=>!sel.has(c.id));
+  const deleted=before-adb.contacts.length;
+  sel.clear();
+  saveDB();closeModal();refreshAll();
+  toast(`✓ Eliminati ${deleted} contatt${deleted===1?'o':'i'}`);
 }
 
 /* ── ADD/EDIT ── */
