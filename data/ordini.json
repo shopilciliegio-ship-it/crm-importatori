@@ -1,6 +1,72 @@
 {
   "orders": [
     {
+      "id": "ord_mq5486ml19i0",
+      "customerName": "MIRIANA BONAZZA",
+      "customerEmail": "miribruco52@gmail.com",
+      "customerPhone": "3396914273",
+      "amount": 171.15,
+      "currency": "EUR",
+      "orderDate": 1780870537000,
+      "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio MIRIANA BONAZZA",
+      "shipmentCode": "",
+      "shippingAddress": "Via del Capofonte, 11, 34128 TRIESTE (TS), Italy",
+      "numberOfCartons": null,
+      "shippingType": null,
+      "gmailMessageId": "<DB9PR08MB668233646C435BCF4060CBBFBF1F2@DB9PR08MB6682.eurprd08.prod.outlook.com>",
+      "trackingNumber": "",
+      "carrier": "Corriere Italia",
+      "source": "shop",
+      "orderNumber": "#1390",
+      "paymentType": "Paypal",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1780917382029,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1780917382029,
+      "updatedAt": 1780917382029
+    },
+    {
+      "id": "ord_mq5486ml258w",
+      "customerName": "Heather Douglas",
+      "customerEmail": "chillerheather@gmail.com",
+      "customerPhone": "",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1780870516000,
+      "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio Heather Douglas",
+      "shipmentCode": "",
+      "shippingAddress": "",
+      "numberOfCartons": null,
+      "shippingType": null,
+      "gmailMessageId": "<DB9PR08MB66820FEEEE1F7C44F32F1C53BF1F2@DB9PR08MB6682.eurprd08.prod.outlook.com>",
+      "trackingNumber": "",
+      "carrier": "Corriere Italia",
+      "source": "shop",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1780917382029,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1780917382029,
+      "updatedAt": 1780917382029
+    },
+    {
       "id": "ord_mq12fqsu08v6",
       "customerName": "MARK MADISON",
       "customerEmail": "mmad6199@aol.com",
@@ -2964,5 +3030,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1780672510830
+  "lastImportedAt": 1780917382029
 }
