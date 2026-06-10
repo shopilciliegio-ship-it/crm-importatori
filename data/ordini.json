@@ -339,11 +339,18 @@
           "subject": "Your order is going through customs",
           "sentAt": 1780754058497,
           "messageId": "<202606061354.43669441319@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegnato",
+          "to": "myhouse_injc@hotmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1781088472571,
+          "messageId": "<202606101047.83055632568@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1780348588797,
-      "updatedAt": 1781088470878,
+      "updatedAt": 1781088472571,
       "mbeTrackingNumber": "IT3299-8V-0000006DG3",
       "shippingType": "standard"
     },
@@ -552,12 +559,19 @@
           "subject": "Your order is going through customs",
           "sentAt": 1780826486259,
           "messageId": "<202606071001.14071679811@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegnato",
+          "to": "mgoodlett@comcast.net",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1781088472571,
+          "messageId": "<202606101047.63763352995@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1781088470878,
+      "updatedAt": 1781088472571,
       "shippingType": "standard",
       "shipmentCode": "1379"
     },
