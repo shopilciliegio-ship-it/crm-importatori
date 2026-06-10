@@ -299,7 +299,7 @@
       "trackingNumber": "1Z9376E1A803482468",
       "carrier": "UPS",
       "shippingDate": "2026-05-27",
-      "status": "dogana",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "ricevuto",
@@ -325,6 +325,11 @@
           "status": "dogana",
           "date": 1780754056391,
           "note": "Auto Fieramente (era: spedito)"
+        },
+        {
+          "status": "consegnato",
+          "date": 1781088470878,
+          "note": "Auto Fieramente (era: dogana)"
         }
       ],
       "emailsSent": [
@@ -338,7 +343,7 @@
       ],
       "notes": "",
       "createdAt": 1780348588797,
-      "updatedAt": 1780754058497,
+      "updatedAt": 1781088470878,
       "mbeTrackingNumber": "IT3299-8V-0000006DG3",
       "shippingType": "standard"
     },
@@ -522,7 +527,7 @@
       "mbeTrackingNumber": "IT3299-8V-0000006E3J",
       "carrier": "UPS",
       "shippingDate": "2026-05-28",
-      "status": "dogana",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "spedito",
@@ -533,6 +538,11 @@
           "status": "dogana",
           "date": 1780826484903,
           "note": "Auto Fieramente (era: spedito)"
+        },
+        {
+          "status": "consegnato",
+          "date": 1781088470878,
+          "note": "Auto Fieramente (era: dogana)"
         }
       ],
       "emailsSent": [
@@ -547,7 +557,7 @@
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780826486259,
+      "updatedAt": 1781088470878,
       "shippingType": "standard",
       "shipmentCode": "1379"
     },
