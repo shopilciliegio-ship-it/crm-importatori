@@ -1205,6 +1205,24 @@
       "subject": "Thank you for your order! 🍷",
       "sentAt": 1780934562742,
       "messageId": "<202606081602.71010190282@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mpvpkyylwz2h",
+      "customerName": "JILL BANKS",
+      "type": "consegnato",
+      "to": "myhouse_injc@hotmail.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1781088472571,
+      "messageId": "<202606101047.83055632568@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mbe_IT3299-8V-0000006E3J",
+      "customerName": "MICHELLE GOODLETT",
+      "type": "consegnato",
+      "to": "mgoodlett@comcast.net",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1781088472571,
+      "messageId": "<202606101047.63763352995@smtp-relay.mailin.fr>"
     }
   ]
 }
