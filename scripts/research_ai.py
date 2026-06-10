@@ -2,12 +2,13 @@
 Ricerca AI automatica importatori — Il Ciliegio CRM
 Eseguito ogni mattina nel workflow import_ordini.yml (server-side, non serve il browser aperto)
 
-Logica (FIFO, un paese alla volta):
+Logica (FIFO sulla coda paesi):
   - Legge data/research-config.json: {queue: [paesi flaggati in ordine], dailyLimit}
-  - Trova il primo paese in coda che ha ancora contatti senza `research`
-  - Analizza fino a `dailyLimit` contatti di quel paese (Google via Serper + sito web + Claude Haiku 4.5)
+  - Scorre i paesi in coda in ordine e accumula contatti senza `research` finché non raggiunge `dailyLimit`
+    in totale (se un paese si esaurisce prima della quota, prosegue con il successivo)
+  - Analizza i contatti raccolti (Google via Serper + sito web + Claude Haiku 4.5)
   - Salva i risultati come override in data/contatti-overrides.json (merge — non tocca status/notes/log esistenti)
-  - Se la quota giornaliera non basta per finire il paese, il giorno dopo riprende da dove si era fermato
+  - Se la quota giornaliera non basta per finire un paese, il giorno dopo riprende da dove si era fermato
     (i contatti già analizzati hanno `research` negli override e vengono saltati)
   - Invia un resoconto via email a fine esecuzione, stesso stile/destinatario del digest ordini
 """
@@ -216,7 +217,8 @@ def queue_progress(queue, by_country, overrides):
 
 # ── Email di resoconto ────────────────────────────────────────────────────────
 
-def send_report(subject_suffix, headline, stats_rows, queue_rows, active_country=None):
+def send_report(subject_suffix, headline, stats_rows, queue_rows, active_countries=None):
+    active_countries = active_countries or set()
     now_str = datetime.now().strftime('%d/%m/%Y %H:%M')
 
     def _stats_table(rows):
@@ -236,7 +238,7 @@ def send_report(subject_suffix, headline, stats_rows, queue_rows, active_country
         for country, done, total in rows:
             pct = round(done / total * 100) if total else 0
             badge = '🟡' if done < total else '🟢'
-            active = ' <span style="color:' + ACCENT + ';font-weight:bold">← in lavorazione</span>' if country == active_country else ''
+            active = ' <span style="color:' + ACCENT + ';font-weight:bold">← in lavorazione</span>' if country in active_countries else ''
             items.append(
                 f'<li style="padding:3px 0;color:#333;font-size:14px">{badge} <b>{html.escape(country)}</b> — {done} / {total} analizzati ({pct}%){active}</li>'
             )
@@ -269,7 +271,9 @@ def send_report(subject_suffix, headline, stats_rows, queue_rows, active_country
 </table></td></tr></table>
 </body></html>"""
 
-    text_lines = [headline] + [f'{label}: {value}' for label, value in stats_rows]
+    plain_headline = re.sub(r'<br\s*/?>', '\n', headline)
+    plain_headline = re.sub(r'<[^>]+>', '', plain_headline)
+    text_lines = [plain_headline] + [f'{label}: {value}' for label, value in stats_rows]
     text_lines.append('')
     text_lines.append('Stato coda:')
     for country, done, total in queue_rows:
@@ -322,18 +326,24 @@ def main():
     for c in contacts:
         by_country.setdefault(c.get('country', ''), []).append(c)
 
-    # Trova il primo paese in coda con contatti ancora da analizzare (FIFO)
-    target_country  = None
-    pending_contacts = []
+    # Costruisce il piano di lavoro scorrendo la coda in ordine FIFO finché
+    # non si raggiunge la quota giornaliera (un paese esaurito passa al successivo)
+    plan           = []  # [(country, [contatti]), ...]
+    pending_totals = {}  # country -> totale contatti pendenti prima di questa run
+    remaining_budget = daily_limit
     for country in queue:
         country_contacts = by_country.get(country, [])
         pending = [c for c in country_contacts if not (overrides.get(c['id']) or {}).get('research')]
-        if pending:
-            target_country  = country
-            pending_contacts = pending
-            break
+        if not pending:
+            continue
+        pending_totals[country] = len(pending)
+        if remaining_budget <= 0:
+            continue
+        take = pending[:remaining_budget]
+        plan.append((country, take))
+        remaining_budget -= len(take)
 
-    if not target_country:
+    if not plan:
         print('Tutti i paesi in coda sono già completamente analizzati')
         rows = queue_progress(queue, by_country, overrides)
         send_report(
@@ -343,50 +353,63 @@ def main():
         )
         return
 
-    to_analyze = pending_contacts[:daily_limit]
-    print(f'Paese attivo: {target_country} — {len(to_analyze)} da analizzare oggi (su {len(pending_contacts)} pendenti, {daily_limit} quota)')
+    total_to_analyze = sum(len(c) for _, c in plan)
+    print(f'Piano: {[(country, len(c)) for country, c in plan]} — {total_to_analyze} da analizzare oggi ({daily_limit} quota)')
 
     stats = {'si': 0, 'forse': 0, 'no': 0, 'vino': 0}
+    analyzed_by_country = {}
     analyzed = 0
     errors   = 0
 
-    for c in to_analyze:
-        analyzed += 1
-        print(f'  [{analyzed}/{len(to_analyze)}] {(c.get("company","") or "")[:50]}')
+    for country, contacts_list in plan:
+        print(f'Paese: {country} — {len(contacts_list)} da analizzare oggi')
+        for i, c in enumerate(contacts_list, 1):
+            analyzed += 1
+            print(f'  [{i}/{len(contacts_list)}] {(c.get("company","") or "")[:50]}')
 
-        search_text = serper_search(c.get('company', ''), target_country)
-        web_text    = fetch_website(c.get('website', '')) if c.get('website') else ''
-        analysis    = claude_analyze(c, search_text, web_text)
+            search_text = serper_search(c.get('company', ''), country)
+            web_text    = fetch_website(c.get('website', '')) if c.get('website') else ''
+            analysis    = claude_analyze(c, search_text, web_text)
 
-        if analysis:
-            now_iso = datetime.now(timezone.utc).isoformat(timespec='milliseconds').replace('+00:00', 'Z')
-            entry = overrides.setdefault(c['id'], {})
-            entry['research'] = {**analysis, 'analyzed_at': now_iso}
+            if analysis:
+                now_iso = datetime.now(timezone.utc).isoformat(timespec='milliseconds').replace('+00:00', 'Z')
+                entry = overrides.setdefault(c['id'], {})
+                entry['research'] = {**analysis, 'analyzed_at': now_iso}
 
-            rec = analysis.get('raccomandato')
-            if rec == 'si':
-                stats['si'] += 1
-            elif rec == 'forse':
-                stats['forse'] += 1
-            elif rec == 'no':
-                stats['no'] += 1
-            if analysis.get('vino_italiano') in ('si', 'probabile'):
-                stats['vino'] += 1
-        else:
-            errors += 1
+                rec = analysis.get('raccomandato')
+                if rec == 'si':
+                    stats['si'] += 1
+                elif rec == 'forse':
+                    stats['forse'] += 1
+                elif rec == 'no':
+                    stats['no'] += 1
+                if analysis.get('vino_italiano') in ('si', 'probabile'):
+                    stats['vino'] += 1
+            else:
+                errors += 1
 
-        time.sleep(2.5)
+            time.sleep(2.5)
 
-    gh_put(OVERRIDES_PATH, overrides, overrides_sha, f'Ricerca AI — {target_country} ({analyzed} analizzati)')
+        analyzed_by_country[country] = len(contacts_list)
+
+    countries_label = '+'.join(plan[i][0] for i in range(len(plan)))
+    gh_put(OVERRIDES_PATH, overrides, overrides_sha, f'Ricerca AI — {countries_label} ({analyzed} analizzati)')
     print(f'✓ {analyzed} risultati salvati in {OVERRIDES_PATH} ({errors} errori)')
 
-    remaining = len(pending_contacts) - analyzed
-    if remaining > 0:
-        headline = (f'🔬 Ricerca su <b>{html.escape(target_country)}</b>: analizzati {analyzed} contatti oggi. '
-                    f'Ne restano <b>{remaining}</b> — la ricerca riprenderà domani da dove si è fermata.')
-    else:
-        headline = (f'🔬 Ricerca su <b>{html.escape(target_country)}</b> completata: analizzati gli ultimi {analyzed} contatti. '
-                    f'Il paese è ora interamente coperto 🟢.')
+    headline_lines = []
+    for country, took in analyzed_by_country.items():
+        country_remaining = pending_totals[country] - took
+        if country_remaining > 0:
+            headline_lines.append(
+                f'🔬 <b>{html.escape(country)}</b>: analizzati {took} contatti oggi. '
+                f'Ne restano <b>{country_remaining}</b> — la ricerca riprenderà domani da dove si è fermata.'
+            )
+        else:
+            headline_lines.append(
+                f'✅ <b>{html.escape(country)}</b> completata: analizzati gli ultimi {took} contatti. '
+                f'Il paese è ora interamente coperto 🟢.'
+            )
+    headline = '<br>'.join(headline_lines)
 
     rows = queue_progress(queue, by_country, overrides)
     stats_rows = [
@@ -397,7 +420,8 @@ def main():
         ('🍷 Vino italiano sì/probabile', stats['vino']),
         ('⚠️ Errori',                     errors),
     ]
-    send_report(target_country, headline, stats_rows, rows, active_country=target_country)
+    subject_suffix = countries_label if len(plan) <= 2 else f'{len(plan)} paesi'
+    send_report(subject_suffix, headline, stats_rows, rows, active_countries=set(analyzed_by_country))
 
 
 if __name__ == '__main__':
