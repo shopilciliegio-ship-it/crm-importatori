@@ -67,17 +67,10 @@ def fixed_service(client: Client, extra_headers: dict | None = None):
     return client.create_service(binding_name, new_addr)
 
 
-def try_tracking(service, tracking_value: str):
-    print(f'\n=== TrackingRequest per "{tracking_value}" ===')
-    params = {
-        'System':              SYSTEM_VALUE,
-        'Credentials':         {'Username': USERNAME, 'Passphrase': PASSPHRASE},
-        'InternalReferenceID': 'elink-test-001',
-        'TrackingMBE':         tracking_value,
-    }
+def _call(service, operation: str, params: dict) -> bool:
     try:
-        result = service.TrackingRequest(RequestContainer=params)
-        print('\n  ✓ risposta:')
+        result = getattr(service, operation)(RequestContainer=params)
+        print(f'\n  ✓ risposta:')
         print(f'  {serialize_object(result)}')
         return True
     except Exception as e:
@@ -91,46 +84,80 @@ def try_tracking(service, tracking_value: str):
         return False
 
 
-def main():
-    if len(sys.argv) < 2:
-        print('Uso: python test_mbe_elink.py <tracking_number_o_shipment_code>')
-        sys.exit(1)
+def try_manage_customer_raw(endpoint_url: str, extra_headers: dict | None = None) -> bool:
+    """ManageCustomerRequest GET via raw HTTP POST — bypassa la validazione zeep."""
+    print('\n=== ManageCustomerRequest (Action=GET) — raw SOAP ===')
+    soap_body = f"""<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:ws="http://www.onlinembe.it/ws/">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <ws:ManageCustomerRequest>
+      <RequestContainer>
+        <Credentials>
+          <Username>{USERNAME}</Username>
+          <Passphrase>{PASSPHRASE}</Passphrase>
+        </Credentials>
+        <InternalReferenceID>Test</InternalReferenceID>
+        <Action>GET</Action>
+      </RequestContainer>
+    </ws:ManageCustomerRequest>
+  </soapenv:Body>
+</soapenv:Envelope>"""
 
-    tracking_value = sys.argv[1]
+    headers = {
+        'Content-Type': 'text/xml; charset=utf-8',
+        'SOAPAction':   '"ManageCustomerRequest"',
+    }
+    if extra_headers:
+        headers.update(extra_headers)
+
+    try:
+        r = requests.post(endpoint_url, data=soap_body.encode('utf-8'), headers=headers, timeout=30)
+        print(f'  HTTP {r.status_code}')
+        print(f'  {r.text[:2000]}')
+        return r.status_code == 200
+    except Exception as e:
+        print(f'  ✗ errore: {e}')
+        return False
+
+
+def try_tracking(service, tracking_value: str) -> bool:
+    print(f'\n=== TrackingRequest per "{tracking_value}" ===')
+    params = {
+        'System':              SYSTEM_VALUE,
+        'Credentials':         {'Username': USERNAME, 'Passphrase': PASSPHRASE},
+        'InternalReferenceID': 'elink-test-001',
+        'TrackingMBE':         tracking_value,
+    }
+    return _call(service, 'TrackingRequest', params)
+
+
+def main():
+    tracking_value = sys.argv[1] if len(sys.argv) > 1 else None
 
     print(f'Carico WSDL da {WSDL_URL} ...')
     client = Client(WSDL_URL)
 
-    # Tentativo 1: endpoint pubblico, header di default (quelli usati per il WSDL)
-    print('\n--- Tentativo 1: header di default ---')
-    service = fixed_service(client)
-    if try_tracking(service, tracking_value):
-        return
+    # Ricava l'endpoint pubblico dal WSDL
+    service     = fixed_service(client)
+    endpoint_url = 'https://api.mbeonline.it/ws'
 
-    # Tentativo 2: header Host forzato all'host interno dichiarato nel WSDL
-    # (instradamento per virtual-host) — risposta arrivata da Akamai (errors.edgesuite.net):
-    # significa che 'elink' non è un host pubblico valido all'edge, scartiamo questa pista.
-    print('\n--- Tentativo 2: con header Host forzato a quello interno del WSDL ---')
-    original_host = urlsplit(original_address(client)).hostname
-    service2 = fixed_service(client, extra_headers={'Host': original_host})
-    if try_tracking(service2, tracking_value):
-        return
+    # Passo 1: ManageCustomerRequest raw (esattamente come l'esempio del supporto MBE)
+    if not try_manage_customer_raw(endpoint_url):
+        print('\nRiprovo con User-Agent da browser (anti-WAF Akamai)...')
+        ua = ('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+              '(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36')
+        if not try_manage_customer_raw(endpoint_url, extra_headers={'User-Agent': ua}):
+            print('\nAncora bloccato — problema di whitelist IP o WAF, non risolvibile lato client.')
+            return
 
-    # Tentativo 3: User-Agent da browser — il 403 "senza contenuto" del tentativo 1
-    # è coerente con bot-detection del WAF Akamai sull'User-Agent di python-zeep/requests
-    print('\n--- Tentativo 3: con User-Agent da browser ---')
-    service3 = fixed_service(client, extra_headers={
-        'User-Agent': ('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
-                       '(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'),
-    })
-    if try_tracking(service3, tracking_value):
-        return
-
-    print('\nTutti i tentativi hanno fallito con 4xx — il blocco sembra a livello di edge/WAF '
-          '(Akamai) o whitelist lato MBE, non risolvibile lato client.')
-    print('Prossimo passo: chiedere al supporto MBE se l\'accesso a e-link richiede una '
-          'whitelist IP del server chiamante o un header specifico (es. API key separata, '
-          'client certificate, ecc.) oltre a Username/Passphrase/System.')
+    # Passo 2: TrackingRequest via zeep (solo se fornito un tracking number)
+    if tracking_value:
+        try_tracking(service, tracking_value)
+    else:
+        print('\nNessun tracking number fornito — fermato dopo ManageCustomer.')
+        print('Uso: python test_mbe_elink.py <tracking_number>')
 
 
 if __name__ == '__main__':
