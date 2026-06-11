@@ -41,7 +41,8 @@
       ],
       "notes": "",
       "createdAt": 1780934555207,
-      "updatedAt": 1780934562742
+      "updatedAt": 1781199154831,
+      "language": "en"
     },
     {
       "id": "ord_mq5486ml19i0",
@@ -135,20 +136,21 @@
       ],
       "notes": "",
       "createdAt": 1780917382029,
-      "updatedAt": 1781199080503,
-      "trackingUrl": "https://www.spedire.com/tracking/3UW1D56044876"
+      "updatedAt": 1781199154831,
+      "trackingUrl": "https://www.spedire.com/tracking/3UW1D56044876",
+      "language": "it"
     },
     {
       "id": "ord_mq5486ml258w",
       "customerName": "Heather Douglas",
       "customerEmail": "chillerheather@gmail.com",
       "customerPhone": "",
-      "amount": 0,
+      "amount": 234.35,
       "currency": "EUR",
       "orderDate": 1780870516000,
       "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio Heather Douglas",
       "shipmentCode": "",
-      "shippingAddress": "",
+      "shippingAddress": "15544 Crestwood Drive, 66007 Basehor (KS), United States",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<DB9PR08MB66820FEEEE1F7C44F32F1C53BF1F2@DB9PR08MB6682.eurprd08.prod.outlook.com>",
@@ -156,7 +158,7 @@
       "carrier": "Corriere Italia",
       "source": "shop",
       "orderNumber": "",
-      "paymentType": "",
+      "paymentType": "Carte Di Credito/Bancomat",
       "shippingDate": null,
       "status": "preparazione",
       "statusHistory": [
@@ -179,8 +181,9 @@
       ],
       "notes": "",
       "createdAt": 1780917382029,
-      "updatedAt": 1781183106079,
-      "trackingUrl": ""
+      "updatedAt": 1781199154831,
+      "trackingUrl": "",
+      "language": "en"
     },
     {
       "id": "ord_mq12fqsu08v6",
@@ -3232,5 +3235,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1780934555207
+  "lastImportedAt": 1781199154831
 }
