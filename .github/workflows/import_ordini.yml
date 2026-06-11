@@ -2,8 +2,7 @@ name: Import Ordini da Gmail
 
 on:
   schedule:
-    - cron: '0 7 * * *'   #  7:00 UTC =  9:00 CEST
-    - cron: '0 12 * * *'  # 12:00 UTC = 14:00 CEST
+    - cron: '0 */4 * * *'  # ogni 4 ore
   workflow_dispatch:        # trigger manuale dal CRM o da GitHub UI
 
 permissions:
@@ -39,6 +38,12 @@ jobs:
           GH_REPO:  ${{ github.repository }}
           # FIERAMENTE_USER e FIERAMENTE_PASS opzionali — fallback hardcoded nello script
         run: python scripts/fetch_fieramente_tracking.py
+
+      - name: Fetch tracking Spedire.com
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO:  ${{ github.repository }}
+        run: python scripts/fetch_spedire_tracking.py
 
       # ── MBE tracking — DORMIENTE (dati indietro rispetto a Fieramente) ──────
       # Riattivare aggiungendo le 2 righe Playwright e rimuovendo i due "if: false"

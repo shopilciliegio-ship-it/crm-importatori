@@ -355,9 +355,11 @@ function openOrdineDetail(id){
 
   const timeline=_buildTimeline(o);
 
-  const trackingLink=o.trackingNumber&&o.carrier==='MBE'
-    ?`<a href="https://www.mbeonline.it/tracking" target="_blank" style="font-size:12px">🔗 MBE tracking</a>`
-    :'';
+  const trackingLink=o.trackingUrl
+    ?`<a href="${esc(o.trackingUrl)}" target="_blank" style="font-size:12px">🔗 Traccia spedizione</a>`
+    :(o.trackingNumber&&o.carrier==='MBE'
+      ?`<a href="https://www.mbeonline.it/tracking" target="_blank" style="font-size:12px">🔗 MBE tracking</a>`
+      :'');
 
   showModal(`
     <div class="mt">📦 ${esc(o.customerName)}${o.source==='shop'?' <span class="badge" style="background:var(--teal-bg);color:var(--teal-tx);font-size:11px;vertical-align:middle">🛒 Shop Online</span>':''}</div>
@@ -368,7 +370,7 @@ function openOrdineDetail(id){
     ${dr('Importo', `<strong>€${o.amount.toFixed(2)}</strong> ${o.currency||'EUR'}`)}
     ${o.paymentType?dr('Pagamento', esc(o.paymentType)):''}
     ${o.shipmentCode?dr('Codice spedizione', `<span style="font-family:monospace;font-weight:700;font-size:15px">${esc(o.shipmentCode)}</span>`):''}
-    ${(o.carrier&&o.carrier!=='MBE')?dr('Corriere', esc(o.carrier)):''}
+    ${o.carrier?dr('Corriere', esc(o.carrier)):''}
     ${dr('Email cliente', o.customerEmail?`<a href="mailto:${esc(o.customerEmail)}">${esc(o.customerEmail)}</a>`:'<span style="color:var(--amber)">⚠ mancante</span>')}
     ${o.customerPhone?dr('Telefono', `<a href="tel:${esc(o.customerPhone)}">${esc(o.customerPhone)}</a>`):''}
     ${o.trackingNumber?dr('Tracking', `<span style="font-family:monospace">${esc(o.trackingNumber)}</span> ${trackingLink}`):''}
@@ -398,8 +400,14 @@ function openOrdineDetail(id){
           <option value="express"${o.shippingType==='express'?' selected':''}>Express</option>
         </select>
       </div>
-      <div class="fg fgf"><label>Tracking number</label>
+      <div class="fg"><label>Corriere</label>
+        <input id="ord-carrier" placeholder="Es. MBE, BRT, GLS, Spedire.com" value="${esc(o.carrier||'')}">
+      </div>
+      <div class="fg"><label>Tracking number</label>
         <input id="ord-tracking" placeholder="Es. 1Z999AA10123456784" value="${esc(o.trackingNumber||'')}">
+      </div>
+      <div class="fg fgf"><label>Link tracciamento</label>
+        <input id="ord-tracking-url" placeholder="Es. https://www.spedire.com/tracking/3UW1D56044876" value="${esc(o.trackingUrl||'')}">
       </div>
       <div class="fg fgf"><label>Indirizzo spedizione</label>
         <input id="ord-address" placeholder="Via Roma 1, 20100 Milano, Italy" value="${esc(o.shippingAddress||'')}">
@@ -430,7 +438,9 @@ async function saveOrdineUpdate(id){
   const o=dbO.orders.find(x=>x.id===id);
   if(!o) return;
   const newStatus=gv('ord-new-status')||o.status;
+  const newCarrier=(document.getElementById('ord-carrier')?.value||'').trim();
   const newTracking=(document.getElementById('ord-tracking')?.value||'').trim();
+  const newTrackingUrl=(document.getElementById('ord-tracking-url')?.value||'').trim();
   const newEmail=(document.getElementById('ord-email')?.value||'').trim();
   const newPhone=(document.getElementById('ord-phone')?.value||'').trim();
   const newAddress=(document.getElementById('ord-address')?.value||'').trim();
@@ -439,7 +449,9 @@ async function saveOrdineUpdate(id){
   const sendEmail=document.getElementById('ord-send-email')?.checked;
 
   if(newEmail) o.customerEmail=newEmail;
+  o.carrier=newCarrier||'';
   if(newTracking) o.trackingNumber=newTracking;
+  o.trackingUrl=newTrackingUrl||'';
   if(newPhone) o.customerPhone=newPhone;
   if(newAddress) o.shippingAddress=newAddress;
   o.shippingType=newShippingType||null;
@@ -550,7 +562,9 @@ async function sendOrdineStatusEmail(o){
   if(!o.customerEmail){ toast('⚠ Email cliente mancante'); return; }
 
   const nome=o.customerName.split(/\s+/)[0]||o.customerName;
-  const trackLine=o.trackingNumber?`Numero tracking: ${o.trackingNumber}\n`:'';
+  const trackLine=o.trackingNumber
+    ?`Numero tracking: ${o.trackingNumber}${o.trackingUrl?`\nTraccia la spedizione: ${o.trackingUrl}`:''}\n`
+    :(o.trackingUrl?`Traccia la spedizione: ${o.trackingUrl}\n`:'');
 
   let subject='', body='';
 
@@ -623,7 +637,7 @@ ti contatto riguardo al tuo ordine. Purtroppo si è verificato un problema con l
 
 Il nostro team è al lavoro per risolvere la situazione e ti terremo aggiornato il prima possibile.
 
-${o.trackingNumber?`Tracking: ${o.trackingNumber}`:''}
+${trackLine}
 
 Per qualsiasi domanda urgente, rispondi direttamente a questa email.
 

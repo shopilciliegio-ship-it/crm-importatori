@@ -1,0 +1,50 @@
+Oggetto: Re: Accesso API e-link - errore 403 su https://api.mbeonline.it/ws
+
+Ciao,
+
+grazie per le risposte e per lo screenshot. Abbiamo rifatto i test usando esattamente
+gli stessi header mostrati nello screenshot (incluso l'header Authorization Basic con
+le nostre credenziali), ma il problema persiste. Abbiamo isolato meglio il
+comportamento e vorremmo condividere questi risultati, perché ci sembra indichino un
+blocco a livello di rete/WAF, non applicativo:
+
+- GET https://api.mbeonline.it/ws/e-link.wsdl (il file WSDL) -> 200 OK, funziona
+  correttamente.
+- GET https://api.mbeonline.it/ws (l'endpoint API, nessun parametro, nessuna
+  credenziale) -> 403 Forbidden, corpo vuoto.
+- POST https://api.mbeonline.it/ws con il SOAP body (ManageCustomerRequest, Action=GET)
+  + header Authorization: Basic <credenziali> + Content-Type: text/xml, come da vostro
+  screenshot -> 403 Forbidden, corpo vuoto.
+- Stesso POST SENZA l'header Authorization -> 403 Forbidden, identico.
+
+In tutti i casi la risposta 403 ha lo stesso set di header (Cache-Control: no-store,
+must-revalidate, no-cache, max-age=0; X-Frame-Options: DENY; X-Content-Type-Options:
+nosniff; X-XSS-Protection; Referrer-Policy: no-referrer; Strict-Transport-Security) e
+imposta lo stesso cookie di sessione che si vede nel vostro screenshot
+(29db36aa5f07e32c0e7ffa7ce589b780=...). Questo ci fa pensare che quel cookie sia solo un
+cookie di sessione generato da un firewall/reverse-proxy davanti ad api.mbeonline.it, e
+non sia legato all'autenticazione applicativa.
+
+In sintesi: il path /ws risulta bloccato per qualsiasi richiesta proveniente dal nostro
+IP, indipendentemente da credenziali, header o corpo della richiesta - mentre
+/ws/e-link.wsdl è raggiungibile normalmente. Questo ci fa pensare a un livello di
+protezione (WAF / bot protection / ACL su path specifico) separato da quello applicativo
+di OnlineMBE che ci avete già confermato essere senza restrizioni IP.
+
+Potreste verificare:
+
+1. Se davanti ad api.mbeonline.it è presente un WAF o un firewall perimetrale (es.
+   Akamai, F5, Imperva, Cloudflare...) che applica regole specifiche sul path /ws, e se
+   è necessario inserire in whitelist a quel livello il nostro IP pubblico:
+
+   195.181.181.168
+
+2. Da quale rete/IP è stata effettuata la prova Postman riportata nello screenshot (es.
+   dalla vostra sede/ufficio)? Se anche da lì il path /ws risponde 403, il problema
+   sarebbe diverso; se invece risponde 200, ci confermerebbe che si tratta di un blocco
+   legato alla provenienza della richiesta.
+
+Restiamo a disposizione per qualunque test aggiuntivo.
+
+Grazie e buona giornata,
+Luca
