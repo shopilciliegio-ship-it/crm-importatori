@@ -207,10 +207,19 @@ def _parse_shop_order_body(text: str) -> dict:
     if m:
         result['paymentType'] = m.group(1).strip().title()
 
-    # Corriere / tipo di spedizione (es. CORRIERE ITALIA)
-    m = re.search(r'(?i:Tipo\s+di\s+Spedizione|Shipping\s+type)\s*\n?\s*([A-Z]{2,}(?:\s+[A-Z]{2,})*)', text)
+    # Corriere / tipo di spedizione (es. CORRIERE ITALIA, U.S.A. Wine CORRIERE STD)
+    # Non mappiamo tutti i nomi corriere: se compare "STD"/"EXPR" la spedizione è
+    # standard/express, e il corriere fisso Italia è sempre standard.
+    m = re.search(r'(?i:Tipo\s+di\s+Spedizione|Shipping\s+type)\s*\n?\s*([^\n]+)', text)
     if m:
-        result['carrier'] = m.group(1).strip().title()
+        raw_ship = m.group(1).strip()
+        result['carrier'] = raw_ship.title()
+        if re.search(r'\bSTD\b', raw_ship, re.I):
+            result['shippingType'] = 'standard'
+        elif re.search(r'\bEXPR', raw_ship, re.I):
+            result['shippingType'] = 'express'
+        elif 'italia' in raw_ship.lower():
+            result['shippingType'] = 'standard'
 
     # Totale Ordine    171,15 €  /  Total Order    €234.35
     # il simbolo € può precedere o seguire l'importo a seconda della lingua dell'email
@@ -245,6 +254,10 @@ def _parse_email(msg) -> dict | None:
     if m_shop:
         body_text, _ = _get_body_info(msg)
         shop_fields = _parse_shop_order_body(body_text)
+        carrier = shop_fields.get('carrier') or 'Corriere Italia'
+        shipping_type = shop_fields.get('shippingType')
+        if not shipping_type and 'italia' in carrier.lower():
+            shipping_type = 'standard'
         return {
             'customerName':    shop_fields.get('customerName') or m_shop.group(1).strip(),
             'amount':          shop_fields.get('amount', 0.0),
@@ -257,11 +270,11 @@ def _parse_email(msg) -> dict | None:
             'shipmentCode':    '',
             'shippingAddress': shop_fields.get('shippingAddress', ''),
             'numberOfCartons': None,
-            'shippingType':    None,
+            'shippingType':    shipping_type,
             'source':          'shop',
             'orderNumber':     shop_fields.get('orderNumber', ''),
             'paymentType':     shop_fields.get('paymentType', ''),
-            'carrier':         shop_fields.get('carrier') or 'Corriere Italia',
+            'carrier':         carrier,
         }
 
     # Supporta sia "New Order" che "New Paid Order"; amount opzionale nel soggetto
