@@ -91,13 +91,39 @@ def gh_put(path: str, data: dict, sha: str | None, message: str) -> None:
 
 # ── Template rendering ────────────────────────────────────────────────────────
 
+def order_lang(order: dict) -> str:
+    """Lingua email: ordini 'Shop Online' (clienti italiani) → it, resto → en."""
+    return 'it' if order.get('source') == 'shop' else 'en'
+
+
 def render_template(tpl: dict, order: dict) -> tuple[str, str]:
+    lang        = order_lang(order)
     nome        = (order.get('customerName') or '').split()[0] or order.get('customerName', '')
     tracking    = order.get('trackingNumber', '') or ''
+    tracking_url = order.get('trackingUrl', '') or ''
     mbe_code    = (order.get('shipmentCode') or '').strip()
     fier_url    = f'https://track.fieramente.biz/#/tracking/{mbe_code}' if mbe_code else ''
-    tracking_line = f'Tracking number: {tracking} — {fier_url}\n' if tracking and fier_url \
-                    else (f'Tracking number: {tracking}\n' if tracking else '')
+
+    if lang == 'it':
+        if tracking and tracking_url:
+            tracking_line = f'Numero tracking: {tracking}\nTraccia la spedizione: {tracking_url}\n'
+        elif tracking_url:
+            tracking_line = f'Traccia la spedizione: {tracking_url}\n'
+        elif tracking and fier_url:
+            tracking_line = f'Numero tracking: {tracking} — {fier_url}\n'
+        elif tracking:
+            tracking_line = f'Numero tracking: {tracking}\n'
+        else:
+            tracking_line = ''
+    else:
+        if tracking and fier_url:
+            tracking_line = f'Tracking number: {tracking} — {fier_url}\n'
+        elif tracking:
+            tracking_line = f'Tracking number: {tracking}\n'
+        elif tracking_url:
+            tracking_line = f'Track your shipment: {tracking_url}\n'
+        else:
+            tracking_line = ''
 
     ctx = {
         'nome':          nome,
@@ -106,8 +132,9 @@ def render_template(tpl: dict, order: dict) -> tuple[str, str]:
         'fieramente_url': fier_url,
     }
 
-    subject = tpl.get('subject', '')
-    body    = tpl.get('body', '')
+    tpl_lang = tpl.get(lang) or tpl.get('en') or {}
+    subject = tpl_lang.get('subject', '')
+    body    = tpl_lang.get('body', '')
     for k, v in ctx.items():
         subject = subject.replace('{' + k + '}', str(v))
         body    = body.replace('{' + k + '}', str(v))
@@ -117,7 +144,8 @@ def render_template(tpl: dict, order: dict) -> tuple[str, str]:
 
 # ── Email HTML builder ────────────────────────────────────────────────────────
 
-_FIER_URL_RE = re.compile(r'(https://track\.fieramente\.biz/#/tracking/[A-Za-z0-9_-]+)')
+_FIER_URL_RE    = re.compile(r'(https://track\.fieramente\.biz/#/tracking/[A-Za-z0-9_-]+)')
+_SPEDIRE_URL_RE = re.compile(r'(https://www\.spedire(?:pro)?\.com/tracking/[A-Za-z0-9]+)')
 
 def _body_to_html(plain: str) -> str:
     paras = [p.strip() for p in plain.split('\n\n') if p.strip()]
@@ -128,6 +156,12 @@ def _body_to_html(plain: str) -> str:
         escaped = _FIER_URL_RE.sub(
             r'<a href="\1" style="color:#B8941A;font-weight:600;text-decoration:none">'
             r'🔗 Track your shipment on Fieramente</a>',
+            escaped
+        )
+        # Rende cliccabile il link Spedire.com tracking
+        escaped = _SPEDIRE_URL_RE.sub(
+            r'<a href="\1" style="color:#B8941A;font-weight:600;text-decoration:none">'
+            r'🔗 Traccia la spedizione</a>',
             escaped
         )
         parts.append(

@@ -1,42 +1,90 @@
 {
   "order_received": {
     "label": "Conferma ricezione ordine",
-    "subject": "Thank you for your order! 🍷",
-    "body": "Dear {nome},\nthank you so much for your order! We are thrilled to have you as a customer.\n\nWe have received your order, and our team will process it as soon as possible. Once your order is ready, we will hand it over to our shipping partner, who will handle all export and customs documentation.\nYou will receive a separate email with the tracking number as soon as your order is on its way.\n\nIn the meantime, if you have any questions, do not hesitate to reply to this email — we are always happy to help.\n\nWarm regards,\nLuca Pattaro\nIl Ciliegio — Viticoltori in Monteriggioni dal 1952\nshop@ilciliegio.com | +39 331 1347899"
+    "en": {
+      "subject": "Thank you for your order! 🍷",
+      "body": "Dear {nome},\nthank you so much for your order! We are thrilled to have you as a customer.\n\nWe have received your order, and our team will process it as soon as possible. Once your order is ready, we will hand it over to our shipping partner, who will handle all export and customs documentation.\nYou will receive a separate email with the tracking number as soon as your order is on its way.\n\nIn the meantime, if you have any questions, do not hesitate to reply to this email — we are always happy to help.\n\nWarm regards,\nLuca Pattaro\nIl Ciliegio — Viticoltori in Monteriggioni dal 1952\nshop@ilciliegio.com | +39 331 1347899"
+    },
+    "it": {
+      "subject": "Grazie per il tuo ordine! 🍷",
+      "body": "Caro {nome},\ngrazie mille per il tuo ordine! Siamo felicissimi di averti come cliente.\n\nAbbiamo ricevuto il tuo ordine e il nostro team lo preparerà al più presto. Una volta pronto, lo affideremo al corriere che si occuperà della spedizione.\nRiceverai una email separata con il numero di tracking non appena l'ordine sarà partito.\n\nNel frattempo, se hai domande, non esitare a rispondere a questa email — siamo sempre felici di aiutarti.\n\nUn caro saluto,\nLuca Pattaro\nIl Ciliegio — Azienda Agricola\nshop@ilciliegio.com | +39 331 1347899"
+    }
   },
   "day0": {
     "label": "Conferma spedizione (Giorno 0)",
-    "subject": "Your wine is on its way! 🍷",
-    "body": "Dear {nome},\nyour order has been shipped and is now on its way to you!\nFor your convenience {tracking_line}\nDelivery will be completed as quickly as possible.\nWe will keep you updated as soon as we have news from customs or the final carrier.\n\nThank you for choosing Il Ciliegio!\n\nLuca Pattaro\nIl Ciliegio — Viticoltori in Monteriggioni dal 1952\nshop@ilciliegio.com | +39 331 1347899"
+    "en": {
+      "subject": "Your wine is on its way! 🍷",
+      "body": "Dear {nome},\nyour order has been shipped and is now on its way to you!\nFor your convenience {tracking_line}\nDelivery will be completed as quickly as possible.\nWe will keep you updated as soon as we have news from customs or the final carrier.\n\nThank you for choosing Il Ciliegio!\n\nLuca Pattaro\nIl Ciliegio — Viticoltori in Monteriggioni dal 1952\nshop@ilciliegio.com | +39 331 1347899"
+    },
+    "it": {
+      "subject": "Il tuo vino è in viaggio! 🍷",
+      "body": "Caro {nome},\nil tuo ordine è stato spedito ed è ora in viaggio verso di te!\n{tracking_line}\nLa consegna avverrà il prima possibile.\nTi aggiorneremo non appena avremo notizie dal corriere.\n\nGrazie per aver scelto Il Ciliegio!\n\nLuca Pattaro\nIl Ciliegio — Azienda Agricola\nshop@ilciliegio.com | +39 331 1347899"
+    }
   },
   "day10": {
     "label": "Reminder 10 giorni (Standard e Express)",
-    "subject": "Shipping update — your order",
-    "body": "Dear {nome},\nhere is an update on your shipment, which has been on its way for 10 days now.\n\nAt this stage, your order is likely crossing the ocean, going through mountains or preparing for customs clearance.\nWe will write to you as soon as we receive any news from the carrier.\nIf you have any questions, feel free to reply to this email.\n\nLuca Pattaro\nIl Ciliegio — Viticoltori in Monteriggioni dal 1952\nshop@ilciliegio.com | +39 331 1347899"
+    "en": {
+      "subject": "Shipping update — your order",
+      "body": "Dear {nome},\nhere is an update on your shipment, which has been on its way for 10 days now.\n\nAt this stage, your order is likely crossing the ocean, going through mountains or preparing for customs clearance.\nWe will write to you as soon as we receive any news from the carrier.\nIf you have any questions, feel free to reply to this email.\n\nLuca Pattaro\nIl Ciliegio — Viticoltori in Monteriggioni dal 1952\nshop@ilciliegio.com | +39 331 1347899"
+    },
+    "it": {
+      "subject": "Aggiornamento spedizione — il tuo ordine",
+      "body": "Caro {nome},\necco un aggiornamento sulla tua spedizione, partita ormai da 10 giorni.\n\nA questo punto il tuo ordine è probabilmente in transito verso la destinazione finale.\nTi scriveremo non appena avremo novità dal corriere.\nPer qualsiasi domanda, rispondi pure a questa email.\n\nLuca Pattaro\nIl Ciliegio — Azienda Agricola\nshop@ilciliegio.com | +39 331 1347899"
+    }
   },
   "day20": {
     "label": "Reminder 20 giorni (solo Standard)",
-    "subject": "Your wine is still on its way — update",
-    "body": "Dear {nome},\n20 days have passed since your order was shipped.\nStandard shipments to some destinations can take up to 30 days for customs clearance and final delivery.\nWe are monitoring the situation and will update you as soon as the carrier provides any news.\n\nWe appreciate your patience!\n\nLuca Pattaro\nIl Ciliegio — Viticoltori in Monteriggioni dal 1952\nshop@ilciliegio.com | +39 331 1347899"
+    "en": {
+      "subject": "Your wine is still on its way — update",
+      "body": "Dear {nome},\n20 days have passed since your order was shipped.\nStandard shipments to some destinations can take up to 30 days for customs clearance and final delivery.\nWe are monitoring the situation and will update you as soon as the carrier provides any news.\n\nWe appreciate your patience!\n\nLuca Pattaro\nIl Ciliegio — Viticoltori in Monteriggioni dal 1952\nshop@ilciliegio.com | +39 331 1347899"
+    },
+    "it": {
+      "subject": "Il tuo vino è ancora in viaggio — aggiornamento",
+      "body": "Caro {nome},\nsono passati 20 giorni dalla spedizione del tuo ordine.\nLe spedizioni standard verso alcune destinazioni possono richiedere fino a 30 giorni per lo sdoganamento e la consegna finale.\nStiamo monitorando la situazione e ti aggiorneremo non appena il corriere fornirà notizie.\n\nGrazie per la pazienza!\n\nLuca Pattaro\nIl Ciliegio — Azienda Agricola\nshop@ilciliegio.com | +39 331 1347899"
+    }
   },
   "in_consegna": {
     "label": "In consegna (dogana superata)",
-    "subject": "Your wine is out for delivery! 🍷",
-    "body": "Dear {nome},\nyour order has cleared customs, and the courier is now delivering it to your address!\n\nFor your convenience {tracking_line}\nPlease note that a signature from an adult (21+) is required upon delivery.\nMake sure someone is available to sign for the package, as carriers may not leave wine shipments unattended.\nIf you need to reschedule the delivery or pick it up at a UPS location, you can do so directly through the UPS tracking link above.\nWe are almost there — thank you for your patience!\n\nLuca Pattaro\nIl Ciliegio — Viticoltori in Monteriggioni dal 1952\nshop@ilciliegio.com | +39 331 1347899"
+    "en": {
+      "subject": "Your wine is out for delivery! 🍷",
+      "body": "Dear {nome},\nyour order has cleared customs, and the courier is now delivering it to your address!\n\nFor your convenience {tracking_line}\nPlease note that a signature from an adult (21+) is required upon delivery.\nMake sure someone is available to sign for the package, as carriers may not leave wine shipments unattended.\nIf you need to reschedule the delivery or pick it up at a UPS location, you can do so directly through the UPS tracking link above.\nWe are almost there — thank you for your patience!\n\nLuca Pattaro\nIl Ciliegio — Viticoltori in Monteriggioni dal 1952\nshop@ilciliegio.com | +39 331 1347899"
+    },
+    "it": {
+      "subject": "Il tuo ordine è in consegna! 🍷",
+      "body": "Caro {nome},\nil corriere sta consegnando il tuo ordine all'indirizzo indicato!\n\n{tracking_line}Ti aggiorneremo appena risulterà consegnato.\nGrazie per la pazienza, ci siamo quasi!\n\nLuca Pattaro\nIl Ciliegio — Azienda Agricola\nshop@ilciliegio.com | +39 331 1347899"
+    }
   },
   "consegnato": {
     "label": "Ordine consegnato",
-    "subject": "Your order has been delivered! 🍷 Enjoy!",
-    "body": "Dear {nome},\ngreat news!\nYour order has been successfully delivered. 🎉\nWe hope you enjoy Il Ciliegio products.\nIf you have any questions or feedback, do not hesitate to contact us — your opinion is very valuable to us.\n\nStay healthy and enjoy IL CILIEGIO!\nLuca Pattaro\nIl Ciliegio — Viticoltori in Monteriggioni dal 1952\nshop@ilciliegio.com | +39 331 1347899"
+    "en": {
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "body": "Dear {nome},\ngreat news!\nYour order has been successfully delivered. 🎉\nWe hope you enjoy Il Ciliegio products.\nIf you have any questions or feedback, do not hesitate to contact us — your opinion is very valuable to us.\n\nStay healthy and enjoy IL CILIEGIO!\nLuca Pattaro\nIl Ciliegio — Viticoltori in Monteriggioni dal 1952\nshop@ilciliegio.com | +39 331 1347899"
+    },
+    "it": {
+      "subject": "Il tuo ordine è stato consegnato! 🍷 Buona degustazione!",
+      "body": "Caro {nome},\nottime notizie!\nIl tuo ordine è stato consegnato con successo. 🎉\nSperiamo che tu possa apprezzare i vini de Il Ciliegio.\nSe hai domande o feedback, non esitare a contattarci — il tuo parere è prezioso per noi.\n\nUn brindisi,\nLuca Pattaro\nIl Ciliegio — Azienda Agricola\nshop@ilciliegio.com | +39 331 1347899"
+    }
   },
   "dogana": {
     "label": "In dogana",
-    "subject": "Your order is going through customs",
-    "body": "Dear {nome},\nyour order is currently going through customs. This process usually takes 2–5 business days.\nNormally, no action is required on your part.\nIf you are required to pay taxes or duties, you will receive a message from customs with further information.\n\nWe will update you as soon as your order is on its way again.\nThanks for your help and your understanding!\nFor your convenience\n{tracking_line}\n\nLuca Pattaro\nIl Ciliegio — Viticoltori in Monteriggioni dal 1952\nshop@ilciliegio.com | +39 331 1347899"
+    "en": {
+      "subject": "Your order is going through customs",
+      "body": "Dear {nome},\nyour order is currently going through customs. This process usually takes 2–5 business days.\nNormally, no action is required on your part.\nIf you are required to pay taxes or duties, you will receive a message from customs with further information.\n\nWe will update you as soon as your order is on its way again.\nThanks for your help and your understanding!\nFor your convenience\n{tracking_line}\n\nLuca Pattaro\nIl Ciliegio — Viticoltori in Monteriggioni dal 1952\nshop@ilciliegio.com | +39 331 1347899"
+    },
+    "it": {
+      "subject": "Il tuo ordine è in fase di sdoganamento",
+      "body": "Caro {nome},\nil tuo ordine è attualmente in fase di sdoganamento. Questo processo richiede normalmente 2-5 giorni lavorativi.\nNormalmente non è richiesta alcuna azione da parte tua.\nSe fosse necessario pagare tasse o dazi, riceverai una comunicazione dalla dogana con le indicazioni necessarie.\n\nTi aggiorneremo non appena l'ordine riprenderà il suo percorso.\nGrazie per la pazienza!\n{tracking_line}\nLuca Pattaro\nIl Ciliegio — Azienda Agricola\nshop@ilciliegio.com | +39 331 1347899"
+    }
   },
   "problema": {
     "label": "Problema spedizione",
-    "subject": "⚠ Important update on your shipment",
-    "body": "Dear {nome},\nI am reaching out regarding your order.\nUnfortunately, an issue has occurred with the shipment, and we are already actively monitoring the situation.\nOur team is working to resolve the matter, and we will keep you updated as soon as possible.\nFor any urgent questions, please reply directly to this email.\n\nFor your convenience {tracking_line}\n\nLuca Pattaro\nIl Ciliegio — Viticoltori in Monteriggioni dal 1952\nshop@ilciliegio.com | +39 331 1347899"
+    "en": {
+      "subject": "⚠ Important update on your shipment",
+      "body": "Dear {nome},\nI am reaching out regarding your order.\nUnfortunately, an issue has occurred with the shipment, and we are already actively monitoring the situation.\nOur team is working to resolve the matter, and we will keep you updated as soon as possible.\nFor any urgent questions, please reply directly to this email.\n\nFor your convenience {tracking_line}\n\nLuca Pattaro\nIl Ciliegio — Viticoltori in Monteriggioni dal 1952\nshop@ilciliegio.com | +39 331 1347899"
+    },
+    "it": {
+      "subject": "⚠ Aggiornamento importante sulla tua spedizione",
+      "body": "Caro {nome},\nti contatto riguardo al tuo ordine.\nPurtroppo si è verificato un problema con la spedizione, che stiamo già monitorando attivamente.\nIl nostro team è al lavoro per risolvere la situazione e ti terremo aggiornato il prima possibile.\nPer qualsiasi domanda urgente, rispondi pure direttamente a questa email.\n\n{tracking_line}\nLuca Pattaro\nIl Ciliegio — Azienda Agricola\nshop@ilciliegio.com | +39 331 1347899"
+    }
   }
 }
