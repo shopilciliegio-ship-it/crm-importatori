@@ -1250,6 +1250,24 @@
       "subject": "Your order has been delivered! 🍷 Enjoy!",
       "sentAt": 1781168870865,
       "messageId": "<202606110907.64744496661@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mq5486ml19i0",
+      "customerName": "MIRIANA BONAZZA",
+      "type": "day0",
+      "to": "miribruco52@gmail.com",
+      "subject": "Your wine is on its way! 🍷",
+      "sentAt": 1781175584218,
+      "messageId": "<202606111059.67727782083@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mq5486ml19i0",
+      "customerName": "MIRIANA BONAZZA",
+      "type": "in_consegna",
+      "to": "miribruco52@gmail.com",
+      "subject": "Your wine is out for delivery! 🍷",
+      "sentAt": 1781175584218,
+      "messageId": "<202606111059.78720113373@smtp-relay.mailin.fr>"
     }
   ]
 }
