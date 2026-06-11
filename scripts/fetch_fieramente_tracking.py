@@ -87,7 +87,7 @@ def fieramente_login():
     r = requests.post(f'{FIERAMENTE_API}/login', json={
         'username': FIERAMENTE_USER,
         'password': FIERAMENTE_PASS,
-    })
+    }, timeout=30)
     r.raise_for_status()
     data = r.json()
     if not data.get('success'):
@@ -100,6 +100,7 @@ def fieramente_get_shipments(token):
     r = requests.get(
         f'{FIERAMENTE_API}/shipments/{FIERAMENTE_USER}',
         headers={'Authorization': f'Bearer {token}'},
+        timeout=30,
     )
     r.raise_for_status()
     shipments = r.json()
@@ -122,8 +123,12 @@ def date_to_ms(date_str):
 def main():
     print('=== Fetch Fieramente Tracking — Il Ciliegio ===')
 
-    token     = fieramente_login()
-    fier_list = fieramente_get_shipments(token)
+    try:
+        token     = fieramente_login()
+        fier_list = fieramente_get_shipments(token)
+    except requests.exceptions.RequestException as e:
+        print(f'⚠ Fieramente non raggiungibile, salto questo step: {e}')
+        return
 
     fier_by_code = {
         s['mbe_code'].strip().upper(): s
