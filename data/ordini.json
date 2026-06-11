@@ -41,7 +41,8 @@
       ],
       "notes": "",
       "createdAt": 1780934555207,
-      "updatedAt": 1780934562742
+      "updatedAt": 1781194288312,
+      "language": "en"
     },
     {
       "id": "ord_mq5486ml19i0",
@@ -119,8 +120,9 @@
       ],
       "notes": "",
       "createdAt": 1780917382029,
-      "updatedAt": 1781183116981,
-      "trackingUrl": "https://www.spedire.com/tracking/3UW1D56044876"
+      "updatedAt": 1781194288312,
+      "trackingUrl": "https://www.spedire.com/tracking/3UW1D56044876",
+      "language": "it"
     },
     {
       "id": "ord_mq5486ml258w",
@@ -163,8 +165,9 @@
       ],
       "notes": "",
       "createdAt": 1780917382029,
-      "updatedAt": 1781183106079,
-      "trackingUrl": ""
+      "updatedAt": 1781194288312,
+      "trackingUrl": "",
+      "language": "en"
     },
     {
       "id": "ord_mq12fqsu08v6",
@@ -3216,5 +3219,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1780934555207
+  "lastImportedAt": 1781194288312
 }
