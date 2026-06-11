@@ -22,7 +22,7 @@
   "in_consegna": {
     "label": "In consegna (dogana superata)",
     "subject": "Your wine is out for delivery! 🍷",
-    "body": "Dear {nome},\nyour order has cleared customs, and UPS is now delivering it to your address!\n\nFor your convenience {tracking_line}\nPlease note that a signature from an adult (21+) is required upon delivery.\nMake sure someone is available to sign for the package, as carriers may not leave wine shipments unattended.\nIf you need to reschedule the delivery or pick it up at a UPS location, you can do so directly through the UPS tracking link above.\nWe are almost there — thank you for your patience!\n\nLuca Pattaro\nIl Ciliegio — Viticoltori in Monteriggioni dal 1952\nshop@ilciliegio.com | +39 331 1347899"
+    "body": "Dear {nome},\nyour order has cleared customs, and the courier is now delivering it to your address!\n\nFor your convenience {tracking_line}\nPlease note that a signature from an adult (21+) is required upon delivery.\nMake sure someone is available to sign for the package, as carriers may not leave wine shipments unattended.\nIf you need to reschedule the delivery or pick it up at a UPS location, you can do so directly through the UPS tracking link above.\nWe are almost there — thank you for your patience!\n\nLuca Pattaro\nIl Ciliegio — Viticoltori in Monteriggioni dal 1952\nshop@ilciliegio.com | +39 331 1347899"
   },
   "consegnato": {
     "label": "Ordine consegnato",
