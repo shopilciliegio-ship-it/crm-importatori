@@ -112,29 +112,44 @@ function _remRow(label,status,trigger,color){
 }
 
 /* ─ Panel template nella sezione ordini ─ */
+const REM_LANGS=[{code:'en',label:'🇬🇧 ENG'},{code:'it',label:'🇮🇹 ITA'}];
+let _remActiveLang='en';
+
 function renderReminderTemplatesPanel(){
   const el=document.getElementById('reminder-templates-panel');
   if(!el) return;
 
+  const tabs=REM_LANGS.map(l=>
+    `<button type="button" class="btn bts ${_remActiveLang===l.code?'btp':''}" onclick="_setRemLang('${l.code}')">${l.label}</button>`
+  ).join('');
+
   const content=REMINDER_SCHEDULE.map((t,i)=>{
     const tpl=dbRemT[t.type]||{};
+    const fields=REM_LANGS.map(l=>{
+      const lt=tpl[l.code]||{};
+      const hidden=_remActiveLang===l.code?'':'display:none';
+      return `<div data-rem-lang="${l.code}" data-rem-type="${t.type}" style="${hidden}">
+        <div class="fg fgf">
+          <label style="font-size:11px;color:var(--text2)">Oggetto (${l.label})</label>
+          <input id="rtpl-sub-${t.type}-${l.code}" value="${esc(lt.subject||'')}" style="font-size:12px">
+        </div>
+        <div class="fg fgf" style="margin-top:4px">
+          <label style="font-size:11px;color:var(--text2)">Corpo email (${l.label}) <span style="font-weight:400">— placeholder: {nome}, {tracking_line}, {fieramente_url}</span></label>
+          <textarea id="rtpl-body-${t.type}-${l.code}" rows="5" style="font-size:12px;width:100%;padding:8px 10px;border:0.5px solid var(--brd2);border-radius:var(--r);background:var(--bg);color:var(--text);font-family:monospace;resize:vertical;line-height:1.5">${esc(lt.body||'')}</textarea>
+        </div>
+      </div>`;
+    }).join('');
     return `<div style="${i>0?'margin-top:16px':''}">
       <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:2px">
         <div style="font-size:12px;font-weight:700;color:var(--text)">📧 ${esc(t.label)}</div>
         <div style="font-size:10px;color:var(--text3);font-style:italic">Trigger: ${esc(t.trigger)}</div>
       </div>
-      <div class="fg fgf">
-        <label style="font-size:11px;color:var(--text2)">Oggetto</label>
-        <input id="rtpl-sub-${t.type}" value="${esc(tpl.subject||'')}" style="font-size:12px">
-      </div>
-      <div class="fg fgf" style="margin-top:4px">
-        <label style="font-size:11px;color:var(--text2)">Corpo email <span style="font-weight:400">— placeholder: {nome}, {tracking_line}, {fieramente_url}</span></label>
-        <textarea id="rtpl-body-${t.type}" rows="5" style="font-size:12px;width:100%;padding:8px 10px;border:0.5px solid var(--brd2);border-radius:var(--r);background:var(--bg);color:var(--text);font-family:monospace;resize:vertical;line-height:1.5">${esc(tpl.body||'')}</textarea>
-      </div>
+      ${fields}
     </div>`;
   }).join('<div class="divhr" style="margin:14px 0"></div>');
 
   el.innerHTML=`<div>
+    <div style="display:flex;gap:6px;margin-bottom:12px">${tabs}</div>
     ${content}
     <div style="display:flex;justify-content:flex-end;margin-top:16px">
       <button class="btn btp bts" onclick="doSaveReminderTemplates()">💾 Salva template su GitHub</button>
@@ -142,13 +157,25 @@ function renderReminderTemplatesPanel(){
   </div>`;
 }
 
+function _setRemLang(code){
+  _remActiveLang=code;
+  document.querySelectorAll('[data-rem-lang]').forEach(el=>{
+    el.style.display = el.dataset.remLang===code ? '' : 'none';
+  });
+  document.querySelectorAll('#reminder-templates-panel .btn.bts').forEach(b=>b.classList.remove('btp'));
+  const idx=REM_LANGS.findIndex(l=>l.code===code);
+  document.querySelectorAll('#reminder-templates-panel > div > div:first-child .btn.bts')[idx]?.classList.add('btp');
+}
+
 async function doSaveReminderTemplates(){
   for(const t of REMINDER_SCHEDULE){
-    const sub =document.getElementById(`rtpl-sub-${t.type}`)?.value||'';
-    const body=document.getElementById(`rtpl-body-${t.type}`)?.value||'';
     if(!dbRemT[t.type]) dbRemT[t.type]={};
-    dbRemT[t.type].subject=sub;
-    dbRemT[t.type].body=body;
+    if(!dbRemT[t.type].label) dbRemT[t.type].label=t.label;
+    for(const l of REM_LANGS){
+      const sub =document.getElementById(`rtpl-sub-${t.type}-${l.code}`)?.value||'';
+      const body=document.getElementById(`rtpl-body-${t.type}-${l.code}`)?.value||'';
+      dbRemT[t.type][l.code]={subject:sub, body:body};
+    }
   }
   await saveReminderTemplates();
 }
