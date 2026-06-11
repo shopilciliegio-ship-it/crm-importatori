@@ -91,11 +91,25 @@
           "type": "Spedito",
           "sentAt": 1781175239777,
           "messageId": "<202606111053.86195609943@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "day0",
+          "to": "miribruco52@gmail.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1781175584218,
+          "messageId": "<202606111059.67727782083@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "in_consegna",
+          "to": "miribruco52@gmail.com",
+          "subject": "Your wine is out for delivery! 🍷",
+          "sentAt": 1781175584218,
+          "messageId": "<202606111059.78720113373@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1780917382029,
-      "updatedAt": 1781175581526,
+      "updatedAt": 1781175584218,
       "trackingUrl": "https://www.spedire.com/tracking/3UW1D56044876"
     },
     {
