@@ -10,6 +10,7 @@ Uso:
     python scripts/test_mbe_elink.py <tracking_number_o_shipment_code>
 """
 
+import base64
 import os
 import sys
 from urllib.parse import urlsplit, urlunsplit
@@ -24,6 +25,11 @@ REAL_HOST = 'api.mbeonline.it'
 
 USERNAME   = os.environ['MBE_ELINK_USERNAME']
 PASSPHRASE = os.environ['MBE_ELINK_PASSPHRASE']
+
+# MBE ha confermato (screenshot Postman funzionante) che, oltre alle credenziali
+# nel body SOAP (Credentials/Username+Passphrase), la richiesta porta un header
+# HTTP "Authorization" — Basic Auth con le stesse credenziali.
+BASIC_AUTH = 'Basic ' + base64.b64encode(f'{USERNAME}:{PASSPHRASE}'.encode('utf-8')).decode('ascii')
 
 # "Plugin" supera la validazione client-side di zeep, ma secondo la documentazione
 # ufficiale OnlineMbe (onlinembe.de/wsdl/documentation.html) il campo SystemType è
@@ -41,9 +47,9 @@ def original_address(client: Client) -> str:
 def fixed_service(client: Client, extra_headers: dict | None = None):
     """Il WSDL espone un endpoint con host interno (es. 'elink') non risolvibile
     pubblicamente. Lo ricreiamo sostituendo l'host con quello pubblico reale,
-    mantenendo schema/path/query originali. extra_headers (opzionale) sovrascrive
-    header HTTP sulle chiamate SOAP successive (es. Host per virtual-host, o
-    User-Agent per evitare il bot-detection del WAF/Akamai)."""
+    mantenendo schema/path/query originali. extra_headers (opzionale) aggiunge/
+    sovrascrive header HTTP sulle chiamate SOAP successive (es. Host per
+    virtual-host, o User-Agent per evitare il bot-detection del WAF/Akamai)."""
     service = next(iter(client.wsdl.services.values()))
     port    = next(iter(service.ports.values()))
     binding_name   = port.binding.name
@@ -56,13 +62,16 @@ def fixed_service(client: Client, extra_headers: dict | None = None):
     print(f'  Endpoint nel WSDL: {original_addr}  (host originale: {original_host})')
     print(f'  Endpoint usato:    {new_addr}' + (f'  con header extra: {extra_headers}' if extra_headers else ''))
 
+    # Il WSDL è già stato caricato con il transport di default (header corretti
+    # per scaricare il file). Sostituiamo il transport ORA, sul client già
+    # pronto, così i nuovi header si applicano solo alle chiamate SOAP successive.
+    # Authorization Basic sempre presente, come nell'esempio Postman fornito da MBE.
+    headers = {'Authorization': BASIC_AUTH}
     if extra_headers:
-        # Il WSDL è già stato caricato con il transport di default (header corretti
-        # per scaricare il file). Sostituiamo il transport ORA, sul client già
-        # pronto, così i nuovi header si applicano solo alle chiamate SOAP successive.
-        session = requests.Session()
-        session.headers.update(extra_headers)
-        client.transport = Transport(session=session)
+        headers.update(extra_headers)
+    session = requests.Session()
+    session.headers.update(headers)
+    client.transport = Transport(session=session)
 
     return client.create_service(binding_name, new_addr)
 
@@ -106,8 +115,9 @@ def try_manage_customer_raw(endpoint_url: str, extra_headers: dict | None = None
 </soapenv:Envelope>"""
 
     headers = {
-        'Content-Type': 'text/xml; charset=utf-8',
-        'SOAPAction':   '"ManageCustomerRequest"',
+        'Content-Type':  'text/xml; charset=utf-8',
+        'SOAPAction':    '"ManageCustomerRequest"',
+        'Authorization': BASIC_AUTH,
     }
     if extra_headers:
         headers.update(extra_headers)
