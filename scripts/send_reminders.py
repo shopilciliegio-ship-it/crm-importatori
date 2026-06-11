@@ -257,6 +257,12 @@ def sent_types(order: dict) -> set[str]:
     return {e.get('type', '') for e in (order.get('emailsSent') or [])}
 
 
+def order_fully_done(order: dict) -> bool:
+    """True se l'ordine è consegnato e l'email 'consegnato' è già stata inviata:
+    nessun reminder potrà mai più scattare, va escluso dal ciclo principale."""
+    return order.get('status') == 'consegnato' and 'consegnato' in sent_types(order)
+
+
 def should_send(order: dict, reminder_type: str, now_ms: int) -> tuple[bool, str]:
     """Restituisce (va_inviato, motivo_skip)."""
     already       = sent_types(order)
@@ -462,8 +468,11 @@ def main():
         if cleaned:
             print(f'🧹 Pulizia: rimossi entry test da {cleaned} ordini attivi')
 
-    active = [o for o in orders if o.get('status') not in ('ricevuto', 'preparazione', 'annullato')]
-    print(f'Ordini attivi: {len(active)} / {len(orders)}')
+    active = [o for o in orders
+              if o.get('status') not in ('ricevuto', 'preparazione', 'annullato')
+              and not order_fully_done(o)]
+    done = sum(1 for o in orders if order_fully_done(o))
+    print(f'Ordini attivi: {len(active)} / {len(orders)} (esclusi {done} consegnati e già notificati)')
 
     sent   = 0
     log_new = []
@@ -484,8 +493,8 @@ def main():
         sent += 1
         log_new.append({'orderId': order['id'], 'customerName': order.get('customerName', ''), **entry})
 
-    # ── order_received: tutti gli ordini non annullati ────────────────────────
-    for order in [o for o in orders if o.get('status') != 'annullato']:
+    # ── order_received: tutti gli ordini non annullati e non già conclusi ─────
+    for order in [o for o in orders if o.get('status') != 'annullato' and not order_fully_done(o)]:
         ok, reason = should_send(order, 'order_received', now_ms)
         if not ok:
             continue
