@@ -92,8 +92,9 @@ def gh_put(path: str, data: dict, sha: str | None, message: str) -> None:
 # ── Template rendering ────────────────────────────────────────────────────────
 
 def order_lang(order: dict) -> str:
-    """Lingua email: ordini 'Shop Online' (clienti italiani) → it, resto → en."""
-    return 'it' if order.get('source') == 'shop' else 'en'
+    """Lingua email cliente — campo 'language' impostato all'import (da indirizzo
+    di spedizione) o modificabile a mano dal CRM. Default inglese."""
+    return order.get('language') or 'en'
 
 
 def render_template(tpl: dict, order: dict) -> tuple[str, str]:

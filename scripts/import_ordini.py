@@ -422,6 +422,15 @@ def save_ordini(db: dict, sha: str | None) -> None:
 
 # ── ID univoco ordine ────────────────────────────────────────────────────────
 
+def detect_language(shipping_address: str) -> str:
+    """Lingua email cliente: 'it' se l'indirizzo di spedizione è in Italia, altrimenti 'en'.
+    Solo un default — modificabile a mano dal CRM (es. clienti esteri sullo Shop Online)."""
+    addr = (shipping_address or '').lower()
+    if 'italy' in addr or 'italia' in addr:
+        return 'it'
+    return 'en'
+
+
 def uid_ord() -> str:
     ts   = int(datetime.now(timezone.utc).timestamp() * 1000)
     b36  = ''
@@ -483,6 +492,9 @@ def main():
             if existing_rec.get('amount', 0) == 0 and o.get('amount', 0) > 0:
                 existing_rec['amount'] = o['amount']
                 updated_fields.append('amount')
+            if not existing_rec.get('language') and existing_rec.get('shippingAddress'):
+                existing_rec['language'] = detect_language(existing_rec['shippingAddress'])
+                updated_fields.append('language')
             if updated_fields:
                 existing_rec['updatedAt'] = now_ms
                 patched += 1
@@ -508,6 +520,7 @@ def main():
             'trackingNumber':  '',
             'carrier':         o.get('carrier', 'MBE'),
             'source':          o.get('source', 'fieramente'),
+            'language':        detect_language(o.get('shippingAddress', '')),
             'orderNumber':     o.get('orderNumber', ''),
             'paymentType':     o.get('paymentType', ''),
             'shippingDate':    None,

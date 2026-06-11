@@ -35,7 +35,9 @@ function _mkOrder({customerName,customerEmail='',customerPhone='',amount=0,curre
     numberOfCartons,
     gmailMessageId,
     trackingNumber: '',
+    trackingUrl: '',
     carrier: 'MBE',
+    language: 'en',
     shippingType: null,
     shippingDate: null,
     status: 'ricevuto',
@@ -409,6 +411,12 @@ function openOrdineDetail(id){
       <div class="fg fgf"><label>Link tracciamento</label>
         <input id="ord-tracking-url" placeholder="Es. https://www.spedire.com/tracking/3UW1D56044876" value="${esc(o.trackingUrl||'')}">
       </div>
+      <div class="fg"><label>Lingua email cliente</label>
+        <select id="ord-language">
+          <option value="en"${(o.language||'en')==='en'?' selected':''}>🇬🇧 Inglese</option>
+          <option value="it"${o.language==='it'?' selected':''}>🇮🇹 Italiano</option>
+        </select>
+      </div>
       <div class="fg fgf"><label>Indirizzo spedizione</label>
         <input id="ord-address" placeholder="Via Roma 1, 20100 Milano, Italy" value="${esc(o.shippingAddress||'')}">
       </div>
@@ -445,6 +453,7 @@ async function saveOrdineUpdate(id){
   const newPhone=(document.getElementById('ord-phone')?.value||'').trim();
   const newAddress=(document.getElementById('ord-address')?.value||'').trim();
   const newShippingType=gv('ord-shipping-type')||'';
+  const newLanguage=gv('ord-language')||'en';
   const note=(document.getElementById('ord-note')?.value||'').trim();
   const sendEmail=document.getElementById('ord-send-email')?.checked;
 
@@ -452,6 +461,7 @@ async function saveOrdineUpdate(id){
   o.carrier=newCarrier||'';
   if(newTracking) o.trackingNumber=newTracking;
   o.trackingUrl=newTrackingUrl||'';
+  o.language=newLanguage;
   if(newPhone) o.customerPhone=newPhone;
   if(newAddress) o.shippingAddress=newAddress;
   o.shippingType=newShippingType||null;
