@@ -55,7 +55,7 @@
       "shipmentCode": "",
       "shippingAddress": "Via del Capofonte, 11, 34128 TRIESTE (TS), Italy",
       "numberOfCartons": null,
-      "shippingType": null,
+      "shippingType": "express",
       "gmailMessageId": "<DB9PR08MB668233646C435BCF4060CBBFBF1F2@DB9PR08MB6682.eurprd08.prod.outlook.com>",
       "trackingNumber": "",
       "carrier": "Corriere Italia",
@@ -119,7 +119,7 @@
       ],
       "notes": "",
       "createdAt": 1780917382029,
-      "updatedAt": 1781175584218,
+      "updatedAt": 1781183116981,
       "trackingUrl": "https://www.spedire.com/tracking/3UW1D56044876"
     },
     {
