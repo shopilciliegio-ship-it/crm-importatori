@@ -64,7 +64,7 @@
       "orderNumber": "#1390",
       "paymentType": "Paypal",
       "shippingDate": 1781175239546,
-      "status": "in_consegna",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -80,6 +80,11 @@
           "status": "in_consegna",
           "date": 1781175581526,
           "note": "Auto Spedire: La spedizione è in consegna"
+        },
+        {
+          "status": "consegnato",
+          "date": 1781194296056,
+          "note": "Auto Spedire: La spedizione è stata consegnata"
         }
       ],
       "emailsSent": [
@@ -120,7 +125,7 @@
       ],
       "notes": "",
       "createdAt": 1780917382029,
-      "updatedAt": 1781194288312,
+      "updatedAt": 1781194296056,
       "trackingUrl": "https://www.spedire.com/tracking/3UW1D56044876",
       "language": "it"
     },
