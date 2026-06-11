@@ -34,14 +34,14 @@
           "to": "daiscastil@gmail.com",
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1780934562742,
-          "messageId": "<202606081602.71010190282@smtp-relay.mailin.fr>"
+          "messageId": "<202606081602.71010190282@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-06-08T18:02:46.000+02:00"
         }
       ],
       "notes": "",
       "createdAt": 1780934555207,
-      "updatedAt": 1780934562742,
-      "language": "en",
-      "trackingUrl": ""
+      "updatedAt": 1780934562742
     },
     {
       "id": "ord_mq5486ml19i0",
@@ -87,33 +87,40 @@
           "to": "miribruco52@gmail.com",
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1780917389985,
-          "messageId": "<202606081116.94918819731@smtp-relay.mailin.fr>"
+          "messageId": "<202606081116.94918819731@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-06-08T13:16:32.000+02:00"
         },
         {
           "type": "Spedito",
           "sentAt": 1781175239777,
-          "messageId": "<202606111053.86195609943@smtp-relay.mailin.fr>"
+          "messageId": "<202606111053.86195609943@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-06-11T12:53:52.000+02:00"
         },
         {
           "type": "day0",
           "to": "miribruco52@gmail.com",
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1781175584218,
-          "messageId": "<202606111059.67727782083@smtp-relay.mailin.fr>"
+          "messageId": "<202606111059.67727782083@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-06-11T12:59:46.000+02:00"
         },
         {
           "type": "in_consegna",
           "to": "miribruco52@gmail.com",
           "subject": "Your wine is out for delivery! 🍷",
           "sentAt": 1781175584218,
-          "messageId": "<202606111059.78720113373@smtp-relay.mailin.fr>"
+          "messageId": "<202606111059.78720113373@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-06-11T12:59:46.000+02:00"
         }
       ],
       "notes": "",
       "createdAt": 1780917382029,
       "updatedAt": 1781175584218,
-      "trackingUrl": "https://www.spedire.com/tracking/3UW1D56044876",
-      "language": "it"
+      "trackingUrl": "https://www.spedire.com/tracking/3UW1D56044876"
     },
     {
       "id": "ord_mq5486ml258w",
@@ -127,7 +134,7 @@
       "shipmentCode": "",
       "shippingAddress": "",
       "numberOfCartons": null,
-      "shippingType": null,
+      "shippingType": "standard",
       "gmailMessageId": "<DB9PR08MB66820FEEEE1F7C44F32F1C53BF1F2@DB9PR08MB6682.eurprd08.prod.outlook.com>",
       "trackingNumber": "",
       "carrier": "Corriere Italia",
@@ -149,13 +156,14 @@
           "to": "chillerheather@gmail.com",
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1780917389985,
-          "messageId": "<202606081116.62065535419@smtp-relay.mailin.fr>"
+          "messageId": "<202606081116.62065535419@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-06-08T13:16:32.000+02:00"
         }
       ],
       "notes": "",
       "createdAt": 1780917382029,
-      "updatedAt": 1780917389985,
-      "language": "en",
+      "updatedAt": 1781183106079,
       "trackingUrl": ""
     },
     {
@@ -196,9 +204,7 @@
       ],
       "notes": "",
       "createdAt": 1780672510830,
-      "updatedAt": 1780672518803,
-      "language": "en",
-      "trackingUrl": ""
+      "updatedAt": 1780672518803
     },
     {
       "id": "ord_mpzhlcdu21tb",
@@ -238,9 +244,7 @@
       ],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1780672518803,
-      "language": "en",
-      "trackingUrl": ""
+      "updatedAt": 1780672518803
     },
     {
       "id": "ord_mpzhlcdubeyc",
@@ -280,9 +284,7 @@
       ],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1780672518803,
-      "language": "en",
-      "trackingUrl": ""
+      "updatedAt": 1780672518803
     },
     {
       "id": "ord_mpzhlcdub8mu",
@@ -322,9 +324,7 @@
       ],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1780672518803,
-      "language": "en",
-      "trackingUrl": ""
+      "updatedAt": 1780672518803
     },
     {
       "id": "ord_mpvpkyylwz2h",
@@ -381,23 +381,25 @@
           "to": "myhouse_injc@hotmail.com",
           "subject": "Your order is going through customs",
           "sentAt": 1780754058497,
-          "messageId": "<202606061354.43669441319@smtp-relay.mailin.fr>"
+          "messageId": "<202606061354.43669441319@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-06-06T15:54:24.000+02:00"
         },
         {
           "type": "consegnato",
           "to": "myhouse_injc@hotmail.com",
           "subject": "Your order has been delivered! 🍷 Enjoy!",
           "sentAt": 1781088472571,
-          "messageId": "<202606101047.83055632568@smtp-relay.mailin.fr>"
+          "messageId": "<202606101047.83055632568@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-06-10T12:47:57.000+02:00"
         }
       ],
       "notes": "",
       "createdAt": 1780348588797,
       "updatedAt": 1781088472571,
       "mbeTrackingNumber": "IT3299-8V-0000006DG3",
-      "shippingType": "standard",
-      "language": "en",
-      "trackingUrl": ""
+      "shippingType": "standard"
     },
     {
       "id": "ord_mpv5bpn5tqbw",
@@ -442,9 +444,7 @@
       "notes": "",
       "createdAt": 1780314564497,
       "updatedAt": 1780672518803,
-      "shippingType": "standard",
-      "language": "en",
-      "trackingUrl": ""
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006F09",
@@ -486,7 +486,9 @@
           "to": "pamella93@hotmail.com",
           "subject": "Your order is going through customs",
           "sentAt": 1781168870865,
-          "messageId": "<202606110907.56714480753@smtp-relay.mailin.fr>"
+          "messageId": "<202606110907.56714480753@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-06-11T11:07:55.000+02:00"
         }
       ],
       "notes": "",
@@ -494,9 +496,7 @@
       "createdAt": 1780415614441,
       "updatedAt": 1781168870865,
       "shippingType": "standard",
-      "shipmentCode": "ESTESP",
-      "language": "en",
-      "trackingUrl": ""
+      "shipmentCode": "ESTESP"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006F07",
@@ -538,7 +538,9 @@
           "to": "kavinhariharan3@gmail.com",
           "subject": "Your order is going through customs",
           "sentAt": 1781168870865,
-          "messageId": "<202606110907.98019683849@smtp-relay.mailin.fr>"
+          "messageId": "<202606110907.98019683849@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-06-11T11:07:53.000+02:00"
         }
       ],
       "notes": "",
@@ -546,9 +548,7 @@
       "createdAt": 1780415614441,
       "updatedAt": 1781168870865,
       "shippingType": "standard",
-      "shipmentCode": "HARIHARANK",
-      "language": "en",
-      "trackingUrl": ""
+      "shipmentCode": "HARIHARANK"
     },
     {
       "id": "ord_mbe_IT3299-0V-0000006EPQ",
@@ -585,7 +585,9 @@
           "to": "chrisconnor1098@gmail.com",
           "subject": "Shipping update — your order",
           "sentAt": 1780908857108,
-          "messageId": "<202606080854.13044468309@smtp-relay.mailin.fr>"
+          "messageId": "<202606080854.13044468309@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-06-08T10:54:22.000+02:00"
         }
       ],
       "notes": "",
@@ -593,9 +595,7 @@
       "createdAt": 1780415614441,
       "updatedAt": 1780908857108,
       "shippingType": "standard",
-      "shipmentCode": "CONNORRC",
-      "language": "en",
-      "trackingUrl": ""
+      "shipmentCode": "CONNORRC"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006E3J",
@@ -637,14 +637,18 @@
           "to": "mgoodlett@comcast.net",
           "subject": "Your order is going through customs",
           "sentAt": 1780826486259,
-          "messageId": "<202606071001.14071679811@smtp-relay.mailin.fr>"
+          "messageId": "<202606071001.14071679811@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-06-07T12:41:25.000+02:00"
         },
         {
           "type": "consegnato",
           "to": "mgoodlett@comcast.net",
           "subject": "Your order has been delivered! 🍷 Enjoy!",
           "sentAt": 1781088472571,
-          "messageId": "<202606101047.63763352995@smtp-relay.mailin.fr>"
+          "messageId": "<202606101047.63763352995@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-06-10T15:04:33.000+02:00"
         }
       ],
       "notes": "",
@@ -652,9 +656,7 @@
       "createdAt": 1780415614441,
       "updatedAt": 1781088472571,
       "shippingType": "standard",
-      "shipmentCode": "1379",
-      "language": "en",
-      "trackingUrl": ""
+      "shipmentCode": "1379"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006E3G",
@@ -691,7 +693,9 @@
           "to": "michael.forbes617@gmail.com",
           "subject": "Your order has been delivered! 🍷 Enjoy!",
           "sentAt": 1780826486259,
-          "messageId": "<202606071001.10288886575@smtp-relay.mailin.fr>"
+          "messageId": "<202606071001.10288886575@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-06-07T12:01:29.000+02:00"
         }
       ],
       "notes": "",
@@ -699,9 +703,7 @@
       "createdAt": 1780415614441,
       "updatedAt": 1780826486259,
       "shippingType": "standard",
-      "shipmentCode": "FORBESM",
-      "language": "en",
-      "trackingUrl": ""
+      "shipmentCode": "FORBESM"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006DP8",
@@ -748,14 +750,18 @@
           "to": "lupitacaraveo@gmail.com",
           "subject": "Your order is going through customs",
           "sentAt": 1780754058497,
-          "messageId": "<202606061354.70045414915@smtp-relay.mailin.fr>"
+          "messageId": "<202606061354.70045414915@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-06-06T15:54:23.000+02:00"
         },
         {
           "type": "consegnato",
           "to": "lupitacaraveo@gmail.com",
           "subject": "Your order has been delivered! 🍷 Enjoy!",
           "sentAt": 1781168870865,
-          "messageId": "<202606110907.64744496661@smtp-relay.mailin.fr>"
+          "messageId": "<202606110907.64744496661@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-06-11T11:07:53.000+02:00"
         }
       ],
       "notes": "",
@@ -763,9 +769,7 @@
       "createdAt": 1780415614441,
       "updatedAt": 1781168870865,
       "shippingType": "standard",
-      "shipmentCode": "LEGARRETAMBIS",
-      "language": "en",
-      "trackingUrl": ""
+      "shipmentCode": "LEGARRETAMBIS"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006C0T",
@@ -817,9 +821,7 @@
       "createdAt": 1780415614441,
       "updatedAt": 1780672518803,
       "shippingType": "standard",
-      "shipmentCode": "MINASSIANP",
-      "language": "en",
-      "trackingUrl": ""
+      "shipmentCode": "MINASSIANP"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006C0P",
@@ -878,9 +880,7 @@
       "createdAt": 1780415614441,
       "updatedAt": 1780672518803,
       "shippingType": "standard",
-      "shipmentCode": "HEALEYJ",
-      "language": "en",
-      "trackingUrl": ""
+      "shipmentCode": "HEALEYJ"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006BU3",
@@ -931,7 +931,9 @@
           "to": "gbklittleman@aol.com",
           "subject": "Your order has been delivered! 🍷 Enjoy!",
           "sentAt": 1780754058497,
-          "messageId": "<202606061354.76683729872@smtp-relay.mailin.fr>"
+          "messageId": "<202606061354.76683729872@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-06-06T15:54:24.000+02:00"
         }
       ],
       "notes": "",
@@ -939,9 +941,7 @@
       "createdAt": 1780415614441,
       "updatedAt": 1780754058497,
       "shippingType": "standard",
-      "shipmentCode": "KERNG",
-      "language": "en",
-      "trackingUrl": ""
+      "shipmentCode": "KERNG"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006B54",
@@ -1002,9 +1002,7 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "express",
-      "language": "en",
-      "trackingUrl": ""
+      "shippingType": "express"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006AKO",
@@ -1051,9 +1049,7 @@
       "createdAt": 1780415614441,
       "updatedAt": 1780672518803,
       "shippingType": "standard",
-      "shipmentCode": "JENKINSF",
-      "language": "en",
-      "trackingUrl": ""
+      "shipmentCode": "JENKINSF"
     },
     {
       "id": "ord_mbe_IT3299-8V-00000069TF",
@@ -1105,9 +1101,7 @@
       "createdAt": 1780415614441,
       "updatedAt": 1780672518803,
       "shippingType": "standard",
-      "shipmentCode": "HARRISONK",
-      "language": "en",
-      "trackingUrl": ""
+      "shipmentCode": "HARRISONK"
     },
     {
       "id": "ord_mbe_IT3299-0V-00000069SD",
@@ -1169,9 +1163,7 @@
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
       "shippingType": "standard",
-      "shipmentCode": "SOBRINOMS",
-      "language": "en",
-      "trackingUrl": ""
+      "shipmentCode": "SOBRINOMS"
     },
     {
       "id": "ord_mbe_IT3299-8V-00000069K3",
@@ -1233,9 +1225,7 @@
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
       "shippingType": "standard",
-      "shipmentCode": "PHAMD",
-      "language": "en",
-      "trackingUrl": ""
+      "shipmentCode": "PHAMD"
     },
     {
       "id": "ord_mbe_IT3299-8V-00000069IY",
@@ -1298,7 +1288,9 @@
           "to": "tvaassen@yousq.net",
           "subject": "Your order has been delivered! 🍷 Enjoy!",
           "sentAt": 1780754058497,
-          "messageId": "<202606061354.90422219829@smtp-relay.mailin.fr>"
+          "messageId": "<202606061354.90422219829@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-06-06T15:54:23.000+02:00"
         }
       ],
       "notes": "",
@@ -1306,9 +1298,7 @@
       "createdAt": 1780415614441,
       "updatedAt": 1780754058497,
       "shippingType": "standard",
-      "shipmentCode": "VAASSENT",
-      "language": "en",
-      "trackingUrl": ""
+      "shipmentCode": "VAASSENT"
     },
     {
       "id": "ord_mbe_IT3299-0V-00000068RB",
@@ -1370,9 +1360,7 @@
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
       "shippingType": "standard",
-      "shipmentCode": "MILLSA",
-      "language": "en",
-      "trackingUrl": ""
+      "shipmentCode": "MILLSA"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006871",
@@ -1434,9 +1422,7 @@
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
       "shippingType": "standard",
-      "shipmentCode": "SW1361",
-      "language": "en",
-      "trackingUrl": ""
+      "shipmentCode": "SW1361"
     },
     {
       "id": "ord_mbe_IT3299-0V-00000067KZ",
@@ -1509,9 +1495,7 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard",
-      "language": "en",
-      "trackingUrl": ""
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-00000062ME",
@@ -1572,9 +1556,7 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard",
-      "language": "en",
-      "trackingUrl": ""
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-00000062MA",
@@ -1635,9 +1617,7 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard",
-      "language": "en",
-      "trackingUrl": ""
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-00000062M1",
@@ -1698,9 +1678,7 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard",
-      "language": "en",
-      "trackingUrl": ""
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-00000062LW",
@@ -1761,9 +1739,7 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard",
-      "language": "en",
-      "trackingUrl": ""
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-00000062L8",
@@ -1824,9 +1800,7 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard",
-      "language": "en",
-      "trackingUrl": ""
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-00000061I9",
@@ -1887,9 +1861,7 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "express",
-      "language": "en",
-      "trackingUrl": ""
+      "shippingType": "express"
     },
     {
       "id": "ord_mbe_IT3299-8V-00000061I7",
@@ -1950,9 +1922,7 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "express",
-      "language": "en",
-      "trackingUrl": ""
+      "shippingType": "express"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005ZFY",
@@ -2013,9 +1983,7 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard",
-      "language": "en",
-      "trackingUrl": ""
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005Z74",
@@ -2076,9 +2044,7 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard",
-      "language": "en",
-      "trackingUrl": ""
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005YGA",
@@ -2139,9 +2105,7 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard",
-      "language": "en",
-      "trackingUrl": ""
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005XNX",
@@ -2202,9 +2166,7 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard",
-      "language": "en",
-      "trackingUrl": ""
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005XA9",
@@ -2265,9 +2227,7 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard",
-      "language": "en",
-      "trackingUrl": ""
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005XA6",
@@ -2315,9 +2275,7 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780574547755,
-      "shippingType": "standard",
-      "language": "en",
-      "trackingUrl": ""
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005XA1",
@@ -2378,9 +2336,7 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard",
-      "language": "en",
-      "trackingUrl": ""
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-0V-0000005X66",
@@ -2428,9 +2384,7 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780574553395,
-      "shippingType": "express",
-      "language": "en",
-      "trackingUrl": ""
+      "shippingType": "express"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005VVZ",
@@ -2491,9 +2445,7 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard",
-      "language": "en",
-      "trackingUrl": ""
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005SIN",
@@ -2554,9 +2506,7 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard",
-      "language": "en",
-      "trackingUrl": ""
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005Q4E",
@@ -2617,9 +2567,7 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard",
-      "language": "en",
-      "trackingUrl": ""
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005PXO",
@@ -2680,9 +2628,7 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard",
-      "language": "en",
-      "trackingUrl": ""
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005P86",
@@ -2746,9 +2692,7 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard",
-      "language": "en",
-      "trackingUrl": ""
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005NYH",
@@ -2809,9 +2753,7 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard",
-      "language": "en",
-      "trackingUrl": ""
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005HIE",
@@ -2872,9 +2814,7 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard",
-      "language": "en",
-      "trackingUrl": ""
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-0V-0000005FWF",
@@ -2935,9 +2875,7 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard",
-      "language": "en",
-      "trackingUrl": ""
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005FB9",
@@ -2998,9 +2936,7 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard",
-      "language": "en",
-      "trackingUrl": ""
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005FB2",
@@ -3061,9 +2997,7 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard",
-      "language": "en",
-      "trackingUrl": ""
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-0V-0000005EEN",
@@ -3124,9 +3058,7 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard",
-      "language": "en",
-      "trackingUrl": ""
+      "shippingType": "standard"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005D6H",
@@ -3187,9 +3119,7 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "express",
-      "language": "en",
-      "trackingUrl": ""
+      "shippingType": "express"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006FDN",
@@ -3236,9 +3166,7 @@
       "createdAt": 1780485256521,
       "updatedAt": 1780672518803,
       "shippingType": "standard",
-      "shipmentCode": "MORENOG",
-      "language": "en",
-      "trackingUrl": ""
+      "shipmentCode": "MORENOG"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006FDJ",
@@ -3285,9 +3213,7 @@
       "createdAt": 1780485256521,
       "updatedAt": 1780672518803,
       "shippingType": "standard",
-      "shipmentCode": "ABRAIRAD",
-      "language": "en",
-      "trackingUrl": ""
+      "shipmentCode": "ABRAIRAD"
     }
   ],
   "lastImportedAt": 1780934555207
