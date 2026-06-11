@@ -415,7 +415,7 @@
       "mbeTrackingNumber": "IT3299-8V-0000006F09",
       "carrier": "UPS",
       "shippingDate": "2026-06-01",
-      "status": "in_transito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "spedito",
@@ -426,13 +426,18 @@
           "status": "in_transito",
           "date": 1780575667907,
           "note": ""
+        },
+        {
+          "status": "dogana",
+          "date": 1781168869195,
+          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780598739759,
+      "updatedAt": 1781168869195,
       "shippingType": "standard",
       "shipmentCode": "ESTESP"
     },
@@ -452,7 +457,7 @@
       "mbeTrackingNumber": "IT3299-8V-0000006F07",
       "carrier": "UPS",
       "shippingDate": "2026-06-01",
-      "status": "in_transito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "spedito",
@@ -463,13 +468,18 @@
           "status": "in_transito",
           "date": 1780575649861,
           "note": ""
+        },
+        {
+          "status": "dogana",
+          "date": 1781168869195,
+          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780598739759,
+      "updatedAt": 1781168869195,
       "shippingType": "standard",
       "shipmentCode": "HARIHARANK"
     },
@@ -636,7 +646,7 @@
       "mbeTrackingNumber": "IT3299-8V-0000006DP8",
       "carrier": "UPS",
       "shippingDate": "2026-05-27",
-      "status": "dogana",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "spedito",
@@ -652,6 +662,11 @@
           "status": "dogana",
           "date": 1780754056391,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "consegnato",
+          "date": 1781168869195,
+          "note": "Auto Fieramente (era: dogana)"
         }
       ],
       "emailsSent": [
@@ -666,7 +681,7 @@
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780754058497,
+      "updatedAt": 1781168869195,
       "shippingType": "standard",
       "shipmentCode": "LEGARRETAMBIS"
     },
