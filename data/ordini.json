@@ -60,13 +60,18 @@
       "source": "shop",
       "orderNumber": "#1390",
       "paymentType": "Paypal",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1781175239546,
+      "status": "spedito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1780917382029,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "spedito",
+          "date": 1781175239546,
+          "note": ""
         }
       ],
       "emailsSent": [
@@ -76,18 +81,24 @@
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1780917389985,
           "messageId": "<202606081116.94918819731@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "Spedito",
+          "sentAt": 1781175239777,
+          "messageId": "<202606111053.86195609943@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1780917382029,
-      "updatedAt": 1780917389985
+      "updatedAt": 1781175239778,
+      "trackingUrl": "https://www.spedire.com/tracking/3UW1D56044876"
     },
     {
       "id": "ord_mq5486ml258w",
       "customerName": "Heather Douglas",
       "customerEmail": "chillerheather@gmail.com",
       "customerPhone": "",
-      "amount": 0.0,
+      "amount": 0,
       "currency": "EUR",
       "orderDate": 1780870516000,
       "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio Heather Douglas",
