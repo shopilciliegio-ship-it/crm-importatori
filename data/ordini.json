@@ -433,11 +433,19 @@
           "note": "Auto Fieramente (era: in_transito)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "dogana",
+          "to": "pamella93@hotmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1781168870865,
+          "messageId": "<202606110907.56714480753@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1781168869195,
+      "updatedAt": 1781168870865,
       "shippingType": "standard",
       "shipmentCode": "ESTESP"
     },
@@ -475,11 +483,19 @@
           "note": "Auto Fieramente (era: in_transito)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "dogana",
+          "to": "kavinhariharan3@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1781168870865,
+          "messageId": "<202606110907.98019683849@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1781168869195,
+      "updatedAt": 1781168870865,
       "shippingType": "standard",
       "shipmentCode": "HARIHARANK"
     },
@@ -676,12 +692,19 @@
           "subject": "Your order is going through customs",
           "sentAt": 1780754058497,
           "messageId": "<202606061354.70045414915@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegnato",
+          "to": "lupitacaraveo@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1781168870865,
+          "messageId": "<202606110907.64744496661@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1781168869195,
+      "updatedAt": 1781168870865,
       "shippingType": "standard",
       "shipmentCode": "LEGARRETAMBIS"
     },
