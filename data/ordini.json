@@ -41,8 +41,7 @@
       ],
       "notes": "",
       "createdAt": 1780934555207,
-      "updatedAt": 1781194288312,
-      "language": "en"
+      "updatedAt": 1780934562742
     },
     {
       "id": "ord_mq5486ml19i0",
@@ -83,8 +82,8 @@
         },
         {
           "status": "consegnato",
-          "date": 1781194296056,
-          "note": "Auto Spedire: La spedizione è stata consegnata"
+          "date": 1781199079035,
+          "note": ""
         }
       ],
       "emailsSent": [
@@ -121,33 +120,43 @@
           "messageId": "<202606111059.78720113373@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-06-11T12:59:46.000+02:00"
+        },
+        {
+          "type": "consegnato",
+          "sentAt": 1781199079035,
+          "messageId": "manual-skip",
+          "manual": true
+        },
+        {
+          "type": "Consegnato",
+          "sentAt": 1781199080503,
+          "messageId": "<202606111731.10438562303@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1780917382029,
-      "updatedAt": 1781194296056,
-      "trackingUrl": "https://www.spedire.com/tracking/3UW1D56044876",
-      "language": "it"
+      "updatedAt": 1781199080503,
+      "trackingUrl": "https://www.spedire.com/tracking/3UW1D56044876"
     },
     {
       "id": "ord_mq5486ml258w",
       "customerName": "Heather Douglas",
       "customerEmail": "chillerheather@gmail.com",
-      "customerPhone": "1-913-227-9208",
-      "amount": 234.35,
+      "customerPhone": "",
+      "amount": 0,
       "currency": "EUR",
       "orderDate": 1780870516000,
       "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio Heather Douglas",
       "shipmentCode": "",
-      "shippingAddress": "15544 Crestwood Drive, 66007 Basehor (KS), United States",
+      "shippingAddress": "",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<DB9PR08MB66820FEEEE1F7C44F32F1C53BF1F2@DB9PR08MB6682.eurprd08.prod.outlook.com>",
       "trackingNumber": "",
-      "carrier": "- U.S.A. Wine Corriere Std",
+      "carrier": "Corriere Italia",
       "source": "shop",
-      "orderNumber": "#1384",
-      "paymentType": "Carte Di Credito/Bancomat",
+      "orderNumber": "",
+      "paymentType": "",
       "shippingDate": null,
       "status": "preparazione",
       "statusHistory": [
@@ -170,9 +179,8 @@
       ],
       "notes": "",
       "createdAt": 1780917382029,
-      "updatedAt": 1781194288312,
-      "trackingUrl": "",
-      "language": "en"
+      "updatedAt": 1781183106079,
+      "trackingUrl": ""
     },
     {
       "id": "ord_mq12fqsu08v6",
@@ -3224,5 +3232,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1781194288312
+  "lastImportedAt": 1780934555207
 }
