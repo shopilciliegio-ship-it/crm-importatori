@@ -39,7 +39,9 @@
       ],
       "notes": "",
       "createdAt": 1780934555207,
-      "updatedAt": 1780934562742
+      "updatedAt": 1780934562742,
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mq5486ml19i0",
@@ -110,7 +112,8 @@
       "notes": "",
       "createdAt": 1780917382029,
       "updatedAt": 1781175584218,
-      "trackingUrl": "https://www.spedire.com/tracking/3UW1D56044876"
+      "trackingUrl": "https://www.spedire.com/tracking/3UW1D56044876",
+      "language": "it"
     },
     {
       "id": "ord_mq5486ml258w",
@@ -151,7 +154,9 @@
       ],
       "notes": "",
       "createdAt": 1780917382029,
-      "updatedAt": 1780917389985
+      "updatedAt": 1780917389985,
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mq12fqsu08v6",
@@ -191,7 +196,9 @@
       ],
       "notes": "",
       "createdAt": 1780672510830,
-      "updatedAt": 1780672518803
+      "updatedAt": 1780672518803,
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mpzhlcdu21tb",
@@ -231,7 +238,9 @@
       ],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1780672518803
+      "updatedAt": 1780672518803,
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mpzhlcdubeyc",
@@ -271,7 +280,9 @@
       ],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1780672518803
+      "updatedAt": 1780672518803,
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mpzhlcdub8mu",
@@ -311,7 +322,9 @@
       ],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1780672518803
+      "updatedAt": 1780672518803,
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mpvpkyylwz2h",
@@ -382,7 +395,9 @@
       "createdAt": 1780348588797,
       "updatedAt": 1781088472571,
       "mbeTrackingNumber": "IT3299-8V-0000006DG3",
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mpv5bpn5tqbw",
@@ -427,7 +442,9 @@
       "notes": "",
       "createdAt": 1780314564497,
       "updatedAt": 1780672518803,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006F09",
@@ -477,7 +494,9 @@
       "createdAt": 1780415614441,
       "updatedAt": 1781168870865,
       "shippingType": "standard",
-      "shipmentCode": "ESTESP"
+      "shipmentCode": "ESTESP",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006F07",
@@ -527,7 +546,9 @@
       "createdAt": 1780415614441,
       "updatedAt": 1781168870865,
       "shippingType": "standard",
-      "shipmentCode": "HARIHARANK"
+      "shipmentCode": "HARIHARANK",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-0V-0000006EPQ",
@@ -572,7 +593,9 @@
       "createdAt": 1780415614441,
       "updatedAt": 1780908857108,
       "shippingType": "standard",
-      "shipmentCode": "CONNORRC"
+      "shipmentCode": "CONNORRC",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006E3J",
@@ -629,7 +652,9 @@
       "createdAt": 1780415614441,
       "updatedAt": 1781088472571,
       "shippingType": "standard",
-      "shipmentCode": "1379"
+      "shipmentCode": "1379",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006E3G",
@@ -674,7 +699,9 @@
       "createdAt": 1780415614441,
       "updatedAt": 1780826486259,
       "shippingType": "standard",
-      "shipmentCode": "FORBESM"
+      "shipmentCode": "FORBESM",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006DP8",
@@ -736,7 +763,9 @@
       "createdAt": 1780415614441,
       "updatedAt": 1781168870865,
       "shippingType": "standard",
-      "shipmentCode": "LEGARRETAMBIS"
+      "shipmentCode": "LEGARRETAMBIS",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006C0T",
@@ -788,7 +817,9 @@
       "createdAt": 1780415614441,
       "updatedAt": 1780672518803,
       "shippingType": "standard",
-      "shipmentCode": "MINASSIANP"
+      "shipmentCode": "MINASSIANP",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006C0P",
@@ -847,7 +878,9 @@
       "createdAt": 1780415614441,
       "updatedAt": 1780672518803,
       "shippingType": "standard",
-      "shipmentCode": "HEALEYJ"
+      "shipmentCode": "HEALEYJ",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006BU3",
@@ -906,7 +939,9 @@
       "createdAt": 1780415614441,
       "updatedAt": 1780754058497,
       "shippingType": "standard",
-      "shipmentCode": "KERNG"
+      "shipmentCode": "KERNG",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006B54",
@@ -967,7 +1002,9 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "express"
+      "shippingType": "express",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006AKO",
@@ -1014,7 +1051,9 @@
       "createdAt": 1780415614441,
       "updatedAt": 1780672518803,
       "shippingType": "standard",
-      "shipmentCode": "JENKINSF"
+      "shipmentCode": "JENKINSF",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-00000069TF",
@@ -1066,7 +1105,9 @@
       "createdAt": 1780415614441,
       "updatedAt": 1780672518803,
       "shippingType": "standard",
-      "shipmentCode": "HARRISONK"
+      "shipmentCode": "HARRISONK",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-0V-00000069SD",
@@ -1128,7 +1169,9 @@
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
       "shippingType": "standard",
-      "shipmentCode": "SOBRINOMS"
+      "shipmentCode": "SOBRINOMS",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-00000069K3",
@@ -1190,7 +1233,9 @@
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
       "shippingType": "standard",
-      "shipmentCode": "PHAMD"
+      "shipmentCode": "PHAMD",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-00000069IY",
@@ -1261,7 +1306,9 @@
       "createdAt": 1780415614441,
       "updatedAt": 1780754058497,
       "shippingType": "standard",
-      "shipmentCode": "VAASSENT"
+      "shipmentCode": "VAASSENT",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-0V-00000068RB",
@@ -1323,7 +1370,9 @@
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
       "shippingType": "standard",
-      "shipmentCode": "MILLSA"
+      "shipmentCode": "MILLSA",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006871",
@@ -1385,7 +1434,9 @@
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
       "shippingType": "standard",
-      "shipmentCode": "SW1361"
+      "shipmentCode": "SW1361",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-0V-00000067KZ",
@@ -1458,7 +1509,9 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-00000062ME",
@@ -1519,7 +1572,9 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-00000062MA",
@@ -1580,7 +1635,9 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-00000062M1",
@@ -1641,7 +1698,9 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-00000062LW",
@@ -1702,7 +1761,9 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-00000062L8",
@@ -1763,7 +1824,9 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-00000061I9",
@@ -1824,7 +1887,9 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "express"
+      "shippingType": "express",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-00000061I7",
@@ -1885,7 +1950,9 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "express"
+      "shippingType": "express",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005ZFY",
@@ -1946,7 +2013,9 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005Z74",
@@ -2007,7 +2076,9 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005YGA",
@@ -2068,7 +2139,9 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005XNX",
@@ -2129,7 +2202,9 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005XA9",
@@ -2190,7 +2265,9 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005XA6",
@@ -2238,7 +2315,9 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780574547755,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005XA1",
@@ -2299,7 +2378,9 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-0V-0000005X66",
@@ -2347,7 +2428,9 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780574553395,
-      "shippingType": "express"
+      "shippingType": "express",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005VVZ",
@@ -2408,7 +2491,9 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005SIN",
@@ -2469,7 +2554,9 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005Q4E",
@@ -2530,7 +2617,9 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005PXO",
@@ -2591,7 +2680,9 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005P86",
@@ -2655,7 +2746,9 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005NYH",
@@ -2716,7 +2809,9 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005HIE",
@@ -2777,7 +2872,9 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-0V-0000005FWF",
@@ -2838,7 +2935,9 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005FB9",
@@ -2899,7 +2998,9 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005FB2",
@@ -2960,7 +3061,9 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-0V-0000005EEN",
@@ -3021,7 +3124,9 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "standard"
+      "shippingType": "standard",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005D6H",
@@ -3082,7 +3187,9 @@
       "source": "mbe",
       "createdAt": 1780415614441,
       "updatedAt": 1780589312253,
-      "shippingType": "express"
+      "shippingType": "express",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006FDN",
@@ -3129,7 +3236,9 @@
       "createdAt": 1780485256521,
       "updatedAt": 1780672518803,
       "shippingType": "standard",
-      "shipmentCode": "MORENOG"
+      "shipmentCode": "MORENOG",
+      "language": "en",
+      "trackingUrl": ""
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006FDJ",
@@ -3176,7 +3285,9 @@
       "createdAt": 1780485256521,
       "updatedAt": 1780672518803,
       "shippingType": "standard",
-      "shipmentCode": "ABRAIRAD"
+      "shipmentCode": "ABRAIRAD",
+      "language": "en",
+      "trackingUrl": ""
     }
   ],
   "lastImportedAt": 1780934555207
