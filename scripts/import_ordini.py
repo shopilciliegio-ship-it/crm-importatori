@@ -181,15 +181,16 @@ def _parse_shop_order_body(text: str) -> dict:
     if customer_email:
         result['customerEmail'] = customer_email
 
-    # Telefono: cifre subito prima dell'etichetta "Indirizzo di Spedizione" (cella affiancata)
-    m = re.search(r'(\d{8,15})\s+Indirizzo\s+di\s+Spedizione', text, re.I)
+    # Telefono: cifre subito prima dell'etichetta indirizzo di spedizione (cella affiancata)
+    # Le email "Shop Online" sono localizzate nella lingua del cliente: etichette IT o EN
+    m = re.search(r'(\d{8,15})\s+(?:Indirizzo\s+di\s+Spedizione|Shipping\s+[Aa]ddress)', text, re.I)
     if m:
         result['customerPhone'] = m.group(1)
 
-    # Nome destinatario + indirizzo: blocco subito sotto "Indirizzo di Spedizione"
+    # Nome destinatario + indirizzo: blocco subito sotto l'etichetta indirizzo di spedizione
     m = re.search(
-        r'Indirizzo\s+di\s+Spedizione\s*\n\s*([^\n]+)\n((?:[^\n]+\n?)+?)'
-        r'(?=Tipo\s+di\s+Pagamento|Tipo\s+di\s+Spedizione|DATI\s+ARTICOLO|$)',
+        r'(?:Indirizzo\s+di\s+Spedizione|Shipping\s+[Aa]ddress)\s*\n\s*([^\n]+)\n((?:[^\n]+\n?)+?)'
+        r'(?=Tipo\s+di\s+Pagamento|Payment\s+type|Tipo\s+di\s+Spedizione|Shipping\s+type|DATI\s+ARTICOLO|$)',
         text, re.I
     )
     if m:
@@ -198,23 +199,26 @@ def _parse_shop_order_body(text: str) -> dict:
         if addr_lines:
             result['shippingAddress'] = ', '.join(addr_lines)
 
-    # Tipo di pagamento (es. PAYPAL) — sequenza di parole in maiuscolo dopo l'etichetta
-    # (?i:...) limita l'insensibilità al maiuscolo/minuscolo solo all'etichetta,
-    # cosicché [A-Z]{2,} catturi solo il valore realmente in maiuscolo (es. si ferma prima di "Tipo di Spedizione")
-    m = re.search(r'(?i:Tipo\s+di\s+Pagamento)\s*\n?\s*([A-Z]{2,}(?:\s+[A-Z]{2,})*)', text)
+    # Tipo di pagamento (es. PAYPAL, CARTE DI CREDITO/BANCOMAT) — sequenza di parole in
+    # maiuscolo dopo l'etichetta. (?i:...) limita l'insensibilità al maiuscolo/minuscolo
+    # solo all'etichetta, cosicché [A-Z]{2,} catturi solo il valore realmente in maiuscolo
+    # (es. si ferma prima di "Tipo di Spedizione" / "Shipping type")
+    m = re.search(r'(?i:Tipo\s+di\s+Pagamento|Payment\s+type)\s*\n?\s*([A-Z]{2,}(?:[\s/]+[A-Z]{2,})*)', text)
     if m:
         result['paymentType'] = m.group(1).strip().title()
 
     # Corriere / tipo di spedizione (es. CORRIERE ITALIA)
-    m = re.search(r'(?i:Tipo\s+di\s+Spedizione)\s*\n?\s*([A-Z]{2,}(?:\s+[A-Z]{2,})*)', text)
+    m = re.search(r'(?i:Tipo\s+di\s+Spedizione|Shipping\s+type)\s*\n?\s*([A-Z]{2,}(?:\s+[A-Z]{2,})*)', text)
     if m:
         result['carrier'] = m.group(1).strip().title()
 
-    # Totale Ordine    171,15 €
-    m = re.search(r'Totale\s+Ordine\s+([\d.,]+)\s*€', text, re.I)
+    # Totale Ordine    171,15 €  /  Total Order    €234.35
+    # il simbolo € può precedere o seguire l'importo a seconda della lingua dell'email
+    m = re.search(r'(?:Totale\s+Ordine|Total\s+Order)\s+(?:€\s*([\d.,]+)|([\d.,]+)\s*€)', text, re.I)
     if m:
+        raw = m.group(1) or m.group(2)
         try:
-            amount = float(m.group(1).replace(',', '.'))
+            amount = float(raw.replace(',', '.'))
             if amount > 0:
                 result['amount'] = amount
         except ValueError:
