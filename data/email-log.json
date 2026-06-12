@@ -1268,6 +1268,15 @@
       "subject": "Your wine is out for delivery! 🍷",
       "sentAt": 1781175584218,
       "messageId": "<202606111059.78720113373@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mqb2woep3ml8",
+      "customerName": "MATTHEW QUEZADA",
+      "type": "order_received",
+      "to": "matthewquezada81@gmail.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1781277970603,
+      "messageId": "<202606121526.83540031699@smtp-relay.mailin.fr>"
     }
   ]
 }
