@@ -1,6 +1,40 @@
 {
   "orders": [
     {
+      "id": "ord_mqb2woep3ml8",
+      "customerName": "MATTHEW QUEZADA",
+      "customerEmail": "matthewquezada81@gmail.com",
+      "customerPhone": "+15622980033",
+      "amount": 155.3,
+      "currency": "EUR",
+      "orderDate": 1781266085000,
+      "emailSubject": "🍷 New Order — MATTHEW QUEZADA — 155.30 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "14557 CULLEN STREET, 90603 WHITTIER, CALIFORNIA (LOS ANGELES COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202606121208.48639218713@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1781277962641,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1781277962641,
+      "updatedAt": 1781277962641
+    },
+    {
       "id": "ord_mq5eg9jb9j56",
       "customerName": "DAISY CASTILLO",
       "customerEmail": "daiscastil@gmail.com",
@@ -3235,5 +3269,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1781199154831
+  "lastImportedAt": 1781277962641
 }
