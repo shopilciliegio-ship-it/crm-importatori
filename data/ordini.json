@@ -29,10 +29,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "matthewquezada81@gmail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1781277970603,
+          "messageId": "<202606121526.83540031699@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1781277962641,
-      "updatedAt": 1781277962641
+      "updatedAt": 1781277970603
     },
     {
       "id": "ord_mq5eg9jb9j56",
