@@ -1304,6 +1304,15 @@
       "subject": "Your order is going through customs",
       "sentAt": 1781324089569,
       "messageId": "<202606130414.61168423744@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mbe_IT3299-8V-0000006F09",
+      "customerName": "PAMELLA ESTES",
+      "type": "consegnato",
+      "to": "pamella93@hotmail.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1781346825712,
+      "messageId": "<202606131033.54143223628@smtp-relay.mailin.fr>"
     }
   ]
 }
