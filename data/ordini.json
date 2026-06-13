@@ -523,7 +523,7 @@
       "mbeTrackingNumber": "IT3299-8V-0000006F09",
       "carrier": "UPS",
       "shippingDate": "2026-06-01",
-      "status": "dogana",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "spedito",
@@ -539,6 +539,11 @@
           "status": "dogana",
           "date": 1781168869195,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "consegnato",
+          "date": 1781346822957,
+          "note": "Auto Fieramente (era: dogana)"
         }
       ],
       "emailsSent": [
@@ -555,7 +560,7 @@
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1781168870865,
+      "updatedAt": 1781346822957,
       "shippingType": "standard",
       "shipmentCode": "ESTESP"
     },
