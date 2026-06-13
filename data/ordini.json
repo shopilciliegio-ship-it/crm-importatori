@@ -575,7 +575,7 @@
       "mbeTrackingNumber": "IT3299-8V-0000006F07",
       "carrier": "UPS",
       "shippingDate": "2026-06-01",
-      "status": "dogana",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "spedito",
@@ -591,6 +591,11 @@
           "status": "dogana",
           "date": 1781168869195,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "consegnato",
+          "date": 1781324086971,
+          "note": "Auto Fieramente (era: dogana)"
         }
       ],
       "emailsSent": [
@@ -607,7 +612,7 @@
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1781168870865,
+      "updatedAt": 1781324086971,
       "shippingType": "standard",
       "shipmentCode": "HARIHARANK"
     },
@@ -3198,7 +3203,7 @@
       "mbeTrackingNumber": "IT3299-8V-0000006FDN",
       "carrier": "UPS",
       "shippingDate": "2026-06-03",
-      "status": "in_transito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "spedito",
@@ -3209,6 +3214,11 @@
           "status": "in_transito",
           "date": 1780575700939,
           "note": ""
+        },
+        {
+          "status": "dogana",
+          "date": 1781324086971,
+          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -3225,7 +3235,7 @@
       "notes": "",
       "source": "mbe",
       "createdAt": 1780485256521,
-      "updatedAt": 1780672518803,
+      "updatedAt": 1781324086971,
       "shippingType": "standard",
       "shipmentCode": "MORENOG"
     },
@@ -3245,7 +3255,7 @@
       "mbeTrackingNumber": "IT3299-8V-0000006FDJ",
       "carrier": "UPS",
       "shippingDate": "2026-06-03",
-      "status": "in_transito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "spedito",
@@ -3256,6 +3266,11 @@
           "status": "in_transito",
           "date": 1780575684099,
           "note": ""
+        },
+        {
+          "status": "dogana",
+          "date": 1781324086971,
+          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -3272,7 +3287,7 @@
       "notes": "",
       "source": "mbe",
       "createdAt": 1780485256521,
-      "updatedAt": 1780672518803,
+      "updatedAt": 1781324086971,
       "shippingType": "standard",
       "shipmentCode": "ABRAIRAD"
     }
