@@ -1277,6 +1277,33 @@
       "subject": "Thank you for your order! 🍷",
       "sentAt": 1781277970603,
       "messageId": "<202606121526.83540031699@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mbe_IT3299-8V-0000006F07",
+      "customerName": "KAVIN HARIHARAN",
+      "type": "consegnato",
+      "to": "kavinhariharan3@gmail.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1781324089569,
+      "messageId": "<202606130414.11402694137@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mbe_IT3299-8V-0000006FDN",
+      "customerName": "GRACIELA MORENO",
+      "type": "dogana",
+      "to": "g06mrn@yahoo.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1781324089569,
+      "messageId": "<202606130414.18198756178@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mbe_IT3299-8V-0000006FDJ",
+      "customerName": "DANIEL ABRAIRA",
+      "type": "dogana",
+      "to": "abraira2040@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1781324089569,
+      "messageId": "<202606130414.61168423744@smtp-relay.mailin.fr>"
     }
   ]
 }
