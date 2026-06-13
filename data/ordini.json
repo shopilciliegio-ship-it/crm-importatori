@@ -555,12 +555,19 @@
           "messageId": "<202606110907.56714480753@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-06-11T11:07:55.000+02:00"
+        },
+        {
+          "type": "consegnato",
+          "to": "pamella93@hotmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1781346825712,
+          "messageId": "<202606131033.54143223628@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1781346822957,
+      "updatedAt": 1781346825712,
       "shippingType": "standard",
       "shipmentCode": "ESTESP"
     },
