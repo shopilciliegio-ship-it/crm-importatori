@@ -607,12 +607,19 @@
           "messageId": "<202606110907.98019683849@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-06-11T11:07:53.000+02:00"
+        },
+        {
+          "type": "consegnato",
+          "to": "kavinhariharan3@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1781324089569,
+          "messageId": "<202606130414.11402694137@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1781324086971,
+      "updatedAt": 1781324089569,
       "shippingType": "standard",
       "shipmentCode": "HARIHARANK"
     },
@@ -3230,12 +3237,19 @@
           "messageId": "<202606051515.37635408981@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-06-05T17:19:51.000+02:00"
+        },
+        {
+          "type": "dogana",
+          "to": "g06mrn@yahoo.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1781324089569,
+          "messageId": "<202606130414.18198756178@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780485256521,
-      "updatedAt": 1781324086971,
+      "updatedAt": 1781324089569,
       "shippingType": "standard",
       "shipmentCode": "MORENOG"
     },
@@ -3282,12 +3296,19 @@
           "messageId": "<202606051515.70933824279@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-06-05T17:15:25.000+02:00"
+        },
+        {
+          "type": "dogana",
+          "to": "abraira2040@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1781324089569,
+          "messageId": "<202606130414.61168423744@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780485256521,
-      "updatedAt": 1781324086971,
+      "updatedAt": 1781324089569,
       "shippingType": "standard",
       "shipmentCode": "ABRAIRAD"
     }
