@@ -3,7 +3,7 @@
   "testMode": false,
   "emailAutoSendImportatori": false,
   "testModeImportatori": true,
-  "emailAutoSendClienti": false,
+  "emailAutoSendClienti": true,
   "testModeClienti": true,
   "excludedCountriesClienti": [
     "Afghanistan",
