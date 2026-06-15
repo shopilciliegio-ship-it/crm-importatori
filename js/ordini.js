@@ -369,7 +369,6 @@ function openOrdineDetail(id){
     ${dr('Stato', `<span class="badge" style="background:${st.c};color:${st.t}">${st.l}</span>`)}
     ${o.orderNumber?dr('Nr. ordine', `<span style="font-family:monospace;font-weight:700">${esc(o.orderNumber)}</span>`):''}
     ${dr('Data ordine', date)}
-    ${dr('Importo', `<strong>€${o.amount.toFixed(2)}</strong> ${o.currency||'EUR'}`)}
     ${o.paymentType?dr('Pagamento', esc(o.paymentType)):''}
     ${o.shipmentCode?dr('Codice spedizione', `<span style="font-family:monospace;font-weight:700;font-size:15px">${esc(o.shipmentCode)}</span>`):''}
     ${o.carrier?dr('Corriere', esc(o.carrier)):''}
@@ -388,6 +387,12 @@ function openOrdineDetail(id){
     <div class="fg2">
       <div class="fg"><label>Nuovo stato</label>
         <select id="ord-new-status">${statusOptions}</select>
+      </div>
+      <div class="fg"><label>Importo</label>
+        <input id="ord-amount" type="number" step="0.01" min="0" placeholder="0.00" value="${o.amount!=null?o.amount:''}">
+      </div>
+      <div class="fg"><label>Valuta</label>
+        <input id="ord-currency" placeholder="EUR" value="${esc(o.currency||'EUR')}">
       </div>
       <div class="fg"><label>Email cliente</label>
         <input id="ord-email" type="email" placeholder="email@cliente.com" value="${esc(o.customerEmail||'')}">
@@ -454,9 +459,13 @@ async function saveOrdineUpdate(id){
   const newAddress=(document.getElementById('ord-address')?.value||'').trim();
   const newShippingType=gv('ord-shipping-type')||'';
   const newLanguage=gv('ord-language')||'en';
+  const newAmount=(document.getElementById('ord-amount')?.value||'').trim();
+  const newCurrency=(document.getElementById('ord-currency')?.value||'').trim();
   const note=(document.getElementById('ord-note')?.value||'').trim();
   const sendEmail=document.getElementById('ord-send-email')?.checked;
 
+  if(newAmount!==''&&!isNaN(parseFloat(newAmount))) o.amount=parseFloat(newAmount);
+  if(newCurrency) o.currency=newCurrency.toUpperCase();
   if(newEmail) o.customerEmail=newEmail;
   o.carrier=newCarrier||'';
   if(newTracking) o.trackingNumber=newTracking;
