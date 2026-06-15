@@ -408,9 +408,9 @@ function openSettings(){
 
 function saveSettings(){
   ghs={token:gv('gt'),owner:gv('go'),repo:gv('gr')};
-  localStorage.setItem('ghcfg',JSON.stringify(ghs));
+  localStorage.setItem('ghcfg_crm-importatori',JSON.stringify(ghs));
   brv={apiKey:gv('bk'),senderEmail:gv('be'),senderName:gv('bn')};
-  localStorage.setItem('brvcfg',JSON.stringify(brv));
+  localStorage.setItem('brvcfg_crm-importatori',JSON.stringify(brv));
   ghSha={importatori:null,clienti:null,templates:null,ordini:null,overrides:null,researchConfig:null};closeModal();
   toast('Impostazioni salvate — connessione in corso…');
   loadFromGH();

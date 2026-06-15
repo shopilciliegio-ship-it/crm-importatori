@@ -55,8 +55,17 @@ async function switchLayer(newLayer){
 /* ── INIT: al caricamento pagina legge da GitHub ── */
 
 async function init(){
-  try{const r=localStorage.getItem('ghcfg');if(r)ghs=JSON.parse(r);}catch(e){}
-  try{const r=localStorage.getItem('brvcfg');if(r)brv=JSON.parse(r);}catch(e){}
+  // Chiavi con prefisso per-progetto: evita collisioni con altri tool sullo stesso dominio github.io (localStorage condiviso per origine)
+  try{
+    let r=localStorage.getItem('ghcfg_crm-importatori');
+    if(!r) r=localStorage.getItem('ghcfg'); // migrazione una tantum dalla vecchia chiave condivisa
+    if(r)ghs=JSON.parse(r);
+  }catch(e){}
+  try{
+    let r=localStorage.getItem('brvcfg_crm-importatori');
+    if(!r) r=localStorage.getItem('brvcfg');
+    if(r)brv=JSON.parse(r);
+  }catch(e){}
   if(!db.templates||!db.templates.length) db.templates=defTplImportatori();
   if(!dbC.templates||!dbC.templates.length) dbC.templates=defTplClienti();
   if(ghs.token&&ghs.owner&&ghs.repo){
