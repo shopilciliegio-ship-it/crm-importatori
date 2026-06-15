@@ -192,6 +192,8 @@ def classify_contact(row: dict) -> dict:
         'company':         f'{first} {last}'.strip(),  # per compatibilità UI card
         'firstName':       first,
         'lastName':        last,
+        'nome':            first,  # usati dalle schermate Modifica/Invia email del CRM
+        'cognome':         last,
         'email':           email.lower(),
         'languageBrowser': lang,
         'country':         country,
