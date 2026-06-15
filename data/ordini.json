@@ -1,6 +1,108 @@
 {
   "orders": [
     {
+      "id": "ord_mqfb6etzok72",
+      "customerName": "Madeline Dotson",
+      "customerEmail": "maddie.dekker01@gmail.com",
+      "customerPhone": "16162126607",
+      "amount": 163.55,
+      "currency": "EUR",
+      "orderDate": 1781519199000,
+      "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio Madeline Dotson",
+      "shipmentCode": "",
+      "shippingAddress": "621 Saint clair Ave NW, 49534 Grand Rapids (MI), United States",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<DB9PR08MB66825341BB98C53E5AC1F944BFE62@DB9PR08MB6682.eurprd08.prod.outlook.com>",
+      "trackingNumber": "",
+      "carrier": "- U.S.A. Wine Corriere Std",
+      "source": "shop",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "Carte Di Credito/Bancomat",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1781533718423,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1781533718423,
+      "updatedAt": 1781533718423
+    },
+    {
+      "id": "ord_mqfb6etzyl7s",
+      "customerName": "JOHNPAUL KLOTZ",
+      "customerEmail": "chris.klotz10@gmail.com",
+      "customerPhone": "+17082685131",
+      "amount": 116.7,
+      "currency": "EUR",
+      "orderDate": 1781512776000,
+      "emailSubject": "🍷 New Order — JOHNPAUL KLOTZ — 116.70 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "229 PARK AVE, 60514 CLARENDON HILLS, ILLINOIS (DUPAGE COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202606150839.20254273206@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1781533718423,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1781533718423,
+      "updatedAt": 1781533718423
+    },
+    {
+      "id": "ord_mqfb6etz79pb",
+      "customerName": "JANICE GORISHEK",
+      "customerEmail": "jgorishek@verizon.net",
+      "customerPhone": "+13035969674",
+      "amount": 201.5,
+      "currency": "EUR",
+      "orderDate": 1781512543000,
+      "emailSubject": "🍷 New Order — JANICE GORISHEK — 201.50 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "2218 SHADEHILL CT, 33612 TAMPA, FLORIDA (HILLSBOROUGH COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202606150835.20884585776@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1781533718423,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1781533718423,
+      "updatedAt": 1781533718423
+    },
+    {
       "id": "ord_mqb2woep3ml8",
       "customerName": "MATTHEW QUEZADA",
       "customerEmail": "matthewquezada81@gmail.com",
@@ -3325,5 +3427,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1781277962641
+  "lastImportedAt": 1781533718423
 }
