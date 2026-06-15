@@ -18,57 +18,39 @@
     "body": "{{dear}}\nI reached out last week about Small Vineyards International — I am not sure my email reached you, so I wanted to try once more.\n\nWe represent a curated portfolio of Italian family wineries, built on 20+ years of proven success in the US market.\nOne partner, one invoice, all of Italy.\n\nIf simplifying your Italian wine sourcing is something worth 2 minutes of your time, everything is here: www.sienawine.it/smallvineyardsinternational\n\nBest,\nLuca Pattaro\nSiena Wine | Small Vineyards International\nluca@sienawine.it | +39 331 1347899"
   },
   {
-    "id": "t3a",
+    "id": "t3",
     "name": "#3a — Follow-up opened(day 21) - Importer Siena Wine",
     "subject": "One contact. One invoice. All of Italy.",
     "body": "{{dear}}\nworking with multiple small Italian producers means multiple contacts, invoices, shipments and conversations. We solve that.\n\nThrough Siena Wine, {{azienda}} gets:\n\n• A single point of contact for the entire portfolio\n• Consolidated orders and shipments\n• Full documentation support\n• A selection proven to sell — validated by years of US market success\n\nWe are not asking you to take a risk on unknown producers. These wines have a track record.\n\nBook a 20-minute call at your convenience: calendly.com/luca-sienawine/30min\n\nBest,\nLuca Pattaro\nSiena Wine | Small Vineyards International\nluca@sienawine.it | +39 331 1347899"
   },
   {
-    "id": "t3b",
-    "name": "#3b — Follow-up not opened (day 21) - Importer Siena Wine",
-    "subject": "One contact. One invoice. All of Italy.",
-    "body": "{{dear}}\nworking with multiple small Italian producers means multiple contacts, invoices, shipments and conversations. We solve that.\n\nThrough Siena Wine, {{azienda}} gets:\n\n• A single point of contact for the entire portfolio\n• Consolidated orders and shipments\n• Full documentation support\n• A selection proven to sell — validated by years of US market success\n\nWe are not asking you to take a risk on unknown producers. These wines have a track record.\n\nBook a 20-minute call at your convenience: calendly.com/luca-sienawine/30min\n\nBest,\nLuca Pattaro\nSiena Wine | Small Vineyards International\nluca@sienawine.it | +39 331 1347899"
-  },
-  {
-    "id": "t4a",
-    "name": "#4a — Break-up opened (day 35) - Importer Siena Wine",
-    "subject": "Closing the loop — {{azienda}}",
-    "body": "{{dear}}\nI have reached out a few times without hearing back — I completely understand; timing is everything in this business.\n\nI will not send further emails, but I wanted to leave you with one thought: if you are ever looking to add a curated Italian portfolio with a proven US track record, a single operational contact, and wineries that genuinely over-deliver for their price point — we are here.\n\nOur portfolio is always available at: www.sienawine.it/smallvineyardsinternational\n\nWishing {{azienda}} continued success.\n\nLuca Pattaro\nSiena Wine | Small Vineyards International\nluca@sienawine.it | +39 331 1347899"
-  },
-  {
-    "id": "t4b",
+    "id": "t4",
     "name": "#4b — Break-up not opened (day 35) - Importer Siena Wine",
     "subject": "Closing the loop — {{azienda}}",
     "body": "{{dear}}\nI have reached out a few times without hearing back — I completely understand; timing is everything in this business.\n\nI will not send further emails, but I wanted to leave you with one thought: if you are ever looking to add a curated Italian portfolio with a proven US track record, a single operational contact, and wineries that genuinely over-deliver for their price point — we are here.\n\nOur portfolio is always available at: www.sienawine.it/smallvineyardsinternational\n\nWishing {{azienda}} continued success.\n\nLuca Pattaro\nSiena Wine | Small Vineyards International\nluca@sienawine.it | +39 331 1347899"
   },
   {
-    "id": "c1",
+    "id": "t1780094169387",
+    "name": "#3b — Follow-up not opened (day 21) - Importer Siena Wine",
+    "subject": "One contact. One invoice. All of Italy.",
+    "body": "{{dear}}\nworking with multiple small Italian producers means multiple contacts, invoices, shipments and conversations. We solve that.\n\nThrough Siena Wine, {{azienda}} gets:\n\n• A single point of contact for the entire portfolio\n• Consolidated orders and shipments\n• Full documentation support\n• A selection proven to sell — validated by years of US market success\n\nWe are not asking you to take a risk on unknown producers. These wines have a track record.\n\nBook a 20-minute call at your convenience: calendly.com/luca-sienawine/30min\n\nBest,\nLuca Pattaro\nSiena Wine | Small Vineyards International\nluca@sienawine.it | +39 331 1347899"
+  },
+  {
+    "id": "t1780094351675",
+    "name": "#4a — Break-up opened (day 35) - Importer Siena Wine",
+    "subject": "Closing the loop — {{azienda}}",
+    "body": "{{dear}}\nI have reached out a few times without hearing back — I completely understand; timing is everything in this business.\n\nI will not send further emails, but I wanted to leave you with one thought: if you are ever looking to add a curated Italian portfolio with a proven US track record, a single operational contact, and wineries that genuinely over-deliver for their price point — we are here.\n\nOur portfolio is always available at: www.sienawine.it/smallvineyardsinternational\n\nWishing {{azienda}} continued success.\n\nLuca Pattaro\nSiena Wine | Small Vineyards International\nluca@sienawine.it | +39 331 1347899"
+  },
+  {
+    "id": "wave1",
     "name": "Benvenuto — Offerta speciale",
-    "subject": "Un pensiero speciale per te da Il Ciliegio 🍷",
-    "body": "Caro {{contatto}},\n\nTi scriviamo dall'Azienda Agricola Il Ciliegio per ringraziarti di far parte della nostra comunità di appassionati.\n\nAbbiamo preparato per te una selezione esclusiva delle nostre migliori etichette, disponibile a condizioni speciali riservate ai nostri clienti più affezionati.\n\nScopri la nostra proposta su www.ilciliegio.com oppure contattaci direttamente — saremo felici di guidarti nella scelta.\n\nA presto,\nIl team de Il Ciliegio\nAzienda Agricola"
+    "subject": "A special thought for you from Il Ciliegio 🍷",
+    "body": "Dear {{nome}},\nWe hope you’ll have fond memories of our winery,\nand we’d like to thank you for being part of our community of wine lovers!\n\nWe’ve put together an exclusive selection of our finest wines, available at special prices and reserved for our most loyal customers.\n\nDiscover our selection by downloading our mobile app at\nhttps://ciliegio-shop.netlify.app/ciliegioshop\n\nKeep in touch,\nIl Ciliegio - Azienda Agricola"
   },
   {
     "id": "c2",
     "name": "Offerta stagionale",
-    "subject": "La nuova annata è arrivata — riservata a te ✨",
-    "body": "Caro {{contatto}},\n\nSiamo entusiasti di annunciarti l'arrivo della nuova annata de Il Ciliegio.\n\nCome nostro cliente, hai accesso in anteprima alla nuova selezione, con la possibilità di acquistare a prezzi dedicati prima dell'apertura al pubblico.\n\nI quantitativi sono limitati. Visita www.ilciliegio.com o rispondi a questa email per prenotare la tua selezione.\n\nTi aspettiamo!\nIl Ciliegio — Azienda Agricola"
-  },
-  {
-    "id": "c3",
-    "name": "Follow-up 1 (7 gg)",
-    "subject": "Hai avuto modo di dare un'occhiata? — Il Ciliegio",
-    "body": "Caro {{contatto}},\n\nTi scrivo brevemente per assicurarmi che tu abbia ricevuto la nostra proposta di qualche giorno fa.\n\nSe hai domande sulla selezione o desideri ricevere ulteriori informazioni, sono qui per aiutarti.\n\nUn caro saluto,\nIl Ciliegio — Azienda Agricola"
-  },
-  {
-    "id": "c4",
-    "name": "Follow-up 2 — Ultimi pezzi",
-    "subject": "Ultimi pezzi disponibili — non perdere l'occasione",
-    "body": "Caro {{contatto}},\n\nTi scrivo perché le scorte della selezione che ti avevo proposto si stanno esaurendo rapidamente.\n\nSe desideri approfittare dell'offerta riservata, ti chiedo di farmi sapere entro i prossimi giorni.\n\nSarò felice di gestire personalmente il tuo ordine.\n\nCon i migliori saluti,\nIl Ciliegio — Azienda Agricola"
-  },
-  {
-    "id": "c5",
-    "name": "Auguri e offerta festiva",
-    "subject": "Buone Feste da Il Ciliegio 🎄",
-    "body": "Caro {{contatto}},\n\nIn occasione delle feste, tutto il team de Il Ciliegio ti augura un periodo sereno e ricco di momenti speciali.\n\nAbbiamo selezionato per te le nostre etichette più eleganti, perfette per brindare o regalare a chi ami.\n\nScopri la confezione regalo Il Ciliegio su www.ilciliegio.com — consegna in tutta Europa.\n\nBuone Feste!\nIl Ciliegio — Azienda Agricola"
+    "subject": "The new vintage has arrived — just for you ✨",
+    "body": "Dear {{nome}},\n\nWe're excited to announce the arrival of the new vintage from Il Ciliegio.\n\nAs one of our customers, you have early access to the new selection, with the chance to purchase at special prices before it becomes available to the public.\n\nQuantities are limited. Visit www.ilciliegio.com or reply to this email to reserve your selection.\n\nWe look forward to hearing from you!\nIl Ciliegio — Azienda Agricola"
   }
 ]
