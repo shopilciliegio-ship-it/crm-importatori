@@ -117,7 +117,7 @@ function _linkify(text, accentColor){
   });
 }
 
-function buildHtmlEmail(body, brand, contactName, opts){
+function buildHtmlEmail(body, brand, contactName){
   try{
   const b = BRANDS[brand] || BRANDS.sienawine;
   // Nota: il greeting è già nel body via {{dear}} — non lo aggiungiamo due volte
@@ -173,14 +173,6 @@ function buildHtmlEmail(body, brand, contactName, opts){
   </td></tr>
 
 </table>
-${(opts&&opts.unsubscribe)?`
-<table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%">
-  <tr><td style="padding:14px 40px;text-align:center">
-    <p style="margin:0;font-size:11px;color:#aaa;line-height:1.6">
-      <a href="mailto:${b.senderEmail}?subject=Unsubscribe" style="color:#aaa;text-decoration:underline">Unsubscribe</a> from this mailing list
-    </p>
-  </td></tr>
-</table>`:''}
 </td></tr>
 </table>
 </body></html>`;
@@ -200,7 +192,7 @@ async function sendViaBrevo(contactId, toEmail, toName, subject, bodyText, brand
     return false;
   }
   const b = BRANDS[brand] || BRANDS.sienawine;
-  const htmlContent = buildHtmlEmail(bodyText, brand, toName, {unsubscribe: isClienti()});
+  const htmlContent = buildHtmlEmail(bodyText, brand, toName);
 
   try{
     const res = await fetch('https://api.brevo.com/v3/smtp/email',{

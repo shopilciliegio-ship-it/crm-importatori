@@ -205,13 +205,6 @@ def build_html(text: str, subject: str) -> str:
     </td>
   </tr>
 </table>
-<table width="600" cellpadding="0" cellspacing="0" style="max-width:600px">
-  <tr><td style="padding:14px 32px;text-align:center">
-    <p style="margin:0;font-size:11px;color:#aaa;line-height:1.6">
-      <a href="mailto:{SENDER_EMAIL}?subject=Unsubscribe" style="color:#aaa;text-decoration:underline">Unsubscribe</a> from this mailing list
-    </p>
-  </td></tr>
-</table>
 </td></tr></table>
 </body></html>"""
 
