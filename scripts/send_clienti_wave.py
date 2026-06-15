@@ -219,7 +219,7 @@ def send_email(to_email: str, to_name: str, subject: str, body: str,
     else:
         actual_to   = to_email
         actual_subj = subject
-        actual_bcc  = [{'email': BCC_EMAIL}]
+        actual_bcc  = []
         print(f'    ✓ wave1 → {to_email}')
 
     payload = {
