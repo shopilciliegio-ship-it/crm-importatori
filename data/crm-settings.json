@@ -5,6 +5,8 @@
   "testModeImportatori": true,
   "emailAutoSendClienti": false,
   "testModeClienti": true,
-  "excludedCountriesClienti": [],
+  "excludedCountriesClienti": [
+    "Kenya"
+  ],
   "waveBatchSize": 500
 }
