@@ -6,8 +6,10 @@
   "emailAutoSendClienti": false,
   "testModeClienti": true,
   "excludedCountriesClienti": [
+    "Israele",
     "Kenya",
-    "Sudafrica"
+    "Sudafrica",
+    "Turchia"
   ],
   "waveBatchSize": 500
 }
