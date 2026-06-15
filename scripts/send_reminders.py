@@ -216,7 +216,7 @@ def send_email(order: dict, reminder_type: str, subject: str, body_text: str,
     else:
         actual_to   = to_email
         actual_subj = subject
-        actual_bcc  = [{'email': BCC_EMAIL}]
+        actual_bcc  = []
         print(f'    ✓ "{reminder_type}" → {to_email}')
 
     payload = {

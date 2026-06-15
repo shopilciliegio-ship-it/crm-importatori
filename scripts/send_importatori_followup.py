@@ -250,7 +250,7 @@ def send_email(to_email: str, to_name: str, subject: str, body_text: str,
     else:
         actual_to   = to_email
         actual_subj = subject
-        actual_bcc  = [{'email': BCC_EMAIL}]
+        actual_bcc  = []
         print(f'    ✓ step{step} → {to_email}')
 
     payload = {
