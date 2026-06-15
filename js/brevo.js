@@ -181,7 +181,7 @@ async function syncBrevoEventsQuiet(){
   if(!brv.apiKey) return;
   const cutoff = Date.now() - 14*86400000; // solo ultime 2 settimane
   const toSync = [];
-  db.contacts.forEach(c=>{
+  [...db.contacts, ...dbC.contacts].forEach(c=>{
     (c.brevoEvents||[]).forEach((ev,i)=>{
       if(ev.messageId && (ev.sentAt||0)>cutoff
         && !ev.bounced && !ev.spam && !ev.unsubscribed && !ev.blocked)
@@ -221,6 +221,10 @@ async function syncBrevoEventsQuiet(){
         if((type==='spamreports'||type==='spam')&&!ev.spam){ev.spam=true;changed=true;contact.log.push({ts:Date.now(),msg:`🚫 Spam: ${ev.subject||''}`});}
         if(type==='unsubscribed'&&!ev.unsubscribed){ev.unsubscribed=true;changed=true;contact.log.push({ts:Date.now(),msg:`🚫 Disiscritto: ${ev.subject||''}`});}
         if((type==='blocked'||type==='invalid')&&!ev.blocked){ev.blocked=true;changed=true;contact.log.push({ts:Date.now(),msg:`🔒 Bloccata: ${ev.subject||''}`});}
+        if((ev.unsubscribed||ev.blocked)&&!contact.blacklisted){
+          contact.blacklisted=true;changed=true;
+          contact.log.push({ts:Date.now(),msg:'🚫 Contatto inserito in blacklist (disiscrizione/bloccata)'});
+        }
       });
       if(changed) updated++;
     }catch(e){ console.warn('Brevo quiet sync:',e); }
@@ -289,6 +293,10 @@ async function syncBrevoEvents(){
         if((type==='blocked'||type==='invalid')&&!ev.blocked){
           ev.blocked=true; changed=true;
           contact.log.push({ts:Date.now(),msg:`🔒 Bloccata: ${ev.subject||''}`});
+        }
+        if((ev.unsubscribed||ev.blocked)&&!contact.blacklisted){
+          contact.blacklisted=true; changed=true;
+          contact.log.push({ts:Date.now(),msg:'🚫 Contatto inserito in blacklist (disiscrizione/bloccata)'});
         }
       });
 
