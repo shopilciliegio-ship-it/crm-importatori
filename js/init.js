@@ -21,10 +21,12 @@ async function switchLayer(newLayer){
   const navEl   = document.querySelector('.nav');
   const ordSec  = document.getElementById('section-ordini');
   const impTgl  = document.getElementById('email-autosend-imp-toggle');
+  const cliTgl  = document.getElementById('email-autosend-cli-toggle');
   const rschBnr = document.getElementById('research-queue-banner');
   if(navEl)  navEl.style.display  = isOrd ? 'none' : '';
   if(ordSec) ordSec.style.display = isOrd ? 'block' : 'none';
   if(impTgl) impTgl.style.display = newLayer==='importatori' ? 'flex' : 'none';
+  if(cliTgl) cliTgl.style.display = newLayer==='clienti' ? 'flex' : 'none';
   if(rschBnr) rschBnr.style.display = newLayer==='importatori' ? 'block' : 'none';
 
   if(isOrd){
@@ -104,6 +106,7 @@ function refreshAll(){
   renderTemplates();renderRegionChart();renderCCChart();renderPipeline();
   updateBadges();updateFilters();
   try{ if(typeof renderEmailToggleImp==='function') renderEmailToggleImp(); }catch(e){}
+  try{ if(typeof renderEmailToggleCli==='function') renderEmailToggleCli(); }catch(e){}
   try{ if(typeof renderResearchBanner==='function') renderResearchBanner(); }catch(e){}
   try{ if(typeof renderOrdini==='function') renderOrdini(); }catch(e){ console.warn('renderOrdini:',e); }
 }

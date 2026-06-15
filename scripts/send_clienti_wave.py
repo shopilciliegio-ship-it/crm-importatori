@@ -45,6 +45,25 @@ GH_REPO       = os.environ.get('GH_REPO', 'crm-importatori')
 
 DEFAULT_BATCH_SIZE = 500
 
+# Mappa codice ISO2 (minuscolo) → nome leggibile, come usato dal CRM (js/templates.js ISO2NAME)
+# Serve per confrontare c['country'] con la lista excludedCountriesClienti scelta nel CRM,
+# che mostra i nomi leggibili dei paesi presenti in dbC.contacts.
+COUNTRY_CODE_TO_NAME = {
+    'it':'Italia','de':'Germania','be':'Belgio','nl':'Paesi Bassi','lu':'Lussemburgo',
+    'fr':'Francia','dk':'Danimarca','at':'Austria','es':'Spagna','pt':'Portogallo',
+    'se':'Svezia','ie':'Irlanda','si':'Slovenia','fi':'Finlandia','hr':'Croazia',
+    'gr':'Grecia','pl':'Polonia','cz':'Rep. Ceca','sk':'Slovacchia','hu':'Ungheria',
+    'bg':'Bulgaria','ee':'Estonia','lv':'Lettonia','lt':'Lituania','ro':'Romania',
+    'cy':'Cipro','mt':'Malta','us':'USA','ca':'Canada','gb':'Gran Bretagna',
+    'ch':'Svizzera','no':'Norvegia',
+}
+
+
+def country_display_name(c: dict) -> str:
+    """Nome paese come mostrato nel CRM (per confronto con excludedCountriesClienti)."""
+    raw = (c.get('country') or '').strip()
+    return COUNTRY_CODE_TO_NAME.get(raw.lower(), raw)
+
 # ── DEFAULT TEMPLATE WAVE 1 ──────────────────────────────────────────────────
 DEFAULT_WAVE1_SUBJECT = "We met at Il Ciliegio Winery — Welcome!"
 DEFAULT_WAVE1_BODY = """\
@@ -315,6 +334,7 @@ def main():
     contacts = db.get('contacts') or []
 
     # Filtra candidati wave1
+    excluded_countries = set(settings.get('excludedCountriesClienti', []))
     now_ms = int(datetime.now(timezone.utc).timestamp() * 1000)
     candidates = [
         c for c in contacts
@@ -323,6 +343,7 @@ def main():
         and not c.get('blacklisted', False)
         and not c.get('waveStatus')               # non ancora contattati
         and c.get('email')
+        and country_display_name(c) not in excluded_countries
     ]
 
     # Ordina per registeredAt ASC (oldest first)

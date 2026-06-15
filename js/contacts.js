@@ -1111,6 +1111,62 @@ function renderEmailToggleImp(){
   el.innerHTML=`<div style="display:flex;align-items:center;gap:8px">${mainBtn}${testBtn}</div>`;
 }
 
+/* ═══ SETTINGS — toggle email clienti privati + paesi esclusi ═══ */
+
+async function toggleEmailAutoSendCli(){
+  dbSettings.emailAutoSendClienti=!dbSettings.emailAutoSendClienti;
+  renderEmailToggleCli();
+  await pushSettingsGH();
+  toast(dbSettings.emailAutoSendClienti?'✓ Email clienti ATTIVATE':'⏸ Email clienti DISATTIVATE');
+}
+
+async function toggleTestModeCli(){
+  dbSettings.testModeClienti=!dbSettings.testModeClienti;
+  renderEmailToggleCli();
+  await pushSettingsGH();
+  toast(dbSettings.testModeClienti?'🧪 Test mode ON — email solo a te':'👥 Produzione — email ai clienti reali');
+}
+
+function renderEmailToggleCli(){
+  const el=document.getElementById('email-autosend-cli-toggle');
+  if(!el) return;
+  const on  =dbSettings.emailAutoSendClienti===true;
+  const test=dbSettings.testModeClienti!==false;
+  const nExcl=(dbSettings.excludedCountriesClienti||[]).length;
+  const exclBtn=`<button onclick="openExcludedCountriesModal()" class="btn bts" style="font-size:12px">🌍 Paesi esclusi${nExcl?' ('+nExcl+')':''}</button>`;
+  const mainBtn=`<button onclick="toggleEmailAutoSendCli()" style="font-size:12px;font-weight:700;padding:7px 16px;border-radius:20px;border:none;cursor:pointer;background:${on?'#2a9d5c':'#c0392b'};color:#fff;letter-spacing:.3px">${on?'🟢 Email clienti: ON':'🔴 Email clienti: OFF'}</button>`;
+  const testBtn=on?`<button onclick="toggleTestModeCli()" style="font-size:12px;font-weight:700;padding:7px 16px;border-radius:20px;border:none;cursor:pointer;background:${test?'#e67e22':'#2980b9'};color:#fff;letter-spacing:.3px">${test?'🧪 Test mode':'👥 Clienti reali'}</button>`:'';
+  el.innerHTML=`<div style="display:flex;align-items:center;gap:8px">${exclBtn}${mainBtn}${testBtn}</div>`;
+}
+
+function openExcludedCountriesModal(){
+  const countries=[...new Set(dbC.contacts.map(c=>(c.country||'').trim()).filter(Boolean))].sort();
+  const excluded=new Set(dbSettings.excludedCountriesClienti||[]);
+  showModal(`
+    <div class="mt">🌍 Paesi esclusi dall'invio email</div>
+    <div style="font-size:12px;color:var(--text2);margin-bottom:12px">I clienti dei paesi selezionati non riceveranno le email automatiche di contatto, anche se marcati come "spedibili". Utile per i paesi dove non si può più spedire ma non vuoi eliminare i contatti dall'archivio.</div>
+    <div style="max-height:320px;overflow-y:auto;display:grid;grid-template-columns:1fr 1fr;gap:4px">
+      ${countries.map(c=>`<label style="display:flex;align-items:center;gap:6px;font-size:13px;cursor:pointer;padding:3px 0">
+        <input type="checkbox" class="excl-country" value="${esc(c)}" ${excluded.has(c)?'checked':''} style="cursor:pointer;accent-color:var(--blue)">
+        ${esc(c)}
+      </label>`).join('')}
+    </div>
+    <div class="mf">
+      <button class="btn" onclick="closeModal()">Annulla</button>
+      <button class="btn btp" onclick="saveExcludedCountries()">Salva</button>
+    </div>
+  `);
+}
+
+async function saveExcludedCountries(){
+  const checked=[...document.querySelectorAll('.excl-country:checked')].map(el=>el.value);
+  dbSettings.excludedCountriesClienti=checked;
+  closeModal();
+  await pushSettingsGH();
+  renderEmailToggleCli();
+  toast(`✓ ${checked.length} paesi esclusi dall'invio email clienti`);
+}
+
 /* ═══════════════════════════════════════════════════
    SINCRONIZZAZIONE BREVO — aperture, click, bounce
 ═══════════════════════════════════════════════════ */
