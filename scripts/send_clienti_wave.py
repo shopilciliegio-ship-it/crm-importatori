@@ -374,15 +374,18 @@ def main():
     errors   = 0
 
     for c in batch:
-        first_name = c.get('firstName') or c.get('company', '').split()[0] or 'friend'
+        first_name = c.get('firstName') or c.get('nome') or c.get('company', '').split()[0] or 'friend'
         body = wave1_body_t.replace('{firstName}', first_name) \
                            .replace('{lastName}',  c.get('lastName', '')) \
-                           .replace('{email}',     c.get('email', ''))
+                           .replace('{email}',     c.get('email', '')) \
+                           .replace('{{nome}}',     first_name) \
+                           .replace('{{contatto}}', first_name)
+        subj = wave1_subj.replace('{{nome}}', first_name).replace('{{contatto}}', first_name)
 
         msg_id = send_email(
             to_email=c['email'],
             to_name=c.get('company', first_name),
-            subject=wave1_subj,
+            subject=subj,
             body=body,
             contact_id=c['id'],
             test_mode=test_mode,

@@ -130,11 +130,11 @@ luca@sienawine.it | +39 331 1347899`}
 
 function defTplClienti(){return[
   {id:'wave1',name:'Benvenuto — Offerta speciale',
-   subject:'Un pensiero speciale per te da Il Ciliegio 🍷',
-   body:"Caro {{contatto}},\n\nTi scriviamo dall'Azienda Agricola Il Ciliegio per ringraziarti di far parte della nostra comunità di appassionati.\n\nAbbiamo preparato per te una selezione esclusiva delle nostre migliori etichette, disponibile a condizioni speciali riservate ai nostri clienti più affezionati.\n\nScopri la nostra proposta su www.ilciliegio.com oppure contattaci direttamente — saremo felici di guidarti nella scelta.\n\nA presto,\nIl team de Il Ciliegio\nAzienda Agricola"},
+   subject:'A special thought for you from Il Ciliegio 🍷',
+   body:"Dear {{nome}},\n\nWe're writing to you from Il Ciliegio Winery to thank you for being part of our community of wine lovers.\n\nWe've prepared an exclusive selection of our finest labels for you, available at special prices reserved for our most loyal customers.\n\nDiscover our selection at www.ilciliegio.com or get in touch with us directly — we'd be happy to help you choose.\n\nSee you soon,\nThe Il Ciliegio Team\nAzienda Agricola"},
   {id:'c2',name:'Offerta stagionale',
-   subject:'La nuova annata è arrivata — riservata a te ✨',
-   body:"Caro {{contatto}},\n\nSiamo entusiasti di annunciarti l'arrivo della nuova annata de Il Ciliegio.\n\nCome nostro cliente, hai accesso in anteprima alla nuova selezione, con la possibilità di acquistare a prezzi dedicati prima dell'apertura al pubblico.\n\nI quantitativi sono limitati. Visita www.ilciliegio.com o rispondi a questa email per prenotare la tua selezione.\n\nTi aspettiamo!\nIl Ciliegio — Azienda Agricola"}
+   subject:'The new vintage has arrived — just for you ✨',
+   body:"Dear {{nome}},\n\nWe're excited to announce the arrival of the new vintage from Il Ciliegio.\n\nAs one of our customers, you have early access to the new selection, with the chance to purchase at special prices before it becomes available to the public.\n\nQuantities are limited. Visit www.ilciliegio.com or reply to this email to reserve your selection.\n\nWe look forward to hearing from you!\nIl Ciliegio — Azienda Agricola"}
 ];}
 
 /* ── SAVE / GH ── */
