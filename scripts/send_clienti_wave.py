@@ -64,6 +64,11 @@ def country_display_name(c: dict) -> str:
     raw = (c.get('country') or '').strip()
     return COUNTRY_CODE_TO_NAME.get(raw.lower(), raw)
 
+
+def is_italian(c: dict) -> bool:
+    raw = (c.get('country') or '').strip().lower()
+    return raw in ('it', 'italia', 'italy')
+
 # ── DEFAULT TEMPLATE WAVE 1 ──────────────────────────────────────────────────
 DEFAULT_WAVE1_SUBJECT = "We met at Il Ciliegio Winery — Welcome!"
 DEFAULT_WAVE1_BODY = """\
@@ -81,6 +86,28 @@ You're receiving this email because you connected to our WiFi during your visit.
 If you'd like to unsubscribe, simply reply to this email.
 
 Warm regards,
+Luca Pattaro
+Il Ciliegio — Azienda Agricola
+Loc. Podere il Ciliegio, Siena (IT)
+www.sienawine.it
+"""
+
+DEFAULT_WAVE1_SUBJECT_IT = "Ci siamo incontrati all'Azienda Il Ciliegio — Benvenuti!"
+DEFAULT_WAVE1_BODY_IT = """\
+Caro {firstName},
+
+Grazie per aver visitato l'Azienda Agricola Il Ciliegio durante il tuo soggiorno in Toscana!
+
+Speriamo che tu abbia trascorso un bel momento con noi e che tu abbia avuto l'occasione di assaggiare i nostri vini.
+Ci farebbe piacere restare in contatto e condividere con te le nostre ultime novità, le uscite stagionali e le offerte esclusive.
+
+🍷 Scopri i nostri vini e ordina online:
+https://www.ciliegioshop.it
+
+Stai ricevendo questa email perché ti sei connesso/a alla nostra rete WiFi durante la visita.
+Se desideri cancellarti, rispondi semplicemente a questa email.
+
+Cordiali saluti,
 Luca Pattaro
 Il Ciliegio — Azienda Agricola
 Loc. Podere il Ciliegio, Siena (IT)
@@ -336,6 +363,7 @@ def main():
     # Filtra candidati wave1
     excluded_countries = set(settings.get('excludedCountriesClienti', []))
     now_ms = int(datetime.now(timezone.utc).timestamp() * 1000)
+    ninety_days_ms = 90 * 24 * 3600 * 1000
     candidates = [
         c for c in contacts
         if c.get('quality') in ('valid',)        # solo verdi (sospetti: review manuale)
@@ -344,6 +372,7 @@ def main():
         and not c.get('waveStatus')               # non ancora contattati
         and c.get('email')
         and country_display_name(c) not in excluded_countries
+        and (c.get('registeredAt') or 0) <= (now_ms - ninety_days_ms)  # registrati >90gg fa
     ]
 
     # Ordina per registeredAt ASC (oldest first)
@@ -361,11 +390,14 @@ def main():
         send_digest([], 0, test_mode, batch_size, 0)
         return
 
-    # Leggi template (dal DB o default)
-    templates    = db.get('templates') or []
-    wave1_tpl    = next((t for t in templates if t.get('id') == 'wave1'), None)
-    wave1_subj   = wave1_tpl['subject'] if wave1_tpl else DEFAULT_WAVE1_SUBJECT
-    wave1_body_t = wave1_tpl['body']    if wave1_tpl else DEFAULT_WAVE1_BODY
+    # Leggi template (dal DB o default) — IT e EN
+    templates      = db.get('templates') or []
+    wave1_tpl_en   = next((t for t in templates if t.get('id') == 'wave1'),    None)
+    wave1_tpl_it   = next((t for t in templates if t.get('id') == 'wave1_it'), None)
+    wave1_subj_en  = wave1_tpl_en['subject'] if wave1_tpl_en else DEFAULT_WAVE1_SUBJECT
+    wave1_body_en  = wave1_tpl_en['body']    if wave1_tpl_en else DEFAULT_WAVE1_BODY
+    wave1_subj_it  = wave1_tpl_it['subject'] if wave1_tpl_it else DEFAULT_WAVE1_SUBJECT_IT
+    wave1_body_it  = wave1_tpl_it['body']    if wave1_tpl_it else DEFAULT_WAVE1_BODY_IT
 
     # Mappa email → contatto per aggiornamento rapido
     contact_map = {c['email']: c for c in contacts}
@@ -375,6 +407,12 @@ def main():
 
     for c in batch:
         first_name = c.get('firstName') or c.get('nome') or c.get('company', '').split()[0] or 'friend'
+        if is_italian(c):
+            wave1_subj   = wave1_subj_it
+            wave1_body_t = wave1_body_it
+        else:
+            wave1_subj   = wave1_subj_en
+            wave1_body_t = wave1_body_en
         body = wave1_body_t.replace('{firstName}', first_name) \
                            .replace('{lastName}',  c.get('lastName', '')) \
                            .replace('{email}',     c.get('email', '')) \

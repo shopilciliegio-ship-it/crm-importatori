@@ -45,13 +45,21 @@ jobs:
             echo "⚠ Nessun CSV trovato — skip import"
           fi
 
-      - name: Invia wave email (batch 500)
+      - name: Invia wave1 (>90gg da registrazione)
         env:
           BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
           GH_TOKEN:      ${{ secrets.GITHUB_TOKEN }}
           GH_OWNER:      ${{ github.repository_owner }}
           GH_REPO:       ${{ github.event.repository.name }}
         run: python scripts/send_clienti_wave.py
+
+      - name: Invia wave2 (>120gg da wave1)
+        env:
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          GH_TOKEN:      ${{ secrets.GITHUB_TOKEN }}
+          GH_OWNER:      ${{ github.repository_owner }}
+          GH_REPO:       ${{ github.event.repository.name }}
+        run: python scripts/send_clienti_wave2.py
 
       - name: Commit aggiornamenti
         run: |
