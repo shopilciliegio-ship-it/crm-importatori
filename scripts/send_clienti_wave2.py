@@ -13,8 +13,10 @@ NOTA: sostituire i template placeholder nel CRM (id: 'wave2', 'wave2_it')
       prima di attivare la produzione.
 """
 
+import html as _html
 import json
 import os
+import re
 import sys
 import time
 import requests
@@ -34,6 +36,10 @@ SENDER_NAME      = 'Il Ciliegio — Azienda Agricola'
 SENDER_EMAIL     = 'export@ilciliegio.com'
 LOGO_URL         = 'https://shopilciliegio-ship-it.github.io/crm-importatori/assets/logo_ciliegio.png'
 ACCENT           = '#B8941A'
+BG_COLOR         = '#2c2c2c'
+TAGLINE          = 'Vini artigianali toscani di eccellenza'
+WEBSITE          = 'https://www.ilciliegio.com'
+PHONE            = '+39 331 1347899'
 
 BREVO_API_KEY = os.environ.get('BREVO_API_KEY', '')
 GH_TOKEN      = os.environ.get('GH_TOKEN', '')
@@ -180,50 +186,74 @@ def gh_put(path: str, data, message: str):
 
 
 # ── EMAIL ────────────────────────────────────────────────────────────────────
+def _linkify(text: str) -> str:
+    def _make_link(m):
+        url = m.group(0)
+        href = url if url.startswith('http') else 'https://' + url
+        return f'<a href="{href}" style="color:{ACCENT};font-weight:600;text-decoration:none">{url}</a>'
+    return re.sub(r'(https?://[^\s<]+|(?:www\.|calendly\.com/)[^\s<]+)', _make_link, text)
+
+
 def build_html(text: str, subject: str) -> str:
-    paragraphs = ''.join(
-        f'<p style="margin:0 0 14px 0;line-height:1.7">{p.strip()}</p>'
-        for p in text.strip().split('\n\n') if p.strip()
-    )
+    body_html = ''
+    for para in text.strip().split('\n\n'):
+        para = para.strip()
+        if not para:
+            continue
+        if '\n•' in para or para.startswith('•'):
+            items = [l.strip() for l in para.split('\n') if l.strip()]
+            lis = ''.join(
+                f'<li style="margin-bottom:6px;color:#333;font-size:15px;line-height:1.6">'
+                f'{_linkify(_html.escape(i.lstrip("•- ")))}</li>'
+                for i in items
+            )
+            body_html += f'<ul style="margin:0 0 16px;padding-left:20px">{lis}</ul>'
+        else:
+            escaped = _html.escape(para).replace('\n', '<br>')
+            body_html += (
+                f'<p style="margin:0 0 16px;color:#333;font-size:15px;line-height:1.7">'
+                f'{_linkify(escaped)}</p>'
+            )
+
     return f"""<!DOCTYPE html>
-<html><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-</head>
-<body style="margin:0;padding:0;background:#f5f5f0;font-family:'Georgia',serif">
-<table width="100%" cellpadding="0" cellspacing="0" style="background:#f5f5f0;padding:32px 16px">
+<html lang="it">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
+<body style="margin:0;padding:0;background:#f4f4f0;font-family:Georgia,'Times New Roman',serif">
+<table width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f0;padding:32px 16px">
 <tr><td align="center">
-<table width="600" cellpadding="0" cellspacing="0"
-  style="background:#fff;border-radius:8px;overflow:hidden;max-width:600px">
-  <tr>
-    <td style="background:{ACCENT};padding:24px 32px;text-align:center">
-      <img src="{LOGO_URL}" alt="Il Ciliegio" height="48"
-        style="max-height:48px;filter:brightness(0)invert(1)" onerror="this.style.display='none'">
-      <div style="color:#fff;font-size:13px;letter-spacing:2px;
-                  text-transform:uppercase;margin-top:8px;opacity:.9">
-        Azienda Agricola · Siena
-      </div>
-    </td>
-  </tr>
-  <tr>
-    <td style="padding:32px;color:#333;font-size:15px">
-      {paragraphs}
-    </td>
-  </tr>
-  <tr>
-    <td style="background:#f9f6ee;padding:20px 32px;border-top:1px solid #e8e0cc">
-      <p style="margin:0;font-size:12px;color:#888;line-height:1.6;text-align:center">
-        Il Ciliegio — Azienda Agricola<br>
-        Loc. Podere il Ciliegio, Siena (SI) · Italy<br>
-        <a href="https://www.ilciliegio.com"
-           style="color:#888;text-decoration:none">www.ilciliegio.com</a>
-        &nbsp;·&nbsp;
-        <a href="mailto:export@ilciliegio.com"
-           style="color:#888;text-decoration:none">export@ilciliegio.com</a>
-      </p>
-    </td>
-  </tr>
+<table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%">
+
+  <!-- HEADER -->
+  <tr><td style="background:{BG_COLOR};border-radius:12px 12px 0 0;padding:32px;text-align:center">
+    <img src="{LOGO_URL}" width="180" alt="Il Ciliegio — Azienda Agricola"
+      style="display:block;margin:0 auto;max-width:180px">
+  </td></tr>
+
+  <!-- DIVIDER -->
+  <tr><td style="background:{ACCENT};height:4px;font-size:0">&nbsp;</td></tr>
+
+  <!-- BODY -->
+  <tr><td style="background:#ffffff;padding:40px 48px">
+    {body_html}
+  </td></tr>
+
+  <!-- DIVIDER -->
+  <tr><td style="background:{ACCENT};height:3px;font-size:0">&nbsp;</td></tr>
+
+  <!-- FOOTER -->
+  <tr><td style="background:{BG_COLOR};border-radius:0 0 12px 12px;padding:28px 40px;text-align:center">
+    <p style="margin:0 0 8px;color:#ffffff;font-size:13px;font-weight:bold;letter-spacing:1px;text-transform:uppercase">Il Ciliegio</p>
+    <p style="margin:0 0 12px;color:{ACCENT};font-size:12px;font-style:italic">{TAGLINE}</p>
+    <p style="margin:0;font-size:12px;color:#999;line-height:1.8">
+      <a href="{WEBSITE}" style="color:#cccccc;text-decoration:none">{WEBSITE.replace('https://','')}</a>
+      &nbsp;|&nbsp;
+      <span style="color:#999">{PHONE}</span>
+    </p>
+  </td></tr>
+
 </table>
-</td></tr></table>
+</td></tr>
+</table>
 </body></html>"""
 
 
