@@ -1,8 +1,12 @@
 /* ═══ DASHBOARD ═══ */
 
+function activeContacts(){
+  return isClienti() ? dbC.contacts.filter(c=>c.shippable!==false) : db.contacts;
+}
+
 function renderStats(){
   const s={total:0,new:0,sent:0,followup:0,replied:0,client:0};
-  (isClienti()?dbC:db).contacts.forEach(c=>{s.total++;s[c.status]=(s[c.status]||0)+1;});
+  activeContacts().forEach(c=>{s.total++;s[c.status]=(s[c.status]||0)+1;});
   document.getElementById('stats').innerHTML=`
     <div class="stat" style="cursor:default"><div class="sl">Totale</div><div class="sv">${s.total}</div></div>
     <div class="stat stat-link" onclick="goToContacts({status:'new'})" title="Vai alla lista"><div class="sl">Da contattare</div><div class="sv bl">${s.new||0}</div></div>
@@ -26,9 +30,8 @@ const REGION_COLORS={
 function renderRegionChart(){
   const el=document.getElementById('rc');
   if(!el) return;
-  const adb=isClienti()?dbC:db;
   const map={};
-  adb.contacts.forEach(c=>{
+  activeContacts().forEach(c=>{
     const r=(c.region||'').trim()||'—';
     map[r]=(map[r]||0)+1;
   });
@@ -54,9 +57,8 @@ function renderRegionChart(){
 function showCountriesForRegion(region){
   const el=document.getElementById('cc');
   if(!el) return;
-  const adb=isClienti()?dbC:db;
   const map={};
-  adb.contacts.filter(c=>(c.region||'').trim()===region).forEach(c=>{
+  activeContacts().filter(c=>(c.region||'').trim()===region).forEach(c=>{
     if(c.country) map[c.country]=(map[c.country]||0)+1;
   });
   const entries=Object.entries(map).sort((a,b)=>b[1]-a[1]);
@@ -80,7 +82,7 @@ function showCountriesForRegion(region){
 
 function renderCCChart(){
   const map={};
-  (isClienti()?dbC:db).contacts.forEach(c=>{if(c.country)map[c.country]=(map[c.country]||0)+1;});
+  activeContacts().forEach(c=>{if(c.country)map[c.country]=(map[c.country]||0)+1;});
   const entries=Object.entries(map).sort((a,b)=>b[1]-a[1]);
   const max=entries[0]?.[1]||1;
   const el=document.getElementById('cc');
@@ -100,8 +102,9 @@ function renderPipeline(){
   const order=['new','sent','followup','replied','client','cold'];
   const cm={new:'blue-bg blue-tx',sent:'amber-bg amber-tx',followup:'pink-bg pink-tx',
     replied:'green-bg green-tx',client:'teal-bg teal-tx',cold:'gray-bg gray-tx'};
-  const map={};(isClienti()?dbC:db).contacts.forEach(c=>{map[c.status]=(map[c.status]||0)+1;});
-  const tot=(isClienti()?dbC:db).contacts.length||1;
+  const ac=activeContacts();
+  const map={};ac.forEach(c=>{map[c.status]=(map[c.status]||0)+1;});
+  const tot=ac.length||1;
   document.getElementById('pipeline').innerHTML='<div style="display:flex;gap:6px;align-items:flex-end;height:70px">'+
     order.map(s=>{
       const n=map[s]||0,h=Math.max(4,Math.round(n/tot*100));
