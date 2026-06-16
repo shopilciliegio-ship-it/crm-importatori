@@ -358,11 +358,14 @@ function toggleSelectAll(checked){
 
 function toggleSelect(id, e){
   e.stopPropagation();
-  if(sel.has(id)) sel.delete(id); else sel.add(id);
+  const checked=e.target?.checked;
+  if(checked!==undefined){ if(checked) sel.add(id); else sel.delete(id); }
+  else { if(sel.has(id)) sel.delete(id); else sel.add(id); }
+  const isSelected=sel.has(id);
   const card=document.querySelector(`[data-cid="${id}"]`);
   if(card){
-    card.classList.toggle('selected', sel.has(id));
-    const cb=card.querySelector('.crow-cb'); if(cb) cb.checked=sel.has(id);
+    card.classList.toggle('selected', isSelected);
+    const cb=card.querySelector('.crow-cb'); if(cb) cb.checked=isSelected;
   }
   _updateSelUI();
 }
