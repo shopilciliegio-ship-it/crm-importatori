@@ -4,7 +4,7 @@
   "emailAutoSendImportatori": false,
   "testModeImportatori": true,
   "emailAutoSendClienti": true,
-  "testModeClienti": true,
+  "testModeClienti": false,
   "excludedCountriesClienti": [
     "Afghanistan",
     "Albania",
