@@ -24,7 +24,7 @@ function openBulkSend(){
     </div>
 
     <!-- BRAND -->
-    <div style="display:flex;gap:8px;margin-bottom:14px">
+    ${!isClienti()?`<div style="display:flex;gap:8px;margin-bottom:14px">
       <button id="bulk-sw" onclick="bulkSelectBrand('sienawine')"
         style="flex:1;padding:10px;border-radius:var(--r);border:2px solid #8B1A1A;background:#1a1a1a;color:#fff;cursor:pointer;font-size:12px;font-weight:700">
         🍷 Siena Wine
@@ -33,8 +33,8 @@ function openBulkSend(){
         style="flex:1;padding:10px;border-radius:var(--r);border:2px solid var(--brd2);background:var(--bg2);color:var(--text);cursor:pointer;font-size:12px;font-weight:700">
         ☀ Il Ciliegio
       </button>
-    </div>
-    <input type="hidden" id="bulk-brand" value="sienawine">
+    </div>`:''}
+    <input type="hidden" id="bulk-brand" value="${isClienti()?'ciliegio':'sienawine'}">
 
     <!-- TEMPLATE -->
     <div class="fg" style="margin-bottom:8px"><label>Template</label>

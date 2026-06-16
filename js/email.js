@@ -305,7 +305,7 @@ function openEmailModal(id, overrideEmail, overrideName, contactIdx){
     <div class="fg" style="margin-bottom:8px"><label>Template</label>
       <select id="tsel" onchange="applyTpl('${id}')">${adb.templates.map((t,i)=>`<option value="${i}">${esc(t.name)}</option>`).join('')}</select>
     </div>
-    <div style="display:flex;gap:8px;margin-bottom:10px">
+    ${!isClienti()?`<div style="display:flex;gap:8px;margin-bottom:10px">
       <button id="bulk-sw" onclick="selectBrand('sienawine','${id}')"
         style="flex:1;padding:10px;border-radius:var(--r);border:2px solid #8B1A1A;background:#1a1a1a;color:#fff;cursor:pointer;font-size:12px;font-weight:700">
         🍷 Siena Wine
@@ -314,8 +314,8 @@ function openEmailModal(id, overrideEmail, overrideName, contactIdx){
         style="flex:1;padding:10px;border-radius:var(--r);border:2px solid var(--brd2);background:var(--bg2);color:var(--text);cursor:pointer;font-size:12px;font-weight:700">
         ☀ Il Ciliegio
       </button>
-    </div>
-    <input type="hidden" id="em-brand" value="sienawine">
+    </div>`:''}
+    <input type="hidden" id="em-brand" value="${isClienti()?'ciliegio':'sienawine'}">
     <div class="fg" style="margin-bottom:8px"><label>Oggetto</label><input id="esu"></div>
     <div class="fg" style="margin-bottom:8px"><label>Testo email</label>
       <textarea id="ebo" style="min-height:200px;font-size:13px;line-height:1.6;font-family:inherit"></textarea>
