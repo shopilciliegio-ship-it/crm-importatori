@@ -323,17 +323,48 @@ function renderContacts(){
     :'<div class="card"><div class="empty">Nessun risultato</div></div>';
 }
 
+function _updateSelUI(){
+  const selBar=document.getElementById('sel-bar-wrap');
+  if(selBar){
+    if(sel.size>0){
+      selBar.innerHTML=`<div class="sel-bar">
+        <span class="sel-bar-info">✓ ${sel.size} contatt${sel.size===1?'o':'i'} selezionat${sel.size===1?'o':'i'}</span>
+        <button class="btn btg bts" onclick="sel.clear();renderContacts()">✕ Deseleziona tutto</button>
+        <button class="btn btp bts" onclick="openBulkSend()">✉ Invia a ${sel.size} contatt${sel.size===1?'o':'i'}</button>
+        <button class="btn btd bts" onclick="bulkDeleteSelected()">🗑 Elimina ${sel.size} contatt${sel.size===1?'o':'i'}</button>
+      </div>`;
+    } else {
+      selBar.innerHTML='';
+    }
+  }
+  const cbAll=document.getElementById('cb-all');
+  if(cbAll){
+    const cards=[...document.querySelectorAll('#cl-cards .cr')];
+    cbAll.checked=cards.length>0&&cards.every(card=>sel.has(card.dataset.cid));
+  }
+}
+
 function toggleSelectAll(checked){
   const list=getFiltered();
   if(checked) list.forEach(c=>sel.add(c.id));
   else list.forEach(c=>sel.delete(c.id));
-  renderContacts();
+  document.querySelectorAll('#cl-cards .cr').forEach(card=>{
+    const id=card.dataset.cid; if(!id) return;
+    card.classList.toggle('selected', sel.has(id));
+    const cb=card.querySelector('.crow-cb'); if(cb) cb.checked=sel.has(id);
+  });
+  _updateSelUI();
 }
 
 function toggleSelect(id, e){
   e.stopPropagation();
   if(sel.has(id)) sel.delete(id); else sel.add(id);
-  renderContacts();
+  const card=document.querySelector(`[data-cid="${id}"]`);
+  if(card){
+    card.classList.toggle('selected', sel.has(id));
+    const cb=card.querySelector('.crow-cb'); if(cb) cb.checked=sel.has(id);
+  }
+  _updateSelUI();
 }
 
 function renderRegistro(){
@@ -496,7 +527,7 @@ function crow(c){
     // Data registrazione
     const regDate=c.registeredAt?new Date(c.registeredAt).toLocaleDateString('it-IT',{day:'2-digit',month:'short',year:'2-digit'}):'';
 
-    return `<div class="cr${checked?' selected':''}" onclick="openDetail('${c.id}')">
+    return `<div class="cr${checked?' selected':''}" data-cid="${c.id}" onclick="openDetail('${c.id}')">
       <input type="checkbox" class="crow-cb" ${checked?'checked':''}
         onclick="toggleSelect('${c.id}',event)" onchange="toggleSelect('${c.id}',event)">
       <div class="av ${AV[hsh(fn+ln)%6]}">${ini(fn+' '+ln)}</div>
@@ -516,7 +547,7 @@ function crow(c){
     : _bwiBadge==='updated'
     ? `<span style="font-size:10px;background:#fff3e0;color:#e65100;padding:1px 7px;border-radius:10px;font-weight:700;margin-left:4px">✏️ AGG.</span>`
     : '';
-  return `<div class="cr${checked?' selected':''}" onclick="openDetail('${c.id}')">
+  return `<div class="cr${checked?' selected':''}" data-cid="${c.id}" onclick="openDetail('${c.id}')">
     <input type="checkbox" class="crow-cb" ${checked?'checked':''}
       onclick="toggleSelect('${c.id}',event)"
       onchange="toggleSelect('${c.id}',event)">
