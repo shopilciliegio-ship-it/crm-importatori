@@ -191,6 +191,15 @@ async function sendViaBrevo(contactId, toEmail, toName, subject, bodyText, brand
     openSettings();
     return false;
   }
+
+  const TEST_BCC = 'hokutazzo@gmail.com';
+  const testMode = isClienti()
+    ? dbSettings.testModeClienti !== false
+    : dbSettings.testModeImportatori !== false;
+  const actualTo      = testMode ? TEST_BCC : toEmail;
+  const actualToName  = testMode ? 'Hokutazzo (test)' : (toName||toEmail||'');
+  const actualSubject = testMode ? `[TEST → ${toEmail}] ${subject}` : subject;
+
   const b = BRANDS[brand] || BRANDS.sienawine;
   const htmlContent = buildHtmlEmail(bodyText, brand, toName);
 
@@ -207,11 +216,11 @@ async function sendViaBrevo(contactId, toEmail, toName, subject, bodyText, brand
           name: isClienti() ? 'Il Ciliegio — Azienda Agricola' : (brv.senderName || b.senderName),
           email: brv.senderEmail || b.senderEmail
         },
-        to: [{ email: toEmail, name: toName||toEmail||'' }],
-        subject: subject,
+        to: [{ email: actualTo, name: actualToName }],
+        subject: actualSubject,
         htmlContent: htmlContent,
         textContent: bodyText.replace(/\{\{[^}]+\}\}/g,'').trim(),
-        tags: ['wine-crm', brand],
+        tags: ['wine-crm', brand, ...(testMode?['test']:[])],
         headers: { 'X-CRM-ContactId': contactId }
       })
     });
