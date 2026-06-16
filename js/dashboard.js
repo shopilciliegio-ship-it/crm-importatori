@@ -245,7 +245,9 @@ function renderResearchBanner(){
 // Converte stringhe come "1,234" o "$27.64M" o "42" in numero per il sort
 
 function updateBadges(){
-  document.getElementById('ct-n').textContent=(isClienti()?dbC:db).contacts.length;
+  document.getElementById('ct-n').textContent=isClienti()?dbC.contacts.filter(c=>c.shippable!==false).length:db.contacts.length;
+  const archEl=document.getElementById('arch-n');
+  if(archEl) archEl.textContent=dbC.contacts.filter(c=>c.shippable===false).length;
   const adb=isClienti()?dbC:db;
   let emailCount=0;
   adb.contacts.forEach(c=>{

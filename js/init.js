@@ -28,6 +28,8 @@ async function switchLayer(newLayer){
   if(impTgl) impTgl.style.display = newLayer==='importatori' ? 'flex' : 'none';
   if(cliTgl) cliTgl.style.display = newLayer==='clienti' ? 'flex' : 'none';
   if(rschBnr) rschBnr.style.display = newLayer==='importatori' ? 'block' : 'none';
+  const archBtn=document.getElementById('nb-archivio-cli');
+  if(archBtn) archBtn.style.display = newLayer==='clienti' ? '' : 'none';
 
   if(isOrd){
     document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
@@ -108,6 +110,7 @@ function refreshAll(){
   try{ if(typeof renderEmailToggleImp==='function') renderEmailToggleImp(); }catch(e){}
   try{ if(typeof renderEmailToggleCli==='function') renderEmailToggleCli(); }catch(e){}
   try{ if(typeof renderResearchBanner==='function') renderResearchBanner(); }catch(e){}
+  try{ if(typeof renderArchivioCli==='function') renderArchivioCli(); }catch(e){}
   try{ if(typeof renderOrdini==='function') renderOrdini(); }catch(e){ console.warn('renderOrdini:',e); }
 }
 

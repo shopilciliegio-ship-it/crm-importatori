@@ -158,11 +158,9 @@ function getFiltered(){
       if(q&&!`${fn} ${ln} ${c.email||''} ${c.country||''} ${c.languageBrowser||c.lingua||''}`.toLowerCase().includes(q))return false;
       if(country&&c.country!==country)return false;
       if(regionOrLang&&c.region!==regionOrLang)return false;
+      if(c.shippable===false)return false;
       const qual=document.getElementById('squal')?.value||'';
       if(qual&&c.quality!==qual)return false;
-      const ship=document.getElementById('sship')?.value||'';
-      if(ship==='yes'&&!c.shippable)return false;
-      if(ship==='no'&&c.shippable!==false)return false;
       const verifica=document.getElementById('sv')?.value||'';
       if(verifica&&!c.quality&&c.statoEmail!==verifica)return false;
     } else {
@@ -276,9 +274,9 @@ function renderContacts(){
     const nInv    = dbC.contacts.filter(c=>c.quality==='invalid').length;
     clientiStats=`<div style="font-size:12px;background:#f0faf0;border:1px solid #c3e6c3;border-radius:8px;padding:6px 12px;display:flex;gap:12px;flex-wrap:wrap;margin-bottom:6px">
       <a href="#" style="color:#2e7d32;font-weight:700;text-decoration:none"
-        onclick="event.preventDefault();document.getElementById('squal').value='valid';document.getElementById('sship').value='yes';renderContacts()">🟢 ${nValid} pronti</a>
+        onclick="event.preventDefault();document.getElementById('squal').value='valid';renderContacts()">🟢 ${nValid} pronti</a>
       <a href="#" style="color:#e65100;font-weight:700;text-decoration:none"
-        onclick="event.preventDefault();document.getElementById('squal').value='suspect';document.getElementById('sship').value='yes';renderContacts()">🟡 ${nSusp} da verificare</a>
+        onclick="event.preventDefault();document.getElementById('squal').value='suspect';renderContacts()">🟡 ${nSusp} da verificare</a>
       ${nInv?`<span style="color:#c62828;font-weight:700">🔴 ${nInv} invalidi</span>`:''}
       ${nWave1?`<span style="color:#1565c0;font-weight:700">📧 ${nWave1} wave 1 inviati</span>`:''}
     </div>`;
@@ -765,6 +763,53 @@ function delContact(id){
   if(!confirm('Eliminare questo contatto?'))return;
   (isClienti()?dbC:db).contacts=(isClienti()?dbC:db).contacts.filter(c=>c.id!==id);
   saveDB();closeModal();refreshAll();toast('Eliminato');
+}
+
+/* ═══ ARCHIVIO NON SPEDIBILI ═══ */
+
+function renderArchivioCli(){
+  const el=document.getElementById('archivio-cli-content');
+  if(!el) return;
+  const archived=dbC.contacts.filter(c=>c.shippable===false);
+  const archEl=document.getElementById('arch-n');
+  if(archEl) archEl.textContent=archived.length;
+  if(!archived.length){
+    el.innerHTML=`<div style="text-align:center;padding:40px;color:var(--text2)">Nessun contatto non spedibile in archivio</div>`;
+    return;
+  }
+  const byCountry={};
+  archived.forEach(c=>{
+    const k=c.country||'Senza paese';
+    if(!byCountry[k]) byCountry[k]=[];
+    byCountry[k].push(c);
+  });
+  const QMAP={valid:'🟢',suspect:'🟡',invalid:'🔴'};
+  el.innerHTML=`
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:8px">
+      <div style="font-size:13px;color:var(--text2)">${archived.length} contatti non spedibili — esclusi dai totali e dall'invio email</div>
+      <button class="btn btd bts" style="font-size:12px" onclick="deleteNonShippable()">🗑 Elimina tutti</button>
+    </div>
+    ${Object.keys(byCountry).sort().map(country=>`
+      <div class="card" style="margin-bottom:8px">
+        <div class="sh"><div class="st">🚫 ${esc(country)} <span style="font-size:12px;font-weight:400;color:var(--text2)">(${byCountry[country].length})</span></div></div>
+        ${byCountry[country].map(c=>{
+          const fn=c.firstName||c.nome||''; const ln=c.lastName||c.cognome||'';
+          const name=`${fn} ${ln}`.trim()||'—';
+          return `<div style="display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:0.5px solid var(--brd2);font-size:13px">
+            <span style="flex:1;min-width:0">${QMAP[c.quality]||''} ${esc(name)}</span>
+            <span style="color:var(--text2);font-size:12px;flex:1.5;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(c.email||'')}</span>
+            <button class="btn btd bts" style="font-size:11px;padding:2px 7px" onclick="deleteArchivedContact('${esc(c.id)}')">✕</button>
+          </div>`;
+        }).join('')}
+      </div>
+    `).join('')}
+  `;
+}
+
+function deleteArchivedContact(id){
+  dbC.contacts=dbC.contacts.filter(c=>c.id!==id);
+  saveDB(); renderArchivioCli(); updateBadges();
+  toast('✓ Contatto eliminato');
 }
 
 function deleteNonShippable(){
