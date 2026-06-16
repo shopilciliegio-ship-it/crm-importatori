@@ -1,19 +1,16 @@
 # -*- coding: utf-8 -*-
 """
-send_clienti_wave.py
-====================
-Invia la prossima wave di email ai clienti privati (WiFi registrations).
+send_clienti_wave2.py
+=====================
+Invia la wave2 di follow-up ai clienti privati già contattati con wave1.
 
-- Legge data/clienti.json da GitHub
-- Filtra: quality='valid', shippable=True, blacklisted=False, waveStatus=None
-- Ordina per registeredAt ASC (oldest first)
-- Invia al prossimo batch (default 500)
-- Aggiorna waveStatus + emailsSent (solo in produzione)
+- Filtra: waveStatus='wave1_sent', wave1 sentAt <= (ora - 120 giorni)
+- Template: wave2_it (italiano) / wave2 (inglese), con fallback ai default
+- Aggiorna waveStatus → 'wave2_sent'
 - Invia digest a luca@ilciliegio.com
-- Salva clienti.json su GitHub
 
-Test mode  → tutte le email vanno a hokutazzo@gmail.com, niente salvato
-Produzione → email ai clienti reali + BCC a hokutazzo@gmail.com
+NOTA: sostituire i template placeholder nel CRM (id: 'wave2', 'wave2_it')
+      prima di attivare la produzione.
 """
 
 import json
@@ -45,9 +42,6 @@ GH_REPO       = os.environ.get('GH_REPO', 'crm-importatori')
 
 DEFAULT_BATCH_SIZE = 500
 
-# Mappa codice ISO2 (minuscolo) → nome leggibile, come usato dal CRM (js/templates.js ISO2NAME)
-# Serve per confrontare c['country'] con la lista excludedCountriesClienti scelta nel CRM,
-# che mostra i nomi leggibili dei paesi presenti in dbC.contacts.
 COUNTRY_CODE_TO_NAME = {
     'it':'Italia','de':'Germania','be':'Belgio','nl':'Paesi Bassi','lu':'Lussemburgo',
     'fr':'Francia','dk':'Danimarca','at':'Austria','es':'Spagna','pt':'Portogallo',
@@ -60,7 +54,6 @@ COUNTRY_CODE_TO_NAME = {
 
 
 def country_display_name(c: dict) -> str:
-    """Nome paese come mostrato nel CRM (per confronto con excludedCountriesClienti)."""
     raw = (c.get('country') or '').strip()
     return COUNTRY_CODE_TO_NAME.get(raw.lower(), raw)
 
@@ -69,21 +62,20 @@ def is_italian(c: dict) -> bool:
     raw = (c.get('country') or '').strip().lower()
     return raw in ('it', 'italia', 'italy')
 
-# ── DEFAULT TEMPLATE WAVE 1 ──────────────────────────────────────────────────
-DEFAULT_WAVE1_SUBJECT = "We met at Il Ciliegio Winery — Welcome!"
-DEFAULT_WAVE1_BODY = """\
+
+def get_wave1_sent_at(c: dict) -> int | None:
+    for e in c.get('emailsSent', []):
+        if e.get('type') == 'wave1':
+            return e.get('sentAt')
+    return None
+
+
+# ── DEFAULT TEMPLATE WAVE 2 (PLACEHOLDER) ────────────────────────────────────
+DEFAULT_WAVE2_SUBJECT    = "[Il Ciliegio] Following up — how are you?"
+DEFAULT_WAVE2_BODY       = """\
 Dear {firstName},
 
-Thank you for visiting Il Ciliegio Winery during your stay in Tuscany!
-
-We hope you enjoyed your time with us and had a chance to taste our wines.
-We'd love to stay in touch and share our latest news, seasonal releases, and exclusive offers with you.
-
-🍷 Discover our wines and order online:
-https://www.ciliegioshop.it
-
-You're receiving this email because you connected to our WiFi during your visit.
-If you'd like to unsubscribe, simply reply to this email.
+[PLACEHOLDER — sostituire con il template wave2 nel CRM (id: wave2)]
 
 Warm regards,
 Luca Pattaro
@@ -92,20 +84,11 @@ Loc. Podere il Ciliegio, Siena (IT)
 www.sienawine.it
 """
 
-DEFAULT_WAVE1_SUBJECT_IT = "Ci siamo incontrati all'Azienda Il Ciliegio — Benvenuti!"
-DEFAULT_WAVE1_BODY_IT = """\
+DEFAULT_WAVE2_SUBJECT_IT = "[Il Ciliegio] Come stai? Un saluto dalla Toscana"
+DEFAULT_WAVE2_BODY_IT    = """\
 Caro {firstName},
 
-Grazie per aver visitato l'Azienda Agricola Il Ciliegio durante il tuo soggiorno in Toscana!
-
-Speriamo che tu abbia trascorso un bel momento con noi e che tu abbia avuto l'occasione di assaggiare i nostri vini.
-Ci farebbe piacere restare in contatto e condividere con te le nostre ultime novità, le uscite stagionali e le offerte esclusive.
-
-🍷 Scopri i nostri vini e ordina online:
-https://www.ciliegioshop.it
-
-Stai ricevendo questa email perché ti sei connesso/a alla nostra rete WiFi durante la visita.
-Se desideri cancellarti, rispondi semplicemente a questa email.
+[SEGNAPOSTO — sostituire con il template wave2_it nel CRM (id: wave2_it)]
 
 Cordiali saluti,
 Luca Pattaro
@@ -132,7 +115,6 @@ def _gh_headers():
 
 def gh_get(path: str) -> tuple[dict | list, str | None]:
     if not GH_TOKEN:
-        # Fallback: leggi da file locale
         local = os.path.join(REPO_ROOT, path)
         if os.path.exists(local):
             with open(local, encoding='utf-8') as f:
@@ -178,7 +160,6 @@ def gh_put(path: str, data, message: str):
         _gh_sha_cache[path] = r.json()['content']['sha']
         return True
     if r.status_code in (409, 422):
-        # Conflitto SHA — rileggi e riprova
         _, new_sha = gh_get(path)
         if new_sha:
             body['sha'] = new_sha
@@ -241,13 +222,11 @@ def send_email(to_email: str, to_name: str, subject: str, body: str,
     if test_mode:
         actual_to   = BCC_EMAIL
         actual_subj = f'[TEST → {to_email}] {subject}'
-        actual_bcc  = []
-        print(f'    🧪 TEST wave1 → {BCC_EMAIL} (reale: {to_email})')
+        print(f'    🧪 TEST wave2 → {BCC_EMAIL} (reale: {to_email})')
     else:
         actual_to   = to_email
         actual_subj = subject
-        actual_bcc  = []
-        print(f'    ✓ wave1 → {to_email}')
+        print(f'    ✓ wave2 → {to_email}')
 
     payload = {
         'sender':      {'name': SENDER_NAME, 'email': SENDER_EMAIL},
@@ -255,13 +234,11 @@ def send_email(to_email: str, to_name: str, subject: str, body: str,
         'subject':     actual_subj,
         'textContent': body,
         'htmlContent': build_html(body, actual_subj),
-        'tags':        ['wine-crm', 'clienti', 'wave1'] + (['test'] if test_mode else []),
+        'tags':        ['wine-crm', 'clienti', 'wave2'] + (['test'] if test_mode else []),
         'headers':     {'X-CRM-ContactId': contact_id},
         'trackClicks': True,
         'trackOpens':  True,
     }
-    if actual_bcc:
-        payload['bcc'] = actual_bcc
 
     r = requests.post(
         'https://api.brevo.com/v3/smtp/email',
@@ -292,11 +269,11 @@ def send_digest(sent: list, errors: int, test_mode: bool, batch_size: int,
         f'<td style="padding:6px 8px;color:#666;font-size:12px">{r["email"]}</td>'
         f'<td style="padding:6px 8px;color:#2e7d32;font-size:12px">✓ {r["msgId"][:20]}…</td>'
         f'</tr>'
-        for r in sent[:50]  # max 50 righe
+        for r in sent[:50]
     )
     body_html = f"""
     <div style="font-family:sans-serif;font-size:14px;color:#333;max-width:600px;margin:0 auto">
-      <h2 style="color:{ACCENT}">📧 Digest clienti wave — {datetime.now().strftime('%d/%m/%Y')}</h2>
+      <h2 style="color:{ACCENT}">📧 Digest clienti wave2 — {datetime.now().strftime('%d/%m/%Y')}</h2>
       <p>{mode_badge} &nbsp; Batch: {len(sent)}/{batch_size} inviati &nbsp;|&nbsp;
          Errori: {errors} &nbsp;|&nbsp; Rimanenti in coda: {total_remaining}</p>
       <table width="100%" cellpadding="0" cellspacing="0"
@@ -316,9 +293,9 @@ def send_digest(sent: list, errors: int, test_mode: bool, batch_size: int,
     payload = {
         'sender':      {'name': SENDER_NAME, 'email': SENDER_EMAIL},
         'to':          [{'email': DIGEST_RECIPIENT, 'name': 'Luca'}],
-        'subject':     f'[CRM] Wave clienti: {len(sent)} email inviate — {datetime.now().strftime("%d/%m/%Y")}',
+        'subject':     f'[CRM] Wave2 clienti: {len(sent)} email inviate — {datetime.now().strftime("%d/%m/%Y")}',
         'htmlContent': body_html,
-        'tags':        ['wine-crm', 'digest', 'clienti'],
+        'tags':        ['wine-crm', 'digest', 'clienti', 'wave2'],
     }
     r = requests.post(
         'https://api.brevo.com/v3/smtp/email',
@@ -327,15 +304,15 @@ def send_digest(sent: list, errors: int, test_mode: bool, batch_size: int,
         timeout=20,
     )
     if r.ok:
-        print(f'\n✓ Digest inviato a {DIGEST_RECIPIENT}')
+        print(f'\n✓ Digest wave2 inviato a {DIGEST_RECIPIENT}')
     else:
-        print(f'\n⚠ Digest non inviato: {r.status_code}')
+        print(f'\n⚠ Digest wave2 non inviato: {r.status_code}')
 
 
 # ── MAIN ─────────────────────────────────────────────────────────────────────
 def main():
     print('=' * 50)
-    print(f'send_clienti_wave.py — {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
+    print(f'send_clienti_wave2.py — {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
     print('=' * 50)
 
     # Leggi settings
@@ -360,28 +337,35 @@ def main():
     db, db_sha = gh_get(DATA_PATH)
     contacts = db.get('contacts') or []
 
-    # Filtra candidati wave1
-    excluded_countries = set(settings.get('excludedCountriesClienti', []))
-    now_ms = int(datetime.now(timezone.utc).timestamp() * 1000)
-    ninety_days_ms = 90 * 24 * 3600 * 1000
-    candidates = [
-        c for c in contacts
-        if c.get('quality') in ('valid',)        # solo verdi (sospetti: review manuale)
-        and c.get('shippable', False)
-        and not c.get('blacklisted', False)
-        and not c.get('waveStatus')               # non ancora contattati
-        and c.get('email')
-        and country_display_name(c) not in excluded_countries
-        and (c.get('registeredAt') or 0) <= (now_ms - ninety_days_ms)  # registrati >90gg fa
-    ]
+    # Filtra candidati wave2: wave1_sent + wave1 sentAt > 120 giorni fa
+    excluded_countries  = set(settings.get('excludedCountriesClienti', []))
+    now_ms              = int(datetime.now(timezone.utc).timestamp() * 1000)
+    one_twenty_days_ms  = 120 * 24 * 3600 * 1000
 
-    # Ordina per registeredAt ASC (oldest first)
-    candidates.sort(key=lambda c: c.get('registeredAt') or 0)
+    candidates = []
+    for c in contacts:
+        if c.get('waveStatus') != 'wave1_sent':
+            continue
+        if not c.get('email'):
+            continue
+        if c.get('blacklisted', False):
+            continue
+        if country_display_name(c) in excluded_countries:
+            continue
+        wave1_at = get_wave1_sent_at(c)
+        if wave1_at is None:
+            continue
+        if wave1_at > (now_ms - one_twenty_days_ms):
+            continue  # meno di 120 giorni fa — troppo presto
+        candidates.append(c)
+
+    # Ordina per wave1 sentAt ASC (oldest first)
+    candidates.sort(key=lambda c: get_wave1_sent_at(c) or 0)
 
     total_remaining = len(candidates)
     batch = candidates[:batch_size]
 
-    print(f'\nCandidati wave1: {total_remaining}')
+    print(f'\nCandidati wave2 (>120gg da wave1): {total_remaining}')
     print(f'Batch questo run: {len(batch)} (max {batch_size})')
     print()
 
@@ -391,13 +375,18 @@ def main():
         return
 
     # Leggi template (dal DB o default) — IT e EN
-    templates      = db.get('templates') or []
-    wave1_tpl_en   = next((t for t in templates if t.get('id') == 'wave1'),    None)
-    wave1_tpl_it   = next((t for t in templates if t.get('id') == 'wave1_it'), None)
-    wave1_subj_en  = wave1_tpl_en['subject'] if wave1_tpl_en else DEFAULT_WAVE1_SUBJECT
-    wave1_body_en  = wave1_tpl_en['body']    if wave1_tpl_en else DEFAULT_WAVE1_BODY
-    wave1_subj_it  = wave1_tpl_it['subject'] if wave1_tpl_it else DEFAULT_WAVE1_SUBJECT_IT
-    wave1_body_it  = wave1_tpl_it['body']    if wave1_tpl_it else DEFAULT_WAVE1_BODY_IT
+    templates     = db.get('templates') or []
+    wave2_tpl_en  = next((t for t in templates if t.get('id') == 'wave2'),    None)
+    wave2_tpl_it  = next((t for t in templates if t.get('id') == 'wave2_it'), None)
+    wave2_subj_en = wave2_tpl_en['subject'] if wave2_tpl_en else DEFAULT_WAVE2_SUBJECT
+    wave2_body_en = wave2_tpl_en['body']    if wave2_tpl_en else DEFAULT_WAVE2_BODY
+    wave2_subj_it = wave2_tpl_it['subject'] if wave2_tpl_it else DEFAULT_WAVE2_SUBJECT_IT
+    wave2_body_it = wave2_tpl_it['body']    if wave2_tpl_it else DEFAULT_WAVE2_BODY_IT
+
+    if not wave2_tpl_en:
+        print('⚠ Template wave2 (EN) non trovato nel CRM — uso placeholder. Aggiungilo prima di produzione!')
+    if not wave2_tpl_it:
+        print('⚠ Template wave2_it (IT) non trovato nel CRM — uso placeholder. Aggiungilo prima di produzione!')
 
     # Mappa email → contatto per aggiornamento rapido
     contact_map = {c['email']: c for c in contacts}
@@ -408,17 +397,18 @@ def main():
     for c in batch:
         first_name = c.get('firstName') or c.get('nome') or c.get('company', '').split()[0] or 'friend'
         if is_italian(c):
-            wave1_subj   = wave1_subj_it
-            wave1_body_t = wave1_body_it
+            wave2_subj   = wave2_subj_it
+            wave2_body_t = wave2_body_it
         else:
-            wave1_subj   = wave1_subj_en
-            wave1_body_t = wave1_body_en
-        body = wave1_body_t.replace('{firstName}', first_name) \
+            wave2_subj   = wave2_subj_en
+            wave2_body_t = wave2_body_en
+
+        body = wave2_body_t.replace('{firstName}', first_name) \
                            .replace('{lastName}',  c.get('lastName', '')) \
                            .replace('{email}',     c.get('email', '')) \
                            .replace('{{nome}}',     first_name) \
                            .replace('{{contatto}}', first_name)
-        subj = wave1_subj.replace('{{nome}}', first_name).replace('{{contatto}}', first_name)
+        subj = wave2_subj.replace('{{nome}}', first_name).replace('{{contatto}}', first_name)
 
         msg_id = send_email(
             to_email=c['email'],
@@ -430,11 +420,11 @@ def main():
         )
 
         if msg_id:
-            sent_log.append({'name': c.get('company',''), 'email': c['email'], 'msgId': msg_id})
+            sent_log.append({'name': c.get('company', ''), 'email': c['email'], 'msgId': msg_id})
             if not test_mode:
-                contact_map[c['email']]['waveStatus'] = 'wave1_sent'
+                contact_map[c['email']]['waveStatus'] = 'wave2_sent'
                 contact_map[c['email']].setdefault('emailsSent', []).append({
-                    'type':      'wave1',
+                    'type':      'wave2',
                     'sentAt':    now_ms,
                     'messageId': msg_id,
                     'toEmail':   c['email'],
@@ -442,7 +432,7 @@ def main():
         else:
             errors += 1
 
-        time.sleep(0.1)  # rate-limit gentile su Brevo
+        time.sleep(0.1)
 
     print(f'\n{"─"*40}')
     print(f'Inviati:  {len(sent_log)}')
@@ -457,18 +447,18 @@ def main():
         for entry in sent_log:
             log.append({
                 'date':      datetime.now(timezone.utc).isoformat(),
-                'module':    'clienti_wave1',
+                'module':    'clienti_wave2',
                 'to':        entry['email'],
                 'name':      entry['name'],
                 'messageId': entry['msgId'],
             })
-        gh_put(LOG_PATH, log, f'Wave clienti — {datetime.now().strftime("%Y-%m-%d %H:%M")} UTC')
+        gh_put(LOG_PATH, log, f'Wave2 clienti — {datetime.now().strftime("%Y-%m-%d %H:%M")} UTC')
 
     # Salva clienti.json aggiornato (solo in produzione)
     if not test_mode and sent_log:
         _gh_sha_cache[DATA_PATH] = db_sha
         ok = gh_put(DATA_PATH, db,
-                    f'Wave clienti {len(sent_log)} email — {datetime.now().strftime("%Y-%m-%d %H:%M")} UTC')
+                    f'Wave2 clienti {len(sent_log)} email — {datetime.now().strftime("%Y-%m-%d %H:%M")} UTC')
         if ok:
             print('✓ clienti.json aggiornato su GitHub')
         else:
