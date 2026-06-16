@@ -128,12 +128,22 @@ def gh_get(path: str) -> tuple[dict | list, str | None]:
     r.raise_for_status()
     d = r.json()
     sha = d.get('sha')
-    raw = d['content'].replace('\n', '')
-    try:
+    raw = d.get('content', '').replace('\n', '')
+    if raw:
         import base64
-        json_str = base64.b64decode(raw).decode('utf-8')
-    except Exception:
-        json_str = raw
+        try:
+            json_str = base64.b64decode(raw).decode('utf-8')
+        except Exception:
+            json_str = raw
+    else:
+        # File >1MB: GitHub non include content inline, usa download_url
+        dl = d.get('download_url')
+        if not dl:
+            print(f'  ✗ gh_get {path}: content vuoto e nessun download_url')
+            return {}, sha
+        r2 = requests.get(dl, timeout=60)
+        r2.raise_for_status()
+        json_str = r2.text
     _gh_sha_cache[path] = sha
     return json.loads(json_str), sha
 
