@@ -1,0 +1,40 @@
+Oggetto: RE: Test API e-link — ancora 403 dopo le modifiche
+
+Ciao,
+
+grazie per aver coinvolto il vostro IT — abbiamo riprovato i test immediatamente dopo la vostra mail.
+
+Purtroppo il risultato è identico a prima delle vostre modifiche:
+
+- Endpoint testato: https://api.mbeonline.it/ws
+- Risposta: HTTP 403 Forbidden
+- Header WAF nella risposta: Server-Timing: intid;desc=990a5eea436fe681
+
+Questo header è lo stesso che avevamo documentato nelle settimane scorse. Il blocco avviene a livello di firewall/WAF PRIMA che la richiesta raggiunga il server SOAP, quindi i cambiamenti ai permessi utente applicativi non hanno effetto.
+
+Abbiamo testato:
+- Path /ws, /ws/e-link, namespace .it e .eu
+- Con e senza header Authorization: Basic
+- Con e senza User-Agent da browser
+- Da IP diversi
+
+In tutti i casi: stesso 403, stesso WAF.
+
+Per sbloccare la situazione avremmo bisogno di uno di questi due elementi:
+
+1. Il vostro IT deve agire sul WAF — la regola intid=990a5eea436fe681 sta bloccando tutti
+   i POST verso /ws indipendentemente dalle credenziali. Non è un problema di utente/passphrase.
+
+2. URL dell'endpoint per l'ambiente vino — nella vostra mail menzionate due ambienti separati
+   (vino e tutto il resto). Il WSDL espone un hostname interno (elink:443) che non è raggiungibile
+   pubblicamente. È possibile che l'ambiente vino usi un endpoint diverso da api.mbeonline.it?
+   Se sì, potete indicarci l'URL corretto?
+
+In alternativa, se avete una collection Postman con una chiamata funzionante (anche solo
+ManageCustomerRequest in GET), possiamo confrontare le richieste header per header per
+isolare la differenza.
+
+Restiamo disponibili per qualsiasi test aggiuntivo.
+
+Grazie,
+Luca
