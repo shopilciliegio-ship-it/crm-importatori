@@ -332,6 +332,15 @@ function openEmailModal(id, overrideEmail, overrideName, contactIdx){
       </button>
     </div>
   `);
+  // Per clienti italiani, auto-seleziona wave1_it se disponibile
+  if(isClienti()){
+    const _c=dbC.contacts.find(x=>x.id===id);
+    const _isIt=['it','italia','italy'].includes((_c?.country||_c?.lingua||'').toLowerCase());
+    if(_isIt){
+      const _itIdx=dbC.templates.findIndex(t=>t.id==='wave1_it');
+      if(_itIdx>=0){const ts=document.getElementById('tsel');if(ts)ts.value=String(_itIdx);}
+    }
+  }
   applyTpl(id);
   // Apri preview automaticamente dopo aver compilato il template
   setTimeout(()=>togglePreview(id, true), 80);

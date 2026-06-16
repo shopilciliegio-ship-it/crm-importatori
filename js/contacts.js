@@ -1031,6 +1031,7 @@ function saveContact(editId){
   if(isClienti()){
     const nome=gv('fa');const cognome=gv('fcog');const email=gv('fe');
     if(!nome||!email){toast('Nome e email obbligatori');return;}
+    const _existing=editId?adb.contacts.find(c=>c.id===editId):null;
     const contact={
       id:editId||'c'+Date.now(),
       nome,cognome,email,lingua:document.getElementById('fling')?.value||'en',
@@ -1038,8 +1039,10 @@ function saveContact(editId){
       company:(nome)+' '+(cognome),name:(nome)+' '+(cognome),
       status:document.getElementById('fst').value,
       products:[],notes:gv('fno'),
+      quality:   _existing?.quality??'valid',
+      shippable: _existing?.shippable??true,
       updatedAt:Date.now(),
-      createdAt:editId?(adb.contacts.find(c=>c.id===editId)?.createdAt||Date.now()):Date.now()
+      createdAt:editId?(_existing?.createdAt||Date.now()):Date.now()
     };
     if(editId){const i=adb.contacts.findIndex(c=>c.id===editId);if(i>=0)adb.contacts[i]=contact;}
     else adb.contacts.push(contact);
