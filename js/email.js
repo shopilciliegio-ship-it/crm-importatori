@@ -204,7 +204,7 @@ async function sendViaBrevo(contactId, toEmail, toName, subject, bodyText, brand
       },
       body: JSON.stringify({
         sender: {
-          name: brv.senderName || b.senderName,
+          name: isClienti() ? 'Il Ciliegio — Azienda Agricola' : (brv.senderName || b.senderName),
           email: brv.senderEmail || b.senderEmail
         },
         to: [{ email: toEmail, name: toName||toEmail||'' }],
