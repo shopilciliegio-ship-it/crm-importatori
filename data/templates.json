@@ -43,9 +43,15 @@
   },
   {
     "id": "wave1",
-    "name": "Benvenuto — Offerta speciale",
+    "name": "Wave 1 - Inglese",
     "subject": "A special thought for you from Il Ciliegio 🍷",
     "body": "Dear {{name}},\nI thought of you today.\n\nIt’s been a while since you last visited us at Il Ciliegio, and we hope that the memories of that day - spent among the vineyards, filled with laughter and glasses of wine - have stayed with you.\n\nWe’re still here, with the same passion and some news we can’t wait to share.\n\nWe’ve just launched our app, designed for those - like you - who love good wines and want them always at their fingertips: exclusive selections, special prices, and the ability to order directly from home.\n\n👉 Download it here: https://ciliegio-shop.netlify.app/ciliegioshop\n\nOur products have improved, and shipping costs have gone down,\nso we look forward to hearing from you again!\nIl Ciliegio\nAzienda Agricola"
+  },
+  {
+    "id": "wave1_it",
+    "name": "Wave 1 — Italiano",
+    "subject": "Un pensiero speciale per te da Il Ciliegio 🍷",
+    "body": "Caro/a {{name}},\n\nHo pensato a te oggi.\n\nÈ passato un po' di tempo dall'ultima volta che ci hai visitati al Ciliegio, e speriamo che i ricordi di quel giorno — trascorso tra i vigneti, tra risate e bicchieri di vino — siano rimasti con te.\n\nSiamo ancora qui, con la stessa passione e alcune novità che non vediamo l'ora di condividere con te.\n\nAbbiamo appena lanciato la nostra app, pensata per chi — come te — ama i vini buoni e vuole averli sempre a portata di mano: selezioni esclusive, prezzi speciali e la possibilità di ordinare direttamente da casa.\n\n👉 Scaricala qui: https://ciliegio-shop.netlify.app/ciliegioshop\n\nI nostri prodotti sono migliorati e i costi di spedizione sono diminuiti,\nper cui non vediamo l'ora di sentirti di nuovo!\nIl Ciliegio\nAzienda Agricola"
   },
   {
     "id": "c2",
