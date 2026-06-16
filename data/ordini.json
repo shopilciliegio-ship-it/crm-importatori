@@ -1,6 +1,74 @@
 {
   "orders": [
     {
+      "id": "ord_mqh1s5rlhcpn",
+      "customerName": "BELINDA BOURJEILI",
+      "customerEmail": "bbourjeili@sbcglobal.net",
+      "customerPhone": "+18604887460",
+      "amount": 225.0,
+      "currency": "EUR",
+      "orderDate": 1781636801000,
+      "emailSubject": "🍷 New Order — BELINDA BOURJEILI — 225.00 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "26 MERRYALL RD, 06776 NEW MILFORD, CONNECTICUT (WESTERN CONNECTICUT PLANNING REGION)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202606161906.84152368044@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1781638869297,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1781638869297,
+      "updatedAt": 1781638869297
+    },
+    {
+      "id": "ord_mqh1s5rleh85",
+      "customerName": "JENNIFER STEVENS",
+      "customerEmail": "jenrichstevens@gmail.com",
+      "customerPhone": "+1336240473",
+      "amount": 267.44,
+      "currency": "EUR",
+      "orderDate": 1781634374000,
+      "emailSubject": "🍷 New Order — JENNIFER STEVENS — 267.44 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "1815 MIMOSA DR, 27403 GREENSBORO, NORTH CAROLINA (GUILFORD COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202606161826.34261474075@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1781638869297,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1781638869297,
+      "updatedAt": 1781638869297
+    },
+    {
       "id": "ord_mqfb6etzok72",
       "customerName": "Madeline Dotson",
       "customerEmail": "maddie.dekker01@gmail.com",
@@ -3451,5 +3519,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1781533718423
+  "lastImportedAt": 1781638869297
 }
