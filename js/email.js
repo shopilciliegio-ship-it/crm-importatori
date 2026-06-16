@@ -200,8 +200,17 @@ async function sendViaBrevo(contactId, toEmail, toName, subject, bodyText, brand
   const actualToName  = testMode ? 'Hokutazzo (test)' : (toName||toEmail||'');
   const actualSubject = testMode ? `[TEST → ${toEmail}] ${subject}` : subject;
 
+  // Risolve placeholder nome rimasti (rete di sicurezza, indipendente da applyTpl)
+  const _c = (isClienti()?dbC:db).contacts.find(x=>x.id===contactId);
+  const _fn = _c?.nome || firstName(_c?.name||'') || firstName(toName||'') || toName || '';
+  const resolvedBody = bodyText
+    .replace(/\{\{name\}\}/g,     _fn)
+    .replace(/\{\{nome\}\}/g,     _fn)
+    .replace(/\{\{contatto\}\}/g, _fn)
+    .replace(/\{\{firstName\}\}/g,_fn);
+
   const b = BRANDS[brand] || BRANDS.sienawine;
-  const htmlContent = buildHtmlEmail(bodyText, brand, toName);
+  const htmlContent = buildHtmlEmail(resolvedBody, brand, toName);
 
   try{
     const res = await fetch('https://api.brevo.com/v3/smtp/email',{
@@ -219,7 +228,7 @@ async function sendViaBrevo(contactId, toEmail, toName, subject, bodyText, brand
         to: [{ email: actualTo, name: actualToName }],
         subject: actualSubject,
         htmlContent: htmlContent,
-        textContent: bodyText.replace(/\{\{[^}]+\}\}/g,'').trim(),
+        textContent: resolvedBody.replace(/\{\{[^}]+\}\}/g,'').trim(),
         tags: ['wine-crm', brand, ...(testMode?['test']:[])],
         headers: { 'X-CRM-ContactId': contactId }
       })
@@ -535,13 +544,16 @@ function fillTplForContact(body, c){
   const primaryName  = firstName(primary?.name || c.contactName || '');
   const primaryTitle = primary?.title || c.contactTitle || '';
 
+  const clientiFirst = c.nome || firstName(c.name||'');
   return body
     .replace(/\{\{dear\}\}/g,          dearLine)
     .replace(/\{\{owner_mention\}\}/g,  ownerMention)
     .replace(/\{\{know_well\}\}/g,      buildKnowWell(secondary))
     .replace(/\{\{owner\}\}/g,          firstName(secondary?.name||''))
-    .replace(/\{\{contatto\}\}/g,       primaryName || c.contactName || '')
-    .replace(/\{\{nome\}\}/g,           primaryName || c.name || '')
+    .replace(/\{\{contatto\}\}/g,       primaryName || c.contactName || clientiFirst)
+    .replace(/\{\{nome\}\}/g,           primaryName || c.name || clientiFirst)
+    .replace(/\{\{name\}\}/g,           clientiFirst || primaryName || c.name || '')
+    .replace(/\{\{firstName\}\}/g,      clientiFirst || primaryName || '')
     .replace(/\{\{job\}\}/g,            primaryTitle)
     .replace(/\{\{azienda\}\}/g,        c.company||'')
     .replace(/\{\{paese\}\}/g,          c.country||'')
