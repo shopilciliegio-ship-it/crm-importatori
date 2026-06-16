@@ -527,6 +527,10 @@ function crow(c){
     const waveLabel={wave1_sent:'📧 Wave 1',wave2_sent:'📧 Wave 2'}[c.waveStatus||'']||'';
     const waveBadge=waveLabel?`<span class="badge" style="background:#e3f2fd;color:#1565c0;font-size:10px;white-space:nowrap">${waveLabel}</span>`:'';
 
+    // Bounce badge
+    const hasBounce=(c.brevoEvents||[]).some(e=>e.bounced)||c.quality==='invalid';
+    const bounceBadge=hasBounce?`<span class="badge" style="background:#ffebee;color:#c62828;font-size:10px;white-space:nowrap">⚠ bounce</span>`:'';
+
     // Data registrazione
     const regDate=c.registeredAt?new Date(c.registeredAt).toLocaleDateString('it-IT',{day:'2-digit',month:'short',year:'2-digit'}):'';
 
@@ -538,7 +542,7 @@ function crow(c){
         <div class="cn">${esc(fn)} <strong>${esc(ln)}</strong>${qualBadge}${countryBadge}</div>
         <div class="cs">${esc(c.email||'')}${regDate?' · '+regDate:''}</div>
       </div>
-      ${waveBadge}
+      ${bounceBadge}${waveBadge}
     </div>`;
   }
   // ── IMPORTATORE ──
