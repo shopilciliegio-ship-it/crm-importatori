@@ -417,8 +417,9 @@ def main():
                            .replace('{lastName}',  c.get('lastName', '')) \
                            .replace('{email}',     c.get('email', '')) \
                            .replace('{{nome}}',     first_name) \
+                           .replace('{{name}}',     first_name) \
                            .replace('{{contatto}}', first_name)
-        subj = wave1_subj.replace('{{nome}}', first_name).replace('{{contatto}}', first_name)
+        subj = wave1_subj.replace('{{nome}}', first_name).replace('{{name}}', first_name).replace('{{contatto}}', first_name)
 
         msg_id = send_email(
             to_email=c['email'],
