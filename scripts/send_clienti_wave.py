@@ -34,7 +34,7 @@ LOG_PATH      = 'data/email-log.json'
 BCC_EMAIL        = 'hokutazzo@gmail.com'
 DIGEST_RECIPIENT = 'luca@ilciliegio.com'
 SENDER_NAME      = 'Il Ciliegio — Azienda Agricola'
-SENDER_EMAIL     = 'luca@sienawine.it'
+SENDER_EMAIL     = 'export@ilciliegio.com'
 LOGO_URL         = 'https://shopilciliegio-ship-it.github.io/crm-importatori/assets/logo_ciliegio.png'
 ACCENT           = '#B8941A'
 
@@ -233,11 +233,11 @@ def build_html(text: str, subject: str) -> str:
       <p style="margin:0;font-size:12px;color:#888;line-height:1.6;text-align:center">
         Il Ciliegio — Azienda Agricola<br>
         Loc. Podere il Ciliegio, Siena (SI) · Italy<br>
-        <a href="https://www.sienawine.it"
-           style="color:#888;text-decoration:none">www.sienawine.it</a>
+        <a href="https://www.ilciliegio.com"
+           style="color:#888;text-decoration:none">www.ilciliegio.com</a>
         &nbsp;·&nbsp;
-        <a href="mailto:luca@sienawine.it"
-           style="color:#888;text-decoration:none">luca@sienawine.it</a>
+        <a href="mailto:export@ilciliegio.com"
+           style="color:#888;text-decoration:none">export@ilciliegio.com</a>
       </p>
     </td>
   </tr>
