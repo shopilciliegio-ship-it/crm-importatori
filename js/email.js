@@ -470,13 +470,15 @@ function applyTpl(id){
   const primaryTitle=prim?.title||c.contactTitle||'';
   const secName     =firstName(sec?.name||'');
 
+  const clientiFirstName = c.nome || firstName(c.name||'');
   const f=s=>String(s||'')
     .replace(/\{\{dear\}\}/g,          dearLine)
     .replace(/\{\{owner_mention\}\}/g,  ownerMention)
     .replace(/\{\{know_well\}\}/g,      knowWell)
     .replace(/\{\{owner\}\}/g,          secName)
-    .replace(/\{\{contatto\}\}/g,       primaryName||c.contactName||'')
-    .replace(/\{\{nome\}\}/g,           primaryName||c.name||'')
+    .replace(/\{\{contatto\}\}/g,       primaryName||c.contactName||clientiFirstName)
+    .replace(/\{\{nome\}\}/g,           primaryName||c.name||clientiFirstName)
+    .replace(/\{\{name\}\}/g,           clientiFirstName||primaryName||c.name||'')
     .replace(/\{\{job\}\}/g,            primaryTitle)
     .replace(/\{\{azienda\}\}/g,        c.company||'')
     .replace(/\{\{paese\}\}/g,          c.country||'')
