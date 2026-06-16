@@ -434,12 +434,16 @@ def main():
             sent_log.append({'name': c.get('company', ''), 'email': c['email'], 'msgId': msg_id})
             if not test_mode:
                 contact_map[c['email']]['waveStatus'] = 'wave2_sent'
-                contact_map[c['email']].setdefault('emailsSent', []).append({
+                es = contact_map[c['email']].get('emailsSent', [])
+                if not isinstance(es, list):
+                    es = []
+                es.append({
                     'type':      'wave2',
                     'sentAt':    now_ms,
                     'messageId': msg_id,
                     'toEmail':   c['email'],
                 })
+                contact_map[c['email']]['emailsSent'] = es
         else:
             errors += 1
 
