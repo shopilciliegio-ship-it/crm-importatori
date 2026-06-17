@@ -41,6 +41,7 @@ async function switchLayer(newLayer){
   // Layer importatori / clienti
   const addBtn=document.querySelector('.btn.btp[onclick="openAddContact()"]');
   if(addBtn) addBtn.textContent = newLayer==='clienti'?'+ Cliente':'+ Contatto';
+  if(typeof renderStatusFilterOptions==='function') renderStatusFilterOptions();
 
   if(isClienti()&&dbC.contacts.length===0&&ghs.token){
     await loadFromGH();
