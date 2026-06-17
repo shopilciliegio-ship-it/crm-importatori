@@ -97,7 +97,7 @@ const BRANDS = {
   },
   ciliegio: {
     name: 'Il Ciliegio',
-    senderEmail: 'export@ilciliegio.com',
+    senderEmail: 'luca@sienawine.it',
     senderName: 'Il Ciliegio — Azienda Agricola',
     logoUrl: 'https://shopilciliegio-ship-it.github.io/crm-importatori/assets/logo_ciliegio.png',
     logoAlt: 'Il Ciliegio — Azienda Agricola',

@@ -674,7 +674,7 @@ export@ilciliegio.com | +39 331 1347899`;
       method:'POST',
       headers:{'api-key':brv.apiKey,'Content-Type':'application/json','Accept':'application/json'},
       body:JSON.stringify({
-        sender:{name:brv.senderName||'Il Ciliegio — Azienda Agricola', email:brv.senderEmail||'export@ilciliegio.com'},
+        sender:{name:brv.senderName||'Il Ciliegio — Azienda Agricola', email:brv.senderEmail||'luca@sienawine.it'},
         to:[{email:o.customerEmail, name:o.customerName}],
         subject:subject,
         htmlContent:buildHtmlEmail(body,'ciliegio',nome),
