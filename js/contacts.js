@@ -1223,7 +1223,8 @@ function renderEmailToggleCli(){
   const mainBtn=`<button onclick="toggleEmailAutoSendCli()" style="font-size:12px;font-weight:700;padding:7px 16px;border-radius:20px;border:none;cursor:pointer;background:${on?'#2a9d5c':'#c0392b'};color:#fff;letter-spacing:.3px">${on?'🟢 Email clienti: ON':'🔴 Email clienti: OFF'}</button>`;
   const testBtn=on?`<button onclick="toggleTestModeCli()" style="font-size:12px;font-weight:700;padding:7px 16px;border-radius:20px;border:none;cursor:pointer;background:${test?'#e67e22':'#2980b9'};color:#fff;letter-spacing:.3px">${test?'🧪 Test mode':'👥 Clienti reali'}</button>`:'';
   const waveBtn=on?`<button id="cli-wave-btn" onclick="triggerClientiWave()" class="btn bts" style="font-size:12px">📤 Invia ora</button>`:'';
-  el.innerHTML=`<div style="display:flex;align-items:center;gap:8px">${exclBtn}${mainBtn}${testBtn}${waveBtn}</div>`;
+  const syncBtn=`<button id="cli-wave-sync-btn" onclick="triggerWaveTrackingSync()" class="btn bts" style="font-size:12px">📊 Sync tracking wave</button>`;
+  el.innerHTML=`<div style="display:flex;align-items:center;gap:8px">${exclBtn}${mainBtn}${testBtn}${waveBtn}${syncBtn}</div>`;
 }
 
 function openExcludedCountriesModal(){

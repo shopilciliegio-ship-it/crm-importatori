@@ -414,6 +414,75 @@ async function _pollClientiWaveWorkflow(btn, maxAttempts=20){
   if(btn){ btn.disabled=false; btn.textContent='📤 Invia ora'; }
 }
 
+/* ── WAVE TRACKING SYNC TRIGGER ── */
+
+async function triggerWaveTrackingSync(){
+  const{token,owner,repo}=ghs;
+  if(!token||!owner||!repo){ toast('⚙ Configura GitHub nelle Impostazioni'); openSettings(); return; }
+
+  const btn=document.getElementById('cli-wave-sync-btn');
+  if(btn){ btn.disabled=true; btn.textContent='⏳ Avvio…'; }
+
+  const dispatchUrl=`https://api.github.com/repos/${owner}/${repo}/actions/workflows/sync_wave_tracking.yml/dispatches`;
+  try{
+    const r=await fetch(dispatchUrl,{
+      method:'POST',
+      headers:{'Authorization':`token ${token}`,'Accept':'application/vnd.github.v3+json','Content-Type':'application/json'},
+      body:JSON.stringify({ref:'main'})
+    });
+    if(r.ok||r.status===204){
+      toast('🔄 Sync tracking wave avviato — attendo completamento…');
+      _pollWaveTrackingWorkflow(btn);
+    } else {
+      const err=await r.json().catch(()=>({}));
+      toast('⚠ Errore avvio: '+(err.message||r.status));
+      if(btn){ btn.disabled=false; btn.textContent='📊 Sync tracking wave'; }
+    }
+  }catch(e){
+    toast('⚠ '+e.message);
+    if(btn){ btn.disabled=false; btn.textContent='📊 Sync tracking wave'; }
+  }
+}
+
+async function _pollWaveTrackingWorkflow(btn, maxAttempts=20){
+  const{token,owner,repo}=ghs;
+  const runsUrl=`https://api.github.com/repos/${owner}/${repo}/actions/runs?workflow_id=sync_wave_tracking.yml&per_page=1`;
+  let elapsed=0;
+
+  for(let i=0;i<maxAttempts;i++){
+    const wait = i===0 ? 8000 : 30000;
+    await new Promise(r=>setTimeout(r,wait));
+    elapsed += wait;
+    const mins = Math.floor(elapsed/60000);
+    const secs = Math.floor((elapsed%60000)/1000);
+    if(btn) btn.textContent=`⏳ ${mins>0?mins+'m ':''
+}${secs}s…`;
+
+    try{
+      const r=await fetch(runsUrl,{
+        headers:{'Authorization':`token ${token}`,'Accept':'application/vnd.github.v3+json'}
+      });
+      if(!r.ok) continue;
+      const data=await r.json();
+      const run=data.workflow_runs?.[0];
+      if(!run) continue;
+
+      if(run.status==='completed'){
+        if(run.conclusion==='success'){
+          toast('✓ Sync tracking wave completato — premi ↻ per aggiornare i contatti');
+        } else {
+          toast('⚠ Sync tracking wave terminato con errore: '+run.conclusion);
+        }
+        if(btn){ btn.disabled=false; btn.textContent='📊 Sync tracking wave'; }
+        return;
+      }
+    }catch(e){ console.warn('Wave tracking sync poll error:',e); }
+  }
+  // Timeout
+  toast('⏱ Sync tracking wave ancora in corso — ricarica manualmente tra qualche minuto');
+  if(btn){ btn.disabled=false; btn.textContent='📊 Sync tracking wave'; }
+}
+
 /* ── DELETE ALL ── */
 
 function exportData(){
