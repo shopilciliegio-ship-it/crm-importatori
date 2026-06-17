@@ -98,13 +98,40 @@ function renderCCChart(){
     :'<div class="empty" style="font-size:12px">Nessun dato</div>';
 }
 
+// Per i clienti wave non c'è triage manuale (replied/client/cold) — la pipeline
+// si basa su ciò che Brevo riporta davvero: invio → apertura → click, con
+// bounce/blacklist che sovrastano tutto il resto perché sono gli esiti che
+// contano di più.
+function clientiPipelineBucket(c){
+  if(c.blacklisted) return 'blacklist';
+  const evs=c.brevoEvents||[];
+  if(evs.some(e=>e.bounced)) return 'bounced';
+  if(evs.some(e=>e.clicked)) return 'clicked';
+  if(evs.some(e=>e.opened))  return 'opened';
+  if(c.waveStatus||evs.length) return 'sent';
+  return 'new';
+}
+
 function renderPipeline(){
-  const order=['new','sent','followup','replied','client','cold'];
-  const cm={new:'blue-bg blue-tx',sent:'amber-bg amber-tx',followup:'pink-bg pink-tx',
-    replied:'green-bg green-tx',client:'teal-bg teal-tx',cold:'gray-bg gray-tx'};
   const ac=activeContacts();
-  const map={};ac.forEach(c=>{map[c.status]=(map[c.status]||0)+1;});
   const tot=ac.length||1;
+  let order,cm,labels,map;
+
+  if(isClienti()){
+    order=['new','sent','opened','clicked','bounced','blacklist'];
+    cm={new:'blue-bg blue-tx',sent:'gray-bg gray-tx',opened:'amber-bg amber-tx',
+      clicked:'teal-bg teal-tx',bounced:'coral-bg coral-tx',blacklist:'red-bg red-tx'};
+    labels={new:'Da<br>contattare',sent:'Email<br>inviate',opened:'Aperta',
+      clicked:'Cliccata',bounced:'Bounce',blacklist:'Blacklist'};
+    map={};ac.forEach(c=>{const b=clientiPipelineBucket(c);map[b]=(map[b]||0)+1;});
+  } else {
+    order=['new','sent','followup','replied','client','cold'];
+    cm={new:'blue-bg blue-tx',sent:'amber-bg amber-tx',followup:'pink-bg pink-tx',
+      replied:'green-bg green-tx',client:'teal-bg teal-tx',cold:'gray-bg gray-tx'};
+    labels=Object.fromEntries(order.map(s=>[s,SM[s].l.replace(' ','<br>')]));
+    map={};ac.forEach(c=>{map[c.status]=(map[c.status]||0)+1;});
+  }
+
   document.getElementById('pipeline').innerHTML='<div style="display:flex;gap:6px;align-items:flex-end;height:70px">'+
     order.map(s=>{
       const n=map[s]||0,h=Math.max(4,Math.round(n/tot*100));
@@ -112,7 +139,7 @@ function renderPipeline(){
       return `<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px">
         <div style="font-size:11px;font-weight:700;color:var(--${tx})">${n}</div>
         <div style="width:100%;height:${h}%;min-height:4px;background:var(--${bg});border-radius:4px 4px 0 0"></div>
-        <div style="font-size:10px;color:var(--text2);text-align:center;line-height:1.2">${SM[s].l.replace(' ','<br>')}</div>
+        <div style="font-size:10px;color:var(--text2);text-align:center;line-height:1.2">${labels[s]}</div>
       </div>`;
     }).join('')+'</div>';
 }
