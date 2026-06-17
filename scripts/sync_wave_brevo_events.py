@@ -293,12 +293,24 @@ def sync_contact_events(contacts, start_date: str, end_date: str) -> tuple[int, 
             log.append({'ts': now_ms, 'msg': msg})
             c['log'] = log
 
-        if kind in ('unsubscribed', 'blocked') and not c.get('blacklisted'):
+    return len(changed_contacts), counts
+
+
+# Spam/unsub/blocked vanno in blacklist — separato dal loop sopra perché deve
+# valere anche per eventi già marcati in run precedenti (es. i 2 spam rilevati
+# prima che questa regola includesse anche "spam", non solo unsubscribed/blocked).
+def reconcile_blacklist(contacts) -> int:
+    now_ms = int(datetime.now(timezone.utc).timestamp() * 1000)
+    fixed = 0
+    for c in contacts:
+        if c.get('blacklisted'):
+            continue
+        if any(ev.get('spam') or ev.get('unsubscribed') or ev.get('blocked') for ev in (c.get('brevoEvents') or [])):
             c['blacklisted'] = True
             c.setdefault('log', []).append(
-                {'ts': now_ms, 'msg': '🚫 Contatto inserito in blacklist (disiscrizione/bloccata)'})
-
-    return len(changed_contacts), counts
+                {'ts': now_ms, 'msg': '🚫 Contatto inserito in blacklist (spam/disiscrizione/bloccata)'})
+            fixed += 1
+    return fixed
 
 
 # ── MAIN ─────────────────────────────────────────────────────────────────────
@@ -328,7 +340,10 @@ def main():
           f'bounced={counts["bounced"]} spam={counts["spam"]} unsubscribed={counts["unsubscribed"]} '
           f'blocked={counts["blocked"]}')
 
-    if created or updated:
+    blacklisted_fixed = reconcile_blacklist(contacts)
+    print(f'Blacklist: {blacklisted_fixed} contatti aggiunti (spam/disiscrizione/bloccata)')
+
+    if created or updated or blacklisted_fixed:
         _gh_sha_cache[DATA_PATH] = db_sha
         ok = gh_put(DATA_PATH, db,
                     f'Sync wave tracking Brevo — {datetime.now().strftime("%Y-%m-%d %H:%M")} UTC '

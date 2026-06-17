@@ -118,6 +118,16 @@ function updateCountryFilter(){
 
 /* ── NAVIGAZIONE RAPIDA da Dashboard ── */
 
+// Apre il Registro/Workflow già filtrato per stato (es. dal click su una colonna della pipeline)
+function goToRegistro(status=''){
+  const rf=document.getElementById('reg-filter');
+  if(rf) rf.value=status;
+  const rsearch=document.getElementById('reg-search');
+  if(rsearch) rsearch.value='';
+  showPage('followups', document.querySelectorAll('.nb')[2]);
+  renderRegistro();
+}
+
 function goToContacts({country='',region='',status='',tipo=''}={}){
   const sc=document.getElementById('sc');
   const sr=document.getElementById('sr');

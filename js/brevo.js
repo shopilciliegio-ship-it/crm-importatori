@@ -227,11 +227,13 @@ function _applyBrevoEvents(contact, ev, events){
     if(!kind||ev[kind]) return;
     ev[kind]=true; ev[kind+'At']=e.date; changed=true;
     if(_BREVO_EVENT_LOG_MSG[kind]) contact.log.push({ts:new Date(e.date).getTime()||Date.now(),msg:_BREVO_EVENT_LOG_MSG[kind](ev)});
-    if((kind==='unsubscribed'||kind==='blocked')&&!contact.blacklisted){
-      contact.blacklisted=true;
-      contact.log.push({ts:Date.now(),msg:'🚫 Contatto inserito in blacklist (disiscrizione/bloccata)'});
-    }
   });
+  // Fuori dal forEach: vale anche per eventi spam/unsub/blocked già marcati in
+  // run precedenti, non solo quelli appena rilevati ora.
+  if((ev.spam||ev.unsubscribed||ev.blocked)&&!contact.blacklisted){
+    contact.blacklisted=true; changed=true;
+    contact.log.push({ts:Date.now(),msg:'🚫 Contatto inserito in blacklist (spam/disiscrizione/bloccata)'});
+  }
   return changed;
 }
 
