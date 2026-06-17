@@ -132,11 +132,19 @@ function renderPipeline(){
     map={};ac.forEach(c=>{map[c.status]=(map[c.status]||0)+1;});
   }
 
+  // Click su una colonna → apre la lista già filtrata per quello stato
+  const regFilterFor={sent:'delivered',opened:'opened',clicked:'clicked',bounced:'bounced',blacklist:'blacklisted'};
+  const clickFor=s=>{
+    if(s==='new') return `goToContacts({status:'new'})`;
+    if(isClienti()) return `goToRegistro('${regFilterFor[s]||''}')`;
+    return `goToContacts({status:'${s}'})`;
+  };
+
   document.getElementById('pipeline').innerHTML='<div style="display:flex;gap:6px;align-items:flex-end;height:70px">'+
     order.map(s=>{
       const n=map[s]||0,h=Math.max(4,Math.round(n/tot*100));
       const[bg,tx]=cm[s].split(' ');
-      return `<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px">
+      return `<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer" onclick="${clickFor(s)}" title="Vai alla lista">
         <div style="font-size:11px;font-weight:700;color:var(--${tx})">${n}</div>
         <div style="width:100%;height:${h}%;min-height:4px;background:var(--${bg});border-radius:4px 4px 0 0"></div>
         <div style="font-size:10px;color:var(--text2);text-align:center;line-height:1.2">${labels[s]}</div>
