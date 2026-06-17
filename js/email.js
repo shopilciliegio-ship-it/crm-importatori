@@ -379,11 +379,11 @@ function togglePreview(id, forceRefresh){
         if(p.startsWith('\u2022')||p.includes('\n\u2022')){
           return '<ul style="margin:0 0 12px;padding-left:20px">'+
             p.split('\n').filter(l=>l.trim()).map(l=>
-              '<li style="margin-bottom:4px">'+esc(l.replace(/^[\u2022\-]\s*/,''))+'</li>'
+              '<li style="margin-bottom:4px">'+_linkify(esc(l.replace(/^[\u2022\-]\s*/,'')),b.accentColor)+'</li>'
             ).join('')+'</ul>';
         }
         return '<p style="margin:0 0 12px;line-height:1.7">'+
-          esc(p).replace(/\n/g,'<br>')+'</p>';
+          _linkify(esc(p),b.accentColor).replace(/\n/g,'<br>')+'</p>';
       }).join('');
       el.innerHTML=
         '<div style="background:#f4f4f0;padding:20px;font-family:Georgia,serif">'+
