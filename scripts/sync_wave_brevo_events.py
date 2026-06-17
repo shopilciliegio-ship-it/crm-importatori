@@ -157,11 +157,19 @@ def backfill_brevo_events(contacts) -> int:
     return created
 
 
-# ── BREVO EVENTS — fetch bulk per tag ───────────────────────────────────────
+# ── BREVO EVENTS — fetch bulk per intervallo di date ────────────────────────
 # Niente chiamate 1-per-messaggio: con migliaia di email quel pattern rischia
 # di sbattere contro un rate-limit dell'endpoint statistiche e fallire in
-# silenzio. Una manciata di chiamate per tag+intervallo date è molto più
-# robusta e ci dà la stessa informazione.
+# silenzio. Una manciata di chiamate per intervallo date è molto più robusta.
+#
+# NB: avevo provato a filtrare anche per tags=wave1/wave2 lato server, ma la
+# serializzazione esatta che Brevo si aspetta per quel parametro non è
+# verificabile senza accesso diretto alla loro API — il filtro tornava 0
+# eventi sempre, silenziosamente (nessun errore HTTP). Niente di documentato
+# in modo affidabile su cui contare due volte: scarichiamo tutto l'intervallo
+# di date (che invece sappiamo funzionare, l'unico errore visto finora è
+# stato sulla validazione di endDate) e filtriamo lato nostro per messageId,
+# che è un dato che controlliamo al 100%.
 #
 # Le stringhe esatte del campo "event" restituito da Brevo non sono
 # consistenti tra le varie pagine della loro documentazione (es. "click" vs
@@ -188,7 +196,7 @@ def _classify_event(etype: str) -> str | None:
     return None
 
 
-def fetch_events_for_tag(tag: str, start_date: str, end_date: str) -> list:
+def fetch_events_for_range(start_date: str, end_date: str) -> list:
     events = []
     offset = 0
     page_size = 2500
@@ -198,7 +206,6 @@ def fetch_events_for_tag(tag: str, start_date: str, end_date: str) -> list:
                 'https://api.brevo.com/v3/smtp/statistics/events',
                 headers=_BREVO_HEADERS,
                 params={
-                    'tags': json.dumps([tag]),
                     'startDate': start_date,
                     'endDate': end_date,
                     'limit': page_size,
@@ -208,12 +215,15 @@ def fetch_events_for_tag(tag: str, start_date: str, end_date: str) -> list:
                 timeout=30,
             )
         except requests.exceptions.RequestException as e:
-            print(f'  ⚠ Brevo events error (tag={tag}, offset={offset}): {e}')
+            print(f'  ⚠ Brevo events error (offset={offset}): {e}')
             break
         if not r.ok:
-            print(f'  ⚠ Brevo events HTTP {r.status_code} (tag={tag}, offset={offset}): {r.text[:200]}')
+            print(f'  ⚠ Brevo events HTTP {r.status_code} (offset={offset}): {r.text[:200]}')
             break
-        page = (r.json() or {}).get('events') or []
+        body = r.json() or {}
+        page = body.get('events') or []
+        if offset == 0:
+            print(f'  Brevo risposta grezza (primi 300 char): {json.dumps(body)[:300]}')
         events.extend(page)
         if not page:
             break
@@ -245,45 +255,48 @@ def sync_contact_events(contacts, start_date: str, end_date: str) -> tuple[int, 
     counts = {'delivered': 0, 'opened': 0, 'clicked': 0, 'bounced': 0, 'spam': 0, 'unsubscribed': 0, 'blocked': 0}
     changed_contacts = set()
 
-    for tag in ('wave1', 'wave2'):
-        raw_events = fetch_events_for_tag(tag, start_date, end_date)
-        print(f'  Brevo: {len(raw_events)} eventi ricevuti per tag={tag}')
+    raw_events = fetch_events_for_range(start_date, end_date)
+    seen_types = sorted({e.get('event') for e in raw_events if e.get('event')})
+    matched = sum(1 for e in raw_events if _norm_mid(e.get('messageId')) in index)
+    print(f'  Brevo: {len(raw_events)} eventi totali nel periodo, {matched} corrispondono a email wave note')
+    if seen_types:
+        print(f'  Tipi di evento visti: {", ".join(seen_types)}')
 
-        for e in raw_events:
-            mid = _norm_mid(e.get('messageId'))
-            hit = index.get(mid)
-            if not hit:
-                continue
-            c, ev = hit
-            kind = _classify_event(e.get('event'))
-            if not kind or ev.get(kind):
-                continue
+    for e in raw_events:
+        mid = _norm_mid(e.get('messageId'))
+        hit = index.get(mid)
+        if not hit:
+            continue
+        c, ev = hit
+        kind = _classify_event(e.get('event'))
+        if not kind or ev.get(kind):
+            continue
 
-            ev[kind] = True
-            ev[kind + 'At'] = e.get('date')
-            counts[kind] += 1
-            changed_contacts.add(id(c))
+        ev[kind] = True
+        ev[kind + 'At'] = e.get('date')
+        counts[kind] += 1
+        changed_contacts.add(id(c))
 
-            if kind in ('opened', 'clicked', 'bounced', 'spam', 'unsubscribed', 'blocked'):
-                log = c.get('log')
-                if not isinstance(log, list):
-                    log = []
-                subj = ev.get('subject') or ''
-                msg = {
-                    'opened':       f'👁 Aperta: {subj}',
-                    'clicked':      f'🔗 Click: {subj}',
-                    'bounced':      f'⚠ Bounce: {subj}',
-                    'spam':         f'🚫 Spam: {subj}',
-                    'unsubscribed': f'🚫 Disiscritto: {subj}',
-                    'blocked':      f'🔒 Bloccata: {subj}',
-                }[kind]
-                log.append({'ts': now_ms, 'msg': msg})
-                c['log'] = log
+        if kind in ('opened', 'clicked', 'bounced', 'spam', 'unsubscribed', 'blocked'):
+            log = c.get('log')
+            if not isinstance(log, list):
+                log = []
+            subj = ev.get('subject') or ''
+            msg = {
+                'opened':       f'👁 Aperta: {subj}',
+                'clicked':      f'🔗 Click: {subj}',
+                'bounced':      f'⚠ Bounce: {subj}',
+                'spam':         f'🚫 Spam: {subj}',
+                'unsubscribed': f'🚫 Disiscritto: {subj}',
+                'blocked':      f'🔒 Bloccata: {subj}',
+            }[kind]
+            log.append({'ts': now_ms, 'msg': msg})
+            c['log'] = log
 
-            if kind in ('unsubscribed', 'blocked') and not c.get('blacklisted'):
-                c['blacklisted'] = True
-                c.setdefault('log', []).append(
-                    {'ts': now_ms, 'msg': '🚫 Contatto inserito in blacklist (disiscrizione/bloccata)'})
+        if kind in ('unsubscribed', 'blocked') and not c.get('blacklisted'):
+            c['blacklisted'] = True
+            c.setdefault('log', []).append(
+                {'ts': now_ms, 'msg': '🚫 Contatto inserito in blacklist (disiscrizione/bloccata)'})
 
     return len(changed_contacts), counts
 
