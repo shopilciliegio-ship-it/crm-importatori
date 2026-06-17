@@ -206,10 +206,15 @@ def gh_put(path: str, data, message: str):
 
 # ── EMAIL ────────────────────────────────────────────────────────────────────
 def _linkify(text: str) -> str:
-    # Sintassi tipo markdown [testo](url) — per usare un'etichetta invece del link grezzo
+    # Sintassi tipo markdown [testo](url) — sostituita con un segnaposto di testo
+    # semplice, altrimenti il passaggio successivo (URL nudi) ri-matcherebbe
+    # l'URL già dentro l'href="" appena creato, generando HTML annidato e rotto
+    placeholders = []
+
     def _make_md_link(m):
         label, url = m.group(1), m.group(2)
-        return f'<a href="{url}" style="color:{ACCENT};font-weight:600;text-decoration:none">{label}</a>'
+        placeholders.append(f'<a href="{url}" style="color:{ACCENT};font-weight:600;text-decoration:none">{label}</a>')
+        return f'@@LINK{len(placeholders)-1}@@'
     text = re.sub(r'\[([^\]]+)\]\((https?://[^\s)]+)\)', _make_md_link, text)
 
     # URL nudi rimasti — link automatico col testo dell'URL stesso
@@ -217,7 +222,9 @@ def _linkify(text: str) -> str:
         url = m.group(0)
         href = url if url.startswith('http') else 'https://' + url
         return f'<a href="{href}" style="color:{ACCENT};font-weight:600;text-decoration:none">{url}</a>'
-    return re.sub(r'(https?://[^\s<]+|(?:www\.|calendly\.com/)[^\s<]+)', _make_link, text)
+    text = re.sub(r'(https?://[^\s<]+|(?:www\.|calendly\.com/)[^\s<]+)', _make_link, text)
+
+    return re.sub(r'@@LINK(\d+)@@', lambda m: placeholders[int(m.group(1))], text)
 
 
 def build_html(text: str, subject: str) -> str:

@@ -112,14 +112,20 @@ const BRANDS = {
 
 function _linkify(text, accentColor){
   const color = accentColor||'#8B1A1A';
-  // Sintassi tipo markdown [testo](url) — per usare un'etichetta invece del link grezzo
-  text = text.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, (m, label, url) =>
-    `<a href="${url}" style="color:${color};font-weight:600;text-decoration:none">${label}</a>`);
+  // Sintassi tipo markdown [testo](url) — sostituita con un segnaposto di testo
+  // semplice, altrimenti il passaggio successivo (URL nudi) ri-matcherebbe
+  // l'URL gia' dentro l'href="" appena creato, generando HTML annidato e rotto
+  const placeholders=[];
+  text = text.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, (m, label, url) => {
+    placeholders.push(`<a href="${url}" style="color:${color};font-weight:600;text-decoration:none">${label}</a>`);
+    return `@@LINK${placeholders.length-1}@@`;
+  });
   // URL nudi rimasti — link automatico col testo dell'URL stesso
-  return text.replace(/(https?:\/\/[^\s<]+|(?:www\.|calendly\.com\/)[^\s<]+)/g, url => {
+  text = text.replace(/(https?:\/\/[^\s<]+|(?:www\.|calendly\.com\/)[^\s<]+)/g, url => {
     const href = url.startsWith('http') ? url : 'https://' + url;
     return `<a href="${href}" style="color:${color};font-weight:600;text-decoration:none">${url}</a>`;
   });
+  return text.replace(/@@LINK(\d+)@@/g, (m, i) => placeholders[Number(i)]);
 }
 
 function buildHtmlEmail(body, brand, contactName){
