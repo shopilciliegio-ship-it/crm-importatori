@@ -374,6 +374,7 @@ function renderRegistro(){
   const adb=isClienti()?dbC:db;
   const sortBy=document.getElementById('reg-sort')?.value||'date';
   const filterStatus=document.getElementById('reg-filter')?.value||'';
+  const searchTerm=(document.getElementById('reg-search')?.value||'').trim().toLowerCase();
   const stOrd={spam:0,bounced:1,blocked:2,unsubscribed:3,cold:4,client:5,replied:6,sent:7,delivered:8,opened:9,clicked:10};
 
   // Raggruppa per contatto
@@ -386,6 +387,11 @@ function renderRegistro(){
     const allEvs=legacyEv?[legacyEv]:evs;
     if(!allEvs.length) return;
     if(filterStatus&&!allEvs.some(ev=>getBrevoStatus(ev)===filterStatus)) return;
+    if(searchTerm){
+      const name=isClienti()?`${c.nome||c.firstName||''} ${c.cognome||c.lastName||''}`.trim():(c.company||'');
+      const hay=(name+' '+(c.email||'')).toLowerCase();
+      if(!hay.includes(searchTerm)) return;
+    }
     groups.push({c,evs:allEvs});
   });
 
@@ -438,7 +444,7 @@ function renderRegistro(){
       </span>`;
     }).join(`<span style="color:var(--text3);font-size:10px;padding:0 1px">›</span>`);
 
-    const fuHtml=isTerminal?'':fuIndicator(evs);
+    const fuHtml=isTerminal?'':fuIndicator(evs,c);
     const cur=lastEv.manualStatus||'';
     const manualSel=isTerminal?'':`
       <select onclick="event.stopPropagation()"
@@ -539,7 +545,7 @@ function crow(c){
         onclick="toggleSelect('${c.id}',event)" onchange="toggleSelect('${c.id}',event)">
       <div class="av ${AV[hsh(fn+ln)%6]}">${ini(fn+' '+ln)}</div>
       <div class="ci">
-        <div class="cn">${esc(fn)} <strong>${esc(ln)}</strong>${qualBadge}${countryBadge}</div>
+        <div class="cn">${esc(fn)} <strong>${esc(ln)}</strong>${qualBadge}${countryBadge}${breveEventsBadge(c)}</div>
         <div class="cs">${esc(c.email||'')}${regDate?' · '+regDate:''}</div>
       </div>
       ${bounceBadge}${waveBadge}
@@ -598,18 +604,27 @@ function openDetail(id){
         ${dr('Verifica email',c.statoEmail||'—')}
       </div>
       ${c.notes?`<div class="divhr"></div><div style="font-size:12px;color:var(--text2);font-weight:700;margin-bottom:6px">NOTE</div><div style="font-size:13px;line-height:1.6;white-space:pre-wrap">${esc(c.notes)}</div>`:''}
-      ${c.emailsSent?`<div class="divhr"></div>
+      ${(()=>{
+        // c.emailsSent è un numero per gli importatori (invio singolo) ma una
+        // lista per i clienti wave (send_clienti_wave.py) — normalizziamo qui.
+        const esCount=Array.isArray(c.emailsSent)?c.emailsSent.length:(c.emailsSent||0);
+        const lastEv=(c.brevoEvents||[])[(c.brevoEvents||[]).length-1];
+        const lastSentAt=c.lastEmailSent||lastEv?.sentAt;
+        const lastSubj=c.lastEmailSubject||lastEv?.subject;
+        if(!esCount) return '';
+        return `<div class="divhr"></div>
         <div style="display:flex;gap:12px;font-size:13px">
           <div style="flex:1;background:var(--blue-bg);border-radius:var(--r);padding:10px 14px;text-align:center">
-            <div style="font-size:20px;font-weight:700;color:var(--blue-tx)">${c.emailsSent||0}</div>
+            <div style="font-size:20px;font-weight:700;color:var(--blue-tx)">${esCount}</div>
             <div style="font-size:11px;color:var(--blue-tx)">Email inviate</div>
           </div>
-          ${c.lastEmailSent?`<div style="flex:2;background:var(--bg2);border-radius:var(--r);padding:10px 14px">
+          ${lastSentAt?`<div style="flex:2;background:var(--bg2);border-radius:var(--r);padding:10px 14px">
             <div style="font-size:11px;color:var(--text2);font-weight:700;margin-bottom:3px">ULTIMA EMAIL</div>
-            <div style="font-size:12px">${new Date(c.lastEmailSent).toLocaleDateString('it-IT')}</div>
-            <div style="font-size:11px;color:var(--text2);margin-top:2px">${esc(c.lastEmailSubject||'')}</div>
+            <div style="font-size:12px">${new Date(lastSentAt).toLocaleDateString('it-IT')}</div>
+            <div style="font-size:11px;color:var(--text2);margin-top:2px">${esc(lastSubj||'')}</div>
           </div>`:''}
-        </div>`:''}
+        </div>`;
+      })()}
       <div class="divhr"></div>
       <div style="font-size:12px;color:var(--text2);font-weight:700;margin-bottom:8px">CAMBIA STATO</div>
       <div style="display:flex;gap:6px;flex-wrap:wrap">

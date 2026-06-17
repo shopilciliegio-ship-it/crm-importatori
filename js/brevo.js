@@ -58,13 +58,30 @@ function fmtDate(ts){
 }
 
 // Scadenzario: FU#2=giorno 7, FU#3=giorno 21, FU finale=giorno 35 (da step1)
-function fuIndicator(evs){
+// Le wave clienti (send_clienti_wave.py/wave2.py) seguono una cadenza diversa
+// e gestita altrove (wave2 a 120gg da wave1, via GitHub Action) — qui mostriamo
+// il countdown coerente con quella cadenza invece del generico giorno7/21/35,
+// che per le wave non corrisponde a nessun invio reale.
+function fuIndicator(evs, c){
   if(!evs||!evs.length) return '';
   const step1 = evs.find(e=>(e.sequenceStep||1)===1) || evs[0];
   if(!step1) return '';
   const lastEv = evs[evs.length-1];
   const lastSt = getBrevoStatus(lastEv);
   if(['replied','client','cold','blacklisted','bounced','spam','unsubscribed','blocked'].includes(lastSt)) return '';
+
+  if(isClienti() && c?.waveStatus){
+    if(c.waveStatus==='wave2_sent')
+      return `<span style="font-size:11px;color:var(--text3);padding:2px 6px">Wave completa</span>`;
+    const days = Math.floor((Date.now()-(step1.sentAt||0))/86400000);
+    const rem = 120 - days;
+    let bg, tx, txt;
+    if(rem>2){        bg='var(--bg2)';     tx='var(--text2)';   txt=`Wave 2 tra ${rem} gg`; }
+    else if(rem>=0){  bg='var(--amber-bg)';tx='var(--amber-tx)'; txt=rem===0?'Wave 2 oggi!':'Wave 2 domani!'; }
+    else{             bg='var(--red-bg)';  tx='var(--red-tx)';   txt=`Wave 2 in ritardo di ${Math.abs(rem)} gg`; }
+    return `<span style="font-size:11px;padding:2px 8px;border-radius:10px;background:${bg};color:${tx};white-space:nowrap;font-weight:600">${txt}</span>`;
+  }
+
   const days = Math.floor((Date.now()-(step1.sentAt||0))/86400000);
   const nSteps = evs.length;
   let label, dueDay;
@@ -176,6 +193,48 @@ async function runAutoFollowUp(){
 
 /* ── SYNC BREVO ── */
 
+// Le stringhe esatte del campo "event" di Brevo non sono consistenti tra le
+// pagine della loro documentazione (es. "click" vs "clicks", "hardBounce" vs
+// "hardBounces") — invece di un match esatto (che ha già sbagliato: i bounce
+// non venivano mai rilevati), classifichiamo per sottostringa case-insensitive.
+function classifyBrevoEventType(type){
+  const e=(type||'').toLowerCase();
+  if(e.includes('bounce'))                       return 'bounced';
+  if(e.includes('click'))                         return 'clicked';
+  if(e.includes('unsub'))                         return 'unsubscribed';
+  if(e.includes('spam'))                          return 'spam';
+  if(e==='blocked'||e==='invalid')                return 'blocked';
+  if(e.includes('open'))                          return 'opened';
+  if(e==='delivered'||e==='request'||e==='requests'||e==='sent') return 'delivered';
+  return null;
+}
+
+const _BREVO_EVENT_LOG_MSG={
+  opened:      ev=>`👁 Aperta: ${ev.subject||''}`,
+  clicked:     ev=>`🔗 Click: ${ev.subject||''}`,
+  bounced:     ev=>`⚠ Bounce: ${ev.subject||''}`,
+  spam:        ev=>`🚫 Spam: ${ev.subject||''}`,
+  unsubscribed:ev=>`🚫 Disiscritto: ${ev.subject||''}`,
+  blocked:     ev=>`🔒 Bloccata: ${ev.subject||''}`,
+};
+
+// Applica gli eventi Brevo grezzi a un singolo brevoEvents[i]. Ritorna true se qualcosa è cambiato.
+function _applyBrevoEvents(contact, ev, events){
+  contact.log = contact.log||[];
+  let changed=false;
+  events.forEach(e=>{
+    const kind=classifyBrevoEventType(e.event);
+    if(!kind||ev[kind]) return;
+    ev[kind]=true; ev[kind+'At']=e.date; changed=true;
+    if(_BREVO_EVENT_LOG_MSG[kind]) contact.log.push({ts:new Date(e.date).getTime()||Date.now(),msg:_BREVO_EVENT_LOG_MSG[kind](ev)});
+    if((kind==='unsubscribed'||kind==='blocked')&&!contact.blacklisted){
+      contact.blacklisted=true;
+      contact.log.push({ts:Date.now(),msg:'🚫 Contatto inserito in blacklist (disiscrizione/bloccata)'});
+    }
+  });
+  return changed;
+}
+
 // Versione silenziosa: gira in background all'avvio, toast solo se trova eventi nuovi
 async function syncBrevoEventsQuiet(){
   if(!brv.apiKey) return;
@@ -198,35 +257,7 @@ async function syncBrevoEventsQuiet(){
       );
       if(!r.ok) continue;
       const data=await r.json();
-      const events=data.events||[];
-      const ev=contact.brevoEvents[evIdx];
-      let changed=false;
-      events.forEach(e=>{
-        const type=(e.event||'').toLowerCase();
-        if((type==='delivered'||type==='requests')&&!ev.delivered){ev.delivered=true;ev.deliveredAt=e.date;changed=true;}
-        if((type==='opened'||type==='unique_opened')&&!ev.opened){
-          ev.opened=true;ev.openedAt=e.date;changed=true;
-          if(!contact.log.some(l=>l.msg.includes('👁 Aperta')&&l.msg.includes((ev.subject||'').slice(0,20))))
-            contact.log.push({ts:new Date(e.date).getTime()||Date.now(),msg:`👁 Aperta: ${ev.subject||''}`});
-        }
-        if((type==='clicks'||type==='click')&&!ev.clicked){
-          ev.clicked=true;ev.clickedAt=e.date;changed=true;
-          if(!contact.log.some(l=>l.msg.includes('🔗 Click')))
-            contact.log.push({ts:new Date(e.date).getTime()||Date.now(),msg:`🔗 Click: ${ev.subject||''}`});
-        }
-        if((type==='hardbounces'||type==='softbounces'||type==='bounced')&&!ev.bounced){
-          ev.bounced=true;ev.bouncedAt=e.date;changed=true;
-          contact.log.push({ts:Date.now(),msg:`⚠ Bounce: ${ev.subject||''}`});
-        }
-        if((type==='spamreports'||type==='spam')&&!ev.spam){ev.spam=true;changed=true;contact.log.push({ts:Date.now(),msg:`🚫 Spam: ${ev.subject||''}`});}
-        if(type==='unsubscribed'&&!ev.unsubscribed){ev.unsubscribed=true;changed=true;contact.log.push({ts:Date.now(),msg:`🚫 Disiscritto: ${ev.subject||''}`});}
-        if((type==='blocked'||type==='invalid')&&!ev.blocked){ev.blocked=true;changed=true;contact.log.push({ts:Date.now(),msg:`🔒 Bloccata: ${ev.subject||''}`});}
-        if((ev.unsubscribed||ev.blocked)&&!contact.blacklisted){
-          contact.blacklisted=true;changed=true;
-          contact.log.push({ts:Date.now(),msg:'🚫 Contatto inserito in blacklist (disiscrizione/bloccata)'});
-        }
-      });
-      if(changed) updated++;
+      if(_applyBrevoEvents(contact, contact.brevoEvents[evIdx], data.events||[])) updated++;
     }catch(e){ console.warn('Brevo quiet sync:',e); }
     await new Promise(r=>setTimeout(r,150));
   }
@@ -257,50 +288,7 @@ async function syncBrevoEvents(){
       );
       if(!r.ok) continue;
       const data = await r.json();
-      const events = data.events||[];
-      const ev = contact.brevoEvents[evIdx];
-      let changed = false;
-
-      events.forEach(e=>{
-        const type = (e.event||'').toLowerCase();
-        if((type==='delivered'||type==='requests')&&!ev.delivered){
-          ev.delivered=true; ev.deliveredAt=e.date; changed=true;
-        }
-        if((type==='opened'||type==='unique_opened')&&!ev.opened){
-          ev.opened=true; ev.openedAt=e.date; changed=true;
-          if(!contact.log.some(l=>l.msg.includes('👁 Aperta')&&l.msg.includes((ev.subject||'').slice(0,20)))){
-            contact.log.push({ts:new Date(e.date).getTime()||Date.now(),msg:`👁 Aperta: ${ev.subject||''}`});
-          }
-        }
-        if((type==='clicks'||type==='click')&&!ev.clicked){
-          ev.clicked=true; ev.clickedAt=e.date; changed=true;
-          if(!contact.log.some(l=>l.msg.includes('🔗 Click'))){
-            contact.log.push({ts:new Date(e.date).getTime()||Date.now(),msg:`🔗 Click: ${ev.subject||''}`});
-          }
-        }
-        if((type==='hardbounces'||type==='softbounces'||type==='bounced')&&!ev.bounced){
-          ev.bounced=true; ev.bouncedAt=e.date; changed=true;
-          contact.log.push({ts:Date.now(),msg:`⚠ Bounce: ${ev.subject||''}`});
-        }
-        if((type==='spamreports'||type==='spam')&&!ev.spam){
-          ev.spam=true; changed=true;
-          contact.log.push({ts:Date.now(),msg:`🚫 Spam: ${ev.subject||''}`});
-        }
-        if(type==='unsubscribed'&&!ev.unsubscribed){
-          ev.unsubscribed=true; changed=true;
-          contact.log.push({ts:Date.now(),msg:`🚫 Disiscritto: ${ev.subject||''}`});
-        }
-        if((type==='blocked'||type==='invalid')&&!ev.blocked){
-          ev.blocked=true; changed=true;
-          contact.log.push({ts:Date.now(),msg:`🔒 Bloccata: ${ev.subject||''}`});
-        }
-        if((ev.unsubscribed||ev.blocked)&&!contact.blacklisted){
-          contact.blacklisted=true; changed=true;
-          contact.log.push({ts:Date.now(),msg:'🚫 Contatto inserito in blacklist (disiscrizione/bloccata)'});
-        }
-      });
-
-      if(changed) updated++;
+      if(_applyBrevoEvents(contact, contact.brevoEvents[evIdx], data.events||[])) updated++;
     }catch(e){ console.warn('Brevo sync error:',e); }
     await new Promise(r=>setTimeout(r,120));
   }
