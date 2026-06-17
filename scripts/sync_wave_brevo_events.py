@@ -307,7 +307,7 @@ def main():
 
     now = datetime.now(timezone.utc)
     start_date = (now - timedelta(days=WAVE_SYNC_CUTOFF_DAYS)).strftime('%Y-%m-%d')
-    end_date = (now + timedelta(days=1)).strftime('%Y-%m-%d')
+    end_date = now.strftime('%Y-%m-%d')  # Brevo rifiuta endDate > oggi
 
     updated, counts = sync_contact_events(contacts, start_date, end_date)
     print(f'Sync Brevo ({start_date}..{end_date}): {updated} contatti con nuovi eventi')
