@@ -396,7 +396,12 @@ function renderRegistro(){
       :null;
     const allEvs=legacyEv?[legacyEv]:evs;
     if(!allEvs.length) return;
-    if(filterStatus&&!allEvs.some(ev=>getBrevoStatus(ev)===filterStatus)) return;
+    // "blacklisted" è un flag a livello di contatto (settato da spam/unsub/blocked
+    // automatici), diverso dallo stato per-evento di getBrevoStatus — quello torna
+    // 'blacklisted' solo se qualcuno l'ha forzato a mano col menu manualStatus.
+    if(filterStatus==='blacklisted'){
+      if(!c.blacklisted&&!allEvs.some(ev=>getBrevoStatus(ev)==='blacklisted')) return;
+    } else if(filterStatus&&!allEvs.some(ev=>getBrevoStatus(ev)===filterStatus)) return;
     if(searchTerm){
       const name=isClienti()?`${c.nome||c.firstName||''} ${c.cognome||c.lastName||''}`.trim():(c.company||'');
       const hay=(name+' '+(c.email||'')).toLowerCase();
