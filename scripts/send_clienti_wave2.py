@@ -474,6 +474,25 @@ def main():
                     'toEmail':   c['email'],
                 })
                 contact_map[c['email']]['emailsSent'] = es
+
+                # brevoEvents: stesso formato usato da js/email.js — è da qui che
+                # il Registro/Workflow, i badge e "Sync Brevo" leggono lo stato,
+                # NON da emailsSent (che il resto del CRM non consulta mai).
+                bev = contact_map[c['email']].get('brevoEvents', [])
+                if not isinstance(bev, list):
+                    bev = []
+                bev.append({
+                    'messageId':    msg_id,
+                    'subject':      subj,
+                    'sentAt':       now_ms,
+                    'toEmail':      c['email'],
+                    'toName':       c.get('company', first_name),
+                    'brand':        'ilciliegio',
+                    'sequenceStep': len(bev) + 1,
+                    'delivered': False, 'opened': False, 'clicked': False,
+                    'bounced': False, 'spam': False, 'unsubscribed': False, 'blocked': False,
+                })
+                contact_map[c['email']]['brevoEvents'] = bev
         else:
             errors += 1
 
