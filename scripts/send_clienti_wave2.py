@@ -187,6 +187,13 @@ def gh_put(path: str, data, message: str):
 
 # ── EMAIL ────────────────────────────────────────────────────────────────────
 def _linkify(text: str) -> str:
+    # Sintassi tipo markdown [testo](url) — per usare un'etichetta invece del link grezzo
+    def _make_md_link(m):
+        label, url = m.group(1), m.group(2)
+        return f'<a href="{url}" style="color:{ACCENT};font-weight:600;text-decoration:none">{label}</a>'
+    text = re.sub(r'\[([^\]]+)\]\((https?://[^\s)]+)\)', _make_md_link, text)
+
+    # URL nudi rimasti — link automatico col testo dell'URL stesso
     def _make_link(m):
         url = m.group(0)
         href = url if url.startswith('http') else 'https://' + url

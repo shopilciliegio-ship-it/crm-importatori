@@ -111,9 +111,14 @@ const BRANDS = {
 };
 
 function _linkify(text, accentColor){
+  const color = accentColor||'#8B1A1A';
+  // Sintassi tipo markdown [testo](url) — per usare un'etichetta invece del link grezzo
+  text = text.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, (m, label, url) =>
+    `<a href="${url}" style="color:${color};font-weight:600;text-decoration:none">${label}</a>`);
+  // URL nudi rimasti — link automatico col testo dell'URL stesso
   return text.replace(/(https?:\/\/[^\s<]+|(?:www\.|calendly\.com\/)[^\s<]+)/g, url => {
     const href = url.startsWith('http') ? url : 'https://' + url;
-    return `<a href="${href}" style="color:${accentColor||'#8B1A1A'};font-weight:600;text-decoration:none">${url}</a>`;
+    return `<a href="${href}" style="color:${color};font-weight:600;text-decoration:none">${url}</a>`;
   });
 }
 
