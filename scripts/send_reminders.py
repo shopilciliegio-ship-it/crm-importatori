@@ -47,6 +47,14 @@ STATI_TERMINALI = {'consegnato', 'annullato'}
 
 DIGEST_RECIPIENT = 'luca@ilciliegio.com'
 
+# Lo script gira ogni 4h (import_ordini.yml) ma il digest deve partire una
+# sola volta al giorno — solo al run delle DIGEST_HOUR_UTC:00 UTC.
+DIGEST_HOUR_UTC = 8  # 10:00 in Italia (CEST)
+
+
+def _is_digest_run() -> bool:
+    return datetime.now(timezone.utc).hour == DIGEST_HOUR_UTC
+
 _STATUS_ORDER = ['ricevuto','preparazione','spedito','in_transito','dogana','in_consegna','consegnato','problema','annullato']
 _STATUS_EMOJI = {
     'ricevuto':    '📥', 'preparazione': '📦', 'spedito':     '🚀',
@@ -552,7 +560,10 @@ def main():
         else:
             print('\nNessuna email da inviare.')
 
-    send_daily_digest(orders, log_new, now_ms, test_mode)
+    if _is_digest_run():
+        send_daily_digest(orders, log_new, now_ms, test_mode)
+    else:
+        print(f'⏭ Digest skippato — parte solo al run delle {DIGEST_HOUR_UTC}:00 UTC')
 
 
 if __name__ == '__main__':

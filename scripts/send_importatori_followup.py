@@ -33,6 +33,14 @@ LOG_PATH       = 'data/email-log-importatori.json'
 BCC_EMAIL        = 'hokutazzo@gmail.com'
 DIGEST_RECIPIENT = 'luca@ilciliegio.com'
 
+# Lo script gira ogni 4h (import_ordini.yml) ma il digest deve partire una
+# sola volta al giorno — solo al run delle DIGEST_HOUR_UTC:00 UTC.
+DIGEST_HOUR_UTC = 8  # 10:00 in Italia (CEST)
+
+
+def _is_digest_run() -> bool:
+    return datetime.now(timezone.utc).hour == DIGEST_HOUR_UTC
+
 SENDER_NAME  = 'Luca Pattaro — Siena Wine'
 SENDER_EMAIL = 'luca@sienawine.it'
 LOGO_URL     = 'https://shopilciliegio-ship-it.github.io/crm-importatori/assets/logo_sienawine.png'
@@ -473,7 +481,8 @@ def main():
 
     if not auto_send:
         print('⏸ Invio automatico importatori disabilitato. Nessuna email inviata.')
-        send_daily_digest([], [], 0, test_mode, 0)
+        if _is_digest_run():
+            send_daily_digest([], [], 0, test_mode, 0)
         return
 
     if test_mode:
@@ -571,7 +580,10 @@ def main():
         elif sent == 0:
             print('\nNessun follow-up da inviare.')
 
-    send_daily_digest(contacts, log_new, now_ms, test_mode, sync_count)
+    if _is_digest_run():
+        send_daily_digest(contacts, log_new, now_ms, test_mode, sync_count)
+    else:
+        print(f'⏭ Digest skippato — parte solo al run delle {DIGEST_HOUR_UTC}:00 UTC')
 
 
 if __name__ == '__main__':
