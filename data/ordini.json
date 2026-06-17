@@ -3560,12 +3560,19 @@
           "subject": "Your order is going through customs",
           "sentAt": 1781324089569,
           "messageId": "<202606130414.61168423744@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegnato",
+          "to": "abraira2040@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1781690183401,
+          "messageId": "<202606170956.73075922261@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780485256521,
-      "updatedAt": 1781690180064,
+      "updatedAt": 1781690183401,
       "shippingType": "standard",
       "shipmentCode": "ABRAIRAD"
     }
