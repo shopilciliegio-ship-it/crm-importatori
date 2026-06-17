@@ -153,6 +153,33 @@ function goToContacts({country='',region='',status='',tipo=''}={}){
   renderContacts();
 }
 
+// Per i clienti la tendina "Situazione contatto" usa le stesse categorie
+// della pipeline (Da contattare/Email inviate/Aperta/Cliccata/Bounce/Blacklist)
+// invece di replied/client/cold, che per migliaia di contatti WiFi non
+// triagiati uno per uno non hanno alcun significato.
+function renderStatusFilterOptions(){
+  const sel=document.getElementById('ss');
+  if(!sel) return;
+  const cur=sel.value;
+  sel.innerHTML = isClienti()
+    ? `<option value="">Situazione contatto</option>
+       <option value="new">Da contattare</option>
+       <option value="sent">Email inviata</option>
+       <option value="opened">👁 Aperta</option>
+       <option value="clicked">🔗 Cliccata</option>
+       <option value="bounced">⚠ Bounce</option>
+       <option value="blacklist">🚫 Blacklist</option>`
+    : `<option value="">Situazione contatto</option>
+       <option value="new">Da contattare</option>
+       <option value="sent">Email inviata</option>
+       <option value="followup">Follow-up</option>
+       <option value="replied">Risposto</option>
+       <option value="client">Cliente</option>
+       <option value="cold">Non interessato</option>
+       <option value="blacklisted">🚫 Blacklist</option>`;
+  if([...sel.options].some(o=>o.value===cur)) sel.value=cur;
+}
+
 function getFiltered(){
   const q=(gv('sq')).toLowerCase();
   const country=document.getElementById('sc')?.value||'';
@@ -192,7 +219,10 @@ function getFiltered(){
       if(rschF==='3'&&(c.research?.affidabilita||0)<3)return false;
     }
     if(window._pendingFilter){if(c.status!=='sent'&&c.status!=='followup')return false;}
-    else if(status&&c.status!==status)return false;
+    else if(status){
+      if(isClienti()){ if(clientiPipelineBucket(c)!==status) return false; }
+      else if(c.status!==status) return false;
+    }
     return true;
   });
 
@@ -389,6 +419,7 @@ function renderRegistro(){
 
   // Raggruppa per contatto
   const groups=[];
+  let totalContacted=0;
   adb.contacts.forEach(c=>{
     const evs=[...(c.brevoEvents||[])].sort((a,b)=>(a.sentAt||0)-(b.sentAt||0));
     const legacyEv=(!evs.length&&(c.status==='sent'||c.status==='followup'))
@@ -396,6 +427,7 @@ function renderRegistro(){
       :null;
     const allEvs=legacyEv?[legacyEv]:evs;
     if(!allEvs.length) return;
+    totalContacted++;
     // "blacklisted" è un flag a livello di contatto (settato da spam/unsub/blocked
     // automatici), diverso dallo stato per-evento di getBrevoStatus — quello torna
     // 'blacklisted' solo se qualcuno l'ha forzato a mano col menu manualStatus.
@@ -409,6 +441,9 @@ function renderRegistro(){
     }
     groups.push({c,evs:allEvs});
   });
+
+  const countEl=document.getElementById('reg-count');
+  if(countEl) countEl.textContent=`${groups.length} di ${totalContacted} visualizzati`;
 
   groups.sort((a,b)=>{
     if(sortBy==='status'){
