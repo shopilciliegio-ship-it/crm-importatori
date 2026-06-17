@@ -261,23 +261,28 @@
       "currency": "EUR",
       "orderDate": 1780920276000,
       "emailSubject": "🍷 New Order — DAISY CASTILLO — 107.90 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "CASTILLOD",
       "shippingAddress": "7677 MOJAVE WIND AVE, 89113 LAS VEGAS, NEVADA (CLARK COUNTY)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202606081204.23092379427@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1Z9376E1A835280410",
       "carrier": "MBE",
       "source": "fieramente",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1781136000000,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1780934555207,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1781690180064,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -293,7 +298,7 @@
       ],
       "notes": "",
       "createdAt": 1780934555207,
-      "updatedAt": 1781199154831,
+      "updatedAt": 1781690180064,
       "language": "en"
     },
     {
@@ -401,23 +406,28 @@
       "currency": "EUR",
       "orderDate": 1780870516000,
       "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio Heather Douglas",
-      "shipmentCode": "",
+      "shipmentCode": "DOUGLASH",
       "shippingAddress": "15544 Crestwood Drive, 66007 Basehor (KS), United States",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<DB9PR08MB66820FEEEE1F7C44F32F1C53BF1F2@DB9PR08MB6682.eurprd08.prod.outlook.com>",
-      "trackingNumber": "",
+      "trackingNumber": "1Z9376E1A834393461",
       "carrier": "Corriere Italia",
       "source": "shop",
       "orderNumber": "",
       "paymentType": "Carte Di Credito/Bancomat",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1781136000000,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1780917382029,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1781690180064,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -433,7 +443,7 @@
       ],
       "notes": "",
       "createdAt": 1780917382029,
-      "updatedAt": 1781199154831,
+      "updatedAt": 1781690180064,
       "trackingUrl": "",
       "language": "en"
     },
@@ -446,20 +456,25 @@
       "currency": "EUR",
       "orderDate": 1780662572000,
       "emailSubject": "🍷 New Order — MARK MADISON — 456.70 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "MADISONM",
       "shippingAddress": "514 NORTH MADISON AVENUE, 33755 CLEARWATER, FLORIDA (PINELLAS COUNTY)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202606051229.85277646007@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A812554032",
       "carrier": "MBE",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1781136000000,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1780672510830,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1781690180064,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -475,7 +490,7 @@
       ],
       "notes": "",
       "createdAt": 1780672510830,
-      "updatedAt": 1780672518803
+      "updatedAt": 1781690180064
     },
     {
       "id": "ord_mpzhlcdu21tb",
@@ -486,20 +501,25 @@
       "currency": "EUR",
       "orderDate": 1780571922000,
       "emailSubject": "🍷 New Order — LISA CHRISTIAN — 124.40 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "CHRISTIANL",
       "shippingAddress": "1313 RIO GRANDE DR, 75013 ALLEN, TEXAS (COLLIN COUNTY)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202606041118.26350675959@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A896828580",
       "carrier": "MBE",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1781136000000,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1780577033970,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1781690180064,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -515,7 +535,7 @@
       ],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1780672518803
+      "updatedAt": 1781690180064
     },
     {
       "id": "ord_mpzhlcdubeyc",
@@ -526,20 +546,25 @@
       "currency": "EUR",
       "orderDate": 1780571738000,
       "emailSubject": "🍷 New Order — WHITNEY BECK — 117.80 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "WHITNEYB",
       "shippingAddress": "5702 OVERTON DR, 75002 ALLEN, TEXAS (COLLIN COUNTY)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202606041115.91309215577@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A808754299",
       "carrier": "MBE",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1781136000000,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1780577033970,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1781690180064,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -555,7 +580,7 @@
       ],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1780672518803
+      "updatedAt": 1781690180064
     },
     {
       "id": "ord_mpzhlcdub8mu",
@@ -685,10 +710,10 @@
       "shippingAddress": "5333 SHORELINE CIR, SANFORD 32771 FLORIDA (SEMINOLE COUNTY)",
       "numberOfCartons": null,
       "gmailMessageId": "<DB9PR08MB668261D530FBFE77EA142B19BF142@DB9PR08MB6682.eurprd08.prod.outlook.com>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A898099632",
       "carrier": "MBE",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1781136000000,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "ricevuto",
@@ -699,6 +724,11 @@
           "status": "preparazione",
           "date": 1780575586147,
           "note": ""
+        },
+        {
+          "status": "in_transito",
+          "date": 1781690180064,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -714,7 +744,7 @@
       ],
       "notes": "",
       "createdAt": 1780314564497,
-      "updatedAt": 1780672518803,
+      "updatedAt": 1781690180064,
       "shippingType": "standard"
     },
     {
@@ -3491,7 +3521,7 @@
       "mbeTrackingNumber": "IT3299-8V-0000006FDJ",
       "carrier": "UPS",
       "shippingDate": "2026-06-03",
-      "status": "dogana",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "spedito",
@@ -3507,6 +3537,11 @@
           "status": "dogana",
           "date": 1781324086971,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "consegnato",
+          "date": 1781690180064,
+          "note": "Auto Fieramente (era: dogana)"
         }
       ],
       "emailsSent": [
@@ -3530,7 +3565,7 @@
       "notes": "",
       "source": "mbe",
       "createdAt": 1780485256521,
-      "updatedAt": 1781324089569,
+      "updatedAt": 1781690180064,
       "shippingType": "standard",
       "shipmentCode": "ABRAIRAD"
     }
