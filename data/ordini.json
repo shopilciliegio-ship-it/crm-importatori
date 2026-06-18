@@ -1,6 +1,40 @@
 {
   "orders": [
     {
+      "id": "ord_mqjc6bvm0tmr",
+      "customerName": "ASHLEIGH COLE",
+      "customerEmail": "thecolefamily1@att.net",
+      "customerPhone": "8649061783",
+      "amount": 841.4,
+      "currency": "EUR",
+      "orderDate": 1781775612000,
+      "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio ASHLEIGH COLE",
+      "shipmentCode": "",
+      "shippingAddress": "106 Steeplechase, 29627 BELTON - S.CAROLINA - U.S.A. (SC), United States",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<DB9PR08MB6682E21A24DCDADBD2926A73BFE32@DB9PR08MB6682.eurprd08.prod.outlook.com>",
+      "trackingNumber": "",
+      "carrier": "- U.S.A. Wine Corriere Std",
+      "source": "shop",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "Carte Di Credito/Bancomat",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1781777258914,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1781777258914,
+      "updatedAt": 1781777258914
+    },
+    {
       "id": "ord_mqh1s5rlhcpn",
       "customerName": "BELINDA BOURJEILI",
       "customerEmail": "bbourjeili@sbcglobal.net",
@@ -3584,5 +3618,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1781638869297
+  "lastImportedAt": 1781777258914
 }
