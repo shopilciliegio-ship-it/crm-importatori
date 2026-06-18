@@ -8,6 +8,15 @@
       "subject": "Your wine is still on its way — update",
       "sentAt": 1781756736561,
       "messageId": "<202606180425.68445784837@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mqjc6bvm0tmr",
+      "customerName": "ASHLEIGH COLE",
+      "type": "order_received",
+      "to": "thecolefamily1@att.net",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1781777271397,
+      "messageId": "<202606181007.78776507337@smtp-relay.mailin.fr>"
     }
   ]
 }
