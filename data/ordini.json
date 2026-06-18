@@ -29,10 +29,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "thecolefamily1@att.net",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1781777271397,
+          "messageId": "<202606181007.78776507337@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1781777258914,
-      "updatedAt": 1781777258914
+      "updatedAt": 1781777271397
     },
     {
       "id": "ord_mqh1s5rlhcpn",
