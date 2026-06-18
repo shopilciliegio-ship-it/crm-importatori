@@ -252,7 +252,7 @@ def sync_contact_events(contacts, start_date: str, end_date: str) -> tuple[int, 
             if mid:
                 index[mid] = (c, ev)
 
-    counts = {'delivered': 0, 'opened': 0, 'clicked': 0, 'bounced': 0, 'spam': 0, 'unsubscribed': 0, 'blocked': 0}
+    counts = {'delivered': 0, 'opened': 0, 'clicked': 0, 'bounced': 0, 'spam': 0, 'unsubscribed': 0, 'blocked': 0, 'clickedLinks': 0}
     changed_contacts = set()
 
     raw_events = fetch_events_for_range(start_date, end_date)
@@ -269,7 +269,26 @@ def sync_contact_events(contacts, start_date: str, end_date: str) -> tuple[int, 
             continue
         c, ev = hit
         kind = _classify_event(e.get('event'))
-        if not kind or ev.get(kind):
+        if not kind:
+            continue
+
+        # Il campo "link" arriva sull'evento "click" stesso — lo registriamo
+        # anche se "clicked" era già True da un run precedente, per coprire sia
+        # più link diversi cliccati nella stessa email sia il backfill del link
+        # sui click già rilevati prima che questo campo esistesse.
+        if kind == 'clicked':
+            link = e.get('link')
+            if link:
+                links = ev.get('clickedLinks')
+                if not isinstance(links, list):
+                    links = []
+                if link not in links:
+                    links.append(link)
+                    ev['clickedLinks'] = links
+                    counts['clickedLinks'] += 1
+                    changed_contacts.add(id(c))
+
+        if ev.get(kind):
             continue
 
         ev[kind] = True
@@ -338,7 +357,7 @@ def main():
     print(f'Sync Brevo ({start_date}..{end_date}): {updated} contatti con nuovi eventi')
     print(f'  delivered={counts["delivered"]} opened={counts["opened"]} clicked={counts["clicked"]} '
           f'bounced={counts["bounced"]} spam={counts["spam"]} unsubscribed={counts["unsubscribed"]} '
-          f'blocked={counts["blocked"]}')
+          f'blocked={counts["blocked"]} clickedLinks={counts["clickedLinks"]}')
 
     blacklisted_fixed = reconcile_blacklist(contacts)
     print(f'Blacklist: {blacklisted_fixed} contatti aggiunti (spam/disiscrizione/bloccata)')

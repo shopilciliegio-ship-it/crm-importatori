@@ -46,7 +46,11 @@ function breveEventsBadge(c){
   const icons = [];
   if(last.delivered) icons.push('<span title="Consegnata" style="color:#27ae60">✓</span>');
   if(last.opened)    icons.push('<span title="Aperta" style="color:#2980b9">👁</span>');
-  if(last.clicked)   icons.push('<span title="Link cliccato" style="color:#8e44ad">🔗</span>');
+  if(last.clicked){
+    const links=Array.isArray(last.clickedLinks)?last.clickedLinks:[];
+    const tip=links.length?`Link cliccato:\n${links.join('\n')}`:'Link cliccato';
+    icons.push(`<span title="${esc(tip)}" style="color:#8e44ad">🔗</span>`);
+  }
   if(last.bounced)   icons.push('<span title="Bounce" style="color:#e74c3c">⚠</span>');
   if(last.spam)      icons.push('<span title="Spam" style="color:#e74c3c">🚫</span>');
   return icons.length ? `<span style="font-size:14px;margin-left:6px">${icons.join('')}</span>` : '';
@@ -224,7 +228,16 @@ function _applyBrevoEvents(contact, ev, events){
   let changed=false;
   events.forEach(e=>{
     const kind=classifyBrevoEventType(e.event);
-    if(!kind||ev[kind]) return;
+    if(!kind) return;
+    // Il link cliccato arriva sull'evento "click" stesso — lo registriamo anche
+    // se "clicked" è già true da una sync precedente (più link diversi nella
+    // stessa email, o backfill del link su click già rilevati prima che questo
+    // campo esistesse).
+    if(kind==='clicked' && e.link){
+      const links=Array.isArray(ev.clickedLinks)?ev.clickedLinks:[];
+      if(!links.includes(e.link)){ links.push(e.link); ev.clickedLinks=links; changed=true; }
+    }
+    if(ev[kind]) return;
     ev[kind]=true; ev[kind+'At']=e.date; changed=true;
     if(_BREVO_EVENT_LOG_MSG[kind]) contact.log.push({ts:new Date(e.date).getTime()||Date.now(),msg:_BREVO_EVENT_LOG_MSG[kind](ev)});
   });

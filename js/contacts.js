@@ -487,7 +487,9 @@ function renderRegistro(){
       const icon=STEP_ICON[st]||'📤';
       const stepN=ev.sequenceStep||(idx+1);
       const noTrackStyle=ev.noTracking?'opacity:0.6':'';
-      return `<span title="${s.l} — ${fmtDate(ev.sentAt)}"
+      const links=ev.clicked&&Array.isArray(ev.clickedLinks)?ev.clickedLinks:[];
+      const tip=s.l+' — '+fmtDate(ev.sentAt)+(links.length?'\n'+links.join('\n'):'');
+      return `<span title="${esc(tip)}"
         style="display:inline-flex;align-items:center;gap:2px;padding:2px 7px;border-radius:10px;
           font-size:11px;font-weight:700;background:${s.bg};color:${s.tx};white-space:nowrap;${noTrackStyle}">
         #${stepN} ${icon} ${fmtDate(ev.sentAt)}
