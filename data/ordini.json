@@ -1,6 +1,74 @@
 {
   "orders": [
     {
+      "id": "ord_mqju2sucol0j",
+      "customerName": "MICHAEL SEPHTON",
+      "customerEmail": "tko751000@gmail.com",
+      "customerPhone": "+15164494389",
+      "amount": 111.2,
+      "currency": "EUR",
+      "orderDate": 1781803396000,
+      "emailSubject": "🍷 New Order — MICHAEL SEPHTON — 111.20 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "1447 PINE ACRES BLVD., 11706 BAY SHORE, NEW YORK (SUFFOLK COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202606181723.97056370554@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1781807327363,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1781807327363,
+      "updatedAt": 1781807327363
+    },
+    {
+      "id": "ord_mqju2suberxx",
+      "customerName": "MICHAEL SEPHTON",
+      "customerEmail": "tko751000@gmail.com",
+      "customerPhone": "+15164494389",
+      "amount": 94.7,
+      "currency": "EUR",
+      "orderDate": 1781799451000,
+      "emailSubject": "🍷 New Order — MICHAEL SEPHTON — 94.70 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "1447 PINE ACRES BLVD., 11706 BAY SHORE, NEW YORK (SUFFOLK COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202606181617.61418169653@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1781807327363,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1781807327363,
+      "updatedAt": 1781807327363
+    },
+    {
       "id": "ord_mqjc6bvm0tmr",
       "customerName": "ASHLEIGH COLE",
       "customerEmail": "thecolefamily1@att.net",
@@ -3626,5 +3694,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1781777258914
+  "lastImportedAt": 1781807327363
 }
