@@ -3595,7 +3595,7 @@
       "mbeTrackingNumber": "IT3299-8V-0000006FDN",
       "carrier": "UPS",
       "shippingDate": "2026-06-03",
-      "status": "dogana",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "spedito",
@@ -3611,6 +3611,11 @@
           "status": "dogana",
           "date": 1781324086971,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "consegnato",
+          "date": 1781871143558,
+          "note": "Auto Fieramente (era: dogana)"
         }
       ],
       "emailsSent": [
@@ -3634,7 +3639,7 @@
       "notes": "",
       "source": "mbe",
       "createdAt": 1780485256521,
-      "updatedAt": 1781324089569,
+      "updatedAt": 1781871143558,
       "shippingType": "standard",
       "shipmentCode": "MORENOG"
     },
