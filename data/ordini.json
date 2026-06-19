@@ -3634,12 +3634,19 @@
           "subject": "Your order is going through customs",
           "sentAt": 1781324089569,
           "messageId": "<202606130414.18198756178@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegnato",
+          "to": "g06mrn@yahoo.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1781871145571,
+          "messageId": "<202606191212.57313837896@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780485256521,
-      "updatedAt": 1781871143558,
+      "updatedAt": 1781871145571,
       "shippingType": "standard",
       "shipmentCode": "MORENOG"
     },
