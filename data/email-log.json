@@ -35,6 +35,15 @@
       "subject": "Thank you for your order! 🍷",
       "sentAt": 1781807335262,
       "messageId": "<202606181828.66063385094@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mbe_IT3299-8V-0000006FDN",
+      "customerName": "GRACIELA MORENO",
+      "type": "consegnato",
+      "to": "g06mrn@yahoo.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1781871145571,
+      "messageId": "<202606191212.57313837896@smtp-relay.mailin.fr>"
     }
   ]
 }
