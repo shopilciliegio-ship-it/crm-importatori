@@ -745,12 +745,17 @@
       "trackingNumber": "",
       "carrier": "MBE",
       "shippingDate": null,
-      "status": "preparazione",
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1780577033970,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1781994998699,
+          "note": ""
         }
       ],
       "emailsSent": [
@@ -762,11 +767,18 @@
           "messageId": "<202606051515.64745513990@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-06-05T17:15:24.000+02:00"
+        },
+        {
+          "type": "In transito",
+          "sentAt": 1781994999123,
+          "messageId": "<202606202236.17513788680@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1780672518803
+      "updatedAt": 1781994999124,
+      "trackingUrl": "",
+      "language": "en"
     },
     {
       "id": "ord_mpvpkyylwz2h",
