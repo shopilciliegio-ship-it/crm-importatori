@@ -108,16 +108,6 @@ def fieramente_get_shipments(token):
     return shipments
 
 
-def date_to_ms(date_str):
-    if not date_str:
-        return None
-    try:
-        dt = datetime.fromisoformat(str(date_str).strip())
-        return int(dt.replace(tzinfo=timezone.utc).timestamp() * 1000)
-    except (ValueError, TypeError):
-        return None
-
-
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
@@ -173,7 +163,6 @@ def main():
         cur_status = order.get('status', 'ricevuto')
         new_status = STATUS_MAP.get(str(fier.get('status', '')))
         tracking   = (fier.get('tracking') or '').strip()
-        ship_ms    = date_to_ms(fier.get('ship_date'))
         updated    = False
 
         if tracking and order.get('trackingNumber') != tracking:
@@ -181,9 +170,12 @@ def main():
             print(f'  {name}: tracking → {tracking}')
             updated = True
 
-        if ship_ms and not order.get('shippingDate'):
-            order['shippingDate'] = ship_ms
-            print(f'  {name}: shippingDate → {fier["ship_date"]}')
+        # shippingDate = giorno in cui rileviamo il tracking number, non il
+        # ship_date di Fieramente (poco affidabile: arriva in ritardo o non
+        # arriva affatto, e la finestra del reminder day0 è di soli 3 giorni).
+        if tracking and not order.get('shippingDate'):
+            order['shippingDate'] = now_ms
+            print(f'  {name}: shippingDate → oggi (tracking number rilevato)')
             updated = True
 
         if new_status and cur_status not in TERMINAL_STATUSES:
