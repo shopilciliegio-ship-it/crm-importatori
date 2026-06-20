@@ -21173,5 +21173,1017 @@
       "note": "Distributore consolidato (dal 1971) con 50 dipendenti e fatturato solido (~6M). Portafoglio ampio (vino, birra, spirits) ma nessuna menzione esplicita di vini italiani. Sito poco curato (Lorem ipsum). Mercato locale Aruba (horeca+retail). Vale verificare se importano vini italiani.",
       "analyzed_at": "2026-06-19T09:41:19.229Z"
     }
+  },
+  "c1780673710718bjtl0": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore consolidato ad Aruba con 30 dipendenti e fatturato solido (~2.7M). Presente in portfolio di grandi cantine (Duckhorn, Chateau Montelena). Manca conferma esplicita di vini italiani nel portafoglio, ma come importatore europeo potrebbe averne. Contatto: herdy@pepia-est.com",
+      "analyzed_at": "2026-06-20T08:18:34.979Z"
+    }
+  },
+  "c1780673710718nhogg": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer/online store ad Aruba con portafoglio vini generico. Fatturato modesto (~2M) e 26 dipendenti suggeriscono piccola-media dimensione locale. Sito web (doit.aw) non corrisponde al nome aziendale, creando confusione sulla struttura. Verificare se effettivamente importano vini italiani prima di contattare.",
+      "analyzed_at": "2026-06-20T08:18:40.475Z"
+    }
+  },
+  "c1780673710718zoan7": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore/distributore consolidato ad Aruba con 12 dipendenti e fatturato ~1M€. Citato come distributore da produttori europei (Quady, Guntrum). Sito dichiarato non raggiungibile ma attivo in passato. Mercato geografico limitato (isola caraibica) riduce potenziale, ma portfolio include vini europei.",
+      "analyzed_at": "2026-06-20T08:18:45.934Z"
+    }
+  },
+  "c178067371071816qx4": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Piccolo importatore-distributore ad Aruba (6 dipendenti, fatturato ~228k). Dati commerciali da trade database confermano import da Italia (Sanpellegrino). Assenza sito web e info limitate riducono affidabilità; mercato locale (isola caraibica) potrebbe non essere prioritario.",
+      "analyzed_at": "2026-06-20T08:18:51.263Z"
+    }
+  },
+  "c1780673710718yfqdi": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda piccola (6 dipendenti, fatturato ~544k USD) senza sito web. Nessuna evidenza di specializzazione in vini italiani; dati frammentari da fonti secondarie. Ubicazione Aruba suggerisce mercato locale/regionale limitato.",
+      "analyzed_at": "2026-06-20T08:18:57.010Z"
+    }
+  },
+  "c1780673710718dht2k": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccolo retailer ad Aruba (3 dipendenti, fatturato ~229k) con portafoglio vini/spirits generico. Sito non raggiungibile limita verifica. Presenza su store locator Blue Chair Bay suggerisce distribuzione reale, ma nessuna evidenza specifica di vini italiani.",
+      "analyzed_at": "2026-06-20T08:19:03.010Z"
+    }
+  },
+  "c1780673710718riy1b": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda con 2 dipendenti e fatturato minimo (207k). Portafoglio esclusivamente sudamericano (Argentina: Malbec, Pinot Noir, Cabernet). Nessuna traccia di vini italiani. Assenza totale da Google e sito poco professionale suggeriscono operatività limitata.",
+      "analyzed_at": "2026-06-20T08:19:10.205Z"
+    }
+  },
+  "c17806737107182wpec": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "si",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "si",
+      "note": "Distributore esclusivo ad Aruba con portfolio che include esplicitamente vini italiani. Azienda consolidata dal 2013, contatti diretti disponibili (Patrick Dekker, owner). Mercato di nicchia ma stabile.",
+      "analyzed_at": "2026-06-20T08:19:16.325Z"
+    }
+  },
+  "c1780673710718y9q4a": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda locale di Aruba che opera come aggregatore online con partnership con importatori locali. Nessuna evidenza di specializzazione in vini italiani; focus su delivery di vini/birre/spirits generici. Sito non raggiungibile al momento dell'analisi.",
+      "analyzed_at": "2026-06-20T08:19:21.278Z"
+    }
+  },
+  "c1780673710718o9mbo": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "E-commerce di vini e spirits con catalogo generico (non specificamente italiano). Sito funzionante con certificazioni WSET. Ubicazione Aruba (mercato caraibico) limita rilevanza per distribuzione vini italiani in Europa.",
+      "analyzed_at": "2026-06-20T08:19:28.175Z"
+    }
+  },
+  "c1780673710718huxq0": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer locale ad Aruba (piccolo mercato). Importa vini da Spagna, nessuna evidenza di focus su vini italiani. Dimensione e posizionamento geografico non strategici per distribuzione vini premium italiani.",
+      "analyzed_at": "2026-06-20T08:19:36.884Z"
+    }
+  },
+  "c1780673710718xftt2": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "importatore|distributore|online",
+      "mercato_target": "retail|online|misto",
+      "raccomandato": "no",
+      "note": "Azienda con sito funzionante e team identificato, ma focus principale su beauty/personal care (CeraVe, L'Oreal). Vini presenti nel catalogo ma non sono core business. Nessuna evidenza di specializzazione in vini italiani; mercato locale (Aruba) limita potenziale B2B internazionale.",
+      "analyzed_at": "2026-06-20T08:19:42.985Z"
+    }
+  },
+  "c1780673710718fqn26": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer ad Aruba con sito basic e nessuna info su fatturato/dipendenti. Catalogo generico (Toscana tra le regioni, ma nessuna menzione esplicita di vini italiani). Mercato locale limitato, non strategico per distributori italiani.",
+      "analyzed_at": "2026-06-20T08:19:50.524Z"
+    }
+  },
+  "c1780673710718gepcw": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "importatore",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda con presenze in directory commerciali ma sito web poco professionale e generico (manca portfolio vini). Nessuna evidenza di specializzazione in vini italiani; catalogo sembra focalizzato su prodotti generici (acqua, biscotti, cibo per cani). Ubicazione ad Aruba (mercato molto piccolo) limita potenziale.",
+      "analyzed_at": "2026-06-20T08:19:56.694Z"
+    }
+  },
+  "c1780673710718cg2qm": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore|distributore",
+      "mercato_target": "horeca|retail",
+      "raccomandato": "forse",
+      "note": "Azienda storica (dal 1965) con sito professionale che importa vini da tutto il mondo (cita Californian wine). Portafoglio generico senza focus esplicito su vini italiani. Segnali di affidabilità (testimonianze, consegne puntuali) ma presenze in database offshore (Paradise Papers) richiedono cautela.",
+      "analyzed_at": "2026-06-20T08:20:03.039Z"
+    }
+  },
+  "c1780673710718qgyn9": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer ad Aruba senza informazioni su portafoglio vini italiani. Sito minimalista, nessun dettaglio su marche/fornitori. Mercato geografico non strategico per esportazione vini italiani.",
+      "analyzed_at": "2026-06-20T08:20:08.673Z"
+    }
+  },
+  "c1780673710725aan5f": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore/retailer consolidato alle Bahamas con 150 dipendenti e fatturato solido (~13.6M). Importa vini e spirits ma nessuna conferma esplicita su vini italiani. Sito non raggiungibile limita verifica.",
+      "analyzed_at": "2026-06-20T08:20:25.374Z"
+    }
+  },
+  "c1780673710725mvt5g": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore e retailer consolidato nei Caraibi (100 dipendenti, fatturato ~16.5M USD, 52 store). Portafoglio ampio (vini, birra, spirits) ma nessuna evidenza specifica di vini italiani. Mercato geografico lontano da target europeo.",
+      "analyzed_at": "2026-06-20T08:20:31.185Z"
+    }
+  },
+  "c17806737107256yxar": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Distributore consolidato (dal 1997) con 93 dipendenti e fatturato significativo. Importa vini (confermato da ImportGenius) ma nessuna evidenza specifica di vini italiani nel portafoglio. Mercato locale Bahamas, non target europeo.",
+      "analyzed_at": "2026-06-20T08:20:37.135Z"
+    }
+  },
+  "c1780673710725u11ug": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Supermercato generale alle Bahamas con sezione liquori (beer, spirits, wine generico). Nessuna evidenza di focus su vini italiani. Registrato presso Inland Revenue bahamese ma sito poco professionale e nessun dettaglio su portafoglio vini.",
+      "analyzed_at": "2026-06-20T08:20:42.735Z"
+    }
+  },
+  "c1780673710725cwtyj": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Azienda con 2 dipendenti e fatturato minimo (43k). Sito non raggiungibile e nessuna traccia online. Impossibile verificare portafoglio vini italiani o affidabilità commerciale.",
+      "analyzed_at": "2026-06-20T08:20:47.432Z"
+    }
+  },
+  "c17806737107255o31i": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Importatore boutique nei Caraibi con contatti verificati (Montalcino, Ceretto). Però: 1 dipendente, fatturato molto basso (15k$), siti non raggiungibili. Potenziale per vini italiani ma scala operativa ridotta.",
+      "analyzed_at": "2026-06-20T08:20:52.451Z"
+    }
+  },
+  "c1780673710725atijm": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda consolidata (dal 2012) con sito e-commerce funzionante, ma fatturato molto basso (15k) e 1 solo dipendente suggeriscono micro-realtà. Portafoglio generico (vini mondiali, non specificamente italiani evidenziati). Mercato locale Bahamas, non target europeo.",
+      "analyzed_at": "2026-06-20T08:20:58.351Z"
+    }
+  },
+  "c1780673710725nwibx": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda consolidata alle Bahamas con sito professionale, registrata fiscalmente e due boutique fisiche. Portafoglio generico (vini, champagne, spirits) senza menzione esplicita di vini italiani; fatturato modesto (155k) suggerisce dimensione piccola. Contattare solo se target è mercato caraibico/resort.",
+      "analyzed_at": "2026-06-20T08:21:06.053Z"
+    }
+  },
+  "c1780673710725e30ij": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "distributore",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Siti dichiarati irraggiungibili, nessuna traccia online, dati aziendali assenti (dipendenti/fatturato). Impossibile verificare affidabilità o portafoglio prodotti.",
+      "analyzed_at": "2026-06-20T08:21:10.536Z"
+    }
+  },
+  "c1780673710725kz9ir": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda bahamese focalizzata su birra locale (Sands) e distribuzione nel mercato caraibico. Portafoglio vini generico (Kendall Jackson, Jacob's Creek) senza focus italiano. Non pertinente per strategie di export vini italiani.",
+      "analyzed_at": "2026-06-20T08:21:16.287Z"
+    }
+  },
+  "c1780673710725k3azm": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer alle Bahamas senza sito web. Presenze su Facebook e attività di wine tasting locale, ma nessuna evidenza di importazione vini italiani. Mercato geograficamente distante e non pertinente per distribuzione italiana.",
+      "analyzed_at": "2026-06-20T08:21:21.893Z"
+    }
+  },
+  "c1780673710725an4d8": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Azienda registrata alle Bahamas con storia consolidata (presente nei registri fiscali dal 2015). Sito e-commerce con sezione dedicata ai vini italiani, ma operatività limitata a Nassau/Paradise Island. Nessun dato su fatturato/dipendenti; contatto telefonico disponibile.",
+      "analyzed_at": "2026-06-20T08:21:27.915Z"
+    }
+  },
+  "c178067371072608z15": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Sito non raggiungibile, nessuna traccia Google, dati aziendali assenti (dipendenti/fatturato). Impossibile verificare portafoglio prodotti o presenza di vini italiani. Mercato Bahamas (Nassau) poco rilevante per distribuzione italiana.",
+      "analyzed_at": "2026-06-20T08:21:32.833Z"
+    }
+  },
+  "c17806737107268ylz2": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Distributore online alle Bahamas specializzato in vini sudafricani (Leopards Leap, Six Dogs) e spirits. Nessuna traccia di vini italiani nel portafoglio. Mercato geografico non rilevante per esportatori italiani.",
+      "analyzed_at": "2026-06-20T08:21:38.839Z"
+    }
+  },
+  "c1780673710733hbeoh": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Catena di supermercati consolidata a Bermuda (8 locations, 200 dipendenti, fatturato solido). Vende vino tra altri prodotti ma non emerge focus su vini italiani. Potenziale cliente per distribuzione retail, richiede verifica su sourcing preferenze.",
+      "analyzed_at": "2026-06-20T08:21:43.883Z"
+    }
+  },
+  "c1780673710733cngf1": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore e retailer consolidato a Bermuda (75 dipendenti, fatturato ~6.8M) con 822 shipment import. Nessuna evidenza esplicita di vini italiani nel portafoglio; assenza di sito web ufficiale limita verifica. Vale la pena contattare per verificare se importano italiani.",
+      "analyzed_at": "2026-06-20T08:21:49.158Z"
+    }
+  },
+  "c1780673710733ijvao": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Supermarket retailer a Bermuda con focus su vini francesi e cileni. Nessuna evidenza di interesse per vini italiani; mercato locale (isola) limita potenziale distribuzione. Non pertinente per esportatori italiani.",
+      "analyzed_at": "2026-06-20T08:21:54.641Z"
+    }
+  },
+  "c1780673710733lq5jn": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda locale bermudiana (dal 1948) con sito web funzionante ma generico. Nessuna evidenza di importazione diretta di vini italiani; focus su retail/online di bevande generiche. Mercato geografico (Bermuda) non strategico per esportazione vini italiani.",
+      "analyzed_at": "2026-06-20T08:22:00.095Z"
+    }
+  },
+  "c1780673710733ayj33": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore-distributore-retailer consolidato a Bermuda con ~10 dipendenti e fatturato modesto (907k). Portafoglio include vini italiani (Piedmont, Tuscany, Nebbiolo, Conterno Nervi) ma focus prevalente su Francia e mercato anglofono. Mercato geografico limitato (isola caraibica) riduce potenziale per esportazioni italiane.",
+      "analyzed_at": "2026-06-20T08:22:06.297Z"
+    }
+  },
+  "c1780673710733k9kt9": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore consolidato a Bermuda (40+ anni) con canale online e wholesale. Portafoglio generico (vini, alimenti, articoli per la casa); nessuna menzione esplicita di vini italiani. Mercato locale limitato (isola), ma potenziale per export verso Caraibi.",
+      "analyzed_at": "2026-06-20T08:22:12.050Z"
+    }
+  },
+  "c1780673710733h9p1z": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda registrata a Bermuda con licenza liquor valida e storico di importazioni (tracce di Aperol da Italia). Piccola struttura (5 dipendenti, fatturato modesto). Sito non raggiungibile limita verifica affidabilità.",
+      "analyzed_at": "2026-06-20T08:22:17.460Z"
+    }
+  },
+  "c17806737107337lcqe": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer online con 650+ vini a Bermuda. Sito funzionante ma nessuna traccia Google; portafoglio generico (non specifica origine vini). Verificare se distribuisce vini italiani prima di contattare.",
+      "analyzed_at": "2026-06-20T08:22:22.376Z"
+    }
+  },
+  "c1780673710733s10j8": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer bermudiano con licenza Class A per vino e birra, presenti online. Instagram mostra vini italiani (Marchesi Gondi toscani). Sito non raggiungibile al momento della verifica; dati limitati su dimensione e fatturato.",
+      "analyzed_at": "2026-06-20T08:22:29.019Z"
+    }
+  },
+  "c1780673710733f983m": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore consolidato a Bermuda (attivo dal 2013+) con portafoglio wine/spirits/beer. Sito non raggiungibile. Nessuna evidenza specifica di vini italiani; focus storico su tabacco e bevande generiche. Contatto possibile ma richiede verifica diretta.",
+      "analyzed_at": "2026-06-20T08:22:34.349Z"
+    }
+  },
+  "c1780673710733g3it1": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore consolidato a Bermuda (75+ anni) con sito professionale e traccia di importazioni da Italia (Fratelli Branca). Serve horeca e retail locali, ma mercato geografico limitato (isola caraibica). Contattare se interessati a canale estero/duty-free.",
+      "analyzed_at": "2026-06-20T08:22:39.642Z"
+    }
+  },
+  "c1780673710733x1eis": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer alle Bermuda senza info su portafoglio vini italiani. Sito non raggiungibile; nessuna evidenza di specializzazione su vini italiani nei risultati di ricerca.",
+      "analyzed_at": "2026-06-20T08:22:45.293Z"
+    }
+  },
+  "c1780673710733d4obj": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Azienda storica (dal 1806) e affidabile con sito professionale e e-commerce attivo. Portafoglio ampio include vini italiani (citati tra le regioni), ma focus principale è mercato locale Bermuda. Non è distributore B2B per horeca italiano.",
+      "analyzed_at": "2026-06-20T08:22:51.172Z"
+    }
+  },
+  "c17806737107333z5me": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer premium a Bermuda con sito professionale e portafoglio internazionale (include Italia tra i paesi). Tuttavia: mercato geografico lontano, focus retail/lounge locale, nessun indicatore di interesse per importazioni dirette da produttori italiani.",
+      "analyzed_at": "2026-06-20T08:22:57.186Z"
+    }
+  },
+  "c1780673710929droi0": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Catena retail con 200 dipendenti e fatturato significativo a Sint Maarten, vende vino tra altri alcolici. Siti dichiarati irraggiungibili e nessuna conferma online di specializzazione vini italiani; verificare contatti diretti per portfolio specifico.",
+      "analyzed_at": "2026-06-20T08:23:05.282Z"
+    }
+  },
+  "c17806737109298u09c": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore consolidato nei Caraibi (80 dipendenti, fatturato ~28.6M) con portafoglio bevande ampio (vino, birra, spirits). Sito e-commerce attivo ma nessuna evidenza esplicita di vini italiani nel catalogo online; potenziale cliente per importazione italiana se interessati al mercato caraibico.",
+      "analyzed_at": "2026-06-20T08:23:11.716Z"
+    }
+  },
+  "c1780673710929ud90u": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Sito non raggiungibile, nessuna info su portafoglio vini italiani. Presenze social limitate (sponsor carnevale). Fatturato molto basso per distributore (1M€) con 70 dipendenti suggerisce mercato locale ristretto (Sint Maarten).",
+      "analyzed_at": "2026-06-20T08:23:28.705Z"
+    }
+  },
+  "c1780673710929b5vg8": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Distributore wholesale nei Caraibi (Sint Maarten) con 50 dipendenti e fatturato modesto (~4.5M). Nessuna evidenza di focus su vini italiani; rebranded a CC1 St. Maarten nel 2014-2015, sito non disponibile. Mercato geografico non strategico per export vini italiani.",
+      "analyzed_at": "2026-06-20T08:23:33.869Z"
+    }
+  },
+  "c1780673710929cbjc9": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore consolidato dal 1976 a Sint Maarten con portafoglio vini/spirits/birra. Fatturato modesto (904k) e 10 dipendenti suggeriscono mercato locale/regionale. Nessuna conferma esplicita di vini italiani nel portafoglio.",
+      "analyzed_at": "2026-06-20T08:23:38.735Z"
+    }
+  },
+  "c1780673710929a4gsh": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Sito irraggiungibile, nessuna traccia Google, fatturato minimo (110k) e 2 dipendenti. Impossibile verificare se commercializza vini italiani. Profilo ad alto rischio.",
+      "analyzed_at": "2026-06-20T08:23:43.609Z"
+    }
+  },
+  "c17806737109291npap": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Azienda di yacht provisioning a Sint Maarten specializzata in importazioni generiche da Europa/America. Nessuna menzione esplicita di vini italiani; focus su servizi di approvvigionamento per yacht. Assenza di sito funzionante e dati aziendali (dipendenti, fatturato) rende valutazione affidabilità molto bassa.",
+      "analyzed_at": "2026-06-20T08:23:49.526Z"
+    }
+  },
+  "c1780673710929pfpji": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Duty free shop a Sint Maarten senza traccia online (sito irraggiungibile, nessun risultato Google). Impossibile verificare portafoglio vini italiani o affidabilità. Contatto non prioritario.",
+      "analyzed_at": "2026-06-20T08:24:06.367Z"
+    }
+  },
+  "c1780673710929v9v32": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Duty free shop a Sint Maarten focalizzato su spirits (cognac, rum, vodka) e tabacco. Nessuna menzione di vini italiani; sito basic su piattaforma gratuita con categorie vuote (0 prodotti). Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-06-20T08:24:11.973Z"
+    }
+  },
+  "c1780673710726775vl": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore wholesale solido (350 dipendenti, ~36M fatturato) con divisione Wine/Spirits, ma nessuna menzione esplicita di vini italiani nel portafoglio. Mercato Caraibi (Barbados), potenziale per espansione premium europeo.",
+      "analyzed_at": "2026-06-20T08:24:17.818Z"
+    }
+  },
+  "c1780673710726bx7bz": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore consolidato (40+ anni, 190 dipendenti) con portafoglio wine & spirits nel mercato caraibico. Nessuna evidenza esplicita di vini italiani; focus probabile su brand internazionali/anglofoni. Contattare per verificare interesse in importazioni italiane.",
+      "analyzed_at": "2026-06-20T08:24:22.612Z"
+    }
+  },
+  "c1780673710726bsbn1": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Distributore consolidato nei Caraibi (dal 1987) con 30 dipendenti e fatturato solido. Catalogo vini generico (Champagne, rossi, bianchi, spumanti) senza menzione esplicita di vini italiani. Mercato HORECA primario. Vale verificare se importano italiani.",
+      "analyzed_at": "2026-06-20T08:24:29.431Z"
+    }
+  },
+  "c1780673710726uxmyr": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore caraibico con portafoglio vini europei (Italia citata nel menu). Fatturato modesto (~1M USD), 12 dipendenti. Serve horeca e retail locale. Sito funzionante ma info limitate su sourcing italiano specifico.",
+      "analyzed_at": "2026-06-20T08:24:35.297Z"
+    }
+  },
+  "c1780673710726rx01g": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore|distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda solida (26+ anni, 50+ dipendenti, sito professionale) specializzata in import/distribuzione di marchi internazionali a Barbados. Portafoglio generico (vini, spirits, sparkling) senza evidenza specifica di vini italiani; mercato locale/regionale (Caraibi) limita potenziale per esportatore italiano.",
+      "analyzed_at": "2026-06-20T08:24:42.124Z"
+    }
+  },
+  "c1780673710726gbayw": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer online consolidato a Barbados con sito professionale e iscrizione BCCI. Catalogo ampio include vini italiani (Sangiovese, Pinot Grigio citati). Non è importatore/distributore diretto, quindi non è il target ideale per fornitori italiani.",
+      "analyzed_at": "2026-06-20T08:24:50.983Z"
+    }
+  },
+  "c1780673710726cu0o3": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore solido e affidabile (divisione R.L. Seale & Company, award-winning) con sito professionale e buona reputazione. Catalogo internazionale include Italia nella sezione OLD WORLD, ma non è specializzato in vini italiani. Mercato locale (Barbados) con retail online e wholesale.",
+      "analyzed_at": "2026-06-20T08:24:57.524Z"
+    }
+  },
+  "c1780673710741xxa1k": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore consolidato (dal 1968) con 125+ dipendenti e fatturato solido nelle Cayman Islands. Portafoglio generico wine/beer/spirits senza menzione esplicita di vini italiani. Mercato locale limitato (isole caraibiche) ma con canali horeca e retail sviluppati.",
+      "analyzed_at": "2026-06-20T08:25:03.099Z"
+    }
+  },
+  "c1780673710741u4xno": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer locale Cayman Islands con sito funzionante ma nessuna evidenza di vini italiani nel portafoglio. Mercato geografico (isole caraibiche) e modello retail puro non allineati con distribuzione vini italiani premium.",
+      "analyzed_at": "2026-06-20T08:25:08.539Z"
+    }
+  },
+  "c1780673710741ybtc8": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Azienda consolidata nelle Cayman Islands con multiple venue (wine bar, ristorante, retail). Fatturato modesto (90k$) e team piccolo (6 dipendenti). Nessuna menzione esplicita di vini italiani nel portafoglio; focus su esperienze enogastronomiche e mercato locale/turistico. Contatto disponibile (Mario Iacoviello). Vale la pena verificare se importano vini italiani.",
+      "analyzed_at": "2026-06-20T08:25:15.292Z"
+    }
+  },
+  "c1780673710741134kk": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Importatore specializzato di vini premium nelle Isole Cayman con sito e-commerce funzionante. Portafoglio include regioni italiane (Tuscany, Piedmont, Veneto) ma focus principale su mercato locale luxury/yacht. Piccola struttura (3 dipendenti) con fatturato modesto per il segmento.",
+      "analyzed_at": "2026-06-20T08:25:23.399Z"
+    }
+  },
+  "c1780673710741ztuf2": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda consolidata alle Cayman Islands (registrata in documenti ufficiali), opera come importatore/distributore/retailer di vini e spirits. Siti dichiarati irraggiungibili; mancano dati su fatturato e dipendenti. Nessuna evidenza esplicita di focus su vini italiani.",
+      "analyzed_at": "2026-06-20T08:25:28.246Z"
+    }
+  },
+  "c1780673710741nqi8m": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Retailer online locale (Cayman Islands) senza visibilità su Google e nessuna menzione di vini italiani. Mercato geografico ristretto (solo isole Cayman) e assenza di dati aziendali (dipendenti, fatturato). Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-06-20T08:25:33.778Z"
+    }
+  },
+  "c17806737107165aebt": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer locale nei Caraibi (Antigua) con sito basic e fatturato modesto (~480k). Nessuna evidenza di importazione vini italiani; focus su prodotti US/UK/Canada e yacht provisioning. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-06-20T08:25:40.111Z"
+    }
+  },
+  "c178067371071640ga5": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda piccola (15 dipendenti, ~1.3M fatturato) senza sito web. Nessuna evidenza di focus su vini italiani; importa generici (Angostura citato). Mercato locale Antigua & Barbuda poco rilevante per esportatori italiani.",
+      "analyzed_at": "2026-06-20T08:25:45.020Z"
+    }
+  },
+  "c17806737107166dxy4": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda piccola (5 dipendenti) con sito funzionante che cita esplicitamente Italia nel portafoglio vini. Assenza da Google e fatturato sconosciuto limitano valutazione affidabilità; mercato Caribbean potrebbe essere interessante per distribuzioni locali.",
+      "analyzed_at": "2026-06-20T08:25:50.921Z"
+    }
+  },
+  "c1780673710716jhzw6": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Piccolo retailer locale (2 dipendenti, fatturato ~62k USD) ad Antigua and Barbuda. Sito non raggiungibile. Nessuna evidenza di importazione vini italiani; focus su mercato HORECA locale/resort. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-06-20T08:25:56.001Z"
+    }
+  },
+  "c17806737107169o945": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo retailer nei Caraibi senza sito web. Nessuna evidenza di importazione vini italiani; focus su sparkling wine/prosecco generico. Mercato locale limitato, non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-06-20T08:26:00.556Z"
+    }
+  },
+  "c1780673710853b9sll": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Catena retail caraibica senza traccia online verificabile. Nessuna evidenza di focus su vini italiani; portafoglio generico (wine/beer/spirits). Sito non raggiungibile/non indicizzato da Google.",
+      "analyzed_at": "2026-06-20T08:26:05.744Z"
+    }
+  },
+  "c1780673710853udsbd": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda caraibica (Grenada) con sito irraggiungibile e zero traccia online. Nessuna evidenza di specializzazione in vini italiani. Dimensione significativa (225 dipendenti) ma impossibile verificare credibilità e portafoglio prodotti.",
+      "analyzed_at": "2026-06-20T08:26:11.038Z"
+    }
+  },
+  "c1780673710853z9v00": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Distributore consolidato (dal 1972) con 119 dipendenti e fatturato solido, ma portafoglio focalizzato su brand internazionali (Diageo, Campari, Hennessy) e non risultano vini italiani specifici. Mercato locale (Grenada e Caraibi) non strategico per esportatori italiani.",
+      "analyzed_at": "2026-06-20T08:26:17.757Z"
+    }
+  },
+  "c1780673710853205oa": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore/distributore caraibico con sito attivo e presenze documentate (import USA, distributore Clos Henri). Portafoglio vini europei/mediterranei suggerisce possibile interesse per vini italiani, ma nessuna conferma esplicita. Fatturato modesto (1.5M) e mercato locale limitato.",
+      "analyzed_at": "2026-06-20T08:26:23.227Z"
+    }
+  },
+  "c1780673710853vaps1": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "no",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Importatore di vini sudafricani (non italiani) con focus su mercato locale caraibico (Grenada). Sito con problemi tecnici e nessuna indicazione di interesse per vini italiani.",
+      "analyzed_at": "2026-06-20T08:26:30.071Z"
+    }
+  },
+  "c1780673710923lija8": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore solido nei Caraibi (180 dipendenti, fatturato ~38M) con portafoglio wine/spirits/beer. Serve horeca e retail. Nessuna menzione esplicita di vini italiani; probabile focus su brand internazionali/locali. Vale verificare se interessati a vini italiani premium.",
+      "analyzed_at": "2026-06-20T08:26:37.563Z"
+    }
+  },
+  "c1780673710923mo09t": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Catena retail locale (Saint Vincent and the Grenadines) con ~150 dipendenti e fatturato modesto. Nessuna evidenza di focus su vini italiani; portafoglio generico wine/spirits per mercato locale. Non pertinente per distribuzione vini premium italiani.",
+      "analyzed_at": "2026-06-20T08:26:43.848Z"
+    }
+  },
+  "c1780673710923gqeqo": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore caraibico consolidato (10-19 dipendenti, fatturato 1-5M) con infrastrutture professionali (cantine climatizzate). Portafoglio generico wine/spirits senza conferma esplicita di vini italiani; mercato locale limitato ma potenziale per espansione.",
+      "analyzed_at": "2026-06-20T08:26:49.587Z"
+    }
+  },
+  "c1780673710923zknhm": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda piccola su isola caraibica (Bequia), catalogo generico con pochi vini italiani identificati (Villa Girardi Amarone). Sito datato (2012), nessun dato su fatturato/dipendenti. Mercato locale turistico-horeca, non rilevante per distribuzione italiana.",
+      "analyzed_at": "2026-06-20T08:26:55.735Z"
+    }
+  },
+  "c1780673710923zy2cz": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda senza sito web, nessuna informazione su portafoglio vini italiani. Ubicazione nei Caraibi (Saint Vincent) suggerisce focus su mercato locale/regionale, non europeo. Dati insufficienti per valutare affidabilità.",
+      "analyzed_at": "2026-06-20T08:27:00.300Z"
+    }
+  },
+  "c17806737109230856t": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Retailer caribico solido (1000 dipendenti, VAT registrato) con canali online e retail. Vende vini ma non specifica origine italiana; portafoglio generico. Potenziale per distribuzione, ma richiede verifica su interesse specifico per vini italiani.",
+      "analyzed_at": "2026-06-20T08:27:06.291Z"
+    }
+  },
+  "c1780673710923cztqz": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Distributore consolidato nei Caraibi (160 dipendenti, ~15,5M fatturato) con portafoglio wine/spirits. Parte di Agostini Limited (gruppo regionale solido). Nessuna evidenza specifica di vini italiani nel portafoglio; mercato locale/regionale, non europeo.",
+      "analyzed_at": "2026-06-20T08:27:11.617Z"
+    }
+  },
+  "c1780673710923xrb46": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore consolidato nei Caraibi (50 dipendenti, ~6M fatturato), braccio commerciale di St Lucia Distillers Group. Portfolio include vini e spirits, ma focus principale su rum locale. Verificare se importa vini italiani o solo prodotti regionali/internazionali generici.",
+      "analyzed_at": "2026-06-20T08:27:28.700Z"
+    }
+  },
+  "c17806737109239ne40": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Azienda consolidata (dal 1992) con sito professionale e forte presenza social. Portfolio globale con accenni a vini italiani (Vermentino di Gallura, liquori italiani). Mercato locale (Saint Lucia) limita potenziale per esportatori italiani; valutare se interessati a distribuire nei Caraibi.",
+      "analyzed_at": "2026-06-20T08:27:35.120Z"
+    }
+  },
+  "c1780673710923w7fi3": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda solida (13 dipendenti, fatturato ~12M€) e leader nella distribuzione vini nelle Piccole Antille. Portafoglio generico europeo/mediterraneo, non esplicitamente focalizzato su vini italiani. Contatto utile se si mira al mercato caraibi.",
+      "analyzed_at": "2026-06-20T08:27:40.291Z"
+    }
+  },
+  "c17806737109238w2hk": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore/distributore con portafoglio ampio (vini, spirits, food italiano). Sito generico e datato; fatturato modesto (809k) con 13 dipendenti suggerisce piccola realtà. Presenze online limitate ma tracce di attività import verificate. Vale la pena contattare per verificare focus su vini italiani e capacità distributiva.",
+      "analyzed_at": "2026-06-20T08:27:46.310Z"
+    }
+  },
+  "c1780673710923eyu6x": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Retailer consolidato (dal 2005) con focus su vini boutique francesi e distribuzioni premium (yacht/villa). Portafoglio prevalentemente francese; vini italiani non esplicitamente citati ma possibile in collezione. Mercato di nicchia (HORECA luxury + retail) non ideale per volume.",
+      "analyzed_at": "2026-06-20T08:27:53.968Z"
+    }
+  },
+  "c17806737109231nu26": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Distributore locale di Saint Martin con sito minimalista e nessuna menzione di vini italiani. Portfolio generico 'from around the world' senza dettagli su marche o provenienza. Mercato troppo piccolo e geograficamente lontano.",
+      "analyzed_at": "2026-06-20T08:27:59.662Z"
+    }
+  },
+  "c17806737108018evs4": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Distributore locale dominicano attivo dal 2007 con 130 dipendenti. Nessuna evidenza di importazione vini italiani; focus su marchi internazionali generici e spirits. Mercato esclusivamente retail/locale, non idoneo per esportazione vini italiani.",
+      "analyzed_at": "2026-06-20T08:28:04.362Z"
+    }
+  },
+  "c1780673710801c650a": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda piccola (9 dipendenti, fatturato ~88k USD) senza sito web. Risultati Google non confermano attività di distribuzione vini; riferimenti trovati riguardano ristorante/bar e memorabilia sportiva. Impossibile verificare portafoglio prodotti e affidabilità.",
+      "analyzed_at": "2026-06-20T08:28:09.262Z"
+    }
+  },
+  "c1780673710801q6rci": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda locale di Dominica (Caraibi) che distribuisce vino, birra e spirits generici. Nessuna evidenza di specializzazione in vini italiani; sito non raggiungibile e info limitate a social media. Non pertinente per esportatori italiani.",
+      "analyzed_at": "2026-06-20T08:28:14.123Z"
+    }
   }
 }
