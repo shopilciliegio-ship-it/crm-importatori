@@ -79,6 +79,7 @@ function getReminderStatusHtml(order){
 
     if(r.type==='day0'){
       if(!sd) return _remRow(r.label,'in attesa spedizione',r.trigger,'var(--text3)');
+      if(daysSince>3) return _remRow(r.label,`⚠ finestra scaduta (${Math.floor(daysSince)}gg) — non inviata`,r.trigger,'var(--red)');
       return _remRow(r.label,'prossima esecuzione script',r.trigger,'var(--amber)');
     }
 
@@ -92,6 +93,7 @@ function getReminderStatusHtml(order){
     if(!r.types.includes(stype)) return _remRow(r.label,`solo Standard (questo: ${stype})`,r.trigger,'var(--text3)');
     if(!sd) return _remRow(r.label,'in attesa spedizione',r.trigger,'var(--text3)');
     const rem=r.days-daysSince;
+    if(daysSince>r.days+3) return _remRow(r.label,`⚠ finestra scaduta (${Math.floor(daysSince)}gg) — non inviata`,r.trigger,'var(--red)');
     if(rem<=0) return _remRow(r.label,'prossima esecuzione script',r.trigger,'var(--amber)');
     return _remRow(r.label,`tra ${Math.ceil(rem)} giorni`,r.trigger,'var(--text3)');
   }).join('');
