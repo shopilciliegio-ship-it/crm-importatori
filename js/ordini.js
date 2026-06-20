@@ -204,6 +204,10 @@ async function syncOrdiniBrevoEventsQuiet(){
   if(newBounces>0){ saveOrdineDB(); renderOrdini(); toast(`⚠ ${newBounces} bounce email ordini — controlla i destinatari`); }
 }
 
+function _fmtDM(ms){
+  return ms?new Date(ms).toLocaleDateString('it-IT',{day:'2-digit',month:'2-digit'}):'';
+}
+
 /* ─ Pallini fase email per la riga lista ─ */
 function _phaseDots(order){
   const sent=new Set((order.emailsSent||[]).filter(e=>!e.manual).map(e=>e.type));
@@ -236,16 +240,34 @@ function _phaseDots(order){
   }
 
   const dots=phases.filter(p=>!(p.hideExpress&&isExpress)).map(p=>{
-    let bg, title='';
+    let bg, title='', dateLabel='';
     const sched=(typeof REMINDER_SCHEDULE!=='undefined'?REMINDER_SCHEDULE:[]).find(r=>r.type===p.type);
-    if(bounced.has(p.type)){       bg='#e74c3c'; title=(sched?.label||p.type)+' — ⚠ BOUNCE'; }
-    else if(sent.has(p.type))    { bg=p.warn?'#c0392b':'#2a9d5c'; title=sched?.label||p.type; }
-    else if(p.sb&&status===p.type){ bg='#e67e22'; title=sched?.label||p.type; }
-    else if(_isPending(p))        { bg='#e67e22'; title=sched?.label||p.type; }
-    else                          { bg='var(--brd2)'; title=sched?.label||p.type; }
-    return `<span title="${esc(title)}" style="display:inline-block;width:7px;height:7px;border-radius:50%;background:${bg}"></span>`;
+    const sentEntry=(order.emailsSent||[]).find(e=>e.type===p.type&&!e.manual);
+    if(bounced.has(p.type)){
+      bg='#e74c3c'; title=(sched?.label||p.type)+' — ⚠ BOUNCE';
+      dateLabel=_fmtDM(sentEntry?.sentAt);
+    } else if(sent.has(p.type)) {
+      bg=p.warn?'#c0392b':'#2a9d5c'; title=sched?.label||p.type;
+      dateLabel=_fmtDM(sentEntry?.sentAt);
+    } else if(p.sb&&status===p.type){
+      bg='#e67e22'; title=sched?.label||p.type;
+    } else if(_isPending(p)){
+      bg='#e67e22'; title=sched?.label||p.type;
+      if(sd&&sched?.days!=null) dateLabel=_fmtDM(sd+sched.days*86400000);
+    } else {
+      bg='var(--brd2)'; title=sched?.label||p.type;
+      if(sd&&sched?.days!=null){
+        const target=sd+sched.days*86400000;
+        dateLabel=_fmtDM(target);
+        if(target<now) title+=' — ⚠ finestra scaduta';
+      }
+    }
+    return `<div style="display:flex;flex-direction:column;align-items:center;gap:1px;min-width:16px">
+      <span style="font-size:8px;color:var(--text3);line-height:1">${dateLabel||'&nbsp;'}</span>
+      <span title="${esc(title)}" style="display:inline-block;width:7px;height:7px;border-radius:50%;background:${bg}"></span>
+    </div>`;
   }).join('');
-  return `<div style="display:flex;gap:2px;align-items:center">${dots}</div>`;
+  return `<div style="display:flex;gap:1px;align-items:center">${dots}</div>`;
 }
 
 /* ─ Timeline unificata stati + email ─ */
