@@ -360,7 +360,7 @@ function renderOrdini(){
       </div>
       <div style="display:flex;align-items:center;gap:6px;flex-shrink:0">
         ${_phaseDots(o)}
-        <span class="badge" style="background:${st.c};color:${st.t}">${st.l}</span>
+        <span class="badge" style="background:${st.c};color:${st.t};min-width:104px;text-align:center">${st.l}</span>
       </div>
     </div>`;
   }).join('');
