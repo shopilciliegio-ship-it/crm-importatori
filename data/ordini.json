@@ -1556,12 +1556,19 @@
           "type": "Problema",
           "sentAt": 1781989369671,
           "messageId": "<202606202102.30369891886@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "problema",
+          "to": "sandfgordon26@gmail.com",
+          "subject": "⚠ Important update on your shipment",
+          "sentAt": 1781990533280,
+          "messageId": "<202606202122.83824163147@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1781989369672,
+      "updatedAt": 1781990533280,
       "shippingType": "standard",
       "shipmentCode": "JENKINSF",
       "trackingUrl": "",
