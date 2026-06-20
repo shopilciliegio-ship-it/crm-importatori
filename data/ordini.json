@@ -1522,7 +1522,7 @@
       "mbeTrackingNumber": "IT3299-8V-0000006AKO",
       "carrier": "UPS",
       "shippingDate": "2026-05-18",
-      "status": "dogana",
+      "status": "problema",
       "statusHistory": [
         {
           "status": "spedito",
@@ -1532,6 +1532,11 @@
         {
           "status": "dogana",
           "date": 1780574180715,
+          "note": ""
+        },
+        {
+          "status": "problema",
+          "date": 1781989369539,
           "note": ""
         }
       ],
@@ -1544,14 +1549,21 @@
           "messageId": "<202606051515.55116648247@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-06-05T17:15:24.000+02:00"
+        },
+        {
+          "type": "Problema",
+          "sentAt": 1781989369671,
+          "messageId": "<202606202102.30369891886@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780672518803,
+      "updatedAt": 1781989369672,
       "shippingType": "standard",
-      "shipmentCode": "JENKINSF"
+      "shipmentCode": "JENKINSF",
+      "trackingUrl": "",
+      "language": "en"
     },
     {
       "id": "ord_mbe_IT3299-8V-00000069TF",
