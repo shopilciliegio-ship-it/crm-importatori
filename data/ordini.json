@@ -1089,7 +1089,9 @@
         {
           "type": "Consegnato",
           "sentAt": 1781989286450,
-          "messageId": "<202606202101.12517731810@smtp-relay.mailin.fr>"
+          "messageId": "<202606202101.12517731810@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-06-20T23:01:19.000+02:00"
         }
       ],
       "notes": "",
@@ -1555,14 +1557,18 @@
         {
           "type": "Problema",
           "sentAt": 1781989369671,
-          "messageId": "<202606202102.30369891886@smtp-relay.mailin.fr>"
+          "messageId": "<202606202102.30369891886@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-06-20T23:02:42.000+02:00"
         },
         {
           "type": "problema",
           "to": "sandfgordon26@gmail.com",
           "subject": "⚠ Important update on your shipment",
           "sentAt": 1781990533280,
-          "messageId": "<202606202122.83824163147@smtp-relay.mailin.fr>"
+          "messageId": "<202606202122.83824163147@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-06-20T23:22:15.000+02:00"
         }
       ],
       "notes": "",
@@ -1746,9 +1752,11 @@
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780589312253,
+      "updatedAt": 1781994559203,
       "shippingType": "standard",
-      "shipmentCode": "PHAMD"
+      "shipmentCode": "PHAMD",
+      "trackingUrl": "",
+      "language": "en"
     },
     {
       "id": "ord_mbe_IT3299-8V-00000069IY",
