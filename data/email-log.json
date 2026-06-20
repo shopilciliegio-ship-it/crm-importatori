@@ -44,6 +44,15 @@
       "subject": "Your order has been delivered! 🍷 Enjoy!",
       "sentAt": 1781871145571,
       "messageId": "<202606191212.57313837896@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mbe_IT3299-8V-0000006AKO",
+      "customerName": "FAITH JENKINS",
+      "type": "problema",
+      "to": "sandfgordon26@gmail.com",
+      "subject": "⚠ Important update on your shipment",
+      "sentAt": 1781990533280,
+      "messageId": "<202606202122.83824163147@smtp-relay.mailin.fr>"
     }
   ]
 }
