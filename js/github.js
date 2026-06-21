@@ -8,6 +8,10 @@ const _layersLoaded = new Set();
 // contatti-overrides.json = solo modifiche utente (status/notes/log/brevoEvents), < 50 KB
 const OVERRIDES_PATH = 'data/contatti-overrides.json';
 let _baseSnap = {}; // {id: {status, notes, log_s, brevoEvents_s}} — snapshot prima degli override
+// true solo se _loadImportatoriOverrides è andato a buon fine in questa sessione (anche se il file non esiste ancora).
+// Se resta false (errore di rete/HTTP/parsing) il push degli override viene bloccato: altrimenti il diff
+// contro _baseSnap risulterebbe vuoto per tutti i contatti già in override e li azzererebbe su GitHub.
+let _overridesLoadOk = false;
 
 function ghPathTemplates(){ return 'data/templates.json'; }
 
@@ -84,15 +88,16 @@ function updGh(s){
 }
 
 async function _loadImportatoriOverrides(token,owner,repo,contacts){
+  _overridesLoadOk=false;
   const url=`https://api.github.com/repos/${owner}/${repo}/contents/${OVERRIDES_PATH}`;
   try{
     const r=await fetch(url,{headers:{'Authorization':`token ${token}`,'Accept':'application/vnd.github.v3+json'}});
-    if(r.status===404){ghSha.overrides=null;return;} // nessun override ancora
-    if(!r.ok) return;
+    if(r.status===404){ghSha.overrides=null;_overridesLoadOk=true;return;} // nessun override ancora
+    if(!r.ok){ console.warn('_loadImportatoriOverrides: HTTP',r.status); return; }
     const d=await r.json();
     ghSha.overrides=d.sha;
     const raw=(d.content||'').replace(/\n/g,'');
-    if(!raw) return;
+    if(!raw){ _overridesLoadOk=true; return; }
     let jsonStr;
     try{ jsonStr=decodeURIComponent(Array.from(atob(raw),c=>'%'+c.charCodeAt(0).toString(16).padStart(2,'0')).join('')); }
     catch(e){ jsonStr=atob(raw); }
@@ -103,6 +108,7 @@ async function _loadImportatoriOverrides(token,owner,repo,contacts){
       if(byId[id]){ Object.assign(byId[id],changes); applied++; }
     }
     if(applied) console.log(`Override applicati: ${applied} contatti`);
+    _overridesLoadOk=true;
   }catch(e){ console.warn('_loadImportatoriOverrides:',e); }
 }
 
@@ -158,6 +164,13 @@ async function _pushImportatoriOverrides(token,owner,repo){
   if(Object.keys(_baseSnap).length===0){
     console.warn('_pushImportatoriOverrides: skip — _baseSnap vuoto, contatti non ancora caricati');
     updGh('saved'); return;
+  }
+  // Guard: non salvare se il caricamento degli override da GitHub non è andato a buon fine in questa
+  // sessione (errore di rete/HTTP/parsing) — altrimenti il diff contro _baseSnap risulterebbe vuoto
+  // per tutti i contatti già in override e li azzererebbe su GitHub.
+  if(!_overridesLoadOk){
+    console.warn('_pushImportatoriOverrides: skip — override non caricati correttamente in questa sessione');
+    updGh('error'); return;
   }
   updGh('saving');
   // Calcola solo le differenze rispetto al base caricato da GitHub
