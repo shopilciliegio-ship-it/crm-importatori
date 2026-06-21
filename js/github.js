@@ -101,10 +101,18 @@ async function _loadImportatoriOverrides(token,owner,repo,contacts){
     const d=await r.json();
     ghSha.overrides=d.sha;
     const raw=(d.content||'').replace(/\n/g,'');
-    if(!raw){ _overridesLoadOk=true; return; }
     let jsonStr;
-    try{ jsonStr=decodeURIComponent(Array.from(atob(raw),c=>'%'+c.charCodeAt(0).toString(16).padStart(2,'0')).join('')); }
-    catch(e){ jsonStr=atob(raw); }
+    if(!raw&&d.download_url){
+      // File > 1 MB: GitHub Contents API restituisce content vuoto — usa download_url (stesso pattern di loadFromGH)
+      const rawR=await fetch(d.download_url);
+      if(!rawR.ok){ console.warn('_loadImportatoriOverrides: download_url HTTP',rawR.status); return; }
+      jsonStr=await rawR.text();
+    } else if(!raw){
+      _overridesLoadOk=true; return; // file davvero vuoto
+    } else {
+      try{ jsonStr=decodeURIComponent(Array.from(atob(raw),c=>'%'+c.charCodeAt(0).toString(16).padStart(2,'0')).join('')); }
+      catch(e){ jsonStr=atob(raw); }
+    }
     const overrides=JSON.parse(jsonStr);
     _overridesLoadedCount=Object.keys(overrides).length;
     const byId=Object.fromEntries(contacts.map(c=>[c.id,c]));
