@@ -449,7 +449,9 @@
           "to": "daiscastil@gmail.com",
           "subject": "Your order is going through customs",
           "sentAt": 1782017361409,
-          "messageId": "<202606210449.71087442303@smtp-relay.mailin.fr>"
+          "messageId": "<202606210449.71087442303@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-06-21T06:49:23.000+02:00"
         }
       ],
       "notes": "",
@@ -608,7 +610,9 @@
           "to": "chillerheather@gmail.com",
           "subject": "Your order is going through customs",
           "sentAt": 1782017361409,
-          "messageId": "<202606210449.84782103580@smtp-relay.mailin.fr>"
+          "messageId": "<202606210449.84782103580@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-06-21T06:49:24.000+02:00"
         }
       ],
       "notes": "",
@@ -667,7 +671,9 @@
           "to": "mmad6199@aol.com",
           "subject": "Your order is going through customs",
           "sentAt": 1782017361409,
-          "messageId": "<202606210449.17647746060@smtp-relay.mailin.fr>"
+          "messageId": "<202606210449.17647746060@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-06-21T07:28:38.000+02:00"
         }
       ],
       "notes": "",
@@ -724,7 +730,9 @@
           "to": "lisa.slp86@gmail.com",
           "subject": "Your order is going through customs",
           "sentAt": 1782017361409,
-          "messageId": "<202606210449.56571824879@smtp-relay.mailin.fr>"
+          "messageId": "<202606210449.56571824879@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-06-21T06:49:25.000+02:00"
         }
       ],
       "notes": "",
@@ -781,7 +789,9 @@
           "to": "wawabeck1@att.net",
           "subject": "Your order is going through customs",
           "sentAt": 1782017361409,
-          "messageId": "<202606210449.56739273585@smtp-relay.mailin.fr>"
+          "messageId": "<202606210449.56739273585@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-06-21T06:49:26.000+02:00"
         }
       ],
       "notes": "",
@@ -800,7 +810,7 @@
       "shipmentCode": "MERCHANT",
       "shippingAddress": "154 WEST SECOND, BOSTON 02127 MASSACHUSETTS (SUFFOLK COUNTY)",
       "numberOfCartons": null,
-      "shippingType": "express",
+      "shippingType": "standard",
       "gmailMessageId": "<DB9PR08MB66828874DFB4DF142967E896BF102@DB9PR08MB6682.eurprd08.prod.outlook.com>",
       "trackingNumber": "",
       "carrier": "MBE",
@@ -831,12 +841,14 @@
         {
           "type": "In transito",
           "sentAt": 1781994999123,
-          "messageId": "<202606202236.17513788680@smtp-relay.mailin.fr>"
+          "messageId": "<202606202236.17513788680@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-06-21T00:36:33.000+02:00"
         }
       ],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1781994999124,
+      "updatedAt": 1782052140124,
       "trackingUrl": "",
       "language": "en"
     },
@@ -969,7 +981,9 @@
           "to": "lorahenke@aol.com",
           "subject": "Your order is going through customs",
           "sentAt": 1782017361409,
-          "messageId": "<202606210449.58749716037@smtp-relay.mailin.fr>"
+          "messageId": "<202606210449.58749716037@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-06-21T06:58:22.000+02:00"
         }
       ],
       "notes": "",
