@@ -12,6 +12,10 @@ let _baseSnap = {}; // {id: {status, notes, log_s, brevoEvents_s}} — snapshot 
 // Se resta false (errore di rete/HTTP/parsing) il push degli override viene bloccato: altrimenti il diff
 // contro _baseSnap risulterebbe vuoto per tutti i contatti già in override e li azzererebbe su GitHub.
 let _overridesLoadOk = false;
+let _overridesLoadedCount = 0; // numero di override presenti su GitHub all'ultimo caricamento riuscito
+// true solo durante l'azione esplicita "svuota database importatori" — l'unico caso in cui un crollo
+// del numero di override è intenzionale e va permesso.
+let _allowOverridesShrink = false;
 
 function ghPathTemplates(){ return 'data/templates.json'; }
 
@@ -102,6 +106,7 @@ async function _loadImportatoriOverrides(token,owner,repo,contacts){
     try{ jsonStr=decodeURIComponent(Array.from(atob(raw),c=>'%'+c.charCodeAt(0).toString(16).padStart(2,'0')).join('')); }
     catch(e){ jsonStr=atob(raw); }
     const overrides=JSON.parse(jsonStr);
+    _overridesLoadedCount=Object.keys(overrides).length;
     const byId=Object.fromEntries(contacts.map(c=>[c.id,c]));
     let applied=0;
     for(const [id,changes] of Object.entries(overrides)){
@@ -185,6 +190,14 @@ async function _pushImportatoriOverrides(token,owner,repo){
     if(JSON.stringify(c.brevoEvents||[])!==snap.brevoEvents) diff.brevoEvents=c.brevoEvents||[];
     if(JSON.stringify(c.research||null)!==snap.research)     diff.research=c.research||null;
     if(Object.keys(diff).length) newOv[c.id]=diff;
+  }
+  // Guard: blocca se il file crollerebbe drasticamente rispetto a quanto caricato da GitHub —
+  // sintomo di un bug (sessione con override non applicati), non di un'edit legittima.
+  // Bypassato solo dall'azione esplicita "svuota database importatori".
+  const newCount=Object.keys(newOv).length;
+  if(!_allowOverridesShrink && _overridesLoadedCount>=10 && newCount<_overridesLoadedCount*0.5){
+    console.warn(`_pushImportatoriOverrides: skip — crollo sospetto ${_overridesLoadedCount} → ${newCount} override`);
+    updGh('error'); return;
   }
   const url=`https://api.github.com/repos/${owner}/${repo}/contents/${OVERRIDES_PATH}`;
   const hd={'Authorization':`token ${token}`,'Content-Type':'application/json','Accept':'application/vnd.github.v3+json'};

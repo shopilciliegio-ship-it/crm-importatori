@@ -160,7 +160,8 @@ function _doDeleteTarget(target){
     db.contacts=[];
     closeModal();refreshAll();
     clearTimeout(saveTimer);
-    pushGH().then(()=>toast('✓ Database Importatori svuotato'));
+    _allowOverridesShrink=true;
+    pushGH().then(()=>{_allowOverridesShrink=false;toast('✓ Database Importatori svuotato');});
   } else if(target==='clienti'){
     dbC.contacts=[];
     closeModal();refreshAll();
