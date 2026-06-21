@@ -416,7 +416,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1781136000000,
-      "status": "in_transito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -427,6 +427,11 @@
           "status": "in_transito",
           "date": 1781690180064,
           "note": "Auto Fieramente (era: preparazione)"
+        },
+        {
+          "status": "dogana",
+          "date": 1782017359476,
+          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -442,7 +447,7 @@
       ],
       "notes": "",
       "createdAt": 1780934555207,
-      "updatedAt": 1781690180064,
+      "updatedAt": 1782017359476,
       "language": "en"
     },
     {
@@ -563,7 +568,7 @@
       "orderNumber": "",
       "paymentType": "Carte Di Credito/Bancomat",
       "shippingDate": 1781136000000,
-      "status": "in_transito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -574,6 +579,11 @@
           "status": "in_transito",
           "date": 1781690180064,
           "note": "Auto Fieramente (era: preparazione)"
+        },
+        {
+          "status": "dogana",
+          "date": 1782017359476,
+          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -589,7 +599,7 @@
       ],
       "notes": "",
       "createdAt": 1780917382029,
-      "updatedAt": 1781690180064,
+      "updatedAt": 1782017359476,
       "trackingUrl": "",
       "language": "en"
     },
@@ -610,7 +620,7 @@
       "trackingNumber": "1ZRY6787A812554032",
       "carrier": "MBE",
       "shippingDate": 1781136000000,
-      "status": "in_transito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -621,6 +631,11 @@
           "status": "in_transito",
           "date": 1781690180064,
           "note": "Auto Fieramente (era: preparazione)"
+        },
+        {
+          "status": "dogana",
+          "date": 1782017359476,
+          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -636,7 +651,7 @@
       ],
       "notes": "",
       "createdAt": 1780672510830,
-      "updatedAt": 1781690180064
+      "updatedAt": 1782017359476
     },
     {
       "id": "ord_mpzhlcdu21tb",
@@ -655,7 +670,7 @@
       "trackingNumber": "1ZRY6787A896828580",
       "carrier": "MBE",
       "shippingDate": 1781136000000,
-      "status": "in_transito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -666,6 +681,11 @@
           "status": "in_transito",
           "date": 1781690180064,
           "note": "Auto Fieramente (era: preparazione)"
+        },
+        {
+          "status": "dogana",
+          "date": 1782017359476,
+          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -681,7 +701,7 @@
       ],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1781690180064
+      "updatedAt": 1782017359476
     },
     {
       "id": "ord_mpzhlcdubeyc",
@@ -700,7 +720,7 @@
       "trackingNumber": "1ZRY6787A808754299",
       "carrier": "MBE",
       "shippingDate": 1781136000000,
-      "status": "in_transito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -711,6 +731,11 @@
           "status": "in_transito",
           "date": 1781690180064,
           "note": "Auto Fieramente (era: preparazione)"
+        },
+        {
+          "status": "dogana",
+          "date": 1782017359476,
+          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -726,7 +751,7 @@
       ],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1781690180064
+      "updatedAt": 1782017359476
     },
     {
       "id": "ord_mpzhlcdub8mu",
@@ -871,7 +896,7 @@
       "trackingNumber": "1ZRY6787A898099632",
       "carrier": "MBE",
       "shippingDate": 1781136000000,
-      "status": "in_transito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "ricevuto",
@@ -887,6 +912,11 @@
           "status": "in_transito",
           "date": 1781690180064,
           "note": "Auto Fieramente (era: preparazione)"
+        },
+        {
+          "status": "dogana",
+          "date": 1782017359476,
+          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -902,7 +932,7 @@
       ],
       "notes": "",
       "createdAt": 1780314564497,
-      "updatedAt": 1781690180064,
+      "updatedAt": 1782017359476,
       "shippingType": "standard"
     },
     {
