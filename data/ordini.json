@@ -443,11 +443,18 @@
           "messageId": "<202606081602.71010190282@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-06-08T18:02:46.000+02:00"
+        },
+        {
+          "type": "dogana",
+          "to": "daiscastil@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1782017361409,
+          "messageId": "<202606210449.71087442303@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1780934555207,
-      "updatedAt": 1782017359476,
+      "updatedAt": 1782017361409,
       "language": "en"
     },
     {
@@ -595,11 +602,18 @@
           "messageId": "<202606081116.62065535419@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-06-08T13:16:32.000+02:00"
+        },
+        {
+          "type": "dogana",
+          "to": "chillerheather@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1782017361409,
+          "messageId": "<202606210449.84782103580@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1780917382029,
-      "updatedAt": 1782017359476,
+      "updatedAt": 1782017361409,
       "trackingUrl": "",
       "language": "en"
     },
@@ -647,11 +661,18 @@
           "messageId": "<202606051515.86444640535@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-06-05T17:15:22.000+02:00"
+        },
+        {
+          "type": "dogana",
+          "to": "mmad6199@aol.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1782017361409,
+          "messageId": "<202606210449.17647746060@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1780672510830,
-      "updatedAt": 1782017359476
+      "updatedAt": 1782017361409
     },
     {
       "id": "ord_mpzhlcdu21tb",
@@ -697,11 +718,18 @@
           "messageId": "<202606051515.43860599920@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-06-05T17:15:21.000+02:00"
+        },
+        {
+          "type": "dogana",
+          "to": "lisa.slp86@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1782017361409,
+          "messageId": "<202606210449.56571824879@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1782017359476
+      "updatedAt": 1782017361409
     },
     {
       "id": "ord_mpzhlcdubeyc",
@@ -747,11 +775,18 @@
           "messageId": "<202606051515.32527638760@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-06-05T17:30:36.000+02:00"
+        },
+        {
+          "type": "dogana",
+          "to": "wawabeck1@att.net",
+          "subject": "Your order is going through customs",
+          "sentAt": 1782017361409,
+          "messageId": "<202606210449.56739273585@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1782017359476
+      "updatedAt": 1782017361409
     },
     {
       "id": "ord_mpzhlcdub8mu",
@@ -928,11 +963,18 @@
           "messageId": "<202606051515.46214198784@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-06-05T17:15:23.000+02:00"
+        },
+        {
+          "type": "dogana",
+          "to": "lorahenke@aol.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1782017361409,
+          "messageId": "<202606210449.58749716037@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1780314564497,
-      "updatedAt": 1782017359476,
+      "updatedAt": 1782017361409,
       "shippingType": "standard"
     },
     {
