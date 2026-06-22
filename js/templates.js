@@ -92,18 +92,18 @@ luca@sienawine.it | +39 331 1347899`},
    subject:"One contact. One invoice. All of Italy.",
    body:`{{dear}}
 
-Working with multiple small Italian producers means multiple contacts, invoices, shipments and conversations. We solve that.
+thank you for taking the time to look at my previous notes — I imagine your inbox is just as busy as mine.
 
-Through Siena Wine, {{azienda}} gets:
+Working with multiple small Italian producers usually means multiple contacts, invoices, shipments and conversations. Through Siena Wine, {{azienda}} gets all of that simplified into:
 
 • A single point of contact for the entire portfolio
 • Consolidated orders and shipments
 • Full documentation support
-• A selection proven to sell — validated by years of US market success
+• A selection proven to sell — validated by years of US market success with August Imports
 
-We are not asking you to take a risk on unknown producers. These wines have a track record.
+No minimum order, no upfront commitment — just a conversation to see if it's a fit.
 
-Book a 20-minute call at your convenience [here](https://calendly.com/luca-sienawine/30min).
+If it's easier, book a 20-minute call at your convenience [here](https://calendly.com/luca-sienawine/30min) — or simply reply with a couple of times that work for you.
 
 Best,
 Luca Pattaro
@@ -111,21 +111,14 @@ Siena Wine | Small Vineyards International
 luca@sienawine.it | +39 331 1347899`},
 
   {id:'t3b', name:'#3b — Follow-up not opened (day 21)',
-   subject:"One contact. One invoice. All of Italy.",
+   subject:"Did my last two notes get lost, {{azienda}}?",
    body:`{{dear}}
 
-Working with multiple small Italian producers means multiple contacts, invoices, shipments and conversations. We solve that.
+I've reached out a couple of times about Small Vineyards International without success — entirely possible my emails simply didn't land at the right moment, or in the right inbox.
 
-Through Siena Wine, {{azienda}} gets:
+In short: we're a curated portfolio of family-run Italian wineries, sold through a single point of contact and a single invoice, with over 20 years of proven track record in the US market with August Imports.
 
-• A single point of contact for the entire portfolio
-• Consolidated orders and shipments
-• Full documentation support
-• A selection proven to sell — validated by years of US market success
-
-We are not asking you to take a risk on unknown producers. These wines have a track record.
-
-Book a 20-minute call at your convenience [here](https://calendly.com/luca-sienawine/30min).
+If Italian wine sourcing is on your radar for {{azienda}}, even a two-line reply works — I'll take it from there. Otherwise, no hard feelings, and you can always find us [here](https://www.sienawine.it/smallvineyardsinternational).
 
 Best,
 Luca Pattaro
@@ -133,16 +126,16 @@ Siena Wine | Small Vineyards International
 luca@sienawine.it | +39 331 1347899`},
 
   {id:'t4a', name:'#4a — Break-up opened (day 35)',
-   subject:"Closing the loop — {{azienda}}",
+   subject:"Last note before I step back, {{azienda}}",
    body:`{{dear}}
 
-I have reached out a few times without hearing back — I completely understand, timing is everything in this business.
+I can see you've taken a look at what I've sent over the past weeks, so I imagine the timing — not the interest — is what's holding things back. Completely understandable.
 
-I will not send further emails, but wanted to leave you with one thought: if you are ever looking to add a curated Italian portfolio with a proven US track record, a single operational contact, and wineries that genuinely over-deliver for their price point — we are here.
+I'll stop reaching out after this note, but before I do: if a curated Italian portfolio, one invoice, and a single point of contact ever becomes useful for {{azienda}}, I'm one reply away — no need to start from scratch, just pick up the conversation whenever it suits you.
 
 Our portfolio is always available [here](https://www.sienawine.it/smallvineyardsinternational).
 
-Wishing {{azienda}} continued success.
+Wishing {{azienda}} continued success in the meantime.
 
 Luca Pattaro
 Siena Wine | Small Vineyards International
@@ -152,9 +145,9 @@ luca@sienawine.it | +39 331 1347899`},
    subject:"Closing the loop — {{azienda}}",
    body:`{{dear}}
 
-I have reached out a few times without hearing back — I completely understand, timing is everything in this business.
+I've reached out a few times without hearing back — I completely understand, timing is everything in this business.
 
-I will not send further emails, but wanted to leave you with one thought: if you are ever looking to add a curated Italian portfolio with a proven US track record, a single operational contact, and wineries that genuinely over-deliver for their price point — we are here.
+I won't send further emails, but I wanted to leave you with one thought: if you're ever looking to add a curated Italian portfolio with a proven US track record, a single operational contact, and wineries that genuinely over-deliver for their price point — we're here.
 
 Our portfolio is always available [here](https://www.sienawine.it/smallvineyardsinternational).
 
