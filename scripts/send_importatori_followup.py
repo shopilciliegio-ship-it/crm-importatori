@@ -25,7 +25,11 @@ BREVO_API_KEY = os.environ['BREVO_API_KEY']
 GH_TOKEN      = os.environ['GH_TOKEN']
 GH_REPO       = os.environ['GH_REPO']
 
-CRM_PATH       = 'data/crm.json'
+# Architettura override per importatori (stesso pattern di js/github.js):
+# contatti.json           = base read-only, aggiornata solo dal sync BWI settimanale
+# contatti-overrides.json = solo le differenze utente (status/notes/log/brevoEvents/research)
+BASE_PATH      = 'data/contatti.json'
+OVERRIDES_PATH = 'data/contatti-overrides.json'
 TEMPLATES_PATH = 'data/templates.json'
 SETTINGS_PATH  = 'data/crm-settings.json'
 LOG_PATH       = 'data/email-log-importatori.json'
@@ -80,9 +84,107 @@ def gh_get(path: str) -> tuple[dict | list, str | None]:
     if r.status_code == 404:
         return {}, None
     r.raise_for_status()
-    data    = r.json()
-    content = base64.b64decode(data['content']).decode('utf-8')
-    return json.loads(content), data['sha']
+    data = r.json()
+    sha  = data['sha']
+    raw  = data.get('content') or ''
+    if not raw and data.get('download_url'):
+        # File > 1 MB: l'API Contents restituisce content vuoto — scarica diretto
+        # (stesso fix v164 applicato in js/github.js per contatti-overrides.json)
+        rr = requests.get(data['download_url'])
+        rr.raise_for_status()
+        return rr.json(), sha
+    if not raw:
+        return {}, sha
+    content = base64.b64decode(raw).decode('utf-8')
+    return json.loads(content), sha
+
+
+def gh_get_overrides() -> tuple[dict, str | None, bool]:
+    """Carica contatti-overrides.json. Ritorna (overrides, sha, ok).
+    ok=False su qualunque errore di rete/HTTP/parsing — il chiamante NON deve
+    calcolare/salvare un diff in quel caso, altrimenti rischia di azzerare gli
+    override esistenti (vedi incident 21-22/06/2026)."""
+    url = f'https://api.github.com/repos/{GH_REPO}/contents/{OVERRIDES_PATH}'
+    try:
+        r = requests.get(url, headers=_GH_HEADERS)
+        if r.status_code == 404:
+            return {}, None, True  # nessun override ancora — caso legittimo
+        r.raise_for_status()
+        data = r.json()
+        sha  = data['sha']
+        raw  = data.get('content') or ''
+        if not raw and data.get('download_url'):
+            rr = requests.get(data['download_url'])
+            rr.raise_for_status()
+            return rr.json(), sha, True
+        if not raw:
+            return {}, sha, True  # file davvero vuoto
+        return json.loads(base64.b64decode(raw).decode('utf-8')), sha, True
+    except Exception as e:
+        print(f'    ⚠ gh_get_overrides error: {e}')
+        return {}, None, False
+
+
+def get_sha(path: str) -> str | None:
+    r = requests.get(f'https://api.github.com/repos/{GH_REPO}/contents/{path}',
+                      headers=_GH_HEADERS)
+    if r.status_code == 404:
+        return None
+    r.raise_for_status()
+    return r.json()['sha']
+
+
+def load_contacts_with_overrides() -> tuple[list, dict, bool, int]:
+    """Mirrors js/github.js loadFromGH()+_loadImportatoriOverrides(): carica la base
+    read-only data/contatti.json, applica sopra gli override utente e mantiene uno
+    snapshot dei valori base (pre-override) per ogni contatto, necessario per
+    calcolare poi il diff da salvare in build_overrides_diff()."""
+    base_raw, _ = gh_get(BASE_PATH)
+    contacts = base_raw.get('contacts', []) if isinstance(base_raw, dict) else base_raw
+
+    base_snap = {}
+    for c in contacts:
+        base_snap[c['id']] = {
+            'status':      c.get('status') or '',
+            'notes':       c.get('notes') or '',
+            'log':         json.dumps(c.get('log') or [], ensure_ascii=False),
+            'brevoEvents': json.dumps(c.get('brevoEvents') or [], ensure_ascii=False),
+            'research':    json.dumps(c.get('research'), ensure_ascii=False),
+        }
+
+    overrides, _, overrides_ok = gh_get_overrides()
+    overrides_loaded_count = len(overrides)
+    by_id = {c['id']: c for c in contacts}
+    for cid, changes in overrides.items():
+        if cid in by_id:
+            by_id[cid].update(changes)
+
+    return contacts, base_snap, overrides_ok, overrides_loaded_count
+
+
+def build_overrides_diff(contacts: list, base_snap: dict) -> dict:
+    """Ricalcola l'intero contatti-overrides.json a partire dai contatti correnti
+    in memoria confrontati con lo snapshot base — stesso approccio di
+    _pushImportatoriOverrides in js/github.js."""
+    new_ov = {}
+    for c in contacts:
+        snap = base_snap.get(c['id'])
+        if not snap:
+            continue
+        diff = {}
+        if (c.get('status') or '') != snap['status']:
+            diff['status'] = c.get('status')
+        if (c.get('notes') or '') != snap['notes']:
+            diff['notes'] = c.get('notes')
+        if json.dumps(c.get('log') or [], ensure_ascii=False) != snap['log']:
+            diff['log'] = c.get('log') or []
+        if json.dumps(c.get('brevoEvents') or [], ensure_ascii=False) != snap['brevoEvents']:
+            diff['brevoEvents'] = c.get('brevoEvents') or []
+        if json.dumps(c.get('research'), ensure_ascii=False) != snap['research']:
+            diff['research'] = c.get('research')
+        if diff:
+            new_ov[c['id']] = diff
+    return new_ov
 
 
 def gh_put(path: str, data, sha: str | None, message: str) -> None:
@@ -490,14 +592,18 @@ def main():
     else:
         print('👥 Produzione — email ai contatti reali')
 
-    crm_raw,  sha_crm = gh_get(CRM_PATH)
-    tpls_raw, _       = gh_get(TEMPLATES_PATH)
-
-    contacts  = crm_raw.get('contacts', []) if isinstance(crm_raw, dict) else crm_raw
-    templates = tpls_raw if isinstance(tpls_raw, list) else []
+    contacts, base_snap, overrides_ok, overrides_loaded_count = load_contacts_with_overrides()
+    tpls_raw, _ = gh_get(TEMPLATES_PATH)
+    templates   = tpls_raw if isinstance(tpls_raw, list) else []
 
     if not templates:
         print('✗ templates.json non trovato. Esci.')
+        return
+
+    if not overrides_ok:
+        print('✗ contatti-overrides.json non caricato correttamente in questo run — '
+              'esco senza inviare email per non rischiare di salvare un diff vuoto '
+              'che azzererebbe gli override esistenti.')
         return
 
     now_ms = int(datetime.now(timezone.utc).timestamp() * 1000)
@@ -558,17 +664,24 @@ def main():
     now_str = datetime.now().strftime('%d/%m/%Y %H:%M')
 
     if test_mode:
-        print(f'\n🧪 Test: {sent} email → {BCC_EMAIL}. crm.json non modificato.')
+        print(f'\n🧪 Test: {sent} email → {BCC_EMAIL}. contatti-overrides.json non modificato.')
     else:
         if sent > 0 or sync_count > 0:
-            if isinstance(crm_raw, dict):
-                crm_raw['contacts'] = contacts
-                to_save = crm_raw
+            new_overrides = build_overrides_diff(contacts, base_snap)
+            new_count     = len(new_overrides)
+            # Guard: blocca il salvataggio se il file crollerebbe drasticamente —
+            # sintomo di un bug (override non applicati in questo run), non di
+            # un'evoluzione legittima. Le email sono già state inviate a questo
+            # punto: non possiamo annullarle, ma almeno non corrompiamo il file.
+            if overrides_loaded_count >= 10 and new_count < overrides_loaded_count * 0.5:
+                print(f'\n✗ Crollo sospetto override: {overrides_loaded_count} → {new_count}. '
+                      f'Salvataggio bloccato (email già inviate, stato non persistito).')
             else:
-                to_save = contacts
-            gh_put(CRM_PATH, to_save, sha_crm,
-                   f'Follow-up importatori — {sent} email — {now_str}')
-            print(f'\n✓ {sent} email inviate, crm.json aggiornato.')
+                fresh_sha = get_sha(OVERRIDES_PATH)
+                gh_put(OVERRIDES_PATH, new_overrides, fresh_sha,
+                       f'Follow-up importatori — {sent} email — {now_str}')
+                print(f'\n✓ {sent} email inviate, contatti-overrides.json aggiornato '
+                      f'({new_count} contatti con override).')
             if cold_count:
                 print(f'  {cold_count} contatti → cold (sequenza completata)')
 
