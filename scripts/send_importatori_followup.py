@@ -280,15 +280,32 @@ def render_template(tpl: dict, c: dict) -> tuple[str, str]:
 
 # ── HTML email builder ────────────────────────────────────────────────────────
 
-_URL_RE = re.compile(r'(https?://[^\s<]+|(?:www\.|calendly\.com/)[^\s<]+)')
+_LABELED_URL_RE = re.compile(r'\[([^\]]+)\]\((https?://[^\s)]+)\)')
+_URL_RE         = re.compile(r'(https?://[^\s<]+|(?:www\.|calendly\.com/)[^\s<]+)')
 
 def _linkify(escaped_text: str) -> str:
-    def _repl(m: re.Match) -> str:
+    """Stesso comportamento di _linkify in js/email.js: sintassi markdown
+    [etichetta](url) per link con testo pulito (usata dai template per evitare
+    di mostrare l'URL nudo, che dopo il click-tracking di Brevo diventerebbe
+    il dominio di redirect), più auto-link per gli URL nudi rimasti."""
+    placeholders: list[str] = []
+
+    def _repl_labeled(m: re.Match) -> str:
+        label, url = m.group(1), m.group(2).replace('&amp;', '&')
+        placeholders.append(f'<a href="{url}" style="color:{ACCENT};font-weight:600;'
+                             f'text-decoration:none">{label}</a>')
+        return f'@@LINK{len(placeholders)-1}@@'
+
+    text = _LABELED_URL_RE.sub(_repl_labeled, escaped_text)
+
+    def _repl_bare(m: re.Match) -> str:
         url = m.group(1).replace('&amp;', '&')
         href = url if url.startswith('http') else 'https://' + url
         return (f'<a href="{href}" style="color:{ACCENT};font-weight:600;'
                 f'text-decoration:none">{m.group(1)}</a>')
-    return _URL_RE.sub(_repl, escaped_text)
+    text = _URL_RE.sub(_repl_bare, text)
+
+    return re.sub(r'@@LINK(\d+)@@', lambda m: placeholders[int(m.group(1))], text)
 
 
 def _body_to_html(plain: str) -> str:
