@@ -88,7 +88,7 @@ Luca Pattaro
 Siena Wine | Small Vineyards International
 luca@sienawine.it | +39 331 1347899`},
 
-  {id:'t3', name:'#3 — Follow-up (day 21)',
+  {id:'t3a', name:'#3a — Follow-up opened (day 21)',
    subject:"One contact. One invoice. All of Italy.",
    body:`{{dear}}
 
@@ -110,7 +110,45 @@ Luca Pattaro
 Siena Wine | Small Vineyards International
 luca@sienawine.it | +39 331 1347899`},
 
-  {id:'t4', name:'#4 — Break-up (day 35)',
+  {id:'t3b', name:'#3b — Follow-up not opened (day 21)',
+   subject:"One contact. One invoice. All of Italy.",
+   body:`{{dear}}
+
+Working with multiple small Italian producers means multiple contacts, invoices, shipments and conversations. We solve that.
+
+Through Siena Wine, {{azienda}} gets:
+
+• A single point of contact for the entire portfolio
+• Consolidated orders and shipments
+• Full documentation support
+• A selection proven to sell — validated by years of US market success
+
+We are not asking you to take a risk on unknown producers. These wines have a track record.
+
+Book a 20-minute call at your convenience: calendly.com/luca-sienawine/30min
+
+Best,
+Luca Pattaro
+Siena Wine | Small Vineyards International
+luca@sienawine.it | +39 331 1347899`},
+
+  {id:'t4a', name:'#4a — Break-up opened (day 35)',
+   subject:"Closing the loop — {{azienda}}",
+   body:`{{dear}}
+
+I have reached out a few times without hearing back — I completely understand, timing is everything in this business.
+
+I will not send further emails, but wanted to leave you with one thought: if you are ever looking to add a curated Italian portfolio with a proven US track record, a single operational contact, and wineries that genuinely over-deliver for their price point — we are here.
+
+Our portfolio is always available at: www.sienawine.it/smallvineyardsinternational
+
+Wishing {{azienda}} continued success.
+
+Luca Pattaro
+Siena Wine | Small Vineyards International
+luca@sienawine.it | +39 331 1347899`},
+
+  {id:'t4b', name:'#4b — Break-up not opened (day 35)',
    subject:"Closing the loop — {{azienda}}",
    body:`{{dear}}
 
