@@ -40,7 +40,7 @@ One partner. One invoice. All the best products from Italy.
 
 Have we piqued your interest?
 
-Discover more about us and the portfolio: www.sienawine.it/smallvineyardsinternational
+Discover more about us and the portfolio [here](https://www.sienawine.it/smallvineyardsinternational).
 
 Best regards,
 Luca Pattaro
@@ -64,7 +64,7 @@ For {{azienda}}, the practical benefits are clear:
 • Flexible quantities — no need to commit to large volumes upfront
 • Full technical support and marketing materials included
 
-Download our brochure and full portfolio: www.sienawine.it/brochure
+Download our brochure and full portfolio [here](https://www.sienawine.it/brochure).
 
 Would you like me to send you the current price list as well?
 
@@ -81,7 +81,7 @@ I reached out last week about Small Vineyards International — I am not sure my
 
 We represent a curated portfolio of Italian family wineries, built on 20+ years of proven success in the US market. One partner, one invoice, all of Italy.
 
-If simplifying your Italian wine sourcing is something worth 2 minutes of your time, everything is here: www.sienawine.it/smallvineyardsinternational
+If simplifying your Italian wine sourcing is something worth 2 minutes of your time, everything is [here](https://www.sienawine.it/smallvineyardsinternational).
 
 Best,
 Luca Pattaro
@@ -103,7 +103,7 @@ Through Siena Wine, {{azienda}} gets:
 
 We are not asking you to take a risk on unknown producers. These wines have a track record.
 
-Book a 20-minute call at your convenience: calendly.com/luca-sienawine/30min
+Book a 20-minute call at your convenience [here](https://calendly.com/luca-sienawine/30min).
 
 Best,
 Luca Pattaro
@@ -125,7 +125,7 @@ Through Siena Wine, {{azienda}} gets:
 
 We are not asking you to take a risk on unknown producers. These wines have a track record.
 
-Book a 20-minute call at your convenience: calendly.com/luca-sienawine/30min
+Book a 20-minute call at your convenience [here](https://calendly.com/luca-sienawine/30min).
 
 Best,
 Luca Pattaro
@@ -140,7 +140,7 @@ I have reached out a few times without hearing back — I completely understand,
 
 I will not send further emails, but wanted to leave you with one thought: if you are ever looking to add a curated Italian portfolio with a proven US track record, a single operational contact, and wineries that genuinely over-deliver for their price point — we are here.
 
-Our portfolio is always available at: www.sienawine.it/smallvineyardsinternational
+Our portfolio is always available [here](https://www.sienawine.it/smallvineyardsinternational).
 
 Wishing {{azienda}} continued success.
 
@@ -156,7 +156,7 @@ I have reached out a few times without hearing back — I completely understand,
 
 I will not send further emails, but wanted to leave you with one thought: if you are ever looking to add a curated Italian portfolio with a proven US track record, a single operational contact, and wineries that genuinely over-deliver for their price point — we are here.
 
-Our portfolio is always available at: www.sienawine.it/smallvineyardsinternational
+Our portfolio is always available [here](https://www.sienawine.it/smallvineyardsinternational).
 
 Wishing {{azienda}} continued success.
 
