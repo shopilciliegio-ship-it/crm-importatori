@@ -25485,5 +25485,36 @@
       "note": "Distributore nel Pacifico (Samoa) specializzato in vini neozelandesi (Craggy Range, Invivo, Saint Clair) e spirits. Nessuna evidenza di vini italiani nel portafoglio. Mercato geografico non rilevante per strategie di export italiano.",
       "analyzed_at": "2026-06-21T08:54:40.825Z"
     }
+  },
+  "ctest1782132321361571he": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1782132321361,
+        "msg": "Contatto di test creato manualmente per audit workflow importatori"
+      },
+      {
+        "ts": 1782133528987,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202606221305.63124437325@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202606221305.63124437325@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1782133528987,
+        "toEmail": "hokutazzo@gmail.com",
+        "toName": "Luca Pattaro",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ]
   }
 }
