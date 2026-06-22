@@ -25496,6 +25496,14 @@
       {
         "ts": 1782133528987,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202606221305.63124437325@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1782141285325,
+        "msg": "🔗 Click: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
+      },
+      {
+        "ts": 1782133754276,
+        "msg": "👁 Aperta: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
       }
     ],
     "brevoEvents": [
@@ -25507,13 +25515,19 @@
         "toName": "Luca Pattaro",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
-        "opened": false,
-        "clicked": false,
+        "delivered": true,
+        "opened": true,
+        "clicked": true,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "clickedLinks": [
+          "https://www.sienawine.it/smallvineyardsinternational"
+        ],
+        "clickedAt": "2026-06-22T17:14:45.325+02:00",
+        "openedAt": "2026-06-22T15:09:14.276+02:00",
+        "deliveredAt": "2026-06-22T15:05:19.000+02:00"
       }
     ]
   }
