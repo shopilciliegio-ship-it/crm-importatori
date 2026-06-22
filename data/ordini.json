@@ -29,10 +29,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "daddonamadison@gmail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1782135817055,
+          "messageId": "<202606221343.13202843150@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1782135805307,
-      "updatedAt": 1782135805307
+      "updatedAt": 1782135817055
     },
     {
       "id": "ord_mqju2sucol0j",
