@@ -183,24 +183,29 @@
       "currency": "EUR",
       "orderDate": 1781636801000,
       "emailSubject": "🍷 New Order — BELINDA BOURJEILI — 225.00 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "BOURJEILIB",
       "shippingAddress": "26 MERRYALL RD, 06776 NEW MILFORD, CONNECTICUT (WESTERN CONNECTICUT PLANNING REGION)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202606161906.84152368044@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A895586745",
       "carrier": "MBE",
       "source": "fieramente",
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1782287519736,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1781638869297,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1782287519736,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -216,7 +221,7 @@
       ],
       "notes": "",
       "createdAt": 1781638869297,
-      "updatedAt": 1781638877798
+      "updatedAt": 1782287519736
     },
     {
       "id": "ord_mqh1s5rleh85",
@@ -227,24 +232,29 @@
       "currency": "EUR",
       "orderDate": 1781634374000,
       "emailSubject": "🍷 New Order — JENNIFER STEVENS — 267.44 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "STEVENSJ",
       "shippingAddress": "1815 MIMOSA DR, 27403 GREENSBORO, NORTH CAROLINA (GUILFORD COUNTY)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202606161826.34261474075@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A802387643",
       "carrier": "MBE",
       "source": "fieramente",
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1782287519736,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1781638869297,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1782287519736,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -260,7 +270,7 @@
       ],
       "notes": "",
       "createdAt": 1781638869297,
-      "updatedAt": 1781638877798
+      "updatedAt": 1782287519736
     },
     {
       "id": "ord_mqfb6etzok72",
@@ -271,24 +281,29 @@
       "currency": "EUR",
       "orderDate": 1781519199000,
       "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio Madeline Dotson",
-      "shipmentCode": "",
+      "shipmentCode": "DOTSONM",
       "shippingAddress": "621 Saint clair Ave NW, 49534 Grand Rapids (MI), United States",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<DB9PR08MB66825341BB98C53E5AC1F944BFE62@DB9PR08MB6682.eurprd08.prod.outlook.com>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A898984158",
       "carrier": "- U.S.A. Wine Corriere Std",
       "source": "shop",
       "language": "en",
       "orderNumber": "",
       "paymentType": "Carte Di Credito/Bancomat",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1782287519736,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1781533718423,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1782287519736,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -304,7 +319,7 @@
       ],
       "notes": "",
       "createdAt": 1781533718423,
-      "updatedAt": 1781533726768
+      "updatedAt": 1782287519736
     },
     {
       "id": "ord_mqfb6etzyl7s",
@@ -315,24 +330,29 @@
       "currency": "EUR",
       "orderDate": 1781512776000,
       "emailSubject": "🍷 New Order — JOHNPAUL KLOTZ — 116.70 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "KLOTZJ",
       "shippingAddress": "229 PARK AVE, 60514 CLARENDON HILLS, ILLINOIS (DUPAGE COUNTY)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202606150839.20254273206@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A817630075",
       "carrier": "MBE",
       "source": "fieramente",
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1782287519736,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1781533718423,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1782287519736,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -348,7 +368,7 @@
       ],
       "notes": "",
       "createdAt": 1781533718423,
-      "updatedAt": 1781533726768
+      "updatedAt": 1782287519736
     },
     {
       "id": "ord_mqfb6etz79pb",
@@ -359,24 +379,29 @@
       "currency": "EUR",
       "orderDate": 1781512543000,
       "emailSubject": "🍷 New Order — JANICE GORISHEK — 201.50 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "GORISHEKJ",
       "shippingAddress": "2218 SHADEHILL CT, 33612 TAMPA, FLORIDA (HILLSBOROUGH COUNTY)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202606150835.20884585776@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A809696654",
       "carrier": "MBE",
       "source": "fieramente",
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1782287519736,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1781533718423,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1782287519736,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -392,7 +417,7 @@
       ],
       "notes": "",
       "createdAt": 1781533718423,
-      "updatedAt": 1781533726768
+      "updatedAt": 1782287519736
     },
     {
       "id": "ord_mqb2woep3ml8",
@@ -403,24 +428,29 @@
       "currency": "EUR",
       "orderDate": 1781266085000,
       "emailSubject": "🍷 New Order — MATTHEW QUEZADA — 155.30 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "QUEZADAM",
       "shippingAddress": "14557 CULLEN STREET, 90603 WHITTIER, CALIFORNIA (LOS ANGELES COUNTY)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202606121208.48639218713@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1Z9376E1A816988639",
       "carrier": "MBE",
       "source": "fieramente",
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1782287519736,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1781277962641,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1782287519736,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -436,7 +466,7 @@
       ],
       "notes": "",
       "createdAt": 1781277962641,
-      "updatedAt": 1781277970603
+      "updatedAt": 1782287519736
     },
     {
       "id": "ord_mq5eg9jb9j56",
