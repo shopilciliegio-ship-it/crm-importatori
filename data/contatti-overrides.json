@@ -28776,7 +28776,7 @@
     }
   },
   "ctest1782132321361571he": {
-    "status": "sent",
+    "status": "replied",
     "log": [
       {
         "ts": 1782132321361,
@@ -28793,6 +28793,10 @@
       {
         "ts": 1782133754276,
         "msg": "👁 Aperta: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
+      },
+      {
+        "ts": 1782302321031,
+        "msg": "💬 Risposto: aggiornato manualmente"
       }
     ],
     "brevoEvents": [
@@ -28816,7 +28820,8 @@
         ],
         "clickedAt": "2026-06-22T17:14:45.325+02:00",
         "openedAt": "2026-06-22T15:09:14.276+02:00",
-        "deliveredAt": "2026-06-22T15:05:19.000+02:00"
+        "deliveredAt": "2026-06-22T15:05:19.000+02:00",
+        "manualStatus": "replied"
       }
     ]
   },
