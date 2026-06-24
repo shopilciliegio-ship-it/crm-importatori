@@ -28776,7 +28776,7 @@
     }
   },
   "ctest1782132321361571he": {
-    "status": "replied",
+    "status": "cold",
     "log": [
       {
         "ts": 1782132321361,
@@ -28797,6 +28797,10 @@
       {
         "ts": 1782302321031,
         "msg": "💬 Risposto: aggiornato manualmente"
+      },
+      {
+        "ts": 1782302332186,
+        "msg": "Stato → Non interessato"
       }
     ],
     "brevoEvents": [
