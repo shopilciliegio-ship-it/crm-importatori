@@ -499,6 +499,20 @@ const COUNTRY_REGION = {
   'KN':'Caraibi','DM':'Caraibi','VI':'Caraibi',
   'TC':'Caraibi','SX':'Caraibi','MF':'Caraibi',
   'VC':'Caraibi','AI':'Caraibi','MS':'Caraibi',
+
+  // ── VARIANTI NOMI (abbreviazioni / grafia alternativa da BWI) ──
+  'Bosnia':'Europa',
+  'Dominican Rep.':'Caraibi',
+  'Virgin Islands (U.S.)':'Caraibi',
+  'Virgin Islands (British)':'Caraibi',
+  'Saint Barthelemy':'Caraibi','Saint-Barthélemy':'Caraibi',
+  'Réunion':'Africa','Reunion':'Africa',
+  'Seychelles':'Africa',
+  'Cape Verde':'Africa','Cabo Verde':'Africa',
+  'Congo':'Africa',
+  'Djibouti':'Africa',
+  'Hong Kong SAR':'Asia',
+  'Cook Islands':'Oceania','Isole Cook':'Oceania',
 };
 
 function resetDefaultTemplates(){
