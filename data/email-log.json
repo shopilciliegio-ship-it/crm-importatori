@@ -62,6 +62,15 @@
       "subject": "Your wine is on its way! 🍷",
       "sentAt": 1782287522787,
       "messageId": "<202606240752.34573427982@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mq5eg9jb9j56",
+      "customerName": "DAISY CASTILLO",
+      "type": "consegnato",
+      "to": "daiscastil@gmail.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1782446906125,
+      "messageId": "<202606260408.15053244096@smtp-relay.mailin.fr>"
     }
   ]
 }
