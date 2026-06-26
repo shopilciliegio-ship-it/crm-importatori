@@ -2691,7 +2691,7 @@
       "emailSubject": "",
       "shopifyOrderId": "",
       "gmailMessageId": "",
-      "trackingNumber": "1ZRY6787A810502789",
+      "trackingNumber": "1ZRY6787A816048402",
       "mbeTrackingNumber": "IT3299-8V-0000005ZFY",
       "carrier": "UPS",
       "shippingDate": "2026-04-09",
@@ -2737,8 +2737,9 @@
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1780589312253,
-      "shippingType": "standard"
+      "updatedAt": 1782471335525,
+      "shippingType": "standard",
+      "shipmentCode": "COLEA"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000005Z74",
