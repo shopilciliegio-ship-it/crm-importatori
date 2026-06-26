@@ -1,6 +1,74 @@
 {
   "orders": [
     {
+      "id": "ord_mqv18erkvrev",
+      "customerName": "HARRISON STEIER",
+      "customerEmail": "hsteier1@gmail.com",
+      "customerPhone": "+15084397106",
+      "amount": 114.5,
+      "currency": "EUR",
+      "orderDate": 1782475698000,
+      "emailSubject": "🍷 New Order — HARRISON STEIER — 114.50 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "29 MATHESON DRIVE, 01752 MARLBOROUGH, MASSACHUSETTS (MIDDLESEX COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202606261208.17761317381@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1782484474304,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1782484474304,
+      "updatedAt": 1782484474304
+    },
+    {
+      "id": "ord_mqv18erkeq5b",
+      "customerName": "ROBERT WILLEY",
+      "customerEmail": "tahitianbobby@gmail.com",
+      "customerPhone": "+17146065000",
+      "amount": 141.0,
+      "currency": "EUR",
+      "orderDate": 1782475478000,
+      "emailSubject": "🍷 New Order — ROBERT WILLEY — 141.00 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "27201 MONFORTE, 92692 MISSION VIEJO, CALIFORNIA (ORANGE COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202606261204.72897862166@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1782484474304,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1782484474304,
+      "updatedAt": 1782484474304
+    },
+    {
       "id": "ord_mqp9n81ny0g2",
       "customerName": "MADISON DADDONA",
       "customerEmail": "daddonamadison@gmail.com",
@@ -4028,5 +4096,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1782135805307
+  "lastImportedAt": 1782484474304
 }
