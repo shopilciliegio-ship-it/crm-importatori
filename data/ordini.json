@@ -571,11 +571,18 @@
           "messageId": "<202606210449.71087442303@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-06-21T06:49:23.000+02:00"
+        },
+        {
+          "type": "consegnato",
+          "to": "daiscastil@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1782446906125,
+          "messageId": "<202606260408.15053244096@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1780934555207,
-      "updatedAt": 1782446904490,
+      "updatedAt": 1782446906125,
       "language": "en"
     },
     {
