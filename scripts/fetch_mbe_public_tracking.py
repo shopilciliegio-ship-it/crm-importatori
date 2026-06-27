@@ -84,10 +84,10 @@ def fetch_mbe_events(mbe_code: str) -> list[tuple[str, str]]:
         page    = browser.new_page()
         try:
             page.goto(url, timeout=30_000)
-            # Attende che la tabella tracking sia visibile
-            page.wait_for_selector('table', timeout=15_000)
+            page.wait_for_load_state('networkidle', timeout=30_000)
         except PWTimeout:
             print(f'    ⚠ Timeout caricamento pagina per {mbe_code}')
+            page.screenshot(path=f'/tmp/mbe_{mbe_code}.png')
             browser.close()
             return []
         except Exception as e:
@@ -95,7 +95,9 @@ def fetch_mbe_events(mbe_code: str) -> list[tuple[str, str]]:
             browser.close()
             return []
 
-        # Estrae tutte le righe di tutte le tabelle
+        page.screenshot(path=f'/tmp/mbe_{mbe_code}.png')
+
+        # Strategia 1: righe di tabella <tr><td>
         rows = page.query_selector_all('table tr')
         for row in rows:
             cells = row.query_selector_all('td')
@@ -104,6 +106,11 @@ def fetch_mbe_events(mbe_code: str) -> list[tuple[str, str]]:
                 desc_txt = (cells[1].inner_text() or '').strip()
                 if date_txt and desc_txt:
                     events.append((date_txt, desc_txt))
+
+        # Se nessuna tabella trovata, stampa il testo della pagina per debug
+        if not events:
+            body = page.inner_text('body')
+            print(f'    [debug] testo pagina (primi 800 char):\n{body[:800]}')
 
         browser.close()
 
