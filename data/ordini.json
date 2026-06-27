@@ -47,7 +47,7 @@
       "customerName": "ROBERT WILLEY",
       "customerEmail": "tahitianbobby@gmail.com",
       "customerPhone": "+17146065000",
-      "amount": 141.0,
+      "amount": 141,
       "currency": "EUR",
       "orderDate": 1782475478000,
       "emailSubject": "🍷 New Order — ROBERT WILLEY — 141.00 EUR",
@@ -228,19 +228,24 @@
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<DB9PR08MB6682E21A24DCDADBD2926A73BFE32@DB9PR08MB6682.eurprd08.prod.outlook.com>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A816048402",
       "carrier": "- U.S.A. Wine Corriere Std",
       "source": "shop",
       "language": "en",
       "orderNumber": "",
       "paymentType": "Carte Di Credito/Bancomat",
       "shippingDate": null,
-      "status": "preparazione",
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1781777258914,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1782565638211,
+          "note": ""
         }
       ],
       "emailsSent": [
@@ -252,11 +257,17 @@
           "messageId": "<202606181007.78776507337@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-06-18T15:04:21.000+02:00"
+        },
+        {
+          "type": "In transito",
+          "sentAt": 1782565638458,
+          "messageId": "<202606271307.50691497802@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1781777258914,
-      "updatedAt": 1781777271397
+      "updatedAt": 1782565638459,
+      "trackingUrl": ""
     },
     {
       "id": "ord_mqh1s5rlhcpn",
