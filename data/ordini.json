@@ -223,7 +223,7 @@
       "currency": "EUR",
       "orderDate": 1781775612000,
       "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio ASHLEIGH COLE",
-      "shipmentCode": "",
+      "shipmentCode": "COLEA",
       "shippingAddress": "106 Steeplechase, 29627 BELTON - S.CAROLINA - U.S.A. (SC), United States",
       "numberOfCartons": null,
       "shippingType": "standard",
@@ -234,7 +234,7 @@
       "language": "en",
       "orderNumber": "",
       "paymentType": "Carte Di Credito/Bancomat",
-      "shippingDate": null,
+      "shippingDate": 1782566908515,
       "status": "in_transito",
       "statusHistory": [
         {
@@ -266,7 +266,7 @@
       ],
       "notes": "",
       "createdAt": 1781777258914,
-      "updatedAt": 1782565638459,
+      "updatedAt": 1782566908515,
       "trackingUrl": ""
     },
     {
