@@ -435,6 +435,9 @@ function openOrdineDetail(id){
       <div class="fg"><label>Tracking number</label>
         <input id="ord-tracking" placeholder="Es. 1Z999AA10123456784" value="${esc(o.trackingNumber||'')}">
       </div>
+      <div class="fg"><label>Codice spedizione Fieramente</label>
+        <input id="ord-shipment-code" placeholder="Es. COLEA" value="${esc(o.shipmentCode||'')}" style="text-transform:uppercase">
+      </div>
       <div class="fg fgf"><label>Link tracciamento</label>
         <input id="ord-tracking-url" placeholder="Es. https://www.spedire.com/tracking/3UW1D56044876" value="${esc(o.trackingUrl||'')}">
       </div>
@@ -481,6 +484,7 @@ async function saveOrdineUpdate(id){
   const newAddress=(document.getElementById('ord-address')?.value||'').trim();
   const newShippingType=gv('ord-shipping-type')||'';
   const newLanguage=gv('ord-language')||'en';
+  const newShipmentCode=(document.getElementById('ord-shipment-code')?.value||'').trim().toUpperCase();
   const newAmount=(document.getElementById('ord-amount')?.value||'').trim();
   const newCurrency=(document.getElementById('ord-currency')?.value||'').trim();
   const note=(document.getElementById('ord-note')?.value||'').trim();
@@ -490,19 +494,25 @@ async function saveOrdineUpdate(id){
   if(newCurrency) o.currency=newCurrency.toUpperCase();
   if(newEmail) o.customerEmail=newEmail;
   o.carrier=newCarrier||'';
-  if(newTracking) o.trackingNumber=newTracking;
+  if(newTracking&&!o.trackingNumber){
+    o.trackingNumber=newTracking;
+    if(!o.shippingDate) o.shippingDate=Date.now();
+  } else if(newTracking){
+    o.trackingNumber=newTracking;
+  }
   o.trackingUrl=newTrackingUrl||'';
   o.language=newLanguage;
   if(newPhone) o.customerPhone=newPhone;
   if(newAddress) o.shippingAddress=newAddress;
   o.shippingType=newShippingType||null;
+  if(newShipmentCode) o.shipmentCode=newShipmentCode;
 
   const statusChanged=newStatus!==o.status;
   if(statusChanged){
     o.status=newStatus;
     o.statusHistory=o.statusHistory||[];
     o.statusHistory.push({status:newStatus, date:Date.now(), note:note||''});
-    if(newStatus==='spedito'&&!o.shippingDate) o.shippingDate=Date.now();
+    if(['spedito','in_transito'].includes(newStatus)&&!o.shippingDate) o.shippingDate=Date.now();
     if(['consegnato','annullato'].includes(newStatus)){
       const alreadySkipped=(o.emailsSent||[]).some(e=>e.type===newStatus);
       if(!alreadySkipped){
@@ -602,89 +612,67 @@ async function sendOrdineStatusEmail(o){
   if(!brv.apiKey){ toast('⚠ Configura Brevo nelle impostazioni per inviare email'); return; }
   if(!o.customerEmail){ toast('⚠ Email cliente mancante'); return; }
 
+  const isIt=(o.language||'en')==='it';
   const nome=o.customerName.split(/\s+/)[0]||o.customerName;
-  const trackLine=o.trackingNumber
-    ?`Numero tracking: ${o.trackingNumber}${o.trackingUrl?`\nTraccia la spedizione: ${o.trackingUrl}`:''}\n`
-    :(o.trackingUrl?`Traccia la spedizione: ${o.trackingUrl}\n`:'');
+  const mbeCode=(o.shipmentCode||'').trim();
+  const fierUrl=mbeCode?`https://track.fieramente.biz/#/tracking/${mbeCode}`:'';
+  const trackRef=o.trackingNumber?(fierUrl?`${o.trackingNumber} — ${fierUrl}`:o.trackingNumber):'';
+  const trackLineIt=trackRef?`Numero tracking: ${trackRef}${o.trackingUrl?`\nTraccia la spedizione: ${o.trackingUrl}`:''}\n`:(o.trackingUrl?`Traccia la spedizione: ${o.trackingUrl}\n`:'');
+  const trackLineEn=trackRef?`Tracking number: ${trackRef}${o.trackingUrl?`\nTrack your shipment: ${o.trackingUrl}`:''}\n`:(o.trackingUrl?`Track your shipment: ${o.trackingUrl}\n`:'');
+  const trackLine=isIt?trackLineIt:trackLineEn;
+  const sig=`Luca Pattaro\nIl Ciliegio — Azienda Agricola\nexport@ilciliegio.com | +39 331 1347899`;
 
   let subject='', body='';
 
   switch(o.status){
     case 'spedito':
-      subject=`Il tuo ordine è partito!${o.trackingNumber?' — Tracking: '+o.trackingNumber:''}`;
-      body=`Caro ${nome},
-
-il tuo ordine è stato spedito ed è ora in viaggio verso di te! 🍷
-
-${trackLine}La spedizione dovrebbe arrivare entro 7-10 giorni lavorativi. Ti aggiorneremo ad ogni cambio di stato.
-
-Grazie per aver scelto i nostri vini!
-
-Luca Pattaro
-Il Ciliegio — Azienda Agricola
-export@ilciliegio.com | +39 331 1347899`;
+      if(isIt){
+        subject=`Il tuo ordine è partito!${o.trackingNumber?' — Tracking: '+o.trackingNumber:''}`;
+        body=`Caro ${nome},\n\nil tuo ordine è stato spedito ed è ora in viaggio verso di te! 🍷\n\n${trackLine}La spedizione dovrebbe arrivare entro 7-10 giorni lavorativi. Ti aggiorneremo ad ogni cambio di stato.\n\nGrazie per aver scelto i nostri vini!\n\n${sig}`;
+      } else {
+        subject=`Your order has shipped!${o.trackingNumber?' — Tracking: '+o.trackingNumber:''}`;
+        body=`Dear ${nome},\n\nyour order has been shipped and is now on its way to you! 🍷\n\n${trackLine}Estimated delivery: 7–10 business days. We'll keep you updated at every status change.\n\nThank you for choosing our wines!\n\n${sig}`;
+      }
       break;
 
     case 'in_transito':
-      subject=`Aggiornamento spedizione — Il tuo vino è in viaggio`;
-      body=`Caro ${nome},
-
-il tuo ordine è in viaggio e procede regolarmente verso la destinazione. 📦
-
-${trackLine}Tempi stimati: 5-10 giorni lavorativi dalla data di spedizione.
-
-A presto!
-
-Luca Pattaro
-Il Ciliegio — Azienda Agricola
-export@ilciliegio.com | +39 331 1347899`;
+      if(isIt){
+        subject=`Aggiornamento spedizione — Il tuo vino è in viaggio`;
+        body=`Caro ${nome},\n\nil tuo ordine è in viaggio e procede regolarmente verso la destinazione. 📦\n\n${trackLine}Tempi stimati: 5-10 giorni lavorativi dalla data di spedizione.\n\nA presto!\n\n${sig}`;
+      } else {
+        subject=`Shipping update — Your wine is on its way`;
+        body=`Dear ${nome},\n\nyour order is in transit and on its way to you. 📦\n\n${trackLine}Estimated delivery: 5–10 business days from the shipping date.\n\nSpeak soon!\n\n${sig}`;
+      }
       break;
 
     case 'dogana':
-      subject=`Il tuo ordine è in fase di sdoganamento`;
-      body=`Caro ${nome},
-
-il tuo ordine è attualmente in fase di sdoganamento. Questo processo richiede normalmente 2-5 giorni lavorativi.
-
-${trackLine}Non è richiesto alcun intervento da parte tua — ti aggiorneremo appena l'ordine riparte.
-
-Grazie per la pazienza!
-
-Luca Pattaro
-Il Ciliegio — Azienda Agricola
-export@ilciliegio.com | +39 331 1347899`;
+      if(isIt){
+        subject=`Il tuo ordine è in fase di sdoganamento`;
+        body=`Caro ${nome},\n\nil tuo ordine è attualmente in fase di sdoganamento. Questo processo richiede normalmente 2-5 giorni lavorativi.\n\n${trackLine}Non è richiesto alcun intervento da parte tua — ti aggiorneremo appena l'ordine riparte.\n\nGrazie per la pazienza!\n\n${sig}`;
+      } else {
+        subject=`Your order is clearing customs`;
+        body=`Dear ${nome},\n\nyour order is currently going through customs clearance. This process normally takes 2–5 business days.\n\n${trackLine}No action is required from you — we'll update you as soon as it's on the move again.\n\nThank you for your patience!\n\n${sig}`;
+      }
       break;
 
     case 'consegnato':
-      subject=`Il tuo ordine è stato consegnato! 🍷 Buona degustazione!`;
-      body=`Caro ${nome},
-
-ottime notizie! Il tuo ordine è stato consegnato con successo. 🎉
-
-Speriamo che tu possa apprezzare i vini de Il Ciliegio. Se hai domande o feedback, non esitare a contattarci — il tuo parere è prezioso per noi.
-
-Saluti,
-
-Luca Pattaro
-Il Ciliegio — Azienda Agricola
-export@ilciliegio.com | +39 331 1347899`;
+      if(isIt){
+        subject=`Il tuo ordine è stato consegnato! 🍷 Buona degustazione!`;
+        body=`Caro ${nome},\n\nottime notizie! Il tuo ordine è stato consegnato con successo. 🎉\n\nSperiamo che tu possa apprezzare i vini de Il Ciliegio. Se hai domande o feedback, non esitare a contattarci.\n\nSaluti,\n\n${sig}`;
+      } else {
+        subject=`Your order has been delivered! 🍷 Enjoy!`;
+        body=`Dear ${nome},\n\ngreat news! Your order has been successfully delivered. 🎉\n\nWe hope you enjoy the wines from Il Ciliegio. If you have any questions or feedback, don't hesitate to reach out.\n\nBest regards,\n\n${sig}`;
+      }
       break;
 
     case 'problema':
-      subject=`⚠ Aggiornamento importante sulla tua spedizione`;
-      body=`Caro ${nome},
-
-ti contatto riguardo al tuo ordine. Purtroppo si è verificato un problema con la spedizione che stiamo già monitorando attivamente.
-
-Il nostro team è al lavoro per risolvere la situazione e ti terremo aggiornato il prima possibile.
-
-${trackLine}
-
-Per qualsiasi domanda urgente, rispondi direttamente a questa email.
-
-Luca Pattaro
-Il Ciliegio — Azienda Agricola
-export@ilciliegio.com | +39 331 1347899`;
+      if(isIt){
+        subject=`⚠ Aggiornamento importante sulla tua spedizione`;
+        body=`Caro ${nome},\n\nti contatto riguardo al tuo ordine. Purtroppo si è verificato un problema con la spedizione che stiamo già monitorando attivamente.\n\nIl nostro team è al lavoro per risolvere la situazione e ti terremo aggiornato il prima possibile.\n\n${trackLine}\nPer qualsiasi domanda urgente, rispondi direttamente a questa email.\n\n${sig}`;
+      } else {
+        subject=`⚠ Important update about your shipment`;
+        body=`Dear ${nome},\n\nI'm reaching out regarding your order. Unfortunately, an issue has occurred with the shipment and we are actively monitoring the situation.\n\nOur team is working to resolve it and we'll keep you informed as soon as possible.\n\n${trackLine}\nFor any urgent questions, please reply directly to this email.\n\n${sig}`;
+      }
       break;
 
     default:
