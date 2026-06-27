@@ -24,6 +24,9 @@ jobs:
       - name: Installa dipendenze
         run: pip install -r scripts/requirements.txt
 
+      - name: Installa Playwright browser
+        run: python -m playwright install chromium --with-deps
+
       - name: Importa ordini
         env:
           GMAIL_USER:         ${{ secrets.GMAIL_USER }}
@@ -52,10 +55,7 @@ jobs:
         run: python scripts/fetch_mbe_public_tracking.py
 
       # ── MBE tracking via login — DORMIENTE (API interna stantia per vino) ───
-      # Riattivare aggiungendo le 2 righe Playwright e rimuovendo i due "if: false"
-      - name: Installa Playwright browser
-        run: python -m playwright install chromium --with-deps
-
+      # Riattivare rimuovendo "if: false"
       - name: Fetch tracking MBE
         if: false
         env:

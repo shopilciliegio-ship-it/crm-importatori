@@ -120,6 +120,10 @@ def main():
         print(f'⚠ Fieramente non raggiungibile, salto questo step: {e}')
         return
 
+    # Debug: stampa tutti i campi della prima spedizione per mappatura futura
+    if fier_list:
+        print(f'  [debug] campi spedizione Fieramente: {sorted(fier_list[0].keys())}')
+
     fier_by_code = {
         s['mbe_code'].strip().upper(): s
         for s in fier_list if s.get('mbe_code')
