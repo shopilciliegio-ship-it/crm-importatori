@@ -45,7 +45,13 @@ jobs:
           GH_REPO:  ${{ github.repository }}
         run: python scripts/fetch_spedire_tracking.py
 
-      # ── MBE tracking — DORMIENTE (dati indietro rispetto a Fieramente) ──────
+      - name: Fetch tracking MBE pubblico (mbe.it)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO:  ${{ github.repository }}
+        run: python scripts/fetch_mbe_public_tracking.py
+
+      # ── MBE tracking via login — DORMIENTE (API interna stantia per vino) ───
       # Riattivare aggiungendo le 2 righe Playwright e rimuovendo i due "if: false"
       - name: Installa Playwright browser
         if: false
