@@ -262,11 +262,18 @@
           "type": "In transito",
           "sentAt": 1782565638458,
           "messageId": "<202606271307.50691497802@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "day0",
+          "to": "thecolefamily1@att.net",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1782575938077,
+          "messageId": "<202606271558.27965269690@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1781777258914,
-      "updatedAt": 1782566908515,
+      "updatedAt": 1782575938077,
       "trackingUrl": ""
     },
     {
