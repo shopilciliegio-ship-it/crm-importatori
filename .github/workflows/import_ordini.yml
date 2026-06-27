@@ -54,7 +54,7 @@ jobs:
       # ── MBE tracking via login — DORMIENTE (API interna stantia per vino) ───
       # Riattivare aggiungendo le 2 righe Playwright e rimuovendo i due "if: false"
       - name: Installa Playwright browser
-        run: playwright install chromium --with-deps
+        run: python -m playwright install chromium --with-deps
 
       - name: Fetch tracking MBE
         if: false
