@@ -1,6 +1,6 @@
 """
 Fetch MBE Public Tracking — Il Ciliegio CRM
-Scraping della pagina pubblica mbe.it/IT/tracking (nessun login richiesto).
+Playwright headless sulla pagina pubblica mbe.it/IT/tracking (nessun login).
 Aggiorna status ordini in ordini.json per tutti gli ordini con mbeTrackingNumber.
 
 Mapping eventi MBE → status CRM:
@@ -10,17 +10,12 @@ Mapping eventi MBE → status CRM:
 URL controllato: https://www.mbe.it/IT/tracking?c={mbeTrackingNumber}-01
 Il suffisso -01 identifica il primo collo — rappresentativo di tutta la spedizione
 anche quando ci sono più colli (-02, -03, …).
-
-Nota: se la pagina è JS-rendered (risposta HTML senza eventi), lo step viene
-saltato silenziosamente — in quel caso attivare Playwright (già in requirements).
 """
 
 import base64
 import json
 import os
-import re
 from datetime import datetime, timezone
-from html import unescape
 
 import requests
 
@@ -50,12 +45,6 @@ _GH_HEADERS = {
     'Accept':        'application/vnd.github.v3+json',
 }
 
-_HTTP_HEADERS = {
-    'User-Agent':      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-    'Accept':          'text/html,application/xhtml+xml',
-    'Accept-Language': 'it-IT,it;q=0.9,en;q=0.8',
-}
-
 
 # ── GitHub helpers ─────────────────────────────────────────────────────────────
 
@@ -81,30 +70,42 @@ def gh_put(path, data, sha, message):
     requests.put(url, headers=_GH_HEADERS, json=body).raise_for_status()
 
 
-# ── MBE page scraping ──────────────────────────────────────────────────────────
+# ── MBE page scraping via Playwright ──────────────────────────────────────────
 
 def fetch_mbe_events(mbe_code: str) -> list[tuple[str, str]]:
-    """Legge la pagina pubblica MBE e ritorna lista di (data, descrizione)."""
+    """Carica la pagina MBE con Playwright e ritorna lista di (data, descrizione)."""
+    from playwright.sync_api import sync_playwright, TimeoutError as PWTimeout
+
     url = MBE_TRACKING_URL.format(code=mbe_code)
-    try:
-        r = requests.get(url, headers=_HTTP_HEADERS, timeout=20)
-        r.raise_for_status()
-    except requests.exceptions.RequestException as e:
-        print(f'    ⚠ HTTP error per {mbe_code}: {e}')
-        return []
-
-    html_text = r.text
-
-    # Estrai tutte le righe <tr> e cerca celle <td> con data + descrizione
-    rows = re.findall(r'<tr[^>]*>(.*?)</tr>', html_text, re.DOTALL | re.IGNORECASE)
     events = []
-    for row in rows:
-        cells = re.findall(r'<td[^>]*>(.*?)</td>', row, re.DOTALL | re.IGNORECASE)
-        if len(cells) >= 2:
-            date_txt = unescape(re.sub(r'<[^>]+>', '', cells[0])).strip()
-            desc_txt = unescape(re.sub(r'<[^>]+>', '', cells[1])).strip()
-            if date_txt and desc_txt:
-                events.append((date_txt, desc_txt))
+
+    with sync_playwright() as pw:
+        browser = pw.chromium.launch(headless=True)
+        page    = browser.new_page()
+        try:
+            page.goto(url, timeout=30_000)
+            # Attende che la tabella tracking sia visibile
+            page.wait_for_selector('table', timeout=15_000)
+        except PWTimeout:
+            print(f'    ⚠ Timeout caricamento pagina per {mbe_code}')
+            browser.close()
+            return []
+        except Exception as e:
+            print(f'    ⚠ Errore Playwright per {mbe_code}: {e}')
+            browser.close()
+            return []
+
+        # Estrae tutte le righe di tutte le tabelle
+        rows = page.query_selector_all('table tr')
+        for row in rows:
+            cells = row.query_selector_all('td')
+            if len(cells) >= 2:
+                date_txt = (cells[0].inner_text() or '').strip()
+                desc_txt = (cells[1].inner_text() or '').strip()
+                if date_txt and desc_txt:
+                    events.append((date_txt, desc_txt))
+
+        browser.close()
 
     return events
 
@@ -153,8 +154,7 @@ def main():
         events = fetch_mbe_events(mbe_code)
 
         if not events:
-            print(f'  {name} ({mbe_code}): nessun evento ricevuto '
-                  f'(pagina vuota o JS-rendered — valutare Playwright)')
+            print(f'  {name} ({mbe_code}): nessun evento ricevuto')
             continue
 
         print(f'  {name} ({mbe_code}): {len(events)} eventi')
