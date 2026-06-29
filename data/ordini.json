@@ -1,6 +1,40 @@
 {
   "orders": [
     {
+      "id": "ord_mqz7gdo78vki",
+      "customerName": "PAUL CHOLLET",
+      "customerEmail": "pdchollet@gmail.com",
+      "customerPhone": "+16502555462",
+      "amount": 170.7,
+      "currency": "EUR",
+      "orderDate": 1782735193000,
+      "emailSubject": "🍷 New Order — PAUL CHOLLET — 170.70 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "122 OCEAN VIEW CT, 92084 VISTA, CALIFORNIA (SAN DIEGO COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202606291213.15843361488@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1782736788535,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1782736788535,
+      "updatedAt": 1782736788535
+    },
+    {
       "id": "ord_mqv18erkvrev",
       "customerName": "HARRISON STEIER",
       "customerEmail": "hsteier1@gmail.com",
@@ -4130,5 +4164,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1782484474304
+  "lastImportedAt": 1782736788535
 }
