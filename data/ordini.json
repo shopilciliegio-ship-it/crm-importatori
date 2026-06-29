@@ -29,10 +29,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "pdchollet@gmail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1782736802876,
+          "messageId": "<202606291240.54263492750@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1782736788535,
-      "updatedAt": 1782736788535
+      "updatedAt": 1782736802876
     },
     {
       "id": "ord_mqv18erkvrev",
