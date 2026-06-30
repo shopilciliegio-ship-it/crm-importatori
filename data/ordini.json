@@ -211,11 +211,18 @@
           "messageId": "<202606181828.73766437216@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-06-18T20:28:57.000+02:00"
+        },
+        {
+          "type": "day0",
+          "to": "tko751000@gmail.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1782818084113,
+          "messageId": "<202606301114.53243157730@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1781807327363,
-      "updatedAt": 1782818080103
+      "updatedAt": 1782818084113
     },
     {
       "id": "ord_mqju2suberxx",
@@ -260,11 +267,18 @@
           "messageId": "<202606181828.66063385094@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-06-18T20:28:58.000+02:00"
+        },
+        {
+          "type": "day0",
+          "to": "tko751000@gmail.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1782818084113,
+          "messageId": "<202606301114.72701357967@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1781807327363,
-      "updatedAt": 1782818080103
+      "updatedAt": 1782818084113
     },
     {
       "id": "ord_mqjc6bvm0tmr",
