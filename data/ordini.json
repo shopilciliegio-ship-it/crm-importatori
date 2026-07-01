@@ -912,11 +912,18 @@
           "messageId": "<202606210449.84782103580@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-06-21T06:49:24.000+02:00"
+        },
+        {
+          "type": "consegnato",
+          "to": "chillerheather@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1782879588313,
+          "messageId": "<202607010419.42826406131@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1780917382029,
-      "updatedAt": 1782879583544,
+      "updatedAt": 1782879588313,
       "trackingUrl": "",
       "language": "en"
     },
