@@ -26,6 +26,15 @@
       "subject": "Your wine is on its way! 🍷",
       "sentAt": 1782818084113,
       "messageId": "<202606301114.72701357967@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mq5486ml258w",
+      "customerName": "Heather Douglas",
+      "type": "consegnato",
+      "to": "chillerheather@gmail.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1782879588313,
+      "messageId": "<202607010419.42826406131@smtp-relay.mailin.fr>"
     }
   ]
 }
