@@ -35,6 +35,24 @@
       "subject": "Your order has been delivered! 🍷 Enjoy!",
       "sentAt": 1782879588313,
       "messageId": "<202607010419.42826406131@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mpzhlcdu21tb",
+      "customerName": "LISA CHRISTIAN",
+      "type": "consegnato",
+      "to": "lisa.slp86@gmail.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1782964770140,
+      "messageId": "<202607020359.62532651753@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mpv5bpn5tqbw",
+      "customerName": "LORA CURRIE",
+      "type": "consegnato",
+      "to": "lorahenke@aol.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1782964770140,
+      "messageId": "<202607020359.35070489410@smtp-relay.mailin.fr>"
     }
   ]
 }
