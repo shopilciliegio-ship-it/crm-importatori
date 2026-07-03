@@ -186,19 +186,24 @@
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202606221229.89736650472@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A813272773",
       "carrier": "MBE",
       "source": "fieramente",
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1783080714740,
+      "status": "spedito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1782135805307,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "spedito",
+          "date": 1783080714740,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -212,7 +217,7 @@
       ],
       "notes": "",
       "createdAt": 1782135805307,
-      "updatedAt": 1782135817055
+      "updatedAt": 1783080714740
     },
     {
       "id": "ord_mqju2sucol0j",
@@ -1272,10 +1277,10 @@
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<DB9PR08MB66828874DFB4DF142967E896BF102@DB9PR08MB6682.eurprd08.prod.outlook.com>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A895574249",
       "carrier": "MBE",
-      "shippingDate": null,
-      "status": "in_transito",
+      "shippingDate": 1783080714740,
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1286,6 +1291,11 @@
           "status": "in_transito",
           "date": 1781994998699,
           "note": ""
+        },
+        {
+          "status": "dogana",
+          "date": 1783080714740,
+          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -1308,7 +1318,7 @@
       ],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1782052140124,
+      "updatedAt": 1783080714740,
       "trackingUrl": "",
       "language": "en"
     },
