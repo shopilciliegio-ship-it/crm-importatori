@@ -178,7 +178,9 @@
       ],
       "notes": "",
       "createdAt": 1782484474304,
-      "updatedAt": 1782484485137
+      "updatedAt": 1783113242634,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1782484474304
     },
     {
       "id": "ord_mqp9n81ny0g2",
@@ -2183,11 +2185,13 @@
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1781990533280,
+      "updatedAt": 1783113242634,
       "shippingType": "standard",
       "shipmentCode": "JENKINSF",
       "trackingUrl": "",
-      "language": "en"
+      "language": "en",
+      "staleAlertDays": 7,
+      "staleAlertSince": 1781989369539
     },
     {
       "id": "ord_mbe_IT3299-8V-00000069TF",
