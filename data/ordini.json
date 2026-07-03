@@ -29,10 +29,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "matt.deddens@yahoo.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1783080719596,
+          "messageId": "<202607031211.59222396093@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1783080712224,
-      "updatedAt": 1783080712224
+      "updatedAt": 1783080719596
     },
     {
       "id": "ord_mqz7gdo78vki",
@@ -213,11 +221,18 @@
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1782135817055,
           "messageId": "<202606221343.13202843150@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "day0",
+          "to": "daddonamadison@gmail.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1783080719596,
+          "messageId": "<202607031212.35095848951@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1782135805307,
-      "updatedAt": 1783080714740
+      "updatedAt": 1783080719596
     },
     {
       "id": "ord_mqju2sucol0j",
@@ -1314,11 +1329,25 @@
           "messageId": "<202606202236.17513788680@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-06-21T00:36:33.000+02:00"
+        },
+        {
+          "type": "day0",
+          "to": "andrew.wayrynen@maritime.edu",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1783080719596,
+          "messageId": "<202607031212.33329909242@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "dogana",
+          "to": "andrew.wayrynen@maritime.edu",
+          "subject": "Your order is going through customs",
+          "sentAt": 1783080719596,
+          "messageId": "<202607031212.68671138398@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1783080714740,
+      "updatedAt": 1783080719596,
       "trackingUrl": "",
       "language": "en"
     },
