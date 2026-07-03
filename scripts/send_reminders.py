@@ -45,6 +45,8 @@ TAGLINE      = 'Vini artigianali toscani di eccellenza'
 DAY_MS          = 24 * 3600 * 1000
 STATI_TERMINALI = {'consegnato', 'annullato'}
 
+STALE_THRESHOLD_DAYS = 7  # spedizione ferma (nessun cambio status) oltre questa soglia → alert
+
 DIGEST_RECIPIENT = 'luca@ilciliegio.com'
 
 # Lo script gira ogni 4h (import_ordini.yml) ma il digest deve partire una
@@ -338,9 +340,76 @@ def should_send(order: dict, reminder_type: str, now_ms: int) -> tuple[bool, str
     return False, 'tipo sconosciuto'
 
 
+# ── Watchdog spedizioni ferme ────────────────────────────────────────────────
+
+def last_status_change_ms(order: dict) -> int:
+    """Data dell'ultimo cambio di stato noto (statusHistory), fallback a updatedAt/orderDate."""
+    history = order.get('statusHistory') or []
+    if history:
+        return max(int(h.get('date', 0)) for h in history)
+    return int(order.get('updatedAt') or order.get('orderDate') or order.get('createdAt') or 0)
+
+
+def stale_info(order: dict, now_ms: int) -> tuple[int, int, int] | None:
+    """Se lo stato non si muove da >= STALE_THRESHOLD_DAYS, restituisce
+    (giorni_fermi, soglia_settimanale raggiunta — 7/14/21/..., last_change_ms).
+    None se non bloccata (status terminale, ancora 'ricevuto', o sotto soglia)."""
+    status = order.get('status', '')
+    if status in STATI_TERMINALI or status == 'ricevuto':
+        return None
+    last_change = last_status_change_ms(order)
+    if not last_change:
+        return None
+    days_stuck = (now_ms - last_change) / DAY_MS
+    if days_stuck < STALE_THRESHOLD_DAYS:
+        return None
+    threshold = STALE_THRESHOLD_DAYS * int(days_stuck // STALE_THRESHOLD_DAYS)
+    return int(days_stuck), threshold, last_change
+
+
+def send_stale_alert(order: dict, days_stuck: int) -> str | None:
+    """Alert interno a Luca (non al cliente): la spedizione non riceve aggiornamenti
+    dal corriere via Fieramente da troppi giorni, va controllata a mano."""
+    name     = order.get('customerName', '?')
+    status   = order.get('status', '?')
+    mbe_code = (order.get('shipmentCode') or '').strip()
+    fier_url = f'https://track.fieramente.biz/#/tracking/{mbe_code}' if mbe_code else ''
+    tracking = order.get('trackingNumber') or '(nessuno)'
+
+    subject = f'⚠️ Spedizione ferma da {days_stuck}gg — {name}'
+    lines = [
+        f'La spedizione di {name} è ferma allo stato "{status}" da {days_stuck} giorni,',
+        'senza alcun aggiornamento dal corriere via Fieramente.',
+        '',
+        f'Codice spedizione: {mbe_code or "(mancante)"}',
+        f'Tracking: {tracking}',
+    ]
+    if fier_url:
+        lines.append(f'Controlla su Fieramente: {fier_url}')
+    lines += ['', 'Verifica manualmente cosa sta succedendo con questa spedizione.']
+    body_text = '\n'.join(lines)
+
+    payload = {
+        'sender':      {'name': SENDER_NAME, 'email': SENDER_EMAIL},
+        'to':          [{'email': DIGEST_RECIPIENT, 'name': 'Luca'}],
+        'subject':     subject,
+        'textContent': body_text,
+        'htmlContent': build_html_email(body_text),
+        'tags':        ['wine-crm', 'ordini', 'stale-watchdog'],
+        'trackClicks': False,
+        'trackOpens':  False,
+    }
+    r = requests.post('https://api.brevo.com/v3/smtp/email', headers=_BREVO_HEADERS, json=payload)
+    if r.ok:
+        print(f'    🚨 Alert spedizione ferma → {DIGEST_RECIPIENT} ({name}, {days_stuck}gg)')
+        return r.json().get('messageId', '')
+    print(f'    ✗ Alert stale fallito {r.status_code}: {r.text[:120]}')
+    return None
+
+
 # ── Daily digest ─────────────────────────────────────────────────────────────
 
-def send_daily_digest(orders: list, log_new: list, now_ms: int, test_mode: bool) -> None:
+def send_daily_digest(orders: list, log_new: list, now_ms: int, test_mode: bool, stale_now: list) -> None:
     from collections import Counter
 
     now_str = datetime.now().strftime('%d/%m/%Y %H:%M')
@@ -378,6 +447,11 @@ def send_daily_digest(orders: list, log_new: list, now_ms: int, test_mode: bool)
         for c in changes
     ]
 
+    stale_rows = [
+        f'<b>{s["name"]}</b>: {_STATUS_EMOJI.get(s["status"],"•")} {s["status"]} — fermo da {s["days"]}gg'
+        for s in sorted(stale_now, key=lambda x: -x['days'])
+    ]
+
     status_table = ''.join(
         f'<tr><td style="padding:4px 12px 4px 0;color:#555;font-size:14px">{_STATUS_EMOJI.get(s,"•")} {s}</td>'
         f'<td style="padding:4px 0;font-weight:bold;font-size:14px;color:#333">{n}</td></tr>'
@@ -393,6 +467,7 @@ def send_daily_digest(orders: list, log_new: list, now_ms: int, test_mode: bool)
     body_html = f"""
     <p style="margin:0 0 4px;color:#999;font-size:12px">{now_str} &nbsp;{mode_badge}</p>
     <h2 style="margin:0 0 20px;color:#222;font-size:20px;font-weight:bold">Resoconto giornaliero</h2>
+    {_section(f'🚨 Spedizioni ferme ≥{STALE_THRESHOLD_DAYS}gg ({len(stale_now)})', stale_rows)}
     {_section(f'📧 Email inviate ({len(log_new)})', email_rows)}
     {_section(f'🔄 Cambi stato ultime 24h ({len(changes)})', change_rows)}
     <h3 style="margin:24px 0 8px;color:#555;font-size:13px;text-transform:uppercase;letter-spacing:1px">📦 Ordini attivi ({len(active_orders)})</h3>
@@ -422,7 +497,7 @@ def send_daily_digest(orders: list, log_new: list, now_ms: int, test_mode: bool)
         'to':          [{'email': DIGEST_RECIPIENT, 'name': 'Luca'}],
         'subject':     f'📋 CRM Il Ciliegio — {now_str}',
         'htmlContent': html_content,
-        'textContent': f'CRM Report {now_str}\nEmail inviate: {len(log_new)}\nCambi stato: {len(changes)}\nOrdini attivi: {len(active_orders)}',
+        'textContent': f'CRM Report {now_str}\nSpedizioni ferme: {len(stale_now)}\nEmail inviate: {len(log_new)}\nCambi stato: {len(changes)}\nOrdini attivi: {len(active_orders)}',
         'tags':        ['wine-crm', 'digest'],
         'trackClicks': False,
         'trackOpens':  False,
@@ -538,30 +613,69 @@ def main():
             if msg_id:
                 _record_send(order, rtype, to_email, subject, msg_id)
 
+    # ── Watchdog: spedizioni ferme (>= 7gg senza cambio di stato) ─────────────
+    # Non dipende dal test_mode: lo stato tracking è reale a prescindere da
+    # come vengono instradate le email al cliente, e Luca deve saperlo comunque.
+    print(f'\n  Watchdog spedizioni ferme (soglia {STALE_THRESHOLD_DAYS}gg):')
+    stale_changed = False
+    stale_now     = []
+    for order in orders:
+        info = stale_info(order, now_ms)
+        if not info:
+            continue
+        days_stuck, threshold, last_change = info
+        stale_now.append({
+            'name':   order.get('customerName', '?'),
+            'status': order.get('status', '?'),
+            'days':   days_stuck,
+        })
+        # Il contatore soglia è legato all'episodio corrente (last_change): se lo
+        # stato si è mosso da quando fu salvato l'ultimo alert, è un nuovo episodio
+        # di stallo e si riparte da zero (altrimenti una vecchia soglia alta
+        # bloccherebbe l'alert su un nuovo blocco più recente ma più corto).
+        already_alerted = int(order.get('staleAlertDays') or 0) \
+            if order.get('staleAlertSince') == last_change else 0
+        if threshold > already_alerted:
+            msg_id = send_stale_alert(order, days_stuck)
+            if msg_id:
+                order['staleAlertDays']  = threshold
+                order['staleAlertSince'] = last_change
+                order['updatedAt'] = now_ms
+                stale_changed = True
+    if not stale_now:
+        print('    nessuna spedizione ferma')
+
     now_str = datetime.now().strftime('%d/%m/%Y %H:%M')
 
     if test_mode:
-        # Salva la pulizia degli entry corrotti (ma non i nuovi invii)
-        if cleaned:
+        # Salva la pulizia degli entry corrotti + eventuali alert stale (ma non i nuovi invii)
+        if cleaned or stale_changed:
             db['orders'] = orders
-            gh_put(DATA_PATH, db, sha_db, f'Test mode: pulizia entry da {cleaned} ordini — {now_str}')
-            print(f'✓ Pulizia salvata su ordini.json.')
+            parts = [p for p in (
+                f'pulizia {cleaned} ordini' if cleaned else '',
+                'alert spedizioni ferme' if stale_changed else '',
+            ) if p]
+            gh_put(DATA_PATH, db, sha_db, f'Test mode: {", ".join(parts)} — {now_str}')
+            print(f'✓ Salvato su ordini.json ({", ".join(parts)}).')
         print(f'\n🧪 Test completato: {sent} email inviate a {BCC_EMAIL}. emailsSent non modificato.')
     else:
-        if sent > 0:
+        if sent > 0 or stale_changed:
             db['orders'] = orders
             gh_put(DATA_PATH, db, sha_db, f'Reminder email — {sent} inviate — {now_str}')
-            log_data, log_sha = gh_get(LOG_PATH)
-            existing = log_data.get('log', []) if isinstance(log_data, dict) else []
-            gh_put(LOG_PATH, {'log': existing + log_new}, log_sha,
-                   f'Email log — {len(log_new)} entries — {now_str}')
-            print(f'\n✓ {sent} email inviate, ordini.json aggiornato.')
-            print(f'✓ email-log.json aggiornato ({len(log_new)} nuove righe).')
+            if sent > 0:
+                log_data, log_sha = gh_get(LOG_PATH)
+                existing = log_data.get('log', []) if isinstance(log_data, dict) else []
+                gh_put(LOG_PATH, {'log': existing + log_new}, log_sha,
+                       f'Email log — {len(log_new)} entries — {now_str}')
+                print(f'\n✓ {sent} email inviate, ordini.json aggiornato.')
+                print(f'✓ email-log.json aggiornato ({len(log_new)} nuove righe).')
+            else:
+                print(f'\n✓ ordini.json aggiornato (alert spedizioni ferme).')
         else:
             print('\nNessuna email da inviare.')
 
     if _is_digest_run():
-        send_daily_digest(orders, log_new, now_ms, test_mode)
+        send_daily_digest(orders, log_new, now_ms, test_mode, stale_now)
     else:
         print(f'⏭ Digest skippato — parte solo al run delle {DIGEST_HOUR_UTC}:00 UTC')
 
