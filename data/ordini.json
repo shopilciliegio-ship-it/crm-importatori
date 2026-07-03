@@ -397,11 +397,18 @@
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1782287522787,
           "messageId": "<202606240752.12524165173@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "dogana",
+          "to": "bbourjeili@sbcglobal.net",
+          "subject": "Your order is going through customs",
+          "sentAt": 1783050182940,
+          "messageId": "<202607030343.33846100104@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1781638869297,
-      "updatedAt": 1783050177259
+      "updatedAt": 1783050182940
     },
     {
       "id": "ord_mqh1s5rleh85",
@@ -458,11 +465,18 @@
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1782287522787,
           "messageId": "<202606240752.13612430359@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "dogana",
+          "to": "jenrichstevens@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1783050182940,
+          "messageId": "<202607030343.79850322436@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1781638869297,
-      "updatedAt": 1783050177259
+      "updatedAt": 1783050182940
     },
     {
       "id": "ord_mqfb6etzok72",
@@ -519,11 +533,18 @@
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1782287522787,
           "messageId": "<202606240752.51236173704@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "dogana",
+          "to": "maddie.dekker01@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1783050182940,
+          "messageId": "<202607030343.70846941038@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1781533718423,
-      "updatedAt": 1783050177259
+      "updatedAt": 1783050182940
     },
     {
       "id": "ord_mqfb6etzyl7s",
@@ -580,11 +601,18 @@
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1782287522787,
           "messageId": "<202606240752.87913207101@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "dogana",
+          "to": "chris.klotz10@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1783050182940,
+          "messageId": "<202607030343.93812862840@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1781533718423,
-      "updatedAt": 1783050177259
+      "updatedAt": 1783050182940
     },
     {
       "id": "ord_mqfb6etz79pb",
@@ -641,11 +669,18 @@
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1782287522787,
           "messageId": "<202606240752.21317893134@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "dogana",
+          "to": "jgorishek@verizon.net",
+          "subject": "Your order is going through customs",
+          "sentAt": 1783050182940,
+          "messageId": "<202607030343.49932505526@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1781533718423,
-      "updatedAt": 1783050177259
+      "updatedAt": 1783050182940
     },
     {
       "id": "ord_mqb2woep3ml8",
@@ -702,11 +737,18 @@
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1782287522787,
           "messageId": "<202606240752.34573427982@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "dogana",
+          "to": "matthewquezada81@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1783050182940,
+          "messageId": "<202607030343.39883997574@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1781277962641,
-      "updatedAt": 1783050177259
+      "updatedAt": 1783050182940
     },
     {
       "id": "ord_mq5eg9jb9j56",
@@ -1015,11 +1057,18 @@
           "messageId": "<202606210449.17647746060@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-06-21T07:28:38.000+02:00"
+        },
+        {
+          "type": "consegnato",
+          "to": "mmad6199@aol.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1783050182940,
+          "messageId": "<202607030343.39708899214@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1780672510830,
-      "updatedAt": 1783050177259
+      "updatedAt": 1783050182940
     },
     {
       "id": "ord_mpzhlcdu21tb",
@@ -1150,11 +1199,18 @@
           "messageId": "<202606210449.56739273585@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-06-21T06:49:26.000+02:00"
+        },
+        {
+          "type": "consegnato",
+          "to": "wawabeck1@att.net",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1783050182940,
+          "messageId": "<202607030343.87561527568@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1783050177259
+      "updatedAt": 1783050182940
     },
     {
       "id": "ord_mpzhlcdub8mu",
