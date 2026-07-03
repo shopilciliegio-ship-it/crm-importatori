@@ -1,6 +1,40 @@
 {
   "orders": [
     {
+      "id": "ord_mr4w7uw0auq6",
+      "customerName": "MATT DEDDENS",
+      "customerEmail": "matt.deddens@yahoo.com",
+      "customerPhone": "+351910675703",
+      "amount": 173.0,
+      "currency": "EUR",
+      "orderDate": 1783080045000,
+      "emailSubject": "🍷 New Order — MATT DEDDENS — 173.00 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "RUA JOAO DE DEUS, 4100-457 PORTO, PORTUGAL (PORTO)",
+      "numberOfCartons": null,
+      "shippingType": null,
+      "gmailMessageId": "<202607031200.45743109752@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1783080712224,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1783080712224,
+      "updatedAt": 1783080712224
+    },
+    {
       "id": "ord_mqz7gdo78vki",
       "customerName": "PAUL CHOLLET",
       "customerEmail": "pdchollet@gmail.com",
@@ -4340,5 +4374,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1782736788535
+  "lastImportedAt": 1783080712224
 }
