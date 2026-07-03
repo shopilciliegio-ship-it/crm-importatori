@@ -83,11 +83,18 @@
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1782484485137,
           "messageId": "<202606261434.87211846354@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "day0",
+          "to": "hsteier1@gmail.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1783075356622,
+          "messageId": "<202607031042.46336026849@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1782484474304,
-      "updatedAt": 1783075351578
+      "updatedAt": 1783075356622
     },
     {
       "id": "ord_mqv18erkeq5b",
