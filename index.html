@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wine CRM â€” Small Vineyards International</title>
+<title>Wine CRM — Small Vineyards International</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <style>
 
@@ -162,26 +162,26 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
 <div class="hdr">
   <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
     <div>
-      <div style="font-size:19px;font-weight:700;letter-spacing:-.3px">ðŸ· Wine CRM</div>
+      <div style="font-size:19px;font-weight:700;letter-spacing:-.3px">🍷 Wine CRM</div>
       <div class="sub" id="hdr-sub">Importatori &amp; Distributori</div>
     </div>
     <div class="layer-toggle">
-      <button class="layer-btn active" id="layer-btn-imp" onclick="switchLayer('importatori')">ðŸ¢ Importatori</button>
-      <button class="layer-btn" id="layer-btn-cli" onclick="switchLayer('clienti')">ðŸ‘¤ Clienti Privati</button>
-      <button class="layer-btn" id="layer-btn-ord" onclick="switchLayer('ordini')">ðŸ“¦ Ordini</button>
+      <button class="layer-btn active" id="layer-btn-imp" onclick="switchLayer('importatori')">🏢 Importatori</button>
+      <button class="layer-btn" id="layer-btn-cli" onclick="switchLayer('clienti')">👤 Clienti Privati</button>
+      <button class="layer-btn" id="layer-btn-ord" onclick="switchLayer('ordini')">📦 Ordini</button>
     </div>
-    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.171</div>
+    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.172</div>
   </div>
   <div class="hdr-r">
     <div class="gh-pill"><div class="gh-dot" id="gh-dot"></div><span id="gh-lbl">GitHub</span></div>
-    <button class="btn btg bts" onclick="openSettings()">âš™ GitHub</button>
-    <button class="btn bts" onclick="syncBrevoEvents()" title="Sincronizza aperture e click da Brevo">ðŸ“Š Sync Brevo</button>
-<button class="btn btd bts" onclick="confirmDeleteAll()">ðŸ—‘ Cancella DBâ€¦</button>
+    <button class="btn btg bts" onclick="openSettings()">⚙ GitHub</button>
+    <button class="btn bts" onclick="syncBrevoEvents()" title="Sincronizza aperture e click da Brevo">📊 Sync Brevo</button>
+<button class="btn btd bts" onclick="confirmDeleteAll()">🗑 Cancella DB…</button>
     <button class="btn btp" onclick="openAddContact()">+ Contatto</button>
   </div>
 </div>
 
-<!-- SEZIONE ORDINI â€” visibile solo quando layer='ordini', fuori dal sistema .page -->
+<!-- SEZIONE ORDINI — visibile solo quando layer='ordini', fuori dal sistema .page -->
 <div id="section-ordini" style="display:none">
   <div style="display:flex;align-items:center;justify-content:flex-end;margin-bottom:10px">
     <div id="email-autosend-toggle"></div>
@@ -190,28 +190,28 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
 
   <div class="card" style="margin-bottom:12px">
     <div class="sh" style="margin-bottom:10px">
-      <div class="st">ðŸ“§ Importa ordini</div>
+      <div class="st">📧 Importa ordini</div>
       <div style="font-size:12px;color:var(--text2)">
         Ultimo import: <span id="ord-last-import" style="font-weight:600">mai</span>
         <span class="nbadge" id="ord-n" style="margin-left:6px"></span>
       </div>
     </div>
 
-    <!-- Gmail connect section â€” popolata da renderGmailStatus() -->
+    <!-- Gmail connect section — popolata da renderGmailStatus() -->
     <div id="gmail-status" style="margin-bottom:8px"></div>
 
     <!-- Import manuale come fallback -->
     <details>
       <summary style="font-size:12px;color:var(--text2);cursor:pointer;user-select:none;padding:4px 0;list-style:none">
-        <span style="color:var(--blue)">âŒ¨ Import manuale</span> â€” incolla oggetti email (uno per riga)
+        <span style="color:var(--blue)">⌨ Import manuale</span> — incolla oggetti email (uno per riga)
       </summary>
       <div style="margin-top:10px">
         <p style="font-size:12px;color:var(--text2);margin-bottom:8px;line-height:1.6">
           Formato riconosciuto (con o senza prefisso "I:"):<br>
-          <code>ðŸ· New Order â€” NOME COGNOME â€” 294.05 EUR</code>
+          <code>🍷 New Order — NOME COGNOME — 294.05 EUR</code>
         </p>
         <textarea id="ord-subjects" rows="3"
-          placeholder="ðŸ· New Order â€” MARIO ROSSI â€” 150.00 EUR&#10;I: ðŸ· New Order â€” ANNA BIANCHI â€” 230.50 EUR"
+          placeholder="🍷 New Order — MARIO ROSSI — 150.00 EUR&#10;I: 🍷 New Order — ANNA BIANCHI — 230.50 EUR"
           style="width:100%;font-size:12px;padding:9px 11px;border:0.5px solid var(--brd2);border-radius:var(--r);background:var(--bg);color:var(--text);font-family:monospace;resize:vertical;line-height:1.5"></textarea>
         <div style="display:flex;justify-content:flex-end;margin-top:8px">
           <button class="btn btp bts" onclick="importFromSubjects()">Importa ordini</button>
@@ -221,7 +221,7 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
   </div>
 
   <div class="filters" style="margin-bottom:10px">
-    <input type="text" id="ord-sq" placeholder="Cerca cliente, trackingâ€¦" oninput="renderOrdini()" style="max-width:180px">
+    <input type="text" id="ord-sq" placeholder="Cerca cliente, tracking…" oninput="renderOrdini()" style="max-width:180px">
     <select id="ord-ss" onchange="renderOrdini()">
       <option value="">Tutti gli stati</option>
       <option value="ricevuto">Ricevuto</option>
@@ -238,15 +238,15 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
   </div>
 
   <div class="card" style="padding:0.75rem 1.25rem">
-    <div id="ord-list"><div class="empty">Nessun ordine â€” importa dalla sezione qui sopra</div></div>
+    <div id="ord-list"><div class="empty">Nessun ordine — importa dalla sezione qui sopra</div></div>
   </div>
 
   <details style="margin-top:12px">
     <summary style="font-size:12px;color:var(--text2);cursor:pointer;user-select:none;padding:4px 0;list-style:none">
-      <span style="color:var(--blue)">ðŸ“§ Template email reminder</span> â€” modifica il testo delle email automatiche
+      <span style="color:var(--blue)">📧 Template email reminder</span> — modifica il testo delle email automatiche
     </summary>
     <div class="card" style="margin-top:8px;padding:1.25rem" id="reminder-templates-panel">
-      <div class="empty" style="font-size:12px">Caricamento templateâ€¦</div>
+      <div class="empty" style="font-size:12px">Caricamento template…</div>
     </div>
   </details>
 </div>
@@ -277,32 +277,32 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
 <!-- CONTATTI -->
 <div id="page-contacts" class="page">
   <div class="filters">
-    <input type="text" id="sq" placeholder="Cercaâ€¦" oninput="renderContacts()" style="max-width:120px;min-width:80px">
+    <input type="text" id="sq" placeholder="Cerca…" oninput="renderContacts()" style="max-width:120px;min-width:80px">
     <select id="sr" onchange="updateCountryFilter();renderContacts()"><option value="">Tutte le regioni</option></select>
     <select id="sc" onchange="renderContacts()"><option value="">Tutti i paesi</option></select>
     <select id="sp" onchange="renderContacts()"><option value="">Tutti i tipi</option></select>
     <select id="sortby" onchange="renderContacts()" title="Ordina per">
-      <option value="employees">â†“ Dipendenti</option>
-      <option value="sales">â†“ Fatturato</option>
-      <option value="research">â†“ Stelle AI</option>
+      <option value="employees">↓ Dipendenti</option>
+      <option value="sales">↓ Fatturato</option>
+      <option value="research">↓ Stelle AI</option>
     </select>
     <select id="srsch" onchange="renderContacts()">
-      <option value="">â˜… Tutte</option>
-      <option value="si">âœ… Raccomandati</option>
-      <option value="forse">ðŸŸ¡ Forse</option>
-      <option value="no">âŒ Non idonei</option>
-      <option value="any">ðŸ”¬ Solo analizzati</option>
-      <option value="5">â˜…â˜…â˜…â˜…â˜… 5 stelle</option>
-      <option value="4">â˜…â˜…â˜…â˜…â˜† 4+ stelle</option>
-      <option value="3">â˜…â˜…â˜…â˜†â˜† 3+ stelle</option>
+      <option value="">★ Tutte</option>
+      <option value="si">✅ Raccomandati</option>
+      <option value="forse">🟡 Forse</option>
+      <option value="no">❌ Non idonei</option>
+      <option value="any">🔬 Solo analizzati</option>
+      <option value="5">★★★★★ 5 stelle</option>
+      <option value="4">★★★★☆ 4+ stelle</option>
+      <option value="3">★★★☆☆ 3+ stelle</option>
     </select>
     <select id="sv" onchange="renderContacts()" style="display:none">
       <option value="">Verifica email</option>
-      <option value="valido">âœ“ Valido</option>
-      <option value="non_valido">âœ— Non valido</option>
-      <option value="sospetta">âš  Sospetta</option>
+      <option value="valido">✓ Valido</option>
+      <option value="non_valido">✗ Non valido</option>
+      <option value="sospetta">⚠ Sospetta</option>
       <option value="da_verificare">? Da verificare</option>
-      <option value="sconosciuto">â€” Sconosciuto</option>
+      <option value="sconosciuto">— Sconosciuto</option>
     </select>
     <select id="ss" onchange="window._pendingFilter=false;renderContacts()">
       <option value="">Situazione contatto</option>
@@ -312,33 +312,33 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
       <option value="replied">Risposto</option>
       <option value="client">Cliente</option>
       <option value="cold">Non interessato</option>
-      <option value="blacklisted">ðŸš« Blacklist</option>
+      <option value="blacklisted">🚫 Blacklist</option>
     </select>
     <span id="sbwi-wrap">
       <select id="sbwi" onchange="renderContacts()">
         <option value="">Da BWI: tutti</option>
-        <option value="new">ðŸ†• Nuovi da BWI</option>
-        <option value="updated">âœï¸ Aggiornati da BWI</option>
-        <option value="bwi">ðŸ“‹ Solo BWI</option>
+        <option value="new">🆕 Nuovi da BWI</option>
+        <option value="updated">✏️ Aggiornati da BWI</option>
+        <option value="bwi">📋 Solo BWI</option>
       </select>
       <button id="bwi-sync-btn" class="btn bts" onclick="triggerBwiSync()"
-        style="font-size:12px;padding:4px 12px;white-space:nowrap">ðŸ”„ BWI Sync</button>
+        style="font-size:12px;padding:4px 12px;white-space:nowrap">🔄 BWI Sync</button>
     </span>
     <span id="squal-wrap" style="display:none">
       <select id="squal" onchange="renderContacts()">
-        <option value="">QualitÃ : tutti</option>
-        <option value="valid">ðŸŸ¢ Validi</option>
-        <option value="suspect">ðŸŸ¡ Sospetti</option>
-        <option value="invalid">ðŸ”´ Invalidi</option>
+        <option value="">Qualità: tutti</option>
+        <option value="valid">🟢 Validi</option>
+        <option value="suspect">🟡 Sospetti</option>
+        <option value="invalid">🔴 Invalidi</option>
       </select>
       <select id="sship" onchange="renderContacts()">
-        <option value="">SpedibilitÃ : tutti</option>
-        <option value="yes">âœ… Spedibili</option>
+        <option value="">Spedibilità: tutti</option>
+        <option value="yes">✅ Spedibili</option>
         </select>
       <select id="sortbycli" onchange="renderContacts()" title="Ordina per">
         <option value="">Ordine naturale</option>
-        <option value="chrono">ðŸ“… PiÃ¹ vecchi prima</option>
-        <option value="alpha">ðŸ”¤ Alfabetico</option>
+        <option value="chrono">📅 Più vecchi prima</option>
+        <option value="alpha">🔤 Alfabetico</option>
       </select>
     </span>
   </div>
@@ -350,23 +350,23 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
 <!-- WORKFLOW -->
 <div id="page-followups" class="page">
   <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap">
-    <span style="font-size:13px;color:var(--text2);flex:1">Contatti contattati â€” timeline email, aperture, click</span>
-    <input id="reg-search" type="text" oninput="renderRegistro()" placeholder="ðŸ”Ž Cerca nome o emailâ€¦"
+    <span style="font-size:13px;color:var(--text2);flex:1">Contatti contattati — timeline email, aperture, click</span>
+    <input id="reg-search" type="text" oninput="renderRegistro()" placeholder="🔎 Cerca nome o email…"
       style="font-size:12px;padding:4px 8px;border-radius:var(--r);border:0.5px solid var(--brd2);background:var(--bg);color:var(--text);min-width:180px">
     <select id="reg-sort" onchange="renderRegistro()" style="font-size:12px;padding:4px 8px;border-radius:var(--r);border:0.5px solid var(--brd2);background:var(--bg);color:var(--text)">
-      <option value="date">â†“ PiÃ¹ recente</option>
-      <option value="status">â†“ Per stato</option>
+      <option value="date">↓ Più recente</option>
+      <option value="status">↓ Per stato</option>
     </select>
     <select id="reg-filter" onchange="renderRegistro()" style="font-size:12px;padding:4px 8px;border-radius:var(--r);border:0.5px solid var(--brd2);background:var(--bg);color:var(--text)">
       <option value="">Tutti gli stati</option>
-      <option value="sent">ðŸ“¤ Inviata</option>
-      <option value="delivered">âœ“ Consegnata</option>
-      <option value="opened">ðŸ‘ Aperta</option>
-      <option value="clicked">ðŸ”— Cliccata</option>
-      <option value="replied">ðŸ’¬ Risposto</option>
-      <option value="bounced">âš  Bounce</option>
-      <option value="cold">âŒ Cold</option>
-      <option value="blacklisted">ðŸš« Blacklist</option>
+      <option value="sent">📤 Inviata</option>
+      <option value="delivered">✓ Consegnata</option>
+      <option value="opened">👁 Aperta</option>
+      <option value="clicked">🔗 Cliccata</option>
+      <option value="replied">💬 Risposto</option>
+      <option value="bounced">⚠ Bounce</option>
+      <option value="cold">❌ Cold</option>
+      <option value="blacklisted">🚫 Blacklist</option>
     </select>
     <span id="reg-count" style="font-size:12px;color:var(--text2);white-space:nowrap"></span>
   </div>
@@ -377,34 +377,34 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
 <!-- IMPORT -->
 <div id="page-import" class="page">
   <div class="card" id="import-card-imp">
-    <div class="sh"><div class="st">Importa Importatori â€” XLSX multi-foglio</div></div>
+    <div class="sh"><div class="st">Importa Importatori — XLSX multi-foglio</div></div>
     <p style="font-size:13px;color:var(--text2);margin-bottom:14px;line-height:1.7">
       Carica i file XLSX dal formato <strong>Best Wine Importers</strong>. Il CRM legge tutti i fogli, usa il nome del foglio come paese e rileva la regione dal nome del file (<code>Oceania.xlsx</code>, <code>Africa.xlsx</code>, ecc.).
     </p>
     <div class="drop-zone" id="dz"
       onclick="document.getElementById('fi').click()"
       ondragover="dzO(event)" ondragleave="dzL()" ondrop="dzD(event)">
-      <div style="font-size:2.2rem;margin-bottom:10px">ðŸ“‚</div>
+      <div style="font-size:2.2rem;margin-bottom:10px">📂</div>
       <div style="font-size:15px;font-weight:600">Trascina qui il file XLSX</div>
-      <div style="font-size:12px;margin-top:5px">oppure clicca per selezionare Â· Supporta .xlsx e .json</div>
+      <div style="font-size:12px;margin-top:5px">oppure clicca per selezionare · Supporta .xlsx e .json</div>
     </div>
     <input type="file" id="fi" accept=".xlsx,.xls,.json" style="display:none" onchange="handleFile(this)">
     <div id="imp-prev"></div>
   </div>
 
   <div class="card" id="import-card-cli" style="display:none">
-    <div class="sh"><div class="st">Importa Clienti Privati â€” XLSX o CSV</div></div>
+    <div class="sh"><div class="st">Importa Clienti Privati — XLSX o CSV</div></div>
     <p style="font-size:13px;color:var(--text2);margin-bottom:14px;line-height:1.7">
       Carica il file con i tuoi clienti privati. Colonne riconosciute automaticamente:<br>
-      <strong>Nome Â· Cognome Â· Email Â· Lingua Â· Paese</strong><br>
+      <strong>Nome · Cognome · Email · Lingua · Paese</strong><br>
       Le email marcate "Non Valido" o "Sospetta" vengono saltate automaticamente.
     </p>
     <div class="drop-zone" id="dz-cli"
       onclick="document.getElementById('fi').click()"
       ondragover="dzO(event)" ondragleave="dzL()" ondrop="dzD(event)">
-      <div style="font-size:2.2rem;margin-bottom:10px">ðŸ“‚</div>
+      <div style="font-size:2.2rem;margin-bottom:10px">📂</div>
       <div style="font-size:15px;font-weight:600">Trascina qui il file XLSX</div>
-      <div style="font-size:12px;margin-top:5px">oppure clicca per selezionare Â· Colonne: Nome, Cognome, Email, Lingua, Paese</div>
+      <div style="font-size:12px;margin-top:5px">oppure clicca per selezionare · Colonne: Nome, Cognome, Email, Lingua, Paese</div>
     </div>
     <input type="file" id="fi" accept=".xlsx,.xls,.json" style="display:none" onchange="handleFile(this)">
     <div id="imp-prev"></div>
@@ -416,7 +416,7 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
   <div class="sh" style="margin-bottom:8px">
     <div class="st" id="tpl-title">Template email</div>
     <div style="display:flex;gap:6px">
-      <button class="btn btg bts" onclick="resetToDefaultTemplates()" title="Ripristina template di default">â†º Ripristina default</button>
+      <button class="btn btg bts" onclick="resetToDefaultTemplates()" title="Ripristina template di default">↺ Ripristina default</button>
       <button class="btn bts" onclick="openAddTemplate()">+ Nuovo</button>
     </div>
   </div>
