@@ -51,24 +51,29 @@
       "currency": "EUR",
       "orderDate": 1782475698000,
       "emailSubject": "🍷 New Order — HARRISON STEIER — 114.50 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "STEIERH",
       "shippingAddress": "29 MATHESON DRIVE, 01752 MARLBOROUGH, MASSACHUSETTS (MIDDLESEX COUNTY)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202606261208.17761317381@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A895192858",
       "carrier": "MBE",
       "source": "fieramente",
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1783075351578,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1782484474304,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1783075351578,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -82,7 +87,7 @@
       ],
       "notes": "",
       "createdAt": 1782484474304,
-      "updatedAt": 1782484485137
+      "updatedAt": 1783075351578
     },
     {
       "id": "ord_mqv18erkeq5b",
