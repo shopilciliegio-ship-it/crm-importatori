@@ -407,8 +407,10 @@
       ],
       "notes": "",
       "createdAt": 1781777258914,
-      "updatedAt": 1782575938077,
-      "trackingUrl": ""
+      "updatedAt": 1783172684954,
+      "trackingUrl": "",
+      "staleAlertDays": 7,
+      "staleAlertSince": 1782565638211
     },
     {
       "id": "ord_mqh1s5rlhcpn",
