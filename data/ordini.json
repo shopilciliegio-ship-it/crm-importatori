@@ -369,7 +369,7 @@
       "orderNumber": "",
       "paymentType": "Carte Di Credito/Bancomat",
       "shippingDate": 1782566908515,
-      "status": "in_transito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -380,6 +380,11 @@
           "status": "in_transito",
           "date": 1782565638211,
           "note": ""
+        },
+        {
+          "status": "dogana",
+          "date": 1783223677554,
+          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -407,7 +412,7 @@
       ],
       "notes": "",
       "createdAt": 1781777258914,
-      "updatedAt": 1783172684954,
+      "updatedAt": 1783223677554,
       "trackingUrl": "",
       "staleAlertDays": 7,
       "staleAlertSince": 1782565638211
