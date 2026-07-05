@@ -408,11 +408,18 @@
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1782575938077,
           "messageId": "<202606271558.27965269690@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "dogana",
+          "to": "thecolefamily1@att.net",
+          "subject": "Your order is going through customs",
+          "sentAt": 1783223681420,
+          "messageId": "<202607050354.73596528905@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1781777258914,
-      "updatedAt": 1783223677554,
+      "updatedAt": 1783223681420,
       "trackingUrl": "",
       "staleAlertDays": 7,
       "staleAlertSince": 1782565638211
