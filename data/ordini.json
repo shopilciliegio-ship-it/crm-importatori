@@ -203,7 +203,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1783080714740,
-      "status": "spedito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -214,6 +214,11 @@
           "status": "spedito",
           "date": 1783080714740,
           "note": "Auto Fieramente (era: preparazione)"
+        },
+        {
+          "status": "dogana",
+          "date": 1783310468666,
+          "note": "Auto Fieramente (era: spedito)"
         }
       ],
       "emailsSent": [
@@ -234,7 +239,7 @@
       ],
       "notes": "",
       "createdAt": 1782135805307,
-      "updatedAt": 1783080719596
+      "updatedAt": 1783310468666
     },
     {
       "id": "ord_mqju2sucol0j",
@@ -257,7 +262,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1782818080103,
-      "status": "in_transito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -268,6 +273,11 @@
           "status": "in_transito",
           "date": 1782818080103,
           "note": "Auto Fieramente (era: preparazione)"
+        },
+        {
+          "status": "dogana",
+          "date": 1783310468666,
+          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -290,7 +300,7 @@
       ],
       "notes": "",
       "createdAt": 1781807327363,
-      "updatedAt": 1782818084113
+      "updatedAt": 1783310468666
     },
     {
       "id": "ord_mqju2suberxx",
@@ -313,7 +323,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1782818080103,
-      "status": "in_transito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -324,6 +334,11 @@
           "status": "in_transito",
           "date": 1782818080103,
           "note": "Auto Fieramente (era: preparazione)"
+        },
+        {
+          "status": "dogana",
+          "date": 1783310468666,
+          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -346,7 +361,7 @@
       ],
       "notes": "",
       "createdAt": 1781807327363,
-      "updatedAt": 1782818084113
+      "updatedAt": 1783310468666
     },
     {
       "id": "ord_mqjc6bvm0tmr",
