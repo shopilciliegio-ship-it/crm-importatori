@@ -235,11 +235,18 @@
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1783080719596,
           "messageId": "<202607031212.35095848951@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "dogana",
+          "to": "daddonamadison@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1783310473739,
+          "messageId": "<202607060401.48752586145@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1782135805307,
-      "updatedAt": 1783310468666
+      "updatedAt": 1783310473739
     },
     {
       "id": "ord_mqju2sucol0j",
@@ -296,11 +303,18 @@
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1782818084113,
           "messageId": "<202606301114.53243157730@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "dogana",
+          "to": "tko751000@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1783310473739,
+          "messageId": "<202607060401.25253904585@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1781807327363,
-      "updatedAt": 1783310468666
+      "updatedAt": 1783310473739
     },
     {
       "id": "ord_mqju2suberxx",
@@ -357,11 +371,18 @@
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1782818084113,
           "messageId": "<202606301114.72701357967@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "dogana",
+          "to": "tko751000@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1783310473739,
+          "messageId": "<202607060401.18212207051@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1781807327363,
-      "updatedAt": 1783310468666
+      "updatedAt": 1783310473739
     },
     {
       "id": "ord_mqjc6bvm0tmr",
