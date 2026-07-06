@@ -1,6 +1,74 @@
 {
   "orders": [
     {
+      "id": "ord_mr9e3pqw32dj",
+      "customerName": "PRZEMYSLAW RUDNICKI",
+      "customerEmail": "p.rudnicki96@gmail.com",
+      "customerPhone": "+48509403680",
+      "amount": 113.0,
+      "currency": "EUR",
+      "orderDate": 1783340430000,
+      "emailSubject": "🍷 New Order — PRZEMYSLAW RUDNICKI — 113.00 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "LAGODNA 6A, 15-509 GMINA GRABÓWKA, PODLASKIE VOIVODESHIP (BIAŁYSTOK COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": null,
+      "gmailMessageId": "<202607061220.83094426795@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1783352616728,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1783352616728,
+      "updatedAt": 1783352616728
+    },
+    {
+      "id": "ord_mr9e3pqw8pvq",
+      "customerName": "VAUGHN SHANNON",
+      "customerEmail": "vpshannon71@gmail.com",
+      "customerPhone": "+19378231521",
+      "amount": 200.4,
+      "currency": "EUR",
+      "orderDate": 1783340059000,
+      "emailSubject": "🍷 New Order — VAUGHN SHANNON — 200.40 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "356 DELLWOOD AVE, 45419 OAKWOOD, OHIO (MONTGOMERY COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202607061214.57691573209@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1783352616728,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1783352616728,
+      "updatedAt": 1783352616728
+    },
+    {
       "id": "ord_mr4w7uw0auq6",
       "customerName": "MATT DEDDENS",
       "customerEmail": "matt.deddens@yahoo.com",
@@ -4467,5 +4535,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1783080712224
+  "lastImportedAt": 1783352616728
 }
