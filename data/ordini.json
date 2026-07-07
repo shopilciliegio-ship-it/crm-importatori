@@ -135,24 +135,29 @@
       "currency": "EUR",
       "orderDate": 1782735193000,
       "emailSubject": "🍷 New Order — PAUL CHOLLET — 170.70 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "CHOLLETP",
       "shippingAddress": "122 OCEAN VIEW CT, 92084 VISTA, CALIFORNIA (SAN DIEGO COUNTY)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202606291213.15843361488@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1Z9376E1A803976621",
       "carrier": "MBE",
       "source": "fieramente",
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1783422818092,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1782736788535,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1783422818092,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -166,7 +171,7 @@
       ],
       "notes": "",
       "createdAt": 1782736788535,
-      "updatedAt": 1783352627244,
+      "updatedAt": 1783422818092,
       "staleAlertDays": 7,
       "staleAlertSince": 1782736788535
     },
@@ -233,24 +238,29 @@
       "currency": "EUR",
       "orderDate": 1782475478000,
       "emailSubject": "🍷 New Order — ROBERT WILLEY — 141.00 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "WILLEYR",
       "shippingAddress": "27201 MONFORTE, 92692 MISSION VIEJO, CALIFORNIA (ORANGE COUNTY)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202606261204.72897862166@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1Z9376E1A836377725",
       "carrier": "MBE",
       "source": "fieramente",
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1783422818092,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1782484474304,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1783422818092,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -264,7 +274,7 @@
       ],
       "notes": "",
       "createdAt": 1782484474304,
-      "updatedAt": 1783113242634,
+      "updatedAt": 1783422818092,
       "staleAlertDays": 7,
       "staleAlertSince": 1782484474304
     },
