@@ -46759,5 +46759,1655 @@
       "note": "Azienda argentina con sito irraggiungibile e nessuna traccia online. Impossibile verificare se commercializza vini italiani. Rischio affidabilità elevato per contatti B2B internazionali.",
       "analyzed_at": "2026-07-06T09:09:12.510Z"
     }
+  },
+  "c17833426001870ry7o": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda vietnamita con 1 dipendente e fatturato minimo (71k). Sito e-commerce generico di bevande (birra, vino, spirits) senza specializzazione italiana. Nessuna traccia online, nessun profilo professionale verificabile.",
+      "analyzed_at": "2026-07-07T08:16:24.997Z"
+    }
+  },
+  "c17833426001873gtri": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "sconosciuto",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Azienda vietnamita con sito irraggiungibile, nessuna traccia online, fatturato minimo (224k) e soli 2 dipendenti. Impossibile verificare se opera nel vino italiano.",
+      "analyzed_at": "2026-07-07T08:16:33.486Z"
+    }
+  },
+  "c1783342600187fjvd7": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda vietnamita specializzata in whisky e spirits (non vini). Nessuna menzione di vini italiani nel portafoglio. Micro-azienda (2 dipendenti, fatturato molto basso) con assenza di visibilità Google.",
+      "analyzed_at": "2026-07-07T08:16:39.885Z"
+    }
+  },
+  "c1783342600187a0c5d": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer vietnamita online/fisico con fatturato minimo (48.5k). Nessuna traccia Google, sito generico senza dettagli su portafoglio vini. Non è partner commerciale rilevante per esportatori italiani.",
+      "analyzed_at": "2026-07-07T08:16:44.822Z"
+    }
+  },
+  "c17833426001879c952": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "sconosciuto",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Azienda vietnamita con 1 dipendente e fatturato minimo (~99k). Sito irraggiungibile, nessuna traccia online. Impossibile verificare se commercia vini italiani o se è operativa.",
+      "analyzed_at": "2026-07-07T08:16:52.261Z"
+    }
+  },
+  "c178334260018745m9s": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "no",
+      "tipo_business": "importatore",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Importatore specializzato in Burgundy francese, non vini italiani. Mercato Vietnam con 5 dipendenti e fatturato modesto (4.060k). Nessuna pertinenza per distribuzione vini italiani.",
+      "analyzed_at": "2026-07-07T08:16:59.078Z"
+    }
+  },
+  "c1783342600187hlmsg": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "si",
+      "tipo_business": "importatore",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda vietnamita che importa vini italiani (Scavi & Ray, Campo V, Giordano, ecc.) ma con scarsissima tracciabilità online e fatturato minimo (~104k). Nessuna presenza Google, sito basic, non è partner strategico per produttori italiani.",
+      "analyzed_at": "2026-07-07T08:17:06.242Z"
+    }
+  },
+  "c178334260018725jou": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore vietnamita con portafoglio multi-paese (Francia, Italia, Spagna, Portogallo, ecc.). Sito funzionante ma nessuna traccia Google; fatturato modesto (2.875). Potenziale per distribuzione in Vietnam, ma verificare affidabilità e capacità di acquisto.",
+      "analyzed_at": "2026-07-07T08:17:14.279Z"
+    }
+  },
+  "c1783342600185dc06f": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer online NZ con portafoglio internazionale che include Italia. Fatturato modesto (1.2M NZD) e 32 dipendenti suggeriscono piccola-media azienda. Nessuna traccia Google è un segnale di cautela; sito funzionante ma info limitate su storia/credibilità.",
+      "analyzed_at": "2026-07-07T08:17:20.234Z"
+    }
+  },
+  "c1783342600185l629k": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "distributore",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Distributore neozelandese di vini e spirits, focalizzato su mercato locale (NZ/Australia). Nessuna evidenza di interesse per vini italiani; portfolio orientato a prodotti locali/regionali. Fatturato modesto (442k NZD) e team piccolo (4 dipendenti).",
+      "analyzed_at": "2026-07-07T08:17:28.968Z"
+    }
+  },
+  "c178334260018502acg": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Sito non funzionante (richiede JavaScript, nessun contenuto visibile). Nessuna traccia online nonostante fatturato di 2.2M NZD. Impossibile verificare se trattano vini italiani o solo spirits.",
+      "analyzed_at": "2026-07-07T08:17:37.138Z"
+    }
+  },
+  "c1783342600183kkmai": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Azienda di cooperage (botti e attrezzature per vinificazione), non produttore/distributore di vino. Importa attrezzature italiane (cocciopesto, anfore) ma non vini. Google non trova risultati; fatturato molto basso (128k) con 3 dipendenti suggerisce operatività limitata.",
+      "analyzed_at": "2026-07-07T08:17:47.346Z"
+    }
+  },
+  "c17833426001830s59r": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer online australiano di liquori generici (birra, spirits, champagne). Nessuna menzione di vini italiani nel catalogo. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-07-07T08:17:55.581Z"
+    }
+  },
+  "c1780673710717717nn": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Retailer online argentino con catalogo vini generico (prevalentemente sudamericani). Nessuna evidenza di focus su vini italiani; sito poco informativo su provenienza prodotti. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-07-07T08:18:01.953Z"
+    }
+  },
+  "c1780673710717qmy8g": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Distributore argentino generico di alimenti e bevande (fondato 1977, 51 dipendenti). Nessuna menzione esplicita di vini italiani; sito con encoding corrotto rende difficile valutazione. Non pertinente per strategie di export vini italiani.",
+      "analyzed_at": "2026-07-07T08:18:08.758Z"
+    }
+  },
+  "c1780673710717lba8c": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Supermercato argentino senza evidenza di vini italiani nel portafoglio. Sito generico con focus su promozioni locali, nessuna menzione di importazioni europee o italiane.",
+      "analyzed_at": "2026-07-07T08:18:15.957Z"
+    }
+  },
+  "c1780673710717jd24e": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "distributore",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Azienda argentina senza sito web, assenza totale di traccia online e nessuna evidenza di commercio con vini italiani. Impossibile verificare affidabilità o specializzazione geografica.",
+      "analyzed_at": "2026-07-07T08:18:20.009Z"
+    }
+  },
+  "c1780673710717tbq1a": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Azienda argentina (Santa Fe) senza traccia online né menzione esplicita di vini italiani. Sito basic con sezione 'Nuestras Marcas' vuota. Fatturato significativo (39M) ma non pertinente per distribuzione vini italiani in Italia.",
+      "analyzed_at": "2026-07-07T08:18:28.680Z"
+    }
+  },
+  "c1780673710717l58sb": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Azienda solida (31 dipendenti, fatturato significativo) che importa prestigiosi vini europei inclusi italiani (Antinori, Vega Sicilia). Però è distributore argentino focalizzato su mercato locale, non partner strategico per esportatori italiani verso l'Italia.",
+      "analyzed_at": "2026-07-07T08:18:37.297Z"
+    }
+  },
+  "c1780673710717hv00t": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "distributore",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Sito irraggiungibile, nessuna traccia online, impossibile verificare portafoglio prodotti. Distributore argentino di vini generici senza evidenza di specializzazione italiana.",
+      "analyzed_at": "2026-07-07T08:18:53.995Z"
+    }
+  },
+  "c1780673710717z9afe": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "misto",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Distributore argentino online focalizzato su vini locali (argentini) e spirits internazionali. Nessuna traccia di vini italiani nel catalogo; assenza di risultati Google e sito con encoding issues suggeriscono affidabilità limitata. Non pertinente per esportazione vini italiani.",
+      "analyzed_at": "2026-07-07T08:19:01.161Z"
+    }
+  },
+  "c1780673710717jxfys": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Retailer argentino online senza tracce verificabili su Google. Nessuna menzione di vini italiani nel portafoglio. Dimensione piccola (21 dipendenti, fatturato modesto) e assenza di segnali di affidabilità digitale rendono il contatto non prioritario.",
+      "analyzed_at": "2026-07-07T08:19:06.630Z"
+    }
+  },
+  "c1780673710717fuvka": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Sito non raggiungibile/in errore, nessuna traccia online. Portafoglio generico (alimenti, bevande, pulizia) senza focus su vini italiani. Fatturato modesto per distributore.",
+      "analyzed_at": "2026-07-07T08:19:11.694Z"
+    }
+  },
+  "c1780673710717g9iog": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda argentina senza sito web, nessuna traccia online e nessuna evidenza di specializzazione in vini italiani. Fatturato modesto (1,5M) e assenza totale di informazioni verificabili rendono il contatto rischioso.",
+      "analyzed_at": "2026-07-07T08:19:15.809Z"
+    }
+  },
+  "c17806737107174ms14": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda argentina specializzata in vini locali (Malbec, Cabernet) e bevande varie. Portfolio esclusivamente sudamericano/internazionale, nessun vino italiano. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-07-07T08:19:20.761Z"
+    }
+  },
+  "c1780673710717hmtvk": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "no",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda argentina specializzata in vini argentini e internazionali (Francia, Spagna). Nessuna menzione di vini italiani nel catalogo. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-07-07T08:19:25.152Z"
+    }
+  },
+  "c178067371071778nw2": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore argentino con canale online e fatturato modesto (~783k). Assenza di risultati Google e sito minimalista riducono credibilità. Portfolio include vini ma non confermato focus su italiani.",
+      "analyzed_at": "2026-07-07T08:19:30.302Z"
+    }
+  },
+  "c1780673710717k52a4": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Distributore argentino generico (bevande, alimentari, pulizia) senza traccia online. Nessuna menzione esplicita di vini italiani; catalogo ampio ma locale. Sito in costruzione, nessun risultato Google, fatturato modesto (1,9M). Non pertinente per esportazione vini italiani.",
+      "analyzed_at": "2026-07-07T08:19:36.912Z"
+    }
+  },
+  "c1780673710717k5y34": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda argentina con 21 anni di storia e portafoglio diversificato (vini, spirits, spumanti). Sito funzionante ma assenza totale da Google e nessuna verifica online. Citano vini italiani (Prosecco) e internazionali, ma focus principale su spirits/rum. Contatti disponibili; verificare affidabilità prima di procedere.",
+      "analyzed_at": "2026-07-07T08:19:43.996Z"
+    }
+  },
+  "c1780673710717kxkt5": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "distributore",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda argentina specializzata in birra e bevande locali dal 1962. Nessuna evidenza di importazione vini italiani; focus su mercato locale Santa Fe. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-07-07T08:19:53.997Z"
+    }
+  },
+  "c17806737107174gjh7": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda argentina senza traccia online (Google non trova risultati). Sito dichiarato non verificabile. Nessuna evidenza di focus su vini italiani; profilo generico di distributor locale in Bariloche.",
+      "analyzed_at": "2026-07-07T08:20:03.703Z"
+    }
+  },
+  "c17806737107179ffrv": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "distributore",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Sito non raggiungibile, nessuna traccia online, fatturato modesto (2,2M). Impossibile verificare se distribuisce vini italiani o solo prodotti locali/sudamericani.",
+      "analyzed_at": "2026-07-07T08:20:08.669Z"
+    }
+  },
+  "c17806737107175woc9": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer online argentino con portafoglio vini importati che include Italia. Sito funzionante ma assenza totale da Google suggerisce visibilità limitata. Fatturato modesto (371k) e team piccolo (5 dipendenti) indicano scala locale.",
+      "analyzed_at": "2026-07-07T08:20:13.525Z"
+    }
+  },
+  "c17806737107178oocj": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda argentina senza presenza su Google, focalizzata su vini argentini e spirits internazionali. Non distribuisce vini italiani; non pertinente per strategie di export italiano.",
+      "analyzed_at": "2026-07-07T08:20:18.519Z"
+    }
+  },
+  "c1780673710717rgurb": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda argentina senza presenza Google verificabile. Catalogo generico con alcuni vini italiani (Sangiovese, Prosecco, Pinot Grigio) ma prevalentemente sudamericani. Non è distributore/importatore italiano.",
+      "analyzed_at": "2026-07-07T08:20:23.457Z"
+    }
+  },
+  "c17806737107171kral": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "misto",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Distributore argentino con catalogo prevalentemente di vini locali (Salentein, Zuccardi, Alta Yari) e prodotti generici (alimenti, pulizia). Nessuna traccia di vini italiani nel portafoglio. Sito poco professionale, nessuna visibilità online, fatturato modesto per 4 dipendenti.",
+      "analyzed_at": "2026-07-07T08:20:29.143Z"
+    }
+  },
+  "c1780673710717yyl4c": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Distributore argentino specializzato in vini esclusivi locali (non italiani). Sito poco professionale, nessuna traccia online, fatturato modesto (1,7M). Non pertinente per strategie di export vini italiani.",
+      "analyzed_at": "2026-07-07T08:20:38.713Z"
+    }
+  },
+  "c1780673710717zymr5": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda argentina specializzata in vini kosher (Israele e mondo), non italiani. Sito poco professionale, nessuna traccia Google, focus esclusivo su nicchia kosher. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-07-07T08:20:44.532Z"
+    }
+  },
+  "c178067371071778x0r": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda argentina (Rosario) con 4 filiali fisiche e fatturato solido (~2,3M). Sito funzionante ma generico, nessuna menzione esplicita di vini italiani nel catalogo. Non pertinente per strategie di export vini italiani.",
+      "analyzed_at": "2026-07-07T08:20:50.122Z"
+    }
+  },
+  "c1780673710717jiu6n": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "no",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Distributore argentino specializzato in vini a granel, succhi concentrati e alcoli vinici da Argentina, Cile, Spagna e Sudafrica. Non commercializza vini italiani; assenza da Google e sito poco professionale riducono affidabilità.",
+      "analyzed_at": "2026-07-07T08:20:54.817Z"
+    }
+  },
+  "c17806737107173gek8": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Portfolio include cantine italiane (Le Macchiole, Castello Romitorio, Fattoria Le Pupille, Marchesi Di Barolo) ma sito con encoding issues e nessuna traccia Google. Micro-azienda (2 dipendenti, fatturato basso) focalizzata su mercato argentino, non europeo.",
+      "analyzed_at": "2026-07-07T08:21:00.228Z"
+    }
+  },
+  "c1780673710717afqwt": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Distributore argentino specializzato in birra Quilmes e bevande locali. Nessuna evidenza di vini italiani nel portafoglio; focus su mercato locale Valle de Uco. Sito con contenuti incompleti e placeholder di testo.",
+      "analyzed_at": "2026-07-07T08:21:05.753Z"
+    }
+  },
+  "c17806737107172w6qu": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "distributore",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Distributore argentino con sito non raggiungibile e assenza totale di tracce online. Nessuna evidenza di commercio con vini italiani; dimensione micro (2 dipendenti) suggerisce operatività locale limitata.",
+      "analyzed_at": "2026-07-07T08:21:11.404Z"
+    }
+  },
+  "c17806737107172qi96": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Sito irraggiungibile, nessuna traccia online, 2 dipendenti per fatturato dichiarato di 2,3M USD (incongruente). Impossibile verificare portafoglio vini italiani.",
+      "analyzed_at": "2026-07-07T08:21:16.182Z"
+    }
+  },
+  "c1780673710717tzm07": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer argentino con focus su vini locali (Malbec) e bevande premium. Nessuna evidenza di interesse per vini italiani; mercato target locale (Posadas, Misiones). Non pertinente per distribuzione italiana.",
+      "analyzed_at": "2026-07-07T08:21:21.951Z"
+    }
+  },
+  "c17806737107176uf7o": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda argentina (non italiana), sito in manutenzione senza info prodotti, nessuna traccia online, fatturato minimo. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-07-07T08:21:26.787Z"
+    }
+  },
+  "c17806737107179kwqf": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda argentina senza traccia online (Google assente). Catalogo generico con vini esteri (Jerez, Oporto, Champagne) ma nessun riferimento a vini italiani. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-07-07T08:21:31.860Z"
+    }
+  },
+  "c1780673710717zh2qd": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda argentina senza presenza online verificabile (Google non trova risultati). Nessuna menzione esplicita di vini italiani nel portafoglio. Dimensione molto piccola (2 dipendenti) e fatturato modesto per distributore. Non pertinente per strategie di export vini italiani.",
+      "analyzed_at": "2026-07-07T08:21:48.828Z"
+    }
+  },
+  "c1780673710717bd5b8": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "E-commerce argentino specializzato in vini locali (Malbec, Torrontés) e spirits. Nessuna traccia di vini italiani nel catalogo. Non pertinente per distribuzione italiana.",
+      "analyzed_at": "2026-07-07T08:21:54.687Z"
+    }
+  },
+  "c1780673710717l9mx5": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Distributore argentino specializzato in vini locali/sudamericani. Non risulta interesse per vini italiani; Google non trova tracce online. Contatto non pertinente per esportazione italiana.",
+      "analyzed_at": "2026-07-07T08:21:59.746Z"
+    }
+  },
+  "c178067371071761zoz": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda argentina senza sito web, nessuna traccia online, 1 solo dipendente. Impossibile verificare se commercializza vini italiani. Profilo troppo poco trasparente per contatti B2B.",
+      "analyzed_at": "2026-07-07T08:22:04.512Z"
+    }
+  },
+  "c1780673710717gfj9t": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda argentina (Salta) con 1 solo dipendente e fatturato modesto. Sito irraggiungibile, nessuna traccia online. Nessuna evidenza di focus su vini italiani. Profilo non affidabile per partnership B2B.",
+      "analyzed_at": "2026-07-07T08:22:09.776Z"
+    }
+  },
+  "c17806737107179ktc8": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda argentina (Del Viso) con 1 dipendente e fatturato modesto. Sito non indicizzato su Google, contenuto frammentario e non funzionante. Nessuna evidenza di vini italiani nel portafoglio; focus su mercato locale argentino (eventi, wine bar, consegne GBA Nord).",
+      "analyzed_at": "2026-07-07T08:22:16.029Z"
+    }
+  },
+  "c17806737107174el9o": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda argentina con 1 dipendente e fatturato modesto. Siti non raggiungibili e nessuna traccia online. Nessuna evidenza di commercio di vini italiani.",
+      "analyzed_at": "2026-07-07T08:22:19.859Z"
+    }
+  },
+  "c178067371071754lte": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda argentina specializzata in vini locali e importazioni (Cile, Spagna, Francia, Italia, Uruguay). Nessuna traccia online, 1 dipendente, fatturato modesto. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-07-07T08:22:25.248Z"
+    }
+  },
+  "c1780673710717tcxy1": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer argentino senza sito web, assenza totale di traccia online e nessuna evidenza di commercio con vini italiani. Dimensione micro (1 dipendente) rende contatto poco strategico.",
+      "analyzed_at": "2026-07-07T08:22:30.011Z"
+    }
+  },
+  "c17806737107173d0mx": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda argentina con 1 solo dipendente e fatturato modesto. Sito non raggiungibile, nessuna traccia online. Nessuna evidenza di interesse specifico per vini italiani. Non idonea per partnership commerciale.",
+      "analyzed_at": "2026-07-07T08:22:34.865Z"
+    }
+  },
+  "c1780673710717ucxl3": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Jumbo è una grande catena retail argentina (supermercado online) che vende vino tra molte altre categorie. Non risultano evidenze di focus su vini italiani specifici; il sito non fornisce dettagli su provenienza/selezione vini. Non è un importatore/distributore specializzato.",
+      "analyzed_at": "2026-07-07T08:22:40.380Z"
+    }
+  },
+  "c17806737107179x6o7": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda argentina specializzata in birra e bevande locali (Quilmes, Skol, Corona). Vini presenti sono esclusivamente argentini (Malbec). Nessuna traccia di vini italiani nel catalogo. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-07-07T08:22:45.453Z"
+    }
+  },
+  "c1780673710717kzlj9": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "no",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Distributore argentino specializzato in vini locali e internazionali (principalmente sudamericani). Portfolio focalizzato su bodegas argentine, nessuna menzione di vini italiani. Non pertinente per esportatori italiani.",
+      "analyzed_at": "2026-07-07T08:22:51.683Z"
+    }
+  },
+  "c1780673710717s9qoa": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Distributore argentino generico senza focus su vini italiani. Sito minimalista, nessuna traccia online, assenza dati aziendali (dipendenti/fatturato). Non pertinente per esportazione vini italiani.",
+      "analyzed_at": "2026-07-07T08:22:56.397Z"
+    }
+  },
+  "c1780673710717yxgsp": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "no",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda argentina solida con sito professionale, multiple sedi e certificazioni internazionali. Portfolio focalizzato su vini argentini, spirits globali e marche proprie - nessun riferimento a vini italiani.",
+      "analyzed_at": "2026-07-07T08:23:02.321Z"
+    }
+  },
+  "c1780673710717fg2m3": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Sito generico di contenuti su vini/spirits senza evidenza di attività commerciale reale. Nessun risultato Google, assenza di info aziendali (dipendenti, fatturato), focus su vini argentini e internazionali, non italiani.",
+      "analyzed_at": "2026-07-07T08:23:07.461Z"
+    }
+  },
+  "c1780673710717mnfsh": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Sito non raggiungibile, nessuna traccia online, dati insufficienti. Impossibile verificare affidabilità o portafoglio prodotti (inclusi vini italiani).",
+      "analyzed_at": "2026-07-07T08:23:12.209Z"
+    }
+  },
+  "c1780673710717npddh": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "distributore",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Nessun sito web, assenza totale di tracce online, dati insufficienti per valutare affidabilità. Impossibile verificare se distribuisce vini italiani o se è ancora attiva.",
+      "analyzed_at": "2026-07-07T08:23:16.164Z"
+    }
+  },
+  "c1780673710717jd3ik": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Azienda argentina specializzata in birra artigianale/importata, non in vini italiani. Sito poco professionale, nessuna traccia online, nessun dato su fatturato/dipendenti. Non pertinente per vini italiani.",
+      "analyzed_at": "2026-07-07T08:23:21.692Z"
+    }
+  },
+  "c1780673710717z10ks": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Enoteca argentina senza traccia online (zero risultati Google). Sito con spam/malware evidente (casino links, testo corrotto). Nessuna menzione di vini italiani nel catalogo visibile.",
+      "analyzed_at": "2026-07-07T08:23:27.724Z"
+    }
+  },
+  "c1780673710717ew00u": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Nessun sito web, assenza totale di traccia online, dati insufficienti. Impossibile verificare affidabilità o portafoglio vini italiani.",
+      "analyzed_at": "2026-07-07T08:23:32.449Z"
+    }
+  },
+  "c17806737107177ylne": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Nessun sito web, assenza totale di presenze online e dati verificabili. Impossibile valutare credibilità, portafoglio prodotti o interesse per vini italiani. Contatto non consigliato senza ulteriori verifiche offline.",
+      "analyzed_at": "2026-07-07T08:23:36.927Z"
+    }
+  },
+  "c1780673710717v0g69": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Mercadolibre è marketplace argentino noto, ma sito non raggiungibile e nessuna info su portafoglio vini italiani. 'Mostodivino' potrebbe essere specializzato vini, ma dati insufficienti per valutare affidabilità e interesse per vini italiani.",
+      "analyzed_at": "2026-07-07T08:23:41.871Z"
+    }
+  },
+  "c1780673710717e76jm": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "misto",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda argentina (Godoy Cruz) specializzata in vini locali e spirits. Nessuna menzione di vini italiani nel portafoglio. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-07-07T08:23:46.072Z"
+    }
+  },
+  "c1780673710717zh9ny": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Supermercato locale argentino con sito funzionante ma nessuna evidenza di focus su vini italiani. Assenza totale di informazioni su portafoglio vini, fornitori o specializzazione enologica.",
+      "analyzed_at": "2026-07-07T08:23:54.536Z"
+    }
+  },
+  "c1780673710717h9bpj": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Nessun sito web, assenza totale di tracce online, dati insufficienti per valutare affidabilità. Non è possibile verificare se commercializza vini italiani.",
+      "analyzed_at": "2026-07-07T08:24:00.161Z"
+    }
+  },
+  "c1780673710717ihxi6": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Nessun sito web dichiarato, assente da Google, dati aziendali incompleti (dipendenti/fatturato sconosciuti). Impossibile verificare affidabilità o interesse per vini italiani.",
+      "analyzed_at": "2026-07-07T08:24:04.130Z"
+    }
+  },
+  "c17806737107175d564": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda argentina specializzata esclusivamente in vini argentini e accessori. Nessuna traccia online (Google), nessuna informazione su dipendenti/fatturato. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-07-07T08:24:08.947Z"
+    }
+  },
+  "c1780673710717b65fe": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "E-commerce argentino generico di alimentari e bevande. Nessuna evidenza di vini italiani nel catalogo; focus su prodotti locali/latinoamericani. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-07-07T08:24:13.582Z"
+    }
+  },
+  "c1780673710717yrl2c": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer argentino con sito dichiarato ma non raggiungibile. Nessuna traccia online verificabile. Potenziale cliente per vini italiani, ma affidabilità molto bassa senza conferme.",
+      "analyzed_at": "2026-07-07T08:24:17.637Z"
+    }
+  },
+  "c1780673710717ecqwe": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda argentina specializzata in vini sudamericani (Malbec, Cabernet). Nessuna traccia di vini italiani nel portafoglio. Non pertinente per strategie di distribuzione vini italiani.",
+      "analyzed_at": "2026-07-07T08:24:22.041Z"
+    }
+  },
+  "c1780673710717upblb": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda argentina specializzata in vini locali (Malbec, Catena, Andeluna) e prodotti gourmet. Nessuna traccia di vini italiani nel portafoglio; assenza di dati verificabili (Google, dipendenti, fatturato).",
+      "analyzed_at": "2026-07-07T08:24:27.325Z"
+    }
+  },
+  "c1780673710717rn4bs": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda argentina (Bariloche) che vende vini argentini e importati, non italiani. Sito poco professionale con errori di markup HTML e nessuna traccia online (zero risultati Google).",
+      "analyzed_at": "2026-07-07T08:24:32.330Z"
+    }
+  },
+  "c17806737107172myl7": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Sito irraggiungibile, nessuna traccia online, dati aziendali assenti. Impossibile verificare affidabilità o portafoglio prodotti (inclusa presenza vini italiani).",
+      "analyzed_at": "2026-07-07T08:24:37.284Z"
+    }
+  },
+  "c1780673710717wx16r": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Sito irraggiungibile, nessuna traccia Google, dati aziendali assenti (dipendenti/fatturato). Impossibile verificare se commercializza vini italiani o se è operativa.",
+      "analyzed_at": "2026-07-07T08:24:43.173Z"
+    }
+  },
+  "c1780673710717ywz7x": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda argentina specializzata in vini argentini, non italiani. Sito non indicizzato su Google, contenuti minimi e non informativi. Nessun dato su dipendenti/fatturato.",
+      "analyzed_at": "2026-07-07T08:24:49.341Z"
+    }
+  },
+  "c1780673710717wtog6": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda argentina senza presenze online verificabili (zero risultati Google). Portafoglio ampio ma focalizzato su vini locali/internazionali generici, nessuna menzione esplicita di vini italiani. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-07-07T08:24:54.245Z"
+    }
+  },
+  "c1780673710717j0hch": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer argentino online specializzato in vini locali (Malbec, Tannat, Bonarda) e bevande. Nessuna traccia di vini italiani nel catalogo; focus esclusivo su prodotti sudamericani.",
+      "analyzed_at": "2026-07-07T08:24:59.688Z"
+    }
+  },
+  "c1780673710717wh61w": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda argentina (Rosario) specializzata in vini locali e importati, ma nessun vino italiano nel catalogo visibile. Sito con contenuti confusi (riferimenti a casino) e nessuna traccia online verificabile.",
+      "analyzed_at": "2026-07-07T08:25:05.908Z"
+    }
+  },
+  "c1780673710717vwzit": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda argentina specializzata in vini sudamericani (Malbec, Tannat, blend argentini). Nessuna traccia di vini italiani nel portafoglio. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-07-07T08:25:11.628Z"
+    }
+  },
+  "c1780673710717dl5bi": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda argentina specializzata in vini sudamericani (Argentina, Cile). Nessuna traccia di vini italiani nel catalogo. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-07-07T08:25:19.740Z"
+    }
+  },
+  "c1780673710717w4ys3": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer argentino focalizzato su vini sudamericani e importati (Spagna, USA, Uruguay). Nessuna traccia online, assenza di dati aziendali (dipendenti, fatturato). Non è un partner strategico per esportare vini italiani.",
+      "analyzed_at": "2026-07-07T08:25:25.375Z"
+    }
+  },
+  "c1780673710717upikt": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Importatore argentino con catalogo ampio (Prosecco 9 prodotti, vini spumanti). Sito poco professionale, nessuna traccia Google, contatti basic (Gmail). Potenziale per vini italiani ma affidabilità bassa.",
+      "analyzed_at": "2026-07-07T08:25:30.552Z"
+    }
+  },
+  "c1780673710717r00bb": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore argentino di vini e spirits senza presenze online verificabili (Google non trova risultati). Sito minimalista con solo avviso di maggiore età. Impossibile valutare portafoglio prodotti e focus su vini italiani.",
+      "analyzed_at": "2026-07-07T08:25:36.535Z"
+    }
+  },
+  "c17806737107172ussd": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Sito irraggiungibile, nessuna traccia online, dati aziendali assenti. Impossibile verificare affidabilità o portafoglio prodotti (inclusi vini italiani).",
+      "analyzed_at": "2026-07-07T08:25:41.419Z"
+    }
+  },
+  "c17806737107174p5v7": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda argentina specializzata in vini sudamericani (Malbec, Bonarda, Tannat). Nessuna traccia di vini italiani nel portafoglio. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-07-07T08:25:46.817Z"
+    }
+  },
+  "c17806737107170n9qq": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda argentina di logistica e distribuzione generica (non specializzata in vino). Nessuna menzione di vini italiani; sito con problemi di encoding e nessuna traccia online. Non pertinente per esportazione vini italiani.",
+      "analyzed_at": "2026-07-07T08:25:51.869Z"
+    }
+  },
+  "c1780673710717fwn8x": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Sito irraggiungibile, nessuna traccia online, dati aziendali assenti. Impossibile verificare se commercializza vini italiani o se è un'azienda operativa.",
+      "analyzed_at": "2026-07-07T08:25:56.341Z"
+    }
+  },
+  "c1780673710717bcvcp": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda argentina specializzata in vini sudamericani (Mendoza). Nessuna traccia di vini italiani nel portafoglio. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-07-07T08:26:01.234Z"
+    }
+  },
+  "c1780673710717linzx": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda argentina specializzata in formaggi, salumi e prodotti gourmet locali. Nessuna evidenza di vini italiani nel catalogo; assenza di risultati Google e dati aziendali (dipendenti, fatturato). Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-07-07T08:26:10.458Z"
+    }
+  },
+  "c1780673710717d0tea": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Sito irraggiungibile, nessuna traccia online, nessuna informazione su vini italiani nel portafoglio. Impossibile verificare affidabilità e specializzazione.",
+      "analyzed_at": "2026-07-07T08:26:16.083Z"
+    }
+  },
+  "c1780673710717i05y9": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Vinoteca argentina specializzata in vini locali (varietali argentini). Non commercializza vini italiani; focus esclusivo su prodotti nazionali. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-07-07T08:26:22.926Z"
+    }
+  },
+  "c17806737107173x4nf": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "no",
+      "tipo_business": "sconosciuto",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Sito template generico (Colorlib) con contenuti placeholder e mix confuso (vini argentini + arredamento). Nessuna traccia online, email sospetta, prezzi in ARS. Non è un partner affidabile per vini italiani.",
+      "analyzed_at": "2026-07-07T08:26:28.580Z"
+    }
+  },
+  "c1780673710717hml24": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda argentina specializzata esclusivamente in vini argentini e spumanti locali. Non pertinente per distribuzione di vini italiani. Nessuna traccia online (Google) nonostante sito dichiarato.",
+      "analyzed_at": "2026-07-07T08:26:33.702Z"
+    }
+  },
+  "c17806737107179jykg": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "E-commerce argentino con portafoglio italiano (vini importati, prosecco, vermouth). Sito funzionante ma nessuna traccia Google; assenza dati finanziari/dipendenti limita valutazione. Potenziale per distribuzione locale, ma richiede verifica affidabilità.",
+      "analyzed_at": "2026-07-07T08:26:39.123Z"
+    }
+  },
+  "c1780673710717nnlyt": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Vinoteca argentina specializzata in vini argentini, non italiani. Sito poco professionale con testo placeholder (Lorem ipsum) e nessuna traccia online. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-07-07T08:26:44.008Z"
+    }
+  },
+  "c17806737107178plzg": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "E-commerce argentino senza presenze online verificabili (zero risultati Google). Catalogo generico di bevande e accessori, nessuna menzione esplicita di vini italiani. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-07-07T08:26:50.037Z"
+    }
+  },
+  "c1780673710717lqp87": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda argentina senza presenze online verificabili (zero risultati Google). Nessuna evidenza di importazione vini italiani nel portafoglio. Affidabilità bassa per partnership B2B internazionale.",
+      "analyzed_at": "2026-07-07T08:26:54.997Z"
+    }
+  },
+  "c1780673710717vg7c8": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Nessun sito web, nessuna traccia online, dati insufficienti. Impossibile verificare affidabilità o interesse per vini italiani. Non contattare senza ulteriori informazioni.",
+      "analyzed_at": "2026-07-07T08:27:00.538Z"
+    }
+  },
+  "c1780673710717wj2fw": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Wine bar + panetteria a Buenos Aires con sommelier argentina. Sito funzionante ma nessuna traccia online. Portafoglio vini non specificato (probabilmente argentini/sudamericani). Contatto diretto possibile ma non è chiaro se importano vini italiani.",
+      "analyzed_at": "2026-07-07T08:27:05.821Z"
+    }
+  },
+  "c1780673710717cwo0f": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda argentina specializzata in vini sudamericani (Malbec, Torrontés, Tannat). Nessuna traccia di vini italiani nel catalogo. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-07-07T08:27:10.416Z"
+    }
+  },
+  "c1780673710717tmr3w": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Nessun sito web, assenza totale di risultati Google, dati aziendali incompleti (dipendenti/fatturato mancanti). Impossibile verificare affidabilità o portafoglio vini italiani. Azienda argentina non tracciabile online.",
+      "analyzed_at": "2026-07-07T08:27:15.313Z"
+    }
+  },
+  "c1780673710717qi9pu": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "misto",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Distributore argentino specializzato in vini locali (Malbec, Cabernet) e spirits. Nessuna traccia di vini italiani nel portafoglio. Non pertinente per esportatori italiani.",
+      "analyzed_at": "2026-07-07T08:27:19.793Z"
+    }
+  },
+  "c1780673710717o5duv": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "E-commerce argentino di vini importati con Italia nel portafoglio, ma nessuna traccia online (Google), dati aziendali assenti, focus esclusivamente B2C retail. Non pertinente per distribuzione italiana.",
+      "analyzed_at": "2026-07-07T08:27:24.661Z"
+    }
+  },
+  "c1780673710717lncoh": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda argentina (non italiana) con sito irraggiungibile e nessuna traccia online. Nessuna evidenza di specializzazione in vini italiani. Non pertinente per network vini italiani.",
+      "analyzed_at": "2026-07-07T08:27:30.604Z"
+    }
+  },
+  "c1780673710717ev1c5": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Nessun sito web, assenza totale di tracce online e dati aziendali. Impossibile verificare esistenza, solidità o portafoglio prodotti. Non contattare senza ulteriori conferme.",
+      "analyzed_at": "2026-07-07T08:27:35.007Z"
+    }
+  },
+  "c17806737107170wiyz": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "misto",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda argentina (non italiana) specializzata in vini sudamericani e prodotti locali. Nessuna traccia online, sito con problemi tecnici e inventario esaurito. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-07-07T08:27:39.861Z"
+    }
+  },
+  "c1780673710717amvmy": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda argentina senza sito web, nessuna traccia online e dati insufficienti. Impossibile verificare affidabilità, portafoglio prodotti o interesse per vini italiani.",
+      "analyzed_at": "2026-07-07T08:27:44.090Z"
+    }
+  },
+  "c178067371071731vqu": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Nessun sito web, assenza totale di traccia online (Google), dati aziendali incompleti. Impossibile verificare affidabilità o interesse per vini italiani.",
+      "analyzed_at": "2026-07-07T08:27:48.242Z"
+    }
+  },
+  "c1780673710717mect5": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda argentina specializzata in vini locali (Malbec, Cabernet, Syrah) e spirits. Nessun vino italiano nel catalogo; assenza di dati aziendali (dipendenti, fatturato) e nessuna traccia Google riduce affidabilità.",
+      "analyzed_at": "2026-07-07T08:27:53.531Z"
+    }
+  },
+  "c178067371071725eop": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda argentina specializzata in vini locali (Malbec, Cabernet, Torrontés) e spirits. Nessuna traccia di vini italiani nel portafoglio. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-07-07T08:27:58.107Z"
+    }
+  },
+  "c1780673710717lpwdj": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Nessun sito web, assenza totale di tracce online (Google), dati aziendali incompleti. Impossibile verificare affidabilità o interesse per vini italiani.",
+      "analyzed_at": "2026-07-07T08:28:06.375Z"
+    }
+  },
+  "c1780673710717wcvh2": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer argentino con focus su vini locali e importati (prevalentemente whisky/spirits). Nessuna evidenza di specializzazione in vini italiani; catalogo orientato a mercato domestico sudamericano, non pertinente per distribuzione italiana.",
+      "analyzed_at": "2026-07-07T08:28:11.876Z"
+    }
+  },
+  "c1780673710717ml974": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore argentino di vini e spirits con sito non raggiungibile. Nessuna traccia online (Google, social). Difficile verificare se commercializza vini italiani o solo prodotti locali/sudamericani. Richiede contatto diretto per confermare affidabilità e portafoglio.",
+      "analyzed_at": "2026-07-07T08:28:17.076Z"
+    }
+  },
+  "c1780673710717elurw": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Sito irraggiungibile, nessuna traccia Google, dati aziendali assenti (dipendenti/fatturato). Impossibile verificare affidabilità o presenza di vini italiani nel portafoglio.",
+      "analyzed_at": "2026-07-07T08:28:22.674Z"
+    }
+  },
+  "c1780673710717k8q0c": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda argentina specializzata in vini sudamericani (Malbec, Cabernet). Nessuna traccia di vini italiani nel portafoglio. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-07-07T08:28:27.615Z"
+    }
+  },
+  "c1780673710717usbw3": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Nessun sito web, assenza totale di tracce online, dati insufficienti per valutare affidabilità e portafoglio prodotti. Impossibile verificare se commercializza vini italiani.",
+      "analyzed_at": "2026-07-07T08:28:31.910Z"
+    }
+  },
+  "c1780673710717d1sem": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda argentina che vende vini locali e prodotti tipici argentini (mate, dulce de leche, alfajores). Non importa vini italiani; focus esclusivo su prodotti argentini e food&beverage locale. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-07-07T08:28:37.266Z"
+    }
+  },
+  "c17806737107173llxd": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer argentino specializzato in vini locali (Malbec, Torrontés) e importazioni (Champagne, Whisky). Nessuna menzione di vini italiani nel catalogo. Non pertinente per distribuzione italiana.",
+      "analyzed_at": "2026-07-07T08:28:41.501Z"
+    }
+  },
+  "c1780673710717cl0og": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda argentina specializzata in vini locali e spirits. Nessuna traccia di vini italiani nel catalogo (focus su Mendoza, Malbec, Tannat). Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-07-07T08:28:48.045Z"
+    }
+  },
+  "c17806737107175zm2g": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer argentino online con catalogo vini ampio (include Sangiovese, Nebbiolo, Pinot Grigio) ma nessuna traccia digitale verificabile. Assenza totale da Google e dati aziendali suggerisce bassa affidabilità. Non è distributore/importatore italiano.",
+      "analyzed_at": "2026-07-07T08:28:59.364Z"
+    }
+  },
+  "c17806737107170slbo": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda argentina senza presenze online verificabili (zero risultati Google). Portafoglio generico (vini, birre, spirits) ma nessuna menzione esplicita di vini italiani. Mancano dati su dimensione e affidabilità.",
+      "analyzed_at": "2026-07-07T08:29:06.165Z"
+    }
+  },
+  "c17806737107171xab8": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "importatore",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda argentina specializzata in vini kosher internazionali (non italiani). Nessuna traccia online, sito basic. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-07-07T08:29:13.641Z"
+    }
+  },
+  "c1780673710717vfhg1": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "E-commerce argentino con catalogo misto (vini italiani presenti: Trebbiano d'Abruzzo). Sito poco professionale, nessuna visibilità Google, stock vuoto, dati aziendali assenti. Non pertinente per distribuzione italiana.",
+      "analyzed_at": "2026-07-07T08:29:18.901Z"
+    }
+  },
+  "c17806737107179y5j3": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Nessun sito web, assenza totale di tracce online (Google), dati aziendali mancanti. Impossibile verificare affidabilità o portafoglio prodotti.",
+      "analyzed_at": "2026-07-07T08:29:23.421Z"
+    }
+  },
+  "c17806737107176xla3": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Nessun sito web dichiarato, assenza totale di risultati Google, dati aziendali mancanti (dipendenti, fatturato). Impossibile verificare se commercializza vini italiani o se è un'azienda operativa.",
+      "analyzed_at": "2026-07-07T08:29:28.318Z"
+    }
+  },
+  "c1780673710717hu6qv": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "misto",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda argentina (Buenos Aires) specializzata in vini locali e bevande generiche. Nessuna traccia di vini italiani nel catalogo; focus esclusivo su prodotti argentini (Malbec, Cabernet Franc, Syrah). Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-07-07T08:29:37.218Z"
+    }
+  },
+  "c17806737107179vuff": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Nessun sito web, assenza totale di tracce online (Google), dati aziendali mancanti (dipendenti, fatturato). Impossibile verificare affidabilità o portafoglio vini italiani.",
+      "analyzed_at": "2026-07-07T08:29:41.391Z"
+    }
+  },
+  "c1780673710717v8nk5": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Nessun sito web, assenza totale di tracce online (Google), dati aziendali incompleti. Impossibile verificare affidabilità o portafoglio prodotti.",
+      "analyzed_at": "2026-07-07T08:29:49.138Z"
+    }
+  },
+  "c1780673710717l8efd": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda argentina specializzata in vini sudamericani (Malbec, Bonarda, Tannat). Pur citando varietà italiane (Nebbiolo, Sangiovese, Barbera), il focus è su bodegas argentine. Nessuna traccia online, dati aziendali assenti.",
+      "analyzed_at": "2026-07-07T08:29:53.964Z"
+    }
+  },
+  "c1780673710717xeqgy": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "distributore",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Nessun sito web dichiarato, assenza totale di risultati Google e dati aziendali (dipendenti, fatturato). Impossibile verificare se distribuisce vini italiani. Azienda non tracciabile online.",
+      "analyzed_at": "2026-07-07T08:29:57.988Z"
+    }
+  },
+  "c1780673710717aw4yt": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda argentina specializzata in vini locali (Malbec, Cabernet Franc). Nessuna traccia di vini italiani nel portafoglio. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-07-07T08:30:02.784Z"
+    }
+  },
+  "c1780673710717hhdpk": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "E-commerce argentino senza presenza Google, nessuna info su portafoglio vini o specializzazione italiana. Dati insufficienti per valutare affidabilità e pertinenza commerciale.",
+      "analyzed_at": "2026-07-07T08:30:07.480Z"
+    }
+  },
+  "c17806737107177zkcg": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Nessun sito web, assenza totale di tracce online e dati aziendali. Impossibile verificare affidabilità, portafoglio prodotti o interesse per vini italiani. Non contattare senza validazione preliminare.",
+      "analyzed_at": "2026-07-07T08:30:11.846Z"
+    }
+  },
+  "c17806737107175c2mz": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Disco è un supermercato argentino generico (non specializzato in vino). Vende vino come categoria secondaria insieme a birra, spirits e prodotti alimentari. Nessuna traccia di importazione di vini italiani; focus esclusivo su mercato locale argentino.",
+      "analyzed_at": "2026-07-07T08:30:17.271Z"
+    }
+  },
+  "c17806737107178v2k7": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Distributore argentino di bevande generiche (acque, gaseose, birre, vini locali). Nessuna specializzazione in vini italiani; catalogo focalizzato su prodotti sudamericani. Non pertinente per esportazione vini italiani.",
+      "analyzed_at": "2026-07-07T08:30:22.951Z"
+    }
+  },
+  "c1780673710717kdu62": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Nessun sito web, assenza totale di tracce online, dati aziendali incompleti (dipendenti/fatturato sconosciuti). Impossibile verificare affidabilità o interesse per vini italiani.",
+      "analyzed_at": "2026-07-07T08:30:27.122Z"
+    }
+  },
+  "c1780673710717ksqo2": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "distributore",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Sito non funzionante (solo 'Home ENTRAR' visibile), nessuna traccia Google, dati aziendali assenti. Impossibile verificare affidabilità o portafoglio vini.",
+      "analyzed_at": "2026-07-07T08:30:32.202Z"
+    }
+  },
+  "c1780673710717uyhc1": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Distributore argentino generico (vini, birre, spirits, alimentari). Nessuna evidenza di specializzazione in vini italiani; sito poco informativo e nessuna traccia online. Non pertinente per esportazione vini italiani.",
+      "analyzed_at": "2026-07-07T08:30:37.390Z"
+    }
+  },
+  "c178067371071767rln": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "distributore",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Nessun sito web, assenza totale di tracce online (Google), dati aziendali mancanti (dipendenti, fatturato). Impossibile verificare affidabilità o portafoglio vini italiani.",
+      "analyzed_at": "2026-07-07T08:30:41.719Z"
+    }
+  },
+  "c178067371071719mb7": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Distributore argentino locale (Garin, Buenos Aires) focalizzato su birra e bevande generiche per kiosk/negozi. Nessuna menzione di vini italiani; assenza di risultati Google e sito basic suggeriscono operazione piccola/locale. Non pertinente per esportazione vini italiani.",
+      "analyzed_at": "2026-07-07T08:30:48.195Z"
+    }
+  },
+  "c1780673710717it9w3": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Nessun sito web, assenza totale di risultati Google, dati aziendali mancanti (dipendenti, fatturato). Impossibile verificare affidabilità o portafoglio vini italiani. Contatto non consigliato senza ulteriori verifiche.",
+      "analyzed_at": "2026-07-07T08:30:53.352Z"
+    }
+  },
+  "c1780673710717s6lrz": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Siti dichiarati irraggiungibili, nessuna traccia online (Google), dati aziendali assenti (dipendenti, fatturato). Impossibile verificare se commercializza vini italiani o se è operativa.",
+      "analyzed_at": "2026-07-07T08:30:57.354Z"
+    }
   }
 }
