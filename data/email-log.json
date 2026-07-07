@@ -35,6 +35,15 @@
       "subject": "Your wine is on its way! 🍷",
       "sentAt": 1783422822287,
       "messageId": "<202607071113.16846984862@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mrarkjesrjkm",
+      "customerName": "ELIZABETH CONTI",
+      "type": "order_received",
+      "to": "elizabethvconti@yahoo.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1783435715035,
+      "messageId": "<202607071448.17957174266@smtp-relay.mailin.fr>"
     }
   ]
 }
