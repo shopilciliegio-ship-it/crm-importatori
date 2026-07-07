@@ -167,11 +167,18 @@
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1782736802876,
           "messageId": "<202606291240.54263492750@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "day0",
+          "to": "pdchollet@gmail.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1783422822287,
+          "messageId": "<202607071113.96786951596@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1782736788535,
-      "updatedAt": 1783422818092,
+      "updatedAt": 1783422822287,
       "staleAlertDays": 7,
       "staleAlertSince": 1782736788535
     },
@@ -270,11 +277,18 @@
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1782484485137,
           "messageId": "<202606261434.21357134489@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "day0",
+          "to": "tahitianbobby@gmail.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1783422822287,
+          "messageId": "<202607071113.16846984862@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1782484474304,
-      "updatedAt": 1783422818092,
+      "updatedAt": 1783422822287,
       "staleAlertDays": 7,
       "staleAlertSince": 1782484474304
     },
