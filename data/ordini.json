@@ -1,6 +1,40 @@
 {
   "orders": [
     {
+      "id": "ord_mrarkjesrjkm",
+      "customerName": "ELIZABETH CONTI",
+      "customerEmail": "elizabethvconti@yahoo.com",
+      "customerPhone": "+16105177084",
+      "amount": 426.4,
+      "currency": "EUR",
+      "orderDate": 1783434334000,
+      "emailSubject": "🍷 New Order — ELIZABETH CONTI — 426.40 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "64 HERITAGE DRIVE ALLENTOWN, NJ 08501 UNITED STATES, 08501 ALLENTOWN, NEW JERSEY (MONMOUTH COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202607071425.13004064182@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1783435702851,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1783435702851,
+      "updatedAt": 1783435702851
+    },
+    {
       "id": "ord_mr9e3pqw32dj",
       "customerName": "PRZEMYSLAW RUDNICKI",
       "customerEmail": "p.rudnicki96@gmail.com",
@@ -4577,5 +4611,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1783352616728
+  "lastImportedAt": 1783435702851
 }
