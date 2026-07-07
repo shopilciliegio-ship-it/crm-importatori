@@ -29,10 +29,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "elizabethvconti@yahoo.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1783435715035,
+          "messageId": "<202607071448.17957174266@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1783435702851,
-      "updatedAt": 1783435702851
+      "updatedAt": 1783435715035
     },
     {
       "id": "ord_mr9e3pqw32dj",
