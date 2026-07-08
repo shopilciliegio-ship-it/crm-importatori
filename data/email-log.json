@@ -62,6 +62,15 @@
       "subject": "Your order has been delivered! 🍷 Enjoy!",
       "sentAt": 1783480755280,
       "messageId": "<202607080319.20290770138@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mrbxkhn28fx7",
+      "customerName": "ALENAS ALCAUSKAS BUYEU ID LT948979",
+      "type": "order_received",
+      "to": "4alenas4@gmail.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1783506257961,
+      "messageId": "<202607081024.62884565268@smtp-relay.mailin.fr>"
     }
   ]
 }
