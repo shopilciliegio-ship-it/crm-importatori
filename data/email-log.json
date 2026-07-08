@@ -44,6 +44,24 @@
       "subject": "Thank you for your order! 🍷",
       "sentAt": 1783435715035,
       "messageId": "<202607071448.17957174266@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mqp9n81ny0g2",
+      "customerName": "MADISON DADDONA",
+      "type": "consegnato",
+      "to": "daddonamadison@gmail.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1783480755280,
+      "messageId": "<202607080319.47613490613@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mqh1s5rlhcpn",
+      "customerName": "BELINDA BOURJEILI",
+      "type": "consegnato",
+      "to": "bbourjeili@sbcglobal.net",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1783480755280,
+      "messageId": "<202607080319.20290770138@smtp-relay.mailin.fr>"
     }
   ]
 }
