@@ -1,6 +1,40 @@
 {
   "orders": [
     {
+      "id": "ord_mrbxkhn28fx7",
+      "customerName": "ALENAS ALCAUSKAS BUYEU ID LT948979",
+      "customerEmail": "4alenas4@gmail.com",
+      "customerPhone": "+390298282985",
+      "amount": 96.0,
+      "currency": "EUR",
+      "orderDate": 1783497548000,
+      "emailSubject": "🍷 New Order — ALENAS ALCAUSKAS BUYEU ID LT948979 — 96.00 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "VIA BOLSENA 9, 20098 RODANO, LOMBARDY (MILAN)",
+      "numberOfCartons": null,
+      "shippingType": null,
+      "gmailMessageId": "<202607080759.80013071367@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1783506244430,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1783506244430,
+      "updatedAt": 1783506244430
+    },
+    {
       "id": "ord_mrarkjesrjkm",
       "customerName": "ELIZABETH CONTI",
       "customerEmail": "elizabethvconti@yahoo.com",
@@ -4643,5 +4677,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1783435702851
+  "lastImportedAt": 1783506244430
 }
