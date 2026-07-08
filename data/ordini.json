@@ -29,10 +29,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "4alenas4@gmail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1783506257961,
+          "messageId": "<202607081024.62884565268@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1783506244430,
-      "updatedAt": 1783506244430
+      "updatedAt": 1783506257961
     },
     {
       "id": "ord_mrarkjesrjkm",
