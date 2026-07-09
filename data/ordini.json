@@ -35,7 +35,9 @@
           "to": "luca@ilciliegio.com",
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1783591755007,
-          "messageId": "<202607091009.67014697740@smtp-relay.mailin.fr>"
+          "messageId": "<202607091009.67014697740@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-09T12:09:19.000+02:00"
         }
       ],
       "notes": "",
@@ -47,7 +49,7 @@
       "customerName": "ALENAS ALCAUSKAS BUYEU ID LT948979",
       "customerEmail": "4alenas4@gmail.com",
       "customerPhone": "+390298282985",
-      "amount": 96.0,
+      "amount": 96,
       "currency": "EUR",
       "orderDate": 1783497548000,
       "emailSubject": "🍷 New Order — ALENAS ALCAUSKAS BUYEU ID LT948979 — 96.00 EUR",
@@ -77,7 +79,9 @@
           "to": "4alenas4@gmail.com",
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1783506257961,
-          "messageId": "<202607081024.62884565268@smtp-relay.mailin.fr>"
+          "messageId": "<202607081024.62884565268@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-08T12:24:20.000+02:00"
         }
       ],
       "notes": "",
@@ -119,7 +123,9 @@
           "to": "elizabethvconti@yahoo.com",
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1783435715035,
-          "messageId": "<202607071448.17957174266@smtp-relay.mailin.fr>"
+          "messageId": "<202607071448.17957174266@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-07T16:48:38.000+02:00"
         }
       ],
       "notes": "",
@@ -131,14 +137,14 @@
       "customerName": "PRZEMYSLAW RUDNICKI",
       "customerEmail": "p.rudnicki96@gmail.com",
       "customerPhone": "+48509403680",
-      "amount": 113.0,
+      "amount": 113,
       "currency": "EUR",
       "orderDate": 1783340430000,
       "emailSubject": "🍷 New Order — PRZEMYSLAW RUDNICKI — 113.00 EUR",
       "shipmentCode": "RUDNICKIP",
       "shippingAddress": "LAGODNA 6A, 15-509 GMINA GRABÓWKA, PODLASKIE VOIVODESHIP (BIAŁYSTOK COUNTY)",
       "numberOfCartons": null,
-      "shippingType": null,
+      "shippingType": "standard",
       "gmailMessageId": "<202607061220.83094426795@smtp-relay.mailin.fr>",
       "trackingNumber": "1Z50X8766835554010",
       "carrier": "MBE",
@@ -166,19 +172,24 @@
           "to": "p.rudnicki96@gmail.com",
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1783352627244,
-          "messageId": "<202607061543.19099593641@smtp-relay.mailin.fr>"
+          "messageId": "<202607061543.19099593641@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-06T17:43:50.000+02:00"
         },
         {
           "type": "day0",
           "to": "p.rudnicki96@gmail.com",
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1783591755007,
-          "messageId": "<202607091009.93504299253@smtp-relay.mailin.fr>"
+          "messageId": "<202607091009.93504299253@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-09T12:09:17.000+02:00"
         }
       ],
       "notes": "",
       "createdAt": 1783352616728,
-      "updatedAt": 1783591755007
+      "updatedAt": 1783597606499,
+      "trackingUrl": ""
     },
     {
       "id": "ord_mr9e3pqw8pvq",
@@ -215,7 +226,9 @@
           "to": "vpshannon71@gmail.com",
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1783352627244,
-          "messageId": "<202607061543.28054300495@smtp-relay.mailin.fr>"
+          "messageId": "<202607061543.28054300495@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-06T17:43:50.000+02:00"
         }
       ],
       "notes": "",
@@ -227,7 +240,7 @@
       "customerName": "MATT DEDDENS",
       "customerEmail": "matt.deddens@yahoo.com",
       "customerPhone": "+351910675703",
-      "amount": 173.0,
+      "amount": 173,
       "currency": "EUR",
       "orderDate": 1783080045000,
       "emailSubject": "🍷 New Order — MATT DEDDENS — 173.00 EUR",
@@ -257,7 +270,9 @@
           "to": "matt.deddens@yahoo.com",
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1783080719596,
-          "messageId": "<202607031211.59222396093@smtp-relay.mailin.fr>"
+          "messageId": "<202607031211.59222396093@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-03T14:12:03.000+02:00"
         }
       ],
       "notes": "",
@@ -304,14 +319,18 @@
           "to": "pdchollet@gmail.com",
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1782736802876,
-          "messageId": "<202606291240.54263492750@smtp-relay.mailin.fr>"
+          "messageId": "<202606291240.54263492750@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-06-29T14:40:08.000+02:00"
         },
         {
           "type": "day0",
           "to": "pdchollet@gmail.com",
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1783422822287,
-          "messageId": "<202607071113.96786951596@smtp-relay.mailin.fr>"
+          "messageId": "<202607071113.96786951596@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-07T13:13:45.000+02:00"
         }
       ],
       "notes": "",
@@ -360,14 +379,18 @@
           "to": "hsteier1@gmail.com",
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1782484485137,
-          "messageId": "<202606261434.87211846354@smtp-relay.mailin.fr>"
+          "messageId": "<202606261434.87211846354@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-06-26T16:34:47.000+02:00"
         },
         {
           "type": "day0",
           "to": "hsteier1@gmail.com",
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1783075356622,
-          "messageId": "<202607031042.46336026849@smtp-relay.mailin.fr>"
+          "messageId": "<202607031042.46336026849@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-03T12:42:39.000+02:00"
         }
       ],
       "notes": "",
@@ -414,14 +437,18 @@
           "to": "tahitianbobby@gmail.com",
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1782484485137,
-          "messageId": "<202606261434.21357134489@smtp-relay.mailin.fr>"
+          "messageId": "<202606261434.21357134489@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-06-26T16:34:48.000+02:00"
         },
         {
           "type": "day0",
           "to": "tahitianbobby@gmail.com",
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1783422822287,
-          "messageId": "<202607071113.16846984862@smtp-relay.mailin.fr>"
+          "messageId": "<202607071113.16846984862@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-07T13:13:45.000+02:00"
         }
       ],
       "notes": "",
@@ -487,21 +514,27 @@
           "to": "daddonamadison@gmail.com",
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1783080719596,
-          "messageId": "<202607031212.35095848951@smtp-relay.mailin.fr>"
+          "messageId": "<202607031212.35095848951@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-03T14:12:02.000+02:00"
         },
         {
           "type": "dogana",
           "to": "daddonamadison@gmail.com",
           "subject": "Your order is going through customs",
           "sentAt": 1783310473739,
-          "messageId": "<202607060401.48752586145@smtp-relay.mailin.fr>"
+          "messageId": "<202607060401.48752586145@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-06T06:01:15.000+02:00"
         },
         {
           "type": "consegnato",
           "to": "daddonamadison@gmail.com",
           "subject": "Your order has been delivered! 🍷 Enjoy!",
           "sentAt": 1783480755280,
-          "messageId": "<202607080319.47613490613@smtp-relay.mailin.fr>"
+          "messageId": "<202607080319.47613490613@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-08T05:19:18.000+02:00"
         }
       ],
       "notes": "",
@@ -567,21 +600,27 @@
           "to": "tko751000@gmail.com",
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1782818084113,
-          "messageId": "<202606301114.53243157730@smtp-relay.mailin.fr>"
+          "messageId": "<202606301114.53243157730@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-06-30T13:14:46.000+02:00"
         },
         {
           "type": "dogana",
           "to": "tko751000@gmail.com",
           "subject": "Your order is going through customs",
           "sentAt": 1783310473739,
-          "messageId": "<202607060401.25253904585@smtp-relay.mailin.fr>"
+          "messageId": "<202607060401.25253904585@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-06T06:01:15.000+02:00"
         },
         {
           "type": "consegnato",
           "to": "tko751000@gmail.com",
           "subject": "Your order has been delivered! 🍷 Enjoy!",
           "sentAt": 1783568652951,
-          "messageId": "<202607090344.28839494759@smtp-relay.mailin.fr>"
+          "messageId": "<202607090344.28839494759@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-09T05:44:15.000+02:00"
         }
       ],
       "notes": "",
@@ -647,21 +686,27 @@
           "to": "tko751000@gmail.com",
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1782818084113,
-          "messageId": "<202606301114.72701357967@smtp-relay.mailin.fr>"
+          "messageId": "<202606301114.72701357967@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-06-30T13:14:47.000+02:00"
         },
         {
           "type": "dogana",
           "to": "tko751000@gmail.com",
           "subject": "Your order is going through customs",
           "sentAt": 1783310473739,
-          "messageId": "<202607060401.18212207051@smtp-relay.mailin.fr>"
+          "messageId": "<202607060401.18212207051@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-06T06:01:15.000+02:00"
         },
         {
           "type": "consegnato",
           "to": "tko751000@gmail.com",
           "subject": "Your order has been delivered! 🍷 Enjoy!",
           "sentAt": 1783568652951,
-          "messageId": "<202607090344.84448709577@smtp-relay.mailin.fr>"
+          "messageId": "<202607090344.84448709577@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-09T05:44:15.000+02:00"
         }
       ],
       "notes": "",
@@ -725,28 +770,36 @@
         {
           "type": "In transito",
           "sentAt": 1782565638458,
-          "messageId": "<202606271307.50691497802@smtp-relay.mailin.fr>"
+          "messageId": "<202606271307.50691497802@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-06-27T15:07:05.000+02:00"
         },
         {
           "type": "day0",
           "to": "thecolefamily1@att.net",
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1782575938077,
-          "messageId": "<202606271558.27965269690@smtp-relay.mailin.fr>"
+          "messageId": "<202606271558.27965269690@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-06-27T17:59:01.000+02:00"
         },
         {
           "type": "dogana",
           "to": "thecolefamily1@att.net",
           "subject": "Your order is going through customs",
           "sentAt": 1783223681420,
-          "messageId": "<202607050354.73596528905@smtp-relay.mailin.fr>"
+          "messageId": "<202607050354.73596528905@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-05T05:54:44.000+02:00"
         },
         {
           "type": "consegnato",
           "to": "thecolefamily1@att.net",
           "subject": "Your order has been delivered! 🍷 Enjoy!",
           "sentAt": 1783568652951,
-          "messageId": "<202607090344.67052420379@smtp-relay.mailin.fr>"
+          "messageId": "<202607090344.67052420379@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-09T05:50:47.000+02:00"
         }
       ],
       "notes": "",
@@ -822,14 +875,18 @@
           "to": "bbourjeili@sbcglobal.net",
           "subject": "Your order is going through customs",
           "sentAt": 1783050182940,
-          "messageId": "<202607030343.33846100104@smtp-relay.mailin.fr>"
+          "messageId": "<202607030343.33846100104@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-03T05:43:07.000+02:00"
         },
         {
           "type": "consegnato",
           "to": "bbourjeili@sbcglobal.net",
           "subject": "Your order has been delivered! 🍷 Enjoy!",
           "sentAt": 1783480755280,
-          "messageId": "<202607080319.20290770138@smtp-relay.mailin.fr>"
+          "messageId": "<202607080319.20290770138@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-08T05:19:19.000+02:00"
         }
       ],
       "notes": "",
@@ -897,7 +954,9 @@
           "to": "jenrichstevens@gmail.com",
           "subject": "Your order is going through customs",
           "sentAt": 1783050182940,
-          "messageId": "<202607030343.79850322436@smtp-relay.mailin.fr>"
+          "messageId": "<202607030343.79850322436@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-03T05:43:06.000+02:00"
         }
       ],
       "notes": "",
@@ -970,14 +1029,18 @@
           "to": "maddie.dekker01@gmail.com",
           "subject": "Your order is going through customs",
           "sentAt": 1783050182940,
-          "messageId": "<202607030343.70846941038@smtp-relay.mailin.fr>"
+          "messageId": "<202607030343.70846941038@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-03T05:43:05.000+02:00"
         },
         {
           "type": "consegnato",
           "to": "maddie.dekker01@gmail.com",
           "subject": "Your order has been delivered! 🍷 Enjoy!",
           "sentAt": 1783568652951,
-          "messageId": "<202607090344.52002816467@smtp-relay.mailin.fr>"
+          "messageId": "<202607090344.52002816467@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-09T05:44:15.000+02:00"
         }
       ],
       "notes": "",
@@ -1045,7 +1108,9 @@
           "to": "chris.klotz10@gmail.com",
           "subject": "Your order is going through customs",
           "sentAt": 1783050182940,
-          "messageId": "<202607030343.93812862840@smtp-relay.mailin.fr>"
+          "messageId": "<202607030343.93812862840@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-03T05:43:07.000+02:00"
         }
       ],
       "notes": "",
@@ -1113,7 +1178,9 @@
           "to": "jgorishek@verizon.net",
           "subject": "Your order is going through customs",
           "sentAt": 1783050182940,
-          "messageId": "<202607030343.49932505526@smtp-relay.mailin.fr>"
+          "messageId": "<202607030343.49932505526@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-03T05:43:08.000+02:00"
         }
       ],
       "notes": "",
@@ -1181,7 +1248,9 @@
           "to": "matthewquezada81@gmail.com",
           "subject": "Your order is going through customs",
           "sentAt": 1783050182940,
-          "messageId": "<202607030343.39883997574@smtp-relay.mailin.fr>"
+          "messageId": "<202607030343.39883997574@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-03T05:43:07.000+02:00"
         }
       ],
       "notes": "",
@@ -1255,7 +1324,9 @@
           "to": "daiscastil@gmail.com",
           "subject": "Your order has been delivered! 🍷 Enjoy!",
           "sentAt": 1782446906125,
-          "messageId": "<202606260408.15053244096@smtp-relay.mailin.fr>"
+          "messageId": "<202606260408.15053244096@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-06-26T06:08:28.000+02:00"
         }
       ],
       "notes": "",
@@ -1428,7 +1499,9 @@
           "to": "chillerheather@gmail.com",
           "subject": "Your order has been delivered! 🍷 Enjoy!",
           "sentAt": 1782879588313,
-          "messageId": "<202607010419.42826406131@smtp-relay.mailin.fr>"
+          "messageId": "<202607010419.42826406131@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-01T06:19:51.000+02:00"
         }
       ],
       "notes": "",
@@ -1501,7 +1574,9 @@
           "to": "mmad6199@aol.com",
           "subject": "Your order has been delivered! 🍷 Enjoy!",
           "sentAt": 1783050182940,
-          "messageId": "<202607030343.39708899214@smtp-relay.mailin.fr>"
+          "messageId": "<202607030343.39708899214@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-03T05:43:09.000+02:00"
         }
       ],
       "notes": "",
@@ -1572,7 +1647,9 @@
           "to": "lisa.slp86@gmail.com",
           "subject": "Your order has been delivered! 🍷 Enjoy!",
           "sentAt": 1782964770140,
-          "messageId": "<202607020359.62532651753@smtp-relay.mailin.fr>"
+          "messageId": "<202607020359.62532651753@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-02T05:59:32.000+02:00"
         }
       ],
       "notes": "",
@@ -1643,7 +1720,9 @@
           "to": "wawabeck1@att.net",
           "subject": "Your order has been delivered! 🍷 Enjoy!",
           "sentAt": 1783050182940,
-          "messageId": "<202607030343.87561527568@smtp-relay.mailin.fr>"
+          "messageId": "<202607030343.87561527568@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-03T05:43:09.000+02:00"
         }
       ],
       "notes": "",
@@ -1707,14 +1786,18 @@
           "to": "andrew.wayrynen@maritime.edu",
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1783080719596,
-          "messageId": "<202607031212.33329909242@smtp-relay.mailin.fr>"
+          "messageId": "<202607031212.33329909242@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-03T14:12:05.000+02:00"
         },
         {
           "type": "dogana",
           "to": "andrew.wayrynen@maritime.edu",
           "subject": "Your order is going through customs",
           "sentAt": 1783080719596,
-          "messageId": "<202607031212.68671138398@smtp-relay.mailin.fr>"
+          "messageId": "<202607031212.68671138398@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-03T14:12:05.000+02:00"
         }
       ],
       "notes": "",
@@ -1866,7 +1949,9 @@
           "to": "lorahenke@aol.com",
           "subject": "Your order has been delivered! 🍷 Enjoy!",
           "sentAt": 1782964770140,
-          "messageId": "<202607020359.35070489410@smtp-relay.mailin.fr>"
+          "messageId": "<202607020359.35070489410@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-02T05:59:33.000+02:00"
         }
       ],
       "notes": "",
