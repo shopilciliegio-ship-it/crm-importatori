@@ -29,10 +29,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "luca@ilciliegio.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1783591755007,
+          "messageId": "<202607091009.67014697740@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1783591738771,
-      "updatedAt": 1783591738771
+      "updatedAt": 1783591755007
     },
     {
       "id": "ord_mrbxkhn28fx7",
@@ -159,11 +167,18 @@
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1783352627244,
           "messageId": "<202607061543.19099593641@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "day0",
+          "to": "p.rudnicki96@gmail.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1783591755007,
+          "messageId": "<202607091009.93504299253@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1783352616728,
-      "updatedAt": 1783591747911
+      "updatedAt": 1783591755007
     },
     {
       "id": "ord_mr9e3pqw8pvq",
