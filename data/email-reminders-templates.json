@@ -80,7 +80,7 @@
     "label": "Problema spedizione",
     "en": {
       "subject": "⚠ Important update on your shipment",
-      "body": "Dear {nome},\nI am reaching out regarding your order.\nUnfortunately, an issue has occurred with the shipment, and we are already actively monitoring the situation.\nOur team is working to resolve the matter, and we will keep you updated as soon as possible.\nFor any urgent questions, please reply directly to this email.\n\nFor your convenience {tracking_line}\n\nLuca Pattaro\nIl Ciliegio — Viticoltori in Monteriggioni dal 1952\nshop@ilciliegio.com | +39 331 1347899"
+      "body": "Dear {nome},\nI am reaching out regarding your order.\nUnfortunately, an issue has occurred with the shipment, and we are already actively monitoring the situation.\nOur team is working trying to resolve the matter, and we will keep you updated as soon as possible.\nFor any urgent questions, please reply directly to this email.\n\nFor your convenience {tracking_line}\n\nLuca Pattaro\nIl Ciliegio — Viticoltori in Monteriggioni dal 1952\nshop@ilciliegio.com | +39 331 1347899"
     },
     "it": {
       "subject": "⚠ Aggiornamento importante sulla tua spedizione",
