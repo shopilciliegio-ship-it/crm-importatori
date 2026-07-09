@@ -2,7 +2,7 @@
   "emailAutoSend": true,
   "testMode": false,
   "emailAutoSendImportatori": true,
-  "testModeImportatori": true,
+  "testModeImportatori": false,
   "emailAutoSendClienti": true,
   "testModeClienti": false,
   "excludedCountriesClienti": [
