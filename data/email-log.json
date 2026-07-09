@@ -107,6 +107,24 @@
       "subject": "Your order has been delivered! 🍷 Enjoy!",
       "sentAt": 1783568652951,
       "messageId": "<202607090344.52002816467@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mrdcgxhvhpul",
+      "customerName": "SETH MORGAN",
+      "type": "order_received",
+      "to": "luca@ilciliegio.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1783591755007,
+      "messageId": "<202607091009.67014697740@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mr9e3pqw32dj",
+      "customerName": "PRZEMYSLAW RUDNICKI",
+      "type": "day0",
+      "to": "p.rudnicki96@gmail.com",
+      "subject": "Your wine is on its way! 🍷",
+      "sentAt": 1783591755007,
+      "messageId": "<202607091009.93504299253@smtp-relay.mailin.fr>"
     }
   ]
 }
