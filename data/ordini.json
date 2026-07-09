@@ -21,7 +21,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": null,
-      "status": "ricevuto",
+      "status": "preparazione",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -31,6 +31,11 @@
         {
           "status": "ricevuto",
           "date": 1783597743154,
+          "note": ""
+        },
+        {
+          "status": "preparazione",
+          "date": 1783598356619,
           "note": ""
         }
       ],
@@ -47,7 +52,7 @@
       ],
       "notes": "",
       "createdAt": 1783591738771,
-      "updatedAt": 1783597743155,
+      "updatedAt": 1783598356619,
       "trackingUrl": ""
     },
     {
