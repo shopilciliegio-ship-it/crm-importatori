@@ -1,6 +1,40 @@
 {
   "orders": [
     {
+      "id": "ord_mrdcgxhvhpul",
+      "customerName": "SETH MORGAN",
+      "customerEmail": "luca@ilciliegio.com",
+      "customerPhone": "+12672215552",
+      "amount": 378.34,
+      "currency": "EUR",
+      "orderDate": 1783588097000,
+      "emailSubject": "🍷 New Order — SETH MORGAN — 378.34 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "STATE, COUNTRY, CITY ZIP CODE",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<DB9PR08MB6682F8D6DB081A47CE71F13DBFFE2@DB9PR08MB6682.eurprd08.prod.outlook.com>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1783591738771,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1783591738771,
+      "updatedAt": 1783591738771
+    },
+    {
       "id": "ord_mrbxkhn28fx7",
       "customerName": "ALENAS ALCAUSKAS BUYEU ID LT948979",
       "customerEmail": "4alenas4@gmail.com",
@@ -4733,5 +4767,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1783506244430
+  "lastImportedAt": 1783591738771
 }
