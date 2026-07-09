@@ -127,24 +127,29 @@
       "currency": "EUR",
       "orderDate": 1783340430000,
       "emailSubject": "🍷 New Order — PRZEMYSLAW RUDNICKI — 113.00 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "RUDNICKIP",
       "shippingAddress": "LAGODNA 6A, 15-509 GMINA GRABÓWKA, PODLASKIE VOIVODESHIP (BIAŁYSTOK COUNTY)",
       "numberOfCartons": null,
       "shippingType": null,
       "gmailMessageId": "<202607061220.83094426795@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1Z50X8766835554010",
       "carrier": "MBE",
       "source": "fieramente",
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1783591747911,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1783352616728,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1783591747911,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -158,7 +163,7 @@
       ],
       "notes": "",
       "createdAt": 1783352616728,
-      "updatedAt": 1783352627244
+      "updatedAt": 1783591747911
     },
     {
       "id": "ord_mr9e3pqw8pvq",
