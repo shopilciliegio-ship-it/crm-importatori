@@ -475,7 +475,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1782818080103,
-      "status": "dogana",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -491,6 +491,11 @@
           "status": "dogana",
           "date": 1783310468666,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "consegnato",
+          "date": 1783568646498,
+          "note": "Auto Fieramente (era: dogana)"
         }
       ],
       "emailsSent": [
@@ -520,7 +525,7 @@
       ],
       "notes": "",
       "createdAt": 1781807327363,
-      "updatedAt": 1783310473739
+      "updatedAt": 1783568646498
     },
     {
       "id": "ord_mqju2suberxx",
@@ -543,7 +548,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1782818080103,
-      "status": "dogana",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -559,6 +564,11 @@
           "status": "dogana",
           "date": 1783310468666,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "consegnato",
+          "date": 1783568646498,
+          "note": "Auto Fieramente (era: dogana)"
         }
       ],
       "emailsSent": [
@@ -588,7 +598,7 @@
       ],
       "notes": "",
       "createdAt": 1781807327363,
-      "updatedAt": 1783310473739
+      "updatedAt": 1783568646498
     },
     {
       "id": "ord_mqjc6bvm0tmr",
@@ -611,7 +621,7 @@
       "orderNumber": "",
       "paymentType": "Carte Di Credito/Bancomat",
       "shippingDate": 1782566908515,
-      "status": "dogana",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -627,6 +637,11 @@
           "status": "dogana",
           "date": 1783223677554,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "consegnato",
+          "date": 1783568646498,
+          "note": "Auto Fieramente (era: dogana)"
         }
       ],
       "emailsSent": [
@@ -661,7 +676,7 @@
       ],
       "notes": "",
       "createdAt": 1781777258914,
-      "updatedAt": 1783223681420,
+      "updatedAt": 1783568646498,
       "trackingUrl": "",
       "staleAlertDays": 7,
       "staleAlertSince": 1782565638211
@@ -835,7 +850,7 @@
       "orderNumber": "",
       "paymentType": "Carte Di Credito/Bancomat",
       "shippingDate": 1782287519736,
-      "status": "dogana",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -851,6 +866,11 @@
           "status": "dogana",
           "date": 1783050177259,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "consegnato",
+          "date": 1783568646498,
+          "note": "Auto Fieramente (era: dogana)"
         }
       ],
       "emailsSent": [
@@ -880,7 +900,7 @@
       ],
       "notes": "",
       "createdAt": 1781533718423,
-      "updatedAt": 1783050182940
+      "updatedAt": 1783568646498
     },
     {
       "id": "ord_mqfb6etzyl7s",
