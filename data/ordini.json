@@ -21,12 +21,17 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": null,
-      "status": "preparazione",
+      "status": "ricevuto",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1783591738771,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "ricevuto",
+          "date": 1783597743154,
+          "note": ""
         }
       ],
       "emailsSent": [
@@ -42,7 +47,7 @@
       ],
       "notes": "",
       "createdAt": 1783591738771,
-      "updatedAt": 1783597717451,
+      "updatedAt": 1783597743155,
       "trackingUrl": ""
     },
     {
