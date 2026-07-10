@@ -227,6 +227,7 @@ def main():
             sub_status    = latest_status.get('sub_status', '')
             print(f'    [debug] {name} ({num}): raw_status={raw_status!r} sub_status={sub_status!r} '
                   f'ultimo evento: {latest_event_note(info) or "(nessuno)"} @ {latest_event_time(info) or "?"}')
+            print(f'    [debug-raw] {json.dumps(info, ensure_ascii=False)[:3000]}')
 
             new_status = STATUS_MAP.get(raw_status)
             if not new_status:
