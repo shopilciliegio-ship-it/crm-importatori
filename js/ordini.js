@@ -383,8 +383,8 @@ function openOrdineDetail(id){
 
   const trackingLink=o.trackingUrl
     ?`<a href="${esc(o.trackingUrl)}" target="_blank" style="font-size:12px">🔗 Traccia spedizione</a>`
-    :(o.trackingNumber&&o.carrier==='MBE'
-      ?`<a href="https://www.mbeonline.it/tracking" target="_blank" style="font-size:12px">🔗 MBE tracking</a>`
+    :(o.trackingNumber
+      ?`<a href="https://t.17track.net/en#nums=${encodeURIComponent(o.trackingNumber)}" target="_blank" style="font-size:12px">🔗 17Track</a>`
       :'');
 
   showModal(`
