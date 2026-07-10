@@ -616,9 +616,8 @@ async function sendOrdineStatusEmail(o){
 
   const isIt=(o.language||'en')==='it';
   const nome=o.customerName.split(/\s+/)[0]||o.customerName;
-  const mbeCode=(o.shipmentCode||'').trim();
-  const fierUrl=mbeCode?`https://track.fieramente.biz/#/tracking/${mbeCode}`:'';
-  const trackRef=o.trackingNumber?(fierUrl?`${o.trackingNumber} — ${fierUrl}`:o.trackingNumber):'';
+  const track17Url=o.trackingNumber?`https://t.17track.net/en#nums=${encodeURIComponent(o.trackingNumber)}`:'';
+  const trackRef=o.trackingNumber?(track17Url?`${o.trackingNumber} — ${track17Url}`:o.trackingNumber):'';
   const trackLineIt=trackRef?`Numero tracking: ${trackRef}${o.trackingUrl?`\nTraccia la spedizione: ${o.trackingUrl}`:''}\n`:(o.trackingUrl?`Traccia la spedizione: ${o.trackingUrl}\n`:'');
   const trackLineEn=trackRef?`Tracking number: ${trackRef}${o.trackingUrl?`\nTrack your shipment: ${o.trackingUrl}`:''}\n`:(o.trackingUrl?`Track your shipment: ${o.trackingUrl}\n`:'');
   const trackLine=isIt?trackLineIt:trackLineEn;
