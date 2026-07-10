@@ -224,6 +224,24 @@
       "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
       "sentAt": 1783705719802,
       "messageId": "<202607101748.15372410507@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mqh1s5rleh85",
+      "customerName": "JENNIFER STEVENS",
+      "type": "consegnato",
+      "to": "jenrichstevens@gmail.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1783717806582,
+      "messageId": "<202607102110.35327292456@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mqb2woep3ml8",
+      "customerName": "MATTHEW QUEZADA",
+      "type": "in_consegna",
+      "to": "matthewquezada81@gmail.com",
+      "subject": "Your wine is out for delivery! 🍷",
+      "sentAt": 1783717806582,
+      "messageId": "<202607102110.83160123775@smtp-relay.mailin.fr>"
     }
   ]
 }
