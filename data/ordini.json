@@ -1093,7 +1093,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1782287519736,
-      "status": "dogana",
+      "status": "in_consegna",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1109,6 +1109,11 @@
           "status": "dogana",
           "date": 1783050177259,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "in_consegna",
+          "date": 1783686943116,
+          "note": "Auto 17Track (era: dogana): Auto 17Track (AvailableForPickup)"
         }
       ],
       "emailsSent": [
@@ -1140,7 +1145,7 @@
       ],
       "notes": "",
       "createdAt": 1781533718423,
-      "updatedAt": 1783686192652,
+      "updatedAt": 1783686943116,
       "staleAlertDays": 7,
       "staleAlertSince": 1783050177259,
       "track17Registered": true
@@ -1789,7 +1794,7 @@
       "trackingNumber": "1ZRY6787A895574249",
       "carrier": "MBE",
       "shippingDate": 1783080714740,
-      "status": "dogana",
+      "status": "problema",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1805,6 +1810,11 @@
           "status": "dogana",
           "date": 1783080714740,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "problema",
+          "date": 1783686943116,
+          "note": "Auto 17Track (era: dogana): Auto 17Track (Exception)"
         }
       ],
       "emailsSent": [
@@ -1845,7 +1855,7 @@
       ],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1783686192652,
+      "updatedAt": 1783686943116,
       "trackingUrl": "",
       "language": "en",
       "track17Registered": true
