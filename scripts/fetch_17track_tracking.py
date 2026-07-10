@@ -45,14 +45,17 @@ STATUS_MAP = {
     'Expired':             'problema',
     'AvailableForPickup': 'in_consegna',
     'OutForDelivery':     'in_consegna',
-    'DeliveryFailure':    'problema',
+    'DeliveryFailure':    'consegna_fallita',
     'Delivered':          'consegnato',
     'Exception':          'problema',
 }
 
+# consegna_fallita sta sotto consegnato: un tentativo fallito può ancora
+# risolversi con una consegna riuscita al giro successivo, senza serve alcun
+# hack "force" (a differenza di problema, che sta sopra consegnato apposta).
 STATUS_RANK = {s: i for i, s in enumerate([
-    'ricevuto', 'preparazione', 'spedito', 'in_transito',
-    'dogana', 'in_consegna', 'consegnato', 'problema', 'annullato',
+    'ricevuto', 'preparazione', 'spedito', 'in_transito', 'dogana',
+    'in_consegna', 'consegna_fallita', 'consegnato', 'problema', 'annullato',
 ])}
 
 TERMINAL_STATUSES = {'consegnato', 'annullato'}
@@ -151,6 +154,16 @@ def latest_event_note(track_info: dict) -> str:
     return ''
 
 
+def latest_event_time(track_info: dict) -> str:
+    """Timestamp dell'ultimo evento — usato per distinguere un NUOVO tentativo
+    di consegna fallito da uno già notificato in un run precedente."""
+    for provider in track_info.get('providers') or []:
+        events = provider.get('events') or []
+        if events:
+            return events[0].get('time_iso') or events[0].get('time_utc') or ''
+    return ''
+
+
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
@@ -222,7 +235,20 @@ def main():
             # consegnato può sovrascrivere problema: il pacco arriva comunque
             force = (new_status == 'consegnato' and cur_status == 'problema')
 
-            if new_rank > cur_rank or force:
+            # Un nuovo tentativo di consegna fallito va sempre segnalato, anche
+            # se lo stato è già consegna_fallita da un tentativo precedente
+            # (stesso rank → il confronto rank non basterebbe da solo).
+            event_time      = latest_event_time(info)
+            is_new_failure  = (
+                raw_status == 'DeliveryFailure'
+                and event_time
+                and event_time != order.get('lastDeliveryFailureEventAt')
+            )
+            if is_new_failure:
+                order['deliveryFailureCount']       = order.get('deliveryFailureCount', 0) + 1
+                order['lastDeliveryFailureEventAt'] = event_time
+
+            if new_rank > cur_rank or force or is_new_failure:
                 note = latest_event_note(info) or f'Auto 17Track ({raw_status})'
                 order.setdefault('statusHistory', []).append({
                     'status': new_status,

@@ -58,10 +58,11 @@ DIGEST_HOUR_UTC = 8  # 10:00 in Italia (CEST)
 def _is_digest_run() -> bool:
     return datetime.now(timezone.utc).hour == DIGEST_HOUR_UTC
 
-_STATUS_ORDER = ['ricevuto','preparazione','spedito','in_transito','dogana','in_consegna','consegnato','problema','annullato']
+_STATUS_ORDER = ['ricevuto','preparazione','spedito','in_transito','dogana','in_consegna','consegna_fallita','consegnato','problema','annullato']
 _STATUS_EMOJI = {
     'ricevuto':    '📥', 'preparazione': '📦', 'spedito':     '🚀',
     'in_transito': '✈️',  'dogana':       '🛃', 'in_consegna': '🏠',
+    'consegna_fallita': '📭',
     'consegnato':  '✅',  'problema':     '⚠️', 'annullato':   '❌',
 }
 
@@ -312,7 +313,7 @@ def should_send(order: dict, reminder_type: str, now_ms: int) -> tuple[bool, str
         return True, ''
 
     if reminder_type in ('day10', 'day20'):
-        if status in STATI_TERMINALI or status in ('in_consegna', 'dogana'):
+        if status in STATI_TERMINALI or status in ('in_consegna', 'dogana', 'consegna_fallita'):
             return False, f'stato avanzato ({status}) — skip reminder temporizzato'
         if not shipping_date:
             return False, 'shippingDate mancante'
@@ -623,6 +624,29 @@ def main():
             msg_id = send_email(order, rtype, subject, body, test_mode)
             if msg_id:
                 _record_send(order, rtype, to_email, subject, msg_id)
+
+    # ── Mancata consegna: notifica ripetibile, una per tentativo fallito ─────
+    # (a differenza degli altri reminder_type, questo NON passa da should_send:
+    # lì il controllo "già inviata" è booleano — qui serve un conteggio, un
+    # tentativo di consegna fallito in più deve generare una nuova email anche
+    # se una precedente era già stata inviata per lo stesso ordine)
+    tpl_cf = templates.get('consegna_fallita')
+    for order in active:
+        fail_count = order.get('deliveryFailureCount', 0)
+        if not fail_count:
+            continue
+        if not tpl_cf:
+            print(f'    {order.get("customerName","?")}: consegna_fallita — template mancante')
+            continue
+        already_sent = sum(1 for e in (order.get('emailsSent') or []) if e.get('type') == 'consegna_fallita')
+        for _ in range(fail_count - already_sent):
+            subject, body = render_template(tpl_cf, order)
+            to_email = (order.get('customerEmail') or '').strip()
+            msg_id = send_email(order, 'consegna_fallita', subject, body, test_mode)
+            if msg_id:
+                _record_send(order, 'consegna_fallita', to_email, subject, msg_id)
+            else:
+                break
 
     # ── Watchdog: spedizioni ferme (>= 7gg senza cambio di stato) ─────────────
     # Non dipende dal test_mode: lo stato tracking è reale a prescindere da
