@@ -995,11 +995,18 @@
           "messageId": "<202607101235.10103915910@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-10T14:35:48.000+02:00"
+        },
+        {
+          "type": "consegna_fallita",
+          "to": "jenrichstevens@gmail.com",
+          "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+          "sentAt": 1783703151356,
+          "messageId": "<202607101705.92938738568@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1781638869297,
-      "updatedAt": 1783703149054,
+      "updatedAt": 1783703151356,
       "staleAlertDays": 7,
       "staleAlertSince": 1783050177259,
       "track17Registered": true,
