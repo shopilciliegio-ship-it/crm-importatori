@@ -933,7 +933,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1782287519736,
-      "status": "in_consegna",
+      "status": "consegna_fallita",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -954,6 +954,11 @@
           "status": "in_consegna",
           "date": 1783686192652,
           "note": "Auto 17Track (era: dogana): Auto 17Track (OutForDelivery)"
+        },
+        {
+          "status": "consegna_fallita",
+          "date": 1783703149054,
+          "note": "Auto 17Track (era: in_consegna): GREENSBORO, NC, United States — Second Delivery Attempted, We missed you again. A final attempt will be made the next business day."
         }
       ],
       "emailsSent": [
@@ -994,10 +999,12 @@
       ],
       "notes": "",
       "createdAt": 1781638869297,
-      "updatedAt": 1783686945961,
+      "updatedAt": 1783703149054,
       "staleAlertDays": 7,
       "staleAlertSince": 1783050177259,
-      "track17Registered": true
+      "track17Registered": true,
+      "deliveryFailureCount": 1,
+      "lastDeliveryFailureEventAt": "2026-07-09T14:35:57-04:00"
     },
     {
       "id": "ord_mqfb6etzok72",
