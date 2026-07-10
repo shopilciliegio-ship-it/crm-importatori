@@ -48,6 +48,13 @@ jobs:
           GH_REPO:  ${{ github.repository }}
         run: python scripts/fetch_spedire_tracking.py
 
+      - name: Fetch tracking 17Track (UPS)
+        env:
+          TRACK17_API_KEY: ${{ secrets.TRACK17_API_KEY }}
+          GH_TOKEN:        ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO:         ${{ github.repository }}
+        run: python scripts/fetch_17track_tracking.py
+
       # ── MBE pubblico — DORMIENTE (mbe.it bloccato da Akamai WAF, mai funzionato) ──
       # Riattivare rimuovendo "if: false" quando risolto o sostituito da UPS API
       - name: Fetch tracking MBE pubblico (mbe.it)
