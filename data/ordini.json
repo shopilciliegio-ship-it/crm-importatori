@@ -406,7 +406,9 @@
       ],
       "notes": "",
       "createdAt": 1782484474304,
-      "updatedAt": 1783075356622
+      "updatedAt": 1783681828452,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1783075351578
     },
     {
       "id": "ord_mqv18erkeq5b",
