@@ -57,9 +57,19 @@ def _gh_headers():
     }
 
 
+def _gh_request(method, url, **kwargs):
+    """Ritenta su 502/503/504 (errori transitori dei server GitHub) — max 3 tentativi."""
+    for attempt in range(3):
+        r = requests.request(method, url, **kwargs)
+        if r.status_code in (502, 503, 504) and attempt < 2:
+            time.sleep(2 ** attempt)
+            continue
+        return r
+
+
 def gh_get(path: str):
     url = f'https://api.github.com/repos/{GH_OWNER}/{GH_REPO}/contents/{path}'
-    r = requests.get(url, headers=_gh_headers(), timeout=20)
+    r = _gh_request('GET', url, headers=_gh_headers(), timeout=20)
     if r.status_code == 404:
         return {}, None
     r.raise_for_status()
@@ -73,7 +83,7 @@ def gh_get(path: str):
         if not dl:
             print(f'  ✗ gh_get {path}: content vuoto e nessun download_url')
             return {}, sha
-        r2 = requests.get(dl, timeout=60)
+        r2 = _gh_request('GET', dl, timeout=60)
         r2.raise_for_status()
         json_str = r2.text
     _gh_sha_cache[path] = sha
@@ -90,7 +100,7 @@ def gh_put(path: str, data, message: str):
     if sha:
         body['sha'] = sha
 
-    r = requests.put(url, headers=_gh_headers(), json=body, timeout=30)
+    r = _gh_request('PUT', url, headers=_gh_headers(), json=body, timeout=30)
     if r.status_code in (200, 201):
         _gh_sha_cache[path] = r.json()['content']['sha']
         return True
@@ -98,7 +108,7 @@ def gh_put(path: str, data, message: str):
         _, new_sha = gh_get(path)
         if new_sha:
             body['sha'] = new_sha
-            r2 = requests.put(url, headers=_gh_headers(), json=body, timeout=30)
+            r2 = _gh_request('PUT', url, headers=_gh_headers(), json=body, timeout=30)
             return r2.status_code in (200, 201)
     print(f'  ✗ gh_put {path}: {r.status_code} {r.text[:200]}')
     return False

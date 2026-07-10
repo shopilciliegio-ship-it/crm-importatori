@@ -19,6 +19,7 @@ Mapping status Fieramente → CRM:
 import base64
 import json
 import os
+import time
 from datetime import datetime, timezone
 
 import requests
@@ -59,9 +60,19 @@ _GH_HEADERS = {
 
 # ── GitHub helpers ─────────────────────────────────────────────────────────────
 
+def _gh_request(method, url, **kwargs):
+    """Ritenta su 502/503/504 (errori transitori dei server GitHub) — max 3 tentativi."""
+    for attempt in range(3):
+        r = requests.request(method, url, **kwargs)
+        if r.status_code in (502, 503, 504) and attempt < 2:
+            time.sleep(2 ** attempt)
+            continue
+        return r
+
+
 def gh_get(path):
     url = f'https://api.github.com/repos/{GH_REPO}/contents/{path}'
-    r   = requests.get(url, headers=_GH_HEADERS)
+    r   = _gh_request('GET', url, headers=_GH_HEADERS)
     if r.status_code == 404:
         return {}, None
     r.raise_for_status()
@@ -78,7 +89,7 @@ def gh_put(path, data, sha, message):
     body = {'message': message, 'content': content}
     if sha:
         body['sha'] = sha
-    requests.put(url, headers=_GH_HEADERS, json=body).raise_for_status()
+    _gh_request('PUT', url, headers=_GH_HEADERS, json=body).raise_for_status()
 
 
 # ── Fieramente API ─────────────────────────────────────────────────────────────

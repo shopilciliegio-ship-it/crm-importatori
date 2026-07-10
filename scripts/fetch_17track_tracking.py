@@ -25,6 +25,7 @@ Mapping status 17Track → CRM:
 import base64
 import json
 import os
+import time
 from datetime import datetime, timezone
 
 import requests
@@ -68,9 +69,19 @@ _TRACK17_HEADERS = {
 
 # ── GitHub helpers ────────────────────────────────────────────────────────────
 
+def _gh_request(method, url, **kwargs):
+    """Ritenta su 502/503/504 (errori transitori dei server GitHub) — max 3 tentativi."""
+    for attempt in range(3):
+        r = requests.request(method, url, **kwargs)
+        if r.status_code in (502, 503, 504) and attempt < 2:
+            time.sleep(2 ** attempt)
+            continue
+        return r
+
+
 def gh_get(path):
     url = f'https://api.github.com/repos/{GH_REPO}/contents/{path}'
-    r   = requests.get(url, headers=_GH_HEADERS)
+    r   = _gh_request('GET', url, headers=_GH_HEADERS)
     if r.status_code == 404:
         return {}, None
     r.raise_for_status()
@@ -87,7 +98,7 @@ def gh_put(path, data, sha, message):
     body = {'message': message, 'content': content}
     if sha:
         body['sha'] = sha
-    requests.put(url, headers=_GH_HEADERS, json=body).raise_for_status()
+    _gh_request('PUT', url, headers=_GH_HEADERS, json=body).raise_for_status()
 
 
 # ── 17Track API ───────────────────────────────────────────────────────────────
@@ -163,6 +174,7 @@ def main():
 
     # ── Fase 1: registrazione una tantum ──────────────────────────────────────
     to_register = [o for o in candidates if not o.get('track17Registered')]
+    freshly_registered = set()
     if to_register:
         numbers  = [o['trackingNumber'].strip().upper() for o in to_register]
         accepted = register_numbers(numbers)
@@ -172,10 +184,17 @@ def main():
                 order['track17Registered'] = True
                 order['updatedAt'] = now_ms
                 changed += 1
+                freshly_registered.add(num)
                 print(f'  + registrato: {order.get("customerName","?")} ({num})')
 
-    # ── Fase 2: poll stato per tutti i registrati ─────────────────────────────
-    registered = [o for o in candidates if o.get('track17Registered')]
+    # ── Fase 2: poll stato per i registrati nei run precedenti ────────────────
+    # (chi è stato appena registrato in questa Fase 1 non ha ancora dati:
+    # 17Track impiega qualche minuto/ora per interrogare il corriere — verrà
+    # interrogato al prossimo run)
+    registered = [
+        o for o in candidates
+        if o.get('track17Registered') and o['trackingNumber'].strip().upper() not in freshly_registered
+    ]
     if not registered:
         print('Nessun ordine ancora registrato su 17Track — solo registrazione questo run.')
     else:

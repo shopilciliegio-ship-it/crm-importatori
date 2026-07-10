@@ -24,9 +24,6 @@ jobs:
       - name: Installa dipendenze
         run: pip install -r scripts/requirements.txt
 
-      - name: Installa Playwright browser
-        run: python -m playwright install --with-deps
-
       - name: Importa ordini
         env:
           GMAIL_USER:         ${{ secrets.GMAIL_USER }}
@@ -56,7 +53,9 @@ jobs:
         run: python scripts/fetch_17track_tracking.py
 
       # ── MBE pubblico — DORMIENTE (mbe.it bloccato da Akamai WAF, mai funzionato) ──
-      # Riattivare rimuovendo "if: false" quando risolto o sostituito da UPS API
+      # Sostituito da 17Track. Riattivare rimuovendo "if: false" richiede anche
+      # di rimettere lo step "Installa Playwright browser" (rimosso perché
+      # inutile finché questo resta dormiente).
       - name: Fetch tracking MBE pubblico (mbe.it)
         if: false
         env:
