@@ -1007,11 +1007,18 @@
           "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
           "sentAt": 1783703151356,
           "messageId": "<202607101705.92938738568@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegna_fallita",
+          "to": "jenrichstevens@gmail.com",
+          "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+          "sentAt": 1783705719802,
+          "messageId": "<202607101748.37099661646@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1781638869297,
-      "updatedAt": 1783705716609,
+      "updatedAt": 1783705719802,
       "staleAlertDays": 7,
       "staleAlertSince": 1783050177259,
       "track17Registered": true,
@@ -1185,11 +1192,18 @@
           "messageId": "<202607101235.72533508790@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-10T14:35:48.000+02:00"
+        },
+        {
+          "type": "consegna_fallita",
+          "to": "chris.klotz10@gmail.com",
+          "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+          "sentAt": 1783705719802,
+          "messageId": "<202607101748.35421371378@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1781533718423,
-      "updatedAt": 1783705716609,
+      "updatedAt": 1783705719802,
       "staleAlertDays": 7,
       "staleAlertSince": 1783050177259,
       "track17Registered": true,
@@ -1914,11 +1928,25 @@
           "messageId": "<202607101235.80136103349@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-10T14:35:50.000+02:00"
+        },
+        {
+          "type": "consegna_fallita",
+          "to": "andrew.wayrynen@maritime.edu",
+          "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+          "sentAt": 1783705719802,
+          "messageId": "<202607101748.47057063561@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegna_fallita",
+          "to": "andrew.wayrynen@maritime.edu",
+          "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+          "sentAt": 1783705719802,
+          "messageId": "<202607101748.46994277145@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1783705716609,
+      "updatedAt": 1783705719802,
       "trackingUrl": "",
       "language": "en",
       "track17Registered": true,
@@ -2759,12 +2787,26 @@
           "messageId": "<202606202122.83824163147@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-06-20T23:22:15.000+02:00"
+        },
+        {
+          "type": "consegna_fallita",
+          "to": "sandfgordon26@gmail.com",
+          "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+          "sentAt": 1783705719802,
+          "messageId": "<202607101748.57773613016@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegna_fallita",
+          "to": "sandfgordon26@gmail.com",
+          "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+          "sentAt": 1783705719802,
+          "messageId": "<202607101748.15372410507@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1783705716609,
+      "updatedAt": 1783705719802,
       "shippingType": "standard",
       "shipmentCode": "JENKINSF",
       "trackingUrl": "",
