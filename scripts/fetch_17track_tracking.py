@@ -15,17 +15,26 @@ Mapping status 17Track → CRM:
   InfoReceived         → spedito
   InTransit            → in_transito
   Expired              → problema
-  AvailableForPickup   → in_consegna
+  AvailableForPickup   → consegna_fallita (il corriere non ce l'ha fatta a consegnare
+                          a casa, il pacco resta fermo in un Access Point in attesa
+                          del cliente — stessa urgenza di un tentativo fallito)
   OutForDelivery       → in_consegna
   DeliveryFailure      → consegna_fallita
   Delivered            → consegnato
   Exception            → problema
 
-Un tentativo di consegna fallito NON alza lo status a DeliveryFailure —
-verificato in produzione, 17Track/UPS lascia lo status a OutForDelivery anche
-al 2°/3° tentativo. Il segnale vero è nel testo libero di latest_event.description
-(es. "Second Delivery Attempted, We missed you again.") — vedi
-is_failed_delivery_attempt() e FAILED_ATTEMPT_KEYWORDS.
+Un tentativo di consegna fallito NON alza affidabilmente lo status a
+DeliveryFailure — verificato in produzione (2°/3° tentativo UPS restano
+"OutForDelivery"). Il segnale vero è nel testo libero delle singole
+description degli eventi (es. "Second Delivery Attempted, We missed you
+again.", "We were unable to deliver your package") — vedi
+FAILED_ATTEMPT_KEYWORDS e failed_attempt_events().
+
+Il controllo scorre TUTTO lo storico eventi restituito da 17Track (non solo
+latest_event), altrimenti un tentativo fallito "superato" da un evento più
+recente nella stessa finestra di poll (4h) passerebbe inosservato — caso
+reale: KLOTZ, "impossibile consegnare" (08/07) seguito il giorno dopo da
+"in attesa ritiro Access Point" prima del run successivo.
 """
 
 import base64
@@ -49,7 +58,7 @@ STATUS_MAP = {
     'InfoReceived':       'spedito',
     'InTransit':          'in_transito',
     'Expired':             'problema',
-    'AvailableForPickup': 'in_consegna',
+    'AvailableForPickup': 'consegna_fallita',
     'OutForDelivery':     'in_consegna',
     'DeliveryFailure':    'consegna_fallita',
     'Delivered':          'consegnato',
@@ -168,18 +177,19 @@ def latest_event_note(track_info: dict) -> str:
     return f'{loc} — {desc}'.strip(' —') if loc else desc
 
 
-def latest_event_time(track_info: dict) -> str:
-    """Timestamp dell'ultimo evento — usato per distinguere un NUOVO tentativo
-    di consegna fallito da uno già notificato in un run precedente."""
-    ev = track_info.get('latest_event') or {}
-    return ev.get('time_iso') or ev.get('time_utc') or ''
-
-
-def is_failed_delivery_attempt(track_info: dict) -> bool:
-    """17Track non alza lo status a DeliveryFailure per un tentativo intermedio
-    (resta OutForDelivery) — il segnale vero è nel testo libero dell'evento."""
-    desc = (latest_event_note(track_info) or '').lower()
-    return any(kw in desc for kw in FAILED_ATTEMPT_KEYWORDS)
+def failed_attempt_events(track_info: dict) -> list[dict]:
+    """Tutti gli eventi (non solo l'ultimo) la cui descrizione indica un
+    tentativo di consegna fallito. Serve lo storico completo — un tentativo
+    fallito viene spesso "superato" da un evento più recente (es. passaggio
+    a un Access Point) prima del prossimo poll, e leggere solo latest_event
+    lo farebbe sparire senza mai essere notificato."""
+    out = []
+    for provider in (track_info.get('tracking') or {}).get('providers') or []:
+        for ev in provider.get('events') or []:
+            desc = (ev.get('description') or '').lower()
+            if any(kw in desc for kw in FAILED_ATTEMPT_KEYWORDS):
+                out.append(ev)
+    return out
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────
@@ -247,12 +257,17 @@ def main():
             print(f'    {name} ({num}): raw_status={raw_status!r} sub_status={sub_status!r} '
                   f'ultimo evento: {event_desc or "(nessuno)"}')
 
-            # Un tentativo di consegna fallito NON alza lo status a DeliveryFailure
-            # (resta OutForDelivery anche al 2°/3° tentativo) — va riconosciuto dal
-            # testo dell'evento, non dal solo status/sub_status.
-            failed_attempt = is_failed_delivery_attempt(info)
+            mapped_status = STATUS_MAP.get(raw_status)
 
-            new_status = 'consegna_fallita' if failed_attempt else STATUS_MAP.get(raw_status)
+            # Un tentativo di consegna fallito NON alza affidabilmente lo status
+            # a DeliveryFailure (resta OutForDelivery anche al 2°/3° tentativo) —
+            # va cercato nel testo di TUTTI gli eventi, non solo l'ultimo. Se il
+            # pacco risulta però già consegnato, non forziamo consegna_fallita:
+            # un tentativo fallito passato non deve bloccare un Delivered attuale.
+            all_failed_events = failed_attempt_events(info) if mapped_status != 'consegnato' else []
+            has_failed_attempt = bool(all_failed_events)
+
+            new_status = 'consegna_fallita' if has_failed_attempt else mapped_status
             if not new_status:
                 print(f'  {name} ({num}): status "{raw_status}" — nessun aggiornamento')
                 continue
@@ -264,21 +279,27 @@ def main():
             # consegnato può sovrascrivere problema: il pacco arriva comunque
             force = (new_status == 'consegnato' and cur_status == 'problema')
 
-            # Un nuovo tentativo di consegna fallito va sempre segnalato, anche
-            # se lo stato è già consegna_fallita da un tentativo precedente
-            # (stesso rank → il confronto rank non basterebbe da solo).
-            event_time     = latest_event_time(info)
-            is_new_failure = (
-                failed_attempt
-                and event_time
-                and event_time != order.get('lastDeliveryFailureEventAt')
+            # Nuovi tentativi falliti non ancora notificati (per timestamp evento,
+            # confrontato con l'ultimo già visto) — ognuno genera una email in più
+            # in send_reminders.py, anche se lo stato resta consegna_fallita
+            # (stesso rank del tentativo precedente → il confronto rank da solo
+            # non lo rileverebbe).
+            last_seen  = order.get('lastDeliveryFailureEventAt') or ''
+            new_events = sorted(
+                (ev for ev in all_failed_events
+                 if (ev.get('time_utc') or ev.get('time_iso') or '') > last_seen),
+                key=lambda ev: ev.get('time_utc') or ev.get('time_iso') or ''
             )
+            is_new_failure = bool(new_events)
             if is_new_failure:
-                order['deliveryFailureCount']       = order.get('deliveryFailureCount', 0) + 1
-                order['lastDeliveryFailureEventAt'] = event_time
+                order['deliveryFailureCount']       = order.get('deliveryFailureCount', 0) + len(new_events)
+                order['lastDeliveryFailureEventAt'] = new_events[-1].get('time_utc') or new_events[-1].get('time_iso')
 
             if new_rank > cur_rank or force or is_new_failure:
-                note = latest_event_note(info) or f'Auto 17Track ({raw_status})'
+                if new_events:
+                    note = new_events[-1].get('description') or f'Auto 17Track ({raw_status})'
+                else:
+                    note = latest_event_note(info) or f'Auto 17Track ({raw_status})'
                 order.setdefault('statusHistory', []).append({
                     'status': new_status,
                     'date':   now_ms,
