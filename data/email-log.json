@@ -161,6 +161,15 @@
       "subject": "⚠ Important update on your shipment",
       "sentAt": 1783686945961,
       "messageId": "<202607101235.80136103349@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mqh1s5rleh85",
+      "customerName": "JENNIFER STEVENS",
+      "type": "consegna_fallita",
+      "to": "jenrichstevens@gmail.com",
+      "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+      "sentAt": 1783703151356,
+      "messageId": "<202607101705.92938738568@smtp-relay.mailin.fr>"
     }
   ]
 }
