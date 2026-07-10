@@ -10,6 +10,7 @@ const ORD_STATUS = {
   in_transito:  {l:'In transito',      c:'var(--blue-bg)',   t:'var(--blue-tx)'},
   dogana:       {l:'In dogana',        c:'var(--amber-bg)',  t:'var(--amber-tx)'},
   in_consegna:  {l:'In consegna',      c:'var(--teal-bg)',   t:'var(--teal-tx)'},
+  consegna_fallita: {l:'Mancata consegna', c:'var(--amber-bg)', t:'var(--amber-tx)'},
   consegnato:   {l:'Consegnato',       c:'var(--green-bg)',  t:'var(--green-tx)'},
   problema:     {l:'Problema',         c:'var(--red-bg)',    t:'var(--red-tx)'},
   annullato:    {l:'Annullato',        c:'var(--gray-bg)',   t:'var(--gray-tx)'},
@@ -227,6 +228,7 @@ function _phaseDots(order){
     {type:'day20',hideExpress:true},
     {type:'dogana',sb:true},
     {type:'in_consegna',sb:true},
+    {type:'consegna_fallita',sb:true,warn:true},
     {type:'consegnato',sb:true},
     {type:'problema',sb:true,warn:true},
   ];
@@ -234,8 +236,8 @@ function _phaseDots(order){
   function _isPending(p){
     if(p.type==='order_received') return ['ricevuto','preparazione'].includes(status);
     if(p.type==='day0')  return sd&&daysSince<=3;
-    if(p.type==='day10') return sd&&daysSince>=10&&daysSince<=13&&!['consegnato','annullato','dogana','in_consegna'].includes(status);
-    if(p.type==='day20') return sd&&isStandard&&daysSince>=20&&daysSince<=23&&!['consegnato','annullato','dogana','in_consegna'].includes(status);
+    if(p.type==='day10') return sd&&daysSince>=10&&daysSince<=13&&!['consegnato','annullato','dogana','in_consegna','consegna_fallita'].includes(status);
+    if(p.type==='day20') return sd&&isStandard&&daysSince>=20&&daysSince<=23&&!['consegnato','annullato','dogana','in_consegna','consegna_fallita'].includes(status);
     return false;
   }
 
@@ -272,7 +274,7 @@ function _phaseDots(order){
 
 /* ─ Timeline unificata stati + email ─ */
 function _buildTimeline(order){
-  const TYPE_LABELS={order_received:'Conferma ricezione',day0:'Conferma spedizione',day10:'Reminder 10gg',day20:'Reminder 20gg',dogana:'In dogana',in_consegna:'In consegna',consegnato:'Consegnato',problema:'Problema spedizione'};
+  const TYPE_LABELS={order_received:'Conferma ricezione',day0:'Conferma spedizione',day10:'Reminder 10gg',day20:'Reminder 20gg',dogana:'In dogana',in_consegna:'In consegna',consegna_fallita:'Mancata consegna',consegnato:'Consegnato',problema:'Problema spedizione'};
   const events=[];
   for(const h of (order.statusHistory||[])){
     const st=ORD_STATUS[h.status]||{l:h.status,c:'var(--bg2)',t:'var(--text2)'};
@@ -672,6 +674,16 @@ async function sendOrdineStatusEmail(o){
       } else {
         subject=`⚠ Important update about your shipment`;
         body=`Dear ${nome},\n\nI'm reaching out regarding your order. Unfortunately, an issue has occurred with the shipment and we are actively monitoring the situation.\n\nOur team is working to resolve it and we'll keep you informed as soon as possible.\n\n${trackLine}\nFor any urgent questions, please reply directly to this email.\n\n${sig}`;
+      }
+      break;
+
+    case 'consegna_fallita':
+      if(isIt){
+        subject=`⚠ Tentativo di consegna non riuscito — potrebbe servire un'azione`;
+        body=`Caro ${nome},\n\nil corriere ha provato a consegnare il tuo ordine, ma la consegna non è andata a buon fine (ricorda che per le spedizioni di vino è richiesta la firma di un adulto maggiorenne).\n\n${trackLine}Normalmente il corriere riproverà automaticamente. Se preferisci, puoi anche riprogrammare la consegna o ritirare il pacco presso un punto UPS vicino a te direttamente dal link di tracking qui sopra.\n\nSe il pacco non viene consegnato dopo alcuni tentativi, potrebbe essere reso al mittente — ti consigliamo quindi di agire il prima possibile.\n\n${sig}`;
+      } else {
+        subject=`⚠ Delivery attempt unsuccessful — action may be needed`;
+        body=`Dear ${nome},\n\nthe carrier attempted to deliver your order, but the delivery was not completed (please remember that a signature from an adult aged 21+ is required for wine shipments).\n\n${trackLine}The carrier will normally attempt delivery again automatically. If you prefer, you can also reschedule the delivery or arrange pickup at a nearby UPS access point directly through the tracking link above.\n\nIf the package is not delivered after a few attempts, it may be returned to us — so we recommend acting soon if possible.\n\n${sig}`;
       }
       break;
 

@@ -43,8 +43,8 @@ STATUS_MAP = {
 }
 
 STATUS_RANK = {s: i for i, s in enumerate([
-    'ricevuto', 'preparazione', 'spedito', 'in_transito',
-    'dogana', 'in_consegna', 'consegnato', 'problema', 'annullato',
+    'ricevuto', 'preparazione', 'spedito', 'in_transito', 'dogana',
+    'in_consegna', 'consegna_fallita', 'consegnato', 'problema', 'annullato',
 ])}
 
 TERMINAL_STATUSES = {'consegnato', 'annullato'}

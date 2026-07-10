@@ -54,6 +54,17 @@
       "body": "Caro {nome},\nil corriere sta consegnando il tuo ordine all'indirizzo indicato!\n\n{tracking_line}Ti aggiorneremo appena risulterà consegnato.\nGrazie per la pazienza, ci siamo quasi!\n\nLuca Pattaro\nIl Ciliegio — Azienda Agricola\nshop@ilciliegio.com | +39 331 1347899"
     }
   },
+  "consegna_fallita": {
+    "label": "Mancata consegna",
+    "en": {
+      "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+      "body": "Dear {nome},\nthe carrier attempted to deliver your order, but the delivery was not completed (please remember that a signature from an adult aged 21+ is required for wine shipments).\n\nFor your convenience {tracking_line}\nThe carrier will normally attempt delivery again automatically. If you prefer, you can also reschedule the delivery or arrange pickup at a nearby UPS access point directly through the tracking link above.\n\nIf the package is not delivered after a few attempts, it may be returned to us — so we recommend acting soon if possible.\nFor any questions, feel free to reply directly to this email.\n\nLuca Pattaro\nIl Ciliegio — Viticoltori in Monteriggioni dal 1952\nshop@ilciliegio.com | +39 331 1347899"
+    },
+    "it": {
+      "subject": "⚠ Tentativo di consegna non riuscito — potrebbe servire un'azione",
+      "body": "Caro {nome},\nil corriere ha provato a consegnare il tuo ordine, ma la consegna non è andata a buon fine (ricorda che per le spedizioni di vino è richiesta la firma di un adulto maggiorenne).\n\n{tracking_line}Normalmente il corriere riproverà automaticamente. Se preferisci, puoi anche riprogrammare la consegna o ritirare il pacco presso un punto UPS vicino a te direttamente dal link di tracking qui sopra.\n\nSe il pacco non viene consegnato dopo alcuni tentativi, potrebbe essere reso al mittente — ti consigliamo quindi di agire il prima possibile.\nPer qualsiasi domanda, rispondi pure direttamente a questa email.\n\nLuca Pattaro\nIl Ciliegio — Azienda Agricola\nshop@ilciliegio.com | +39 331 1347899"
+    }
+  },
   "consegnato": {
     "label": "Ordine consegnato",
     "en": {
