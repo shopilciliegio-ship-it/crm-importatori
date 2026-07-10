@@ -170,6 +170,60 @@
       "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
       "sentAt": 1783703151356,
       "messageId": "<202607101705.92938738568@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mqh1s5rleh85",
+      "customerName": "JENNIFER STEVENS",
+      "type": "consegna_fallita",
+      "to": "jenrichstevens@gmail.com",
+      "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+      "sentAt": 1783705719802,
+      "messageId": "<202607101748.37099661646@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mqfb6etzyl7s",
+      "customerName": "JOHNPAUL KLOTZ",
+      "type": "consegna_fallita",
+      "to": "chris.klotz10@gmail.com",
+      "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+      "sentAt": 1783705719802,
+      "messageId": "<202607101748.35421371378@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mpzhlcdub8mu",
+      "customerName": "ANDREW WAYRYNEN",
+      "type": "consegna_fallita",
+      "to": "andrew.wayrynen@maritime.edu",
+      "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+      "sentAt": 1783705719802,
+      "messageId": "<202607101748.47057063561@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mpzhlcdub8mu",
+      "customerName": "ANDREW WAYRYNEN",
+      "type": "consegna_fallita",
+      "to": "andrew.wayrynen@maritime.edu",
+      "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+      "sentAt": 1783705719802,
+      "messageId": "<202607101748.46994277145@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mbe_IT3299-8V-0000006AKO",
+      "customerName": "FAITH JENKINS",
+      "type": "consegna_fallita",
+      "to": "sandfgordon26@gmail.com",
+      "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+      "sentAt": 1783705719802,
+      "messageId": "<202607101748.57773613016@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mbe_IT3299-8V-0000006AKO",
+      "customerName": "FAITH JENKINS",
+      "type": "consegna_fallita",
+      "to": "sandfgordon26@gmail.com",
+      "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+      "sentAt": 1783705719802,
+      "messageId": "<202607101748.15372410507@smtp-relay.mailin.fr>"
     }
   ]
 }
