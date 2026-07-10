@@ -124,23 +124,22 @@ def render_template(tpl: dict, order: dict) -> tuple[str, str]:
     nome        = (order.get('customerName') or '').split()[0] or order.get('customerName', '')
     tracking    = order.get('trackingNumber', '') or ''
     tracking_url = order.get('trackingUrl', '') or ''
-    mbe_code    = (order.get('shipmentCode') or '').strip()
-    fier_url    = f'https://track.fieramente.biz/#/tracking/{mbe_code}' if mbe_code else ''
+    track17_url = f'https://t.17track.net/en#nums={tracking}' if tracking else ''
 
     if lang == 'it':
         if tracking and tracking_url:
             tracking_line = f'Numero tracking: {tracking}\nTraccia la spedizione: {tracking_url}\n'
         elif tracking_url:
             tracking_line = f'Traccia la spedizione: {tracking_url}\n'
-        elif tracking and fier_url:
-            tracking_line = f'Numero tracking: {tracking} — {fier_url}\n'
+        elif tracking and track17_url:
+            tracking_line = f'Numero tracking: {tracking} — {track17_url}\n'
         elif tracking:
             tracking_line = f'Numero tracking: {tracking}\n'
         else:
             tracking_line = ''
     else:
-        if tracking and fier_url:
-            tracking_line = f'Tracking number: {tracking} — {fier_url}\n'
+        if tracking and track17_url:
+            tracking_line = f'Tracking number: {tracking} — {track17_url}\n'
         elif tracking:
             tracking_line = f'Tracking number: {tracking}\n'
         elif tracking_url:
@@ -152,7 +151,7 @@ def render_template(tpl: dict, order: dict) -> tuple[str, str]:
         'nome':          nome,
         'tracking':      tracking,
         'tracking_line': tracking_line,
-        'fieramente_url': fier_url,
+        'track17_url':   track17_url,
     }
 
     tpl_lang = tpl.get(lang) or tpl.get('en') or {}
@@ -167,7 +166,7 @@ def render_template(tpl: dict, order: dict) -> tuple[str, str]:
 
 # ── Email HTML builder ────────────────────────────────────────────────────────
 
-_FIER_URL_RE    = re.compile(r'(https://track\.fieramente\.biz/#/tracking/[A-Za-z0-9_-]+)')
+_TRACK17_URL_RE = re.compile(r'(https://t\.17track\.net/en#nums=[A-Za-z0-9]+)')
 _SPEDIRE_URL_RE = re.compile(r'(https://www\.spedire(?:pro)?\.com/tracking/[A-Za-z0-9]+)')
 
 def _body_to_html(plain: str) -> str:
@@ -175,10 +174,10 @@ def _body_to_html(plain: str) -> str:
     parts = []
     for p in paras:
         escaped = html.escape(p).replace('\n', '<br>')
-        # Rende cliccabili i link Fieramente tracking
-        escaped = _FIER_URL_RE.sub(
+        # Rende cliccabile il link 17Track (stato aggiornato in tempo reale)
+        escaped = _TRACK17_URL_RE.sub(
             r'<a href="\1" style="color:#B8941A;font-weight:600;text-decoration:none">'
-            r'🔗 Track your shipment on Fieramente</a>',
+            r'🔗 Track your shipment live</a>',
             escaped
         )
         # Rende cliccabile il link Spedire.com tracking
@@ -381,23 +380,23 @@ def stale_info(order: dict, now_ms: int) -> tuple[int, int, int] | None:
 
 def send_stale_alert(order: dict, days_stuck: int) -> str | None:
     """Alert interno a Luca (non al cliente): la spedizione non riceve aggiornamenti
-    dal corriere via Fieramente da troppi giorni, va controllata a mano."""
+    di stato da troppi giorni, va controllata a mano."""
     name     = order.get('customerName', '?')
     status   = order.get('status', '?')
     mbe_code = (order.get('shipmentCode') or '').strip()
-    fier_url = f'https://track.fieramente.biz/#/tracking/{mbe_code}' if mbe_code else ''
-    tracking = order.get('trackingNumber') or '(nessuno)'
+    tracking = order.get('trackingNumber') or ''
+    track17_url = f'https://t.17track.net/en#nums={tracking}' if tracking else ''
 
     subject = f'⚠️ Spedizione ferma da {days_stuck}gg — {name}'
     lines = [
         f'La spedizione di {name} è ferma allo stato "{status}" da {days_stuck} giorni,',
-        'senza alcun aggiornamento dal corriere via Fieramente.',
+        'senza alcun aggiornamento di stato.',
         '',
         f'Codice spedizione: {mbe_code or "(mancante)"}',
-        f'Tracking: {tracking}',
+        f'Tracking: {tracking or "(nessuno)"}',
     ]
-    if fier_url:
-        lines.append(f'Controlla su Fieramente: {fier_url}')
+    if track17_url:
+        lines.append(f'Controlla su 17Track: {track17_url}')
     lines += ['', 'Verifica manualmente cosa sta succedendo con questa spedizione.']
     body_text = '\n'.join(lines)
 
