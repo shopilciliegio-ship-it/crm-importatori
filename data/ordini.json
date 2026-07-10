@@ -199,8 +199,9 @@
       ],
       "notes": "",
       "createdAt": 1783352616728,
-      "updatedAt": 1783597606499,
-      "trackingUrl": ""
+      "updatedAt": 1783686192652,
+      "trackingUrl": "",
+      "track17Registered": true
     },
     {
       "id": "ord_mr9e3pqw8pvq",
@@ -346,9 +347,10 @@
       ],
       "notes": "",
       "createdAt": 1782736788535,
-      "updatedAt": 1783422822287,
+      "updatedAt": 1783686192652,
       "staleAlertDays": 7,
-      "staleAlertSince": 1782736788535
+      "staleAlertSince": 1782736788535,
+      "track17Registered": true
     },
     {
       "id": "ord_mqv18erkvrev",
@@ -406,9 +408,10 @@
       ],
       "notes": "",
       "createdAt": 1782484474304,
-      "updatedAt": 1783681828452,
+      "updatedAt": 1783686192652,
       "staleAlertDays": 7,
-      "staleAlertSince": 1783075351578
+      "staleAlertSince": 1783075351578,
+      "track17Registered": true
     },
     {
       "id": "ord_mqv18erkeq5b",
@@ -466,9 +469,10 @@
       ],
       "notes": "",
       "createdAt": 1782484474304,
-      "updatedAt": 1783422822287,
+      "updatedAt": 1783686192652,
       "staleAlertDays": 7,
-      "staleAlertSince": 1782484474304
+      "staleAlertSince": 1782484474304,
+      "track17Registered": true
     },
     {
       "id": "ord_mqp9n81ny0g2",
@@ -927,7 +931,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1782287519736,
-      "status": "dogana",
+      "status": "in_consegna",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -943,6 +947,11 @@
           "status": "dogana",
           "date": 1783050177259,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "in_consegna",
+          "date": 1783686192652,
+          "note": "Auto 17Track (era: dogana): Auto 17Track (OutForDelivery)"
         }
       ],
       "emailsSent": [
@@ -974,9 +983,10 @@
       ],
       "notes": "",
       "createdAt": 1781638869297,
-      "updatedAt": 1783655237203,
+      "updatedAt": 1783686192652,
       "staleAlertDays": 7,
-      "staleAlertSince": 1783050177259
+      "staleAlertSince": 1783050177259,
+      "track17Registered": true
     },
     {
       "id": "ord_mqfb6etzok72",
@@ -1130,9 +1140,10 @@
       ],
       "notes": "",
       "createdAt": 1781533718423,
-      "updatedAt": 1783655237203,
+      "updatedAt": 1783686192652,
       "staleAlertDays": 7,
-      "staleAlertSince": 1783050177259
+      "staleAlertSince": 1783050177259,
+      "track17Registered": true
     },
     {
       "id": "ord_mqfb6etz79pb",
@@ -1284,9 +1295,10 @@
       ],
       "notes": "",
       "createdAt": 1781277962641,
-      "updatedAt": 1783655237203,
+      "updatedAt": 1783686192652,
       "staleAlertDays": 7,
-      "staleAlertSince": 1783050177259
+      "staleAlertSince": 1783050177259,
+      "track17Registered": true
     },
     {
       "id": "ord_mq5eg9jb9j56",
@@ -1833,9 +1845,10 @@
       ],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1783080719596,
+      "updatedAt": 1783686192652,
       "trackingUrl": "",
-      "language": "en"
+      "language": "en",
+      "track17Registered": true
     },
     {
       "id": "ord_mpvpkyylwz2h",
@@ -2671,13 +2684,14 @@
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1783199085438,
+      "updatedAt": 1783686192652,
       "shippingType": "standard",
       "shipmentCode": "JENKINSF",
       "trackingUrl": "",
       "language": "en",
       "staleAlertDays": 14,
-      "staleAlertSince": 1781989369539
+      "staleAlertSince": 1781989369539,
+      "track17Registered": true
     },
     {
       "id": "ord_mbe_IT3299-8V-00000069TF",
