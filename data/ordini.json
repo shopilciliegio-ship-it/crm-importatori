@@ -289,7 +289,9 @@
       ],
       "notes": "",
       "createdAt": 1783080712224,
-      "updatedAt": 1783080719596
+      "updatedAt": 1783686945961,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1783080712224
     },
     {
       "id": "ord_mqz7gdo78vki",
@@ -979,11 +981,18 @@
           "messageId": "<202607030343.79850322436@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-03T05:43:06.000+02:00"
+        },
+        {
+          "type": "in_consegna",
+          "to": "jenrichstevens@gmail.com",
+          "subject": "Your wine is out for delivery! 🍷",
+          "sentAt": 1783686945961,
+          "messageId": "<202607101235.10103915910@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1781638869297,
-      "updatedAt": 1783686192652,
+      "updatedAt": 1783686945961,
       "staleAlertDays": 7,
       "staleAlertSince": 1783050177259,
       "track17Registered": true
@@ -1141,11 +1150,18 @@
           "messageId": "<202607030343.93812862840@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-03T05:43:07.000+02:00"
+        },
+        {
+          "type": "in_consegna",
+          "to": "chris.klotz10@gmail.com",
+          "subject": "Your wine is out for delivery! 🍷",
+          "sentAt": 1783686945961,
+          "messageId": "<202607101235.72533508790@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1781533718423,
-      "updatedAt": 1783686943116,
+      "updatedAt": 1783686945961,
       "staleAlertDays": 7,
       "staleAlertSince": 1783050177259,
       "track17Registered": true
@@ -1851,11 +1867,18 @@
           "messageId": "<202607031212.68671138398@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-03T14:12:05.000+02:00"
+        },
+        {
+          "type": "problema",
+          "to": "andrew.wayrynen@maritime.edu",
+          "subject": "⚠ Important update on your shipment",
+          "sentAt": 1783686945961,
+          "messageId": "<202607101235.80136103349@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1783686943116,
+      "updatedAt": 1783686945961,
       "trackingUrl": "",
       "language": "en",
       "track17Registered": true
