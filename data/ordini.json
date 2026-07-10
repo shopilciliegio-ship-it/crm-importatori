@@ -972,7 +972,9 @@
       ],
       "notes": "",
       "createdAt": 1781638869297,
-      "updatedAt": 1783050182940
+      "updatedAt": 1783655237203,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1783050177259
     },
     {
       "id": "ord_mqfb6etzok72",
@@ -1126,7 +1128,9 @@
       ],
       "notes": "",
       "createdAt": 1781533718423,
-      "updatedAt": 1783050182940
+      "updatedAt": 1783655237203,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1783050177259
     },
     {
       "id": "ord_mqfb6etz79pb",
@@ -1197,11 +1201,18 @@
           "messageId": "<202607030343.49932505526@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-03T05:43:08.000+02:00"
+        },
+        {
+          "type": "consegnato",
+          "to": "jgorishek@verizon.net",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1783655237203,
+          "messageId": "<202607100347.29374935297@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1781533718423,
-      "updatedAt": 1783655231550
+      "updatedAt": 1783655237203
     },
     {
       "id": "ord_mqb2woep3ml8",
@@ -1271,7 +1282,9 @@
       ],
       "notes": "",
       "createdAt": 1781277962641,
-      "updatedAt": 1783050182940
+      "updatedAt": 1783655237203,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1783050177259
     },
     {
       "id": "ord_mq5eg9jb9j56",
