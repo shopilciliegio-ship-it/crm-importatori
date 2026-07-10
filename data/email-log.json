@@ -125,6 +125,15 @@
       "subject": "Your wine is on its way! 🍷",
       "sentAt": 1783591755007,
       "messageId": "<202607091009.93504299253@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mqfb6etz79pb",
+      "customerName": "JANICE GORISHEK",
+      "type": "consegnato",
+      "to": "jgorishek@verizon.net",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1783655237203,
+      "messageId": "<202607100347.29374935297@smtp-relay.mailin.fr>"
     }
   ]
 }
