@@ -1149,7 +1149,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1782287519736,
-      "status": "dogana",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1165,6 +1165,11 @@
           "status": "dogana",
           "date": 1783050177259,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "consegnato",
+          "date": 1783655231550,
+          "note": "Auto Fieramente (era: dogana)"
         }
       ],
       "emailsSent": [
@@ -1196,7 +1201,7 @@
       ],
       "notes": "",
       "createdAt": 1781533718423,
-      "updatedAt": 1783050182940
+      "updatedAt": 1783655231550
     },
     {
       "id": "ord_mqb2woep3ml8",
