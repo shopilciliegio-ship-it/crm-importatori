@@ -933,7 +933,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1782287519736,
-      "status": "consegna_fallita",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -964,6 +964,11 @@
           "status": "consegna_fallita",
           "date": 1783705716609,
           "note": "Auto 17Track (era: consegna_fallita): Second Delivery Attempted, We missed you again. A final attempt will be made the next business day."
+        },
+        {
+          "status": "consegnato",
+          "date": 1783717798897,
+          "note": "Auto 17Track (era: consegna_fallita): GREENSBORO, NC, US — Delivered, DELIVERED"
         }
       ],
       "emailsSent": [
@@ -1018,7 +1023,7 @@
       ],
       "notes": "",
       "createdAt": 1781638869297,
-      "updatedAt": 1783705719802,
+      "updatedAt": 1783717798897,
       "staleAlertDays": 7,
       "staleAlertSince": 1783050177259,
       "track17Registered": true,
@@ -1316,7 +1321,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1782287519736,
-      "status": "dogana",
+      "status": "in_consegna",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1332,6 +1337,11 @@
           "status": "dogana",
           "date": 1783050177259,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "in_consegna",
+          "date": 1783717798897,
+          "note": "Auto 17Track (era: dogana): La Mirada, CA, United States — Out for Delivery, Out For Delivery Today"
         }
       ],
       "emailsSent": [
@@ -1363,7 +1373,7 @@
       ],
       "notes": "",
       "createdAt": 1781277962641,
-      "updatedAt": 1783686192652,
+      "updatedAt": 1783717798897,
       "staleAlertDays": 7,
       "staleAlertSince": 1783050177259,
       "track17Registered": true
@@ -1857,7 +1867,7 @@
       "trackingNumber": "1ZRY6787A895574249",
       "carrier": "MBE",
       "shippingDate": 1783080714740,
-      "status": "consegna_fallita",
+      "status": "problema",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1883,6 +1893,11 @@
           "status": "consegna_fallita",
           "date": 1783705716609,
           "note": "Auto 17Track (era: problema): Returning to Sender, We were unable to deliver the package on our final attempt. We are returning this package to the sender."
+        },
+        {
+          "status": "problema",
+          "date": 1783717798897,
+          "note": "Auto 17Track (era: consegna_fallita): Investigation Opened, We've begun an investigation to locate the package."
         }
       ],
       "emailsSent": [
@@ -1946,7 +1961,7 @@
       ],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1783705719802,
+      "updatedAt": 1783717798897,
       "trackingUrl": "",
       "language": "en",
       "track17Registered": true,
@@ -2739,7 +2754,7 @@
       "mbeTrackingNumber": "IT3299-8V-0000006AKO",
       "carrier": "UPS",
       "shippingDate": "2026-05-18",
-      "status": "consegna_fallita",
+      "status": "problema",
       "statusHistory": [
         {
           "status": "spedito",
@@ -2760,6 +2775,11 @@
           "status": "consegna_fallita",
           "date": 1783705716609,
           "note": "Auto 17Track (era: problema): Returning to Sender, We were unable to deliver the package on our final attempt. We are returning this package to the sender."
+        },
+        {
+          "status": "problema",
+          "date": 1783717798897,
+          "note": "Auto 17Track (era: consegna_fallita): NEW ROCHELLE, NY, US — Returned, Package was returned to the sender"
         }
       ],
       "emailsSent": [
@@ -2806,7 +2826,7 @@
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1783705719802,
+      "updatedAt": 1783717798897,
       "shippingType": "standard",
       "shipmentCode": "JENKINSF",
       "trackingUrl": "",
