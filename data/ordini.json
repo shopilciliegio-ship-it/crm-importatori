@@ -959,6 +959,11 @@
           "status": "consegna_fallita",
           "date": 1783703149054,
           "note": "Auto 17Track (era: in_consegna): GREENSBORO, NC, United States — Second Delivery Attempted, We missed you again. A final attempt will be made the next business day."
+        },
+        {
+          "status": "consegna_fallita",
+          "date": 1783705716609,
+          "note": "Auto 17Track (era: consegna_fallita): Second Delivery Attempted, We missed you again. A final attempt will be made the next business day."
         }
       ],
       "emailsSent": [
@@ -1006,12 +1011,12 @@
       ],
       "notes": "",
       "createdAt": 1781638869297,
-      "updatedAt": 1783703151356,
+      "updatedAt": 1783705716609,
       "staleAlertDays": 7,
       "staleAlertSince": 1783050177259,
       "track17Registered": true,
-      "deliveryFailureCount": 1,
-      "lastDeliveryFailureEventAt": "2026-07-09T14:35:57-04:00"
+      "deliveryFailureCount": 2,
+      "lastDeliveryFailureEventAt": "2026-07-09T18:35:57Z"
     },
     {
       "id": "ord_mqfb6etzok72",
@@ -1118,7 +1123,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1782287519736,
-      "status": "in_consegna",
+      "status": "consegna_fallita",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1139,6 +1144,11 @@
           "status": "in_consegna",
           "date": 1783686943116,
           "note": "Auto 17Track (era: dogana): Auto 17Track (AvailableForPickup)"
+        },
+        {
+          "status": "consegna_fallita",
+          "date": 1783705716609,
+          "note": "Auto 17Track (era: in_consegna): We were unable to deliver your package. It's on the way to a UPS Access Point™ location next business day for pick up."
         }
       ],
       "emailsSent": [
@@ -1179,11 +1189,13 @@
       ],
       "notes": "",
       "createdAt": 1781533718423,
-      "updatedAt": 1783688859324,
+      "updatedAt": 1783705716609,
       "staleAlertDays": 7,
       "staleAlertSince": 1783050177259,
       "track17Registered": true,
-      "trackingUrl": ""
+      "trackingUrl": "",
+      "deliveryFailureCount": 1,
+      "lastDeliveryFailureEventAt": "2026-07-08T15:41:47Z"
     },
     {
       "id": "ord_mqfb6etz79pb",
@@ -1831,7 +1843,7 @@
       "trackingNumber": "1ZRY6787A895574249",
       "carrier": "MBE",
       "shippingDate": 1783080714740,
-      "status": "problema",
+      "status": "consegna_fallita",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1852,6 +1864,11 @@
           "status": "problema",
           "date": 1783686943116,
           "note": "Auto 17Track (era: dogana): Auto 17Track (Exception)"
+        },
+        {
+          "status": "consegna_fallita",
+          "date": 1783705716609,
+          "note": "Auto 17Track (era: problema): Returning to Sender, We were unable to deliver the package on our final attempt. We are returning this package to the sender."
         }
       ],
       "emailsSent": [
@@ -1901,10 +1918,12 @@
       ],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1783686945961,
+      "updatedAt": 1783705716609,
       "trackingUrl": "",
       "language": "en",
-      "track17Registered": true
+      "track17Registered": true,
+      "deliveryFailureCount": 2,
+      "lastDeliveryFailureEventAt": "2026-07-02T07:24:38Z"
     },
     {
       "id": "ord_mpvpkyylwz2h",
@@ -2692,7 +2711,7 @@
       "mbeTrackingNumber": "IT3299-8V-0000006AKO",
       "carrier": "UPS",
       "shippingDate": "2026-05-18",
-      "status": "problema",
+      "status": "consegna_fallita",
       "statusHistory": [
         {
           "status": "spedito",
@@ -2708,6 +2727,11 @@
           "status": "problema",
           "date": 1781989369539,
           "note": ""
+        },
+        {
+          "status": "consegna_fallita",
+          "date": 1783705716609,
+          "note": "Auto 17Track (era: problema): Returning to Sender, We were unable to deliver the package on our final attempt. We are returning this package to the sender."
         }
       ],
       "emailsSent": [
@@ -2740,14 +2764,16 @@
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1783686192652,
+      "updatedAt": 1783705716609,
       "shippingType": "standard",
       "shipmentCode": "JENKINSF",
       "trackingUrl": "",
       "language": "en",
       "staleAlertDays": 14,
       "staleAlertSince": 1781989369539,
-      "track17Registered": true
+      "track17Registered": true,
+      "deliveryFailureCount": 2,
+      "lastDeliveryFailureEventAt": "2026-06-09T11:05:36Z"
     },
     {
       "id": "ord_mbe_IT3299-8V-00000069TF",
