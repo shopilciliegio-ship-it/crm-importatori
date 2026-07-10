@@ -78,9 +78,19 @@ _BREVO_HEADERS = {
 
 # ── GitHub helpers ────────────────────────────────────────────────────────────
 
+def _gh_request(method: str, url: str, **kwargs):
+    """Ritenta su 502/503/504 (errori transitori dei server GitHub) — max 3 tentativi."""
+    for attempt in range(3):
+        r = requests.request(method, url, **kwargs)
+        if r.status_code in (502, 503, 504) and attempt < 2:
+            time.sleep(2 ** attempt)
+            continue
+        return r
+
+
 def gh_get(path: str) -> tuple[dict | list, str | None]:
     url = f'https://api.github.com/repos/{GH_REPO}/contents/{path}'
-    r = requests.get(url, headers=_GH_HEADERS)
+    r = _gh_request('GET', url, headers=_GH_HEADERS)
     if r.status_code == 404:
         return {}, None
     r.raise_for_status()
@@ -90,7 +100,7 @@ def gh_get(path: str) -> tuple[dict | list, str | None]:
     if not raw and data.get('download_url'):
         # File > 1 MB: l'API Contents restituisce content vuoto — scarica diretto
         # (stesso fix v164 applicato in js/github.js per contatti-overrides.json)
-        rr = requests.get(data['download_url'])
+        rr = _gh_request('GET', data['download_url'])
         rr.raise_for_status()
         return rr.json(), sha
     if not raw:
@@ -106,7 +116,7 @@ def gh_get_overrides() -> tuple[dict, str | None, bool]:
     override esistenti (vedi incident 21-22/06/2026)."""
     url = f'https://api.github.com/repos/{GH_REPO}/contents/{OVERRIDES_PATH}'
     try:
-        r = requests.get(url, headers=_GH_HEADERS)
+        r = _gh_request('GET', url, headers=_GH_HEADERS)
         if r.status_code == 404:
             return {}, None, True  # nessun override ancora — caso legittimo
         r.raise_for_status()
@@ -114,7 +124,7 @@ def gh_get_overrides() -> tuple[dict, str | None, bool]:
         sha  = data['sha']
         raw  = data.get('content') or ''
         if not raw and data.get('download_url'):
-            rr = requests.get(data['download_url'])
+            rr = _gh_request('GET', data['download_url'])
             rr.raise_for_status()
             return rr.json(), sha, True
         if not raw:
@@ -126,8 +136,8 @@ def gh_get_overrides() -> tuple[dict, str | None, bool]:
 
 
 def get_sha(path: str) -> str | None:
-    r = requests.get(f'https://api.github.com/repos/{GH_REPO}/contents/{path}',
-                      headers=_GH_HEADERS)
+    r = _gh_request('GET', f'https://api.github.com/repos/{GH_REPO}/contents/{path}',
+                     headers=_GH_HEADERS)
     if r.status_code == 404:
         return None
     r.raise_for_status()
@@ -195,7 +205,7 @@ def gh_put(path: str, data, sha: str | None, message: str) -> None:
     body = {'message': message, 'content': content}
     if sha:
         body['sha'] = sha
-    requests.put(url, headers=_GH_HEADERS, json=body).raise_for_status()
+    _gh_request('PUT', url, headers=_GH_HEADERS, json=body).raise_for_status()
 
 
 # ── Contact helpers ────────────────────────────────────────────────────────────

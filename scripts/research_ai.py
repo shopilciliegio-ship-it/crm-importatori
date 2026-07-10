@@ -74,10 +74,20 @@ Criteri di valutazione:
 
 # ── GitHub helpers ────────────────────────────────────────────────────────────
 
+def _gh_request(method, url, **kwargs):
+    """Ritenta su 502/503/504 (errori transitori dei server GitHub) — max 3 tentativi."""
+    for attempt in range(3):
+        r = requests.request(method, url, **kwargs)
+        if r.status_code in (502, 503, 504) and attempt < 2:
+            time.sleep(2 ** attempt)
+            continue
+        return r
+
+
 def gh_get(path):
     """Ritorna (dati_json, sha) oppure (None, None) se il file non esiste."""
     url = f'https://api.github.com/repos/{GH_REPO}/contents/{path}'
-    r = requests.get(url, headers=_GH_HEADERS)
+    r = _gh_request('GET', url, headers=_GH_HEADERS)
     if r.status_code == 404:
         return None, None
     r.raise_for_status()
@@ -87,7 +97,7 @@ def gh_get(path):
         content = base64.b64decode(raw).decode('utf-8')
     else:
         # File > 1 MB: l'API Contents non include il content, va scaricato da download_url
-        rr = requests.get(d['download_url'])
+        rr = _gh_request('GET', d['download_url'])
         rr.raise_for_status()
         content = rr.text
     return json.loads(content), d['sha']
@@ -99,7 +109,7 @@ def gh_put(path, data, sha, message):
     body    = {'message': message, 'content': content}
     if sha:
         body['sha'] = sha
-    r = requests.put(url, headers=_GH_HEADERS, json=body)
+    r = _gh_request('PUT', url, headers=_GH_HEADERS, json=body)
     r.raise_for_status()
     return r.json()['content']['sha']
 
