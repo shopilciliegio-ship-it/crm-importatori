@@ -261,11 +261,20 @@ def main():
 
             # Un tentativo di consegna fallito NON alza affidabilmente lo status
             # a DeliveryFailure (resta OutForDelivery anche al 2°/3° tentativo) —
-            # va cercato nel testo di TUTTI gli eventi, non solo l'ultimo. Se il
-            # pacco risulta però già consegnato, non forziamo consegna_fallita:
-            # un tentativo fallito passato non deve bloccare un Delivered attuale.
-            all_failed_events = failed_attempt_events(info) if mapped_status != 'consegnato' else []
-            has_failed_attempt = bool(all_failed_events)
+            # va cercato nel testo di TUTTI gli eventi, non solo l'ultimo.
+            # Ma va promosso a consegna_fallita SOLO se lo stato mappato dal
+            # raw_status attuale non è già più avanzato/severo di lui: un evento
+            # "unable to deliver" può comparire anche nel testo di un reso al
+            # mittente ormai definitivo (Exception → problema, rank più alto) —
+            # in quel caso "vai a ritirarlo" sarebbe un messaggio sbagliato.
+            # Bug reale del 10/07/2026: ANDREW WAYRYNEN e FAITH JENKINS, entrambi
+            # già Exception_Returned (pacco reso al mittente), sono stati
+            # riportati indietro a consegna_fallita e hanno ricevuto l'email
+            # "vai a ritirarlo" per errore.
+            mapped_rank         = STATUS_RANK.get(mapped_status, -1) if mapped_status else -1
+            can_flag_as_failed  = mapped_status is not None and mapped_rank <= STATUS_RANK['consegna_fallita']
+            all_failed_events   = failed_attempt_events(info) if can_flag_as_failed else []
+            has_failed_attempt  = bool(all_failed_events)
 
             new_status = 'consegna_fallita' if has_failed_attempt else mapped_status
             if not new_status:
