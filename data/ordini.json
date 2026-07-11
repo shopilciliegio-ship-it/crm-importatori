@@ -164,7 +164,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1783591747911,
-      "status": "in_transito",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -175,6 +175,11 @@
           "status": "in_transito",
           "date": 1783591747911,
           "note": "Auto Fieramente (era: preparazione)"
+        },
+        {
+          "status": "consegnato",
+          "date": 1783777040296,
+          "note": "Auto 17Track (era: in_transito): SOBOLEWO, PL — Delivered, DELIVERED"
         }
       ],
       "emailsSent": [
@@ -199,7 +204,7 @@
       ],
       "notes": "",
       "createdAt": 1783352616728,
-      "updatedAt": 1783686192652,
+      "updatedAt": 1783777040296,
       "trackingUrl": "",
       "track17Registered": true
     },
