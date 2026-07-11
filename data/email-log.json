@@ -251,6 +251,15 @@
       "subject": "Your order has been delivered! 🍷 Enjoy!",
       "sentAt": 1783750716799,
       "messageId": "<202607110618.59770033986@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mr9e3pqw32dj",
+      "customerName": "PRZEMYSLAW RUDNICKI",
+      "type": "consegnato",
+      "to": "p.rudnicki96@gmail.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1783777043840,
+      "messageId": "<202607111337.76741338759@smtp-relay.mailin.fr>"
     }
   ]
 }
