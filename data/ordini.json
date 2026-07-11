@@ -1388,11 +1388,18 @@
           "subject": "Your wine is out for delivery! 🍷",
           "sentAt": 1783717806582,
           "messageId": "<202607102110.83160123775@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegnato",
+          "to": "matthewquezada81@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1783750716799,
+          "messageId": "<202607110618.59770033986@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1781277962641,
-      "updatedAt": 1783739590341,
+      "updatedAt": 1783750716799,
       "staleAlertDays": 7,
       "staleAlertSince": 1783050177259,
       "track17Registered": true
