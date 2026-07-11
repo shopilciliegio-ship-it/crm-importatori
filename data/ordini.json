@@ -200,11 +200,18 @@
           "messageId": "<202607091009.93504299253@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-09T12:09:17.000+02:00"
+        },
+        {
+          "type": "consegnato",
+          "to": "p.rudnicki96@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1783777043840,
+          "messageId": "<202607111337.76741338759@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1783352616728,
-      "updatedAt": 1783777040296,
+      "updatedAt": 1783777043840,
       "trackingUrl": "",
       "track17Registered": true
     },
