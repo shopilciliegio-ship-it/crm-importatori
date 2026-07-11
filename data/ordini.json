@@ -1328,7 +1328,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1782287519736,
-      "status": "in_consegna",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1349,6 +1349,11 @@
           "status": "in_consegna",
           "date": 1783717798897,
           "note": "Auto 17Track (era: dogana): La Mirada, CA, United States — Out for Delivery, Out For Delivery Today"
+        },
+        {
+          "status": "consegnato",
+          "date": 1783739590341,
+          "note": "Auto Fieramente (era: in_consegna)"
         }
       ],
       "emailsSent": [
@@ -1387,7 +1392,7 @@
       ],
       "notes": "",
       "createdAt": 1781277962641,
-      "updatedAt": 1783717806582,
+      "updatedAt": 1783739590341,
       "staleAlertDays": 7,
       "staleAlertSince": 1783050177259,
       "track17Registered": true
