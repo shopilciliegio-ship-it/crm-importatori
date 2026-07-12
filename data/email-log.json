@@ -260,6 +260,15 @@
       "subject": "Your order has been delivered! 🍷 Enjoy!",
       "sentAt": 1783777043840,
       "messageId": "<202607111337.76741338759@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mqv18erkvrev",
+      "customerName": "HARRISON STEIER",
+      "type": "dogana",
+      "to": "hsteier1@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1783826673129,
+      "messageId": "<202607120324.86233338008@smtp-relay.mailin.fr>"
     }
   ]
 }
