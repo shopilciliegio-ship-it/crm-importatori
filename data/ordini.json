@@ -423,11 +423,18 @@
           "messageId": "<202607031042.46336026849@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-03T12:42:39.000+02:00"
+        },
+        {
+          "type": "dogana",
+          "to": "hsteier1@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1783826673129,
+          "messageId": "<202607120324.86233338008@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1782484474304,
-      "updatedAt": 1783826669863,
+      "updatedAt": 1783826673129,
       "staleAlertDays": 7,
       "staleAlertSince": 1783075351578,
       "track17Registered": true
