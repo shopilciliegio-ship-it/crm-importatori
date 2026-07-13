@@ -1,292 +1,275 @@
-{
-  "log": [
-    {
-      "orderId": "ord_mr9e3pqw32dj",
-      "customerName": "PRZEMYSLAW RUDNICKI",
-      "type": "order_received",
-      "to": "p.rudnicki96@gmail.com",
-      "subject": "Thank you for your order! 🍷",
-      "sentAt": 1783352627244,
-      "messageId": "<202607061543.19099593641@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mr9e3pqw8pvq",
-      "customerName": "VAUGHN SHANNON",
-      "type": "order_received",
-      "to": "vpshannon71@gmail.com",
-      "subject": "Thank you for your order! 🍷",
-      "sentAt": 1783352627244,
-      "messageId": "<202607061543.28054300495@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mqz7gdo78vki",
-      "customerName": "PAUL CHOLLET",
-      "type": "day0",
-      "to": "pdchollet@gmail.com",
-      "subject": "Your wine is on its way! 🍷",
-      "sentAt": 1783422822287,
-      "messageId": "<202607071113.96786951596@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mqv18erkeq5b",
-      "customerName": "ROBERT WILLEY",
-      "type": "day0",
-      "to": "tahitianbobby@gmail.com",
-      "subject": "Your wine is on its way! 🍷",
-      "sentAt": 1783422822287,
-      "messageId": "<202607071113.16846984862@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mrarkjesrjkm",
-      "customerName": "ELIZABETH CONTI",
-      "type": "order_received",
-      "to": "elizabethvconti@yahoo.com",
-      "subject": "Thank you for your order! 🍷",
-      "sentAt": 1783435715035,
-      "messageId": "<202607071448.17957174266@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mqp9n81ny0g2",
-      "customerName": "MADISON DADDONA",
-      "type": "consegnato",
-      "to": "daddonamadison@gmail.com",
-      "subject": "Your order has been delivered! 🍷 Enjoy!",
-      "sentAt": 1783480755280,
-      "messageId": "<202607080319.47613490613@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mqh1s5rlhcpn",
-      "customerName": "BELINDA BOURJEILI",
-      "type": "consegnato",
-      "to": "bbourjeili@sbcglobal.net",
-      "subject": "Your order has been delivered! 🍷 Enjoy!",
-      "sentAt": 1783480755280,
-      "messageId": "<202607080319.20290770138@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mrbxkhn28fx7",
-      "customerName": "ALENAS ALCAUSKAS BUYEU ID LT948979",
-      "type": "order_received",
-      "to": "4alenas4@gmail.com",
-      "subject": "Thank you for your order! 🍷",
-      "sentAt": 1783506257961,
-      "messageId": "<202607081024.62884565268@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mqju2sucol0j",
-      "customerName": "MICHAEL SEPHTON",
-      "type": "consegnato",
-      "to": "tko751000@gmail.com",
-      "subject": "Your order has been delivered! 🍷 Enjoy!",
-      "sentAt": 1783568652951,
-      "messageId": "<202607090344.28839494759@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mqju2suberxx",
-      "customerName": "MICHAEL SEPHTON",
-      "type": "consegnato",
-      "to": "tko751000@gmail.com",
-      "subject": "Your order has been delivered! 🍷 Enjoy!",
-      "sentAt": 1783568652951,
-      "messageId": "<202607090344.84448709577@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mqjc6bvm0tmr",
-      "customerName": "ASHLEIGH COLE",
-      "type": "consegnato",
-      "to": "thecolefamily1@att.net",
-      "subject": "Your order has been delivered! 🍷 Enjoy!",
-      "sentAt": 1783568652951,
-      "messageId": "<202607090344.67052420379@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mqfb6etzok72",
-      "customerName": "Madeline Dotson",
-      "type": "consegnato",
-      "to": "maddie.dekker01@gmail.com",
-      "subject": "Your order has been delivered! 🍷 Enjoy!",
-      "sentAt": 1783568652951,
-      "messageId": "<202607090344.52002816467@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mrdcgxhvhpul",
-      "customerName": "SETH MORGAN",
-      "type": "order_received",
-      "to": "luca@ilciliegio.com",
-      "subject": "Thank you for your order! 🍷",
-      "sentAt": 1783591755007,
-      "messageId": "<202607091009.67014697740@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mr9e3pqw32dj",
-      "customerName": "PRZEMYSLAW RUDNICKI",
-      "type": "day0",
-      "to": "p.rudnicki96@gmail.com",
-      "subject": "Your wine is on its way! 🍷",
-      "sentAt": 1783591755007,
-      "messageId": "<202607091009.93504299253@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mqfb6etz79pb",
-      "customerName": "JANICE GORISHEK",
-      "type": "consegnato",
-      "to": "jgorishek@verizon.net",
-      "subject": "Your order has been delivered! 🍷 Enjoy!",
-      "sentAt": 1783655237203,
-      "messageId": "<202607100347.29374935297@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mqh1s5rleh85",
-      "customerName": "JENNIFER STEVENS",
-      "type": "in_consegna",
-      "to": "jenrichstevens@gmail.com",
-      "subject": "Your wine is out for delivery! 🍷",
-      "sentAt": 1783686945961,
-      "messageId": "<202607101235.10103915910@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mqfb6etzyl7s",
-      "customerName": "JOHNPAUL KLOTZ",
-      "type": "in_consegna",
-      "to": "chris.klotz10@gmail.com",
-      "subject": "Your wine is out for delivery! 🍷",
-      "sentAt": 1783686945961,
-      "messageId": "<202607101235.72533508790@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mpzhlcdub8mu",
-      "customerName": "ANDREW WAYRYNEN",
-      "type": "problema",
-      "to": "andrew.wayrynen@maritime.edu",
-      "subject": "⚠ Important update on your shipment",
-      "sentAt": 1783686945961,
-      "messageId": "<202607101235.80136103349@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mqh1s5rleh85",
-      "customerName": "JENNIFER STEVENS",
-      "type": "consegna_fallita",
-      "to": "jenrichstevens@gmail.com",
-      "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
-      "sentAt": 1783703151356,
-      "messageId": "<202607101705.92938738568@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mqh1s5rleh85",
-      "customerName": "JENNIFER STEVENS",
-      "type": "consegna_fallita",
-      "to": "jenrichstevens@gmail.com",
-      "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
-      "sentAt": 1783705719802,
-      "messageId": "<202607101748.37099661646@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mqfb6etzyl7s",
-      "customerName": "JOHNPAUL KLOTZ",
-      "type": "consegna_fallita",
-      "to": "chris.klotz10@gmail.com",
-      "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
-      "sentAt": 1783705719802,
-      "messageId": "<202607101748.35421371378@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mpzhlcdub8mu",
-      "customerName": "ANDREW WAYRYNEN",
-      "type": "consegna_fallita",
-      "to": "andrew.wayrynen@maritime.edu",
-      "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
-      "sentAt": 1783705719802,
-      "messageId": "<202607101748.47057063561@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mpzhlcdub8mu",
-      "customerName": "ANDREW WAYRYNEN",
-      "type": "consegna_fallita",
-      "to": "andrew.wayrynen@maritime.edu",
-      "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
-      "sentAt": 1783705719802,
-      "messageId": "<202607101748.46994277145@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mbe_IT3299-8V-0000006AKO",
-      "customerName": "FAITH JENKINS",
-      "type": "consegna_fallita",
-      "to": "sandfgordon26@gmail.com",
-      "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
-      "sentAt": 1783705719802,
-      "messageId": "<202607101748.57773613016@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mbe_IT3299-8V-0000006AKO",
-      "customerName": "FAITH JENKINS",
-      "type": "consegna_fallita",
-      "to": "sandfgordon26@gmail.com",
-      "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
-      "sentAt": 1783705719802,
-      "messageId": "<202607101748.15372410507@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mqh1s5rleh85",
-      "customerName": "JENNIFER STEVENS",
-      "type": "consegnato",
-      "to": "jenrichstevens@gmail.com",
-      "subject": "Your order has been delivered! 🍷 Enjoy!",
-      "sentAt": 1783717806582,
-      "messageId": "<202607102110.35327292456@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mqb2woep3ml8",
-      "customerName": "MATTHEW QUEZADA",
-      "type": "in_consegna",
-      "to": "matthewquezada81@gmail.com",
-      "subject": "Your wine is out for delivery! 🍷",
-      "sentAt": 1783717806582,
-      "messageId": "<202607102110.83160123775@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mqb2woep3ml8",
-      "customerName": "MATTHEW QUEZADA",
-      "type": "consegnato",
-      "to": "matthewquezada81@gmail.com",
-      "subject": "Your order has been delivered! 🍷 Enjoy!",
-      "sentAt": 1783750716799,
-      "messageId": "<202607110618.59770033986@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mr9e3pqw32dj",
-      "customerName": "PRZEMYSLAW RUDNICKI",
-      "type": "consegnato",
-      "to": "p.rudnicki96@gmail.com",
-      "subject": "Your order has been delivered! 🍷 Enjoy!",
-      "sentAt": 1783777043840,
-      "messageId": "<202607111337.76741338759@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mqv18erkvrev",
-      "customerName": "HARRISON STEIER",
-      "type": "dogana",
-      "to": "hsteier1@gmail.com",
-      "subject": "Your order is going through customs",
-      "sentAt": 1783826673129,
-      "messageId": "<202607120324.86233338008@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mqz7gdo78vki",
-      "customerName": "PAUL CHOLLET",
-      "type": "dogana",
-      "to": "pdchollet@gmail.com",
-      "subject": "Your order is going through customs",
-      "sentAt": 1783913275063,
-      "messageId": "<202607130327.27686866631@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mqv18erkeq5b",
-      "customerName": "ROBERT WILLEY",
-      "type": "dogana",
-      "to": "tahitianbobby@gmail.com",
-      "subject": "Your order is going through customs",
-      "sentAt": 1783913275063,
-      "messageId": "<202607130327.43796505570@smtp-relay.mailin.fr>"
-    }
-  ]
-}
+[
+  {
+    "date": "2026-07-13T10:18:11.834883+00:00",
+    "module": "clienti_wave1",
+    "to": "teknomanu@gmail.com",
+    "name": "Emanuele FUMI CAMBI GADO",
+    "messageId": "<202607131017.57743699119@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-07-13T10:18:11.834903+00:00",
+    "module": "clienti_wave1",
+    "to": "priyaagarwal768@gmail.com",
+    "name": "Priya Agarwal",
+    "messageId": "<202607131017.19575236250@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-07-13T10:18:11.834906+00:00",
+    "module": "clienti_wave1",
+    "to": "bkmarshall921@gmail.com",
+    "name": "Michael Marshall Jr",
+    "messageId": "<202607131017.68970665538@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-07-13T10:18:11.834908+00:00",
+    "module": "clienti_wave1",
+    "to": "vrinda.oberai@gmail.com",
+    "name": "Vrinda Oberai",
+    "messageId": "<202607131017.72928272788@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-07-13T10:18:11.834911+00:00",
+    "module": "clienti_wave1",
+    "to": "dutyt@cox.net",
+    "name": "Tim Duty",
+    "messageId": "<202607131017.71267843946@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-07-13T10:18:11.834913+00:00",
+    "module": "clienti_wave1",
+    "to": "bilgesukarakzs_1987@hotmail.com",
+    "name": "Bilgesu Kahraman",
+    "messageId": "<202607131017.75798430090@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-07-13T10:18:11.834915+00:00",
+    "module": "clienti_wave1",
+    "to": "evanweinberg0428@gmail.com",
+    "name": "Evan Weinberg",
+    "messageId": "<202607131017.83557912265@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-07-13T10:18:11.834917+00:00",
+    "module": "clienti_wave1",
+    "to": "christineasciara@gmail.com",
+    "name": "Christine Sciara",
+    "messageId": "<202607131017.43504589718@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-07-13T10:18:11.834919+00:00",
+    "module": "clienti_wave1",
+    "to": "flaviaceciliadipascual@gmail.com",
+    "name": "Flavia Dipascual",
+    "messageId": "<202607131017.96303062691@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-07-13T10:18:11.834921+00:00",
+    "module": "clienti_wave1",
+    "to": "nikolazkitic@gmail.com",
+    "name": "Nikola Kitic",
+    "messageId": "<202607131017.71589780167@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-07-13T10:18:11.834923+00:00",
+    "module": "clienti_wave1",
+    "to": "zorannat7@gmail.com",
+    "name": "Zoran Kitic",
+    "messageId": "<202607131017.88173435561@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-07-13T10:18:11.834925+00:00",
+    "module": "clienti_wave1",
+    "to": "tawandacraig@yahoo.com",
+    "name": "Tawanda Craig",
+    "messageId": "<202607131017.50441009579@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-07-13T10:18:11.834927+00:00",
+    "module": "clienti_wave1",
+    "to": "amlaalma@gmail.com",
+    "name": "Amla Alma",
+    "messageId": "<202607131017.78415981802@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-07-13T10:18:11.834928+00:00",
+    "module": "clienti_wave1",
+    "to": "studiontk@gmail.com",
+    "name": "Nataliya Ki",
+    "messageId": "<202607131017.25130287657@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-07-13T10:18:11.834930+00:00",
+    "module": "clienti_wave1",
+    "to": "yaboikhamille@gmail.com",
+    "name": "Khamille Kingston",
+    "messageId": "<202607131017.45473925920@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-07-13T10:18:11.834932+00:00",
+    "module": "clienti_wave1",
+    "to": "noinoi@gmail.com",
+    "name": "Noi Noi",
+    "messageId": "<202607131017.88593816044@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-07-13T10:18:11.834934+00:00",
+    "module": "clienti_wave1",
+    "to": "burmelau@gmail.com",
+    "name": "Laura Burmeister",
+    "messageId": "<202607131017.14511681062@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-07-13T10:18:11.834936+00:00",
+    "module": "clienti_wave1",
+    "to": "mg1geiger@aol.com",
+    "name": "Maddie Geiger",
+    "messageId": "<202607131017.27638794468@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-07-13T10:18:11.834938+00:00",
+    "module": "clienti_wave1",
+    "to": "natalie.floyd2005@icloud.com",
+    "name": "Natalie Floyd",
+    "messageId": "<202607131017.59595620386@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-07-13T10:18:11.834940+00:00",
+    "module": "clienti_wave1",
+    "to": "mnmary@aol.com",
+    "name": "Mary Stephan",
+    "messageId": "<202607131017.58937988944@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-07-13T10:18:11.834942+00:00",
+    "module": "clienti_wave1",
+    "to": "krd@kingshuk.net",
+    "name": "Kingshuk Das",
+    "messageId": "<202607131018.37832897995@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-07-13T10:18:11.834944+00:00",
+    "module": "clienti_wave1",
+    "to": "arjavdas71@gmail.com",
+    "name": "Arjav Das",
+    "messageId": "<202607131018.38613763521@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-07-13T10:18:11.834946+00:00",
+    "module": "clienti_wave1",
+    "to": "stefhanysanchez@yahoo.com",
+    "name": "Stefhany Sanchez",
+    "messageId": "<202607131018.85805294937@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-07-13T10:18:11.834948+00:00",
+    "module": "clienti_wave1",
+    "to": "joannalmeida13@gmail.com",
+    "name": "Joann Almeida",
+    "messageId": "<202607131018.99384150902@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-07-13T10:18:11.834950+00:00",
+    "module": "clienti_wave1",
+    "to": "maecar721@gmail.com",
+    "name": "Linda Allocvo",
+    "messageId": "<202607131018.94936733356@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-07-13T10:18:11.834951+00:00",
+    "module": "clienti_wave1",
+    "to": "mjking1878@hotmail.co.uk",
+    "name": "Michael King",
+    "messageId": "<202607131018.17963581116@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-07-13T10:18:11.834953+00:00",
+    "module": "clienti_wave1",
+    "to": "dr001k4169@blueyonder.co.uk",
+    "name": "David Robinson",
+    "messageId": "<202607131018.95885121645@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-07-13T10:18:11.834955+00:00",
+    "module": "clienti_wave1",
+    "to": "arce.brandon@aol.com",
+    "name": "Brandon Arce",
+    "messageId": "<202607131018.27337845334@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-07-13T10:18:11.834957+00:00",
+    "module": "clienti_wave1",
+    "to": "fioralbazhaku@gmail.com",
+    "name": "Fjoralba Habilaj",
+    "messageId": "<202607131018.49597082581@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-07-13T10:18:11.834958+00:00",
+    "module": "clienti_wave1",
+    "to": "o.j.raab@gmx.net",
+    "name": "Oliver Raab",
+    "messageId": "<202607131018.73222068326@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-07-13T10:18:11.834960+00:00",
+    "module": "clienti_wave1",
+    "to": "mark.endres@web.de",
+    "name": "Mark Endres",
+    "messageId": "<202607131018.39448418559@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-07-13T10:18:11.834961+00:00",
+    "module": "clienti_wave1",
+    "to": "fries.heidi@gmx.de",
+    "name": "Heidi Fries",
+    "messageId": "<202607131018.74627221497@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-07-13T10:18:11.834963+00:00",
+    "module": "clienti_wave1",
+    "to": "trombikke@gmail.com",
+    "name": "Mario Massini",
+    "messageId": "<202607131018.98751217409@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-07-13T10:18:11.834965+00:00",
+    "module": "clienti_wave1",
+    "to": "mimmuccio98@hotmail.it",
+    "name": "Mimmo Buttacavoli",
+    "messageId": "<202607131018.88303588007@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-07-13T10:18:11.834967+00:00",
+    "module": "clienti_wave1",
+    "to": "stefano.corbini@gmail.com",
+    "name": "Stefano Corbini",
+    "messageId": "<202607131018.67285373723@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-07-13T10:18:11.834969+00:00",
+    "module": "clienti_wave1",
+    "to": "sarahgates54@hotmail.com",
+    "name": "Sarah Gates",
+    "messageId": "<202607131018.83816396168@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-07-13T10:18:11.834970+00:00",
+    "module": "clienti_wave1",
+    "to": "mapaulabina@gmail.com",
+    "name": "Paula Bina",
+    "messageId": "<202607131018.96756582988@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-07-13T10:18:11.834972+00:00",
+    "module": "clienti_wave1",
+    "to": "eligalespi@gmaik.com",
+    "name": "Eloise Gates",
+    "messageId": "<202607131018.19760797696@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-07-13T10:18:11.834974+00:00",
+    "module": "clienti_wave1",
+    "to": "dancinggirl523@gmail.com",
+    "name": "Izzy Gonzales",
+    "messageId": "<202607131018.92832368024@smtp-relay.mailin.fr>"
+  }
+]
