@@ -362,11 +362,18 @@
           "messageId": "<202607071113.96786951596@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-07T13:13:45.000+02:00"
+        },
+        {
+          "type": "dogana",
+          "to": "pdchollet@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1783913275063,
+          "messageId": "<202607130327.27686866631@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1782736788535,
-      "updatedAt": 1783913270789,
+      "updatedAt": 1783913275063,
       "staleAlertDays": 7,
       "staleAlertSince": 1782736788535,
       "track17Registered": true
@@ -501,11 +508,18 @@
           "messageId": "<202607071113.16846984862@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-07T13:13:45.000+02:00"
+        },
+        {
+          "type": "dogana",
+          "to": "tahitianbobby@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1783913275063,
+          "messageId": "<202607130327.43796505570@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1782484474304,
-      "updatedAt": 1783913270789,
+      "updatedAt": 1783913275063,
       "staleAlertDays": 7,
       "staleAlertSince": 1782484474304,
       "track17Registered": true
