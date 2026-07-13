@@ -2031,11 +2031,18 @@
           "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
           "sentAt": 1783705719802,
           "messageId": "<202607101748.46994277145@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "day10",
+          "to": "andrew.wayrynen@maritime.edu",
+          "subject": "Shipping update — your order",
+          "sentAt": 1783953906505,
+          "messageId": "<202607131445.58392019507@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1783717798897,
+      "updatedAt": 1783953906505,
       "trackingUrl": "",
       "language": "en",
       "track17Registered": true,
