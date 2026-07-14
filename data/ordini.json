@@ -1,6 +1,40 @@
 {
   "orders": [
     {
+      "id": "ord_mrks9ygcsxmy",
+      "customerName": "SUSAN RUSCIANO",
+      "customerEmail": "susanrusciano1960@yahoo.com",
+      "customerPhone": "2014031451",
+      "amount": 276.7,
+      "currency": "EUR",
+      "orderDate": 1784038386000,
+      "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio SUSAN RUSCIANO",
+      "shipmentCode": "",
+      "shippingAddress": "14 Dogwood Loop, 12721 Bloomingburg (NY), United States",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<DB9PR08MB668298FD870AD519C01BF439BFF92@DB9PR08MB6682.eurprd08.prod.outlook.com>",
+      "trackingNumber": "",
+      "carrier": "- U.S.A. Wine Corriere Std",
+      "source": "shop",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "Carte Di Credito/Bancomat",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1784041550508,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1784041550508,
+      "updatedAt": 1784041550508
+    },
+    {
       "id": "ord_mrkpqofs6q8x",
       "customerName": "BRANDON REILLO",
       "customerEmail": "reillorr221@gmail.com",
@@ -5212,5 +5246,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1784037291832
+  "lastImportedAt": 1784041550508
 }
