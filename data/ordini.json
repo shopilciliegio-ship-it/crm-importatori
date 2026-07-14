@@ -29,10 +29,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "susanrusciano1960@yahoo.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1784041565664,
+          "messageId": "<202607141506.47929727863@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1784041550508,
-      "updatedAt": 1784041550508
+      "updatedAt": 1784041565664
     },
     {
       "id": "ord_mrkpqofs6q8x",
@@ -230,7 +238,9 @@
       ],
       "notes": "",
       "createdAt": 1783435702851,
-      "updatedAt": 1783435715035
+      "updatedAt": 1784041565664,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1783435702851
     },
     {
       "id": "ord_mr9e3pqw32dj",
