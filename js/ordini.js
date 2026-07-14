@@ -475,12 +475,18 @@ function renderOrdini(){
     const hasMissingEmail = !o.customerEmail&&!['annullato'].includes(o.status);
     const hasMissingType = !o.shippingType&&['spedito','in_transito','dogana','in_consegna'].includes(o.status);
     const destCountry = orderDestCountry(o);
-    const flag = destCountry?flagEmoji(destCountry):'';
+    // Su Windows le bandiere emoji spesso NON vengono disegnate come icona colorata
+    // (limite noto del font di sistema, a differenza di macOS/iOS) — il glifo da solo
+    // degrada a testo grigio minuscolo che si perde nello sfondo. Un badge con
+    // sfondo garantisce che il paese si veda sempre, con o senza rendering emoji.
+    const countryBadge = destCountry
+      ?`<span class="badge" style="background:var(--blue-bg);color:var(--blue-tx);font-size:10px" title="${esc(destCountry)}">${flagEmoji(destCountry)} ${esc(destCountry)}</span> · `
+      :'';
     return `<div class="cr" onclick="openOrdineDetail('${o.id}')">
       <div class="av av2" style="font-size:10px">${ini(o.customerName)}</div>
       <div class="ci">
         <div class="cn">${esc(o.customerName)}${o.source==='shop'?'<span class="badge" style="background:var(--teal-bg);color:var(--teal-tx);font-size:9px;margin-left:5px">🛒 Shop Online</span>':''}${hasMissingEmail?'<span style="color:var(--amber);font-size:10px;margin-left:5px">⚠ email</span>':''}${hasMissingType&&o.source!=='shop'?'<span style="color:var(--amber);font-size:10px;margin-left:5px">⚠ tipo sped.</span>':''}</div>
-        <div class="cs">${flag?'<span title="'+esc(destCountry)+'">'+flag+'</span> · ':''}${date} · €${o.amount.toFixed(2)} ${o.currency||'EUR'}${o.shippingType?' · <span style="font-size:10px;opacity:.7">'+o.shippingType+'</span>':''}</div>
+        <div class="cs">${countryBadge}${date} · €${o.amount.toFixed(2)} ${o.currency||'EUR'}${o.shippingType?' · <span style="font-size:10px;opacity:.7">'+o.shippingType+'</span>':''}</div>
       </div>
       <div style="display:flex;align-items:center;gap:6px;flex-shrink:0">
         ${_phaseDots(o)}
