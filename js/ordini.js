@@ -556,8 +556,8 @@ function openOrdineDetail(id){
       </div>
       <div class="fg"><label>Paese di destinazione</label>
         <select id="ord-dest-country">
-          <option value="">Auto (dedotto dall'indirizzo)</option>
-          ${ORDER_COUNTRIES.map(c=>`<option value="${c.iso2}"${o.destCountry===c.iso2?' selected':''}>${flagEmoji(c.iso2)} ${esc(c.label)}</option>`).join('')}
+          <option value=""${!orderDestCountry(o)?' selected':''}>Auto (nessun paese dedotto)</option>
+          ${ORDER_COUNTRIES.map(c=>`<option value="${c.iso2}"${orderDestCountry(o)===c.iso2?' selected':''}>${flagEmoji(c.iso2)} ${esc(c.label)}</option>`).join('')}
         </select>
       </div>
       <div class="fg"><label>Corriere</label>
