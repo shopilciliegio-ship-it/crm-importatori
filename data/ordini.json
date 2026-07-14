@@ -385,7 +385,7 @@
       "shipmentCode": "",
       "shippingAddress": "RUA JOAO DE DEUS, 4100-457 PORTO, PORTUGAL (PORTO)",
       "numberOfCartons": null,
-      "shippingType": null,
+      "shippingType": "standard",
       "gmailMessageId": "<202607031200.45743109752@smtp-relay.mailin.fr>",
       "trackingNumber": "",
       "carrier": "MBE",
@@ -415,9 +415,10 @@
       ],
       "notes": "",
       "createdAt": 1783080712224,
-      "updatedAt": 1783686945961,
+      "updatedAt": 1784041778633,
       "staleAlertDays": 7,
-      "staleAlertSince": 1783080712224
+      "staleAlertSince": 1783080712224,
+      "trackingUrl": ""
     },
     {
       "id": "ord_mqz7gdo78vki",
