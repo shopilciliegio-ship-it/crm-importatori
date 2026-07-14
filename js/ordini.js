@@ -16,6 +16,109 @@ const ORD_STATUS = {
   annullato:    {l:'Annullato',        c:'var(--gray-bg)',   t:'var(--gray-tx)'},
 };
 
+/* ─ Paese di destinazione: dedotto dall'indirizzo, o impostato a mano ─ */
+// Gli ordini non hanno un campo "paese" strutturato — solo shippingAddress (testo
+// libero). Fieramente/Shop di solito riportano stato/paese per esteso; MBE spesso
+// riporta solo "via, città" senza alcun indizio geografico (impossibile da dedurre).
+// o.destCountry (ISO2), se impostato a mano dall'utente, ha sempre la precedenza.
+const COUNTRY_NAME_TO_ISO2 = {
+  'united states':'US','united states of america':'US','usa':'US','u.s.a':'US','u.s.a.':'US',
+  'italy':'IT','italia':'IT',
+  'united kingdom':'GB','great britain':'GB','england':'GB','scotland':'GB','wales':'GB','uk':'GB',
+  'canada':'CA','germany':'DE','germania':'DE','france':'FR','francia':'FR',
+  'spain':'ES','spagna':'ES','portugal':'PT','portogallo':'PT',
+  'switzerland':'CH','svizzera':'CH','netherlands':'NL','olanda':'NL','paesi bassi':'NL',
+  'belgium':'BE','belgio':'BE','austria':'AT','ireland':'IE','irlanda':'IE',
+  'poland':'PL','polonia':'PL','sweden':'SE','svezia':'SE','norway':'NO','norvegia':'NO',
+  'denmark':'DK','danimarca':'DK','finland':'FI','finlandia':'FI',
+  'greece':'GR','grecia':'GR','czech republic':'CZ','czechia':'CZ',
+  'hungary':'HU','ungheria':'HU','romania':'RO','bulgaria':'BG',
+  'croatia':'HR','croazia':'HR','slovenia':'SI','slovakia':'SK','slovacchia':'SK',
+  'luxembourg':'LU','lussemburgo':'LU','malta':'MT','cyprus':'CY','cipro':'CY',
+  'estonia':'EE','latvia':'LV','lithuania':'LT','iceland':'IS','islanda':'IS',
+  'australia':'AU','new zealand':'NZ','nuova zelanda':'NZ',
+  'japan':'JP','giappone':'JP','china':'CN','cina':'CN',
+  'south korea':'KR','singapore':'SG','hong kong':'HK','taiwan':'TW',
+  'brazil':'BR','brasile':'BR','argentina':'AR','chile':'CL','cile':'CL',
+  'colombia':'CO','peru':'PE','perù':'PE','uruguay':'UY',
+  'south africa':'ZA','sudafrica':'ZA','israel':'IL','israele':'IL',
+  'united arab emirates':'AE','uae':'AE','emirati arabi':'AE',
+  'russia':'RU','ukraine':'UA','ucraina':'UA','turkey':'TR','turchia':'TR',
+};
+// Molti indirizzi Fieramente/MBE riportano lo stato USA o la regione italiana per
+// esteso senza scrivere il paese ("United States"/"Italy") — usati come fallback,
+// controllati PRIMA dei nomi paese in guessCountryFromAddress() per evitare conflitti
+// tipo "New Mexico" (stato USA) letto come paese "Mexico".
+const US_STATE_TO_ISO2 = {
+  'alabama':'US','alaska':'US','arizona':'US','arkansas':'US','california':'US',
+  'colorado':'US','connecticut':'US','delaware':'US','florida':'US','georgia':'US',
+  'hawaii':'US','idaho':'US','illinois':'US','indiana':'US','iowa':'US','kansas':'US',
+  'kentucky':'US','louisiana':'US','maine':'US','maryland':'US','massachusetts':'US',
+  'michigan':'US','minnesota':'US','mississippi':'US','missouri':'US','montana':'US',
+  'nebraska':'US','nevada':'US','new hampshire':'US','new jersey':'US','new mexico':'US',
+  'new york':'US','north carolina':'US','north dakota':'US','ohio':'US','oklahoma':'US',
+  'oregon':'US','pennsylvania':'US','rhode island':'US','south carolina':'US','south dakota':'US',
+  'tennessee':'US','texas':'US','utah':'US','vermont':'US','virginia':'US','washington':'US',
+  'west virginia':'US','wisconsin':'US','wyoming':'US','district of columbia':'US',
+};
+const IT_REGION_TO_ISO2 = {
+  'lombardy':'IT','lombardia':'IT','tuscany':'IT','toscana':'IT','piedmont':'IT','piemonte':'IT',
+  'veneto':'IT','sicily':'IT','sicilia':'IT','sardinia':'IT','sardegna':'IT','apulia':'IT','puglia':'IT',
+  'campania':'IT','emilia-romagna':'IT','emilia romagna':'IT','liguria':'IT','marche':'IT',
+  'abruzzo':'IT','umbria':'IT','calabria':'IT','basilicata':'IT','molise':'IT',
+  'friuli-venezia giulia':'IT','friuli venezia giulia':'IT','trentino-alto adige':'IT',
+  'trentino alto adige':'IT','aosta valley':'IT',"valle d'aosta":'IT','lazio':'IT',
+};
+// Lista per il menu a tendina "Paese" nella scheda ordine — etichette in italiano.
+const ORDER_COUNTRIES = [
+  {iso2:'IT',label:'Italia'},{iso2:'US',label:'Stati Uniti'},{iso2:'GB',label:'Regno Unito'},
+  {iso2:'CA',label:'Canada'},{iso2:'DE',label:'Germania'},{iso2:'FR',label:'Francia'},
+  {iso2:'ES',label:'Spagna'},{iso2:'PT',label:'Portogallo'},{iso2:'CH',label:'Svizzera'},
+  {iso2:'NL',label:'Paesi Bassi'},{iso2:'BE',label:'Belgio'},{iso2:'AT',label:'Austria'},
+  {iso2:'IE',label:'Irlanda'},{iso2:'PL',label:'Polonia'},{iso2:'SE',label:'Svezia'},
+  {iso2:'NO',label:'Norvegia'},{iso2:'DK',label:'Danimarca'},{iso2:'FI',label:'Finlandia'},
+  {iso2:'GR',label:'Grecia'},{iso2:'CZ',label:'Rep. Ceca'},{iso2:'HU',label:'Ungheria'},
+  {iso2:'RO',label:'Romania'},{iso2:'BG',label:'Bulgaria'},{iso2:'HR',label:'Croazia'},
+  {iso2:'SI',label:'Slovenia'},{iso2:'SK',label:'Slovacchia'},{iso2:'LU',label:'Lussemburgo'},
+  {iso2:'MT',label:'Malta'},{iso2:'CY',label:'Cipro'},{iso2:'EE',label:'Estonia'},
+  {iso2:'LV',label:'Lettonia'},{iso2:'LT',label:'Lituania'},{iso2:'IS',label:'Islanda'},
+  {iso2:'AU',label:'Australia'},{iso2:'NZ',label:'Nuova Zelanda'},{iso2:'JP',label:'Giappone'},
+  {iso2:'CN',label:'Cina'},{iso2:'KR',label:'Corea del Sud'},{iso2:'SG',label:'Singapore'},
+  {iso2:'HK',label:'Hong Kong'},{iso2:'TW',label:'Taiwan'},{iso2:'BR',label:'Brasile'},
+  {iso2:'AR',label:'Argentina'},{iso2:'CL',label:'Cile'},{iso2:'CO',label:'Colombia'},
+  {iso2:'PE',label:'Perù'},{iso2:'UY',label:'Uruguay'},{iso2:'MX',label:'Messico'},
+  {iso2:'ZA',label:'Sudafrica'},{iso2:'IL',label:'Israele'},{iso2:'AE',label:'Emirati Arabi'},
+  {iso2:'RU',label:'Russia'},{iso2:'UA',label:'Ucraina'},{iso2:'TR',label:'Turchia'},
+].sort((a,b)=>a.label.localeCompare(b.label,'it'));
+
+function flagEmoji(iso2){
+  if(!iso2||iso2.length!==2) return '';
+  const cps=[...iso2.toUpperCase()].map(c=>0x1F1E6+(c.charCodeAt(0)-65));
+  return String.fromCodePoint(...cps);
+}
+
+function guessCountryFromAddress(address){
+  if(!address) return null;
+  const addr=' '+address.toLowerCase().replace(/[.,()]/g,' ')+' ';
+  const esc_=s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+  // Stati USA/regioni italiane per esteso prima dei nomi paese: evita che "new mexico"
+  // (indirizzo USA) venga scambiato per il paese "Mexico" (non presente in
+  // COUNTRY_NAME_TO_ISO2 per questo stesso motivo — la base clienti è a stragrande
+  // maggioranza statunitense).
+  const subCountry = {...US_STATE_TO_ISO2, ...IT_REGION_TO_ISO2};
+  for(const name of Object.keys(subCountry).sort((a,b)=>b.length-a.length)){
+    if(new RegExp('\\b'+esc_(name)+'\\b').test(addr)) return subCountry[name];
+  }
+  for(const name of Object.keys(COUNTRY_NAME_TO_ISO2).sort((a,b)=>b.length-a.length)){
+    if(new RegExp('\\b'+esc_(name)+'\\b').test(addr)) return COUNTRY_NAME_TO_ISO2[name];
+  }
+  return null;
+}
+
+function orderDestCountry(o){
+  return o.destCountry || guessCountryFromAddress(o.shippingAddress);
+}
+
 function uidOrd(){ return 'ord_'+Date.now().toString(36)+Math.random().toString(36).slice(2,6); }
 
 /* ─ Helper: costruisce oggetto ordine completo ─ */
@@ -41,6 +144,7 @@ function _mkOrder({customerName,customerEmail='',customerPhone='',amount=0,curre
     language: 'en',
     shippingType: null,
     shippingDate: null,
+    destCountry: null,
     status: 'ricevuto',
     statusHistory: [{status:'ricevuto', date:now, note}],
     emailsSent: [],
@@ -354,11 +458,13 @@ function renderOrdini(){
     const date=new Date(o.orderDate).toLocaleDateString('it-IT',{day:'numeric',month:'short',year:'2-digit'});
     const hasMissingEmail = !o.customerEmail&&!['annullato'].includes(o.status);
     const hasMissingType = !o.shippingType&&['spedito','in_transito','dogana','in_consegna'].includes(o.status);
+    const destCountry = orderDestCountry(o);
+    const flag = destCountry?flagEmoji(destCountry):'';
     return `<div class="cr" onclick="openOrdineDetail('${o.id}')">
       <div class="av av2" style="font-size:10px">${ini(o.customerName)}</div>
       <div class="ci">
         <div class="cn">${esc(o.customerName)}${o.source==='shop'?'<span class="badge" style="background:var(--teal-bg);color:var(--teal-tx);font-size:9px;margin-left:5px">🛒 Shop Online</span>':''}${hasMissingEmail?'<span style="color:var(--amber);font-size:10px;margin-left:5px">⚠ email</span>':''}${hasMissingType&&o.source!=='shop'?'<span style="color:var(--amber);font-size:10px;margin-left:5px">⚠ tipo sped.</span>':''}</div>
-        <div class="cs">${date} · €${o.amount.toFixed(2)} ${o.currency||'EUR'}${o.shippingType?' · <span style="font-size:10px;opacity:.7">'+o.shippingType+'</span>':''}</div>
+        <div class="cs">${flag?'<span title="'+esc(destCountry)+'">'+flag+'</span> · ':''}${date} · €${o.amount.toFixed(2)} ${o.currency||'EUR'}${o.shippingType?' · <span style="font-size:10px;opacity:.7">'+o.shippingType+'</span>':''}</div>
       </div>
       <div style="display:flex;align-items:center;gap:6px;flex-shrink:0">
         ${_phaseDots(o)}
@@ -401,6 +507,7 @@ function openOrdineDetail(id){
     ${o.trackingNumber?dr('Tracking', `<span style="font-family:monospace">${esc(o.trackingNumber)}</span> ${trackingLink}`):''}
     ${(()=>{const stl={standard:'Standard',express:'Express'};const v=o.shippingType?`<span class="badge" style="background:var(--blue-bg);color:var(--blue-tx)">${stl[o.shippingType]||o.shippingType}</span>`:'<span style="color:var(--amber);font-size:12px">⚠ tipo non specificato</span>';return dr('Tipologia spedizione',v);})()}
     ${o.shippingDate?dr('Data spedizione', new Date(o.shippingDate).toLocaleDateString('it-IT',{day:'numeric',month:'long',year:'numeric'})):''}
+    ${(()=>{const dc=orderDestCountry(o);const label=dc?(ORDER_COUNTRIES.find(c=>c.iso2===dc)?.label||dc):'';const v=dc?`${flagEmoji(dc)} ${esc(label)}${!o.destCountry?' <span style="color:var(--text3);font-size:11px">(dedotto dall\'indirizzo)</span>':''}`:'<span style="color:var(--amber);font-size:12px">⚠ non rilevabile dall\'indirizzo — impostalo qui sotto</span>';return dr('Paese di destinazione',v);})()}
     ${o.shippingAddress?dr('Indirizzo spedizione', `<span style="font-size:12px;color:var(--text2)">${esc(o.shippingAddress)}</span>`):''}
     ${o.numberOfCartons?dr('Colli MBE', `<strong>${o.numberOfCartons}</strong> colli`):''}
     ${o.emailSubject?dr('Oggetto email', `<span style="font-size:11px;color:var(--text2)">${esc(o.emailSubject)}</span>`):''}
@@ -429,6 +536,12 @@ function openOrdineDetail(id){
           <option value="">Non specificata</option>
           <option value="standard"${o.shippingType==='standard'?' selected':''}>Standard</option>
           <option value="express"${o.shippingType==='express'?' selected':''}>Express</option>
+        </select>
+      </div>
+      <div class="fg"><label>Paese di destinazione</label>
+        <select id="ord-dest-country">
+          <option value="">Auto (dedotto dall'indirizzo)</option>
+          ${ORDER_COUNTRIES.map(c=>`<option value="${c.iso2}"${o.destCountry===c.iso2?' selected':''}>${flagEmoji(c.iso2)} ${esc(c.label)}</option>`).join('')}
         </select>
       </div>
       <div class="fg"><label>Corriere</label>
@@ -485,6 +598,7 @@ async function saveOrdineUpdate(id){
   const newPhone=(document.getElementById('ord-phone')?.value||'').trim();
   const newAddress=(document.getElementById('ord-address')?.value||'').trim();
   const newShippingType=gv('ord-shipping-type')||'';
+  const newDestCountry=gv('ord-dest-country')||'';
   const newLanguage=gv('ord-language')||'en';
   const newShipmentCode=(document.getElementById('ord-shipment-code')?.value||'').trim().toUpperCase();
   const newAmount=(document.getElementById('ord-amount')?.value||'').trim();
@@ -507,6 +621,7 @@ async function saveOrdineUpdate(id){
   if(newPhone) o.customerPhone=newPhone;
   if(newAddress) o.shippingAddress=newAddress;
   o.shippingType=newShippingType||null;
+  o.destCountry=newDestCountry||null;
   if(newShipmentCode) o.shipmentCode=newShipmentCode;
 
   const statusChanged=newStatus!==o.status;
