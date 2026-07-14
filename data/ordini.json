@@ -1,6 +1,40 @@
 {
   "orders": [
     {
+      "id": "ord_mrkpqofs6q8x",
+      "customerName": "BRANDON REILLO",
+      "customerEmail": "reillorr221@gmail.com",
+      "customerPhone": "+15165909615",
+      "amount": 107.9,
+      "currency": "EUR",
+      "orderDate": 1784027657000,
+      "emailSubject": "🍷 New Order — BRANDON REILLO — 107.90 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "37 ADRIANNE LANE , 10303 STATEN ISLAND , NEW YO RK (RICHMOND)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202607141114.40180099665@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1784037291832,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1784037291832,
+      "updatedAt": 1784037291832
+    },
+    {
       "id": "ord_mrdcgxhvhpul",
       "customerName": "SETH MORGAN",
       "customerEmail": "michellehunsberger@verizon.net",
@@ -5170,5 +5204,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1783591738771
+  "lastImportedAt": 1784037291832
 }
