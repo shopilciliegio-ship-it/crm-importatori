@@ -100,7 +100,7 @@
       "orderDate": 1783588097000,
       "emailSubject": "🍷 New Order — SETH MORGAN — 378.34 EUR",
       "shipmentCode": "SETHM",
-      "shippingAddress": "STATE, COUNTRY, CITY ZIP CODE",
+      "shippingAddress": "5 BRAMBLE LANE, 11747 MELVILLE, NEW YORK (SUFFOLK COUNTY)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<DB9PR08MB6682F8D6DB081A47CE71F13DBFFE2@DB9PR08MB6682.eurprd08.prod.outlook.com>",
@@ -156,9 +156,10 @@
       ],
       "notes": "",
       "createdAt": 1783591738771,
-      "updatedAt": 1784023366058,
+      "updatedAt": 1784055839010,
       "trackingUrl": "",
-      "track17Registered": true
+      "track17Registered": true,
+      "destCountry": "US"
     },
     {
       "id": "ord_mrbxkhn28fx7",
