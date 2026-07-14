@@ -35,7 +35,9 @@
           "to": "susanrusciano1960@yahoo.com",
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1784041565664,
-          "messageId": "<202607141506.47929727863@smtp-relay.mailin.fr>"
+          "messageId": "<202607141506.47929727863@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-14T17:06:10.000+02:00"
         }
       ],
       "notes": "",
@@ -77,12 +79,16 @@
           "to": "reillorr221@gmail.com",
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1784037303993,
-          "messageId": "<202607141355.22871072272@smtp-relay.mailin.fr>"
+          "messageId": "<202607141355.22871072272@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-14T15:55:06.000+02:00"
         }
       ],
       "notes": "",
       "createdAt": 1784037291832,
-      "updatedAt": 1784037303993
+      "updatedAt": 1784045364105,
+      "trackingUrl": "",
+      "destCountry": "US"
     },
     {
       "id": "ord_mrdcgxhvhpul",
@@ -143,7 +149,9 @@
           "to": "michellehunsberger@verizon.net",
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1784023366058,
-          "messageId": "<202607141002.48560483363@smtp-relay.mailin.fr>"
+          "messageId": "<202607141002.48560483363@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-14T12:02:50.000+02:00"
         }
       ],
       "notes": "",
@@ -305,7 +313,9 @@
           "to": "p.rudnicki96@gmail.com",
           "subject": "Your order has been delivered! 🍷 Enjoy!",
           "sentAt": 1783777043840,
-          "messageId": "<202607111337.76741338759@smtp-relay.mailin.fr>"
+          "messageId": "<202607111337.76741338759@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-11T15:37:26.000+02:00"
         }
       ],
       "notes": "",
@@ -363,7 +373,9 @@
           "to": "vpshannon71@gmail.com",
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1784023366058,
-          "messageId": "<202607141002.11368880851@smtp-relay.mailin.fr>"
+          "messageId": "<202607141002.11368880851@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-14T12:02:49.000+02:00"
         }
       ],
       "notes": "",
@@ -483,7 +495,9 @@
           "to": "pdchollet@gmail.com",
           "subject": "Your order is going through customs",
           "sentAt": 1783913275063,
-          "messageId": "<202607130327.27686866631@smtp-relay.mailin.fr>"
+          "messageId": "<202607130327.27686866631@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-13T05:27:57.000+02:00"
         }
       ],
       "notes": "",
@@ -556,7 +570,9 @@
           "to": "hsteier1@gmail.com",
           "subject": "Your order is going through customs",
           "sentAt": 1783826673129,
-          "messageId": "<202607120324.86233338008@smtp-relay.mailin.fr>"
+          "messageId": "<202607120324.86233338008@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-12T05:24:35.000+02:00"
         }
       ],
       "notes": "",
@@ -629,7 +645,9 @@
           "to": "tahitianbobby@gmail.com",
           "subject": "Your order is going through customs",
           "sentAt": 1783913275063,
-          "messageId": "<202607130327.43796505570@smtp-relay.mailin.fr>"
+          "messageId": "<202607130327.43796505570@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-13T05:27:57.000+02:00"
         }
       ],
       "notes": "",
@@ -1174,21 +1192,27 @@
           "to": "jenrichstevens@gmail.com",
           "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
           "sentAt": 1783703151356,
-          "messageId": "<202607101705.92938738568@smtp-relay.mailin.fr>"
+          "messageId": "<202607101705.92938738568@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-10T19:05:53.000+02:00"
         },
         {
           "type": "consegna_fallita",
           "to": "jenrichstevens@gmail.com",
           "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
           "sentAt": 1783705719802,
-          "messageId": "<202607101748.37099661646@smtp-relay.mailin.fr>"
+          "messageId": "<202607101748.37099661646@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-10T19:48:42.000+02:00"
         },
         {
           "type": "consegnato",
           "to": "jenrichstevens@gmail.com",
           "subject": "Your order has been delivered! 🍷 Enjoy!",
           "sentAt": 1783717806582,
-          "messageId": "<202607102110.35327292456@smtp-relay.mailin.fr>"
+          "messageId": "<202607102110.35327292456@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-10T23:10:09.000+02:00"
         }
       ],
       "notes": "",
@@ -1373,7 +1397,9 @@
           "to": "chris.klotz10@gmail.com",
           "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
           "sentAt": 1783705719802,
-          "messageId": "<202607101748.35421371378@smtp-relay.mailin.fr>"
+          "messageId": "<202607101748.35421371378@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-10T19:48:42.000+02:00"
         }
       ],
       "notes": "",
@@ -1550,14 +1576,18 @@
           "to": "matthewquezada81@gmail.com",
           "subject": "Your wine is out for delivery! 🍷",
           "sentAt": 1783717806582,
-          "messageId": "<202607102110.83160123775@smtp-relay.mailin.fr>"
+          "messageId": "<202607102110.83160123775@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-10T23:10:09.000+02:00"
         },
         {
           "type": "consegnato",
           "to": "matthewquezada81@gmail.com",
           "subject": "Your order has been delivered! 🍷 Enjoy!",
           "sentAt": 1783750716799,
-          "messageId": "<202607110618.59770033986@smtp-relay.mailin.fr>"
+          "messageId": "<202607110618.59770033986@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-11T08:18:38.000+02:00"
         }
       ],
       "notes": "",
@@ -2138,21 +2168,27 @@
           "to": "andrew.wayrynen@maritime.edu",
           "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
           "sentAt": 1783705719802,
-          "messageId": "<202607101748.47057063561@smtp-relay.mailin.fr>"
+          "messageId": "<202607101748.47057063561@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-10T19:48:44.000+02:00"
         },
         {
           "type": "consegna_fallita",
           "to": "andrew.wayrynen@maritime.edu",
           "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
           "sentAt": 1783705719802,
-          "messageId": "<202607101748.46994277145@smtp-relay.mailin.fr>"
+          "messageId": "<202607101748.46994277145@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-10T19:48:44.000+02:00"
         },
         {
           "type": "day10",
           "to": "andrew.wayrynen@maritime.edu",
           "subject": "Shipping update — your order",
           "sentAt": 1783953906505,
-          "messageId": "<202607131445.58392019507@smtp-relay.mailin.fr>"
+          "messageId": "<202607131445.58392019507@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-13T16:45:11.000+02:00"
         }
       ],
       "notes": "",
@@ -3009,14 +3045,18 @@
           "to": "sandfgordon26@gmail.com",
           "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
           "sentAt": 1783705719802,
-          "messageId": "<202607101748.57773613016@smtp-relay.mailin.fr>"
+          "messageId": "<202607101748.57773613016@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-10T19:48:44.000+02:00"
         },
         {
           "type": "consegna_fallita",
           "to": "sandfgordon26@gmail.com",
           "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
           "sentAt": 1783705719802,
-          "messageId": "<202607101748.15372410507@smtp-relay.mailin.fr>"
+          "messageId": "<202607101748.15372410507@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-10T19:48:44.000+02:00"
         }
       ],
       "notes": "",
