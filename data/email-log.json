@@ -26,6 +26,15 @@
       "subject": "Your wine is on its way! 🍷",
       "sentAt": 1784023366058,
       "messageId": "<202607141002.11368880851@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mrkpqofs6q8x",
+      "customerName": "BRANDON REILLO",
+      "type": "order_received",
+      "to": "reillorr221@gmail.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1784037303993,
+      "messageId": "<202607141355.22871072272@smtp-relay.mailin.fr>"
     }
   ]
 }
