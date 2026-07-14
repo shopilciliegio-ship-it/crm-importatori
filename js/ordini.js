@@ -101,12 +101,6 @@ const ORDER_COUNTRIES = [
   {iso2:'RU',label:'Russia'},{iso2:'UA',label:'Ucraina'},{iso2:'TR',label:'Turchia'},
 ].sort((a,b)=>a.label.localeCompare(b.label,'it'));
 
-function flagEmoji(iso2){
-  if(!iso2||iso2.length!==2) return '';
-  const cps=[...iso2.toUpperCase()].map(c=>0x1F1E6+(c.charCodeAt(0)-65));
-  return String.fromCodePoint(...cps);
-}
-
 function guessCountryFromAddress(address){
   if(!address) return null;
   const addr=' '+address.toLowerCase().replace(/[.,()]/g,' ')+' ';
@@ -480,7 +474,7 @@ function renderOrdini(){
     // degrada a testo grigio minuscolo che si perde nello sfondo. Un badge con
     // sfondo garantisce che il paese si veda sempre, con o senza rendering emoji.
     const countryBadge = destCountry
-      ?`<span class="badge" style="background:var(--blue-bg);color:var(--blue-tx);font-size:10px" title="${esc(destCountry)}">${flagEmoji(destCountry)} ${esc(destCountry)}</span> · `
+      ?`<span class="badge" style="background:var(--blue-bg);color:var(--blue-tx);font-size:10px" title="${esc(destCountry)}">${esc(destCountry)}</span> · `
       :'';
     return `<div class="cr" onclick="openOrdineDetail('${o.id}')">
       <div class="av av2" style="font-size:10px">${ini(o.customerName)}</div>
@@ -529,7 +523,7 @@ function openOrdineDetail(id){
     ${o.trackingNumber?dr('Tracking', `<span style="font-family:monospace">${esc(o.trackingNumber)}</span> ${trackingLink}`):''}
     ${(()=>{const stl={standard:'Standard',express:'Express'};const v=o.shippingType?`<span class="badge" style="background:var(--blue-bg);color:var(--blue-tx)">${stl[o.shippingType]||o.shippingType}</span>`:'<span style="color:var(--amber);font-size:12px">⚠ tipo non specificato</span>';return dr('Tipologia spedizione',v);})()}
     ${o.shippingDate?dr('Data spedizione', new Date(o.shippingDate).toLocaleDateString('it-IT',{day:'numeric',month:'long',year:'numeric'})):''}
-    ${(()=>{const dc=orderDestCountry(o);const label=dc?(ORDER_COUNTRIES.find(c=>c.iso2===dc)?.label||dc):'';const v=dc?`${flagEmoji(dc)} ${esc(label)}${!o.destCountry?' <span style="color:var(--text3);font-size:11px">(dedotto dall\'indirizzo)</span>':''}`:'<span style="color:var(--amber);font-size:12px">⚠ non rilevabile dall\'indirizzo — impostalo qui sotto</span>';return dr('Paese di destinazione',v);})()}
+    ${(()=>{const dc=orderDestCountry(o);const label=dc?(ORDER_COUNTRIES.find(c=>c.iso2===dc)?.label||dc):'';const v=dc?`<span class="badge" style="background:var(--blue-bg);color:var(--blue-tx)">${esc(dc)}</span> ${esc(label)}${!o.destCountry?' <span style="color:var(--text3);font-size:11px">(dedotto dall\'indirizzo)</span>':''}`:'<span style="color:var(--amber);font-size:12px">⚠ non rilevabile dall\'indirizzo — impostalo qui sotto</span>';return dr('Paese di destinazione',v);})()}
     ${o.shippingAddress?dr('Indirizzo spedizione', `<span style="font-size:12px;color:var(--text2)">${esc(o.shippingAddress)}</span>`):''}
     ${o.numberOfCartons?dr('Colli MBE', `<strong>${o.numberOfCartons}</strong> colli`):''}
     ${o.emailSubject?dr('Oggetto email', `<span style="font-size:11px;color:var(--text2)">${esc(o.emailSubject)}</span>`):''}
@@ -563,7 +557,7 @@ function openOrdineDetail(id){
       <div class="fg"><label>Paese di destinazione</label>
         <select id="ord-dest-country">
           <option value=""${!orderDestCountry(o)?' selected':''}>Auto (nessun paese dedotto)</option>
-          ${ORDER_COUNTRIES.map(c=>`<option value="${c.iso2}"${orderDestCountry(o)===c.iso2?' selected':''}>${flagEmoji(c.iso2)} ${esc(c.label)}</option>`).join('')}
+          ${ORDER_COUNTRIES.map(c=>`<option value="${c.iso2}"${orderDestCountry(o)===c.iso2?' selected':''}>${esc(c.label)} (${c.iso2})</option>`).join('')}
         </select>
       </div>
       <div class="fg"><label>Corriere</label>
