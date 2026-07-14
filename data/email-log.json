@@ -35,6 +35,15 @@
       "subject": "Thank you for your order! 🍷",
       "sentAt": 1784037303993,
       "messageId": "<202607141355.22871072272@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mrks9ygcsxmy",
+      "customerName": "SUSAN RUSCIANO",
+      "type": "order_received",
+      "to": "susanrusciano1960@yahoo.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1784041565664,
+      "messageId": "<202607141506.47929727863@smtp-relay.mailin.fr>"
     }
   ]
 }
