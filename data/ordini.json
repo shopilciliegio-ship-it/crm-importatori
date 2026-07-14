@@ -9,19 +9,19 @@
       "currency": "EUR",
       "orderDate": 1783588097000,
       "emailSubject": "🍷 New Order — SETH MORGAN — 378.34 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "SETHM",
       "shippingAddress": "STATE, COUNTRY, CITY ZIP CODE",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<DB9PR08MB6682F8D6DB081A47CE71F13DBFFE2@DB9PR08MB6682.eurprd08.prod.outlook.com>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A897106796",
       "carrier": "MBE",
       "source": "fieramente",
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1784023362268,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -37,6 +37,11 @@
           "status": "preparazione",
           "date": 1783598356619,
           "note": ""
+        },
+        {
+          "status": "in_transito",
+          "date": 1784023362268,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -52,7 +57,7 @@
       ],
       "notes": "",
       "createdAt": 1783591738771,
-      "updatedAt": 1783598356619,
+      "updatedAt": 1784023362268,
       "trackingUrl": ""
     },
     {
@@ -224,24 +229,29 @@
       "currency": "EUR",
       "orderDate": 1783340059000,
       "emailSubject": "🍷 New Order — VAUGHN SHANNON — 200.40 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "SHANNONV",
       "shippingAddress": "356 DELLWOOD AVE, 45419 OAKWOOD, OHIO (MONTGOMERY COUNTY)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202607061214.57691573209@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A805771981",
       "carrier": "MBE",
       "source": "fieramente",
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1784023362268,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1783352616728,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1784023362268,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -257,7 +267,7 @@
       ],
       "notes": "",
       "createdAt": 1783352616728,
-      "updatedAt": 1783965515697,
+      "updatedAt": 1784023362268,
       "staleAlertDays": 7,
       "staleAlertSince": 1783352616728
     },
