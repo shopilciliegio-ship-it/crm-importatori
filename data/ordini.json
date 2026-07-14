@@ -53,11 +53,18 @@
           "messageId": "<202607091009.67014697740@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-09T12:09:19.000+02:00"
+        },
+        {
+          "type": "day0",
+          "to": "michellehunsberger@verizon.net",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1784023366058,
+          "messageId": "<202607141002.48560483363@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1783591738771,
-      "updatedAt": 1784023363748,
+      "updatedAt": 1784023366058,
       "trackingUrl": "",
       "track17Registered": true
     },
@@ -264,11 +271,18 @@
           "messageId": "<202607061543.28054300495@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-06T17:43:50.000+02:00"
+        },
+        {
+          "type": "day0",
+          "to": "vpshannon71@gmail.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1784023366058,
+          "messageId": "<202607141002.11368880851@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1783352616728,
-      "updatedAt": 1784023363748,
+      "updatedAt": 1784023366058,
       "staleAlertDays": 7,
       "staleAlertSince": 1783352616728,
       "track17Registered": true
