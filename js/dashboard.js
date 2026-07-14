@@ -182,12 +182,19 @@ function _countryQueueFlag(country){
   const inQueue = (rschCfg.queue||[]).includes(country);
   const { done, total } = _countryResearchProgress(country);
   const allDone = inQueue && total > 0 && done >= total;
-  const icon  = !inQueue ? '⚪' : (allDone ? '🟢' : '🟡');
+  // Un paese già completato in passato (completedCountries) che si ritrova di nuovo
+  // con contatti non analizzati (es. nuove anagrafiche importate) torna 🔵 invece di 🟡:
+  // segnala che va ricontrollato con priorità, non che è "in coda dall'inizio" come un 🟡 normale.
+  const wasCompleted = (rschCfg.completedCountries||[]).includes(country);
+  const regressed = inQueue && !allDone && wasCompleted;
+  const icon  = !inQueue ? '⚪' : (allDone ? '🟢' : (regressed ? '🔵' : '🟡'));
   const title = !inQueue
     ? 'Aggiungi alla coda di ricerca AI automatica'
     : allDone
       ? `Ricerca completata (${done}/${total}) — clic per togliere dalla coda`
-      : `In coda di ricerca AI — ${done}/${total} analizzati — clic per togliere dalla coda`;
+      : regressed
+        ? `Nuove anagrafiche da controllare (${done}/${total}) dopo un paese già completato — verranno analizzate con priorità nella prossima ricerca automatica`
+        : `In coda di ricerca AI — ${done}/${total} analizzati — clic per togliere dalla coda`;
   return `<button class="btn" style="font-size:13px;padding:2px 6px;flex-shrink:0;margin-left:4px;background:none;border:none;cursor:pointer"
     onclick="event.stopPropagation();toggleResearchQueue('${esc(country)}',this)" title="${esc(title)}">${icon}</button>`;
 }
@@ -223,6 +230,7 @@ async function loadResearchConfigFromGH(){
     catch(e){ jsonStr=atob(raw); }
     rschCfg=JSON.parse(jsonStr);
     if(!Array.isArray(rschCfg.queue)) rschCfg.queue=[];
+    if(!Array.isArray(rschCfg.completedCountries)) rschCfg.completedCountries=[];
     renderResearchBanner();
   }catch(e){ console.warn('loadResearchConfigFromGH:',e); }
 }
@@ -258,8 +266,12 @@ function renderResearchBanner(){
     </div>`;
     return;
   }
+  // Stesso ordine di priorità usato da scripts/research_ai.py: i paesi 🔵 (già completati
+  // in passato, ora con nuove anagrafiche da controllare) passano davanti al resto della coda FIFO.
+  const completedSet = new Set(rschCfg.completedCountries||[]);
+  const priorityOrder = [...queue.filter(c=>completedSet.has(c)), ...queue.filter(c=>!completedSet.has(c))];
   let active=null, queuedAfter=0;
-  for(const country of queue){
+  for(const country of priorityOrder){
     const {done,total}=_countryResearchProgress(country);
     if(done<total){
       if(!active) active={country,done,total};

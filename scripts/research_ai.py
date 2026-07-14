@@ -34,7 +34,7 @@ CONFIG_PATH    = 'data/research-config.json'
 CONTACTS_PATH  = 'data/contatti.json'
 OVERRIDES_PATH = 'data/contatti-overrides.json'
 
-DEFAULT_CONFIG = {'queue': [], 'dailyLimit': 150}
+DEFAULT_CONFIG = {'queue': [], 'dailyLimit': 150, 'completedCountries': []}
 
 DIGEST_RECIPIENT = 'luca@ilciliegio.com'
 SENDER_NAME  = 'Il Ciliegio — Azienda Agricola'
@@ -225,10 +225,31 @@ def queue_progress(queue, by_country, overrides):
     return rows
 
 
+def sync_completed_countries(queue, by_country, overrides, completed_countries):
+    """Aggiunge a completed_countries ogni paese in coda già interamente analizzato.
+
+    Serve sia a "seminare" il set la prima volta che questa funzione esiste (paesi già
+    verdi da prima), sia a registrare i completamenti di oggi — così, se in futuro
+    arrivano nuove anagrafiche per quel paese, il CRM lo segnala con la priorità 🔵
+    invece di trattarlo come un normale 🟡 mai completato.
+    """
+    changed = False
+    for country in queue:
+        contacts = by_country.get(country, [])
+        if not contacts:
+            continue
+        if all((overrides.get(c['id']) or {}).get('research') for c in contacts):
+            if country not in completed_countries:
+                completed_countries.add(country)
+                changed = True
+    return changed
+
+
 # ── Email di resoconto ────────────────────────────────────────────────────────
 
-def send_report(subject_suffix, headline, stats_rows, queue_rows, active_countries=None):
+def send_report(subject_suffix, headline, stats_rows, queue_rows, active_countries=None, completed_countries=None):
     active_countries = active_countries or set()
+    completed_countries = completed_countries or set()
     now_str = datetime.now().strftime('%d/%m/%Y %H:%M')
 
     def _stats_table(rows):
@@ -247,7 +268,12 @@ def send_report(subject_suffix, headline, stats_rows, queue_rows, active_countri
         items = []
         for country, done, total in rows:
             pct = round(done / total * 100) if total else 0
-            badge = '🟡' if done < total else '🟢'
+            if done >= total:
+                badge = '🟢'
+            elif country in completed_countries:
+                badge = '🔵'  # già completato in passato, nuove anagrafiche da controllare con priorità
+            else:
+                badge = '🟡'
             active = ' <span style="color:' + ACCENT + ';font-weight:bold">← in lavorazione</span>' if country in active_countries else ''
             items.append(
                 f'<li style="padding:3px 0;color:#333;font-size:14px">{badge} <b>{html.escape(country)}</b> — {done} / {total} analizzati ({pct}%){active}</li>'
@@ -309,11 +335,20 @@ def send_report(subject_suffix, headline, stats_rows, queue_rows, active_countri
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
-    config, _ = gh_get(CONFIG_PATH)
+    config, config_sha = gh_get(CONFIG_PATH)
     if config is None:
         config = DEFAULT_CONFIG
     queue       = config.get('queue') or []
     daily_limit = config.get('dailyLimit') or DEFAULT_CONFIG['dailyLimit']
+    completed_countries = set(config.get('completedCountries') or [])
+
+    def persist_config_if_changed():
+        new_list = sorted(completed_countries)
+        if new_list == sorted(config.get('completedCountries') or []):
+            return
+        config['completedCountries'] = new_list
+        nonlocal config_sha
+        config_sha = gh_put(CONFIG_PATH, config, config_sha, 'Aggiorna paesi completati — ricerca AI')
 
     if not queue:
         print('Coda vuota — nessun paese selezionato per la ricerca automatica')
@@ -336,12 +371,23 @@ def main():
     for c in contacts:
         by_country.setdefault(c.get('country', ''), []).append(c)
 
-    # Costruisce il piano di lavoro scorrendo la coda in ordine FIFO finché
+    # Seed/aggiorna il set dei paesi "mai completati": serve a distinguere, nel CRM,
+    # un paese 🔵 (già coperto al 100% in passato, ora con nuove anagrafiche da
+    # controllare) da uno 🟡 (mai completato). Va fatto PRIMA di costruire il piano,
+    # così i paesi 🔵 possono avere priorità già in questa run.
+    sync_completed_countries(queue, by_country, overrides, completed_countries)
+
+    # Priorità: i paesi già completati in passato (🔵, nuove anagrafiche da ricontrollare)
+    # passano davanti al resto della coda FIFO invariata.
+    priority_order = [c for c in queue if c in completed_countries] + \
+                      [c for c in queue if c not in completed_countries]
+
+    # Costruisce il piano di lavoro scorrendo la coda (in ordine di priorità) finché
     # non si raggiunge la quota giornaliera (un paese esaurito passa al successivo)
     plan           = []  # [(country, [contatti]), ...]
     pending_totals = {}  # country -> totale contatti pendenti prima di questa run
     remaining_budget = daily_limit
-    for country in queue:
+    for country in priority_order:
         country_contacts = by_country.get(country, [])
         pending = [c for c in country_contacts if not (overrides.get(c['id']) or {}).get('research')]
         if not pending:
@@ -355,11 +401,12 @@ def main():
 
     if not plan:
         print('Tutti i paesi in coda sono già completamente analizzati')
+        persist_config_if_changed()
         rows = queue_progress(queue, by_country, overrides)
         send_report(
             'coda completata',
             '✅ Tutti i paesi in coda sono completamente analizzati. Seleziona altri paesi nella pagina Importatori per avviare nuove ricerche.',
-            [], rows
+            [], rows, completed_countries=completed_countries
         )
         return
 
@@ -406,6 +453,11 @@ def main():
     gh_put(OVERRIDES_PATH, overrides, overrides_sha, f'Ricerca AI — {countries_label} ({analyzed} analizzati)')
     print(f'✓ {analyzed} risultati salvati in {OVERRIDES_PATH} ({errors} errori)')
 
+    # Registra i completamenti di oggi (paesi che hanno esaurito i pendenti in questa run)
+    # nel set persistente, così eventuali nuove anagrafiche future li segnaleranno 🔵.
+    sync_completed_countries(queue, by_country, overrides, completed_countries)
+    persist_config_if_changed()
+
     headline_lines = []
     for country, took in analyzed_by_country.items():
         country_remaining = pending_totals[country] - took
@@ -431,7 +483,7 @@ def main():
         ('⚠️ Errori',                     errors),
     ]
     subject_suffix = countries_label if len(plan) <= 2 else f'{len(plan)} paesi'
-    send_report(subject_suffix, headline, stats_rows, rows, active_countries=set(analyzed_by_country))
+    send_report(subject_suffix, headline, stats_rows, rows, active_countries=set(analyzed_by_country), completed_countries=completed_countries)
 
 
 if __name__ == '__main__':
