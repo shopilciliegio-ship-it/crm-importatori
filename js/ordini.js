@@ -16,6 +16,16 @@ const ORD_STATUS = {
   annullato:    {l:'Annullato',        c:'var(--gray-bg)',   t:'var(--gray-tx)'},
 };
 
+// Ordine "fase spedizione" per il filtro Ordina per (vs il default per data ordine):
+// preparazione → transito → dogana → problema → in consegna → mancata consegna → consegnato.
+// ricevuto/spedito/annullato non specificati esplicitamente dall'utente — inseriti nella
+// posizione più logica (ricevuto prima di tutto, spedito appena prima di in_transito,
+// annullato in fondo come stato terminale fuori sequenza).
+const ORD_PHASE_RANK = {
+  ricevuto:0, preparazione:1, spedito:2, in_transito:3, dogana:4,
+  problema:5, in_consegna:6, consegna_fallita:7, consegnato:8, annullato:9,
+};
+
 /* ─ Paese di destinazione: dedotto dall'indirizzo, o impostato a mano ─ */
 // Gli ordini non hanno un campo "paese" strutturato — solo shippingAddress (testo
 // libero). Fieramente/Shop di solito riportano stato/paese per esteso; MBE spesso
@@ -415,8 +425,14 @@ function renderOrdini(){
 
   const sq = (document.getElementById('ord-sq')?.value||'').toLowerCase();
   const sf = document.getElementById('ord-ss')?.value||'';
+  const sortMode = document.getElementById('ord-sort')?.value||'date';
 
-  let orders=[...dbO.orders].sort((a,b)=>b.orderDate-a.orderDate);
+  let orders=[...dbO.orders].sort(sortMode==='phase'
+    ? (a,b)=>{
+        const ra=ORD_PHASE_RANK[a.status]??99, rb=ORD_PHASE_RANK[b.status]??99;
+        return ra!==rb ? ra-rb : b.orderDate-a.orderDate;
+      }
+    : (a,b)=>b.orderDate-a.orderDate);
   if(sq) orders=orders.filter(o=>
     (o.customerName||'').toLowerCase().includes(sq)||
     (o.trackingNumber||'').toLowerCase().includes(sq)||

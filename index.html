@@ -170,7 +170,7 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
       <button class="layer-btn" id="layer-btn-cli" onclick="switchLayer('clienti')">👤 Clienti Privati</button>
       <button class="layer-btn" id="layer-btn-ord" onclick="switchLayer('ordini')">📦 Ordini</button>
     </div>
-    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.177</div>
+    <div style="font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;padding:4px 10px;background:var(--bg2);border-radius:20px;border:0.5px solid var(--brd)">V.178</div>
   </div>
   <div class="hdr-r">
     <div class="gh-pill"><div class="gh-dot" id="gh-dot"></div><span id="gh-lbl">GitHub</span></div>
@@ -233,6 +233,10 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
       <option value="consegnato">Consegnato</option>
       <option value="problema">Problema</option>
       <option value="annullato">Annullato</option>
+    </select>
+    <select id="ord-sort" onchange="renderOrdini()">
+      <option value="date">Ordina per: Data ordine</option>
+      <option value="phase">Ordina per: Fase spedizione</option>
     </select>
     <button class="btn bts" onclick="openAddOrdine()">+ Ordine manuale</button>
   </div>
@@ -447,7 +451,7 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
 <script src="js/brevo.js?v=171"></script>
 <script src="js/import.js?v=171"></script>
 <script src="js/dashboard.js?v=176"></script><script src="js/reminders.js?v=173"></script>
-<script src="js/ordini.js?v=177"></script>
+<script src="js/ordini.js?v=178"></script>
 <script src="js/init.js?v=171"></script>
 
 </body>
