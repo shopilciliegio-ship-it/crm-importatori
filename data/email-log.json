@@ -8,6 +8,24 @@
       "subject": "Shipping update — your order",
       "sentAt": 1783953906505,
       "messageId": "<202607131445.58392019507@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mrdcgxhvhpul",
+      "customerName": "SETH MORGAN",
+      "type": "day0",
+      "to": "michellehunsberger@verizon.net",
+      "subject": "Your wine is on its way! 🍷",
+      "sentAt": 1784023366058,
+      "messageId": "<202607141002.48560483363@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mr9e3pqw8pvq",
+      "customerName": "VAUGHN SHANNON",
+      "type": "day0",
+      "to": "vpshannon71@gmail.com",
+      "subject": "Your wine is on its way! 🍷",
+      "sentAt": 1784023366058,
+      "messageId": "<202607141002.11368880851@smtp-relay.mailin.fr>"
     }
   ]
 }
