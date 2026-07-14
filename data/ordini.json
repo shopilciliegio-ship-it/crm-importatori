@@ -29,10 +29,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "reillorr221@gmail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1784037303993,
+          "messageId": "<202607141355.22871072272@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1784037291832,
-      "updatedAt": 1784037291832
+      "updatedAt": 1784037303993
     },
     {
       "id": "ord_mrdcgxhvhpul",
