@@ -18,11 +18,11 @@ const ORD_STATUS = {
 
 // Ordine "fase spedizione" per il filtro Ordina per (vs il default per data ordine):
 // preparazione → transito → dogana → problema → in consegna → mancata consegna → consegnato.
-// ricevuto/spedito/annullato non specificati esplicitamente dall'utente — inseriti nella
-// posizione più logica (ricevuto prima di tutto, spedito appena prima di in_transito,
-// annullato in fondo come stato terminale fuori sequenza).
+// ricevuto/spedito esclusi apposta: non si verificano mai nella pipeline reale
+// (gli ordini partono già da "preparazione" in import_ordini.py, e "spedito" è
+// troppo transitorio per essere osservato tra un polling e l'altro).
 const ORD_PHASE_RANK = {
-  ricevuto:0, preparazione:1, spedito:2, in_transito:3, dogana:4,
+  preparazione:1, in_transito:3, dogana:4,
   problema:5, in_consegna:6, consegna_fallita:7, consegnato:8, annullato:9,
 };
 
