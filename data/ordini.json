@@ -3064,7 +3064,7 @@
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1783717798897,
+      "updatedAt": 1784120247077,
       "shippingType": "standard",
       "shipmentCode": "JENKINSF",
       "trackingUrl": "",
@@ -3073,7 +3073,8 @@
       "staleAlertSince": 1781989369539,
       "track17Registered": true,
       "deliveryFailureCount": 2,
-      "lastDeliveryFailureEventAt": "2026-06-09T11:05:36Z"
+      "lastDeliveryFailureEventAt": "2026-06-09T11:05:36Z",
+      "destCountry": "US"
     },
     {
       "id": "ord_mbe_IT3299-8V-00000069TF",
