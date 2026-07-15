@@ -203,7 +203,9 @@
       ],
       "notes": "",
       "createdAt": 1783506244430,
-      "updatedAt": 1783506257961
+      "updatedAt": 1784123549863,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1783506244430
     },
     {
       "id": "ord_mrarkjesrjkm",
