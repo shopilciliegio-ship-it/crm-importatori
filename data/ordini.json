@@ -1,6 +1,40 @@
 {
   "orders": [
     {
+      "id": "ord_mrns290cjx63",
+      "customerName": "LISA JONES",
+      "customerEmail": "ghjlmj@gmail.com",
+      "customerPhone": "+18322055451",
+      "amount": 255.81,
+      "currency": "EUR",
+      "orderDate": 1784212825000,
+      "emailSubject": "🍷 New Order — LISA JONES — 255.81 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "4427 TEXANA, 77523 BAY , TEXAS (CHAMBERS COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202607161440.27589712083@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1784222589468,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1784222589468,
+      "updatedAt": 1784222589468
+    },
+    {
       "id": "ord_mrks9ygcsxmy",
       "customerName": "SUSAN RUSCIANO",
       "customerEmail": "susanrusciano1960@yahoo.com",
@@ -5305,5 +5339,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1784041550508
+  "lastImportedAt": 1784222589468
 }
