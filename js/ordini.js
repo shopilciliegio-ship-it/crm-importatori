@@ -510,7 +510,7 @@ function openOrdineDetail(id){
       :'');
 
   const spedireproSearchBtn=o.trackingUrl?'':
-    `<button id="spedirepro-sync-btn" class="btn" style="font-size:12px;padding:4px 10px" onclick="triggerSpedireproSync()">🔄 Cerca su SpedirePro</button>`;
+    `<button class="btn" style="font-size:12px;padding:4px 10px" onclick="triggerGmailImport()" title="Avvia l'import completo (Gmail + tracking Fieramente/SpedirePro/17Track)">🔄 Cerca tracking (avvia import)</button>`;
 
   showModal(`
     <div class="mt">📦 ${esc(o.customerName)}${o.source==='shop'?' <span class="badge" style="background:var(--teal-bg);color:var(--teal-tx);font-size:11px;vertical-align:middle">🛒 Shop Online</span>':''}</div>

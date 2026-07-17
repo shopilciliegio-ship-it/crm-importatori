@@ -39,6 +39,14 @@ jobs:
           # FIERAMENTE_USER e FIERAMENTE_PASS opzionali — fallback hardcoded nello script
         run: python scripts/fetch_fieramente_tracking.py
 
+      - name: Cerca spedizioni SpedirePro
+        env:
+          SPEDIREPRO_EMAIL:    ${{ secrets.SPEDIREPRO_EMAIL }}
+          SPEDIREPRO_PASSWORD: ${{ secrets.SPEDIREPRO_PASSWORD }}
+          GH_TOKEN:            ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO:             ${{ github.repository }}
+        run: python scripts/fetch_spedirepro_shipments.py
+
       - name: Fetch tracking Spedire.com
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
