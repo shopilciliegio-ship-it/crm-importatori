@@ -29,10 +29,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "info@vierasbakery.net",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1784296071963,
+          "messageId": "<202607171347.96119006417@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1784296059758,
-      "updatedAt": 1784296059758
+      "updatedAt": 1784296071963
     },
     {
       "id": "ord_mrns290cjx63",
@@ -507,8 +515,8 @@
       ],
       "notes": "",
       "createdAt": 1783080712224,
-      "updatedAt": 1784041778633,
-      "staleAlertDays": 7,
+      "updatedAt": 1784296071963,
+      "staleAlertDays": 14,
       "staleAlertSince": 1783080712224,
       "trackingUrl": ""
     },
