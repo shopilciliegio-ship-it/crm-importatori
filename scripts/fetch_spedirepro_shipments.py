@@ -1,9 +1,10 @@
 """
 Fetch SpedirePro Shipments — Il Ciliegio CRM
-Login via Playwright (sessione cookie + CSRF, area privata spedirepro.com),
-recupera l'elenco spedizioni e le collega agli ordini CRM tramite il codice
-"Riferimento ordine di vendita" (COGNOME + INIZIALE NOME), impostato a mano
-dall'operatore in fase di creazione spedizione su SpedirePro.
+Login via requests puro (sessione cookie Laravel + CSRF, area privata
+spedirepro.com — nessun browser headless necessario), recupera l'elenco
+spedizioni e le collega agli ordini CRM tramite il codice "Riferimento
+ordine di vendita" (COGNOME + INIZIALE NOME), impostato a mano dall'operatore
+in fase di creazione spedizione su SpedirePro.
 
 Popola trackingUrl/carrier/status/shippingDate sull'ordine — non gestisce
 la lettera di vettura (non richiesta).
@@ -26,11 +27,13 @@ GH_TOKEN            = os.environ['GH_TOKEN']
 GH_REPO             = os.environ['GH_REPO']
 DATA_PATH           = 'data/ordini.json'
 
+LOGIN_PAGE_URL  = 'https://www.spedirepro.com/login'
+LOGIN_API_URL   = 'https://www.spedirepro.com/api/auth/login'
 SHIPMENTS_URL   = 'https://www.spedirepro.com/api/user/shipments'
 SHIPMENTS_LIMIT = 100
 MAX_PAGES       = 10
 
-_SCREENSHOT_DIR = '/tmp'
+_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36'
 
 # Stessa mappatura/rank di scripts/fetch_spedire_tracking.py — stessa piattaforma Alsendo
 STATUS_MAP = {
@@ -50,96 +53,85 @@ STATUS_RANK = {s: i for i, s in enumerate([
 TERMINAL_STATUSES = {'consegnato', 'annullato'}
 
 
-# ── Auth + fetch via Playwright (sessione cookie + CSRF) ─────────────────────
+# ── Auth + fetch via requests (sessione cookie Laravel + CSRF) ───────────────
 
-def _debug_page(page, label: str) -> None:
-    try:
-        page.screenshot(path=f'{_SCREENSHOT_DIR}/spedirepro_{label}.png')
-    except Exception:
-        pass
-    print(f'  [{label}] URL: {page.url}')
+def _xsrf_header(session: requests.Session) -> str:
+    cookie = session.cookies.get('XSRF-TOKEN')
+    if not cookie:
+        raise RuntimeError('Cookie XSRF-TOKEN non trovato — la pagina SpedirePro potrebbe essere cambiata.')
+    return urllib.parse.unquote(cookie)
+
+
+def login() -> requests.Session:
+    session = requests.Session()
+    session.headers.update({'User-Agent': _UA})
+
+    r = session.get(LOGIN_PAGE_URL, timeout=20)
+    r.raise_for_status()
+
+    m = re.search(r'<meta\s+name="csrf-token"\s+content="([^"]+)"', r.text)
+    if not m:
+        raise RuntimeError(
+            'Meta tag csrf-token non trovato nella pagina di login — '
+            'SpedirePro potrebbe aver cambiato struttura.'
+        )
+    csrf_token = m.group(1)
+
+    headers = {
+        'accept':           'application/json, text/plain, */*',
+        'content-type':     'application/json',
+        'x-csrf-token':     csrf_token,
+        'x-xsrf-token':     _xsrf_header(session),
+        'x-requested-with': 'XMLHttpRequest',
+        'referer':          LOGIN_PAGE_URL,
+        'origin':           'https://www.spedirepro.com',
+    }
+
+    r = session.post(
+        LOGIN_API_URL, json={'email': SPEDIREPRO_EMAIL, 'password': SPEDIREPRO_PASSWORD},
+        headers=headers, timeout=20,
+    )
+    if r.status_code != 200:
+        raise RuntimeError(
+            f'Login SpedirePro fallito — HTTP {r.status_code}: {r.text[:300]}\n'
+            'Verificare SPEDIREPRO_EMAIL/SPEDIREPRO_PASSWORD nei GitHub Secrets.'
+        )
+
+    print('  Login SpedirePro: OK')
+    return session
 
 
 def fetch_shipments() -> list[dict]:
-    from playwright.sync_api import sync_playwright
+    session = login()
 
-    with sync_playwright() as pw:
-        browser = pw.chromium.launch(headless=True)
-        context = browser.new_context()
-        page    = context.new_page()
+    headers = {
+        'accept':           'application/json, text/plain, */*',
+        'content-type':     'application/json',
+        'x-xsrf-token':     _xsrf_header(session),
+        'x-requested-with': 'XMLHttpRequest',
+        'referer':          'https://www.spedirepro.com/le-tue-spedizioni',
+        'origin':           'https://www.spedirepro.com',
+    }
 
-        print('  Apertura area privata SpedirePro...')
-        page.goto('https://www.spedirepro.com/le-tue-spedizioni', timeout=30_000)
-
-        try:
-            page.wait_for_selector(
-                'input[type="email"], input[name="email"]', timeout=15_000
-            )
-        except Exception:
-            _debug_page(page, '01_no_login_form')
-            raise RuntimeError(
-                'Form di login non trovato su SpedirePro — la pagina potrebbe essere '
-                'cambiata, controllare screenshot 01_no_login_form.png.'
-            )
-
-        page.fill('input[type="email"], input[name="email"]', SPEDIREPRO_EMAIL)
-        page.fill('input[type="password"], input[name="password"]', SPEDIREPRO_PASSWORD)
-        page.click('button[type="submit"]')
-
-        try:
-            page.wait_for_load_state('networkidle', timeout=20_000)
-        except Exception:
-            pass
-
-        _debug_page(page, '02_after_login')
-
-        if '/le-tue-spedizioni' not in page.url:
-            try:
-                page.wait_for_url('**/le-tue-spedizioni**', timeout=15_000)
-            except Exception:
-                _debug_page(page, '03_login_failed')
-                raise RuntimeError(
-                    'Login SpedirePro non riuscito — verificare SPEDIREPRO_EMAIL/'
-                    'SPEDIREPRO_PASSWORD nei GitHub Secrets. Screenshot: 03_login_failed.png.'
-                )
-
-        xsrf_cookie = next(
-            (c['value'] for c in context.cookies() if c['name'] == 'XSRF-TOKEN'), None
-        )
-        if not xsrf_cookie:
-            raise RuntimeError('Login SpedirePro OK ma cookie XSRF-TOKEN non trovato.')
-        xsrf_token = urllib.parse.unquote(xsrf_cookie)
-
-        headers = {
-            'accept':           'application/json, text/plain, */*',
-            'content-type':     'application/json',
-            'x-xsrf-token':     xsrf_token,
-            'x-requested-with': 'XMLHttpRequest',
+    all_shipments: list[dict] = []
+    for pg in range(1, MAX_PAGES + 1):
+        payload = {
+            'query':     {'is_returning': False, 'archived': False},
+            'limit':     SHIPMENTS_LIMIT,
+            'ascending': 0,
+            'page':      pg,
+            'byColumn':  1,
         }
-
-        all_shipments: list[dict] = []
-        for pg in range(1, MAX_PAGES + 1):
-            payload = {
-                'query':     {'is_returning': False, 'archived': False},
-                'limit':     SHIPMENTS_LIMIT,
-                'ascending': 0,
-                'page':      pg,
-                'byColumn':  1,
-            }
-            resp = context.request.post(SHIPMENTS_URL, headers=headers, data=payload)
-            if not resp.ok:
-                print(f'  Pagina {pg}: risposta {resp.status}, mi fermo.')
-                break
-            data  = resp.json()
-            items = data.get('data') or data.get('shipments') or []
-            if isinstance(data, list):
-                items = data
-            all_shipments.extend(items)
-            print(f'  Pagina {pg}: {len(items)} spedizioni')
-            if len(items) < SHIPMENTS_LIMIT:
-                break
-
-        browser.close()
+        r = session.post(SHIPMENTS_URL, json=payload, headers=headers, timeout=20)
+        if not r.ok:
+            print(f'  Pagina {pg}: risposta HTTP {r.status_code}, mi fermo.')
+            break
+        data  = r.json()
+        items = data.get('data') or data.get('shipments') or (data if isinstance(data, list) else [])
+        all_shipments.extend(items)
+        print(f'  Pagina {pg}: {len(items)} spedizioni')
+        if len(items) < SHIPMENTS_LIMIT:
+            break
 
     print(f'Totale spedizioni SpedirePro: {len(all_shipments)}')
     return all_shipments
