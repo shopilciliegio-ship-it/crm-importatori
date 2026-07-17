@@ -542,13 +542,13 @@ function openSettings(){
     </p>
     <div class="fg2" style="margin-bottom:1.25rem">
       <div class="fg fgf"><label>Personal Access Token</label>
-        <input id="gt" type="password" placeholder="ghp_xxxx…" value="${esc(ghs.token||'')}">
+        <input id="gt" type="text" autocomplete="off" style="-webkit-text-security:disc;text-security:disc" placeholder="ghp_xxxx…" value="${esc(ghs.token||'')}">
       </div>
       <div class="fg"><label>Owner</label>
-        <input id="go" placeholder="shopilciliegio-ship-it" value="${esc(ghs.owner||'shopilciliegio-ship-it')}">
+        <input id="go" autocomplete="off" placeholder="shopilciliegio-ship-it" value="${esc(ghs.owner||'shopilciliegio-ship-it')}">
       </div>
       <div class="fg"><label>Repository</label>
-        <input id="gr" placeholder="crm-importatori" value="${esc(ghs.repo||'crm-importatori')}">
+        <input id="gr" autocomplete="off" placeholder="crm-importatori" value="${esc(ghs.repo||'crm-importatori')}">
       </div>
     </div>
 
@@ -562,7 +562,7 @@ function openSettings(){
     </p>
     <div class="fg2">
       <div class="fg fgf"><label>API Key Brevo</label>
-        <input id="bk" type="password" placeholder="xkeysib-…" value="${esc(brv.apiKey||'')}">
+        <input id="bk" type="text" autocomplete="off" style="-webkit-text-security:disc;text-security:disc" placeholder="xkeysib-…" value="${esc(brv.apiKey||'')}">
       </div>
       <div class="fg"><label>Email mittente verificata</label>
         <input id="be" placeholder="luca@sienawine.it" value="${esc(brv.senderEmail||'luca@sienawine.it')}">
