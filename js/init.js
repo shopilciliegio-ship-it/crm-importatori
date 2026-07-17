@@ -60,6 +60,11 @@ async function switchLayer(newLayer){
 /* ── INIT: al caricamento pagina legge da GitHub ── */
 
 async function init(){
+  // Chiede al browser di non evictare mai i dati di questo sito per liberare
+  // spazio — altrimenti il token GitHub salvato in localStorage può sparire da
+  // solo sotto pressione di storage. Richiesta silenziosa, il browser decide.
+  if(navigator.storage&&navigator.storage.persist) navigator.storage.persist().catch(()=>{});
+
   // Chiavi con prefisso per-progetto: evita collisioni con altri tool sullo stesso dominio github.io (localStorage condiviso per origine)
   try{
     let r=localStorage.getItem('ghcfg_crm-importatori');
