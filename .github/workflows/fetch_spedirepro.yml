@@ -1,0 +1,44 @@
+name: Fetch SpedirePro Shipments
+
+on:
+  schedule:
+    - cron: '0 */4 * * *'  # ogni 4 ore
+  workflow_dispatch:        # trigger manuale dal CRM o da GitHub UI
+
+permissions:
+  contents: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  fetch-spedirepro:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Installa dipendenze
+        run: pip install requests playwright
+
+      - name: Installa Playwright browser
+        run: playwright install --with-deps chromium
+
+      - name: Cerca spedizioni SpedirePro
+        env:
+          SPEDIREPRO_EMAIL:    ${{ secrets.SPEDIREPRO_EMAIL }}
+          SPEDIREPRO_PASSWORD: ${{ secrets.SPEDIREPRO_PASSWORD }}
+          GH_TOKEN:            ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO:             ${{ github.repository }}
+        run: python scripts/fetch_spedirepro_shipments.py
+
+      - name: Salva screenshot debug SpedirePro
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: spedirepro-debug-screenshots
+          path: /tmp/spedirepro_*.png
+          if-no-files-found: ignore

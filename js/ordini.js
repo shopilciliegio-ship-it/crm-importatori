@@ -509,6 +509,9 @@ function openOrdineDetail(id){
       ?`<a href="https://t.17track.net/en#nums=${encodeURIComponent(o.trackingNumber)}" target="_blank" style="font-size:12px">🔗 17Track</a>`
       :'');
 
+  const spedireproSearchBtn=o.trackingUrl?'':
+    `<button id="spedirepro-sync-btn" class="btn" style="font-size:12px;padding:4px 10px" onclick="triggerSpedireproSync()">🔄 Cerca su SpedirePro</button>`;
+
   showModal(`
     <div class="mt">📦 ${esc(o.customerName)}${o.source==='shop'?' <span class="badge" style="background:var(--teal-bg);color:var(--teal-tx);font-size:11px;vertical-align:middle">🛒 Shop Online</span>':''}</div>
 
@@ -520,7 +523,8 @@ function openOrdineDetail(id){
     ${o.carrier?dr('Corriere', esc(o.carrier)):''}
     ${dr('Email cliente', o.customerEmail?`<a href="mailto:${esc(o.customerEmail)}">${esc(o.customerEmail)}</a>`:'<span style="color:var(--amber)">⚠ mancante</span>')}
     ${o.customerPhone?dr('Telefono', `<a href="tel:${esc(o.customerPhone)}">${esc(o.customerPhone)}</a>`):''}
-    ${o.trackingNumber?dr('Tracking', `<span style="font-family:monospace">${esc(o.trackingNumber)}</span> ${trackingLink}`):''}
+    ${o.trackingNumber?dr('Tracking', `<span style="font-family:monospace">${esc(o.trackingNumber)}</span> ${trackingLink}`):(trackingLink?dr('Tracking', trackingLink):'')}
+    ${spedireproSearchBtn?dr('SpedirePro', spedireproSearchBtn):''}
     ${(()=>{const stl={standard:'Standard',express:'Express'};const v=o.shippingType?`<span class="badge" style="background:var(--blue-bg);color:var(--blue-tx)">${stl[o.shippingType]||o.shippingType}</span>`:'<span style="color:var(--amber);font-size:12px">⚠ tipo non specificato</span>';return dr('Tipologia spedizione',v);})()}
     ${o.shippingDate?dr('Data spedizione', new Date(o.shippingDate).toLocaleDateString('it-IT',{day:'numeric',month:'long',year:'numeric'})):''}
     ${(()=>{const dc=orderDestCountry(o);const label=dc?(ORDER_COUNTRIES.find(c=>c.iso2===dc)?.label||dc):'';const v=dc?`<span class="badge" style="background:var(--blue-bg);color:var(--blue-tx)">${esc(dc)}</span> ${esc(label)}${!o.destCountry?' <span style="color:var(--text3);font-size:11px">(dedotto dall\'indirizzo)</span>':''}`:'<span style="color:var(--amber);font-size:12px">⚠ non rilevabile dall\'indirizzo — impostalo qui sotto</span>';return dr('Paese di destinazione',v);})()}
