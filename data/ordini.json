@@ -1,6 +1,40 @@
 {
   "orders": [
     {
+      "id": "ord_mrozsz1q6qxz",
+      "customerName": "CHRISTINA VIERA",
+      "customerEmail": "info@vierasbakery.net",
+      "customerPhone": "+15099474178",
+      "amount": 158.6,
+      "currency": "EUR",
+      "orderDate": 1784286088000,
+      "emailSubject": "🍷 New Order — CHRISTINA VIERA — 158.60 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "631 S TAFT ST, 99336 KENNEWICK, WASHINGTON (BENTON COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202607171101.50043336108@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1784296059758,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1784296059758,
+      "updatedAt": 1784296059758
+    },
+    {
       "id": "ord_mrns290cjx63",
       "customerName": "LISA JONES",
       "customerEmail": "ghjlmj@gmail.com",
@@ -5347,5 +5381,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1784222589468
+  "lastImportedAt": 1784296059758
 }
