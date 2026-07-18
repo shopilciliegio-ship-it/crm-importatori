@@ -750,11 +750,18 @@
           "messageId": "<202607120324.86233338008@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-12T05:24:35.000+02:00"
+        },
+        {
+          "type": "in_consegna",
+          "to": "hsteier1@gmail.com",
+          "subject": "Your wine is out for delivery! 🍷",
+          "sentAt": 1784381125711,
+          "messageId": "<202607181325.43329795196@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1782484474304,
-      "updatedAt": 1784381122574,
+      "updatedAt": 1784381125711,
       "staleAlertDays": 7,
       "staleAlertSince": 1783075351578,
       "track17Registered": true
