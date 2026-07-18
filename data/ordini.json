@@ -1,6 +1,74 @@
 {
   "orders": [
     {
+      "id": "ord_mrq6bg2n6y48",
+      "customerName": "SARAH SALA",
+      "customerEmail": "rowerpoet@gmail.com",
+      "customerPhone": "+15174031957",
+      "amount": 317.0,
+      "currency": "EUR",
+      "orderDate": 1784362959000,
+      "emailSubject": "🍷 New Order — SARAH SALA — 317.00 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "173 WARWICK ST, 11207 NEW YORK, NEW YORK (KINGS COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202607180822.28624585123@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1784367465503,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1784367465503,
+      "updatedAt": 1784367465503
+    },
+    {
+      "id": "ord_mrq6bg2nwwc5",
+      "customerName": "STAN SALA",
+      "customerEmail": "stansala@gmail.com",
+      "customerPhone": "+15174036333",
+      "amount": 515.0,
+      "currency": "EUR",
+      "orderDate": 1784362646000,
+      "emailSubject": "🍷 New Order — STAN SALA — 515.00 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "10025 EMERALD DR, 49230 BROOKLYN, MICHIGAN (LENAWEE COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202607180817.28074095588@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1784367465503,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1784367465503,
+      "updatedAt": 1784367465503
+    },
+    {
       "id": "ord_mrozsz1q6qxz",
       "customerName": "CHRISTINA VIERA",
       "customerEmail": "info@vierasbakery.net",
@@ -5391,5 +5459,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1784296059758
+  "lastImportedAt": 1784367465503
 }
