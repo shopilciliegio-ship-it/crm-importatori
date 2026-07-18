@@ -80,6 +80,15 @@
       "subject": "Thank you for your order! 🍷",
       "sentAt": 1784367495410,
       "messageId": "<202607180938.55786156536@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mqv18erkvrev",
+      "customerName": "HARRISON STEIER",
+      "type": "in_consegna",
+      "to": "hsteier1@gmail.com",
+      "subject": "Your wine is out for delivery! 🍷",
+      "sentAt": 1784381125711,
+      "messageId": "<202607181325.43329795196@smtp-relay.mailin.fr>"
     }
   ]
 }
