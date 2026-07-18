@@ -700,7 +700,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1783075351578,
-      "status": "dogana",
+      "status": "in_consegna",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -716,6 +716,11 @@
           "status": "dogana",
           "date": 1783826669863,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "in_consegna",
+          "date": 1784381122574,
+          "note": "Auto 17Track (era: dogana): Chelmsford, MA, United States — Out for Delivery, Out For Delivery Today"
         }
       ],
       "emailsSent": [
@@ -749,7 +754,7 @@
       ],
       "notes": "",
       "createdAt": 1782484474304,
-      "updatedAt": 1783826673129,
+      "updatedAt": 1784381122574,
       "staleAlertDays": 7,
       "staleAlertSince": 1783075351578,
       "track17Registered": true
