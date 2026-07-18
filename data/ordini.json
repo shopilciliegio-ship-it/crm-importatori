@@ -29,10 +29,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "rowerpoet@gmail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1784367495410,
+          "messageId": "<202607180938.75924460462@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1784367465503,
-      "updatedAt": 1784367465503
+      "updatedAt": 1784367495410
     },
     {
       "id": "ord_mrq6bg2nwwc5",
@@ -63,10 +71,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "stansala@gmail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1784367495410,
+          "messageId": "<202607180938.55786156536@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1784367465503,
-      "updatedAt": 1784367465503
+      "updatedAt": 1784367495410
     },
     {
       "id": "ord_mrozsz1q6qxz",
