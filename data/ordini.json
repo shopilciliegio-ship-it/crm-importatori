@@ -517,7 +517,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1784023362268,
-      "status": "in_transito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -528,6 +528,11 @@
           "status": "in_transito",
           "date": 1784023362268,
           "note": "Auto Fieramente (era: preparazione)"
+        },
+        {
+          "status": "dogana",
+          "date": 1784431222135,
+          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -552,7 +557,7 @@
       ],
       "notes": "",
       "createdAt": 1783352616728,
-      "updatedAt": 1784023366058,
+      "updatedAt": 1784431222135,
       "staleAlertDays": 7,
       "staleAlertSince": 1783352616728,
       "track17Registered": true
@@ -700,7 +705,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1783075351578,
-      "status": "in_consegna",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -721,6 +726,11 @@
           "status": "in_consegna",
           "date": 1784381122574,
           "note": "Auto 17Track (era: dogana): Chelmsford, MA, United States — Out for Delivery, Out For Delivery Today"
+        },
+        {
+          "status": "consegnato",
+          "date": 1784431222135,
+          "note": "Auto Fieramente (era: in_consegna)"
         }
       ],
       "emailsSent": [
@@ -761,7 +771,7 @@
       ],
       "notes": "",
       "createdAt": 1782484474304,
-      "updatedAt": 1784381125711,
+      "updatedAt": 1784431222135,
       "staleAlertDays": 7,
       "staleAlertSince": 1783075351578,
       "track17Registered": true
