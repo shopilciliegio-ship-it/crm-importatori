@@ -89,6 +89,24 @@
       "subject": "Your wine is out for delivery! 🍷",
       "sentAt": 1784381125711,
       "messageId": "<202607181325.43329795196@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mr9e3pqw8pvq",
+      "customerName": "VAUGHN SHANNON",
+      "type": "dogana",
+      "to": "vpshannon71@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1784431226727,
+      "messageId": "<202607190320.43275760169@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mqv18erkvrev",
+      "customerName": "HARRISON STEIER",
+      "type": "consegnato",
+      "to": "hsteier1@gmail.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1784431226727,
+      "messageId": "<202607190320.90512398292@smtp-relay.mailin.fr>"
     }
   ]
 }
