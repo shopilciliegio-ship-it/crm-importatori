@@ -553,11 +553,18 @@
           "messageId": "<202607141002.11368880851@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-14T12:02:49.000+02:00"
+        },
+        {
+          "type": "dogana",
+          "to": "vpshannon71@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1784431226727,
+          "messageId": "<202607190320.43275760169@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1783352616728,
-      "updatedAt": 1784431222135,
+      "updatedAt": 1784431226727,
       "staleAlertDays": 7,
       "staleAlertSince": 1783352616728,
       "track17Registered": true
@@ -767,11 +774,18 @@
           "subject": "Your wine is out for delivery! 🍷",
           "sentAt": 1784381125711,
           "messageId": "<202607181325.43329795196@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegnato",
+          "to": "hsteier1@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1784431226727,
+          "messageId": "<202607190320.90512398292@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1782484474304,
-      "updatedAt": 1784431222135,
+      "updatedAt": 1784431226727,
       "staleAlertDays": 7,
       "staleAlertSince": 1783075351578,
       "track17Registered": true
