@@ -211,11 +211,18 @@
           "messageId": "<202607141506.47929727863@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-14T17:06:10.000+02:00"
+        },
+        {
+          "type": "day0",
+          "to": "susanrusciano1960@yahoo.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1784545038127,
+          "messageId": "<202607201057.44102232097@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1784041550508,
-      "updatedAt": 1784545035537,
+      "updatedAt": 1784545038127,
       "track17Registered": true
     },
     {
@@ -261,11 +268,18 @@
           "messageId": "<202607141355.22871072272@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-14T15:55:06.000+02:00"
+        },
+        {
+          "type": "day0",
+          "to": "reillorr221@gmail.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1784545038127,
+          "messageId": "<202607201057.14864948964@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1784037291832,
-      "updatedAt": 1784545035537,
+      "updatedAt": 1784545038127,
       "trackingUrl": "",
       "destCountry": "US",
       "track17Registered": true
