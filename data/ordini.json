@@ -177,24 +177,29 @@
       "currency": "EUR",
       "orderDate": 1784038386000,
       "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio SUSAN RUSCIANO",
-      "shipmentCode": "",
+      "shipmentCode": "RUSCIANOS",
       "shippingAddress": "14 Dogwood Loop, 12721 Bloomingburg (NY), United States",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<DB9PR08MB668298FD870AD519C01BF439BFF92@DB9PR08MB6682.eurprd08.prod.outlook.com>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A895066324",
       "carrier": "- U.S.A. Wine Corriere Std",
       "source": "shop",
       "language": "en",
       "orderNumber": "",
       "paymentType": "Carte Di Credito/Bancomat",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1784545031732,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1784041550508,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1784545031732,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -210,7 +215,7 @@
       ],
       "notes": "",
       "createdAt": 1784041550508,
-      "updatedAt": 1784041565664
+      "updatedAt": 1784545031732
     },
     {
       "id": "ord_mrkpqofs6q8x",
@@ -221,24 +226,29 @@
       "currency": "EUR",
       "orderDate": 1784027657000,
       "emailSubject": "🍷 New Order — BRANDON REILLO — 107.90 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "REILLOB",
       "shippingAddress": "37 ADRIANNE LANE , 10303 STATEN ISLAND , NEW YO RK (RICHMOND)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202607141114.40180099665@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A897785311",
       "carrier": "MBE",
       "source": "fieramente",
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1784545031732,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1784037291832,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1784545031732,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -254,7 +264,7 @@
       ],
       "notes": "",
       "createdAt": 1784037291832,
-      "updatedAt": 1784045374322,
+      "updatedAt": 1784545031732,
       "trackingUrl": "",
       "destCountry": "US"
     },
