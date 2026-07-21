@@ -362,10 +362,12 @@
       ],
       "notes": "",
       "createdAt": 1783591738771,
-      "updatedAt": 1784055839010,
+      "updatedAt": 1784629689504,
       "trackingUrl": "",
       "track17Registered": true,
-      "destCountry": "US"
+      "destCountry": "US",
+      "staleAlertDays": 7,
+      "staleAlertSince": 1784023362268
     },
     {
       "id": "ord_mrbxkhn28fx7",
