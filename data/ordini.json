@@ -5,7 +5,7 @@
       "customerName": "SARAH SALA",
       "customerEmail": "rowerpoet@gmail.com",
       "customerPhone": "+15174031957",
-      "amount": 317.0,
+      "amount": 317,
       "currency": "EUR",
       "orderDate": 1784362959000,
       "emailSubject": "🍷 New Order — SARAH SALA — 317.00 EUR",
@@ -35,7 +35,9 @@
           "to": "rowerpoet@gmail.com",
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1784367495410,
-          "messageId": "<202607180938.75924460462@smtp-relay.mailin.fr>"
+          "messageId": "<202607180938.75924460462@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-18T11:38:17.000+02:00"
         }
       ],
       "notes": "",
@@ -47,7 +49,7 @@
       "customerName": "STAN SALA",
       "customerEmail": "stansala@gmail.com",
       "customerPhone": "+15174036333",
-      "amount": 515.0,
+      "amount": 515,
       "currency": "EUR",
       "orderDate": 1784362646000,
       "emailSubject": "🍷 New Order — STAN SALA — 515.00 EUR",
@@ -77,7 +79,9 @@
           "to": "stansala@gmail.com",
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1784367495410,
-          "messageId": "<202607180938.55786156536@smtp-relay.mailin.fr>"
+          "messageId": "<202607180938.55786156536@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-18T11:38:18.000+02:00"
         }
       ],
       "notes": "",
@@ -119,7 +123,9 @@
           "to": "info@vierasbakery.net",
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1784296071963,
-          "messageId": "<202607171347.96119006417@smtp-relay.mailin.fr>"
+          "messageId": "<202607171347.96119006417@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-17T15:47:58.000+02:00"
         }
       ],
       "notes": "",
@@ -161,7 +167,9 @@
           "to": "ghjlmj@gmail.com",
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1784222601216,
-          "messageId": "<202607161723.24915868496@smtp-relay.mailin.fr>"
+          "messageId": "<202607161723.24915868496@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-16T19:23:23.000+02:00"
         }
       ],
       "notes": "",
@@ -217,7 +225,9 @@
           "to": "susanrusciano1960@yahoo.com",
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1784545038127,
-          "messageId": "<202607201057.44102232097@smtp-relay.mailin.fr>"
+          "messageId": "<202607201057.44102232097@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-20T12:57:23.000+02:00"
         }
       ],
       "notes": "",
@@ -274,7 +284,9 @@
           "to": "reillorr221@gmail.com",
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1784545038127,
-          "messageId": "<202607201057.14864948964@smtp-relay.mailin.fr>"
+          "messageId": "<202607201057.14864948964@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-20T12:57:22.000+02:00"
         }
       ],
       "notes": "",
@@ -376,12 +388,17 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": null,
-      "status": "preparazione",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1783506244430,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "consegnato",
+          "date": 1784622239202,
+          "note": ""
         }
       ],
       "emailsSent": [
@@ -393,13 +410,26 @@
           "messageId": "<202607081024.62884565268@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-08T12:24:20.000+02:00"
+        },
+        {
+          "type": "consegnato",
+          "sentAt": 1784622239202,
+          "messageId": "manual-skip",
+          "manual": true
+        },
+        {
+          "type": "Consegnato",
+          "sentAt": 1784622239479,
+          "messageId": "<202607210823.17183105959@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1783506244430,
-      "updatedAt": 1784123549863,
+      "updatedAt": 1784622239479,
       "staleAlertDays": 7,
-      "staleAlertSince": 1783506244430
+      "staleAlertSince": 1783506244430,
+      "trackingUrl": "",
+      "destCountry": "IT"
     },
     {
       "id": "ord_mrarkjesrjkm",
@@ -585,7 +615,9 @@
           "to": "vpshannon71@gmail.com",
           "subject": "Your order is going through customs",
           "sentAt": 1784431226727,
-          "messageId": "<202607190320.43275760169@smtp-relay.mailin.fr>"
+          "messageId": "<202607190320.43275760169@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-19T05:20:29.000+02:00"
         }
       ],
       "notes": "",
@@ -799,14 +831,18 @@
           "to": "hsteier1@gmail.com",
           "subject": "Your wine is out for delivery! 🍷",
           "sentAt": 1784381125711,
-          "messageId": "<202607181325.43329795196@smtp-relay.mailin.fr>"
+          "messageId": "<202607181325.43329795196@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-18T15:25:28.000+02:00"
         },
         {
           "type": "consegnato",
           "to": "hsteier1@gmail.com",
           "subject": "Your order has been delivered! 🍷 Enjoy!",
           "sentAt": 1784431226727,
-          "messageId": "<202607190320.90512398292@smtp-relay.mailin.fr>"
+          "messageId": "<202607190320.90512398292@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-07-19T05:20:29.000+02:00"
         }
       ],
       "notes": "",
