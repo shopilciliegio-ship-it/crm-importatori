@@ -73,7 +73,7 @@ function showCountriesForRegion(region){
   el.innerHTML=entries.length
     ? entries.map(([c,n])=>`
       <div class="brow">
-        <div class="blbl country-link" onclick="goToContacts({country:'${esc(c)}'})" title="Apri contatti di ${esc(c)}">${esc(c)}${_countryResearchBadge(c)}</div>
+        <div class="blbl country-link" onclick="goToContacts({country:'${esc(c)}'})" title="Apri contatti di ${esc(c)}"><span class="bname">${esc(c)}</span>${_countryResearchBadge(c)}</div>
         <div class="btrk"><div class="bfll" style="width:${Math.round(n/max*100)}%">${n}</div></div>
         ${_countryQueueFlag(c)}
       </div>`).join('')
@@ -91,7 +91,7 @@ function renderCCChart(){
   if(titleEl) titleEl.textContent='Per paese';
   el.innerHTML=entries.length?entries.map(([c,n])=>`
     <div class="brow">
-      <div class="blbl country-link" onclick="goToContacts({country:'${esc(c)}'})" title="Apri contatti di ${esc(c)}">${esc(c)}${_countryResearchBadge(c)}</div>
+      <div class="blbl country-link" onclick="goToContacts({country:'${esc(c)}'})" title="Apri contatti di ${esc(c)}"><span class="bname">${esc(c)}</span>${_countryResearchBadge(c)}</div>
       <div class="btrk"><div class="bfll" style="width:${Math.round(n/max*100)}%">${n}</div></div>
       ${_countryQueueFlag(c)}
     </div>`).join('')
