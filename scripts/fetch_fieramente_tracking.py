@@ -19,6 +19,7 @@ Mapping status Fieramente → CRM:
 import base64
 import json
 import os
+import re
 import time
 from datetime import datetime, timezone
 
@@ -44,6 +45,21 @@ STATUS_MAP = {
     '8': 'dogana',
     '9': 'in_consegna',
 }
+
+def derive_candidate_code(customer_name: str) -> str | None:
+    """Deriva il codice MBE atteso da un nome cliente: COGNOME + iniziale nome
+    (es. 'ELIZABETH CONTI' → 'CONTIE'), lo stesso schema usato da Fieramente/MBE.
+    Richiede almeno nome e cognome; assume che l'ultima parola sia il cognome."""
+    parts = (customer_name or '').strip().split()
+    if len(parts) < 2:
+        return None
+    first, last = parts[0], parts[-1]
+    last_clean     = re.sub(r'[^A-Za-z]', '', last).upper()
+    first_initial  = re.sub(r'[^A-Za-z]', '', first).upper()[:1]
+    if not last_clean or not first_initial:
+        return None
+    return last_clean + first_initial
+
 
 STATUS_RANK = {s: i for i, s in enumerate([
     'ricevuto', 'preparazione', 'spedito', 'in_transito', 'dogana',
@@ -152,6 +168,21 @@ def main():
         if s.get('customer_email') and email_counts[s['customer_email'].strip().lower()] == 1
     }
 
+    def fier_by_derived_name(customer_name: str):
+        """Fallback quando shipmentCode ed email non combaciano (es. refuso email
+        tipo Elizabeth/Elisabeth): cerca per COGNOME+iniziale derivato dal nome,
+        incluso un eventuale suffisso numerico che Fieramente aggiunge in caso di
+        omonimi (es. CONTIE, CONTIE2). Ritorna None se zero o più match (ambiguo)."""
+        candidate = derive_candidate_code(customer_name)
+        if not candidate:
+            return None
+        matches = [
+            s for s in fier_list
+            if (code := (s.get('mbe_code') or '').strip().upper())
+            and (code == candidate or (code.startswith(candidate) and code[len(candidate):].isdigit()))
+        ]
+        return matches[0] if len(matches) == 1 else None
+
     db, sha_db = gh_get(DATA_PATH)
     orders     = db.get('orders') or []
     now_ms     = int(datetime.now(timezone.utc).timestamp() * 1000)
@@ -170,6 +201,17 @@ def main():
                 if mbe_code and not order.get('shipmentCode'):
                     order['shipmentCode'] = mbe_code
                     print(f'  {order.get("customerName","?")}: shipmentCode → {mbe_code} (match email)')
+
+        if not fier:
+            # Ultimo fallback: codice derivato dal nome (COGNOME+iniziale). Copre i
+            # casi in cui email diverse tra ordine e Fieramente (refusi tipo
+            # Elizabeth/Elisabeth) impediscono il match per email.
+            fier = fier_by_derived_name(order.get('customerName', ''))
+            if fier:
+                mbe_code = (fier.get('mbe_code') or '').strip()
+                if mbe_code and not order.get('shipmentCode'):
+                    order['shipmentCode'] = mbe_code
+                    print(f'  {order.get("customerName","?")}: shipmentCode → {mbe_code} (match nome derivato)')
 
         if not fier:
             continue
