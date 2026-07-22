@@ -442,24 +442,29 @@
       "currency": "EUR",
       "orderDate": 1783434334000,
       "emailSubject": "🍷 New Order — ELIZABETH CONTI — 426.40 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "CONTIE",
       "shippingAddress": "64 HERITAGE DRIVE ALLENTOWN, NJ 08501 UNITED STATES, 08501 ALLENTOWN, NEW JERSEY (MONMOUTH COUNTY)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202607071425.13004064182@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A804767523",
       "carrier": "MBE",
       "source": "fieramente",
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1784741109072,
+      "status": "spedito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1783435702851,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "spedito",
+          "date": 1784741109072,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -475,7 +480,7 @@
       ],
       "notes": "",
       "createdAt": 1783435702851,
-      "updatedAt": 1784654771485,
+      "updatedAt": 1784741109072,
       "staleAlertDays": 14,
       "staleAlertSince": 1783435702851
     },
@@ -575,7 +580,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1784023362268,
-      "status": "dogana",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -591,6 +596,11 @@
           "status": "dogana",
           "date": 1784431222135,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "consegnato",
+          "date": 1784741109072,
+          "note": "Auto Fieramente (era: dogana)"
         }
       ],
       "emailsSent": [
@@ -624,7 +634,7 @@
       ],
       "notes": "",
       "createdAt": 1783352616728,
-      "updatedAt": 1784431226727,
+      "updatedAt": 1784741109072,
       "staleAlertDays": 7,
       "staleAlertSince": 1783352616728,
       "track17Registered": true
