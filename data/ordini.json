@@ -476,11 +476,18 @@
           "messageId": "<202607071448.17957174266@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-07T16:48:38.000+02:00"
+        },
+        {
+          "type": "day0",
+          "to": "elizabethvconti@yahoo.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1784741120861,
+          "messageId": "<202607221725.96207210601@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1783435702851,
-      "updatedAt": 1784741115538,
+      "updatedAt": 1784741120861,
       "staleAlertDays": 14,
       "staleAlertSince": 1783435702851,
       "track17Registered": true
@@ -631,11 +638,18 @@
           "messageId": "<202607190320.43275760169@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-19T05:20:29.000+02:00"
+        },
+        {
+          "type": "consegnato",
+          "to": "vpshannon71@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1784741120861,
+          "messageId": "<202607221725.86909914169@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1783352616728,
-      "updatedAt": 1784741109072,
+      "updatedAt": 1784741120861,
       "staleAlertDays": 7,
       "staleAlertSince": 1783352616728,
       "track17Registered": true
