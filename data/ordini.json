@@ -29,10 +29,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "mariamccreesh196@btinternet.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1784815965602,
+          "messageId": "<202607231412.62284332490@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1784815954156,
-      "updatedAt": 1784815954156
+      "updatedAt": 1784815965602
     },
     {
       "id": "ord_mrxlc44s52ot",
@@ -63,10 +71,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "roy@bensonbox.ie",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1784815965602,
+          "messageId": "<202607231412.84685558972@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1784815954156,
-      "updatedAt": 1784815954156
+      "updatedAt": 1784815965602
     },
     {
       "id": "ord_mrxlc44sxku5",
@@ -97,10 +113,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "giuliacape04@gmail.com",
+          "subject": "Grazie per il tuo ordine! 🍷",
+          "sentAt": 1784815965602,
+          "messageId": "<202607231412.98631152537@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1784815954156,
-      "updatedAt": 1784815954156
+      "updatedAt": 1784815965602
     },
     {
       "id": "ord_mrq6bg2n6y48",
@@ -2612,11 +2636,18 @@
           "messageId": "<202607131445.58392019507@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-13T16:45:11.000+02:00"
+        },
+        {
+          "type": "day20",
+          "to": "andrew.wayrynen@maritime.edu",
+          "subject": "Your wine is still on its way — update",
+          "sentAt": 1784815965602,
+          "messageId": "<202607231412.85307865810@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1784343011168,
+      "updatedAt": 1784815965602,
       "trackingUrl": "",
       "language": "en",
       "track17Registered": true,
