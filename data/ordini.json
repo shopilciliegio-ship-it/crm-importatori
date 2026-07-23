@@ -874,7 +874,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1783422818092,
-      "status": "dogana",
+      "status": "in_consegna",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -890,6 +890,11 @@
           "status": "dogana",
           "date": 1783913270789,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "in_consegna",
+          "date": 1784840962297,
+          "note": "Auto 17Track (era: dogana): Carlsbad, CA, United States — Out for Delivery, Out For Delivery Today"
         }
       ],
       "emailsSent": [
@@ -923,7 +928,7 @@
       ],
       "notes": "",
       "createdAt": 1782736788535,
-      "updatedAt": 1784518489347,
+      "updatedAt": 1784840962297,
       "staleAlertDays": 7,
       "staleAlertSince": 1783913270789,
       "track17Registered": true
@@ -1052,7 +1057,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1783422818092,
-      "status": "in_consegna",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1073,6 +1078,11 @@
           "status": "in_consegna",
           "date": 1784827636809,
           "note": "Auto 17Track (era: dogana): Aliso Viejo, CA, United States — Out for Delivery, Out For Delivery Today"
+        },
+        {
+          "status": "consegnato",
+          "date": 1784840962297,
+          "note": "Auto 17Track (era: in_consegna): MISSION VIEJO, CA, US — Delivered, DELIVERED"
         }
       ],
       "emailsSent": [
@@ -1113,7 +1123,7 @@
       ],
       "notes": "",
       "createdAt": 1782484474304,
-      "updatedAt": 1784827638798,
+      "updatedAt": 1784840962297,
       "staleAlertDays": 7,
       "staleAlertSince": 1783913270789,
       "track17Registered": true
