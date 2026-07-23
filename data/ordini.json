@@ -363,11 +363,18 @@
           "messageId": "<202607141002.48560483363@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-14T12:02:50.000+02:00"
+        },
+        {
+          "type": "dogana",
+          "to": "michellehunsberger@verizon.net",
+          "subject": "Your order is going through customs",
+          "sentAt": 1784776828165,
+          "messageId": "<202607230320.51126965920@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1783591738771,
-      "updatedAt": 1784776824492,
+      "updatedAt": 1784776828165,
       "trackingUrl": "",
       "track17Registered": true,
       "destCountry": "US",
@@ -493,11 +500,18 @@
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1784741120861,
           "messageId": "<202607221725.96207210601@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "dogana",
+          "to": "elizabethvconti@yahoo.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1784776828165,
+          "messageId": "<202607230320.66661781013@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1783435702851,
-      "updatedAt": 1784776824492,
+      "updatedAt": 1784776828165,
       "staleAlertDays": 14,
       "staleAlertSince": 1783435702851,
       "track17Registered": true
