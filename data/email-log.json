@@ -35,6 +35,24 @@
       "subject": "Your order has been delivered! 🍷 Enjoy!",
       "sentAt": 1784741120861,
       "messageId": "<202607221725.86909914169@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mrdcgxhvhpul",
+      "customerName": "SETH MORGAN",
+      "type": "dogana",
+      "to": "michellehunsberger@verizon.net",
+      "subject": "Your order is going through customs",
+      "sentAt": 1784776828165,
+      "messageId": "<202607230320.51126965920@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mrarkjesrjkm",
+      "customerName": "ELIZABETH CONTI",
+      "type": "dogana",
+      "to": "elizabethvconti@yahoo.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1784776828165,
+      "messageId": "<202607230320.66661781013@smtp-relay.mailin.fr>"
     }
   ]
 }
