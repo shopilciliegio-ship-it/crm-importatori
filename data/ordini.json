@@ -300,7 +300,9 @@
       ],
       "notes": "",
       "createdAt": 1784222589468,
-      "updatedAt": 1784222601216
+      "updatedAt": 1784827638798,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1784222589468
     },
     {
       "id": "ord_mrks9ygcsxmy",
@@ -1100,11 +1102,18 @@
           "messageId": "<202607130327.43796505570@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-13T05:27:57.000+02:00"
+        },
+        {
+          "type": "in_consegna",
+          "to": "tahitianbobby@gmail.com",
+          "subject": "Your wine is out for delivery! 🍷",
+          "sentAt": 1784827638798,
+          "messageId": "<202607231727.63030859648@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1782484474304,
-      "updatedAt": 1784827636809,
+      "updatedAt": 1784827638798,
       "staleAlertDays": 7,
       "staleAlertSince": 1783913270789,
       "track17Registered": true
