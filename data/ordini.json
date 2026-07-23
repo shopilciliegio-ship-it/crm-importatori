@@ -1,6 +1,108 @@
 {
   "orders": [
     {
+      "id": "ord_mrxlc44sb2w3",
+      "customerName": "MARIA MCCREESH",
+      "customerEmail": "mariamccreesh196@btinternet.com",
+      "customerPhone": "+353872895764",
+      "amount": 155.0,
+      "currency": "EUR",
+      "orderDate": 1784815782000,
+      "emailSubject": "🍷 New Order — MARIA MCCREESH — 155.00 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "RIVERBROOK, , E21CY52 BURNCOURT, CAHIR, IRELAND (TIPPERARY)",
+      "numberOfCartons": null,
+      "shippingType": null,
+      "gmailMessageId": "<202607231409.13942527735@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1784815954156,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1784815954156,
+      "updatedAt": 1784815954156
+    },
+    {
+      "id": "ord_mrxlc44s52ot",
+      "customerName": "ROY BENSON",
+      "customerEmail": "roy@bensonbox.ie",
+      "customerPhone": "+353872353911",
+      "amount": 342.0,
+      "currency": "EUR",
+      "orderDate": 1784814737000,
+      "emailSubject": "🍷 New Order — ROY BENSON — 342.00 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "TEMPLEHOLLOW , V94AHC6 KILLALOE, IRELAND (CO CLARE)",
+      "numberOfCartons": null,
+      "shippingType": null,
+      "gmailMessageId": "<202607231352.41341983422@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1784815954156,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1784815954156,
+      "updatedAt": 1784815954156
+    },
+    {
+      "id": "ord_mrxlc44sxku5",
+      "customerName": "Giulia Capelli",
+      "customerEmail": "giuliacape04@gmail.com",
+      "customerPhone": "3291243823",
+      "amount": 33.0,
+      "currency": "EUR",
+      "orderDate": 1784813157000,
+      "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio Giulia Capelli",
+      "shipmentCode": "",
+      "shippingAddress": "Via Manzoni n.14, 24050 Cavernago (BG), Italy",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<DB9PR08MB6682CFA619E72A9AB053C23FBFC02@DB9PR08MB6682.eurprd08.prod.outlook.com>",
+      "trackingNumber": "",
+      "carrier": "Corriere Italia Fisso Fino A 100 € Di Ordine",
+      "source": "shop",
+      "language": "it",
+      "orderNumber": "#1408",
+      "paymentType": "Carte Di Credito/Bancomat",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1784815954156,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1784815954156,
+      "updatedAt": 1784815954156
+    },
+    {
       "id": "ord_mrq6bg2n6y48",
       "customerName": "SARAH SALA",
       "customerEmail": "rowerpoet@gmail.com",
@@ -5624,5 +5726,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1784367465503
+  "lastImportedAt": 1784815954156
 }
