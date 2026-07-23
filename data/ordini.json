@@ -1050,7 +1050,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1783422818092,
-      "status": "dogana",
+      "status": "in_consegna",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1066,6 +1066,11 @@
           "status": "dogana",
           "date": 1783913270789,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "in_consegna",
+          "date": 1784827636809,
+          "note": "Auto 17Track (era: dogana): Aliso Viejo, CA, United States — Out for Delivery, Out For Delivery Today"
         }
       ],
       "emailsSent": [
@@ -1099,7 +1104,7 @@
       ],
       "notes": "",
       "createdAt": 1782484474304,
-      "updatedAt": 1784518489347,
+      "updatedAt": 1784827636809,
       "staleAlertDays": 7,
       "staleAlertSince": 1783913270789,
       "track17Registered": true
