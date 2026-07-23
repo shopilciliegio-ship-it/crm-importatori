@@ -98,6 +98,24 @@
       "subject": "Your wine is out for delivery! 🍷",
       "sentAt": 1784827638798,
       "messageId": "<202607231727.63030859648@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mqz7gdo78vki",
+      "customerName": "PAUL CHOLLET",
+      "type": "in_consegna",
+      "to": "pdchollet@gmail.com",
+      "subject": "Your wine is out for delivery! 🍷",
+      "sentAt": 1784840964301,
+      "messageId": "<202607232109.48693483807@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mqv18erkeq5b",
+      "customerName": "ROBERT WILLEY",
+      "type": "consegnato",
+      "to": "tahitianbobby@gmail.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1784840964301,
+      "messageId": "<202607232109.56120807618@smtp-relay.mailin.fr>"
     }
   ]
 }
