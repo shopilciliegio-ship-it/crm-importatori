@@ -924,11 +924,18 @@
           "messageId": "<202607130327.27686866631@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-13T05:27:57.000+02:00"
+        },
+        {
+          "type": "in_consegna",
+          "to": "pdchollet@gmail.com",
+          "subject": "Your wine is out for delivery! 🍷",
+          "sentAt": 1784840964301,
+          "messageId": "<202607232109.48693483807@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1782736788535,
-      "updatedAt": 1784840962297,
+      "updatedAt": 1784840964301,
       "staleAlertDays": 7,
       "staleAlertSince": 1783913270789,
       "track17Registered": true
@@ -1119,11 +1126,18 @@
           "subject": "Your wine is out for delivery! 🍷",
           "sentAt": 1784827638798,
           "messageId": "<202607231727.63030859648@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegnato",
+          "to": "tahitianbobby@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1784840964301,
+          "messageId": "<202607232109.56120807618@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1782484474304,
-      "updatedAt": 1784840962297,
+      "updatedAt": 1784840964301,
       "staleAlertDays": 7,
       "staleAlertSince": 1783913270789,
       "track17Registered": true
