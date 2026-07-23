@@ -89,6 +89,15 @@
       "subject": "Your wine is still on its way — update",
       "sentAt": 1784815965602,
       "messageId": "<202607231412.85307865810@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mqv18erkeq5b",
+      "customerName": "ROBERT WILLEY",
+      "type": "in_consegna",
+      "to": "tahitianbobby@gmail.com",
+      "subject": "Your wine is out for delivery! 🍷",
+      "sentAt": 1784827638798,
+      "messageId": "<202607231727.63030859648@smtp-relay.mailin.fr>"
     }
   ]
 }
