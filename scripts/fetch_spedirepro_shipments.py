@@ -134,6 +134,11 @@ def fetch_shipments() -> list[dict]:
             break
 
     print(f'Totale spedizioni SpedirePro: {len(all_shipments)}')
+    if all_shipments:
+        print('  DEBUG primo shipment (rimuovere dopo diagnosi):')
+        print(' ', json.dumps(all_shipments[0], ensure_ascii=False)[:2000])
+        refs = [s.get('reference') for s in all_shipments if s.get('reference')]
+        print(f'  DEBUG shipments con reference non vuoto: {len(refs)}/{len(all_shipments)}')
     return all_shipments
 
 
