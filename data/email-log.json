@@ -116,6 +116,15 @@
       "subject": "Your order has been delivered! 🍷 Enjoy!",
       "sentAt": 1784840964301,
       "messageId": "<202607232109.56120807618@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mqz7gdo78vki",
+      "customerName": "PAUL CHOLLET",
+      "type": "consegna_fallita",
+      "to": "pdchollet@gmail.com",
+      "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+      "sentAt": 1784862865999,
+      "messageId": "<202607240314.55271999689@smtp-relay.mailin.fr>"
     }
   ]
 }
