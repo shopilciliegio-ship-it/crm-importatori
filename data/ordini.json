@@ -936,11 +936,18 @@
           "subject": "Your wine is out for delivery! 🍷",
           "sentAt": 1784840964301,
           "messageId": "<202607232109.48693483807@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegna_fallita",
+          "to": "pdchollet@gmail.com",
+          "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+          "sentAt": 1784862865999,
+          "messageId": "<202607240314.55271999689@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1782736788535,
-      "updatedAt": 1784862860866,
+      "updatedAt": 1784862865999,
       "staleAlertDays": 7,
       "staleAlertSince": 1783913270789,
       "track17Registered": true,
