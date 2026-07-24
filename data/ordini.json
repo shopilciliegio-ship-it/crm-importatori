@@ -547,11 +547,18 @@
           "subject": "Your order is going through customs",
           "sentAt": 1784776828165,
           "messageId": "<202607230320.51126965920@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegnato",
+          "to": "michellehunsberger@verizon.net",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1784917851425,
+          "messageId": "<202607241830.85077809850@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1783591738771,
-      "updatedAt": 1784917843103,
+      "updatedAt": 1784917851425,
       "trackingUrl": "",
       "track17Registered": true,
       "destCountry": "US",
@@ -1964,8 +1971,8 @@
       ],
       "notes": "",
       "createdAt": 1781533718423,
-      "updatedAt": 1784322040870,
-      "staleAlertDays": 7,
+      "updatedAt": 1784917851425,
+      "staleAlertDays": 14,
       "staleAlertSince": 1783705716609,
       "track17Registered": true,
       "trackingUrl": "",
