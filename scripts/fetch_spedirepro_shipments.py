@@ -117,18 +117,16 @@ def fetch_shipments() -> list[dict]:
     # sito chiama un endpoint diverso: /api/user/shipments/pickup (non
     # /api/user/shipments). Proviamolo (rimuovere dopo diagnosi).
     pickup_url = 'https://www.spedirepro.com/api/user/shipments/pickup'
-    for label, query in {'query vuota': {}, 'query attuale': {'is_returning': False, 'archived': False}}.items():
-        payload = {'query': query, 'limit': SHIPMENTS_LIMIT, 'ascending': 0, 'page': 1, 'byColumn': 1}
-        r = session.post(pickup_url, json=payload, headers=headers, timeout=20)
-        if not r.ok:
-            print(f'  DEBUG /pickup [{label}]: HTTP {r.status_code} — {r.text[:300]}')
-            continue
+    payload = {'query': {}, 'limit': SHIPMENTS_LIMIT, 'ascending': 0, 'page': 1, 'byColumn': 1}
+    r = session.post(pickup_url, json=payload, headers=headers, timeout=20)
+    if r.ok:
         data  = r.json()
         items = data.get('data') or data.get('shipments') or (data if isinstance(data, list) else [])
-        has_capelli = any('CAPELLIG' in json.dumps(s, ensure_ascii=False) for s in items)
-        print(f'  DEBUG /pickup [{label}]: {len(items)} spedizioni, CAPELLIG presente: {has_capelli}')
-        if items:
-            print('  DEBUG primo item /pickup:', json.dumps(items[0], ensure_ascii=False)[:1500])
+        print(f'  DEBUG /pickup: {len(items)} spedizioni — dump completo:')
+        for it in items:
+            print('  ---', json.dumps(it, ensure_ascii=False))
+    else:
+        print(f'  DEBUG /pickup: HTTP {r.status_code} — {r.text[:300]}')
 
     all_shipments: list[dict] = []
     for pg in range(1, MAX_PAGES + 1):
