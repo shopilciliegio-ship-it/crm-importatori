@@ -152,6 +152,15 @@
       "subject": "Your order has been delivered! 🍷 Enjoy!",
       "sentAt": 1784917851425,
       "messageId": "<202607241830.85077809850@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mrxlc44sxku5",
+      "customerName": "Giulia Capelli",
+      "type": "day0",
+      "to": "giuliacape04@gmail.com",
+      "subject": "Il tuo vino è in viaggio! 🍷",
+      "sentAt": 1784919285818,
+      "messageId": "<202607241854.81350759675@smtp-relay.mailin.fr>"
     }
   ]
 }
