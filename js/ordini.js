@@ -149,6 +149,10 @@ function _mkOrder({customerName,customerEmail='',customerPhone='',amount=0,curre
     shippingType: null,
     shippingDate: null,
     destCountry: null,
+    products: [],
+    customsDuties: null,
+    shippingCostMos: null,
+    shippingCostCustomer: null,
     status: 'ricevuto',
     statusHistory: [{status:'ricevuto', date:now, note}],
     emailsSent: [],
@@ -315,6 +319,33 @@ async function syncOrdiniBrevoEventsQuiet(){
 
 function _fmtDM(ms){
   return ms?new Date(ms).toLocaleDateString('it-IT',{day:'2-digit',month:'2-digit'}):'';
+}
+
+/* ─ Prodotti spediti: riga editabile nel form + riepilogo sola lettura ─ */
+function _prodRowHtml(p){
+  p=p||{};
+  return `<div class="prod-row" style="display:flex;gap:6px;margin-bottom:6px;align-items:center">
+    <input class="prod-desc" placeholder="Descrizione prodotto" value="${esc(p.description||'')}" style="flex:2">
+    <input class="prod-qty" type="number" min="0" step="1" placeholder="Qtà" value="${p.qty!=null?p.qty:''}" style="width:60px">
+    <input class="prod-value" type="number" min="0" step="0.01" placeholder="Valore tot. €" value="${p.value!=null?p.value:''}" style="width:110px">
+    <button type="button" class="btn bts btd" onclick="this.closest('.prod-row').remove()" style="padding:4px 8px;flex-shrink:0">🗑</button>
+  </div>`;
+}
+
+function addOrdineProductRow(){
+  document.getElementById('ord-products-rows')?.insertAdjacentHTML('beforeend', _prodRowHtml({}));
+}
+
+function _productsSummaryHtml(o){
+  if(!o.products||!o.products.length) return '';
+  const rows=o.products.map(p=>
+    `<tr><td style="padding:2px 10px 2px 0">${esc(p.description||'—')}</td>`+
+    `<td style="padding:2px 10px;text-align:center">${p.qty!=null?p.qty:''}</td>`+
+    `<td style="padding:2px 0;text-align:right">${p.value!=null?'€'+Number(p.value).toFixed(2):''}</td></tr>`
+  ).join('');
+  const tot=o.products.reduce((s,p)=>s+(Number(p.value)||0),0);
+  return `<table style="font-size:12px;border-collapse:collapse;width:100%">${rows}</table>`+
+    (tot?`<div style="font-size:11px;color:var(--text3);margin-top:2px;text-align:right">Totale: €${tot.toFixed(2)}</div>`:'');
 }
 
 /* ─ Pallini fase email per la riga lista ─ */
@@ -530,6 +561,10 @@ function openOrdineDetail(id){
     ${(()=>{const dc=orderDestCountry(o);const label=dc?(ORDER_COUNTRIES.find(c=>c.iso2===dc)?.label||dc):'';const v=dc?`<span class="badge" style="background:var(--blue-bg);color:var(--blue-tx)">${esc(dc)}</span> ${esc(label)}${!o.destCountry?' <span style="color:var(--text3);font-size:11px">(dedotto dall\'indirizzo)</span>':''}`:'<span style="color:var(--amber);font-size:12px">⚠ non rilevabile dall\'indirizzo — impostalo qui sotto</span>';return dr('Paese di destinazione',v);})()}
     ${o.shippingAddress?dr('Indirizzo spedizione', `<span style="font-size:12px;color:var(--text2)">${esc(o.shippingAddress)}</span>`):''}
     ${o.numberOfCartons?dr('Colli MBE', `<strong>${o.numberOfCartons}</strong> colli`):''}
+    ${o.shippingCostMos!=null?dr('Costo spedizione (da MOS)', `€${Number(o.shippingCostMos).toFixed(2)}`):''}
+    ${o.shippingCostCustomer!=null?dr('Costo spedizione (pagato dal cliente)', `€${Number(o.shippingCostCustomer).toFixed(2)}`):''}
+    ${o.customsDuties!=null?dr('Dazi doganali', `€${Number(o.customsDuties).toFixed(2)}`):''}
+    ${o.products&&o.products.length?dr('Prodotti', _productsSummaryHtml(o)):''}
     ${o.emailSubject?dr('Oggetto email', `<span style="font-size:11px;color:var(--text2)">${esc(o.emailSubject)}</span>`):''}
     ${o.notes?dr('Note', esc(o.notes)):''}
 
@@ -544,6 +579,15 @@ function openOrdineDetail(id){
       </div>
       <div class="fg"><label>Valuta</label>
         <input id="ord-currency" placeholder="EUR" value="${esc(o.currency||'EUR')}">
+      </div>
+      <div class="fg"><label>Costo spedizione (da MOS)</label>
+        <input id="ord-shipping-cost-mos" type="number" step="0.01" min="0" placeholder="0.00" value="${o.shippingCostMos!=null?o.shippingCostMos:''}">
+      </div>
+      <div class="fg"><label>Costo spedizione (pagato dal cliente)</label>
+        <input id="ord-shipping-cost-customer" type="number" step="0.01" min="0" placeholder="0.00" value="${o.shippingCostCustomer!=null?o.shippingCostCustomer:''}">
+      </div>
+      <div class="fg"><label>Dazi doganali</label>
+        <input id="ord-customs-duties" type="number" step="0.01" min="0" placeholder="0.00" value="${o.customsDuties!=null?o.customsDuties:''}">
       </div>
       <div class="fg"><label>Email cliente</label>
         <input id="ord-email" type="email" placeholder="email@cliente.com" value="${esc(o.customerEmail||'')}">
@@ -585,6 +629,11 @@ function openOrdineDetail(id){
       <div class="fg fgf"><label>Indirizzo spedizione</label>
         <input id="ord-address" placeholder="Via Roma 1, 20100 Milano, Italy" value="${esc(o.shippingAddress||'')}">
       </div>
+      <div class="fg fgf">
+        <label>Prodotti spediti</label>
+        <div id="ord-products-rows">${(o.products||[]).map(p=>_prodRowHtml(p)).join('')}</div>
+        <button type="button" class="btn bts" onclick="addOrdineProductRow()" style="font-size:12px;margin-top:2px">+ Aggiungi prodotto</button>
+      </div>
       <div class="fg fgf"><label>Note (opzionale)</label>
         <input id="ord-note" placeholder="Es. Pacco in dogana a Milano">
       </div>
@@ -623,11 +672,28 @@ async function saveOrdineUpdate(id){
   const newShipmentCode=(document.getElementById('ord-shipment-code')?.value||'').trim().toUpperCase();
   const newAmount=(document.getElementById('ord-amount')?.value||'').trim();
   const newCurrency=(document.getElementById('ord-currency')?.value||'').trim();
+  const newShippingCostMos=(document.getElementById('ord-shipping-cost-mos')?.value||'').trim();
+  const newShippingCostCustomer=(document.getElementById('ord-shipping-cost-customer')?.value||'').trim();
+  const newCustomsDuties=(document.getElementById('ord-customs-duties')?.value||'').trim();
   const note=(document.getElementById('ord-note')?.value||'').trim();
   const sendEmail=document.getElementById('ord-send-email')?.checked;
 
   if(newAmount!==''&&!isNaN(parseFloat(newAmount))) o.amount=parseFloat(newAmount);
   if(newCurrency) o.currency=newCurrency.toUpperCase();
+  o.shippingCostMos=(newShippingCostMos!==''&&!isNaN(parseFloat(newShippingCostMos)))?parseFloat(newShippingCostMos):null;
+  o.shippingCostCustomer=(newShippingCostCustomer!==''&&!isNaN(parseFloat(newShippingCostCustomer)))?parseFloat(newShippingCostCustomer):null;
+  o.customsDuties=(newCustomsDuties!==''&&!isNaN(parseFloat(newCustomsDuties)))?parseFloat(newCustomsDuties):null;
+
+  o.products=Array.from(document.querySelectorAll('#ord-products-rows .prod-row')).map(row=>{
+    const description=(row.querySelector('.prod-desc')?.value||'').trim();
+    const qtyStr=(row.querySelector('.prod-qty')?.value||'').trim();
+    const valStr=(row.querySelector('.prod-value')?.value||'').trim();
+    return {
+      description,
+      qty: (qtyStr!==''&&!isNaN(parseFloat(qtyStr)))?parseFloat(qtyStr):null,
+      value: (valStr!==''&&!isNaN(parseFloat(valStr)))?parseFloat(valStr):null,
+    };
+  }).filter(p=>p.description||p.qty!=null||p.value!=null);
   if(newEmail) o.customerEmail=newEmail;
   o.carrier=newCarrier||'';
   if(newTracking&&!o.trackingNumber){
