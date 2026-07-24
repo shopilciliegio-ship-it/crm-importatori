@@ -638,7 +638,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1784741109072,
-      "status": "dogana",
+      "status": "in_consegna",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -654,6 +654,11 @@
           "status": "dogana",
           "date": 1784776824492,
           "note": "Auto Fieramente (era: spedito)"
+        },
+        {
+          "status": "in_consegna",
+          "date": 1784910237915,
+          "note": "Auto 17Track (era: dogana): Hamilton, NJ, United States — Out for Delivery, Out For Delivery Today"
         }
       ],
       "emailsSent": [
@@ -683,7 +688,7 @@
       ],
       "notes": "",
       "createdAt": 1783435702851,
-      "updatedAt": 1784776828165,
+      "updatedAt": 1784910237915,
       "staleAlertDays": 14,
       "staleAlertSince": 1783435702851,
       "track17Registered": true
