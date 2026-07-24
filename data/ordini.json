@@ -1,6 +1,40 @@
 {
   "orders": [
     {
+      "id": "ord_mryr02psox04",
+      "customerName": "MIKA VIRAY",
+      "customerEmail": "kkviray@gmail.com",
+      "customerPhone": "+12093453175",
+      "amount": 150.9,
+      "currency": "EUR",
+      "orderDate": 1784881817000,
+      "emailSubject": "🍷 New Order — MIKA VIRAY — 150.90 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "565 N DAUBENBERGER RD, 95380 TURLOCK, CALIFORNIA (STANISLAUS COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202607240830.99349304568@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1784885936320,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1784885936320,
+      "updatedAt": 1784885936320
+    },
+    {
       "id": "ord_mrxlc44sb2w3",
       "customerName": "MARIA MCCREESH",
       "customerEmail": "mariamccreesh196@btinternet.com",
@@ -5809,5 +5843,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1784815954156
+  "lastImportedAt": 1784885936320
 }
