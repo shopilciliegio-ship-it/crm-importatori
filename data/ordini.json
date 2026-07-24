@@ -298,7 +298,9 @@
       ],
       "notes": "",
       "createdAt": 1784296059758,
-      "updatedAt": 1784296071963
+      "updatedAt": 1784901250217,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1784296059758
     },
     {
       "id": "ord_mrns290cjx63",
@@ -890,8 +892,8 @@
       ],
       "notes": "",
       "createdAt": 1783080712224,
-      "updatedAt": 1784296071963,
-      "staleAlertDays": 14,
+      "updatedAt": 1784901250217,
+      "staleAlertDays": 21,
       "staleAlertSince": 1783080712224,
       "trackingUrl": ""
     },
