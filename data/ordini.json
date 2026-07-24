@@ -874,7 +874,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1783422818092,
-      "status": "in_consegna",
+      "status": "consegna_fallita",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -895,6 +895,11 @@
           "status": "in_consegna",
           "date": 1784840962297,
           "note": "Auto 17Track (era: dogana): Carlsbad, CA, United States — Out for Delivery, Out For Delivery Today"
+        },
+        {
+          "status": "consegna_fallita",
+          "date": 1784862860866,
+          "note": "Auto 17Track (era: in_consegna): Delivery Attempted, The receiver was not available for delivery. We'll make a second attempt the next business day."
         }
       ],
       "emailsSent": [
@@ -935,10 +940,12 @@
       ],
       "notes": "",
       "createdAt": 1782736788535,
-      "updatedAt": 1784840964301,
+      "updatedAt": 1784862860866,
       "staleAlertDays": 7,
       "staleAlertSince": 1783913270789,
-      "track17Registered": true
+      "track17Registered": true,
+      "deliveryFailureCount": 1,
+      "lastDeliveryFailureEventAt": "2026-07-23T20:22:36Z"
     },
     {
       "id": "ord_mqv18erkvrev",
