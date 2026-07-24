@@ -167,11 +167,18 @@
           "subject": "Grazie per il tuo ordine! 🍷",
           "sentAt": 1784815965602,
           "messageId": "<202607231412.98631152537@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "day0",
+          "to": "giuliacape04@gmail.com",
+          "subject": "Il tuo vino è in viaggio! 🍷",
+          "sentAt": 1784919285818,
+          "messageId": "<202607241854.81350759675@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1784815954156,
-      "updatedAt": 1784919282450,
+      "updatedAt": 1784919285818,
       "trackingUrl": "https://www.spedire.com/tracking/1Z71V28R6899452932",
       "spedireproReference": "CAPELLIG"
     },
