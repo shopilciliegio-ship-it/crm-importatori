@@ -29,7 +29,12 @@ DATA_PATH           = 'data/ordini.json'
 
 LOGIN_PAGE_URL  = 'https://www.spedirepro.com/login'
 LOGIN_API_URL   = 'https://www.spedirepro.com/api/auth/login'
+# Due bucket separati lato SpedirePro: le spedizioni già ritirate dal corriere
+# vivono su SHIPMENTS_URL, quelle appena create e ancora in attesa di ritiro
+# su PICKUP_URL — un ordine appena spedito può restare lì per giorni prima di
+# spostarsi, quindi vanno interrogati entrambi.
 SHIPMENTS_URL   = 'https://www.spedirepro.com/api/user/shipments'
+PICKUP_URL      = 'https://www.spedirepro.com/api/user/shipments/pickup'
 SHIPMENTS_LIMIT = 100
 MAX_PAGES       = 10
 
@@ -113,43 +118,38 @@ def fetch_shipments() -> list[dict]:
         'origin':           'https://www.spedirepro.com',
     }
 
-    # DEBUG temporaneo: dal Network tab del browser, la tab "da ritirare" del
-    # sito chiama un endpoint diverso: /api/user/shipments/pickup (non
-    # /api/user/shipments). Proviamolo (rimuovere dopo diagnosi).
-    pickup_url = 'https://www.spedirepro.com/api/user/shipments/pickup'
-    payload = {'query': {}, 'limit': SHIPMENTS_LIMIT, 'ascending': 0, 'page': 1, 'byColumn': 1}
-    r = session.post(pickup_url, json=payload, headers=headers, timeout=20)
-    if r.ok:
-        data  = r.json()
-        items = data.get('data') or data.get('shipments') or (data if isinstance(data, list) else [])
-        print(f'  DEBUG /pickup: {len(items)} spedizioni — dump completo:')
-        for it in items:
-            print('  ---', json.dumps(it, ensure_ascii=False))
-    else:
-        print(f'  DEBUG /pickup: HTTP {r.status_code} — {r.text[:300]}')
-
     all_shipments: list[dict] = []
-    for pg in range(1, MAX_PAGES + 1):
-        payload = {
-            'query':     {'is_returning': False, 'archived': False},
-            'limit':     SHIPMENTS_LIMIT,
-            'ascending': 0,
-            'page':      pg,
-            'byColumn':  1,
-        }
-        r = session.post(SHIPMENTS_URL, json=payload, headers=headers, timeout=20)
-        if not r.ok:
-            print(f'  Pagina {pg}: risposta HTTP {r.status_code}, mi fermo.')
-            break
-        data  = r.json()
-        items = data.get('data') or data.get('shipments') or (data if isinstance(data, list) else [])
-        all_shipments.extend(items)
-        print(f'  Pagina {pg}: {len(items)} spedizioni')
-        if len(items) < SHIPMENTS_LIMIT:
-            break
 
-    print(f'Totale spedizioni SpedirePro: {len(all_shipments)}')
-    return all_shipments
+    for url, query, label in (
+        (SHIPMENTS_URL, {'is_returning': False, 'archived': False}, 'monitorate'),
+        (PICKUP_URL,    {},                                         'da ritirare'),
+    ):
+        for pg in range(1, MAX_PAGES + 1):
+            payload = {'query': query, 'limit': SHIPMENTS_LIMIT, 'ascending': 0, 'page': pg, 'byColumn': 1}
+            r = session.post(url, json=payload, headers=headers, timeout=20)
+            if not r.ok:
+                print(f'  [{label}] pagina {pg}: risposta HTTP {r.status_code}, mi fermo.')
+                break
+            data  = r.json()
+            items = data.get('data') or data.get('shipments') or (data if isinstance(data, list) else [])
+            all_shipments.extend(items)
+            print(f'  [{label}] pagina {pg}: {len(items)} spedizioni')
+            if len(items) < SHIPMENTS_LIMIT:
+                break
+
+    # Dedup per reference (codice univoco SpedirePro) — in teoria i due bucket
+    # sono disgiunti, ma meglio non fidarsi ciecamente per evitare falsi
+    # conflitti nel matching se una spedizione risultasse in entrambi.
+    seen: set[str] = set()
+    deduped: list[dict] = []
+    for s in all_shipments:
+        key = s.get('reference') or s.get('tracker') or id(s)
+        if key not in seen:
+            seen.add(key)
+            deduped.append(s)
+
+    print(f'Totale spedizioni SpedirePro: {len(deduped)}')
+    return deduped
 
 
 # ── GitHub (stesso pattern di fetch_spedire_tracking.py) ─────────────────────
@@ -210,11 +210,15 @@ def main():
 
     shipments = fetch_shipments()
 
-    # Raggruppa spedizioni per reference — se un reference compare più di una
-    # volta lato SpedirePro, è ambiguo quanto un doppione lato CRM.
+    # Raggruppa spedizioni per merchant_reference — il "Riferimento ordine di
+    # vendita" impostato a mano dall'operatore (da NON confondere con
+    # "reference", codice generato automaticamente da SpedirePro, es.
+    # "AN2407263J7CO", che non ha alcuna relazione col codice cliente).
+    # Se un merchant_reference compare più di una volta lato SpedirePro, è
+    # ambiguo quanto un doppione lato CRM.
     by_reference: dict[str, list[dict]] = {}
     for s in shipments:
-        ref = (s.get('reference') or '').strip().upper()
+        ref = (s.get('merchant_reference') or (s.get('data') or {}).get('merchant_reference') or '').strip().upper()
         if ref:
             by_reference.setdefault(ref, []).append(s)
 
