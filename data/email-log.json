@@ -143,6 +143,15 @@
       "subject": "Your wine is out for delivery! 🍷",
       "sentAt": 1784910240243,
       "messageId": "<202607241624.62364087876@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mrdcgxhvhpul",
+      "customerName": "SETH MORGAN",
+      "type": "consegnato",
+      "to": "michellehunsberger@verizon.net",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1784917851425,
+      "messageId": "<202607241830.85077809850@smtp-relay.mailin.fr>"
     }
   ]
 }
