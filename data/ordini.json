@@ -141,18 +141,23 @@
       "shippingType": "standard",
       "gmailMessageId": "<DB9PR08MB6682CFA619E72A9AB053C23FBFC02@DB9PR08MB6682.eurprd08.prod.outlook.com>",
       "trackingNumber": "",
-      "carrier": "Corriere Italia Fisso Fino A 100 € Di Ordine",
+      "carrier": "UPS EXPRESS ITALIA",
       "source": "shop",
       "language": "it",
       "orderNumber": "#1408",
       "paymentType": "Carte Di Credito/Bancomat",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1784919282450,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1784815954156,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1784919282450,
+          "note": "Auto SpedirePro: trovato tracking (rif. CAPELLIG)"
         }
       ],
       "emailsSent": [
@@ -166,7 +171,9 @@
       ],
       "notes": "",
       "createdAt": 1784815954156,
-      "updatedAt": 1784815965602
+      "updatedAt": 1784919282450,
+      "trackingUrl": "https://www.spedire.com/tracking/1Z71V28R6899452932",
+      "spedireproReference": "CAPELLIG"
     },
     {
       "id": "ord_mrq6bg2n6y48",
