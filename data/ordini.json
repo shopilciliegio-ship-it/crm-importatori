@@ -684,11 +684,18 @@
           "subject": "Your order is going through customs",
           "sentAt": 1784776828165,
           "messageId": "<202607230320.66661781013@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "in_consegna",
+          "to": "elizabethvconti@yahoo.com",
+          "subject": "Your wine is out for delivery! 🍷",
+          "sentAt": 1784910240243,
+          "messageId": "<202607241624.62364087876@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1783435702851,
-      "updatedAt": 1784910237915,
+      "updatedAt": 1784910240243,
       "staleAlertDays": 14,
       "staleAlertSince": 1783435702851,
       "track17Registered": true
