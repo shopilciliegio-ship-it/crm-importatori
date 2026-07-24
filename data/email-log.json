@@ -125,6 +125,15 @@
       "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
       "sentAt": 1784862865999,
       "messageId": "<202607240314.55271999689@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mryr02psox04",
+      "customerName": "MIKA VIRAY",
+      "type": "order_received",
+      "to": "kkviray@gmail.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1784885950145,
+      "messageId": "<202607240939.92698169861@smtp-relay.mailin.fr>"
     }
   ]
 }
