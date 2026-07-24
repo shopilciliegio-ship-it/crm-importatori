@@ -134,6 +134,15 @@
       "subject": "Thank you for your order! 🍷",
       "sentAt": 1784885950145,
       "messageId": "<202607240939.92698169861@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mrarkjesrjkm",
+      "customerName": "ELIZABETH CONTI",
+      "type": "in_consegna",
+      "to": "elizabethvconti@yahoo.com",
+      "subject": "Your wine is out for delivery! 🍷",
+      "sentAt": 1784910240243,
+      "messageId": "<202607241624.62364087876@smtp-relay.mailin.fr>"
     }
   ]
 }
