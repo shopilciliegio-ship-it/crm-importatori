@@ -135,10 +135,16 @@ def fetch_shipments() -> list[dict]:
 
     print(f'Totale spedizioni SpedirePro: {len(all_shipments)}')
     if all_shipments:
-        print('  DEBUG primo shipment (rimuovere dopo diagnosi):')
-        print(' ', json.dumps(all_shipments[0], ensure_ascii=False)[:2000])
-        refs = [s.get('reference') for s in all_shipments if s.get('reference')]
-        print(f'  DEBUG shipments con reference non vuoto: {len(refs)}/{len(all_shipments)}')
+        print('  DEBUG merchant_reference / reference per ogni spedizione (rimuovere dopo diagnosi):')
+        for s in all_shipments:
+            mref = s.get('merchant_reference') or (s.get('data') or {}).get('merchant_reference')
+            ref  = s.get('reference')
+            blob = json.dumps(s, ensure_ascii=False)
+            hit  = 'capelli' in blob.lower() or 'CAPELLIG' in blob
+            marker = '  <<< CAPELLI/CAPELLIG QUI' if hit else ''
+            print(f'    rel={s.get("rel")} reference={ref!r} merchant_reference={mref!r}{marker}')
+            if hit:
+                print('    DEBUG blob completo:', blob)
     return all_shipments
 
 
