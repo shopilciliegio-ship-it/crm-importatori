@@ -664,7 +664,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1784741109072,
-      "status": "in_consegna",
+      "status": "consegna_fallita",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -685,6 +685,11 @@
           "status": "in_consegna",
           "date": 1784910237915,
           "note": "Auto 17Track (era: dogana): Hamilton, NJ, United States — Out for Delivery, Out For Delivery Today"
+        },
+        {
+          "status": "consegna_fallita",
+          "date": 1784949166552,
+          "note": "Auto 17Track (era: in_consegna): Delivery Attempted, The receiver was not available for delivery. We'll make a second attempt the next business day."
         }
       ],
       "emailsSent": [
@@ -721,10 +726,12 @@
       ],
       "notes": "",
       "createdAt": 1783435702851,
-      "updatedAt": 1784910240243,
+      "updatedAt": 1784949166552,
       "staleAlertDays": 14,
       "staleAlertSince": 1783435702851,
-      "track17Registered": true
+      "track17Registered": true,
+      "deliveryFailureCount": 1,
+      "lastDeliveryFailureEventAt": "2026-07-24T17:09:32Z"
     },
     {
       "id": "ord_mr9e3pqw32dj",
