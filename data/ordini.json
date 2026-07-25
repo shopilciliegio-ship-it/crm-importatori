@@ -722,11 +722,18 @@
           "subject": "Your wine is out for delivery! 🍷",
           "sentAt": 1784910240243,
           "messageId": "<202607241624.62364087876@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegna_fallita",
+          "to": "elizabethvconti@yahoo.com",
+          "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+          "sentAt": 1784949169447,
+          "messageId": "<202607250312.23125286355@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1783435702851,
-      "updatedAt": 1784949166552,
+      "updatedAt": 1784949169447,
       "staleAlertDays": 14,
       "staleAlertSince": 1783435702851,
       "track17Registered": true,
@@ -1037,11 +1044,18 @@
           "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
           "sentAt": 1784862865999,
           "messageId": "<202607240314.55271999689@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegnato",
+          "to": "pdchollet@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1784949169447,
+          "messageId": "<202607250312.18289864288@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1782736788535,
-      "updatedAt": 1784949160842,
+      "updatedAt": 1784949169447,
       "staleAlertDays": 7,
       "staleAlertSince": 1783913270789,
       "track17Registered": true,
@@ -2793,13 +2807,13 @@
       ],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1784815965602,
+      "updatedAt": 1784949169447,
       "trackingUrl": "",
       "language": "en",
       "track17Registered": true,
       "deliveryFailureCount": 2,
       "lastDeliveryFailureEventAt": "2026-07-02T07:24:38Z",
-      "staleAlertDays": 7,
+      "staleAlertDays": 14,
       "staleAlertSince": 1783717798897
     },
     {
@@ -3664,12 +3678,12 @@
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1784343011168,
+      "updatedAt": 1784949169447,
       "shippingType": "standard",
       "shipmentCode": "JENKINSF",
       "trackingUrl": "",
       "language": "en",
-      "staleAlertDays": 7,
+      "staleAlertDays": 14,
       "staleAlertSince": 1783717798897,
       "track17Registered": true,
       "deliveryFailureCount": 2,
