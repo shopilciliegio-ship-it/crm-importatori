@@ -161,6 +161,24 @@
       "subject": "Il tuo vino è in viaggio! 🍷",
       "sentAt": 1784919285818,
       "messageId": "<202607241854.81350759675@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mqz7gdo78vki",
+      "customerName": "PAUL CHOLLET",
+      "type": "consegnato",
+      "to": "pdchollet@gmail.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1784949169447,
+      "messageId": "<202607250312.18289864288@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mrarkjesrjkm",
+      "customerName": "ELIZABETH CONTI",
+      "type": "consegna_fallita",
+      "to": "elizabethvconti@yahoo.com",
+      "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+      "sentAt": 1784949169447,
+      "messageId": "<202607250312.23125286355@smtp-relay.mailin.fr>"
     }
   ]
 }
