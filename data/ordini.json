@@ -738,11 +738,18 @@
           "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
           "sentAt": 1784949169447,
           "messageId": "<202607250312.23125286355@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegna_fallita",
+          "to": "elizabethvconti@yahoo.com",
+          "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+          "sentAt": 1785036352440,
+          "messageId": "<202607260325.79943975182@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1783435702851,
-      "updatedAt": 1785036349883,
+      "updatedAt": 1785036352440,
       "staleAlertDays": 14,
       "staleAlertSince": 1783435702851,
       "track17Registered": true,
