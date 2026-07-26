@@ -188,6 +188,24 @@
       "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
       "sentAt": 1785036352440,
       "messageId": "<202607260325.79943975182@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_ms1ug73ecj7v",
+      "customerName": "REINALDO COSTALES",
+      "type": "order_received",
+      "to": "tobynieves@yahoo.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1785073141325,
+      "messageId": "<202607261339.66663919084@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_ms1ug73esgss",
+      "customerName": "Liviu Nitreanu",
+      "type": "order_received",
+      "to": "liviu.nitreanu123@gmail.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1785073141325,
+      "messageId": "<202607261339.27922871924@smtp-relay.mailin.fr>"
     }
   ]
 }
