@@ -237610,7 +237610,7 @@
           "toEmail": "abby.aschenbeck@gmail.com"
         }
       ],
-      "blacklisted": false,
+      "blacklisted": true,
       "notes": "",
       "status": "sent",
       "region": "Nord America",
@@ -237630,12 +237630,22 @@
           "clicked": false,
           "bounced": false,
           "spam": false,
-          "unsubscribed": false,
+          "unsubscribed": true,
           "blocked": false,
-          "deliveredAt": "2026-06-16T23:16:07.887+02:00"
+          "deliveredAt": "2026-06-16T23:16:07.887+02:00",
+          "unsubscribedAt": "2026-07-26T17:36:19.993+02:00"
         }
       ],
-      "log": []
+      "log": [
+        {
+          "ts": 1785085367246,
+          "msg": "🚫 Disiscritto: Wave 1"
+        },
+        {
+          "ts": 1785085368109,
+          "msg": "🚫 Contatto inserito in blacklist (spam/disiscrizione/bloccata)"
+        }
+      ]
     },
     {
       "id": "cli_a7b6be039c",
