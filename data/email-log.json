@@ -179,6 +179,15 @@
       "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
       "sentAt": 1784949169447,
       "messageId": "<202607250312.23125286355@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mrarkjesrjkm",
+      "customerName": "ELIZABETH CONTI",
+      "type": "consegna_fallita",
+      "to": "elizabethvconti@yahoo.com",
+      "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+      "sentAt": 1785036352440,
+      "messageId": "<202607260325.79943975182@smtp-relay.mailin.fr>"
     }
   ]
 }
