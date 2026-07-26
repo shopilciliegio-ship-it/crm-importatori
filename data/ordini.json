@@ -1,6 +1,74 @@
 {
   "orders": [
     {
+      "id": "ord_ms1ug73ecj7v",
+      "customerName": "REINALDO COSTALES",
+      "customerEmail": "tobynieves@yahoo.com",
+      "customerPhone": "0014078408498",
+      "amount": 189.63,
+      "currency": "EUR",
+      "orderDate": 1785068016000,
+      "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio REINALDO COSTALES",
+      "shipmentCode": "",
+      "shippingAddress": "2767 Bobcat Chase Blvd, 34787 OAKLAND - FLORIDA - U.S.A. (FL), United States",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<DB9PR08MB6682700F8C0C50603A3496C9BFCD2@DB9PR08MB6682.eurprd08.prod.outlook.com>",
+      "trackingNumber": "",
+      "carrier": "- U.S.A. Wine Corriere Std",
+      "source": "shop",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "Paypal",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1785073125866,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1785073125866,
+      "updatedAt": 1785073125866
+    },
+    {
+      "id": "ord_ms1ug73esgss",
+      "customerName": "Liviu Nitreanu",
+      "customerEmail": "liviu.nitreanu123@gmail.com",
+      "customerPhone": "0040744554640",
+      "amount": 159.0,
+      "currency": "EUR",
+      "orderDate": 1785067997000,
+      "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio Liviu Nitreanu",
+      "shipmentCode": "",
+      "shippingAddress": "Campinita, 27, 013862 BUCURESTI SECTORUL 1 (B), Romania",
+      "numberOfCartons": null,
+      "shippingType": null,
+      "gmailMessageId": "<DB9PR08MB66829BB5215B9FDF8341E6EFBFCD2@DB9PR08MB6682.eurprd08.prod.outlook.com>",
+      "trackingNumber": "",
+      "carrier": "Nuovo Corriere Europa",
+      "source": "shop",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "Carte Di Credito/Bancomat",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1785073125866,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1785073125866,
+      "updatedAt": 1785073125866
+    },
+    {
       "id": "ord_mryr02psox04",
       "customerName": "MIKA VIRAY",
       "customerEmail": "kkviray@gmail.com",
@@ -5933,5 +6001,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1784885936320
+  "lastImportedAt": 1785073125866
 }
