@@ -507,11 +507,18 @@
           "messageId": "<202607201057.44102232097@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-20T12:57:23.000+02:00"
+        },
+        {
+          "type": "dogana",
+          "to": "susanrusciano1960@yahoo.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1785123313475,
+          "messageId": "<202607270335.71075843029@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1784041550508,
-      "updatedAt": 1785123307387,
+      "updatedAt": 1785123313475,
       "track17Registered": true
     },
     {
@@ -571,11 +578,18 @@
           "messageId": "<202607201057.14864948964@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-20T12:57:22.000+02:00"
+        },
+        {
+          "type": "dogana",
+          "to": "reillorr221@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1785123313475,
+          "messageId": "<202607270335.36641667880@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1784037291832,
-      "updatedAt": 1785123307387,
+      "updatedAt": 1785123313475,
       "trackingUrl": "",
       "destCountry": "US",
       "track17Registered": true
