@@ -217,6 +217,8 @@ function getFiltered(){
       if(rschF==='5'&&(c.research?.affidabilita||0)<5)return false;
       if(rschF==='4'&&(c.research?.affidabilita||0)<4)return false;
       if(rschF==='3'&&(c.research?.affidabilita||0)<3)return false;
+      if(rschF==='2'&&(c.research?.affidabilita||0)<2)return false;
+      if(rschF==='1'&&(c.research?.affidabilita||0)<1)return false;
     }
     if(window._pendingFilter){if(c.status!=='sent'&&c.status!=='followup')return false;}
     else if(status){
@@ -231,7 +233,7 @@ function getFiltered(){
   if(!isClienti()){
     list.sort((a,b)=>{
       let va, vb;
-      if(sortBy==='research'){
+      if(sortBy==='research'||sortBy==='research_asc'){
         va = a.research?.affidabilita ?? -1;
         vb = b.research?.affidabilita ?? -1;
       } else {
@@ -241,7 +243,7 @@ function getFiltered(){
       if(va === -1 && vb === -1) return 0;
       if(va === -1) return 1;
       if(vb === -1) return -1;
-      return vb - va;
+      return sortBy==='research_asc' ? va - vb : vb - va;
     });
   } else {
     // Ordinamento clienti: cronologico (più vecchi prima) o alfabetico,
