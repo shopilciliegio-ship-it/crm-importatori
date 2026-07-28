@@ -235440,7 +235440,7 @@
           "toEmail": "alejandro.x.rojas@gmail.com"
         }
       ],
-      "blacklisted": false,
+      "blacklisted": true,
       "notes": "",
       "status": "sent",
       "region": "Nord America",
@@ -235460,16 +235460,25 @@
           "clicked": false,
           "bounced": false,
           "spam": false,
-          "unsubscribed": false,
+          "unsubscribed": true,
           "blocked": false,
           "deliveredAt": "2026-07-27T12:35:07.471+02:00",
-          "openedAt": "2026-07-27T22:48:07.370+02:00"
+          "openedAt": "2026-07-27T22:48:07.370+02:00",
+          "unsubscribedAt": "2026-07-28T14:37:23.074+02:00"
         }
       ],
       "log": [
         {
           "ts": 1785186679157,
           "msg": "👁 Aperta: A special thought for you from Il Ciliegio 🍷"
+        },
+        {
+          "ts": 1785247757684,
+          "msg": "🚫 Disiscritto: A special thought for you from Il Ciliegio 🍷"
+        },
+        {
+          "ts": 1785247758863,
+          "msg": "🚫 Contatto inserito in blacklist (spam/disiscrizione/bloccata)"
         }
       ]
     },
