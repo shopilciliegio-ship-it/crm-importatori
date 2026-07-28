@@ -33,10 +33,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "rcavalla58@gmail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1785251392373,
+          "messageId": "<202607281509.54881224245@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1785251378851,
-      "updatedAt": 1785251378851
+      "updatedAt": 1785251392373
     },
     {
       "id": "ord_ms1ug73ecj7v",
