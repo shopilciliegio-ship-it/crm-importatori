@@ -16,9 +16,25 @@
       "gmailMessageId": "<PAXPR08MB668570E1FB974BA457E65DD7BFCB2@PAXPR08MB6685.eurprd08.prod.outlook.com>",
       "trackingNumber": "",
       "carrier": "- U.S.A. Wine Corriere Std",
-      "products": [],
-      "customsDuties": null,
-      "shippingCostCustomer": null,
+      "products": [
+        {
+          "description": "CHIANTI COLLI SENESI DOCG POGGIO ORLANDO 2024",
+          "qty": 2,
+          "value": 24.0
+        },
+        {
+          "description": "CHIANTI GRAN FONDO STRADE BIANCHE LIMITED EDITION",
+          "qty": 1,
+          "value": 20.0
+        },
+        {
+          "description": "MARIO ROSSO IGT 2019",
+          "qty": 1,
+          "value": 28.0
+        }
+      ],
+      "customsDuties": 7.2,
+      "shippingCostCustomer": 75.0,
       "shippingCostMos": null,
       "source": "shop",
       "language": "en",
@@ -44,7 +60,7 @@
       ],
       "notes": "",
       "createdAt": 1785251378851,
-      "updatedAt": 1785251392373
+      "updatedAt": 1785260311602
     },
     {
       "id": "ord_ms1ug73ecj7v",
@@ -6795,5 +6811,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1785251378851
+  "lastImportedAt": 1785260311602
 }
