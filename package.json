@@ -1,0 +1,8 @@
+{
+  "name": "crm-importatori-scripts",
+  "private": true,
+  "description": "Dipendenze Node per gli script in scripts/ (import Python resta separato, vedi scripts/requirements.txt)",
+  "dependencies": {
+    "pdf-lib": "^1.17.1"
+  }
+}
