@@ -160,6 +160,33 @@ def _parse_body(text: str, mailto_emails: list[str] | None = None) -> dict:
     if m:
         result['shippingType'] = m.group(1).lower()
 
+    # PRODUCTS: righe tipo "3x Brunello 2018 (€87.00)" o "2x Free Gift (FREE GIFT)"
+    products = []
+    for pm in re.finditer(r'^\s*(\d+)\s*x\s+(.+?)\s*\(([^)]*)\)\s*$', text, re.M | re.I):
+        qty = int(pm.group(1))
+        desc = pm.group(2).strip()
+        price_m = re.search(r'(\d+(?:[.,]\d+)?)', pm.group(3))
+        unit_price = float(price_m.group(1).replace(',', '.')) if price_m else 0.0
+        products.append({'description': desc, 'qty': qty, 'value': round(qty * unit_price, 2)})
+    if products:
+        result['products'] = products
+
+    # Import Duties (10%): €11.20
+    m = re.search(r'Import\s+Duties[^:]*:\s*[€$£]?\s*([\d.,]+)', text, re.I)
+    if m:
+        try:
+            result['customsDuties'] = float(m.group(1).replace(',', '.'))
+        except ValueError:
+            pass
+
+    # Shipping (...): €35.00 — costo di spedizione addebitato al cliente
+    m = re.search(r'Shipping\s*\([^)]*\)\s*:\s*[€$£]?\s*([\d.,]+)', text, re.I)
+    if m:
+        try:
+            result['shippingCostCustomer'] = float(m.group(1).replace(',', '.'))
+        except ValueError:
+            pass
+
     return result
 
 
@@ -168,8 +195,8 @@ def _parse_shop_order_body(text: str) -> dict:
     Formato lineare senza PDF: indirizzi fatturazione/spedizione, pagamento, corriere, totali."""
     result = {}
 
-    # Ordine #1390
-    m = re.search(r'Ordine\s*#\s*(\d+)', text, re.I)
+    # Ordine #1390 / Order #1412
+    m = re.search(r'(?:Ordine|Order)\s*#\s*(\d+)', text, re.I)
     if m:
         result['orderNumber'] = '#' + m.group(1)
 
@@ -233,6 +260,41 @@ def _parse_shop_order_body(text: str) -> dict:
         except ValueError:
             pass
 
+    # Articoli ordinati: blocchi "Article: NOME ... Code NNNNN ... Price € X  Quantity N ... Total row €Y".
+    # Le righe accessorie (dazi, spese varie) sono anch'esse un "Article:" ma senza "Code" numerico:
+    # è così che si distinguono dai veri articoli di vino.
+    products = []
+    duties = 0.0
+    blocks = re.split(r'(?=Article\s*:)', text, flags=re.I)
+    for block in blocks[1:]:
+        m_name = re.match(r'Article\s*:\s*(.+)', block, re.I)
+        if not m_name:
+            continue
+        name = m_name.group(1).strip()
+        has_code = bool(re.search(r'\bCode\s+\d', block, re.I))
+        m_qty = re.search(r'Quantity\s+(\d+)', block, re.I)
+        qty = int(m_qty.group(1)) if m_qty else 1
+        m_tot = re.search(r'Total\s+row\s*\n?\s*€?\s*([\d.,]+)', block, re.I)
+        value = float(m_tot.group(1).replace(',', '.')) if m_tot else 0.0
+        if has_code:
+            products.append({'description': name, 'qty': qty, 'value': value})
+        elif re.search(r'\bTAX\b|DAZI|DAZIO|DUTY|DOGAN', name, re.I):
+            duties += value
+    if products:
+        result['products'] = products
+    if duties > 0:
+        result['customsDuties'] = round(duties, 2)
+
+    # Transport expenses    €75.00 — costo di spedizione reale pagato dal cliente
+    # (distinto dalle eventuali righe "SPESE DI TRASPORTO" tra gli pseudo-articoli sopra,
+    # che sono importi diversi/parziali e non il costo di trasporto effettivo)
+    m = re.search(r'Transport\s+expenses\s+€?\s*([\d.,]+)', text, re.I)
+    if m:
+        try:
+            result['shippingCostCustomer'] = float(m.group(1).replace(',', '.'))
+        except ValueError:
+            pass
+
     return result
 
 
@@ -275,6 +337,9 @@ def _parse_email(msg) -> dict | None:
             'orderNumber':     shop_fields.get('orderNumber', ''),
             'paymentType':     shop_fields.get('paymentType', ''),
             'carrier':         carrier,
+            'products':              shop_fields.get('products', []),
+            'customsDuties':         shop_fields.get('customsDuties'),
+            'shippingCostCustomer':  shop_fields.get('shippingCostCustomer'),
         }
 
     # Supporta sia "New Order" che "New Paid Order"; amount opzionale nel soggetto
@@ -313,6 +378,9 @@ def _parse_email(msg) -> dict | None:
         'shippingAddress': body_fields.get('shippingAddress', ''),
         'numberOfCartons': None,
         'shippingType':    body_fields.get('shippingType'),
+        'products':              body_fields.get('products', []),
+        'customsDuties':         body_fields.get('customsDuties'),
+        'shippingCostCustomer':  body_fields.get('shippingCostCustomer'),
     }
 
     # Amount: body ha priorità su soggetto se soggetto = 0
@@ -393,13 +461,23 @@ def parse_fieramente_pdf(pdf_bytes: bytes) -> dict:
     else:
         shipping_type = None
 
+    # TOTAL SHIPPING CHARGES — costo trasporto reale fatturato dal corriere (già scontato)
+    shipping_cost_mos = None
+    m_sc = re.search(r'TOTAL\s+SHIPPING\s+CHARGES\s*\n?\s*€?\s*([\d.,]+)', text, re.I)
+    if m_sc:
+        try:
+            shipping_cost_mos = float(m_sc.group(1).replace(',', '.'))
+        except ValueError:
+            pass
+
     result = {
-        'shipmentCode':    shipment_code,
-        'customerEmail':   customer_email,
-        'customerPhone':   customer_phone,
-        'shippingAddress': shipping_address,
-        'numberOfCartons': number_of_cartons,
-        'shippingType':    shipping_type,
+        'shipmentCode':      shipment_code,
+        'customerEmail':     customer_email,
+        'customerPhone':     customer_phone,
+        'shippingAddress':   shipping_address,
+        'numberOfCartons':   number_of_cartons,
+        'shippingType':      shipping_type,
+        'shippingCostMos':   shipping_cost_mos,
     }
     print(f'    PDF → code={shipment_code} email={customer_email} colli={number_of_cartons} tipo={shipping_type}')
     return result
@@ -489,7 +567,8 @@ def main():
 
     # Campi che aggiorniamo se mancanti su ordini già presenti
     PATCHABLE = ('customerEmail', 'customerPhone', 'shippingType', 'shippingAddress', 'shipmentCode',
-                 'orderNumber', 'paymentType', 'carrier')
+                 'orderNumber', 'paymentType', 'carrier',
+                 'products', 'customsDuties', 'shippingCostCustomer', 'shippingCostMos')
 
     for o in new_orders_raw:
         existing_rec = next(
@@ -536,6 +615,10 @@ def main():
             'gmailMessageId':  o.get('gmailMessageId', ''),
             'trackingNumber':  '',
             'carrier':         o.get('carrier', 'MBE'),
+            'products':              o.get('products', []),
+            'customsDuties':         o.get('customsDuties'),
+            'shippingCostCustomer':  o.get('shippingCostCustomer'),
+            'shippingCostMos':       o.get('shippingCostMos'),
             'source':          o.get('source', 'fieramente'),
             'language':        detect_language(o.get('shippingAddress', '')),
             'orderNumber':     o.get('orderNumber', ''),
