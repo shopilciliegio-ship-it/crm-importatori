@@ -706,7 +706,7 @@
       "orderNumber": "#1400",
       "paymentType": "Carte Di Credito/Bancomat",
       "shippingDate": 1784545031732,
-      "status": "dogana",
+      "status": "in_consegna",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -722,6 +722,11 @@
           "status": "dogana",
           "date": 1785123307387,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "in_consegna",
+          "date": 1785273174167,
+          "note": "Auto 17Track (era: dogana): Ferndale, NY, United States — Out for Delivery, Out For Delivery Today"
         }
       ],
       "emailsSent": [
@@ -753,7 +758,7 @@
       ],
       "notes": "",
       "createdAt": 1784041550508,
-      "updatedAt": 1785249706412,
+      "updatedAt": 1785273174167,
       "track17Registered": true,
       "products": [
         {
@@ -791,7 +796,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1784545031732,
-      "status": "dogana",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -807,6 +812,11 @@
           "status": "dogana",
           "date": 1785123307387,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "consegnato",
+          "date": 1785273174167,
+          "note": "Auto 17Track (era: dogana): STATEN ISLAND, NY, US — Delivered, DELIVERED"
         }
       ],
       "emailsSent": [
@@ -838,7 +848,7 @@
       ],
       "notes": "",
       "createdAt": 1784037291832,
-      "updatedAt": 1785249706412,
+      "updatedAt": 1785273174167,
       "trackingUrl": "",
       "destCountry": "US",
       "track17Registered": true,
