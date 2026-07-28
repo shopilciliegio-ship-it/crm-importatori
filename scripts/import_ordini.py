@@ -26,6 +26,11 @@ GH_TOKEN           = os.environ['GH_TOKEN']
 GH_REPO            = os.environ['GH_REPO']             # owner/repo
 DATA_PATH          = 'data/ordini.json'
 
+# Backfill una tantum: se valorizzata (YYYY-MM-DD), ignora lastImportedAt e
+# ri-scansiona da questa data — usata per popolare prodotti/dazi/spedizione
+# sugli ordini già importati prima che questi campi esistessero.
+BACKFILL_SINCE = os.environ.get('BACKFILL_SINCE', '').strip()
+
 SKIP_EMAILS = {'ilciliegio', 'shop@', 'noreply', 'no-reply', 'fieramente',
                'sienawine', 'mailer-daemon', 'bounce', 'notification'}
 
@@ -548,8 +553,11 @@ def main():
     existing = db.get('orders', [])
     print(f'Ordini esistenti: {len(existing)}')
 
-    # Data di partenza: lastImportedAt - 1 giorno, o ultimi 30 giorni
-    if db.get('lastImportedAt'):
+    # Data di partenza: BACKFILL_SINCE (una tantum) > lastImportedAt - 1 giorno > ultimi 30 giorni
+    if BACKFILL_SINCE:
+        from_dt = datetime.strptime(BACKFILL_SINCE, '%Y-%m-%d').replace(tzinfo=timezone.utc)
+        print(f'⚠ BACKFILL attivo: ricerco ordini dal {BACKFILL_SINCE} (ignoro lastImportedAt)')
+    elif db.get('lastImportedAt'):
         from_dt = datetime.fromtimestamp(db['lastImportedAt'] / 1000, tz=timezone.utc) - timedelta(days=1)
     else:
         from_dt = datetime.now(timezone.utc) - timedelta(days=30)

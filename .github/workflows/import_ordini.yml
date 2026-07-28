@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: '0 */4 * * *'  # ogni 4 ore
   workflow_dispatch:        # trigger manuale dal CRM o da GitHub UI
+    inputs:
+      backfill_since:
+        description: 'Backfill: ri-scansiona da questa data (YYYY-MM-DD) ignorando lastImportedAt. Lascia vuoto per il normale import incrementale.'
+        required: false
+        default: ''
 
 permissions:
   contents: write
@@ -30,9 +35,15 @@ jobs:
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           GH_TOKEN:           ${{ secrets.GITHUB_TOKEN }}
           GH_REPO:            ${{ github.repository }}
+          BACKFILL_SINCE:     ${{ github.event.inputs.backfill_since }}
         run: python scripts/import_ordini.py
 
+      # I seguenti step (tracking + email reminder/follow-up) vengono saltati durante
+      # un backfill manuale, per non rifare inutilmente fetch di tracking già noti e
+      # soprattutto per non rischiare di inviare email reminder/follow-up ai clienti
+      # per ordini vecchi solo perché li stiamo re-importando.
       - name: Fetch tracking Fieramente
+        if: github.event.inputs.backfill_since == ''
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO:  ${{ github.repository }}
@@ -40,6 +51,7 @@ jobs:
         run: python scripts/fetch_fieramente_tracking.py
 
       - name: Cerca spedizioni SpedirePro
+        if: github.event.inputs.backfill_since == ''
         env:
           SPEDIREPRO_EMAIL:    ${{ secrets.SPEDIREPRO_EMAIL }}
           SPEDIREPRO_PASSWORD: ${{ secrets.SPEDIREPRO_PASSWORD }}
@@ -48,12 +60,14 @@ jobs:
         run: python scripts/fetch_spedirepro_shipments.py
 
       - name: Fetch tracking Spedire.com
+        if: github.event.inputs.backfill_since == ''
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO:  ${{ github.repository }}
         run: python scripts/fetch_spedire_tracking.py
 
       - name: Fetch tracking 17Track (UPS)
+        if: github.event.inputs.backfill_since == ''
         env:
           TRACK17_API_KEY: ${{ secrets.TRACK17_API_KEY }}
           GH_TOKEN:        ${{ secrets.GITHUB_TOKEN }}
@@ -85,6 +99,7 @@ jobs:
       # ────────────────────────────────────────────────────────────────────────
 
       - name: Invia reminder email temporizzati
+        if: github.event.inputs.backfill_since == ''
         env:
           BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
           GH_TOKEN:      ${{ secrets.GITHUB_TOKEN }}
@@ -92,6 +107,7 @@ jobs:
         run: python scripts/send_reminders.py
 
       - name: Invia follow-up importatori
+        if: github.event.inputs.backfill_since == ''
         env:
           BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
           GH_TOKEN:      ${{ secrets.GITHUB_TOKEN }}
