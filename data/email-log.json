@@ -8,6 +8,15 @@
       "subject": "Your order has been delivered! 🍷 Enjoy!",
       "sentAt": 1785207105789,
       "messageId": "<202607280251.73770177880@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_ms4skrz7fqyb",
+      "customerName": "Richard Cavalla",
+      "type": "order_received",
+      "to": "rcavalla58@gmail.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1785251392373,
+      "messageId": "<202607281509.54881224245@smtp-relay.mailin.fr>"
     }
   ]
 }
