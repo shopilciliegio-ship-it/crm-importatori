@@ -634,8 +634,17 @@ def main():
             'shippingDate':    None,
             'status':          'preparazione',
             'statusHistory':   [{'status': 'preparazione', 'date': now_ms,
-                                  'note': 'Importato da Gmail (GitHub Actions)'}],
-            'emailsSent':      [],
+                                  'note': 'Importato da Gmail (GitHub Actions)'
+                                          + (' — BACKFILL' if BACKFILL_SINCE else '')}],
+            # In un run di backfill l'email di questo ordine può arrivare da un
+            # inoltro fatto oggi (data reale ignota/persa): l'ordine sembrerebbe
+            # "appena arrivato" e riceverebbe l'email di benvenuto al cliente.
+            # La marchiamo già "inviata" (finta) per bloccarla a prescindere
+            # dalla data che risulta sull'ordine.
+            'emailsSent':      ([{'type': 'order_received', 'sentAt': now_ms,
+                                   'manual': True, 'suppressed': True,
+                                   'note': 'Soppressa — ordine importato via backfill'}]
+                                 if BACKFILL_SINCE else []),
             'notes':           '',
             'createdAt':       now_ms,
             'updatedAt':       now_ms,
