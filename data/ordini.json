@@ -858,11 +858,18 @@
           "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
           "sentAt": 1785036352440,
           "messageId": "<202607260325.79943975182@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegnato",
+          "to": "elizabethvconti@yahoo.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1785207105789,
+          "messageId": "<202607280251.73770177880@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1783435702851,
-      "updatedAt": 1785207098004,
+      "updatedAt": 1785207105789,
       "staleAlertDays": 14,
       "staleAlertSince": 1783435702851,
       "track17Registered": true,
