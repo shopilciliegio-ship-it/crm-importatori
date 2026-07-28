@@ -18,7 +18,7 @@
       "carrier": "- U.S.A. Wine Corriere Std",
       "source": "shop",
       "language": "en",
-      "orderNumber": "",
+      "orderNumber": "#1412",
       "paymentType": "Paypal",
       "shippingDate": null,
       "status": "preparazione",
@@ -40,7 +40,16 @@
       ],
       "notes": "",
       "createdAt": 1785073125866,
-      "updatedAt": 1785073141325
+      "updatedAt": 1785248418530,
+      "products": [
+        {
+          "description": "INFERNACCIO RED WINE IGT 2022",
+          "qty": 6,
+          "value": 96.0
+        }
+      ],
+      "customsDuties": 9.6,
+      "shippingCostCustomer": 75.0
     },
     {
       "id": "ord_ms1ug73esgss",
@@ -60,7 +69,7 @@
       "carrier": "Nuovo Corriere Europa",
       "source": "shop",
       "language": "en",
-      "orderNumber": "",
+      "orderNumber": "#1414",
       "paymentType": "Carte Di Credito/Bancomat",
       "shippingDate": null,
       "status": "preparazione",
@@ -82,7 +91,15 @@
       ],
       "notes": "",
       "createdAt": 1785073125866,
-      "updatedAt": 1785073141325
+      "updatedAt": 1785248418530,
+      "products": [
+        {
+          "description": "EXTRA VIRGIN OLIVE OIL 2025 LT 1",
+          "qty": 4,
+          "value": 84.0
+        }
+      ],
+      "shippingCostCustomer": 75.0
     },
     {
       "id": "ord_mryr02psox04",
@@ -6053,5 +6070,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1785073125866
+  "lastImportedAt": 1785248418530
 }
