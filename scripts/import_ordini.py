@@ -260,21 +260,23 @@ def _parse_shop_order_body(text: str) -> dict:
         except ValueError:
             pass
 
-    # Articoli ordinati: blocchi "Article: NOME ... Code NNNNN ... Price € X  Quantity N ... Total row €Y".
-    # Le righe accessorie (dazi, spese varie) sono anch'esse un "Article:" ma senza "Code" numerico:
-    # è così che si distinguono dai veri articoli di vino.
+    # Articoli ordinati: blocchi "Article/Articolo: NOME ... Code/Codice NNNNN ...
+    # Quantity/Qta N ... Total row/Totale Riga €Y". Le email sono localizzate nella
+    # lingua del cliente (etichette IT o EN, come per gli altri campi sopra).
+    # Le righe accessorie (dazi, spese varie) sono anch'esse un "Article:" ma senza
+    # un "Code" numerico: è così che si distinguono dai veri articoli di vino.
     products = []
     duties = 0.0
-    blocks = re.split(r'(?=Article\s*:)', text, flags=re.I)
+    blocks = re.split(r'(?=(?:Article|Articolo)\s*:)', text, flags=re.I)
     for block in blocks[1:]:
-        m_name = re.match(r'Article\s*:\s*(.+)', block, re.I)
+        m_name = re.match(r'(?:Article|Articolo)\s*:\s*(.+)', block, re.I)
         if not m_name:
             continue
         name = m_name.group(1).strip()
-        has_code = bool(re.search(r'\bCode\s+\d', block, re.I))
-        m_qty = re.search(r'Quantity\s+(\d+)', block, re.I)
+        has_code = bool(re.search(r'\b(?:Code|Codice)\s+\d', block, re.I))
+        m_qty = re.search(r'(?:Quantity|Qt[aà])\s+(\d+)', block, re.I)
         qty = int(m_qty.group(1)) if m_qty else 1
-        m_tot = re.search(r'Total\s+row\s*\n?\s*€?\s*([\d.,]+)', block, re.I)
+        m_tot = re.search(r'(?:Total\s+row|Totale\s+Riga)\s*\n?\s*€?\s*([\d.,]+)', block, re.I)
         value = float(m_tot.group(1).replace(',', '.')) if m_tot else 0.0
         if has_code:
             products.append({'description': name, 'qty': qty, 'value': value})
@@ -285,10 +287,10 @@ def _parse_shop_order_body(text: str) -> dict:
     if duties > 0:
         result['customsDuties'] = round(duties, 2)
 
-    # Transport expenses    €75.00 — costo di spedizione reale pagato dal cliente
-    # (distinto dalle eventuali righe "SPESE DI TRASPORTO" tra gli pseudo-articoli sopra,
+    # Transport expenses/Spese Trasporto    €75.00 — costo di spedizione reale pagato
+    # dal cliente (distinto dalle eventuali righe pseudo-articolo tra quelle sopra,
     # che sono importi diversi/parziali e non il costo di trasporto effettivo)
-    m = re.search(r'Transport\s+expenses\s+€?\s*([\d.,]+)', text, re.I)
+    m = re.search(r'(?:Transport\s+expenses|Spese\s+(?:di\s+)?Trasporto)\s+€?\s*([\d.,]+)', text, re.I)
     if m:
         try:
             result['shippingCostCustomer'] = float(m.group(1).replace(',', '.'))
