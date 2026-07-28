@@ -1,6 +1,44 @@
 {
   "orders": [
     {
+      "id": "ord_ms4skrz7fqyb",
+      "customerName": "Richard Cavalla",
+      "customerEmail": "rcavalla58@gmail.com",
+      "customerPhone": "5595586732",
+      "amount": 154.2,
+      "currency": "EUR",
+      "orderDate": 1785251300000,
+      "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio Richard Cavalla",
+      "shipmentCode": "",
+      "shippingAddress": "1940 S Waverly Ln, 93727 Fresno (CA), United States",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<PAXPR08MB668570E1FB974BA457E65DD7BFCB2@PAXPR08MB6685.eurprd08.prod.outlook.com>",
+      "trackingNumber": "",
+      "carrier": "- U.S.A. Wine Corriere Std",
+      "products": [],
+      "customsDuties": null,
+      "shippingCostCustomer": null,
+      "shippingCostMos": null,
+      "source": "shop",
+      "language": "en",
+      "orderNumber": "#1419",
+      "paymentType": "Carte Di Credito/Bancomat",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1785251378851,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1785251378851,
+      "updatedAt": 1785251378851
+    },
+    {
       "id": "ord_ms1ug73ecj7v",
       "customerName": "REINALDO COSTALES",
       "customerEmail": "tobynieves@yahoo.com",
@@ -6749,5 +6787,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1785249706412
+  "lastImportedAt": 1785251378851
 }
