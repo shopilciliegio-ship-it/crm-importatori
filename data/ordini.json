@@ -141,7 +141,26 @@
       ],
       "notes": "",
       "createdAt": 1784885936320,
-      "updatedAt": 1784885950145
+      "updatedAt": 1785249706412,
+      "products": [
+        {
+          "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
+          "qty": 2,
+          "value": 38.0
+        },
+        {
+          "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
+          "qty": 1,
+          "value": 10.0
+        },
+        {
+          "description": "1 LT EXTRA VIRGIN OLIVE OIL 2025",
+          "qty": 1,
+          "value": 21.0
+        }
+      ],
+      "customsDuties": 6.9,
+      "shippingCostCustomer": 75.0
     },
     {
       "id": "ord_mrxlc44sb2w3",
@@ -183,7 +202,20 @@
       ],
       "notes": "",
       "createdAt": 1784815954156,
-      "updatedAt": 1784815965602
+      "updatedAt": 1785249706412,
+      "products": [
+        {
+          "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
+          "qty": 3,
+          "value": 57.0
+        },
+        {
+          "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
+          "qty": 3,
+          "value": 30.0
+        }
+      ],
+      "shippingCostCustomer": 68.0
     },
     {
       "id": "ord_mrxlc44s52ot",
@@ -225,7 +257,20 @@
       ],
       "notes": "",
       "createdAt": 1784815954156,
-      "updatedAt": 1784815965602
+      "updatedAt": 1785249706412,
+      "products": [
+        {
+          "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
+          "qty": 12,
+          "value": 228.0
+        },
+        {
+          "description": "CHIANTI STRADE BIANCHE 2025 LIM. ED.",
+          "qty": 1,
+          "value": 0.0
+        }
+      ],
+      "shippingCostCustomer": 114.0
     },
     {
       "id": "ord_mrxlc44sxku5",
@@ -325,9 +370,23 @@
       ],
       "notes": "",
       "createdAt": 1784367465503,
-      "updatedAt": 1784973213410,
+      "updatedAt": 1785249706412,
       "staleAlertDays": 7,
-      "staleAlertSince": 1784367465503
+      "staleAlertSince": 1784367465503,
+      "products": [
+        {
+          "description": "SPARKLING WINE CILIEGIO IN FIORE ROSÉ",
+          "qty": 12,
+          "value": 120.0
+        },
+        {
+          "description": "CHIANTI STRADE BIANCHE 2025 LIM. ED.",
+          "qty": 1,
+          "value": 0.0
+        }
+      ],
+      "customsDuties": 12.0,
+      "shippingCostCustomer": 185.0
     },
     {
       "id": "ord_mrq6bg2nwwc5",
@@ -371,9 +430,33 @@
       ],
       "notes": "",
       "createdAt": 1784367465503,
-      "updatedAt": 1784973213410,
+      "updatedAt": 1785249706412,
       "staleAlertDays": 7,
-      "staleAlertSince": 1784367465503
+      "staleAlertSince": 1784367465503,
+      "products": [
+        {
+          "description": "INFERNACCIO RED WINE IGT 2022",
+          "qty": 6,
+          "value": 96.0
+        },
+        {
+          "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
+          "qty": 6,
+          "value": 114.0
+        },
+        {
+          "description": "CHIANTI STRADE BIANCHE 2025 LIM. ED.",
+          "qty": 1,
+          "value": 0.0
+        },
+        {
+          "description": "5 LT EXTRA VIRGIN OLIVE OIL 2025",
+          "qty": 1,
+          "value": 90.0
+        }
+      ],
+      "customsDuties": 30.0,
+      "shippingCostCustomer": 185.0
     },
     {
       "id": "ord_mrozsz1q6qxz",
@@ -417,9 +500,38 @@
       ],
       "notes": "",
       "createdAt": 1784296059758,
-      "updatedAt": 1784901250217,
+      "updatedAt": 1785249706412,
       "staleAlertDays": 7,
-      "staleAlertSince": 1784296059758
+      "staleAlertSince": 1784296059758,
+      "products": [
+        {
+          "description": "1 LT EXTRA VIRGIN OLIVE OIL 2025",
+          "qty": 1,
+          "value": 21.0
+        },
+        {
+          "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
+          "qty": 1,
+          "value": 10.0
+        },
+        {
+          "description": "SPARKLING WINE CILIEGIO IN FIORE ROSÉ",
+          "qty": 1,
+          "value": 10.0
+        },
+        {
+          "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
+          "qty": 1,
+          "value": 19.0
+        },
+        {
+          "description": "INFERNACCIO RED WINE IGT 2022",
+          "qty": 1,
+          "value": 16.0
+        }
+      ],
+      "customsDuties": 7.6,
+      "shippingCostCustomer": 75.0
     },
     {
       "id": "ord_mrns290cjx63",
@@ -463,9 +575,53 @@
       ],
       "notes": "",
       "createdAt": 1784222589468,
-      "updatedAt": 1784827638798,
+      "updatedAt": 1785249706412,
       "staleAlertDays": 7,
-      "staleAlertSince": 1784222589468
+      "staleAlertSince": 1784222589468,
+      "products": [
+        {
+          "description": "WHITE WINE IGT 2024",
+          "qty": 2,
+          "value": 14.0
+        },
+        {
+          "description": "RED WINE IGT 2024",
+          "qty": 1,
+          "value": 7.0
+        },
+        {
+          "description": "PURPLE GRAPES - SWEET RED WINE IGT 202..",
+          "qty": 1,
+          "value": 4.25
+        },
+        {
+          "description": "POGGIO ORLANDO 2024 CHIANTI COLLI SENE..",
+          "qty": 2,
+          "value": 24.0
+        },
+        {
+          "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
+          "qty": 3,
+          "value": 57.0
+        },
+        {
+          "description": "LE FORCACCE WHITE WINE IGT 2024 VIOGNI..",
+          "qty": 1,
+          "value": 8.5
+        },
+        {
+          "description": "SPARKLING WINE CILIEGIO IN FIORE ROSÉ",
+          "qty": 1,
+          "value": 10.0
+        },
+        {
+          "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
+          "qty": 1,
+          "value": 10.0
+        }
+      ],
+      "customsDuties": 12.8,
+      "shippingCostCustomer": 115.0
     },
     {
       "id": "ord_mrks9ygcsxmy",
@@ -485,7 +641,7 @@
       "carrier": "- U.S.A. Wine Corriere Std",
       "source": "shop",
       "language": "en",
-      "orderNumber": "",
+      "orderNumber": "#1400",
       "paymentType": "Carte Di Credito/Bancomat",
       "shippingDate": 1784545031732,
       "status": "dogana",
@@ -535,8 +691,22 @@
       ],
       "notes": "",
       "createdAt": 1784041550508,
-      "updatedAt": 1785123313475,
-      "track17Registered": true
+      "updatedAt": 1785249706412,
+      "track17Registered": true,
+      "products": [
+        {
+          "description": "INFERNACCIO RED WINE IGT 2022",
+          "qty": 6,
+          "value": 96.0
+        },
+        {
+          "description": "LE FORCACCE WHITE WINE IGT 2025 VIOGNIER 100%",
+          "qty": 6,
+          "value": 51.0
+        }
+      ],
+      "customsDuties": 14.7,
+      "shippingCostCustomer": 115.0
     },
     {
       "id": "ord_mrkpqofs6q8x",
@@ -606,10 +776,29 @@
       ],
       "notes": "",
       "createdAt": 1784037291832,
-      "updatedAt": 1785123313475,
+      "updatedAt": 1785249706412,
       "trackingUrl": "",
       "destCountry": "US",
-      "track17Registered": true
+      "track17Registered": true,
+      "products": [
+        {
+          "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
+          "qty": 1,
+          "value": 10.0
+        },
+        {
+          "description": "SPARKLING WINE CILIEGIO IN FIORE ROSÉ",
+          "qty": 1,
+          "value": 10.0
+        },
+        {
+          "description": "VIN SANTO DEL CHIANTI DOC 2019",
+          "qty": 1,
+          "value": 19.0
+        }
+      ],
+      "customsDuties": 3.9,
+      "shippingCostCustomer": 65.0
     },
     {
       "id": "ord_mrdcgxhvhpul",
@@ -701,12 +890,31 @@
       ],
       "notes": "",
       "createdAt": 1783591738771,
-      "updatedAt": 1784917851425,
+      "updatedAt": 1785249706412,
       "trackingUrl": "",
       "track17Registered": true,
       "destCountry": "US",
       "staleAlertDays": 7,
-      "staleAlertSince": 1784023362268
+      "staleAlertSince": 1784023362268,
+      "products": [
+        {
+          "description": "MARIO RED WINE IGT 2019",
+          "qty": 4,
+          "value": 112.0
+        },
+        {
+          "description": "INFERNACCIO RED WINE IGT 2022",
+          "qty": 4,
+          "value": 64.0
+        },
+        {
+          "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
+          "qty": 4,
+          "value": 76.0
+        }
+      ],
+      "customsDuties": 23.94,
+      "shippingCostCustomer": 115.0
     },
     {
       "id": "ord_mrbxkhn28fx7",
@@ -766,11 +974,19 @@
       ],
       "notes": "",
       "createdAt": 1783506244430,
-      "updatedAt": 1784622239479,
+      "updatedAt": 1785249706412,
       "staleAlertDays": 7,
       "staleAlertSince": 1783506244430,
       "trackingUrl": "",
-      "destCountry": "IT"
+      "destCountry": "IT",
+      "products": [
+        {
+          "description": "1 LT EXTRA VIRGIN OLIVE OIL 2025",
+          "qty": 4,
+          "value": 84.0
+        }
+      ],
+      "shippingCostCustomer": 12.0
     },
     {
       "id": "ord_mrarkjesrjkm",
@@ -886,12 +1102,31 @@
       ],
       "notes": "",
       "createdAt": 1783435702851,
-      "updatedAt": 1785207105789,
+      "updatedAt": 1785249706412,
       "staleAlertDays": 14,
       "staleAlertSince": 1783435702851,
       "track17Registered": true,
       "deliveryFailureCount": 2,
-      "lastDeliveryFailureEventAt": "2026-07-25T18:04:51Z"
+      "lastDeliveryFailureEventAt": "2026-07-25T18:04:51Z",
+      "products": [
+        {
+          "description": "INFERNACCIO RED WINE IGT 2022",
+          "qty": 3,
+          "value": 48.0
+        },
+        {
+          "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
+          "qty": 3,
+          "value": 57.0
+        },
+        {
+          "description": "1 LT EXTRA VIRGIN OLIVE OIL 2025",
+          "qty": 6,
+          "value": 126.0
+        }
+      ],
+      "customsDuties": 21.95,
+      "shippingCostCustomer": 185.0
     },
     {
       "id": "ord_mr9e3pqw32dj",
@@ -963,10 +1198,28 @@
       ],
       "notes": "",
       "createdAt": 1783352616728,
-      "updatedAt": 1784055611090,
+      "updatedAt": 1785249706412,
       "trackingUrl": "",
       "track17Registered": true,
-      "destCountry": "PL"
+      "destCountry": "PL",
+      "products": [
+        {
+          "description": "MARIO RED WINE IGT 2019",
+          "qty": 1,
+          "value": 28.0
+        },
+        {
+          "description": "VIN SANTO DEL CHIANTI DOC 2019",
+          "qty": 1,
+          "value": 19.0
+        },
+        {
+          "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
+          "qty": 1,
+          "value": 10.0
+        }
+      ],
+      "shippingCostCustomer": 56.0
     },
     {
       "id": "ord_mr9e3pqw8pvq",
@@ -1050,10 +1303,19 @@
       ],
       "notes": "",
       "createdAt": 1783352616728,
-      "updatedAt": 1784741120861,
+      "updatedAt": 1785249706412,
       "staleAlertDays": 7,
       "staleAlertSince": 1783352616728,
-      "track17Registered": true
+      "track17Registered": true,
+      "products": [
+        {
+          "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
+          "qty": 6,
+          "value": 114.0
+        }
+      ],
+      "customsDuties": 11.4,
+      "shippingCostCustomer": 75.0
     },
     {
       "id": "ord_mr4w7uw0auq6",
@@ -1097,10 +1359,28 @@
       ],
       "notes": "",
       "createdAt": 1783080712224,
-      "updatedAt": 1784901250217,
+      "updatedAt": 1785249706412,
       "staleAlertDays": 21,
       "staleAlertSince": 1783080712224,
-      "trackingUrl": ""
+      "trackingUrl": "",
+      "products": [
+        {
+          "description": "INFERNACCIO RED WINE IGT 2022",
+          "qty": 3,
+          "value": 48.0
+        },
+        {
+          "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
+          "qty": 2,
+          "value": 38.0
+        },
+        {
+          "description": "MARIO RED WINE IGT 2019",
+          "qty": 1,
+          "value": 28.0
+        }
+      ],
+      "shippingCostCustomer": 59.0
     },
     {
       "id": "ord_mqz7gdo78vki",
@@ -1208,12 +1488,31 @@
       ],
       "notes": "",
       "createdAt": 1782736788535,
-      "updatedAt": 1784949169447,
+      "updatedAt": 1785249706412,
       "staleAlertDays": 7,
       "staleAlertSince": 1783913270789,
       "track17Registered": true,
       "deliveryFailureCount": 1,
-      "lastDeliveryFailureEventAt": "2026-07-23T20:22:36Z"
+      "lastDeliveryFailureEventAt": "2026-07-23T20:22:36Z",
+      "products": [
+        {
+          "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
+          "qty": 3,
+          "value": 30.0
+        },
+        {
+          "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
+          "qty": 2,
+          "value": 38.0
+        },
+        {
+          "description": "VIN SANTO DEL CHIANTI DOC 2019",
+          "qty": 1,
+          "value": 19.0
+        }
+      ],
+      "customsDuties": 8.7,
+      "shippingCostCustomer": 75.0
     },
     {
       "id": "ord_mqv18erkvrev",
@@ -1313,10 +1612,29 @@
       ],
       "notes": "",
       "createdAt": 1782484474304,
-      "updatedAt": 1784431226727,
+      "updatedAt": 1785249706412,
       "staleAlertDays": 7,
       "staleAlertSince": 1783075351578,
-      "track17Registered": true
+      "track17Registered": true,
+      "products": [
+        {
+          "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
+          "qty": 1,
+          "value": 10.0
+        },
+        {
+          "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
+          "qty": 1,
+          "value": 19.0
+        },
+        {
+          "description": "INFERNACCIO RED WINE IGT 2022",
+          "qty": 1,
+          "value": 16.0
+        }
+      ],
+      "customsDuties": 4.5,
+      "shippingCostCustomer": 65.0
     },
     {
       "id": "ord_mqv18erkeq5b",
@@ -1412,10 +1730,19 @@
       ],
       "notes": "",
       "createdAt": 1782484474304,
-      "updatedAt": 1784840964301,
+      "updatedAt": 1785249706412,
       "staleAlertDays": 7,
       "staleAlertSince": 1783913270789,
-      "track17Registered": true
+      "track17Registered": true,
+      "products": [
+        {
+          "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
+          "qty": 6,
+          "value": 60.0
+        }
+      ],
+      "customsDuties": 6.0,
+      "shippingCostCustomer": 75.0
     },
     {
       "id": "ord_mqp9n81ny0g2",
@@ -1499,7 +1826,36 @@
       ],
       "notes": "",
       "createdAt": 1782135805307,
-      "updatedAt": 1783480755280
+      "updatedAt": 1785249706412,
+      "products": [
+        {
+          "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
+          "qty": 1,
+          "value": 19.0
+        },
+        {
+          "description": "SPARKLING WINE CILIEGIO IN FIORE ROSÉ",
+          "qty": 2,
+          "value": 20.0
+        },
+        {
+          "description": "500 ML EXTRA VIRGIN OLIVE OIL 2025",
+          "qty": 1,
+          "value": 11.5
+        },
+        {
+          "description": "THEIA RED WINE",
+          "qty": 1,
+          "value": 5.0
+        },
+        {
+          "description": "RED WINE IGT 2024",
+          "qty": 1,
+          "value": 7.0
+        }
+      ],
+      "customsDuties": 6.25,
+      "shippingCostCustomer": 75.0
     },
     {
       "id": "ord_mqju2sucol0j",
@@ -1585,7 +1941,26 @@
       ],
       "notes": "",
       "createdAt": 1781807327363,
-      "updatedAt": 1783568652951
+      "updatedAt": 1785249706412,
+      "products": [
+        {
+          "description": "MARIO RED WINE IGT 2019",
+          "qty": 1,
+          "value": 28.0
+        },
+        {
+          "description": "RED WINE IGT 2024",
+          "qty": 1,
+          "value": 7.0
+        },
+        {
+          "description": "WHITE WINE IGT 2024",
+          "qty": 1,
+          "value": 7.0
+        }
+      ],
+      "customsDuties": 4.2,
+      "shippingCostCustomer": 65.0
     },
     {
       "id": "ord_mqju2suberxx",
@@ -1671,7 +2046,16 @@
       ],
       "notes": "",
       "createdAt": 1781807327363,
-      "updatedAt": 1783568652951
+      "updatedAt": 1785249706412,
+      "products": [
+        {
+          "description": "250 ML EXTRA VIRGIN OLIVE OIL 2025",
+          "qty": 3,
+          "value": 27.0
+        }
+      ],
+      "customsDuties": 2.7,
+      "shippingCostCustomer": 65.0
     },
     {
       "id": "ord_mqjc6bvm0tmr",
@@ -1691,7 +2075,7 @@
       "carrier": "- U.S.A. Wine Corriere Std",
       "source": "shop",
       "language": "en",
-      "orderNumber": "",
+      "orderNumber": "#1395",
       "paymentType": "Carte Di Credito/Bancomat",
       "shippingDate": 1782566908515,
       "status": "consegnato",
@@ -1764,10 +2148,39 @@
       ],
       "notes": "",
       "createdAt": 1781777258914,
-      "updatedAt": 1783568652951,
+      "updatedAt": 1785249706412,
       "trackingUrl": "",
       "staleAlertDays": 7,
-      "staleAlertSince": 1782565638211
+      "staleAlertSince": 1782565638211,
+      "products": [
+        {
+          "description": "AFELIO CHIANTI DOCG 2022",
+          "qty": 4,
+          "value": 20.0
+        },
+        {
+          "description": "THEIA RED TABLE WINE",
+          "qty": 2,
+          "value": 10.0
+        },
+        {
+          "description": "THEIA WHITE TABLE WINE",
+          "qty": 2,
+          "value": 10.0
+        },
+        {
+          "description": "CHIANTI COLLI SENESI DOCG POGGIO ORLANDO 2024",
+          "qty": 14,
+          "value": 168.0
+        },
+        {
+          "description": "CHIANTI COLLI SENESI DOCG POGGIO ORLANDO RISERVA 2021",
+          "qty": 14,
+          "value": 266.0
+        }
+      ],
+      "customsDuties": 47.4,
+      "shippingCostCustomer": 320.0
     },
     {
       "id": "ord_mqh1s5rlhcpn",
@@ -1851,7 +2264,31 @@
       ],
       "notes": "",
       "createdAt": 1781638869297,
-      "updatedAt": 1783480755280
+      "updatedAt": 1785249706412,
+      "products": [
+        {
+          "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
+          "qty": 3,
+          "value": 30.0
+        },
+        {
+          "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
+          "qty": 2,
+          "value": 38.0
+        },
+        {
+          "description": "POGGIO ORLANDO 2024 CHIANTI COLLI SENE..",
+          "qty": 1,
+          "value": 12.0
+        },
+        {
+          "description": "SPARKLING WINE CILIEGIO IN FIORE ROSÉ",
+          "qty": 2,
+          "value": 20.0
+        }
+      ],
+      "customsDuties": 10.0,
+      "shippingCostCustomer": 115.0
     },
     {
       "id": "ord_mqh1s5rleh85",
@@ -1977,12 +2414,41 @@
       ],
       "notes": "",
       "createdAt": 1781638869297,
-      "updatedAt": 1783717806582,
+      "updatedAt": 1785249706412,
       "staleAlertDays": 7,
       "staleAlertSince": 1783050177259,
       "track17Registered": true,
       "deliveryFailureCount": 2,
-      "lastDeliveryFailureEventAt": "2026-07-09T18:35:57Z"
+      "lastDeliveryFailureEventAt": "2026-07-09T18:35:57Z",
+      "products": [
+        {
+          "description": "WHITE WINE IGT 2024",
+          "qty": 2,
+          "value": 14.0
+        },
+        {
+          "description": "POGGIO ORLANDO 2024 CHIANTI COLLI SENE..",
+          "qty": 4,
+          "value": 48.0
+        },
+        {
+          "description": "LE FORCACCE WHITE WINE IGT 2024 VIOGNI..",
+          "qty": 2,
+          "value": 17.0
+        },
+        {
+          "description": "INFERNACCIO RED WINE IGT 2022",
+          "qty": 3,
+          "value": 48.0
+        },
+        {
+          "description": "CHIANTI STRADE BIANCHE 2025 LIM. ED.",
+          "qty": 1,
+          "value": 0.0
+        }
+      ],
+      "customsDuties": 12.7,
+      "shippingCostCustomer": 115.0
     },
     {
       "id": "ord_mqfb6etzok72",
@@ -2002,7 +2468,7 @@
       "carrier": "- U.S.A. Wine Corriere Std",
       "source": "shop",
       "language": "en",
-      "orderNumber": "",
+      "orderNumber": "#1393",
       "paymentType": "Carte Di Credito/Bancomat",
       "shippingDate": 1782287519736,
       "status": "consegnato",
@@ -2066,7 +2532,36 @@
       ],
       "notes": "",
       "createdAt": 1781533718423,
-      "updatedAt": 1783568652951
+      "updatedAt": 1785249706412,
+      "products": [
+        {
+          "description": "CILIEGIO IN FIORE SWEET SPARKLING WINE",
+          "qty": 1,
+          "value": 10.0
+        },
+        {
+          "description": "LE FORCACCE WHITE WINE IGT 2025 VIOGNIER 100%",
+          "qty": 1,
+          "value": 8.5
+        },
+        {
+          "description": "CILIEGIO IN FIORE ROSE' SPARKLING WINE",
+          "qty": 1,
+          "value": 10.0
+        },
+        {
+          "description": "INFERNACCIO RED WINE IGT 2022",
+          "qty": 2,
+          "value": 32.0
+        },
+        {
+          "description": "CHIANTI GRAN FONDO STRADE BIANCHE LIMITED EDITION",
+          "qty": 1,
+          "value": 20.0
+        }
+      ],
+      "customsDuties": 8.05,
+      "shippingCostCustomer": 75.0
     },
     {
       "id": "ord_mqfb6etzyl7s",
@@ -2164,13 +2659,32 @@
       ],
       "notes": "",
       "createdAt": 1781533718423,
-      "updatedAt": 1784917851425,
+      "updatedAt": 1785249706412,
       "staleAlertDays": 14,
       "staleAlertSince": 1783705716609,
       "track17Registered": true,
       "trackingUrl": "",
       "deliveryFailureCount": 1,
-      "lastDeliveryFailureEventAt": "2026-07-08T15:41:47Z"
+      "lastDeliveryFailureEventAt": "2026-07-08T15:41:47Z",
+      "products": [
+        {
+          "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
+          "qty": 1,
+          "value": 19.0
+        },
+        {
+          "description": "INFERNACCIO RED WINE IGT 2022",
+          "qty": 1,
+          "value": 16.0
+        },
+        {
+          "description": "POGGIO ORLANDO 2024 CHIANTI COLLI SENE..",
+          "qty": 1,
+          "value": 12.0
+        }
+      ],
+      "customsDuties": 4.7,
+      "shippingCostCustomer": 65.0
     },
     {
       "id": "ord_mqfb6etz79pb",
@@ -2254,7 +2768,31 @@
       ],
       "notes": "",
       "createdAt": 1781533718423,
-      "updatedAt": 1783655237203
+      "updatedAt": 1785249706412,
+      "products": [
+        {
+          "description": "MARIO RED WINE IGT 2019",
+          "qty": 2,
+          "value": 56.0
+        },
+        {
+          "description": "CHIANTI STRADE BIANCHE 2025 LIM. ED.",
+          "qty": 1,
+          "value": 20.0
+        },
+        {
+          "description": "WHITE WINE IGT 2024",
+          "qty": 1,
+          "value": 7.0
+        },
+        {
+          "description": "INFERNACCIO RED WINE IGT 2022",
+          "qty": 2,
+          "value": 32.0
+        }
+      ],
+      "customsDuties": 11.5,
+      "shippingCostCustomer": 75.0
     },
     {
       "id": "ord_mqb2woep3ml8",
@@ -2352,10 +2890,29 @@
       ],
       "notes": "",
       "createdAt": 1781277962641,
-      "updatedAt": 1783750716799,
+      "updatedAt": 1785249706412,
       "staleAlertDays": 7,
       "staleAlertSince": 1783050177259,
-      "track17Registered": true
+      "track17Registered": true,
+      "products": [
+        {
+          "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
+          "qty": 3,
+          "value": 30.0
+        },
+        {
+          "description": "POGGIO ORLANDO 2024 CHIANTI COLLI SENE.",
+          "qty": 2,
+          "value": 24.0
+        },
+        {
+          "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
+          "qty": 1,
+          "value": 19.0
+        }
+      ],
+      "customsDuties": 7.3,
+      "shippingCostCustomer": 75.0
     },
     {
       "id": "ord_mq5eg9jb9j56",
@@ -2431,8 +2988,27 @@
       ],
       "notes": "",
       "createdAt": 1780934555207,
-      "updatedAt": 1782446906125,
-      "language": "en"
+      "updatedAt": 1785249706412,
+      "language": "en",
+      "products": [
+        {
+          "description": "VIN SANTO DEL CHIANTI DOC 2019",
+          "qty": 1,
+          "value": 19.0
+        },
+        {
+          "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
+          "qty": 1,
+          "value": 10.0
+        },
+        {
+          "description": "SPARKLING WINE CILIEGIO IN FIORE ROSÉ",
+          "qty": 1,
+          "value": 10.0
+        }
+      ],
+      "customsDuties": 3.9,
+      "shippingCostCustomer": 65.0
     },
     {
       "id": "ord_mq5486ml19i0",
@@ -2549,7 +3125,7 @@
       "trackingNumber": "1Z9376E1A834393461",
       "carrier": "Corriere Italia",
       "source": "shop",
-      "orderNumber": "",
+      "orderNumber": "#1384",
       "paymentType": "Carte Di Credito/Bancomat",
       "shippingDate": 1781136000000,
       "status": "consegnato",
@@ -2606,9 +3182,23 @@
       ],
       "notes": "",
       "createdAt": 1780917382029,
-      "updatedAt": 1782879588313,
+      "updatedAt": 1785249706412,
       "trackingUrl": "",
-      "language": "en"
+      "language": "en",
+      "products": [
+        {
+          "description": "PURPLE GRAPES - SWEET RED WINE IGT 2024",
+          "qty": 2,
+          "value": 8.5
+        },
+        {
+          "description": "CILIEGIO IN FIORE SWEET SPARKLING WINE",
+          "qty": 10,
+          "value": 100.0
+        }
+      ],
+      "customsDuties": 10.85,
+      "shippingCostCustomer": 115.0
     },
     {
       "id": "ord_mq12fqsu08v6",
@@ -2681,7 +3271,27 @@
       ],
       "notes": "",
       "createdAt": 1780672510830,
-      "updatedAt": 1783050182940
+      "updatedAt": 1785249706412,
+      "products": [
+        {
+          "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
+          "qty": 12,
+          "value": 228.0
+        },
+        {
+          "description": "CHIANTI STRADE BIANCHE 2025 LIM. ED.",
+          "qty": 1,
+          "value": 0.0
+        },
+        {
+          "description": "VIN SANTO DEL CHIANTI DOC 2019",
+          "qty": 1,
+          "value": 19.0
+        }
+      ],
+      "customsDuties": 24.7,
+      "shippingCostCustomer": 185.0,
+      "language": "en"
     },
     {
       "id": "ord_mpzhlcdu21tb",
@@ -2754,7 +3364,27 @@
       ],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1782964770140
+      "updatedAt": 1785249706412,
+      "products": [
+        {
+          "description": "INFERNACCIO RED WINE IGT 2022",
+          "qty": 1,
+          "value": 16.0
+        },
+        {
+          "description": "VIN SANTO DEL CHIANTI DOC 2019",
+          "qty": 1,
+          "value": 19.0
+        },
+        {
+          "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
+          "qty": 1,
+          "value": 19.0
+        }
+      ],
+      "customsDuties": 5.4,
+      "shippingCostCustomer": 65.0,
+      "language": "en"
     },
     {
       "id": "ord_mpzhlcdubeyc",
@@ -2827,7 +3457,17 @@
       ],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1783050182940
+      "updatedAt": 1785249706412,
+      "products": [
+        {
+          "description": "INFERNACCIO RED WINE IGT 2022",
+          "qty": 3,
+          "value": 48.0
+        }
+      ],
+      "customsDuties": 4.8,
+      "shippingCostCustomer": 65.0,
+      "language": "en"
     },
     {
       "id": "ord_mpzhlcdub8mu",
@@ -2960,14 +3600,23 @@
       ],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1784949169447,
+      "updatedAt": 1785249706412,
       "trackingUrl": "",
       "language": "en",
       "track17Registered": true,
       "deliveryFailureCount": 2,
       "lastDeliveryFailureEventAt": "2026-07-02T07:24:38Z",
       "staleAlertDays": 14,
-      "staleAlertSince": 1783717798897
+      "staleAlertSince": 1783717798897,
+      "products": [
+        {
+          "description": "INFERNACCIO RED WINE IGT 2022",
+          "qty": 3,
+          "value": 48.0
+        }
+      ],
+      "customsDuties": 4.8,
+      "shippingCostCustomer": 65.0
     },
     {
       "id": "ord_mpvpkyylwz2h",
@@ -3048,7 +3697,7 @@
       "id": "ord_mpv5bpn5tqbw",
       "customerName": "LORA CURRIE",
       "customerEmail": "lorahenke@aol.com",
-      "customerPhone": "",
+      "customerPhone": "14075626225",
       "amount": 240.4,
       "currency": "EUR",
       "orderDate": 1780230916000,
@@ -3119,8 +3768,38 @@
       ],
       "notes": "",
       "createdAt": 1780314564497,
-      "updatedAt": 1782964770140,
-      "shippingType": "standard"
+      "updatedAt": 1785249706412,
+      "shippingType": "standard",
+      "products": [
+        {
+          "description": "500 ML EXTRA VIRGIN OLIVE OIL 2025",
+          "qty": 4,
+          "value": 46.0
+        },
+        {
+          "description": "SPARKLING WINE CILIEGIO IN FIORE ROSÉ",
+          "qty": 4,
+          "value": 40.0
+        },
+        {
+          "description": "DURUM WHEAT FLOUR SENATORE CAPPELLI KG..",
+          "qty": 2,
+          "value": 8.0
+        },
+        {
+          "description": "CHIANTI STRADE BIANCHE 2025 LIM. ED.",
+          "qty": 1,
+          "value": 20.0
+        },
+        {
+          "description": "CHIANTI STRADE BIANCHE 2025 LIM. ED.",
+          "qty": 1,
+          "value": 0.0
+        }
+      ],
+      "customsDuties": 11.4,
+      "shippingCostCustomer": 115.0,
+      "language": "en"
     },
     {
       "id": "ord_mbe_IT3299-8V-0000006F09",
@@ -6070,5 +6749,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1785248418530
+  "lastImportedAt": 1785249706412
 }
