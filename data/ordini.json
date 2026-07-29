@@ -355,7 +355,7 @@
       "orderNumber": "#1408",
       "paymentType": "Carte Di Credito/Bancomat",
       "shippingDate": 1784919282450,
-      "status": "in_consegna",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -371,6 +371,11 @@
           "status": "in_consegna",
           "date": 1785306960381,
           "note": "Auto Spedire: In consegna"
+        },
+        {
+          "status": "consegnato",
+          "date": 1785321802158,
+          "note": "Auto Spedire: CONSEGNATO "
         }
       ],
       "emailsSent": [
@@ -398,7 +403,7 @@
       ],
       "notes": "",
       "createdAt": 1784815954156,
-      "updatedAt": 1785306963305,
+      "updatedAt": 1785321802158,
       "trackingUrl": "https://www.spedire.com/tracking/1Z71V28R6899452932",
       "spedireproReference": "CAPELLIG"
     },
