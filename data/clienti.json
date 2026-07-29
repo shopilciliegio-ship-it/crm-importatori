@@ -70893,7 +70893,7 @@
           "toEmail": "giuvellafriggieri@gmail.com"
         }
       ],
-      "blacklisted": false,
+      "blacklisted": true,
       "notes": "",
       "status": "sent",
       "region": "Nord America",
@@ -70913,9 +70913,20 @@
           "clicked": false,
           "bounced": false,
           "spam": false,
-          "unsubscribed": false,
+          "unsubscribed": true,
           "blocked": false,
-          "deliveredAt": "2026-06-16T23:13:56.775+02:00"
+          "deliveredAt": "2026-06-16T23:13:56.775+02:00",
+          "unsubscribedAt": "2026-07-29T12:21:04.883+02:00"
+        }
+      ],
+      "log": [
+        {
+          "ts": 1785321625034,
+          "msg": "🚫 Disiscritto: Wave 1"
+        },
+        {
+          "ts": 1785321626111,
+          "msg": "🚫 Contatto inserito in blacklist (spam/disiscrizione/bloccata)"
         }
       ]
     },
