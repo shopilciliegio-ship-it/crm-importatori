@@ -766,11 +766,18 @@
           "subject": "Your wine is out for delivery! 🍷",
           "sentAt": 1785273176252,
           "messageId": "<202607282112.34352406620@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegnato",
+          "to": "susanrusciano1960@yahoo.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1785293900102,
+          "messageId": "<202607290258.80875792765@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1784041550508,
-      "updatedAt": 1785293894820,
+      "updatedAt": 1785293900102,
       "track17Registered": true,
       "products": [
         {
