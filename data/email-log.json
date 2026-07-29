@@ -35,6 +35,15 @@
       "subject": "Your order has been delivered! 🍷 Enjoy!",
       "sentAt": 1785273176252,
       "messageId": "<202607282112.64778414712@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mrks9ygcsxmy",
+      "customerName": "SUSAN RUSCIANO",
+      "type": "consegnato",
+      "to": "susanrusciano1960@yahoo.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1785293900102,
+      "messageId": "<202607290258.80875792765@smtp-relay.mailin.fr>"
     }
   ]
 }
