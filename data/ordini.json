@@ -718,7 +718,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1785420786789,
-      "status": "in_transito",
+      "status": "problema",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -729,6 +729,11 @@
           "status": "in_transito",
           "date": 1785420786789,
           "note": "Auto Fieramente (era: preparazione)"
+        },
+        {
+          "status": "problema",
+          "date": 1785433219676,
+          "note": "Auto 17Track (era: in_transito): On the Way, The street name is incorrect. This may delay delivery. We're attempting to update the address."
         }
       ],
       "emailsSent": [
@@ -751,7 +756,7 @@
       ],
       "notes": "",
       "createdAt": 1784222589468,
-      "updatedAt": 1785420804446,
+      "updatedAt": 1785433219676,
       "staleAlertDays": 7,
       "staleAlertSince": 1784222589468,
       "products": [
