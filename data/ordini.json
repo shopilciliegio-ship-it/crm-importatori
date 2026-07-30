@@ -107,7 +107,7 @@
       ],
       "notes": "",
       "createdAt": 1785073125866,
-      "updatedAt": 1785420786789,
+      "updatedAt": 1785420795910,
       "products": [
         {
           "description": "INFERNACCIO RED WINE IGT 2022",
@@ -116,7 +116,8 @@
         }
       ],
       "customsDuties": 9.6,
-      "shippingCostCustomer": 75
+      "shippingCostCustomer": 75,
+      "track17Registered": true
     },
     {
       "id": "ord_ms1ug73esgss",
@@ -163,7 +164,7 @@
       ],
       "notes": "",
       "createdAt": 1785073125866,
-      "updatedAt": 1785420786789,
+      "updatedAt": 1785420795910,
       "products": [
         {
           "description": "EXTRA VIRGIN OLIVE OIL 2025 LT 1",
@@ -171,7 +172,8 @@
           "value": 84
         }
       ],
-      "shippingCostCustomer": 75
+      "shippingCostCustomer": 75,
+      "track17Registered": true
     },
     {
       "id": "ord_mryr02psox04",
@@ -279,7 +281,7 @@
       ],
       "notes": "",
       "createdAt": 1784815954156,
-      "updatedAt": 1785420786789,
+      "updatedAt": 1785420795910,
       "products": [
         {
           "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
@@ -292,7 +294,8 @@
           "value": 30
         }
       ],
-      "shippingCostCustomer": 68
+      "shippingCostCustomer": 68,
+      "track17Registered": true
     },
     {
       "id": "ord_mrxlc44s52ot",
@@ -339,7 +342,7 @@
       ],
       "notes": "",
       "createdAt": 1784815954156,
-      "updatedAt": 1785420786789,
+      "updatedAt": 1785420795910,
       "products": [
         {
           "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
@@ -352,7 +355,8 @@
           "value": 0
         }
       ],
-      "shippingCostCustomer": 114
+      "shippingCostCustomer": 114,
+      "track17Registered": true
     },
     {
       "id": "ord_mrxlc44sxku5",
@@ -481,7 +485,7 @@
       ],
       "notes": "",
       "createdAt": 1784367465503,
-      "updatedAt": 1785420786789,
+      "updatedAt": 1785420795910,
       "staleAlertDays": 7,
       "staleAlertSince": 1784367465503,
       "products": [
@@ -497,7 +501,8 @@
         }
       ],
       "customsDuties": 12,
-      "shippingCostCustomer": 185
+      "shippingCostCustomer": 185,
+      "track17Registered": true
     },
     {
       "id": "ord_mrq6bg2nwwc5",
@@ -546,7 +551,7 @@
       ],
       "notes": "",
       "createdAt": 1784367465503,
-      "updatedAt": 1785420786789,
+      "updatedAt": 1785420795910,
       "staleAlertDays": 7,
       "staleAlertSince": 1784367465503,
       "products": [
@@ -572,7 +577,8 @@
         }
       ],
       "customsDuties": 30,
-      "shippingCostCustomer": 185
+      "shippingCostCustomer": 185,
+      "track17Registered": true
     },
     {
       "id": "ord_mrozsz1q6qxz",
@@ -696,7 +702,7 @@
       ],
       "notes": "",
       "createdAt": 1784222589468,
-      "updatedAt": 1785420786789,
+      "updatedAt": 1785420795910,
       "staleAlertDays": 7,
       "staleAlertSince": 1784222589468,
       "products": [
@@ -742,7 +748,8 @@
         }
       ],
       "customsDuties": 12.8,
-      "shippingCostCustomer": 115
+      "shippingCostCustomer": 115,
+      "track17Registered": true
     },
     {
       "id": "ord_mrks9ygcsxmy",
@@ -1521,7 +1528,7 @@
       ],
       "notes": "",
       "createdAt": 1783080712224,
-      "updatedAt": 1785420786789,
+      "updatedAt": 1785420795910,
       "staleAlertDays": 21,
       "staleAlertSince": 1783080712224,
       "trackingUrl": "",
@@ -1542,7 +1549,8 @@
           "value": 28
         }
       ],
-      "shippingCostCustomer": 59
+      "shippingCostCustomer": 59,
+      "track17Registered": true
     },
     {
       "id": "ord_mqz7gdo78vki",
