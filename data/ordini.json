@@ -752,11 +752,18 @@
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1785420804446,
           "messageId": "<202607301413.90714304152@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "problema",
+          "to": "ghjlmj@gmail.com",
+          "subject": "⚠ Important update on your shipment",
+          "sentAt": 1785433221967,
+          "messageId": "<202607301740.35147660853@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1784222589468,
-      "updatedAt": 1785433219676,
+      "updatedAt": 1785433221967,
       "staleAlertDays": 7,
       "staleAlertSince": 1784222589468,
       "products": [
