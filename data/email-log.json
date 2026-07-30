@@ -134,6 +134,15 @@
       "subject": "Your wine is on its way! 🍷",
       "sentAt": 1785420804446,
       "messageId": "<202607301413.33558715926@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mrns290cjx63",
+      "customerName": "LISA JONES",
+      "type": "problema",
+      "to": "ghjlmj@gmail.com",
+      "subject": "⚠ Important update on your shipment",
+      "sentAt": 1785433221967,
+      "messageId": "<202607301740.35147660853@smtp-relay.mailin.fr>"
     }
   ]
 }
