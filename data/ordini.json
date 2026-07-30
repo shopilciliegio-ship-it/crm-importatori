@@ -103,11 +103,18 @@
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1785073141325,
           "messageId": "<202607261339.66663919084@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "day0",
+          "to": "tobynieves@yahoo.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1785420804446,
+          "messageId": "<202607301413.55331356081@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1785073125866,
-      "updatedAt": 1785420795910,
+      "updatedAt": 1785420804446,
       "products": [
         {
           "description": "INFERNACCIO RED WINE IGT 2022",
@@ -160,11 +167,18 @@
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1785073141325,
           "messageId": "<202607261339.27922871924@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "day0",
+          "to": "liviu.nitreanu123@gmail.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1785420804446,
+          "messageId": "<202607301413.87135782105@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1785073125866,
-      "updatedAt": 1785420795910,
+      "updatedAt": 1785420804446,
       "products": [
         {
           "description": "EXTRA VIRGIN OLIVE OIL 2025 LT 1",
@@ -277,11 +291,18 @@
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1784815965602,
           "messageId": "<202607231412.62284332490@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "day0",
+          "to": "mariamccreesh196@btinternet.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1785420804446,
+          "messageId": "<202607301413.22101222829@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1784815954156,
-      "updatedAt": 1785420795910,
+      "updatedAt": 1785420804446,
       "products": [
         {
           "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
@@ -338,11 +359,18 @@
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1784815965602,
           "messageId": "<202607231412.84685558972@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "day0",
+          "to": "roy@bensonbox.ie",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1785420804446,
+          "messageId": "<202607301413.16888661989@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1784815954156,
-      "updatedAt": 1785420795910,
+      "updatedAt": 1785420804446,
       "products": [
         {
           "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
@@ -481,11 +509,18 @@
           "messageId": "<202607180938.75924460462@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-18T11:38:17.000+02:00"
+        },
+        {
+          "type": "day0",
+          "to": "rowerpoet@gmail.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1785420804446,
+          "messageId": "<202607301413.69673782671@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1784367465503,
-      "updatedAt": 1785420795910,
+      "updatedAt": 1785420804446,
       "staleAlertDays": 7,
       "staleAlertSince": 1784367465503,
       "products": [
@@ -547,11 +582,18 @@
           "messageId": "<202607180938.55786156536@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-18T11:38:18.000+02:00"
+        },
+        {
+          "type": "day0",
+          "to": "stansala@gmail.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1785420804446,
+          "messageId": "<202607301413.45061113833@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1784367465503,
-      "updatedAt": 1785420795910,
+      "updatedAt": 1785420804446,
       "staleAlertDays": 7,
       "staleAlertSince": 1784367465503,
       "products": [
@@ -698,11 +740,18 @@
           "messageId": "<202607161723.24915868496@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-16T19:23:23.000+02:00"
+        },
+        {
+          "type": "day0",
+          "to": "ghjlmj@gmail.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1785420804446,
+          "messageId": "<202607301413.90714304152@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1784222589468,
-      "updatedAt": 1785420795910,
+      "updatedAt": 1785420804446,
       "staleAlertDays": 7,
       "staleAlertSince": 1784222589468,
       "products": [
@@ -1524,11 +1573,18 @@
           "messageId": "<202607031211.59222396093@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-03T14:12:03.000+02:00"
+        },
+        {
+          "type": "day0",
+          "to": "matt.deddens@yahoo.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1785420804446,
+          "messageId": "<202607301413.33558715926@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1783080712224,
-      "updatedAt": 1785420795910,
+      "updatedAt": 1785420804446,
       "staleAlertDays": 21,
       "staleAlertSince": 1783080712224,
       "trackingUrl": "",
