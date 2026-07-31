@@ -143,6 +143,33 @@
       "subject": "⚠ Important update on your shipment",
       "sentAt": 1785433221967,
       "messageId": "<202607301740.35147660853@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_ms4skrz7fqyb",
+      "customerName": "Richard Cavalla",
+      "type": "day0",
+      "to": "rcavalla58@gmail.com",
+      "subject": "Your wine is on its way! 🍷",
+      "sentAt": 1785494643933,
+      "messageId": "<202607311044.93767038858@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mryr02psox04",
+      "customerName": "MIKA VIRAY",
+      "type": "day0",
+      "to": "kkviray@gmail.com",
+      "subject": "Your wine is on its way! 🍷",
+      "sentAt": 1785494643933,
+      "messageId": "<202607311044.79908942229@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mrozsz1q6qxz",
+      "customerName": "CHRISTINA VIERA",
+      "type": "day0",
+      "to": "info@vierasbakery.net",
+      "subject": "Your wine is on its way! 🍷",
+      "sentAt": 1785494643933,
+      "messageId": "<202607311044.76474069299@smtp-relay.mailin.fr>"
     }
   ]
 }
