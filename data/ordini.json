@@ -14,7 +14,7 @@
       "numberOfCartons": 1,
       "shippingType": "standard",
       "gmailMessageId": "<PAXPR08MB668570E1FB974BA457E65DD7BFCB2@PAXPR08MB6685.eurprd08.prod.outlook.com>",
-      "trackingNumber": "",
+      "trackingNumber": "1Z9376E1A833937394",
       "carrier": "- U.S.A. Wine Corriere Std",
       "products": [
         {
@@ -40,13 +40,18 @@
       "language": "en",
       "orderNumber": "#1419",
       "paymentType": "Carte Di Credito/Bancomat",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1785494636777,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1785251378851,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1785494636777,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -60,7 +65,7 @@
       ],
       "notes": "",
       "createdAt": 1785251378851,
-      "updatedAt": 1785293882410
+      "updatedAt": 1785494636777
     },
     {
       "id": "ord_ms1ug73ecj7v",
@@ -198,24 +203,29 @@
       "currency": "EUR",
       "orderDate": 1784881817000,
       "emailSubject": "🍷 New Order — MIKA VIRAY — 150.90 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "VIRAYM",
       "shippingAddress": "565 N DAUBENBERGER RD, 95380 TURLOCK, CALIFORNIA (STANISLAUS COUNTY)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202607240830.99349304568@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1Z9376E1A822640000",
       "carrier": "MBE",
       "source": "fieramente",
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1785494636777,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1784885936320,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1785494636777,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -229,7 +239,7 @@
       ],
       "notes": "",
       "createdAt": 1784885936320,
-      "updatedAt": 1785249706412,
+      "updatedAt": 1785494636777,
       "products": [
         {
           "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
@@ -631,24 +641,29 @@
       "currency": "EUR",
       "orderDate": 1784286088000,
       "emailSubject": "🍷 New Order — CHRISTINA VIERA — 158.60 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "VIERAC26/94",
       "shippingAddress": "631 S TAFT ST, 99336 KENNEWICK, WASHINGTON (BENTON COUNTY)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202607171101.50043336108@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1Z9376E1A822647610",
       "carrier": "MBE",
       "source": "fieramente",
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1785494636777,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1784296059758,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1785494636777,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -664,7 +679,7 @@
       ],
       "notes": "",
       "createdAt": 1784296059758,
-      "updatedAt": 1785249706412,
+      "updatedAt": 1785494636777,
       "staleAlertDays": 7,
       "staleAlertSince": 1784296059758,
       "products": [
