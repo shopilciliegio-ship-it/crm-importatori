@@ -65,7 +65,8 @@
       ],
       "notes": "",
       "createdAt": 1785251378851,
-      "updatedAt": 1785494636777
+      "updatedAt": 1785494641129,
+      "track17Registered": true
     },
     {
       "id": "ord_ms1ug73ecj7v",
@@ -239,7 +240,7 @@
       ],
       "notes": "",
       "createdAt": 1784885936320,
-      "updatedAt": 1785494636777,
+      "updatedAt": 1785494641129,
       "products": [
         {
           "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
@@ -258,7 +259,8 @@
         }
       ],
       "customsDuties": 6.9,
-      "shippingCostCustomer": 75
+      "shippingCostCustomer": 75,
+      "track17Registered": true
     },
     {
       "id": "ord_mrxlc44sb2w3",
@@ -679,7 +681,7 @@
       ],
       "notes": "",
       "createdAt": 1784296059758,
-      "updatedAt": 1785494636777,
+      "updatedAt": 1785494641129,
       "staleAlertDays": 7,
       "staleAlertSince": 1784296059758,
       "products": [
@@ -710,7 +712,8 @@
         }
       ],
       "customsDuties": 7.6,
-      "shippingCostCustomer": 75
+      "shippingCostCustomer": 75,
+      "track17Registered": true
     },
     {
       "id": "ord_mrns290cjx63",
