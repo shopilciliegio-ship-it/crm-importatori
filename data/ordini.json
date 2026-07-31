@@ -61,11 +61,18 @@
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1785251392373,
           "messageId": "<202607281509.54881224245@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "day0",
+          "to": "rcavalla58@gmail.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1785494643933,
+          "messageId": "<202607311044.93767038858@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1785251378851,
-      "updatedAt": 1785494641129,
+      "updatedAt": 1785494643933,
       "track17Registered": true
     },
     {
@@ -236,11 +243,18 @@
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1784885950145,
           "messageId": "<202607240939.92698169861@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "day0",
+          "to": "kkviray@gmail.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1785494643933,
+          "messageId": "<202607311044.79908942229@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1784885936320,
-      "updatedAt": 1785494641129,
+      "updatedAt": 1785494643933,
       "products": [
         {
           "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
@@ -677,11 +691,18 @@
           "messageId": "<202607171347.96119006417@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-17T15:47:58.000+02:00"
+        },
+        {
+          "type": "day0",
+          "to": "info@vierasbakery.net",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1785494643933,
+          "messageId": "<202607311044.76474069299@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1784296059758,
-      "updatedAt": 1785494641129,
+      "updatedAt": 1785494643933,
       "staleAlertDays": 7,
       "staleAlertSince": 1784296059758,
       "products": [
