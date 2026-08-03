@@ -204,11 +204,18 @@
           "messageId": "<202607301413.87135782105@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-30T16:13:30.000+02:00"
+        },
+        {
+          "type": "consegnato",
+          "to": "liviu.nitreanu123@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1785779749309,
+          "messageId": "<202608031755.75525788937@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1785073125866,
-      "updatedAt": 1785779746497,
+      "updatedAt": 1785779749309,
       "products": [
         {
           "description": "EXTRA VIRGIN OLIVE OIL 2025 LT 1",
@@ -1723,11 +1730,18 @@
           "messageId": "<202607301413.33558715926@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-30T16:13:37.000+02:00"
+        },
+        {
+          "type": "consegna_fallita",
+          "to": "matt.deddens@yahoo.com",
+          "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+          "sentAt": 1785779749309,
+          "messageId": "<202608031755.98859224684@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1783080712224,
-      "updatedAt": 1785779746497,
+      "updatedAt": 1785779749309,
       "staleAlertDays": 21,
       "staleAlertSince": 1783080712224,
       "trackingUrl": "",
