@@ -168,7 +168,7 @@
       "orderNumber": "#1414",
       "paymentType": "Carte Di Credito/Bancomat",
       "shippingDate": 1785420786789,
-      "status": "in_transito",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -179,6 +179,11 @@
           "status": "in_transito",
           "date": 1785420786789,
           "note": "Auto Fieramente (era: preparazione)"
+        },
+        {
+          "status": "consegnato",
+          "date": 1785779746497,
+          "note": "Auto 17Track (era: in_transito): BUCURESTI, RO — Delivered, DELIVERED"
         }
       ],
       "emailsSent": [
@@ -203,7 +208,7 @@
       ],
       "notes": "",
       "createdAt": 1785073125866,
-      "updatedAt": 1785420804446,
+      "updatedAt": 1785779746497,
       "products": [
         {
           "description": "EXTRA VIRGIN OLIVE OIL 2025 LT 1",
@@ -1682,7 +1687,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1785420786789,
-      "status": "in_transito",
+      "status": "consegna_fallita",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1693,6 +1698,11 @@
           "status": "in_transito",
           "date": 1785420786789,
           "note": "Auto Fieramente (era: preparazione)"
+        },
+        {
+          "status": "consegna_fallita",
+          "date": 1785779746497,
+          "note": "Auto 17Track (era: in_transito): We were unable to deliver your package. It's on the way to a secure UPS Access Point™ location for pick up."
         }
       ],
       "emailsSent": [
@@ -1717,7 +1727,7 @@
       ],
       "notes": "",
       "createdAt": 1783080712224,
-      "updatedAt": 1785420804446,
+      "updatedAt": 1785779746497,
       "staleAlertDays": 21,
       "staleAlertSince": 1783080712224,
       "trackingUrl": "",
@@ -1739,7 +1749,9 @@
         }
       ],
       "shippingCostCustomer": 59,
-      "track17Registered": true
+      "track17Registered": true,
+      "deliveryFailureCount": 1,
+      "lastDeliveryFailureEventAt": "2026-08-03T14:49:27Z"
     },
     {
       "id": "ord_mqz7gdo78vki",
