@@ -304,7 +304,7 @@
       "shipmentCode": "MCCREESHM",
       "shippingAddress": "RIVERBROOK, , E21CY52 BURNCOURT, CAHIR, IRELAND (TIPPERARY)",
       "numberOfCartons": null,
-      "shippingType": null,
+      "shippingType": "standard",
       "gmailMessageId": "<202607231409.13942527735@smtp-relay.mailin.fr>",
       "trackingNumber": "1Z50X8766833633901",
       "carrier": "MBE",
@@ -348,7 +348,7 @@
       ],
       "notes": "",
       "createdAt": 1784815954156,
-      "updatedAt": 1785420804446,
+      "updatedAt": 1785743975022,
       "products": [
         {
           "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
@@ -362,7 +362,11 @@
         }
       ],
       "shippingCostCustomer": 68,
-      "track17Registered": true
+      "track17Registered": true,
+      "shippingCostMos": null,
+      "customsDuties": null,
+      "trackingUrl": "",
+      "destCountry": "IE"
     },
     {
       "id": "ord_mrxlc44s52ot",
