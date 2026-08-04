@@ -1742,11 +1742,18 @@
           "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
           "sentAt": 1785779749309,
           "messageId": "<202608031755.98859224684@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegnato",
+          "to": "matt.deddens@yahoo.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1785865942643,
+          "messageId": "<202608041752.77636620634@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1783080712224,
-      "updatedAt": 1785865940466,
+      "updatedAt": 1785865942643,
       "staleAlertDays": 21,
       "staleAlertSince": 1783080712224,
       "trackingUrl": "",
