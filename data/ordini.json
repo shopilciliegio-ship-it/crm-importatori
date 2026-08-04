@@ -1694,7 +1694,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1785420786789,
-      "status": "consegna_fallita",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1710,6 +1710,11 @@
           "status": "consegna_fallita",
           "date": 1785779746497,
           "note": "Auto 17Track (era: in_transito): We were unable to deliver your package. It's on the way to a secure UPS Access Point™ location for pick up."
+        },
+        {
+          "status": "consegnato",
+          "date": 1785865940466,
+          "note": "Auto 17Track (era: consegna_fallita): PORTO, PT — Delivered, DELIVERED"
         }
       ],
       "emailsSent": [
@@ -1741,7 +1746,7 @@
       ],
       "notes": "",
       "createdAt": 1783080712224,
-      "updatedAt": 1785779749309,
+      "updatedAt": 1785865940466,
       "staleAlertDays": 21,
       "staleAlertSince": 1783080712224,
       "trackingUrl": "",
