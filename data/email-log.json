@@ -26,6 +26,15 @@
       "subject": "Your order has been delivered! 🍷 Enjoy!",
       "sentAt": 1785865942643,
       "messageId": "<202608041752.77636620634@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mrxlc44sb2w3",
+      "customerName": "MARIA MCCREESH",
+      "type": "consegnato",
+      "to": "mariamccreesh196@btinternet.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1785951911187,
+      "messageId": "<202608051745.47795325456@smtp-relay.mailin.fr>"
     }
   ]
 }
