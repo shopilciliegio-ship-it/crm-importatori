@@ -35,6 +35,15 @@
       "subject": "Your order has been delivered! 🍷 Enjoy!",
       "sentAt": 1785951911187,
       "messageId": "<202608051745.47795325456@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mrxlc44s52ot",
+      "customerName": "ROY BENSON",
+      "type": "consegnato",
+      "to": "roy@bensonbox.ie",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1786026198827,
+      "messageId": "<202608061423.62796525360@smtp-relay.mailin.fr>"
     }
   ]
 }
