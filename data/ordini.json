@@ -413,7 +413,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1785420786789,
-      "status": "in_transito",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -424,6 +424,11 @@
           "status": "in_transito",
           "date": 1785420786789,
           "note": "Auto Fieramente (era: preparazione)"
+        },
+        {
+          "status": "consegnato",
+          "date": 1786026195677,
+          "note": "Auto 17Track (era: in_transito): TIPPERARY, IE — Delivered, DELIVERED"
         }
       ],
       "emailsSent": [
@@ -448,7 +453,7 @@
       ],
       "notes": "",
       "createdAt": 1784815954156,
-      "updatedAt": 1785743965087,
+      "updatedAt": 1786026195677,
       "products": [
         {
           "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
