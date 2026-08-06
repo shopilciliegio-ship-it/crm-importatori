@@ -135,7 +135,7 @@
       ],
       "notes": "",
       "createdAt": 1785073125866,
-      "updatedAt": 1785420804446,
+      "updatedAt": 1786026198827,
       "products": [
         {
           "description": "INFERNACCIO RED WINE IGT 2022",
@@ -145,7 +145,9 @@
       ],
       "customsDuties": 9.6,
       "shippingCostCustomer": 75,
-      "track17Registered": true
+      "track17Registered": true,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1785420786789
     },
     {
       "id": "ord_ms1ug73esgss",
@@ -449,11 +451,18 @@
           "messageId": "<202607301413.16888661989@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-30T16:13:33.000+02:00"
+        },
+        {
+          "type": "consegnato",
+          "to": "roy@bensonbox.ie",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1786026198827,
+          "messageId": "<202608061423.62796525360@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1784815954156,
-      "updatedAt": 1786026195677,
+      "updatedAt": 1786026198827,
       "products": [
         {
           "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
@@ -617,9 +626,9 @@
       ],
       "notes": "",
       "createdAt": 1784367465503,
-      "updatedAt": 1785420804446,
+      "updatedAt": 1786026198827,
       "staleAlertDays": 7,
-      "staleAlertSince": 1784367465503,
+      "staleAlertSince": 1785420786789,
       "products": [
         {
           "description": "SPARKLING WINE CILIEGIO IN FIORE ROSÉ",
@@ -692,9 +701,9 @@
       ],
       "notes": "",
       "createdAt": 1784367465503,
-      "updatedAt": 1785420804446,
+      "updatedAt": 1786026198827,
       "staleAlertDays": 7,
-      "staleAlertSince": 1784367465503,
+      "staleAlertSince": 1785420786789,
       "products": [
         {
           "description": "INFERNACCIO RED WINE IGT 2022",
