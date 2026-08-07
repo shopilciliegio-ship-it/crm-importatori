@@ -298803,7 +298803,7 @@
           "toEmail": "stella.szpira@gmail.com"
         }
       ],
-      "blacklisted": false,
+      "blacklisted": true,
       "notes": "",
       "status": "sent",
       "region": "Europa",
@@ -298823,9 +298823,20 @@
           "clicked": false,
           "bounced": false,
           "spam": false,
-          "unsubscribed": false,
+          "unsubscribed": true,
           "blocked": false,
-          "deliveredAt": "2026-06-17T23:37:49.010+02:00"
+          "deliveredAt": "2026-06-17T23:37:49.010+02:00",
+          "unsubscribedAt": "2026-08-07T08:19:25.152+02:00"
+        }
+      ],
+      "log": [
+        {
+          "ts": 1786093191623,
+          "msg": "🚫 Disiscritto: A special thought for you from Il Ciliegio 🍷"
+        },
+        {
+          "ts": 1786093192521,
+          "msg": "🚫 Contatto inserito in blacklist (spam/disiscrizione/bloccata)"
         }
       ]
     },
