@@ -76,8 +76,10 @@
       ],
       "notes": "",
       "createdAt": 1785251378851,
-      "updatedAt": 1785494643933,
-      "track17Registered": true
+      "updatedAt": 1786108422331,
+      "track17Registered": true,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1785494636777
     },
     {
       "id": "ord_ms1ug73ecj7v",
@@ -284,7 +286,7 @@
       ],
       "notes": "",
       "createdAt": 1784885936320,
-      "updatedAt": 1785494643933,
+      "updatedAt": 1786108422331,
       "products": [
         {
           "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
@@ -304,7 +306,9 @@
       ],
       "customsDuties": 6.9,
       "shippingCostCustomer": 75,
-      "track17Registered": true
+      "track17Registered": true,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1785494636777
     },
     {
       "id": "ord_mrxlc44sb2w3",
@@ -786,9 +790,9 @@
       ],
       "notes": "",
       "createdAt": 1784296059758,
-      "updatedAt": 1785494643933,
+      "updatedAt": 1786108422331,
       "staleAlertDays": 7,
-      "staleAlertSince": 1784296059758,
+      "staleAlertSince": 1785494636777,
       "products": [
         {
           "description": "1 LT EXTRA VIRGIN OLIVE OIL 2025",
