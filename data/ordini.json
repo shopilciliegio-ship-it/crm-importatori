@@ -102,7 +102,7 @@
       "orderNumber": "#1412",
       "paymentType": "Paypal",
       "shippingDate": 1785420786789,
-      "status": "in_transito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -113,6 +113,11 @@
           "status": "in_transito",
           "date": 1785420786789,
           "note": "Auto Fieramente (era: preparazione)"
+        },
+        {
+          "status": "dogana",
+          "date": 1786154138991,
+          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -137,7 +142,7 @@
       ],
       "notes": "",
       "createdAt": 1785073125866,
-      "updatedAt": 1786026198827,
+      "updatedAt": 1786154138991,
       "products": [
         {
           "description": "INFERNACCIO RED WINE IGT 2022",
@@ -595,7 +600,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1785420786789,
-      "status": "in_transito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -606,6 +611,11 @@
           "status": "in_transito",
           "date": 1785420786789,
           "note": "Auto Fieramente (era: preparazione)"
+        },
+        {
+          "status": "dogana",
+          "date": 1786154138991,
+          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -630,7 +640,7 @@
       ],
       "notes": "",
       "createdAt": 1784367465503,
-      "updatedAt": 1786026198827,
+      "updatedAt": 1786154138991,
       "staleAlertDays": 7,
       "staleAlertSince": 1785420786789,
       "products": [
@@ -670,7 +680,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1785420786789,
-      "status": "in_transito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -681,6 +691,11 @@
           "status": "in_transito",
           "date": 1785420786789,
           "note": "Auto Fieramente (era: preparazione)"
+        },
+        {
+          "status": "dogana",
+          "date": 1786154138991,
+          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -705,7 +720,7 @@
       ],
       "notes": "",
       "createdAt": 1784367465503,
-      "updatedAt": 1786026198827,
+      "updatedAt": 1786154138991,
       "staleAlertDays": 7,
       "staleAlertSince": 1785420786789,
       "products": [
