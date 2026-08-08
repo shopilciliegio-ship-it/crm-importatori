@@ -138,11 +138,18 @@
           "messageId": "<202607301413.55331356081@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-30T16:13:32.000+02:00"
+        },
+        {
+          "type": "dogana",
+          "to": "tobynieves@yahoo.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1786154145473,
+          "messageId": "<202608080155.27763045484@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1785073125866,
-      "updatedAt": 1786154138991,
+      "updatedAt": 1786154145473,
       "products": [
         {
           "description": "INFERNACCIO RED WINE IGT 2022",
@@ -636,11 +643,18 @@
           "messageId": "<202607301413.69673782671@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-30T16:13:33.000+02:00"
+        },
+        {
+          "type": "dogana",
+          "to": "rowerpoet@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1786154145473,
+          "messageId": "<202608080155.40328884296@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1784367465503,
-      "updatedAt": 1786154138991,
+      "updatedAt": 1786154145473,
       "staleAlertDays": 7,
       "staleAlertSince": 1785420786789,
       "products": [
@@ -716,11 +730,18 @@
           "messageId": "<202607301413.45061113833@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-30T16:13:34.000+02:00"
+        },
+        {
+          "type": "dogana",
+          "to": "stansala@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1786154145473,
+          "messageId": "<202608080155.15112574095@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1784367465503,
-      "updatedAt": 1786154138991,
+      "updatedAt": 1786154145473,
       "staleAlertDays": 7,
       "staleAlertSince": 1785420786789,
       "products": [
@@ -4054,13 +4075,13 @@
       ],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1785532264735,
+      "updatedAt": 1786154145473,
       "trackingUrl": "",
       "language": "en",
       "track17Registered": true,
       "deliveryFailureCount": 2,
       "lastDeliveryFailureEventAt": "2026-07-02T07:24:38Z",
-      "staleAlertDays": 21,
+      "staleAlertDays": 28,
       "staleAlertSince": 1783717798897,
       "products": [
         {
@@ -4964,12 +4985,12 @@
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1786013026604,
+      "updatedAt": 1786154145473,
       "shippingType": "standard",
       "shipmentCode": "JENKINSF",
       "trackingUrl": "",
       "language": "en",
-      "staleAlertDays": 21,
+      "staleAlertDays": 28,
       "staleAlertSince": 1783717798897,
       "track17Registered": true,
       "deliveryFailureCount": 2,
