@@ -962,11 +962,18 @@
           "messageId": "<202607301740.35147660853@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-30T19:40:24.000+02:00"
+        },
+        {
+          "type": "day10",
+          "to": "ghjlmj@gmail.com",
+          "subject": "Shipping update — your order",
+          "sentAt": 1786293641265,
+          "messageId": "<202608091640.78503630011@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1784222589468,
-      "updatedAt": 1786064034494,
+      "updatedAt": 1786293641265,
       "staleAlertDays": 7,
       "staleAlertSince": 1785433219676,
       "products": [
