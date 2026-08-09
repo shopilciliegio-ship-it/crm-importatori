@@ -41,7 +41,7 @@
       "orderNumber": "#1419",
       "paymentType": "Carte Di Credito/Bancomat",
       "shippingDate": 1785494636777,
-      "status": "in_transito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -52,6 +52,11 @@
           "status": "in_transito",
           "date": 1785494636777,
           "note": "Auto Fieramente (era: preparazione)"
+        },
+        {
+          "status": "dogana",
+          "date": 1786240990707,
+          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -76,7 +81,7 @@
       ],
       "notes": "",
       "createdAt": 1785251378851,
-      "updatedAt": 1786108422331,
+      "updatedAt": 1786240990707,
       "track17Registered": true,
       "staleAlertDays": 7,
       "staleAlertSince": 1785494636777
@@ -263,7 +268,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1785494636777,
-      "status": "in_transito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -274,6 +279,11 @@
           "status": "in_transito",
           "date": 1785494636777,
           "note": "Auto Fieramente (era: preparazione)"
+        },
+        {
+          "status": "dogana",
+          "date": 1786240990707,
+          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -298,7 +308,7 @@
       ],
       "notes": "",
       "createdAt": 1784885936320,
-      "updatedAt": 1786108422331,
+      "updatedAt": 1786240990707,
       "products": [
         {
           "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
@@ -791,7 +801,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1785494636777,
-      "status": "in_transito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -802,6 +812,11 @@
           "status": "in_transito",
           "date": 1785494636777,
           "note": "Auto Fieramente (era: preparazione)"
+        },
+        {
+          "status": "dogana",
+          "date": 1786240990707,
+          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -826,7 +841,7 @@
       ],
       "notes": "",
       "createdAt": 1784296059758,
-      "updatedAt": 1786108422331,
+      "updatedAt": 1786240990707,
       "staleAlertDays": 7,
       "staleAlertSince": 1785494636777,
       "products": [
