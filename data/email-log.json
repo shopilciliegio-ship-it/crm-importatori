@@ -71,6 +71,33 @@
       "subject": "Your order is going through customs",
       "sentAt": 1786154145473,
       "messageId": "<202608080155.15112574095@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_ms4skrz7fqyb",
+      "customerName": "Richard Cavalla",
+      "type": "dogana",
+      "to": "rcavalla58@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1786240997848,
+      "messageId": "<202608090203.94545788435@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mryr02psox04",
+      "customerName": "MIKA VIRAY",
+      "type": "dogana",
+      "to": "kkviray@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1786240997848,
+      "messageId": "<202608090203.76547837436@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mrozsz1q6qxz",
+      "customerName": "CHRISTINA VIERA",
+      "type": "dogana",
+      "to": "info@vierasbakery.net",
+      "subject": "Your order is going through customs",
+      "sentAt": 1786240997848,
+      "messageId": "<202608090203.79802865323@smtp-relay.mailin.fr>"
     }
   ]
 }
