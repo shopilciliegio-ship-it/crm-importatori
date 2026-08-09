@@ -77,11 +77,18 @@
           "messageId": "<202607311044.93767038858@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-31T12:44:06.000+02:00"
+        },
+        {
+          "type": "dogana",
+          "to": "rcavalla58@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1786240997848,
+          "messageId": "<202608090203.94545788435@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1785251378851,
-      "updatedAt": 1786240990707,
+      "updatedAt": 1786240997848,
       "track17Registered": true,
       "staleAlertDays": 7,
       "staleAlertSince": 1785494636777
@@ -304,11 +311,18 @@
           "messageId": "<202607311044.79908942229@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-31T12:44:06.000+02:00"
+        },
+        {
+          "type": "dogana",
+          "to": "kkviray@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1786240997848,
+          "messageId": "<202608090203.76547837436@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1784885936320,
-      "updatedAt": 1786240990707,
+      "updatedAt": 1786240997848,
       "products": [
         {
           "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
@@ -837,11 +851,18 @@
           "messageId": "<202607311044.76474069299@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-31T12:44:10.000+02:00"
+        },
+        {
+          "type": "dogana",
+          "to": "info@vierasbakery.net",
+          "subject": "Your order is going through customs",
+          "sentAt": 1786240997848,
+          "messageId": "<202608090203.79802865323@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1784296059758,
-      "updatedAt": 1786240990707,
+      "updatedAt": 1786240997848,
       "staleAlertDays": 7,
       "staleAlertSince": 1785494636777,
       "products": [
