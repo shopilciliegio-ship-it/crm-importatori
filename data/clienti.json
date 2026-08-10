@@ -70640,13 +70640,20 @@
           "brand": "ilciliegio",
           "sequenceStep": 1,
           "delivered": true,
-          "opened": false,
+          "opened": true,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
           "blocked": false,
-          "deliveredAt": "2026-08-10T10:22:12.779+02:00"
+          "deliveredAt": "2026-08-10T10:22:12.779+02:00",
+          "openedAt": "2026-08-10T20:59:02.425+02:00"
+        }
+      ],
+      "log": [
+        {
+          "ts": 1786394585000,
+          "msg": "👁 Aperta: A special thought for you from Il Ciliegio 🍷"
         }
       ]
     },
