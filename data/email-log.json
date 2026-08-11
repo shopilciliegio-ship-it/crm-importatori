@@ -8,6 +8,15 @@
       "subject": "Thank you for your order! 🍷",
       "sentAt": 1786454101634,
       "messageId": "<202608111315.80981669943@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mrq6bg2n6y48",
+      "customerName": "SARAH SALA",
+      "type": "in_consegna",
+      "to": "rowerpoet@gmail.com",
+      "subject": "Your wine is out for delivery! 🍷",
+      "sentAt": 1786467688576,
+      "messageId": "<202608111701.20587201202@smtp-relay.mailin.fr>"
     }
   ]
 }
