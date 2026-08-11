@@ -64,10 +64,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "john_galante@icloud.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1786454101634,
+          "messageId": "<202608111315.80981669943@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1786454089247,
-      "updatedAt": 1786454089247
+      "updatedAt": 1786454101634
     },
     {
       "id": "ord_ms4skrz7fqyb",
