@@ -1,6 +1,75 @@
 {
   "orders": [
     {
+      "id": "ord_msoon19bav7n",
+      "customerName": "JOHN GALANTE",
+      "customerEmail": "john_galante@icloud.com",
+      "customerPhone": "+17185364016",
+      "amount": 630.3,
+      "currency": "EUR",
+      "orderDate": 1786447004000,
+      "emailSubject": "🍷 New Order — JOHN GALANTE — 630.30 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "STATE, COUNTRY, CITY ZIP CODE",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202608111116.20405691066@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "INFERNACCIO RED WINE IGT 2022",
+          "qty": 10,
+          "value": 160.0
+        },
+        {
+          "description": "CHIANTI STRADE BIANCHE 2025 LIM. ED.",
+          "qty": 1,
+          "value": 0.0
+        },
+        {
+          "description": "SPARKLING WINE CILIEGIO IN FIORE ROSÉ",
+          "qty": 2,
+          "value": 20.0
+        },
+        {
+          "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
+          "qty": 6,
+          "value": 114.0
+        },
+        {
+          "description": "3 LT EXTRA VIRGIN OLIVE OIL 2025",
+          "qty": 1,
+          "value": 58.0
+        },
+        {
+          "description": "1 LT EXTRA VIRGIN OLIVE OIL 2025",
+          "qty": 1,
+          "value": 21.0
+        }
+      ],
+      "customsDuties": 37.3,
+      "shippingCostCustomer": 220.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1786454089247,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1786454089247,
+      "updatedAt": 1786454089247
+    },
+    {
       "id": "ord_ms4skrz7fqyb",
       "customerName": "Richard Cavalla",
       "customerEmail": "rcavalla58@gmail.com",
@@ -7267,5 +7336,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1785260311602
+  "lastImportedAt": 1786454089247
 }
