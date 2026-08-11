@@ -756,11 +756,18 @@
           "subject": "Your order is going through customs",
           "sentAt": 1786154145473,
           "messageId": "<202608080155.40328884296@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "in_consegna",
+          "to": "rowerpoet@gmail.com",
+          "subject": "Your wine is out for delivery! 🍷",
+          "sentAt": 1786467688576,
+          "messageId": "<202608111701.20587201202@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1784367465503,
-      "updatedAt": 1786467686009,
+      "updatedAt": 1786467688576,
       "staleAlertDays": 7,
       "staleAlertSince": 1785420786789,
       "products": [
