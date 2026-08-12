@@ -3,6 +3,8 @@
 function openBulkSend(){
   if(!sel.size){toast('Nessun contatto selezionato');return;}
   const contacts=(isClienti()?dbC:db).contacts.filter(c=>sel.has(c.id));
+  // Clienti Privati: invia sempre prima ai registrati più vecchi
+  if(isClienti()) contacts.sort((a,b)=>(a.registeredAt||0)-(b.registeredAt||0));
   const withEmail=contacts.filter(c=>c.contactEmail||c.email);
   const noEmail=contacts.filter(c=>!c.contactEmail&&!c.email);
 
@@ -137,6 +139,8 @@ async function confirmBulkSend(){
   const dMax=parseFloat(document.getElementById('bulk-dmax')?.value||'2')*1000;
 
   const contacts=(isClienti()?dbC:db).contacts.filter(c=>sel.has(c.id));
+  // Clienti Privati: invia sempre prima ai registrati più vecchi
+  if(isClienti()) contacts.sort((a,b)=>(a.registeredAt||0)-(b.registeredAt||0));
   const withEmail=contacts.filter(c=>c.contactEmail||c.email);
   const noEmail=contacts.filter(c=>!c.contactEmail&&!c.email);
 
