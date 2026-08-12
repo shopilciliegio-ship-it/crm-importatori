@@ -1,6 +1,104 @@
 {
   "orders": [
     {
+      "id": "ord_mspuaybk2t8e",
+      "customerName": "Steven Fierro",
+      "customerEmail": "sfierro53@gmail.com",
+      "customerPhone": "6319424835",
+      "amount": 260.19,
+      "currency": "EUR",
+      "orderDate": 1786523705000,
+      "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio Steven Fierro",
+      "shipmentCode": "",
+      "shippingAddress": "3724 Bumble Bee Dr, 28470 Shallotte (NC), United States",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<DB9PR08MB6682A44A96D6C28C94367E8EBFDC2@DB9PR08MB6682.eurprd08.prod.outlook.com>",
+      "trackingNumber": "",
+      "carrier": "- U.S.A. Wine Corriere Std",
+      "products": [
+        {
+          "description": "EXTRA VIRGIN OLIVE OIL 2025 LT 1",
+          "qty": 3,
+          "value": 63.0
+        },
+        {
+          "description": "AFELIO CHIANTI DOCG 2022",
+          "qty": 4,
+          "value": 20.0
+        },
+        {
+          "description": "CHIANTI COLLI SENESI DOCG POGGIO ORLANDO 2024",
+          "qty": 4,
+          "value": 48.0
+        }
+      ],
+      "customsDuties": 14.19,
+      "shippingCostCustomer": 115.0,
+      "shippingCostMos": null,
+      "source": "shop",
+      "language": "en",
+      "orderNumber": "#1424",
+      "paymentType": "Carte Di Credito/Bancomat",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1786524069440,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1786524069440,
+      "updatedAt": 1786524069440
+    },
+    {
+      "id": "ord_mspuaybkgrtb",
+      "customerName": "Linda Burroughs",
+      "customerEmail": "burroughs_linda@yahoo.com",
+      "customerPhone": "15133122651",
+      "amount": 159.0,
+      "currency": "EUR",
+      "orderDate": 1786523685000,
+      "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio Linda Burroughs",
+      "shipmentCode": "",
+      "shippingAddress": "6728 Rose crest Ave, 45243 Cincinnati (OH), United States",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<DB9PR08MB6682F6E7489C63A84F6666FBBFDC2@DB9PR08MB6682.eurprd08.prod.outlook.com>",
+      "trackingNumber": "",
+      "carrier": "No Vino - U.S.A. Extra Corriere Std",
+      "products": [
+        {
+          "description": "EXTRA VIRGIN OLIVE OIL 2025 LT 1",
+          "qty": 4,
+          "value": 84.0
+        }
+      ],
+      "customsDuties": null,
+      "shippingCostCustomer": 75.0,
+      "shippingCostMos": null,
+      "source": "shop",
+      "language": "en",
+      "orderNumber": "#1428",
+      "paymentType": "Carte Di Credito/Bancomat",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1786524069440,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1786524069440,
+      "updatedAt": 1786524069440
+    },
+    {
       "id": "ord_msoon19bav7n",
       "customerName": "JOHN GALANTE",
       "customerEmail": "john_galante@icloud.com",
@@ -7368,5 +7466,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1786454089247
+  "lastImportedAt": 1786524069440
 }
