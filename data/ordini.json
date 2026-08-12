@@ -9,9 +9,9 @@
       "currency": "EUR",
       "orderDate": 1786523705000,
       "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio Steven Fierro",
-      "shipmentCode": "",
+      "shipmentCode": "FIERROS",
       "shippingAddress": "3724 Bumble Bee Dr, 28470 Shallotte (NC), United States",
-      "numberOfCartons": null,
+      "numberOfCartons": 2,
       "shippingType": "standard",
       "gmailMessageId": "<DB9PR08MB6682A44A96D6C28C94367E8EBFDC2@DB9PR08MB6682.eurprd08.prod.outlook.com>",
       "trackingNumber": "",
@@ -20,22 +20,22 @@
         {
           "description": "EXTRA VIRGIN OLIVE OIL 2025 LT 1",
           "qty": 3,
-          "value": 63.0
+          "value": 63
         },
         {
           "description": "AFELIO CHIANTI DOCG 2022",
           "qty": 4,
-          "value": 20.0
+          "value": 20
         },
         {
           "description": "CHIANTI COLLI SENESI DOCG POGGIO ORLANDO 2024",
           "qty": 4,
-          "value": 48.0
+          "value": 48
         }
       ],
       "customsDuties": 14.19,
-      "shippingCostCustomer": 115.0,
-      "shippingCostMos": null,
+      "shippingCostCustomer": 115,
+      "shippingCostMos": 105,
       "source": "shop",
       "language": "en",
       "orderNumber": "#1424",
@@ -52,20 +52,20 @@
       "emailsSent": [],
       "notes": "",
       "createdAt": 1786524069440,
-      "updatedAt": 1786524069440
+      "updatedAt": 1786524072282
     },
     {
       "id": "ord_mspuaybkgrtb",
       "customerName": "Linda Burroughs",
       "customerEmail": "burroughs_linda@yahoo.com",
       "customerPhone": "15133122651",
-      "amount": 159.0,
+      "amount": 159,
       "currency": "EUR",
       "orderDate": 1786523685000,
       "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio Linda Burroughs",
-      "shipmentCode": "",
+      "shipmentCode": "BURROUGHSL",
       "shippingAddress": "6728 Rose crest Ave, 45243 Cincinnati (OH), United States",
-      "numberOfCartons": null,
+      "numberOfCartons": 1,
       "shippingType": "standard",
       "gmailMessageId": "<DB9PR08MB6682F6E7489C63A84F6666FBBFDC2@DB9PR08MB6682.eurprd08.prod.outlook.com>",
       "trackingNumber": "",
@@ -74,12 +74,12 @@
         {
           "description": "EXTRA VIRGIN OLIVE OIL 2025 LT 1",
           "qty": 4,
-          "value": 84.0
+          "value": 84
         }
       ],
       "customsDuties": null,
-      "shippingCostCustomer": 75.0,
-      "shippingCostMos": null,
+      "shippingCostCustomer": 75,
+      "shippingCostMos": 65,
       "source": "shop",
       "language": "en",
       "orderNumber": "#1428",
@@ -96,7 +96,7 @@
       "emailsSent": [],
       "notes": "",
       "createdAt": 1786524069440,
-      "updatedAt": 1786524069440
+      "updatedAt": 1786524072808
     },
     {
       "id": "ord_msoon19bav7n",
@@ -118,36 +118,36 @@
         {
           "description": "INFERNACCIO RED WINE IGT 2022",
           "qty": 10,
-          "value": 160.0
+          "value": 160
         },
         {
           "description": "CHIANTI STRADE BIANCHE 2025 LIM. ED.",
           "qty": 1,
-          "value": 0.0
+          "value": 0
         },
         {
           "description": "SPARKLING WINE CILIEGIO IN FIORE ROSÉ",
           "qty": 2,
-          "value": 20.0
+          "value": 20
         },
         {
           "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
           "qty": 6,
-          "value": 114.0
+          "value": 114
         },
         {
           "description": "3 LT EXTRA VIRGIN OLIVE OIL 2025",
           "qty": 1,
-          "value": 58.0
+          "value": 58
         },
         {
           "description": "1 LT EXTRA VIRGIN OLIVE OIL 2025",
           "qty": 1,
-          "value": 21.0
+          "value": 21
         }
       ],
       "customsDuties": 37.3,
-      "shippingCostCustomer": 220.0,
+      "shippingCostCustomer": 220,
       "shippingCostMos": null,
       "source": "fieramente",
       "language": "en",
