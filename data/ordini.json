@@ -933,7 +933,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1785420786789,
-      "status": "dogana",
+      "status": "in_consegna",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -949,6 +949,11 @@
           "status": "dogana",
           "date": 1786154138991,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "in_consegna",
+          "date": 1786554039960,
+          "note": "Auto 17Track (era: dogana): Adrian, MI, United States — Out for Delivery, Out For Delivery Today"
         }
       ],
       "emailsSent": [
@@ -980,7 +985,7 @@
       ],
       "notes": "",
       "createdAt": 1784367465503,
-      "updatedAt": 1786154145473,
+      "updatedAt": 1786554039960,
       "staleAlertDays": 7,
       "staleAlertSince": 1785420786789,
       "products": [
