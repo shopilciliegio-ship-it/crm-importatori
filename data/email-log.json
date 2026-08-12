@@ -17,6 +17,15 @@
       "subject": "Your wine is out for delivery! 🍷",
       "sentAt": 1786467688576,
       "messageId": "<202608111701.20587201202@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mrq6bg2n6y48",
+      "customerName": "SARAH SALA",
+      "type": "consegnato",
+      "to": "rowerpoet@gmail.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1786501138618,
+      "messageId": "<202608120218.86192323326@smtp-relay.mailin.fr>"
     }
   ]
 }
