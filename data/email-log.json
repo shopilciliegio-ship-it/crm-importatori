@@ -44,6 +44,15 @@
       "subject": "Thank you for your order! 🍷",
       "sentAt": 1786524086758,
       "messageId": "<202608120841.10852538910@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mrq6bg2nwwc5",
+      "customerName": "STAN SALA",
+      "type": "in_consegna",
+      "to": "stansala@gmail.com",
+      "subject": "Your wine is out for delivery! 🍷",
+      "sentAt": 1786554043392,
+      "messageId": "<202608121700.94155293293@smtp-relay.mailin.fr>"
     }
   ]
 }
