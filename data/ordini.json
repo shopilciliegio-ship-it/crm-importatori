@@ -1009,11 +1009,18 @@
           "messageId": "<202608080155.15112574095@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-08-08T03:55:49.000+02:00"
+        },
+        {
+          "type": "in_consegna",
+          "to": "stansala@gmail.com",
+          "subject": "Your wine is out for delivery! 🍷",
+          "sentAt": 1786567895237,
+          "messageId": "<202608122051.23285945192@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1784367465503,
-      "updatedAt": 1786567892529,
+      "updatedAt": 1786567895237,
       "staleAlertDays": 7,
       "staleAlertSince": 1785420786789,
       "products": [
