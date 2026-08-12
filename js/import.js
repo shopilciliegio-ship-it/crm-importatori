@@ -21,6 +21,10 @@ function regionFromCountry(country){
   return COUNTRY_REGION[country] || COUNTRY_REGION[country.trim()] || 'Altro';
 }
 
+// Import e Clienti Privati hanno ciascuno la propria card/anteprima:
+// evita di scrivere l'anteprima nella card nascosta dell'altro layer.
+function impPrevEl(){ return document.getElementById(isClienti()?'imp-prev-cli':'imp-prev-imp'); }
+
 function parseXlsx(wb, filename){
   if(isClienti()) return parseXlsxClienti(wb, filename);
   return parseXlsxImportatori(wb, filename);
@@ -368,7 +372,7 @@ function showPreview(incoming,filename){
 
   const hasAction=newOnes.length||updates.length;
 
-  document.getElementById('imp-prev').innerHTML=`
+  impPrevEl().innerHTML=`
     <div style="margin-top:14px">
       <div class="imp-pills">
         <span class="ip ip-n">✓ ${newOnes.length} nuovi</span>
@@ -389,7 +393,7 @@ function showPreview(incoming,filename){
           <button class="btn btp" onclick="confirmImport()">
             ✓ ${newOnes.length?`Aggiungi ${newOnes.length}`:''}${newOnes.length&&updates.length?' + ':''}${updates.length?`Aggiorna ${updates.length}`:''}
           </button>
-          <button class="btn btg" onclick="pending=null;document.getElementById('imp-prev').innerHTML=''">Annulla</button>
+          <button class="btn btg" onclick="pending=null;impPrevEl().innerHTML=''">Annulla</button>
         </div>`
       :'<p style="margin-top:10px;font-size:13px;color:var(--green-tx);font-weight:500">✓ Tutti i contatti sono già aggiornati.</p>'}
     </div>`;
@@ -490,7 +494,7 @@ function confirmImport(){
   }
 
   saveDB();refreshAll();
-  document.getElementById('imp-prev').innerHTML='';
+  impPrevEl().innerHTML='';
   pending=null;
   const msg=`✓ ${addedCount? addedCount+' aggiunti':''}${addedCount&&updatedCount?' + ':''}${updatedCount?updatedCount+' aggiornati':''}`;
   toast(msg||'Nessuna modifica');
@@ -499,11 +503,11 @@ function confirmImport(){
 
 /* ── DRAG & DROP ── */
 
-function dzO(e){e.preventDefault();document.getElementById('dz').classList.add('over');}
+function dzO(e){e.preventDefault();e.currentTarget.classList.add('over');}
 
-function dzL(){document.getElementById('dz').classList.remove('over');}
+function dzL(e){e?.currentTarget?.classList.remove('over');}
 
-function dzD(e){e.preventDefault();dzL();processFile(e.dataTransfer.files[0]);}
+function dzD(e){e.preventDefault();dzL(e);processFile(e.dataTransfer.files[0]);}
 
 function handleFile(input){processFile(input.files[0]);input.value='';}
 

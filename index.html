@@ -392,14 +392,14 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
       Carica i file XLSX dal formato <strong>Best Wine Importers</strong>. Il CRM legge tutti i fogli, usa il nome del foglio come paese e rileva la regione dal nome del file (<code>Oceania.xlsx</code>, <code>Africa.xlsx</code>, ecc.).
     </p>
     <div class="drop-zone" id="dz"
-      onclick="document.getElementById('fi').click()"
+      onclick="document.getElementById('fi-imp').click()"
       ondragover="dzO(event)" ondragleave="dzL()" ondrop="dzD(event)">
       <div style="font-size:2.2rem;margin-bottom:10px">📂</div>
       <div style="font-size:15px;font-weight:600">Trascina qui il file XLSX</div>
       <div style="font-size:12px;margin-top:5px">oppure clicca per selezionare · Supporta .xlsx e .json</div>
     </div>
-    <input type="file" id="fi" accept=".xlsx,.xls,.json" style="display:none" onchange="handleFile(this)">
-    <div id="imp-prev"></div>
+    <input type="file" id="fi-imp" accept=".xlsx,.xls,.json" style="display:none" onchange="handleFile(this)">
+    <div id="imp-prev-imp"></div>
   </div>
 
   <div class="card" id="import-card-cli" style="display:none">
@@ -411,14 +411,14 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
       data (es. "Data creazione") viene usata per ordinare gli invii massivi dal più vecchio al più nuovo.
     </p>
     <div class="drop-zone" id="dz-cli"
-      onclick="document.getElementById('fi').click()"
+      onclick="document.getElementById('fi-cli').click()"
       ondragover="dzO(event)" ondragleave="dzL()" ondrop="dzD(event)">
       <div style="font-size:2.2rem;margin-bottom:10px">📂</div>
       <div style="font-size:15px;font-weight:600">Trascina qui il file XLSX</div>
       <div style="font-size:12px;margin-top:5px">oppure clicca per selezionare · Colonne: Nome, Cognome, Email, Lingua, Paese, Data creazione</div>
     </div>
-    <input type="file" id="fi" accept=".xlsx,.xls,.json" style="display:none" onchange="handleFile(this)">
-    <div id="imp-prev"></div>
+    <input type="file" id="fi-cli" accept=".xlsx,.xls,.json" style="display:none" onchange="handleFile(this)">
+    <div id="imp-prev-cli"></div>
   </div>
 </div>
 
