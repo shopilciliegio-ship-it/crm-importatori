@@ -406,15 +406,16 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
     <div class="sh"><div class="st">Importa Clienti Privati — XLSX o CSV</div></div>
     <p style="font-size:13px;color:var(--text2);margin-bottom:14px;line-height:1.7">
       Carica il file con i tuoi clienti privati. Colonne riconosciute automaticamente:<br>
-      <strong>Nome · Cognome · Email · Lingua · Paese</strong><br>
-      Le email marcate "Non Valido" o "Sospetta" vengono saltate automaticamente.
+      <strong>Nome · Cognome · Email · Lingua · Paese · Data creazione</strong><br>
+      Le email marcate "Non Valido" o "Sospetta" vengono saltate automaticamente. La colonna
+      data (es. "Data creazione") viene usata per ordinare gli invii massivi dal più vecchio al più nuovo.
     </p>
     <div class="drop-zone" id="dz-cli"
       onclick="document.getElementById('fi').click()"
       ondragover="dzO(event)" ondragleave="dzL()" ondrop="dzD(event)">
       <div style="font-size:2.2rem;margin-bottom:10px">📂</div>
       <div style="font-size:15px;font-weight:600">Trascina qui il file XLSX</div>
-      <div style="font-size:12px;margin-top:5px">oppure clicca per selezionare · Colonne: Nome, Cognome, Email, Lingua, Paese</div>
+      <div style="font-size:12px;margin-top:5px">oppure clicca per selezionare · Colonne: Nome, Cognome, Email, Lingua, Paese, Data creazione</div>
     </div>
     <input type="file" id="fi" accept=".xlsx,.xls,.json" style="display:none" onchange="handleFile(this)">
     <div id="imp-prev"></div>

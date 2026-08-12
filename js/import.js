@@ -26,6 +26,32 @@ function parseXlsx(wb, filename){
   return parseXlsxImportatori(wb, filename);
 }
 
+// Converte una cella data (stringa formattata o numero seriale Excel) in epoch ms.
+// Ritorna 0 se non riconosciuta.
+function parseExcelDate(raw){
+  const s=String(raw||'').trim();
+  if(!s) return 0;
+  // Numero seriale Excel (cella non formattata come data da SheetJS)
+  if(/^\d+(\.\d+)?$/.test(s)){
+    const serial=parseFloat(s);
+    if(serial>1000) return Math.round((serial-25569)*86400*1000); // giorni dal 1899-12-30
+  }
+  // ISO: 2024-08-15 o 2024-08-15T10:00:00
+  let m=s.match(/^(\d{4})-(\d{1,2})-(\d{1,2})/);
+  if(m) return Date.UTC(+m[1],+m[2]-1,+m[3]);
+  // Formato gg/mm/aaaa o gg-mm-aaaa (assume europeo; se il primo numero non può
+  // essere un giorno, prova a invertire — copre anche eventuali export mm/gg/aaaa)
+  m=s.match(/^(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})/);
+  if(m){
+    let d=+m[1], mo=+m[2], y=+m[3];
+    if(d>12&&mo<=12){ /* d/m/y, ok così */ }
+    else if(mo>12&&d<=12){ const t=d; d=mo; mo=t; }
+    return Date.UTC(y,mo-1,d);
+  }
+  const t=Date.parse(s);
+  return isNaN(t)?0:t;
+}
+
 function parseXlsxClienti(wb, filename){
   const contacts=[];
   const seen=new Set();
@@ -51,6 +77,9 @@ function parseXlsxClienti(wb, filename){
       browser: hi(['linguabrowser','browser','browserlang'],4),
       country: hi(['paese','country','nazione'],5),
       valido:  hi(['valido','valid','stato'],6),
+      registrazione: hi(['data creazione','data di creazione','data registrazione',
+                          'data','created','createdat','created_at','registration date',
+                          'date created','signup date'],-1),
     };
     const dataRows=hasHeader?rows.slice(1):rows;
 
@@ -62,6 +91,7 @@ function parseXlsxClienti(wb, filename){
       const lingua=g(IDX.lingua)||g(IDX.browser).split('-')[0]||'en';
       const country=g(IDX.country);
       const valido=g(IDX.valido); // Valido / Non Valido / Sospetta / Da verificare / Sconosciuto
+      const registeredAt=IDX.registrazione>=0 ? parseExcelDate(g(IDX.registrazione)) : 0;
 
       // Salta solo righe senza email o senza @
       if(!email||!email.includes('@')) return;
@@ -76,7 +106,7 @@ function parseXlsxClienti(wb, filename){
       else if(vLow==='sospetta') statoEmail='sospetta';
       else if(vLow==='da verificare'||vLow==='sconosciuto') statoEmail='da_verificare';
 
-      contacts.push({nome,cognome,email,lingua,country,statoEmail,
+      contacts.push({nome,cognome,email,lingua,country,statoEmail,registeredAt,
         company:nome+' '+cognome, name:nome+' '+cognome});
     });
   });
@@ -263,7 +293,7 @@ function dedupVsDB(incoming){
                    'type','prodType','city','state','address','postalCode',
                    'brandName','facebook','instagram','twitter','linkedinCo',
                    'youtube','founded','regNumber'];
-  const UPD_CLI = ['email','country','lingua','statoEmail'];
+  const UPD_CLI = ['email','country','lingua','statoEmail','registeredAt'];
   const UPDATE_FIELDS = isClienti() ? UPD_CLI : UPD_IMP;
 
   // ── Trova un record esistente nel DB che corrisponde al contatto in arrivo ──
@@ -380,6 +410,7 @@ function confirmImport(){
           nome:c.nome||'',cognome:c.cognome||'',
           email:c.email||'',lingua:c.lingua||'en',
           country:c.country||'',statoEmail:c.statoEmail||'sconosciuto',
+          registeredAt:c.registeredAt||now,
           company:(c.nome||'')+' '+(c.cognome||''),
           name:(c.nome||'')+' '+(c.cognome||''),
           status:'new',products:[],notes:'',
@@ -428,21 +459,28 @@ function confirmImport(){
   }
 
   // 2. Aggiorna contatti esistenti (solo i campi che sono cambiati)
-  const UPDATE_FIELDS=['email','phone','website','contactName','contactTitle','contactEmail','employees','sales'];
+  const UPDATE_FIELDS = isClienti()
+    ? ['email','nome','cognome','country','lingua','statoEmail','registeredAt']
+    : ['email','phone','website','contactName','contactTitle','contactEmail','employees','sales'];
   if(updates?.length){
+    const targetContacts=(isClienti()?dbC:db).contacts;
     updates.forEach(c=>{
-      const idx=db.contacts.findIndex(x=>x.id===c._existingId);
+      const idx=targetContacts.findIndex(x=>x.id===c._existingId);
       if(idx<0) return;
-      const existing=db.contacts[idx];
+      const existing=targetContacts[idx];
       const changes=[];
       UPDATE_FIELDS.forEach(f=>{
         const v=(c[f]||'').toString().trim();
         if(v&&v!==(existing[f]||'').toString().trim()){
           changes.push(`${f}: "${existing[f]||''}" → "${v}"`);
-          existing[f]=v;
+          existing[f]=f==='registeredAt'?(c[f]||0):v;
         }
       });
       if(changes.length){
+        if(isClienti()&&(existing.nome||existing.cognome)){
+          existing.company=(existing.nome||'')+' '+(existing.cognome||'');
+          existing.name=existing.company;
+        }
         existing.updatedAt=now;
         existing.log=existing.log||[];
         existing.log.push({ts:now,msg:'Aggiornato da XLSX: '+changes.join(', ')});
