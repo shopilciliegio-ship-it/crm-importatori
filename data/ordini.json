@@ -959,7 +959,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1785420786789,
-      "status": "in_consegna",
+      "status": "consegna_fallita",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -980,6 +980,11 @@
           "status": "in_consegna",
           "date": 1786567892529,
           "note": "Auto 17Track (era: dogana): Adrian, MI, United States — Out for Delivery, Out For Delivery Today"
+        },
+        {
+          "status": "consegna_fallita",
+          "date": 1786587691099,
+          "note": "Auto 17Track (era: in_consegna): Delivery Attempted, The receiver was not available for delivery. We'll make a second attempt the next business day."
         }
       ],
       "emailsSent": [
@@ -1020,7 +1025,7 @@
       ],
       "notes": "",
       "createdAt": 1784367465503,
-      "updatedAt": 1786567895237,
+      "updatedAt": 1786587691099,
       "staleAlertDays": 7,
       "staleAlertSince": 1785420786789,
       "products": [
@@ -1047,7 +1052,9 @@
       ],
       "customsDuties": 30,
       "shippingCostCustomer": 185,
-      "track17Registered": true
+      "track17Registered": true,
+      "deliveryFailureCount": 1,
+      "lastDeliveryFailureEventAt": "2026-08-12T16:42:15Z"
     },
     {
       "id": "ord_mrozsz1q6qxz",
