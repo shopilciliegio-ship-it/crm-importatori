@@ -1200,7 +1200,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1785420786789,
-      "status": "problema",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1216,6 +1216,11 @@
           "status": "problema",
           "date": 1785433219676,
           "note": "Auto 17Track (era: in_transito): On the Way, The street name is incorrect. This may delay delivery. We're attempting to update the address."
+        },
+        {
+          "status": "consegnato",
+          "date": 1786654152765,
+          "note": "Auto 17Track (era: problema): BAYTOWN, TX, US — Delivered, DELIVERED"
         }
       ],
       "emailsSent": [
@@ -1258,7 +1263,7 @@
       ],
       "notes": "",
       "createdAt": 1784222589468,
-      "updatedAt": 1786293641265,
+      "updatedAt": 1786654152765,
       "staleAlertDays": 7,
       "staleAlertSince": 1785433219676,
       "products": [
