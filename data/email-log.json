@@ -80,6 +80,15 @@
       "subject": "Your order has been delivered! 🍷 Enjoy!",
       "sentAt": 1786640429474,
       "messageId": "<202608131700.68716644880@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mrns290cjx63",
+      "customerName": "LISA JONES",
+      "type": "consegnato",
+      "to": "ghjlmj@gmail.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1786654155328,
+      "messageId": "<202608132049.33814806858@smtp-relay.mailin.fr>"
     }
   ]
 }
