@@ -1259,11 +1259,18 @@
           "messageId": "<202608091640.78503630011@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-08-09T18:40:43.000+02:00"
+        },
+        {
+          "type": "consegnato",
+          "to": "ghjlmj@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1786654155328,
+          "messageId": "<202608132049.33814806858@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1784222589468,
-      "updatedAt": 1786654152765,
+      "updatedAt": 1786654155328,
       "staleAlertDays": 7,
       "staleAlertSince": 1785433219676,
       "products": [
