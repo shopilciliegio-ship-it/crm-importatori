@@ -315,7 +315,7 @@
       "orderNumber": "#1412",
       "paymentType": "Paypal",
       "shippingDate": 1785420786789,
-      "status": "dogana",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -331,6 +331,11 @@
           "status": "dogana",
           "date": 1786154138991,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "consegnato",
+          "date": 1786640426522,
+          "note": "Auto 17Track (era: dogana): OAKLAND, FL, US — Delivered, DELIVERED"
         }
       ],
       "emailsSent": [
@@ -364,7 +369,7 @@
       ],
       "notes": "",
       "createdAt": 1785073125866,
-      "updatedAt": 1786154145473,
+      "updatedAt": 1786640426522,
       "products": [
         {
           "description": "INFERNACCIO RED WINE IGT 2022",
