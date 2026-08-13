@@ -365,11 +365,18 @@
           "messageId": "<202608080155.27763045484@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-08-08T03:55:50.000+02:00"
+        },
+        {
+          "type": "consegnato",
+          "to": "tobynieves@yahoo.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1786640429474,
+          "messageId": "<202608131700.68716644880@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1785073125866,
-      "updatedAt": 1786640426522,
+      "updatedAt": 1786640429474,
       "products": [
         {
           "description": "INFERNACCIO RED WINE IGT 2022",
