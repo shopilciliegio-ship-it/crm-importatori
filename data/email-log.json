@@ -71,6 +71,15 @@
       "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
       "sentAt": 1786587693941,
       "messageId": "<202608130221.36595026125@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_ms1ug73ecj7v",
+      "customerName": "REINALDO COSTALES",
+      "type": "consegnato",
+      "to": "tobynieves@yahoo.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1786640429474,
+      "messageId": "<202608131700.68716644880@smtp-relay.mailin.fr>"
     }
   ]
 }
