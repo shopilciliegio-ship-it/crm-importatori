@@ -62,6 +62,15 @@
       "subject": "Your wine is out for delivery! 🍷",
       "sentAt": 1786567895237,
       "messageId": "<202608122051.23285945192@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mrq6bg2nwwc5",
+      "customerName": "STAN SALA",
+      "type": "consegna_fallita",
+      "to": "stansala@gmail.com",
+      "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+      "sentAt": 1786587693941,
+      "messageId": "<202608130221.36595026125@smtp-relay.mailin.fr>"
     }
   ]
 }
