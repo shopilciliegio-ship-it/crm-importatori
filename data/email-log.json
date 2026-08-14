@@ -89,6 +89,15 @@
       "subject": "Your order has been delivered! 🍷 Enjoy!",
       "sentAt": 1786654155328,
       "messageId": "<202608132049.33814806858@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mrq6bg2nwwc5",
+      "customerName": "STAN SALA",
+      "type": "consegna_fallita",
+      "to": "stansala@gmail.com",
+      "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+      "sentAt": 1786673940315,
+      "messageId": "<202608140219.84191580103@smtp-relay.mailin.fr>"
     }
   ]
 }
