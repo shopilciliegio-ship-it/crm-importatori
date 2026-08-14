@@ -1045,11 +1045,18 @@
           "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
           "sentAt": 1786587693941,
           "messageId": "<202608130221.36595026125@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegna_fallita",
+          "to": "stansala@gmail.com",
+          "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+          "sentAt": 1786673940315,
+          "messageId": "<202608140219.84191580103@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1784367465503,
-      "updatedAt": 1786673937110,
+      "updatedAt": 1786673940315,
       "staleAlertDays": 7,
       "staleAlertSince": 1785420786789,
       "products": [
