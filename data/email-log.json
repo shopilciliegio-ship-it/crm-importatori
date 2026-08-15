@@ -107,6 +107,15 @@
       "subject": "Your order has been delivered! 🍷 Enjoy!",
       "sentAt": 1786757240899,
       "messageId": "<202608150127.29609955177@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mryr02psox04",
+      "customerName": "MIKA VIRAY",
+      "type": "in_consegna",
+      "to": "kkviray@gmail.com",
+      "subject": "Your wine is out for delivery! 🍷",
+      "sentAt": 1786825621831,
+      "messageId": "<202608152027.65924751184@smtp-relay.mailin.fr>"
     }
   ]
 }
