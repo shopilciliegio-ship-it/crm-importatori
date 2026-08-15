@@ -69668,7 +69668,7 @@
           "toEmail": "evanweinberg0428@gmail.com"
         }
       ],
-      "blacklisted": false,
+      "blacklisted": true,
       "notes": "",
       "status": "sent",
       "region": "Nord America",
@@ -69688,9 +69688,20 @@
           "clicked": false,
           "bounced": false,
           "spam": false,
-          "unsubscribed": false,
+          "unsubscribed": true,
           "blocked": false,
-          "deliveredAt": "2026-07-13T12:17:52.455+02:00"
+          "deliveredAt": "2026-07-13T12:17:52.455+02:00",
+          "unsubscribedAt": "2026-08-15T03:54:42.098+02:00"
+        }
+      ],
+      "log": [
+        {
+          "ts": 1786768344392,
+          "msg": "🚫 Disiscritto: A special thought for you from Il Ciliegio 🍷"
+        },
+        {
+          "ts": 1786768345302,
+          "msg": "🚫 Contatto inserito in blacklist (spam/disiscrizione/bloccata)"
         }
       ]
     },
