@@ -1057,11 +1057,18 @@
           "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
           "sentAt": 1786673940315,
           "messageId": "<202608140219.84191580103@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegnato",
+          "to": "stansala@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1786757240899,
+          "messageId": "<202608150127.29609955177@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1784367465503,
-      "updatedAt": 1786757235157,
+      "updatedAt": 1786757240899,
       "staleAlertDays": 7,
       "staleAlertSince": 1785420786789,
       "products": [
@@ -4436,13 +4443,13 @@
       ],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1786154145473,
+      "updatedAt": 1786757240899,
       "trackingUrl": "",
       "language": "en",
       "track17Registered": true,
       "deliveryFailureCount": 2,
       "lastDeliveryFailureEventAt": "2026-07-02T07:24:38Z",
-      "staleAlertDays": 28,
+      "staleAlertDays": 35,
       "staleAlertSince": 1783717798897,
       "products": [
         {
@@ -5346,12 +5353,12 @@
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1786154145473,
+      "updatedAt": 1786757240899,
       "shippingType": "standard",
       "shipmentCode": "JENKINSF",
       "trackingUrl": "",
       "language": "en",
-      "staleAlertDays": 28,
+      "staleAlertDays": 35,
       "staleAlertSince": 1783717798897,
       "track17Registered": true,
       "deliveryFailureCount": 2,
