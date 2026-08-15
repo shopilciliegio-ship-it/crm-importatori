@@ -971,7 +971,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1785420786789,
-      "status": "consegna_fallita",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1002,6 +1002,11 @@
           "status": "consegna_fallita",
           "date": 1786673937110,
           "note": "Auto 17Track (era: consegna_fallita): Second Delivery Attempted, We missed you again. A final attempt will be made the next business day."
+        },
+        {
+          "status": "consegnato",
+          "date": 1786757235157,
+          "note": "Auto Fieramente (era: consegna_fallita)"
         }
       ],
       "emailsSent": [
@@ -1056,7 +1061,7 @@
       ],
       "notes": "",
       "createdAt": 1784367465503,
-      "updatedAt": 1786673940315,
+      "updatedAt": 1786757235157,
       "staleAlertDays": 7,
       "staleAlertSince": 1785420786789,
       "products": [
