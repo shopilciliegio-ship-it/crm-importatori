@@ -542,11 +542,18 @@
           "messageId": "<202608090203.76547837436@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-08-09T04:03:20.000+02:00"
+        },
+        {
+          "type": "in_consegna",
+          "to": "kkviray@gmail.com",
+          "subject": "Your wine is out for delivery! 🍷",
+          "sentAt": 1786825621831,
+          "messageId": "<202608152027.65924751184@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1784885936320,
-      "updatedAt": 1786825619819,
+      "updatedAt": 1786825621831,
       "products": [
         {
           "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
