@@ -116,6 +116,24 @@
       "subject": "Your wine is out for delivery! 🍷",
       "sentAt": 1786825621831,
       "messageId": "<202608152027.65924751184@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_ms4skrz7fqyb",
+      "customerName": "Richard Cavalla",
+      "type": "consegnato",
+      "to": "rcavalla58@gmail.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1786844344326,
+      "messageId": "<202608160139.84782315115@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mryr02psox04",
+      "customerName": "MIKA VIRAY",
+      "type": "consegna_fallita",
+      "to": "kkviray@gmail.com",
+      "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+      "sentAt": 1786844344326,
+      "messageId": "<202608160139.73398081860@smtp-relay.mailin.fr>"
     }
   ]
 }
