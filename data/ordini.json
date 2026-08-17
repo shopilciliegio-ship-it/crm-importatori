@@ -49,10 +49,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "berrillos@gmail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1786998710403,
+          "messageId": "<202608172031.38291768501@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1786984838207,
-      "updatedAt": 1786998695898
+      "updatedAt": 1786998710403
     },
     {
       "id": "ord_msxgmtrz7y9n",
@@ -93,10 +101,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "cantalu965@gmail.com",
+          "subject": "Grazie per il tuo ordine! 🍷",
+          "sentAt": 1786998710403,
+          "messageId": "<202608172031.38291407107@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1786984838207,
-      "updatedAt": 1786998696499
+      "updatedAt": 1786998710403
     },
     {
       "id": "ord_msx8gqos55cs",
