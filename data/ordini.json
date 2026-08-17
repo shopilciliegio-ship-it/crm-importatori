@@ -9,9 +9,9 @@
       "currency": "EUR",
       "orderDate": 1786979861000,
       "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio Stephanie Berrillo",
-      "shipmentCode": "",
+      "shipmentCode": "BERRILLOS",
       "shippingAddress": "118 Saxonwald Lane, 15234 Pittsburgh (PA), United States",
-      "numberOfCartons": null,
+      "numberOfCartons": 1,
       "shippingType": "standard",
       "gmailMessageId": "<DB9PR08MB66823383C2BB376A744B59F0BFA72@DB9PR08MB6682.eurprd08.prod.outlook.com>",
       "trackingNumber": "",
@@ -20,22 +20,22 @@
         {
           "description": "CILIEGIO IN FIORE SWEET SPARKLING WINE",
           "qty": 3,
-          "value": 30.0
+          "value": 30
         },
         {
           "description": "THEIA WHITE TABLE WINE",
           "qty": 1,
-          "value": 5.0
+          "value": 5
         },
         {
           "description": "THEIA RED TABLE WINE",
           "qty": 2,
-          "value": 10.0
+          "value": 10
         }
       ],
       "customsDuties": 4.5,
-      "shippingCostCustomer": 75.0,
-      "shippingCostMos": null,
+      "shippingCostCustomer": 75,
+      "shippingCostMos": 70,
       "source": "shop",
       "language": "en",
       "orderNumber": "#1440",
@@ -52,20 +52,20 @@
       "emailsSent": [],
       "notes": "",
       "createdAt": 1786984838207,
-      "updatedAt": 1786984838207
+      "updatedAt": 1786998695898
     },
     {
       "id": "ord_msxgmtrz7y9n",
       "customerName": "Luciano Cantamessa",
       "customerEmail": "cantalu965@gmail.com",
       "customerPhone": "3311582918",
-      "amount": 105.0,
+      "amount": 105,
       "currency": "EUR",
       "orderDate": 1786979852000,
       "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio Luciano Cantamessa",
-      "shipmentCode": "",
+      "shipmentCode": "CANTAMESSAL",
       "shippingAddress": "San Sebastiano 19/21, 13040 Palazzolo Vercellese (VC), Italy",
-      "numberOfCartons": null,
+      "numberOfCartons": 1,
       "shippingType": "standard",
       "gmailMessageId": "<DB9PR08MB66826D97165DE1E385836C21BFA72@DB9PR08MB6682.eurprd08.prod.outlook.com>",
       "trackingNumber": "",
@@ -74,12 +74,12 @@
         {
           "description": "OLIO EXTRA VERGINE DI OLIVA 2025 LT 1",
           "qty": 5,
-          "value": 105.0
+          "value": 105
         }
       ],
       "customsDuties": null,
       "shippingCostCustomer": null,
-      "shippingCostMos": null,
+      "shippingCostMos": 0,
       "source": "shop",
       "language": "it",
       "orderNumber": "#1432",
@@ -96,7 +96,7 @@
       "emailsSent": [],
       "notes": "",
       "createdAt": 1786984838207,
-      "updatedAt": 1786984838207
+      "updatedAt": 1786998696499
     },
     {
       "id": "ord_msx8gqos55cs",
