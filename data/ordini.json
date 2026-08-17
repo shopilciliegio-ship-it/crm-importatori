@@ -1,6 +1,60 @@
 {
   "orders": [
     {
+      "id": "ord_msx8gqos55cs",
+      "customerName": "ABBIE BLUNIER",
+      "customerEmail": "abbieblunier@gmail.com",
+      "customerPhone": "6185530279",
+      "amount": 185.55,
+      "currency": "EUR",
+      "orderDate": 1786967435000,
+      "emailSubject": "🍷 New Order — ABBIE BLUNIER — 185.55 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "STATE, COUNTRY, CITY ZIP CODE",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202608171150.90118010166@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "500 ML EXTRA VIRGIN OLIVE OIL 2025",
+          "qty": 1,
+          "value": 11.5
+        },
+        {
+          "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
+          "qty": 3,
+          "value": 57.0
+        },
+        {
+          "description": "INFERNACCIO RED WINE IGT 2022",
+          "qty": 2,
+          "value": 32.0
+        }
+      ],
+      "customsDuties": 10.05,
+      "shippingCostCustomer": 75.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1786971117340,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1786971117340,
+      "updatedAt": 1786971117340
+    },
+    {
       "id": "ord_mspuaybk2t8e",
       "customerName": "Steven Fierro",
       "customerEmail": "sfierro53@gmail.com",
@@ -7630,5 +7684,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1786524069440
+  "lastImportedAt": 1786971117340
 }
