@@ -232521,7 +232521,7 @@
           "toEmail": "arrate2412@gmail.com"
         }
       ],
-      "blacklisted": false,
+      "blacklisted": true,
       "notes": "",
       "status": "sent",
       "region": "Europa",
@@ -232541,12 +232541,22 @@
           "clicked": false,
           "bounced": false,
           "spam": false,
-          "unsubscribed": false,
+          "unsubscribed": true,
           "blocked": false,
-          "deliveredAt": "2026-06-16T23:04:55.979+02:00"
+          "deliveredAt": "2026-06-16T23:04:55.979+02:00",
+          "unsubscribedAt": "2026-08-17T20:25:06.792+02:00"
         }
       ],
-      "log": []
+      "log": [
+        {
+          "ts": 1786998478297,
+          "msg": "🚫 Disiscritto: Wave 1"
+        },
+        {
+          "ts": 1786998479357,
+          "msg": "🚫 Contatto inserito in blacklist (spam/disiscrizione/bloccata)"
+        }
+      ]
     },
     {
       "id": "cli_799c5e3ebe",
