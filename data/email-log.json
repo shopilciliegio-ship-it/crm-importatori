@@ -8,6 +8,24 @@
       "subject": "Thank you for your order! 🍷",
       "sentAt": 1786971142418,
       "messageId": "<202608171252.10575995610@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_msxgmtrz9acu",
+      "customerName": "Stephanie Berrillo",
+      "type": "order_received",
+      "to": "berrillos@gmail.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1786998710403,
+      "messageId": "<202608172031.38291768501@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_msxgmtrz7y9n",
+      "customerName": "Luciano Cantamessa",
+      "type": "order_received",
+      "to": "cantalu965@gmail.com",
+      "subject": "Grazie per il tuo ordine! 🍷",
+      "sentAt": 1786998710403,
+      "messageId": "<202608172031.38291407107@smtp-relay.mailin.fr>"
     }
   ]
 }
