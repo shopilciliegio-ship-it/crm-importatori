@@ -1,6 +1,104 @@
 {
   "orders": [
     {
+      "id": "ord_msxgmtrz9acu",
+      "customerName": "Stephanie Berrillo",
+      "customerEmail": "berrillos@gmail.com",
+      "customerPhone": "4129659476",
+      "amount": 124.5,
+      "currency": "EUR",
+      "orderDate": 1786979861000,
+      "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio Stephanie Berrillo",
+      "shipmentCode": "",
+      "shippingAddress": "118 Saxonwald Lane, 15234 Pittsburgh (PA), United States",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<DB9PR08MB66823383C2BB376A744B59F0BFA72@DB9PR08MB6682.eurprd08.prod.outlook.com>",
+      "trackingNumber": "",
+      "carrier": "- U.S.A. Wine Corriere Std",
+      "products": [
+        {
+          "description": "CILIEGIO IN FIORE SWEET SPARKLING WINE",
+          "qty": 3,
+          "value": 30.0
+        },
+        {
+          "description": "THEIA WHITE TABLE WINE",
+          "qty": 1,
+          "value": 5.0
+        },
+        {
+          "description": "THEIA RED TABLE WINE",
+          "qty": 2,
+          "value": 10.0
+        }
+      ],
+      "customsDuties": 4.5,
+      "shippingCostCustomer": 75.0,
+      "shippingCostMos": null,
+      "source": "shop",
+      "language": "en",
+      "orderNumber": "#1440",
+      "paymentType": "Carte Di Credito/Bancomat",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1786984838207,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1786984838207,
+      "updatedAt": 1786984838207
+    },
+    {
+      "id": "ord_msxgmtrz7y9n",
+      "customerName": "Luciano Cantamessa",
+      "customerEmail": "cantalu965@gmail.com",
+      "customerPhone": "3311582918",
+      "amount": 105.0,
+      "currency": "EUR",
+      "orderDate": 1786979852000,
+      "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio Luciano Cantamessa",
+      "shipmentCode": "",
+      "shippingAddress": "San Sebastiano 19/21, 13040 Palazzolo Vercellese (VC), Italy",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<DB9PR08MB66826D97165DE1E385836C21BFA72@DB9PR08MB6682.eurprd08.prod.outlook.com>",
+      "trackingNumber": "",
+      "carrier": "Corriere Italia Gratis Oltre 100 € Di Ordine",
+      "products": [
+        {
+          "description": "OLIO EXTRA VERGINE DI OLIVA 2025 LT 1",
+          "qty": 5,
+          "value": 105.0
+        }
+      ],
+      "customsDuties": null,
+      "shippingCostCustomer": null,
+      "shippingCostMos": null,
+      "source": "shop",
+      "language": "it",
+      "orderNumber": "#1432",
+      "paymentType": "Carte Di Credito/Bancomat",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1786984838207,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1786984838207,
+      "updatedAt": 1786984838207
+    },
+    {
       "id": "ord_msx8gqos55cs",
       "customerName": "ABBIE BLUNIER",
       "customerEmail": "abbieblunier@gmail.com",
@@ -7695,5 +7793,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1786971117340
+  "lastImportedAt": 1786984838207
 }
