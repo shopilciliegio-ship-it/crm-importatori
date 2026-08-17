@@ -25,16 +25,16 @@
         {
           "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
           "qty": 3,
-          "value": 57.0
+          "value": 57
         },
         {
           "description": "INFERNACCIO RED WINE IGT 2022",
           "qty": 2,
-          "value": 32.0
+          "value": 32
         }
       ],
       "customsDuties": 10.05,
-      "shippingCostCustomer": 75.0,
+      "shippingCostCustomer": 75,
       "shippingCostMos": null,
       "source": "fieramente",
       "language": "en",
@@ -639,7 +639,7 @@
       ],
       "notes": "",
       "createdAt": 1784885936320,
-      "updatedAt": 1786844344326,
+      "updatedAt": 1786974928717,
       "products": [
         {
           "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
@@ -663,7 +663,10 @@
       "staleAlertDays": 7,
       "staleAlertSince": 1785494636777,
       "deliveryFailureCount": 1,
-      "lastDeliveryFailureEventAt": "2026-08-16T00:37:34Z"
+      "lastDeliveryFailureEventAt": "2026-08-16T00:37:34Z",
+      "shippingCostMos": null,
+      "trackingUrl": "",
+      "destCountry": "US"
     },
     {
       "id": "ord_mrxlc44sb2w3",
