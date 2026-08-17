@@ -49,10 +49,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "abbieblunier@gmail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1786971142418,
+          "messageId": "<202608171252.10575995610@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1786971117340,
-      "updatedAt": 1786971117340
+      "updatedAt": 1786971142418
     },
     {
       "id": "ord_mspuaybk2t8e",
