@@ -754,11 +754,18 @@
           "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
           "sentAt": 1786844344326,
           "messageId": "<202608160139.73398081860@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegnato",
+          "to": "kkviray@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1787028022005,
+          "messageId": "<202608180440.19008685220@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1784885936320,
-      "updatedAt": 1787028016186,
+      "updatedAt": 1787028022005,
       "products": [
         {
           "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
