@@ -680,7 +680,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1785494636777,
-      "status": "consegna_fallita",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -706,6 +706,11 @@
           "status": "consegna_fallita",
           "date": 1786844340873,
           "note": "Auto 17Track (era: in_consegna): Delivery Attempted, The receiver was not available for delivery. We'll make a second attempt the next business day."
+        },
+        {
+          "status": "consegnato",
+          "date": 1787028016186,
+          "note": "Auto Fieramente (era: consegna_fallita)"
         }
       ],
       "emailsSent": [
@@ -753,7 +758,7 @@
       ],
       "notes": "",
       "createdAt": 1784885936320,
-      "updatedAt": 1786974928717,
+      "updatedAt": 1787028016186,
       "products": [
         {
           "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
