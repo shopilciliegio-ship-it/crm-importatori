@@ -1401,11 +1401,18 @@
           "messageId": "<202608090203.79802865323@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-08-09T04:03:24.000+02:00"
+        },
+        {
+          "type": "in_consegna",
+          "to": "info@vierasbakery.net",
+          "subject": "Your wine is out for delivery! 🍷",
+          "sentAt": 1787084970243,
+          "messageId": "<202608182029.99828775177@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1784296059758,
-      "updatedAt": 1787084968211,
+      "updatedAt": 1787084970243,
       "staleAlertDays": 7,
       "staleAlertSince": 1786240990707,
       "products": [
