@@ -371,9 +371,11 @@
       ],
       "notes": "",
       "createdAt": 1786454089247,
-      "updatedAt": 1786565682916,
+      "updatedAt": 1787070985038,
       "trackingUrl": "",
-      "destCountry": "US"
+      "destCountry": "US",
+      "staleAlertDays": 7,
+      "staleAlertSince": 1786454089247
     },
     {
       "id": "ord_ms4skrz7fqyb",
