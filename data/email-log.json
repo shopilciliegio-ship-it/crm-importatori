@@ -26,6 +26,15 @@
       "subject": "Grazie per il tuo ordine! 🍷",
       "sentAt": 1786998710403,
       "messageId": "<202608172031.38291407107@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mryr02psox04",
+      "customerName": "MIKA VIRAY",
+      "type": "consegnato",
+      "to": "kkviray@gmail.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1787028022005,
+      "messageId": "<202608180440.19008685220@smtp-relay.mailin.fr>"
     }
   ]
 }
