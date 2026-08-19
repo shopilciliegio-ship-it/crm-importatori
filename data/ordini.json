@@ -1,6 +1,55 @@
 {
   "orders": [
     {
+      "id": "ord_mt03g0xip68g",
+      "customerName": "STEVEN WATKINS",
+      "customerEmail": "steven2watkins@gmail.com",
+      "customerPhone": "+610435152353",
+      "amount": 70.0,
+      "currency": "EUR",
+      "orderDate": 1787140341000,
+      "emailSubject": "🍷 New Order — STEVEN WATKINS — 70.00 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "STATE, COUNTRY, CITY ZIP CODE",
+      "numberOfCartons": null,
+      "shippingType": null,
+      "gmailMessageId": "<202608191152.41253638625@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
+          "qty": 2,
+          "value": 38.0
+        },
+        {
+          "description": "INFERNACCIO RED WINE IGT 2022",
+          "qty": 2,
+          "value": 32.0
+        }
+      ],
+      "customsDuties": null,
+      "shippingCostCustomer": 0.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1787144084406,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1787144084406,
+      "updatedAt": 1787144084406
+    },
+    {
       "id": "ord_msxgmtrz9acu",
       "customerName": "Stephanie Berrillo",
       "customerEmail": "berrillos@gmail.com",
@@ -7851,5 +7900,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1786984838207
+  "lastImportedAt": 1787144084406
 }
