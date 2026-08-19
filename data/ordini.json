@@ -238,7 +238,9 @@
       ],
       "notes": "",
       "createdAt": 1786524069440,
-      "updatedAt": 1786524086758
+      "updatedAt": 1787128970134,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1786524069440
     },
     {
       "id": "ord_mspuaybkgrtb",
@@ -292,7 +294,9 @@
       ],
       "notes": "",
       "createdAt": 1786524069440,
-      "updatedAt": 1786524086758
+      "updatedAt": 1787128970134,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1786524069440
     },
     {
       "id": "ord_msoon19bav7n",
