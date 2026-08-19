@@ -1351,7 +1351,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1785494636777,
-      "status": "in_consegna",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1372,6 +1372,11 @@
           "status": "in_consegna",
           "date": 1787084968211,
           "note": "Auto 17Track (era: dogana): Kennewick, WA, United States — Out for Delivery, Out For Delivery Today"
+        },
+        {
+          "status": "consegnato",
+          "date": 1787114492519,
+          "note": "Auto Fieramente (era: in_consegna)"
         }
       ],
       "emailsSent": [
@@ -1412,7 +1417,7 @@
       ],
       "notes": "",
       "createdAt": 1784296059758,
-      "updatedAt": 1787084970243,
+      "updatedAt": 1787114492519,
       "staleAlertDays": 7,
       "staleAlertSince": 1786240990707,
       "products": [
