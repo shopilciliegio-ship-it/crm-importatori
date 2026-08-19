@@ -44,10 +44,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "steven2watkins@gmail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1787144096524,
+          "messageId": "<202608191254.14806818665@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1787144084406,
-      "updatedAt": 1787144084406
+      "updatedAt": 1787144096524
     },
     {
       "id": "ord_msxgmtrz9acu",
