@@ -44,6 +44,15 @@
       "subject": "Your wine is out for delivery! 🍷",
       "sentAt": 1787084970243,
       "messageId": "<202608182029.99828775177@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mrozsz1q6qxz",
+      "customerName": "CHRISTINA VIERA",
+      "type": "consegnato",
+      "to": "info@vierasbakery.net",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1787114498288,
+      "messageId": "<202608190441.31399231369@smtp-relay.mailin.fr>"
     }
   ]
 }
