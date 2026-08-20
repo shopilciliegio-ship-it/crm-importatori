@@ -49,10 +49,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "lucy.rinehuls@gmail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1787257994599,
+          "messageId": "<202608202033.42360883057@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1787257976117,
-      "updatedAt": 1787257979903
+      "updatedAt": 1787257994599
     },
     {
       "id": "ord_mt03g0xip68g",
