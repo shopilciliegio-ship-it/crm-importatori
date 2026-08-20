@@ -62,6 +62,15 @@
       "subject": "Thank you for your order! 🍷",
       "sentAt": 1787144096524,
       "messageId": "<202608191254.14806818665@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mt1z94c56v4p",
+      "customerName": "Lucy Rinehuls",
+      "type": "order_received",
+      "to": "lucy.rinehuls@gmail.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1787257994599,
+      "messageId": "<202608202033.42360883057@smtp-relay.mailin.fr>"
     }
   ]
 }
