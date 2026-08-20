@@ -1,6 +1,60 @@
 {
   "orders": [
     {
+      "id": "ord_mt1z94c56v4p",
+      "customerName": "Lucy Rinehuls",
+      "customerEmail": "lucy.rinehuls@gmail.com",
+      "customerPhone": "12052493437",
+      "amount": 152.55,
+      "currency": "EUR",
+      "orderDate": 1787252357000,
+      "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio Lucy Rinehuls",
+      "shipmentCode": "",
+      "shippingAddress": "725 Walters Lane, 29209 Columbia (SC), United States",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<DB9PR08MB6682466B0D74E2D22EB81DB0BFA42@DB9PR08MB6682.eurprd08.prod.outlook.com>",
+      "trackingNumber": "",
+      "carrier": "- U.S.A. Wine Corriere Std",
+      "products": [
+        {
+          "description": "EXTRA VIRGIN OLIVE OIL 2025 ML 500",
+          "qty": 3,
+          "value": 34.5
+        },
+        {
+          "description": "INFERNACCIO RED WINE IGT 2022",
+          "qty": 1,
+          "value": 16.0
+        },
+        {
+          "description": "CILIEGIO IN FIORE SWEET SPARKLING WINE",
+          "qty": 2,
+          "value": 20.0
+        }
+      ],
+      "customsDuties": 7.05,
+      "shippingCostCustomer": 75.0,
+      "shippingCostMos": null,
+      "source": "shop",
+      "language": "en",
+      "orderNumber": "#1443",
+      "paymentType": "Carte Di Credito/Bancomat",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1787257976117,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1787257976117,
+      "updatedAt": 1787257976117
+    },
+    {
       "id": "ord_mt03g0xip68g",
       "customerName": "STEVEN WATKINS",
       "customerEmail": "steven2watkins@gmail.com",
@@ -7908,5 +7962,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1787144084406
+  "lastImportedAt": 1787257976117
 }
