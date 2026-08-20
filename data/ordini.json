@@ -9,9 +9,9 @@
       "currency": "EUR",
       "orderDate": 1787252357000,
       "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio Lucy Rinehuls",
-      "shipmentCode": "",
+      "shipmentCode": "RINEHULSL",
       "shippingAddress": "725 Walters Lane, 29209 Columbia (SC), United States",
-      "numberOfCartons": null,
+      "numberOfCartons": 1,
       "shippingType": "standard",
       "gmailMessageId": "<DB9PR08MB6682466B0D74E2D22EB81DB0BFA42@DB9PR08MB6682.eurprd08.prod.outlook.com>",
       "trackingNumber": "",
@@ -25,17 +25,17 @@
         {
           "description": "INFERNACCIO RED WINE IGT 2022",
           "qty": 1,
-          "value": 16.0
+          "value": 16
         },
         {
           "description": "CILIEGIO IN FIORE SWEET SPARKLING WINE",
           "qty": 2,
-          "value": 20.0
+          "value": 20
         }
       ],
       "customsDuties": 7.05,
-      "shippingCostCustomer": 75.0,
-      "shippingCostMos": null,
+      "shippingCostCustomer": 75,
+      "shippingCostMos": 70,
       "source": "shop",
       "language": "en",
       "orderNumber": "#1443",
@@ -52,14 +52,14 @@
       "emailsSent": [],
       "notes": "",
       "createdAt": 1787257976117,
-      "updatedAt": 1787257976117
+      "updatedAt": 1787257979903
     },
     {
       "id": "ord_mt03g0xip68g",
       "customerName": "STEVEN WATKINS",
       "customerEmail": "steven2watkins@gmail.com",
       "customerPhone": "+610435152353",
-      "amount": 70.0,
+      "amount": 70,
       "currency": "EUR",
       "orderDate": 1787140341000,
       "emailSubject": "🍷 New Order — STEVEN WATKINS — 70.00 EUR",
@@ -74,16 +74,16 @@
         {
           "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
           "qty": 2,
-          "value": 38.0
+          "value": 38
         },
         {
           "description": "INFERNACCIO RED WINE IGT 2022",
           "qty": 2,
-          "value": 32.0
+          "value": 32
         }
       ],
       "customsDuties": null,
-      "shippingCostCustomer": 0.0,
+      "shippingCostCustomer": 0,
       "shippingCostMos": null,
       "source": "fieramente",
       "language": "en",
