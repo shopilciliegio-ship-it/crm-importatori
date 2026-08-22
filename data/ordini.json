@@ -44,10 +44,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "giuseppemaruca.33@gmail.com",
+          "subject": "Grazie per il tuo ordine! 🍷",
+          "sentAt": 1787402855496,
+          "messageId": "<202608221247.20397488167@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1787402837151,
-      "updatedAt": 1787402840977
+      "updatedAt": 1787402855496
     },
     {
       "id": "ord_mt1z94c56v4p",
