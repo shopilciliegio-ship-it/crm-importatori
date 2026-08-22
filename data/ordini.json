@@ -1,6 +1,55 @@
 {
   "orders": [
     {
+      "id": "ord_mt4dhztscxg9",
+      "customerName": "Giuseppe Maruca",
+      "customerEmail": "giuseppemaruca.33@gmail.com",
+      "customerPhone": "3371000965",
+      "amount": 102.5,
+      "currency": "EUR",
+      "orderDate": 1787391435000,
+      "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio Giuseppe Maruca",
+      "shipmentCode": "",
+      "shippingAddress": "Via pozzodipinto 31, 33098 Valvasone Arzene (PN), Italy",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<DB9PR08MB6682010254D6322907CFF3B9BFA22@DB9PR08MB6682.eurprd08.prod.outlook.com>",
+      "trackingNumber": "",
+      "carrier": "Corriere Italia Gratis Oltre 100 € Di Ordine",
+      "products": [
+        {
+          "description": "PURPLE GRAPES - SWEET RED WINE IGT 2024",
+          "qty": 10,
+          "value": 42.5
+        },
+        {
+          "description": "AFELIO CHIANTI DOCG 2022",
+          "qty": 12,
+          "value": 60.0
+        }
+      ],
+      "customsDuties": null,
+      "shippingCostCustomer": null,
+      "shippingCostMos": null,
+      "source": "shop",
+      "language": "it",
+      "orderNumber": "#1446",
+      "paymentType": "Carte Di Credito/Bancomat",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1787402837151,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1787402837151,
+      "updatedAt": 1787402837151
+    },
+    {
       "id": "ord_mt1z94c56v4p",
       "customerName": "Lucy Rinehuls",
       "customerEmail": "lucy.rinehuls@gmail.com",
@@ -7970,5 +8019,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1787257976117
+  "lastImportedAt": 1787402837151
 }
