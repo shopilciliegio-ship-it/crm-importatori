@@ -71,6 +71,15 @@
       "subject": "Thank you for your order! 🍷",
       "sentAt": 1787257994599,
       "messageId": "<202608202033.42360883057@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mt4dhztscxg9",
+      "customerName": "Giuseppe Maruca",
+      "type": "order_received",
+      "to": "giuseppemaruca.33@gmail.com",
+      "subject": "Grazie per il tuo ordine! 🍷",
+      "sentAt": 1787402855496,
+      "messageId": "<202608221247.20397488167@smtp-relay.mailin.fr>"
     }
   ]
 }
