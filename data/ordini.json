@@ -9,9 +9,9 @@
       "currency": "EUR",
       "orderDate": 1787391435000,
       "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio Giuseppe Maruca",
-      "shipmentCode": "",
+      "shipmentCode": "MARUCAG",
       "shippingAddress": "Via pozzodipinto 31, 33098 Valvasone Arzene (PN), Italy",
-      "numberOfCartons": null,
+      "numberOfCartons": 4,
       "shippingType": "standard",
       "gmailMessageId": "<DB9PR08MB6682010254D6322907CFF3B9BFA22@DB9PR08MB6682.eurprd08.prod.outlook.com>",
       "trackingNumber": "",
@@ -25,12 +25,12 @@
         {
           "description": "AFELIO CHIANTI DOCG 2022",
           "qty": 12,
-          "value": 60.0
+          "value": 60
         }
       ],
       "customsDuties": null,
       "shippingCostCustomer": null,
-      "shippingCostMos": null,
+      "shippingCostMos": 0,
       "source": "shop",
       "language": "it",
       "orderNumber": "#1446",
@@ -47,7 +47,7 @@
       "emailsSent": [],
       "notes": "",
       "createdAt": 1787402837151,
-      "updatedAt": 1787402837151
+      "updatedAt": 1787402840977
     },
     {
       "id": "ord_mt1z94c56v4p",
