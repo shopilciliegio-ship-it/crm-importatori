@@ -308,7 +308,9 @@
       ],
       "notes": "",
       "createdAt": 1786984838207,
-      "updatedAt": 1786998710403
+      "updatedAt": 1787589741187,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1786984838207
     },
     {
       "id": "ord_msxgmtrz7y9n",
@@ -360,7 +362,9 @@
       ],
       "notes": "",
       "createdAt": 1786984838207,
-      "updatedAt": 1786998710403
+      "updatedAt": 1787589741187,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1786984838207
     },
     {
       "id": "ord_msx8gqos55cs",
