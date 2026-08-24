@@ -1,6 +1,70 @@
 {
   "orders": [
     {
+      "id": "ord_mt78rb9zlaom",
+      "customerName": "BRIAN STIERITZ",
+      "customerEmail": "brstieritz@comcast.net",
+      "customerPhone": "13038987314",
+      "amount": 903.0,
+      "currency": "EUR",
+      "orderDate": 1787573844000,
+      "emailSubject": "🍷 New Order — BRIAN STIERITZ — 903.00 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "STATE, COUNTRY, CITY ZIP CODE",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202608241217.92364861500@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "INFERNACCIO RED WINE IGT 2022",
+          "qty": 12,
+          "value": 192.0
+        },
+        {
+          "description": "CHIANTI STRADE BIANCHE 2025 LIM. ED.",
+          "qty": 2,
+          "value": 0.0
+        },
+        {
+          "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
+          "qty": 12,
+          "value": 228.0
+        },
+        {
+          "description": "1 LT EXTRA VIRGIN OLIVE OIL 2025",
+          "qty": 4,
+          "value": 84.0
+        },
+        {
+          "description": "CANTUCCINI ALMONDS BISCUITS 250 GR",
+          "qty": 4,
+          "value": 26.0
+        }
+      ],
+      "customsDuties": 53.0,
+      "shippingCostCustomer": 320.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1787576272343,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1787576272343,
+      "updatedAt": 1787576272343
+    },
+    {
       "id": "ord_mt4dhztscxg9",
       "customerName": "Giuseppe Maruca",
       "customerEmail": "giuseppemaruca.33@gmail.com",
@@ -8027,5 +8091,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1787402837151
+  "lastImportedAt": 1787576272343
 }
