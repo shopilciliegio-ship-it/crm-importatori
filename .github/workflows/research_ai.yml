@@ -1,9 +1,13 @@
 name: Ricerca AI Importatori
 
 on:
-  schedule:
-    - cron: '0 5 * * *'  # 05:00 UTC = 07:00 CEST (mattina presto in Italia)
-  workflow_dispatch:        # trigger manuale dal CRM o da GitHub UI
+  # Schedule sospeso il 24/08/2026: crediti Anthropic esauriti sull'account collegato
+  # a CLAUDE_API_KEY, 12 giorni di run notturne a vuoto senza che nessuno se ne accorgesse.
+  # Ricaricare il saldo su console.anthropic.com, resettare "paused" in data/research-config.json,
+  # POI decommentare lo schedule qui sotto per riattivare l'esecuzione automatica.
+  # schedule:
+  #   - cron: '0 5 * * *'  # 05:00 UTC = 07:00 CEST (mattina presto in Italia)
+  workflow_dispatch:        # trigger manuale dal CRM o da GitHub UI (bloccato lato script da "paused")
 
 permissions:
   contents: write

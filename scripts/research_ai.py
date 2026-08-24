@@ -164,6 +164,19 @@ def fetch_website(url):
 _JSON_RE = re.compile(r'\{[\s\S]*\}')
 
 
+class FatalAPIError(Exception):
+    """Errore Claude a livello di account (crediti esauriti, chiave non valida/revocata):
+    non ha senso ritentare gli altri contatti, sarebbe solo tempo/quota Serper sprecati."""
+
+
+def _is_fatal_claude_error(status_code, text):
+    if status_code in (401, 403):
+        return True
+    if status_code == 400 and 'credit balance' in text.lower():
+        return True
+    return False
+
+
 def claude_analyze(c, search_text, web_text):
     prompt = f"""Azienda: {c.get('company','')}
 Paese: {c.get('country','')} | Città: {c.get('city','')}
@@ -200,12 +213,16 @@ Sito dichiarato: {c.get('website') or '(nessuno)'}
                 time.sleep(wait)
                 continue
             if not r.ok:
+                if _is_fatal_claude_error(r.status_code, r.text):
+                    raise FatalAPIError(f'{r.status_code} {r.text[:200]}')
                 print(f'  ⚠ Claude error: {r.status_code} {r.text[:150]}')
                 return {}
             data    = r.json()
             content = (data.get('content') or [{}])[0].get('text', '').strip()
             m = _JSON_RE.search(content)
             return json.loads(m.group(0)) if m else {}
+        except FatalAPIError:
+            raise
         except Exception as e:
             print(f'  ⚠ Claude exception: {e}')
             if attempt < 3:
@@ -342,6 +359,30 @@ def main():
     daily_limit = config.get('dailyLimit') or DEFAULT_CONFIG['dailyLimit']
     completed_countries = set(config.get('completedCountries') or [])
 
+    if config.get('paused'):
+        reason    = config.get('pausedReason', '(motivo non specificato)')
+        paused_at = config.get('pausedAt', '?')
+        print(f'⏸ Ricerca AI in pausa dal {paused_at} — {reason} — salto questa esecuzione (nessuna chiamata Serper/Claude)')
+        contacts_data, _ = gh_get(CONTACTS_PATH)
+        contacts = (contacts_data or {}).get('contacts', [])
+        overrides, _ = gh_get(OVERRIDES_PATH)
+        overrides = overrides or {}
+        by_country = {}
+        for c in contacts:
+            by_country.setdefault(c.get('country', ''), []).append(c)
+        rows = queue_progress(queue, by_country, overrides)
+        send_report(
+            'in pausa — richiede intervento',
+            f'⏸️ <b>Ricerca AI sospesa automaticamente</b> il {html.escape(paused_at)} per un errore non recuperabile:<br>'
+            f'<code>{html.escape(reason)}</code><br><br>'
+            f'Probabile causa: crediti Anthropic esauriti o chiave API non valida/revocata sull\'account collegato a questo repo. '
+            f'Controlla <b>console.anthropic.com → Plans &amp; Billing</b>.<br><br>'
+            f'Le esecuzioni restano <b>sospese</b> finché non resetti manualmente <code>paused</code> in '
+            f'<code>data/research-config.json</code> e riattivi lo schedule del workflow su GitHub.',
+            [], rows, completed_countries=completed_countries
+        )
+        return
+
     def persist_config_if_changed():
         new_list = sorted(completed_countries)
         if new_list == sorted(config.get('completedCountries') or []):
@@ -414,24 +455,34 @@ def main():
     print(f'Piano: {[(country, len(c)) for country, c in plan]} — {total_to_analyze} da analizzare oggi ({daily_limit} quota)')
 
     stats = {'si': 0, 'forse': 0, 'no': 0, 'vino': 0}
-    analyzed_by_country = {}
-    analyzed = 0
-    errors   = 0
+    analyzed_by_country = {}   # paese -> contatti analizzati CON SUCCESSO in questa run
+    successes = 0              # analisi riuscite (quello che conta davvero, non i tentativi)
+    errors    = 0
+    overrides_changed = False
+    fatal_error = None
 
     for country, contacts_list in plan:
         print(f'Paese: {country} — {len(contacts_list)} da analizzare oggi')
+        country_successes = 0
         for i, c in enumerate(contacts_list, 1):
-            analyzed += 1
             print(f'  [{i}/{len(contacts_list)}] {(c.get("company","") or "")[:50]}')
 
             search_text = serper_search(c.get('company', ''), country)
             web_text    = fetch_website(c.get('website', '')) if c.get('website') else ''
-            analysis    = claude_analyze(c, search_text, web_text)
+            try:
+                analysis = claude_analyze(c, search_text, web_text)
+            except FatalAPIError as e:
+                fatal_error = e
+                print(f'  🚨 Errore fatale — interrompo la ricerca (niente altri tentativi sprecati): {e}')
+                break
 
             if analysis:
                 now_iso = datetime.now(timezone.utc).isoformat(timespec='milliseconds').replace('+00:00', 'Z')
                 entry = overrides.setdefault(c['id'], {})
                 entry['research'] = {**analysis, 'analyzed_at': now_iso}
+                overrides_changed = True
+                country_successes += 1
+                successes += 1
 
                 rec = analysis.get('raccomandato')
                 if rec == 'si':
@@ -447,11 +498,38 @@ def main():
 
             time.sleep(2.5)
 
-        analyzed_by_country[country] = len(contacts_list)
+        analyzed_by_country[country] = country_successes
+        if fatal_error:
+            break
 
-    countries_label = '+'.join(plan[i][0] for i in range(len(plan)))
-    gh_put(OVERRIDES_PATH, overrides, overrides_sha, f'Ricerca AI — {countries_label} ({analyzed} analizzati)')
-    print(f'✓ {analyzed} risultati salvati in {OVERRIDES_PATH} ({errors} errori)')
+    countries_label = '+'.join(analyzed_by_country.keys())
+
+    if overrides_changed:
+        gh_put(OVERRIDES_PATH, overrides, overrides_sha, f'Ricerca AI — {countries_label} ({successes} analizzati)')
+        print(f'✓ {successes} risultati salvati in {OVERRIDES_PATH} ({errors} errori)')
+    else:
+        print(f'⚠ Nessun risultato salvato in questa run ({errors} errori, 0 successi) — override non modificato')
+
+    if fatal_error:
+        config['paused']       = True
+        config['pausedReason'] = str(fatal_error)[:300]
+        config['pausedAt']     = datetime.now(timezone.utc).isoformat(timespec='milliseconds').replace('+00:00', 'Z')
+        gh_put(CONFIG_PATH, config, config_sha, 'Ricerca AI sospesa — errore account Claude')
+        print(f'🚨 Ricerca AI sospesa automaticamente: {fatal_error}')
+
+        rows = queue_progress(queue, by_country, overrides)
+        extra = f'<br><br>({successes} contatti comunque salvati prima dell\'errore.)' if successes else ''
+        send_report(
+            'BLOCCATA — richiede intervento',
+            f'🚨 <b>Ricerca AI sospesa automaticamente.</b><br>Errore Claude non recuperabile: '
+            f'<code>{html.escape(str(fatal_error)[:300])}</code><br><br>'
+            f'Probabile causa: crediti Anthropic esauriti o chiave API non valida/revocata sull\'account collegato a questo repo. '
+            f'Controlla <b>console.anthropic.com → Plans &amp; Billing</b>.<br><br>'
+            f'Le esecuzioni automatiche restano <b>sospese</b> finché non resetti manualmente <code>paused</code> in '
+            f'<code>data/research-config.json</code> e riattivi lo schedule del workflow su GitHub.' + extra,
+            [], rows, completed_countries=completed_countries
+        )
+        return
 
     # Registra i completamenti di oggi (paesi che hanno esaurito i pendenti in questa run)
     # nel set persistente, così eventuali nuove anagrafiche future li segnaleranno 🔵.
@@ -475,7 +553,7 @@ def main():
 
     rows = queue_progress(queue, by_country, overrides)
     stats_rows = [
-        ('🔍 Analizzati oggi',            analyzed),
+        ('🔍 Analizzati oggi',            successes),
         ('✅ Consigliati (sì)',           stats['si']),
         ('🤔 Forse',                      stats['forse']),
         ('❌ Non consigliati',            stats['no']),
