@@ -165,9 +165,6 @@
     "Netherlands"
   ],
   "dailyLimit": 150,
-  "paused": true,
-  "pausedReason": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"}}",
-  "pausedAt": "2026-08-24T05:41:33.000Z",
   "completedCountries": [
     "Albania",
     "Andorra",
