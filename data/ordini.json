@@ -59,10 +59,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "brstieritz@comcast.net",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1787576290209,
+          "messageId": "<202608241258.46583724486@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1787576272343,
-      "updatedAt": 1787576272343
+      "updatedAt": 1787576290209
     },
     {
       "id": "ord_mt4dhztscxg9",
@@ -414,7 +422,9 @@
       ],
       "notes": "",
       "createdAt": 1786971117340,
-      "updatedAt": 1786971142418
+      "updatedAt": 1787576290209,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1786971117340
     },
     {
       "id": "ord_mspuaybk2t8e",
