@@ -44,10 +44,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "robertosacchetto@gmail.com",
+          "subject": "Grazie per il tuo ordine! 🍷",
+          "sentAt": 1787690031248,
+          "messageId": "<202608252033.57757594833@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1787690012971,
-      "updatedAt": 1787690016830
+      "updatedAt": 1787690031248
     },
     {
       "id": "ord_mt78rb9zlaom",
