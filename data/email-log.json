@@ -8,6 +8,15 @@
       "subject": "Thank you for your order! 🍷",
       "sentAt": 1787576290209,
       "messageId": "<202608241258.46583724486@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mt94h63vbvno",
+      "customerName": "SACCHETTO CONSULTING SNC",
+      "type": "order_received",
+      "to": "robertosacchetto@gmail.com",
+      "subject": "Grazie per il tuo ordine! 🍷",
+      "sentAt": 1787690031248,
+      "messageId": "<202608252033.57757594833@smtp-relay.mailin.fr>"
     }
   ]
 }
