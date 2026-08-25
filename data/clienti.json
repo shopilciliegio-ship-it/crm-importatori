@@ -133654,7 +133654,7 @@
           "toEmail": "xenia7393@gmail.com"
         }
       ],
-      "blacklisted": false,
+      "blacklisted": true,
       "notes": "",
       "status": "sent",
       "region": "Europa",
@@ -133670,13 +133670,29 @@
           "brand": "ilciliegio",
           "sequenceStep": 1,
           "delivered": true,
-          "opened": false,
+          "opened": true,
           "clicked": false,
           "bounced": false,
           "spam": false,
-          "unsubscribed": false,
+          "unsubscribed": true,
           "blocked": false,
-          "deliveredAt": "2026-06-17T23:45:28.481+02:00"
+          "deliveredAt": "2026-06-17T23:45:28.481+02:00",
+          "openedAt": "2026-08-25T11:58:56.654+02:00",
+          "unsubscribedAt": "2026-08-25T11:59:18.054+02:00"
+        }
+      ],
+      "log": [
+        {
+          "ts": 1787662148243,
+          "msg": "👁 Aperta: A special thought for you from Il Ciliegio 🍷"
+        },
+        {
+          "ts": 1787662148243,
+          "msg": "🚫 Disiscritto: A special thought for you from Il Ciliegio 🍷"
+        },
+        {
+          "ts": 1787662148993,
+          "msg": "🚫 Contatto inserito in blacklist (spam/disiscrizione/bloccata)"
         }
       ]
     },
