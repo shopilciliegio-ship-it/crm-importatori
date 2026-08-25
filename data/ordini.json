@@ -1,6 +1,55 @@
 {
   "orders": [
     {
+      "id": "ord_mt94h63vbvno",
+      "customerName": "SACCHETTO CONSULTING SNC",
+      "customerEmail": "robertosacchetto@gmail.com",
+      "customerPhone": "3485123654",
+      "amount": 107.5,
+      "currency": "EUR",
+      "orderDate": 1787684975000,
+      "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio SACCHETTO CONSULTING SNC",
+      "shipmentCode": "",
+      "shippingAddress": "VIALE SAN LAZZARO, 62, 36100 VICENZA (VI), Italy",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<DB9PR08MB6682AEE2147755A93D4512A3BFAF2@DB9PR08MB6682.eurprd08.prod.outlook.com>",
+      "trackingNumber": "",
+      "carrier": "Corriere Italia Gratis Oltre 100 € Di Ordine",
+      "products": [
+        {
+          "description": "OLIO EXTRA VERGINE DI OLIVA 2025 ML 500",
+          "qty": 1,
+          "value": 11.5
+        },
+        {
+          "description": "CHIANTI COLLI SENESI DOCG POGGIO ORLANDO 2024",
+          "qty": 8,
+          "value": 96.0
+        }
+      ],
+      "customsDuties": null,
+      "shippingCostCustomer": null,
+      "shippingCostMos": null,
+      "source": "shop",
+      "language": "it",
+      "orderNumber": "#1448",
+      "paymentType": "Carte Di Credito/Bancomat",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1787690012971,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1787690012971,
+      "updatedAt": 1787690012971
+    },
+    {
       "id": "ord_mt78rb9zlaom",
       "customerName": "BRIAN STIERITZ",
       "customerEmail": "brstieritz@comcast.net",
@@ -8105,5 +8154,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1787576272343
+  "lastImportedAt": 1787690012971
 }
