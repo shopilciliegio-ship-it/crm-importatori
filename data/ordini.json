@@ -110,7 +110,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": null,
-      "status": "preparazione",
+      "status": "ricevuto",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -121,6 +121,11 @@
           "status": "problema",
           "date": 1787734559807,
           "note": "⚠ Email bounce (order_received): brstieritz@comcast.net"
+        },
+        {
+          "status": "ricevuto",
+          "date": 1787737340894,
+          "note": ""
         }
       ],
       "emailsSent": [
@@ -138,7 +143,7 @@
       ],
       "notes": "",
       "createdAt": 1787576272343,
-      "updatedAt": 1787737318951,
+      "updatedAt": 1787737340894,
       "trackingUrl": "",
       "destCountry": "US"
     },
