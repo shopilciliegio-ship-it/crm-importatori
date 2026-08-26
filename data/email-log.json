@@ -17,6 +17,15 @@
       "subject": "Grazie per il tuo ordine! 🍷",
       "sentAt": 1787690031248,
       "messageId": "<202608252033.57757594833@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mta3q0nwlz70",
+      "customerName": "MANDIP KAUR",
+      "type": "order_received",
+      "to": "kaur.mandip23@gmail.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1787749243039,
+      "messageId": "<202608261300.43575422895@smtp-relay.mailin.fr>"
     }
   ]
 }
