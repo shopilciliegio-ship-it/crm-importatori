@@ -171,12 +171,12 @@
       "products": [
         {
           "description": "PURPLE GRAPES - SWEET RED WINE IGT 2024",
-          "qty": 10,
+          "qty": 9,
           "value": 42.5
         },
         {
           "description": "AFELIO CHIANTI DOCG 2022",
-          "qty": 12,
+          "qty": 9,
           "value": 60
         }
       ],
@@ -209,7 +209,9 @@
       ],
       "notes": "",
       "createdAt": 1787402837151,
-      "updatedAt": 1787402855496
+      "updatedAt": 1787738585777,
+      "trackingUrl": "",
+      "destCountry": "IT"
     },
     {
       "id": "ord_mt1z94c56v4p",
