@@ -54,10 +54,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "kaur.mandip23@gmail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1787749243039,
+          "messageId": "<202608261300.43575422895@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1787749212380,
-      "updatedAt": 1787749212380
+      "updatedAt": 1787749243039
     },
     {
       "id": "ord_mt94h63vbvno",
@@ -393,7 +401,9 @@
       ],
       "notes": "",
       "createdAt": 1787144084406,
-      "updatedAt": 1787144096524
+      "updatedAt": 1787749243039,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1787144084406
     },
     {
       "id": "ord_msxgmtrz9acu",
