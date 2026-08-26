@@ -110,7 +110,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": null,
-      "status": "ricevuto",
+      "status": "preparazione",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -125,6 +125,11 @@
         {
           "status": "ricevuto",
           "date": 1787737340894,
+          "note": ""
+        },
+        {
+          "status": "preparazione",
+          "date": 1787737359534,
           "note": ""
         }
       ],
@@ -143,7 +148,7 @@
       ],
       "notes": "",
       "createdAt": 1787576272343,
-      "updatedAt": 1787737340894,
+      "updatedAt": 1787737359534,
       "trackingUrl": "",
       "destCountry": "US"
     },
