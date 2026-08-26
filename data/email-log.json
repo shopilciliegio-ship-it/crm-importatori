@@ -26,6 +26,51 @@
       "subject": "Thank you for your order! 🍷",
       "sentAt": 1787749243039,
       "messageId": "<202608261300.43575422895@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_msxgmtrz9acu",
+      "customerName": "Stephanie Berrillo",
+      "type": "day0",
+      "to": "berrillos@gmail.com",
+      "subject": "Your wine is on its way! 🍷",
+      "sentAt": 1787763059178,
+      "messageId": "<202608261650.15388543504@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_msx8gqos55cs",
+      "customerName": "ABBIE BLUNIER",
+      "type": "day0",
+      "to": "abbieblunier@gmail.com",
+      "subject": "Your wine is on its way! 🍷",
+      "sentAt": 1787763059178,
+      "messageId": "<202608261651.61384301583@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mspuaybk2t8e",
+      "customerName": "Steven Fierro",
+      "type": "day0",
+      "to": "sfierro53@gmail.com",
+      "subject": "Your wine is on its way! 🍷",
+      "sentAt": 1787763059178,
+      "messageId": "<202608261651.65928342754@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mspuaybkgrtb",
+      "customerName": "Linda Burroughs",
+      "type": "day0",
+      "to": "burroughs_linda@yahoo.com",
+      "subject": "Your wine is on its way! 🍷",
+      "sentAt": 1787763059178,
+      "messageId": "<202608261651.24625535892@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_msoon19bav7n",
+      "customerName": "JOHN GALANTE",
+      "type": "day0",
+      "to": "john_galante@icloud.com",
+      "subject": "Your wine is on its way! 🍷",
+      "sentAt": 1787763059178,
+      "messageId": "<202608261651.86280352935@smtp-relay.mailin.fr>"
     }
   ]
 }
