@@ -62,14 +62,14 @@
     {
       "id": "ord_mt78rb9zlaom",
       "customerName": "BRIAN STIERITZ",
-      "customerEmail": "brstieritz@comcast.net",
+      "customerEmail": "rstieritz@gmail.com",
       "customerPhone": "13038987314",
       "amount": 903,
       "currency": "EUR",
       "orderDate": 1787573844000,
       "emailSubject": "🍷 New Order — BRIAN STIERITZ — 903.00 EUR",
       "shipmentCode": "",
-      "shippingAddress": "STATE, COUNTRY, CITY ZIP CODE",
+      "shippingAddress": "BROOMFIELD, COLORADO, USA",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202608241217.92364861500@smtp-relay.mailin.fr>",
@@ -138,7 +138,9 @@
       ],
       "notes": "",
       "createdAt": 1787576272343,
-      "updatedAt": 1787576290209
+      "updatedAt": 1787737318951,
+      "trackingUrl": "",
+      "destCountry": "US"
     },
     {
       "id": "ord_mt4dhztscxg9",
