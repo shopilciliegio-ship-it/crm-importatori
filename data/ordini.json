@@ -468,11 +468,18 @@
           "messageId": "<202608172031.38291768501@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-08-17T22:31:52.000+02:00"
+        },
+        {
+          "type": "day0",
+          "to": "berrillos@gmail.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1787763059178,
+          "messageId": "<202608261650.15388543504@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1786984838207,
-      "updatedAt": 1787763055891,
+      "updatedAt": 1787763059178,
       "staleAlertDays": 7,
       "staleAlertSince": 1786984838207,
       "track17Registered": true
@@ -596,11 +603,18 @@
           "messageId": "<202608171252.10575995610@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-08-17T14:52:25.000+02:00"
+        },
+        {
+          "type": "day0",
+          "to": "abbieblunier@gmail.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1787763059178,
+          "messageId": "<202608261651.61384301583@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1786971117340,
-      "updatedAt": 1787763055891,
+      "updatedAt": 1787763059178,
       "staleAlertDays": 7,
       "staleAlertSince": 1786971117340,
       "track17Registered": true
@@ -668,11 +682,18 @@
           "messageId": "<202608120841.75893426641@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-08-12T10:41:28.000+02:00"
+        },
+        {
+          "type": "day0",
+          "to": "sfierro53@gmail.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1787763059178,
+          "messageId": "<202608261651.65928342754@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1786524069440,
-      "updatedAt": 1787763055891,
+      "updatedAt": 1787763059178,
       "staleAlertDays": 14,
       "staleAlertSince": 1786524069440,
       "track17Registered": true
@@ -730,11 +751,18 @@
           "messageId": "<202608120841.10852538910@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-08-12T10:41:31.000+02:00"
+        },
+        {
+          "type": "day0",
+          "to": "burroughs_linda@yahoo.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1787763059178,
+          "messageId": "<202608261651.24625535892@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1786524069440,
-      "updatedAt": 1787763055891,
+      "updatedAt": 1787763059178,
       "staleAlertDays": 14,
       "staleAlertSince": 1786524069440,
       "track17Registered": true
@@ -817,11 +845,18 @@
           "messageId": "<202608111315.80981669943@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-08-11T15:15:07.000+02:00"
+        },
+        {
+          "type": "day0",
+          "to": "john_galante@icloud.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1787763059178,
+          "messageId": "<202608261651.86280352935@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1786454089247,
-      "updatedAt": 1787763055891,
+      "updatedAt": 1787763059178,
       "trackingUrl": "",
       "destCountry": "US",
       "staleAlertDays": 14,
