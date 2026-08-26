@@ -1,6 +1,65 @@
 {
   "orders": [
     {
+      "id": "ord_mta3q0nwlz70",
+      "customerName": "MANDIP KAUR",
+      "customerEmail": "kaur.mandip23@gmail.com",
+      "customerPhone": "+12158804020",
+      "amount": 299.25,
+      "currency": "EUR",
+      "orderDate": 1787745602000,
+      "emailSubject": "🍷 New Order — MANDIP KAUR — 299.25 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "STATE, COUNTRY, CITY ZIP CODE",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202608261200.59931495233@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "INFERNACCIO RED WINE IGT 2022",
+          "qty": 3,
+          "value": 48.0
+        },
+        {
+          "description": "POGGIO ORLANDO 2024 CHIANTI COLLI SENE..",
+          "qty": 3,
+          "value": 36.0
+        },
+        {
+          "description": "LE FORCACCE WHITE WINE IGT 2024 VIOGNI..",
+          "qty": 3,
+          "value": 25.5
+        },
+        {
+          "description": "3 LT EXTRA VIRGIN OLIVE OIL 2025",
+          "qty": 1,
+          "value": 58.0
+        }
+      ],
+      "customsDuties": 16.75,
+      "shippingCostCustomer": 115.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1787749212380,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1787749212380,
+      "updatedAt": 1787749212380
+    },
+    {
       "id": "ord_mt94h63vbvno",
       "customerName": "SACCHETTO CONSULTING SNC",
       "customerEmail": "robertosacchetto@gmail.com",
@@ -8223,5 +8282,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1787690012971
+  "lastImportedAt": 1787749212380
 }
