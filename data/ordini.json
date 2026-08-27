@@ -1,6 +1,124 @@
 {
   "orders": [
     {
+      "id": "ord_mtc2jbpdl9ln",
+      "customerName": "PAULA GREZESZAK",
+      "customerEmail": "paulagrezeszak@gmail.com",
+      "customerPhone": "+19893210313",
+      "amount": 389.6,
+      "currency": "EUR",
+      "orderDate": 1787828929000,
+      "emailSubject": "🍷 New Order — PAULA GREZESZAK — 389.60 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "STATE, COUNTRY, CITY ZIP CODE",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202608271108.71946648696@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
+          "qty": 4,
+          "value": 40.0
+        },
+        {
+          "description": "SPARKLING WINE CILIEGIO IN FIORE ROSÉ",
+          "qty": 4,
+          "value": 40.0
+        },
+        {
+          "description": "INFERNACCIO RED WINE IGT 2022",
+          "qty": 4,
+          "value": 64.0
+        },
+        {
+          "description": "CHIANTI STRADE BIANCHE 2025 LIM. ED.",
+          "qty": 1,
+          "value": 0.0
+        },
+        {
+          "description": "1 LT EXTRA VIRGIN OLIVE OIL 2025",
+          "qty": 2,
+          "value": 42.0
+        }
+      ],
+      "customsDuties": 18.6,
+      "shippingCostCustomer": 185.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1787868152832,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1787868152832,
+      "updatedAt": 1787868152832
+    },
+    {
+      "id": "ord_mtc2jbpc0oie",
+      "customerName": "AARON DORFMAN",
+      "customerEmail": "rlpisarz9@gmail.com",
+      "customerPhone": "+15707066914",
+      "amount": 137.15,
+      "currency": "EUR",
+      "orderDate": 1787828586000,
+      "emailSubject": "🍷 New Order — AARON DORFMAN — 137.15 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "STATE, COUNTRY, CITY ZIP CODE",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202608271103.11935514151@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "100 ML EXTRA VIRGIN OLIVE OIL 2025",
+          "qty": 7,
+          "value": 35.0
+        },
+        {
+          "description": "500 ML EXTRA VIRGIN OLIVE OIL 2025",
+          "qty": 1,
+          "value": 11.5
+        },
+        {
+          "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
+          "qty": 1,
+          "value": 10.0
+        }
+      ],
+      "customsDuties": 5.65,
+      "shippingCostCustomer": 75.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1787868152832,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1787868152832,
+      "updatedAt": 1787868152832
+    },
+    {
       "id": "ord_mta3q0nwlz70",
       "customerName": "MANDIP KAUR",
       "customerEmail": "kaur.mandip23@gmail.com",
@@ -8357,5 +8475,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1787749212380
+  "lastImportedAt": 1787868152832
 }
