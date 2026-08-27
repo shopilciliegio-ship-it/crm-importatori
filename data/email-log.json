@@ -71,6 +71,24 @@
       "subject": "Your wine is on its way! 🍷",
       "sentAt": 1787763059178,
       "messageId": "<202608261651.86280352935@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mtc2jbpdl9ln",
+      "customerName": "PAULA GREZESZAK",
+      "type": "order_received",
+      "to": "paulagrezeszak@gmail.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1787868186330,
+      "messageId": "<202608272203.83890527795@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mtc2jbpc0oie",
+      "customerName": "AARON DORFMAN",
+      "type": "order_received",
+      "to": "rlpisarz9@gmail.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1787868186330,
+      "messageId": "<202608272203.15467318951@smtp-relay.mailin.fr>"
     }
   ]
 }
