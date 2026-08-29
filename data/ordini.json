@@ -410,9 +410,11 @@
       ],
       "notes": "",
       "createdAt": 1787402837151,
-      "updatedAt": 1787738585777,
+      "updatedAt": 1788011052516,
       "trackingUrl": "",
-      "destCountry": "IT"
+      "destCountry": "IT",
+      "staleAlertDays": 7,
+      "staleAlertSince": 1787402837151
     },
     {
       "id": "ord_mt1z94c56v4p",
