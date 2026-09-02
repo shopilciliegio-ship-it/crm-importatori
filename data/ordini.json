@@ -200,11 +200,18 @@
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1787749243039,
           "messageId": "<202608261300.43575422895@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "day0",
+          "to": "kaur.mandip23@gmail.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1788356950709,
+          "messageId": "<202609021349.19122663161@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1787749212380,
-      "updatedAt": 1788356947475,
+      "updatedAt": 1788356950709,
       "track17Registered": true
     },
     {
@@ -264,7 +271,9 @@
       ],
       "notes": "",
       "createdAt": 1787690012971,
-      "updatedAt": 1787690031248
+      "updatedAt": 1788356950709,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1787690012971
     },
     {
       "id": "ord_mt78rb9zlaom",
@@ -356,11 +365,18 @@
           "bouncedAt": "2026-08-24T14:58:12.000+02:00",
           "delivered": true,
           "deliveredAt": "2026-08-24T14:58:11.428+02:00"
+        },
+        {
+          "type": "day0",
+          "to": "rstieritz@gmail.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1788356950709,
+          "messageId": "<202609021349.79214310329@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1787576272343,
-      "updatedAt": 1788356947475,
+      "updatedAt": 1788356950709,
       "trackingUrl": "",
       "destCountry": "US",
       "track17Registered": true
@@ -491,11 +507,18 @@
           "messageId": "<202608202033.42360883057@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-08-20T22:33:17.000+02:00"
+        },
+        {
+          "type": "day0",
+          "to": "lucy.rinehuls@gmail.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1788356950709,
+          "messageId": "<202609021349.94863998055@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1787257976117,
-      "updatedAt": 1788356947475,
+      "updatedAt": 1788356950709,
       "staleAlertDays": 7,
       "staleAlertSince": 1787257976117,
       "track17Registered": true
@@ -557,8 +580,8 @@
       ],
       "notes": "",
       "createdAt": 1787144084406,
-      "updatedAt": 1787749243039,
-      "staleAlertDays": 7,
+      "updatedAt": 1788356950709,
+      "staleAlertDays": 14,
       "staleAlertSince": 1787144084406
     },
     {
@@ -692,8 +715,8 @@
       ],
       "notes": "",
       "createdAt": 1786984838207,
-      "updatedAt": 1787589741187,
-      "staleAlertDays": 7,
+      "updatedAt": 1788356950709,
+      "staleAlertDays": 14,
       "staleAlertSince": 1786984838207
     },
     {
