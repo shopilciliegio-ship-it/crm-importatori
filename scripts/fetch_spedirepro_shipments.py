@@ -203,6 +203,15 @@ def customer_code(name: str) -> str:
     return cognome + nome[0]
 
 
+def order_number_code(order_number: str) -> str:
+    """In pratica per gli ordini Shop Online l'operatore mette spesso il numero
+    ordine (es. '#1448') invece del codice COGNOME+INIZIALE su SpedirePro — più
+    naturale da leggere direttamente dall'ordine. Accettiamo anche questo: solo
+    le cifre, senza # o spazi."""
+    digits = re.sub(r'\D', '', order_number or '')
+    return digits
+
+
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
@@ -232,13 +241,16 @@ def main():
     # ricontrollato a ogni run finché non raggiunge uno stato terminale, altrimenti
     # resta congelato al primo status visto (es. "spedito") e non arriva mai a
     # "consegnato" anche se la spedizione nel frattempo è stata recapitata.
+    # Un ordine viene registrato sotto TUTTI i codici che l'operatore potrebbe
+    # ragionevolmente aver usato su SpedirePro (cognome+iniziale, o il numero
+    # ordine per gli ordini Shop Online) — vedi order_number_code().
     pending_by_code: dict[str, list[dict]] = {}
     for o in orders:
         if o.get('status') in TERMINAL_STATUSES:
             continue
-        code = customer_code(o.get('customerName', ''))
-        if code:
-            pending_by_code.setdefault(code, []).append(o)
+        for code in {customer_code(o.get('customerName', '')), order_number_code(o.get('orderNumber', ''))}:
+            if code:
+                pending_by_code.setdefault(code, []).append(o)
 
     unmatched_crm = sorted(c for c in pending_by_code if c not in by_reference)
     if unmatched_crm:
@@ -249,8 +261,15 @@ def main():
         print(f'  [diagnostica] {len(by_reference)} riferimenti distinti trovati su SpedirePro: {sorted(by_reference.keys())}')
 
     changed = 0
+    # Un ordine registrato sotto due codici (nome + numero ordine) va gestito una
+    # sola volta per run anche se ENTRAMBI trovano una spedizione corrispondente.
+    processed_ids: set[str] = set()
 
     for code, crm_matches in pending_by_code.items():
+        crm_matches = [o for o in crm_matches if o.get('id') not in processed_ids]
+        if not crm_matches:
+            continue
+
         spedire_matches = by_reference.get(code)
         if not spedire_matches:
             continue
@@ -262,6 +281,7 @@ def main():
                 'verificare manualmente.'
             )
             for o in crm_matches:
+                processed_ids.add(o.get('id'))
                 if note not in (o.get('notes') or ''):
                     o['notes']     = (note + '\n' + (o.get('notes') or '')).strip()
                     o['updatedAt'] = now_ms
@@ -316,6 +336,7 @@ def main():
             })
 
         order['updatedAt'] = now_ms
+        processed_ids.add(order.get('id'))
         changed += 1
         print(f'  ✓ {order.get("customerName")}: {"nuovo tracking" if is_new_link else "stato " + new_status} ({code}) → {tracking_url}')
 
