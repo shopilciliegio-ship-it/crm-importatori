@@ -466,17 +466,36 @@ def parse_fieramente_pdf(pdf_bytes: bytes) -> dict:
         print(f'    ⚠ Errore lettura PDF: {e}')
         return {}
 
+    # pdfplumber spesso non riesce a leggere il CONTENUTO dei campi-modulo che
+    # buildMosPdf (create-notification.js) compila via pdf-lib — vede solo le
+    # etichette statiche del template PDF. Risultato: after('ADDRESS') finisce
+    # per catturare come "valore" la prossima etichetta (es. 'CITY'), non il
+    # dato vero del cliente — e quella spazzatura sovrascriveva l'indirizzo
+    # corretto già preso dal corpo email (order.update() in _parse_email dà
+    # priorità ai campi del PDF quando non sono vuoti).
+    _LABEL_WORDS = {
+        'SHIPMENT', 'CODE', 'NAME', 'ADDRESS', 'CITY', 'ZIP', 'STATE', 'COUNTRY',
+        'PHONE', 'EMAIL', 'NUMBER', 'OF', 'CARTONS', 'SHIPPING', 'INSTRUCTIONS',
+        'TOTAL', 'CHARGES',
+    }
+
+    def _looks_like_label(value: str) -> bool:
+        words = re.sub(r'[^A-Za-z\s]', ' ', value).upper().split()
+        return bool(words) and all(w in _LABEL_WORDS for w in words)
+
     def after(label: str) -> str:
         """Valore sulla riga successiva all'etichetta."""
         pattern = label.replace(' ', r'\s+') + r'\s*\n\s*([^\n]+)'
         m = re.search(pattern, text, re.I)
-        return m.group(1).strip() if m else ''
+        value = m.group(1).strip() if m else ''
+        return '' if _looks_like_label(value) else value
 
     def inline(label: str) -> str:
         """Valore sulla stessa riga dell'etichetta (dopo spazio)."""
         pattern = label.replace(' ', r'\s+') + r'\s+([^\n]+)'
         m = re.search(pattern, text, re.I)
-        return m.group(1).strip() if m else ''
+        value = m.group(1).strip() if m else ''
+        return '' if _looks_like_label(value) else value
 
     # SHIPMENT CODE (potrebbe essere sulla stessa riga o sulla successiva)
     shipment_code = after('SHIPMENT CODE') or inline('SHIPMENT CODE')
