@@ -13,11 +13,47 @@ import re
 import base64
 import io
 import random
+import signal
 import string
+import sys
+from contextlib import contextmanager
 from datetime import datetime, timedelta, timezone
 
 import pdfplumber
 import requests
+
+# Senza questo, l'output di print() resta bufferizzato quando lo stdout non è un
+# terminale (come nei log di GitHub Actions): non si vede nulla finché il buffer
+# non si riempie o lo script non finisce, quindi un blocco appare come "silenzio
+# totale" invece di mostrare a che punto si trova.
+sys.stdout.reconfigure(line_buffering=True)
+
+
+class ImapHardTimeout(Exception):
+    """Sollevata quando un'operazione IMAP supera il timeout di sicurezza."""
+
+
+def _alarm_handler(signum, frame):
+    raise ImapHardTimeout('operazione IMAP bloccata oltre il timeout di sicurezza')
+
+
+@contextmanager
+def _hard_timeout(seconds):
+    """Timeout 'duro' via segnale: a differenza del timeout sui socket, interrompe
+    anche una chiamata bloccata prima che un socket esista — es. la risoluzione DNS
+    di imap.gmail.com, il vero punto in cui import_ordini.py si è bloccato più volte
+    (senza dare nessun errore) nonostante il timeout sul socket. Solo Unix
+    (signal.alarm) — su piattaforme senza questo supporto, non fa nulla."""
+    if not hasattr(signal, 'alarm'):
+        yield
+        return
+    old_handler = signal.signal(signal.SIGALRM, _alarm_handler)
+    signal.alarm(seconds)
+    try:
+        yield
+    finally:
+        signal.alarm(0)
+        signal.signal(signal.SIGALRM, old_handler)
 
 # ── Config da env (GitHub Secrets) ──────────────────────────────────────────
 GMAIL_USER         = os.environ['GMAIL_USER']          # shop.ilciliegio@gmail.com
@@ -36,20 +72,26 @@ def fetch_new_emails(since_date: datetime) -> list[dict]:
     """Connette a Gmail via IMAP, restituisce lista ordini grezzi."""
     since_str = since_date.strftime('%d-%b-%Y')   # es. "01-May-2026"
 
-    # timeout esplicito: senza, una connessione/risposta IMAP che si blocca (rete,
-    # rate-limit Gmail, ecc.) appende lo script all'infinito — il job GitHub Actions
-    # veniva poi ucciso solo dal timeout di default di 6 ore, saltando tutti gli step
-    # successivi (incluso SpedirePro) senza nessun errore visibile.
-    mail = imaplib.IMAP4_SSL('imap.gmail.com', timeout=30)
-    mail.login(GMAIL_USER, GMAIL_APP_PASSWORD)
-    mail.select('inbox')
+    # timeout sul socket + timeout "duro" via segnale (vedi _hard_timeout): senza,
+    # una connessione/risposta IMAP che si blocca (rete, DNS, rate-limit Gmail, ecc.)
+    # appende lo script all'infinito — il job GitHub Actions veniva poi ucciso solo
+    # dal timeout di default di 6 ore, saltando tutti gli step successivi (incluso
+    # SpedirePro) senza nessun errore visibile.
+    print('Connessione a Gmail...')
+    with _hard_timeout(60):
+        mail = imaplib.IMAP4_SSL('imap.gmail.com', timeout=30)
+        mail.login(GMAIL_USER, GMAIL_APP_PASSWORD)
+        mail.select('inbox')
+    print('Connesso. Cerco le email...')
 
     criteria = f'(SINCE {since_str} OR (OR SUBJECT "New Order" SUBJECT "New Paid Order") SUBJECT "Invio Ordine")'
-    _, nums = mail.search(None, criteria)
+    with _hard_timeout(60):
+        _, nums = mail.search(None, criteria)
 
     orders = []
     for num in (nums[0] or b'').split():
-        _, data = mail.fetch(num, '(RFC822)')
+        with _hard_timeout(30):
+            _, data = mail.fetch(num, '(RFC822)')
         raw = data[0][1]
         msg = email.message_from_bytes(raw)
         order = _parse_email(msg)

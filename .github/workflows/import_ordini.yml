@@ -10,6 +10,7 @@ permissions:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  PYTHONUNBUFFERED: "1"   # log in tempo reale, non solo a fine script/buffer pieno
 
 jobs:
   import:
@@ -38,7 +39,7 @@ jobs:
       # successivi (incluso SpedirePro) venivano saltati senza nessun errore visibile.
       # Ora un problema in uno step si ferma in max 10-15 minuti e non blocca gli altri.
       - name: Importa ordini
-        timeout-minutes: 10
+        timeout-minutes: 15
         continue-on-error: true
         env:
           GMAIL_USER:         ${{ secrets.GMAIL_USER }}
