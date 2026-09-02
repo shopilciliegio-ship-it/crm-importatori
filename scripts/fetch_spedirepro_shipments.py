@@ -194,13 +194,26 @@ def gh_put(path, data, sha, message):
 # ── Matching ordine ↔ spedizione ──────────────────────────────────────────────
 
 def customer_code(name: str) -> str:
-    """COGNOME (tutto tranne la prima parola) + INIZIALE NOME, es. 'SUSAN RUSCIANO' → 'RUSCIANOS'."""
-    words = re.sub(r'[^A-Za-z\s]', '', (name or '')).upper().split()
-    if len(words) < 2:
+    """Deve rispecchiare ESATTAMENTE la stessa logica di generazione dello
+    shipment code usata in CiliegioShop/netlify/functions/create-notification.js
+    (buildMosPdf) — quella che finisce stampata sul modulo MOS Fieramente che
+    l'operatore ha sotto gli occhi mentre spedisce, quindi quella che scrive
+    su SpedirePro. Ultima parola (cognome) + iniziale di tutto il resto unito
+    (nome/e). Es. 'SUSAN RUSCIANO' → 'RUSCIANOS'; 'SACCHETTO CONSULTING SNC'
+    → 'SNCS' (non 'CONSULTINGSNCS' come con la vecchia logica — che trattava
+    la PRIMA parola come nome, sbagliando su ogni nome di più di due parole:
+    ragioni sociali, doppi cognomi, ecc. — e per questo non trovava mai match
+    per gli ordini con ragione sociale, es. Sacchetto Consulting SNC)."""
+    words = (name or '').strip().split()
+    if not words:
         return ''
-    nome      = words[0]
-    cognome   = ''.join(words[1:])
-    return cognome + nome[0]
+    if len(words) == 1:
+        base = words[0]
+    else:
+        last_name  = words[-1]
+        first_name = ' '.join(words[:-1])
+        base = last_name + first_name[0]
+    return re.sub(r'[^A-Za-z0-9]', '', base).upper()
 
 
 def order_number_code(order_number: str) -> str:
