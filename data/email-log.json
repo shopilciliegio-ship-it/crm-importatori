@@ -26,6 +26,15 @@
       "subject": "Your wine is on its way! 🍷",
       "sentAt": 1788356950709,
       "messageId": "<202609021349.94863998055@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mtk6wiatmljw",
+      "customerName": "AMBER MAIDA",
+      "type": "order_received",
+      "to": "dmbcrush@hotnail.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1788359238786,
+      "messageId": "<202609021427.39261067653@smtp-relay.mailin.fr>"
     }
   ]
 }
