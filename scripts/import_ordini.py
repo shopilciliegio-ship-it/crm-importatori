@@ -36,7 +36,11 @@ def fetch_new_emails(since_date: datetime) -> list[dict]:
     """Connette a Gmail via IMAP, restituisce lista ordini grezzi."""
     since_str = since_date.strftime('%d-%b-%Y')   # es. "01-May-2026"
 
-    mail = imaplib.IMAP4_SSL('imap.gmail.com')
+    # timeout esplicito: senza, una connessione/risposta IMAP che si blocca (rete,
+    # rate-limit Gmail, ecc.) appende lo script all'infinito — il job GitHub Actions
+    # veniva poi ucciso solo dal timeout di default di 6 ore, saltando tutti gli step
+    # successivi (incluso SpedirePro) senza nessun errore visibile.
+    mail = imaplib.IMAP4_SSL('imap.gmail.com', timeout=30)
     mail.login(GMAIL_USER, GMAIL_APP_PASSWORD)
     mail.select('inbox')
 
@@ -495,7 +499,7 @@ _GH_HEADERS = {
 
 def load_ordini() -> tuple[dict, str | None]:
     url = f'https://api.github.com/repos/{GH_REPO}/contents/{DATA_PATH}'
-    r = requests.get(url, headers=_GH_HEADERS)
+    r = requests.get(url, headers=_GH_HEADERS, timeout=30)
     if r.status_code == 404:
         return {'orders': [], 'lastImportedAt': None}, None
     r.raise_for_status()
@@ -513,7 +517,7 @@ def save_ordini(db: dict, sha: str | None) -> None:
     body    = {'message': f'Import ordini — {now_str}', 'content': content}
     if sha:
         body['sha'] = sha
-    r = requests.put(url, headers=_GH_HEADERS, json=body)
+    r = requests.put(url, headers=_GH_HEADERS, json=body, timeout=30)
     r.raise_for_status()
 
 
