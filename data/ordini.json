@@ -731,11 +731,18 @@
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1787763059178,
           "messageId": "<202608261650.15388543504@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "dogana",
+          "to": "berrillos@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1788388152741,
+          "messageId": "<202609022229.13872334588@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1786984838207,
-      "updatedAt": 1788388147384,
+      "updatedAt": 1788388152741,
       "staleAlertDays": 7,
       "staleAlertSince": 1786984838207,
       "track17Registered": true
@@ -892,11 +899,18 @@
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1787763059178,
           "messageId": "<202608261651.61384301583@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "dogana",
+          "to": "abbieblunier@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1788388152741,
+          "messageId": "<202609022229.41792109673@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1786971117340,
-      "updatedAt": 1788388147384,
+      "updatedAt": 1788388152741,
       "staleAlertDays": 7,
       "staleAlertSince": 1786971117340,
       "track17Registered": true
@@ -976,11 +990,18 @@
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1787763059178,
           "messageId": "<202608261651.65928342754@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "dogana",
+          "to": "sfierro53@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1788388152741,
+          "messageId": "<202609022229.90558982680@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1786524069440,
-      "updatedAt": 1788388147384,
+      "updatedAt": 1788388152741,
       "staleAlertDays": 14,
       "staleAlertSince": 1786524069440,
       "track17Registered": true
@@ -1050,11 +1071,18 @@
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1787763059178,
           "messageId": "<202608261651.24625535892@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "dogana",
+          "to": "burroughs_linda@yahoo.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1788388152741,
+          "messageId": "<202609022229.46224673308@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1786524069440,
-      "updatedAt": 1788388147384,
+      "updatedAt": 1788388152741,
       "staleAlertDays": 14,
       "staleAlertSince": 1786524069440,
       "track17Registered": true
@@ -1149,11 +1177,18 @@
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1787763059178,
           "messageId": "<202608261651.86280352935@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegnato",
+          "to": "john_galante@icloud.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1788388152741,
+          "messageId": "<202609022229.67597868424@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1786454089247,
-      "updatedAt": 1788388147384,
+      "updatedAt": 1788388152741,
       "trackingUrl": "",
       "destCountry": "US",
       "staleAlertDays": 14,
