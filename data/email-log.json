@@ -35,6 +35,42 @@
       "subject": "Thank you for your order! 🍷",
       "sentAt": 1788359238786,
       "messageId": "<202609021427.39261067653@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mt4dhztscxg9",
+      "customerName": "Giuseppe Maruca",
+      "type": "day0",
+      "to": "giuseppemaruca.33@gmail.com",
+      "subject": "Il tuo vino è in viaggio! 🍷",
+      "sentAt": 1788361197562,
+      "messageId": "<202609021459.56998263885@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mt4dhztscxg9",
+      "customerName": "Giuseppe Maruca",
+      "type": "consegnato",
+      "to": "giuseppemaruca.33@gmail.com",
+      "subject": "Il tuo ordine è stato consegnato! 🍷 Buona degustazione!",
+      "sentAt": 1788361197562,
+      "messageId": "<202609021459.15569928393@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_msxgmtrz7y9n",
+      "customerName": "Luciano Cantamessa",
+      "type": "day0",
+      "to": "cantalu965@gmail.com",
+      "subject": "Il tuo vino è in viaggio! 🍷",
+      "sentAt": 1788361197562,
+      "messageId": "<202609021459.69925036422@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_msxgmtrz7y9n",
+      "customerName": "Luciano Cantamessa",
+      "type": "consegnato",
+      "to": "cantalu965@gmail.com",
+      "subject": "Il tuo ordine è stato consegnato! 🍷 Buona degustazione!",
+      "sentAt": 1788361197562,
+      "messageId": "<202609021459.83753365092@smtp-relay.mailin.fr>"
     }
   ]
 }
