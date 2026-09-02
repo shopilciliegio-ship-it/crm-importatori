@@ -448,7 +448,7 @@
       "shippingType": "standard",
       "gmailMessageId": "<DB9PR08MB6682010254D6322907CFF3B9BFA22@DB9PR08MB6682.eurprd08.prod.outlook.com>",
       "trackingNumber": "",
-      "carrier": "Corriere Italia Gratis Oltre 100 € Di Ordine",
+      "carrier": "POSTE DELIVERY STANDARD",
       "products": [
         {
           "description": "PURPLE GRAPES - SWEET RED WINE IGT 2024",
@@ -468,13 +468,18 @@
       "language": "it",
       "orderNumber": "#1446",
       "paymentType": "Carte Di Credito/Bancomat",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1788361193617,
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1787402837151,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "consegnato",
+          "date": 1788361193617,
+          "note": "Auto SpedirePro: aggiornamento stato (rif. 1446)"
         }
       ],
       "emailsSent": [
@@ -490,11 +495,12 @@
       ],
       "notes": "",
       "createdAt": 1787402837151,
-      "updatedAt": 1788011052516,
-      "trackingUrl": "",
+      "updatedAt": 1788361193617,
+      "trackingUrl": "https://www.spedire.com/tracking/1UW1VAJ004338",
       "destCountry": "IT",
       "staleAlertDays": 7,
-      "staleAlertSince": 1787402837151
+      "staleAlertSince": 1787402837151,
+      "spedireproReference": "1446"
     },
     {
       "id": "ord_mt1z94c56v4p",
@@ -730,7 +736,7 @@
       "shippingType": "standard",
       "gmailMessageId": "<DB9PR08MB66826D97165DE1E385836C21BFA72@DB9PR08MB6682.eurprd08.prod.outlook.com>",
       "trackingNumber": "",
-      "carrier": "Corriere Italia Gratis Oltre 100 € Di Ordine",
+      "carrier": "TNT EXPRESS",
       "products": [
         {
           "description": "OLIO EXTRA VERGINE DI OLIVA 2025 LT 1",
@@ -745,13 +751,18 @@
       "language": "it",
       "orderNumber": "#1432",
       "paymentType": "Carte Di Credito/Bancomat",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1788361193617,
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1786984838207,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "consegnato",
+          "date": 1788361193617,
+          "note": "Auto SpedirePro: aggiornamento stato (rif. 1432)"
         }
       ],
       "emailsSent": [
@@ -767,9 +778,11 @@
       ],
       "notes": "",
       "createdAt": 1786984838207,
-      "updatedAt": 1788356950709,
+      "updatedAt": 1788361193617,
       "staleAlertDays": 14,
-      "staleAlertSince": 1786984838207
+      "staleAlertSince": 1786984838207,
+      "trackingUrl": "https://www.spedire.com/tracking/WS00378479",
+      "spedireproReference": "1432"
     },
     {
       "id": "ord_msx8gqos55cs",
