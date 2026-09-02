@@ -227860,7 +227860,7 @@
           "toEmail": "elenakofthemilkyway@gmail.com"
         }
       ],
-      "blacklisted": false,
+      "blacklisted": true,
       "notes": "",
       "status": "sent",
       "region": "Nord America",
@@ -227876,16 +227876,31 @@
           "brand": "ilciliegio",
           "sequenceStep": 1,
           "delivered": true,
-          "opened": false,
+          "opened": true,
           "clicked": false,
           "bounced": false,
           "spam": false,
-          "unsubscribed": false,
+          "unsubscribed": true,
           "blocked": false,
-          "deliveredAt": "2026-06-16T23:11:21.050+02:00"
+          "deliveredAt": "2026-06-16T23:11:21.050+02:00",
+          "openedAt": "2026-09-02T01:15:08.163+02:00",
+          "unsubscribedAt": "2026-09-02T01:15:37.409+02:00"
         }
       ],
-      "log": []
+      "log": [
+        {
+          "ts": 1788319340035,
+          "msg": "👁 Aperta: Wave 1"
+        },
+        {
+          "ts": 1788319340035,
+          "msg": "🚫 Disiscritto: Wave 1"
+        },
+        {
+          "ts": 1788319340979,
+          "msg": "🚫 Contatto inserito in blacklist (spam/disiscrizione/bloccata)"
+        }
+      ]
     },
     {
       "id": "cli_f622f78a44",
