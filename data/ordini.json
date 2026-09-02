@@ -697,7 +697,7 @@
       "orderNumber": "#1440",
       "paymentType": "Carte Di Credito/Bancomat",
       "shippingDate": 1787763050649,
-      "status": "in_transito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -708,6 +708,11 @@
           "status": "in_transito",
           "date": 1787763050649,
           "note": "Auto Fieramente (era: preparazione)"
+        },
+        {
+          "status": "dogana",
+          "date": 1788388147384,
+          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -730,7 +735,7 @@
       ],
       "notes": "",
       "createdAt": 1786984838207,
-      "updatedAt": 1787763059178,
+      "updatedAt": 1788388147384,
       "staleAlertDays": 7,
       "staleAlertSince": 1786984838207,
       "track17Registered": true
@@ -853,7 +858,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1787763050649,
-      "status": "in_transito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -864,6 +869,11 @@
           "status": "in_transito",
           "date": 1787763050649,
           "note": "Auto Fieramente (era: preparazione)"
+        },
+        {
+          "status": "dogana",
+          "date": 1788388147384,
+          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -886,7 +896,7 @@
       ],
       "notes": "",
       "createdAt": 1786971117340,
-      "updatedAt": 1787763059178,
+      "updatedAt": 1788388147384,
       "staleAlertDays": 7,
       "staleAlertSince": 1786971117340,
       "track17Registered": true
@@ -932,7 +942,7 @@
       "orderNumber": "#1424",
       "paymentType": "Carte Di Credito/Bancomat",
       "shippingDate": 1787763050649,
-      "status": "in_transito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -943,6 +953,11 @@
           "status": "in_transito",
           "date": 1787763050649,
           "note": "Auto Fieramente (era: preparazione)"
+        },
+        {
+          "status": "dogana",
+          "date": 1788388147384,
+          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -965,7 +980,7 @@
       ],
       "notes": "",
       "createdAt": 1786524069440,
-      "updatedAt": 1787763059178,
+      "updatedAt": 1788388147384,
       "staleAlertDays": 14,
       "staleAlertSince": 1786524069440,
       "track17Registered": true
@@ -1001,7 +1016,7 @@
       "orderNumber": "#1428",
       "paymentType": "Carte Di Credito/Bancomat",
       "shippingDate": 1787763050649,
-      "status": "in_transito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1012,6 +1027,11 @@
           "status": "in_transito",
           "date": 1787763050649,
           "note": "Auto Fieramente (era: preparazione)"
+        },
+        {
+          "status": "dogana",
+          "date": 1788388147384,
+          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -1034,7 +1054,7 @@
       ],
       "notes": "",
       "createdAt": 1786524069440,
-      "updatedAt": 1787763059178,
+      "updatedAt": 1788388147384,
       "staleAlertDays": 14,
       "staleAlertSince": 1786524069440,
       "track17Registered": true
@@ -1095,7 +1115,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1787763050649,
-      "status": "in_transito",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1106,6 +1126,11 @@
           "status": "in_transito",
           "date": 1787763050649,
           "note": "Auto Fieramente (era: preparazione)"
+        },
+        {
+          "status": "consegnato",
+          "date": 1788388147384,
+          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -1128,7 +1153,7 @@
       ],
       "notes": "",
       "createdAt": 1786454089247,
-      "updatedAt": 1787763059178,
+      "updatedAt": 1788388147384,
       "trackingUrl": "",
       "destCountry": "US",
       "staleAlertDays": 14,
