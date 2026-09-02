@@ -39,10 +39,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "dmbcrush@hotnail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1788359238786,
+          "messageId": "<202609021427.39261067653@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1788359215781,
-      "updatedAt": 1788359215781
+      "updatedAt": 1788359238786
     },
     {
       "id": "ord_mtc2jbpdl9ln",
