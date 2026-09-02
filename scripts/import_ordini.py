@@ -94,7 +94,17 @@ def fetch_new_emails(since_date: datetime) -> list[dict]:
             _, data = mail.fetch(num, '(RFC822)')
         raw = data[0][1]
         msg = email.message_from_bytes(raw)
-        order = _parse_email(msg)
+        # Copre anche il parsing del PDF allegato (pdfplumber/pdfminer, noto per
+        # potersi bloccare su PDF dalla struttura particolare) — non solo l'IMAP:
+        # la run del 02/09 si è impallata qui, dopo 3 email lette correttamente,
+        # non nella connessione.
+        try:
+            with _hard_timeout(30):
+                order = _parse_email(msg)
+        except ImapHardTimeout:
+            subj = _decode_header(msg.get('Subject', ''))[:80]
+            print(f'  ⚠ Parsing troppo lento (>30s), salto: {subj}')
+            order = None
         if order:
             orders.append(order)
             print(f'  Trovato: {order["customerName"]} — {order.get("shipmentCode","?")} — €{order["amount"]}')
