@@ -1,6 +1,50 @@
 {
   "orders": [
     {
+      "id": "ord_mtk6wiatmljw",
+      "customerName": "AMBER MAIDA",
+      "customerEmail": "dmbcrush@hotnail.com",
+      "customerPhone": "5708619023",
+      "amount": 154.2,
+      "currency": "EUR",
+      "orderDate": 1788253617000,
+      "emailSubject": "🍷 New Order — AMBER MAIDA — 154.20 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "STATE, COUNTRY, CITY ZIP CODE",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202609010906.15921187249@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "250 ML EXTRA VIRGIN OLIVE OIL 2025",
+          "qty": 8,
+          "value": 72.0
+        }
+      ],
+      "customsDuties": 7.2,
+      "shippingCostCustomer": 75.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1788359215781,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1788359215781,
+      "updatedAt": 1788359215781
+    },
+    {
       "id": "ord_mtc2jbpdl9ln",
       "customerName": "PAULA GREZESZAK",
       "customerEmail": "paulagrezeszak@gmail.com",
@@ -8536,5 +8580,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1787868152832
+  "lastImportedAt": 1788359215781
 }
