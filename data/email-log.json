@@ -71,6 +71,51 @@
       "subject": "Il tuo ordine è stato consegnato! 🍷 Buona degustazione!",
       "sentAt": 1788361197562,
       "messageId": "<202609021459.83753365092@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_msxgmtrz9acu",
+      "customerName": "Stephanie Berrillo",
+      "type": "dogana",
+      "to": "berrillos@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1788388152741,
+      "messageId": "<202609022229.13872334588@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_msx8gqos55cs",
+      "customerName": "ABBIE BLUNIER",
+      "type": "dogana",
+      "to": "abbieblunier@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1788388152741,
+      "messageId": "<202609022229.41792109673@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mspuaybk2t8e",
+      "customerName": "Steven Fierro",
+      "type": "dogana",
+      "to": "sfierro53@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1788388152741,
+      "messageId": "<202609022229.90558982680@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mspuaybkgrtb",
+      "customerName": "Linda Burroughs",
+      "type": "dogana",
+      "to": "burroughs_linda@yahoo.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1788388152741,
+      "messageId": "<202609022229.46224673308@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_msoon19bav7n",
+      "customerName": "JOHN GALANTE",
+      "type": "consegnato",
+      "to": "john_galante@icloud.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1788388152741,
+      "messageId": "<202609022229.67597868424@smtp-relay.mailin.fr>"
     }
   ]
 }
