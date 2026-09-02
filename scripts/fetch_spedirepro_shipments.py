@@ -228,13 +228,25 @@ def main():
 
     # Ordini CRM ancora da collegare, raggruppati per codice calcolato — serve
     # per rilevare conflitti anche lato CRM (due ordini con lo stesso codice).
+    # NB: un ordine con trackingUrl già impostato NON va escluso qui — va
+    # ricontrollato a ogni run finché non raggiunge uno stato terminale, altrimenti
+    # resta congelato al primo status visto (es. "spedito") e non arriva mai a
+    # "consegnato" anche se la spedizione nel frattempo è stata recapitata.
     pending_by_code: dict[str, list[dict]] = {}
     for o in orders:
-        if o.get('trackingUrl') or o.get('status') in TERMINAL_STATUSES:
+        if o.get('status') in TERMINAL_STATUSES:
             continue
         code = customer_code(o.get('customerName', ''))
         if code:
             pending_by_code.setdefault(code, []).append(o)
+
+    unmatched_crm = sorted(c for c in pending_by_code if c not in by_reference)
+    if unmatched_crm:
+        print(f'  [diagnostica] {len(unmatched_crm)} ordini CRM in attesa senza spedizione SpedirePro corrispondente:')
+        for code in unmatched_crm:
+            names = ', '.join(o.get('customerName', '?') for o in pending_by_code[code])
+            print(f'    CRM "{code}" ({names}) — nessuna spedizione con questo riferimento su SpedirePro')
+        print(f'  [diagnostica] {len(by_reference)} riferimenti distinti trovati su SpedirePro: {sorted(by_reference.keys())}')
 
     changed = 0
 
@@ -270,6 +282,17 @@ def main():
         if STATUS_RANK.get(new_status, 0) < STATUS_RANK.get(cur_status, 0):
             new_status = cur_status
 
+        is_new_link    = not order.get('trackingUrl')
+        status_changed = new_status != cur_status
+
+        # Niente di nuovo per questo ordine rispetto all'ultimo run: non tocco
+        # nulla — altrimenti, ora che gli ordini già agganciati vengono
+        # ricontrollati a ogni run (necessario per far avanzare lo stato fino a
+        # "consegnato"), finiremmo per aggiungere una riga di statusHistory
+        # identica ogni 4 ore all'infinito anche quando non è successo nulla.
+        if not is_new_link and not status_changed:
+            continue
+
         order['trackingUrl'] = tracking_url
         order['carrier']     = (shipment.get('data') or {}).get('courier', {}).get('courier_name') \
             or order.get('carrier') or 'Spedire.com'
@@ -278,14 +301,14 @@ def main():
         if not order.get('shippingDate'):
             order['shippingDate'] = now_ms
 
-        if new_status != cur_status:
+        if status_changed:
             order.setdefault('statusHistory', []).append({
                 'status': new_status,
                 'date':   now_ms,
-                'note':   f'Auto SpedirePro: trovato tracking (rif. {code})',
+                'note':   f'Auto SpedirePro: aggiornamento stato (rif. {code})',
             })
             order['status'] = new_status
-        else:
+        elif is_new_link:
             order.setdefault('statusHistory', []).append({
                 'status': cur_status,
                 'date':   now_ms,
@@ -294,7 +317,7 @@ def main():
 
         order['updatedAt'] = now_ms
         changed += 1
-        print(f'  ✓ {order.get("customerName")}: tracking trovato ({code}) → {tracking_url}')
+        print(f'  ✓ {order.get("customerName")}: {"nuovo tracking" if is_new_link else "stato " + new_status} ({code}) → {tracking_url}')
 
     if changed > 0:
         db['orders'] = orders
