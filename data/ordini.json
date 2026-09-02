@@ -143,12 +143,12 @@
       "currency": "EUR",
       "orderDate": 1787745602000,
       "emailSubject": "🍷 New Order — MANDIP KAUR — 299.25 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "KAURM",
       "shippingAddress": "STATE, COUNTRY, CITY ZIP CODE",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202608261200.59931495233@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A812176067",
       "carrier": "MBE",
       "products": [
         {
@@ -179,13 +179,18 @@
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1788356942048,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1787749212380,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1788356942048,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -199,7 +204,7 @@
       ],
       "notes": "",
       "createdAt": 1787749212380,
-      "updatedAt": 1787749243039
+      "updatedAt": 1788356942048
     },
     {
       "id": "ord_mt94h63vbvno",
@@ -269,12 +274,12 @@
       "currency": "EUR",
       "orderDate": 1787573844000,
       "emailSubject": "🍷 New Order — BRIAN STIERITZ — 903.00 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "STIERITZB",
       "shippingAddress": "BROOMFIELD, COLORADO, USA",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202608241217.92364861500@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1Z9376E1A816308962",
       "carrier": "MBE",
       "products": [
         {
@@ -310,8 +315,8 @@
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1788356942048,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -332,6 +337,11 @@
           "status": "preparazione",
           "date": 1787737359534,
           "note": ""
+        },
+        {
+          "status": "in_transito",
+          "date": 1788356942048,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -349,7 +359,7 @@
       ],
       "notes": "",
       "createdAt": 1787576272343,
-      "updatedAt": 1787737359534,
+      "updatedAt": 1788356942048,
       "trackingUrl": "",
       "destCountry": "US"
     },
@@ -430,7 +440,7 @@
       "numberOfCartons": 1,
       "shippingType": "standard",
       "gmailMessageId": "<DB9PR08MB6682466B0D74E2D22EB81DB0BFA42@DB9PR08MB6682.eurprd08.prod.outlook.com>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A813575259",
       "carrier": "- U.S.A. Wine Corriere Std",
       "products": [
         {
@@ -456,13 +466,18 @@
       "language": "en",
       "orderNumber": "#1443",
       "paymentType": "Carte Di Credito/Bancomat",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1788356942048,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1787257976117,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1788356942048,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -478,7 +493,7 @@
       ],
       "notes": "",
       "createdAt": 1787257976117,
-      "updatedAt": 1787868186330,
+      "updatedAt": 1788356942048,
       "staleAlertDays": 7,
       "staleAlertSince": 1787257976117
     },
