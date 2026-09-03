@@ -16,6 +16,7 @@ import random
 import signal
 import string
 import sys
+import time
 from contextlib import contextmanager
 from datetime import datetime, timedelta, timezone
 
@@ -100,6 +101,7 @@ def fetch_new_emails(since_date: datetime) -> list[dict]:
             _, data = mail.fetch(num, '(RFC822)')
         raw = data[0][1]
         msg = email.message_from_bytes(raw)
+        print(f'    email size: {len(raw)} bytes, subject={_decode_header(msg.get("Subject",""))[:60]!r}')
         # Copre anche il parsing del PDF allegato (pdfplumber/pdfminer, noto per
         # potersi bloccare su PDF dalla struttura particolare) — non solo l'IMAP:
         # la run del 02/09 si è impallata qui, dopo 3 email lette correttamente,
@@ -133,8 +135,11 @@ def _decode_header(raw: str) -> str:
 def _get_body_info(msg) -> tuple[str, list[str]]:
     """Restituisce (testo_body, lista_email_da_mailto_link)."""
     import html as _html
+    t0 = time.monotonic()
     plain, html_src = '', ''
+    n_parts = 0
     for part in msg.walk():
+        n_parts += 1
         ct = part.get_content_type()
         payload = part.get_payload(decode=True)
         if not payload:
@@ -145,22 +150,33 @@ def _get_body_info(msg) -> tuple[str, list[str]]:
             plain += decoded
         elif ct == 'text/html':
             html_src += decoded
+    print(f'      [prof] walk+decode: {time.monotonic()-t0:.1f}s parts={n_parts} plain={len(plain)} html={len(html_src)}')
 
     # Estrae email da href="mailto:..." prima di strippare l'HTML
+    t0 = time.monotonic()
     mailto_emails = re.findall(r'href=["\']mailto:([^"\'>\s]+)', html_src, re.I)
+    print(f'      [prof] mailto regex: {time.monotonic()-t0:.1f}s')
 
     if plain:
         return plain, mailto_emails
 
     if html_src:
+        t0 = time.monotonic()
         text = re.sub(r'<style[^>]*>.*?</style>', '', html_src, flags=re.S | re.I)
         text = re.sub(r'<script[^>]*>.*?</script>', '', text, flags=re.S | re.I)
+        print(f'      [prof] strip style/script: {time.monotonic()-t0:.1f}s')
         # <td> e <th> → spazio (stessa riga), <tr> <br> <p> <div> → a capo
+        t0 = time.monotonic()
         text = re.sub(r'<(?:br|p|div|tr|li|h\d)[^>]*/?>','\n', text, flags=re.I)
         text = re.sub(r'<(?:td|th)[^>]*>', ' ', text, flags=re.I)
+        print(f'      [prof] block tags: {time.monotonic()-t0:.1f}s')
+        t0 = time.monotonic()
         text = re.sub(r'<[^>]+>', '', text)
+        print(f'      [prof] strip tags: {time.monotonic()-t0:.1f}s len={len(text)}')
+        t0 = time.monotonic()
         text = _html.unescape(text)
         text = re.sub(r'[ \t]+', ' ', text)
+        print(f'      [prof] unescape+collapse: {time.monotonic()-t0:.1f}s')
         return text.strip(), mailto_emails
 
     return '', mailto_emails
@@ -256,27 +272,35 @@ def _parse_shop_order_body(text: str) -> dict:
     """Estrae i campi ordine dal corpo email del negozio online (Azienda Agricola Il Ciliegio).
     Formato lineare senza PDF: indirizzi fatturazione/spedizione, pagamento, corriere, totali."""
     result = {}
+    print(f'      [prof] parse_shop_order_body: text_len={len(text)}')
 
     # Ordine #1390 / Order #1412
+    t0 = time.monotonic()
     m = re.search(r'(?:Ordine|Order)\s*#\s*(\d+)', text, re.I)
     if m:
         result['orderNumber'] = '#' + m.group(1)
+    print(f'      [prof] orderNumber: {time.monotonic()-t0:.1f}s')
 
     # Email cliente: prima email non di sistema nel corpo
+    t0 = time.monotonic()
     all_emails = re.findall(EMAIL_RE, text)
     customer_email = next(
         (e for e in all_emails if not any(s in e.lower() for s in SKIP_EMAILS)), ''
     )
     if customer_email:
         result['customerEmail'] = customer_email
+    print(f'      [prof] email: {time.monotonic()-t0:.1f}s')
 
     # Telefono: cifre subito prima dell'etichetta indirizzo di spedizione (cella affiancata)
     # Le email "Shop Online" sono localizzate nella lingua del cliente: etichette IT o EN
+    t0 = time.monotonic()
     m = re.search(r'(\d{8,15})\s+(?:Indirizzo\s+di\s+Spedizione|Shipping\s+[Aa]ddress)', text, re.I)
     if m:
         result['customerPhone'] = m.group(1)
+    print(f'      [prof] phone: {time.monotonic()-t0:.1f}s')
 
     # Nome destinatario + indirizzo: blocco subito sotto l'etichetta indirizzo di spedizione
+    t0 = time.monotonic()
     m = re.search(
         r'(?:Indirizzo\s+di\s+Spedizione|Shipping\s+[Aa]ddress)\s*\n\s*([^\n]+)\n((?:[^\n]+\n?)+?)'
         r'(?=Tipo\s+di\s+Pagamento|Payment\s+type|Tipo\s+di\s+Spedizione|Shipping\s+type|DATI\s+ARTICOLO|$)',
@@ -287,18 +311,22 @@ def _parse_shop_order_body(text: str) -> dict:
         addr_lines = [l.strip() for l in m.group(2).split('\n') if l.strip()]
         if addr_lines:
             result['shippingAddress'] = ', '.join(addr_lines)
+    print(f'      [prof] address: {time.monotonic()-t0:.1f}s')
 
     # Tipo di pagamento (es. PAYPAL, CARTE DI CREDITO/BANCOMAT) — sequenza di parole in
     # maiuscolo dopo l'etichetta. (?i:...) limita l'insensibilità al maiuscolo/minuscolo
     # solo all'etichetta, cosicché [A-Z]{2,} catturi solo il valore realmente in maiuscolo
     # (es. si ferma prima di "Tipo di Spedizione" / "Shipping type")
+    t0 = time.monotonic()
     m = re.search(r'(?i:Tipo\s+di\s+Pagamento|Payment\s+type)\s*\n?\s*([A-Z]{2,}(?:[\s/]+[A-Z]{2,})*)', text)
     if m:
         result['paymentType'] = m.group(1).strip().title()
+    print(f'      [prof] paymentType: {time.monotonic()-t0:.1f}s')
 
     # Corriere / tipo di spedizione (es. CORRIERE ITALIA, U.S.A. Wine CORRIERE STD)
     # Non mappiamo tutti i nomi corriere: se compare "STD"/"EXPR" la spedizione è
     # standard/express, e il corriere fisso Italia è sempre standard.
+    t0 = time.monotonic()
     m = re.search(r'(?i:Tipo\s+di\s+Spedizione|Shipping\s+type)\s*\n?\s*([^\n]+)', text)
     if m:
         raw_ship = m.group(1).strip()
@@ -309,9 +337,11 @@ def _parse_shop_order_body(text: str) -> dict:
             result['shippingType'] = 'express'
         elif 'italia' in raw_ship.lower():
             result['shippingType'] = 'standard'
+    print(f'      [prof] carrier: {time.monotonic()-t0:.1f}s')
 
     # Totale Ordine    171,15 €  /  Total Order    €234.35
     # il simbolo € può precedere o seguire l'importo a seconda della lingua dell'email
+    t0 = time.monotonic()
     m = re.search(r'(?:Totale\s+Ordine|Total\s+Order)\s+(?:€\s*([\d.,]+)|([\d.,]+)\s*€)', text, re.I)
     if m:
         raw = m.group(1) or m.group(2)
@@ -321,16 +351,20 @@ def _parse_shop_order_body(text: str) -> dict:
                 result['amount'] = amount
         except ValueError:
             pass
+    print(f'      [prof] amount: {time.monotonic()-t0:.1f}s')
 
     # Articoli ordinati: blocchi "Article/Articolo: NOME ... Code/Codice NNNNN ...
     # Quantity/Qta N ... Total row/Totale Riga €Y". Le email sono localizzate nella
     # lingua del cliente (etichette IT o EN, come per gli altri campi sopra).
     # Le righe accessorie (dazi, spese varie) sono anch'esse un "Article:" ma senza
     # un "Code" numerico: è così che si distinguono dai veri articoli di vino.
+    t0 = time.monotonic()
     products = []
     duties = 0.0
     blocks = re.split(r'(?=(?:Article|Articolo)\s*:)', text, flags=re.I)
-    for block in blocks[1:]:
+    print(f'      [prof] products split: {time.monotonic()-t0:.1f}s n_blocks={len(blocks)}')
+    t0 = time.monotonic()
+    for i, block in enumerate(blocks[1:]):
         m_name = re.match(r'(?:Article|Articolo)\s*:\s*(.+)', block, re.I)
         if not m_name:
             continue
@@ -344,6 +378,7 @@ def _parse_shop_order_body(text: str) -> dict:
             products.append({'description': name, 'qty': qty, 'value': value})
         elif re.search(r'\bTAX\b|DAZI|DAZIO|DUTY|DOGAN', name, re.I):
             duties += value
+    print(f'      [prof] products loop: {time.monotonic()-t0:.1f}s')
     if products:
         result['products'] = products
     if duties > 0:
@@ -352,12 +387,14 @@ def _parse_shop_order_body(text: str) -> dict:
     # Transport expenses/Spese Trasporto    €75.00 — costo di spedizione reale pagato
     # dal cliente (distinto dalle eventuali righe pseudo-articolo tra quelle sopra,
     # che sono importi diversi/parziali e non il costo di trasporto effettivo)
+    t0 = time.monotonic()
     m = re.search(r'(?:Transport\s+expenses|Spese\s+(?:di\s+)?Trasporto)\s+€?\s*([\d.,]+)', text, re.I)
     if m:
         try:
             result['shippingCostCustomer'] = float(m.group(1).replace(',', '.'))
         except ValueError:
             pass
+    print(f'      [prof] transport: {time.monotonic()-t0:.1f}s')
 
     return result
 
