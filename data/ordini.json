@@ -5,13 +5,13 @@
       "customerName": "Anne Apicella",
       "customerEmail": "apicella05@aol.com",
       "customerPhone": "",
-      "amount": 141.0,
+      "amount": 141,
       "currency": "EUR",
       "orderDate": 1788386161000,
       "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio Anne Apicella",
-      "shipmentCode": "",
+      "shipmentCode": "APICELLAA",
       "shippingAddress": "1903 Castle Peak Loop NE, 87144 Rio Rancho (NM), United States",
-      "numberOfCartons": null,
+      "numberOfCartons": 1,
       "shippingType": "standard",
       "gmailMessageId": "<CAOmk=KZayo-wcmsFum3ZqmrDitrc=tNOCeNRChiBz8btYEORxQ@mail.gmail.com>",
       "trackingNumber": "",
@@ -20,12 +20,12 @@
         {
           "description": "CILIEGIO IN FIORE SWEET SPARKLING WINE",
           "qty": 6,
-          "value": 60.0
+          "value": 60
         }
       ],
-      "customsDuties": 6.0,
-      "shippingCostCustomer": 75.0,
-      "shippingCostMos": null,
+      "customsDuties": 6,
+      "shippingCostCustomer": 75,
+      "shippingCostMos": 70,
       "source": "shop",
       "language": "en",
       "orderNumber": "#1455",
@@ -42,7 +42,7 @@
       "emailsSent": [],
       "notes": "",
       "createdAt": 1788426131169,
-      "updatedAt": 1788426131169
+      "updatedAt": 1788426134051
     },
     {
       "id": "ord_mtk6wiatmljw",
@@ -64,11 +64,11 @@
         {
           "description": "250 ML EXTRA VIRGIN OLIVE OIL 2025",
           "qty": 8,
-          "value": 72.0
+          "value": 72
         }
       ],
       "customsDuties": 7.2,
-      "shippingCostCustomer": 75.0,
+      "shippingCostCustomer": 75,
       "shippingCostMos": null,
       "source": "fieramente",
       "language": "en",
@@ -116,31 +116,31 @@
         {
           "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
           "qty": 4,
-          "value": 40.0
+          "value": 40
         },
         {
           "description": "SPARKLING WINE CILIEGIO IN FIORE ROSÉ",
           "qty": 4,
-          "value": 40.0
+          "value": 40
         },
         {
           "description": "INFERNACCIO RED WINE IGT 2022",
           "qty": 4,
-          "value": 64.0
+          "value": 64
         },
         {
           "description": "CHIANTI STRADE BIANCHE 2025 LIM. ED.",
           "qty": 1,
-          "value": 0.0
+          "value": 0
         },
         {
           "description": "1 LT EXTRA VIRGIN OLIVE OIL 2025",
           "qty": 2,
-          "value": 42.0
+          "value": 42
         }
       ],
       "customsDuties": 18.6,
-      "shippingCostCustomer": 185.0,
+      "shippingCostCustomer": 185,
       "shippingCostMos": null,
       "source": "fieramente",
       "language": "en",
@@ -188,7 +188,7 @@
         {
           "description": "100 ML EXTRA VIRGIN OLIVE OIL 2025",
           "qty": 7,
-          "value": 35.0
+          "value": 35
         },
         {
           "description": "500 ML EXTRA VIRGIN OLIVE OIL 2025",
@@ -198,11 +198,11 @@
         {
           "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
           "qty": 1,
-          "value": 10.0
+          "value": 10
         }
       ],
       "customsDuties": 5.65,
-      "shippingCostCustomer": 75.0,
+      "shippingCostCustomer": 75,
       "shippingCostMos": null,
       "source": "fieramente",
       "language": "en",
@@ -250,12 +250,12 @@
         {
           "description": "INFERNACCIO RED WINE IGT 2022",
           "qty": 3,
-          "value": 48.0
+          "value": 48
         },
         {
           "description": "POGGIO ORLANDO 2024 CHIANTI COLLI SENE..",
           "qty": 3,
-          "value": 36.0
+          "value": 36
         },
         {
           "description": "LE FORCACCE WHITE WINE IGT 2024 VIOGNI..",
@@ -265,11 +265,11 @@
         {
           "description": "3 LT EXTRA VIRGIN OLIVE OIL 2025",
           "qty": 1,
-          "value": 58.0
+          "value": 58
         }
       ],
       "customsDuties": 16.75,
-      "shippingCostCustomer": 115.0,
+      "shippingCostCustomer": 115,
       "shippingCostMos": null,
       "source": "fieramente",
       "language": "en",
