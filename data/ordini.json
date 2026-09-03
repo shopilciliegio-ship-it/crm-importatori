@@ -366,12 +366,17 @@
       "orderNumber": "#1448",
       "paymentType": "Carte Di Credito/Bancomat",
       "shippingDate": null,
-      "status": "preparazione",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1787690012971,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "consegnato",
+          "date": 1788428443838,
+          "note": ""
         }
       ],
       "emailsSent": [
@@ -383,13 +388,26 @@
           "messageId": "<202608252033.57757594833@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-08-25T22:33:54.000+02:00"
+        },
+        {
+          "type": "consegnato",
+          "sentAt": 1788428443838,
+          "messageId": "manual-skip",
+          "manual": true
+        },
+        {
+          "type": "Consegnato",
+          "sentAt": 1788428444092,
+          "messageId": "<202609030940.72176778531@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1787690012971,
-      "updatedAt": 1788356950709,
+      "updatedAt": 1788428444092,
       "staleAlertDays": 7,
-      "staleAlertSince": 1787690012971
+      "staleAlertSince": 1787690012971,
+      "trackingUrl": "",
+      "destCountry": "IT"
     },
     {
       "id": "ord_mt78rb9zlaom",
