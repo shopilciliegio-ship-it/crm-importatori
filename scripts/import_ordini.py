@@ -299,18 +299,35 @@ def _parse_shop_order_body(text: str) -> dict:
         result['customerPhone'] = m.group(1)
     print(f'      [prof] phone: {time.monotonic()-t0:.1f}s')
 
-    # Nome destinatario + indirizzo: blocco subito sotto l'etichetta indirizzo di spedizione
+    # Nome destinatario + indirizzo: blocco subito sotto l'etichetta indirizzo di spedizione.
+    # Estratto riga per riga invece che con un'unica regex multi-riga: il pattern
+    # precedente (gruppi annidati ripetuti '(?:[^\n]+\n?)+?' + lookahead multi-alternativa)
+    # andava in backtracking esponenziale su alcuni corpi email — bloccava il parsing
+    # per >30s sull'ordine "Anne Apicella" (03/09) pur con un testo di soli 1491
+    # caratteri, escludendo che fosse solo lentezza dovuta alla dimensione. Uno split
+    # per riga + scansione lineare è intrinsecamente O(n), niente da tracciare.
     t0 = time.monotonic()
-    m = re.search(
-        r'(?:Indirizzo\s+di\s+Spedizione|Shipping\s+[Aa]ddress)\s*\n\s*([^\n]+)\n((?:[^\n]+\n?)+?)'
-        r'(?=Tipo\s+di\s+Pagamento|Payment\s+type|Tipo\s+di\s+Spedizione|Shipping\s+type|DATI\s+ARTICOLO|$)',
-        text, re.I
-    )
-    if m:
-        result['customerName'] = m.group(1).strip()
-        addr_lines = [l.strip() for l in m.group(2).split('\n') if l.strip()]
-        if addr_lines:
-            result['shippingAddress'] = ', '.join(addr_lines)
+    m_addr_label = re.search(r'(?:Indirizzo\s+di\s+Spedizione|Shipping\s+[Aa]ddress)\s*\n', text, re.I)
+    if m_addr_label:
+        stop_re = re.compile(
+            r'^\s*(?:Tipo\s+di\s+Pagamento|Payment\s+type|Tipo\s+di\s+Spedizione|Shipping\s+type|DATI\s+ARTICOLO)',
+            re.I
+        )
+        lines_after = text[m_addr_label.end():].split('\n')
+        idx = 0
+        while idx < len(lines_after) and not lines_after[idx].strip():
+            idx += 1
+        if idx < len(lines_after):
+            name_line = lines_after[idx]
+            rest_lines = []
+            for line in lines_after[idx + 1:]:
+                if stop_re.match(line):
+                    break
+                rest_lines.append(line)
+            result['customerName'] = name_line.strip()
+            addr_lines = [l.strip() for l in rest_lines if l.strip()]
+            if addr_lines:
+                result['shippingAddress'] = ', '.join(addr_lines)
     print(f'      [prof] address: {time.monotonic()-t0:.1f}s')
 
     # Tipo di pagamento (es. PAYPAL, CARTE DI CREDITO/BANCOMAT) — sequenza di parole in
