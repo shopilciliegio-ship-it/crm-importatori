@@ -65,6 +65,12 @@ DATA_PATH          = 'data/ordini.json'
 SKIP_EMAILS = {'ilciliegio', 'shop@', 'noreply', 'no-reply', 'fieramente',
                'sienawine', 'mailer-daemon', 'bounce', 'notification'}
 
+# Quantificatori limitati (RFC 5321: local-part max 64, domain max 255) invece di
+# '+' illimitato: senza il limite, un corpo email con un lungo blob di caratteri
+# validi (base64, token) e nessun '@' fa scattare un backtracking O(n²) — la run
+# del 03/09 si è impallata proprio qui (>30s) sull'ordine "Anne Apicella".
+EMAIL_RE = r'\b[A-Za-z0-9._%+\-]{1,64}@[A-Za-z0-9.\-]{1,255}\.[A-Za-z]{2,6}\b'
+
 
 # ── IMAP ────────────────────────────────────────────────────────────────────
 
@@ -184,7 +190,7 @@ def _parse_body(text: str, mailto_emails: list[str] | None = None) -> dict:
             result['customerEmail'] = customer_email
     if not result.get('customerEmail'):
         # Ultimo fallback: prima email qualsiasi nel testo
-        all_emails = re.findall(r'\b[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,6}\b', text)
+        all_emails = re.findall(EMAIL_RE, text)
         result['customerEmail'] = next(
             (e for e in all_emails if not any(s in e.lower() for s in SKIP_EMAILS)), ''
         )
@@ -257,7 +263,7 @@ def _parse_shop_order_body(text: str) -> dict:
         result['orderNumber'] = '#' + m.group(1)
 
     # Email cliente: prima email non di sistema nel corpo
-    all_emails = re.findall(r'\b[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,6}\b', text)
+    all_emails = re.findall(EMAIL_RE, text)
     customer_email = next(
         (e for e in all_emails if not any(s in e.lower() for s in SKIP_EMAILS)), ''
     )
@@ -505,7 +511,7 @@ def parse_fieramente_pdf(pdf_bytes: bytes) -> dict:
         shipment_code = m.group(1) if m else ''
 
     # EMAIL: prima email non di sistema
-    all_emails = re.findall(r'\b[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,6}\b', text)
+    all_emails = re.findall(EMAIL_RE, text)
     customer_email = next(
         (e for e in all_emails if not any(s in e.lower() for s in SKIP_EMAILS)),
         ''
