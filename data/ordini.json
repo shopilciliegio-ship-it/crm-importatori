@@ -800,7 +800,7 @@
       "orderNumber": "#1440",
       "paymentType": "Carte Di Credito/Bancomat",
       "shippingDate": 1787763050649,
-      "status": "dogana",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -816,6 +816,11 @@
           "status": "dogana",
           "date": 1788388147384,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "consegnato",
+          "date": 1788474767660,
+          "note": "Auto Fieramente (era: dogana)"
         }
       ],
       "emailsSent": [
@@ -849,7 +854,7 @@
       ],
       "notes": "",
       "createdAt": 1786984838207,
-      "updatedAt": 1788388152741,
+      "updatedAt": 1788474767660,
       "staleAlertDays": 7,
       "staleAlertSince": 1786984838207,
       "track17Registered": true
@@ -1071,7 +1076,7 @@
       "orderNumber": "#1424",
       "paymentType": "Carte Di Credito/Bancomat",
       "shippingDate": 1787763050649,
-      "status": "dogana",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1087,6 +1092,11 @@
           "status": "dogana",
           "date": 1788388147384,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "consegnato",
+          "date": 1788474767660,
+          "note": "Auto Fieramente (era: dogana)"
         }
       ],
       "emailsSent": [
@@ -1120,7 +1130,7 @@
       ],
       "notes": "",
       "createdAt": 1786524069440,
-      "updatedAt": 1788388152741,
+      "updatedAt": 1788474767660,
       "staleAlertDays": 14,
       "staleAlertSince": 1786524069440,
       "track17Registered": true
