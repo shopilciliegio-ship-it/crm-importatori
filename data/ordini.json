@@ -180,7 +180,9 @@
       ],
       "notes": "",
       "createdAt": 1787868152832,
-      "updatedAt": 1787868186330
+      "updatedAt": 1788474772585,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1787868152832
     },
     {
       "id": "ord_mtc2jbpc0oie",
@@ -244,7 +246,9 @@
       ],
       "notes": "",
       "createdAt": 1787868152832,
-      "updatedAt": 1787868186330
+      "updatedAt": 1788474772585,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1787868152832
     },
     {
       "id": "ord_mta3q0nwlz70",
@@ -850,11 +854,18 @@
           "messageId": "<202609022229.13872334588@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-09-03T00:29:16.000+02:00"
+        },
+        {
+          "type": "consegnato",
+          "to": "berrillos@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1788474772585,
+          "messageId": "<202609032232.22517292199@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1786984838207,
-      "updatedAt": 1788474767660,
+      "updatedAt": 1788474772585,
       "staleAlertDays": 7,
       "staleAlertSince": 1786984838207,
       "track17Registered": true
@@ -1126,11 +1137,18 @@
           "messageId": "<202609022229.90558982680@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-09-03T00:29:16.000+02:00"
+        },
+        {
+          "type": "consegnato",
+          "to": "sfierro53@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1788474772585,
+          "messageId": "<202609032232.10934426852@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1786524069440,
-      "updatedAt": 1788474767660,
+      "updatedAt": 1788474772585,
       "staleAlertDays": 14,
       "staleAlertSince": 1786524069440,
       "track17Registered": true
@@ -1216,11 +1234,18 @@
           "messageId": "<202609022229.46224673308@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-09-03T00:29:18.000+02:00"
+        },
+        {
+          "type": "in_consegna",
+          "to": "burroughs_linda@yahoo.com",
+          "subject": "Your wine is out for delivery! 🍷",
+          "sentAt": 1788474772585,
+          "messageId": "<202609032232.74565015928@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1786524069440,
-      "updatedAt": 1788474770670,
+      "updatedAt": 1788474772585,
       "staleAlertDays": 14,
       "staleAlertSince": 1786524069440,
       "track17Registered": true
