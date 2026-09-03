@@ -1166,7 +1166,7 @@
       "orderNumber": "#1428",
       "paymentType": "Carte Di Credito/Bancomat",
       "shippingDate": 1787763050649,
-      "status": "dogana",
+      "status": "in_consegna",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1182,6 +1182,11 @@
           "status": "dogana",
           "date": 1788388147384,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "in_consegna",
+          "date": 1788474770670,
+          "note": "Auto 17Track (era: dogana): Sharonville, OH, United States — Out for Delivery, Out For Delivery Today"
         }
       ],
       "emailsSent": [
@@ -1215,7 +1220,7 @@
       ],
       "notes": "",
       "createdAt": 1786524069440,
-      "updatedAt": 1788388152741,
+      "updatedAt": 1788474770670,
       "staleAlertDays": 14,
       "staleAlertSince": 1786524069440,
       "track17Registered": true
