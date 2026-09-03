@@ -721,12 +721,17 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": null,
-      "status": "preparazione",
+      "status": "annullato",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1787144084406,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "annullato",
+          "date": 1788428955479,
+          "note": ""
         }
       ],
       "emailsSent": [
@@ -738,13 +743,21 @@
           "messageId": "<202608191254.14806818665@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-08-19T14:54:59.000+02:00"
+        },
+        {
+          "type": "annullato",
+          "sentAt": 1788428955479,
+          "messageId": "manual-skip",
+          "manual": true
         }
       ],
       "notes": "",
       "createdAt": 1787144084406,
-      "updatedAt": 1788356950709,
+      "updatedAt": 1788428955479,
       "staleAlertDays": 14,
-      "staleAlertSince": 1787144084406
+      "staleAlertSince": 1787144084406,
+      "trackingUrl": "",
+      "destCountry": null
     },
     {
       "id": "ord_msxgmtrz9acu",
