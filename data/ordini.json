@@ -5520,7 +5520,7 @@
       "trackingNumber": "1ZRY6787A895574249",
       "carrier": "MBE",
       "shippingDate": 1783080714740,
-      "status": "problema",
+      "status": "annullato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -5551,6 +5551,11 @@
           "status": "problema",
           "date": 1783717798897,
           "note": "Auto 17Track (era: consegna_fallita): Investigation Opened, We've begun an investigation to locate the package."
+        },
+        {
+          "status": "annullato",
+          "date": 1788428412958,
+          "note": ""
         }
       ],
       "emailsSent": [
@@ -5632,11 +5637,17 @@
           "messageId": "<202607231412.85307865810@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-23T16:12:51.000+02:00"
+        },
+        {
+          "type": "annullato",
+          "sentAt": 1788428412958,
+          "messageId": "manual-skip",
+          "manual": true
         }
       ],
       "notes": "",
       "createdAt": 1780577033970,
-      "updatedAt": 1787954376510,
+      "updatedAt": 1788428412959,
       "trackingUrl": "",
       "language": "en",
       "track17Registered": true,
@@ -5652,7 +5663,9 @@
         }
       ],
       "customsDuties": 4.8,
-      "shippingCostCustomer": 65
+      "shippingCostCustomer": 65,
+      "shippingCostMos": null,
+      "destCountry": "US"
     },
     {
       "id": "ord_mpvpkyylwz2h",
