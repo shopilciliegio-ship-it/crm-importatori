@@ -116,6 +116,15 @@
       "subject": "Your order has been delivered! 🍷 Enjoy!",
       "sentAt": 1788388152741,
       "messageId": "<202609022229.67597868424@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mtlaqqjl57yj",
+      "customerName": "Anne Apicella",
+      "type": "order_received",
+      "to": "apicella05@aol.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1788426143719,
+      "messageId": "<202609030902.45521700116@smtp-relay.mailin.fr>"
     }
   ]
 }
