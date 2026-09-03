@@ -153,9 +153,17 @@ def register_numbers(numbers: list[str]) -> set[str]:
     return accepted
 
 
-def fetch_track_info(numbers: list[str]) -> dict[str, dict]:
-    """Ritorna {number: track_info} per i numeri con risposta valida."""
+def fetch_track_info(numbers: list[str]) -> tuple[dict[str, dict], set[str]]:
+    """Ritorna ({number: track_info}, {numeri da ri-registrare}).
+
+    17Track può "dimenticare" lato suo un numero già registrato (osservato su
+    spedizioni consegnate da mesi e non interrogate per un po': la nostra
+    ordini.json segnava track17Registered=true, ma /gettrackinfo rispondeva
+    "does not register, please register first" — bloccando per sempre il
+    poll di quell'ordine, che restava indietro rispetto allo stato reale).
+    Questi numeri vanno segnalati al chiamante per una ri-registrazione."""
     result = {}
+    needs_reregister = set()
     for batch in _chunks(numbers, BATCH_SIZE):
         body = [{'number': n} for n in batch]
         r = requests.post(f'{API_BASE}/gettrackinfo', headers=_TRACK17_HEADERS, json=body, timeout=30)
@@ -165,8 +173,11 @@ def fetch_track_info(numbers: list[str]) -> dict[str, dict]:
             result[item['number']] = item.get('track_info') or {}
         for item in data.get('rejected') or []:
             err = (item.get('error') or {}).get('message', '?')
-            print(f'    ✗ gettrackinfo rifiutato {item.get("number")}: {err}')
-    return result
+            num = item.get('number')
+            print(f'    ✗ gettrackinfo rifiutato {num}: {err}')
+            if 'register' in err.lower():
+                needs_reregister.add(num)
+    return result, needs_reregister
 
 
 def latest_event_note(track_info: dict) -> str:
@@ -240,7 +251,22 @@ def main():
         print('Nessun ordine ancora registrato su 17Track — solo registrazione questo run.')
     else:
         numbers    = [o['trackingNumber'].strip().upper() for o in registered]
-        track_info = fetch_track_info(numbers)
+        track_info, needs_reregister = fetch_track_info(numbers)
+
+        if needs_reregister:
+            print(f'  Ri-registro {len(needs_reregister)} numeri "dimenticati" da 17Track...')
+            reaccepted = register_numbers(list(needs_reregister))
+            for order in registered:
+                num = order['trackingNumber'].strip().upper()
+                if num in reaccepted:
+                    # I dati non sono ancora pronti subito dopo la registrazione
+                    # (vedi commento Fase 2 più sotto) — verrà interrogato con
+                    # successo al prossimo run, non serve altro qui.
+                    order['updatedAt'] = now_ms
+                    changed += 1
+                    print(f'    + ri-registrato: {order.get("customerName","?")} ({num}) — verrà interrogato al prossimo run')
+                elif num in needs_reregister:
+                    print(f'    ✗ ri-registrazione fallita anche per {num} — richiede verifica manuale')
 
         for order in registered:
             num  = order['trackingNumber'].strip().upper()
