@@ -76,6 +76,18 @@ FAILED_ATTEMPT_KEYWORDS = (
     'unable to deliver', 'delivery exception', 'no one available',
 )
 
+# Un pacco reso al mittente viene comunque "consegnato" da UPS — solo che la
+# consegna finale è al mittente, non al cliente. Senza questo controllo, il
+# 'force' più sotto (consegnato può sovrascrivere problema) promuoverebbe
+# l'ordine a "consegnato" e manderebbe al cliente un'email "il tuo pacco è
+# arrivato" sbagliata. Caso reale: FAITH JENKINS, 1ZRY6787A898650651,
+# "Returned, Package was returned to the sender" già in statusHistory.
+RETURN_TO_SENDER_KEYWORDS = (
+    'return to sender', 'returning to sender', 'returned to sender',
+    'return to the sender', 'returning to the sender', 'returned to the sender',
+    'return to shipper', 'returned to shipper',
+)
+
 # consegna_fallita sta sotto consegnato: un tentativo fallito può ancora
 # risolversi con una consegna riuscita al giro successivo, senza serve alcun
 # hack "force" (a differenza di problema, che sta sopra consegnato apposta).
@@ -203,6 +215,26 @@ def failed_attempt_events(track_info: dict) -> list[dict]:
     return out
 
 
+def has_return_to_sender(order: dict, track_info: dict) -> bool:
+    """True se lo storico dell'ordine (eventi già visti in run precedenti) o gli
+    eventi 17Track di questa run indicano un reso al mittente. Va controllato
+    PRIMA di lasciare che un raw_status 'Delivered' promuova l'ordine a
+    consegnato — quel "Delivered" è la consegna del reso al mittente, non al
+    cliente. Controlla anche statusHistory (non solo gli eventi live) perché
+    un reso può essere stato rilevato in un run passato e 17Track potrebbe non
+    ripetere quell'evento in ogni risposta successiva."""
+    for entry in order.get('statusHistory') or []:
+        note = (entry.get('note') or '').lower()
+        if any(kw in note for kw in RETURN_TO_SENDER_KEYWORDS):
+            return True
+    for provider in (track_info.get('tracking') or {}).get('providers') or []:
+        for ev in provider.get('events') or []:
+            desc = (ev.get('description') or '').lower()
+            if any(kw in desc for kw in RETURN_TO_SENDER_KEYWORDS):
+                return True
+    return False
+
+
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
@@ -311,8 +343,15 @@ def main():
             cur_rank   = STATUS_RANK.get(cur_status, 0)
             new_rank   = STATUS_RANK.get(new_status, 0)
 
-            # consegnato può sovrascrivere problema: il pacco arriva comunque
-            force = (new_status == 'consegnato' and cur_status == 'problema')
+            # consegnato può sovrascrivere problema: il pacco arriva comunque —
+            # TRANNE quando è un reso al mittente già rilevato: quel "Delivered"
+            # è la consegna del reso, non al cliente (vedi has_return_to_sender).
+            force = (
+                new_status == 'consegnato' and cur_status == 'problema'
+                and not has_return_to_sender(order, info)
+            )
+            if new_status == 'consegnato' and cur_status == 'problema' and not force:
+                print(f'  {name} ({num}): "Delivered" ma reso al mittente già rilevato — status "problema" mantenuto')
 
             # Nuovi tentativi falliti non ancora notificati (per timestamp evento,
             # confrontato con l'ultimo già visto) — ognuno genera una email in più
