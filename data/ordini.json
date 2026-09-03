@@ -1,6 +1,50 @@
 {
   "orders": [
     {
+      "id": "ord_mtlaqqjl57yj",
+      "customerName": "Anne Apicella",
+      "customerEmail": "apicella05@aol.com",
+      "customerPhone": "",
+      "amount": 141.0,
+      "currency": "EUR",
+      "orderDate": 1788386161000,
+      "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio Anne Apicella",
+      "shipmentCode": "",
+      "shippingAddress": "1903 Castle Peak Loop NE, 87144 Rio Rancho (NM), United States",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<CAOmk=KZayo-wcmsFum3ZqmrDitrc=tNOCeNRChiBz8btYEORxQ@mail.gmail.com>",
+      "trackingNumber": "",
+      "carrier": "- U.S.A. Wine Corriere Std",
+      "products": [
+        {
+          "description": "CILIEGIO IN FIORE SWEET SPARKLING WINE",
+          "qty": 6,
+          "value": 60.0
+        }
+      ],
+      "customsDuties": 6.0,
+      "shippingCostCustomer": 75.0,
+      "shippingCostMos": null,
+      "source": "shop",
+      "language": "en",
+      "orderNumber": "#1455",
+      "paymentType": "Carte Di Credito/Bancomat",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1788426131169,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1788426131169,
+      "updatedAt": 1788426131169
+    },
+    {
       "id": "ord_mtk6wiatmljw",
       "customerName": "AMBER MAIDA",
       "customerEmail": "dmbcrush@hotnail.com",
@@ -8689,5 +8733,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1788359215781
+  "lastImportedAt": 1788426131169
 }
