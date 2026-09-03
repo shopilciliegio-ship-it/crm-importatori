@@ -4618,7 +4618,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1782287519736,
-      "status": "consegna_fallita",
+      "status": "annullato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -4644,6 +4644,11 @@
           "status": "consegna_fallita",
           "date": 1783705716609,
           "note": "Auto 17Track (era: in_consegna): We were unable to deliver your package. It's on the way to a UPS Access Point™ location next business day for pick up."
+        },
+        {
+          "status": "annullato",
+          "date": 1788428422606,
+          "note": ""
         }
       ],
       "emailsSent": [
@@ -4689,11 +4694,17 @@
           "messageId": "<202607101748.35421371378@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-07-10T19:48:42.000+02:00"
+        },
+        {
+          "type": "annullato",
+          "sentAt": 1788428422606,
+          "messageId": "manual-skip",
+          "manual": true
         }
       ],
       "notes": "",
       "createdAt": 1781533718423,
-      "updatedAt": 1787954376510,
+      "updatedAt": 1788428422606,
       "staleAlertDays": 49,
       "staleAlertSince": 1783705716609,
       "track17Registered": true,
@@ -4718,7 +4729,9 @@
         }
       ],
       "customsDuties": 4.7,
-      "shippingCostCustomer": 65
+      "shippingCostCustomer": 65,
+      "shippingCostMos": null,
+      "destCountry": "US"
     },
     {
       "id": "ord_mqfb6etz79pb",
