@@ -193,12 +193,12 @@
       "currency": "EUR",
       "orderDate": 1787828586000,
       "emailSubject": "🍷 New Order — AARON DORFMAN — 137.15 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "DORFMANA",
       "shippingAddress": "STATE, COUNTRY, CITY ZIP CODE",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202608271103.11935514151@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A807508271",
       "carrier": "MBE",
       "products": [
         {
@@ -224,13 +224,18 @@
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1788537811037,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1787868152832,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1788537811037,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -246,7 +251,7 @@
       ],
       "notes": "",
       "createdAt": 1787868152832,
-      "updatedAt": 1788474772585,
+      "updatedAt": 1788537811037,
       "staleAlertDays": 7,
       "staleAlertSince": 1787868152832
     },
@@ -2204,7 +2209,7 @@
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202607180817.28074095588@smtp-relay.mailin.fr>",
-      "trackingNumber": "1ZRY6787A812196965",
+      "trackingNumber": "1ZRY6787A815829285",
       "carrier": "MBE",
       "source": "fieramente",
       "language": "en",
@@ -2316,7 +2321,7 @@
       ],
       "notes": "",
       "createdAt": 1784367465503,
-      "updatedAt": 1786757240899,
+      "updatedAt": 1788537811037,
       "staleAlertDays": 7,
       "staleAlertSince": 1785420786789,
       "products": [
