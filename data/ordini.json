@@ -247,11 +247,18 @@
           "messageId": "<202608272203.15467318951@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-08-28T00:03:09.000+02:00"
+        },
+        {
+          "type": "day0",
+          "to": "rlpisarz9@gmail.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1788537815892,
+          "messageId": "<202609041603.44975979364@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1787868152832,
-      "updatedAt": 1788537811037,
+      "updatedAt": 1788537815892,
       "staleAlertDays": 7,
       "staleAlertSince": 1787868152832
     },
