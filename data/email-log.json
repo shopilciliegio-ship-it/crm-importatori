@@ -161,6 +161,15 @@
       "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
       "sentAt": 1788493984583,
       "messageId": "<202609040353.72251561265@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mtc2jbpc0oie",
+      "customerName": "AARON DORFMAN",
+      "type": "day0",
+      "to": "rlpisarz9@gmail.com",
+      "subject": "Your wine is on its way! 🍷",
+      "sentAt": 1788537815892,
+      "messageId": "<202609041603.44975979364@smtp-relay.mailin.fr>"
     }
   ]
 }
