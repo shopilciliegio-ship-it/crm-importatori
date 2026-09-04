@@ -1184,7 +1184,7 @@
       "orderNumber": "#1428",
       "paymentType": "Carte Di Credito/Bancomat",
       "shippingDate": 1787763050649,
-      "status": "in_consegna",
+      "status": "consegna_fallita",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1205,6 +1205,11 @@
           "status": "in_consegna",
           "date": 1788474770670,
           "note": "Auto 17Track (era: dogana): Sharonville, OH, United States — Out for Delivery, Out For Delivery Today"
+        },
+        {
+          "status": "consegna_fallita",
+          "date": 1788493981358,
+          "note": "Auto 17Track (era: in_consegna): Delivery Attempted, We were unable to deliver your package. It's on the way to a UPS Access Point™ location next business day for pick up."
         }
       ],
       "emailsSent": [
@@ -1245,10 +1250,12 @@
       ],
       "notes": "",
       "createdAt": 1786524069440,
-      "updatedAt": 1788474772585,
+      "updatedAt": 1788493981358,
       "staleAlertDays": 14,
       "staleAlertSince": 1786524069440,
-      "track17Registered": true
+      "track17Registered": true,
+      "deliveryFailureCount": 1,
+      "lastDeliveryFailureEventAt": "2026-09-03T18:07:44Z"
     },
     {
       "id": "ord_msoon19bav7n",
