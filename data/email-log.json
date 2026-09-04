@@ -152,6 +152,15 @@
       "subject": "Your wine is out for delivery! 🍷",
       "sentAt": 1788474772585,
       "messageId": "<202609032232.74565015928@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mspuaybkgrtb",
+      "customerName": "Linda Burroughs",
+      "type": "consegna_fallita",
+      "to": "burroughs_linda@yahoo.com",
+      "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+      "sentAt": 1788493984583,
+      "messageId": "<202609040353.72251561265@smtp-relay.mailin.fr>"
     }
   ]
 }
