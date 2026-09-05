@@ -179,6 +179,15 @@
       "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
       "sentAt": 1788580034776,
       "messageId": "<202609050347.90393525873@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mspuaybkgrtb",
+      "customerName": "Linda Burroughs",
+      "type": "consegnato",
+      "to": "burroughs_linda@yahoo.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1788645548055,
+      "messageId": "<202609052159.91812710808@smtp-relay.mailin.fr>"
     }
   ]
 }
