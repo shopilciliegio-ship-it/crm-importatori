@@ -1211,7 +1211,7 @@
       "orderNumber": "#1428",
       "paymentType": "Carte Di Credito/Bancomat",
       "shippingDate": 1787763050649,
-      "status": "consegna_fallita",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1237,6 +1237,11 @@
           "status": "consegna_fallita",
           "date": 1788493981358,
           "note": "Auto 17Track (era: in_consegna): Delivery Attempted, We were unable to deliver your package. It's on the way to a UPS Access Point™ location next business day for pick up."
+        },
+        {
+          "status": "consegnato",
+          "date": 1788645546023,
+          "note": "Auto 17Track (era: consegna_fallita): CINCINNATI, OH, US — Delivered, DELIVERED"
         }
       ],
       "emailsSent": [
@@ -1284,7 +1289,7 @@
       ],
       "notes": "",
       "createdAt": 1786524069440,
-      "updatedAt": 1788493984583,
+      "updatedAt": 1788645546023,
       "staleAlertDays": 14,
       "staleAlertSince": 1786524069440,
       "track17Registered": true,
