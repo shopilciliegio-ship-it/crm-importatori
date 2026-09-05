@@ -1285,11 +1285,18 @@
           "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
           "sentAt": 1788493984583,
           "messageId": "<202609040353.72251561265@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegnato",
+          "to": "burroughs_linda@yahoo.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1788645548055,
+          "messageId": "<202609052159.91812710808@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1786524069440,
-      "updatedAt": 1788645546023,
+      "updatedAt": 1788645548055,
       "staleAlertDays": 14,
       "staleAlertSince": 1786524069440,
       "track17Registered": true,
