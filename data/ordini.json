@@ -1004,7 +1004,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1787763050649,
-      "status": "dogana",
+      "status": "consegna_fallita",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1020,6 +1020,11 @@
           "status": "dogana",
           "date": 1788388147384,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "consegna_fallita",
+          "date": 1788580031390,
+          "note": "Auto 17Track (era: dogana): Delivery Attempted, We were unable to deliver your package. It's on the way to a UPS Access Point™ location next business day for pick up."
         }
       ],
       "emailsSent": [
@@ -1053,10 +1058,12 @@
       ],
       "notes": "",
       "createdAt": 1786971117340,
-      "updatedAt": 1788388152741,
+      "updatedAt": 1788580031390,
       "staleAlertDays": 7,
       "staleAlertSince": 1786971117340,
-      "track17Registered": true
+      "track17Registered": true,
+      "deliveryFailureCount": 1,
+      "lastDeliveryFailureEventAt": "2026-09-04T17:05:02Z"
     },
     {
       "id": "ord_mspuaybk2t8e",
