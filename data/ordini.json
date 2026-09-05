@@ -1054,11 +1054,18 @@
           "messageId": "<202609022229.41792109673@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-09-03T00:29:17.000+02:00"
+        },
+        {
+          "type": "consegna_fallita",
+          "to": "abbieblunier@gmail.com",
+          "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+          "sentAt": 1788580034776,
+          "messageId": "<202609050347.90393525873@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1786971117340,
-      "updatedAt": 1788580031390,
+      "updatedAt": 1788580034776,
       "staleAlertDays": 7,
       "staleAlertSince": 1786971117340,
       "track17Registered": true,
