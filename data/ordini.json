@@ -1,6 +1,70 @@
 {
   "orders": [
     {
+      "id": "ord_mtr0qshs7mlr",
+      "customerName": "JOSHUA COMO",
+      "customerEmail": "jcblueandwhite96@gmail.com",
+      "customerPhone": "+14124535306",
+      "amount": 325.1,
+      "currency": "EUR",
+      "orderDate": 1788771094000,
+      "emailSubject": "🍷 New Order — JOSHUA COMO — 325.10 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "107 DRESHER WOODS DR, 19025 UPPER DUBLIN TOWNSHIP, PENNSYLVANIA (MONTGOMERY COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202609070851.62910252085@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "INFERNACCIO RED WINE IGT 2022",
+          "qty": 3,
+          "value": 48.0
+        },
+        {
+          "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
+          "qty": 6,
+          "value": 114.0
+        },
+        {
+          "description": "VIN SANTO DEL CHIANTI DOC 2019",
+          "qty": 1,
+          "value": 19.0
+        },
+        {
+          "description": "SPARKLING WINE CILIEGIO IN FIORE ROSÉ",
+          "qty": 1,
+          "value": 10.0
+        },
+        {
+          "description": "CHIANTI STRADE BIANCHE 2025 LIM. ED.",
+          "qty": 1,
+          "value": 0.0
+        }
+      ],
+      "customsDuties": 19.1,
+      "shippingCostCustomer": 115.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1788772134592,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1788772134592,
+      "updatedAt": 1788772134592
+    },
+    {
       "id": "ord_mtlaqqjl57yj",
       "customerName": "Anne Apicella",
       "customerEmail": "apicella05@aol.com",
@@ -8950,5 +9014,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1788426131169
+  "lastImportedAt": 1788772134592
 }
