@@ -188,6 +188,15 @@
       "subject": "Your order has been delivered! 🍷 Enjoy!",
       "sentAt": 1788645548055,
       "messageId": "<202609052159.91812710808@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mtr0qshs7mlr",
+      "customerName": "JOSHUA COMO",
+      "type": "order_received",
+      "to": "jcblueandwhite96@gmail.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1788772149241,
+      "messageId": "<202609070909.37547825525@smtp-relay.mailin.fr>"
     }
   ]
 }
