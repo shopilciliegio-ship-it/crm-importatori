@@ -22285,13 +22285,20 @@
           "brand": "ilciliegio",
           "sequenceStep": 1,
           "delivered": true,
-          "opened": false,
+          "opened": true,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
           "blocked": false,
-          "deliveredAt": "2026-09-07T15:11:17.681+02:00"
+          "deliveredAt": "2026-09-07T15:11:17.681+02:00",
+          "openedAt": "2026-09-07T19:59:57.652+02:00"
+        }
+      ],
+      "log": [
+        {
+          "ts": 1788820503147,
+          "msg": "👁 Aperta: A special thought for you from Il Ciliegio 🍷"
         }
       ]
     },
@@ -318958,13 +318965,20 @@
           "brand": "ilciliegio",
           "sequenceStep": 1,
           "delivered": true,
-          "opened": false,
+          "opened": true,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
           "blocked": false,
-          "deliveredAt": "2026-09-07T15:11:37.435+02:00"
+          "deliveredAt": "2026-09-07T15:11:37.435+02:00",
+          "openedAt": "2026-09-07T19:59:17.916+02:00"
+        }
+      ],
+      "log": [
+        {
+          "ts": 1788820503147,
+          "msg": "👁 Aperta: A special thought for you from Il Ciliegio 🍷"
         }
       ]
     },
