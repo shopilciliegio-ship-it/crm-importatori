@@ -179,11 +179,18 @@
           "messageId": "<202609021427.39261067653@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-09-02T16:27:19.665+02:00"
+        },
+        {
+          "type": "day0",
+          "to": "dmbcrush@hotnail.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1788802532981,
+          "messageId": "<202609071735.14799011739@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1788359215781,
-      "updatedAt": 1788802530597,
+      "updatedAt": 1788802532981,
       "track17Registered": true
     },
     {
