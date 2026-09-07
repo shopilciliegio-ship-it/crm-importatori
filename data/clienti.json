@@ -12751,13 +12751,21 @@
           "toName": "Sophie Lavender",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
-          "opened": false,
+          "delivered": true,
+          "opened": true,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:13.612+02:00",
+          "openedAt": "2026-09-07T15:11:19.603+02:00"
+        }
+      ],
+      "log": [
+        {
+          "ts": 1788801951193,
+          "msg": "👁 Aperta: A special thought for you from Il Ciliegio 🍷"
         }
       ]
     },
@@ -21788,13 +21796,14 @@
           "toName": "Victoria Pestana",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:13.703+02:00"
         }
       ]
     },
@@ -21859,13 +21868,14 @@
           "toName": "José Jaramillo",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:14.696+02:00"
         }
       ]
     },
@@ -21953,13 +21963,14 @@
           "toName": "Mrigayu Ghosh",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:14.696+02:00"
         }
       ]
     },
@@ -22070,13 +22081,14 @@
           "toName": "Koyel Ghosh",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:15.679+02:00"
         }
       ]
     },
@@ -22118,13 +22130,21 @@
           "toName": "Mickey Sullivan",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
-          "bounced": false,
+          "bounced": true,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:15.679+02:00",
+          "bouncedAt": "2026-09-07T15:11:16.000+02:00"
+        }
+      ],
+      "log": [
+        {
+          "ts": 1788801951193,
+          "msg": "⚠ Bounce: A special thought for you from Il Ciliegio 🍷"
         }
       ]
     },
@@ -22166,13 +22186,14 @@
           "toName": "Matthew Dunaski",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:16.700+02:00"
         }
       ]
     },
@@ -22214,13 +22235,14 @@
           "toName": "Sydney Harrison",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:16.700+02:00"
         }
       ]
     },
@@ -22262,13 +22284,14 @@
           "toName": "Martine Grond",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:17.681+02:00"
         }
       ]
     },
@@ -34437,13 +34460,14 @@
           "toName": "Pareen Mann",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:17.680+02:00"
         }
       ]
     },
@@ -34485,13 +34509,14 @@
           "toName": "Cintia Manuel",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:18.752+02:00"
         }
       ]
     },
@@ -34533,13 +34558,21 @@
           "toName": "Felisberto Manuel Junior",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
-          "opened": false,
+          "delivered": true,
+          "opened": true,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:18.685+02:00",
+          "openedAt": "2026-09-07T15:11:27.596+02:00"
+        }
+      ],
+      "log": [
+        {
+          "ts": 1788801951193,
+          "msg": "👁 Aperta: A special thought for you from Il Ciliegio 🍷"
         }
       ]
     },
@@ -43692,13 +43725,21 @@
           "toName": "Carter Reece",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
-          "bounced": false,
+          "bounced": true,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:19.709+02:00",
+          "bouncedAt": "2026-09-07T15:11:24.000+02:00"
+        }
+      ],
+      "log": [
+        {
+          "ts": 1788801951193,
+          "msg": "⚠ Bounce: A special thought for you from Il Ciliegio 🍷"
         }
       ]
     },
@@ -43765,13 +43806,14 @@
           "toName": "Thamyris Bredoff",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:19.709+02:00"
         }
       ]
     },
@@ -317298,13 +317340,14 @@
           "toName": "Marco Catapano",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:20.695+02:00"
         }
       ]
     },
@@ -317346,13 +317389,14 @@
           "toName": "Fabrizio Valleggi",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:20.695+02:00"
         }
       ]
     },
@@ -317394,13 +317438,14 @@
           "toName": "Laura Angiolini",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:21.746+02:00"
         }
       ]
     },
@@ -317442,13 +317487,21 @@
           "toName": "PIETRO Regina",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
-          "bounced": false,
+          "bounced": true,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:21.948+02:00",
+          "bouncedAt": "2026-09-07T15:11:23.000+02:00"
+        }
+      ],
+      "log": [
+        {
+          "ts": 1788801951193,
+          "msg": "⚠ Bounce: Un pensiero speciale per te da Il Ciliegio 🍷"
         }
       ]
     },
@@ -317490,13 +317543,21 @@
           "toName": "Yuri Morrocchi",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
-          "opened": false,
+          "delivered": true,
+          "opened": true,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:22.671+02:00",
+          "openedAt": "2026-09-07T15:36:48.792+02:00"
+        }
+      ],
+      "log": [
+        {
+          "ts": 1788801951193,
+          "msg": "👁 Aperta: Un pensiero speciale per te da Il Ciliegio 🍷"
         }
       ]
     },
@@ -317538,13 +317599,14 @@
           "toName": "Liliana Alleri",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:23.907+02:00"
         }
       ]
     },
@@ -317586,13 +317648,14 @@
           "toName": "Luciana Forgione",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:23.907+02:00"
         }
       ]
     },
@@ -317634,13 +317697,14 @@
           "toName": "Ilona Borsós",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:23.966+02:00"
         }
       ]
     },
@@ -317682,13 +317746,14 @@
           "toName": "martino zappa",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:24.695+02:00"
         }
       ]
     },
@@ -317730,13 +317795,14 @@
           "toName": "Marco Benocci",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:25.285+02:00"
         }
       ]
     },
@@ -317778,13 +317844,14 @@
           "toName": "Debora Bruttini",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:25.708+02:00"
         }
       ]
     },
@@ -317826,13 +317893,21 @@
           "toName": "Martina Pinassi",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
-          "opened": false,
+          "delivered": true,
+          "opened": true,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:26.492+02:00",
+          "openedAt": "2026-09-07T15:13:46.081+02:00"
+        }
+      ],
+      "log": [
+        {
+          "ts": 1788801951193,
+          "msg": "👁 Aperta: Un pensiero speciale per te da Il Ciliegio 🍷"
         }
       ]
     },
@@ -317874,13 +317949,21 @@
           "toName": "Marta Bertazzo",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
-          "opened": false,
+          "delivered": true,
+          "opened": true,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:26.703+02:00",
+          "openedAt": "2026-09-07T18:52:52.208+02:00"
+        }
+      ],
+      "log": [
+        {
+          "ts": 1788801951193,
+          "msg": "👁 Aperta: Un pensiero speciale per te da Il Ciliegio 🍷"
         }
       ]
     },
@@ -317922,13 +318005,14 @@
           "toName": "Fabio Muzzi",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:27.423+02:00"
         }
       ]
     },
@@ -317970,13 +318054,14 @@
           "toName": "Angelo Rifino",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:27.696+02:00"
         }
       ]
     },
@@ -318018,13 +318103,14 @@
           "toName": "Tara Venturino",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:28.330+02:00"
         }
       ]
     },
@@ -318066,13 +318152,14 @@
           "toName": "Renato Renato",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:28.709+02:00"
         }
       ]
     },
@@ -318114,13 +318201,21 @@
           "toName": "Manu Fero",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
-          "bounced": false,
+          "bounced": true,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:29.291+02:00",
+          "bouncedAt": "2026-09-07T15:11:30.000+02:00"
+        }
+      ],
+      "log": [
+        {
+          "ts": 1788801951193,
+          "msg": "⚠ Bounce: Un pensiero speciale per te da Il Ciliegio 🍷"
         }
       ]
     },
@@ -318162,13 +318257,21 @@
           "toName": "Jose Torres",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
-          "bounced": false,
+          "bounced": true,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:29.694+02:00",
+          "bouncedAt": "2026-09-07T15:11:32.000+02:00"
+        }
+      ],
+      "log": [
+        {
+          "ts": 1788801951193,
+          "msg": "⚠ Bounce: A special thought for you from Il Ciliegio 🍷"
         }
       ]
     },
@@ -318210,13 +318313,14 @@
           "toName": "Sushmitha Ravi Shankar",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:30.304+02:00"
         }
       ]
     },
@@ -318258,13 +318362,14 @@
           "toName": "Megane Barriere",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:30.989+02:00"
         }
       ]
     },
@@ -318306,13 +318411,14 @@
           "toName": "Isabelle Huang",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:31.282+02:00"
         }
       ]
     },
@@ -318354,13 +318460,14 @@
           "toName": "Isaac Huang",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:31.983+02:00"
         }
       ]
     },
@@ -318402,13 +318509,14 @@
           "toName": "MARIA Barra",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:32.714+02:00"
         }
       ]
     },
@@ -318450,13 +318558,14 @@
           "toName": "Charline Belanger",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:32.950+02:00"
         }
       ]
     },
@@ -318498,13 +318607,14 @@
           "toName": "Daniela Dugas",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:33.682+02:00"
         }
       ]
     },
@@ -318546,13 +318656,14 @@
           "toName": "Jun Huang",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:34.321+02:00"
         }
       ]
     },
@@ -318594,13 +318705,21 @@
           "toName": "Glaysson Castro",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
-          "bounced": false,
+          "bounced": true,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:35.601+02:00",
+          "bouncedAt": "2026-09-07T15:11:36.000+02:00"
+        }
+      ],
+      "log": [
+        {
+          "ts": 1788801951193,
+          "msg": "⚠ Bounce: A special thought for you from Il Ciliegio 🍷"
         }
       ]
     },
@@ -318642,13 +318761,14 @@
           "toName": "Doana Castro Castro",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:35.325+02:00"
         }
       ]
     },
@@ -318690,13 +318810,14 @@
           "toName": "Wantuil Teixeira",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:35.771+02:00"
         }
       ]
     },
@@ -318738,13 +318859,14 @@
           "toName": "Andre Luiz",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:37.161+02:00"
         }
       ]
     },
@@ -318786,13 +318908,14 @@
           "toName": "Shaun Field",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:36.950+02:00"
         }
       ]
     },
@@ -318834,13 +318957,14 @@
           "toName": "Patricia Field",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-07T15:11:37.435+02:00"
         }
       ]
     },
