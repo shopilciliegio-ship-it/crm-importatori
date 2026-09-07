@@ -135,12 +135,12 @@
       "currency": "EUR",
       "orderDate": 1788253617000,
       "emailSubject": "🍷 New Order — AMBER MAIDA — 154.20 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "MAIDAA",
       "shippingAddress": "STATE, COUNTRY, CITY ZIP CODE",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202609010906.15921187249@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A804379452",
       "carrier": "MBE",
       "products": [
         {
@@ -156,13 +156,18 @@
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1788802527554,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1788359215781,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1788802527554,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -178,7 +183,7 @@
       ],
       "notes": "",
       "createdAt": 1788359215781,
-      "updatedAt": 1788359238786
+      "updatedAt": 1788802527554
     },
     {
       "id": "ord_mtc2jbpdl9ln",
