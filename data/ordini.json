@@ -59,10 +59,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "jcblueandwhite96@gmail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1788772149241,
+          "messageId": "<202609070909.37547825525@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1788772134592,
-      "updatedAt": 1788772134592
+      "updatedAt": 1788772149241
     },
     {
       "id": "ord_mtlaqqjl57yj",
