@@ -1219,11 +1219,18 @@
           "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
           "sentAt": 1788580034776,
           "messageId": "<202609050347.90393525873@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegnato",
+          "to": "abbieblunier@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1788906562632,
+          "messageId": "<202609082229.58202980540@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1786971117340,
-      "updatedAt": 1788906556570,
+      "updatedAt": 1788906562632,
       "staleAlertDays": 7,
       "staleAlertSince": 1786971117340,
       "track17Registered": true,
