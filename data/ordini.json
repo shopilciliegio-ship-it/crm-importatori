@@ -1,6 +1,65 @@
 {
   "orders": [
     {
+      "id": "ord_mtsvmdcr2ufo",
+      "customerName": "ASHLEY BOWCOTT",
+      "customerEmail": "ambowcott@gmail.com",
+      "customerPhone": "+18477158426",
+      "amount": 164.1,
+      "currency": "EUR",
+      "orderDate": 1788857526000,
+      "emailSubject": "🍷 New Order — ASHLEY BOWCOTT — 164.10 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "3590 NORWICH DR, 30084 TUCKER, GEORGIA (GA)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202609080852.50931656826@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
+          "qty": 2,
+          "value": 38.0
+        },
+        {
+          "description": "SPARKLING WINE CILIEGIO IN FIORE ROSÉ",
+          "qty": 1,
+          "value": 10.0
+        },
+        {
+          "description": "1 LT EXTRA VIRGIN OLIVE OIL 2025",
+          "qty": 1,
+          "value": 21.0
+        },
+        {
+          "description": "POGGIO ORLANDO 2024 CHIANTI COLLI SENE..",
+          "qty": 1,
+          "value": 12.0
+        }
+      ],
+      "customsDuties": 8.1,
+      "shippingCostCustomer": 75.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1788884462618,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1788884462618,
+      "updatedAt": 1788884462618
+    },
+    {
       "id": "ord_mtr0qshs7mlr",
       "customerName": "JOSHUA COMO",
       "customerEmail": "jcblueandwhite96@gmail.com",
@@ -9035,5 +9094,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1788772134592
+  "lastImportedAt": 1788884462618
 }
