@@ -8,6 +8,15 @@
       "subject": "Your wine is on its way! 🍷",
       "sentAt": 1788802532981,
       "messageId": "<202609071735.14799011739@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mtsvmdcr2ufo",
+      "customerName": "ASHLEY BOWCOTT",
+      "type": "order_received",
+      "to": "ambowcott@gmail.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1788884492104,
+      "messageId": "<202609081621.66588805008@smtp-relay.mailin.fr>"
     }
   ]
 }
