@@ -17,6 +17,15 @@
       "subject": "Thank you for your order! 🍷",
       "sentAt": 1788884492104,
       "messageId": "<202609081621.66588805008@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_msx8gqos55cs",
+      "customerName": "ABBIE BLUNIER",
+      "type": "consegnato",
+      "to": "abbieblunier@gmail.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1788906562632,
+      "messageId": "<202609082229.58202980540@smtp-relay.mailin.fr>"
     }
   ]
 }
