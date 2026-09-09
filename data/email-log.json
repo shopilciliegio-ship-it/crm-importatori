@@ -26,6 +26,33 @@
       "subject": "Your order has been delivered! 🍷 Enjoy!",
       "sentAt": 1788906562632,
       "messageId": "<202609082229.58202980540@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mta3q0nwlz70",
+      "customerName": "MANDIP KAUR",
+      "type": "dogana",
+      "to": "kaur.mandip23@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1788992585183,
+      "messageId": "<202609092223.82389730844@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mt78rb9zlaom",
+      "customerName": "BRIAN STIERITZ",
+      "type": "dogana",
+      "to": "rstieritz@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1788992585183,
+      "messageId": "<202609092223.46876165583@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mt1z94c56v4p",
+      "customerName": "Lucy Rinehuls",
+      "type": "dogana",
+      "to": "lucy.rinehuls@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1788992585183,
+      "messageId": "<202609092223.96057387889@smtp-relay.mailin.fr>"
     }
   ]
 }
