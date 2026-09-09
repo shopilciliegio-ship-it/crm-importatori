@@ -461,7 +461,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1788356942048,
-      "status": "in_transito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -472,6 +472,11 @@
           "status": "in_transito",
           "date": 1788356942048,
           "note": "Auto Fieramente (era: preparazione)"
+        },
+        {
+          "status": "dogana",
+          "date": 1788992579000,
+          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -496,7 +501,7 @@
       ],
       "notes": "",
       "createdAt": 1787749212380,
-      "updatedAt": 1788970645087,
+      "updatedAt": 1788992579000,
       "track17Registered": true,
       "staleAlertDays": 7,
       "staleAlertSince": 1788356942048
@@ -631,7 +636,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1788356942048,
-      "status": "in_transito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -657,6 +662,11 @@
           "status": "in_transito",
           "date": 1788356942048,
           "note": "Auto Fieramente (era: preparazione)"
+        },
+        {
+          "status": "dogana",
+          "date": 1788992579000,
+          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -683,7 +693,7 @@
       ],
       "notes": "",
       "createdAt": 1787576272343,
-      "updatedAt": 1788970645087,
+      "updatedAt": 1788992579000,
       "trackingUrl": "",
       "destCountry": "US",
       "track17Registered": true,
@@ -818,7 +828,7 @@
       "orderNumber": "#1443",
       "paymentType": "Carte Di Credito/Bancomat",
       "shippingDate": 1788356942048,
-      "status": "in_transito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -829,6 +839,11 @@
           "status": "in_transito",
           "date": 1788356942048,
           "note": "Auto Fieramente (era: preparazione)"
+        },
+        {
+          "status": "dogana",
+          "date": 1788992579000,
+          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -853,7 +868,7 @@
       ],
       "notes": "",
       "createdAt": 1787257976117,
-      "updatedAt": 1788970645087,
+      "updatedAt": 1788992579000,
       "staleAlertDays": 7,
       "staleAlertSince": 1788356942048,
       "track17Registered": true
