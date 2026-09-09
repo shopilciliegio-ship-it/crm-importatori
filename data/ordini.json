@@ -496,8 +496,10 @@
       ],
       "notes": "",
       "createdAt": 1787749212380,
-      "updatedAt": 1788356950709,
-      "track17Registered": true
+      "updatedAt": 1788970645087,
+      "track17Registered": true,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1788356942048
     },
     {
       "id": "ord_mt94h63vbvno",
@@ -681,10 +683,12 @@
       ],
       "notes": "",
       "createdAt": 1787576272343,
-      "updatedAt": 1788356950709,
+      "updatedAt": 1788970645087,
       "trackingUrl": "",
       "destCountry": "US",
-      "track17Registered": true
+      "track17Registered": true,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1788356942048
     },
     {
       "id": "ord_mt4dhztscxg9",
@@ -849,9 +853,9 @@
       ],
       "notes": "",
       "createdAt": 1787257976117,
-      "updatedAt": 1788356950709,
+      "updatedAt": 1788970645087,
       "staleAlertDays": 7,
-      "staleAlertSince": 1787257976117,
+      "staleAlertSince": 1788356942048,
       "track17Registered": true
     },
     {
