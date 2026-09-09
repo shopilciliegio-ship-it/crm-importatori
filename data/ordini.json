@@ -497,11 +497,18 @@
           "messageId": "<202609021349.19122663161@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-09-02T15:49:13.000+02:00"
+        },
+        {
+          "type": "dogana",
+          "to": "kaur.mandip23@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1788992585183,
+          "messageId": "<202609092223.82389730844@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1787749212380,
-      "updatedAt": 1788992579000,
+      "updatedAt": 1788992585183,
       "track17Registered": true,
       "staleAlertDays": 7,
       "staleAlertSince": 1788356942048
@@ -689,11 +696,18 @@
           "messageId": "<202609021349.79214310329@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-09-02T15:49:13.000+02:00"
+        },
+        {
+          "type": "dogana",
+          "to": "rstieritz@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1788992585183,
+          "messageId": "<202609092223.46876165583@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1787576272343,
-      "updatedAt": 1788992579000,
+      "updatedAt": 1788992585183,
       "trackingUrl": "",
       "destCountry": "US",
       "track17Registered": true,
@@ -864,11 +878,18 @@
           "messageId": "<202609021349.94863998055@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-09-02T15:49:14.000+02:00"
+        },
+        {
+          "type": "dogana",
+          "to": "lucy.rinehuls@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1788992585183,
+          "messageId": "<202609092223.96057387889@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1787257976117,
-      "updatedAt": 1788992579000,
+      "updatedAt": 1788992585183,
       "staleAlertDays": 7,
       "staleAlertSince": 1788356942048,
       "track17Registered": true
