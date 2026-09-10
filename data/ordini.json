@@ -1,6 +1,60 @@
 {
   "orders": [
     {
+      "id": "ord_mtvq0wusqke9",
+      "customerName": "MICHAEL  ROMANO",
+      "customerEmail": "romanomike4@gmail.com",
+      "customerPhone": "+15407356214",
+      "amount": 110.65,
+      "currency": "EUR",
+      "orderDate": 1789051238000,
+      "emailSubject": "🍷 New Order — MICHAEL  ROMANO — 110.65 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "4754 RANDALL RD , 27707 DURHAM, NORTH CAROLINA (DURHAM COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202609101440.41697718114@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "SPARKLING WINE CILIEGIO IN FIORE ROSÉ",
+          "qty": 1,
+          "value": 10.0
+        },
+        {
+          "description": "CHIANTI STRADE BIANCHE 2025 LIM. ED.",
+          "qty": 1,
+          "value": 20.0
+        },
+        {
+          "description": "500 ML EXTRA VIRGIN OLIVE OIL 2025",
+          "qty": 1,
+          "value": 11.5
+        }
+      ],
+      "customsDuties": 4.15,
+      "shippingCostCustomer": 65.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1789056461908,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1789056461908,
+      "updatedAt": 1789056461908
+    },
+    {
       "id": "ord_mtsvmdcr2ufo",
       "customerName": "ASHLEY BOWCOTT",
       "customerEmail": "ambowcott@gmail.com",
@@ -9167,5 +9221,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1788884462618
+  "lastImportedAt": 1789056461908
 }
