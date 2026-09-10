@@ -153,7 +153,7 @@
       "numberOfCartons": 1,
       "shippingType": "standard",
       "gmailMessageId": "<CAOmk=KZayo-wcmsFum3ZqmrDitrc=tNOCeNRChiBz8btYEORxQ@mail.gmail.com>",
-      "trackingNumber": "",
+      "trackingNumber": "1Z9376E1A830007797",
       "carrier": "- U.S.A. Wine Corriere Std",
       "products": [
         {
@@ -169,13 +169,18 @@
       "language": "en",
       "orderNumber": "#1455",
       "paymentType": "Carte Di Credito/Bancomat",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1789030464513,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1788426131169,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1789030464513,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -191,7 +196,7 @@
       ],
       "notes": "",
       "createdAt": 1788426131169,
-      "updatedAt": 1788426143719
+      "updatedAt": 1789030464513
     },
     {
       "id": "ord_mtk6wiatmljw",
