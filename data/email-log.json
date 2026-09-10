@@ -53,6 +53,15 @@
       "subject": "Your order is going through customs",
       "sentAt": 1788992585183,
       "messageId": "<202609092223.96057387889@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mtlaqqjl57yj",
+      "customerName": "Anne Apicella",
+      "type": "day0",
+      "to": "apicella05@aol.com",
+      "subject": "Your wine is on its way! 🍷",
+      "sentAt": 1789030472278,
+      "messageId": "<202609100854.89205389627@smtp-relay.mailin.fr>"
     }
   ]
 }
