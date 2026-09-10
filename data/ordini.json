@@ -192,11 +192,18 @@
           "messageId": "<202609030902.45521700116@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-09-03T11:02:28.000+02:00"
+        },
+        {
+          "type": "day0",
+          "to": "apicella05@aol.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1789030472278,
+          "messageId": "<202609100854.89205389627@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1788426131169,
-      "updatedAt": 1789030468655,
+      "updatedAt": 1789030472278,
       "track17Registered": true
     },
     {
