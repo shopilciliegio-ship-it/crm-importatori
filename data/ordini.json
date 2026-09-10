@@ -49,10 +49,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "romanomike4@gmail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1789056495591,
+          "messageId": "<202609101608.97602514918@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1789056461908,
-      "updatedAt": 1789056461908
+      "updatedAt": 1789056495591
     },
     {
       "id": "ord_mtsvmdcr2ufo",
