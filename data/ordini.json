@@ -44,10 +44,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "julianag1811@gmail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1789143109447,
+          "messageId": "<202609111611.55484077235@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1789143073839,
-      "updatedAt": 1789143073839
+      "updatedAt": 1789143109447
     },
     {
       "id": "ord_mtvq0wusqke9",
@@ -534,9 +542,9 @@
       ],
       "notes": "",
       "createdAt": 1787868152832,
-      "updatedAt": 1788596012833,
+      "updatedAt": 1789143109447,
       "staleAlertDays": 7,
-      "staleAlertSince": 1787868152832,
+      "staleAlertSince": 1788537811037,
       "track17Registered": true
     },
     {
