@@ -1,6 +1,55 @@
 {
   "orders": [
     {
+      "id": "ord_mtx5lb1re0j5",
+      "customerName": "JULIANA GOSKA",
+      "customerEmail": "julianag1811@gmail.com",
+      "customerPhone": "+17155705748",
+      "amount": 160.8,
+      "currency": "EUR",
+      "orderDate": 1789117009000,
+      "emailSubject": "🍷 New Order — JULIANA GOSKA — 160.80 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "8640 PINE ST, 54494 TOWN OF GRAND RAPIDS, WISCONSIN (WOOD COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202609110856.25657674737@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "SPARKLING WINE CILIEGIO IN FIORE ROSÉ",
+          "qty": 3,
+          "value": 30.0
+        },
+        {
+          "description": "INFERNACCIO RED WINE IGT 2022",
+          "qty": 3,
+          "value": 48.0
+        }
+      ],
+      "customsDuties": 7.8,
+      "shippingCostCustomer": 75.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1789143073839,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1789143073839,
+      "updatedAt": 1789143073839
+    },
+    {
       "id": "ord_mtvq0wusqke9",
       "customerName": "MICHAEL  ROMANO",
       "customerEmail": "romanomike4@gmail.com",
@@ -9229,5 +9278,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1789056461908
+  "lastImportedAt": 1789143073839
 }
