@@ -71,6 +71,15 @@
       "subject": "Thank you for your order! 🍷",
       "sentAt": 1789056495591,
       "messageId": "<202609101608.97602514918@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mtx5lb1re0j5",
+      "customerName": "JULIANA GOSKA",
+      "type": "order_received",
+      "to": "julianag1811@gmail.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1789143109447,
+      "messageId": "<202609111611.55484077235@smtp-relay.mailin.fr>"
     }
   ]
 }
