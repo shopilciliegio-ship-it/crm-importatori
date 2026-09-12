@@ -80,6 +80,15 @@
       "subject": "Thank you for your order! 🍷",
       "sentAt": 1789143109447,
       "messageId": "<202609111611.55484077235@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mtyj4v9z6p73",
+      "customerName": "MINNELLIS MERCADO DE LUCAS",
+      "type": "order_received",
+      "to": "minnellis@icloud.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1789226320187,
+      "messageId": "<202609121518.12448440113@smtp-relay.mailin.fr>"
     }
   ]
 }
