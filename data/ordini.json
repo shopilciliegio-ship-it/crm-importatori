@@ -1,6 +1,65 @@
 {
   "orders": [
     {
+      "id": "ord_mtyj4v9z6p73",
+      "customerName": "MINNELLIS MERCADO DE LUCAS",
+      "customerEmail": "minnellis@icloud.com",
+      "customerPhone": "+17745738803",
+      "amount": 199.3,
+      "currency": "EUR",
+      "orderDate": 1789202020000,
+      "emailSubject": "🍷 New Order — MINNELLIS MERCADO DE LUCAS — 199.30 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "1759 MILLER SPRINGS DRIVE, 30620 BETHLEHEM, GEORGIA (BARROW COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202609120833.20453012362@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "CHIANTI STRADE BIANCHE 2025 LIM. ED.",
+          "qty": 2,
+          "value": 40.0
+        },
+        {
+          "description": "VIN SANTO DEL CHIANTI DOC 2019",
+          "qty": 2,
+          "value": 38.0
+        },
+        {
+          "description": "INFERNACCIO RED WINE IGT 2022",
+          "qty": 1,
+          "value": 16.0
+        },
+        {
+          "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
+          "qty": 1,
+          "value": 19.0
+        }
+      ],
+      "customsDuties": 11.3,
+      "shippingCostCustomer": 75.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1789226287702,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1789226287702,
+      "updatedAt": 1789226287702
+    },
+    {
       "id": "ord_mtx5lb1re0j5",
       "customerName": "JULIANA GOSKA",
       "customerEmail": "julianag1811@gmail.com",
@@ -9286,5 +9345,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1789143073839
+  "lastImportedAt": 1789226287702
 }
