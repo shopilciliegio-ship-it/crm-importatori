@@ -54,10 +54,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "minnellis@icloud.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1789226320187,
+          "messageId": "<202609121518.12448440113@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1789226287702,
-      "updatedAt": 1789226287702
+      "updatedAt": 1789226320187
     },
     {
       "id": "ord_mtx5lb1re0j5",
