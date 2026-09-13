@@ -89,6 +89,15 @@
       "subject": "Thank you for your order! 🍷",
       "sentAt": 1789226320187,
       "messageId": "<202609121518.12448440113@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mtc2jbpc0oie",
+      "customerName": "AARON DORFMAN",
+      "type": "dogana",
+      "to": "rlpisarz9@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1789272373791,
+      "messageId": "<202609130406.55295128272@smtp-relay.mailin.fr>"
     }
   ]
 }
