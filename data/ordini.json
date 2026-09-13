@@ -610,11 +610,18 @@
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1788537815892,
           "messageId": "<202609041603.44975979364@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "dogana",
+          "to": "rlpisarz9@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1789272373791,
+          "messageId": "<202609130406.55295128272@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1787868152832,
-      "updatedAt": 1789272369894,
+      "updatedAt": 1789272373791,
       "staleAlertDays": 7,
       "staleAlertSince": 1788537811037,
       "track17Registered": true
