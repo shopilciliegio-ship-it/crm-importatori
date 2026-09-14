@@ -323,7 +323,9 @@
       ],
       "notes": "",
       "createdAt": 1788772134592,
-      "updatedAt": 1788772149241
+      "updatedAt": 1789397578405,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1788772134592
     },
     {
       "id": "ord_mtlaqqjl57yj",
