@@ -1166,11 +1166,18 @@
           "subject": "Your order is going through customs",
           "sentAt": 1788992585183,
           "messageId": "<202609092223.96057387889@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "in_consegna",
+          "to": "lucy.rinehuls@gmail.com",
+          "subject": "Your wine is out for delivery! 🍷",
+          "sentAt": 1789500980841,
+          "messageId": "<202609151936.88133575275@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1787257976117,
-      "updatedAt": 1789500977771,
+      "updatedAt": 1789500980841,
       "staleAlertDays": 7,
       "staleAlertSince": 1788356942048,
       "track17Registered": true
