@@ -933,11 +933,18 @@
           "subject": "Your order is going through customs",
           "sentAt": 1788992585183,
           "messageId": "<202609092223.46876165583@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegnato",
+          "to": "rstieritz@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1789445636973,
+          "messageId": "<202609150413.59055753011@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1787576272343,
-      "updatedAt": 1789445630032,
+      "updatedAt": 1789445636973,
       "trackingUrl": "",
       "destCountry": "US",
       "track17Registered": true,
