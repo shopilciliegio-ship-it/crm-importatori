@@ -1118,7 +1118,7 @@
       "orderNumber": "#1443",
       "paymentType": "Carte Di Credito/Bancomat",
       "shippingDate": 1788356942048,
-      "status": "dogana",
+      "status": "in_consegna",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1134,6 +1134,11 @@
           "status": "dogana",
           "date": 1788992579000,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "in_consegna",
+          "date": 1789500977771,
+          "note": "Auto 17Track (era: dogana): West Columbia, SC, United States — Out for Delivery, Out For Delivery Today"
         }
       ],
       "emailsSent": [
@@ -1165,7 +1170,7 @@
       ],
       "notes": "",
       "createdAt": 1787257976117,
-      "updatedAt": 1788992585183,
+      "updatedAt": 1789500977771,
       "staleAlertDays": 7,
       "staleAlertSince": 1788356942048,
       "track17Registered": true
