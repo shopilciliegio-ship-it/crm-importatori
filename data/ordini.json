@@ -252,11 +252,18 @@
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1788884492104,
           "messageId": "<202609081621.66588805008@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "day0",
+          "to": "ambowcott@gmail.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1789478398107,
+          "messageId": "<202609151319.51739482243@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1788884462618,
-      "updatedAt": 1789478395317,
+      "updatedAt": 1789478398107,
       "track17Registered": true
     },
     {
@@ -330,11 +337,18 @@
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1788772149241,
           "messageId": "<202609070909.37547825525@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "day0",
+          "to": "jcblueandwhite96@gmail.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1789478398107,
+          "messageId": "<202609151319.90518929643@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1788772134592,
-      "updatedAt": 1789478395317,
+      "updatedAt": 1789478398107,
       "staleAlertDays": 7,
       "staleAlertSince": 1788772134592,
       "track17Registered": true
@@ -558,11 +572,18 @@
           "messageId": "<202608272203.83890527795@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-08-28T00:03:10.000+02:00"
+        },
+        {
+          "type": "day0",
+          "to": "paulagrezeszak@gmail.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1789478398107,
+          "messageId": "<202609151319.84406848020@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1787868152832,
-      "updatedAt": 1789478395317,
+      "updatedAt": 1789478398107,
       "staleAlertDays": 14,
       "staleAlertSince": 1787868152832,
       "track17Registered": true
