@@ -35,6 +35,15 @@
       "subject": "Your wine is on its way! 🍷",
       "sentAt": 1789478398107,
       "messageId": "<202609151319.84406848020@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mt1z94c56v4p",
+      "customerName": "Lucy Rinehuls",
+      "type": "in_consegna",
+      "to": "lucy.rinehuls@gmail.com",
+      "subject": "Your wine is out for delivery! 🍷",
+      "sentAt": 1789500980841,
+      "messageId": "<202609151936.88133575275@smtp-relay.mailin.fr>"
     }
   ]
 }
