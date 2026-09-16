@@ -418,11 +418,18 @@
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1789030472278,
           "messageId": "<202609100854.89205389627@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "dogana",
+          "to": "apicella05@aol.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1789598826154,
+          "messageId": "<202609162247.22598884548@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1788426131169,
-      "updatedAt": 1789598819743,
+      "updatedAt": 1789598826154,
       "track17Registered": true
     },
     {
@@ -692,11 +699,18 @@
           "subject": "Your wine is out for delivery! 🍷",
           "sentAt": 1789586865808,
           "messageId": "<202609161927.82991395252@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegna_fallita",
+          "to": "rlpisarz9@gmail.com",
+          "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+          "sentAt": 1789598826154,
+          "messageId": "<202609162247.90292868603@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1787868152832,
-      "updatedAt": 1789598823613,
+      "updatedAt": 1789598826154,
       "staleAlertDays": 7,
       "staleAlertSince": 1788537811037,
       "track17Registered": true,
@@ -809,11 +823,18 @@
           "subject": "Your wine is out for delivery! 🍷",
           "sentAt": 1789586865808,
           "messageId": "<202609161927.68278561827@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegna_fallita",
+          "to": "kaur.mandip23@gmail.com",
+          "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+          "sentAt": 1789598826154,
+          "messageId": "<202609162247.39313152878@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1787749212380,
-      "updatedAt": 1789598823613,
+      "updatedAt": 1789598826154,
       "track17Registered": true,
       "staleAlertDays": 7,
       "staleAlertSince": 1788356942048,
@@ -1226,11 +1247,18 @@
           "subject": "Your wine is out for delivery! 🍷",
           "sentAt": 1789500980841,
           "messageId": "<202609151936.88133575275@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegna_fallita",
+          "to": "lucy.rinehuls@gmail.com",
+          "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+          "sentAt": 1789598826154,
+          "messageId": "<202609162247.53532079109@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1787257976117,
-      "updatedAt": 1789598823613,
+      "updatedAt": 1789598826154,
       "staleAlertDays": 7,
       "staleAlertSince": 1788356942048,
       "track17Registered": true,
