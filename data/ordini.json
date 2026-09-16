@@ -634,7 +634,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1788537811037,
-      "status": "in_consegna",
+      "status": "consegna_fallita",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -655,6 +655,11 @@
           "status": "in_consegna",
           "date": 1789586863725,
           "note": "Auto 17Track (era: dogana): Farmingdale, NY, United States — Out for Delivery, Out For Delivery Today"
+        },
+        {
+          "status": "consegna_fallita",
+          "date": 1789598823613,
+          "note": "Auto 17Track (era: in_consegna): Delivery Attempted, The receiver was not available for delivery. We'll make a second attempt the next business day."
         }
       ],
       "emailsSent": [
@@ -691,10 +696,12 @@
       ],
       "notes": "",
       "createdAt": 1787868152832,
-      "updatedAt": 1789586865808,
+      "updatedAt": 1789598823613,
       "staleAlertDays": 7,
       "staleAlertSince": 1788537811037,
-      "track17Registered": true
+      "track17Registered": true,
+      "deliveryFailureCount": 1,
+      "lastDeliveryFailureEventAt": "2026-09-16T21:42:58Z"
     },
     {
       "id": "ord_mta3q0nwlz70",
@@ -742,7 +749,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1788356942048,
-      "status": "in_consegna",
+      "status": "consegna_fallita",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -763,6 +770,11 @@
           "status": "in_consegna",
           "date": 1789586863725,
           "note": "Auto 17Track (era: dogana): Bethlehem, PA, United States — Out for Delivery, Out For Delivery Today"
+        },
+        {
+          "status": "consegna_fallita",
+          "date": 1789598823613,
+          "note": "Auto 17Track (era: in_consegna): Delivery Attempted, The receiver was not available for delivery. We'll make a second attempt the next business day."
         }
       ],
       "emailsSent": [
@@ -801,10 +813,12 @@
       ],
       "notes": "",
       "createdAt": 1787749212380,
-      "updatedAt": 1789586865808,
+      "updatedAt": 1789598823613,
       "track17Registered": true,
       "staleAlertDays": 7,
-      "staleAlertSince": 1788356942048
+      "staleAlertSince": 1788356942048,
+      "deliveryFailureCount": 1,
+      "lastDeliveryFailureEventAt": "2026-09-16T18:11:19Z"
     },
     {
       "id": "ord_mt94h63vbvno",
@@ -1173,6 +1187,11 @@
           "status": "consegna_fallita",
           "date": 1789531795142,
           "note": "Auto 17Track (era: in_consegna): West Columbia, SC, United States — On the Way, Arrived at Facility"
+        },
+        {
+          "status": "consegna_fallita",
+          "date": 1789598823613,
+          "note": "Auto 17Track (era: consegna_fallita): Second Delivery Attempted, We missed you again. A final attempt will be made the next business day."
         }
       ],
       "emailsSent": [
@@ -1211,10 +1230,12 @@
       ],
       "notes": "",
       "createdAt": 1787257976117,
-      "updatedAt": 1789531795142,
+      "updatedAt": 1789598823613,
       "staleAlertDays": 7,
       "staleAlertSince": 1788356942048,
-      "track17Registered": true
+      "track17Registered": true,
+      "deliveryFailureCount": 1,
+      "lastDeliveryFailureEventAt": "2026-09-16T18:44:42Z"
     },
     {
       "id": "ord_mt03g0xip68g",
