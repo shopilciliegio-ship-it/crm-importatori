@@ -675,11 +675,18 @@
           "subject": "Your order is going through customs",
           "sentAt": 1789272373791,
           "messageId": "<202609130406.55295128272@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "in_consegna",
+          "to": "rlpisarz9@gmail.com",
+          "subject": "Your wine is out for delivery! 🍷",
+          "sentAt": 1789586865808,
+          "messageId": "<202609161927.82991395252@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1787868152832,
-      "updatedAt": 1789586863725,
+      "updatedAt": 1789586865808,
       "staleAlertDays": 7,
       "staleAlertSince": 1788537811037,
       "track17Registered": true
@@ -778,11 +785,18 @@
           "subject": "Your order is going through customs",
           "sentAt": 1788992585183,
           "messageId": "<202609092223.82389730844@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "in_consegna",
+          "to": "kaur.mandip23@gmail.com",
+          "subject": "Your wine is out for delivery! 🍷",
+          "sentAt": 1789586865808,
+          "messageId": "<202609161927.68278561827@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1787749212380,
-      "updatedAt": 1789586863725,
+      "updatedAt": 1789586865808,
       "track17Registered": true,
       "staleAlertDays": 7,
       "staleAlertSince": 1788356942048
