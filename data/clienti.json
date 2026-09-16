@@ -317756,7 +317756,7 @@
           "toEmail": "martinozappabruco@gmail.com"
         }
       ],
-      "blacklisted": false,
+      "blacklisted": true,
       "notes": "",
       "status": "sent",
       "region": "Europa",
@@ -317772,13 +317772,29 @@
           "brand": "ilciliegio",
           "sequenceStep": 1,
           "delivered": true,
-          "opened": false,
+          "opened": true,
           "clicked": false,
           "bounced": false,
           "spam": false,
-          "unsubscribed": false,
+          "unsubscribed": true,
           "blocked": false,
-          "deliveredAt": "2026-09-07T15:11:24.695+02:00"
+          "deliveredAt": "2026-09-07T15:11:24.695+02:00",
+          "openedAt": "2026-09-16T15:46:46.875+02:00",
+          "unsubscribedAt": "2026-09-16T15:46:53.391+02:00"
+        }
+      ],
+      "log": [
+        {
+          "ts": 1789575555655,
+          "msg": "👁 Aperta: Un pensiero speciale per te da Il Ciliegio 🍷"
+        },
+        {
+          "ts": 1789575555655,
+          "msg": "🚫 Disiscritto: Un pensiero speciale per te da Il Ciliegio 🍷"
+        },
+        {
+          "ts": 1789575556430,
+          "msg": "🚫 Contatto inserito in blacklist (spam/disiscrizione/bloccata)"
         }
       ]
     },
