@@ -62,6 +62,42 @@
       "subject": "Your wine is out for delivery! 🍷",
       "sentAt": 1789586865808,
       "messageId": "<202609161927.68278561827@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mtlaqqjl57yj",
+      "customerName": "Anne Apicella",
+      "type": "dogana",
+      "to": "apicella05@aol.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1789598826154,
+      "messageId": "<202609162247.22598884548@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mtc2jbpc0oie",
+      "customerName": "AARON DORFMAN",
+      "type": "consegna_fallita",
+      "to": "rlpisarz9@gmail.com",
+      "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+      "sentAt": 1789598826154,
+      "messageId": "<202609162247.90292868603@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mta3q0nwlz70",
+      "customerName": "MANDIP KAUR",
+      "type": "consegna_fallita",
+      "to": "kaur.mandip23@gmail.com",
+      "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+      "sentAt": 1789598826154,
+      "messageId": "<202609162247.39313152878@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mt1z94c56v4p",
+      "customerName": "Lucy Rinehuls",
+      "type": "consegna_fallita",
+      "to": "lucy.rinehuls@gmail.com",
+      "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+      "sentAt": 1789598826154,
+      "messageId": "<202609162247.53532079109@smtp-relay.mailin.fr>"
     }
   ]
 }
