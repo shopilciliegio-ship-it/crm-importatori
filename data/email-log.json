@@ -98,6 +98,24 @@
       "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
       "sentAt": 1789598826154,
       "messageId": "<202609162247.53532079109@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mtc2jbpc0oie",
+      "customerName": "AARON DORFMAN",
+      "type": "consegnato",
+      "to": "rlpisarz9@gmail.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1789685084932,
+      "messageId": "<202609172244.27574631617@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mta3q0nwlz70",
+      "customerName": "MANDIP KAUR",
+      "type": "consegnato",
+      "to": "kaur.mandip23@gmail.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1789685084932,
+      "messageId": "<202609172244.88624362302@smtp-relay.mailin.fr>"
     }
   ]
 }
