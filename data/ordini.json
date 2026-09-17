@@ -713,11 +713,18 @@
           "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
           "sentAt": 1789598826154,
           "messageId": "<202609162247.90292868603@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegnato",
+          "to": "rlpisarz9@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1789685084932,
+          "messageId": "<202609172244.27574631617@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1787868152832,
-      "updatedAt": 1789685078796,
+      "updatedAt": 1789685084932,
       "staleAlertDays": 7,
       "staleAlertSince": 1788537811037,
       "track17Registered": true,
@@ -842,11 +849,18 @@
           "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
           "sentAt": 1789598826154,
           "messageId": "<202609162247.39313152878@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegnato",
+          "to": "kaur.mandip23@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1789685084932,
+          "messageId": "<202609172244.88624362302@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1787749212380,
-      "updatedAt": 1789685078796,
+      "updatedAt": 1789685084932,
       "track17Registered": true,
       "staleAlertDays": 7,
       "staleAlertSince": 1788356942048,
