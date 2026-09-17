@@ -184,7 +184,9 @@
       ],
       "notes": "",
       "createdAt": 1789056461908,
-      "updatedAt": 1789056495591
+      "updatedAt": 1789673906972,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1789056461908
     },
     {
       "id": "ord_mtsvmdcr2ufo",
