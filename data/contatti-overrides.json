@@ -4999,6 +4999,35 @@
     }
   },
   "c17806737107186sf7u": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789766612589,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609182123.49652687784@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609182123.49652687784@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789766612589,
+        "toEmail": "foodandwine@basile.com.au",
+        "toName": "Ken John",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "forse",
@@ -87219,6 +87248,14 @@
       {
         "ts": 1789746560165,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181549.38808384253@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1789746898707,
+        "msg": "🔗 Click: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
+      },
+      {
+        "ts": 1789746878824,
+        "msg": "👁 Aperta: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
       }
     ],
     "brevoEvents": [
@@ -87230,13 +87267,20 @@
         "toName": "Dan Davies",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
-        "opened": false,
-        "clicked": false,
+        "delivered": true,
+        "opened": true,
+        "clicked": true,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "clickedLinks": [
+          "https://www.sienawine.it/smallvineyardsinternational",
+          "https://www.sienawine.it"
+        ],
+        "clickedAt": "2026-09-18T17:54:58.707+02:00",
+        "openedAt": "2026-09-18T17:54:38.824+02:00",
+        "deliveredAt": "2026-09-18T17:49:18.000+02:00"
       }
     ],
     "research": {
@@ -87259,6 +87303,14 @@
       {
         "ts": 1789746563551,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181549.90861163655@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1789746588631,
+        "msg": "🔗 Click: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
+      },
+      {
+        "ts": 1789746570220,
+        "msg": "👁 Aperta: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
       }
     ],
     "brevoEvents": [
@@ -87270,13 +87322,19 @@
         "toName": "Alyana Popat",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
-        "opened": false,
-        "clicked": false,
+        "delivered": true,
+        "opened": true,
+        "clicked": true,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "clickedLinks": [
+          "https://www.sienawine.it"
+        ],
+        "clickedAt": "2026-09-18T17:49:48.631+02:00",
+        "openedAt": "2026-09-18T17:49:30.220+02:00",
+        "deliveredAt": "2026-09-18T17:49:23.000+02:00"
       }
     ],
     "research": {
