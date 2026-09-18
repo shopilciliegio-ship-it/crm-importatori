@@ -6607,6 +6607,35 @@
     }
   },
   "c17806737107189eq4s": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789768967919,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609182202.96687944512@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609182202.96687944512@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789768967919,
+        "toEmail": "lukas@classicalwines.com.au",
+        "toName": "Mike Cooper",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 4,
       "vino_italiano": "probabile",
@@ -122563,6 +122592,10 @@
       {
         "ts": 1789746723039,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181552.82727431315@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1789746727000,
+        "msg": "⚠ Bounce: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
       }
     ],
     "brevoEvents": [
@@ -122574,13 +122607,15 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
-        "bounced": false,
+        "bounced": true,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "bouncedAt": "2026-09-18T17:52:07.000+02:00",
+        "deliveredAt": "2026-09-18T17:52:00.287+02:00"
       }
     ],
     "research": {
