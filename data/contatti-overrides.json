@@ -5319,6 +5319,35 @@
     }
   },
   "c1780673710718ynip9": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789767097940,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609182131.71807725543@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609182131.71807725543@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789767097940,
+        "toEmail": "info@thebevco.com.au",
+        "toName": "Craig Sweet",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "non_risulta",
@@ -88956,13 +88985,14 @@
         "toName": "Laura Wakim",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:39:15.000+02:00"
       }
     ],
     "research": {
