@@ -7247,6 +7247,35 @@
     }
   },
   "c1780673710718wab5v": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789769949546,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609182219.96206439412@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609182219.96206439412@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789769949546,
+        "toEmail": "shop@finewinemerchant.com.au",
+        "toName": "Stewart Plant",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "forse",
@@ -141176,13 +141205,14 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:52:35.000+02:00"
       }
     ],
     "research": {
@@ -141216,13 +141246,14 @@
         "toName": "Méryll Grech",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:52:38.000+02:00"
       }
     ],
     "research": {
