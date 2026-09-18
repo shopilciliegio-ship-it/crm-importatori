@@ -4599,6 +4599,35 @@
     }
   },
   "c1780673710718pubm6": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789766021344,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609182113.40045173530@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609182113.40045173530@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789766021344,
+        "toEmail": "goldcoast@globalfw.com.au",
+        "toName": "Steve Beever",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 5,
       "vino_italiano": "probabile",
@@ -86215,6 +86244,10 @@
       {
         "ts": 1789746513552,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181548.94883175180@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1789748521406,
+        "msg": "👁 Aperta: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
       }
     ],
     "brevoEvents": [
@@ -86226,13 +86259,15 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
-        "opened": false,
+        "delivered": true,
+        "opened": true,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "openedAt": "2026-09-18T18:22:01.406+02:00",
+        "deliveredAt": "2026-09-18T17:48:31.000+02:00"
       }
     ],
     "research": {
@@ -86266,13 +86301,14 @@
         "toName": "Taj Bedi",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:48:34.000+02:00"
       }
     ],
     "research": {
