@@ -176476,6 +176476,35 @@
     }
   },
   "c1789400396382vw2pc": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1789400396361,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789748968963,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181629.89813874710@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181629.89813874710@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789748968963,
+        "toEmail": "orders@nlrwines.co.za",
+        "toName": "Nell-Marie Le Roux",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 1,
       "vino_italiano": "non_risulta",
