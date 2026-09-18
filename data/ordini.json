@@ -122,7 +122,9 @@
       ],
       "notes": "",
       "createdAt": 1789143073839,
-      "updatedAt": 1789143109447
+      "updatedAt": 1789770289130,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1789143073839
     },
     {
       "id": "ord_mtvq0wusqke9",
@@ -511,11 +513,18 @@
           "subject": "Your order is going through customs",
           "sentAt": 1789337713552,
           "messageId": "<202609132215.31080152796@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegnato",
+          "to": "dmbcrush@hotnail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1789770289130,
+          "messageId": "<202609182224.26045427992@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1788359215781,
-      "updatedAt": 1789770283315,
+      "updatedAt": 1789770289130,
       "track17Registered": true
     },
     {
