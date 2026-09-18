@@ -4879,6 +4879,35 @@
     }
   },
   "c1780673710718dbznz": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789766426761,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609182120.21419804600@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609182120.21419804600@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789766426761,
+        "toEmail": "sales@iceboxliquor.com.au",
+        "toName": "Shane Mackintosh",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "non_risulta",
@@ -86917,6 +86946,10 @@
       {
         "ts": 1789746544961,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181549.15190884847@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1789746653554,
+        "msg": "👁 Aperta: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
       }
     ],
     "brevoEvents": [
@@ -86928,13 +86961,15 @@
         "toName": "Claire Njoki",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
-        "opened": false,
+        "delivered": true,
+        "opened": true,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "openedAt": "2026-09-18T17:50:53.554+02:00",
+        "deliveredAt": "2026-09-18T17:49:03.000+02:00"
       }
     ],
     "research": {
@@ -86957,6 +86992,10 @@
       {
         "ts": 1789746547831,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181549.68337428683@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1789747266466,
+        "msg": "👁 Aperta: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
       }
     ],
     "brevoEvents": [
@@ -86968,13 +87007,15 @@
         "toName": "James Muhoro",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
-        "opened": false,
+        "delivered": true,
+        "opened": true,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "openedAt": "2026-09-18T18:01:06.466+02:00",
+        "deliveredAt": "2026-09-18T17:49:06.000+02:00"
       }
     ],
     "research": {
