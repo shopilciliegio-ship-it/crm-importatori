@@ -6967,6 +6967,35 @@
     }
   },
   "c17806737107183bc2a": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789769527237,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609182212.67582871713@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609182212.67582871713@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789769527237,
+        "toEmail": "contactus@bayfields.com.au",
+        "toName": "Carlo Campana",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "probabile",
@@ -136145,13 +136174,14 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:34:35.000+02:00"
       }
     ],
     "research": {
@@ -136218,6 +136248,14 @@
       {
         "ts": 1789745979218,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181539.40920686792@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1789745997079,
+        "msg": "🔗 Click: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
+      },
+      {
+        "ts": 1789745981484,
+        "msg": "👁 Aperta: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
       }
     ],
     "brevoEvents": [
@@ -136229,13 +136267,20 @@
         "toName": "Gibson Arcillas",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
-        "opened": false,
-        "clicked": false,
+        "delivered": true,
+        "opened": true,
+        "clicked": true,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "clickedLinks": [
+          "https://www.sienawine.it/smallvineyardsinternational",
+          "https://www.sienawine.it"
+        ],
+        "clickedAt": "2026-09-18T17:39:57.079+02:00",
+        "openedAt": "2026-09-18T17:39:41.484+02:00",
+        "deliveredAt": "2026-09-18T17:39:38.000+02:00"
       }
     ],
     "research": {
