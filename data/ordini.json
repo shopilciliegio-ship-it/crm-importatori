@@ -1208,7 +1208,7 @@
       "orderNumber": "#1443",
       "paymentType": "Carte Di Credito/Bancomat",
       "shippingDate": 1788356942048,
-      "status": "consegna_fallita",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1239,6 +1239,11 @@
           "status": "consegna_fallita",
           "date": 1789598823613,
           "note": "Auto 17Track (era: consegna_fallita): Second Delivery Attempted, We missed you again. A final attempt will be made the next business day."
+        },
+        {
+          "status": "consegnato",
+          "date": 1789704038237,
+          "note": "Auto 17Track (era: consegna_fallita): COLUMBIA, SC, US — Delivered, DELIVERED"
         }
       ],
       "emailsSent": [
@@ -1284,7 +1289,7 @@
       ],
       "notes": "",
       "createdAt": 1787257976117,
-      "updatedAt": 1789598826154,
+      "updatedAt": 1789704038237,
       "staleAlertDays": 7,
       "staleAlertSince": 1788356942048,
       "track17Registered": true,
