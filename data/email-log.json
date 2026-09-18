@@ -125,6 +125,15 @@
       "subject": "Your order has been delivered! 🍷 Enjoy!",
       "sentAt": 1789704040923,
       "messageId": "<202609180400.57802815320@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mtk6wiatmljw",
+      "customerName": "AMBER MAIDA",
+      "type": "consegnato",
+      "to": "dmbcrush@hotnail.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1789770289130,
+      "messageId": "<202609182224.26045427992@smtp-relay.mailin.fr>"
     }
   ]
 }
