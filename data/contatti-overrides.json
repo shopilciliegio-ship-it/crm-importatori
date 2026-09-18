@@ -5599,6 +5599,35 @@
     }
   },
   "c17806737107188o1vb": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789767554090,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609182139.49504167271@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609182139.49504167271@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789767554090,
+        "toEmail": "online@monacellars.com.au",
+        "toName": "Simon Kelton",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 3,
       "vino_italiano": "probabile",
@@ -94234,13 +94263,14 @@
         "toName": "Matthew Taylor",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:50:06.000+02:00"
       }
     ],
     "research": {
@@ -94285,13 +94315,14 @@
         "toName": "John Thangoon",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:50:11.000+02:00"
       }
     ],
     "research": {
