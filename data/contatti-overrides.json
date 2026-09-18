@@ -6167,6 +6167,35 @@
     }
   },
   "c1780673710718inqby": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789768318764,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609182151.62895793937@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609182151.62895793937@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789768318764,
+        "toEmail": "hello@shortysliquor.com.au",
+        "toName": "Hamish Walker",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "non_risulta",
@@ -121517,6 +121546,14 @@
       {
         "ts": 1789746674488,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181551.57083826611@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1789746695845,
+        "msg": "🔗 Click: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
+      },
+      {
+        "ts": 1789746678067,
+        "msg": "👁 Aperta: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
       }
     ],
     "brevoEvents": [
@@ -121528,13 +121565,20 @@
         "toName": "Lanre Akinlagun",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
-        "opened": false,
-        "clicked": false,
+        "delivered": true,
+        "opened": true,
+        "clicked": true,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "clickedLinks": [
+          "https://www.sienawine.it",
+          "https://www.sienawine.it/smallvineyardsinternational"
+        ],
+        "clickedAt": "2026-09-18T17:51:35.845+02:00",
+        "openedAt": "2026-09-18T17:51:18.067+02:00",
+        "deliveredAt": "2026-09-18T17:51:13.000+02:00"
       }
     ],
     "research": {
