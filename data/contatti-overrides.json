@@ -64570,6 +64570,35 @@
     }
   },
   "c17806737108018evs4": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744880775,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181521.81742261573@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181521.81742261573@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744880775,
+        "toEmail": "orders@finefoodsinc.com",
+        "toName": "Sharon Rabess",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 3,
       "vino_italiano": "non_risulta",
@@ -64581,6 +64610,35 @@
     }
   },
   "c1780673710801c650a": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744883678,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181521.38852946158@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181521.38852946158@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744883678,
+        "toEmail": "pirate@cwdom.dm",
+        "toName": "Frederic Cernota",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "non_risulta",
@@ -64592,6 +64650,35 @@
     }
   },
   "c1780673710801q6rci": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744887152,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181521.57143938604@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181521.57143938604@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744887152,
+        "toEmail": "gbasales21@gmail.com",
+        "toName": "",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "non_risulta",
@@ -131369,6 +131456,35 @@
     }
   },
   "c1780673710923s373s": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744861213,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181520.39482362065@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181520.39482362065@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744861213,
+        "toEmail": "info@stbarthswine.com",
+        "toName": "Pasqualé Irace",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "forse",
@@ -131468,6 +131584,35 @@
     }
   },
   "c17806737109231nu26": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789745449810,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181530.81848623124@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181530.81848623124@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789745449810,
+        "toEmail": "order@islandspiritsnv.com",
+        "toName": "",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "non_risulta",
@@ -157713,6 +157858,35 @@
     }
   },
   "c17839449653790mgg3": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1783944965354,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744664996,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181517.95615328878@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181517.95615328878@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744664996,
+        "toEmail": "sales@bakuscellars.hk",
+        "toName": "Christophe Denis Pierre E Castellino",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "no",
@@ -157724,6 +157898,35 @@
     }
   },
   "c1783944965379glqj8": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1783944965354,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744668576,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181517.22442361142@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181517.22442361142@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744668576,
+        "toEmail": "waisun2003@gmail.com",
+        "toName": "Wai Sun Master Lam",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "probabile",
@@ -157746,6 +157949,35 @@
     }
   },
   "c17839449653792ff8a": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1783944965354,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744671709,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181517.68707621357@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181517.68707621357@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744671709,
+        "toEmail": "info@greatresources.net",
+        "toName": "Ming Hung Iu",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "forse",
@@ -157757,6 +157989,35 @@
     }
   },
   "c1783944965379wsblq": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1783944965354,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744675084,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181517.63641714473@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181517.63641714473@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744675084,
+        "toEmail": "someoneswineshop@gmail.com",
+        "toName": "Ping Sum Chong",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "si",
@@ -157768,6 +158029,35 @@
     }
   },
   "c17839449653798zlh3": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1783944965354,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744678548,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181517.56085149724@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181517.56085149724@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744678548,
+        "toEmail": "marketing@veroconcept.com.hk",
+        "toName": "ESTHER LEE",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 1,
       "vino_italiano": "non_risulta",
@@ -158065,6 +158355,35 @@
     }
   },
   "c17845483887890xjmv": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1784548388771,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744682307,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181517.31139514651@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181517.31139514651@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744682307,
+        "toEmail": "contact@fwr.asia",
+        "toName": "Denis Maurice Georges Martinet",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "no",
@@ -158076,6 +158395,35 @@
     }
   },
   "c1784548388789bipso": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1784548388771,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744685402,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181518.97422085954@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181518.97422085954@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744685402,
+        "toEmail": "cs@cheong-hing.com",
+        "toName": "Dominic Tsui",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 3,
       "vino_italiano": "probabile",
@@ -158505,6 +158853,35 @@
     }
   },
   "c1786357249411ykd55": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1786357249391,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744688069,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181518.22797683779@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181518.22797683779@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744688069,
+        "toEmail": "info@beaquahk.com",
+        "toName": "",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 1,
       "vino_italiano": "non_risulta",
@@ -158516,6 +158893,35 @@
     }
   },
   "c1786357249411vuecd": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1786357249391,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744690918,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181518.73777352712@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181518.73777352712@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744690918,
+        "toEmail": "csila@innotaste.com",
+        "toName": "Andreas Schockhoven",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "no",
@@ -158527,6 +158933,35 @@
     }
   },
   "c1786357249411r2fs4": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1786357249391,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744694331,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181518.17472103131@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181518.17472103131@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744694331,
+        "toEmail": "jb@hkwineguild.com",
+        "toName": "Jean-Baptiste Mage",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 1,
       "vino_italiano": "non_risulta",
@@ -158538,6 +158973,35 @@
     }
   },
   "c17863572494110dcge": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1786357249391,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744698950,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181518.33487648563@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181518.33487648563@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744698950,
+        "toEmail": "info@mingwines.com",
+        "toName": "",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "no",
@@ -158549,6 +159013,35 @@
     }
   },
   "c1786357249411tapyf": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1786357249391,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744702700,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181518.78681619649@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181518.78681619649@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744702700,
+        "toEmail": "hugo@provinery.com",
+        "toName": "Marie Haddad",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "no",
@@ -158560,6 +159053,35 @@
     }
   },
   "c1786357249411m6wm0": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1786357249391,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744705341,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181518.71673322127@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181518.71673322127@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744705341,
+        "toEmail": "info@solomonvintners.com",
+        "toName": "Rosanna A.",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "forse",
@@ -158571,6 +159093,35 @@
     }
   },
   "c1786357249411w4uwb": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1786357249391,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744709176,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181518.34973428169@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181518.34973428169@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744709176,
+        "toEmail": "sales@sippinhk.com",
+        "toName": "",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 3,
       "vino_italiano": "no",
@@ -158615,6 +159166,35 @@
     }
   },
   "c1786357249411t5eof": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1786357249391,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744712297,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181518.21913364865@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181518.21913364865@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744712297,
+        "toEmail": "info@winetalefareastlimited.com",
+        "toName": "Thomas Kwok Fai Chan",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 1,
       "vino_italiano": "non_risulta",
@@ -158637,6 +159217,35 @@
     }
   },
   "c178635724941161nl0": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1786357249391,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744714778,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181518.82834973843@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181518.82834973843@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744714778,
+        "toEmail": "sales@ccfwines.com",
+        "toName": "",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "non_risulta",
@@ -158648,6 +159257,35 @@
     }
   },
   "c1786357249411zaoyd": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1786357249391,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744717369,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181518.62849303018@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181518.62849303018@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744717369,
+        "toEmail": "info@kylixhk.com",
+        "toName": "",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "no",
@@ -158670,6 +159308,35 @@
     }
   },
   "c1786357249411i824z": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1786357249391,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744719907,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181518.54487384714@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181518.54487384714@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744719907,
+        "toEmail": "simon@lavigna.hk",
+        "toName": "Simon Cheung",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "si",
@@ -158681,6 +159348,35 @@
     }
   },
   "c1786357249411is40j": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1786357249391,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744723420,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181518.68566428466@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181518.68566428466@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744723420,
+        "toEmail": "heatfire1000@yahoo.com",
+        "toName": "Dominic Lau",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "probabile",
@@ -158769,6 +159465,35 @@
     }
   },
   "c17869599610161cwps": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1786959960995,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744726807,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181518.62338030851@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181518.62338030851@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744726807,
+        "toEmail": "info@hkfwec.com",
+        "toName": "",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "forse",
@@ -158780,6 +159505,35 @@
     }
   },
   "c17869599610164hiei": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1786959960995,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744730288,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181518.22247586347@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181518.22247586347@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744730288,
+        "toEmail": "sales@goodwinehk.com",
+        "toName": "",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "no",
@@ -158791,6 +159545,35 @@
     }
   },
   "c1786959961016pw3ll": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1786959960995,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744733835,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181518.59230677569@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181518.59230677569@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744733835,
+        "toEmail": "info@garudawines.hk",
+        "toName": "",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "forse",
@@ -158802,6 +159585,35 @@
     }
   },
   "c1786959961016gsxqf": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1786959960995,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744737542,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181518.66463925708@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181518.66463925708@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744737542,
+        "toEmail": "cs@ieverydaywine.com",
+        "toName": "",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "no",
@@ -158824,6 +159636,35 @@
     }
   },
   "c1786959961016exfvo": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1786959960995,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744740505,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181518.51650461933@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181518.51650461933@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744740505,
+        "toEmail": "leightonwine87@gmail.com",
+        "toName": "Lin Shuting",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 1,
       "vino_italiano": "non_risulta",
@@ -158846,6 +159687,35 @@
     }
   },
   "c17869599610162l1i9": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1786959960995,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744744103,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181519.11905282229@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181519.11905282229@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744744103,
+        "toEmail": "sales@joyunion.hk",
+        "toName": "",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "no",
@@ -158857,6 +159727,35 @@
     }
   },
   "c1786959961016azpd6": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1786959960995,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744746574,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181519.11820010228@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181519.11820010228@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744746574,
+        "toEmail": "Info@wowshk.com",
+        "toName": "",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "si",
@@ -158868,6 +159767,35 @@
     }
   },
   "c17869599610169k6zp": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1786959960995,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744749944,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181519.94403991643@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181519.94403991643@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744749944,
+        "toEmail": "kgroupwine@yahoo.com.hk",
+        "toName": "",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "non_risulta",
@@ -158879,6 +159807,35 @@
     }
   },
   "c1786959961016qe9pl": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1786959960995,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744752822,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181519.51429650555@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181519.51429650555@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744752822,
+        "toEmail": "contact@intothevines.hk",
+        "toName": "",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 3,
       "vino_italiano": "no",
@@ -158890,6 +159847,35 @@
     }
   },
   "c1786959961016au7lm": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1786959960995,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744756144,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181519.12205803340@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181519.12205803340@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744756144,
+        "toEmail": "info@imperatrice.com.hk",
+        "toName": "Jeanne Jobard",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 3,
       "vino_italiano": "no",
@@ -158901,6 +159887,35 @@
     }
   },
   "c1786959961016xsnjo": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1786959960995,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744758986,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181519.10354181379@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181519.10354181379@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744758986,
+        "toEmail": "hkwineforest@gmail.com",
+        "toName": "",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "probabile",
@@ -158912,6 +159927,35 @@
     }
   },
   "c17869599610164gvui": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1786959960995,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744762331,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181519.91470118818@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181519.91470118818@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744762331,
+        "toEmail": "julien@souverainewine.com",
+        "toName": "",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 3,
       "vino_italiano": "no",
@@ -158923,6 +159967,35 @@
     }
   },
   "c1786959961016ch7qg": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1786959960995,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744765249,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181519.41358993733@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181519.41358993733@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744765249,
+        "toEmail": "info@wineocork.com",
+        "toName": "",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 3,
       "vino_italiano": "no",
@@ -159231,6 +160304,35 @@
     }
   },
   "c178756517556871jb7": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1787565175550,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744768913,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181519.93274944981@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181519.93274944981@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744768913,
+        "toEmail": "tz@tzgroup.com.hk",
+        "toName": "Peggy Tse",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "forse",
@@ -159275,6 +160377,35 @@
     }
   },
   "c1787565175568h5uvg": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1787565175550,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744771463,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181519.18084891852@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181519.18084891852@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744771463,
+        "toEmail": "info@strongharbour.com",
+        "toName": "",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "no",
@@ -159286,6 +160417,35 @@
     }
   },
   "c17875651755687z7r9": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1787565175550,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744774843,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181519.72246367193@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181519.72246367193@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744774843,
+        "toEmail": "swallowkingliquor@gmail.com",
+        "toName": "",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 3,
       "vino_italiano": "forse",
@@ -159308,6 +160468,35 @@
     }
   },
   "c1787565175568eq4sd": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1787565175550,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744777410,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181519.24480840473@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181519.24480840473@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744777410,
+        "toEmail": "thirsty@vino.com.hk",
+        "toName": "Henrietta Hutchings",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 1,
       "vino_italiano": "non_risulta",
@@ -159363,6 +160552,35 @@
     }
   },
   "c1787565175568v7enl": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1787565175550,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744780898,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181519.29459021445@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181519.29459021445@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744780898,
+        "toEmail": "info@vivanthk.com",
+        "toName": "",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "no",
@@ -159374,6 +160592,35 @@
     }
   },
   "c1787565175568v4p0u": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1787565175550,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744783999,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181519.74942932843@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181519.74942932843@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744783999,
+        "toEmail": "info@drinks.com.hk",
+        "toName": "",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "no",
@@ -159396,6 +160643,35 @@
     }
   },
   "c178756517556889h6a": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1787565175550,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744787431,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181519.51808523558@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181519.51808523558@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744787431,
+        "toEmail": "sales@winetimehk.com",
+        "toName": "",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "probabile",
@@ -159407,6 +160683,35 @@
     }
   },
   "c17875651755685mh43": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1787565175550,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744790303,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181519.13935882626@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181519.13935882626@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744790303,
+        "toEmail": "info@onecellarhongkong.com",
+        "toName": "Aaron Chung",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "probabile",
@@ -159429,6 +160734,35 @@
     }
   },
   "c17875651755688dgks": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1787565175550,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744793870,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181519.89398338461@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181519.89398338461@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744793870,
+        "toEmail": "sales@atwines.com.hk",
+        "toName": "",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "forse",
@@ -159440,6 +160774,35 @@
     }
   },
   "c1787565175568w4lvu": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1787565175550,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744796719,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181519.12373621424@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181519.12373621424@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744796719,
+        "toEmail": "sales@beverageworld.com.hk",
+        "toName": "",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "forse",
@@ -159451,6 +160814,35 @@
     }
   },
   "c1787565175568x9gua": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1787565175550,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744799628,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181519.32322613689@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181519.32322613689@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744799628,
+        "toEmail": "info@ppwinecellar.com",
+        "toName": "",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "no",
@@ -159473,6 +160865,35 @@
     }
   },
   "c1787565175568zjg8g": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1787565175550,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744801945,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181519.12177190460@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181519.12177190460@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744801945,
+        "toEmail": "info@diverxu.com",
+        "toName": "Dorothy Lee",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "no",
@@ -159484,6 +160905,35 @@
     }
   },
   "c17875651755689dyba": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1787565175550,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744805518,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181520.61263515315@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181520.61263515315@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744805518,
+        "toEmail": "info@frenchwinedirect.com.hk",
+        "toName": "",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 3,
       "vino_italiano": "no",
@@ -159495,6 +160945,35 @@
     }
   },
   "c1787565175568ij65y": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1787565175550,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744808391,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181520.30281807826@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181520.30281807826@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744808391,
+        "toEmail": "hkbeveragespirits@gmail.com",
+        "toName": "",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "forse",
@@ -159506,6 +160985,35 @@
     }
   },
   "c17875651755682j3q8": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1787565175550,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789744811389,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181520.45094193710@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609181520.45094193710@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789744811389,
+        "toEmail": "channisli@hkwine.com.hk",
+        "toName": "",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "no",
