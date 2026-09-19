@@ -1674,6 +1674,35 @@
     }
   },
   "c1780673710717lj7pd": {
+    "status": "sent",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1789849297935,
+        "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609192021.57201976554@smtp-relay.mailin.fr>)"
+      }
+    ],
+    "brevoEvents": [
+      {
+        "messageId": "<202609192021.57201976554@smtp-relay.mailin.fr>",
+        "subject": "Still importing wines in the hard way? Take a look at Small Vineyards International now!",
+        "sentAt": 1789849297935,
+        "toEmail": "info@distrosol.com.ar",
+        "toName": "Renzo Recchia",
+        "brand": "sienawine",
+        "sequenceStep": 1,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false
+      }
+    ],
     "research": {
       "affidabilita": 3,
       "vino_italiano": "non_risulta",
