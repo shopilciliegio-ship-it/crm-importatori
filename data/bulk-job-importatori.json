@@ -1,5 +1,5 @@
 {
-  "status": "running",
+  "status": "done",
   "createdAt": 1789933360992,
   "contactIds": [
     "c17806737107162txko",
@@ -13,9 +13,10 @@
   "testMode": true,
   "startedAt": 1789933370815,
   "progress": {
-    "sent": 0,
+    "sent": 2,
     "failed": 0,
     "skipped": 0,
     "total": 2
-  }
+  },
+  "finishedAt": 1789933374431
 }
