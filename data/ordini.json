@@ -64,10 +64,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "peraineca@virgilio.it",
+          "subject": "Grazie per il tuo ordine! 🍷",
+          "sentAt": 1789942692699,
+          "messageId": "<202609202218.67785522137@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1789942673431,
-      "updatedAt": 1789942677052
+      "updatedAt": 1789942692699
     },
     {
       "id": "ord_mtyj4v9z6p73",
