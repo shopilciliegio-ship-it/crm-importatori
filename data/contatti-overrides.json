@@ -92315,6 +92315,10 @@
       {
         "ts": 1789745954158,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181539.34593783168@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1789877781011,
+        "msg": "🔗 Click: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
       }
     ],
     "brevoEvents": [
@@ -92328,12 +92332,13 @@
         "sequenceStep": 1,
         "delivered": true,
         "opened": false,
-        "clicked": false,
+        "clicked": true,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "deliveredAt": "2026-09-18T17:39:15.000+02:00"
+        "deliveredAt": "2026-09-18T17:39:15.000+02:00",
+        "clickedAt": "2026-09-20T06:17:05.111+02:00"
       }
     ],
     "research": {
