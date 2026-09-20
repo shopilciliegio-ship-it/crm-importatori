@@ -146,6 +146,27 @@ async function confirmBulkSend(){
 
   closeModal();
 
+  // Importatori: invio lato server (GitHub Actions) — niente loop nel browser.
+  // Il tab può essere chiuso subito dopo l'avvio: lo script gira comunque e
+  // salva lo stato progressivamente, invece di dipendere da un salvataggio
+  // "debounced" nel browser che si perde se la sessione si interrompe
+  // (vedi incidente 18-19/09/2026: 1230 invii reali mai salvati nel CRM).
+  if(!isClienti()){
+    if(!withEmail.length){ toast('Nessun contatto con email da inviare'); sel.clear(); refreshAll(); return; }
+    await startImportatoriBulkSend({
+      contactIds: withEmail.map(c=>c.id),
+      templateIndex: tplIdx,
+      subject: subjTemplate,
+      brand,
+      delayMin: dMin/1000,
+      delayMax: dMax/1000,
+    }, noEmail.length);
+    sel.clear();
+    refreshAll();
+    return;
+  }
+
+  // Clienti: invio dal browser (comportamento invariato)
   // Mostra progress overlay
   const prog=document.createElement('div');
   prog.className='send-prog';
@@ -194,6 +215,103 @@ async function confirmBulkSend(){
   sel.clear();
   refreshAll();
   showBulkReport(results, window._stopBulk);
+}
+
+/* ── BULK IMPORTATORI — invio server-side (GitHub Actions) ── */
+
+async function startImportatoriBulkSend(job, skippedCount){
+  const total=job.contactIds.length;
+  const prog=document.createElement('div');
+  prog.className='send-prog';
+  prog.id='bulk-prog';
+  prog.innerHTML=`
+    <div class="send-prog-box">
+      <div style="font-size:16px;font-weight:700;margin-bottom:8px">Invio massivo sul server</div>
+      <div style="font-size:13px;color:var(--text2)" id="prog-status">Avvio del workflow…</div>
+      <div class="prog-bar-track"><div class="prog-bar-fill" id="prog-fill" style="width:0%"></div></div>
+      <div style="font-size:12px;color:var(--text3)" id="prog-counter">0 / ${total}</div>
+      <div style="font-size:11px;color:var(--text3);margin-top:10px;line-height:1.5">
+        L'invio gira su GitHub Actions, non nel browser — puoi chiudere<br>questa pagina in qualsiasi momento, l'invio continua comunque.
+      </div>
+    </div>`;
+  document.body.appendChild(prog);
+
+  const setStatus=(msg)=>{ const el=document.getElementById('prog-status'); if(el) el.textContent=msg; };
+  const setProgress=(sent,failed,tot)=>{
+    const done=sent+failed;
+    const fill=document.getElementById('prog-fill');
+    const cnt=document.getElementById('prog-counter');
+    if(fill) fill.style.width=`${Math.round(done/tot*100)}%`;
+    if(cnt) cnt.textContent=`${done} / ${tot}`;
+  };
+
+  try{
+    setStatus('Salvo il job su GitHub…');
+    await pushBulkJobImportatori(job);
+
+    setStatus('Avvio il workflow GitHub Actions…');
+    const dispatched=await triggerImportatoriBulkWorkflow();
+    if(!dispatched){
+      document.getElementById('bulk-prog')?.remove();
+      toast('⚠ Errore avvio workflow — controlla token/permessi GitHub');
+      return;
+    }
+
+    setStatus('In corso sul server…');
+    const finalJob=await pollImportatoriBulkWorkflow((p)=>{
+      if(p) setProgress(p.sent||0, p.failed||0, p.total||total);
+    });
+
+    document.getElementById('bulk-prog')?.remove();
+    showBulkReportServer(finalJob, total, skippedCount);
+  }catch(e){
+    document.getElementById('bulk-prog')?.remove();
+    toast('⚠ '+e.message);
+    console.error('startImportatoriBulkSend:',e);
+  }
+}
+
+function showBulkReportServer(finalJob, total, skippedCount){
+  if(!finalJob){
+    showModal(`
+      <div class="mt">⏱ Invio ancora in corso</div>
+      <p style="font-size:13px;color:var(--text2);line-height:1.6">
+        Il workflow sta ancora girando sul server (batch grande, o GitHub Actions
+        più lento del solito). Non è un problema: puoi chiudere questa finestra
+        tranquillamente — riceverai un'email di resoconto a fine invio, e potrai
+        anche solo ricaricare il CRM più tardi.
+      </p>
+      <div class="mf"><button class="btn btp" onclick="closeModal()">Ho capito</button></div>
+    `);
+    return;
+  }
+  const p=finalJob.progress||{};
+  const sent=p.sent||0, failed=p.failed||0, skipped=(p.skipped||0)+ (skippedCount||0);
+  const errored=finalJob.status==='error';
+
+  showModal(`
+    <div class="mt">${errored?'✗ Invio terminato con errore':'✓ Invio completato'}</div>
+    ${errored?`<p style="font-size:13px;color:var(--red-tx);margin-bottom:12px">${esc(finalJob.error||'Errore sconosciuto')}</p>`:''}
+    <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap">
+      <div style="flex:1;min-width:80px;background:var(--green-bg);border-radius:var(--r);padding:12px;text-align:center">
+        <div style="font-size:26px;font-weight:700;color:var(--green-tx)">${sent}</div>
+        <div style="font-size:11px;color:var(--green-tx);font-weight:600">Inviate</div>
+      </div>
+      ${failed?`<div style="flex:1;min-width:80px;background:var(--red-bg);border-radius:var(--r);padding:12px;text-align:center">
+        <div style="font-size:26px;font-weight:700;color:var(--red-tx)">${failed}</div>
+        <div style="font-size:11px;color:var(--red-tx);font-weight:600">Fallite</div>
+      </div>`:''}
+      ${skipped?`<div style="flex:1;min-width:80px;background:var(--amber-bg);border-radius:var(--r);padding:12px;text-align:center">
+        <div style="font-size:26px;font-weight:700;color:var(--amber-tx)">${skipped}</div>
+        <div style="font-size:11px;color:var(--amber-tx);font-weight:600">Saltati/mancanti</div>
+      </div>`:''}
+    </div>
+    <p style="font-size:12px;color:var(--text3);line-height:1.5">
+      Riceverai anche un'email di resoconto a ${esc(finalJob.digestRecipient||'luca@ilciliegio.com')}.
+      Ricarica i contatti (↻) per vedere gli stati aggiornati.
+    </p>
+    <div class="mf"><button class="btn btp" onclick="closeModal()">Chiudi</button></div>
+  `);
 }
 
 function showBulkReport(results, interrupted){
