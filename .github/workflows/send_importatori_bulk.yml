@@ -1,0 +1,31 @@
+name: Invio massivo Importatori (server-side)
+
+on:
+  workflow_dispatch:   # lanciato dal CRM (js/github.js → triggerImportatoriBulkSend)
+
+permissions:
+  contents: write
+
+env:
+  PYTHONUNBUFFERED: "1"   # log in tempo reale nel run, non solo a fine script
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300   # margine ampio per batch grandi (2000 contatti * ~2s + checkpoint)
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Installa dipendenze
+        run: pip install requests
+
+      - name: Invia bulk importatori
+        env:
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          GH_TOKEN:      ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO:       ${{ github.repository }}
+        run: python scripts/send_importatori_bulk.py
