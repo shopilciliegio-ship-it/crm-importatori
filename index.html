@@ -295,16 +295,19 @@ code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:12px;font
       <option value="research_asc">↑ Stelle AI</option>
     </select>
     <select id="srsch" onchange="renderContacts()">
-      <option value="">★ Tutte</option>
+      <option value="">🔬 Tutti (raccomandazione)</option>
       <option value="si">✅ Raccomandati</option>
       <option value="forse">🟡 Forse</option>
       <option value="no">❌ Non idonei</option>
       <option value="any">🔬 Solo analizzati</option>
+    </select>
+    <select id="sstars" onchange="renderContacts()">
+      <option value="">★ Tutte le stelle</option>
       <option value="5">★★★★★ 5 stelle</option>
-      <option value="4">★★★★☆ 4+ stelle</option>
-      <option value="3">★★★☆☆ 3+ stelle</option>
-      <option value="2">★★☆☆☆ 2+ stelle</option>
-      <option value="1">★☆☆☆☆ 1+ stelle</option>
+      <option value="4">★★★★☆ 4 stelle</option>
+      <option value="3">★★★☆☆ 3 stelle</option>
+      <option value="2">★★☆☆☆ 2 stelle</option>
+      <option value="1">★☆☆☆☆ 1 stella</option>
     </select>
     <select id="sv" onchange="renderContacts()" style="display:none">
       <option value="">Verifica email</option>
