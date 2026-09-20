@@ -271,6 +271,7 @@ def fill_tpl_for_contact(body: str, c: dict) -> str:
 
 _LABELED_URL_RE = re.compile(r'\[([^\]]+)\]\((https?://[^\s)]+)\)')
 _URL_RE         = re.compile(r'(https?://[^\s<]+|(?:www\.|calendly\.com/)[^\s<]+)')
+_BULLET_RE      = re.compile(r'^[•\-]\s*')
 
 
 def _linkify(text: str, accent: str) -> str:
@@ -298,9 +299,10 @@ def build_html_email(body: str, brand: str) -> str:
         lines = p.split('\n')
         if p.startswith('•') or '\n•' in p:
             items = [l.strip() for l in lines if l.strip()]
+            accent = b['accentColor']
             lis = ''.join(
-                f'<li style="margin-bottom:6px;color:#333;font-size:15px;line-height:1.6">'
-                f'{_linkify(html.escape(re.sub(r"^[•\-]\s*", "", i)), b["accentColor"])}</li>'
+                '<li style="margin-bottom:6px;color:#333;font-size:15px;line-height:1.6">'
+                f'{_linkify(html.escape(_BULLET_RE.sub("", i)), accent)}</li>'
                 for i in items
             )
             parts.append(f'<ul style="margin:0 0 16px;padding-left:20px">{lis}</ul>')
