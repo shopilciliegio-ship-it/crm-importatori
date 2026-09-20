@@ -157175,6 +157175,10 @@
       {
         "ts": 1789747149705,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181559.25406029094@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1789909058943,
+        "msg": "👁 Aperta: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
       }
     ],
     "brevoEvents": [
@@ -157187,13 +157191,14 @@
         "brand": "sienawine",
         "sequenceStep": 1,
         "delivered": true,
-        "opened": false,
+        "opened": true,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "deliveredAt": "2026-09-18T17:59:14.000+02:00"
+        "deliveredAt": "2026-09-18T17:59:14.000+02:00",
+        "openedAt": "2026-09-19T14:39:06.135+02:00"
       }
     ],
     "research": {
@@ -157355,6 +157360,14 @@
       {
         "ts": 1789747161481,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181559.91008025467@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1789909058943,
+        "msg": "👁 Aperta: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
+      },
+      {
+        "ts": 1789909058943,
+        "msg": "🔗 Click: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
       }
     ],
     "brevoEvents": [
@@ -157367,13 +157380,15 @@
         "brand": "sienawine",
         "sequenceStep": 1,
         "delivered": true,
-        "opened": false,
-        "clicked": false,
+        "opened": true,
+        "clicked": true,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "deliveredAt": "2026-09-18T17:59:34.000+02:00"
+        "deliveredAt": "2026-09-18T17:59:34.000+02:00",
+        "openedAt": "2026-09-19T09:05:23.392+02:00",
+        "clickedAt": "2026-09-19T09:04:45.104+02:00"
       }
     ],
     "research": {
@@ -157601,6 +157616,10 @@
       {
         "ts": 1789747505966,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181605.68799222736@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1789909058943,
+        "msg": "👁 Aperta: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
       }
     ],
     "brevoEvents": [
@@ -157613,13 +157632,14 @@
         "brand": "sienawine",
         "sequenceStep": 1,
         "delivered": true,
-        "opened": false,
+        "opened": true,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "deliveredAt": "2026-09-18T18:05:10.000+02:00"
+        "deliveredAt": "2026-09-18T18:05:10.000+02:00",
+        "openedAt": "2026-09-19T08:59:09.181+02:00"
       }
     ],
     "research": {
@@ -172969,13 +172989,14 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T18:15:20.000+02:00"
       }
     ],
     "research": {
@@ -176452,13 +176473,14 @@
         "toName": "Linda Smith",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:35:07.000+02:00"
       }
     ],
     "research": {
@@ -176492,13 +176514,14 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:35:08.000+02:00"
       }
     ],
     "research": {
@@ -176532,13 +176555,14 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:35:12.000+02:00"
       }
     ],
     "research": {
@@ -176572,13 +176596,14 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:35:17.000+02:00"
       }
     ],
     "research": {
@@ -176623,13 +176648,14 @@
         "toName": "Willie Hamed",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:35:18.000+02:00"
       }
     ],
     "research": {
@@ -176674,13 +176700,14 @@
         "toName": "Joe Buckhalton",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:35:24.000+02:00"
       }
     ],
     "research": {
@@ -176736,13 +176763,14 @@
         "toName": "Jim Hines",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:35:26.000+02:00"
       }
     ],
     "research": {
@@ -176787,13 +176815,14 @@
         "toName": "Hisham (Shawn) Hamed",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:35:29.000+02:00"
       }
     ],
     "research": {
@@ -176827,13 +176856,14 @@
         "toName": "Preveen Nel",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T18:16:25.000+02:00"
       }
     ],
     "research": {
@@ -176878,13 +176908,14 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T18:16:06.000+02:00"
       }
     ],
     "research": {
@@ -176933,13 +176964,14 @@
         "toName": "Evans Mauta II",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T18:15:39.000+02:00"
       }
     ],
     "research": {
@@ -176973,13 +177005,14 @@
         "toName": "Niren Ramlaul",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T18:15:29.000+02:00"
       }
     ],
     "research": {
@@ -177002,6 +177035,14 @@
       {
         "ts": 1789748132748,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181615.39257497796@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1789909058943,
+        "msg": "🔗 Click: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
+      },
+      {
+        "ts": 1789909058943,
+        "msg": "👁 Aperta: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
       }
     ],
     "brevoEvents": [
@@ -177013,13 +177054,16 @@
         "toName": "Patrick Butai",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
-        "opened": false,
-        "clicked": false,
+        "delivered": true,
+        "opened": true,
+        "clicked": true,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "clickedAt": "2026-09-18T18:16:15.387+02:00",
+        "openedAt": "2026-09-18T18:15:46.587+02:00",
+        "deliveredAt": "2026-09-18T18:15:34.000+02:00"
       }
     ],
     "research": {
@@ -177053,13 +177097,14 @@
         "toName": "Godwin Kundai Matanga",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T18:15:44.000+02:00"
       }
     ],
     "research": {
@@ -177093,13 +177138,14 @@
         "toName": "Yatish Bhagat",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T18:15:44.000+02:00"
       }
     ],
     "research": {
@@ -177133,13 +177179,14 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T18:15:42.000+02:00"
       }
     ],
     "research": {
@@ -177173,13 +177220,14 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T18:15:54.000+02:00"
       }
     ],
     "research": {
@@ -177202,6 +177250,10 @@
       {
         "ts": 1789748148016,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181615.30251534437@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1789909058943,
+        "msg": "🔗 Click: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
       }
     ],
     "brevoEvents": [
@@ -177213,13 +177265,15 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
-        "clicked": false,
+        "clicked": true,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "clickedAt": "2026-09-20T05:15:21.468+02:00",
+        "deliveredAt": "2026-09-18T18:15:53.000+02:00"
       }
     ],
     "research": {
@@ -177847,6 +177901,10 @@
       {
         "ts": 1789744656317,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181517.43954365203@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1789909058943,
+        "msg": "👁 Aperta: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
       }
     ],
     "brevoEvents": [
@@ -177858,13 +177916,15 @@
         "toName": "Pierre Legrandois",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
-        "opened": false,
+        "delivered": true,
+        "opened": true,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "openedAt": "2026-09-18T22:07:12.222+02:00",
+        "deliveredAt": "2026-09-18T17:17:38.000+02:00"
       }
     ],
     "research": {
@@ -177887,6 +177947,10 @@
       {
         "ts": 1789744659323,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181517.15099926577@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1789909058943,
+        "msg": "👁 Aperta: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
       }
     ],
     "brevoEvents": [
@@ -177898,13 +177962,15 @@
         "toName": "Yu Fan Sung",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
-        "opened": false,
+        "delivered": true,
+        "opened": true,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "openedAt": "2026-09-18T17:17:46.451+02:00",
+        "deliveredAt": "2026-09-18T17:17:37.000+02:00"
       }
     ],
     "research": {
@@ -177938,13 +178004,14 @@
         "toName": "Chi Wing Wong",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:17:45.000+02:00"
       }
     ],
     "research": {
@@ -177978,13 +178045,14 @@
         "toName": "Christophe Denis Pierre E Castellino",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:17:46.000+02:00"
       }
     ],
     "research": {
@@ -178018,13 +178086,14 @@
         "toName": "Wai Sun Master Lam",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:17:46.000+02:00"
       }
     ],
     "research": {
@@ -178069,13 +178138,14 @@
         "toName": "Ming Hung Iu",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:18:04.000+02:00"
       }
     ],
     "research": {
@@ -178109,13 +178179,14 @@
         "toName": "Ping Sum Chong",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:17:53.000+02:00"
       }
     ],
     "research": {
@@ -178149,13 +178220,14 @@
         "toName": "ESTHER LEE",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:18:07.000+02:00"
       }
     ],
     "research": {
@@ -178453,13 +178525,14 @@
         "toName": "Emmanuel Zulu",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T18:15:49.000+02:00"
       }
     ],
     "research": {
@@ -178493,13 +178566,14 @@
         "toName": "Marlin Moodaley",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T18:15:54.000+02:00"
       }
     ],
     "research": {
@@ -178533,13 +178607,14 @@
         "toName": "Denis Maurice Georges Martinet",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:18:01.000+02:00"
       }
     ],
     "research": {
@@ -178573,13 +178648,14 @@
         "toName": "Dominic Tsui",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:18:06.000+02:00"
       }
     ],
     "research": {
@@ -179031,13 +179107,14 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:18:06.000+02:00"
       }
     ],
     "research": {
@@ -179071,13 +179148,14 @@
         "toName": "Andreas Schockhoven",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:18:10.000+02:00"
       }
     ],
     "research": {
@@ -179111,13 +179189,14 @@
         "toName": "Jean-Baptiste Mage",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:18:16.000+02:00"
       }
     ],
     "research": {
@@ -179151,13 +179230,14 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:18:25.000+02:00"
       }
     ],
     "research": {
@@ -179180,6 +179260,10 @@
       {
         "ts": 1789744702700,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181518.78681619649@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1789909058943,
+        "msg": "👁 Aperta: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
       }
     ],
     "brevoEvents": [
@@ -179191,13 +179275,15 @@
         "toName": "Marie Haddad",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
-        "opened": false,
+        "delivered": true,
+        "opened": true,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "openedAt": "2026-09-18T17:18:30.935+02:00",
+        "deliveredAt": "2026-09-18T17:18:21.000+02:00"
       }
     ],
     "research": {
@@ -179231,13 +179317,14 @@
         "toName": "Rosanna A.",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:18:28.000+02:00"
       }
     ],
     "research": {
@@ -179260,6 +179347,10 @@
       {
         "ts": 1789744709176,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181518.34973428169@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1789909058943,
+        "msg": "👁 Aperta: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
       }
     ],
     "brevoEvents": [
@@ -179271,13 +179362,15 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
-        "opened": false,
+        "delivered": true,
+        "opened": true,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "openedAt": "2026-09-19T06:10:22.914+02:00",
+        "deliveredAt": "2026-09-18T17:18:27.000+02:00"
       }
     ],
     "research": {
@@ -179344,13 +179437,14 @@
         "toName": "Thomas Kwok Fai Chan",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:18:42.000+02:00"
       }
     ],
     "research": {
@@ -179395,13 +179489,14 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:18:40.000+02:00"
       }
     ],
     "research": {
@@ -179435,13 +179530,14 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:18:35.000+02:00"
       }
     ],
     "research": {
@@ -179486,13 +179582,14 @@
         "toName": "Simon Cheung",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:18:46.000+02:00"
       }
     ],
     "research": {
@@ -179526,13 +179623,14 @@
         "toName": "Dominic Lau",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:18:46.000+02:00"
       }
     ],
     "research": {
@@ -179566,13 +179664,15 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
-        "bounced": false,
+        "bounced": true,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "bouncedAt": "2026-09-19T09:51:51.000+02:00",
+        "deliveredAt": "2026-09-18T18:15:57.089+02:00"
       }
     ],
     "research": {
@@ -179606,13 +179706,14 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T18:17:48.000+02:00"
       }
     ],
     "research": {
@@ -179701,13 +179802,14 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:18:52.000+02:00"
       }
     ],
     "research": {
@@ -179730,6 +179832,10 @@
       {
         "ts": 1789744730288,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181518.22247586347@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1789909058943,
+        "msg": "👁 Aperta: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
       }
     ],
     "brevoEvents": [
@@ -179741,13 +179847,15 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
-        "opened": false,
+        "delivered": true,
+        "opened": true,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "openedAt": "2026-09-19T02:54:10.075+02:00",
+        "deliveredAt": "2026-09-18T17:18:48.000+02:00"
       }
     ],
     "research": {
@@ -179781,13 +179889,14 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:18:59.000+02:00"
       }
     ],
     "research": {
@@ -179821,13 +179930,14 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:19:05.000+02:00"
       }
     ],
     "research": {
@@ -179872,13 +179982,14 @@
         "toName": "Lin Shuting",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:18:58.000+02:00"
       }
     ],
     "research": {
@@ -179923,13 +180034,15 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
-        "bounced": false,
+        "bounced": true,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "bouncedAt": "2026-09-18T17:19:48.000+02:00",
+        "deliveredAt": "2026-09-18T17:19:01.703+02:00"
       }
     ],
     "research": {
@@ -179963,13 +180076,14 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:19:05.000+02:00"
       }
     ],
     "research": {
@@ -180003,13 +180117,14 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:19:09.000+02:00"
       }
     ],
     "research": {
@@ -180043,13 +180158,14 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:19:11.000+02:00"
       }
     ],
     "research": {
@@ -180083,13 +180199,14 @@
         "toName": "Jeanne Jobard",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:19:14.000+02:00"
       }
     ],
     "research": {
@@ -180123,13 +180240,14 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:19:17.000+02:00"
       }
     ],
     "research": {
@@ -180152,6 +180270,10 @@
       {
         "ts": 1789744762331,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181519.91470118818@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1789909058943,
+        "msg": "👁 Aperta: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
       }
     ],
     "brevoEvents": [
@@ -180163,13 +180285,15 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
-        "opened": false,
+        "delivered": true,
+        "opened": true,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "openedAt": "2026-09-18T17:27:36.994+02:00",
+        "deliveredAt": "2026-09-18T17:19:21.000+02:00"
       }
     ],
     "research": {
@@ -180203,13 +180327,14 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:19:23.000+02:00"
       }
     ],
     "research": {
@@ -180540,13 +180665,14 @@
         "toName": "Peggy Tse",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:19:37.000+02:00"
       }
     ],
     "research": {
@@ -180613,13 +180739,14 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:19:39.000+02:00"
       }
     ],
     "research": {
@@ -180653,13 +180780,14 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:19:34.000+02:00"
       }
     ],
     "research": {
@@ -180693,6 +180821,10 @@
       {
         "ts": 1789744777410,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181519.24480840473@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1789909058943,
+        "msg": "👁 Aperta: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
       }
     ],
     "brevoEvents": [
@@ -180704,13 +180836,15 @@
         "toName": "Henrietta Hutchings",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
-        "opened": false,
+        "delivered": true,
+        "opened": true,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "openedAt": "2026-09-18T17:19:43.086+02:00",
+        "deliveredAt": "2026-09-18T17:19:36.000+02:00"
       }
     ],
     "research": {
@@ -180788,13 +180922,14 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:19:39.000+02:00"
       }
     ],
     "research": {
@@ -180828,13 +180963,14 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:19:55.000+02:00"
       }
     ],
     "research": {
@@ -180868,6 +181004,10 @@
       {
         "ts": 1789744787431,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181519.51808523558@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1789909058943,
+        "msg": "👁 Aperta: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
       }
     ],
     "brevoEvents": [
@@ -180879,13 +181019,15 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
-        "opened": false,
+        "delivered": true,
+        "opened": true,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "openedAt": "2026-09-20T05:16:24.565+02:00",
+        "deliveredAt": "2026-09-18T17:19:46.000+02:00"
       }
     ],
     "research": {
@@ -180919,13 +181061,14 @@
         "toName": "Aaron Chung",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:19:48.000+02:00"
       }
     ],
     "research": {
@@ -180970,13 +181113,15 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
-        "bounced": false,
+        "bounced": true,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "bouncedAt": "2026-09-18T17:19:55.000+02:00",
+        "deliveredAt": "2026-09-18T17:19:51.387+02:00"
       }
     ],
     "research": {
@@ -181010,13 +181155,14 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:19:55.000+02:00"
       }
     ],
     "research": {
@@ -181050,13 +181196,14 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:20:00.000+02:00"
       }
     ],
     "research": {
@@ -181090,6 +181237,14 @@
       {
         "ts": 1789744801945,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181519.12177190460@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1789909058943,
+        "msg": "🔗 Click: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
+      },
+      {
+        "ts": 1789909058943,
+        "msg": "👁 Aperta: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
       }
     ],
     "brevoEvents": [
@@ -181101,13 +181256,16 @@
         "toName": "Dorothy Lee",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
-        "opened": false,
-        "clicked": false,
+        "delivered": true,
+        "opened": true,
+        "clicked": true,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "clickedAt": "2026-09-18T17:21:09.774+02:00",
+        "openedAt": "2026-09-18T17:20:11.306+02:00",
+        "deliveredAt": "2026-09-18T17:20:01.000+02:00"
       }
     ],
     "research": {
@@ -181141,13 +181299,14 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:20:06.000+02:00"
       }
     ],
     "research": {
@@ -181181,13 +181340,14 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:20:06.000+02:00"
       }
     ],
     "research": {
@@ -181221,13 +181381,14 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T17:20:10.000+02:00"
       }
     ],
     "research": {
@@ -183274,13 +183435,14 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T18:22:35.000+02:00"
       }
     ],
     "research": {
@@ -183325,13 +183487,14 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T18:22:40.000+02:00"
       }
     ],
     "research": {
@@ -183365,13 +183528,14 @@
         "toName": "Norbert Martins",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T18:23:20.000+02:00"
       }
     ],
     "research": {
@@ -183405,13 +183569,14 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T18:24:54.000+02:00"
       }
     ],
     "research": {
@@ -183445,13 +183610,14 @@
         "toName": "Franzelle Paulsen",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T18:25:59.000+02:00"
       }
     ],
     "research": {
@@ -183485,13 +183651,14 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T18:26:48.000+02:00"
       }
     ],
     "research": {
@@ -183525,13 +183692,14 @@
         "toName": "Juan",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T18:27:43.000+02:00"
       }
     ],
     "research": {
@@ -183565,13 +183733,14 @@
         "toName": "Chenjerai Gumbo",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T18:28:19.000+02:00"
       }
     ],
     "research": {
@@ -183605,13 +183774,14 @@
         "toName": "Nell-Marie Le Roux",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T18:29:38.000+02:00"
       }
     ],
     "research": {
@@ -183645,13 +183815,14 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T18:29:31.000+02:00"
       }
     ],
     "research": {
@@ -183685,13 +183856,14 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T18:31:02.000+02:00"
       }
     ],
     "research": {
@@ -183725,13 +183897,14 @@
         "toName": "Ricardo Manuel Garces",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T18:31:54.000+02:00"
       }
     ],
     "research": {
@@ -183765,13 +183938,14 @@
         "toName": "Cornel Nieuwoudt",
         "brand": "sienawine",
         "sequenceStep": 1,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
-        "blocked": false
+        "blocked": false,
+        "deliveredAt": "2026-09-18T18:32:46.000+02:00"
       }
     ],
     "research": {
