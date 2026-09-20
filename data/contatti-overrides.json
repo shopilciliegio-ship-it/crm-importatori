@@ -5155,6 +5155,10 @@
       {
         "ts": 1789910349366,
         "msg": "🔧 Recuperato da Brevo — invio reale del 18-19/09 inviato ma non salvato nel CRM per interruzione di sessione (ricostruito il 20/09/2026 incrociando gli eventi Brevo)"
+      },
+      {
+        "ts": 1789929311943,
+        "msg": "👁 Aperta: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
       }
     ],
     "brevoEvents": [
@@ -5167,13 +5171,14 @@
         "brand": "sienawine",
         "sequenceStep": 1,
         "delivered": true,
-        "opened": false,
+        "opened": true,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "deliveredAt": "2026-09-19T22:45:37.000+02:00"
+        "deliveredAt": "2026-09-19T22:45:37.000+02:00",
+        "openedAt": "2026-09-20T16:31:00.327+02:00"
       }
     ],
     "research": {
