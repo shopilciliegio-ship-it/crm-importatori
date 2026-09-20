@@ -1,6 +1,75 @@
 {
   "orders": [
     {
+      "id": "ord_muadni1jn7fk",
+      "customerName": "MONICA BRAMBILLA",
+      "customerEmail": "peraineca@virgilio.it",
+      "customerPhone": "3351539215",
+      "amount": 53.25,
+      "currency": "EUR",
+      "orderDate": 1789932666000,
+      "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio MONICA BRAMBILLA",
+      "shipmentCode": "",
+      "shippingAddress": "CASCINA LODOLA N. 2, 20042 PESSANO CON BORNAGO (MI), Italy",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<CAOmk=KZjdYBgoo8NEf9E15zh5M+XcKNqDjnjNFF=nv1yjMkf3w@mail.gmail.com>",
+      "trackingNumber": "",
+      "carrier": "Corriere Italia",
+      "products": [
+        {
+          "description": "THEIA BIANCO ITALIA",
+          "qty": 1,
+          "value": 5.0
+        },
+        {
+          "description": "THEIA ROSSO ITALIA",
+          "qty": 1,
+          "value": 5.0
+        },
+        {
+          "description": "AFELIO CHIANTI DOCG 2022",
+          "qty": 1,
+          "value": 5.0
+        },
+        {
+          "description": "BIANCO IGT 2025",
+          "qty": 1,
+          "value": 7.0
+        },
+        {
+          "description": "ROSSO IGT 2025",
+          "qty": 1,
+          "value": 7.0
+        },
+        {
+          "description": "PURPLE GRAPES - SWEET RED WINE IGT 2024",
+          "qty": 1,
+          "value": 4.25
+        }
+      ],
+      "customsDuties": null,
+      "shippingCostCustomer": 20.0,
+      "shippingCostMos": null,
+      "source": "shop",
+      "language": "it",
+      "orderNumber": "#1457",
+      "paymentType": "Carte Di Credito/Bancomat",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1789942673431,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1789942673431,
+      "updatedAt": 1789942673431
+    },
+    {
       "id": "ord_mtyj4v9z6p73",
       "customerName": "MINNELLIS MERCADO DE LUCAS",
       "customerEmail": "minnellis@icloud.com",
@@ -9579,5 +9648,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1789226287702
+  "lastImportedAt": 1789942673431
 }
