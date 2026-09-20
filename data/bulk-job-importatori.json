@@ -1,5 +1,5 @@
 {
-  "status": "pending",
+  "status": "running",
   "createdAt": 1789933360992,
   "contactIds": [
     "c17806737107162txko",
@@ -10,5 +10,12 @@
   "brand": "sienawine",
   "delayMin": 1,
   "delayMax": 2,
-  "testMode": true
+  "testMode": true,
+  "startedAt": 1789933370815,
+  "progress": {
+    "sent": 0,
+    "failed": 0,
+    "skipped": 0,
+    "total": 2
+  }
 }
