@@ -1150,7 +1150,11 @@
         "unsubscribed": false,
         "blocked": false,
         "clickedAt": "2026-09-19T22:10:55.328+02:00",
-        "deliveredAt": "2026-09-19T22:10:02.000+02:00"
+        "deliveredAt": "2026-09-19T22:10:02.000+02:00",
+        "clickedLinks": [
+          "https://www.sienawine.it/smallvineyardsinternational",
+          "https://www.sienawine.it"
+        ]
       }
     ],
     "research": {
@@ -1324,7 +1328,11 @@
         "unsubscribed": false,
         "blocked": false,
         "clickedAt": "2026-09-19T22:10:26.149+02:00",
-        "deliveredAt": "2026-09-19T22:10:23.000+02:00"
+        "deliveredAt": "2026-09-19T22:10:23.000+02:00",
+        "clickedLinks": [
+          "https://www.sienawine.it",
+          "https://www.sienawine.it/smallvineyardsinternational"
+        ]
       }
     ],
     "research": {
@@ -1386,7 +1394,11 @@
         "blocked": false,
         "clickedAt": "2026-09-19T22:11:30.071+02:00",
         "openedAt": "2026-09-19T22:11:26.196+02:00",
-        "deliveredAt": "2026-09-19T22:10:26.000+02:00"
+        "deliveredAt": "2026-09-19T22:10:26.000+02:00",
+        "clickedLinks": [
+          "https://www.sienawine.it",
+          "https://www.sienawine.it/smallvineyardsinternational"
+        ]
       }
     ],
     "research": {
@@ -1664,7 +1676,11 @@
         "blocked": false,
         "clickedAt": "2026-09-19T22:19:37.389+02:00",
         "openedAt": "2026-09-19T22:19:24.056+02:00",
-        "deliveredAt": "2026-09-19T22:19:15.000+02:00"
+        "deliveredAt": "2026-09-19T22:19:15.000+02:00",
+        "clickedLinks": [
+          "https://www.sienawine.it/smallvineyardsinternational",
+          "https://www.sienawine.it"
+        ]
       }
     ],
     "research": {
@@ -87308,6 +87324,10 @@
       {
         "ts": 1789745836821,
         "msg": "👁 Aperta: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
+      },
+      {
+        "ts": 1789895116086,
+        "msg": "🔗 Click: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
       }
     ],
     "brevoEvents": [
@@ -87321,13 +87341,17 @@
         "sequenceStep": 1,
         "delivered": true,
         "opened": true,
-        "clicked": false,
+        "clicked": true,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
         "openedAt": "2026-09-18T17:37:16.821+02:00",
-        "deliveredAt": "2026-09-18T17:37:08.000+02:00"
+        "deliveredAt": "2026-09-18T17:37:08.000+02:00",
+        "clickedLinks": [
+          "https://www.sienawine.it"
+        ],
+        "clickedAt": "2026-09-20T11:05:16.086+02:00"
       }
     ],
     "research": {
