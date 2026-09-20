@@ -214,11 +214,10 @@ function getFiltered(){
       if(rschF==='si'&&c.research?.raccomandato!=='si')return false;
       if(rschF==='forse'&&c.research?.raccomandato!=='forse')return false;
       if(rschF==='no'&&c.research?.raccomandato!=='no')return false;
-      if(rschF==='5'&&(c.research?.affidabilita||0)<5)return false;
-      if(rschF==='4'&&(c.research?.affidabilita||0)<4)return false;
-      if(rschF==='3'&&(c.research?.affidabilita||0)<3)return false;
-      if(rschF==='2'&&(c.research?.affidabilita||0)<2)return false;
-      if(rschF==='1'&&(c.research?.affidabilita||0)<1)return false;
+      // Stelle: filtro separato ed ESATTO (non "N+") — scegliendo "1 stella" si
+      // vedono solo i contatti con affidabilita===1, non anche 2-5.
+      const starsF=document.getElementById('sstars')?.value||'';
+      if(starsF&&(c.research?.affidabilita||0)!==parseInt(starsF,10))return false;
     }
     if(window._pendingFilter){if(c.status!=='sent'&&c.status!=='followup')return false;}
     else if(status){
@@ -281,6 +280,8 @@ function renderContacts(){
   if(sortbyEl) sortbyEl.style.display=isClienti()?'none':'';
   const srschEl=document.getElementById('srsch');
   if(srschEl) srschEl.style.display=isClienti()?'none':'';
+  const sstarsEl=document.getElementById('sstars');
+  if(sstarsEl) sstarsEl.style.display=isClienti()?'none':'';
   const svEl=document.getElementById('sv');
   if(svEl) svEl.style.display='none'; // rimpiazzato da squal per clienti
 
