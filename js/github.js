@@ -448,6 +448,95 @@ async function _pollClientiWaveWorkflow(btn, maxAttempts=20){
   if(btn){ btn.disabled=false; btn.textContent='📤 Invia ora'; }
 }
 
+/* ── BULK IMPORTATORI — invio server-side (GitHub Actions) ── */
+// Sostituisce il vecchio invio dal browser (loop in js/bulk.js): qui il browser
+// scrive solo il "job" su GitHub e lancia il workflow, che gira interamente
+// server-side. Vedi scripts/send_importatori_bulk.py per la logica di invio.
+
+const BULK_JOB_PATH_IMPORTATORI = 'data/bulk-job-importatori.json';
+
+async function pushBulkJobImportatori(job){
+  const{token,owner,repo}=ghs;
+  if(!token||!owner||!repo) throw new Error('GitHub non configurato');
+  const url=`https://api.github.com/repos/${owner}/${repo}/contents/${BULK_JOB_PATH_IMPORTATORI}`;
+  const hd={'Authorization':`token ${token}`,'Content-Type':'application/json','Accept':'application/vnd.github.v3+json'};
+  let sha=null;
+  const r=await fetch(url,{headers:hd});
+  if(r.ok) sha=(await r.json()).sha;
+  const jsonStr=JSON.stringify(job,null,2);
+  const bytes=new TextEncoder().encode(jsonStr);
+  const CHUNK=65536; let binary='';
+  for(let i=0;i<bytes.length;i+=CHUNK)
+    binary+=String.fromCharCode.apply(null,bytes.subarray(i,Math.min(i+CHUNK,bytes.length)));
+  const b64=btoa(binary);
+  const body={message:`Bulk importatori — job creato (${job.contactIds.length} contatti)`,content:b64};
+  if(sha) body.sha=sha;
+  const res=await fetch(url,{method:'PUT',headers:hd,body:JSON.stringify(body)});
+  if(!res.ok){
+    const err=await res.json().catch(()=>({}));
+    throw new Error('Salvataggio job fallito: '+(err.message||res.status));
+  }
+}
+
+async function _fetchBulkJobImportatori(){
+  const{token,owner,repo}=ghs;
+  const url=`https://api.github.com/repos/${owner}/${repo}/contents/${BULK_JOB_PATH_IMPORTATORI}`;
+  const r=await fetch(url,{headers:{'Authorization':`token ${token}`,'Accept':'application/vnd.github.v3+json'}});
+  if(!r.ok) return null;
+  const d=await r.json();
+  const raw=(d.content||'').replace(/\n/g,'');
+  if(!raw) return null;
+  try{
+    const jsonStr=decodeURIComponent(Array.from(atob(raw),c=>'%'+c.charCodeAt(0).toString(16).padStart(2,'0')).join(''));
+    return JSON.parse(jsonStr);
+  }catch(e){ return null; }
+}
+
+async function triggerImportatoriBulkWorkflow(){
+  const{token,owner,repo}=ghs;
+  if(!token||!owner||!repo){ toast('⚙ Configura GitHub nelle Impostazioni'); return false; }
+  const dispatchUrl=`https://api.github.com/repos/${owner}/${repo}/actions/workflows/send_importatori_bulk.yml/dispatches`;
+  try{
+    const r=await fetch(dispatchUrl,{
+      method:'POST',
+      headers:{'Authorization':`token ${token}`,'Accept':'application/vnd.github.v3+json','Content-Type':'application/json'},
+      body:JSON.stringify({ref:'main'})
+    });
+    return r.ok||r.status===204;
+  }catch(e){ console.warn('triggerImportatoriBulkWorkflow:',e); return false; }
+}
+
+// Polling: controlla sia lo stato del run GitHub Actions sia il file di job
+// (per il conteggio "in corso"). Ritorna il job finale quando il run è
+// completato, o null se scade maxAttempts (il workflow continua comunque sul
+// server — non è un errore, solo un timeout del polling lato browser).
+async function pollImportatoriBulkWorkflow(onProgress, maxAttempts=80){
+  const{token,owner,repo}=ghs;
+  const runsUrl=`https://api.github.com/repos/${owner}/${repo}/actions/runs?workflow_id=send_importatori_bulk.yml&per_page=1`;
+
+  for(let i=0;i<maxAttempts;i++){
+    const wait = i===0 ? 8000 : 15000;
+    await new Promise(r=>setTimeout(r,wait));
+
+    try{
+      const job=await _fetchBulkJobImportatori();
+      if(job && typeof onProgress==='function') onProgress(job.progress);
+
+      const r=await fetch(runsUrl,{headers:{'Authorization':`token ${token}`,'Accept':'application/vnd.github.v3+json'}});
+      if(!r.ok) continue;
+      const data=await r.json();
+      const run=data.workflow_runs?.[0];
+      if(!run) continue;
+
+      if(run.status==='completed'){
+        const finalJob=await _fetchBulkJobImportatori();
+        return finalJob;
+      }
+    }catch(e){ console.warn('pollImportatoriBulkWorkflow error:',e); }
+  }
+  return null; // timeout polling — il workflow prosegue comunque sul server
+}
+
 /* ── WAVE TRACKING SYNC TRIGGER ── */
 
 async function triggerWaveTrackingSync(){
