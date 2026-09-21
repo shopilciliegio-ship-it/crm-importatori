@@ -143,11 +143,18 @@
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1789226320187,
           "messageId": "<202609121518.12448440113@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "day0",
+          "to": "minnellis@icloud.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1790002682494,
+          "messageId": "<202609211458.44355081736@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1789226287702,
-      "updatedAt": 1790002679350,
+      "updatedAt": 1790002682494,
       "staleAlertDays": 7,
       "staleAlertSince": 1789226287702,
       "track17Registered": true
@@ -208,11 +215,18 @@
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1789143109447,
           "messageId": "<202609111611.55484077235@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "day0",
+          "to": "julianag1811@gmail.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1790002682494,
+          "messageId": "<202609211458.17962870486@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1789143073839,
-      "updatedAt": 1790002679350,
+      "updatedAt": 1790002682494,
       "staleAlertDays": 7,
       "staleAlertSince": 1789143073839,
       "track17Registered": true
@@ -278,11 +292,18 @@
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1789056495591,
           "messageId": "<202609101608.97602514918@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "day0",
+          "to": "romanomike4@gmail.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1790002682494,
+          "messageId": "<202609211458.73922805493@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1789056461908,
-      "updatedAt": 1790002679350,
+      "updatedAt": 1790002682494,
       "staleAlertDays": 7,
       "staleAlertSince": 1789056461908,
       "track17Registered": true
