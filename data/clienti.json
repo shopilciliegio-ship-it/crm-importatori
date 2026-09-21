@@ -320524,13 +320524,14 @@
           "toName": "Emily Sallee",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-21T15:31:12.778+02:00"
         }
       ]
     },
@@ -320572,13 +320573,14 @@
           "toName": "Максим Бороденко",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-21T15:31:13.399+02:00"
         }
       ]
     },
@@ -320620,13 +320622,14 @@
           "toName": "Matvey Anna",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-21T15:31:14.032+02:00"
         }
       ]
     },
@@ -320668,13 +320671,21 @@
           "toName": "Booo Weef",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
-          "bounced": false,
+          "bounced": true,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-21T15:31:14.649+02:00",
+          "bouncedAt": "2026-09-21T15:31:15.000+02:00"
+        }
+      ],
+      "log": [
+        {
+          "ts": 1790013468774,
+          "msg": "⚠ Bounce: A special thought for you from Il Ciliegio 🍷"
         }
       ]
     },
@@ -320716,13 +320727,14 @@
           "toName": "Hasmik Israyelyan",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-21T15:31:15.232+02:00"
         }
       ]
     },
@@ -320764,13 +320776,21 @@
           "toName": "Tsovinar Babakhanyan",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
-          "opened": false,
+          "delivered": true,
+          "opened": true,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-21T15:31:15.831+02:00",
+          "openedAt": "2026-09-21T17:14:34.169+02:00"
+        }
+      ],
+      "log": [
+        {
+          "ts": 1790013468774,
+          "msg": "👁 Aperta: A special thought for you from Il Ciliegio 🍷"
         }
       ]
     },
@@ -320812,13 +320832,14 @@
           "toName": "Milena Nahapetyan",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-21T15:31:16.429+02:00"
         }
       ]
     },
@@ -320860,13 +320881,14 @@
           "toName": "Uliana Marushenkova",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-21T15:31:17.058+02:00"
         }
       ]
     },
@@ -320908,13 +320930,14 @@
           "toName": "Polina Polina",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-21T15:31:17.690+02:00"
         }
       ]
     },
@@ -320956,13 +320979,14 @@
           "toName": "Galina Potapchick",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-21T15:31:18.253+02:00"
         }
       ]
     },
@@ -321003,13 +321027,14 @@
           "toName": "Catalina Labadie",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-21T15:31:18.885+02:00"
         }
       ]
     },
@@ -321050,13 +321075,14 @@
           "toName": "sandra gonzalez",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-21T15:31:19.480+02:00"
         }
       ]
     },
@@ -328192,13 +328218,14 @@
           "toName": "Giulia D'Amato",
           "brand": "ilciliegio",
           "sequenceStep": 1,
-          "delivered": false,
+          "delivered": true,
           "opened": false,
           "clicked": false,
           "bounced": false,
           "spam": false,
           "unsubscribed": false,
-          "blocked": false
+          "blocked": false,
+          "deliveredAt": "2026-09-21T15:31:12.365+02:00"
         }
       ]
     },
