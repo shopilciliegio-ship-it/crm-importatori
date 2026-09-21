@@ -86,12 +86,12 @@
       "currency": "EUR",
       "orderDate": 1789202020000,
       "emailSubject": "🍷 New Order — MINNELLIS MERCADO DE LUCAS — 199.30 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "LUCASM",
       "shippingAddress": "1759 MILLER SPRINGS DRIVE, 30620 BETHLEHEM, GEORGIA (BARROW COUNTY)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202609120833.20453012362@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A809990013",
       "carrier": "MBE",
       "products": [
         {
@@ -122,13 +122,18 @@
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1790002675059,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1789226287702,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1790002675059,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -142,7 +147,7 @@
       ],
       "notes": "",
       "createdAt": 1789226287702,
-      "updatedAt": 1789832434546,
+      "updatedAt": 1790002675059,
       "staleAlertDays": 7,
       "staleAlertSince": 1789226287702
     },
@@ -155,12 +160,12 @@
       "currency": "EUR",
       "orderDate": 1789117009000,
       "emailSubject": "🍷 New Order — JULIANA GOSKA — 160.80 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "GOSKAJ",
       "shippingAddress": "8640 PINE ST, 54494 TOWN OF GRAND RAPIDS, WISCONSIN (WOOD COUNTY)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202609110856.25657674737@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A806199625",
       "carrier": "MBE",
       "products": [
         {
@@ -181,13 +186,18 @@
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1790002675059,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1789143073839,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1790002675059,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -201,7 +211,7 @@
       ],
       "notes": "",
       "createdAt": 1789143073839,
-      "updatedAt": 1789770289130,
+      "updatedAt": 1790002675059,
       "staleAlertDays": 7,
       "staleAlertSince": 1789143073839
     },
@@ -214,12 +224,12 @@
       "currency": "EUR",
       "orderDate": 1789051238000,
       "emailSubject": "🍷 New Order — MICHAEL  ROMANO — 110.65 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "ROMANOM",
       "shippingAddress": "4754 RANDALL RD , 27707 DURHAM, NORTH CAROLINA (DURHAM COUNTY)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202609101440.41697718114@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A803631984",
       "carrier": "MBE",
       "products": [
         {
@@ -245,13 +255,18 @@
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1790002675059,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1789056461908,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1790002675059,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -265,7 +280,7 @@
       ],
       "notes": "",
       "createdAt": 1789056461908,
-      "updatedAt": 1789673906972,
+      "updatedAt": 1790002675059,
       "staleAlertDays": 7,
       "staleAlertSince": 1789056461908
     },
