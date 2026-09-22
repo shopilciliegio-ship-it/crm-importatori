@@ -2,11 +2,21 @@ name: SpottyWifi Weekly Import + Campaign Wave
 
 on:
   schedule:
-    - cron: '0 7 * * 1'  # Ogni lunedì alle 07:00 UTC (prima del BWI sync alle 09:00)
+    # RISERVA. Il trigger principale è un timer esterno (Cloudflare Worker, timer-cloudflare/worker.js)
+    # che lancia questo workflow via API (workflow_dispatch) il lunedì alle 9:00 Europe/Rome (prima del
+    # BWI sync, che parte alle 11:00): il cron di GitHub è "best effort" e in pratica parte con ore di
+    # ritardo.
+    - cron: '0 7 * * 1'  # 07:00 UTC = 09:00 CEST (ora legale, lunedì)
+    - cron: '0 8 * * 1'  # 08:00 UTC = 09:00 CET (ora solare, lunedì)
   workflow_dispatch:       # Trigger manuale dal CRM o GitHub UI
 
 permissions:
   contents: write
+
+# Un solo run alla volta: timer esterno e cron di riserva non devono mai girare in parallelo.
+concurrency:
+  group: spotty-weekly
+  cancel-in-progress: false
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
