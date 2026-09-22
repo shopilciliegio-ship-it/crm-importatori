@@ -232,6 +232,30 @@ def select_best_contact(contacts):
     return primary, secondary
 
 
+def select_send_email(c: dict) -> tuple[str, str]:
+    """A chi mandare DAVVERO la prima email — per priorità di ruolo (stesso JOB_PRIORITY di
+    select_best_contact/selectBestContact in js/email.js, usato per il saluto nel testo), ma qui
+    SERVE un'email valida: select_best_contact() sceglie in base al nome anche senza email (va
+    bene per il saluto, "Dear Manon" — ma la mail poteva finire su un indirizzo generico diverso
+    da quello della persona salutata, vedi discussione 22/9/2026). Rispetta emailBloccate (casella
+    segnata sbagliata/non monitorata da js/risposte.js), stesso criterio di select_contact() in
+    scripts/send_importatori_followup.py — quello script poi riusa QUESTO stesso indirizzo per
+    tutti i follow-up (continuità del filo, non ri-sceglie ogni volta)."""
+    blocked = {(e or '').strip().lower() for e in (c.get('emailBloccate') or [])}
+    scored = sorted(
+        ({**ct, 'score': _priority_score(ct.get('title'))} for ct in (c.get('contacts') or []) if (ct.get('email') or '').strip()),
+        key=lambda ct: ct['score']
+    )
+    for ct in scored:
+        email = ct['email'].strip()
+        if email.lower() not in blocked:
+            return email, ct.get('name', '')
+    fallback = (c.get('contactEmail') or c.get('email') or '').strip()
+    if fallback.lower() in blocked:
+        return '', (c.get('contactName') or '')
+    return fallback, (c.get('contactName') or '')
+
+
 def first_name(full: str) -> str:
     return (full or '').strip().split()[0] if (full or '').strip() else ''
 
@@ -463,12 +487,9 @@ def main():
 
     for i, cid in enumerate(target_ids):
         c = by_id[cid]
-        to_email = (c.get('contactEmail') or c.get('email') or '').strip()
-        to_name  = c.get('contactName') or c.get('name') or ''
-        blocked  = {(e or '').strip().lower() for e in (c.get('emailBloccate') or [])}
-        if not to_email or to_email.lower() in blocked:
-            # emailBloccate: casella segnata sbagliata/non monitorata da js/risposte.js
-            # (provaAltraCasella) — non ritentarla mai, anche se è rimasta impostata per errore.
+        to_email, to_name = select_send_email(c)
+        if not to_email:
+            # Nessuna casella valida: tutte bloccate, o nessuna email da nessuna parte in scheda.
             skipped += 1
             continue
 
