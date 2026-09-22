@@ -37,21 +37,9 @@ function renderRisposteBanner(){
 
 function apriRevisioneRisposte(){
   if(!_irData || !(_irData.pending||[]).length){ toast('Nessuna risposta da rivedere'); return; }
-  // Riprende da dove Luca aveva lasciato (es. dopo aver aperto la scheda di un contatto per
-  // cercare un'altra email — vedi vediSchedaContatto()), non sempre da capo.
+  // Riprende da dove Luca aveva lasciato l'ultima volta, non sempre da capo.
   if(_irIndex>=_irData.pending.length) _irIndex=0;
   mostraItemRevisione();
-}
-
-// Apre la scheda completa del contatto (stessa vista di "Contatti", con tutti i nomi/titoli/
-// telefoni/LinkedIn anche senza email) — per quando il campo libero della "casella sbagliata"
-// non basta perché Luca non sa a memoria un indirizzo alternativo e vuole cercarlo lui nella
-// scheda. Chiude il popup di revisione (stesso overlay, showModal() ne tiene solo uno alla
-// volta); riapri con "Rivedi" nel banner per tornare esattamente al punto dov'eri.
-function vediSchedaContatto(contactId){
-  if(!contactId) return;
-  closeModal();
-  openDetail(contactId);
 }
 
 function mostraItemRevisione(){
@@ -84,6 +72,25 @@ function mostraItemRevisione(){
   const contattoDb=it.contactId?db.contacts.find(x=>x.id===it.contactId):null;
   const badEmail=(contattoDb&&_ultimoToEmail(contattoDb))||it.from;
   const alternative=contattoDb?_altreCaselle(contattoDb, badEmail):[];
+  // Persone note in azienda, ANCHE senza email (solo nome/ruolo/LinkedIn) — mostrate qui inline,
+  // non in una scheda separata: aprire un secondo popup chiudeva questo (showModal ne tiene uno
+  // solo alla volta) e si perdeva il filo della revisione. Serve anche a spiegare perché la
+  // tendina sopra è vuota: se qui non c'è nessuna email, non è un bug, è che BWI non l'ha trovata.
+  const tuttePersone=contattoDb?(contattoDb.contacts||[]):[];
+  const personeBox = tuttePersone.length ? `
+    <details style="margin-top:8px">
+      <summary style="font-size:12px;color:var(--text3);cursor:pointer">👥 Persone note in azienda (${tuttePersone.length}) — anche senza email</summary>
+      <div style="margin-top:6px">
+        ${tuttePersone.map(p=>`
+          <div style="display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:0.5px solid var(--brd);font-size:12px">
+            <div style="flex:1;min-width:0">
+              <div style="font-weight:600">${esc(p.name||'—')}</div>
+              <div style="color:var(--text2)">${esc(p.title||'')}${p.email?` · ${esc(p.email)}`:' · nessuna email nota'}</div>
+            </div>
+            ${p.linkedin?`<a href="${esc(p.linkedin)}" target="_blank" style="font-size:11px;padding:3px 8px;border-radius:12px;background:var(--blue-bg);color:var(--blue-tx);font-weight:600;text-decoration:none;flex-shrink:0">LinkedIn ↗</a>`:''}
+          </div>`).join('')}
+      </div>
+    </details>` : '';
   const casellaBox = contattoDb ? `
     <div style="margin-bottom:8px;padding:10px 12px;border-radius:var(--r);border:0.5px dashed var(--brd2)">
       <div style="font-size:12px;color:var(--text2);margin-bottom:6px">📭 Casella "${esc(badEmail)}" sbagliata o non monitorata? Rimetti da contattare con un'altra:</div>
@@ -91,15 +98,13 @@ function mostraItemRevisione(){
       <select onchange="const o=this.selectedOptions[0];document.getElementById('ir-alt-email').value=o?o.dataset.email||'':'';document.getElementById('ir-alt-name').value=o?o.dataset.name||'':'';" style="width:100%;padding:6px 8px;border-radius:var(--r);border:0.5px solid var(--brd2);background:var(--bg);color:var(--text);font-size:13px;margin-bottom:6px">
         <option value="">— scegli tra i contatti già noti in azienda —</option>
         ${alternative.map(a=>`<option data-email="${esc(a.email)}" data-name="${esc(a.name)}">${esc(a.name||'(nome sconosciuto)')}${a.title?` — ${esc(a.title)}`:''} · ${esc(a.email)}</option>`).join('')}
-      </select>`:`<div style="font-size:12px;color:var(--text3);margin-bottom:6px">Nessun altro contatto noto in archivio per questa azienda — scrivi tu i dati qui sotto.</div>`}
+      </select>`:`<div style="font-size:12px;color:var(--text3);margin-bottom:6px">Nessuna email nota in archivio per questa azienda oltre a quella appena usata — guarda "Persone note" qui sotto per cercarle su LinkedIn, o scrivi tu i dati.</div>`}
       <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
         <input type="text" id="ir-alt-name" placeholder="nome (facoltativo)" style="padding:6px 8px;border-radius:var(--r);border:0.5px solid var(--brd2);background:var(--bg);color:var(--text);font-size:13px;width:140px">
         <input type="email" id="ir-alt-email" placeholder="email" value="${esc(it.emailAlternativa||'')}" style="padding:6px 8px;border-radius:var(--r);border:0.5px solid var(--brd2);background:var(--bg);color:var(--text);font-size:13px;flex:1;min-width:180px">
         <button class="btn btp bts" onclick="provaAltraCasella('${esc(badEmail)}')">↻ Rimetti da contattare con questa</button>
       </div>
-      <div style="margin-top:6px">
-        <button class="btn btg bts" onclick="vediSchedaContatto('${esc(it.contactId)}')">🔍 Vedi scheda completa (LinkedIn, telefoni...)</button>
-      </div>
+      ${personeBox}
     </div>` : '';
   // Fuori sede (o comunque "nessuno stato proposto", incluso un pattern imparato da uno standby
   // precedente): offri lo standby, non solo il dismiss secco — altrimenti il conteggio dei

@@ -15,7 +15,10 @@ function showModal(html){
     <button onclick="closeModal()" style="position:absolute;top:14px;right:16px;background:none;border:none;cursor:pointer;font-size:20px;color:var(--text2);line-height:1;padding:4px 6px;border-radius:4px;z-index:10" title="Chiudi">✕</button>
     <div style="position:relative">${html}</div>
   </div>`;
-  bg.addEventListener('click',e=>{if(e.target===bg)closeModal();});
+  // NIENTE chiusura al click sullo sfondo (rimosso 22/9/2026): un <select> vicino al bordo basso
+  // del popup apre la lista nativa del browser SOPRA lo sfondo scuro — cliccare un'opzione lì
+  // veniva letto come "click sullo sfondo" e chiudeva tutto il popup senza preavviso. Si chiude
+  // solo con la ✕ o con un pulsante esplicito.
   document.getElementById('modals').appendChild(bg);
 }
 
