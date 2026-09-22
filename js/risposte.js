@@ -54,9 +54,17 @@ function mostraItemRevisione(){
   const confLabel = IR_CONF_LABEL[it.confidence]||'';
   const rientro = it.dataRientro ? `<div style="margin-top:4px;font-size:12px;color:var(--text2)">📅 Rientro indicato: ${esc(it.dataRientro)}</div>` : '';
 
+  const rdMap = {true:{t:'✅ Sì',c:'var(--green-tx)'}, false:{t:'❌ No',c:'var(--red-tx)'}};
+  const rd = rdMap[it.rispostaDiretta] || {t:'❓ Incerta', c:'var(--text2)'};
+
+  const nonCollegatoBox = it.nonCollegato ? `
+    <div style="margin-bottom:10px;padding:8px 12px;border-radius:var(--r);background:var(--amber-bg);color:var(--amber-tx);font-size:12px;font-weight:600">
+      ⚠ Non collegata a nessun contatto del CRM — solo consultabile, nessuna azione sullo stato possibile.
+    </div>` : '';
+
   // Casella sbagliata/non monitorata: propone le altre già note per l'azienda (dal catalogo
-  // contatti, non estratte dal testo dell'email) — solo se ce n'è almeno una da provare.
-  const contattoDb=db.contacts.find(x=>x.id===it.contactId);
+  // contatti, non estratte dal testo dell'email) — solo se il contatto esiste e ce n'è almeno una.
+  const contattoDb=it.contactId?db.contacts.find(x=>x.id===it.contactId):null;
   const badEmail=(contattoDb&&_ultimoToEmail(contattoDb))||it.from;
   const alternative=contattoDb?_altreCaselle(contattoDb, badEmail):[];
   const casellaBox = alternative.length ? `
@@ -78,20 +86,7 @@ function mostraItemRevisione(){
       <button class="btn btp bts" onclick="risolviStandby()">⏸ Standby fino a qui</button>
     </div>` : '';
 
-  showModal(`
-    <div class="mt">📬 Revisione risposte — ${_irIndex+1} di ${pending.length}</div>
-    <div class="card" style="padding:12px 14px;margin-bottom:12px;background:var(--bg2)">
-      <div style="font-weight:700">${esc(it.company||'')}</div>
-      <div style="font-size:12px;color:var(--text2);margin-top:2px">${esc(it.from||'')} · ${fmtDate(new Date(it.date).getTime())}</div>
-      <div style="font-weight:600;margin-top:10px">${esc(it.subject||'(senza oggetto)')}</div>
-      <div style="font-size:13px;color:var(--text2);margin-top:6px;white-space:pre-wrap;max-height:180px;overflow:auto">${esc(it.snippet||'')}</div>
-    </div>
-    <div style="margin-bottom:12px;font-size:13px">
-      <strong>Proposta:</strong> ${esc(suggestedLabel)}
-      ${confLabel?`<span style="font-size:11px;color:var(--text3);margin-left:6px">${confLabel}</span>`:''}
-      <div style="color:var(--text2);margin-top:2px">${esc(it.reason||'')}</div>
-      ${rientro}
-    </div>
+  const azioniStato = it.nonCollegato ? '' : `
     <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px">
       <button class="btn btp bts" onclick="risolviRevisione('replied')">💬 Risposto</button>
       <button class="btn btp bts" onclick="risolviRevisione('client')">🤝 Cliente</button>
@@ -99,7 +94,29 @@ function mostraItemRevisione(){
       <button class="btn btd bts" onclick="risolviRevisione('blacklisted')">🚫 Blacklist</button>
     </div>
     ${standbyBox}
-    ${casellaBox}
+    ${casellaBox}`;
+
+  showModal(`
+    <div class="mt">📬 Revisione risposte — ${_irIndex+1} di ${pending.length}</div>
+    ${nonCollegatoBox}
+    <div class="card" style="padding:12px 14px;margin-bottom:12px;background:var(--bg2)">
+      <div style="font-weight:700">${esc(it.company||'')}</div>
+      <div style="font-size:12px;color:var(--text2);margin-top:2px">👤 ${esc(it.mittenteNome||it.from||'')}${it.mittenteNome?` — ${esc(it.from||'')}`:''} · ${fmtDate(new Date(it.date).getTime())}</div>
+      <div style="font-weight:600;margin-top:10px">${esc(it.subject||'(senza oggetto)')}</div>
+      <div style="font-size:13px;margin-top:8px;padding:8px 10px;border-radius:var(--r);background:var(--bg);color:var(--text)">📝 ${esc(it.riassunto||'(nessun riassunto disponibile)')}</div>
+      <details style="margin-top:6px"><summary style="font-size:11px;color:var(--text3);cursor:pointer">Testo originale</summary>
+        <div style="font-size:12px;color:var(--text2);margin-top:4px;white-space:pre-wrap;max-height:150px;overflow:auto">${esc(it.snippet||'')}</div>
+      </details>
+    </div>
+    <div style="margin-bottom:12px;font-size:13px">
+      <div><strong>Risposta diretta a una nostra email:</strong> <span style="color:${rd.c};font-weight:600">${rd.t}</span></div>
+      <div style="margin-top:4px"><strong>Proposta:</strong> ${esc(suggestedLabel)}
+        ${confLabel?`<span style="font-size:11px;color:var(--text3);margin-left:6px">${confLabel}</span>`:''}
+      </div>
+      <div style="color:var(--text2);margin-top:2px">${esc(it.reason||'')}</div>
+      ${rientro}
+    </div>
+    ${azioniStato}
     <div style="display:flex;gap:8px">
       <button class="btn btg bts" onclick="risolviRevisione(null)">✔ Ok, nessun cambio di stato</button>
       <button class="btn btg bts" onclick="saltaRevisione()">⏭ Salta per ora</button>
