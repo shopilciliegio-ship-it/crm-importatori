@@ -203,6 +203,7 @@ async function _pushImportatoriOverrides(token,owner,repo){
     // "Casella sbagliata" (js/risposte.js → provaAltraCasella()): cambio email di contatto +
     // lista indirizzi da non riprovare più per questo contatto.
     if((c.contactEmail||'')!==(snap.contactEmail||''))       diff.contactEmail=c.contactEmail||'';
+    if((c.contactName||'')!==(snap.contactName||''))         diff.contactName=c.contactName||'';
     if(JSON.stringify(c.emailBloccate||[])!==snap.emailBloccate) diff.emailBloccate=c.emailBloccate||[];
     if(Object.keys(diff).length) newOv[c.id]=diff;
   }

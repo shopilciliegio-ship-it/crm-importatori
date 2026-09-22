@@ -87,16 +87,18 @@ function mostraItemRevisione(){
   const casellaBox = contattoDb ? `
     <div style="margin-bottom:8px;padding:10px 12px;border-radius:var(--r);border:0.5px dashed var(--brd2)">
       <div style="font-size:12px;color:var(--text2);margin-bottom:6px">📭 Casella "${esc(badEmail)}" sbagliata o non monitorata? Rimetti da contattare con un'altra:</div>
+      ${alternative.length?`
+      <select onchange="const o=this.selectedOptions[0];document.getElementById('ir-alt-email').value=o?o.dataset.email||'':'';document.getElementById('ir-alt-name').value=o?o.dataset.name||'':'';" style="width:100%;padding:6px 8px;border-radius:var(--r);border:0.5px solid var(--brd2);background:var(--bg);color:var(--text);font-size:13px;margin-bottom:6px">
+        <option value="">— scegli tra i contatti già noti in azienda —</option>
+        ${alternative.map(a=>`<option data-email="${esc(a.email)}" data-name="${esc(a.name)}">${esc(a.name||'(nome sconosciuto)')}${a.title?` — ${esc(a.title)}`:''} · ${esc(a.email)}</option>`).join('')}
+      </select>`:`<div style="font-size:12px;color:var(--text3);margin-bottom:6px">Nessun altro contatto noto in archivio per questa azienda — scrivi tu i dati qui sotto.</div>`}
       <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
-        ${alternative.length?`<select onchange="document.getElementById('ir-alt-email').value=this.value" style="padding:6px 8px;border-radius:var(--r);border:0.5px solid var(--brd2);background:var(--bg);color:var(--text);font-size:13px">
-          <option value="">— caselle già note —</option>
-          ${alternative.map(e=>`<option value="${esc(e)}">${esc(e)}</option>`).join('')}
-        </select>`:''}
-        <input type="email" id="ir-alt-email" placeholder="oppure scrivi un'email" value="${esc(it.emailAlternativa||'')}" style="padding:6px 8px;border-radius:var(--r);border:0.5px solid var(--brd2);background:var(--bg);color:var(--text);font-size:13px;flex:1;min-width:200px">
+        <input type="text" id="ir-alt-name" placeholder="nome (facoltativo)" style="padding:6px 8px;border-radius:var(--r);border:0.5px solid var(--brd2);background:var(--bg);color:var(--text);font-size:13px;width:140px">
+        <input type="email" id="ir-alt-email" placeholder="email" value="${esc(it.emailAlternativa||'')}" style="padding:6px 8px;border-radius:var(--r);border:0.5px solid var(--brd2);background:var(--bg);color:var(--text);font-size:13px;flex:1;min-width:180px">
         <button class="btn btp bts" onclick="provaAltraCasella('${esc(badEmail)}')">↻ Rimetti da contattare con questa</button>
       </div>
       <div style="margin-top:6px">
-        <button class="btn btg bts" onclick="vediSchedaContatto('${esc(it.contactId)}')">🔍 Vedi scheda contatto — cerca altri nomi/email</button>
+        <button class="btn btg bts" onclick="vediSchedaContatto('${esc(it.contactId)}')">🔍 Vedi scheda completa (LinkedIn, telefoni...)</button>
       </div>
     </div>` : '';
   // Fuori sede (o comunque "nessuno stato proposto", incluso un pattern imparato da uno standby
@@ -165,18 +167,24 @@ function _ultimoToEmail(c){
   return (lastEv&&lastEv.toEmail)||'';
 }
 
-// Altri indirizzi già noti per l'azienda (c.contacts[], più c.email/c.contactEmail), esclusi quello
-// appena usato e quelli già bloccati in passato — per il pulsante "casella sbagliata, prova un'altra".
+// Altre PERSONE già note per l'azienda (c.contacts[], più c.contactEmail/c.email), esclusa quella
+// appena usata e quelle già bloccate in passato — con nome/ruolo, non solo l'indirizzo nudo: senza
+// un nome il template di invio non sa chi salutare (vedi provaAltraCasella).
 function _altreCaselle(c, escludi){
   const bloccate=new Set((c.emailBloccate||[]).map(e=>(e||'').trim().toLowerCase()));
-  const esc=(escludi||'').trim().toLowerCase();
-  const cand=new Set();
-  (c.contacts||[]).forEach(p=>{ const e=(p.email||'').trim().toLowerCase(); if(e) cand.add(e); });
-  if(c.email) cand.add(c.email.trim().toLowerCase());
-  if(c.contactEmail) cand.add(c.contactEmail.trim().toLowerCase());
-  cand.delete(esc);
-  bloccate.forEach(e=>cand.delete(e));
-  return [...cand];
+  const escLower=(escludi||'').trim().toLowerCase();
+  const visti=new Set();
+  const out=[];
+  const add=(email, name, title)=>{
+    const e=(email||'').trim().toLowerCase();
+    if(!e || e===escLower || bloccate.has(e) || visti.has(e)) return;
+    visti.add(e);
+    out.push({email:e, name:(name||'').trim(), title:(title||'').trim()});
+  };
+  (c.contacts||[]).forEach(p=>add(p.email, p.name, p.title));
+  add(c.contactEmail, c.contactName, c.contactTitle);
+  add(c.email, '', '');
+  return out;
 }
 
 async function risolviRevisione(status){
@@ -219,15 +227,17 @@ function saltaRevisione(){
   mostraItemRevisione();
 }
 
-// Casella sbagliata/non monitorata: rimette il contatto "da contattare" con un'altra email già
-// nota per l'azienda, blocca quella vecchia (non verrà più selezionata per nessun invio futuro —
-// vedi select_contact() in scripts/send_importatori_followup.py, che rispetta emailBloccate) e
-// chiude la revisione di questa email.
+// Casella sbagliata/non monitorata: rimette il contatto "da contattare" con un'altra email (+nome,
+// se noto — senza un nome il template saluta genericamente l'azienda, vedi render_template() in
+// scripts/send_importatori_followup.py) già nota per l'azienda o scritta a mano, blocca quella
+// vecchia (non verrà più selezionata per nessun invio futuro — vedi select_contact() in
+// scripts/send_importatori_followup.py, che rispetta emailBloccate) e chiude la revisione.
 async function provaAltraCasella(badEmail){
   const it=(_irData.pending||[])[_irIndex];
   if(!it) return;
-  const nuovaEmail=document.getElementById('ir-alt-email')?.value;
-  if(!nuovaEmail){ toast('Nessuna casella alternativa selezionata'); return; }
+  const nuovaEmail=document.getElementById('ir-alt-email')?.value?.trim();
+  const nuovoNome=document.getElementById('ir-alt-name')?.value?.trim()||'';
+  if(!nuovaEmail){ toast('Scegli o scrivi un\'email prima di continuare'); return; }
 
   const c=db.contacts.find(x=>x.id===it.contactId);
   if(!c){ toast('⚠ Contatto non trovato nel CRM'); return; }
@@ -236,9 +246,10 @@ async function provaAltraCasella(badEmail){
   const badLower=(badEmail||'').trim().toLowerCase();
   if(badLower && !c.emailBloccate.includes(badLower)) c.emailBloccate.push(badLower);
   c.contactEmail=nuovaEmail;
+  c.contactName=nuovoNome;  // vuoto se non noto: meglio un saluto generico che il nome sbagliato di prima
   c.status='new';
   c.log=c.log||[];
-  c.log.push({ts:Date.now(), msg:`📭 Casella "${badEmail}" sbagliata/non monitorata — sostituita con "${nuovaEmail}", rimesso "da contattare"`});
+  c.log.push({ts:Date.now(), msg:`📭 Casella "${badEmail}" sbagliata/non monitorata — sostituita con "${nuovoNome?nuovoNome+' <'+nuovaEmail+'>':nuovaEmail}", rimesso "da contattare"`});
   saveDB();
   toast(`📭 Rimesso "da contattare" con ${nuovaEmail} ✓`);
 
