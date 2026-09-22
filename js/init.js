@@ -28,6 +28,8 @@ async function switchLayer(newLayer){
   if(impTgl) impTgl.style.display = newLayer==='importatori' ? 'flex' : 'none';
   if(cliTgl) cliTgl.style.display = newLayer==='clienti' ? 'flex' : 'none';
   if(rschBnr) rschBnr.style.display = newLayer==='importatori' ? 'block' : 'none';
+  const unlockBtn=document.getElementById('unlock-bwi-btn');
+  if(unlockBtn) unlockBtn.style.display = newLayer==='importatori' ? '' : 'none';
   const archBtn=document.getElementById('nb-archivio-cli');
   if(archBtn) archBtn.style.display = newLayer==='clienti' ? '' : 'none';
 

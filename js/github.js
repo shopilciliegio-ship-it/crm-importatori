@@ -549,6 +549,78 @@ async function pollImportatoriBulkWorkflow(onProgress, maxAttempts=80){
   return null; // timeout polling — il workflow prosegue comunque sul server
 }
 
+/* ── SBLOCCO EMAIL BWI (bulk) ── */
+// Stesso schema di BULK_JOB_PATH_IMPORTATORI: il browser scrive il job (categoria+stelle+budget
+// crediti, già calcolati lato client per l'anteprima — vedi js/unlock.js), lancia il workflow, e
+// fa polling leggendo lo stesso file per il progresso. Vedi scripts/unlock_leads_bulk.py.
+
+const UNLOCK_JOB_PATH = 'data/unlock-leads-job.json';
+
+async function pushUnlockJob(job){
+  const{token,owner,repo}=ghs;
+  if(!token||!owner||!repo) throw new Error('GitHub non configurato');
+  const url=`https://api.github.com/repos/${owner}/${repo}/contents/${UNLOCK_JOB_PATH}`;
+  const hd={'Authorization':`token ${token}`,'Content-Type':'application/json','Accept':'application/vnd.github.v3+json'};
+  let sha=null;
+  const r=await fetch(url,{headers:hd});
+  if(r.ok) sha=(await r.json()).sha;
+  const body={message:`Sblocco email BWI — job creato (${job.raccomandato}, ${job.stelle.join('/')}⭐, budget ${job.maxCredits})`,content:btoa(unescape(encodeURIComponent(JSON.stringify(job,null,2))))};
+  if(sha) body.sha=sha;
+  const res=await fetch(url,{method:'PUT',headers:hd,body:JSON.stringify(body)});
+  if(!res.ok){
+    const err=await res.json().catch(()=>({}));
+    throw new Error('Salvataggio job fallito: '+(err.message||res.status));
+  }
+}
+
+async function _fetchUnlockJob(){
+  const{token,owner,repo}=ghs;
+  const url=`https://api.github.com/repos/${owner}/${repo}/contents/${UNLOCK_JOB_PATH}`;
+  const r=await fetch(url,{headers:{'Authorization':`token ${token}`,'Accept':'application/vnd.github.v3+json'}});
+  if(!r.ok) return null;
+  const d=await r.json();
+  const raw=(d.content||'').replace(/\n/g,'');
+  if(!raw) return null;
+  try{ return JSON.parse(decodeURIComponent(escape(atob(raw)))); }catch(e){ return null; }
+}
+
+async function triggerUnlockWorkflow(){
+  const{token,owner,repo}=ghs;
+  if(!token||!owner||!repo){ toast('⚙ Configura GitHub nelle Impostazioni'); return false; }
+  const dispatchUrl=`https://api.github.com/repos/${owner}/${repo}/actions/workflows/unlock_leads_bulk.yml/dispatches`;
+  try{
+    const r=await fetch(dispatchUrl,{
+      method:'POST',
+      headers:{'Authorization':`token ${token}`,'Accept':'application/vnd.github.v3+json','Content-Type':'application/json'},
+      body:JSON.stringify({ref:'main'})
+    });
+    return r.ok||r.status===204;
+  }catch(e){ console.warn('triggerUnlockWorkflow:',e); return false; }
+}
+
+// Polling: controlla lo stato del run GitHub Actions. Ritorna il job finale ('done') o null se
+// scade maxAttempts (il workflow continua comunque sul server, può girare a lungo su tanti sblocchi).
+async function pollUnlockWorkflow(maxAttempts=200){
+  const{token,owner,repo}=ghs;
+  const runsUrl=`https://api.github.com/repos/${owner}/${repo}/actions/runs?workflow_id=unlock_leads_bulk.yml&per_page=1`;
+
+  for(let i=0;i<maxAttempts;i++){
+    const wait = i===0 ? 10000 : 15000;
+    await new Promise(r=>setTimeout(r,wait));
+    try{
+      const r=await fetch(runsUrl,{headers:{'Authorization':`token ${token}`,'Accept':'application/vnd.github.v3+json'}});
+      if(!r.ok) continue;
+      const data=await r.json();
+      const run=data.workflow_runs?.[0];
+      if(!run) continue;
+      if(run.status==='completed'){
+        return await _fetchUnlockJob();
+      }
+    }catch(e){ console.warn('pollUnlockWorkflow error:',e); }
+  }
+  return null;
+}
+
 /* ── RISPOSTE IMPORTATORI (inbox) ── */
 // Stesso schema di lettura/scrittura di BULK_JOB_PATH_IMPORTATORI: lo script server-side
 // (scripts/check_importatori_replies.py, gira ogni giorno via GitHub Actions) scrive qui le
