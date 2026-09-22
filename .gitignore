@@ -7,6 +7,9 @@ Spotty/utentiregistrati_latest.csv
 BWI/test_login*.py
 BWI/debug_*.html
 
+# Credenziali locali (mai committate)
+imap-sienawine-credentials.json
+
 # Dipendenze Python
 __pycache__/
 *.py[cod]
