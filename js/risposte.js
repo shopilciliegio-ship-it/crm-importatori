@@ -37,8 +37,21 @@ function renderRisposteBanner(){
 
 function apriRevisioneRisposte(){
   if(!_irData || !(_irData.pending||[]).length){ toast('Nessuna risposta da rivedere'); return; }
-  _irIndex=0;
+  // Riprende da dove Luca aveva lasciato (es. dopo aver aperto la scheda di un contatto per
+  // cercare un'altra email — vedi vediSchedaContatto()), non sempre da capo.
+  if(_irIndex>=_irData.pending.length) _irIndex=0;
   mostraItemRevisione();
+}
+
+// Apre la scheda completa del contatto (stessa vista di "Contatti", con tutti i nomi/titoli/
+// telefoni/LinkedIn anche senza email) — per quando il campo libero della "casella sbagliata"
+// non basta perché Luca non sa a memoria un indirizzo alternativo e vuole cercarlo lui nella
+// scheda. Chiude il popup di revisione (stesso overlay, showModal() ne tiene solo uno alla
+// volta); riapri con "Rivedi" nel banner per tornare esattamente al punto dov'eri.
+function vediSchedaContatto(contactId){
+  if(!contactId) return;
+  closeModal();
+  openDetail(contactId);
 }
 
 function mostraItemRevisione(){
@@ -81,6 +94,9 @@ function mostraItemRevisione(){
         </select>`:''}
         <input type="email" id="ir-alt-email" placeholder="oppure scrivi un'email" value="${esc(it.emailAlternativa||'')}" style="padding:6px 8px;border-radius:var(--r);border:0.5px solid var(--brd2);background:var(--bg);color:var(--text);font-size:13px;flex:1;min-width:200px">
         <button class="btn btp bts" onclick="provaAltraCasella('${esc(badEmail)}')">↻ Rimetti da contattare con questa</button>
+      </div>
+      <div style="margin-top:6px">
+        <button class="btn btg bts" onclick="vediSchedaContatto('${esc(it.contactId)}')">🔍 Vedi scheda contatto — cerca altri nomi/email</button>
       </div>
     </div>` : '';
   // Fuori sede (o comunque "nessuno stato proposto", incluso un pattern imparato da uno standby
