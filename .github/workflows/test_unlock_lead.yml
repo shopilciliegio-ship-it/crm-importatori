@@ -1,0 +1,32 @@
+name: Test sblocco email BWI (una tantum)
+
+on:
+  workflow_dispatch:
+    inputs:
+      compID:
+        description: 'ID azienda BWI da testare (default: Alessi Beverages, già sbloccato a mano nel browser)'
+        type: string
+        default: '89790'
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Installa dipendenze
+        run: pip install requests openpyxl
+
+      - name: Testa unlockLead/
+        working-directory: BWI
+        env:
+          BWI_EMAIL:    ${{ secrets.BWI_EMAIL }}
+          BWI_PASSWORD: ${{ secrets.BWI_PASSWORD }}
+        run: python test_unlock_lead.py "${{ inputs.compID }}"
