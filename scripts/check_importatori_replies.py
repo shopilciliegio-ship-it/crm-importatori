@@ -184,7 +184,12 @@ blocco markdown):
   "risposta_diretta": true o false,
   "categoria": "bounce" | "non_interessato" | "risposta" | "cliente" | "fuori_sede" | "incerto" | "non_pertinente",
   "motivo": "una frase breve in italiano che spiega la categoria scelta",
-  "data_rientro": "YYYY-MM-DD oppure null — SOLO se categoria è fuori_sede e c'è una data di rientro esplicita"
+  "data_rientro": "YYYY-MM-DD oppure null — SOLO se categoria è fuori_sede e c'è una data di rientro esplicita",
+  "email_alternativa": "un indirizzo email ESPLICITAMENTE scritto nel testo come contatto alternativo a cui
+                         scrivere (es. risposta automatica di instradamento tipo 'per acquisti scrivi a
+                         orders@azienda.com'), oppure null se il testo non scrive nessun indirizzo email
+                         alternativo (anche se nomina persone o reparti SENZA email, metti null: non inventare
+                         un indirizzo che non è scritto per esteso nel testo)"
 }
 
 CONTESTO: prima del testo dell'email ti dico se è già tecnicamente risultata collegata (stesso thread o stesso
@@ -381,7 +386,7 @@ def main():
         print(f'  ✉ UID {uid}  {from_addr}  "{subject[:60]}"  {"🔗" if collegato else "❓non collegata"}')
 
         body = extract_body_text(msg)
-        suggested_status, reason, riassunto, data_rientro = None, '', '', None
+        suggested_status, reason, riassunto, data_rientro, email_alt = None, '', '', None, None
         risposta_diretta = True if header_match else (None if collegato else False)
 
         if BOUNCE_SENDER_RE.search(from_addr):
@@ -402,6 +407,7 @@ def main():
                 reason = result.get('motivo') or categoria
                 riassunto = result.get('riassunto') or ''
                 data_rientro = result.get('data_rientro')
+                email_alt = (result.get('email_alternativa') or '').strip() or None
                 if header_match is False:  # non già determinato dal thread: usa il giudizio AI
                     risposta_diretta = bool(result.get('risposta_diretta'))
             else:
@@ -425,6 +431,7 @@ def main():
             'reason': reason,
             'confidence': confidence,
             'dataRientro': data_rientro,
+            'emailAlternativa': email_alt,
         })
         nuove_pending += 1
 
