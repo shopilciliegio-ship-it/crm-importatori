@@ -62,18 +62,24 @@ function mostraItemRevisione(){
       ⚠ Non collegata a nessun contatto del CRM — solo consultabile, nessuna azione sullo stato possibile.
     </div>` : '';
 
-  // Casella sbagliata/non monitorata: propone le altre già note per l'azienda (dal catalogo
-  // contatti, non estratte dal testo dell'email) — solo se il contatto esiste e ce n'è almeno una.
+  // Casella sbagliata/non monitorata: SEMPRE disponibile quando c'è un contatto collegato — non
+  // solo se il CRM ha già un'altra email in archivio. Luca spesso sa (dalla scheda del contatto,
+  // dal sito, da fuori) un indirizzo che il sistema non può conoscere da solo; se il CRM ha altre
+  // caselle già note le propone in più, come scorciatoia, ma non è una condizione per mostrare il
+  // pulsante. Precompilato con l'indirizzo alternativo se la risposta automatica ne scriveva uno
+  // esplicito (email_alternativa, da check_importatori_replies.py).
   const contattoDb=it.contactId?db.contacts.find(x=>x.id===it.contactId):null;
   const badEmail=(contattoDb&&_ultimoToEmail(contattoDb))||it.from;
   const alternative=contattoDb?_altreCaselle(contattoDb, badEmail):[];
-  const casellaBox = alternative.length ? `
+  const casellaBox = contattoDb ? `
     <div style="margin-bottom:8px;padding:10px 12px;border-radius:var(--r);border:0.5px dashed var(--brd2)">
-      <div style="font-size:12px;color:var(--text2);margin-bottom:6px">📭 Casella "${esc(badEmail)}" sbagliata o non monitorata? Altre caselle note per questa azienda:</div>
+      <div style="font-size:12px;color:var(--text2);margin-bottom:6px">📭 Casella "${esc(badEmail)}" sbagliata o non monitorata? Rimetti da contattare con un'altra:</div>
       <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
-        <select id="ir-alt-email" style="padding:6px 8px;border-radius:var(--r);border:0.5px solid var(--brd2);background:var(--bg);color:var(--text);font-size:13px">
+        ${alternative.length?`<select onchange="document.getElementById('ir-alt-email').value=this.value" style="padding:6px 8px;border-radius:var(--r);border:0.5px solid var(--brd2);background:var(--bg);color:var(--text);font-size:13px">
+          <option value="">— caselle già note —</option>
           ${alternative.map(e=>`<option value="${esc(e)}">${esc(e)}</option>`).join('')}
-        </select>
+        </select>`:''}
+        <input type="email" id="ir-alt-email" placeholder="oppure scrivi un'email" value="${esc(it.emailAlternativa||'')}" style="padding:6px 8px;border-radius:var(--r);border:0.5px solid var(--brd2);background:var(--bg);color:var(--text);font-size:13px;flex:1;min-width:200px">
         <button class="btn btp bts" onclick="provaAltraCasella('${esc(badEmail)}')">↻ Rimetti da contattare con questa</button>
       </div>
     </div>` : '';
