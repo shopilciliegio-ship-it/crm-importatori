@@ -465,7 +465,10 @@ def main():
         c = by_id[cid]
         to_email = (c.get('contactEmail') or c.get('email') or '').strip()
         to_name  = c.get('contactName') or c.get('name') or ''
-        if not to_email:
+        blocked  = {(e or '').strip().lower() for e in (c.get('emailBloccate') or [])}
+        if not to_email or to_email.lower() in blocked:
+            # emailBloccate: casella segnata sbagliata/non monitorata da js/risposte.js
+            # (provaAltraCasella) — non ritentarla mai, anche se è rimasta impostata per errore.
             skipped += 1
             continue
 

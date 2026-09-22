@@ -200,6 +200,10 @@ async function _pushImportatoriOverrides(token,owner,repo){
     // Standby follow-up (fuori sede rilevato in js/risposte.js) — vedi fuIndicator() in js/brevo.js
     // e should_send_followup() in scripts/send_importatori_followup.py.
     if((c.snoozeUntil||null)!==(snap.snoozeUntil||null))     diff.snoozeUntil=c.snoozeUntil||null;
+    // "Casella sbagliata" (js/risposte.js → provaAltraCasella()): cambio email di contatto +
+    // lista indirizzi da non riprovare più per questo contatto.
+    if((c.contactEmail||'')!==(snap.contactEmail||''))       diff.contactEmail=c.contactEmail||'';
+    if(JSON.stringify(c.emailBloccate||[])!==snap.emailBloccate) diff.emailBloccate=c.emailBloccate||[];
     if(Object.keys(diff).length) newOv[c.id]=diff;
   }
   // Guard: blocca se il file crollerebbe drasticamente rispetto a quanto caricato da GitHub —
