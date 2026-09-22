@@ -505,10 +505,10 @@ def should_send_followup(c: dict, templates: list, now_ms: int) -> tuple[str | N
     if c.get('status') in TERMINAL_STATUSES:
         return None, None, 0
 
-    # Standby (fuori sede rilevato in js/risposte.js, campo impostato dal CRM): il conteggio dei
-    # giorni resta quello che è (step1.sentAt non si tocca), ma niente follow-up finché non passa
-    # la data indicata — vedi fuIndicator() in js/brevo.js per lo stesso campo lato UI.
-    snooze_until = c.get('snoozeUntil')
+    # Standby (fuori sede rilevato in js/risposte.js, campo impostato dal CRM): niente follow-up
+    # finché non passa la data indicata — vedi fuIndicator() in js/brevo.js per lo stesso campo
+    # lato UI.
+    snooze_until = c.get('snoozeUntil') or 0
     if snooze_until and now_ms < snooze_until:
         return None, None, 0
 
@@ -523,7 +523,12 @@ def should_send_followup(c: dict, templates: list, now_ms: int) -> tuple[str | N
 
     step1     = next((e for e in evs if (e.get('sequenceStep') or 1) == 1), evs[0])
     n_steps   = len(evs)
-    days      = (now_ms - (step1.get('sentAt') or 0)) / DAY_MS
+    # Se c'è stato uno standby, il conteggio 7/21/35gg riparte da quando è finito (non resta
+    # ancorato al primo invio originale): altrimenti un contatto "in pausa" da prima del giorno 7
+    # si becca il follow-up quasi subito appena rientra, invece di avere una settimana piena come
+    # da lì in poi — non è quello che Luca vuole quando dà tempo a qualcuno di rientrare dalle ferie.
+    riferimento = max(step1.get('sentAt') or 0, snooze_until)
+    days        = (now_ms - riferimento) / DAY_MS
 
     if n_steps == 1 and days >= 7:
         if days > 14:

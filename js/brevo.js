@@ -94,7 +94,12 @@ function fuIndicator(evs, c){
     return `<span style="font-size:11px;padding:2px 8px;border-radius:10px;background:${bg};color:${tx};white-space:nowrap;font-weight:600">${txt}</span>`;
   }
 
-  const days = Math.floor((Date.now()-(step1.sentAt||0))/86400000);
+  // Se c'è STATO uno standby (già passato, altrimenti si sarebbe fermati alla riga sopra), il
+  // conteggio riparte da quando è finito — stessa logica di should_send_followup() in
+  // scripts/send_importatori_followup.py, altrimenti il badge mostrerebbe "in ritardo" appena
+  // finito lo standby anche se per il sistema il conteggio è fresco.
+  const riferimento = Math.max(step1.sentAt||0, c?.snoozeUntil||0);
+  const days = Math.floor((Date.now()-riferimento)/86400000);
   const nSteps = evs.length;
   let label, dueDay;
   if(nSteps<2){      label='FU #2';     dueDay=7;  }
@@ -153,7 +158,11 @@ async function processAutoFollowUps(){
     if(['replied','client','cold','blacklisted'].includes(lastEv.manualStatus)) return;
 
     const step1 = evs.find(e=>(e.sequenceStep||1)===1)||evs[0];
-    const daysSince1 = Math.floor((Date.now()-(step1.sentAt||0))/86400000);
+    // Se c'è stato uno standby, il conteggio riparte da quando è finito, non resta ancorato al
+    // primo invio — stessa logica di riferimento in should_send_followup() (Python, il percorso
+    // automatico vero); qui solo per coerenza nel percorso manuale/secondario.
+    const riferimento = Math.max(step1.sentAt||0, c.snoozeUntil||0);
+    const daysSince1 = Math.floor((Date.now()-riferimento)/86400000);
     const nSteps = evs.length;
 
     if(nSteps===1 && daysSince1>=7){
