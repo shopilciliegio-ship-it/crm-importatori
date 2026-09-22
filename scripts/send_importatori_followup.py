@@ -211,9 +211,13 @@ def gh_put(path: str, data, sha: str | None, message: str) -> None:
 # ── Contact helpers ────────────────────────────────────────────────────────────
 
 def select_contact(c: dict) -> tuple[str, str]:
-    """Returns (email, full_name) of the best contact for this company.
-    Esclude le caselle segnate come sbagliate/non monitorate da js/risposte.js
-    (provaAltraCasella, pulsante "casella sbagliata" nella revisione risposte)."""
+    """Sceglie il 'miglior' contatto per priorità di ruolo — usata SOLO come ripiego da
+    step1_target() per contatti storici senza toEmail salvato in brevoEvents (da prima che questo
+    tracciamento esistesse). NON va chiamata per decidere a chi mandare un follow-up: la scelta
+    del destinatario si fa una volta sola, al primo invio (select_send_email() in
+    send_importatori_bulk.py) — i follow-up devono continuare sullo stesso indirizzo, vedi
+    step1_target(). Esclude comunque le caselle segnate sbagliate/non monitorate
+    (provaAltraCasella in js/risposte.js)."""
     blocked = {(e or '').strip().lower() for e in (c.get('emailBloccate') or [])}
     contacts = c.get('contacts') or []
     best, best_score = None, 999
@@ -234,6 +238,21 @@ def select_contact(c: dict) -> tuple[str, str]:
     if fallback_email.lower() in blocked:
         return '', ''
     return fallback_email, (c.get('contactName') or c.get('name', ''))
+
+
+def step1_target(c: dict) -> tuple[str, str]:
+    """A chi è stata mandata la prima email — i follow-up vanno SEMPRE alla stessa persona/
+    indirizzo (continuità del filo: il template dice letteralmente "ti riscrivo riguardo alla mia
+    email precedente", non ha senso se la riceve chi quella email non l'ha mai vista — vedi
+    discussione 22/9/2026, prima veniva ri-scelto il "miglior" contatto ad ogni run). Se
+    l'indirizzo bloccato nel frattempo (provaAltraCasella → emailBloccate), NON continua a
+    scrivere lì: ripiega su select_contact() per trovare un'alternativa valida."""
+    evs = sorted(c.get('brevoEvents') or [], key=lambda e: e.get('sentAt', 0))
+    step1 = next((e for e in evs if (e.get('sequenceStep') or 1) == 1), evs[0] if evs else None)
+    blocked = {(e or '').strip().lower() for e in (c.get('emailBloccate') or [])}
+    if step1 and step1.get('toEmail') and step1['toEmail'].strip().lower() not in blocked:
+        return step1['toEmail'].strip(), step1.get('toName', '')
+    return select_contact(c)
 
 
 def get_owner(c: dict, primary_email: str) -> str | None:
@@ -266,8 +285,7 @@ def find_tpl(templates: list, *ids, name_hint: str = '') -> dict | None:
     return None
 
 
-def render_template(tpl: dict, c: dict) -> tuple[str, str]:
-    to_email, to_name = select_contact(c)
+def render_template(tpl: dict, c: dict, to_email: str, to_name: str) -> tuple[str, str]:
     contact_fn = first_name(to_name)
     company    = c.get('company', '')
     owner_fn   = get_owner(c, to_email)
@@ -690,7 +708,7 @@ def main():
 
     for c in active:
         name     = c.get('company') or c.get('name', '?')
-        to_email, to_name = select_contact(c)
+        to_email, to_name = step1_target(c)
         print(f'\n  {name} | status={c.get("status")} | evs={len(c.get("brevoEvents") or [])}')
 
         step_label, tpl, next_step = should_send_followup(c, templates, now_ms)
@@ -704,7 +722,7 @@ def main():
             continue
 
         print(f'    → {step_label} | tpl={tpl.get("id","?")} "{tpl.get("name","")[:40]}"')
-        subject, body = render_template(tpl, c)
+        subject, body = render_template(tpl, c, to_email, to_name)
         result = send_email(to_email, to_name, subject, body, c['id'], next_step, test_mode)
 
         if result:
