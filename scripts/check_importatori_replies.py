@@ -36,7 +36,7 @@ import json
 import os
 import re
 import time
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 import requests
 
@@ -288,10 +288,15 @@ def main():
     mail.select('INBOX', readonly=True)
 
     last_uid = int(data.get('lastUid') or 0)
-    typ, res = mail.uid('search', None, f'UID {last_uid + 1}:*')
+    # SINCE oltre a UID: senza, il primo run (lastUid=0, visto il 22/9/2026 — 425 email trovate,
+    # quasi tutte vecchie e non pertinenti) macina TUTTA la cronologia della casella 40 alla volta
+    # invece della posta recente. 30 giorni coprono comodamente l'intera campagna (iniziata il
+    # 18/9/2026) e lasciano indietro per sempre solo email più vecchie della campagna stessa.
+    since_str = (datetime.now(timezone.utc) - timedelta(days=30)).strftime('%d-%b-%Y')
+    typ, res = mail.uid('search', None, f'(SINCE {since_str}) UID {last_uid + 1}:*')
     uids = [int(u) for u in (res[0] or b'').split()]
     uids = [u for u in uids if u > last_uid]  # '*' può ripetere l'ultimo UID esistente se non ce ne sono di nuovi
-    print(f'📬 {len(uids)} email nuove da UID {last_uid + 1} in poi.')
+    print(f'📬 {len(uids)} email nuove da UID {last_uid + 1} in poi (ultimi 30 giorni).')
 
     if len(uids) > MAX_EMAIL_PER_RUN:
         print(f'⚠ Troppe email nuove ({len(uids)}) — elaboro solo le prime {MAX_EMAIL_PER_RUN}, il resto al prossimo run.')
