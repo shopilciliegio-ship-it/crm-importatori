@@ -204,7 +204,11 @@ async function _pushImportatoriOverrides(token,owner,repo){
     // lista indirizzi da non riprovare più per questo contatto.
     if((c.contactEmail||'')!==(snap.contactEmail||''))       diff.contactEmail=c.contactEmail||'';
     if((c.contactName||'')!==(snap.contactName||''))         diff.contactName=c.contactName||'';
-    if(JSON.stringify(c.emailBloccate||[])!==snap.emailBloccate) diff.emailBloccate=c.emailBloccate||[];
+    // Confronto simmetrico: snap.emailBloccate non esiste mai nello snapshot base (solo
+    // log/brevoEvents/research ce l'hanno), quindi senza normalizzare anche il lato destro il
+    // confronto risultava SEMPRE diverso — scriveva "emailBloccate: []" su ogni contatto ad ogni
+    // salvataggio qualsiasi, anche senza che nessuno avesse mai bloccato una casella (bug 22/9/2026).
+    if(JSON.stringify(c.emailBloccate||[])!==JSON.stringify(snap.emailBloccate||[])) diff.emailBloccate=c.emailBloccate||[];
     if(Object.keys(diff).length) newOv[c.id]=diff;
   }
   // Guard: blocca se il file crollerebbe drasticamente rispetto a quanto caricato da GitHub —
