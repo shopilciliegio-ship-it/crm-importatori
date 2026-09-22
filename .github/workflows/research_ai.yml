@@ -2,11 +2,21 @@ name: Ricerca AI Importatori
 
 on:
   schedule:
-    - cron: '0 5 * * *'  # 05:00 UTC = 07:00 CEST (mattina presto in Italia)
+    # RISERVA. Il trigger principale è un timer esterno (Cloudflare Worker, timer-cloudflare/worker.js)
+    # che lancia questo workflow via API (workflow_dispatch) alle 7:00 Europe/Rome tutto l'anno: il cron
+    # di GitHub è "best effort" e in pratica parte con ore di ritardo (la mail di ricerca arrivava nel
+    # primo pomeriggio invece che la mattina).
+    - cron: '0 5 * * *'  # 05:00 UTC = 07:00 CEST (ora legale)
+    - cron: '0 6 * * *'  # 06:00 UTC = 07:00 CET (ora solare)
   workflow_dispatch:        # trigger manuale dal CRM o da GitHub UI
 
 permissions:
   contents: write
+
+# Un solo run alla volta: timer esterno e cron di riserva non devono mai girare in parallelo.
+concurrency:
+  group: research-ai
+  cancel-in-progress: false
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true

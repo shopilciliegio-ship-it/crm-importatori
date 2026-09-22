@@ -2,11 +2,21 @@ name: Import Ordini da Gmail
 
 on:
   schedule:
-    - cron: '0 */4 * * *'  # ogni 4 ore
+    # RISERVA. Il trigger principale è un timer esterno (Cloudflare Worker, timer-cloudflare/worker.js)
+    # che lancia questo workflow via API (workflow_dispatch) alle 0/6/12/18 Europe/Rome: il cron di
+    # GitHub è "best effort" e in pratica parte con ore di ritardo. Cadenza ridotta da ogni 4h a ogni
+    # 6h il 22/9/2026 (richiesto da Luca: non cambiava nulla farlo più spesso).
+    - cron: '0 */6 * * *'  # ogni 6 ore
   workflow_dispatch:        # trigger manuale dal CRM o da GitHub UI
 
 permissions:
   contents: write
+
+# Un solo run alla volta: timer esterno e cron di riserva non devono mai girare in parallelo
+# (due import Gmail in contemporanea rischierebbero di litigarsi il commit finale).
+concurrency:
+  group: import-ordini
+  cancel-in-progress: false
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
