@@ -53,7 +53,10 @@ CONTATTI_PATH      = 'data/contatti.json'
 OVERRIDES_PATH      = 'data/contatti-overrides.json'
 INBOX_RISPOSTE_PATH = 'data/inbox-risposte.json'
 
-MAX_EMAIL_PER_RUN = 40  # margine di sicurezza: non elaborare centinaia di email in un run solo
+MAX_EMAIL_PER_RUN = 150  # margine di sicurezza, non un limite tecnico: con SINCE 30gg il volume
+# normale è ~60-70 email (verificato 22/9/2026), quindi questo tetto serve solo a coprire un
+# eventuale arretrato più grosso del solito senza sforare i timeout-minutes:20 del job — anche nel
+# caso peggiore (ogni email richiede una chiamata Claude, ~2-3s) restano ampi margini (150×3s=7.5min).
 
 _GH_HEADERS = {
     'Authorization': f'token {GH_TOKEN}',
