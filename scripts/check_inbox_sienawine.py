@@ -34,6 +34,12 @@ def decode(raw):
 
 
 def main():
+    # La console di Windows (cp1252) non sa stampare ✅/emoji: forza l'output a UTF-8.
+    try:
+        sys.stdout.reconfigure(encoding='utf-8')
+    except Exception:
+        pass
+
     if not os.path.exists(CREDS_PATH):
         print(f'ERRORE: manca {CREDS_PATH}')
         print('Creane uno con {"host":"imaps.aruba.it","port":993,"user":"luca@sienawine.it","password":"..."}')
