@@ -1,0 +1,45 @@
+name: Controllo risposte importatori
+
+on:
+  schedule:
+    # A differenza dei job "orari" (research_ai, import_ordini...) qui il timing non è critico:
+    # un controllo "qualche ora dopo" va benissimo, quindi niente timer Cloudflare per questo job,
+    # solo lo schedule di GitHub.
+    - cron: '11 6 * * *'  # ~06:11 UTC, un orario qualsiasi fuori dai picchi di congestione
+  workflow_dispatch:   # utile per un test manuale o per lanciarlo subito dopo una modifica
+
+permissions:
+  contents: write
+
+env:
+  PYTHONUNBUFFERED: "1"
+
+# Un solo run alla volta: non ha senso farne girare due in parallelo sullo stesso lastUid.
+concurrency:
+  group: check-importatori-replies
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Installa dipendenze
+        run: pip install requests
+
+      - name: Controlla inbox e classifica le nuove risposte
+        env:
+          SIENAWINE_IMAP_HOST:     ${{ secrets.SIENAWINE_IMAP_HOST }}
+          SIENAWINE_IMAP_PORT:     ${{ secrets.SIENAWINE_IMAP_PORT }}
+          SIENAWINE_IMAP_USER:     ${{ secrets.SIENAWINE_IMAP_USER }}
+          SIENAWINE_IMAP_PASSWORD: ${{ secrets.SIENAWINE_IMAP_PASSWORD }}
+          CLAUDE_API_KEY:          ${{ secrets.CLAUDE_API_KEY }}
+          GH_TOKEN:                ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO:                 ${{ github.repository }}
+        run: python scripts/check_importatori_replies.py
