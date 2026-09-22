@@ -53,6 +53,22 @@ function mostraItemRevisione(){
   const suggestedLabel = it.suggestedStatus ? (IR_STATUS_LABEL[it.suggestedStatus]||it.suggestedStatus) : 'Nessuno — solo informativo';
   const confLabel = IR_CONF_LABEL[it.confidence]||'';
   const rientro = it.dataRientro ? `<div style="margin-top:4px;font-size:12px;color:var(--text2)">📅 Rientro indicato: ${esc(it.dataRientro)}</div>` : '';
+
+  // Casella sbagliata/non monitorata: propone le altre già note per l'azienda (dal catalogo
+  // contatti, non estratte dal testo dell'email) — solo se ce n'è almeno una da provare.
+  const contattoDb=db.contacts.find(x=>x.id===it.contactId);
+  const badEmail=(contattoDb&&_ultimoToEmail(contattoDb))||it.from;
+  const alternative=contattoDb?_altreCaselle(contattoDb, badEmail):[];
+  const casellaBox = alternative.length ? `
+    <div style="margin-bottom:8px;padding:10px 12px;border-radius:var(--r);border:0.5px dashed var(--brd2)">
+      <div style="font-size:12px;color:var(--text2);margin-bottom:6px">📭 Casella "${esc(badEmail)}" sbagliata o non monitorata? Altre caselle note per questa azienda:</div>
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+        <select id="ir-alt-email" style="padding:6px 8px;border-radius:var(--r);border:0.5px solid var(--brd2);background:var(--bg);color:var(--text);font-size:13px">
+          ${alternative.map(e=>`<option value="${esc(e)}">${esc(e)}</option>`).join('')}
+        </select>
+        <button class="btn btp bts" onclick="provaAltraCasella('${esc(badEmail)}')">↻ Rimetti da contattare con questa</button>
+      </div>
+    </div>` : '';
   // Fuori sede (o comunque "nessuno stato proposto", incluso un pattern imparato da uno standby
   // precedente): offri lo standby, non solo il dismiss secco — altrimenti il conteggio dei
   // follow-up (7/21/35gg) continua come se non fosse successo niente.
@@ -83,6 +99,7 @@ function mostraItemRevisione(){
       <button class="btn btd bts" onclick="risolviRevisione('blacklisted')">🚫 Blacklist</button>
     </div>
     ${standbyBox}
+    ${casellaBox}
     <div style="display:flex;gap:8px">
       <button class="btn btg bts" onclick="risolviRevisione(null)">✔ Ok, nessun cambio di stato</button>
       <button class="btn btg bts" onclick="saltaRevisione()">⏭ Salta per ora</button>
@@ -99,6 +116,28 @@ function _lastSkFor(contactId){
   const lastEv=evs[evs.length-1];
   if(!lastEv) return null;
   return {c, sk:c.id+'|'+(lastEv.messageId||evs.indexOf(lastEv))};
+}
+
+// L'indirizzo a cui abbiamo scritto per davvero l'ultima volta (non necessariamente c.contactEmail,
+// che potrebbe essere stato cambiato dopo l'invio) — quello da bloccare se risulta sbagliato.
+function _ultimoToEmail(c){
+  const evs=[...(c.brevoEvents||[])].sort((a,b)=>(a.sentAt||0)-(b.sentAt||0));
+  const lastEv=evs[evs.length-1];
+  return (lastEv&&lastEv.toEmail)||'';
+}
+
+// Altri indirizzi già noti per l'azienda (c.contacts[], più c.email/c.contactEmail), esclusi quello
+// appena usato e quelli già bloccati in passato — per il pulsante "casella sbagliata, prova un'altra".
+function _altreCaselle(c, escludi){
+  const bloccate=new Set((c.emailBloccate||[]).map(e=>(e||'').trim().toLowerCase()));
+  const esc=(escludi||'').trim().toLowerCase();
+  const cand=new Set();
+  (c.contacts||[]).forEach(p=>{ const e=(p.email||'').trim().toLowerCase(); if(e) cand.add(e); });
+  if(c.email) cand.add(c.email.trim().toLowerCase());
+  if(c.contactEmail) cand.add(c.contactEmail.trim().toLowerCase());
+  cand.delete(esc);
+  bloccate.forEach(e=>cand.delete(e));
+  return [...cand];
 }
 
 async function risolviRevisione(status){
@@ -138,6 +177,42 @@ async function risolviRevisione(status){
 
 function saltaRevisione(){
   _irIndex++;
+  mostraItemRevisione();
+}
+
+// Casella sbagliata/non monitorata: rimette il contatto "da contattare" con un'altra email già
+// nota per l'azienda, blocca quella vecchia (non verrà più selezionata per nessun invio futuro —
+// vedi select_contact() in scripts/send_importatori_followup.py, che rispetta emailBloccate) e
+// chiude la revisione di questa email.
+async function provaAltraCasella(badEmail){
+  const it=(_irData.pending||[])[_irIndex];
+  if(!it) return;
+  const nuovaEmail=document.getElementById('ir-alt-email')?.value;
+  if(!nuovaEmail){ toast('Nessuna casella alternativa selezionata'); return; }
+
+  const c=db.contacts.find(x=>x.id===it.contactId);
+  if(!c){ toast('⚠ Contatto non trovato nel CRM'); return; }
+
+  c.emailBloccate=c.emailBloccate||[];
+  const badLower=(badEmail||'').trim().toLowerCase();
+  if(badLower && !c.emailBloccate.includes(badLower)) c.emailBloccate.push(badLower);
+  c.contactEmail=nuovaEmail;
+  c.status='new';
+  c.log=c.log||[];
+  c.log.push({ts:Date.now(), msg:`📭 Casella "${badEmail}" sbagliata/non monitorata — sostituita con "${nuovaEmail}", rimesso "da contattare"`});
+  saveDB();
+  toast(`📭 Rimesso "da contattare" con ${nuovaEmail} ✓`);
+
+  _irData.pending.splice(_irIndex,1);
+  _irData.risolte=_irData.risolte||[];
+  _irData.risolte.push({contactId:it.contactId, from:it.from, subject:it.subject, suggestedStatus:it.suggestedStatus, finalStatus:'altra_casella', at:Date.now()});
+  try{
+    await pushInboxRisposte(_irData, `Revisione risposta — ${it.company||it.from} → altra casella (${nuovaEmail})`);
+  }catch(e){
+    console.warn('pushInboxRisposte:',e);
+    toast('⚠ Coda risposte non salvata (il contatto è comunque aggiornato)');
+  }
+
   mostraItemRevisione();
 }
 

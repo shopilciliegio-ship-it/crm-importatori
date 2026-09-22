@@ -211,20 +211,29 @@ def gh_put(path: str, data, sha: str | None, message: str) -> None:
 # ── Contact helpers ────────────────────────────────────────────────────────────
 
 def select_contact(c: dict) -> tuple[str, str]:
-    """Returns (email, full_name) of the best contact for this company."""
+    """Returns (email, full_name) of the best contact for this company.
+    Esclude le caselle segnate come sbagliate/non monitorate da js/risposte.js
+    (provaAltraCasella, pulsante "casella sbagliata" nella revisione risposte)."""
+    blocked = {(e or '').strip().lower() for e in (c.get('emailBloccate') or [])}
     contacts = c.get('contacts') or []
     best, best_score = None, 999
     for ct in contacts:
+        email = (ct.get('email') or '').strip()
+        if not email or email.lower() in blocked:
+            continue
         title = (ct.get('title') or '').lower()
         score = 99
         for kw, pri in JOB_PRIORITY.items():
             if kw in title:
                 score = min(score, pri)
-        if score < best_score and ct.get('email'):
+        if score < best_score:
             best_score, best = score, ct
     if best:
         return best['email'], best.get('name', '')
-    return (c.get('contactEmail') or c.get('email', '')), (c.get('contactName') or c.get('name', ''))
+    fallback_email = (c.get('contactEmail') or c.get('email', '')).strip()
+    if fallback_email.lower() in blocked:
+        return '', ''
+    return fallback_email, (c.get('contactName') or c.get('name', ''))
 
 
 def get_owner(c: dict, primary_email: str) -> str | None:
@@ -684,6 +693,9 @@ def main():
             continue
         if not tpl:
             print(f'    ⚠ template mancante per {step_label}')
+            continue
+        if not to_email:
+            print(f'    ⚠ nessuna casella valida per {name} (tutte bloccate/mancanti) — salto')
             continue
 
         print(f'    → {step_label} | tpl={tpl.get("id","?")} "{tpl.get("name","")[:40]}"')
