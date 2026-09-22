@@ -74,6 +74,14 @@ function fuIndicator(evs, c){
   const lastSt = getBrevoStatus(lastEv);
   if(['replied','client','cold','blacklisted','bounced','spam','unsubscribed','blocked'].includes(lastSt)) return '';
 
+  // Standby (es. fuori sede rilevato da js/risposte.js): il conteggio dei giorni per il follow-up
+  // è congelato, non solo il follow-up in sé — vedi should_send_followup() in
+  // scripts/send_importatori_followup.py, stesso campo c.snoozeUntil.
+  if(c?.snoozeUntil && c.snoozeUntil>Date.now()){
+    const dataStr=new Date(c.snoozeUntil).toLocaleDateString('it-IT',{day:'numeric',month:'short'});
+    return `<span style="font-size:11px;padding:2px 8px;border-radius:10px;background:var(--blue-bg);color:var(--blue-tx);white-space:nowrap;font-weight:600">⏸ Standby fino al ${dataStr}</span>`;
+  }
+
   if(isClienti() && c?.waveStatus){
     if(c.waveStatus==='wave2_sent')
       return `<span style="font-size:11px;color:var(--text3);padding:2px 6px">Wave completa</span>`;
@@ -137,6 +145,7 @@ async function processAutoFollowUps(){
 
   adb.contacts.forEach(c=>{
     if(['replied','client','cold','blacklisted'].includes(c.status)) return;
+    if(c.snoozeUntil && c.snoozeUntil>Date.now()) return; // fuori sede: in standby, vedi fuIndicator()
     const evs = [...(c.brevoEvents||[])].sort((a,b)=>(a.sentAt||0)-(b.sentAt||0));
     if(!evs.length) return;
     // Salta se l'ultima email ha uno stato terminale manuale

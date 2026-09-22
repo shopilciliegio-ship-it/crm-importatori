@@ -476,6 +476,13 @@ def should_send_followup(c: dict, templates: list, now_ms: int) -> tuple[str | N
     if c.get('status') in TERMINAL_STATUSES:
         return None, None, 0
 
+    # Standby (fuori sede rilevato in js/risposte.js, campo impostato dal CRM): il conteggio dei
+    # giorni resta quello che è (step1.sentAt non si tocca), ma niente follow-up finché non passa
+    # la data indicata — vedi fuIndicator() in js/brevo.js per lo stesso campo lato UI.
+    snooze_until = c.get('snoozeUntil')
+    if snooze_until and now_ms < snooze_until:
+        return None, None, 0
+
     evs = sorted(c.get('brevoEvents') or [], key=lambda e: e.get('sentAt', 0))
     if not evs:
         return None, None, 0

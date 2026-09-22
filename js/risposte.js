@@ -10,7 +10,7 @@
 let _irData = null;  // {lastUid, pending, risolte, pattern} — cache in memoria di data/inbox-risposte.json
 let _irIndex = 0;
 
-const IR_STATUS_LABEL = { replied:'💬 Risposto', client:'🤝 Cliente', cold:'❌ Non interessato', blacklisted:'🚫 Blacklist' };
+const IR_STATUS_LABEL = { replied:'💬 Risposto', client:'🤝 Cliente', cold:'❌ Non interessato', blacklisted:'🚫 Blacklist', snoozed:'⏸ Standby (già visto altre volte)' };
 const IR_CONF_LABEL   = { pattern:'🔁 stesso mittente già rivisto', regola:'⚙ bounce tecnico', ai:'🤖 lettura AI' };
 
 async function refreshRisposteBanner(){
@@ -53,6 +53,14 @@ function mostraItemRevisione(){
   const suggestedLabel = it.suggestedStatus ? (IR_STATUS_LABEL[it.suggestedStatus]||it.suggestedStatus) : 'Nessuno — solo informativo';
   const confLabel = IR_CONF_LABEL[it.confidence]||'';
   const rientro = it.dataRientro ? `<div style="margin-top:4px;font-size:12px;color:var(--text2)">📅 Rientro indicato: ${esc(it.dataRientro)}</div>` : '';
+  // Fuori sede (o comunque "nessuno stato proposto", incluso un pattern imparato da uno standby
+  // precedente): offri lo standby, non solo il dismiss secco — altrimenti il conteggio dei
+  // follow-up (7/21/35gg) continua come se non fosse successo niente.
+  const standbyBox = (!it.suggestedStatus || it.suggestedStatus==='snoozed') ? `
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap">
+      <input type="date" id="ir-standby-date" value="${esc(it.dataRientro||'')}" style="padding:6px 8px;border-radius:var(--r);border:0.5px solid var(--brd2);background:var(--bg);color:var(--text);font-size:13px">
+      <button class="btn btp bts" onclick="risolviStandby()">⏸ Standby fino a qui</button>
+    </div>` : '';
 
   showModal(`
     <div class="mt">📬 Revisione risposte — ${_irIndex+1} di ${pending.length}</div>
@@ -74,6 +82,7 @@ function mostraItemRevisione(){
       <button class="btn btp bts" onclick="risolviRevisione('cold')">❌ Non interessato</button>
       <button class="btn btd bts" onclick="risolviRevisione('blacklisted')">🚫 Blacklist</button>
     </div>
+    ${standbyBox}
     <div style="display:flex;gap:8px">
       <button class="btn btg bts" onclick="risolviRevisione(null)">✔ Ok, nessun cambio di stato</button>
       <button class="btn btg bts" onclick="saltaRevisione()">⏭ Salta per ora</button>
@@ -129,5 +138,40 @@ async function risolviRevisione(status){
 
 function saltaRevisione(){
   _irIndex++;
+  mostraItemRevisione();
+}
+
+// Fuori sede: congela il conteggio dei follow-up automatici (7/21/35gg, vedi
+// should_send_followup() in scripts/send_importatori_followup.py e fuIndicator() in js/brevo.js)
+// finché non passa la data di rientro, invece di lasciarlo correre come se niente fosse successo.
+async function risolviStandby(){
+  const it=(_irData.pending||[])[_irIndex];
+  if(!it) return;
+  const dateStr=document.getElementById('ir-standby-date')?.value;
+  if(!dateStr){ toast('Scegli una data prima di mettere in standby'); return; }
+  const ts=new Date(dateStr+'T12:00:00').getTime();
+  if(!ts||isNaN(ts)){ toast('Data non valida'); return; }
+
+  const c=db.contacts.find(x=>x.id===it.contactId);
+  if(c){
+    c.snoozeUntil=ts;
+    c.log=c.log||[];
+    c.log.push({ts:Date.now(), msg:`⏸ Standby fino al ${new Date(ts).toLocaleDateString('it-IT')} (${it.reason||'fuori sede'})`});
+    saveDB();
+    toast(`⏸ Standby fino al ${new Date(ts).toLocaleDateString('it-IT')} ✓`);
+  } else {
+    toast('⚠ Contatto non trovato nel CRM — standby non impostato');
+  }
+
+  _irData.pending.splice(_irIndex,1);
+  _irData.risolte=_irData.risolte||[];
+  _irData.risolte.push({contactId:it.contactId, from:it.from, subject:it.subject, suggestedStatus:it.suggestedStatus, finalStatus:'snoozed', at:Date.now()});
+  try{
+    await pushInboxRisposte(_irData, `Revisione risposta — ${it.company||it.from} → standby fino al ${dateStr}`);
+  }catch(e){
+    console.warn('pushInboxRisposte:',e);
+    toast('⚠ Coda risposte non salvata (lo standby è comunque impostato sul contatto)');
+  }
+
   mostraItemRevisione();
 }
