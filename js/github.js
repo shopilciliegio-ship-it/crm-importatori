@@ -537,6 +537,53 @@ async function pollImportatoriBulkWorkflow(onProgress, maxAttempts=80){
   return null; // timeout polling — il workflow prosegue comunque sul server
 }
 
+/* ── RISPOSTE IMPORTATORI (inbox) ── */
+// Stesso schema di lettura/scrittura di BULK_JOB_PATH_IMPORTATORI: lo script server-side
+// (scripts/check_importatori_replies.py, gira ogni giorno via GitHub Actions) scrive qui le
+// email nuove da rivedere; il CRM le legge e, quando Luca conferma/corregge una classificazione
+// in js/risposte.js, riscrive il file per toglierla da "pending" e aggiungerla a "risolte".
+
+const INBOX_RISPOSTE_PATH = 'data/inbox-risposte.json';
+let ghShaInboxRisposte = null;
+
+async function fetchInboxRisposte(){
+  const{token,owner,repo}=ghs;
+  if(!token||!owner||!repo) return null;
+  const url=`https://api.github.com/repos/${owner}/${repo}/contents/${INBOX_RISPOSTE_PATH}`;
+  try{
+    const r=await fetch(url,{headers:{'Authorization':`token ${token}`,'Accept':'application/vnd.github.v3+json'}});
+    if(r.status===404) return null; // il job server-side non ha ancora girato una volta
+    if(!r.ok) return null;
+    const d=await r.json();
+    ghShaInboxRisposte=d.sha;
+    const raw=(d.content||'').replace(/\n/g,'');
+    if(!raw) return null;
+    const jsonStr=decodeURIComponent(Array.from(atob(raw),c=>'%'+c.charCodeAt(0).toString(16).padStart(2,'0')).join(''));
+    return JSON.parse(jsonStr);
+  }catch(e){ console.warn('fetchInboxRisposte:',e); return null; }
+}
+
+async function pushInboxRisposte(data, message){
+  const{token,owner,repo}=ghs;
+  if(!token||!owner||!repo) throw new Error('GitHub non configurato');
+  const url=`https://api.github.com/repos/${owner}/${repo}/contents/${INBOX_RISPOSTE_PATH}`;
+  const hd={'Authorization':`token ${token}`,'Content-Type':'application/json','Accept':'application/vnd.github.v3+json'};
+  const jsonStr=JSON.stringify(data,null,2);
+  const bytes=new TextEncoder().encode(jsonStr);
+  const CHUNK=65536; let binary='';
+  for(let i=0;i<bytes.length;i+=CHUNK)
+    binary+=String.fromCharCode.apply(null,bytes.subarray(i,Math.min(i+CHUNK,bytes.length)));
+  const b64=btoa(binary);
+  const body={message:message||`Revisione risposte importatori — ${new Date().toLocaleString('it-IT')}`,content:b64};
+  if(ghShaInboxRisposte) body.sha=ghShaInboxRisposte;
+  const res=await fetch(url,{method:'PUT',headers:hd,body:JSON.stringify(body)});
+  if(!res.ok){
+    const err=await res.json().catch(()=>({}));
+    throw new Error('Salvataggio inbox-risposte fallito: '+(err.message||res.status));
+  }
+  ghShaInboxRisposte=(await res.json()).content.sha;
+}
+
 /* ── WAVE TRACKING SYNC TRIGGER ── */
 
 async function triggerWaveTrackingSync(){

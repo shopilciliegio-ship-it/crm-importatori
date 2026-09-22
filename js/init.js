@@ -94,6 +94,8 @@ async function init(){
       otherLoads.push(loadSettingsFromGH().catch(e=>console.warn('loadSettingsFromGH:',e)));
     if(typeof loadResearchConfigFromGH==='function')
       otherLoads.push(loadResearchConfigFromGH().catch(e=>console.warn('loadResearchConfigFromGH:',e)));
+    if(typeof refreshRisposteBanner==='function')
+      otherLoads.push(refreshRisposteBanner().catch(e=>console.warn('refreshRisposteBanner:',e)));
 
     await Promise.all([contactsChain, ...otherLoads]);
     // Sync silenzioso bounce Brevo (3s di ritardo per non bloccare il render iniziale)
@@ -116,6 +118,7 @@ function refreshAll(){
   try{ if(typeof renderEmailToggleImp==='function') renderEmailToggleImp(); }catch(e){}
   try{ if(typeof renderEmailToggleCli==='function') renderEmailToggleCli(); }catch(e){}
   try{ if(typeof renderResearchBanner==='function') renderResearchBanner(); }catch(e){}
+  try{ if(typeof renderRisposteBanner==='function') renderRisposteBanner(); }catch(e){}
   try{ if(typeof renderArchivioCli==='function') renderArchivioCli(); }catch(e){}
   try{ if(typeof renderOrdini==='function') renderOrdini(); }catch(e){ console.warn('renderOrdini:',e); }
 }
