@@ -197,6 +197,9 @@ async function _pushImportatoriOverrides(token,owner,repo){
     if(JSON.stringify(c.log||[])!==snap.log)                 diff.log=c.log||[];
     if(JSON.stringify(c.brevoEvents||[])!==snap.brevoEvents) diff.brevoEvents=c.brevoEvents||[];
     if(JSON.stringify(c.research||null)!==snap.research)     diff.research=c.research||null;
+    // Standby follow-up (fuori sede rilevato in js/risposte.js) — vedi fuIndicator() in js/brevo.js
+    // e should_send_followup() in scripts/send_importatori_followup.py.
+    if((c.snoozeUntil||null)!==(snap.snoozeUntil||null))     diff.snoozeUntil=c.snoozeUntil||null;
     if(Object.keys(diff).length) newOv[c.id]=diff;
   }
   // Guard: blocca se il file crollerebbe drasticamente rispetto a quanto caricato da GitHub —
