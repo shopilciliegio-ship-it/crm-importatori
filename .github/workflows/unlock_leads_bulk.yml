@@ -1,0 +1,34 @@
+name: Sblocco email BWI (bulk)
+
+on:
+  workflow_dispatch:   # lanciato dal CRM (js/unlock.js → triggerUnlockLeadsBulk)
+
+permissions:
+  contents: write
+
+env:
+  PYTHONUNBUFFERED: "1"
+
+jobs:
+  unlock:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300   # margine ampio: uno sblocco alla volta, fino a migliaia di contatti
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Installa dipendenze
+        run: pip install requests
+
+      - name: Sblocca email BWI
+        env:
+          BWI_EMAIL:     ${{ secrets.BWI_EMAIL }}
+          BWI_PASSWORD:  ${{ secrets.BWI_PASSWORD }}
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          GH_TOKEN:      ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO:       ${{ github.repository }}
+        run: python scripts/unlock_leads_bulk.py
