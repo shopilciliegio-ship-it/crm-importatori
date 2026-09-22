@@ -411,9 +411,21 @@ def send_email(to_email: str, to_name: str, subject: str, body_text: str,
 
 # ── Brevo events sync ─────────────────────────────────────────────────────────
 
+SYNC_BUDGET_SECONDS = 180  # 3 minuti: lascia margine dentro il timeout di 10' del job GitHub Actions
+# per la parte che conta davvero (invio follow-up, sotto) — vedi incidente 22/9/2026: Brevo in
+# timeout ha fatto sforare l'intero step, e l'invio follow-up non è mai partito quel giorno perché
+# il sync (una chiamata HTTP per OGNI singola email già inviata, migliaia in totale) viene prima.
+
+
 def sync_brevo_events(contacts: list, now_ms: int) -> int:
     updated = 0
+    t0 = time.monotonic()
+    timeouts_in_a_row = 0
     for c in contacts:
+        if time.monotonic() - t0 > SYNC_BUDGET_SECONDS:
+            print(f'  ⏱ Budget di {SYNC_BUDGET_SECONDS}s esaurito — salto il resto del sync '
+                  f'(riprende dal prossimo run, l\'invio follow-up parte comunque adesso).')
+            break
         for ev in (c.get('brevoEvents') or []):
             msg_id = ev.get('messageId')
             if not msg_id:
@@ -426,6 +438,7 @@ def sync_brevo_events(contacts: list, now_ms: int) -> int:
                     f'?messageId={requests.utils.quote(msg_id)}&limit=50',
                     headers=_BREVO_HEADERS, timeout=10,
                 )
+                timeouts_in_a_row = 0
                 if not r.ok:
                     continue
                 changed = False
@@ -453,6 +466,13 @@ def sync_brevo_events(contacts: list, now_ms: int) -> int:
                 time.sleep(0.12)
             except Exception as e:
                 print(f'    ⚠ sync error: {e}')
+                # Brevo giù/degradato: tanti timeout di fila vogliono dire che aspettare 10s per
+                # ognuno è solo tempo sprecato — molla subito invece di bruciare tutto il budget
+                # un errore alla volta.
+                timeouts_in_a_row += 1
+                if timeouts_in_a_row >= 5:
+                    print(f'  ⚠ {timeouts_in_a_row} errori di fila — Brevo sembra irraggiungibile, interrompo il sync.')
+                    return updated
     return updated
 
 
