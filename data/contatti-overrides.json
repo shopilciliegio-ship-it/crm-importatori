@@ -246450,40 +246450,148 @@
     "contactName": "Venera Prahl"
   },
   "c1780673710951a6ojc": {
-    "contactName": "Roberto Mazzotta"
+    "contactName": "Roberto Mazzotta",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "si",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer online svizzero con vini italiani nel portafoglio (Italia tra i 4 focus principali). Sito poco aggiornato, nessuna traccia online, info su dipendenti/fatturato assenti. Contattare solo se target è mercato svizzero retail/online.",
+      "analyzed_at": "2026-09-23T05:00:33.455Z"
+    }
   },
   "c1780673710951p29dd": {
-    "contactName": "Nguyen Christophe"
+    "contactName": "Nguyen Christophe",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda svizzera specializzata in vini Jura (francesi). Nessuna menzione di vini italiani nel sito. Assenza di visibilità online (nessun risultato Google) e dati aziendali incompleti suggeriscono piccola dimensione locale.",
+      "analyzed_at": "2026-09-23T05:00:40.081Z"
+    }
   },
   "c1780673710951bnxvt": {
-    "contactName": "Humberto Silva"
+    "contactName": "Humberto Silva",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Portafoglio prevalentemente portoghese e sudamericano (Santa Vitoria, HFP Santa Ana). Nessuna traccia di vini italiani. Sito basic senza info aziendali, fatturato o dipendenti; assenza totale da Google suggerisce scarsa visibilità.",
+      "analyzed_at": "2026-09-23T05:00:46.928Z"
+    }
   },
   "c1780673710951wqztt": {
-    "contactName": "Markus Kauffer"
+    "contactName": "Markus Kauffer",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "consulenza_wine",
+      "mercato_target": "privati_aziende",
+      "raccomandato": "no",
+      "note": "Azienda svizzera specializzata in consulenza e gestione cantine private/aziendali, non in importazione/distribuzione di vini. Nessuna menzione di vini italiani; assenza di risultati Google e dati aziendali (dipendenti, fatturato) riduce affidabilità.",
+      "analyzed_at": "2026-09-23T05:00:53.478Z"
+    }
   },
   "c1780673710951nhfav": {
-    "contactName": "Juan Antonio Lo Bello"
+    "contactName": "Juan Antonio Lo Bello",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "sconosciuto",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Azienda svizzera specializzata in wine tours educativi in Alsazia, non in distribuzione/vendita di vini. Nessun risultato Google, assenza dati finanziari/dipendenti. Non pertinente per partnership commerciale vini italiani.",
+      "analyzed_at": "2026-09-23T05:00:58.450Z"
+    }
   },
   "c1780673710951auqex": {
-    "contactName": "Urs Wüthrich"
+    "contactName": "Urs Wüthrich",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda molto piccola (gestori: Cristina e Urs Wüthrich) con focus principale su keramik e corsi creativi. Vino è attività secondaria con selezione piemontese limitata. Nessuna traccia online, nessun dato su fatturato/dipendenti.",
+      "analyzed_at": "2026-09-23T05:01:04.646Z"
+    }
   },
   "c1780673710951f5z0y": {
-    "contactName": "Danilo Wyder"
+    "contactName": "Danilo Wyder",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo negozio di alimentari locale (Torre, Blenio) con focus su prodotti regionali svizzeri. Vini prevalentemente locali/regionali; nessuna evidenza di importazione sistematica di vini italiani. Non è un buyer rilevante per esportatori italiani.",
+      "analyzed_at": "2026-09-23T05:01:11.016Z"
+    }
   },
   "c1780673710951pqbhj": {
-    "contactName": "Tino Planzer"
+    "contactName": "Tino Planzer",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Sito web poco professionale e mal strutturato (HTML corrotto). Nessuna menzione esplicita di vini italiani nel portafoglio. Focus su whisky e spirituosen suggerisce assortimento generico non specializzato in vini italiani.",
+      "analyzed_at": "2026-09-23T05:01:24.360Z"
+    }
   },
   "c17806737109518lkbj": {
-    "contactName": "Fabien Pizzinat"
+    "contactName": "Fabien Pizzinat",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "misto",
+      "mercato_target": "online",
+      "raccomandato": "forse",
+      "note": "Importatore online svizzero con portafoglio italiano (Piemonte, Toscana, Veneto) e francese. Sito funzionante ma assenza di visibilità Google e dati aziendali (dipendenti/fatturato) limitano valutazione affidabilità.",
+      "analyzed_at": "2026-09-23T05:01:30.213Z"
+    }
   },
   "c1780673710951vl6s3": {
-    "contactName": "Kuki Zamberlani"
+    "contactName": "Kuki Zamberlani",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda storica ticinese (dal 1891) con focus su vini locali/regionali. Sito funzionante ma con info limitate su portafoglio vini italiani. Gestione familiare, attivo in retail e degustazioni. Verificare se importa vini italiani oltre ai ticinesi.",
+      "analyzed_at": "2026-09-23T05:01:35.182Z"
+    }
   },
   "c1780673710951h6rmr": {
-    "contactName": "Zavas Herman"
+    "contactName": "Zavas Herman",
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Sito irraggiungibile, nessuna traccia Google, dati aziendali assenti (dipendenti/fatturato). Impossibile verificare affidabilità o portafoglio vini.",
+      "analyzed_at": "2026-09-23T05:01:39.627Z"
+    }
   },
   "c17806737109516rog4": {
-    "contactName": "Anand B."
+    "contactName": "Anand B.",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccola caviste specializzata in vini naturali a Ginevra. Sito funzionante ma minimalista, nessuna info su portafoglio vini italiani specifico. Fondatori con background horeca e passione per vini vivanti suggeriscono potenziale interesse per italiani naturali/biologici.",
+      "analyzed_at": "2026-09-23T05:04:21.697Z"
+    }
   },
   "c1780673710951dembt": {
     "research": {
@@ -251170,28 +251278,100 @@
     }
   },
   "c178067371095365k8l": {
-    "contactName": "Verena Alter"
+    "contactName": "Verena Alter",
+    "research": {
+      "affidabilita": 5,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Lidl GB è una grande catena retail (31k dipendenti, fatturato 13,8 mld) con sezione vini consolidata. Tuttavia, come buyer per vini italiani specifici, richiede contatti attraverso canali B2B/fornitori ufficiali, non tramite approccio diretto.",
+      "analyzed_at": "2026-09-23T05:14:55.023Z"
+    }
   },
   "c17806737109530tp51": {
-    "contactName": "Mark Rankin"
+    "contactName": "Mark Rankin",
+    "research": {
+      "affidabilita": 5,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "One Stop è una grande catena di convenience store UK (7200 dipendenti, ~600M fatturato) con portafoglio bevande generico (vino, birra, spirits). Non emerge focus specifico su vini italiani dal sito. Contatto potenziale solo se si mira a distribuzione retail UK di massa.",
+      "analyzed_at": "2026-09-23T05:15:00.958Z"
+    }
   },
   "c1780673710953koun0": {
-    "contactName": "Anna Rigby"
+    "contactName": "Anna Rigby",
+    "research": {
+      "affidabilita": 5,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "John Lewis è retailer UK di grandi dimensioni (1600 dipendenti, fatturato 86M) con sezione vini consolidata. Tuttavia: focus prevalente su moda/arredamento/elettronica; nessuna evidenza di vini italiani specifici nel portafoglio; mercato target è consumer retail UK, non horeca/distribuzione.",
+      "analyzed_at": "2026-09-23T05:15:06.653Z"
+    }
   },
   "c1780673710953smok7": {
-    "contactName": "Anna Krzyzaniak"
+    "contactName": "Anna Krzyzaniak",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda UK di grandi dimensioni (1444 dipendenti, fatturato ~900M) con portafoglio vino/spirits. Siti dichiarati irraggiungibili e nessuna traccia Google: verificare validità dati. Se operativa, potrebbe essere interessante per distribuzione UK.",
+      "analyzed_at": "2026-09-23T05:15:10.885Z"
+    }
   },
   "c17806737109535v7l8": {
-    "contactName": "Keith Lamont"
+    "contactName": "Keith Lamont",
+    "research": {
+      "affidabilita": 5,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Lidl è grande catena retail UK con 1.279 dipendenti e fatturato significativo. Vende vino online e in negozi, ma come buyer per grandi volumi. Contatto utile solo se hai capacità di fornire grandi quantità a prezzi competitivi.",
+      "analyzed_at": "2026-09-23T05:15:16.365Z"
+    }
   },
   "c1780673710953244cd": {
-    "contactName": "Mike Toth"
+    "contactName": "Mike Toth",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Budgens è catena retail UK consolidata (1196 dipendenti, ~68M€ fatturato) con vini in portafoglio. Sito generico non specifica sourcing italiano. Vale la pena verificare se hanno buyer dedicato per vini europei/italiani.",
+      "analyzed_at": "2026-09-23T05:15:21.679Z"
+    }
   },
   "c1780673710953lu9qf": {
-    "contactName": "Daniel Spruds"
+    "contactName": "Daniel Spruds",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Grossista UK consolidato (dal 1976) con 979 dipendenti e fatturato significativo. Portafoglio ampio include vini ma non specifica italiani. Modello cash&carry rivolto a retailer indipendenti: potenziale per distribuzione vini italiani nel mercato UK, ma richiede verifica su effettivo interesse per categoria premium.",
+      "analyzed_at": "2026-09-23T05:15:28.608Z"
+    }
   },
   "c1780673710953sam8e": {
-    "contactName": "Christian Streatfield"
+    "contactName": "Christian Streatfield",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Ocado è un grande retailer online UK con fatturato significativo (2.7B€) e 916 dipendenti. Vende vino ma non confermato focus su italiano. Contatto utile solo se target è distribuzione UK premium online.",
+      "analyzed_at": "2026-09-23T05:15:32.841Z"
+    }
   },
   "c1780673710953w0f26": {
     "contactName": "Daniel Forth"
@@ -273781,16 +273961,52 @@
     "contactName": "Brigid Bradley"
   },
   "c17815374525459vx6b": {
-    "contactName": "André Clavien"
+    "contactName": "André Clavien",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo wine bar/enoteca svizzera (Berg/Frasnacht) con fatturato minimo (~287k CHF). Nessuna menzione di vini italiani nel sito; focus su vini selezionati generici. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-09-23T05:07:43.064Z"
+    }
   },
   "c178153745254578ald": {
-    "contactName": "Laurent Mathis"
+    "contactName": "Laurent Mathis",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Distributore svizzero di bevande generico con focus su horeca locale e eventi. Nessuna menzione esplicita di vini italiani nel portafoglio; assortimento non specificato online. Azienda piccola (4 dipendenti) con fatturato modesto, non pertinente per strategie di export vini italiani.",
+      "analyzed_at": "2026-09-23T05:07:48.453Z"
+    }
   },
   "c17815374525455acas": {
-    "contactName": "Pascal Willisch"
+    "contactName": "Pascal Willisch",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "sconosciuto",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Sito irraggiungibile, nessuna traccia online, azienda molto piccola (3 dipendenti). Impossibile verificare se commercializza vini italiani o se è operativa.",
+      "analyzed_at": "2026-09-23T05:08:10.930Z"
+    }
   },
   "c1781537452545n4nsl": {
-    "contactName": "Olivier Chédel"
+    "contactName": "Olivier Chédel",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "importatore",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Specializzata esclusivamente in vini sudafricani (Cape Town). Azienda molto piccola (3 dipendenti, fatturato ~287k CHF) senza visibilità Google. Non pertinente per portafoglio vini italiani.",
+      "analyzed_at": "2026-09-23T05:08:21.409Z"
+    }
   },
   "c1781537452546xb8yo": {
     "contactName": "Beth Kuchynka"
@@ -273923,16 +274139,52 @@
     "contactName": "Joe Stevens"
   },
   "c1782140735064tnj06": {
-    "contactName": "Loup Roux"
+    "contactName": "Loup Roux",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccolo e-commerce svizzero (3 dipendenti, fatturato ~292k) con portafoglio europeo che include vini italiani (Toscana, Antinori, Ornellaia). Assenza totale da Google e sito poco ottimizzato suggeriscono operatività limitata; potenziale interessante solo per partnership online specializzata.",
+      "analyzed_at": "2026-09-23T05:08:55.725Z"
+    }
   },
   "c1782140735064nqc7r": {
-    "contactName": "Lukas Anderegg"
+    "contactName": "Lukas Anderegg",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "sconosciuto",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Azienda micro (3 dipendenti, fatturato ~388k CHF) con sito irraggiungibile e zero traccia online. Impossibile verificare se opera nel vino italiano o in altri settori. Contatto non consigliato senza validazione preliminare.",
+      "analyzed_at": "2026-09-23T05:09:00.823Z"
+    }
   },
   "c1782140735064xw8iq": {
-    "contactName": "Charles Perrier"
+    "contactName": "Charles Perrier",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "E-commerce vini svizzero con profilo personalizzato (B2C). Piccola struttura (3 dipendenti, ~600k CHF fatturato). Catalogo non specificato ma probabile selezione europea. Nessuna menzione esplicita di vini italiani nel testo disponibile.",
+      "analyzed_at": "2026-09-23T05:09:06.234Z"
+    }
   },
   "c1782140735064oor7w": {
-    "contactName": "Nicolas Schilling"
+    "contactName": "Nicolas Schilling",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore franco-italiano con storia dal 1979, ma sito datato e nessuna traccia Google. Fatturato modesto (517k) per 4 dipendenti suggerisce operazione piccola. Offre servizi di blending e export logistics, target mercati premium (USA, Giappone).",
+      "analyzed_at": "2026-09-23T05:09:21.449Z"
+    }
   },
   "c178214073506439j3x": {
     "contactName": "David Hemsley"
@@ -274156,61 +274408,232 @@
     "contactName": "Irmantas Kinderis"
   },
   "c1782738742254g3h22": {
-    "contactName": "Udo K."
+    "contactName": "Udo K.",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "E-commerce svizzero con portafoglio prevalentemente vini svizzeri (Vallese, Ticino, Ginevra). Presenti alcuni produttori italiani (Cantine Stucky-Hügin, Valentina Andrei). Fatturato modesto (389k CHF) suggerisce piccolo retailer online. Assenza su Google e info limitate riducono affidabilità.",
+      "analyzed_at": "2026-09-23T05:09:27.172Z"
+    }
   },
   "c1782738742254wyd8d": {
-    "contactName": "Urs Vaney"
+    "contactName": "Urs Vaney",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Importatore svizzero con selezione multi-paese (Svizzera, Francia, Spagna, Italia). Sito funzionante ma minimalista, nessuna visibilità Google. Fatturato modesto (292k CHF) suggerisce piccola struttura. Italia presente nel catalogo ma non dettagliata.",
+      "analyzed_at": "2026-09-23T05:09:32.035Z"
+    }
   },
   "c1782738742254lv7s5": {
-    "contactName": "Kristian Doolan"
+    "contactName": "Kristian Doolan",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda specializzata esclusivamente in vini australiani (Xanadu, Yering Station, Ox Hardy). Nessuna traccia di vini italiani nel portafoglio. Fatturato molto modesto (CHF 292k) suggerisce piccolo e-commerce di nicchia.",
+      "analyzed_at": "2026-09-23T05:09:42.382Z"
+    }
   },
   "c17827387422543jnh6": {
-    "contactName": "Antonio Torres"
+    "contactName": "Antonio Torres",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "sconosciuto",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Azienda svizzera specializzata in vini portoghesi (Douro), non italiani. Fatturato molto basso (188k CHF), nessuna traccia online, informazioni insufficienti su struttura e clientela.",
+      "analyzed_at": "2026-09-23T05:09:47.441Z"
+    }
   },
   "c17827387422545swv8": {
-    "contactName": "Gabriele Dolce"
+    "contactName": "Gabriele Dolce",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore svizzero fondato 2020 con 150 riferimenti in stock, serve horeca e retail. Sito generico senza dettagli su provenienza vini; nessuna menzione esplicita di vini italiani. Fatturato modesto (292k CHF) suggerisce piccola realtà locale.",
+      "analyzed_at": "2026-09-23T05:09:52.960Z"
+    }
   },
   "c1782738742254jw3wt": {
-    "contactName": "Giancarlo Schwendener"
+    "contactName": "Giancarlo Schwendener",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda svizzera di wine marketing con fatturato modesto (259k). Sito minimalista in tedesco, nessuna traccia Google. Portafoglio generico su 'piccole regioni vinicole' senza specificare origine geografica. Verificare se tratta vini italiani prima di contattare.",
+      "analyzed_at": "2026-09-23T05:09:58.420Z"
+    }
   },
   "c17827387422554a92m": {
-    "contactName": "Ursi Eichmann"
+    "contactName": "Ursi Eichmann",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda svizzera specializzata esclusivamente in vini austriaci (Grüner Veltliner, Zweigelt, ecc.). Nessuna traccia di vini italiani nel portafoglio. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-09-23T05:10:04.355Z"
+    }
   },
   "c1782738742255p3iq2": {
-    "contactName": "Olivier Suter"
+    "contactName": "Olivier Suter",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Startup svizzera (2021) con focus su vini naturali/biologici da piccoli produttori. Sito funzionante ma assenza totale da Google e fatturato molto basso (191k) suggeriscono fase iniziale. Portfolio non esplicitamente italiano ma approccio mediterraneo/europeo probabile.",
+      "analyzed_at": "2026-09-23T05:10:10.020Z"
+    }
   },
   "c1782738742255m8j8g": {
-    "contactName": "André Crelier"
+    "contactName": "André Crelier",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccola azienda svizzera (fatturato ~259k) con negozio fisico a Neuchâtel. Sito minimalista senza dettagli su portafoglio prodotti. Nessuna traccia online di specializzazione in vini italiani. Contattare solo se target include Svizzera romanda.",
+      "analyzed_at": "2026-09-23T05:10:23.211Z"
+    }
   },
   "c1782738742255tw4v2": {
-    "contactName": "Sascha Kopitovic"
+    "contactName": "Sascha Kopitovic",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda specializzata in vini e spirituosi serbi, non italiani. Business model online B2C con fatturato modesto (647k CHF). Non pertinente per chi cerca fornitori di vino italiano.",
+      "analyzed_at": "2026-09-23T05:10:35.421Z"
+    }
   },
   "c1782738742255s019v": {
-    "contactName": "Jan Sedelberger"
+    "contactName": "Jan Sedelberger",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "E-commerce svizzero di vini con sito funzionante e fatturato modesto (487k CHF). Portafoglio generico (rossi, bianchi, rosé, spumanti) senza indicazione esplicita di vini italiani. Nessuna traccia Google suggerisce piccola dimensione; potenziale interessante solo se specializzato in italiani.",
+      "analyzed_at": "2026-09-23T05:10:46.786Z"
+    }
   },
   "c17827387422556zxcw": {
-    "contactName": "Eva Mercier"
+    "contactName": "Eva Mercier",
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "sconosciuto",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Azienda svizzera con fatturato minimo (286k CHF), sito irraggiungibile e nessuna traccia online. Impossibile verificare se opera nel settore vino o se commercializza vini italiani.",
+      "analyzed_at": "2026-09-23T05:10:59.795Z"
+    }
   },
   "c178273874225543ujh": {
-    "contactName": "Konstantin Schmidt"
+    "contactName": "Konstantin Schmidt",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "sconosciuto",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Sito irraggiungibile, nessuna traccia online, fatturato molto basso (292k CHF). Impossibile verificare se commercializza vini italiani o se è ancora attiva.",
+      "analyzed_at": "2026-09-23T05:11:09.614Z"
+    }
   },
   "c1782738742255jxy6y": {
-    "contactName": "Manfred Bigalke"
+    "contactName": "Manfred Bigalke",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "importatore",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda focalizzata su vini francesi di lusso (Romanée-Conti, Petrus, Borgogna, Bordeaux). Nessuna menzione di vini italiani. Assenza totale da Google e dati aziendali scarsi (fatturato modesto 364k CHF) suggeriscono bassa visibilità e affidabilità incerta.",
+      "analyzed_at": "2026-09-23T05:11:15.112Z"
+    }
   },
   "c1782738742255o801m": {
-    "contactName": "Oliver Kuenzler"
+    "contactName": "Oliver Kuenzler",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Specializzato esclusivamente in vini borgognoni francesi (Burgundy), non commercializza vini italiani. E-commerce retail con fatturato modesto (CHF 683k), target consumer B2C svizzero.",
+      "analyzed_at": "2026-09-23T05:11:20.193Z"
+    }
   },
   "c1782738742255pc11e": {
-    "contactName": "Florian Van Belle"
+    "contactName": "Florian Van Belle",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "no",
+      "tipo_business": "importatore",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Importatore specializzato in vini balcanici e caucasici (Bulgaria, Georgia, Macedonia del Nord), non italiani. Business model e-commerce B2C con spedizioni rapide. Non pertinente per chi cerca vini italiani.",
+      "analyzed_at": "2026-09-23T05:11:33.007Z"
+    }
   },
   "c17827387422551cwy5": {
-    "contactName": "Luca Brunner"
+    "contactName": "Luca Brunner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "E-commerce svizzero con portafoglio mediterraneo (Francia, Italia). Sito funzionante ma assenza di dati aziendali pubblici (dipendenti, fatturato dichiarato basso). Consulenza wine pairing e wine sets suggeriscono nicchia premium retail/consumer.",
+      "analyzed_at": "2026-09-23T05:11:38.373Z"
+    }
   },
   "c1782738742255tcdcg": {
-    "contactName": "Markus Utiger"
+    "contactName": "Markus Utiger",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "importatore",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda svizzera specializzata in vini austriaci (Wachau), non italiani. Fatturato modesto (395k€), nessuna presenza Google, focus esclusivo su vini austriaci maturati.",
+      "analyzed_at": "2026-09-23T05:11:43.160Z"
+    }
   },
   "c1782738742255cbq6x": {
-    "contactName": "Besim Ramadani"
+    "contactName": "Besim Ramadani",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda con fatturato molto basso (395k CHF), nessuna traccia online, sito generico senza dettagli su portafoglio vini. Nessuna evidenza di specializzazione in vini italiani.",
+      "analyzed_at": "2026-09-23T05:11:55.070Z"
+    }
   },
   "c1783342600183kkmai": {
     "research": {
@@ -274469,67 +274892,256 @@
     "contactName": "SUHAS ALLUMPURATH SUKUMARAN"
   },
   "c1783342600185y9w6n": {
-    "contactName": "Jürg Binggeli"
+    "contactName": "Jürg Binggeli",
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "sconosciuto",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Sito irraggiungibile, nessuna traccia online, fatturato molto basso (292k CHF). Impossibile verificare se opera nel settore vino o se commercializza vini italiani.",
+      "analyzed_at": "2026-09-23T05:12:07.363Z"
+    }
   },
   "c17833426001854hmvv": {
-    "contactName": "Benjamin Petitjean"
+    "contactName": "Benjamin Petitjean",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Azienda svizzera di lusso con sito professionale ma assenza totale da Google e dati aziendali scarsi. Selezione vini include francesi e italiani (Masseto), ma focus su champagne/spiritueux. Fatturato modesto (1M CHF) suggerisce attività di nicchia/boutique.",
+      "analyzed_at": "2026-09-23T05:12:20.595Z"
+    }
   },
   "c17833426001852ixrn": {
-    "contactName": "Johan Clerc"
+    "contactName": "Johan Clerc",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "forse",
+      "note": "E-commerce specializzato in vini, whisky e craft beer con fatturato modesto (487k CHF). Portfolio prevalentemente francese/internazionale; vini italiani non esplicitamente citati. Assenza da Google e dati aziendali scarsi limitano valutazione affidabilità.",
+      "analyzed_at": "2026-09-23T05:12:33.542Z"
+    }
   },
   "c1783342600185p299f": {
-    "contactName": "Fabio Tufano"
+    "contactName": "Fabio Tufano",
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "no",
+      "tipo_business": "sconosciuto",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Sito non operativo - contiene solo pagina di default Hoststar (webhosting provider). Nessuna traccia di attività nel settore vino. Dominio parcheggiato o abbandonato.",
+      "analyzed_at": "2026-09-23T05:12:40.641Z"
+    }
   },
   "c1783342600185n6ix9": {
-    "contactName": "Samuel Wüst"
+    "contactName": "Samuel Wüst",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Importatore svizzero di vini con sito professionale e posizionamento B2B (horeca/retail). Fatturato modesto (487k CHF) suggerisce PMI. Non cita esplicitamente vini italiani nel testo, ma portafoglio europeo probabile. Verificare catalogo produttori prima di contattare.",
+      "analyzed_at": "2026-09-23T05:12:45.928Z"
+    }
   },
   "c1783342600185l7q4q": {
-    "contactName": "Stefan Kissling"
+    "contactName": "Stefan Kissling",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-azienda (fatturato ~528k CHF) fondata 2022, importatore wine-lover senza focus dichiarato su vini italiani. Sito con funzionalità e-commerce ma assenza di visibilità online (zero risultati Google) suggerisce scarsa penetrazione di mercato.",
+      "analyzed_at": "2026-09-23T05:12:51.431Z"
+    }
   },
   "c1783342600185cugs8": {
-    "contactName": "Lara Alexandra Brasio"
+    "contactName": "Lara Alexandra Brasio",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda specializzata esclusivamente in vini portoghesi, non italiani. Nessuna traccia online (Google), fatturato modesto (367k CHF), assenza di dati aziendali strutturati.",
+      "analyzed_at": "2026-09-23T05:12:57.913Z"
+    }
   },
   "c1783342600185hdf2e": {
-    "contactName": "Urs Alexander Podzorski"
+    "contactName": "Urs Alexander Podzorski",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "E-commerce svizzero specializzato in vini naturali europei (inclusi probabilmente italiani). Fatturato modesto (~775k CHF), nessuna visibilità Google. Sito funzionante ma info limitate su portafoglio e origini vini.",
+      "analyzed_at": "2026-09-23T05:13:03.350Z"
+    }
   },
   "c17833426001851vmzb": {
-    "contactName": "Stefan Fuchs"
+    "contactName": "Stefan Fuchs",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "si",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda piccola (fatturato ~292k CHF) che importa vini italiani da piccoli produttori, con servizi anche di consulenza e software. Sito basic e nessuna traccia Google; modello business poco chiaro (wine import + software prototyping). Vale verificare se operativa e seria.",
+      "analyzed_at": "2026-09-23T05:13:09.466Z"
+    }
   },
   "c1783342600185e9aqg": {
-    "contactName": "Marcel Grélat"
+    "contactName": "Marcel Grélat",
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "sconosciuto",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Sito irraggiungibile, nessuna traccia online, fatturato molto basso (292k CHF). Impossibile verificare se opera nel settore vino o se commercializza vini italiani.",
+      "analyzed_at": "2026-09-23T05:13:13.635Z"
+    }
   },
   "c1783342600185zxqpq": {
-    "contactName": "Andreas Völk"
+    "contactName": "Andreas Völk",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda svizzera specializzata in vini austriaci (Pannonia/Ungheria), non italiani. Fatturato molto basso (292k CHF), assenza totale di visibilità Google, modello e-commerce puro. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-09-23T05:13:18.369Z"
+    }
   },
   "c1783342600185lrio4": {
-    "contactName": "Océane Pinsone"
+    "contactName": "Océane Pinsone",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "E-commerce di vini con selezione italiana (Veneto, Abruzzo, Puglia) e internazionale. Fatturato modesto (CHF 389k) suggerisce piccola realtà. Assenza da Google e info limitate riducono affidabilità; verificare solidità prima di contattare.",
+      "analyzed_at": "2026-09-23T05:13:23.873Z"
+    }
   },
   "c1783342600185xywpz": {
-    "contactName": "Rafael Angel Ochoa Galindez"
+    "contactName": "Rafael Angel Ochoa Galindez",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "forse",
+      "note": "Importatore svizzero di vini naturali europei con portafoglio che include produttori italiani (Cascina degli Ulivi, Le Coste). Fatturato modesto (292k CHF) suggerisce piccola realtà. Sito funzionante ma info limitate; assenza di visibilità Google è preoccupante.",
+      "analyzed_at": "2026-09-23T05:13:34.193Z"
+    }
   },
   "c17833426001851tq7o": {
-    "contactName": "David  Allsworth"
+    "contactName": "David  Allsworth",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Micro-azienda svizzera (683k€ fatturato) specializzata in fine wine con fondatori esperti. Focus su Borgogna francese e Bordeaux; menzione di Sangiovese suggerisce interesse italiano ma non primario. Assenza da Google e dati scarsi limitano valutazione affidabilità.",
+      "analyzed_at": "2026-09-23T05:13:39.195Z"
+    }
   },
   "c1783342600185ddicf": {
-    "contactName": "Priscilla Nadler"
+    "contactName": "Priscilla Nadler",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "forse",
+      "note": "E-commerce svizzero di vini e spirituosen con fatturato modesto (584k CHF). Portafoglio include vini italiani (Prosecco DOC Bio rilevato), ma assenza da Google e dati aziendali limitati riducono affidabilità. Modello B2C puro, non adatto a partnership horeca/distribuzione.",
+      "analyzed_at": "2026-09-23T05:13:45.240Z"
+    }
   },
   "c17833426001857fmaa": {
-    "contactName": "Antonio Moriello"
+    "contactName": "Antonio Moriello",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore svizzero con selezione italiana (Toscana). Sito funzionante ma assenza totale da Google e dati aziendali scarsi (fatturato modesto ~782k CHF) suggeriscono operazione piccola/locale. Vale verificare se interessati a mercato CH/EU.",
+      "analyzed_at": "2026-09-23T05:13:50.934Z"
+    }
   },
   "c1783342600185kz2d5": {
-    "contactName": "Corinne Poffet"
+    "contactName": "Corinne Poffet",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccolo retailer svizzero (fatturato ~595k) con sito amatoriale e nessuna traccia online. Portafoglio generico di vini 'erleseni' senza specificare origine. Contatto possibile ma bassa priorità.",
+      "analyzed_at": "2026-09-23T05:13:58.546Z"
+    }
   },
   "c17833426001862vt6w": {
-    "contactName": "Alain Freymond"
+    "contactName": "Alain Freymond",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "sconosciuto",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Sito irraggiungibile, nessuna traccia online, fatturato modesto (292k CHF). Impossibile verificare se commercializza vini italiani o se è operativo.",
+      "analyzed_at": "2026-09-23T05:14:04.653Z"
+    }
   },
   "c1783342600186ey05w": {
-    "contactName": "Christophe Bourguignon"
+    "contactName": "Christophe Bourguignon",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore svizzero con sito funzionante ma assenza totale di visibilità online (zero risultati Google). Fatturato modesto (286k€) suggerisce piccola struttura. Portafoglio non specificato: menziona 'produttori' generici senza chiarire se include vini italiani. Contattare solo se target include Svizzera/mercato francofono.",
+      "analyzed_at": "2026-09-23T05:14:10.344Z"
+    }
   },
   "c178334260018642tsk": {
-    "contactName": "Gheorghe Tataru"
+    "contactName": "Gheorghe Tataru",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "importatore",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Importatore svizzero specializzato in vini moldavi (Novak Winery), non italiani. Sito basic su Odoo, nessuna traccia online, fatturato modesto (565k CHF). Non pertinente per portafoglio vini italiani.",
+      "analyzed_at": "2026-09-23T05:14:15.486Z"
+    }
   },
   "c17833426001863mcw6": {
-    "contactName": "Micael Marinho"
+    "contactName": "Micael Marinho",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Specializzata in vini portoghesi (Quinta do Sobral), non italiani. E-commerce B2C con fatturato molto basso (292k CHF). Nessuna visibilità Google, assenza di dati aziendali pubblici.",
+      "analyzed_at": "2026-09-23T05:14:21.001Z"
+    }
   },
   "c17833426001861jlzr": {
     "contactName": "Aaron Elliott"
@@ -275339,7 +275951,16 @@
     "contactName": "Andrey Lopatyshkin"
   },
   "c1783944965381y9ec1": {
-    "contactName": "Manuel Brötzmann"
+    "contactName": "Manuel Brötzmann",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "E-commerce svizzero di vini selezionati da piccoli produttori europei (Italia inclusa nel portafoglio). Fatturato modesto (388k CHF) suggerisce realtà piccola/artigianale. Sito funzionante ma assenza totale da Google e dati aziendali limitati riducono affidabilità percepita.",
+      "analyzed_at": "2026-09-23T05:14:26.976Z"
+    }
   },
   "c1783944965382b1flm": {
     "contactName": "Daniel Shepstone Koppel Daly"
@@ -284007,7 +284628,16 @@
     "contactName": "Cornel Nieuwoudt"
   },
   "c1789400396382kgfxg": {
-    "contactName": "Raphael Schor"
+    "contactName": "Raphael Schor",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda specializzata esclusivamente in Champagne francese (vini da piccoli produttori). Nessuna traccia di vini italiani nel portafoglio. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-09-23T05:14:49.439Z"
+    }
   },
   "c17894003963820dyjv": {
     "research": {
@@ -284859,5 +285489,885 @@
   },
   "c1790005322934ofh2n": {
     "contactName": "Enrico Marcato"
+  },
+  "c1780673710951ybfk5": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Specializzato esclusivamente in vini bulgari boutique, non italiani. Assenza totale di visibilità Google e dati aziendali (dipendenti/fatturato) suggerisce dimensione molto piccola o scarsa autorevolezza.",
+      "analyzed_at": "2026-09-23T05:01:45.062Z"
+    }
+  },
+  "c17806737109516zexa": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer svizzero con 2 negozi fisici e portafoglio vini generico (rossi, bianchi, rosati). Sito poco informativo, nessuna traccia online, dati aziendali assenti. Contattare solo se target è distribuzione retail Svizzera.",
+      "analyzed_at": "2026-09-23T05:01:50.403Z"
+    }
+  },
+  "c1780673710951pez8t": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer svizzero con sito dichiarato irraggiungibile e nessuna traccia online. Assenza di dati su dimensione, portafoglio vini e affidabilità. Verificare contatto diretto prima di investire tempo.",
+      "analyzed_at": "2026-09-23T05:01:55.315Z"
+    }
+  },
+  "c1780673710951qjzbl": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda specializzata esclusivamente in vini argentini (Malbec, Cabernet, Torrontés). Nessuna traccia di vini italiani nel portafoglio. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-09-23T05:02:02.585Z"
+    }
+  },
+  "c1780673710951dcv36": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Azienda consolidata dal 1997 con selezione personale di vini italiani. Assenza da Google e sito datato suggeriscono bassa visibilità digitale; modello retail locale (Svizzera) con degustazioni in loco, non adatto a distribuzione B2B italiana.",
+      "analyzed_at": "2026-09-23T05:02:09.666Z"
+    }
+  },
+  "c1780673710951o3xy0": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Biostore svizzero con sezione vini, ma nessuna evidenza esplicita di focus su vini italiani. Sito funzionante ma scarsi dettagli su portafoglio vinicolo. Vale la pena contattare direttamente per verificare interesse a vini biologici/naturali italiani.",
+      "analyzed_at": "2026-09-23T05:02:15.540Z"
+    }
+  },
+  "c1780673710951gl6mv": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Negozio portoghese specializzato in prodotti lusitani (pesce, birra, dolci). Nessuna evidenza di focus su vini italiani; catalogo orientato a Portogallo/Brasile/Spagna. Dimensione micro (gestione familiare), non adatto a partnership B2B per vini italiani.",
+      "analyzed_at": "2026-09-23T05:02:20.591Z"
+    }
+  },
+  "c1780673710951jpb8i": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Caviste specializzata in vini naturali con portafoglio che include Italia. Sito funzionante ma info limitate (no dipendenti/fatturato). Contatto disponibile; verificare se interessati a fornitori di vini naturali italiani.",
+      "analyzed_at": "2026-09-23T05:02:24.984Z"
+    }
+  },
+  "c1780673710951v5axs": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "forse",
+      "note": "Retailer online svizzero di vino, ma sito irraggiungibile e nessuna traccia Google. Verificare se ancora attivo prima di contattare. Potenziale cliente se operativo, ma affidabilità da confermare.",
+      "analyzed_at": "2026-09-23T05:02:29.131Z"
+    }
+  },
+  "c1780673710951ggizw": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "si",
+      "tipo_business": "misto",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer svizzero con online shop e wine bar fisiche (Basel, Thalwil, Thun). Vende vini italiani (es. Roberto Sarotto Barbera). Sito funzionante ma nessuna traccia Google; dati aziendali (dipendenti/fatturato) non disponibili. Contatto telefonico presente.",
+      "analyzed_at": "2026-09-23T05:02:34.105Z"
+    }
+  },
+  "c1780673710951nd0j3": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Piccola enoteca svizzera con focus su vini italiani e svizzeri da produttori noti. Serve sia clientela privata che horeca. Sito datato e nessuna traccia online; dimensione modesta ma potenzialmente interessante per distribuzione locale.",
+      "analyzed_at": "2026-09-23T05:02:40.301Z"
+    }
+  },
+  "c17806737109517c32w": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "importatore|retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Azienda familiare che importa vini da Apulia e Sicilia con focus su retail/consumatore finale. Sito funzionante ma nessuna traccia Google. Dimensione piccola (200 prodotti totali), non è un player B2B horeca primario.",
+      "analyzed_at": "2026-09-23T05:02:46.019Z"
+    }
+  },
+  "c17806737109516zngo": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "si",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer consolidato dal 1923 a Lugano con focus su vini italiani, francesi e svizzeri. Clientela prevalentemente retail/turistica; non è canale distributivo per produttori. Contattare solo se interessati a placement in punto vendita fisico di prestigio.",
+      "analyzed_at": "2026-09-23T05:02:51.554Z"
+    }
+  },
+  "c1780673710951a8h6y": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Sito irraggiungibile, nessuna traccia Google, dati aziendali assenti (dipendenti/fatturato). Impossibile verificare portafoglio prodotti e affidabilità. Sconsigliato contattare senza validazione preliminare.",
+      "analyzed_at": "2026-09-23T05:02:55.599Z"
+    }
+  },
+  "c1780673710951jos2x": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore|online",
+      "mercato_target": "retail|online",
+      "raccomandato": "forse",
+      "note": "Piccolo importatore svizzero con focus su vini hawaiiani e biologici locali (Ticino, Luzern). Portafoglio limitato di vini italiani (Tamborini Ticino). Sito funzionante ma scarsa visibilità online. Mercato principalmente locale/svizzero.",
+      "analyzed_at": "2026-09-23T05:03:01.583Z"
+    }
+  },
+  "c17806737109516u3uf": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda svizzera senza sito web, nessuna traccia online e dati insufficienti. Impossibile verificare portafoglio vini italiani o affidabilità commerciale.",
+      "analyzed_at": "2026-09-23T05:03:05.473Z"
+    }
+  },
+  "c1780673710951xmaas": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo retailer svizzero locale con focus su vini regionali (presumibilmente svizzeri/europei). Nessuna menzione esplicita di vini italiani; assenza totale di visibilità online (zero risultati Google) e sito web molto basilare suggeriscono operatività limitata al mercato locale.",
+      "analyzed_at": "2026-09-23T05:03:16.861Z"
+    }
+  },
+  "c17806737109510777b": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore svizzero con focus su vini biologici e spumanti. Siti dichiarati non raggiungibili e assenza di risultati Google suggeriscono azienda piccola o inattiva. Verificare contatti diretti prima di investire tempo.",
+      "analyzed_at": "2026-09-23T05:03:20.979Z"
+    }
+  },
+  "c1780673710951vamcw": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "no",
+      "tipo_business": "importatore|retailer",
+      "mercato_target": "retail|horeca",
+      "raccomandato": "no",
+      "note": "Azienda solida fondata nel 1973, specializzata esclusivamente in vini francesi (Bordeaux, Borgogna, Loire, Rhône). Non importa vini italiani, quindi non pertinente per strategie di promozione del vino italiano.",
+      "analyzed_at": "2026-09-23T05:03:27.015Z"
+    }
+  },
+  "c1780673710951f29eu": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "horeca",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Wine bar/enoteca con bottleshop a Lucerna. Sito funzionante ma minime info su portafoglio vini (\"vini da tutto il mondo\"). Nessuna menzione esplicita di vini italiani. Assenza dati su dipendenti/fatturato limita valutazione affidabilità.",
+      "analyzed_at": "2026-09-23T05:03:32.133Z"
+    }
+  },
+  "c17806737109516n4xx": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer svizzero online con catalogo diversificato (Francia, Svizzera, Italia, Spagna, Portogallo). Sito funzionante ma senza info su dimensioni aziendali. Vini italiani presenti (Montalcino, Piemonte, Sicilia, Toscana) ma non sono focus principale.",
+      "analyzed_at": "2026-09-23T05:03:39.309Z"
+    }
+  },
+  "c1780673710951t0u1m": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda svizzera focalizzata su prodotti locali vaudesi (formaggi, charcuterie, vini regionali). Nessuna evidenza di interesse per vini italiani; portafoglio orientato esclusivamente al terroir locale.",
+      "analyzed_at": "2026-09-23T05:03:44.616Z"
+    }
+  },
+  "c1780673710951l7dm7": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Sito datato (2013-2018), nessuna traccia Google, modello B2C puro (consegna a domicilio). Non è importatore/distributore B2B per horeca/retail.",
+      "analyzed_at": "2026-09-23T05:03:49.538Z"
+    }
+  },
+  "c17806737109519q46r": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "E-commerce svizzero con sito funzionante e registrazione legale (IDE CHE-101.716.389). Catalogo generico (vini, champagne, spiritueux, epicerie) senza focus esplicito su vini italiani. Nessuna visibilità Google e dati aziendali assenti limitano valutazione affidabilità.",
+      "analyzed_at": "2026-09-23T05:03:55.860Z"
+    }
+  },
+  "c1780673710951hi1ql": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore svizzero con 20+ anni di storia e passione per il vino; modello diretto con produttori. Portafoglio non specificato ma approccio europeo suggerisce possibile interesse per vini italiani. Assenza di dati pubblici (Google) e info finanziarie limita valutazione affidabilità.",
+      "analyzed_at": "2026-09-23T05:04:01.664Z"
+    }
+  },
+  "c1780673710951qm680": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Sito irraggiungibile, nessuna traccia online (Google), dati aziendali assenti. Impossibile verificare affidabilità o portafoglio prodotti.",
+      "analyzed_at": "2026-09-23T05:04:06.022Z"
+    }
+  },
+  "c1780673710951m0rxc": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Nessun sito web dichiarato, assente da Google, dati aziendali incompleti (dipendenti/fatturato mancanti). Impossibile verificare affidabilità o portafoglio vini italiani.",
+      "analyzed_at": "2026-09-23T05:04:10.402Z"
+    }
+  },
+  "c17806737109517mxcx": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda specializzata esclusivamente in vini rumeni e moldavi. Nessuna traccia di vini italiani nel portafoglio. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-09-23T05:04:16.984Z"
+    }
+  },
+  "c17806737109511bk5d": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Distributore svizzero locale (Ägerital) senza presenze online rilevabili. Portafoglio generico (vini generici, birra, spirits) senza menzione esplicita di vini italiani. Non pertinente per strategie di export vini italiani.",
+      "analyzed_at": "2026-09-23T05:04:27.075Z"
+    }
+  },
+  "c1780673710951k08ua": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda svizzera specializzata in birra artigianale (craft beer), non vini. Sito con errori tecnici WordPress e nessuna traccia online. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-09-23T05:04:33.525Z"
+    }
+  },
+  "c17806737109514mjm7": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "horeca",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Ristorante italiano premiato (Michelin 2025, Gault Millau top 150, Falstaff 88pt) con focus su cucina italiana e vini. Sito indica 'Wine, Sparkling Wine' ma è primariamente HORECA, non retailer/online. Contatto utile solo se si vende vini premium italiani al ristorante.",
+      "analyzed_at": "2026-09-23T05:04:40.676Z"
+    }
+  },
+  "c1780673710951e4uai": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer svizzero con sito funzionante e portafoglio vini diversificato (svizzeri, francesi, esteri). Citano 300+ vini ma non specificamente italiani. Dimensione piccola, mercato locale. Vale la pena contattare se target è distribuzione retail in Svizzera romanda.",
+      "analyzed_at": "2026-09-23T05:04:45.475Z"
+    }
+  },
+  "c1780673710951f8unr": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "E-commerce svizzero con sezione dedicata a vini italiani (bianchi, rosati, rossi). Sito funzionante ma nessuna traccia online (Google). Offre anche B2B (horeca/revendeurs). Mancano dati su dimensione e affidabilità.",
+      "analyzed_at": "2026-09-23T05:04:51.984Z"
+    }
+  },
+  "c1780673710951vhwbm": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "misto",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Importatore svizzero specializzato in vini italiani (Etna, Vulcani d'Italia, Cantine del Notaio). Sito funzionante con e-commerce attivo, ma assenza totale da Google e dati aziendali (dipendenti/fatturato) limitano valutazione affidabilità. Contatto possibile per verificare solidità e volumi.",
+      "analyzed_at": "2026-09-23T05:05:07.453Z"
+    }
+  },
+  "c178067371095189r3o": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "E-commerce svizzero focalizzato su whisky e spirituosen; vini presenti ma non evidenziati (solo categorie generiche). Nessuna traccia online, dati aziendali assenti, portfolio non specializzato su vini italiani.",
+      "analyzed_at": "2026-09-23T05:05:12.867Z"
+    }
+  },
+  "c1780673710951k7qz4": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda svizzera specializzata in vini tedeschi e finefood (aceto balsamico, olio). Nessuna traccia di vini italiani nel portafoglio. Assenza di dati su dipendenti/fatturato e nessuna visibilità Google suggerisce dimensione ridotta.",
+      "analyzed_at": "2026-09-23T05:05:20.854Z"
+    }
+  },
+  "c1780673710951ltr4l": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer svizzero con sito web attivo ma assenza totale di visibilità Google e info aziendali (dipendenti/fatturato). Portafoglio generico (vini, birre, spirits) senza evidenza esplicita di vini italiani. Vale la pena contattare direttamente per verificare interesse e capacità distributiva.",
+      "analyzed_at": "2026-09-23T05:05:26.165Z"
+    }
+  },
+  "c1780673710951f3u6r": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "importatore",
+      "mercato_target": "online",
+      "raccomandato": "forse",
+      "note": "Importatore svizzero specializzato in vini italiani (Toscana) con approccio artigianale e selezione diretta dai produttori. Sito funzionante ma assenza di dati pubblici (dipendenti, fatturato) e nessuna traccia Google limitano valutazione affidabilità.",
+      "analyzed_at": "2026-09-23T05:05:31.190Z"
+    }
+  },
+  "c178067371095104sn7": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Sito con contenuti corrotti/mal formattati, nessuna traccia online. Sembra essere un ristorante/bar con wine selection a Zurigo, non un vero retailer/online store di vini. Dati di contatto incoerenti (indirizzo italiano in footer non corrisponde a Zurigo).",
+      "analyzed_at": "2026-09-23T05:05:37.670Z"
+    }
+  },
+  "c1780673710951byz1s": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccolo retailer svizzero con sito funzionante e catalogo vini italiani (Barolo, Terre Siciliane). Assenza di dati su Google e info aziendali limita valutazione; mercato locale/online non strategico per distributore italiano.",
+      "analyzed_at": "2026-09-23T05:05:43.370Z"
+    }
+  },
+  "c1780673710951woatm": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "no",
+      "tipo_business": "sconosciuto",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Sito completamente compromesso: contiene solo contenuti su casino online (Chicken Road) senza alcuna traccia di attività vinicola. Nessun risultato Google, nessuna informazione aziendale verificabile. Potenziale frode o sito abbandonato/hackerato.",
+      "analyzed_at": "2026-09-23T05:05:48.683Z"
+    }
+  },
+  "c1780673710951ppjn7": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "E-commerce specializzato in vini italiani (Valpolicella, Amarone, Franciacorta). Sito funzionante ma assenza di visibilità Google e dati aziendali (dipendenti, fatturato) limitano valutazione affidabilità. Contattare per verificare solidità e volumi.",
+      "analyzed_at": "2026-09-23T05:05:54.923Z"
+    }
+  },
+  "c1780673710951od2lh": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda specializzata esclusivamente in vini spagnoli (1700+ referenze). Nessuna traccia di vini italiani nel portafoglio. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-09-23T05:06:04.595Z"
+    }
+  },
+  "c17806737109517hft5": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Specializzato in vini naturali senza solfiti aggiunti, focus su produttori europei con filosofia sostenibile. Sito presente ma nessuna traccia Google; portafoglio non specifica origine geografica dei vini (potenzialmente italiani tra i fornitori). Contattare per verificare se distribuisce vini italiani naturali.",
+      "analyzed_at": "2026-09-23T05:06:09.797Z"
+    }
+  },
+  "c1780673710951s5o3l": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda specializzata esclusivamente in whisky e spirits (rum, gin, tequila, calvados, grappa). Nessuna traccia di vini italiani o europei nel portafoglio. Non pertinente per distribuzione vini.",
+      "analyzed_at": "2026-09-23T05:06:14.796Z"
+    }
+  },
+  "c1780673710951qeu0u": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Bar/shop specializzato in birre artigianali e spirits con sezione vini generica. Nessuna evidenza di focus su vini italiani; assenza di dati aziendali (dipendenti, fatturato) e scarsa visibilità online rendono difficile valutare affidabilità.",
+      "analyzed_at": "2026-09-23T05:06:20.167Z"
+    }
+  },
+  "c1780673710951d0f82": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Sito in manutenzione da tempo indeterminato, nessuna traccia Google, dati aziendali assenti (dipendenti/fatturato). Impossibile verificare portafoglio prodotti e affidabilità.",
+      "analyzed_at": "2026-09-23T05:06:25.970Z"
+    }
+  },
+  "c1780673710951h3zat": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore|online",
+      "mercato_target": "online",
+      "raccomandato": "forse",
+      "note": "Nome suggerisce specializzazione in prodotti del Cilento (Italia). Sito irraggiungibile e assenza totale di risultati Google indicano possibile inattività o problemi operativi. Verificare contattabilità prima di procedere.",
+      "analyzed_at": "2026-09-23T05:06:30.297Z"
+    }
+  },
+  "c17806737109510n429": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "importatore",
+      "mercato_target": "online",
+      "raccomandato": "forse",
+      "note": "Importatore svizzero con focus su vini italiani, francesi e svizzeri. Sito funzionante ma assenza di risultati Google e dati aziendali (dipendenti, fatturato) limitano valutazione affidabilità. Modello B2C online puro, non HORECA.",
+      "analyzed_at": "2026-09-23T05:06:36.328Z"
+    }
+  },
+  "c1780673710951ycj7l": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "no",
+      "tipo_business": "importatore",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda svizzera specializzata esclusivamente in vini di Bordeaux in primeurs. Importatore ufficiale Baron Philippe de Rothschild con sito professionale. Non commercializza vini italiani.",
+      "analyzed_at": "2026-09-23T05:06:42.126Z"
+    }
+  },
+  "c1780673710951kq66p": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda specializzata in prodotti greci (vini, ouzo, tsipouro, olio, delikatessen). Nessuna traccia di vini italiani nel portafoglio. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-09-23T05:06:48.566Z"
+    }
+  },
+  "c17806737109510m3hx": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "misto",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccolo importatore svizzero con focus su vini europei e specialità italiane. Assenza di visibilità online (nessun risultato Google) e dati finanziari limitano la valutazione; contatto diretto consigliato per verificare volume d'affari e interesse B2B.",
+      "analyzed_at": "2026-09-23T05:06:53.086Z"
+    }
+  },
+  "c1780673710951p75to": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccola vinothek online svizzera con sito funzionante ma scarsa visibilità. Portafoglio non specificato (probabile mix europeo/italiano). Contatto diretto disponibile; verificare se interessati a vini italiani prima di contattare.",
+      "analyzed_at": "2026-09-23T05:06:58.234Z"
+    }
+  },
+  "c17806737109517u2zu": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo wine bar/enoteca locale (associazione di appassionati) senza visibilità online. Nessuna informazione su portafoglio vini o focus su italiani. Non idoneo per distribuzione.",
+      "analyzed_at": "2026-09-23T05:07:04.676Z"
+    }
+  },
+  "c1780673710951536md": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "E-commerce svizzero con vini italiani nel portafoglio (Rosso, Bianco, Rosé). Assenza di risultati Google e dati aziendali (dipendenti/fatturato) limitano valutazione affidabilità. Verificare volume vendite e interesse per fornitori italiani.",
+      "analyzed_at": "2026-09-23T05:07:10.290Z"
+    }
+  },
+  "c1780673710951vy926": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "si",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "E-commerce svizzero con vini italiani (Calabria IGT, Barbaresco Piemonte). Sito funzionante ma assenza totale di visibilità Google, nessuna info su dimensioni/storia aziendale. Contattare solo se interessati a piccoli retailer online in Svizzera.",
+      "analyzed_at": "2026-09-23T05:07:15.507Z"
+    }
+  },
+  "c1780673710951twoo1": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "si",
+      "tipo_business": "importatore",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccolo importatore svizzero con focus su vini sud-italiani. Sito datato e nessuna traccia online; gestione personale (Ernst Nef). Contatto diretto possibile ma dimensione molto ridotta.",
+      "analyzed_at": "2026-09-23T05:07:21.894Z"
+    }
+  },
+  "c1780673710951kcawk": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "online",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "E-commerce svizzero con catalogo che include vini italiani prestigiosi (Piedmont, Tuscany, produttori come Antinori, San Guido, Conterno). Assenza di risultati Google e dati aziendali (dipendenti/fatturato) limitano valutazione affidabilità. Contatto disponibile; verificare solidità prima di proposta commerciale.",
+      "analyzed_at": "2026-09-23T05:07:30.993Z"
+    }
+  },
+  "c1780673710951ovfh1": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore|online",
+      "mercato_target": "retail|online",
+      "raccomandato": "no",
+      "note": "Azienda specializzata in vini secondi di Bordeaux, non in vini italiani. Sito con encoding issues e nessuna traccia online (Google). Profilo non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-09-23T05:07:37.130Z"
+    }
+  },
+  "c1781537452545j986a": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "E-commerce specializzato in vini italiani con portafoglio interessante (Marsala, Prosecco, vini da piccoli produttori). Micro-azienda (2 dipendenti, fatturato ~260k CHF) con sito funzionante ma assenza totale da Google suggerisce visibilità limitata. Contattare se interessati a canale online B2C svizzero.",
+      "analyzed_at": "2026-09-23T05:07:53.683Z"
+    }
+  },
+  "c1781537452545lxb7y": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-azienda (1 dipendente, fatturato ~96k CHF) con sito e-commerce generico di vini. Nessuna menzione esplicita di vini italiani nel testo estratto; catalogo sembra internazionale (Grüner Veltliner austriaco, Shiraz sudafricano). Assenza totale da Google suggerisce visibilità molto bassa.",
+      "analyzed_at": "2026-09-23T05:08:01.879Z"
+    }
+  },
+  "c178153745254565ds3": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "si",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "E-commerce specializzato in vini e oli d'oliva italiani da piccoli produttori. Fatturato molto modesto (292k CHF) e assenza totale da Google suggeriscono startup giovane o poco visibile. Sito funzionante ma minimalista, nessuna info su dipendenti o storia aziendale.",
+      "analyzed_at": "2026-09-23T05:08:06.981Z"
+    }
+  },
+  "c1781537452545e1mqd": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "importatore",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccolo importatore svizzero specializzato in vini del Sannio (Campania). Sito funzionante ma minimalista, 2 dipendenti, fatturato modesto (~390k CHF). Assenza totale da Google suggerisce scarsa visibilità online. Potenziale per contatti diretti ma dimensione molto ridotta.",
+      "analyzed_at": "2026-09-23T05:08:16.743Z"
+    }
+  },
+  "c1782140735064tvdyq": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Piccola azienda familiare (2 dipendenti) con fatturato modesto, ma sito funzionante e catalogo di 300 vini. Serve horeca locale e retail nel Val d'Hérens. Nessuna menzione esplicita di vini italiani, ma portafoglio europeo suggerisce possibile interesse.",
+      "analyzed_at": "2026-09-23T05:08:27.758Z"
+    }
+  },
+  "c1782140735064e0c55": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "sconosciuto",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Sito in tedesco con struttura base ma contenuti non caricati (sezioni 'Unsere Weine' vuote). Nessuna traccia online, impossibile verificare portafoglio prodotti e specializzazione geografica.",
+      "analyzed_at": "2026-09-23T05:08:33.167Z"
+    }
+  },
+  "c1782140735064zzmqe": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore-distributore-retailer consolidato dal 1981 con sito e-commerce funzionante. Portafoglio include vini italiani (Piemonte, Toscana, Sicilia, Puglia) ma focus prevalente su Francia e Svizzera. Piccola struttura (5 dipendenti, fatturato ~487k CHF) orientata a clientela retail/online di fascia alta.",
+      "analyzed_at": "2026-09-23T05:08:39.082Z"
+    }
+  },
+  "c1782738742254x5kba": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "si",
+      "tipo_business": "distributore",
+      "mercato_target": "retail",
+      "raccomandato": "si",
+      "note": "Distributore svizzero specializzato in vini italiani (Piemonte, Toscana, Valle d'Aosta, Veneto). Rete retail consolidata in Ticino con fatturato ~776k CHF. Sito professionale con e-commerce attivo.",
+      "analyzed_at": "2026-09-23T05:09:37.360Z"
+    }
+  },
+  "c1782738742255cq7kd": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "si",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo retailer online svizzero con fatturato modesto (376k CHF). Vende vini italiani ma è un negozio locale per consumatori finali, non un partner B2B rilevante per distribuzione. Nessuna traccia Google, sito basic su Weebly.",
+      "analyzed_at": "2026-09-23T05:10:17.381Z"
+    }
+  },
+  "c1782738742255wbb6h": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccola cantina svizzera (fatturato ~460k) con sito minimalista e nessuna traccia online. Nome 'Cantina Brusa' suggerisce focus su vini, probabilmente italiani. Gestisce wine bar e shop locale - contattare solo se target è Svizzera/Langenthal.",
+      "analyzed_at": "2026-09-23T05:10:29.404Z"
+    }
+  },
+  "c1782738742255il2o2": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "sconosciuto",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Sito irraggiungibile, nessuna traccia online, fatturato modesto (478k CHF). Impossibile verificare portafoglio prodotti e specializzazione vini italiani.",
+      "analyzed_at": "2026-09-23T05:10:40.183Z"
+    }
+  },
+  "c1782738742255m06dw": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore svizzero di vini e spirituosen da tutto il mondo con focus su qualità e direct import. Sito funzionante ma informazioni limitate; nessuna menzione esplicita di vini italiani nel testo disponibile, anche se portafoglio internazionale lo suggerisce. Fatturato modesto (292k CHF) indica piccola-media azienda.",
+      "analyzed_at": "2026-09-23T05:10:54.829Z"
+    }
+  },
+  "c1782738742255ieyxi": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "no",
+      "tipo_business": "importatore",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Importatore specializzato in vini greci, non italiani. Fatturato modesto (191k CHF) suggerisce piccola operazione. Non pertinente per portafoglio vini italiani.",
+      "analyzed_at": "2026-09-23T05:11:04.625Z"
+    }
+  },
+  "c1782738742255p95pg": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda con fatturato modesto (389k€) e sito funzionante ma con problemi tecnici. Portafoglio focalizzato su vini francesi (Borgogna) e spiritueux; nessuna menzione esplicita di vini italiani. Modello business diversificato (club, shop, horeca) ma principalmente orientato al mercato francese.",
+      "analyzed_at": "2026-09-23T05:11:28.027Z"
+    }
+  },
+  "c1782738742255rtmv0": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "E-commerce svizzero di vini con portafoglio mediterraneo (Francia, Italia, Spagna). Piccola struttura (5 dipendenti, ~647k CHF fatturato). Recente rebranding da Arthur's Cellar (feb 2026) suggerisce continuità operativa. Assenza da Google e info limitate riducono affidabilità percepita.",
+      "analyzed_at": "2026-09-23T05:12:02.787Z"
+    }
+  },
+  "c1783342600185v8gms": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "importatore",
+      "mercato_target": "online",
+      "raccomandato": "forse",
+      "note": "Piccolo importatore svizzero con focus su vini italiani (Piemonte) e francesi, vendita diretta online. Fatturato modesto (367k) suggerisce struttura leggera; sito funzionante ma assenza totale da Google è preoccupante per affidabilità.",
+      "analyzed_at": "2026-09-23T05:12:14.592Z"
+    }
+  },
+  "c17833426001852lpfn": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Distributore svizzero di bevande con prodotti a base di vino italiano (MySpritz). Fatturato modesto (389k€), nessuna traccia online. Potenziale limitato ma merita verifica per mercato CH.",
+      "analyzed_at": "2026-09-23T05:12:28.034Z"
+    }
+  },
+  "c17845483887917muny": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore svizzero specializzato in vini naturali mediterranei con portfolio italiano (La Stoppa, Stefano Amerighi, Le Boncie, Zidarich, Tenute Dettori). Piccola struttura (2 dipendenti, fatturato ~396k€) ma sito funzionante e selezione curata. Assenza da Google e info limitate riducono affidabilità percepita.",
+      "analyzed_at": "2026-09-23T05:14:32.446Z"
+    }
+  },
+  "c1786959961018nb7tq": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "E-commerce svizzero specializzato in vini italiani (Toscana, Piemonte, Veneto, Sicilia, Abruzzo). Sito funzionante ma assenza di info aziendali (dipendenti, fatturato, storia). Nessuna visibilità Google suggerisce piccola realtà locale.",
+      "analyzed_at": "2026-09-23T05:14:39.139Z"
+    }
+  },
+  "c1788792932801urvx4": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Distributore svizzero di bevande e vini con servizio horeca/catering. Sito minimalista senza info su portafoglio vini; nessuna traccia online. Contattare direttamente per verificare se importano vini italiani.",
+      "analyzed_at": "2026-09-23T05:14:44.558Z"
+    }
+  },
+  "c17806737109538sl64": {
+    "research": {
+      "affidabilita": 5,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Whole Foods Market UK è retailer solido (798 dipendenti, fatturato 109M) con forte presenza online e in-store. Portafoglio vini ampio ma non specificamente focalizzato su italiani; contatto utile solo se si ha capacità di supportare grandi volumi retail/online.",
+      "analyzed_at": "2026-09-23T05:15:37.610Z"
+    }
   }
 }
