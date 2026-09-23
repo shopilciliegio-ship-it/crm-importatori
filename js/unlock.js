@@ -103,8 +103,8 @@ async function avviaSbloccaEmail(){
 
   const finalJob=await pollUnlockWorkflow();
   if(finalJob && finalJob.result){
-    const {unlocked, failed, skipped, stopReason}=finalJob.result;
-    toast(`✅ Sblocco completato: ${unlocked} sbloccate, ${failed} fallite, ${skipped} saltate${stopReason?' — '+stopReason:''}`);
+    const {unlocked, spent, failed, skipped, stopReason}=finalJob.result;
+    toast(`✅ Sblocco completato: ${unlocked} email, ${spent??'?'} crediti spesi, ${failed} fallite, ${skipped} saltate (0 crediti)${stopReason?' — '+stopReason:''}`);
     if(typeof loadFromGH==='function') loadFromGH();  // ricarica per vedere le nuove email
   } else {
     toast('⏱ Sblocco ancora in corso o monitoraggio scaduto — controlla su GitHub Actions o riapri il CRM tra qualche minuto');

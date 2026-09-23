@@ -230,9 +230,10 @@ def send_digest(job, unlocked, failed, skipped, credits_left_hint):
     subject = f'🔓 Sblocco email BWI — {unlocked} sbloccate ({now_str})'
     rows = [
         ('Categoria', f'{job.get("raccomandato","?")} · {"/".join(str(s) for s in job.get("stelle",[]))} stelle'),
-        ('Sbloccate', str(unlocked)),
-        ('Fallite', str(failed)),
-        ('Già note (saltate)', str(skipped)),
+        ('Email ottenute', str(unlocked)),
+        ('Crediti BWI spesi', str((job.get('result') or {}).get('spent', '?'))),
+        ('Pagate senza email / errori', str(failed)),
+        ('Saltate (nessuna email su BWI, 0 crediti)', str(skipped)),
     ]
     if credits_left_hint is not None:
         rows.append(('Crediti BWI residui (stima)', str(credits_left_hint)))
@@ -306,13 +307,13 @@ def main():
     _, headers = do_login()
     print('✅ Login OK\n')
 
-    unlocked = failed = skipped = 0
+    unlocked = failed = skipped = spent = 0
     since_checkpoint = 0
     now_ms = int(datetime.now(timezone.utc).timestamp() * 1000)
     stop_reason = None
 
     for c in targets:
-        if unlocked >= max_credits:
+        if spent >= max_credits:  # tetto sui crediti SPESI, non sulle email ottenute (23/9: tetto 20, spesi 34)
             stop_reason = f'budget di {max_credits} crediti raggiunto'
             break
 
@@ -325,28 +326,45 @@ def main():
         if not leads:
             skipped += 1
             continue
-        target_lead = best_person(leads)
+        # Campo Email nella lista lead (gratuita), scoperto il 23/9/2026 dopo 14 crediti spesi a vuoto:
+        #   "*"         = email presente ma bloccata -> sbloccabile (1 credito)
+        #   ""          = BWI non ha l'email ("No Email/Phone" sul portale): sbloccare costa 1 credito
+        #                 e non restituisce nulla -> MAI sbloccare
+        #   "x@dominio" = già sbloccata (es. a mano dal portale) -> la prendiamo gratis
+        gia_note  = [l for l in leads if '@' in (l.get('Email') or '')]
+        bloccate  = [l for l in leads if (l.get('Email') or '').strip() == '*']
+        gratis = bool(gia_note)
+        target_lead = best_person(gia_note or bloccate)
         if not target_lead or not target_lead.get('LeadId'):
+            # Nessuna persona con email su BWI: lo segniamo (gratis) così l'azienda esce dai candidati.
+            c.setdefault('log', []).append({
+                'ts': now_ms,
+                'msg': f'{LOG_SENZA_EMAIL}: nessuna persona con email su BWI (verificato senza spendere crediti)',
+            })
+            print(f'  ∅ {c.get("company","?")}: nessuna persona con email su BWI — saltata, 0 crediti')
             skipped += 1
+            since_checkpoint += 1
             continue
 
-        try:
-            r = unlock_lead(headers, int(comp_id), target_lead['LeadId'], target_lead.get('LeadType', 'manu'))
-        except Exception as e:
-            print(f'  ⚠ {c.get("company","?")}: errore rete — {e}')
-            failed += 1
-            continue
-
-        if r.status_code in (402, 403):
-            stop_reason = f'BWI ha rifiutato lo sblocco (HTTP {r.status_code}) — probabile fine crediti'
-            print(f'  ❌ {stop_reason}')
-            break
-        if not r.ok:
-            print(f'  ⚠ {c.get("company","?")}: HTTP {r.status_code}')
-            failed += 1
-            continue
-
-        result = r.json()
+        if gratis:
+            result = {'leadEmail': target_lead['Email'].strip()}  # già in chiaro: nessuno sblocco, 0 crediti
+        else:
+            try:
+                r = unlock_lead(headers, int(comp_id), target_lead['LeadId'], target_lead.get('LeadType', 'manu'))
+            except Exception as e:
+                print(f'  ⚠ {c.get("company","?")}: errore rete — {e}')
+                failed += 1
+                continue
+            if r.status_code in (402, 403):
+                stop_reason = f'BWI ha rifiutato lo sblocco (HTTP {r.status_code}) — probabile fine crediti'
+                print(f'  ❌ {stop_reason}')
+                break
+            if not r.ok:
+                print(f'  ⚠ {c.get("company","?")}: HTTP {r.status_code}')
+                failed += 1
+                continue
+            spent += 1  # BWI scala il credito anche se poi non restituisce l'email
+            result = r.json()
         email = (result.get('leadEmail') or '').strip()
         if not email:
             # BWI scala comunque il credito: lo segniamo nella scheda così non si ritenta più.
@@ -453,10 +471,10 @@ def main():
 
     job['status']   = 'done'
     job['finishedAt'] = datetime.now(timezone.utc).isoformat()
-    job['result']   = {'unlocked': unlocked, 'failed': failed, 'skipped': skipped, 'stopReason': stop_reason}
+    job['result']   = {'unlocked': unlocked, 'spent': spent, 'failed': failed, 'skipped': skipped, 'stopReason': stop_reason}
     save_job(job)
 
-    print(f'\n✅ Fatto. Sbloccate {unlocked}, fallite {failed}, saltate {skipped}.'
+    print(f'\n✅ Fatto. Email ottenute {unlocked}, crediti spesi {spent}, fallite {failed}, saltate {skipped}.'
           + (f' Fermato: {stop_reason}' if stop_reason else ''))
 
     send_digest(job, unlocked, failed, skipped, None)
