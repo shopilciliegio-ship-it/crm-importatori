@@ -16,7 +16,8 @@ function selectBestContact(contacts){
   const scored = contacts
     .filter(c => c.name || c.email)
     .map(c => ({...c, score: getPriorityScore(c.title)}))
-    .sort((a,b) => a.score - b.score);
+    // Persona sbloccata via BWI (scripts/unlock_leads_bulk.py) = sempre il destinatario: saluto e indirizzo coincidono.
+    .sort((a,b) => ((b.sbloccato?1:0)-(a.sbloccato?1:0)) || (a.score - b.score));
 
   if(!scored.length) return {primary:null, secondary:null};
 

@@ -248,6 +248,8 @@ def main():
     base_snap = {c['id']: {
         'status': c.get('status') or '', 'log': json.dumps(c.get('log') or [], ensure_ascii=False),
         'contactEmail': c.get('contactEmail') or '', 'contactName': c.get('contactName') or '',
+        'contactTitle': c.get('contactTitle') or '',
+        'contacts': json.dumps(c.get('contacts') or [], ensure_ascii=False),
     } for c in contacts}
 
     targets = target_contacts(list(by_id.values()), raccomandato, stelle_set)
@@ -304,8 +306,24 @@ def main():
             failed += 1
             continue
 
+        # La persona sbloccata va nella scheda (contacts[]) con email e flag "sbloccato": da lì la
+        # scelgono come destinatario, a prescindere dal ruolo, invio massivo, follow-up, CRM e saluto
+        # "Dear ..." (sort in select_best_contact/select_send_email/selectBestContact).
+        full_name = (target_lead.get('FullName') or '').strip()
+        position  = (target_lead.get('Position') or '').strip()
+        people = [dict(p) for p in (c.get('contacts') or [])]
+        same = next((p for p in people if full_name and (p.get('name') or '').strip().lower() == full_name.lower()), None)
+        if same:
+            same['email'] = email
+            same['sbloccato'] = True
+            if position and not same.get('title'):
+                same['title'] = position
+        else:
+            people.append({'name': full_name, 'title': position, 'email': email, 'sbloccato': True})
+        c['contacts']     = people
         c['contactEmail'] = email
-        c['contactName']  = target_lead.get('FullName', '')
+        c['contactName']  = full_name
+        c['contactTitle'] = position
         c.setdefault('log', []).append({
             'ts': now_ms,
             'msg': f'🔓 Email sbloccata via BWI: {target_lead.get("FullName","")} <{email}> ({target_lead.get("Position","")})',
@@ -328,6 +346,10 @@ def main():
                     diff['contactName'] = cc.get('contactName') or ''
                 if json.dumps(cc.get('log') or [], ensure_ascii=False) != snap['log']:
                     diff['log'] = cc.get('log') or []
+                if json.dumps(cc.get('contacts') or [], ensure_ascii=False) != snap['contacts']:
+                    diff['contacts'] = cc.get('contacts') or []
+                if (cc.get('contactTitle') or '') != snap['contactTitle']:
+                    diff['contactTitle'] = cc.get('contactTitle') or ''
                 if diff:
                     new_ov.setdefault(cc['id'], {}).update(diff)
             merged = {**overrides, **{k: {**overrides.get(k, {}), **v} for k, v in new_ov.items()}}
@@ -350,6 +372,10 @@ def main():
             diff['contactName'] = cc.get('contactName') or ''
         if json.dumps(cc.get('log') or [], ensure_ascii=False) != snap['log']:
             diff['log'] = cc.get('log') or []
+        if json.dumps(cc.get('contacts') or [], ensure_ascii=False) != snap['contacts']:
+            diff['contacts'] = cc.get('contacts') or []
+        if (cc.get('contactTitle') or '') != snap['contactTitle']:
+            diff['contactTitle'] = cc.get('contactTitle') or ''
         if diff:
             new_ov.setdefault(cc['id'], {}).update(diff)
     merged = {**overrides, **{k: {**overrides.get(k, {}), **v} for k, v in new_ov.items()}}

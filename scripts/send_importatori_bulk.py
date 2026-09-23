@@ -139,6 +139,16 @@ def get_sha(path: str):
     return r.json()['sha']
 
 
+# Campi scritti negli override da ALTRI punti (CRM, sblocco email BWI, revisione risposte) che questo
+# script non modifica ma NON deve perdere: build_overrides_diff() ricostruisce l'intero file, e fino al
+# 23/9/2026 teneva solo status/notes/log/brevoEvents/research — un invio avrebbe cancellato email
+# sbloccate, standby e caselle bloccate. Ora: questi campi si aggiornano se cambiati, e qualunque altro
+# campo già presente negli override viene ricopiato così com'è.
+EXTRA_OV_FIELDS = ('contacts', 'contactEmail', 'contactName', 'contactTitle', 'snoozeUntil', 'emailBloccate')
+TRACKED_OV_FIELDS = ('status', 'notes', 'log', 'brevoEvents', 'research')
+_LOADED_OV = {}
+
+
 def load_contacts_with_overrides():
     base_raw, _ = gh_get(BASE_PATH)
     contacts = base_raw.get('contacts', []) if isinstance(base_raw, dict) else base_raw
@@ -151,11 +161,14 @@ def load_contacts_with_overrides():
             'log':         json.dumps(c.get('log') or [], ensure_ascii=False),
             'brevoEvents': json.dumps(c.get('brevoEvents') or [], ensure_ascii=False),
             'research':    json.dumps(c.get('research'), ensure_ascii=False),
+            'extra':       {k: json.dumps(c.get(k), ensure_ascii=False) for k in EXTRA_OV_FIELDS},
         }
 
     overrides, _ = gh_get(OVERRIDES_PATH)
     if not isinstance(overrides, dict):
         overrides = {}
+    _LOADED_OV.clear()
+    _LOADED_OV.update(overrides)
     by_id = {c['id']: c for c in contacts}
     for cid, changes in overrides.items():
         if cid in by_id:
@@ -170,7 +183,11 @@ def build_overrides_diff(contacts, base_snap):
         snap = base_snap.get(c['id'])
         if not snap:
             continue
-        diff = {}
+        # Ricopia i campi di override che qui non si ricalcolano (vedi EXTRA_OV_FIELDS).
+        diff = {k: v for k, v in (_LOADED_OV.get(c['id']) or {}).items() if k not in TRACKED_OV_FIELDS}
+        for k in EXTRA_OV_FIELDS:
+            if k in diff or json.dumps(c.get(k), ensure_ascii=False) != snap['extra'][k]:
+                diff[k] = c.get(k)
         if (c.get('status') or '') != snap['status']:
             diff['status'] = c.get('status')
         if (c.get('notes') or '') != snap['notes']:
@@ -219,7 +236,7 @@ def _priority_score(title: str) -> int:
 def select_best_contact(contacts):
     scored = sorted(
         ({**c, 'score': _priority_score(c.get('title'))} for c in (contacts or []) if c.get('name') or c.get('email')),
-        key=lambda c: c['score']
+        key=lambda c: (0 if c.get('sbloccato') else 1, c['score'])  # persona sbloccata via BWI = sempre il destinatario
     )
     if not scored:
         return None, None
@@ -244,7 +261,7 @@ def select_send_email(c: dict) -> tuple[str, str]:
     blocked = {(e or '').strip().lower() for e in (c.get('emailBloccate') or [])}
     scored = sorted(
         ({**ct, 'score': _priority_score(ct.get('title'))} for ct in (c.get('contacts') or []) if (ct.get('email') or '').strip()),
-        key=lambda ct: ct['score']
+        key=lambda ct: (0 if ct.get('sbloccato') else 1, ct['score'])  # persona sbloccata via BWI = sempre il destinatario
     )
     for ct in scored:
         email = ct['email'].strip()

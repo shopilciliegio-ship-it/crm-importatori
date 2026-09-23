@@ -204,6 +204,9 @@ async function _pushImportatoriOverrides(token,owner,repo){
     // lista indirizzi da non riprovare più per questo contatto.
     if((c.contactEmail||'')!==(snap.contactEmail||''))       diff.contactEmail=c.contactEmail||'';
     if((c.contactName||'')!==(snap.contactName||''))         diff.contactName=c.contactName||'';
+    // Persona sbloccata via BWI (scripts/unlock_leads_bulk.py) scritta in contacts[] con email.
+    if(snap.contacts!==undefined && JSON.stringify(c.contacts||[])!==snap.contacts) diff.contacts=c.contacts||[];
+    if((c.contactTitle||'')!==(snap.contactTitle||''))       diff.contactTitle=c.contactTitle||'';
     // Confronto simmetrico: snap.emailBloccate non esiste mai nello snapshot base (solo
     // log/brevoEvents/research ce l'hanno), quindi senza normalizzare anche il lato destro il
     // confronto risultava SEMPRE diverso — scriveva "emailBloccate: []" su ogni contatto ad ogni
@@ -305,7 +308,8 @@ async function loadFromGH(){
           notes:c.notes||'',
           log:JSON.stringify(c.log||[]),
           brevoEvents:JSON.stringify(c.brevoEvents||[]),
-          research:JSON.stringify(c.research||null)
+          research:JSON.stringify(c.research||null),
+          contacts:JSON.stringify(c.contacts||[])
         };
       }
       db.contacts=contacts;

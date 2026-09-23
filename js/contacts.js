@@ -739,15 +739,18 @@ function openDetail(id){
     ${(c.contacts&&c.contacts.length)?`
     <div class="divhr"></div>
     <div style="font-size:12px;color:var(--text2);font-weight:700;margin-bottom:8px">CONTATTI (${c.contacts.length})</div>
-    ${c.contacts.map((ct,i)=>`
+    ${(()=>{ const dest=selectBestContact(c.contacts).primary; return c.contacts.map((ct,i)=>{
+      // Destinatario degli invii = chi sceglie selectBestContact() (la persona sbloccata via BWI prima di tutti).
+      const isDest = dest && dest.email && dest.name===ct.name && dest.email===ct.email;
+      return `
       <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:0.5px solid var(--brd);cursor:pointer" onclick="openEmailToContact('${c.id}',${i})">
         <div style="flex:1">
-          <div style="font-size:13px;font-weight:600">${esc(ct.name||'—')}</div>
+          <div style="font-size:13px;font-weight:600">${esc(ct.name||'—')}${ct.sbloccato?' <span title="Email sbloccata via BWI" style="font-size:11px">🔓</span>':''}${isDest?' <span style="font-size:10px;padding:2px 7px;border-radius:10px;background:var(--blue-bg);color:var(--blue-tx);font-weight:700">📬 DESTINATARIO INVII</span>':''}</div>
           <div style="font-size:12px;color:var(--text2)">${esc(ct.title||'')}${ct.email?' · <a href="mailto:'+esc(ct.email)+'" onclick="event.stopPropagation()">'+esc(ct.email)+'</a>':''}</div>
         </div>
         ${ct.linkedin?`<a href="${esc(ct.linkedin)}" target="_blank" onclick="event.stopPropagation()" style="font-size:11px;padding:3px 8px;border-radius:12px;background:var(--blue-bg);color:var(--blue-tx);font-weight:600;text-decoration:none;flex-shrink:0">in</a>`:''}
         <button class="btn bts" style="font-size:11px;flex-shrink:0" onclick="event.stopPropagation();openEmailToContact('${c.id}',${i})">✉</button>
-      </div>`).join('')}`:''}
+      </div>`; }).join(''); })()}`:''}
 
     ${c.notes?`<div class="divhr"></div><div style="font-size:12px;color:var(--text2);font-weight:700;margin-bottom:6px">NOTE</div><div style="font-size:13px;line-height:1.6;white-space:pre-wrap">${esc(c.notes)}</div>`:''}
 
