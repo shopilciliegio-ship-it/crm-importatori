@@ -1,18 +1,9 @@
 {
   "raccomandato": "forse",
   "stelle": [
-    1,
     2
   ],
   "maxCredits": 20,
-  "status": "done",
-  "createdAt": 1790177482383,
-  "startedAt": "2026-09-23T15:31:42.299507+00:00",
-  "finishedAt": "2026-09-23T15:32:21.729011+00:00",
-  "result": {
-    "unlocked": 20,
-    "failed": 14,
-    "skipped": 1,
-    "stopReason": "budget di 20 crediti raggiunto"
-  }
+  "status": "pending",
+  "createdAt": 1790181257047
 }
