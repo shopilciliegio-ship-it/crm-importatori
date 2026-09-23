@@ -112,7 +112,9 @@ def _email_sospetta(c, email):
     d = _domain(email)
     if not d or d in FREE_MAIL:
         return False
-    company = {_domain(c.get('email')), _domain(c.get('website'))} - {''}
+    # website può contenere più siti separati da virgola ("http://bottegarotolo.com.au, https://bottega1995.com.au")
+    sites = (c.get('website') or '').replace(';', ',').replace(' ', ',').split(',')
+    company = ({_domain(c.get('email'))} | {_domain(w) for w in sites}) - {''}
     if not company:
         return False
     return not any(d == k or d.endswith('.' + k) or k.endswith('.' + d) for k in company)
