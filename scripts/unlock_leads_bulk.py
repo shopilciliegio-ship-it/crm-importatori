@@ -74,6 +74,50 @@ JOB_PRIORITY = {
 }
 
 
+# Log scritto quando BWI scala il credito ma non ha l'email della persona (visto il 23/9/2026: 14 su 34,
+# Email "" anche dopo lo sblocco pagato). Serve anche come marcatore: quell'azienda non si ritenta più.
+LOG_SENZA_EMAIL = '🔓 Sblocco BWI senza email'
+
+# Provider generici: un'email personale su questi domini non è "sospetta" anche se l'azienda ha un
+# dominio suo (piccoli importatori usano spesso gmail & co.).
+FREE_MAIL = {'gmail.com', 'googlemail.com', 'hotmail.com', 'outlook.com', 'live.com', 'yahoo.com',
+             'icloud.com', 'me.com', 'aol.com', 'msn.com', 'gmx.com', 'gmx.de', 'web.de', 'libero.it',
+             'yandex.ru', 'mail.ru', 'qq.com', '163.com', 'bigpond.com', 'hotmail.it', 'yahoo.it'}
+
+
+def _norm_name(s):
+    import unicodedata
+    s = unicodedata.normalize('NFKD', s or '').encode('ascii', 'ignore').decode().lower()
+    return ' '.join(s.replace('.', ' ').split())
+
+
+def _same_person(crm_name, bwi_name):
+    """BWI tronca il nome alle prime 2 parole ("Elvis Enrique" per "Elvis Enrique Medina"):
+    stessa persona se i nomi coincidono o se quello CRM inizia con quello BWI."""
+    a, b = _norm_name(crm_name), _norm_name(bwi_name)
+    return bool(a and b) and (a == b or a.startswith(b + ' ') or b.startswith(a + ' '))
+
+
+def _domain(s):
+    s = (s or '').strip().lower()
+    if '@' in s:
+        s = s.rsplit('@', 1)[1]
+    s = s.split('://')[-1].split('/')[0].split(':')[0]
+    return s[4:] if s.startswith('www.') else s
+
+
+def _email_sospetta(c, email):
+    """True se l'email sbloccata è su un dominio che non c'entra con l'azienda (es. Ken John di
+    P. & T. Basile -> kenjohnson@ea.com, cioè Electronic Arts): dato sbagliato di BWI."""
+    d = _domain(email)
+    if not d or d in FREE_MAIL:
+        return False
+    company = {_domain(c.get('email')), _domain(c.get('website'))} - {''}
+    if not company:
+        return False
+    return not any(d == k or d.endswith('.' + k) or k.endswith('.' + d) for k in company)
+
+
 def _priority_score(title: str) -> int:
     if not title:
         return 99
@@ -164,8 +208,10 @@ def target_contacts(contacts, raccomandato, stelle_set):
         people = c.get('contacts') or []
         if not people:
             continue
-        if any((p.get('email') or '').strip() for p in people):
+        if any((p.get('email') or '').strip() or (p.get('emailSospetta') or '').strip() for p in people):
             continue  # già sbloccato in passato, salta
+        if any(LOG_SENZA_EMAIL in (l.get('msg') or '') for l in (c.get('log') or [])):
+            continue  # già pagato una volta e BWI non ha l'email: non rispendere
         out.append(c)
     # Più stelle prima: con un tetto di crediti (maxCredits) si sbloccano le aziende migliori.
     out.sort(key=lambda c: -((c.get('research') or {}).get('affidabilita') or 0))
@@ -303,7 +349,16 @@ def main():
         result = r.json()
         email = (result.get('leadEmail') or '').strip()
         if not email:
+            # BWI scala comunque il credito: lo segniamo nella scheda così non si ritenta più.
+            print(f'  ∅ {c.get("company","?")}: BWI non ha l\'email di {target_lead.get("FullName","")} '
+                  f'(credito speso) — risposta: {json.dumps(result, ensure_ascii=False)[:200]}')
+            c.setdefault('log', []).append({
+                'ts': now_ms,
+                'msg': f'{LOG_SENZA_EMAIL}: BWI non ha l\'email di {target_lead.get("FullName","")} '
+                       f'({target_lead.get("Position","")}) — credito speso, non si ritenta',
+            })
             failed += 1
+            since_checkpoint += 1
             continue
 
         # La persona sbloccata va nella scheda (contacts[]) con email e flag "sbloccato": da lì la
@@ -312,25 +367,39 @@ def main():
         full_name = (target_lead.get('FullName') or '').strip()
         position  = (target_lead.get('Position') or '').strip()
         people = [dict(p) for p in (c.get('contacts') or [])]
-        same = next((p for p in people if full_name and (p.get('name') or '').strip().lower() == full_name.lower()), None)
-        if same:
-            same['email'] = email
-            same['sbloccato'] = True
-            if position and not same.get('title'):
-                same['title'] = position
-        else:
-            people.append({'name': full_name, 'title': position, 'email': email, 'sbloccato': True})
+        same = next((p for p in people if _same_person(p.get('name'), full_name)), None)
+        if not same:
+            same = {'name': full_name, 'title': position}
+            people.append(same)
+        elif position and not same.get('title'):
+            same['title'] = position
+        name_crm = same.get('name') or full_name  # il nome completo del CRM vince su quello troncato di BWI
+        if _email_sospetta(c, email):
+            # Dominio che non c'entra con l'azienda: la teniamo in scheda ma NON la usiamo per gli invii.
+            same['emailSospetta'] = email
+            c['contacts'] = people
+            c.setdefault('log', []).append({
+                'ts': now_ms,
+                'msg': f'⚠ Email sbloccata via BWI con dominio diverso dall\'azienda: {name_crm} <{email}> '
+                       f'— da verificare, NON usata per gli invii',
+            })
+            print(f'  ⚠ {c.get("company","?")}: {name_crm} <{email}> — dominio sospetto, non usata')
+            unlocked += 1
+            since_checkpoint += 1
+            continue
+        same['email'] = email
+        same['sbloccato'] = True
         c['contacts']     = people
         c['contactEmail'] = email
-        c['contactName']  = full_name
-        c['contactTitle'] = position
+        c['contactName']  = name_crm
+        c['contactTitle'] = same.get('title') or position
         c.setdefault('log', []).append({
             'ts': now_ms,
-            'msg': f'🔓 Email sbloccata via BWI: {target_lead.get("FullName","")} <{email}> ({target_lead.get("Position","")})',
+            'msg': f'🔓 Email sbloccata via BWI: {name_crm} <{email}> ({target_lead.get("Position","")})',
         })
         unlocked += 1
         since_checkpoint += 1
-        print(f'  ✅ {c.get("company","?")}: {target_lead.get("FullName","")} <{email}>')
+        print(f'  ✅ {c.get("company","?")}: {name_crm} <{email}>')
         time.sleep(0.3)
 
         if since_checkpoint >= CHECKPOINT_EVERY:
