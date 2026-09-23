@@ -190,8 +190,8 @@ async function processAutoFollowUps(){
     const toEmail = primary?.email||c.contactEmail||c.email;
     const toName  = primary?.name ||c.contactName ||c.name||'';
     if(!toEmail) continue;
-    const subj = fillTplForContact(tpl.subject, c);
-    const body = fillTplForContact(tpl.body, c);
+    const subj = fillTplForContact(tpl.subject, c, toEmail);
+    const body = fillTplForContact(tpl.body, c, toEmail);
     const brand = (c.brevoEvents?.[0]?.brand)||'sienawine';
     const result = await sendViaBrevo(c.id, toEmail, toName, subj, body, brand);
     if(result?.ok){

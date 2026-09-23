@@ -52,6 +52,23 @@ function firstName(fullName){
 // No contact  → Esteemed [Company] Team,
 // 1+ contacts → Dear [Name] from [Company],
 
+// Saluto secondo a CHI arriva davvero la mail (regola di Luca, 23/9/2026) — stessa logica di
+// greeting_line() in scripts/send_importatori_bulk.py e send_importatori_followup.py:
+//   indirizzo personale di una persona nota     → Dear Ken from [Company],
+//   indirizzo generico + persona di riferimento → To the kind attention of Ken John,
+//   indirizzo generico e nessun nome            → Esteemed [Company] Team,
+function buildGreeting(c, toEmail, refName){
+  const e=(toEmail||'').trim().toLowerCase();
+  const company=c?.company||'';
+  const person=(c?.contacts||[]).find(p=>e && (p.email||'').trim().toLowerCase()===e && (p.name||'').trim());
+  let name=person?.name||'';
+  if(!name && e && e===(c?.contactEmail||'').trim().toLowerCase() && e!==(c?.email||'').trim().toLowerCase())
+    name=c.contactName||'';
+  if(name.trim()) return company?`Dear ${firstName(name)} from ${company},`:`Dear ${firstName(name)},`;
+  if((refName||'').trim()) return `To the kind attention of ${refName.trim()},`;
+  return company?`Esteemed ${company} Team,`:'Dear Sir/Madam,';
+}
+
 function buildDearLine(primary, secondary, companyName){
   if(!primary || !primary.name){
     return `Esteemed ${companyName||''} Team,`;
@@ -484,7 +501,7 @@ function applyTpl(id){
   const prim=ctx.primary||null;
   const sec=ctx.secondary||null;
 
-  const dearLine    =buildDearLine(prim,sec,c.company);
+  const dearLine    =buildGreeting(c, document.getElementById('em-to')?.value || prim?.email || c.contactEmail || c.email, prim?.name);
   const ownerMention=buildOwnerMention(sec);
   const knowWell    =buildKnowWell(sec);
   const primaryName =firstName(prim?.name||c.contactName||'');
@@ -545,13 +562,14 @@ function openEmailToContact(contactId, contactIdx){
   openEmailModal(contactId, ct.email||c.email, (ct.name||c.contactName), contactIdx);
 }
 
-function fillTplForContact(body, c){
+function fillTplForContact(body, c, toEmail){
   // Selezione contatto ottimale per variabili personalizzate
   const {primary, secondary} = (c.contacts&&c.contacts.length)
     ? selectBestContact(c.contacts)
     : {primary:null, secondary:null};
 
-  const dearLine     = buildDearLine(primary, secondary, c.company);
+  // toEmail = indirizzo a cui parte davvero la mail (default: stesso criterio di brevo.js)
+  const dearLine     = buildGreeting(c, toEmail || primary?.email || c.contactEmail || c.email, primary?.name);
   const ownerMention = buildOwnerMention(secondary);
   const primaryName  = firstName(primary?.name || c.contactName || '');
   const primaryTitle = primary?.title || c.contactTitle || '';
