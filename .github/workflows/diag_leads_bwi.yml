@@ -1,0 +1,32 @@
+name: Diagnostica lead BWI (sola lettura, 0 crediti)
+
+on:
+  workflow_dispatch:
+    inputs:
+      compIDs:
+        description: 'ID aziende BWI separati da virgola'
+        type: string
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  diag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Installa dipendenze
+        run: pip install requests openpyxl
+
+      - name: Scarica lead (nessuno sblocco)
+        working-directory: BWI
+        env:
+          BWI_EMAIL:    ${{ secrets.BWI_EMAIL }}
+          BWI_PASSWORD: ${{ secrets.BWI_PASSWORD }}
+        run: python diag_leads_bwi.py "${{ inputs.compIDs }}"
