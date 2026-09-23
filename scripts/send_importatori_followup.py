@@ -144,6 +144,16 @@ def get_sha(path: str) -> str | None:
     return r.json()['sha']
 
 
+# Campi scritti negli override da ALTRI punti (CRM, sblocco email BWI, revisione risposte) che questo
+# script non modifica ma NON deve perdere: build_overrides_diff() ricostruisce l'intero file, e fino al
+# 23/9/2026 teneva solo status/notes/log/brevoEvents/research — un invio avrebbe cancellato email
+# sbloccate, standby e caselle bloccate. Ora: questi campi si aggiornano se cambiati, e qualunque altro
+# campo già presente negli override viene ricopiato così com'è.
+EXTRA_OV_FIELDS = ('contacts', 'contactEmail', 'contactName', 'contactTitle', 'snoozeUntil', 'emailBloccate')
+TRACKED_OV_FIELDS = ('status', 'notes', 'log', 'brevoEvents', 'research')
+_LOADED_OV = {}
+
+
 def load_contacts_with_overrides() -> tuple[list, dict, bool, int]:
     """Mirrors js/github.js loadFromGH()+_loadImportatoriOverrides(): carica la base
     read-only data/contatti.json, applica sopra gli override utente e mantiene uno
@@ -160,10 +170,13 @@ def load_contacts_with_overrides() -> tuple[list, dict, bool, int]:
             'log':         json.dumps(c.get('log') or [], ensure_ascii=False),
             'brevoEvents': json.dumps(c.get('brevoEvents') or [], ensure_ascii=False),
             'research':    json.dumps(c.get('research'), ensure_ascii=False),
+            'extra':       {k: json.dumps(c.get(k), ensure_ascii=False) for k in EXTRA_OV_FIELDS},
         }
 
     overrides, _, overrides_ok = gh_get_overrides()
     overrides_loaded_count = len(overrides)
+    _LOADED_OV.clear()
+    _LOADED_OV.update(overrides)
     by_id = {c['id']: c for c in contacts}
     for cid, changes in overrides.items():
         if cid in by_id:
@@ -181,7 +194,11 @@ def build_overrides_diff(contacts: list, base_snap: dict) -> dict:
         snap = base_snap.get(c['id'])
         if not snap:
             continue
-        diff = {}
+        # Ricopia i campi di override che qui non si ricalcolano (vedi EXTRA_OV_FIELDS).
+        diff = {k: v for k, v in (_LOADED_OV.get(c['id']) or {}).items() if k not in TRACKED_OV_FIELDS}
+        for k in EXTRA_OV_FIELDS:
+            if k in diff or json.dumps(c.get(k), ensure_ascii=False) != snap['extra'][k]:
+                diff[k] = c.get(k)
         if (c.get('status') or '') != snap['status']:
             diff['status'] = c.get('status')
         if (c.get('notes') or '') != snap['notes']:
@@ -230,6 +247,8 @@ def select_contact(c: dict) -> tuple[str, str]:
         for kw, pri in JOB_PRIORITY.items():
             if kw in title:
                 score = min(score, pri)
+        if ct.get('sbloccato'):
+            score = -1  # persona sbloccata via BWI = sempre il destinatario
         if score < best_score:
             best_score, best = score, ct
     if best:
