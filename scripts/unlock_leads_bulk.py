@@ -4,7 +4,7 @@ Siena Wine / Small Vineyards International
 
 Endpoint BWI scoperto il 22/9/2026 ispezionando il Network tab del browser mentre Luca
 sbloccava a mano un contatto (Joe Alessi, Alessi Beverages): POST unlockLead/ con
-{compID, leadID, leadType}, 1 credito BWI per sblocco (Luca ne ha ~5000).
+{compID, leadID, leadType}, 1 credito BWI per sblocco (Luca ne ha ~12.000 al 23/9/2026).
 
 Flusso:
   1. Il browser (js/unlock.js) scrive data/unlock-leads-job.json con
