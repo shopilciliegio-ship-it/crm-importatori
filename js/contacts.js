@@ -1,5 +1,16 @@
 /* ═══ CONTACTS ═══ */
 
+// Stato dell'email persona per il filtro "Email persona" (sblocco BWI, js/unlock.js):
+// sbloccata | sospetta | senza (BWI non ha l'email) | da_sbloccare (persone ma nessuna email) | ''
+function emailPersonaStato(c){
+  const pp=c.contacts||[];
+  if(pp.some(p=>p.sbloccato&&(p.email||'').trim())) return 'sbloccata';
+  if(pp.some(p=>(p.emailSospetta||'').trim())) return 'sospetta';
+  if((c.log||[]).some(l=>(l.msg||'').includes('🔓 Sblocco BWI senza email'))) return 'senza';
+  if(pp.length && !pp.some(p=>(p.email||'').trim())) return 'da_sbloccare';
+  return '';
+}
+
 let _cliOffset = 0;
 let _impOffset = 0;
 const CLI_PAGE_SIZE = 100;
@@ -209,6 +220,8 @@ function getFiltered(){
       if(bwiF==='new'&&bwiBadgeStatus(c)!=='new')return false;
       if(bwiF==='updated'&&bwiBadgeStatus(c)!=='updated')return false;
       if(bwiF==='bwi'&&!c.bwiCompId)return false;
+      const emF=document.getElementById('semail')?.value||'';
+      if(emF&&emailPersonaStato(c)!==emF)return false;
       const rschF=document.getElementById('srsch')?.value||'';
       if(rschF==='any'&&!c.research)return false;
       if(rschF==='si'&&c.research?.raccomandato!=='si')return false;

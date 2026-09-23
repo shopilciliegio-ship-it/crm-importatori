@@ -304,15 +304,35 @@ def find_tpl(templates: list, *ids, name_hint: str = '') -> dict | None:
     return None
 
 
+def greeting_line(c: dict, to_email: str, ref_name: str) -> str:
+    """Riga di saluto secondo a CHI arriva davvero la mail (regola di Luca, 23/9/2026):
+      - indirizzo personale di una persona nota  -> "Dear Ken from <Azienda>,"
+      - indirizzo generico, ma persona di riferimento -> "To the kind attention of Ken John,"
+      - indirizzo generico e nessun nome          -> "Esteemed <Azienda> Team,"
+    Stessa logica di buildGreeting() in js/email.js."""
+    e = (to_email or '').strip().lower()
+    company = c.get('company', '') or ''
+    person = next((p for p in (c.get('contacts') or [])
+                   if e and (p.get('email') or '').strip().lower() == e and (p.get('name') or '').strip()), None)
+    name = (person or {}).get('name', '')
+    if not name and e and e == (c.get('contactEmail') or '').strip().lower() \
+            and e != (c.get('email') or '').strip().lower():
+        name = c.get('contactName') or ''  # email personale importata senza scheda persona
+    if name.strip():
+        return f"Dear {first_name(name)} from {company}," if company else f"Dear {first_name(name)},"
+    if (ref_name or '').strip():
+        return f"To the kind attention of {ref_name.strip()},"
+    return f"Esteemed {company} Team," if company else 'Dear Sir/Madam,'
+
+
 def render_template(tpl: dict, c: dict, to_email: str, to_name: str) -> tuple[str, str]:
     contact_fn = first_name(to_name)
     company    = c.get('company', '')
     owner_fn   = get_owner(c, to_email)
 
-    if contact_fn:
-        dear = f'Dear {contact_fn} from {company},' if company else f'Dear {contact_fn},'
-    else:
-        dear = f'Dear {company} team,' if company else 'Dear Sir/Madam,'
+    # to_name può essere il nome di riferimento anche quando to_email è generico (info@...):
+    # greeting_line() decide in base a chi possiede davvero l'indirizzo.
+    dear = greeting_line(c, to_email, to_name)
 
     know_well      = (f'This is something you and {owner_fn} know very well.' if owner_fn else '')
     owner_mention  = (f' — and after seeing what you and {owner_fn} have built' if owner_fn else '')

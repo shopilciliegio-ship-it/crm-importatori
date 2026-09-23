@@ -277,11 +277,30 @@ def first_name(full: str) -> str:
     return (full or '').strip().split()[0] if (full or '').strip() else ''
 
 
+def greeting_line(c: dict, to_email: str, ref_name: str) -> str:
+    """Riga di saluto secondo a CHI arriva davvero la mail (regola di Luca, 23/9/2026):
+      - indirizzo personale di una persona nota  -> "Dear Ken from <Azienda>,"
+      - indirizzo generico, ma persona di riferimento -> "To the kind attention of Ken John,"
+      - indirizzo generico e nessun nome          -> "Esteemed <Azienda> Team,"
+    Stessa logica di buildGreeting() in js/email.js."""
+    e = (to_email or '').strip().lower()
+    company = c.get('company', '') or ''
+    person = next((p for p in (c.get('contacts') or [])
+                   if e and (p.get('email') or '').strip().lower() == e and (p.get('name') or '').strip()), None)
+    name = (person or {}).get('name', '')
+    if not name and e and e == (c.get('contactEmail') or '').strip().lower() \
+            and e != (c.get('email') or '').strip().lower():
+        name = c.get('contactName') or ''  # email personale importata senza scheda persona
+    if name.strip():
+        return f"Dear {first_name(name)} from {company}," if company else f"Dear {first_name(name)},"
+    if (ref_name or '').strip():
+        return f"To the kind attention of {ref_name.strip()},"
+    return f"Esteemed {company} Team," if company else 'Dear Sir/Madam,'
+
+
 def fill_tpl_for_contact(body: str, c: dict) -> str:
     primary, secondary = select_best_contact(c.get('contacts'))
-    dear_line = (f"Esteemed {c.get('company','')} Team,"
-                 if not primary or not primary.get('name')
-                 else f"Dear {first_name(primary['name'])} from {c.get('company','')},")
+    dear_line = greeting_line(c, select_send_email(c)[0], (primary or {}).get('name', ''))
     owner_mention = (f" — and after seeing what you and {first_name(secondary['name'])} have built"
                       if secondary and secondary.get('name') else '')
     know_well = (f"This is something you and {first_name(secondary['name'])} know very well."

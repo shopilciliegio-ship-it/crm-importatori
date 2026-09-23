@@ -190,8 +190,8 @@ async function confirmBulkSend(){
     const c=withEmail[i];
     const toEmail=c.contactEmail||c.email;
     const toName=c.contactName||c.name||'';
-    const subject=fillTplForContact(subjTemplate,c);
-    const body=fillTplForContact(bodyTemplate,c);
+    const subject=fillTplForContact(subjTemplate,c,toEmail);
+    const body=fillTplForContact(bodyTemplate,c,toEmail);
 
     // Aggiorna UI
     document.getElementById('prog-status').textContent=
