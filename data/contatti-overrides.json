@@ -20608,7 +20608,28 @@
       "analyzed_at": "2026-06-30T08:26:33.413Z"
     },
     "contactName": "Suzanna Cole",
-    "contactTitle": "Sales Representative"
+    "contactTitle": "Sales Representative",
+    "contactEmail": "suzanna@thestandardwineco.com",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790181270024,
+        "msg": "🔓 Email sbloccata via BWI: Suzanna Cole <suzanna@thestandardwineco.com> (Sales Representative)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Suzanna Cole",
+        "title": "Sales Representative",
+        "email": "suzanna@thestandardwineco.com",
+        "phone": "",
+        "linkedin": "http://www.linkedin.com/in/suzcole",
+        "sbloccato": true
+      }
+    ]
   },
   "c1780673710721bnbhp": {
     "research": {
@@ -21453,8 +21474,36 @@
       "note": "Distributore australiano con fatturato modesto (1,3M AUD) e solo 2 dipendenti. Sito minimalista senza info su portafoglio vini. Nessuna traccia online di specializzazione italiana. Contattare solo se target Australia è prioritario.",
       "analyzed_at": "2026-06-30T08:33:38.008Z"
     },
-    "contactName": "Ben Loughman",
-    "contactTitle": "Sales"
+    "contactName": "Tom Egan",
+    "contactTitle": "National Sales",
+    "contactEmail": "tom@viticult.com.au",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790181270024,
+        "msg": "🔓 Email sbloccata via BWI: Tom Egan <tom@viticult.com.au> (National Sales)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Ben Loughman",
+        "title": "Sales",
+        "email": "",
+        "phone": "*",
+        "linkedin": ""
+      },
+      {
+        "name": "Tom Egan",
+        "title": "National Sales",
+        "email": "tom@viticult.com.au",
+        "phone": "*",
+        "linkedin": "",
+        "sbloccato": true
+      }
+    ]
   },
   "c1780673710721ea8hc": {
     "research": {
@@ -22416,7 +22465,28 @@
       "analyzed_at": "2026-07-01T08:47:13.714Z"
     },
     "contactName": "Seamus O'fathartaigh",
-    "contactTitle": "Founder and Director"
+    "contactTitle": "Founder and Director",
+    "contactEmail": "seamus@winemovement.com.au",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790181270024,
+        "msg": "🔓 Email sbloccata via BWI: Seamus O'fathartaigh <seamus@winemovement.com.au> (Founder and Director)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Seamus O'fathartaigh",
+        "title": "Founder and Director",
+        "email": "seamus@winemovement.com.au",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/seamus-o-fathartaigh-4b10725b/?originalSubdomain=au",
+        "sbloccato": true
+      }
+    ]
   },
   "c1780673710722uyghs": {
     "research": {
@@ -22552,7 +22622,42 @@
       "analyzed_at": "2026-07-01T08:48:29.538Z"
     },
     "contactName": "Chris Masten",
-    "contactTitle": "Sales Manager"
+    "contactTitle": "Sales Manager",
+    "contactEmail": "chris@offthevine.net.au",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790181270024,
+        "msg": "🔓 Email sbloccata via BWI: Chris Masten <chris@offthevine.net.au> (Sales Manager)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Chris Masten",
+        "title": "Sales Manager",
+        "email": "chris@offthevine.net.au",
+        "phone": "*",
+        "linkedin": "",
+        "sbloccato": true
+      },
+      {
+        "name": "Scott Spalding",
+        "title": "Owner",
+        "email": "",
+        "phone": "*",
+        "linkedin": "https://www.linkedin.com/in/scott-spalding-5001778/"
+      },
+      {
+        "name": "Gabby Mcnaughton",
+        "title": "Administration / Purchasing",
+        "email": "",
+        "phone": "*",
+        "linkedin": ""
+      }
+    ]
   },
   "c1780673710722zaz9u": {
     "research": {
@@ -22656,7 +22761,35 @@
       "analyzed_at": "2026-07-01T08:49:18.751Z"
     },
     "contactName": "Daniel Dickson",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "contactEmail": "daniel.d@claritycru.com",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790181270024,
+        "msg": "🔓 Email sbloccata via BWI: Daniel Dickson <daniel.d@claritycru.com> (Director)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Daniel Dickson",
+        "title": "Director",
+        "email": "daniel.d@claritycru.com",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/daniel-dickson-australia/",
+        "sbloccato": true
+      },
+      {
+        "name": "Dan Radford",
+        "title": "Director",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/dan-radford-1a737b5b/"
+      }
+    ]
   },
   "c17806737107222miwa": {
     "research": {
@@ -22903,7 +23036,28 @@
       "analyzed_at": "2026-07-01T08:51:41.790Z"
     },
     "contactName": "Michelle Slater",
-    "contactTitle": "Senior Brand Manager"
+    "contactTitle": "Senior Brand Manager",
+    "contactEmail": "michelle.slater@vhws.com.au",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790181270024,
+        "msg": "🔓 Email sbloccata via BWI: Michelle Slater <michelle.slater@vhws.com.au> (Senior Brand Manager)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Michelle Slater",
+        "title": "Senior Brand Manager",
+        "email": "michelle.slater@vhws.com.au",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/michelle-slater-6a2221103/",
+        "sbloccato": true
+      }
+    ]
   },
   "c1780673710722v55ot": {
     "research": {
@@ -23124,7 +23278,28 @@
       "analyzed_at": "2026-07-01T08:53:14.453Z"
     },
     "contactName": "David Lamb",
-    "contactTitle": "Proprietor"
+    "contactTitle": "Proprietor",
+    "contactEmail": "david@douglaslambwines.com.au",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790181270024,
+        "msg": "🔓 Email sbloccata via BWI: David Lamb <david@douglaslambwines.com.au> (Proprietor)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "David Lamb",
+        "title": "Proprietor",
+        "email": "david@douglaslambwines.com.au",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/david-w-lamb/",
+        "sbloccato": true
+      }
+    ]
   },
   "c17806737107220kq9w": {
     "research": {
