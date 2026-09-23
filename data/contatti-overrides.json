@@ -52,18 +52,6 @@
     "contactTitle": "Managing Director"
   },
   "c17806737107160gyqk": {
-    "research": {
-      "affidabilita": 2,
-      "vino_italiano": "forse",
-      "tipo_business": "misto",
-      "mercato_target": "misto",
-      "raccomandato": "forse",
-      "note": "Azienda albanese consolidata (dal 1993) con 105 dipendenti e fatturato significativo, ma sito non raggiungibile e nessuna traccia online. Portafoglio generico di food/beverage: vino citato come prodotto ma senza specificare origine (italiano o altro).",
-      "analyzed_at": "2026-07-14T07:08:55.908Z"
-    },
-    "contactName": "Asja Sali",
-    "contactTitle": "Manager Sales",
-    "contactEmail": "sales@royalmh.com",
     "log": [
       {
         "ts": 1780673710716,
@@ -74,6 +62,17 @@
         "msg": "🔓 Email sbloccata via BWI: Asja Sali <sales@royalmh.com> (Manager Sales)"
       }
     ],
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda albanese consolidata (dal 1993) con 105 dipendenti e fatturato significativo, ma sito non raggiungibile e nessuna traccia online. Portafoglio generico di food/beverage: vino citato come prodotto ma senza specificare origine (italiano o altro).",
+      "analyzed_at": "2026-07-14T07:08:55.908Z"
+    },
+    "contactEmail": "sales@royalmh.com",
+    "contactName": "Asja Sali",
     "contacts": [
       {
         "name": "Asja Sali",
@@ -83,7 +82,8 @@
         "linkedin": "https://www.linkedin.com/in/asja-sali-6534b9133/",
         "sbloccato": true
       }
-    ]
+    ],
+    "contactTitle": "Manager Sales"
   },
   "c1780673710716jzc7p": {
     "research": {
@@ -99,6 +99,16 @@
     "contactTitle": "Purchasing Manager"
   },
   "c1780673710716kp4ep": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790178029682,
+        "msg": "🔓 Sblocco BWI senza email: BWI non ha l'email di Erjola Braha — credito speso il 23/9/2026, non si ritenta"
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "forse",
@@ -109,17 +119,7 @@
       "analyzed_at": "2026-07-14T07:09:08.482Z"
     },
     "contactName": "Erjola Braha",
-    "contactTitle": "Founder/ Ceo",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1790178029682,
-        "msg": "🔓 Sblocco BWI senza email: BWI non ha l'email di Erjola Braha — credito speso il 23/9/2026, non si ritenta"
-      }
-    ]
+    "contactTitle": "Founder/ Ceo"
   },
   "c1780673710716rnet4": {
     "research": {
@@ -148,18 +148,6 @@
     "contactTitle": "Director of Sales and Distribution"
   },
   "c1780673710716w9xz1": {
-    "research": {
-      "affidabilita": 2,
-      "vino_italiano": "forse",
-      "tipo_business": "importatore",
-      "mercato_target": "misto",
-      "raccomandato": "forse",
-      "note": "Importatore albanese con 22 dipendenti, ma sito irraggiungibile e nessuna traccia online. Portafoglio wine/sparkling suggerisce potenziale interesse per vini italiani, ma mancano conferme. Verificare contatti diretti prima di investire tempo.",
-      "analyzed_at": "2026-07-14T07:09:28.115Z"
-    },
-    "contactName": "Dritan Beqiri",
-    "contactTitle": "Chief Executive Officer",
-    "contactEmail": "dritan.beqiri@lmcomercial.al",
     "log": [
       {
         "ts": 1780673710716,
@@ -170,6 +158,17 @@
         "msg": "🔓 Email sbloccata via BWI: Dritan Beqiri <dritan.beqiri@lmcomercial.al> (Chief Executive Officer)"
       }
     ],
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore albanese con 22 dipendenti, ma sito irraggiungibile e nessuna traccia online. Portafoglio wine/sparkling suggerisce potenziale interesse per vini italiani, ma mancano conferme. Verificare contatti diretti prima di investire tempo.",
+      "analyzed_at": "2026-07-14T07:09:28.115Z"
+    },
+    "contactEmail": "dritan.beqiri@lmcomercial.al",
+    "contactName": "Dritan Beqiri",
     "contacts": [
       {
         "name": "Dritan Beqiri",
@@ -186,9 +185,20 @@
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/ervis-beqiri-574a795b/"
       }
-    ]
+    ],
+    "contactTitle": "Chief Executive Officer"
   },
   "c1780673710716d4vmy": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790178029682,
+        "msg": "🔓 Sblocco BWI senza email: BWI non ha l'email di Altin Mulla — credito speso il 23/9/2026, non si ritenta"
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "probabile",
@@ -199,17 +209,7 @@
       "analyzed_at": "2026-07-14T07:09:32.909Z"
     },
     "contactName": "Altin Mulla",
-    "contactTitle": "Managing Director",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1790178029682,
-        "msg": "🔓 Sblocco BWI senza email: BWI non ha l'email di Altin Mulla — credito speso il 23/9/2026, non si ritenta"
-      }
-    ]
+    "contactTitle": "Managing Director"
   },
   "c1780673710716h1uv8": {
     "research": {
@@ -225,6 +225,16 @@
     "contactTitle": "Managing Director"
   },
   "c1780673710716kcaqg": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790178029682,
+        "msg": "🔓 Sblocco BWI senza email: BWI non ha l'email di Dashamir Elezi — credito speso il 23/9/2026, non si ritenta"
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "probabile",
@@ -235,7 +245,9 @@
       "analyzed_at": "2026-07-14T07:09:43.675Z"
     },
     "contactName": "Dashamir Elezi",
-    "contactTitle": "Consultant",
+    "contactTitle": "Consultant"
+  },
+  "c1780673710716z07o6": {
     "log": [
       {
         "ts": 1780673710716,
@@ -243,11 +255,9 @@
       },
       {
         "ts": 1790178029682,
-        "msg": "🔓 Sblocco BWI senza email: BWI non ha l'email di Dashamir Elezi — credito speso il 23/9/2026, non si ritenta"
+        "msg": "🔓 Sblocco BWI senza email: BWI non ha l'email di Renato Kodheli — credito speso il 23/9/2026, non si ritenta"
       }
-    ]
-  },
-  "c1780673710716z07o6": {
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "forse",
@@ -258,17 +268,7 @@
       "analyzed_at": "2026-07-14T07:09:48.143Z"
     },
     "contactName": "Renato Kodheli",
-    "contactTitle": "Manager Partner",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1790178029682,
-        "msg": "🔓 Sblocco BWI senza email: BWI non ha l'email di Renato Kodheli — credito speso il 23/9/2026, non si ritenta"
-      }
-    ]
+    "contactTitle": "Manager Partner"
   },
   "c1780673710716s3o4b": {
     "research": {
@@ -321,6 +321,16 @@
     "contactTitle": "Chief Executive Officer"
   },
   "c17806737107161xl6e": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790178029682,
+        "msg": "🔓 Sblocco BWI senza email: BWI non ha l'email di Saimir Haxhijani — credito speso il 23/9/2026, non si ritenta"
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "forse",
@@ -331,17 +341,7 @@
       "analyzed_at": "2026-07-14T07:10:14.746Z"
     },
     "contactName": "Saimir Haxhijani",
-    "contactTitle": "General Manager",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1790178029682,
-        "msg": "🔓 Sblocco BWI senza email: BWI non ha l'email di Saimir Haxhijani — credito speso il 23/9/2026, non si ritenta"
-      }
-    ]
+    "contactTitle": "General Manager"
   },
   "c17806737107166cx5n": {
     "research": {
@@ -357,6 +357,16 @@
     "contactTitle": "Founder"
   },
   "c1780673710716o3fs2": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790178029682,
+        "msg": "🔓 Sblocco BWI senza email: BWI non ha l'email di Arban Gjinollari — credito speso il 23/9/2026, non si ritenta"
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "si",
@@ -367,7 +377,9 @@
       "analyzed_at": "2026-07-14T07:10:25.189Z"
     },
     "contactName": "Arban Gjinollari",
-    "contactTitle": "Sales Manager",
+    "contactTitle": "Sales Manager"
+  },
+  "c1780673710716p3hz9": {
     "log": [
       {
         "ts": 1780673710716,
@@ -375,11 +387,9 @@
       },
       {
         "ts": 1790178029682,
-        "msg": "🔓 Sblocco BWI senza email: BWI non ha l'email di Arban Gjinollari — credito speso il 23/9/2026, non si ritenta"
+        "msg": "🔓 Sblocco BWI senza email: BWI non ha l'email di Ilir Lagji — credito speso il 23/9/2026, non si ritenta"
       }
-    ]
-  },
-  "c1780673710716p3hz9": {
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "forse",
@@ -390,17 +400,7 @@
       "analyzed_at": "2026-07-14T07:10:30.083Z"
     },
     "contactName": "Ilir Lagji",
-    "contactTitle": "General Manager",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1790178029682,
-        "msg": "🔓 Sblocco BWI senza email: BWI non ha l'email di Ilir Lagji — credito speso il 23/9/2026, non si ritenta"
-      }
-    ]
+    "contactTitle": "General Manager"
   },
   "c1780673710716e5j1k": {
     "research": {
@@ -462,6 +462,16 @@
     "contactTitle": "Commercial Administration Manager"
   },
   "c1780673710716c6t5u": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790178029682,
+        "msg": "🔓 Sblocco BWI senza email: BWI non ha l'email di Ondara Llabres Camara — credito speso il 23/9/2026, non si ritenta"
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "forse",
@@ -472,17 +482,7 @@
       "analyzed_at": "2026-07-14T07:13:02.434Z"
     },
     "contactName": "Arnaud Olive Moliné",
-    "contactTitle": "Director",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1790178029682,
-        "msg": "🔓 Sblocco BWI senza email: BWI non ha l'email di Ondara Llabres Camara — credito speso il 23/9/2026, non si ritenta"
-      }
-    ]
+    "contactTitle": "Director"
   },
   "c1780673710716wsfc2": {
     "research": {
@@ -496,6 +496,16 @@
     }
   },
   "c1780673710716nzymk": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790178029682,
+        "msg": "🔓 Sblocco BWI senza email: BWI non ha l'email di Pedro Miranda — credito speso il 23/9/2026, non si ritenta"
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "probabile",
@@ -506,17 +516,7 @@
       "analyzed_at": "2026-07-14T07:13:17.777Z"
     },
     "contactName": "Pedro Miranda",
-    "contactTitle": "Manager",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1790178029682,
-        "msg": "🔓 Sblocco BWI senza email: BWI non ha l'email di Pedro Miranda — credito speso il 23/9/2026, non si ritenta"
-      }
-    ]
+    "contactTitle": "Manager"
   },
   "c1780673710716t70u2": {
     "research": {
@@ -634,6 +634,16 @@
     "contactTitle": "Purchasing Area Manager"
   },
   "c1780673710716czcjl": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790178029682,
+        "msg": "🔓 Sblocco BWI senza email: BWI non ha l'email di Nil Ubach — credito speso il 23/9/2026, non si ritenta"
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "probabile",
@@ -644,17 +654,7 @@
       "analyzed_at": "2026-07-14T07:14:26.029Z"
     },
     "contactName": "Nil Ubach",
-    "contactTitle": "Owner",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1790178029682,
-        "msg": "🔓 Sblocco BWI senza email: BWI non ha l'email di Nil Ubach — credito speso il 23/9/2026, non si ritenta"
-      }
-    ]
+    "contactTitle": "Owner"
   },
   "c17806737107167xyo5": {
     "research": {
@@ -679,18 +679,6 @@
     }
   },
   "c1780673710716fcdso": {
-    "research": {
-      "affidabilita": 2,
-      "vino_italiano": "non_risulta",
-      "tipo_business": "misto",
-      "mercato_target": "misto",
-      "raccomandato": "forse",
-      "note": "Azienda angolana con dimensioni significative (1000 dipendenti) e portafoglio vini/spirits. Sito non raggiungibile e assenza totale di tracce online rendono impossibile verificare specializzazione in vini italiani o affidabilità. Contatto diretto consigliato solo se interessati al mercato angolano.",
-      "analyzed_at": "2026-06-22T10:43:49.515Z"
-    },
-    "contactName": "Alfredo Graça",
-    "contactTitle": "Buyer",
-    "contactEmail": "alfredo.graca@alimentaangola.co.ao",
     "log": [
       {
         "ts": 1780673710716,
@@ -701,6 +689,17 @@
         "msg": "🔓 Email sbloccata via BWI: Alfredo Graça <alfredo.graca@alimentaangola.co.ao> (Buyer)"
       }
     ],
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda angolana con dimensioni significative (1000 dipendenti) e portafoglio vini/spirits. Sito non raggiungibile e assenza totale di tracce online rendono impossibile verificare specializzazione in vini italiani o affidabilità. Contatto diretto consigliato solo se interessati al mercato angolano.",
+      "analyzed_at": "2026-06-22T10:43:49.515Z"
+    },
+    "contactEmail": "alfredo.graca@alimentaangola.co.ao",
+    "contactName": "Alfredo Graça",
     "contacts": [
       {
         "name": "Alfredo Graça",
@@ -717,9 +716,20 @@
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/marcos-nobre-a0b8b9165/"
       }
-    ]
+    ],
+    "contactTitle": "Buyer"
   },
   "c17806737107160518x": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790178029682,
+        "msg": "🔓 Sblocco BWI senza email: BWI non ha l'email di Sérgio Portugal — credito speso il 23/9/2026, non si ritenta"
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "non_risulta",
@@ -730,17 +740,7 @@
       "analyzed_at": "2026-06-22T10:43:55.650Z"
     },
     "contactName": "Sérgio Portugal",
-    "contactTitle": "Purchasing Director",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1790178029682,
-        "msg": "🔓 Sblocco BWI senza email: BWI non ha l'email di Sérgio Portugal — credito speso il 23/9/2026, non si ritenta"
-      }
-    ]
+    "contactTitle": "Purchasing Director"
   },
   "c1780673710716ele0p": {
     "status": "sent",
@@ -786,18 +786,6 @@
     "contactTitle": "General Manager"
   },
   "c178067371071679kgv": {
-    "research": {
-      "affidabilita": 2,
-      "vino_italiano": "probabile",
-      "tipo_business": "distributore",
-      "mercato_target": "retail",
-      "raccomandato": "forse",
-      "note": "Distributore angolano con 100 dipendenti che cita vini italiani nel portafoglio (Francia, Italia, Portogallo). Sito con encoding issues e nessuna traccia Google; fatturato modesto (~950k). Mercato locale (Angola) limita potenziale partnership export.",
-      "analyzed_at": "2026-06-22T10:44:06.919Z"
-    },
-    "contactName": "Diogo Miranda Alves",
-    "contactTitle": "General Manager",
-    "contactEmail": "diogo.alves@multiafrica.com",
     "log": [
       {
         "ts": 1780673710716,
@@ -812,6 +800,17 @@
         "msg": "🔓 Email sbloccata via BWI: Diogo Miranda Alves <diogo.alves@multiafrica.com> (General Manager)"
       }
     ],
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Distributore angolano con 100 dipendenti che cita vini italiani nel portafoglio (Francia, Italia, Portogallo). Sito con encoding issues e nessuna traccia Google; fatturato modesto (~950k). Mercato locale (Angola) limita potenziale partnership export.",
+      "analyzed_at": "2026-06-22T10:44:06.919Z"
+    },
+    "contactEmail": "diogo.alves@multiafrica.com",
+    "contactName": "Diogo Miranda Alves",
     "contacts": [
       {
         "name": "Diogo Miranda Alves",
@@ -828,7 +827,8 @@
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/roberto-lopes-4a458793/"
       }
-    ]
+    ],
+    "contactTitle": "General Manager"
   },
   "c17806737107163pg1z": {
     "status": "sent",
@@ -1675,18 +1675,6 @@
     "contactTitle": "Director Of Operations"
   },
   "c17806737107172v8e2": {
-    "research": {
-      "affidabilita": 2,
-      "vino_italiano": "non_risulta",
-      "tipo_business": "distributore",
-      "mercato_target": "misto",
-      "raccomandato": "forse",
-      "note": "Azienda argentina di grandi dimensioni (1405 dipendenti, fatturato significativo) nel wholesale/distribuzione. Siti dichiarati irraggiungibili e nessuna traccia online rendono impossibile verificare portafoglio vini italiani. Potenziale cliente per export, ma richiede verifica diretta.",
-      "analyzed_at": "2026-07-06T09:08:11.141Z"
-    },
-    "contactName": "Sebastian Zimmermann",
-    "contactTitle": "General Manager",
-    "contactEmail": "szimmermann@yaguar.com.ar",
     "log": [
       {
         "ts": 1780673710716,
@@ -1697,6 +1685,17 @@
         "msg": "🔓 Email sbloccata via BWI: Sebastian Zimmermann <szimmermann@yaguar.com.ar> (General Manager)"
       }
     ],
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda argentina di grandi dimensioni (1405 dipendenti, fatturato significativo) nel wholesale/distribuzione. Siti dichiarati irraggiungibili e nessuna traccia online rendono impossibile verificare portafoglio vini italiani. Potenziale cliente per export, ma richiede verifica diretta.",
+      "analyzed_at": "2026-07-06T09:08:11.141Z"
+    },
+    "contactEmail": "szimmermann@yaguar.com.ar",
+    "contactName": "Sebastian Zimmermann",
     "contacts": [
       {
         "name": "Sebastian Zimmermann",
@@ -1713,7 +1712,8 @@
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/joaquin-torti-61bab331/"
       }
-    ]
+    ],
+    "contactTitle": "General Manager"
   },
   "c178067371071744crx": {
     "status": "sent",
@@ -1905,18 +1905,6 @@
     "contactTitle": "Operations Manager"
   },
   "c17806737107177jgex": {
-    "research": {
-      "affidabilita": 2,
-      "vino_italiano": "non_risulta",
-      "tipo_business": "misto",
-      "mercato_target": "misto",
-      "raccomandato": "forse",
-      "note": "Distributore argentino con dimensioni interessanti (170 dipendenti, ~7M fatturato) e portafoglio vini, ma siti irraggiungibili e nessuna traccia online. Impossibile verificare se importa vini italiani. Richiede verifica diretta prima di contatto.",
-      "analyzed_at": "2026-07-06T09:08:37.409Z"
-    },
-    "contactName": "Lionel Muñoz",
-    "contactTitle": "Purchasing Manager",
-    "contactEmail": "lmunoz@parodisrl.com.ar",
     "log": [
       {
         "ts": 1780673710716,
@@ -1927,6 +1915,17 @@
         "msg": "🔓 Email sbloccata via BWI: Lionel Muñoz <lmunoz@parodisrl.com.ar> (Purchasing Manager)"
       }
     ],
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore argentino con dimensioni interessanti (170 dipendenti, ~7M fatturato) e portafoglio vini, ma siti irraggiungibili e nessuna traccia online. Impossibile verificare se importa vini italiani. Richiede verifica diretta prima di contatto.",
+      "analyzed_at": "2026-07-06T09:08:37.409Z"
+    },
+    "contactEmail": "lmunoz@parodisrl.com.ar",
+    "contactName": "Lionel Muñoz",
     "contacts": [
       {
         "name": "Lionel Muñoz",
@@ -1943,7 +1942,8 @@
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/andres-coca-38807068/"
       }
-    ]
+    ],
+    "contactTitle": "Purchasing Manager"
   },
   "c1780673710717juihg": {
     "status": "sent",
@@ -2032,18 +2032,6 @@
     "contactTitle": "Purchase"
   },
   "c1780673710717zqbqh": {
-    "research": {
-      "affidabilita": 2,
-      "vino_italiano": "non_risulta",
-      "tipo_business": "distributore",
-      "mercato_target": "misto",
-      "raccomandato": "forse",
-      "note": "Distributore argentino di dimensioni significative (110 dipendenti, fatturato ~82M). Nessuna traccia online di Danodis; sito Hergo non fornisce info su portafoglio vini. Impossibile verificare se commercializza vini italiani.",
-      "analyzed_at": "2026-07-06T09:08:53.615Z"
-    },
-    "contactName": "Cristian Mena",
-    "contactTitle": "Sales Manager",
-    "contactEmail": "cristian.mena@hergo.com.ar",
     "log": [
       {
         "ts": 1780673710716,
@@ -2054,6 +2042,17 @@
         "msg": "🔓 Email sbloccata via BWI: Cristian Mena <cristian.mena@hergo.com.ar> (Sales Manager)"
       }
     ],
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore argentino di dimensioni significative (110 dipendenti, fatturato ~82M). Nessuna traccia online di Danodis; sito Hergo non fornisce info su portafoglio vini. Impossibile verificare se commercializza vini italiani.",
+      "analyzed_at": "2026-07-06T09:08:53.615Z"
+    },
+    "contactEmail": "cristian.mena@hergo.com.ar",
+    "contactName": "Cristian Mena",
     "contacts": [
       {
         "name": "Cristian Mena",
@@ -2070,7 +2069,8 @@
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/alan-maximiliano-vazquez-317027144/"
       }
-    ]
+    ],
+    "contactTitle": "Sales Manager"
   },
   "c1780673710717hhu8b": {
     "status": "sent",
@@ -2788,6 +2788,16 @@
     "contactTitle": "Manager"
   },
   "c178067371071778nw2": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790178029682,
+        "msg": "🔓 Sblocco BWI senza email: BWI non ha l'email di Joaquin Garcia — credito speso il 23/9/2026, non si ritenta"
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "forse",
@@ -2798,17 +2808,7 @@
       "analyzed_at": "2026-07-07T08:19:30.302Z"
     },
     "contactName": "Joaquin Garcia",
-    "contactTitle": "Partner",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1790178029682,
-        "msg": "🔓 Sblocco BWI senza email: BWI non ha l'email di Joaquin Garcia — credito speso il 23/9/2026, non si ritenta"
-      }
-    ]
+    "contactTitle": "Partner"
   },
   "c1780673710717k52a4": {
     "status": "sent",
@@ -2857,18 +2857,6 @@
     }
   },
   "c1780673710717k5y34": {
-    "research": {
-      "affidabilita": 2,
-      "vino_italiano": "probabile",
-      "tipo_business": "importatore",
-      "mercato_target": "misto",
-      "raccomandato": "forse",
-      "note": "Azienda argentina con 21 anni di storia e portafoglio diversificato (vini, spirits, spumanti). Sito funzionante ma assenza totale da Google e nessuna verifica online. Citano vini italiani (Prosecco) e internazionali, ma focus principale su spirits/rum. Contatti disponibili; verificare affidabilità prima di procedere.",
-      "analyzed_at": "2026-07-07T08:19:43.996Z"
-    },
-    "contactName": "Elvis Enrique Medina",
-    "contactTitle": "Head of Purchasing and Import Analyst",
-    "contactEmail": "elvis@wine-supply.com",
     "log": [
       {
         "ts": 1780673710716,
@@ -2879,6 +2867,17 @@
         "msg": "🔓 Email sbloccata via BWI: Elvis Enrique <elvis@wine-supply.com> (Head of Purchasing and Import Analyst)"
       }
     ],
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda argentina con 21 anni di storia e portafoglio diversificato (vini, spirits, spumanti). Sito funzionante ma assenza totale da Google e nessuna verifica online. Citano vini italiani (Prosecco) e internazionali, ma focus principale su spirits/rum. Contatti disponibili; verificare affidabilità prima di procedere.",
+      "analyzed_at": "2026-07-07T08:19:43.996Z"
+    },
+    "contactEmail": "elvis@wine-supply.com",
+    "contactName": "Elvis Enrique Medina",
     "contacts": [
       {
         "name": "Elvis Enrique Medina",
@@ -2916,7 +2915,8 @@
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/santiago-giovannelli-9bb7936a/"
       }
-    ]
+    ],
+    "contactTitle": "Head of Purchasing and Import Analyst"
   },
   "c1780673710717kxkt5": {
     "status": "sent",
@@ -3369,18 +3369,6 @@
     "contactTitle": "Assistant Manager"
   },
   "c17806737107173gek8": {
-    "research": {
-      "affidabilita": 2,
-      "vino_italiano": "probabile",
-      "tipo_business": "importatore",
-      "mercato_target": "retail",
-      "raccomandato": "forse",
-      "note": "Portfolio include cantine italiane (Le Macchiole, Castello Romitorio, Fattoria Le Pupille, Marchesi Di Barolo) ma sito con encoding issues e nessuna traccia Google. Micro-azienda (2 dipendenti, fatturato basso) focalizzata su mercato argentino, non europeo.",
-      "analyzed_at": "2026-07-07T08:21:00.228Z"
-    },
-    "contactName": "Alejandro Zaldumbide",
-    "contactTitle": "Director of Imports",
-    "contactEmail": "alejandro@internationalwinemore.com",
     "log": [
       {
         "ts": 1780673710716,
@@ -3391,6 +3379,17 @@
         "msg": "🔓 Email sbloccata via BWI: Alejandro Zaldumbide <alejandro@internationalwinemore.com> (Director of Imports)"
       }
     ],
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Portfolio include cantine italiane (Le Macchiole, Castello Romitorio, Fattoria Le Pupille, Marchesi Di Barolo) ma sito con encoding issues e nessuna traccia Google. Micro-azienda (2 dipendenti, fatturato basso) focalizzata su mercato argentino, non europeo.",
+      "analyzed_at": "2026-07-07T08:21:00.228Z"
+    },
+    "contactEmail": "alejandro@internationalwinemore.com",
+    "contactName": "Alejandro Zaldumbide",
     "contacts": [
       {
         "name": "Alejandro Zaldumbide",
@@ -3407,7 +3406,8 @@
         "phone": "",
         "linkedin": ""
       }
-    ]
+    ],
+    "contactTitle": "Director of Imports"
   },
   "c1780673710717afqwt": {
     "status": "sent",
@@ -4623,18 +4623,6 @@
     "contactTitle": "Owner"
   },
   "c1780673710717v0g69": {
-    "research": {
-      "affidabilita": 2,
-      "vino_italiano": "forse",
-      "tipo_business": "misto",
-      "mercato_target": "misto",
-      "raccomandato": "forse",
-      "note": "Mercadolibre è marketplace argentino noto, ma sito non raggiungibile e nessuna info su portafoglio vini italiani. 'Mostodivino' potrebbe essere specializzato vini, ma dati insufficienti per valutare affidabilità e interesse per vini italiani.",
-      "analyzed_at": "2026-07-07T08:23:41.871Z"
-    },
-    "contactName": "Leandro Da Cruz",
-    "contactTitle": "Founding Partner",
-    "contactEmail": "leandro@mostodivino.ar",
     "log": [
       {
         "ts": 1780673710716,
@@ -4645,6 +4633,17 @@
         "msg": "🔓 Email sbloccata via BWI: Leandro Da <leandro@mostodivino.ar> (Founding Partner)"
       }
     ],
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Mercadolibre è marketplace argentino noto, ma sito non raggiungibile e nessuna info su portafoglio vini italiani. 'Mostodivino' potrebbe essere specializzato vini, ma dati insufficienti per valutare affidabilità e interesse per vini italiani.",
+      "analyzed_at": "2026-07-07T08:23:41.871Z"
+    },
+    "contactEmail": "leandro@mostodivino.ar",
+    "contactName": "Leandro Da Cruz",
     "contacts": [
       {
         "name": "Leandro Da Cruz",
@@ -4661,7 +4660,8 @@
         "phone": "",
         "linkedin": "Https://www.linkedin.com/in/alejandro-borlandelli-84491823/"
       }
-    ]
+    ],
+    "contactTitle": "Founding Partner"
   },
   "c1780673710717e76jm": {
     "status": "sent",
@@ -4922,18 +4922,6 @@
     "contactTitle": "Purchasing Manager"
   },
   "c1780673710717yrl2c": {
-    "research": {
-      "affidabilita": 2,
-      "vino_italiano": "forse",
-      "tipo_business": "retailer",
-      "mercato_target": "retail",
-      "raccomandato": "forse",
-      "note": "Retailer argentino con sito dichiarato ma non raggiungibile. Nessuna traccia online verificabile. Potenziale cliente per vini italiani, ma affidabilità molto bassa senza conferme.",
-      "analyzed_at": "2026-07-07T08:24:17.637Z"
-    },
-    "contactName": "Aldo Graziani",
-    "contactTitle": "Owner, Sommelier, Wine Consultant",
-    "contactEmail": "aldo@aldosvinoteca.com",
     "log": [
       {
         "ts": 1780673710716,
@@ -4944,6 +4932,17 @@
         "msg": "🔓 Email sbloccata via BWI: Aldo Graziani <aldo@aldosvinoteca.com> (Owner, Sommelier, Wine Consultant)"
       }
     ],
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer argentino con sito dichiarato ma non raggiungibile. Nessuna traccia online verificabile. Potenziale cliente per vini italiani, ma affidabilità molto bassa senza conferme.",
+      "analyzed_at": "2026-07-07T08:24:17.637Z"
+    },
+    "contactEmail": "aldo@aldosvinoteca.com",
+    "contactName": "Aldo Graziani",
     "contacts": [
       {
         "name": "Aldo Graziani",
@@ -4953,7 +4952,8 @@
         "linkedin": "https://www.linkedin.com/in/aldo-graziani-7b888941/",
         "sbloccato": true
       }
-    ]
+    ],
+    "contactTitle": "Owner, Sommelier, Wine Consultant"
   },
   "c1780673710717ecqwe": {
     "status": "sent",
@@ -5478,6 +5478,16 @@
     "contactTitle": "Partner"
   },
   "c1780673710717upikt": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790178029682,
+        "msg": "🔓 Sblocco BWI senza email: BWI non ha l'email di Marco Di Meo — credito speso il 23/9/2026, non si ritenta"
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "probabile",
@@ -5488,31 +5498,9 @@
       "analyzed_at": "2026-07-07T08:25:30.552Z"
     },
     "contactName": "Marco Di Meo",
-    "contactTitle": "Owner",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1790178029682,
-        "msg": "🔓 Sblocco BWI senza email: BWI non ha l'email di Marco Di Meo — credito speso il 23/9/2026, non si ritenta"
-      }
-    ]
+    "contactTitle": "Owner"
   },
   "c1780673710717r00bb": {
-    "research": {
-      "affidabilita": 2,
-      "vino_italiano": "forse",
-      "tipo_business": "misto",
-      "mercato_target": "misto",
-      "raccomandato": "forse",
-      "note": "Distributore argentino di vini e spirits senza presenze online verificabili (Google non trova risultati). Sito minimalista con solo avviso di maggiore età. Impossibile valutare portafoglio prodotti e focus su vini italiani.",
-      "analyzed_at": "2026-07-07T08:25:36.535Z"
-    },
-    "contactName": "Jorge Muñoz Olesti",
-    "contactTitle": "Regional Commercial Manager",
-    "contactEmail": "jmunoz@distribuidoraleyseca.com.ar",
     "log": [
       {
         "ts": 1780673710716,
@@ -5523,6 +5511,17 @@
         "msg": "🔓 Email sbloccata via BWI: Jorge Muñoz <jmunoz@distribuidoraleyseca.com.ar> (Regional Commercial Manager)"
       }
     ],
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore argentino di vini e spirits senza presenze online verificabili (Google non trova risultati). Sito minimalista con solo avviso di maggiore età. Impossibile valutare portafoglio prodotti e focus su vini italiani.",
+      "analyzed_at": "2026-07-07T08:25:36.535Z"
+    },
+    "contactEmail": "jmunoz@distribuidoraleyseca.com.ar",
+    "contactName": "Jorge Muñoz Olesti",
     "contacts": [
       {
         "name": "Jorge Muñoz Olesti",
@@ -5532,7 +5531,8 @@
         "linkedin": "https://www.linkedin.com/in/jorge-mu%C3%B1oz-olesti-4a076614/",
         "sbloccato": true
       }
-    ]
+    ],
+    "contactTitle": "Regional Commercial Manager"
   },
   "c17806737107172ussd": {
     "status": "sent",
@@ -10981,6 +10981,16 @@
     "contactTitle": "Sales Manager"
   },
   "c178067371071816qx4": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790178029682,
+        "msg": "🔓 Sblocco BWI senza email: BWI non ha l'email di Ythamar Timp — credito speso il 23/9/2026, non si ritenta"
+      }
+    ],
     "research": {
       "affidabilita": 2,
       "vino_italiano": "probabile",
@@ -10991,17 +11001,7 @@
       "analyzed_at": "2026-06-20T08:18:51.263Z"
     },
     "contactName": "Ythamar Timp",
-    "contactTitle": "Manager",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1790178029682,
-        "msg": "🔓 Sblocco BWI senza email: BWI non ha l'email di Ythamar Timp — credito speso il 23/9/2026, non si ritenta"
-      }
-    ]
+    "contactTitle": "Manager"
   },
   "c1780673710718yfqdi": {
     "status": "sent",
@@ -11047,18 +11047,6 @@
     "contactTitle": "Wine & Spirits Director"
   },
   "c1780673710718dht2k": {
-    "research": {
-      "affidabilita": 2,
-      "vino_italiano": "forse",
-      "tipo_business": "retailer",
-      "mercato_target": "retail",
-      "raccomandato": "forse",
-      "note": "Piccolo retailer ad Aruba (3 dipendenti, fatturato ~229k) con portafoglio vini/spirits generico. Sito non raggiungibile limita verifica. Presenza su store locator Blue Chair Bay suggerisce distribuzione reale, ma nessuna evidenza specifica di vini italiani.",
-      "analyzed_at": "2026-06-20T08:19:03.010Z"
-    },
-    "contactName": "Jack Bult",
-    "contactTitle": "Managing Director",
-    "contactEmail": "jackbult@superfoodaruba.com",
     "log": [
       {
         "ts": 1780673710716,
@@ -11069,6 +11057,17 @@
         "msg": "🔓 Email sbloccata via BWI: Jack Bult <jackbult@superfoodaruba.com> (Managing Director)"
       }
     ],
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccolo retailer ad Aruba (3 dipendenti, fatturato ~229k) con portafoglio vini/spirits generico. Sito non raggiungibile limita verifica. Presenza su store locator Blue Chair Bay suggerisce distribuzione reale, ma nessuna evidenza specifica di vini italiani.",
+      "analyzed_at": "2026-06-20T08:19:03.010Z"
+    },
+    "contactEmail": "jackbult@superfoodaruba.com",
+    "contactName": "Jack Bult",
     "contacts": [
       {
         "name": "Jack Bult",
@@ -11078,7 +11077,8 @@
         "linkedin": "Https://www.linkedin.com/in/jack-bult-b9171ba/",
         "sbloccato": true
       }
-    ]
+    ],
+    "contactTitle": "Managing Director"
   },
   "c1780673710718riy1b": {
     "status": "sent",
@@ -12507,7 +12507,6 @@
       "analyzed_at": "2026-06-27T07:46:03.128Z"
     },
     "contactName": "Ken John",
-    "contactTitle": "Wine Buyer",
     "contacts": [
       {
         "name": "Ken John",
@@ -12523,7 +12522,8 @@
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/max-davidson-74425554/"
       }
-    ]
+    ],
+    "contactTitle": "Wine Buyer"
   },
   "c1780673710718noumd": {
     "status": "sent",
@@ -12653,9 +12653,8 @@
       "note": "Retailer australiano di dimensioni medie (89 dipendenti, fatturato ~20M AUD) con portafoglio vini/spirits. Assenza di sito web e zero traccia online rendono difficile valutare se commercializza vini italiani. Contatto diretto potrebbe chiarire interesse per importazioni italiane.",
       "analyzed_at": "2026-06-27T07:46:19.980Z"
     },
-    "contactName": "David Reberger",
-    "contactTitle": "General Manager",
     "contactEmail": "dreberger@kemenys.com",
+    "contactName": "David Reberger",
     "contacts": [
       {
         "name": "David Reberger",
@@ -12672,7 +12671,8 @@
         "phone": "",
         "linkedin": "Https://www.linkedin.com/in/andrew-kemeny-4a00361/"
       }
-    ]
+    ],
+    "contactTitle": "General Manager"
   },
   "c1780673710718h8x6n": {
     "status": "sent",
@@ -13106,9 +13106,8 @@
       "note": "Azienda australiana con fatturato significativo (11,8M) e 50 dipendenti, opera come importatore/distributore/retailer online. Siti dichiarati irraggiungibili e nessuna traccia Google: verificare contatti diretti prima di investire tempo.",
       "analyzed_at": "2026-06-27T07:47:02.819Z"
     },
-    "contactName": "Ben O'Connor",
-    "contactTitle": "Account Manager",
     "contactEmail": "boconnor@bibendum.com.au",
+    "contactName": "Ben O'Connor",
     "contacts": [
       {
         "name": "Ben O'Connor",
@@ -13125,7 +13124,8 @@
         "phone": "*",
         "linkedin": "https://www.linkedin.com/in/tal-thorne-368217163/"
       }
-    ]
+    ],
+    "contactTitle": "Account Manager"
   },
   "c1780673710718urq12": {
     "status": "sent",
@@ -13413,9 +13413,8 @@
       "note": "Azienda australiana con 40 dipendenti e fatturato significativo (5,4M AUD). Sito dichiarato irraggiungibile e assenza totale di risultati Google sono segnali preoccupanti. Potrebbe importare vini italiani ma mancano conferme.",
       "analyzed_at": "2026-06-27T07:47:41.429Z"
     },
-    "contactName": "Ronnie Joss",
-    "contactTitle": "Managing Director",
     "contactEmail": "ronnie@trialiafoods.com.au",
+    "contactName": "Ronnie Joss",
     "contacts": [
       {
         "name": "Ronnie Joss",
@@ -13425,7 +13424,8 @@
         "linkedin": "https://www.linkedin.com/in/ronnie-joss-687466123",
         "sbloccato": true
       }
-    ]
+    ],
+    "contactTitle": "Managing Director"
   },
   "c1780673710718lfcn8": {
     "status": "sent",
@@ -13677,9 +13677,8 @@
       "note": "Wholesaler australiano con fatturato significativo (9.5M) e 35 dipendenti, ma sito irraggiungibile e nessuna traccia online. Probabile focus su vini italiani dato il nome (Pisconeri), ma impossibile verificare portafoglio e affidabilità senza accesso ai dati.",
       "analyzed_at": "2026-06-27T07:48:07.077Z"
     },
-    "contactName": "Albert Pisconeri",
-    "contactTitle": "Director",
     "contactEmail": "pisconeri.albert@pisconeri.com.au",
+    "contactName": "Albert Pisconeri",
     "contacts": [
       {
         "name": "Albert Pisconeri",
@@ -13689,7 +13688,8 @@
         "linkedin": "https://www.linkedin.com/in/albert-pisconeri-62a8898b/",
         "sbloccato": true
       }
-    ]
+    ],
+    "contactTitle": "Director"
   },
   "c17806737107185zvme": {
     "status": "sent",
@@ -14431,9 +14431,8 @@
       "note": "Azienda australiana con 22 dipendenti e fatturato modesto (~830k AUD). Sito non raggiungibile e assenza totale di risultati Google suggeriscono bassa visibilità online. Portafoglio generico (vino, birra, spirits) non specifica origine geografica dei vini.",
       "analyzed_at": "2026-06-27T07:49:29.540Z"
     },
-    "contactName": "Massimo Orobello",
-    "contactTitle": "Managing Director",
     "contactEmail": "massimo@divinefw.com.au",
+    "contactName": "Massimo Orobello",
     "contacts": [
       {
         "name": "Nicola Rullo",
@@ -14450,7 +14449,8 @@
         "linkedin": "https://www.linkedin.com/in/massimo-orobello-436377ba/",
         "sbloccato": true
       }
-    ]
+    ],
+    "contactTitle": "Managing Director"
   },
   "c17806737107189eq4s": {
     "status": "sent",
@@ -14547,9 +14547,8 @@
       "note": "Distributore australiano di vini fini (Old & New World) fondato nel 2017, fatturato solido (~22M AUD) con 20 dipendenti. Nessuna menzione esplicita di vini italiani nel portfolio visibile. Assenza totale da Google e contenuto web minimalista riducono affidabilità percepita.",
       "analyzed_at": "2026-06-27T07:49:39.402Z"
     },
-    "contactName": "Andrew Clarke",
-    "contactTitle": "Sales Manager",
     "contactEmail": "andrew.clarke@hofw.com.au",
+    "contactName": "Andrew Clarke",
     "contacts": [
       {
         "name": "Andrew Clarke",
@@ -14573,7 +14572,8 @@
         "phone": "*",
         "linkedin": ""
       }
-    ]
+    ],
+    "contactTitle": "Sales Manager"
   },
   "c1780673710718ohfud": {
     "status": "sent",
