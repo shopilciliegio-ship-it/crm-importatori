@@ -746,7 +746,7 @@ function openDetail(id){
       <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:0.5px solid var(--brd);cursor:pointer" onclick="openEmailToContact('${c.id}',${i})">
         <div style="flex:1">
           <div style="font-size:13px;font-weight:600">${esc(ct.name||'—')}${ct.sbloccato?' <span title="Email sbloccata via BWI" style="font-size:11px">🔓</span>':''}${isDest?' <span style="font-size:10px;padding:2px 7px;border-radius:10px;background:var(--blue-bg);color:var(--blue-tx);font-weight:700">📬 DESTINATARIO INVII</span>':''}</div>
-          <div style="font-size:12px;color:var(--text2)">${esc(ct.title||'')}${ct.email?' · <a href="mailto:'+esc(ct.email)+'" onclick="event.stopPropagation()">'+esc(ct.email)+'</a>':''}</div>
+          <div style="font-size:12px;color:var(--text2)">${esc(ct.title||'')}${ct.email?' · <a href="mailto:'+esc(ct.email)+'" onclick="event.stopPropagation()">'+esc(ct.email)+'</a>':''}${ct.emailSospetta?' · <span style="color:var(--red-tx,#b42318)" title="Email sbloccata via BWI ma con dominio diverso dall\'azienda: non usata per gli invii finché non la confermi (modifica il contatto e spostala nel campo email)">⚠ '+esc(ct.emailSospetta)+' — da verificare</span>':''}</div>
         </div>
         ${ct.linkedin?`<a href="${esc(ct.linkedin)}" target="_blank" onclick="event.stopPropagation()" style="font-size:11px;padding:3px 8px;border-radius:12px;background:var(--blue-bg);color:var(--blue-tx);font-weight:600;text-decoration:none;flex-shrink:0">in</a>`:''}
         <button class="btn bts" style="font-size:11px;flex-shrink:0" onclick="event.stopPropagation();openEmailToContact('${c.id}',${i})">✉</button>

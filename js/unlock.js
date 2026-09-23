@@ -15,7 +15,9 @@ function _unlockCandidati(raccomandato, stelleSet){
     if(!stelleSet.has(r.affidabilita)) return false;
     const persone=c.contacts||[];
     if(!persone.length) return false;
-    if(persone.some(p=>(p.email||'').trim())) return false;
+    if(persone.some(p=>(p.email||'').trim()||(p.emailSospetta||'').trim())) return false;
+    // Già pagato una volta ma BWI non ha l'email (LOG_SENZA_EMAIL in scripts/unlock_leads_bulk.py): non ritentare.
+    if((c.log||[]).some(l=>(l.msg||'').includes('🔓 Sblocco BWI senza email'))) return false;
     return true;
   });
 }
