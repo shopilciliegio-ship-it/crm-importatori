@@ -15468,16 +15468,20 @@
       {
         "ts": 1790181270024,
         "msg": "⚠ Email sbloccata via BWI con dominio diverso dall'azienda: Antonio Rosato <antonio@bottegarotolo.com.au> — da verificare, NON usata per gli invii"
+      },
+      {
+        "ts": 1790181384062,
+        "msg": "🔓 Email sbloccata via BWI confermata (dominio di un sito dell'azienda): Antonio Rosato <antonio@bottegarotolo.com.au>"
       }
     ],
     "contacts": [
       {
         "name": "Antonio Rosato",
         "title": "General Manager",
-        "email": "",
+        "email": "antonio@bottegarotolo.com.au",
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/antoniorosato83/",
-        "emailSospetta": "antonio@bottegarotolo.com.au"
+        "sbloccato": true
       },
       {
         "name": "Andrea Ramon",
@@ -15493,7 +15497,8 @@
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/louis-acanfora-915237201/"
       }
-    ]
+    ],
+    "contactEmail": "antonio@bottegarotolo.com.au"
   },
   "c1780673710718ab1dw": {
     "research": {
@@ -18917,8 +18922,8 @@
       "note": "Azienda australiana con fatturato interessante (4,6M) e portafoglio wine/spirits. Siti dichiarati non raggiungibili e assenza totale di risultati Google sollevano dubbi su attività reale. Nome dominio 'vinoitaliano.com.au' suggerisce focus su vini italiani, ma impossibile verificare.",
       "analyzed_at": "2026-06-29T09:26:56.956Z"
     },
-    "contactName": "Todd Slater",
-    "contactTitle": "Sales Manager",
+    "contactName": "Matt Paul",
+    "contactTitle": "Director",
     "log": [
       {
         "ts": 1780673710716,
@@ -18931,6 +18936,10 @@
       {
         "ts": 1790181270024,
         "msg": "⚠ Email sbloccata via BWI con dominio diverso dall'azienda: Matt Paul <matt@vinoitaliano.com.au> — da verificare, NON usata per gli invii"
+      },
+      {
+        "ts": 1790181384062,
+        "msg": "🔓 Email sbloccata via BWI confermata (dominio di un sito dell'azienda): Matt Paul <matt@vinoitaliano.com.au>"
       }
     ],
     "contacts": [
@@ -18951,12 +18960,13 @@
       {
         "name": "Matt Paul",
         "title": "Director",
-        "email": "",
+        "email": "matt@vinoitaliano.com.au",
         "phone": "",
         "linkedin": "",
-        "emailSospetta": "matt@vinoitaliano.com.au"
+        "sbloccato": true
       }
-    ]
+    ],
+    "contactEmail": "matt@vinoitaliano.com.au"
   },
   "c17806737107203yg7u": {
     "research": {
