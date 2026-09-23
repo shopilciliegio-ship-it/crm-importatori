@@ -14980,6 +14980,10 @@
       {
         "ts": 1789769650699,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609182214.21410370808@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1790181270024,
+        "msg": "🔓 Email sbloccata via BWI: Nikki Knights <nik@winewomanww.com> (Managing Director)"
       }
     ],
     "brevoEvents": [
@@ -15011,7 +15015,25 @@
       "analyzed_at": "2026-06-27T07:50:31.575Z"
     },
     "contactName": "Nikki Knights",
-    "contactTitle": "Managing Director"
+    "contactTitle": "Managing Director",
+    "contactEmail": "nik@winewomanww.com",
+    "contacts": [
+      {
+        "name": "Nikki Knights",
+        "title": "Managing Director",
+        "email": "nik@winewomanww.com",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/nikki-knights-487b029a/",
+        "sbloccato": true
+      },
+      {
+        "name": "Craig Knights",
+        "title": "Chief Of Wine",
+        "email": "",
+        "phone": "",
+        "linkedin": ""
+      }
+    ]
   },
   "c17806737107183xgee": {
     "status": "sent",
@@ -15437,7 +15459,41 @@
       "analyzed_at": "2026-06-27T07:51:33.972Z"
     },
     "contactName": "Antonio Rosato",
-    "contactTitle": "General Manager"
+    "contactTitle": "General Manager",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790181270024,
+        "msg": "⚠ Email sbloccata via BWI con dominio diverso dall'azienda: Antonio Rosato <antonio@bottegarotolo.com.au> — da verificare, NON usata per gli invii"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Antonio Rosato",
+        "title": "General Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/antoniorosato83/",
+        "emailSospetta": "antonio@bottegarotolo.com.au"
+      },
+      {
+        "name": "Andrea Ramon",
+        "title": "Managing Director",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/andrea-ramon-91547823/"
+      },
+      {
+        "name": "Louis Acanfora",
+        "title": "Sales Executive",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/louis-acanfora-915237201/"
+      }
+    ]
   },
   "c1780673710718ab1dw": {
     "research": {
@@ -16134,7 +16190,35 @@
       "analyzed_at": "2026-06-27T07:56:32.882Z"
     },
     "contactName": "Andrew Cameron",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "contactEmail": "acameron@dejavuwines.com.au",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790181270024,
+        "msg": "🔓 Email sbloccata via BWI: Andrew Cameron <acameron@dejavuwines.com.au> (Owner)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Andrew Cameron",
+        "title": "Owner",
+        "email": "acameron@dejavuwines.com.au",
+        "phone": "*",
+        "linkedin": "https://www.linkedin.com/in/andrew-cameron-789b1a11/",
+        "sbloccato": true
+      },
+      {
+        "name": "Jennifer Anderson",
+        "title": "Sales Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/jennifer-anderson-2bb17666/"
+      }
+    ]
   },
   "c1780673710719vci3h": {
     "research": {
@@ -16510,7 +16594,28 @@
       "analyzed_at": "2026-06-28T08:18:28.204Z"
     },
     "contactName": "Pasquale Napoletano",
-    "contactTitle": "Managing Director"
+    "contactTitle": "Managing Director",
+    "contactEmail": "pat@italyinaglass.com.au",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790181270024,
+        "msg": "🔓 Email sbloccata via BWI: Pasquale Napoletano <pat@italyinaglass.com.au> (Managing Director)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Pasquale Napoletano",
+        "title": "Managing Director",
+        "email": "pat@italyinaglass.com.au",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/pasquale-napoletano-100528126/",
+        "sbloccato": true
+      }
+    ]
   },
   "c1780673710719ov4yk": {
     "research": {
@@ -17497,7 +17602,17 @@
       "analyzed_at": "2026-06-28T08:25:56.483Z"
     },
     "contactName": "Irina Sinitsky",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790181270024,
+        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
+      }
+    ]
   },
   "c1780673710720qf6f1": {
     "research": {
@@ -17549,7 +17664,35 @@
       "analyzed_at": "2026-06-28T08:26:33.784Z"
     },
     "contactName": "Sarina Dentice",
-    "contactTitle": "Owner/ Managing Director"
+    "contactTitle": "Owner/ Managing Director",
+    "contactEmail": "sarina@merlinboutiquewines.com.au",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790181270024,
+        "msg": "🔓 Email sbloccata via BWI: Sarina Dentice <sarina@merlinboutiquewines.com.au> (Owner/ Managing Director)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Sarina Dentice",
+        "title": "Owner/ Managing Director",
+        "email": "sarina@merlinboutiquewines.com.au",
+        "phone": "*",
+        "linkedin": "https://www.linkedin.com/in/sarina-dentice-8abb313b",
+        "sbloccato": true
+      },
+      {
+        "name": "Ben Dentice",
+        "title": "Senior Sales Account Manager",
+        "email": "",
+        "phone": "*",
+        "linkedin": "Https://www.linkedin.com/in/ben-dentice-4b042057/"
+      }
+    ]
   },
   "c1780673710720qo5rr": {
     "research": {
@@ -17601,7 +17744,35 @@
       "analyzed_at": "2026-06-28T08:26:53.461Z"
     },
     "contactName": "Dennis Roman",
-    "contactTitle": "Director - Sommelier"
+    "contactTitle": "Director - Sommelier",
+    "contactEmail": "dennis@sensesat.com",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790181270024,
+        "msg": "🔓 Email sbloccata via BWI: Dennis Roman <dennis@sensesat.com> (Director - Sommelier)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Dennis Roman",
+        "title": "Director - Sommelier",
+        "email": "dennis@sensesat.com",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/dennis-roman-b9a99077/",
+        "sbloccato": true
+      },
+      {
+        "name": "Barbara Vega",
+        "title": "Account Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/barbara-vega-13b21080/"
+      }
+    ]
   },
   "c178067371072073hkn": {
     "research": {
@@ -17666,7 +17837,35 @@
       "analyzed_at": "2026-06-28T08:27:22.349Z"
     },
     "contactName": "Ludovic Deloche",
-    "contactTitle": "National Sales"
+    "contactTitle": "National Sales",
+    "contactEmail": "ludovic@halleauxvins.com.au",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790181270024,
+        "msg": "🔓 Email sbloccata via BWI: Ludovic Deloche <ludovic@halleauxvins.com.au> (National Sales)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Ludovic Deloche",
+        "title": "National Sales",
+        "email": "ludovic@halleauxvins.com.au",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/ludovic-deloche-7bab6536/?originalSubdomain=au",
+        "sbloccato": true
+      },
+      {
+        "name": "Max Helsing",
+        "title": "Sales",
+        "email": "",
+        "phone": "",
+        "linkedin": ""
+      }
+    ]
   },
   "c178067371072079zej": {
     "research": {
@@ -18507,7 +18706,35 @@
       "analyzed_at": "2026-06-29T09:25:40.508Z"
     },
     "contactName": "Darren Harris",
-    "contactTitle": "Managing Director"
+    "contactTitle": "Managing Director",
+    "contactEmail": "darren@grandmillesime.com.au",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790181270024,
+        "msg": "🔓 Email sbloccata via BWI: Darren Harris <darren@grandmillesime.com.au> (Managing Director)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Darren Harris",
+        "title": "Managing Director",
+        "email": "darren@grandmillesime.com.au",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/darren-harris-9662a85b/",
+        "sbloccato": true
+      },
+      {
+        "name": "Tracey Zammit",
+        "title": "Office Manager/ Administration Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/tracey-zammit-5a1596aa/"
+      }
+    ]
   },
   "c1780673710720c56v2": {
     "research": {
@@ -18572,7 +18799,35 @@
       "analyzed_at": "2026-06-29T09:26:05.798Z"
     },
     "contactName": "Grégoire Bertaud",
-    "contactTitle": "Founder And Director"
+    "contactTitle": "Founder And Director",
+    "contactEmail": "gregoire@noblespirits.com.au",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790181270024,
+        "msg": "🔓 Email sbloccata via BWI: Grégoire Bertaud <gregoire@noblespirits.com.au> (Founder And Director)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Grégoire Bertaud",
+        "title": "Founder And Director",
+        "email": "gregoire@noblespirits.com.au",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/gregoirebertaud/",
+        "sbloccato": true
+      },
+      {
+        "name": "Julian Berthier",
+        "title": "Brand Ambassador",
+        "email": "",
+        "phone": "",
+        "linkedin": "Https://www.linkedin.com/in/julian-berthier-5a8198148/"
+      }
+    ]
   },
   "c1780673710720xnhts": {
     "research": {
@@ -18663,7 +18918,45 @@
       "analyzed_at": "2026-06-29T09:26:56.956Z"
     },
     "contactName": "Todd Slater",
-    "contactTitle": "Sales Manager"
+    "contactTitle": "Sales Manager",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1781537452525,
+        "msg": "BWI sync: aggiornato (contatti)"
+      },
+      {
+        "ts": 1790181270024,
+        "msg": "⚠ Email sbloccata via BWI con dominio diverso dall'azienda: Matt Paul <matt@vinoitaliano.com.au> — da verificare, NON usata per gli invii"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Todd Slater",
+        "title": "Sales Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/todd-slater-6a973885/"
+      },
+      {
+        "name": "Matthew Glen Paul",
+        "title": "Director",
+        "email": "",
+        "phone": "",
+        "linkedin": ""
+      },
+      {
+        "name": "Matt Paul",
+        "title": "Director",
+        "email": "",
+        "phone": "",
+        "linkedin": "",
+        "emailSospetta": "matt@vinoitaliano.com.au"
+      }
+    ]
   },
   "c17806737107203yg7u": {
     "research": {
@@ -18741,7 +19034,17 @@
       "analyzed_at": "2026-06-29T09:27:32.171Z"
     },
     "contactName": "Naz Fazio",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790181270024,
+        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
+      }
+    ]
   },
   "c17806737107209c90k": {
     "research": {
@@ -18897,7 +19200,17 @@
       "analyzed_at": "2026-06-29T09:28:33.415Z"
     },
     "contactName": "Peter Rogers",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790181270024,
+        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
+      }
+    ]
   },
   "c1780673710720injrd": {
     "research": {
@@ -19079,7 +19392,17 @@
       "analyzed_at": "2026-06-29T09:29:40.637Z"
     },
     "contactName": "Matt Fox",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790181270024,
+        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
+      }
+    ]
   },
   "c17806737107209i3v0": {
     "research": {
@@ -19503,7 +19826,35 @@
       "analyzed_at": "2026-06-29T09:33:22.086Z"
     },
     "contactName": "Jacqueline Bassilios",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "contactEmail": "jacqueline@csiwinesaus.com",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790181270024,
+        "msg": "🔓 Email sbloccata via BWI: Jacqueline Bassilios <jacqueline@csiwinesaus.com> (Owner)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Jacqueline Bassilios",
+        "title": "Owner",
+        "email": "jacqueline@csiwinesaus.com",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/jacqueline-bassilios-6b18ba163/",
+        "sbloccato": true
+      },
+      {
+        "name": "Peter Bassilios",
+        "title": "Director",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/peter-bassilios-4372a425/"
+      }
+    ]
   },
   "c1780673710720fy2ve": {
     "research": {
@@ -19516,7 +19867,17 @@
       "analyzed_at": "2026-06-29T09:33:27.346Z"
     },
     "contactName": "Chris Bell",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790181270024,
+        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
+      }
+    ]
   },
   "c1780673710720yh8s4": {
     "research": {
@@ -19568,7 +19929,34 @@
       "analyzed_at": "2026-06-29T09:33:49.631Z"
     },
     "contactName": "Stefano Moretti",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790181270024,
+        "msg": "⚠ Email sbloccata via BWI con dominio diverso dall'azienda: Caroline Lee <caroline.lee@nortonrosefulbright.com> — da verificare, NON usata per gli invii"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Stefano Moretti",
+        "title": "Owner",
+        "email": "",
+        "phone": "",
+        "linkedin": "http://www.linkedin.com/in/stefano-moretti-2a419181"
+      },
+      {
+        "name": "Caroline Lee",
+        "title": "Business Owner",
+        "email": "",
+        "phone": "",
+        "linkedin": "http://www.linkedin.com/in/carolinejanelee",
+        "emailSospetta": "caroline.lee@nortonrosefulbright.com"
+      }
+    ]
   },
   "c1780673710720vqbxo": {
     "research": {
@@ -19724,7 +20112,17 @@
       "analyzed_at": "2026-06-29T09:34:52.965Z"
     },
     "contactName": "Carl Clump",
-    "contactTitle": "Chairman"
+    "contactTitle": "Chairman",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790181270024,
+        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
+      }
+    ]
   },
   "c1780673710721ad8h3": {
     "research": {
@@ -19919,7 +20317,17 @@
       "analyzed_at": "2026-06-29T09:36:20.574Z"
     },
     "contactName": "Thomas Robertson",
-    "contactTitle": "General Manager"
+    "contactTitle": "General Manager",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790181270024,
+        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
+      }
+    ]
   },
   "c1780673710721usmgh": {
     "research": {
@@ -20023,7 +20431,28 @@
       "analyzed_at": "2026-06-30T08:25:28.592Z"
     },
     "contactName": "Andrea Contin",
-    "contactTitle": "Owner & Importer"
+    "contactTitle": "Owner & Importer",
+    "contactEmail": "andrea@satartisanwines.com",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790181270024,
+        "msg": "🔓 Email sbloccata via BWI: Andrea Contin <andrea@satartisanwines.com> (Owner & Importer)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Andrea Contin",
+        "title": "Owner & Importer",
+        "email": "andrea@satartisanwines.com",
+        "phone": "",
+        "linkedin": "",
+        "sbloccato": true
+      }
+    ]
   },
   "c1780673710721tloyl": {
     "research": {
