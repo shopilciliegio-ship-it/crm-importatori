@@ -10,7 +10,8 @@ Flusso:
   1. Il browser (js/unlock.js) scrive data/unlock-leads-job.json con
      {raccomandato, stelle:[...], maxCredits, status:'pending'} e lancia questo workflow via
      workflow_dispatch — l'anteprima (quanti contatti, quanti crediti) è già stata calcolata dal
-     browser PRIMA di lanciare, qui maxCredits è solo un tetto di sicurezza.
+     browser PRIMA di lanciare, maxCredits è il tetto scelto da Luca nel popup
+     (default = tutti i candidati trovati dall'anteprima).
   2. Questo script: filtra i contatti che matchano raccomandato+stelle, hanno almeno una persona
      in scheda (contacts[]) ma NESSUNA con email nota (mai sbloccata prima — non rispende crediti
      per chi ce l'ha già), sceglie per ciascuno il lead con priorità di ruolo più alta (stessa
@@ -166,6 +167,8 @@ def target_contacts(contacts, raccomandato, stelle_set):
         if any((p.get('email') or '').strip() for p in people):
             continue  # già sbloccato in passato, salta
         out.append(c)
+    # Più stelle prima: con un tetto di crediti (maxCredits) si sbloccano le aziende migliori.
+    out.sort(key=lambda c: -((c.get('research') or {}).get('affidabilita') or 0))
     return out
 
 

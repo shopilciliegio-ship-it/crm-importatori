@@ -40,6 +40,11 @@ function apriSbloccaEmail(){
         </label>`).join('')}
       </div>
     </div>
+    <div class="fg">
+      <label>Massimo crediti da spendere</label>
+      <input type="number" id="unlk-max" min="1" step="1" placeholder="tutti" oninput="aggiornaAnteprimaSblocca()" style="width:140px">
+      <div style="font-size:11px;color:var(--text3);margin-top:4px">Vuoto = tutti quelli trovati. Con un tetto si parte dalle aziende con più stelle.</div>
+    </div>
     <div id="unlk-preview" style="padding:10px 12px;border-radius:var(--r);background:var(--bg2);font-size:13px;margin:4px 0 14px"></div>
     <div style="display:flex;gap:8px">
       <button class="btn btp bts" id="unlk-btn-avvia" onclick="avviaSbloccaEmail()">🔓 Avvia sblocco</button>
@@ -47,6 +52,12 @@ function apriSbloccaEmail(){
     </div>
   `);
   aggiornaAnteprimaSblocca();
+}
+
+// Tetto crediti scelto nel popup: vuoto/0/non valido = nessun tetto (tutti i candidati).
+function _unlockTetto(n){
+  const v=parseInt(document.getElementById('unlk-max')?.value,10);
+  return (v>0) ? Math.min(v,n) : n;
 }
 
 function aggiornaAnteprimaSblocca(){
@@ -60,9 +71,12 @@ function aggiornaAnteprimaSblocca(){
     return;
   }
   const n=_unlockCandidati(racc, stelleSet).length;
-  if(el) el.innerHTML = n
-    ? `📊 <strong>${n}</strong> contatti da sbloccare — costo stimato <strong>${n} crediti</strong> BWI (1 a testa).`
-    : `Nessun contatto trovato con questi filtri (o hanno già tutti l'email nota).`;
+  const tetto=_unlockTetto(n);
+  if(el) el.innerHTML = !n
+    ? `Nessun contatto trovato con questi filtri (o hanno già tutti l'email nota).`
+    : tetto<n
+      ? `📊 <strong>${n}</strong> contatti trovati — ne sblocchi <strong>${tetto}</strong> (i più stellati), costo massimo <strong>${tetto} crediti</strong> BWI.`
+      : `📊 <strong>${n}</strong> contatti da sbloccare — costo stimato <strong>${n} crediti</strong> BWI (1 a testa).`;
   if(btn) btn.disabled = (n===0);
 }
 
@@ -71,9 +85,10 @@ async function avviaSbloccaEmail(){
   const stelleSet=new Set([...document.querySelectorAll('.unlk-stelle:checked')].map(el=>parseInt(el.value,10)));
   const n=_unlockCandidati(racc, stelleSet).length;
   if(!n){ toast('Nessun contatto da sbloccare con questi filtri'); return; }
-  if(!confirm(`Confermi lo sblocco di ${n} contatti (${n} crediti BWI)? Parte su GitHub Actions, può richiedere tempo — puoi chiudere la pagina, prosegue comunque sul server.`)) return;
+  const tetto=_unlockTetto(n);
+  if(!confirm(`Confermi lo sblocco di ${tetto} contatti${tetto<n?` (su ${n} trovati)`:''} — massimo ${tetto} crediti BWI? Parte su GitHub Actions, può richiedere tempo — puoi chiudere la pagina, prosegue comunque sul server.`)) return;
 
-  const job={ raccomandato:racc, stelle:[...stelleSet], maxCredits:n, status:'pending', createdAt:Date.now() };
+  const job={ raccomandato:racc, stelle:[...stelleSet], maxCredits:tetto, status:'pending', createdAt:Date.now() };
   try{
     await pushUnlockJob(job);
   }catch(e){ toast('⚠ Salvataggio job fallito: '+e.message); return; }
@@ -82,7 +97,7 @@ async function avviaSbloccaEmail(){
   if(!ok){ toast('⚠ Avvio workflow fallito'); return; }
 
   closeModal();
-  toast(`🔓 Sblocco avviato (${n} contatti) — ti avviso quando finisce`);
+  toast(`🔓 Sblocco avviato (max ${tetto} contatti) — ti avviso quando finisce`);
 
   const finalJob=await pollUnlockWorkflow();
   if(finalJob && finalJob.result){
