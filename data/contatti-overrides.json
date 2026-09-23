@@ -62,7 +62,28 @@
       "analyzed_at": "2026-07-14T07:08:55.908Z"
     },
     "contactName": "Asja Sali",
-    "contactTitle": "Manager Sales"
+    "contactTitle": "Manager Sales",
+    "contactEmail": "sales@royalmh.com",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790177507623,
+        "msg": "🔓 Email sbloccata via BWI: Asja Sali <sales@royalmh.com> (Manager Sales)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Asja Sali",
+        "title": "Manager Sales",
+        "email": "sales@royalmh.com",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/asja-sali-6534b9133/",
+        "sbloccato": true
+      }
+    ]
   },
   "c1780673710716jzc7p": {
     "research": {
@@ -127,7 +148,35 @@
       "analyzed_at": "2026-07-14T07:09:28.115Z"
     },
     "contactName": "Dritan Beqiri",
-    "contactTitle": "Chief Executive Officer"
+    "contactTitle": "Chief Executive Officer",
+    "contactEmail": "dritan.beqiri@lmcomercial.al",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790177507623,
+        "msg": "🔓 Email sbloccata via BWI: Dritan Beqiri <dritan.beqiri@lmcomercial.al> (Chief Executive Officer)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Dritan Beqiri",
+        "title": "Chief Executive Officer",
+        "email": "dritan.beqiri@lmcomercial.al",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/dritan-beqiri-4901951a4/",
+        "sbloccato": true
+      },
+      {
+        "name": "Ervis Beqiri",
+        "title": "Executive Assistant To Ceo",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/ervis-beqiri-574a795b/"
+      }
+    ]
   },
   "c1780673710716d4vmy": {
     "research": {
@@ -540,7 +589,35 @@
       "analyzed_at": "2026-06-22T10:43:49.515Z"
     },
     "contactName": "Alfredo Graça",
-    "contactTitle": "Buyer"
+    "contactTitle": "Buyer",
+    "contactEmail": "alfredo.graca@alimentaangola.co.ao",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790177507623,
+        "msg": "🔓 Email sbloccata via BWI: Alfredo Graça <alfredo.graca@alimentaangola.co.ao> (Buyer)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Alfredo Graça",
+        "title": "Buyer",
+        "email": "alfredo.graca@alimentaangola.co.ao",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/alfredo-gra%C3%A7a-2a256219a/",
+        "sbloccato": true
+      },
+      {
+        "name": "Marcos Nobre",
+        "title": "Buyer",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/marcos-nobre-a0b8b9165/"
+      }
+    ]
   },
   "c17806737107160518x": {
     "research": {
@@ -609,7 +686,39 @@
       "analyzed_at": "2026-06-22T10:44:06.919Z"
     },
     "contactName": "Diogo Miranda Alves",
-    "contactTitle": "General Manager"
+    "contactTitle": "General Manager",
+    "contactEmail": "diogo.alves@multiafrica.com",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1780753727960,
+        "msg": "BWI sync: aggiornato (contatti)"
+      },
+      {
+        "ts": 1790177507623,
+        "msg": "🔓 Email sbloccata via BWI: Diogo Miranda Alves <diogo.alves@multiafrica.com> (General Manager)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Diogo Miranda Alves",
+        "title": "General Manager",
+        "email": "diogo.alves@multiafrica.com",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/diogo-miranda-alves-05185a90/",
+        "sbloccato": true
+      },
+      {
+        "name": "Roberto Lopes",
+        "title": "Sales Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/roberto-lopes-4a458793/"
+      }
+    ]
   },
   "c17806737107163pg1z": {
     "status": "sent",
@@ -1466,7 +1575,35 @@
       "analyzed_at": "2026-07-06T09:08:11.141Z"
     },
     "contactName": "Sebastian Zimmermann",
-    "contactTitle": "General Manager"
+    "contactTitle": "General Manager",
+    "contactEmail": "szimmermann@yaguar.com.ar",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790177507623,
+        "msg": "🔓 Email sbloccata via BWI: Sebastian Zimmermann <szimmermann@yaguar.com.ar> (General Manager)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Sebastian Zimmermann",
+        "title": "General Manager",
+        "email": "szimmermann@yaguar.com.ar",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/sebaszimmermann/",
+        "sbloccato": true
+      },
+      {
+        "name": "Joaquin Torti",
+        "title": "Sales Director",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/joaquin-torti-61bab331/"
+      }
+    ]
   },
   "c178067371071744crx": {
     "status": "sent",
@@ -1668,7 +1805,35 @@
       "analyzed_at": "2026-07-06T09:08:37.409Z"
     },
     "contactName": "Lionel Muñoz",
-    "contactTitle": "Purchasing Manager"
+    "contactTitle": "Purchasing Manager",
+    "contactEmail": "lmunoz@parodisrl.com.ar",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790177507623,
+        "msg": "🔓 Email sbloccata via BWI: Lionel Muñoz <lmunoz@parodisrl.com.ar> (Purchasing Manager)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Lionel Muñoz",
+        "title": "Purchasing Manager",
+        "email": "lmunoz@parodisrl.com.ar",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/lionel-mu%C3%B1oz-5b921715/",
+        "sbloccato": true
+      },
+      {
+        "name": "Andres Coca",
+        "title": "Sales Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/andres-coca-38807068/"
+      }
+    ]
   },
   "c1780673710717juihg": {
     "status": "sent",
@@ -1767,7 +1932,35 @@
       "analyzed_at": "2026-07-06T09:08:53.615Z"
     },
     "contactName": "Cristian Mena",
-    "contactTitle": "Sales Manager"
+    "contactTitle": "Sales Manager",
+    "contactEmail": "cristian.mena@hergo.com.ar",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790177507623,
+        "msg": "🔓 Email sbloccata via BWI: Cristian Mena <cristian.mena@hergo.com.ar> (Sales Manager)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Cristian Mena",
+        "title": "Sales Manager",
+        "email": "cristian.mena@hergo.com.ar",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/cristian-mena-839784192",
+        "sbloccato": true
+      },
+      {
+        "name": "Alan Maximiliano Vazquez",
+        "title": "Head Of Sales And Distribution",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/alan-maximiliano-vazquez-317027144/"
+      }
+    ]
   },
   "c1780673710717hhu8b": {
     "status": "sent",
@@ -2553,8 +2746,62 @@
       "note": "Azienda argentina con 21 anni di storia e portafoglio diversificato (vini, spirits, spumanti). Sito funzionante ma assenza totale da Google e nessuna verifica online. Citano vini italiani (Prosecco) e internazionali, ma focus principale su spirits/rum. Contatti disponibili; verificare affidabilità prima di procedere.",
       "analyzed_at": "2026-07-07T08:19:43.996Z"
     },
-    "contactName": "Elvis Enrique Medina",
-    "contactTitle": "Head of Purchasing and Import Analyst"
+    "contactName": "Elvis Enrique",
+    "contactTitle": "Head of Purchasing and Import Analyst",
+    "contactEmail": "elvis@wine-supply.com",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790177507623,
+        "msg": "🔓 Email sbloccata via BWI: Elvis Enrique <elvis@wine-supply.com> (Head of Purchasing and Import Analyst)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Elvis Enrique Medina",
+        "title": "Head of Purchasing and Import Analyst",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/elvis-enrique-medina-56715912b"
+      },
+      {
+        "name": "Alex Atakan",
+        "title": "Director",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/alex-atakan-84a68127/"
+      },
+      {
+        "name": "Verónica Caspani",
+        "title": "Purchasing & Operations",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/ver%C3%B3nica-caspani-0a4b83136/"
+      },
+      {
+        "name": "Eduardo Trabazzo",
+        "title": "Sales Assistant",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/eduardo-trabazzo-6436311a5/"
+      },
+      {
+        "name": "Santiago Giovannelli",
+        "title": "Marketing Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/santiago-giovannelli-9bb7936a/"
+      },
+      {
+        "name": "Elvis Enrique",
+        "title": "Head of Purchasing and Import Analyst",
+        "email": "elvis@wine-supply.com",
+        "sbloccato": true
+      }
+    ]
   },
   "c1780673710717kxkt5": {
     "status": "sent",
@@ -3017,7 +3264,35 @@
       "analyzed_at": "2026-07-07T08:21:00.228Z"
     },
     "contactName": "Alejandro Zaldumbide",
-    "contactTitle": "Director of Imports"
+    "contactTitle": "Director of Imports",
+    "contactEmail": "alejandro@internationalwinemore.com",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790177507623,
+        "msg": "🔓 Email sbloccata via BWI: Alejandro Zaldumbide <alejandro@internationalwinemore.com> (Director of Imports)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Alejandro Zaldumbide",
+        "title": "Director of Imports",
+        "email": "alejandro@internationalwinemore.com",
+        "phone": "",
+        "linkedin": "",
+        "sbloccato": true
+      },
+      {
+        "name": "Enzo Trentanove Roth",
+        "title": "Ceo",
+        "email": "",
+        "phone": "",
+        "linkedin": ""
+      }
+    ]
   },
   "c1780673710717afqwt": {
     "status": "sent",
@@ -4242,8 +4517,41 @@
       "note": "Mercadolibre è marketplace argentino noto, ma sito non raggiungibile e nessuna info su portafoglio vini italiani. 'Mostodivino' potrebbe essere specializzato vini, ma dati insufficienti per valutare affidabilità e interesse per vini italiani.",
       "analyzed_at": "2026-07-07T08:23:41.871Z"
     },
-    "contactName": "Leandro Da Cruz",
-    "contactTitle": "Founding Partner"
+    "contactName": "Leandro Da",
+    "contactTitle": "Founding Partner",
+    "contactEmail": "leandro@mostodivino.ar",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790177507623,
+        "msg": "🔓 Email sbloccata via BWI: Leandro Da <leandro@mostodivino.ar> (Founding Partner)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Leandro Da Cruz",
+        "title": "Founding Partner",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/leandro-dacruz/"
+      },
+      {
+        "name": "Alejandro Borlandelli",
+        "title": "Director",
+        "email": "",
+        "phone": "",
+        "linkedin": "Https://www.linkedin.com/in/alejandro-borlandelli-84491823/"
+      },
+      {
+        "name": "Leandro Da",
+        "title": "Founding Partner",
+        "email": "leandro@mostodivino.ar",
+        "sbloccato": true
+      }
+    ]
   },
   "c1780673710717e76jm": {
     "status": "sent",
@@ -4514,7 +4822,28 @@
       "analyzed_at": "2026-07-07T08:24:17.637Z"
     },
     "contactName": "Aldo Graziani",
-    "contactTitle": "Owner, Sommelier, Wine Consultant"
+    "contactTitle": "Owner, Sommelier, Wine Consultant",
+    "contactEmail": "aldo@aldosvinoteca.com",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790177507623,
+        "msg": "🔓 Email sbloccata via BWI: Aldo Graziani <aldo@aldosvinoteca.com> (Owner, Sommelier, Wine Consultant)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Aldo Graziani",
+        "title": "Owner, Sommelier, Wine Consultant",
+        "email": "aldo@aldosvinoteca.com",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/aldo-graziani-7b888941/",
+        "sbloccato": true
+      }
+    ]
   },
   "c1780673710717ecqwe": {
     "status": "sent",
@@ -5061,8 +5390,34 @@
       "note": "Distributore argentino di vini e spirits senza presenze online verificabili (Google non trova risultati). Sito minimalista con solo avviso di maggiore età. Impossibile valutare portafoglio prodotti e focus su vini italiani.",
       "analyzed_at": "2026-07-07T08:25:36.535Z"
     },
-    "contactName": "Jorge Muñoz Olesti",
-    "contactTitle": "Regional Commercial Manager"
+    "contactName": "Jorge Muñoz",
+    "contactTitle": "Regional Commercial Manager",
+    "contactEmail": "jmunoz@distribuidoraleyseca.com.ar",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790177507623,
+        "msg": "🔓 Email sbloccata via BWI: Jorge Muñoz <jmunoz@distribuidoraleyseca.com.ar> (Regional Commercial Manager)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Jorge Muñoz Olesti",
+        "title": "Regional Commercial Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/jorge-mu%C3%B1oz-olesti-4a076614/"
+      },
+      {
+        "name": "Jorge Muñoz",
+        "title": "Regional Commercial Manager",
+        "email": "jmunoz@distribuidoraleyseca.com.ar",
+        "sbloccato": true
+      }
+    ]
   },
   "c17806737107172ussd": {
     "status": "sent",
@@ -10577,7 +10932,28 @@
       "analyzed_at": "2026-06-20T08:19:03.010Z"
     },
     "contactName": "Jack Bult",
-    "contactTitle": "Managing Director"
+    "contactTitle": "Managing Director",
+    "contactEmail": "jackbult@superfoodaruba.com",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1790177507623,
+        "msg": "🔓 Email sbloccata via BWI: Jack Bult <jackbult@superfoodaruba.com> (Managing Director)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Jack Bult",
+        "title": "Managing Director",
+        "email": "jackbult@superfoodaruba.com",
+        "phone": "",
+        "linkedin": "Https://www.linkedin.com/in/jack-bult-b9171ba/",
+        "sbloccato": true
+      }
+    ]
   },
   "c1780673710718riy1b": {
     "status": "sent",
@@ -11961,6 +12337,10 @@
       {
         "ts": 1789770296190,
         "msg": "🔗 Click: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
+      },
+      {
+        "ts": 1790177507623,
+        "msg": "🔓 Email sbloccata via BWI: Ken John <kenjohnson@ea.com> (Wine Buyer)"
       }
     ],
     "brevoEvents": [
@@ -11998,7 +12378,25 @@
       "analyzed_at": "2026-06-27T07:46:03.128Z"
     },
     "contactName": "Ken John",
-    "contactTitle": "Wine Buyer"
+    "contactTitle": "Wine Buyer",
+    "contactEmail": "kenjohnson@ea.com",
+    "contacts": [
+      {
+        "name": "Ken John",
+        "title": "Wine Buyer",
+        "email": "kenjohnson@ea.com",
+        "phone": "",
+        "linkedin": "https://au.linkedin.com/pub/ken-john/70/3b7/381/en",
+        "sbloccato": true
+      },
+      {
+        "name": "Max Davidson",
+        "title": "Purchasing",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/max-davidson-74425554/"
+      }
+    ]
   },
   "c1780673710718noumd": {
     "status": "sent",
@@ -12094,6 +12492,10 @@
       {
         "ts": 1789766801348,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609182126.44279836657@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1790177507623,
+        "msg": "🔓 Email sbloccata via BWI: David Reberger <dreberger@kemenys.com> (General Manager)"
       }
     ],
     "brevoEvents": [
@@ -12125,7 +12527,25 @@
       "analyzed_at": "2026-06-27T07:46:19.980Z"
     },
     "contactName": "David Reberger",
-    "contactTitle": "General Manager"
+    "contactTitle": "General Manager",
+    "contactEmail": "dreberger@kemenys.com",
+    "contacts": [
+      {
+        "name": "David Reberger",
+        "title": "General Manager",
+        "email": "dreberger@kemenys.com",
+        "phone": "",
+        "linkedin": "https://au.linkedin.com/in/david-reberger-274a2b35",
+        "sbloccato": true
+      },
+      {
+        "name": "Andrew Kemeny",
+        "title": "Director",
+        "email": "",
+        "phone": "",
+        "linkedin": "Https://www.linkedin.com/in/andrew-kemeny-4a00361/"
+      }
+    ]
   },
   "c1780673710718h8x6n": {
     "status": "sent",
@@ -12524,6 +12944,10 @@
       {
         "ts": 1789770296190,
         "msg": "👁 Aperta: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
+      },
+      {
+        "ts": 1790177507623,
+        "msg": "🔓 Email sbloccata via BWI: Ben O'Connor <boconnor@bibendum.com.au> (Account Manager)"
       }
     ],
     "brevoEvents": [
@@ -12556,7 +12980,25 @@
       "analyzed_at": "2026-06-27T07:47:02.819Z"
     },
     "contactName": "Ben O'Connor",
-    "contactTitle": "Account Manager"
+    "contactTitle": "Account Manager",
+    "contactEmail": "boconnor@bibendum.com.au",
+    "contacts": [
+      {
+        "name": "Ben O'Connor",
+        "title": "Account Manager",
+        "email": "boconnor@bibendum.com.au",
+        "phone": "*",
+        "linkedin": "https://www.linkedin.com/in/ben-o-connor-945087172/",
+        "sbloccato": true
+      },
+      {
+        "name": "Tal Thorne",
+        "title": "Account Manager",
+        "email": "",
+        "phone": "*",
+        "linkedin": "https://www.linkedin.com/in/tal-thorne-368217163/"
+      }
+    ]
   },
   "c1780673710718urq12": {
     "status": "sent",
@@ -12805,6 +13247,10 @@
       {
         "ts": 1789770296190,
         "msg": "🔗 Click: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
+      },
+      {
+        "ts": 1790177507623,
+        "msg": "🔓 Email sbloccata via BWI: Ronnie Joss <ronnie@trialiafoods.com.au> (Managing Director)"
       }
     ],
     "brevoEvents": [
@@ -12841,7 +13287,18 @@
       "analyzed_at": "2026-06-27T07:47:41.429Z"
     },
     "contactName": "Ronnie Joss",
-    "contactTitle": "Managing Director"
+    "contactTitle": "Managing Director",
+    "contactEmail": "ronnie@trialiafoods.com.au",
+    "contacts": [
+      {
+        "name": "Ronnie Joss",
+        "title": "Managing Director",
+        "email": "ronnie@trialiafoods.com.au",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/ronnie-joss-687466123",
+        "sbloccato": true
+      }
+    ]
   },
   "c1780673710718lfcn8": {
     "status": "sent",
@@ -13054,6 +13511,10 @@
       {
         "ts": 1789770296190,
         "msg": "🔗 Click: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
+      },
+      {
+        "ts": 1790177507623,
+        "msg": "🔓 Email sbloccata via BWI: Albert Pisconeri <pisconeri.albert@pisconeri.com.au> (Director)"
       }
     ],
     "brevoEvents": [
@@ -13090,7 +13551,18 @@
       "analyzed_at": "2026-06-27T07:48:07.077Z"
     },
     "contactName": "Albert Pisconeri",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "contactEmail": "pisconeri.albert@pisconeri.com.au",
+    "contacts": [
+      {
+        "name": "Albert Pisconeri",
+        "title": "Director",
+        "email": "pisconeri.albert@pisconeri.com.au",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/albert-pisconeri-62a8898b/",
+        "sbloccato": true
+      }
+    ]
   },
   "c17806737107185zvme": {
     "status": "sent",
@@ -13797,6 +14269,10 @@
       {
         "ts": 1789768922926,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609182201.93136126968@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1790177507623,
+        "msg": "🔓 Email sbloccata via BWI: Massimo Orobello <massimo@divinefw.com.au> (Managing Director)"
       }
     ],
     "brevoEvents": [
@@ -13828,8 +14304,26 @@
       "note": "Azienda australiana con 22 dipendenti e fatturato modesto (~830k AUD). Sito non raggiungibile e assenza totale di risultati Google suggeriscono bassa visibilità online. Portafoglio generico (vino, birra, spirits) non specifica origine geografica dei vini.",
       "analyzed_at": "2026-06-27T07:49:29.540Z"
     },
-    "contactName": "Nicola Rullo",
-    "contactTitle": "Director"
+    "contactName": "Massimo Orobello",
+    "contactTitle": "Managing Director",
+    "contactEmail": "massimo@divinefw.com.au",
+    "contacts": [
+      {
+        "name": "Nicola Rullo",
+        "title": "Director",
+        "email": "",
+        "phone": "",
+        "linkedin": ""
+      },
+      {
+        "name": "Massimo Orobello",
+        "title": "Managing Director",
+        "email": "massimo@divinefw.com.au",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/massimo-orobello-436377ba/",
+        "sbloccato": true
+      }
+    ]
   },
   "c17806737107189eq4s": {
     "status": "sent",
@@ -13888,6 +14382,10 @@
       {
         "ts": 1789770296190,
         "msg": "🔗 Click: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
+      },
+      {
+        "ts": 1790177507623,
+        "msg": "🔓 Email sbloccata via BWI: Andrew Clarke <andrew.clarke@hofw.com.au> (Sales Manager)"
       }
     ],
     "brevoEvents": [
@@ -13923,7 +14421,32 @@
       "analyzed_at": "2026-06-27T07:49:39.402Z"
     },
     "contactName": "Andrew Clarke",
-    "contactTitle": "Sales Manager"
+    "contactTitle": "Sales Manager",
+    "contactEmail": "andrew.clarke@hofw.com.au",
+    "contacts": [
+      {
+        "name": "Andrew Clarke",
+        "title": "Sales Manager",
+        "email": "andrew.clarke@hofw.com.au",
+        "phone": "*",
+        "linkedin": "https://www.linkedin.com/in/andy-clarke-dipwset-3ba08779/",
+        "sbloccato": true
+      },
+      {
+        "name": "Rhys Staples",
+        "title": "Sales Manager",
+        "email": "",
+        "phone": "*",
+        "linkedin": ""
+      },
+      {
+        "name": "Matthew Davidson",
+        "title": "Sales Manager",
+        "email": "",
+        "phone": "*",
+        "linkedin": ""
+      }
+    ]
   },
   "c1780673710718ohfud": {
     "status": "sent",
