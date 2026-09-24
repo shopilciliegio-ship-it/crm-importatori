@@ -16,6 +16,12 @@ let _overridesLoadedCount = 0; // numero di override presenti su GitHub all'ulti
 // true solo durante l'azione esplicita "svuota database importatori" — l'unico caso in cui un crollo
 // del numero di override è intenzionale e va permesso.
 let _allowOverridesShrink = false;
+// Override come letti da GitHub all'ultimo caricamento/salvataggio (copia separata, mai toccata
+// dall'interfaccia): la "versione comune" per il merge a 3 vie in _pushImportatoriOverrides.
+// Serve perché anche il SERVER scrive in questo file (sblocco BWI, Ricerca AI, invii, follow-up):
+// prima il CRM riscriveva tutto con la sua copia in memoria e cancellava quelle modifiche
+// (24/9/2026: 3 email ALDI Australia sbloccate e pagate, sparite un minuto dopo).
+let _ovLoaded = {};
 
 function ghPathTemplates(){ return 'data/templates.json'; }
 
@@ -96,7 +102,7 @@ async function _loadImportatoriOverrides(token,owner,repo,contacts){
   const url=`https://api.github.com/repos/${owner}/${repo}/contents/${OVERRIDES_PATH}`;
   try{
     const r=await fetch(url,{headers:{'Authorization':`token ${token}`,'Accept':'application/vnd.github.v3+json'}});
-    if(r.status===404){ghSha.overrides=null;_overridesLoadOk=true;return;} // nessun override ancora
+    if(r.status===404){ghSha.overrides=null;_ovLoaded={};_overridesLoadOk=true;return;} // nessun override ancora
     if(!r.ok){ console.warn('_loadImportatoriOverrides: HTTP',r.status); return; }
     const d=await r.json();
     ghSha.overrides=d.sha;
@@ -114,6 +120,7 @@ async function _loadImportatoriOverrides(token,owner,repo,contacts){
       catch(e){ jsonStr=atob(raw); }
     }
     const overrides=JSON.parse(jsonStr);
+    _ovLoaded=JSON.parse(jsonStr);
     _overridesLoadedCount=Object.keys(overrides).length;
     const byId=Object.fromEntries(contacts.map(c=>[c.id,c]));
     let applied=0;
@@ -172,20 +179,79 @@ async function pushGH(){
   }catch(e){updGh('error');console.error('pushGH exception:',e);}
 }
 
-async function _pushImportatoriOverrides(token,owner,repo){
-  // Guard: non salvare se il base non è stato caricato (evita di azzerare overrides)
-  if(Object.keys(_baseSnap).length===0){
-    console.warn('_pushImportatoriOverrides: skip — _baseSnap vuoto, contatti non ancora caricati');
-    updGh('saved'); return;
+// Legge contatti-overrides.json com'è ADESSO su GitHub: {sha, data}. `data` è null se la versione
+// è la stessa già nota (knownSha): niente download di 13 MB quando il server non ha scritto nulla.
+async function _fetchOverridesNow(token,owner,repo,knownSha){
+  const url=`https://api.github.com/repos/${owner}/${repo}/contents/${OVERRIDES_PATH}`;
+  const r=await fetch(url,{headers:{'Authorization':`token ${token}`,'Accept':'application/vnd.github.v3+json'},cache:'no-store'});
+  if(r.status===404) return {sha:null,data:{}};
+  if(!r.ok) throw new Error('lettura override HTTP '+r.status);
+  const d=await r.json();
+  if(knownSha && d.sha===knownSha) return {sha:d.sha,data:null};
+  const raw=(d.content||'').replace(/\n/g,'');
+  let jsonStr;
+  if(!raw&&d.download_url){
+    const rawR=await fetch(d.download_url,{cache:'no-store'});
+    if(!rawR.ok) throw new Error('download override HTTP '+rawR.status);
+    jsonStr=await rawR.text();
+  } else {
+    try{ jsonStr=decodeURIComponent(Array.from(atob(raw),c=>'%'+c.charCodeAt(0).toString(16).padStart(2,'0')).join('')); }
+    catch(e){ jsonStr=atob(raw); }
   }
-  // Guard: non salvare se il caricamento degli override da GitHub non è andato a buon fine in questa
-  // sessione (errore di rete/HTTP/parsing) — altrimenti il diff contro _baseSnap risulterebbe vuoto
-  // per tutti i contatti già in override e li azzererebbe su GitHub.
-  if(!_overridesLoadOk){
-    console.warn('_pushImportatoriOverrides: skip — override non caricati correttamente in questa sessione');
-    updGh('error'); return;
+  return {sha:d.sha,data:jsonStr.trim()?JSON.parse(jsonStr):{}};
+}
+
+// Chiavi per unire le liste che crescono da entrambe le parti (il server aggiunge log/eventi,
+// il CRM anche): stessa voce = stessa chiave.
+const _OV_LIST_KEY={
+  log: e=>`${e.ts}|${e.msg}`,
+  brevoEvents: e=>e.messageId?`m|${e.messageId}`:`${e.sentAt}|${e.toEmail||''}|${e.subject||''}`,
+};
+const _js=v=>JSON.stringify(v===undefined?null:v);
+
+// Merge a 3 vie per campo: local = override calcolati dal CRM, loaded = versione comune,
+// server = versione attuale su GitHub. Vince chi ha cambiato il campo; se l'hanno cambiato
+// entrambi, log/brevoEvents si uniscono voce per voce, gli altri campi tengono quello del CRM.
+// Ritorna {merged, fromServer:[[id,campo,valore]]} — i cambi del server da riportare in memoria.
+function _mergeOverrides(local, loaded, server){
+  const merged={}, fromServer=[];
+  const ids=new Set([...Object.keys(local),...Object.keys(server)]);
+  for(const id of ids){
+    const L=local[id]||{}, O=loaded[id]||{}, S=server[id]||{};
+    const m={};
+    for(const f of new Set([...Object.keys(L),...Object.keys(O),...Object.keys(S)])){
+      const lc=_js(L[f])!==_js(O[f]);
+      const sc=_js(S[f])!==_js(O[f]);
+      let v;
+      if(lc&&sc&&_OV_LIST_KEY[f]&&Array.isArray(L[f])&&Array.isArray(S[f])){
+        const key=_OV_LIST_KEY[f];
+        const oMap=new Map((Array.isArray(O[f])?O[f]:[]).map(e=>[key(e),e]));
+        const lMap=new Map(L[f].map(e=>[key(e),e]));
+        const sMap=new Map(S[f].map(e=>[key(e),e]));
+        v=[];
+        for(const k of new Set([...sMap.keys(),...lMap.keys()])){
+          const l=lMap.get(k), sv=sMap.get(k), o=oMap.get(k);
+          if(l&&sv) v.push(_js(l)===_js(o)?sv:(_js(sv)===_js(o)?l:{...sv,...l}));
+          else v.push(l||sv);
+        }
+        const tk=f==='log'?'ts':'sentAt';
+        v.sort((a,b)=>(a[tk]||0)-(b[tk]||0));
+        fromServer.push([id,f,v]);
+      } else if(lc){
+        v=L[f];
+      } else {
+        v=S[f];
+        if(sc) fromServer.push([id,f,v]);
+      }
+      if(v!==undefined) m[f]=v;
+    }
+    if(Object.keys(m).length) merged[id]=m;
   }
-  updGh('saving');
+  return {merged, fromServer};
+}
+
+// Override calcolati dal CRM: differenze di ogni contatto rispetto al base (contatti.json).
+function _computeLocalOverrides(){
   // Calcola solo le differenze rispetto al base caricato da GitHub
   const newOv={};
   for(const c of db.contacts){
@@ -214,6 +280,40 @@ async function _pushImportatoriOverrides(token,owner,repo){
     if(JSON.stringify(c.emailBloccate||[])!==JSON.stringify(snap.emailBloccate||[])) diff.emailBloccate=c.emailBloccate||[];
     if(Object.keys(diff).length) newOv[c.id]=diff;
   }
+  return newOv;
+}
+
+// Porta nel CRM aperto le modifiche scritte dal server (es. email sbloccate) SENZA salvare e
+// senza ricaricare i 29 MB: unisce con le modifiche locali non ancora salvate, che restano da salvare.
+async function syncOverridesFromServer(){
+  const{token,owner,repo}=ghs;
+  if(!token||!owner||!repo||!_overridesLoadOk||!Object.keys(_baseSnap).length) return 0;
+  const now=await _fetchOverridesNow(token,owner,repo,ghSha.overrides);
+  if(!now.data) return 0;
+  const {fromServer}=_mergeOverrides(_computeLocalOverrides(),_ovLoaded,now.data);
+  const byId=Object.fromEntries(db.contacts.map(c=>[c.id,c]));
+  for(const [id,f,v] of fromServer){ if(byId[id]) byId[id][f]=JSON.parse(_js(v)); }
+  _ovLoaded=now.data;
+  ghSha.overrides=now.sha;
+  if(fromServer.length){ try{ refreshAll(); }catch(e){} }
+  return fromServer.length;
+}
+
+async function _pushImportatoriOverrides(token,owner,repo,_tentativo=0){
+  // Guard: non salvare se il base non è stato caricato (evita di azzerare overrides)
+  if(Object.keys(_baseSnap).length===0){
+    console.warn('_pushImportatoriOverrides: skip — _baseSnap vuoto, contatti non ancora caricati');
+    updGh('saved'); return;
+  }
+  // Guard: non salvare se il caricamento degli override da GitHub non è andato a buon fine in questa
+  // sessione (errore di rete/HTTP/parsing) — altrimenti il diff contro _baseSnap risulterebbe vuoto
+  // per tutti i contatti già in override e li azzererebbe su GitHub.
+  if(!_overridesLoadOk){
+    console.warn('_pushImportatoriOverrides: skip — override non caricati correttamente in questa sessione');
+    updGh('error'); return;
+  }
+  updGh('saving');
+  const newOv=_computeLocalOverrides();
   // Guard: blocca se il file crollerebbe drasticamente rispetto a quanto caricato da GitHub —
   // sintomo di un bug (sessione con override non applicati), non di un'edit legittima.
   // Bypassato solo dall'azione esplicita "svuota database importatori".
@@ -225,11 +325,22 @@ async function _pushImportatoriOverrides(token,owner,repo){
   const url=`https://api.github.com/repos/${owner}/${repo}/contents/${OVERRIDES_PATH}`;
   const hd={'Authorization':`token ${token}`,'Content-Type':'application/json','Accept':'application/vnd.github.v3+json'};
   try{
-    if(!ghSha.overrides){
-      const r=await fetch(url,{headers:hd});
-      if(r.ok) ghSha.overrides=(await r.json()).sha;
+    // Il server ha scritto qualcosa dopo il nostro ultimo caricamento/salvataggio? Allora si unisce
+    // (merge a 3 vie) invece di sovrascrivere, e i suoi cambi tornano anche nel CRM aperto.
+    let daSalvare=newOv;
+    const now=await _fetchOverridesNow(token,owner,repo,ghSha.overrides);
+    if(now.data){
+      const {merged, fromServer}=_mergeOverrides(newOv,_ovLoaded,now.data);
+      daSalvare=merged;
+      if(fromServer.length){
+        const byId=Object.fromEntries(db.contacts.map(c=>[c.id,c]));
+        for(const [id,f,v] of fromServer){ if(byId[id]) byId[id][f]=JSON.parse(_js(v)); }
+        console.log(`override: ${fromServer.length} modifiche del server unite a quelle del CRM`);
+        try{ refreshAll(); }catch(e){}
+      }
     }
-    const jsonStr=JSON.stringify(newOv,null,2);
+    ghSha.overrides=now.sha;
+    const jsonStr=JSON.stringify(daSalvare,null,2);
     const bytes=new TextEncoder().encode(jsonStr);
     const CHUNK=65536; let binary='';
     for(let i=0;i<bytes.length;i+=CHUNK)
@@ -240,10 +351,13 @@ async function _pushImportatoriOverrides(token,owner,repo){
     const res=await fetch(url,{method:'PUT',headers:hd,body:JSON.stringify(body)});
     if(res.ok){
       ghSha.overrides=(await res.json()).content.sha;
+      _ovLoaded=JSON.parse(jsonStr);
+      _overridesLoadedCount=Object.keys(daSalvare).length;
       updGh('saved');
-      console.log(`overrides salvati: ${Object.keys(newOv).length} contatti modificati`);
-    } else if(res.status===409||res.status===422){
-      ghSha.overrides=null; setTimeout(()=>_pushImportatoriOverrides(token,owner,repo),1000);
+      console.log(`overrides salvati: ${Object.keys(daSalvare).length} contatti modificati`);
+    } else if((res.status===409||res.status===422)&&_tentativo<3){
+      // Il server ha scritto proprio adesso: si rilegge e si riunisce (non si sovrascrive).
+      setTimeout(()=>_pushImportatoriOverrides(token,owner,repo,_tentativo+1),1500);
     } else {
       const err=await res.json().catch(()=>({}));
       console.error('pushGH overrides error:',res.status,err.message); updGh('error');
@@ -581,7 +695,7 @@ async function pushUnlockJob(job){
 async function _fetchUnlockJob(){
   const{token,owner,repo}=ghs;
   const url=`https://api.github.com/repos/${owner}/${repo}/contents/${UNLOCK_JOB_PATH}`;
-  const r=await fetch(url,{headers:{'Authorization':`token ${token}`,'Accept':'application/vnd.github.v3+json'}});
+  const r=await fetch(url,{headers:{'Authorization':`token ${token}`,'Accept':'application/vnd.github.v3+json'},cache:'no-store'});
   if(!r.ok) return null;
   const d=await r.json();
   const raw=(d.content||'').replace(/\n/g,'');

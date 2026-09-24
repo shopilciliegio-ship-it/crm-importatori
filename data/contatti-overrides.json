@@ -11591,6 +11591,10 @@
       {
         "ts": 1789770296190,
         "msg": "👁 Aperta: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
+      },
+      {
+        "ts": 1790267134618,
+        "msg": "🔓 Sblocco email della scheda via BWI: Jason Bowyer <jason.bowyer@aldi.com.au>, Maggie Anderson Lister <maggie.anderson-lister@aldi.com.au>, Shay Stearnes <shay.stearnes@aldi.com.au> (3 crediti)"
       }
     ],
     "brevoEvents": [
@@ -11628,7 +11632,30 @@
       "analyzed_at": "2026-06-27T07:44:21.534Z"
     },
     "contactName": "Jason Bowyer",
-    "contactTitle": "Buying Director"
+    "contactTitle": "Buying Director",
+    "contacts": [
+      {
+        "name": "Jason Bowyer",
+        "title": "Buying Director",
+        "email": "jason.bowyer@aldi.com.au",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/jason-bowyer-59b8443/"
+      },
+      {
+        "name": "Shay Stearnes",
+        "title": "Buying Director",
+        "email": "shay.stearnes@aldi.com.au",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/shay-stearnes-3663104b/"
+      },
+      {
+        "name": "Maggie Anderson Lister",
+        "title": "Buying Director",
+        "email": "maggie.anderson-lister@aldi.com.au",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/maggie-anderson-lister-4b0a2213a/"
+      }
+    ]
   },
   "c1780673710718d20qb": {
     "status": "sent",
