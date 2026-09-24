@@ -652,7 +652,7 @@ async function fetchInboxRisposte(){
   }catch(e){ console.warn('fetchInboxRisposte:',e); return null; }
 }
 
-async function pushInboxRisposte(data, message){
+async function pushInboxRisposte(data, message, _retry){
   const{token,owner,repo}=ghs;
   if(!token||!owner||!repo) throw new Error('GitHub non configurato');
   const url=`https://api.github.com/repos/${owner}/${repo}/contents/${INBOX_RISPOSTE_PATH}`;
@@ -667,10 +667,34 @@ async function pushInboxRisposte(data, message){
   if(ghShaInboxRisposte) body.sha=ghShaInboxRisposte;
   const res=await fetch(url,{method:'PUT',headers:hd,body:JSON.stringify(body)});
   if(!res.ok){
+    // 409/422 = il file è cambiato su GitHub dopo che il CRM l'ha letto (tipico: il controllo
+    // automatico delle risposte ha aggiunto email nuove mentre il CRM era aperto da ore). Invece di
+    // perdere la revisione (24/9/2026: standby salvato sul contatto ma email riproposta), rilegge la
+    // versione nuova, ci riapplica le revisioni fatte qui e riprova una volta.
+    if((res.status===409||res.status===422) && !_retry){
+      const fresh=await fetchInboxRisposte();  // aggiorna anche ghShaInboxRisposte
+      if(fresh){
+        _mergeInboxRisposte(data, fresh);
+        return pushInboxRisposte(data, message, true);
+      }
+    }
     const err=await res.json().catch(()=>({}));
     throw new Error('Salvataggio inbox-risposte fallito: '+(err.message||res.status));
   }
   ghShaInboxRisposte=(await res.json()).content.sha;
+}
+
+// Riporta in `local` (l'oggetto in uso nel popup, modificato sul posto) la versione più recente
+// del server: tiene le email nuove arrivate nel frattempo e toglie quelle già risolte qui.
+function _mergeInboxRisposte(local, fresh){
+  const risolteLocali=local.risolte||[];
+  const idRisolti=new Set(risolteLocali.map(r=>r.id).filter(Boolean));
+  const pending=(fresh.pending||[]).filter(p=>!idRisolti.has(p.id));
+  const visti=new Set((fresh.risolte||[]).map(r=>`${r.at}|${r.from}`));
+  const risolte=[...(fresh.risolte||[]), ...risolteLocali.filter(r=>!visti.has(`${r.at}|${r.from}`))];
+  Object.keys(fresh).forEach(k=>{ if(k!=='pending'&&k!=='risolte') local[k]=fresh[k]; });
+  local.pending=pending;
+  local.risolte=risolte;
 }
 
 /* ── WAVE TRACKING SYNC TRIGGER ── */
