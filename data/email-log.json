@@ -26,6 +26,33 @@
       "subject": "Your wine is on its way! 🍷",
       "sentAt": 1790002682494,
       "messageId": "<202609211458.73922805493@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mtsvmdcr2ufo",
+      "customerName": "ASHLEY BOWCOTT",
+      "type": "dogana",
+      "to": "ambowcott@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1790222459283,
+      "messageId": "<202609240400.56742690038@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mtr0qshs7mlr",
+      "customerName": "JOSHUA COMO",
+      "type": "dogana",
+      "to": "jcblueandwhite96@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1790222459283,
+      "messageId": "<202609240401.13126535325@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mtc2jbpdl9ln",
+      "customerName": "PAULA GREZESZAK",
+      "type": "dogana",
+      "to": "paulagrezeszak@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1790222459283,
+      "messageId": "<202609240401.79853804620@smtp-relay.mailin.fr>"
     }
   ]
 }
