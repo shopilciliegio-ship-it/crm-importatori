@@ -1,5 +1,5 @@
 {
-  "lastUid": 441,
+  "lastUid": 443,
   "pending": [
     {
       "id": "ir_415",
@@ -486,6 +486,44 @@
       "reason": "È una risposta ufficiale di Atacadão che riconosce la proposta e fornisce il processo formale per procedere, senza rifiutare né impegnarsi immediatamente.",
       "confidence": "ai",
       "dataRientro": null
+    },
+    {
+      "id": "ir_442",
+      "uid": 442,
+      "contactId": null,
+      "nonCollegato": true,
+      "company": "Angela Nigrelli",
+      "from": "anigrelli@augustimports.com",
+      "mittenteNome": "Angela Nigrelli",
+      "subject": "August Imports Producer Order - 3749",
+      "date": "2026-09-23T18:03:22+00:00",
+      "snippet": "Attached is a new order on container 3749",
+      "riassunto": "Un'azienda (August Imports) comunica l'arrivo di un nuovo ordine su container 3749 e allega la documentazione.",
+      "rispostaDiretta": false,
+      "suggestedStatus": null,
+      "reason": "Email di notifica logistica/ordine interno non collegata alla proposta commerciale di distribuzione vini Il Ciliegio.",
+      "confidence": "ai",
+      "dataRientro": null,
+      "emailAlternativa": null
+    },
+    {
+      "id": "ir_443",
+      "uid": 443,
+      "contactId": null,
+      "nonCollegato": true,
+      "company": "Brevo",
+      "from": "account-alerts@t.brevo.com",
+      "mittenteNome": "Brevo",
+      "subject": "[Brevo] Le chiavi SMTP saranno contrassegnate come inattive tra 7 giorni",
+      "date": "2026-09-23T22:45:09+00:00",
+      "snippet": "[View in browser](https://beeag.r.tsp1-brevo.net/tr/mr/6jqcFclpdFJfl4y6Oqd0JwPCK4CXcl3KhVexV-H51UzUS-9aW9ePib474WbLv5n7f8UjjA7S48ISAakHXUHbDmV6fF3svCx7NQghhsWJo1WC4VdV7A3ioc3qTU9Y3ZQ8gbkAN1y8szGZJFudKgQf_l1cTYjRQ3pYlija9iPRQdhl6049G_pu5mBIM__Px3cAs6WHN5TYXZ3FeENdMrAD2t_7S7HYDrqOGvghSOE)\r\n\r\nChiavi SMTP inattive\r\n--------------------\r\n\r\n\r\nCiao Luca Pattaro,\r\n\r\nAbbiamo notato che le seguenti chiavi S",
+      "riassunto": "Brevo (piattaforma di email marketing) notifica a Luca Pattaro di Siena Wine Srl che le chiavi SMTP inattive da 3 mesi verranno disattivate tra 7 giorni se non utilizzate.",
+      "rispostaDiretta": false,
+      "suggestedStatus": null,
+      "reason": "È una notifica automatica di servizio da Brevo riguardante la gestione tecnica dell'account email, non correlata alla campagna commerciale di distribuzione vini.",
+      "confidence": "ai",
+      "dataRientro": null,
+      "emailAlternativa": null
     }
   ],
   "risolte": [],
