@@ -386,7 +386,8 @@ async function sbloccaEmailScheda(){
   if(!fin||!fin.result){ stato("⏱ Non ho ancora l'esito: riapri la revisione tra qualche minuto."); return; }
   const {unlocked, spent, stopReason}=fin.result;
   toast(`🔓 ${c.company}: ${unlocked} email nuove, ${spent} crediti spesi${stopReason?' — '+stopReason:''}`);
-  await loadFromGH();
+  // Porta nel CRM le email appena sbloccate (senza ricaricare tutto e senza perdere nulla).
+  try{ await syncOverridesFromServer(); }catch(e){ console.warn('syncOverridesFromServer:',e); }
   // Ridisegna il popup solo se Luca è ancora sulla stessa risposta.
   const cur=(_irData.pending||[])[_irIndex];
   if(cur&&cur.contactId===c.id) mostraItemRevisione();
