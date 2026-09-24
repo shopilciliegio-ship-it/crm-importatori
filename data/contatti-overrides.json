@@ -241510,7 +241510,7 @@
     "contactTitle": "Director"
   },
   "c1780673710931f2lh7": {
-    "status": "sent",
+    "status": "cold",
     "log": [
       {
         "ts": 1780673710716,
@@ -241519,6 +241519,10 @@
       {
         "ts": 1789746995347,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609181556.73215866184@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1790263515723,
+        "msg": "❌ Non interessato: aggiornato manualmente"
       }
     ],
     "brevoEvents": [
@@ -241537,7 +241541,8 @@
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "deliveredAt": "2026-09-18T17:57:39.000+02:00"
+        "deliveredAt": "2026-09-18T17:57:39.000+02:00",
+        "manualStatus": "cold"
       }
     ],
     "research": {
