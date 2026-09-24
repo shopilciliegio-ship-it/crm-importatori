@@ -2,24 +2,6 @@
   "lastUid": 443,
   "pending": [
     {
-      "id": "ir_415",
-      "uid": 415,
-      "contactId": null,
-      "nonCollegato": true,
-      "company": "antonio@terraevinariae.com",
-      "from": "antonio@terraevinariae.com",
-      "mittenteNome": "antonio@terraevinariae.com",
-      "subject": "Private label project for Small Vineyards International",
-      "date": "2026-09-18T10:48:38+00:00",
-      "snippet": "Good morning Nicolas\r\n\r\n \r\n\r\nRegarding Private Label Project , here you have some information :\r\n\r\nGENERAL CONCEPTS\r\n\r\nPrivate label wines offer the opportunity to access new segments, increase volumes, and serve as a test to evaluate the market response to new styles or varieties.\r\n\r\nUsually, they are wines produced by a winemaker to be sold exclusively by one or more large-scale retail chains or",
-      "riassunto": "Nicolas riceve da un contatto una proposta dettagliata su progetti di private label con vini italiani di piccoli produttori per il mercato USA, evidenziando vantaggi come personalizzazione, trasparenza e unicità rispetto ai vini di massa.",
-      "rispostaDiretta": false,
-      "suggestedStatus": null,
-      "reason": "Email pertinente al settore vinicolo e potenzialmente interessante per Il Ciliegio/Siena Wine, ma non è chiaro se sia una risposta a una nostra proposta o un'iniziativa esterna; il mittente non è identificato chiaramente e il testo sembra incompleto.",
-      "confidence": "ai",
-      "dataRientro": null
-    },
-    {
       "id": "ir_416",
       "uid": 416,
       "contactId": null,
@@ -526,6 +508,15 @@
       "emailAlternativa": null
     }
   ],
-  "risolte": [],
+  "risolte": [
+    {
+      "contactId": null,
+      "from": "antonio@terraevinariae.com",
+      "subject": "Private label project for Small Vineyards International",
+      "suggestedStatus": null,
+      "finalStatus": null,
+      "at": 1790264150497
+    }
+  ],
   "pattern": {}
 }
