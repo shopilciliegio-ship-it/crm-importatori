@@ -578,11 +578,18 @@
           "subject": "Your order is going through customs",
           "sentAt": 1789598826154,
           "messageId": "<202609162247.22598884548@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegnato",
+          "to": "apicella05@aol.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1790244059874,
+          "messageId": "<202609241001.36471204736@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1788426131169,
-      "updatedAt": 1790244052901,
+      "updatedAt": 1790244059874,
       "track17Registered": true,
       "staleAlertDays": 7,
       "staleAlertSince": 1789598819743
