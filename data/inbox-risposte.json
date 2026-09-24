@@ -2,24 +2,6 @@
   "lastUid": 443,
   "pending": [
     {
-      "id": "ir_420",
-      "uid": 420,
-      "contactId": "c1780673710931f2lh7",
-      "nonCollegato": false,
-      "company": "Vassco Distributors (pty) Ltd",
-      "from": "mail@vassco.co.za",
-      "mittenteNome": "mail@vassco.co.za",
-      "subject": "Use the following email addresses TO PLACE AN ORDER.",
-      "date": "2026-09-18T15:57:39+00:00",
-      "snippet": "",
-      "riassunto": "Vassco Distributors risponde con un'indicazione su come effettuare un ordine, fornendo indirizzi email dedicati.",
-      "rispostaDiretta": true,
-      "suggestedStatus": "replied",
-      "reason": "È una risposta pertinente alla nostra proposta commerciale che fornisce informazioni procedurali su come procedere con un ordine.",
-      "confidence": "ai",
-      "dataRientro": null
-    },
-    {
       "id": "ir_422",
       "uid": 422,
       "contactId": "c1780673710718o99od",
@@ -451,6 +433,15 @@
       "suggestedStatus": null,
       "finalStatus": "copia",
       "at": 1790266261372
+    },
+    {
+      "id": "ir_420",
+      "contactId": "c1780673710931f2lh7",
+      "from": "mail@vassco.co.za",
+      "subject": "Use the following email addresses TO PLACE AN ORDER.",
+      "suggestedStatus": "replied",
+      "finalStatus": "cold",
+      "at": 1790267108270
     }
   ],
   "pattern": {}
