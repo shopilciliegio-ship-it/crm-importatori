@@ -2,42 +2,6 @@
   "lastUid": 443,
   "pending": [
     {
-      "id": "ir_416",
-      "uid": 416,
-      "contactId": null,
-      "nonCollegato": true,
-      "company": "antonio@terraevinariae.com",
-      "from": "antonio@terraevinariae.com",
-      "mittenteNome": "antonio@terraevinariae.com",
-      "subject": "Private label project for Small Vineyards International",
-      "date": "2026-09-18T11:11:24+00:00",
-      "snippet": "Good morning Nicolas\r\n\r\n \r\n\r\nRegarding Private Label Project , here you have some information :\r\n\r\nGENERAL CONCEPTS\r\n\r\nPrivate label wines offer the opportunity to access new segments, increase volumes, and serve as a test to evaluate the market response to new styles or varieties.\r\n\r\nUsually, they are wines produced by a winemaker to be sold exclusively by one or more large-scale retail chains or",
-      "riassunto": "Nicolas riceve da un contatto (non identificato chiaramente) un documento informativo dettagliato sui vantaggi dei vini private label con piccoli produttori italiani, sottolineando opportunità di personalizzazione, trasparenza e differenziazione nel mercato USA.",
-      "rispostaDiretta": false,
-      "suggestedStatus": null,
-      "reason": "Il contenuto è pertinente al settore vinicolo e potrebbe essere una risposta indiretta a una proposta commerciale, ma manca chiarezza su chi scrive e se è effettivamente una reazione alla nostra campagna o un documento informativo generico inoltrato.",
-      "confidence": "ai",
-      "dataRientro": null
-    },
-    {
-      "id": "ir_417",
-      "uid": 417,
-      "contactId": null,
-      "nonCollegato": true,
-      "company": "Rachel Pisarz",
-      "from": "rlpisarz9@gmail.com",
-      "mittenteNome": "Rachel Pisarz",
-      "subject": "Re: ⚠ Delivery attempt unsuccessful — action may be needed",
-      "date": "2026-09-18T15:29:18+00:00",
-      "snippet": "Yes been delivered !&nbsp; \n\n Thank you&nbsp;\n Sent from my iPhone\n \n On Sep 18, 2026, at 11:16 AM, luca@sienawine.it wrote:\n\n \n ﻿ \r\n \r\n \r\n \r\n \r\n Hello, Rachel! \n &nbsp; \n I saw your package has been delivered! \n Glad there was someone on the 17 for pick it up. \n The courier normally do 3 attempts in a row, so the 18 should be ok the same to collect. \n &nbsp; \n Stay healthy and enjoy IL CILIEGIO! ",
-      "riassunto": "Rachel Pisarz conferma che il pacco è stato consegnato con successo. Si tratta di una comunicazione relativa a un ordine di vino già effettuato (non una risposta a una proposta commerciale di distribuzione).",
-      "rispostaDiretta": false,
-      "suggestedStatus": null,
-      "reason": "Email riguarda la gestione di una consegna di un ordine già effettuato, non è una risposta a una proposta di distribuzione/importazione commerciale.",
-      "confidence": "ai",
-      "dataRientro": null
-    },
-    {
       "id": "ir_418",
       "uid": 418,
       "contactId": "c1780673710918l5se0",
@@ -516,6 +480,22 @@
       "suggestedStatus": null,
       "finalStatus": null,
       "at": 1790264150497
+    },
+    {
+      "contactId": null,
+      "from": "antonio@terraevinariae.com",
+      "subject": "Private label project for Small Vineyards International",
+      "suggestedStatus": null,
+      "finalStatus": null,
+      "at": 1790264152524
+    },
+    {
+      "contactId": null,
+      "from": "rlpisarz9@gmail.com",
+      "subject": "Re: ⚠ Delivery attempt unsuccessful — action may be needed",
+      "suggestedStatus": null,
+      "finalStatus": null,
+      "at": 1790264153971
     }
   ],
   "pattern": {}
