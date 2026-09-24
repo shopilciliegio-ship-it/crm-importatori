@@ -240478,6 +240478,10 @@
       {
         "ts": 1789790300469,
         "msg": "👁 Aperta: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
+      },
+      {
+        "ts": 1790263534497,
+        "msg": "⏸ Standby fino al 28/09/2026 (È una risposta automatica (automatic reply) che non esprime interesse o disinteresse, tipica di assenza temporanea o configurazione automatica della casella.)"
       }
     ],
     "brevoEvents": [
@@ -240509,7 +240513,8 @@
       "raccomandato": "no",
       "note": "Azienda sudafricana senza traccia online (Google non trova risultati) e sito irraggiungibile. Nessuna evidenza di commercio di vini italiani. Non pertinente per distribuzione vini italiani.",
       "analyzed_at": "2026-06-23T08:34:34.585Z"
-    }
+    },
+    "snoozeUntil": 1790589600000
   },
   "c178067371093121lwk": {
     "status": "sent",
