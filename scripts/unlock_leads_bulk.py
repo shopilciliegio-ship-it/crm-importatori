@@ -22,6 +22,13 @@ Flusso:
      select_send_email() — il prossimo invio la userà in automatico) + un log. Salvataggio
      progressivo ogni CHECKPOINT_EVERY sblocchi, non solo a fine batch.
   4. Manda un resoconto finale via email (stesso schema degli altri digest del CRM).
+
+Modalità "una sola scheda" (job con companyId, lanciata dal popup Revisione risposte in
+js/risposte.js, 24/9/2026): per UNA azienda sblocca TUTTE le persone con email bloccata ("*")
+su BWI, non solo quella col ruolo più alto — serve quando la casella usata è sbagliata/non
+monitorata e Luca vuole scegliere a chi riscrivere. Le email finiscono in contacts[] SENZA
+flag "sbloccato" e senza toccare contactEmail: il destinatario lo sceglie Luca nel popup
+("Rimetti da contattare con questa"). Niente email di resoconto: l'esito lo mostra il popup.
 """
 
 import base64
@@ -220,6 +227,80 @@ def target_contacts(contacts, raccomandato, stelle_set):
     return out
 
 
+def unlock_single_company(c, headers, max_credits, now_ms):
+    """Modalità "una sola scheda": sblocca tutte le persone con email bloccata ("*") dell'azienda,
+    prende gratis quelle già in chiaro, non tocca mai i lead senza email (""). Ritorna
+    (unlocked, spent, failed, skipped, stop_reason)."""
+    comp_id = c.get('bwiCompId')
+    if not comp_id:
+        return 0, 0, 0, 1, 'azienda senza ID BWI'
+    leads = get_leads(headers, int(comp_id))
+    people = [dict(p) for p in (c.get('contacts') or [])]
+    blocked = {(e or '').strip().lower() for e in (c.get('emailBloccate') or [])}
+    known = {(p.get('email') or p.get('emailSospetta') or '').strip().lower() for p in people} | blocked
+    known.discard('')
+    unlocked = spent = failed = skipped = 0
+    stop_reason = None
+    trovate = []
+    for lead in sorted(leads, key=lambda l: _priority_score(l.get('Position'))):
+        raw = (lead.get('Email') or '').strip()
+        full_name = (lead.get('FullName') or '').strip()
+        position  = (lead.get('Position') or '').strip()
+        if '@' in raw:
+            email = raw  # già in chiaro: 0 crediti
+        elif raw == '*':
+            if spent >= max_credits:
+                stop_reason = f'budget di {max_credits} crediti raggiunto'
+                break
+            try:
+                r = unlock_lead(headers, int(comp_id), lead['LeadId'], lead.get('LeadType', 'manu'))
+            except Exception as e:
+                print(f'  ⚠ {full_name}: errore rete — {e}')
+                failed += 1
+                continue
+            if r.status_code in (402, 403):
+                stop_reason = f'BWI ha rifiutato lo sblocco (HTTP {r.status_code}) — probabile fine crediti'
+                break
+            if not r.ok:
+                print(f'  ⚠ {full_name}: HTTP {r.status_code}')
+                failed += 1
+                continue
+            spent += 1
+            email = (r.json().get('leadEmail') or '').strip()
+            if not email:
+                failed += 1
+                c.setdefault('log', []).append({'ts': now_ms, 'msg': f"{LOG_SENZA_EMAIL}: BWI non ha l'email di {full_name} ({position}) — credito speso"})
+                continue
+            time.sleep(0.3)
+        else:
+            skipped += 1  # "" = BWI non ha l'email: mai sbloccare
+            continue
+        if email.lower() in known:
+            continue  # già in scheda (o bloccata): niente da aggiungere
+        known.add(email.lower())
+        same = next((p for p in people if _same_person(p.get('name'), full_name)), None)
+        if not same:
+            same = {'name': full_name, 'title': position}
+            people.append(same)
+        elif position and not same.get('title'):
+            same['title'] = position
+        name_crm = same.get('name') or full_name
+        if _email_sospetta(c, email):
+            same['emailSospetta'] = email
+            c.setdefault('log', []).append({'ts': now_ms, 'msg': f"⚠ Email sbloccata via BWI con dominio diverso dall'azienda: {name_crm} <{email}> — da verificare, NON usata per gli invii"})
+            print(f'  ⚠ {name_crm} <{email}> — dominio sospetto')
+        else:
+            same['email'] = email
+            trovate.append(f'{name_crm} <{email}>')
+            print(f'  ✅ {name_crm} <{email}>')
+        unlocked += 1
+    c['contacts'] = people
+    c.setdefault('log', []).append({'ts': now_ms, 'msg': (
+        f"🔓 Sblocco email della scheda via BWI: {', '.join(trovate)} ({spent} crediti)" if trovate
+        else f'🔓 Sblocco email della scheda via BWI: nessuna nuova email ({spent} crediti)')})
+    return unlocked, spent, failed, skipped, stop_reason
+
+
 def best_person(people):
     scored = sorted(people, key=lambda p: _priority_score(p.get('title')))
     return scored[0] if scored else None
@@ -276,7 +357,8 @@ def main():
     raccomandato = job.get('raccomandato')
     stelle_set   = set(job.get('stelle') or [])
     max_credits  = int(job.get('maxCredits') or 0)
-    if not raccomandato or not stelle_set or max_credits <= 0:
+    company_id   = job.get('companyId')  # modalità "una sola scheda" (popup Revisione risposte)
+    if max_credits <= 0 or (not company_id and (not raccomandato or not stelle_set)):
         print(f'✗ Job non valido: {job}')
         return
 
@@ -301,9 +383,19 @@ def main():
         'contacts': json.dumps(c.get('contacts') or [], ensure_ascii=False),
     } for c in contacts}
 
-    targets = target_contacts(list(by_id.values()), raccomandato, stelle_set)
-    print(f'🎯 {len(targets)} aziende target ("{raccomandato}", stelle {sorted(stelle_set)}), '
-          f'budget {max_credits} crediti.')
+    if company_id:
+        if company_id not in by_id:
+            job['status'] = 'done'
+            job['result'] = {'unlocked': 0, 'spent': 0, 'failed': 0, 'skipped': 0, 'stopReason': 'azienda non trovata nel CRM'}
+            save_job(job)
+            print(f'✗ Azienda {company_id} non trovata. Esco.')
+            return
+        targets = []
+        print(f'🎯 Una sola scheda: {by_id[company_id].get("company","?")}, budget {max_credits} crediti.')
+    else:
+        targets = target_contacts(list(by_id.values()), raccomandato, stelle_set)
+        print(f'🎯 {len(targets)} aziende target ("{raccomandato}", stelle {sorted(stelle_set)}), '
+              f'budget {max_credits} crediti.')
 
     print('🔑 Login BWI...')
     _, headers = do_login()
@@ -313,6 +405,9 @@ def main():
     since_checkpoint = 0
     now_ms = int(datetime.now(timezone.utc).timestamp() * 1000)
     stop_reason = None
+
+    if company_id:
+        unlocked, spent, failed, skipped, stop_reason = unlock_single_company(by_id[company_id], headers, max_credits, now_ms)
 
     for c in targets:
         if spent >= max_credits:  # tetto sui crediti SPESI, non sulle email ottenute (23/9: tetto 20, spesi 34)
@@ -479,7 +574,8 @@ def main():
     print(f'\n✅ Fatto. Email ottenute {unlocked}, crediti spesi {spent}, fallite {failed}, saltate {skipped}.'
           + (f' Fermato: {stop_reason}' if stop_reason else ''))
 
-    send_digest(job, unlocked, failed, skipped, None)
+    if not company_id:
+        send_digest(job, unlocked, failed, skipped, None)
 
 
 def get_ov_sha():
