@@ -222780,6 +222780,10 @@
       {
         "ts": 1789745671338,
         "msg": "👁 Aperta: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
+      },
+      {
+        "ts": 1790263424825,
+        "msg": "⏸ Standby fino al 28/09/2026 (È una risposta automatica (out of office) che fornisce contatti alternativi ma non esprime interesse o disinteresse sulla proposta commerciale.)"
       }
     ],
     "brevoEvents": [
@@ -222815,6 +222819,7 @@
       "note": "Supermercato portoricano con sezione 'Licores' ma nessuna evidenza di vini italiani nel catalogo online. Focus su birra (Coors Light) e prodotti locali/generici. Discrepanza tra dipendenti dichiarati (650) e dati ZoomInfo (50-99): affidabilità incerta.",
       "analyzed_at": "2026-06-19T09:37:27.854Z"
     },
+    "snoozeUntil": 1790589600000,
     "contactName": "Manon Petex",
     "contactTitle": "Wine Buyer"
   },
