@@ -166844,7 +166844,6 @@
     }
   },
   "c17806737108860kv5l": {
-    "status": "sent",
     "log": [
       {
         "ts": 1780673710716,
@@ -166857,6 +166856,10 @@
       {
         "ts": 1789746675841,
         "msg": "👁 Aperta: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
+      },
+      {
+        "ts": 1790263454703,
+        "msg": "📭 Casella \"contact@phoenixbev.mu\" sbagliata/non monitorata — sostituita con \"Wines_Spirits@phoenixbev.mu\", rimesso \"da contattare\""
       }
     ],
     "brevoEvents": [
@@ -166888,8 +166891,11 @@
       "note": "Azienda di grandi dimensioni (1787 dipendenti, fatturato significativo) ma siti web irraggiungibili e nessuna traccia online. Impossibile verificare portafoglio vini italiani o affidabilità. Rischio elevato di contatto.",
       "analyzed_at": "2026-06-22T10:45:08.459Z"
     },
-    "contactName": "Bernard Theys",
-    "contactTitle": "Chief Executive Officer"
+    "contactEmail": "Wines_Spirits@phoenixbev.mu",
+    "contactTitle": "Chief Executive Officer",
+    "emailBloccate": [
+      "contact@phoenixbev.mu"
+    ]
   },
   "c17806737108861wsa0": {
     "status": "sent",
