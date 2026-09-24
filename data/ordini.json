@@ -532,7 +532,7 @@
       "orderNumber": "#1455",
       "paymentType": "Carte Di Credito/Bancomat",
       "shippingDate": 1789030464513,
-      "status": "dogana",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -548,6 +548,11 @@
           "status": "dogana",
           "date": 1789598819743,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "consegnato",
+          "date": 1790244052901,
+          "note": "Auto Fieramente (era: dogana)"
         }
       ],
       "emailsSent": [
@@ -577,7 +582,7 @@
       ],
       "notes": "",
       "createdAt": 1788426131169,
-      "updatedAt": 1790222459283,
+      "updatedAt": 1790244052901,
       "track17Registered": true,
       "staleAlertDays": 7,
       "staleAlertSince": 1789598819743
