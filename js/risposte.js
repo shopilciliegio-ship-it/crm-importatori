@@ -91,6 +91,14 @@ function mostraItemRevisione(){
           </div>`).join('')}
       </div>
     </details>` : '';
+  // Sblocco BWI di TUTTE le persone di questa scheda (tipico: casella generica non monitorata,
+  // in scheda ci sono persone senza email). Vedi unlock_single_company() in scripts/unlock_leads_bulk.py.
+  const senzaEmail=tuttePersone.filter(p=>!(p.email||'').trim()&&!(p.emailSospetta||'').trim()).length;
+  const sbloccaBox = (contattoDb && contattoDb.bwiCompId) ? `
+    <div id="ir-sblocca-box" style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:8px;font-size:12px;color:var(--text2)">
+      <button class="btn btp bts" id="ir-sblocca-btn" onclick="sbloccaEmailScheda()">🔓 Sblocca le email di questa scheda (BWI)</button>
+      <span>${senzaEmail?`${senzaEmail} person${senzaEmail===1?'a':'e'} senza email in scheda · `:''}1 credito per ogni email bloccata su BWI (max ${IR_UNLOCK_MAX})</span>
+    </div>` : '';
   const casellaBox = contattoDb ? `
     <div style="margin-bottom:8px;padding:10px 12px;border-radius:var(--r);border:0.5px dashed var(--brd2)">
       <div style="font-size:12px;color:var(--text2);margin-bottom:6px">📭 Casella "${esc(badEmail)}" sbagliata o non monitorata? Rimetti da contattare con un'altra:</div>
@@ -104,6 +112,7 @@ function mostraItemRevisione(){
         <input type="email" id="ir-alt-email" placeholder="email" value="${esc(it.emailAlternativa||'')}" style="padding:6px 8px;border-radius:var(--r);border:0.5px solid var(--brd2);background:var(--bg);color:var(--text);font-size:13px;flex:1;min-width:180px">
         <button class="btn btp bts" onclick="provaAltraCasella('${esc(badEmail)}')">↻ Rimetti da contattare con questa</button>
       </div>
+      ${sbloccaBox}
       ${personeBox}
     </div>` : '';
   // Fuori sede (o comunque "nessuno stato proposto", incluso un pattern imparato da uno standby
@@ -252,6 +261,20 @@ async function provaAltraCasella(badEmail){
   if(badLower && !c.emailBloccate.includes(badLower)) c.emailBloccate.push(badLower);
   c.contactEmail=nuovaEmail;
   c.contactName=nuovoNome;  // vuoto se non noto: meglio un saluto generico che il nome sbagliato di prima
+  // La persona scelta diventa il destinatario degli invii: gli script (select_send_email,
+  // select_contact, select_best_contact) mettono sempre per prima la persona con "sbloccato",
+  // a prescindere dal ruolo — senza questo, dopo uno sblocco di più persone l'invio sceglierebbe
+  // per ruolo e non quella scelta qui.
+  const nuovaLower=nuovaEmail.toLowerCase();
+  c.contacts=(c.contacts||[]).map(p=>{
+    const q={...p};
+    if((q.email||'').trim().toLowerCase()===nuovaLower){ q.sbloccato=true; if(!q.name&&nuovoNome) q.name=nuovoNome; }
+    else delete q.sbloccato;
+    return q;
+  });
+  if(!c.contacts.some(p=>(p.email||'').trim().toLowerCase()===nuovaLower)){
+    c.contacts.push({name:nuovoNome, title:'', email:nuovaEmail, sbloccato:true});
+  }
   c.status='new';
   c.log=c.log||[];
   c.log.push({ts:Date.now(), msg:`📭 Casella "${badEmail}" sbagliata/non monitorata — sostituita con "${nuovoNome?nuovoNome+' <'+nuovaEmail+'>':nuovaEmail}", rimesso "da contattare"`});
@@ -304,4 +327,46 @@ async function risolviStandby(){
   }
 
   mostraItemRevisione();
+}
+
+// ── Sblocco email BWI di una sola scheda (dal popup di revisione) ──
+// Riusa job + workflow dello sblocco massivo (js/unlock.js, unlock_leads_bulk.yml) con companyId:
+// lo script sblocca tutte le persone con email bloccata di quell'azienda e le aggiunge a
+// contacts[] senza cambiare il destinatario. A fine giro ricarica il CRM e ridisegna questo stesso
+// popup: le email nuove compaiono nella tendina "scegli tra i contatti già noti".
+const IR_UNLOCK_MAX = 10;
+async function sbloccaEmailScheda(){
+  const it=(_irData.pending||[])[_irIndex];
+  const c=it&&db.contacts.find(x=>x.id===it.contactId);
+  if(!c||!c.bwiCompId){ toast('⚠ Scheda senza ID BWI: sblocco non possibile'); return; }
+  const prev=await _fetchUnlockJob();
+  if(prev && (prev.status==='pending'||prev.status==='running') && Date.now()-(prev.createdAt||0)<30*60*1000){
+    toast("⏳ C'è già uno sblocco BWI in corso: riprova tra qualche minuto"); return;
+  }
+  if(!confirm(`Sbloccare le email delle persone di ${c.company} su BWI? 1 credito per ogni email bloccata, massimo ${IR_UNLOCK_MAX}. Le email già in chiaro sono gratis.`)) return;
+
+  const btn=document.getElementById('ir-sblocca-btn');
+  const box=document.getElementById('ir-sblocca-box');
+  if(btn) btn.disabled=true;
+  const stato=msg=>{ if(box) box.innerHTML=`<span style="font-size:12px;color:var(--text2)">${msg}</span>`; };
+  stato('⏳ Avvio sblocco…');
+  const job={companyId:c.id, company:c.company||'', maxCredits:IR_UNLOCK_MAX, status:'pending', createdAt:Date.now()};
+  try{ await pushUnlockJob(job); }catch(e){ stato('⚠ '+esc(e.message)); if(btn) btn.disabled=false; return; }
+  if(!await triggerUnlockWorkflow()){ stato('⚠ Avvio del workflow fallito'); return; }
+  stato('⏳ Sblocco in corso su BWI (di solito 1-2 minuti). Puoi restare qui.');
+
+  // Aspetta il job di QUESTA scheda (non l'ultimo run qualsiasi): controllo ogni 10 s, fino a ~8 minuti.
+  let fin=null;
+  for(let i=0;i<48&&!fin;i++){
+    await new Promise(r=>setTimeout(r,10000));
+    const j=await _fetchUnlockJob().catch(()=>null);
+    if(j&&j.companyId===c.id&&j.createdAt===job.createdAt&&j.status==='done') fin=j;
+  }
+  if(!fin||!fin.result){ stato("⏱ Non ho ancora l'esito: riapri la revisione tra qualche minuto."); return; }
+  const {unlocked, spent, stopReason}=fin.result;
+  toast(`🔓 ${c.company}: ${unlocked} email nuove, ${spent} crediti spesi${stopReason?' — '+stopReason:''}`);
+  await loadFromGH();
+  // Ridisegna il popup solo se Luca è ancora sulla stessa risposta.
+  const cur=(_irData.pending||[])[_irIndex];
+  if(cur&&cur.contactId===c.id) mostraItemRevisione();
 }

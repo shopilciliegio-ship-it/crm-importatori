@@ -568,7 +568,8 @@ async function pushUnlockJob(job){
   let sha=null;
   const r=await fetch(url,{headers:hd});
   if(r.ok) sha=(await r.json()).sha;
-  const body={message:`Sblocco email BWI — job creato (${job.raccomandato}, ${job.stelle.join('/')}⭐, budget ${job.maxCredits})`,content:btoa(unescape(encodeURIComponent(JSON.stringify(job,null,2))))};
+  const desc=job.companyId?`scheda ${job.company||job.companyId}`:`${job.raccomandato}, ${(job.stelle||[]).join('/')}⭐`;
+  const body={message:`Sblocco email BWI — job creato (${desc}, budget ${job.maxCredits})`,content:btoa(unescape(encodeURIComponent(JSON.stringify(job,null,2))))};
   if(sha) body.sha=sha;
   const res=await fetch(url,{method:'PUT',headers:hd,body:JSON.stringify(body)});
   if(!res.ok){
