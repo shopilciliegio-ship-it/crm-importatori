@@ -35,8 +35,12 @@ function renderRisposteBanner(){
   </div>`;
 }
 
-function apriRevisioneRisposte(){
-  if(!_irData || !(_irData.pending||[]).length){ toast('Nessuna risposta da rivedere'); return; }
+async function apriRevisioneRisposte(){
+  // Rilegge sempre la coda all'apertura: il CRM può restare aperto per ore mentre il controllo
+  // automatico aggiunge email nuove (e cambia la versione del file su GitHub).
+  const fresh=await fetchInboxRisposte();
+  if(fresh) _irData=fresh;
+  if(!_irData || !(_irData.pending||[]).length){ renderRisposteBanner(); toast('Nessuna risposta da rivedere'); return; }
   // Riprende da dove Luca aveva lasciato l'ultima volta, non sempre da capo.
   if(_irIndex>=_irData.pending.length) _irIndex=0;
   mostraItemRevisione();
@@ -221,9 +225,9 @@ async function risolviRevisione(status){
 
   // Sposta da "pending" a "risolte": alimenta il pattern-learning del prossimo run server-side
   // (mittenti già rivisti con esito coerente vengono riconosciuti in automatico la volta dopo).
-  _irData.pending.splice(_irIndex,1);
+  _togliDallaCoda(it);
   _irData.risolte=_irData.risolte||[];
-  _irData.risolte.push({contactId:it.contactId, from:it.from, subject:it.subject, suggestedStatus:it.suggestedStatus, finalStatus:status, at:Date.now()});
+  _irData.risolte.push({id:it.id, contactId:it.contactId, from:it.from, subject:it.subject, suggestedStatus:it.suggestedStatus, finalStatus:status, at:Date.now()});
   try{
     await pushInboxRisposte(_irData, `Revisione risposta — ${it.company||it.from} → ${status?(IR_STATUS_LABEL[status]||status):'nessun cambio'}`);
   }catch(e){
@@ -234,6 +238,23 @@ async function risolviRevisione(status){
   // _irIndex non avanza: l'elemento corrente è stato tolto dall'array, quindi l'indice attuale
   // punta già al prossimo (o è fuori range se era l'ultimo — gestito da mostraItemRevisione).
   mostraItemRevisione();
+}
+
+// Toglie dalla coda la risposta corrente e le sue copie (stesso mittente e stesso oggetto: la
+// stessa persona che scrive più volte sullo stesso filo, es. 3 risposte identiche) — una revisione
+// vale per tutte, altrimenti le copie ricomparivano dopo "Ok". Le copie finiscono in "risolte" con
+// il loro id, così un salvataggio in conflitto (_mergeInboxRisposte) non le riporta indietro.
+function _togliDallaCoda(it){
+  const chiave=x=>`${(x.from||'').toLowerCase()}|${x.subject||''}`;
+  const k=chiave(it);
+  const copie=_irData.pending.filter(p=>p!==it&&chiave(p)===k);
+  const primaDellIndice=_irData.pending.slice(0,_irIndex).filter(p=>p!==it&&chiave(p)===k).length;
+  _irData.pending=_irData.pending.filter(p=>p!==it&&chiave(p)!==k);
+  _irData.risolte=_irData.risolte||[];
+  copie.forEach(p=>_irData.risolte.push({id:p.id, contactId:p.contactId, from:p.from, subject:p.subject, suggestedStatus:p.suggestedStatus, finalStatus:'copia', at:Date.now()}));
+  if(copie.length) toast(`Tolte anche ${copie.length} copi${copie.length===1?'a':'e'} della stessa email`);
+  // Le copie potevano stare prima dell'indice corrente: riallinea per non saltare la prossima.
+  _irIndex=Math.max(0,Math.min(_irIndex-primaDellIndice,_irData.pending.length));
 }
 
 function saltaRevisione(){
@@ -281,9 +302,9 @@ async function provaAltraCasella(badEmail){
   saveDB();
   toast(`📭 Rimesso "da contattare" con ${nuovaEmail} ✓`);
 
-  _irData.pending.splice(_irIndex,1);
+  _togliDallaCoda(it);
   _irData.risolte=_irData.risolte||[];
-  _irData.risolte.push({contactId:it.contactId, from:it.from, subject:it.subject, suggestedStatus:it.suggestedStatus, finalStatus:'altra_casella', at:Date.now()});
+  _irData.risolte.push({id:it.id, contactId:it.contactId, from:it.from, subject:it.subject, suggestedStatus:it.suggestedStatus, finalStatus:'altra_casella', at:Date.now()});
   try{
     await pushInboxRisposte(_irData, `Revisione risposta — ${it.company||it.from} → altra casella (${nuovaEmail})`);
   }catch(e){
@@ -316,9 +337,9 @@ async function risolviStandby(){
     toast('⚠ Contatto non trovato nel CRM — standby non impostato');
   }
 
-  _irData.pending.splice(_irIndex,1);
+  _togliDallaCoda(it);
   _irData.risolte=_irData.risolte||[];
-  _irData.risolte.push({contactId:it.contactId, from:it.from, subject:it.subject, suggestedStatus:it.suggestedStatus, finalStatus:'snoozed', at:Date.now()});
+  _irData.risolte.push({id:it.id, contactId:it.contactId, from:it.from, subject:it.subject, suggestedStatus:it.suggestedStatus, finalStatus:'snoozed', at:Date.now()});
   try{
     await pushInboxRisposte(_irData, `Revisione risposta — ${it.company||it.from} → standby fino al ${dateStr}`);
   }catch(e){
