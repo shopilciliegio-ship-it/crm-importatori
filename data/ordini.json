@@ -386,11 +386,18 @@
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1789478398107,
           "messageId": "<202609151319.51739482243@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "dogana",
+          "to": "ambowcott@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1790222459283,
+          "messageId": "<202609240400.56742690038@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1788884462618,
-      "updatedAt": 1790222452085,
+      "updatedAt": 1790222459283,
       "track17Registered": true,
       "staleAlertDays": 7,
       "staleAlertSince": 1789478391419
@@ -478,11 +485,18 @@
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1789478398107,
           "messageId": "<202609151319.90518929643@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "dogana",
+          "to": "jcblueandwhite96@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1790222459283,
+          "messageId": "<202609240401.13126535325@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1788772134592,
-      "updatedAt": 1790222452085,
+      "updatedAt": 1790222459283,
       "staleAlertDays": 7,
       "staleAlertSince": 1789478391419,
       "track17Registered": true
@@ -563,8 +577,10 @@
       ],
       "notes": "",
       "createdAt": 1788426131169,
-      "updatedAt": 1789598826154,
-      "track17Registered": true
+      "updatedAt": 1790222459283,
+      "track17Registered": true,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1789598819743
     },
     {
       "id": "ord_mtk6wiatmljw",
@@ -742,11 +758,18 @@
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1789478398107,
           "messageId": "<202609151319.84406848020@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "dogana",
+          "to": "paulagrezeszak@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1790222459283,
+          "messageId": "<202609240401.79853804620@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1787868152832,
-      "updatedAt": 1790222452085,
+      "updatedAt": 1790222459283,
       "staleAlertDays": 7,
       "staleAlertSince": 1789478391419,
       "track17Registered": true
