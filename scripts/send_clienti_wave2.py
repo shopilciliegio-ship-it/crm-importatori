@@ -294,7 +294,8 @@ def send_email(to_email: str, to_name: str, subject: str, body: str,
 
     payload = {
         'sender':      {'name': SENDER_NAME, 'email': SENDER_EMAIL},
-        'to':          [{'email': actual_to, 'name': to_name}],
+        # Brevo rifiuta un "name" vuoto (400 "name is missing in to"): se manca, si manda solo l'email.
+        'to':          [{'email': actual_to, **({'name': to_name.strip()} if (to_name or '').strip() else {})}],
         'subject':     actual_subj,
         'textContent': body,
         'htmlContent': build_html(body, actual_subj),
