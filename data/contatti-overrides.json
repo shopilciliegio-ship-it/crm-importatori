@@ -784,14 +784,15 @@
         "toName": "Irina Pearson",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-25T18:03:57.000+02:00"
       }
     ],
     "research": {
@@ -893,14 +894,15 @@
         "toName": "Paula Dantas",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-25T18:04:44.000+02:00"
       }
     ],
     "research": {
@@ -1005,14 +1007,15 @@
         "toName": "Bruno Vieira",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-25T18:04:02.000+02:00"
       }
     ],
     "research": {
@@ -1082,14 +1085,15 @@
         "toName": "Bendito Afonso",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-25T18:04:43.000+02:00"
       }
     ],
     "research": {
@@ -1351,14 +1355,15 @@
         "toName": "Paul Farara",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-25T18:04:12.000+02:00"
       }
     ],
     "research": {
@@ -1428,14 +1433,15 @@
         "toName": "Claudine Vierstraete",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-25T18:04:10.000+02:00"
       }
     ],
     "research": {
@@ -1492,14 +1498,15 @@
         "toName": "Kamlesh Vaswani",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-25T18:04:11.000+02:00"
       }
     ],
     "research": {
@@ -11192,14 +11199,15 @@
         "toName": "Alfonso Mora",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-25T18:04:09.000+02:00"
       }
     ],
     "research": {
@@ -11290,14 +11298,15 @@
         "toName": "Emilio Berlis",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-25T18:04:12.000+02:00"
       }
     ],
     "research": {
@@ -11428,14 +11437,15 @@
         "toName": "Eddy Ter Schure",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-25T18:04:12.000+02:00"
       }
     ],
     "research": {
@@ -11468,6 +11478,10 @@
       {
         "ts": 1790352055180,
         "msg": "⚡ Auto day7: \"#2a — Follow-up opened (day 7) - Importer Siena Wine\""
+      },
+      {
+        "ts": 1790356332112,
+        "msg": "👁 Aperta: Swift Distribution Aruba — a few more reasons to consider us"
       }
     ],
     "brevoEvents": [
@@ -11497,14 +11511,16 @@
         "toName": "Cristine Hintz",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
-        "opened": false,
+        "delivered": true,
+        "opened": true,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "openedAt": "2026-09-25T19:12:12.112+02:00",
+        "deliveredAt": "2026-09-25T18:04:10.000+02:00"
       }
     ],
     "research": {
