@@ -1,6 +1,114 @@
 {
   "orders": [
     {
+      "id": "ord_muh5divi7env",
+      "customerName": "EMILY PEACH",
+      "customerEmail": "embosela@gmail.com",
+      "customerPhone": "+13305182448",
+      "amount": 158.6,
+      "currency": "EUR",
+      "orderDate": 1790338849000,
+      "emailSubject": "🍷 New Order — EMILY PEACH — 158.60 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "223 REVILLION WAY, 30188 WOODSTOCK , GEORGIA (CHEROKEE COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202609251220.46020309110@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
+          "qty": 2,
+          "value": 20.0
+        },
+        {
+          "description": "POGGIO ORLANDO 2024 CHIANTI COLLI SENE..",
+          "qty": 2,
+          "value": 24.0
+        },
+        {
+          "description": "INFERNACCIO RED WINE IGT 2022",
+          "qty": 2,
+          "value": 32.0
+        }
+      ],
+      "customsDuties": 7.6,
+      "shippingCostCustomer": 75.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1790352034253,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1790352034253,
+      "updatedAt": 1790352034253
+    },
+    {
+      "id": "ord_muh5divhqc01",
+      "customerName": "JESSICA COOK",
+      "customerEmail": "jlcook315@gmail.com",
+      "customerPhone": "+14102274856",
+      "amount": 160.8,
+      "currency": "EUR",
+      "orderDate": 1790338560000,
+      "emailSubject": "🍷 New Order — JESSICA COOK — 160.80 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "9838 NW 2ND COURT, 33324 PLANTATION, FLORIDA (BROWARD COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202609251215.34038238327@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
+          "qty": 1,
+          "value": 10.0
+        },
+        {
+          "description": "POGGIO ORLANDO 2024 CHIANTI COLLI SENE..",
+          "qty": 3,
+          "value": 36.0
+        },
+        {
+          "description": "INFERNACCIO RED WINE IGT 2022",
+          "qty": 2,
+          "value": 32.0
+        }
+      ],
+      "customsDuties": 7.8,
+      "shippingCostCustomer": 75.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1790352034253,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1790352034253,
+      "updatedAt": 1790352034253
+    },
+    {
       "id": "ord_muadni1jn7fk",
       "customerName": "MONICA BRAMBILLA",
       "customerEmail": "peraineca@virgilio.it",
@@ -9759,5 +9867,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1789942673431
+  "lastImportedAt": 1790352034253
 }
