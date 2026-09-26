@@ -1,6 +1,50 @@
 {
   "orders": [
     {
+      "id": "ord_muiktlyzttpy",
+      "customerName": "ILLIANA BEVERLY",
+      "customerEmail": "lonibeverly@gmail.com",
+      "customerPhone": "+18033184324",
+      "amount": 141.0,
+      "currency": "EUR",
+      "orderDate": 1790431003000,
+      "emailSubject": "🍷 New Order — ILLIANA BEVERLY — 141.00 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "497 WALMAR DRIVE, 44140 BAY VILLAGE, OHIO (CUYAHOGA COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202609261356.70039162934@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
+          "qty": 6,
+          "value": 60.0
+        }
+      ],
+      "customsDuties": 6.0,
+      "shippingCostCustomer": 75.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1790438445179,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1790438445179,
+      "updatedAt": 1790438445179
+    },
+    {
       "id": "ord_muh5divi7env",
       "customerName": "EMILY PEACH",
       "customerEmail": "embosela@gmail.com",
@@ -9883,5 +9927,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1790352034253
+  "lastImportedAt": 1790438445179
 }
