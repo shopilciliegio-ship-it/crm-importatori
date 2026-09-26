@@ -39,10 +39,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "lonibeverly@gmail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1790438458226,
+          "messageId": "<202609261600.32129145568@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1790438445179,
-      "updatedAt": 1790438445179
+      "updatedAt": 1790438458226
     },
     {
       "id": "ord_muh5divi7env",
