@@ -11800,6 +11800,10 @@
       {
         "ts": 1790373658355,
         "msg": "⚡ Auto day7: \"#2a — Follow-up opened (day 7) - Importer Siena Wine\""
+      },
+      {
+        "ts": 1790404820459,
+        "msg": "👁 Aperta: Playa Liquor Nv/playa Trading Nv — a few more reasons to consider us"
       }
     ],
     "brevoEvents": [
@@ -11830,14 +11834,15 @@
         "brand": "sienawine",
         "sequenceStep": 2,
         "delivered": true,
-        "opened": false,
+        "opened": true,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
         "manualStatus": null,
-        "deliveredAt": "2026-09-26T00:04:07.000+02:00"
+        "deliveredAt": "2026-09-26T00:04:07.000+02:00",
+        "openedAt": "2026-09-26T08:40:20.459+02:00"
       }
     ],
     "research": {
@@ -12052,7 +12057,11 @@
         "blocked": false,
         "manualStatus": null,
         "clickedAt": "2026-09-26T00:04:17.342+02:00",
-        "deliveredAt": "2026-09-26T00:04:13.000+02:00"
+        "deliveredAt": "2026-09-26T00:04:13.000+02:00",
+        "clickedLinks": [
+          "https://www.sienawine.it/smallvineyardsinternational",
+          "https://www.sienawine.it"
+        ]
       }
     ],
     "research": {
@@ -12145,7 +12154,11 @@
         "manualStatus": null,
         "clickedAt": "2026-09-26T00:13:25.044+02:00",
         "openedAt": "2026-09-26T00:08:21.072+02:00",
-        "deliveredAt": "2026-09-26T00:04:10.000+02:00"
+        "deliveredAt": "2026-09-26T00:04:10.000+02:00",
+        "clickedLinks": [
+          "https://www.sienawine.it/brochure",
+          "https://www.sienawine.it"
+        ]
       }
     ],
     "research": {
@@ -12247,7 +12260,11 @@
         "blocked": false,
         "manualStatus": null,
         "clickedAt": "2026-09-26T00:04:15.603+02:00",
-        "deliveredAt": "2026-09-26T00:04:13.000+02:00"
+        "deliveredAt": "2026-09-26T00:04:13.000+02:00",
+        "clickedLinks": [
+          "https://www.sienawine.it/smallvineyardsinternational",
+          "https://www.sienawine.it"
+        ]
       }
     ],
     "research": {
@@ -12405,7 +12422,11 @@
         "blocked": false,
         "manualStatus": null,
         "clickedAt": "2026-09-26T00:04:44.598+02:00",
-        "deliveredAt": "2026-09-26T00:04:31.000+02:00"
+        "deliveredAt": "2026-09-26T00:04:31.000+02:00",
+        "clickedLinks": [
+          "https://www.sienawine.it/brochure",
+          "https://www.sienawine.it"
+        ]
       }
     ],
     "research": {
@@ -12553,7 +12574,11 @@
         "blocked": false,
         "manualStatus": null,
         "clickedAt": "2026-09-26T00:04:51.001+02:00",
-        "deliveredAt": "2026-09-26T00:04:24.000+02:00"
+        "deliveredAt": "2026-09-26T00:04:24.000+02:00",
+        "clickedLinks": [
+          "https://www.sienawine.it",
+          "https://www.sienawine.it/brochure"
+        ]
       }
     ],
     "research": {
@@ -12762,7 +12787,11 @@
         "blocked": false,
         "manualStatus": null,
         "clickedAt": "2026-09-26T00:04:34.927+02:00",
-        "deliveredAt": "2026-09-26T00:04:23.000+02:00"
+        "deliveredAt": "2026-09-26T00:04:23.000+02:00",
+        "clickedLinks": [
+          "https://www.sienawine.it/smallvineyardsinternational",
+          "https://www.sienawine.it"
+        ]
       }
     ],
     "research": {
@@ -13429,7 +13458,11 @@
         "manualStatus": null,
         "openedAt": "2026-09-26T00:51:08.524+02:00",
         "clickedAt": "2026-09-26T00:04:35.527+02:00",
-        "deliveredAt": "2026-09-26T00:04:29.000+02:00"
+        "deliveredAt": "2026-09-26T00:04:29.000+02:00",
+        "clickedLinks": [
+          "https://www.sienawine.it",
+          "https://www.sienawine.it/brochure"
+        ]
       }
     ],
     "research": {
