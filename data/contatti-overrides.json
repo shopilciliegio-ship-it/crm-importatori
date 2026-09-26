@@ -1150,14 +1150,15 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-26T00:04:19.000+02:00"
       }
     ],
     "research": {
@@ -1212,14 +1213,15 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-26T00:04:23.000+02:00"
       }
     ],
     "research": {
@@ -1274,14 +1276,15 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-26T00:04:02.000+02:00"
       }
     ],
     "research": {
@@ -1336,14 +1339,15 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-26T00:04:47.000+02:00"
       }
     ],
     "research": {
@@ -1398,14 +1402,15 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-26T00:04:06.000+02:00"
       }
     ],
     "research": {
@@ -11682,14 +11687,15 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-26T00:04:05.000+02:00"
       }
     ],
     "research": {
@@ -11744,14 +11750,15 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-26T00:04:06.000+02:00"
       }
     ],
     "research": {
@@ -11822,14 +11829,15 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-26T00:04:07.000+02:00"
       }
     ],
     "research": {
@@ -11886,14 +11894,15 @@
         "toName": "Lidija Fargher",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-26T00:04:13.000+02:00"
       }
     ],
     "research": {
@@ -11958,14 +11967,15 @@
         "toName": "Sharbel Raymond Elias",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-26T00:04:13.000+02:00"
       }
     ],
     "research": {
@@ -11998,6 +12008,10 @@
       {
         "ts": 1790373658355,
         "msg": "⚡ Auto day7: \"#2b — Follow-up not opened (day 7) - Importer Siena Wine\""
+      },
+      {
+        "ts": 1790395261636,
+        "msg": "🔗 Click: Have you ever heard of Small Vineyards International? Not yet?"
       }
     ],
     "brevoEvents": [
@@ -12031,14 +12045,16 @@
         "toName": "Lucas Peers-Catt",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
-        "clicked": false,
+        "clicked": true,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "clickedAt": "2026-09-26T00:04:17.342+02:00",
+        "deliveredAt": "2026-09-26T00:04:13.000+02:00"
       }
     ],
     "research": {
@@ -12102,6 +12118,14 @@
       {
         "ts": 1790373658355,
         "msg": "⚡ Auto day7: \"#2a — Follow-up opened (day 7) - Importer Siena Wine\""
+      },
+      {
+        "ts": 1790395261636,
+        "msg": "🔗 Click: Aldi Australia — a few more reasons to consider us"
+      },
+      {
+        "ts": 1790395261636,
+        "msg": "👁 Aperta: Aldi Australia — a few more reasons to consider us"
       }
     ],
     "brevoEvents": [
@@ -12136,14 +12160,17 @@
         "toName": "Jason Bowyer",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
-        "opened": false,
-        "clicked": false,
+        "delivered": true,
+        "opened": true,
+        "clicked": true,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "clickedAt": "2026-09-26T00:13:25.044+02:00",
+        "openedAt": "2026-09-26T00:08:21.072+02:00",
+        "deliveredAt": "2026-09-26T00:04:10.000+02:00"
       }
     ],
     "research": {
@@ -12176,6 +12203,10 @@
       {
         "ts": 1790373658355,
         "msg": "⚡ Auto day7: \"#2b — Follow-up not opened (day 7) - Importer Siena Wine\""
+      },
+      {
+        "ts": 1790395261636,
+        "msg": "🔗 Click: Have you ever heard of Small Vineyards International? Not yet?"
       }
     ],
     "brevoEvents": [
@@ -12209,14 +12240,16 @@
         "toName": "Kerri Ann Canavero",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
-        "clicked": false,
+        "clicked": true,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "clickedAt": "2026-09-26T00:04:15.603+02:00",
+        "deliveredAt": "2026-09-26T00:04:13.000+02:00"
       }
     ],
     "research": {
@@ -12282,14 +12315,15 @@
         "toName": "Ross Emery",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-26T05:05:38.000+02:00"
       }
     ],
     "research": {
@@ -12326,6 +12360,10 @@
       {
         "ts": 1790373658355,
         "msg": "⚡ Auto day7: \"#2a — Follow-up opened (day 7) - Importer Siena Wine\""
+      },
+      {
+        "ts": 1790395261636,
+        "msg": "🔗 Click: Ritchies Stores Pty Ltd — a few more reasons to consider us"
       }
     ],
     "brevoEvents": [
@@ -12360,14 +12398,16 @@
         "toName": "Jason Walmsley",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
-        "clicked": false,
+        "clicked": true,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "clickedAt": "2026-09-26T00:04:44.598+02:00",
+        "deliveredAt": "2026-09-26T00:04:31.000+02:00"
       }
     ],
     "research": {
@@ -12424,14 +12464,15 @@
         "toName": "Anthony Roberts",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-26T00:04:18.000+02:00"
       }
     ],
     "research": {
@@ -12468,6 +12509,10 @@
       {
         "ts": 1790373658355,
         "msg": "⚡ Auto day7: \"#2a — Follow-up opened (day 7) - Importer Siena Wine\""
+      },
+      {
+        "ts": 1790395261636,
+        "msg": "🔗 Click: Lotte Travel Retail Australia Pty Ltd — a few more reasons to consider us"
       }
     ],
     "brevoEvents": [
@@ -12501,14 +12546,16 @@
         "toName": "Mark Baker",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
-        "clicked": false,
+        "clicked": true,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "clickedAt": "2026-09-26T00:04:51.001+02:00",
+        "deliveredAt": "2026-09-26T00:04:24.000+02:00"
       }
     ],
     "research": {
@@ -12565,14 +12612,15 @@
         "toName": "Abhishek Sonawane",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-26T00:04:16.000+02:00"
       }
     ],
     "research": {
@@ -12629,14 +12677,15 @@
         "toName": "Paul Briscoe",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-26T00:04:24.000+02:00"
       }
     ],
     "research": {
@@ -12669,6 +12718,10 @@
       {
         "ts": 1790373658355,
         "msg": "⚡ Auto day7: \"#2b — Follow-up not opened (day 7) - Importer Siena Wine\""
+      },
+      {
+        "ts": 1790395261636,
+        "msg": "🔗 Click: Have you ever heard of Small Vineyards International? Not yet?"
       }
     ],
     "brevoEvents": [
@@ -12702,14 +12755,16 @@
         "toName": "Steve Beever",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
-        "clicked": false,
+        "clicked": true,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "clickedAt": "2026-09-26T00:04:34.927+02:00",
+        "deliveredAt": "2026-09-26T00:04:23.000+02:00"
       }
     ],
     "research": {
@@ -12764,14 +12819,15 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-26T00:04:26.000+02:00"
       }
     ],
     "research": {
@@ -12836,14 +12892,15 @@
         "toName": "Jonathan Dembo",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-26T00:04:23.000+02:00"
       }
     ],
     "research": {
@@ -12900,14 +12957,15 @@
         "toName": "Sam Cook",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-26T00:04:22.000+02:00"
       }
     ],
     "research": {
@@ -12969,14 +13027,15 @@
         "toName": "John Lanza",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-26T00:04:25.000+02:00"
       }
     ],
     "research": {
@@ -13033,14 +13092,15 @@
         "toName": "Adrian Welsh",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-26T00:04:26.000+02:00"
       }
     ],
     "research": {
@@ -13146,14 +13206,15 @@
         "toName": "Shane Mackintosh",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-26T00:04:27.000+02:00"
       }
     ],
     "research": {
@@ -13265,14 +13326,15 @@
         "toName": "Joe Alessi",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-26T00:04:29.000+02:00"
       }
     ],
     "research": {
@@ -13333,6 +13395,14 @@
       {
         "ts": 1790373658355,
         "msg": "⚡ Auto day7: \"#2a — Follow-up opened (day 7) - Importer Siena Wine\""
+      },
+      {
+        "ts": 1790395261636,
+        "msg": "👁 Aperta: P. & T. Basile Imports Pty. Ltd. — a few more reasons to consider us"
+      },
+      {
+        "ts": 1790395261636,
+        "msg": "🔗 Click: P. & T. Basile Imports Pty. Ltd. — a few more reasons to consider us"
       }
     ],
     "brevoEvents": [
@@ -13367,14 +13437,17 @@
         "toName": "Ken John",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
-        "opened": false,
-        "clicked": false,
+        "delivered": true,
+        "opened": true,
+        "clicked": true,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "openedAt": "2026-09-26T00:51:08.524+02:00",
+        "clickedAt": "2026-09-26T00:04:35.527+02:00",
+        "deliveredAt": "2026-09-26T00:04:29.000+02:00"
       }
     ],
     "research": {
@@ -13429,14 +13502,15 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-26T00:04:31.000+02:00"
       }
     ],
     "research": {
@@ -13493,14 +13567,15 @@
         "toName": "Nitesh Bhatia",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-26T00:04:27.000+02:00"
       }
     ],
     "research": {
@@ -13579,14 +13654,15 @@
         "toName": "David Reberger",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-26T00:04:34.000+02:00"
       }
     ],
     "research": {
@@ -13656,14 +13732,15 @@
         "toName": "Adam Fassina",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-26T00:12:51.000+02:00"
       }
     ],
     "research": {
@@ -13726,14 +13803,15 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-26T00:04:33.000+02:00"
       }
     ],
     "research": {
@@ -13788,14 +13866,15 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-26T00:04:36.000+02:00"
       }
     ],
     "research": {
@@ -13852,14 +13931,15 @@
         "toName": "Mal Williams",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-26T00:04:36.000+02:00"
       }
     ],
     "research": {
@@ -13916,14 +13996,15 @@
         "toName": "Craig Sweet",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-26T00:04:35.000+02:00"
       }
     ],
     "research": {
@@ -13989,14 +14070,15 @@
         "toName": "Derek Griffin",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-26T00:04:43.000+02:00"
       }
     ],
     "research": {
@@ -14053,14 +14135,15 @@
         "toName": "Paul Kassebaum",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-26T00:04:38.000+02:00"
       }
     ],
     "research": {
@@ -15964,7 +16047,7 @@
     }
   },
   "c1780673710718lynns": {
-    "status": "sent",
+    "status": "followup",
     "log": [
       {
         "ts": 1780673710716,
@@ -15973,6 +16056,10 @@
       {
         "ts": 1789768864797,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609182201.58864900531@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1790395261636,
+        "msg": "⚡ Auto day7: \"#2b — Follow-up not opened (day 7) - Importer Siena Wine\""
       }
     ],
     "brevoEvents": [
@@ -15992,6 +16079,23 @@
         "unsubscribed": false,
         "blocked": false,
         "deliveredAt": "2026-09-19T00:01:05.000+02:00"
+      },
+      {
+        "messageId": "<202609260404.56302791937@smtp-relay.mailin.fr>",
+        "subject": "Have you ever heard of Small Vineyards International? Not yet?",
+        "sentAt": 1790395261636,
+        "toEmail": "sales@omegafood.com.au",
+        "toName": "",
+        "brand": "sienawine",
+        "sequenceStep": 2,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false,
+        "manualStatus": null
       }
     ],
     "research": {
@@ -16073,7 +16177,7 @@
   "c17806737107189eq4s": {
     "contactName": "Mike Cooper",
     "contactTitle": "Managing Director",
-    "status": "sent",
+    "status": "followup",
     "log": [
       {
         "ts": 1780673710716,
@@ -16082,6 +16186,10 @@
       {
         "ts": 1789768967919,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609182202.96687944512@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1790395261636,
+        "msg": "⚡ Auto day7: \"#2b — Follow-up not opened (day 7) - Importer Siena Wine\""
       }
     ],
     "brevoEvents": [
@@ -16101,6 +16209,23 @@
         "unsubscribed": false,
         "blocked": false,
         "deliveredAt": "2026-09-19T00:03:19.000+02:00"
+      },
+      {
+        "messageId": "<202609260404.76544280920@smtp-relay.mailin.fr>",
+        "subject": "Have you ever heard of Small Vineyards International? Not yet?",
+        "sentAt": 1790395261636,
+        "toEmail": "lukas@classicalwines.com.au",
+        "toName": "Mike Cooper",
+        "brand": "sienawine",
+        "sequenceStep": 2,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false,
+        "manualStatus": null
       }
     ],
     "research": {
@@ -16141,7 +16266,7 @@
       }
     ],
     "contactTitle": "Sales Manager",
-    "status": "sent",
+    "status": "followup",
     "log": [
       {
         "ts": 1780673710716,
@@ -16158,6 +16283,10 @@
       {
         "ts": 1790177507623,
         "msg": "🔓 Email sbloccata via BWI: Andrew Clarke <andrew.clarke@hofw.com.au> (Sales Manager)"
+      },
+      {
+        "ts": 1790395261636,
+        "msg": "⚡ Auto day7: \"#2b — Follow-up not opened (day 7) - Importer Siena Wine\""
       }
     ],
     "brevoEvents": [
@@ -16181,6 +16310,23 @@
         "clickedLinks": [
           "https://www.sienawine.it/smallvineyardsinternational"
         ]
+      },
+      {
+        "messageId": "<202609260404.26458189203@smtp-relay.mailin.fr>",
+        "subject": "Have you ever heard of Small Vineyards International? Not yet?",
+        "sentAt": 1790395261636,
+        "toEmail": "orders@hofw.com.au",
+        "toName": "Andrew Clarke",
+        "brand": "sienawine",
+        "sequenceStep": 2,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false,
+        "manualStatus": null
       }
     ],
     "research": {
@@ -16196,7 +16342,7 @@
   "c1780673710718ohfud": {
     "contactName": "Alan Kaye",
     "contactTitle": "Purchasing Officer",
-    "status": "sent",
+    "status": "followup",
     "log": [
       {
         "ts": 1780673710716,
@@ -16209,6 +16355,10 @@
       {
         "ts": 1789770296190,
         "msg": "🔗 Click: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
+      },
+      {
+        "ts": 1790395261636,
+        "msg": "⚡ Auto day7: \"#2b — Follow-up not opened (day 7) - Importer Siena Wine\""
       }
     ],
     "brevoEvents": [
@@ -16233,6 +16383,23 @@
           "https://www.sienawine.it/smallvineyardsinternational",
           "https://www.sienawine.it"
         ]
+      },
+      {
+        "messageId": "<202609260404.55877865320@smtp-relay.mailin.fr>",
+        "subject": "Have you ever heard of Small Vineyards International? Not yet?",
+        "sentAt": 1790395261636,
+        "toEmail": "sales@benedikts.com",
+        "toName": "Alan Kaye",
+        "brand": "sienawine",
+        "sequenceStep": 2,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false,
+        "manualStatus": null
       }
     ],
     "research": {
@@ -16248,7 +16415,7 @@
   "c178067371071806aa9": {
     "contactName": "Cameron Crowley",
     "contactTitle": "Managing Director",
-    "status": "sent",
+    "status": "followup",
     "log": [
       {
         "ts": 1780673710716,
@@ -16257,6 +16424,10 @@
       {
         "ts": 1789769154371,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609182205.80305537313@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1790395261636,
+        "msg": "⚡ Auto day7: \"#2b — Follow-up not opened (day 7) - Importer Siena Wine\""
       }
     ],
     "brevoEvents": [
@@ -16276,6 +16447,23 @@
         "unsubscribed": false,
         "blocked": false,
         "deliveredAt": "2026-09-19T00:05:52.000+02:00"
+      },
+      {
+        "messageId": "<202609260404.93242927057@smtp-relay.mailin.fr>",
+        "subject": "Have you ever heard of Small Vineyards International? Not yet?",
+        "sentAt": 1790395261636,
+        "toEmail": "sales@swiftandmoore.com.au",
+        "toName": "Cameron Crowley",
+        "brand": "sienawine",
+        "sequenceStep": 2,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false,
+        "manualStatus": null
       }
     ],
     "research": {
@@ -16291,7 +16479,7 @@
   "c178067371071831ehs": {
     "contactName": "Glen Parsons",
     "contactTitle": "General Manager",
-    "status": "sent",
+    "status": "followup",
     "log": [
       {
         "ts": 1780673710716,
@@ -16300,6 +16488,10 @@
       {
         "ts": 1789769208297,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609182206.48608217267@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1790395261636,
+        "msg": "⚡ Auto day7: \"#2b — Follow-up not opened (day 7) - Importer Siena Wine\""
       }
     ],
     "brevoEvents": [
@@ -16319,6 +16511,23 @@
         "unsubscribed": false,
         "blocked": false,
         "deliveredAt": "2026-09-19T00:06:53.000+02:00"
+      },
+      {
+        "messageId": "<202609260404.10769250509@smtp-relay.mailin.fr>",
+        "subject": "Have you ever heard of Small Vineyards International? Not yet?",
+        "sentAt": 1790395261636,
+        "toEmail": "info@steves.com.au",
+        "toName": "Glen Parsons",
+        "brand": "sienawine",
+        "sequenceStep": 2,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false,
+        "manualStatus": null
       }
     ],
     "research": {
@@ -16332,7 +16541,7 @@
     }
   },
   "c1780673710718seix1": {
-    "status": "sent",
+    "status": "followup",
     "log": [
       {
         "ts": 1780673710716,
@@ -16341,6 +16550,10 @@
       {
         "ts": 1789769266945,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609182207.16173770340@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1790395261636,
+        "msg": "⚡ Auto day7: \"#2b — Follow-up not opened (day 7) - Importer Siena Wine\""
       }
     ],
     "brevoEvents": [
@@ -16360,6 +16573,23 @@
         "unsubscribed": false,
         "blocked": false,
         "deliveredAt": "2026-09-19T00:07:45.000+02:00"
+      },
+      {
+        "messageId": "<202609260404.13160883332@smtp-relay.mailin.fr>",
+        "subject": "Have you ever heard of Small Vineyards International? Not yet?",
+        "sentAt": 1790395261636,
+        "toEmail": "info@linkargroup.com",
+        "toName": "",
+        "brand": "sienawine",
+        "sequenceStep": 2,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false,
+        "manualStatus": null
       }
     ],
     "research": {
@@ -16373,7 +16603,7 @@
     }
   },
   "c1780673710718hm3z1": {
-    "status": "sent",
+    "status": "followup",
     "log": [
       {
         "ts": 1780673710716,
@@ -16382,6 +16612,10 @@
       {
         "ts": 1789769312298,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609182208.64758722270@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1790395261636,
+        "msg": "⚡ Auto day7: \"#2b — Follow-up not opened (day 7) - Importer Siena Wine\""
       }
     ],
     "brevoEvents": [
@@ -16401,6 +16635,23 @@
         "unsubscribed": false,
         "blocked": false,
         "deliveredAt": "2026-09-19T00:08:35.000+02:00"
+      },
+      {
+        "messageId": "<202609260404.67935144448@smtp-relay.mailin.fr>",
+        "subject": "Have you ever heard of Small Vineyards International? Not yet?",
+        "sentAt": 1790395261636,
+        "toEmail": "admin@liquortradersaustralia.com.au",
+        "toName": "",
+        "brand": "sienawine",
+        "sequenceStep": 2,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false,
+        "manualStatus": null
       }
     ],
     "research": {
@@ -16414,7 +16665,7 @@
     }
   },
   "c1780673710718nyxee": {
-    "status": "sent",
+    "status": "followup",
     "log": [
       {
         "ts": 1780673710716,
@@ -16427,6 +16678,10 @@
       {
         "ts": 1789948384948,
         "msg": "👁 Aperta: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
+      },
+      {
+        "ts": 1790395261636,
+        "msg": "⚡ Auto day7: \"#2a — Follow-up opened (day 7) - Importer Siena Wine\""
       }
     ],
     "brevoEvents": [
@@ -16447,6 +16702,23 @@
         "blocked": false,
         "deliveredAt": "2026-09-19T00:09:45.000+02:00",
         "openedAt": "2026-09-21T01:53:04.948+02:00"
+      },
+      {
+        "messageId": "<202609260404.59677582485@smtp-relay.mailin.fr>",
+        "subject": "Ultimax Corporation Pty. Limited — a few more reasons to consider us",
+        "sentAt": 1790395261636,
+        "toEmail": "office@valorecellars.com.au",
+        "toName": "",
+        "brand": "sienawine",
+        "sequenceStep": 2,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false,
+        "manualStatus": null
       }
     ],
     "research": {
@@ -16462,7 +16734,7 @@
   "c17806737107188qkkj": {
     "contactName": "Gerhard Patzold",
     "contactTitle": "National Sales Manager",
-    "status": "sent",
+    "status": "followup",
     "log": [
       {
         "ts": 1780673710716,
@@ -16471,6 +16743,10 @@
       {
         "ts": 1789769450247,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609182210.74527323389@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1790395261636,
+        "msg": "⚡ Auto day7: \"#2b — Follow-up not opened (day 7) - Importer Siena Wine\""
       }
     ],
     "brevoEvents": [
@@ -16490,6 +16766,23 @@
         "unsubscribed": false,
         "blocked": false,
         "deliveredAt": "2026-09-19T00:10:54.000+02:00"
+      },
+      {
+        "messageId": "<202609260404.32177124474@smtp-relay.mailin.fr>",
+        "subject": "Have you ever heard of Small Vineyards International? Not yet?",
+        "sentAt": 1790395261636,
+        "toEmail": "sales@baw.com.au",
+        "toName": "Gerhard Patzold",
+        "brand": "sienawine",
+        "sequenceStep": 2,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false,
+        "manualStatus": null
       }
     ],
     "research": {
@@ -16505,7 +16798,7 @@
   "c17806737107183bc2a": {
     "contactName": "Carlo Campana",
     "contactTitle": "Operations Manager",
-    "status": "sent",
+    "status": "followup",
     "log": [
       {
         "ts": 1780673710716,
@@ -16514,6 +16807,10 @@
       {
         "ts": 1789769527237,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609182212.67582871713@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1790395261636,
+        "msg": "⚡ Auto day7: \"#2b — Follow-up not opened (day 7) - Importer Siena Wine\""
       }
     ],
     "brevoEvents": [
@@ -16533,6 +16830,23 @@
         "unsubscribed": false,
         "blocked": false,
         "deliveredAt": "2026-09-19T00:12:10.000+02:00"
+      },
+      {
+        "messageId": "<202609260404.94334320667@smtp-relay.mailin.fr>",
+        "subject": "Have you ever heard of Small Vineyards International? Not yet?",
+        "sentAt": 1790395261636,
+        "toEmail": "contactus@bayfields.com.au",
+        "toName": "Carlo Campana",
+        "brand": "sienawine",
+        "sequenceStep": 2,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false,
+        "manualStatus": null
       }
     ],
     "research": {
@@ -16548,7 +16862,7 @@
   "c1780673710718fafai": {
     "contactName": "Craig S.",
     "contactTitle": "General Manager",
-    "status": "sent",
+    "status": "followup",
     "log": [
       {
         "ts": 1780673710716,
@@ -16557,6 +16871,10 @@
       {
         "ts": 1789769597108,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609182213.52675837873@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1790395261636,
+        "msg": "⚡ Auto day7: \"#2b — Follow-up not opened (day 7) - Importer Siena Wine\""
       }
     ],
     "brevoEvents": [
@@ -16576,6 +16894,23 @@
         "unsubscribed": false,
         "blocked": false,
         "deliveredAt": "2026-09-19T00:14:24.000+02:00"
+      },
+      {
+        "messageId": "<202609260404.76812459839@smtp-relay.mailin.fr>",
+        "subject": "Have you ever heard of Small Vineyards International? Not yet?",
+        "sentAt": 1790395261636,
+        "toEmail": "orders@ilg.com.au",
+        "toName": "Craig S.",
+        "brand": "sienawine",
+        "sequenceStep": 2,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false,
+        "manualStatus": null
       }
     ],
     "research": {
@@ -16609,7 +16944,7 @@
       }
     ],
     "contactTitle": "Managing Director",
-    "status": "sent",
+    "status": "followup",
     "log": [
       {
         "ts": 1780673710716,
@@ -16622,6 +16957,10 @@
       {
         "ts": 1790181270024,
         "msg": "🔓 Email sbloccata via BWI: Nikki Knights <nik@winewomanww.com> (Managing Director)"
+      },
+      {
+        "ts": 1790395261636,
+        "msg": "⚡ Auto day7: \"#2b — Follow-up not opened (day 7) - Importer Siena Wine\""
       }
     ],
     "brevoEvents": [
@@ -16641,6 +16980,23 @@
         "unsubscribed": false,
         "blocked": false,
         "deliveredAt": "2026-09-19T00:14:10.000+02:00"
+      },
+      {
+        "messageId": "<202609260404.38941470440@smtp-relay.mailin.fr>",
+        "subject": "Have you ever heard of Small Vineyards International? Not yet?",
+        "sentAt": 1790395261636,
+        "toEmail": "orders@winewomanww.com",
+        "toName": "Nikki Knights",
+        "brand": "sienawine",
+        "sequenceStep": 2,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false,
+        "manualStatus": null
       }
     ],
     "research": {
@@ -16656,7 +17012,7 @@
   "c17806737107183xgee": {
     "contactName": "Yukino Ochiai",
     "contactTitle": "Director",
-    "status": "sent",
+    "status": "followup",
     "log": [
       {
         "ts": 1780673710716,
@@ -16665,6 +17021,10 @@
       {
         "ts": 1789769708339,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609182215.88130010279@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1790395261636,
+        "msg": "⚡ Auto day7: \"#2b — Follow-up not opened (day 7) - Importer Siena Wine\""
       }
     ],
     "brevoEvents": [
@@ -16684,6 +17044,23 @@
         "unsubscribed": false,
         "blocked": false,
         "deliveredAt": "2026-09-19T00:15:09.000+02:00"
+      },
+      {
+        "messageId": "<202609260404.33332081578@smtp-relay.mailin.fr>",
+        "subject": "Have you ever heard of Small Vineyards International? Not yet?",
+        "sentAt": 1790395261636,
+        "toEmail": "info@dejavusake.com.au",
+        "toName": "Yukino Ochiai",
+        "brand": "sienawine",
+        "sequenceStep": 2,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false,
+        "manualStatus": null
       }
     ],
     "research": {
@@ -16699,7 +17076,7 @@
   "c17806737107187fvko": {
     "contactName": "Domenico Rotella",
     "contactTitle": "Founding Member",
-    "status": "sent",
+    "status": "followup",
     "log": [
       {
         "ts": 1780673710716,
@@ -16708,6 +17085,10 @@
       {
         "ts": 1789769780842,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609182216.96830012162@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1790395261636,
+        "msg": "⚡ Auto day7: \"#2b — Follow-up not opened (day 7) - Importer Siena Wine\""
       }
     ],
     "brevoEvents": [
@@ -16727,6 +17108,23 @@
         "unsubscribed": false,
         "blocked": false,
         "deliveredAt": "2026-09-19T00:16:21.000+02:00"
+      },
+      {
+        "messageId": "<202609260404.85113055285@smtp-relay.mailin.fr>",
+        "subject": "Have you ever heard of Small Vineyards International? Not yet?",
+        "sentAt": 1790395261636,
+        "toEmail": "mail@mondoimports.com.au",
+        "toName": "Domenico Rotella",
+        "brand": "sienawine",
+        "sequenceStep": 2,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false,
+        "manualStatus": null
       }
     ],
     "research": {
@@ -16740,7 +17138,7 @@
     }
   },
   "c17806737107186okbk": {
-    "status": "sent",
+    "status": "followup",
     "log": [
       {
         "ts": 1780673710716,
@@ -16749,6 +17147,10 @@
       {
         "ts": 1789769861086,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609182217.27137291348@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1790395261636,
+        "msg": "⚡ Auto day7: \"#2b — Follow-up not opened (day 7) - Importer Siena Wine\""
       }
     ],
     "brevoEvents": [
@@ -16768,6 +17170,23 @@
         "unsubscribed": false,
         "blocked": false,
         "deliveredAt": "2026-09-19T00:17:44.000+02:00"
+      },
+      {
+        "messageId": "<202609260404.22987339417@smtp-relay.mailin.fr>",
+        "subject": "Have you ever heard of Small Vineyards International? Not yet?",
+        "sentAt": 1790395261636,
+        "toEmail": "info@grewines.com",
+        "toName": "",
+        "brand": "sienawine",
+        "sequenceStep": 2,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false,
+        "manualStatus": null
       }
     ],
     "research": {
@@ -16781,7 +17200,7 @@
     }
   },
   "c1780673710718j2249": {
-    "status": "sent",
+    "status": "followup",
     "log": [
       {
         "ts": 1780673710716,
@@ -16794,6 +17213,10 @@
       {
         "ts": 1789770296190,
         "msg": "🔗 Click: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
+      },
+      {
+        "ts": 1790395261636,
+        "msg": "⚡ Auto day7: \"#2b — Follow-up not opened (day 7) - Importer Siena Wine\""
       }
     ],
     "brevoEvents": [
@@ -16817,6 +17240,23 @@
         "clickedLinks": [
           "https://www.sienawine.it"
         ]
+      },
+      {
+        "messageId": "<202609260404.87167563784@smtp-relay.mailin.fr>",
+        "subject": "Have you ever heard of Small Vineyards International? Not yet?",
+        "sentAt": 1790395261636,
+        "toEmail": "info@stoneandvineco.com",
+        "toName": "",
+        "brand": "sienawine",
+        "sequenceStep": 2,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false,
+        "manualStatus": null
       }
     ],
     "research": {
@@ -16832,7 +17272,7 @@
   "c1780673710718wab5v": {
     "contactName": "Stewart Plant",
     "contactTitle": "Managing Director",
-    "status": "sent",
+    "status": "followup",
     "log": [
       {
         "ts": 1780673710716,
@@ -16841,6 +17281,10 @@
       {
         "ts": 1789769949546,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609182219.96206439412@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1790395261636,
+        "msg": "⚡ Auto day7: \"#2b — Follow-up not opened (day 7) - Importer Siena Wine\""
       }
     ],
     "brevoEvents": [
@@ -16860,6 +17304,23 @@
         "unsubscribed": false,
         "blocked": false,
         "deliveredAt": "2026-09-19T00:19:22.000+02:00"
+      },
+      {
+        "messageId": "<202609260404.23237309211@smtp-relay.mailin.fr>",
+        "subject": "Have you ever heard of Small Vineyards International? Not yet?",
+        "sentAt": 1790395261636,
+        "toEmail": "shop@finewinemerchant.com.au",
+        "toName": "Stewart Plant",
+        "brand": "sienawine",
+        "sequenceStep": 2,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false,
+        "manualStatus": null
       }
     ],
     "research": {
@@ -16875,7 +17336,7 @@
   "c1780673710718h1hfx": {
     "contactName": "Mark Ashe",
     "contactTitle": "Area Sales Manager",
-    "status": "sent",
+    "status": "followup",
     "log": [
       {
         "ts": 1780673710716,
@@ -16888,6 +17349,10 @@
       {
         "ts": 1789770296190,
         "msg": "🔗 Click: Still importing wines in the hard way? Take a look at Small Vineyards International now!"
+      },
+      {
+        "ts": 1790395261636,
+        "msg": "⚡ Auto day7: \"#2b — Follow-up not opened (day 7) - Importer Siena Wine\""
       }
     ],
     "brevoEvents": [
@@ -16912,6 +17377,23 @@
           "https://www.sienawine.it",
           "https://www.sienawine.it/smallvineyardsinternational"
         ]
+      },
+      {
+        "messageId": "<202609260404.96923232996@smtp-relay.mailin.fr>",
+        "subject": "Have you ever heard of Small Vineyards International? Not yet?",
+        "sentAt": 1790395261636,
+        "toEmail": "orders@bacchuswinemerchant.com.au",
+        "toName": "Mark Ashe",
+        "brand": "sienawine",
+        "sequenceStep": 2,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false,
+        "manualStatus": null
       }
     ],
     "research": {
@@ -16927,7 +17409,7 @@
   "c1780673710718esk47": {
     "contactName": "Stuart Leece",
     "contactTitle": "Director",
-    "status": "sent",
+    "status": "followup",
     "log": [
       {
         "ts": 1780673710716,
@@ -16936,6 +17418,10 @@
       {
         "ts": 1789770057971,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609182220.57207616523@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1790395261636,
+        "msg": "⚡ Auto day7: \"#2b — Follow-up not opened (day 7) - Importer Siena Wine\""
       }
     ],
     "brevoEvents": [
@@ -16955,6 +17441,23 @@
         "unsubscribed": false,
         "blocked": false,
         "deliveredAt": "2026-09-19T00:21:00.000+02:00"
+      },
+      {
+        "messageId": "<202609260404.55865411462@smtp-relay.mailin.fr>",
+        "subject": "Have you ever heard of Small Vineyards International? Not yet?",
+        "sentAt": 1790395261636,
+        "toEmail": "wine@singlevineyards.com",
+        "toName": "Stuart Leece",
+        "brand": "sienawine",
+        "sequenceStep": 2,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false,
+        "manualStatus": null
       }
     ],
     "research": {
@@ -16970,7 +17473,7 @@
   "c17806737107188tbxi": {
     "contactName": "Kyla Kirkpatrick",
     "contactTitle": "Chief Executive Officer",
-    "status": "sent",
+    "status": "followup",
     "log": [
       {
         "ts": 1780673710716,
@@ -16979,6 +17482,10 @@
       {
         "ts": 1789770131689,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609182222.29793211766@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1790395261636,
+        "msg": "⚡ Auto day7: \"#2b — Follow-up not opened (day 7) - Importer Siena Wine\""
       }
     ],
     "brevoEvents": [
@@ -16998,6 +17505,23 @@
         "unsubscribed": false,
         "blocked": false,
         "deliveredAt": "2026-09-19T00:22:10.000+02:00"
+      },
+      {
+        "messageId": "<202609260404.12991022563@smtp-relay.mailin.fr>",
+        "subject": "Have you ever heard of Small Vineyards International? Not yet?",
+        "sentAt": 1790395261636,
+        "toEmail": "support@emperorchampagne.com.au",
+        "toName": "Kyla Kirkpatrick",
+        "brand": "sienawine",
+        "sequenceStep": 2,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false,
+        "manualStatus": null
       }
     ],
     "research": {
@@ -17013,7 +17537,7 @@
   "c1780673710718hz016": {
     "contactName": "Ignazio Ian Deiana",
     "contactTitle": "Owner",
-    "status": "sent",
+    "status": "followup",
     "log": [
       {
         "ts": 1780673710716,
@@ -17022,6 +17546,10 @@
       {
         "ts": 1789770195309,
         "msg": "📧 Email inviata via Brevo — \"Still importing wines in the hard way? Take a look at Small Vineyards International now!\" (ID: <202609182223.22565742695@smtp-relay.mailin.fr>)"
+      },
+      {
+        "ts": 1790395261636,
+        "msg": "⚡ Auto day7: \"#2b — Follow-up not opened (day 7) - Importer Siena Wine\""
       }
     ],
     "brevoEvents": [
@@ -17041,6 +17569,23 @@
         "unsubscribed": false,
         "blocked": false,
         "deliveredAt": "2026-09-19T00:23:18.000+02:00"
+      },
+      {
+        "messageId": "<202609260404.14460947034@smtp-relay.mailin.fr>",
+        "subject": "Have you ever heard of Small Vineyards International? Not yet?",
+        "sentAt": 1790395261636,
+        "toEmail": "info@twelvebottles.com.au",
+        "toName": "Ignazio Ian Deiana",
+        "brand": "sienawine",
+        "sequenceStep": 2,
+        "delivered": false,
+        "opened": false,
+        "clicked": false,
+        "bounced": false,
+        "spam": false,
+        "unsubscribed": false,
+        "blocked": false,
+        "manualStatus": null
       }
     ],
     "research": {
