@@ -125,6 +125,15 @@
       "subject": "Your order is going through customs",
       "sentAt": 1790481659551,
       "messageId": "<202609270401.86234873912@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mujnep4msuey",
+      "customerName": "GIOVANNI INVERNIZZI",
+      "type": "order_received",
+      "to": "giovanni.invernizzi@outlook.com",
+      "subject": "Grazie per il tuo ordine! 🍷",
+      "sentAt": 1790503274055,
+      "messageId": "<202609271001.23136341313@smtp-relay.mailin.fr>"
     }
   ]
 }
