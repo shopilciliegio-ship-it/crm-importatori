@@ -59,10 +59,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "giovanni.invernizzi@outlook.com",
+          "subject": "Grazie per il tuo ordine! 🍷",
+          "sentAt": 1790503274055,
+          "messageId": "<202609271001.23136341313@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1790503254454,
-      "updatedAt": 1790503257526
+      "updatedAt": 1790503274055
     },
     {
       "id": "ord_muiktlyzttpy",
