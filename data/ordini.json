@@ -5,13 +5,13 @@
       "customerName": "GIOVANNI INVERNIZZI",
       "customerEmail": "giovanni.invernizzi@outlook.com",
       "customerPhone": "3358035769",
-      "amount": 110.0,
+      "amount": 110,
       "currency": "EUR",
       "orderDate": 1790491446000,
       "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio GIOVANNI INVERNIZZI",
-      "shipmentCode": "",
+      "shipmentCode": "INVERNIZZIG",
       "shippingAddress": "Via Dante Alighieri n. 24,, 22070 LUISAGO (CO), Italy",
-      "numberOfCartons": null,
+      "numberOfCartons": 2,
       "shippingType": "standard",
       "gmailMessageId": "<CAOmk=KYcVefGzPRqQu3Up4A+VvaVw40K2Ri97pvNNW+J1XpoRw@mail.gmail.com>",
       "trackingNumber": "",
@@ -20,7 +20,7 @@
         {
           "description": "VIN SANTO DEL CHIANTI DOC 2019",
           "qty": 2,
-          "value": 38.0
+          "value": 38
         },
         {
           "description": "CANTUCCINI DELLA MAMMA 250 GR",
@@ -35,17 +35,17 @@
         {
           "description": "OLIO EXTRA VERGINE DI OLIVA 2025 ML 500",
           "qty": 2,
-          "value": 23.0
+          "value": 23
         },
         {
           "description": "CILIEGIO IN FIORE SPUMANTE DOLCE",
           "qty": 1,
-          "value": 10.0
+          "value": 10
         }
       ],
       "customsDuties": null,
       "shippingCostCustomer": null,
-      "shippingCostMos": null,
+      "shippingCostMos": 0,
       "source": "shop",
       "language": "it",
       "orderNumber": "#1460",
@@ -62,14 +62,14 @@
       "emailsSent": [],
       "notes": "",
       "createdAt": 1790503254454,
-      "updatedAt": 1790503254454
+      "updatedAt": 1790503257526
     },
     {
       "id": "ord_muiktlyzttpy",
       "customerName": "ILLIANA BEVERLY",
       "customerEmail": "lonibeverly@gmail.com",
       "customerPhone": "+18033184324",
-      "amount": 141.0,
+      "amount": 141,
       "currency": "EUR",
       "orderDate": 1790431003000,
       "emailSubject": "🍷 New Order — ILLIANA BEVERLY — 141.00 EUR",
@@ -84,11 +84,11 @@
         {
           "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
           "qty": 6,
-          "value": 60.0
+          "value": 60
         }
       ],
-      "customsDuties": 6.0,
-      "shippingCostCustomer": 75.0,
+      "customsDuties": 6,
+      "shippingCostCustomer": 75,
       "shippingCostMos": null,
       "source": "fieramente",
       "language": "en",
@@ -136,21 +136,21 @@
         {
           "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
           "qty": 2,
-          "value": 20.0
+          "value": 20
         },
         {
           "description": "POGGIO ORLANDO 2024 CHIANTI COLLI SENE..",
           "qty": 2,
-          "value": 24.0
+          "value": 24
         },
         {
           "description": "INFERNACCIO RED WINE IGT 2022",
           "qty": 2,
-          "value": 32.0
+          "value": 32
         }
       ],
       "customsDuties": 7.6,
-      "shippingCostCustomer": 75.0,
+      "shippingCostCustomer": 75,
       "shippingCostMos": null,
       "source": "fieramente",
       "language": "en",
@@ -198,21 +198,21 @@
         {
           "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
           "qty": 1,
-          "value": 10.0
+          "value": 10
         },
         {
           "description": "POGGIO ORLANDO 2024 CHIANTI COLLI SENE..",
           "qty": 3,
-          "value": 36.0
+          "value": 36
         },
         {
           "description": "INFERNACCIO RED WINE IGT 2022",
           "qty": 2,
-          "value": 32.0
+          "value": 32
         }
       ],
       "customsDuties": 7.8,
-      "shippingCostCustomer": 75.0,
+      "shippingCostCustomer": 75,
       "shippingCostMos": null,
       "source": "fieramente",
       "language": "en",
