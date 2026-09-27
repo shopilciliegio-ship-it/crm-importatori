@@ -331,11 +331,18 @@
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1790002682494,
           "messageId": "<202609211458.44355081736@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "dogana",
+          "to": "minnellis@icloud.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1790481659551,
+          "messageId": "<202609270400.10804451621@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1789226287702,
-      "updatedAt": 1790481653763,
+      "updatedAt": 1790481659551,
       "staleAlertDays": 7,
       "staleAlertSince": 1789226287702,
       "track17Registered": true
@@ -408,11 +415,18 @@
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1790002682494,
           "messageId": "<202609211458.17962870486@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "dogana",
+          "to": "julianag1811@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1790481659551,
+          "messageId": "<202609270401.86218022636@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1789143073839,
-      "updatedAt": 1790481653763,
+      "updatedAt": 1790481659551,
       "staleAlertDays": 7,
       "staleAlertSince": 1789143073839,
       "track17Registered": true
@@ -490,11 +504,18 @@
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1790002682494,
           "messageId": "<202609211458.73922805493@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "dogana",
+          "to": "romanomike4@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1790481659551,
+          "messageId": "<202609270401.86234873912@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1789056461908,
-      "updatedAt": 1790481653763,
+      "updatedAt": 1790481659551,
       "staleAlertDays": 7,
       "staleAlertSince": 1789056461908,
       "track17Registered": true
