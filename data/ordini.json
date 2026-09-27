@@ -1,6 +1,70 @@
 {
   "orders": [
     {
+      "id": "ord_mujnep4msuey",
+      "customerName": "GIOVANNI INVERNIZZI",
+      "customerEmail": "giovanni.invernizzi@outlook.com",
+      "customerPhone": "3358035769",
+      "amount": 110.0,
+      "currency": "EUR",
+      "orderDate": 1790491446000,
+      "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio GIOVANNI INVERNIZZI",
+      "shipmentCode": "",
+      "shippingAddress": "Via Dante Alighieri n. 24,, 22070 LUISAGO (CO), Italy",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<CAOmk=KYcVefGzPRqQu3Up4A+VvaVw40K2Ri97pvNNW+J1XpoRw@mail.gmail.com>",
+      "trackingNumber": "",
+      "carrier": "Corriere Italia Gratis Oltre 100 € Di Ordine",
+      "products": [
+        {
+          "description": "VIN SANTO DEL CHIANTI DOC 2019",
+          "qty": 2,
+          "value": 38.0
+        },
+        {
+          "description": "CANTUCCINI DELLA MAMMA 250 GR",
+          "qty": 5,
+          "value": 32.5
+        },
+        {
+          "description": "CIAMBELLINE AL CHIANTI GR 200",
+          "qty": 1,
+          "value": 6.5
+        },
+        {
+          "description": "OLIO EXTRA VERGINE DI OLIVA 2025 ML 500",
+          "qty": 2,
+          "value": 23.0
+        },
+        {
+          "description": "CILIEGIO IN FIORE SPUMANTE DOLCE",
+          "qty": 1,
+          "value": 10.0
+        }
+      ],
+      "customsDuties": null,
+      "shippingCostCustomer": null,
+      "shippingCostMos": null,
+      "source": "shop",
+      "language": "it",
+      "orderNumber": "#1460",
+      "paymentType": "Carte Di Credito/Bancomat",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1790503254454,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1790503254454,
+      "updatedAt": 1790503254454
+    },
+    {
       "id": "ord_muiktlyzttpy",
       "customerName": "ILLIANA BEVERLY",
       "customerEmail": "lonibeverly@gmail.com",
@@ -9971,5 +10035,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1790438445179
+  "lastImportedAt": 1790503254454
 }
