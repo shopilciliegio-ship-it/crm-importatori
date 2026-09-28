@@ -1,51 +1,13 @@
-[
-  {
-    "date": "2026-09-28T07:01:25.985843+00:00",
-    "module": "clienti_wave1",
-    "to": "esmietxss@gmail.com",
-    "name": "Eryn Effendy",
-    "messageId": "<202609280701.89108634963@smtp-relay.mailin.fr>"
-  },
-  {
-    "date": "2026-09-28T07:01:25.985858+00:00",
-    "module": "clienti_wave1",
-    "to": "andreia@gmail.com",
-    "name": "Andréia Soares",
-    "messageId": "<202609280701.47957789550@smtp-relay.mailin.fr>"
-  },
-  {
-    "date": "2026-09-28T07:01:25.985861+00:00",
-    "module": "clienti_wave1",
-    "to": "betim@hotmail.com",
-    "name": "Humberto Batista",
-    "messageId": "<202609280701.98305804135@smtp-relay.mailin.fr>"
-  },
-  {
-    "date": "2026-09-28T07:01:25.985863+00:00",
-    "module": "clienti_wave1",
-    "to": "ribeiro.us@outlook.com",
-    "name": "Samuel Ribeiro",
-    "messageId": "<202609280701.30794401343@smtp-relay.mailin.fr>"
-  },
-  {
-    "date": "2026-09-28T07:01:25.985865+00:00",
-    "module": "clienti_wave1",
-    "to": "amandasantos271999@gmail.com",
-    "name": "Amanda Ribeiro",
-    "messageId": "<202609280701.19428572185@smtp-relay.mailin.fr>"
-  },
-  {
-    "date": "2026-09-28T07:01:25.985867+00:00",
-    "module": "clienti_wave1",
-    "to": "melvinavila30@gmail.com",
-    "name": "Melvin Avila",
-    "messageId": "<202609280701.95489613654@smtp-relay.mailin.fr>"
-  },
-  {
-    "date": "2026-09-28T07:01:25.985869+00:00",
-    "module": "clienti_wave1",
-    "to": "gbjunior@gmail.com",
-    "name": "Gabriel Júnior",
-    "messageId": "<202609280701.79026580112@smtp-relay.mailin.fr>"
-  }
-]
+{
+  "log": [
+    {
+      "orderId": "ord_mul2w5h7op36",
+      "customerName": "ROBERT  LEAVITT",
+      "type": "order_received",
+      "to": "rleavitt@icloud.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1790589743393,
+      "messageId": "<202609281002.56082573194@smtp-relay.mailin.fr>"
+    }
+  ]
+}
