@@ -1,139 +1,51 @@
-{
-  "log": [
-    {
-      "orderId": "ord_mtyj4v9z6p73",
-      "customerName": "MINNELLIS MERCADO DE LUCAS",
-      "type": "day0",
-      "to": "minnellis@icloud.com",
-      "subject": "Your wine is on its way! 🍷",
-      "sentAt": 1790002682494,
-      "messageId": "<202609211458.44355081736@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mtx5lb1re0j5",
-      "customerName": "JULIANA GOSKA",
-      "type": "day0",
-      "to": "julianag1811@gmail.com",
-      "subject": "Your wine is on its way! 🍷",
-      "sentAt": 1790002682494,
-      "messageId": "<202609211458.17962870486@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mtvq0wusqke9",
-      "customerName": "MICHAEL  ROMANO",
-      "type": "day0",
-      "to": "romanomike4@gmail.com",
-      "subject": "Your wine is on its way! 🍷",
-      "sentAt": 1790002682494,
-      "messageId": "<202609211458.73922805493@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mtsvmdcr2ufo",
-      "customerName": "ASHLEY BOWCOTT",
-      "type": "dogana",
-      "to": "ambowcott@gmail.com",
-      "subject": "Your order is going through customs",
-      "sentAt": 1790222459283,
-      "messageId": "<202609240400.56742690038@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mtr0qshs7mlr",
-      "customerName": "JOSHUA COMO",
-      "type": "dogana",
-      "to": "jcblueandwhite96@gmail.com",
-      "subject": "Your order is going through customs",
-      "sentAt": 1790222459283,
-      "messageId": "<202609240401.13126535325@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mtc2jbpdl9ln",
-      "customerName": "PAULA GREZESZAK",
-      "type": "dogana",
-      "to": "paulagrezeszak@gmail.com",
-      "subject": "Your order is going through customs",
-      "sentAt": 1790222459283,
-      "messageId": "<202609240401.79853804620@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mtlaqqjl57yj",
-      "customerName": "Anne Apicella",
-      "type": "consegnato",
-      "to": "apicella05@aol.com",
-      "subject": "Your order has been delivered! 🍷 Enjoy!",
-      "sentAt": 1790244059874,
-      "messageId": "<202609241001.36471204736@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mtr0qshs7mlr",
-      "customerName": "JOSHUA COMO",
-      "type": "consegnato",
-      "to": "jcblueandwhite96@gmail.com",
-      "subject": "Your order has been delivered! 🍷 Enjoy!",
-      "sentAt": 1790308868350,
-      "messageId": "<202609250401.11415563644@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_muh5divi7env",
-      "customerName": "EMILY PEACH",
-      "type": "order_received",
-      "to": "embosela@gmail.com",
-      "subject": "Thank you for your order! 🍷",
-      "sentAt": 1790352047717,
-      "messageId": "<202609251600.73450119695@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_muh5divhqc01",
-      "customerName": "JESSICA COOK",
-      "type": "order_received",
-      "to": "jlcook315@gmail.com",
-      "subject": "Thank you for your order! 🍷",
-      "sentAt": 1790352047717,
-      "messageId": "<202609251600.39763397840@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_muiktlyzttpy",
-      "customerName": "ILLIANA BEVERLY",
-      "type": "order_received",
-      "to": "lonibeverly@gmail.com",
-      "subject": "Thank you for your order! 🍷",
-      "sentAt": 1790438458226,
-      "messageId": "<202609261600.32129145568@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mtyj4v9z6p73",
-      "customerName": "MINNELLIS MERCADO DE LUCAS",
-      "type": "dogana",
-      "to": "minnellis@icloud.com",
-      "subject": "Your order is going through customs",
-      "sentAt": 1790481659551,
-      "messageId": "<202609270400.10804451621@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mtx5lb1re0j5",
-      "customerName": "JULIANA GOSKA",
-      "type": "dogana",
-      "to": "julianag1811@gmail.com",
-      "subject": "Your order is going through customs",
-      "sentAt": 1790481659551,
-      "messageId": "<202609270401.86218022636@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mtvq0wusqke9",
-      "customerName": "MICHAEL  ROMANO",
-      "type": "dogana",
-      "to": "romanomike4@gmail.com",
-      "subject": "Your order is going through customs",
-      "sentAt": 1790481659551,
-      "messageId": "<202609270401.86234873912@smtp-relay.mailin.fr>"
-    },
-    {
-      "orderId": "ord_mujnep4msuey",
-      "customerName": "GIOVANNI INVERNIZZI",
-      "type": "order_received",
-      "to": "giovanni.invernizzi@outlook.com",
-      "subject": "Grazie per il tuo ordine! 🍷",
-      "sentAt": 1790503274055,
-      "messageId": "<202609271001.23136341313@smtp-relay.mailin.fr>"
-    }
-  ]
-}
+[
+  {
+    "date": "2026-09-28T07:01:25.985843+00:00",
+    "module": "clienti_wave1",
+    "to": "esmietxss@gmail.com",
+    "name": "Eryn Effendy",
+    "messageId": "<202609280701.89108634963@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-09-28T07:01:25.985858+00:00",
+    "module": "clienti_wave1",
+    "to": "andreia@gmail.com",
+    "name": "Andréia Soares",
+    "messageId": "<202609280701.47957789550@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-09-28T07:01:25.985861+00:00",
+    "module": "clienti_wave1",
+    "to": "betim@hotmail.com",
+    "name": "Humberto Batista",
+    "messageId": "<202609280701.98305804135@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-09-28T07:01:25.985863+00:00",
+    "module": "clienti_wave1",
+    "to": "ribeiro.us@outlook.com",
+    "name": "Samuel Ribeiro",
+    "messageId": "<202609280701.30794401343@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-09-28T07:01:25.985865+00:00",
+    "module": "clienti_wave1",
+    "to": "amandasantos271999@gmail.com",
+    "name": "Amanda Ribeiro",
+    "messageId": "<202609280701.19428572185@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-09-28T07:01:25.985867+00:00",
+    "module": "clienti_wave1",
+    "to": "melvinavila30@gmail.com",
+    "name": "Melvin Avila",
+    "messageId": "<202609280701.95489613654@smtp-relay.mailin.fr>"
+  },
+  {
+    "date": "2026-09-28T07:01:25.985869+00:00",
+    "module": "clienti_wave1",
+    "to": "gbjunior@gmail.com",
+    "name": "Gabriel Júnior",
+    "messageId": "<202609280701.79026580112@smtp-relay.mailin.fr>"
+  }
+]
