@@ -72,7 +72,7 @@
       "shippingType": "standard",
       "gmailMessageId": "<CAOmk=KYcVefGzPRqQu3Up4A+VvaVw40K2Ri97pvNNW+J1XpoRw@mail.gmail.com>",
       "trackingNumber": "",
-      "carrier": "Corriere Italia Gratis Oltre 100 € Di Ordine",
+      "carrier": "TNT EXPRESS",
       "products": [
         {
           "description": "VIN SANTO DEL CHIANTI DOC 2019",
@@ -107,13 +107,18 @@
       "language": "it",
       "orderNumber": "#1460",
       "paymentType": "Carte Di Credito/Bancomat",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1790611322237,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1790503254454,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1790611322237,
+          "note": "Auto SpedirePro: aggiornamento stato (rif. INVERNIZZIG)"
         }
       ],
       "emailsSent": [
@@ -127,7 +132,9 @@
       ],
       "notes": "",
       "createdAt": 1790503254454,
-      "updatedAt": 1790503274055
+      "updatedAt": 1790611322237,
+      "trackingUrl": "https://www.spedire.com/tracking/WS01483068",
+      "spedireproReference": "INVERNIZZIG"
     },
     {
       "id": "ord_muiktlyzttpy",
@@ -320,7 +327,7 @@
       "shippingType": "standard",
       "gmailMessageId": "<CAOmk=KZjdYBgoo8NEf9E15zh5M+XcKNqDjnjNFF=nv1yjMkf3w@mail.gmail.com>",
       "trackingNumber": "",
-      "carrier": "Corriere Italia",
+      "carrier": "UPS EXPRESS ITALIA",
       "products": [
         {
           "description": "THEIA BIANCO ITALIA",
@@ -360,13 +367,18 @@
       "language": "it",
       "orderNumber": "#1457",
       "paymentType": "Carte Di Credito/Bancomat",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1790611322237,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1789942673431,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1790611322237,
+          "note": "Auto SpedirePro: aggiornamento stato (rif. BRAMBILLAM)"
         }
       ],
       "emailsSent": [
@@ -380,9 +392,11 @@
       ],
       "notes": "",
       "createdAt": 1789942673431,
-      "updatedAt": 1790568094330,
+      "updatedAt": 1790611322237,
       "staleAlertDays": 7,
-      "staleAlertSince": 1789942673431
+      "staleAlertSince": 1789942673431,
+      "trackingUrl": "https://www.spedire.com/tracking/1Z71V28R6895838292",
+      "spedireproReference": "BRAMBILLAM"
     },
     {
       "id": "ord_mtyj4v9z6p73",
