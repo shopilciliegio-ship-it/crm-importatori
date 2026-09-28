@@ -128,11 +128,18 @@
           "subject": "Grazie per il tuo ordine! 🍷",
           "sentAt": 1790503274055,
           "messageId": "<202609271001.23136341313@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "day0",
+          "to": "giovanni.invernizzi@outlook.com",
+          "subject": "Il tuo vino è in viaggio! 🍷",
+          "sentAt": 1790611327984,
+          "messageId": "<202609281602.63704398632@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1790503254454,
-      "updatedAt": 1790611322237,
+      "updatedAt": 1790611327984,
       "trackingUrl": "https://www.spedire.com/tracking/WS01483068",
       "spedireproReference": "INVERNIZZIG"
     },
@@ -388,11 +395,18 @@
           "subject": "Grazie per il tuo ordine! 🍷",
           "sentAt": 1789942692699,
           "messageId": "<202609202218.67785522137@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "day0",
+          "to": "peraineca@virgilio.it",
+          "subject": "Il tuo vino è in viaggio! 🍷",
+          "sentAt": 1790611327984,
+          "messageId": "<202609281602.51000490895@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1789942673431,
-      "updatedAt": 1790611322237,
+      "updatedAt": 1790611327984,
       "staleAlertDays": 7,
       "staleAlertSince": 1789942673431,
       "trackingUrl": "https://www.spedire.com/tracking/1Z71V28R6895838292",
