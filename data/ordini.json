@@ -1,6 +1,55 @@
 {
   "orders": [
     {
+      "id": "ord_mul2w5h7op36",
+      "customerName": "ROBERT  LEAVITT",
+      "customerEmail": "rleavitt@icloud.com",
+      "customerPhone": "+12409259934",
+      "amount": 252.94,
+      "currency": "EUR",
+      "orderDate": 1790586185000,
+      "emailSubject": "🍷 New Order — ROBERT  LEAVITT  — 252.94 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "3181 ZIPPERER WAY, 32163 THE VILLAGES, FLORIDA (SUMTER COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202609280903.26626967111@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "POGGIO ORLANDO 2024 CHIANTI COLLI SENE..",
+          "qty": 6,
+          "value": 72.0
+        },
+        {
+          "description": "SPARKLING WINE CILIEGIO IN FIORE ROSÉ",
+          "qty": 6,
+          "value": 60.0
+        }
+      ],
+      "customsDuties": 12.54,
+      "shippingCostCustomer": 115.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1790589729211,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1790589729211,
+      "updatedAt": 1790589729211
+    },
+    {
       "id": "ord_mujnep4msuey",
       "customerName": "GIOVANNI INVERNIZZI",
       "customerEmail": "giovanni.invernizzi@outlook.com",
@@ -10045,5 +10094,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1790503254454
+  "lastImportedAt": 1790589729211
 }
