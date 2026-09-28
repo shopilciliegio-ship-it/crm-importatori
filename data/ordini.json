@@ -44,10 +44,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "rleavitt@icloud.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1790589743393,
+          "messageId": "<202609281002.56082573194@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1790589729211,
-      "updatedAt": 1790589729211
+      "updatedAt": 1790589743393
     },
     {
       "id": "ord_mujnep4msuey",
