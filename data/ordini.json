@@ -165,7 +165,7 @@
       "orderNumber": "#1460",
       "paymentType": "Carte Di Credito/Bancomat",
       "shippingDate": 1790611322237,
-      "status": "in_consegna",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -180,6 +180,11 @@
         {
           "status": "in_consegna",
           "date": 1790676161265,
+          "note": "Auto SpedirePro: aggiornamento stato (rif. INVERNIZZIG)"
+        },
+        {
+          "status": "consegnato",
+          "date": 1790697724946,
           "note": "Auto SpedirePro: aggiornamento stato (rif. INVERNIZZIG)"
         }
       ],
@@ -208,7 +213,7 @@
       ],
       "notes": "",
       "createdAt": 1790503254454,
-      "updatedAt": 1790676166245,
+      "updatedAt": 1790697724946,
       "trackingUrl": "https://www.spedire.com/tracking/WS01483068",
       "spedireproReference": "INVERNIZZIG"
     },
@@ -444,7 +449,7 @@
       "orderNumber": "#1457",
       "paymentType": "Carte Di Credito/Bancomat",
       "shippingDate": 1790611322237,
-      "status": "in_transito",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -454,6 +459,11 @@
         {
           "status": "in_transito",
           "date": 1790611322237,
+          "note": "Auto SpedirePro: aggiornamento stato (rif. BRAMBILLAM)"
+        },
+        {
+          "status": "consegnato",
+          "date": 1790697724946,
           "note": "Auto SpedirePro: aggiornamento stato (rif. BRAMBILLAM)"
         }
       ],
@@ -475,7 +485,7 @@
       ],
       "notes": "",
       "createdAt": 1789942673431,
-      "updatedAt": 1790611327984,
+      "updatedAt": 1790697724946,
       "staleAlertDays": 7,
       "staleAlertSince": 1789942673431,
       "trackingUrl": "https://www.spedire.com/tracking/1Z71V28R6895838292",
