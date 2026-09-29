@@ -157,7 +157,7 @@
       "orderNumber": "#1460",
       "paymentType": "Carte Di Credito/Bancomat",
       "shippingDate": 1790611322237,
-      "status": "in_transito",
+      "status": "in_consegna",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -167,6 +167,11 @@
         {
           "status": "in_transito",
           "date": 1790611322237,
+          "note": "Auto SpedirePro: aggiornamento stato (rif. INVERNIZZIG)"
+        },
+        {
+          "status": "in_consegna",
+          "date": 1790676161265,
           "note": "Auto SpedirePro: aggiornamento stato (rif. INVERNIZZIG)"
         }
       ],
@@ -188,7 +193,7 @@
       ],
       "notes": "",
       "createdAt": 1790503254454,
-      "updatedAt": 1790611327984,
+      "updatedAt": 1790676161265,
       "trackingUrl": "https://www.spedire.com/tracking/WS01483068",
       "spedireproReference": "INVERNIZZIG"
     },
