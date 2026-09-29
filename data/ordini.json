@@ -209,11 +209,18 @@
           "subject": "Il tuo ordine è in consegna! 🍷",
           "sentAt": 1790676166245,
           "messageId": "<202609291002.60121296466@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegnato",
+          "to": "giovanni.invernizzi@outlook.com",
+          "subject": "Il tuo ordine è stato consegnato! 🍷 Buona degustazione!",
+          "sentAt": 1790697731465,
+          "messageId": "<202609291602.39307678240@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1790503254454,
-      "updatedAt": 1790697724946,
+      "updatedAt": 1790697731465,
       "trackingUrl": "https://www.spedire.com/tracking/WS01483068",
       "spedireproReference": "INVERNIZZIG"
     },
@@ -481,11 +488,18 @@
           "subject": "Il tuo vino è in viaggio! 🍷",
           "sentAt": 1790611327984,
           "messageId": "<202609281602.51000490895@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegnato",
+          "to": "peraineca@virgilio.it",
+          "subject": "Il tuo ordine è stato consegnato! 🍷 Buona degustazione!",
+          "sentAt": 1790697731465,
+          "messageId": "<202609291602.61143338953@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1789942673431,
-      "updatedAt": 1790697724946,
+      "updatedAt": 1790697731465,
       "staleAlertDays": 7,
       "staleAlertSince": 1789942673431,
       "trackingUrl": "https://www.spedire.com/tracking/1Z71V28R6895838292",
@@ -848,11 +862,18 @@
           "subject": "Your order is going through customs",
           "sentAt": 1790222459283,
           "messageId": "<202609240400.56742690038@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "in_consegna",
+          "to": "ambowcott@gmail.com",
+          "subject": "Your wine is out for delivery! 🍷",
+          "sentAt": 1790697731465,
+          "messageId": "<202609291602.35795330681@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1788884462618,
-      "updatedAt": 1790697727973,
+      "updatedAt": 1790697731465,
       "track17Registered": true,
       "staleAlertDays": 7,
       "staleAlertSince": 1789478391419
@@ -1249,11 +1270,18 @@
           "subject": "Your order is going through customs",
           "sentAt": 1790222459283,
           "messageId": "<202609240401.79853804620@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "in_consegna",
+          "to": "paulagrezeszak@gmail.com",
+          "subject": "Your wine is out for delivery! 🍷",
+          "sentAt": 1790697731465,
+          "messageId": "<202609291602.48853086696@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1787868152832,
-      "updatedAt": 1790697727973,
+      "updatedAt": 1790697731465,
       "staleAlertDays": 7,
       "staleAlertSince": 1789478391419,
       "track17Registered": true
