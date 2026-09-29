@@ -44,6 +44,42 @@
       "subject": "Il tuo ordine è in consegna! 🍷",
       "sentAt": 1790676166245,
       "messageId": "<202609291002.60121296466@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mujnep4msuey",
+      "customerName": "GIOVANNI INVERNIZZI",
+      "type": "consegnato",
+      "to": "giovanni.invernizzi@outlook.com",
+      "subject": "Il tuo ordine è stato consegnato! 🍷 Buona degustazione!",
+      "sentAt": 1790697731465,
+      "messageId": "<202609291602.39307678240@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_muadni1jn7fk",
+      "customerName": "MONICA BRAMBILLA",
+      "type": "consegnato",
+      "to": "peraineca@virgilio.it",
+      "subject": "Il tuo ordine è stato consegnato! 🍷 Buona degustazione!",
+      "sentAt": 1790697731465,
+      "messageId": "<202609291602.61143338953@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mtsvmdcr2ufo",
+      "customerName": "ASHLEY BOWCOTT",
+      "type": "in_consegna",
+      "to": "ambowcott@gmail.com",
+      "subject": "Your wine is out for delivery! 🍷",
+      "sentAt": 1790697731465,
+      "messageId": "<202609291602.35795330681@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mtc2jbpdl9ln",
+      "customerName": "PAULA GREZESZAK",
+      "type": "in_consegna",
+      "to": "paulagrezeszak@gmail.com",
+      "subject": "Your wine is out for delivery! 🍷",
+      "sentAt": 1790697731465,
+      "messageId": "<202609291602.48853086696@smtp-relay.mailin.fr>"
     }
   ]
 }
