@@ -931,7 +931,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1789478391419,
-      "status": "in_consegna",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -952,6 +952,11 @@
           "status": "in_consegna",
           "date": 1790697727973,
           "note": "Auto 17Track (era: dogana): Doraville, GA, United States — Out for Delivery, Out For Delivery Today"
+        },
+        {
+          "status": "consegnato",
+          "date": 1790719302177,
+          "note": "Auto 17Track (era: in_consegna): TUCKER, GA, US — Delivered, DELIVERED"
         }
       ],
       "emailsSent": [
@@ -986,7 +991,7 @@
       ],
       "notes": "",
       "createdAt": 1788884462618,
-      "updatedAt": 1790697731465,
+      "updatedAt": 1790719302177,
       "track17Registered": true,
       "staleAlertDays": 7,
       "staleAlertSince": 1789478391419
