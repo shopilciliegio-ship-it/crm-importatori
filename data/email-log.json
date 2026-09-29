@@ -26,6 +26,24 @@
       "subject": "Il tuo vino è in viaggio! 🍷",
       "sentAt": 1790611327984,
       "messageId": "<202609281602.51000490895@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mumicdcmko4h",
+      "customerName": "CRISTINA BENITEZ",
+      "type": "order_received",
+      "to": "cbenitezberral@gmail.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1790676166245,
+      "messageId": "<202609291002.11211767669@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mujnep4msuey",
+      "customerName": "GIOVANNI INVERNIZZI",
+      "type": "in_consegna",
+      "to": "giovanni.invernizzi@outlook.com",
+      "subject": "Il tuo ordine è in consegna! 🍷",
+      "sentAt": 1790676166245,
+      "messageId": "<202609291002.60121296466@smtp-relay.mailin.fr>"
     }
   ]
 }
