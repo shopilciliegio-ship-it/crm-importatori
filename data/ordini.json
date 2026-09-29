@@ -1,6 +1,55 @@
 {
   "orders": [
     {
+      "id": "ord_mumicdcmko4h",
+      "customerName": "CRISTINA BENITEZ",
+      "customerEmail": "cbenitezberral@gmail.com",
+      "customerPhone": "+34649512871",
+      "amount": 67.0,
+      "currency": "EUR",
+      "orderDate": 1790670891000,
+      "emailSubject": "🍷 New Order — CRISTINA BENITEZ — 67.00 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "CALLE DOS DE MAYO 25, 1º, 14500 PUENTE GENIL, CÓRDOBA",
+      "numberOfCartons": null,
+      "shippingType": null,
+      "gmailMessageId": "<891e32f5-fb88-4b4c-a600-ec9bd44d8173@smtp-relay.sendinblue.com>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
+          "qty": 2,
+          "value": 20.0
+        },
+        {
+          "description": "100 ML EXTRA VIRGIN OLIVE OIL 2025",
+          "qty": 1,
+          "value": 5.0
+        }
+      ],
+      "customsDuties": null,
+      "shippingCostCustomer": 42.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1790676146326,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1790676146326,
+      "updatedAt": 1790676146326
+    },
+    {
       "id": "ord_mul2w5h7op36",
       "customerName": "ROBERT  LEAVITT",
       "customerEmail": "rleavitt@icloud.com",
@@ -10130,5 +10179,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1790589729211
+  "lastImportedAt": 1790676146326
 }
