@@ -49,10 +49,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "suedauble@verizon.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1790719304442,
+          "messageId": "<202609292201.95564089853@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1790719291118,
-      "updatedAt": 1790719291118
+      "updatedAt": 1790719304442
     },
     {
       "id": "ord_mun81432zjm3",
@@ -108,10 +116,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "mlbrai924@gmail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1790719304442,
+          "messageId": "<202609292201.94668126909@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1790719291118,
-      "updatedAt": 1790719291118
+      "updatedAt": 1790719304442
     },
     {
       "id": "ord_mumicdcmko4h",
@@ -987,11 +1003,18 @@
           "subject": "Your wine is out for delivery! 🍷",
           "sentAt": 1790697731465,
           "messageId": "<202609291602.35795330681@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegnato",
+          "to": "ambowcott@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1790719304442,
+          "messageId": "<202609292201.48310767604@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1788884462618,
-      "updatedAt": 1790719302177,
+      "updatedAt": 1790719304442,
       "track17Registered": true,
       "staleAlertDays": 7,
       "staleAlertSince": 1789478391419
