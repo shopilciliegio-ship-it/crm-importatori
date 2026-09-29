@@ -1,6 +1,119 @@
 {
   "orders": [
     {
+      "id": "ord_mun81432rajr",
+      "customerName": "SUSAN DAUBLE",
+      "customerEmail": "suedauble@verizon.com",
+      "customerPhone": "+12012075849",
+      "amount": 249.2,
+      "currency": "EUR",
+      "orderDate": 1790709251000,
+      "emailSubject": "🍷 New Order — SUSAN DAUBLE — 249.20 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "161 RANDOLPH AVE, 07628 DUMONT, NEW JERSEY (BERGEN COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202609291914.34561325722@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "MARIO RED WINE IGT 2019",
+          "qty": 3,
+          "value": 84.0
+        },
+        {
+          "description": "LE FORCACCE WHITE WINE IGT 2024 VIOGNI..",
+          "qty": 2,
+          "value": 17.0
+        },
+        {
+          "description": "1 LT EXTRA VIRGIN OLIVE OIL 2025",
+          "qty": 1,
+          "value": 21.0
+        }
+      ],
+      "customsDuties": 12.2,
+      "shippingCostCustomer": 115.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1790719291118,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1790719291118,
+      "updatedAt": 1790719291118
+    },
+    {
+      "id": "ord_mun81432zjm3",
+      "customerName": "MARYLOU BRAI",
+      "customerEmail": "mlbrai924@gmail.com",
+      "customerPhone": "+17324569436",
+      "amount": 174.0,
+      "currency": "EUR",
+      "orderDate": 1790708825000,
+      "emailSubject": "🍷 New Order — MARYLOU BRAI — 174.00 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "3007 SMOKE HOUSE COURT, 07728 FREEHOLD TOWNSHIP, NEW JERSEY (MONMOUTH COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202609291907.36417486153@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "MARIO RED WINE IGT 2019",
+          "qty": 1,
+          "value": 28.0
+        },
+        {
+          "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
+          "qty": 1,
+          "value": 10.0
+        },
+        {
+          "description": "SPARKLING WINE CILIEGIO IN FIORE ROSÉ",
+          "qty": 1,
+          "value": 10.0
+        },
+        {
+          "description": "1 LT EXTRA VIRGIN OLIVE OIL 2025",
+          "qty": 2,
+          "value": 42.0
+        }
+      ],
+      "customsDuties": 9.0,
+      "shippingCostCustomer": 75.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1790719291118,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1790719291118,
+      "updatedAt": 1790719291118
+    },
+    {
       "id": "ord_mumicdcmko4h",
       "customerName": "CRISTINA BENITEZ",
       "customerEmail": "cbenitezberral@gmail.com",
@@ -10247,5 +10360,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1790676146326
+  "lastImportedAt": 1790719291118
 }
