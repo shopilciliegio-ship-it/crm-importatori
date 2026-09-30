@@ -116,6 +116,24 @@
       "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
       "sentAt": 1790740922884,
       "messageId": "<202609300402.38263145203@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_muoamq58xfbh",
+      "customerName": "SCOTT BOCKETTI",
+      "type": "order_received",
+      "to": "scottbocketti@gmail.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1790784143580,
+      "messageId": "<202609301602.35433004254@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mtvq0wusqke9",
+      "customerName": "MICHAEL  ROMANO",
+      "type": "in_consegna",
+      "to": "romanomike4@gmail.com",
+      "subject": "Your wine is out for delivery! 🍷",
+      "sentAt": 1790784143580,
+      "messageId": "<202609301602.17110288206@smtp-relay.mailin.fr>"
     }
   ]
 }
