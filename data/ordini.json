@@ -971,11 +971,18 @@
           "subject": "Your wine is out for delivery! 🍷",
           "sentAt": 1790784143580,
           "messageId": "<202609301602.17110288206@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegnato",
+          "to": "romanomike4@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1790805723704,
+          "messageId": "<202609302202.40194732853@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1789056461908,
-      "updatedAt": 1790805719586,
+      "updatedAt": 1790805723704,
       "staleAlertDays": 7,
       "staleAlertSince": 1789056461908,
       "track17Registered": true
