@@ -907,7 +907,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1790002675059,
-      "status": "dogana",
+      "status": "in_consegna",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -923,6 +923,11 @@
           "status": "dogana",
           "date": 1790481653763,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "in_consegna",
+          "date": 1790784140202,
+          "note": "Auto 17Track (era: dogana): Mebane, NC, United States — Out for Delivery, Out For Delivery Today"
         }
       ],
       "emailsSent": [
@@ -950,7 +955,7 @@
       ],
       "notes": "",
       "createdAt": 1789056461908,
-      "updatedAt": 1790481659551,
+      "updatedAt": 1790784140202,
       "staleAlertDays": 7,
       "staleAlertSince": 1789056461908,
       "track17Registered": true
