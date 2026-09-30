@@ -1,6 +1,60 @@
 {
   "orders": [
     {
+      "id": "ord_muoamq58xfbh",
+      "customerName": "SCOTT BOCKETTI",
+      "customerEmail": "scottbocketti@gmail.com",
+      "customerPhone": "+15183392994",
+      "amount": 124.4,
+      "currency": "EUR",
+      "orderDate": 1790770239000,
+      "emailSubject": "🍷 New Order — SCOTT BOCKETTI — 124.40 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "34 MERGNER RD, 12070 FORT JOHNSON, NEW YORK (MONTGOMERY COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202609301210.15435564892@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "INFERNACCIO RED WINE IGT 2022",
+          "qty": 1,
+          "value": 16.0
+        },
+        {
+          "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
+          "qty": 1,
+          "value": 19.0
+        },
+        {
+          "description": "VIN SANTO DEL CHIANTI DOC 2019",
+          "qty": 1,
+          "value": 19.0
+        }
+      ],
+      "customsDuties": 5.4,
+      "shippingCostCustomer": 65.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1790784124892,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1790784124892,
+      "updatedAt": 1790784124892
+    },
+    {
       "id": "ord_mun81432rajr",
       "customerName": "SUSAN DAUBLE",
       "customerEmail": "suedauble@verizon.com",
@@ -10402,5 +10456,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1790719291118
+  "lastImportedAt": 1790784124892
 }
