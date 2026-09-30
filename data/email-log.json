@@ -107,6 +107,15 @@
       "subject": "Your order has been delivered! 🍷 Enjoy!",
       "sentAt": 1790719304442,
       "messageId": "<202609292201.48310767604@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mtc2jbpdl9ln",
+      "customerName": "PAULA GREZESZAK",
+      "type": "consegna_fallita",
+      "to": "paulagrezeszak@gmail.com",
+      "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+      "sentAt": 1790740922884,
+      "messageId": "<202609300402.38263145203@smtp-relay.mailin.fr>"
     }
   ]
 }
