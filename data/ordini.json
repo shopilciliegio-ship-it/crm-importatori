@@ -1365,7 +1365,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1789478391419,
-      "status": "in_consegna",
+      "status": "consegna_fallita",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1386,6 +1386,11 @@
           "status": "in_consegna",
           "date": 1790697727973,
           "note": "Auto 17Track (era: dogana): Flint, MI, United States — Out for Delivery, Out For Delivery Today"
+        },
+        {
+          "status": "consegna_fallita",
+          "date": 1790740920372,
+          "note": "Auto 17Track (era: in_consegna): Delivery Attempted, The receiver was not available for delivery. We'll make a second attempt the next business day."
         }
       ],
       "emailsSent": [
@@ -1422,10 +1427,12 @@
       ],
       "notes": "",
       "createdAt": 1787868152832,
-      "updatedAt": 1790697731465,
+      "updatedAt": 1790740920372,
       "staleAlertDays": 7,
       "staleAlertSince": 1789478391419,
-      "track17Registered": true
+      "track17Registered": true,
+      "deliveryFailureCount": 1,
+      "lastDeliveryFailureEventAt": "2026-09-29T20:59:46Z"
     },
     {
       "id": "ord_mtc2jbpc0oie",
