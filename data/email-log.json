@@ -134,6 +134,15 @@
       "subject": "Your wine is out for delivery! 🍷",
       "sentAt": 1790784143580,
       "messageId": "<202609301602.17110288206@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mtvq0wusqke9",
+      "customerName": "MICHAEL  ROMANO",
+      "type": "consegnato",
+      "to": "romanomike4@gmail.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1790805723704,
+      "messageId": "<202609302202.40194732853@smtp-relay.mailin.fr>"
     }
   ]
 }
