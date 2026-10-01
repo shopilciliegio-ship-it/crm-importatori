@@ -1,6 +1,55 @@
 {
   "orders": [
     {
+      "id": "ord_mupd72by879e",
+      "customerName": "NEIL ROBERTS",
+      "customerEmail": "neilrob4060@gmail.com",
+      "customerPhone": "+16176993182",
+      "amount": 260.2,
+      "currency": "EUR",
+      "orderDate": 1790844731000,
+      "emailSubject": "🍷 New Order — NEIL ROBERTS — 260.20 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "SUMMIT RIDGE DV, 02184 BRAINTREE, MASSACHUSETTS (NORFOLK COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202610010852.85770028699@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "POGGIO ORLANDO 2024 CHIANTI COLLI SENE..",
+          "qty": 11,
+          "value": 132.0
+        },
+        {
+          "description": "CHIANTI STRADE BIANCHE 2025 LIM. ED.",
+          "qty": 1,
+          "value": 0.0
+        }
+      ],
+      "customsDuties": 13.2,
+      "shippingCostCustomer": 115.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1790848899214,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1790848899214,
+      "updatedAt": 1790848899214
+    },
+    {
       "id": "ord_muoamq58xfbh",
       "customerName": "SCOTT BOCKETTI",
       "customerEmail": "scottbocketti@gmail.com",
@@ -10500,5 +10549,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1790784124892
+  "lastImportedAt": 1790848899214
 }
