@@ -299912,603 +299912,1953 @@
   },
   "c1780673710961bzqvd": {
     "contactName": "Jaspar Corbett",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Azienda storica (dal 2003) con proprietario esperto nel settore wine. Dimensione micro (1 dipendente, fatturato ~76k£). Sito funzionante ma scarsa visibilità online. Portafoglio generico di vini interessanti - non specifica italiani ma probabile data esperienza internazionale.",
+      "analyzed_at": "2026-10-01T05:01:25.290Z"
+    }
   },
   "c1780673710961a8k2h": {
     "contactName": "Sharon Croft",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo convenience store locale (1 dipendente dichiarato vs 15 nel sito; fatturato 66k€) con sezione off-license generica. Nessuna evidenza di focus su vini italiani o importazione. Non è un distributore B2B.",
+      "analyzed_at": "2026-10-01T05:01:31.191Z"
+    }
   },
   "c17806737109617jram": {
     "contactName": "Tracey Elwood",
-    "contactTitle": "Director Of Operations And Logistics"
+    "contactTitle": "Director Of Operations And Logistics",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccolo retailer online (1 dipendente, fatturato modesto ~168k£) con catalogo prevalentemente francese/internazionale. Citazione di 'Produttori Di Mandu' suggerisce interesse per vini italiani ma catalogo non chiaramente focalizzato. Contatto diretto disponibile (Karl). Verificare se effettivamente distribuisce vini italiani prima di contattare.",
+      "analyzed_at": "2026-10-01T05:01:36.675Z"
+    }
   },
   "c1780673710961xoljv": {
     "contactName": "Jerome Jacober",
-    "contactTitle": "Founder & Ceo"
+    "contactTitle": "Founder & Ceo",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~352k) specializzata in vini bespoke/personalizzati (champagne francese, spirits). Nessun vino italiano nel portafoglio; focus su creazioni custom per clientela artistica/corporate. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-10-01T05:01:42.704Z"
+    }
   },
   "c1780673710961kxyjd": {
     "contactName": "Karan Mody",
-    "contactTitle": "Marketing & Business Development Manager"
+    "contactTitle": "Marketing & Business Development Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda neo-costituita con 1 solo dipendente e fatturato modesto (566k£). Portfolio focalizzato su vini britannici (Severn Valley) e brand internazionali generici. Nessuna traccia online, nessun vino italiano nel catalogo visibile.",
+      "analyzed_at": "2026-10-01T05:01:49.324Z"
+    }
   },
   "c1780673710961tvmlc": {
     "contactName": "Miguel Crunia",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~76k GBP) focalizzata su vini da regioni emergenti (Spagna, Georgia, Austria, Grecia). Italia non citata esplicitamente; nessuna traccia Google; modello B2C online puro, non adatto a partnership B2B per vini italiani.",
+      "analyzed_at": "2026-10-01T05:01:54.137Z"
+    }
   },
   "c1780673710961m329i": {
     "contactName": "Penny Heyes",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda molto piccola (1 dipendente, fatturato ~45k£) con sito web datato e nessuna traccia online. Assenza di risultati Google e struttura minimalista suggeriscono operatività limitata. Non idonea come partner commerciale.",
+      "analyzed_at": "2026-10-01T05:01:58.254Z"
+    }
   },
   "c1780673710961ssj4m": {
     "contactName": "Andrea D'ercole",
-    "contactTitle": "Founder & Managing Director"
+    "contactTitle": "Founder & Managing Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~114k€) con sito irraggiungibile e nessuna traccia online. Profilo rischio elevato: impossibile verificare credibilità, portafoglio reale e affidabilità operativa.",
+      "analyzed_at": "2026-10-01T05:02:02.372Z"
+    }
   },
   "c1780673710961i1csb": {
     "contactName": "Maureen Dunlop",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Sito in costruzione ('launching shortly'), nessuna traccia online, 1 dipendente, fatturato minimo. Impossibile verificare portafoglio prodotti e specializzazione vini italiani. Non contattare finché non sarà operativo.",
+      "analyzed_at": "2026-10-01T05:02:07.288Z"
+    }
   },
   "c17806737109618yw1e": {
     "contactName": "Chris Rutter",
-    "contactTitle": "Managing Partner"
+    "contactTitle": "Managing Partner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~102k) senza visibilità online. Nessuna menzione esplicita di vini italiani nel portafoglio. Sito datato e poco professionale; non pertinente per distribuzione vini italiani di qualità.",
+      "analyzed_at": "2026-10-01T05:02:11.674Z"
+    }
   },
   "c178067371096143s7v": {
     "contactName": "James Snepp",
-    "contactTitle": "Commercial Director"
+    "contactTitle": "Commercial Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "importatore",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Azienda con 1 solo dipendente e fatturato modesto (640k£). Sito irraggiungibile, nessuna traccia Google, impossibile verificare portafoglio prodotti o specializzazione in vini italiani. Profilo ad alto rischio.",
+      "analyzed_at": "2026-10-01T05:02:26.030Z"
+    }
   },
   "c17806737109611ka5e": {
     "contactName": "Jonathan Sutton",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccola enoteca indipendente (1 dipendente, fatturato ~331k£) con sito funzionante e attività di tasting. Vini da tutto il mondo ma nessuna menzione esplicita di vini italiani. Mercato prevalentemente retail locale/online, non horeca.",
+      "analyzed_at": "2026-10-01T05:02:42.979Z"
+    }
   },
   "c1780673710961lombl": {
     "contactName": "Sinéad K.",
-    "contactTitle": "Store & Operations Manager"
+    "contactTitle": "Store & Operations Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-azienda (1 dipendente, fatturato ~90k£) con focus su cheese & wine pairing. Nessuna menzione esplicita di vini italiani nel sito. Assenza totale da Google suggerisce visibilità molto limitata.",
+      "analyzed_at": "2026-10-01T05:02:47.239Z"
+    }
   },
   "c17806737109613yms1": {
     "contactName": "John Frederick Brian Carlisle",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Wine bar + shop locale con 1 dipendente e fatturato modesto (557k£). Sito generico senza dettagli su portafoglio vini italiani. Non è un buyer B2B rilevante per distributori.",
+      "analyzed_at": "2026-10-01T05:02:51.772Z"
+    }
   },
   "c1780673710961t6zwt": {
     "contactName": "Julian Garratt",
-    "contactTitle": "Managing Director/ Wine Merchant"
+    "contactTitle": "Managing Director/ Wine Merchant",
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "no",
+      "tipo_business": "sconosciuto",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Sito completamente compromesso/hackerato - contiene solo contenuti spam su piattaforma gaming indonesiana (BIGHOKI). Nessuna traccia di attività vinicola reale. Azienda non contattabile.",
+      "analyzed_at": "2026-10-01T05:02:57.421Z"
+    }
   },
   "c1780673710961lxk1q": {
     "contactName": "Peter Wood",
-    "contactTitle": "Ceo"
+    "contactTitle": "Ceo",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato modesto) con sito irraggiungibile e zero traccia online. Nessuna evidenza di focus su vini italiani. Non verificabile.",
+      "analyzed_at": "2026-10-01T05:03:01.342Z"
+    }
   },
   "c1780673710961u0rs0": {
     "contactName": "Liam Gardiner",
-    "contactTitle": "General Manager"
+    "contactTitle": "General Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "importatore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Importatore UK specializzato in vini italiani ed europei, fondato 2021, target horeca (ristoranti, bar, hotel). Fatturato modesto (1,5M£) con 1 solo dipendente suggerisce struttura molto piccola; sito presente ma nessuna traccia Google. Verificare solidità operativa prima di contattare.",
+      "analyzed_at": "2026-10-01T05:03:07.195Z"
+    }
   },
   "c1780673710961ustka": {
     "contactName": "Max Bracher",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore|online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~55k£) con sito irraggiungibile e zero traccia online. Nessuna conferma di specializzazione in vini italiani. Rischio affidabilità molto elevato.",
+      "analyzed_at": "2026-10-01T05:03:11.187Z"
+    }
   },
   "c1780673710961gmgt6": {
     "contactName": "Sara Harrison",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Portafoglio diversificato con vini italiani (Guado al Tasso, Tignanello, Gavi, Prosecco). Azienda micro (1 dipendente, fatturato ~395k£) con assenza totale da Google e sito basic. Contattare solo se interessati a piccoli retailer online UK.",
+      "analyzed_at": "2026-10-01T05:03:16.566Z"
+    }
   },
   "c1780673710961krarw": {
     "contactName": "Laura Ealing",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Azienda micro (1 dipendente) fondata 2010, specializzata in fine wine per collezionisti privati. Portfolio include Italia ma focus su Bordeaux/Borgogna/Champagne. Nessuna traccia online (Google) e fatturato sconosciuto: difficile valutare solidità.",
+      "analyzed_at": "2026-10-01T05:03:21.334Z"
+    }
   },
   "c17806737109618r1vd": {
     "contactName": "Jean-charles Adam",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "importatore",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda focalizzata esclusivamente su vini francesi, non italiani. Un solo dipendente e fatturato molto modesto (251k£) suggeriscono operazione di piccola scala; assenza da Google e sito basic indicano visibilità limitata.",
+      "analyzed_at": "2026-10-01T05:03:26.266Z"
+    }
   },
   "c1780673710961f7bml": {
     "contactName": "Charlie Villers",
-    "contactTitle": "Sales Director"
+    "contactTitle": "Sales Director",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Azienda consolidata dal 1995 con portafoglio europeo (Bordeaux, Burgundy, Champagne, Italia). Sito funzionante ma assenza da Google e un solo dipendente suggeriscono operazione piccola/specializzata. Contattare se target è fine wine investment UK.",
+      "analyzed_at": "2026-10-01T05:03:33.882Z"
+    }
   },
   "c1780673710961wjkxa": {
     "contactName": "Tony Morley",
-    "contactTitle": "Managing Director"
+    "contactTitle": "Managing Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-azienda (1 dipendente, fatturato ~46k€) con sito poco professionale e nessuna traccia online. Attualmente chiusa al pubblico, accetta solo ordini da clienti corporate esistenti. Nessun riferimento a vini italiani nel catalogo (Port, Champagne, generici).",
+      "analyzed_at": "2026-10-01T05:03:38.819Z"
+    }
   },
   "c1780673710961fyb99": {
     "contactName": "Lizzie",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-realtà (1 dipendente, fatturato ~316k) senza visibilità online né risultati Google. Sito minimalista non fornisce info su portafoglio vini. Troppo piccola e poco trasparente per partnership B2B.",
+      "analyzed_at": "2026-10-01T05:03:43.543Z"
+    }
   },
   "c1780673710961fi8zf": {
     "contactName": "Jolanta Jola Swiadek",
-    "contactTitle": "Co-Founder and Director"
+    "contactTitle": "Co-Founder and Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~94k£) focalizzata su spirits (rum, gin, vodka). Vini presenti in catalogo ma non evidenziati. Nessuna traccia online, sito generico. Non idonea per partnership B2B.",
+      "analyzed_at": "2026-10-01T05:03:49.099Z"
+    }
   },
   "c1780673710961jh5xg": {
     "contactName": "Andrew Goadby",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda piccola (1 dipendente, fatturato ~445k€) con 20+ anni di storia, ma sito in manutenzione e nessuna traccia online. Portfolio include Italia (Piedmont, Nebbiolo) ma non è focus principale. Contattare solo se interessati a piccoli importatori retail UK.",
+      "analyzed_at": "2026-10-01T05:03:54.468Z"
+    }
   },
   "c1780673710961pxq28": {
     "contactName": "Cristina (Litviniuc) Paunoiu",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Sito irraggiungibile, nessuna traccia online, fatturato minimo (£141k) con 1 solo dipendente. Profilo non verificabile e potenzialmente inattivo.",
+      "analyzed_at": "2026-10-01T05:03:58.755Z"
+    }
   },
   "c17806737109614eqr5": {
     "contactName": "Lizzy Parrott",
-    "contactTitle": "Manager | Wine Buyer"
+    "contactTitle": "Manager | Wine Buyer",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-azienda (1 dipendente, fatturato ~388k GBP) con sito malfunzionante e nessuna traccia online. Nessuna menzione esplicita di vini italiani nel portafoglio. Non idonea per partnership B2B.",
+      "analyzed_at": "2026-10-01T05:04:03.289Z"
+    }
   },
   "c178067371096139kam": {
     "contactName": "Jack Everton",
-    "contactTitle": "Sales Director"
+    "contactTitle": "Sales Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Sito non accessibile (protezione DDoS), nessuna traccia Google, 1 dipendente con fatturato modesto. Impossibile verificare portafoglio vini italiani o affidabilità operativa.",
+      "analyzed_at": "2026-10-01T05:04:08.424Z"
+    }
   },
   "c1780673710961ijj9d": {
     "contactName": "Lela Mcternan - Mann",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~180k) con sito irraggiungibile e nessuna traccia online. Profilo ad alto rischio: impossibile verificare portafoglio vini, specializzazione italiana o affidabilità commerciale.",
+      "analyzed_at": "2026-10-01T05:04:12.879Z"
+    }
   },
   "c1780673710961zos7f": {
     "contactName": "Nikesh Patel",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~19k€) senza traccia online. Sito irraggiungibile e nessun risultato Google. Affidabilità molto bassa per partnership commerciale.",
+      "analyzed_at": "2026-10-01T05:04:17.033Z"
+    }
   },
   "c1780673710961hdo02": {
     "contactName": "Sudhir Singh",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, ~923k fatturato) con sito generico e nessuna traccia online. Portfolio vini non specificato (solo 'Wine-Der-Lust' citato). Assenza totale di visibilità Google e informazioni concrete su specializzazione italiana rendono contatto poco prioritario.",
+      "analyzed_at": "2026-10-01T05:04:22.037Z"
+    }
   },
   "c178067371096129oq3": {
     "contactName": "Fuchsia Victoria Adamthwaite",
-    "contactTitle": "Ceo"
+    "contactTitle": "Ceo",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~132k€) con sito irraggiungibile e nessuna traccia online. Impossibile verificare se commercializza vini italiani. Affidabilità molto bassa.",
+      "analyzed_at": "2026-10-01T05:04:26.422Z"
+    }
   },
   "c17806737109619h4ah": {
     "contactName": "Patricia Ann Davies",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-azienda (1 dipendente, fatturato ~258k£) focalizzata su ale craft e spirits generici. Nessuna menzione di vini italiani nel sito; assortimento generico UK-oriented. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-10-01T05:04:30.839Z"
+    }
   },
   "c1780673710961rvqfc": {
     "contactName": "Artem Ermakov",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato sconosciuto) con sito basic e zero visibilità Google. Catalogo generico di bevande/snack senza focus su vini italiani. Non idonea per partnership B2B.",
+      "analyzed_at": "2026-10-01T05:04:35.680Z"
+    }
   },
   "c17806737109615ad3c": {
     "contactName": "Jennifer Moran",
-    "contactTitle": "Founder"
+    "contactTitle": "Founder",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~152k) focalizzata su vini californiani e americani. Nessuna traccia di vini italiani nel portafoglio. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-10-01T05:04:40.237Z"
+    }
   },
   "c1780673710961zx0ny": {
     "contactName": "Ho Ji Arthur Lau",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "importatore",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda con 1 dipendente e fatturato minimo (£2.486). Specializzata in vini francesi (Château de Cayx, Champagne) e tedeschi, nessun vino italiano nel portafoglio. Assenza totale da Google e segnali di affidabilità molto bassi.",
+      "analyzed_at": "2026-10-01T05:04:44.785Z"
+    }
   },
   "c1780673710961m5r92": {
     "contactName": "Avanti Patel",
-    "contactTitle": "Ceo"
+    "contactTitle": "Ceo",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Micro-azienda (1 dipendente, fatturato ~305k) con sito funzionante che cita esplicitamente vini italiani (Piedmont, Campania, Sicily, Veneto, Friuli). Assenza totale da Google e fatturato modesto suggeriscono scarsa visibilità; potenziale interessante solo se cercate canale online boutique per volumi ridotti.",
+      "analyzed_at": "2026-10-01T05:04:49.406Z"
+    }
   },
   "c1780673710961yg2nw": {
     "contactName": "Ellen Gibson",
-    "contactTitle": "Managing Director"
+    "contactTitle": "Managing Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda specializzata in whisky scozzese e gin britannici, non vini. Micro-impresa (1 dipendente, fatturato ~92k£) senza presenza Google. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-10-01T05:04:53.393Z"
+    }
   },
   "c1780673710961kev36": {
     "contactName": "Johnathan Mark Robert Garry",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-azienda (1 dipendente, fatturato ~76k€) focalizzata su wine tasting esperienziale e formazione WSET, non su distribuzione B2B. Nessuna traccia online, nessuna menzione esplicita di vini italiani nel portafoglio.",
+      "analyzed_at": "2026-10-01T05:05:00.468Z"
+    }
   },
   "c1780673710961f9zi7": {
     "contactName": "Michael Beckett",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "no",
+      "tipo_business": "importatore",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda CHIUSA - sito dichiara esplicitamente 'we have now closed our shop and are no longer trading'. Specializzata in vini balcanici (Nord Macedonia), non italiani. Non contattare.",
+      "analyzed_at": "2026-10-01T05:05:04.856Z"
+    }
   },
   "c1780673710961fedqs": {
     "contactName": "Hein Barnard",
-    "contactTitle": "Managing Director"
+    "contactTitle": "Managing Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~59k€) con sito minimalista e nessuna traccia online. Portafoglio generico (vini, birre, spirits) senza focus su vini italiani. Affidabilità molto bassa.",
+      "analyzed_at": "2026-10-01T05:05:11.267Z"
+    }
   },
   "c1780673710961j2598": {
     "contactName": "Gary Cennerazzo",
-    "contactTitle": "Director & Owner"
+    "contactTitle": "Director & Owner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Piccola azienda indipendente (1 dipendente, ~434k€ fatturato) con sito funzionante e registrazioni ufficiali UK. Focus su vini artigianali di qualità ma non specifica se italiani. Assenza di visibilità Google e dimensioni ridotte limitano affidabilità; potenziale interessante per fornitori di vini premium italiani indipendenti.",
+      "analyzed_at": "2026-10-01T05:05:21.376Z"
+    }
   },
   "c17806737109618fplj": {
     "contactName": "Benedict Butterworth",
-    "contactTitle": "Founder and Owner"
+    "contactTitle": "Founder and Owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda micro (1 dipendente, fatturato ~298k) con sito funzionante ma scarsa visibilità online. Nessun risultato Google suggerisce bassa autorità digitale. Portafoglio generico (vini, spumanti, biologici) senza focus esplicito su Italia. Vale verificare direttamente se hanno vini italiani nel catalogo.",
+      "analyzed_at": "2026-10-01T05:05:28.318Z"
+    }
   },
   "c17806737109618umo6": {
     "contactName": "Joseph Michael Gilmour",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda con 1 solo dipendente e fatturato modesto (£385k). Catalogo focalizzato su vini francesi (Alsace) e internazionali, nessuna traccia di vini italiani. Assenza totale da Google e profilo molto piccolo suggeriscono scarsa rilevanza commerciale.",
+      "analyzed_at": "2026-10-01T05:05:33.953Z"
+    }
   },
   "c1780673710961sofcj": {
     "contactName": "Freya Wright",
-    "contactTitle": "Store Assistant"
+    "contactTitle": "Store Assistant",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-negozio di vicinato (1 dipendente, fatturato 74k) con off-licence generico. Nessuna menzione di vini italiani, focus su prodotti convenience e spirits. Non pertinente per distribuzione vini specializzati.",
+      "analyzed_at": "2026-10-01T05:05:42.413Z"
+    }
   },
   "c1780673710961rnsex": {
     "contactName": "John Fozard",
-    "contactTitle": "Sales Manager"
+    "contactTitle": "Sales Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "si",
+      "tipo_business": "importatore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Importatore indipendente UK con storia consolidata (dal 1994) e riconoscimenti settoriali. Portfolio include vini italiani (Mario Giribaldi, Pure/Ca'Tesore, Casa Vinicola Botter). Però: 1 solo dipendente e fatturato modesto (312k) suggeriscono operazione molto piccola; assenza da Google e nessuna traccia online riducono visibilità. Contattare se interessati a piccoli importatori specializzati B2B.",
+      "analyzed_at": "2026-10-01T05:05:48.339Z"
+    }
   },
   "c1780673710961a7fzc": {
     "contactName": "Luigi Di Caprio",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "si",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-azienda (1 dipendente, fatturato ~70k€) focalizzata su e-commerce B2C di vini campani. Assenza totale di visibilità Google e dimensioni troppo ridotte per partnership B2B significativa.",
+      "analyzed_at": "2026-10-01T05:05:52.978Z"
+    }
   },
   "c1780673710961yh2o4": {
     "contactName": "Angelo Trivigno",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "misto",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Azienda con identità italiana forte (Bar Gigi, Cantine Dell'Angelo) e struttura unica con cantine storiche. Però: 1 dipendente e fatturato molto basso (59k£) suggeriscono micro-realtà; nessuna traccia online; focus principale su horeca/ristorazione locale piuttosto che distribuzione vini.",
+      "analyzed_at": "2026-10-01T05:05:59.051Z"
+    }
   },
   "c178067371096154id6": {
     "contactName": "Adrian Watts",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-azienda (1 dipendente, fatturato ~£30k) focalizzata su vini naturali/biologici e spirits locali UK. Nessuna evidenza di specializzazione in vini italiani; assenza online (Google) e sito in aggiornamento riducono affidabilità. Non pertinente per distribuzione italiana.",
+      "analyzed_at": "2026-10-01T05:06:03.861Z"
+    }
   },
   "c1780673710961r0lj5": {
     "contactName": "Simon Eddleston",
-    "contactTitle": "Founder and Managing Director"
+    "contactTitle": "Founder and Managing Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente) con fatturato modesto. Sito irraggiungibile e nessuna traccia online. Impossibile verificare se commercializza vini italiani o profilo aziendale.",
+      "analyzed_at": "2026-10-01T05:06:08.301Z"
+    }
   },
   "c1780673710961ef2s3": {
     "contactName": "Edward Stafford-Deitsch",
-    "contactTitle": "Managing Director"
+    "contactTitle": "Managing Director",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda UK con sito funzionante e portafoglio vini diversificato (inclusi italiani: Piedmont, Tuscany). Però: 1 solo dipendente, fatturato modesto (623k£), nessuna traccia Google. Potrebbe essere realtà piccola ma legittima o startup; verificare affidabilità prima di contattare.",
+      "analyzed_at": "2026-10-01T05:06:13.765Z"
+    }
   },
   "c17806737109611zfel": {
     "contactName": "Laszlo Hesley",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda specializzata esclusivamente in vini georgiani, non italiani. Micro-impresa (1 dipendente, fatturato ~74k£) con assenza totale di visibilità Google e nessuna traccia online verificabile oltre il sito dichiarato.",
+      "analyzed_at": "2026-10-01T05:06:19.674Z"
+    }
   },
   "c1780673710961belz5": {
     "contactName": "Patrick Kaczmarczyk",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~255k) specializzata in spirits polacchi e birre. Nessuna menzione di vini italiani; focus su bevande europee generiche. Sito non indicizzato su Google e contenuti scarsi suggeriscono operatività limitata.",
+      "analyzed_at": "2026-10-01T05:06:23.957Z"
+    }
   },
   "c1780673710961vvc62": {
     "contactName": "Rajan Johal",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "E-commerce UK specializzato in champagne, spirits e vini generici (nessun vino italiano). Azienda micro (1 dipendente, fatturato modesto) senza traccia Google. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-10-01T05:06:29.177Z"
+    }
   },
   "c1780673710961q3g82": {
     "contactName": "Charles Bolton",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda specializzata in cocktail premiscelati (non vini), con 1 solo dipendente e fatturato modesto. Nessuna traccia online, nessun risultato Google. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-10-01T05:06:33.471Z"
+    }
   },
   "c1780673710961mwc9j": {
     "contactName": "Derek Harle",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Sito con evidenti problemi tecnici (HTML non renderizzato, email e indirizzo sospetti). Nessuna traccia Google. Azienda micro (1 dipendente, fatturato ~107k). Portfolio generico con vini italiani tra molti paesi, ma affidabilità molto bassa.",
+      "analyzed_at": "2026-10-01T05:06:38.482Z"
+    }
   },
   "c1780673710961j4htm": {
     "contactName": "Dave Mccaw",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccolo retailer indipendente a Belfast (1 dipendente, fatturato ~32k€) con sito funzionante e buone recensioni. Specializzato in craft beer e vini, ma nessuna menzione esplicita di vini italiani. Contatto possibile solo per distribuzioni molto locali/micro.",
+      "analyzed_at": "2026-10-01T05:06:43.648Z"
+    }
   },
   "c17806737109617jqhl": {
     "contactName": "Mark Roberts",
-    "contactTitle": "Managing Director"
+    "contactTitle": "Managing Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "importatore",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~164k) specializzata in vini croati. Sito irraggiungibile e nessuna traccia online. Non pertinente per vini italiani.",
+      "analyzed_at": "2026-10-01T05:06:59.651Z"
+    }
   },
   "c17806737109611cyfb": {
     "contactName": "Stuart Dale",
-    "contactTitle": "Chief Wine Officer"
+    "contactTitle": "Chief Wine Officer",
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda con 1 solo dipendente, sito irraggiungibile, nessuna traccia Google, fatturato sconosciuto. Impossibile verificare credibilità o portafoglio vini italiani. Alto rischio di inaffidabilità.",
+      "analyzed_at": "2026-10-01T05:07:03.616Z"
+    }
   },
   "c1780673710961j2yr7": {
     "contactName": "Paul Russell Malkin",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Azienda piccola (1 dipendente, fatturato ~132k) specializzata in vini italiani di qualità via e-commerce. Sito funzionante con catalogo italiano robusto (Primitivo, Fiano, Amarone, Prosecco). Assenza da Google e dimensioni micro limitano affidabilità; non è canale B2B horeca.",
+      "analyzed_at": "2026-10-01T05:07:08.305Z"
+    }
   },
   "c1780673710961uuqtq": {
     "contactName": "Hilary Green",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~280k€) specializzata in consulenza per collezionisti privati di vino fine. Nessuna traccia online, portfolio non specificato. Non è un canale di distribuzione rilevante per produttori.",
+      "analyzed_at": "2026-10-01T05:07:12.866Z"
+    }
   },
   "c1780673710961f2323": {
     "contactName": "David F T Wright",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~76k£) con sito irraggiungibile e nessuna traccia online. Profilo troppo piccolo e poco verificabile per partnership commerciale.",
+      "analyzed_at": "2026-10-01T05:07:16.783Z"
+    }
   },
   "c1780673710961k4l2i": {
     "contactName": "Matt Day",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~131k£) con sito irraggiungibile e nessuna traccia online. Impossibile verificare se commercializza vini italiani. Rischio affidabilità elevato.",
+      "analyzed_at": "2026-10-01T05:07:21.102Z"
+    }
   },
   "c1780673710961vr45s": {
     "contactName": "Adam Parlour",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "forse",
+      "note": "Micro-azienda (1 dipendente) con fatturato modesto. Sito non raggiungibile e assenza totale di presenze online rendono difficile verificare se commercializza vini italiani. Contattare solo se si dispone di canali diretti affidabili.",
+      "analyzed_at": "2026-10-01T05:07:25.251Z"
+    }
   },
   "c17806737109619cqcr": {
     "contactName": "Amish Thakkar",
-    "contactTitle": "Managing Director"
+    "contactTitle": "Managing Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-azienda (1 dipendente, fatturato ~257k GBP) senza presenze online verificabili. Portafoglio generico (spirits, vini internazionali, birra) senza focus su vini italiani. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-10-01T05:07:30.254Z"
+    }
   },
   "c17806737109612dn6o": {
     "contactName": "Colin Raymond Hobbs",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccolo retailer online (1 dipendente, fatturato ~353k GBP) con catalogo ampio che include vini italiani (Piedmont, Tuscany, Sicily, etc.). Sito funzionante ma nessuna visibilità Google; dimensione micro limita potenziale partnership B2B.",
+      "analyzed_at": "2026-10-01T05:07:35.060Z"
+    }
   },
   "c1780673710961902nx": {
     "contactName": "Andrew Lundy",
-    "contactTitle": "Managing Director"
+    "contactTitle": "Managing Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda molto piccola (1 dipendente, fatturato ~99k£) senza presenza Google. Portafoglio vini esclusivamente estero (Cile, Francia): nessun vino italiano. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-10-01T05:07:39.617Z"
+    }
   },
   "c1780673710961mxpux": {
     "contactName": "Johannah Ashton Sykes",
-    "contactTitle": "Director/ Owner"
+    "contactTitle": "Director/ Owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "importatore",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato £3.230) specializzata esclusivamente in vini francesi (Languedoc, Roussillon, Loire). Nessuna traccia online, sito template generico. Non pertinente per vini italiani.",
+      "analyzed_at": "2026-10-01T05:07:44.216Z"
+    }
   },
   "c1780673710961r03oa": {
     "contactName": "Duncan John Fraser",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Retailer UK con online store e wholesale, ma nessuna menzione esplicita di vini italiani nel sito. Azienda piccola (1 dipendente, fatturato modesto) con presenza fisica a Preston; potenziale interessante se importa vini italiani, ma richiede verifica diretta.",
+      "analyzed_at": "2026-10-01T05:07:48.834Z"
+    }
   },
   "c1780673710962cjqll": {
     "contactName": "Simos Symeonides",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-azienda (1 dipendente, fatturato ~106k GBP) senza sito web, assenza totale di presenze online. Impossibile verificare portafoglio prodotti o specializzazione vini italiani.",
+      "analyzed_at": "2026-10-01T05:07:53.033Z"
+    }
   },
   "c1780673710962b8p4d": {
     "contactName": "Preet Sahota",
-    "contactTitle": "Founder And Managing Director"
+    "contactTitle": "Founder And Managing Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~42k£) senza presenze online verificabili. Nessuna menzione esplicita di vini italiani nel sito. Profilo troppo piccolo e poco trasparente per partnership B2B.",
+      "analyzed_at": "2026-10-01T05:08:03.089Z"
+    }
   },
   "c17806737109624ezq3": {
     "contactName": "Ernesto Remo Radaelli",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "importatore",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~233k£) specializzata in vini naturali francesi (Loire, Jura). Nessuna traccia online, nessun risultato Google. Non commercializza vini italiani.",
+      "analyzed_at": "2026-10-01T05:08:07.656Z"
+    }
   },
   "c17806737109620ns1t": {
     "contactName": "Karen Dickins",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda storica (dal 1949) con sito funzionante ma minima visibilità online. Fatturato modesto (225k) e 1 solo dipendente suggeriscono piccola realtà locale. Portfolio 'old and new world' non specifica vini italiani ma non li esclude.",
+      "analyzed_at": "2026-10-01T05:08:17.376Z"
+    }
   },
   "c1780673710962l1s6c": {
     "contactName": "Valerio Rosellini",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda UK registrata (AWRS compliant) con sito funzionante ma assenza totale di visibilità online (zero risultati Google). Fatturato modesto (276k£) e 1 solo dipendente suggeriscono operazione molto piccola. Nessuna evidenza esplicita di vini italiani nel portfolio.",
+      "analyzed_at": "2026-10-01T05:08:22.022Z"
+    }
   },
   "c1780673710962drevz": {
     "contactName": "Sam Earl",
-    "contactTitle": "Chief Executive Officer"
+    "contactTitle": "Chief Executive Officer",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda online UK con 1 dipendente e fatturato modesto (763k£). Nessuna traccia Google, sito generico su vini europei (Bordeaux, Borgogna, Champagne prevalenti). Non è un partner B2B rilevante per distribuzione italiana.",
+      "analyzed_at": "2026-10-01T05:08:27.239Z"
+    }
   },
   "c1780673710962htufu": {
     "contactName": "Tom Innes",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore|retailer",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda storica (dal 1987) con sito funzionante e clientela qualificata (banche, università, ristoranti). Specializzata in Borgogna e vini fini, ma nessuna menzione esplicita di vini italiani. Dimensione micro (1 dipendente, fatturato ~227k) limita potenziale partnership.",
+      "analyzed_at": "2026-10-01T05:08:32.824Z"
+    }
   },
   "c17806737109622kocq": {
     "contactName": "Piers Graham",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~72k€) con sito irraggiungibile e zero traccia online. Nessuna evidenza di specializzazione in vini italiani. Affidabilità molto bassa.",
+      "analyzed_at": "2026-10-01T05:08:37.348Z"
+    }
   },
   "c1780673710962krxqs": {
     "contactName": "Julia Jenkins",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda molto piccola (1 dipendente, fatturato ~511k GBP) senza visibilità Google. Sito generico con catalogo internazionale (Argentina, Australia) ma nessuna menzione esplicita di vini italiani. Non idonea per partnership B2B.",
+      "analyzed_at": "2026-10-01T05:08:41.458Z"
+    }
   },
   "c1780673710962shhjq": {
     "contactName": "Freddie Bisinotto",
-    "contactTitle": "Consultant / Food & Beverage Procurement"
+    "contactTitle": "Consultant / Food & Beverage Procurement",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "importatore",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~89k€) focalizzata su rosé francese (St Tropez). Nessuna menzione di vini italiani. Sito scadente con contenuti duplicati e assenza totale di visibilità online (zero risultati Google).",
+      "analyzed_at": "2026-10-01T05:08:46.029Z"
+    }
   },
   "c1780673710962hxvyf": {
     "contactName": "Dominic Francis Watson",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "misto",
+      "mercato_target": "online",
+      "raccomandato": "forse",
+      "note": "Piccola realtà online (1 dipendente, ~269k fatturato) con selezione curata di vini italiani (Cotarella, Fuligni). Assenza da Google e dimensioni ridotte suggeriscono nicchia specializzata; verificare se interessati a fornitori B2B.",
+      "analyzed_at": "2026-10-01T05:08:50.246Z"
+    }
   },
   "c1780673710962uj3rm": {
     "contactName": "Sandra Jane Flatt",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Azienda piccola (1 dipendente, fatturato ~50k£) con sito funzionante e portafoglio wine internazionale che include Italia. Assenza da Google e dimensioni ridotte suggeriscono operatività locale/online limitata. Vale verificare se interessati a fornitori italiani.",
+      "analyzed_at": "2026-10-01T05:08:55.328Z"
+    }
   },
   "c1780673710962wnf9m": {
     "contactName": "Gabriella Cocchiarella",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "horeca",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~61k) classificata erroneamente come importer/retailer. È un ristorante italiano tradizionale (Locanda Gabriella) con bakery, non distributore di vino. Non è un contatto B2B rilevante per fornitori di vini italiani.",
+      "analyzed_at": "2026-10-01T05:08:59.805Z"
+    }
   },
   "c178067371096218x0d": {
     "contactName": "Marc Patch",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore UK attivo dal 2013 con portafoglio multi-regionale (50+ zone vinicole). Marchi visibili sono spagnoli (Faustino, Marqués del Atrio). Nessuna traccia Google; 1 dipendente con fatturato ~£1.68M suggerisce operazione snella/virtuale. Verificare se effettivamente distribuisce vini italiani.",
+      "analyzed_at": "2026-10-01T05:09:05.250Z"
+    }
   },
   "c1780673710962g1umb": {
     "contactName": "Nicholas Corfe",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda specializzata esclusivamente in vini brasiliani, non italiani. Dimensione micro (1 dipendente, fatturato ~110k€) con assenza totale di visibilità online (nessun risultato Google). Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-10-01T05:09:10.211Z"
+    }
   },
   "c1780673710962axl07": {
     "contactName": "Katherine Emma Dart",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Piccola azienda (1 dipendente, fatturato ~101k) specializzata in wine subscription gestita da Master of Wine. Sito funzionante ma nessuna traccia Google; non specifica provenienza vini (potenzialmente italiani in mix europeo). Vale la pena contattare per verificare interesse in vini italiani premium.",
+      "analyzed_at": "2026-10-01T05:09:14.974Z"
+    }
   },
   "c1780673710962ahtoi": {
     "contactName": "David Kelly",
-    "contactTitle": "Company Owner"
+    "contactTitle": "Company Owner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "E-commerce UK con portafoglio vini europei (Chianti, Prosecco, Champagne). Fatturato modesto (145k£) e 1 dipendente suggeriscono piccola operazione. Sito funzionante dal 2003 ma nessuna traccia Google. Contattare solo se target è retail online UK.",
+      "analyzed_at": "2026-10-01T05:09:20.308Z"
+    }
   },
   "c1780673710962os5tb": {
     "contactName": "Pawel Slawomir Kedziak",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "distributore",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~282k€) specializzata in birre e spirits polacchi/cechi. Nessuna traccia di vini italiani nel catalogo; focus su prodotti dell'Est Europa. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-10-01T05:09:29.187Z"
+    }
   },
   "c1780673710962ao28k": {
     "contactName": "Kevin Dilton-hill",
-    "contactTitle": "Founder And Director"
+    "contactTitle": "Founder And Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda con 1 dipendente e fatturato minimo (80k£). Sito non raggiungibile/dismesso, fusione con The Little Fine Wine Company. Nessuna traccia Google. Troppo piccola e instabile per partnership B2B.",
+      "analyzed_at": "2026-10-01T05:09:33.710Z"
+    }
   },
   "c1780673710962j6zat": {
     "contactName": "Belinda Harrison",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccolo retailer indipendente (1 dipendente, fatturato ~250k) con sito funzionante. Importa direttamente vini europei ma non specifica italiani. Mercato locale (Ealing, London) poco rilevante per B2B vini italiani.",
+      "analyzed_at": "2026-10-01T05:09:41.737Z"
+    }
   },
   "c178067371096211w5r": {
     "contactName": "Philippa Haywood",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo negozio indipendente (1 dipendente, fatturato ~145k€) con sito basic su WordPress. Nessuna menzione esplicita di vini italiani nel portafoglio; focus su retail locale (Bournemouth). Non idoneo per distribuzione B2B.",
+      "analyzed_at": "2026-10-01T05:09:46.020Z"
+    }
   },
   "c17806737109629dge2": {
     "contactName": "George Ekmetsoglou",
-    "contactTitle": "Sales Manager"
+    "contactTitle": "Sales Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente) con fatturato modesto. Sito irraggiungibile e nessuna traccia online. Portafoglio generico (wine/beer/spirits) senza evidenza di specializzazione italiana. Rischio affidabilità elevato.",
+      "analyzed_at": "2026-10-01T05:09:50.248Z"
+    }
   },
   "c1780673710962lokay": {
     "contactName": "Ian Hogarth",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Sito con template generico non completato (placeholder text visibili). Azienda molto piccola (1 dipendente, fatturato ~306k). Nessuna traccia online né menzione esplicita di vini italiani nel catalogo.",
+      "analyzed_at": "2026-10-01T05:09:54.708Z"
+    }
   },
   "c178067371096266d1y": {
     "contactName": "Martin David Flowers",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato £3k) con siti non raggiungibili e zero traccia online. Impossibile verificare credibilità, portafoglio prodotti o specializzazione vini italiani.",
+      "analyzed_at": "2026-10-01T05:09:58.893Z"
+    }
   },
   "c1780673710962dmzy3": {
     "contactName": "Sarah-Jane Freeman",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Micro-azienda (1 dipendente, fatturato ~75k£) senza visibilità Google. Sito generico con vini 'da tutto il mondo' ma nessuna menzione esplicita di vini italiani. Profilo email 'filler@godaddy.com' suggerisce setup poco professionale.",
+      "analyzed_at": "2026-10-01T05:10:03.207Z"
+    }
   },
   "c1780673710962w6y3d": {
     "contactName": "Jonathan Braham-Everett",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Sito praticamente vuoto (solo cookie banner), nessuna traccia online, 1 dipendente con fatturato dichiarato elevato (incongruenza sospetta). Impossibile verificare portafoglio prodotti o specializzazione italiana.",
+      "analyzed_at": "2026-10-01T05:10:09.943Z"
+    }
   },
   "c1780673710962rvth3": {
     "contactName": "James Read",
-    "contactTitle": "Managing Director"
+    "contactTitle": "Managing Director",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore specializzato in Bordeaux e Burgundy con esperienza consolidata (fondatore con 28 anni nel settore). Assenza da Google e struttura micro (1 dipendente) suggeriscono operatività limitata; vini italiani non esplicitamente citati ma portafoglio europeo ampio potrebbe includerli.",
+      "analyzed_at": "2026-10-01T05:10:15.456Z"
+    }
   },
   "c1780673710962o1etp": {
     "contactName": "Katie Mene",
-    "contactTitle": "Founder"
+    "contactTitle": "Founder",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~94k) con sito irraggiungibile e nessuna traccia online. Profilo di startup fragile o inattiva. Non verificabile.",
+      "analyzed_at": "2026-10-01T05:10:19.948Z"
+    }
   },
   "c1780673710962n1pwn": {
     "contactName": "Louise Rayfield",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo negozio indipendente di village (1 dipendente, fatturato ~98k€) con focus su deli e drinks locali. Assortimento generico di vini senza specializzazione italiana esplicita; non è un buyer strategico per esportatori.",
+      "analyzed_at": "2026-10-01T05:10:25.082Z"
+    }
   },
   "c1780673710962i2klc": {
     "contactName": "Julian White",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "importatore",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda specializzata esclusivamente in vini francesi (Champagne, Bordeaux, Burgundy). Fatturato molto basso (50k£), 1 solo dipendente, nessuna traccia online. Non pertinente per vini italiani.",
+      "analyzed_at": "2026-10-01T05:10:30.963Z"
+    }
   },
   "c1780673710962lzzj2": {
     "contactName": "Giovanni Cocchiarella",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "misto",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Azienda micro (1 dipendente, fatturato ~£50k) specializzata in vini italiani autentici con e-commerce e negozio fisico a Olney. Assenza da Google e fatturato modesto suggeriscono operazione piccola/locale; sito funzionante ma nessuna visibilità online verificabile.",
+      "analyzed_at": "2026-10-01T05:10:47.642Z"
+    }
   },
   "c1780673710962ntjiv": {
     "contactName": "Julia Phillips",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "si",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~58k€) specializzata in e-commerce B2C di Prosecco e vini spumanti italiani. Nessuna visibilità Google, assenza di profilo commerciale verificabile. Non idonea per partnership B2B.",
+      "analyzed_at": "2026-10-01T05:10:52.326Z"
+    }
   },
   "c1780673710962jglhe": {
     "contactName": "Rashid Mohamad Ibrahim",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~195k) con sito generico e template placeholder. Nessuna traccia online, catalogo vini non specificato (solo 'White/Rose/Red Reserve' generici). Non risulta focus su vini italiani.",
+      "analyzed_at": "2026-10-01T05:10:57.813Z"
+    }
   },
   "c1780673710962jjpgv": {
     "contactName": "Jean-Charles Stiquel",
-    "contactTitle": "Co Founder"
+    "contactTitle": "Co Founder",
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "no",
+      "tipo_business": "sconosciuto",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Sito compromesso/hackerato con contenuti casinò e slot machine. Nessuna traccia Google, fatturato minimo (1 dipendente). Non affidabile per partnership vini.",
+      "analyzed_at": "2026-10-01T05:11:04.576Z"
+    }
   },
   "c1780673710962oatq2": {
     "contactName": "Giancarlo Moretti",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "si",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~75k£) specializzata in e-commerce di vini italiani. Assenza totale da Google e nessuna traccia online rendono difficile verificare affidabilità e solidità. Non idonea per partnership B2B.",
+      "analyzed_at": "2026-10-01T05:11:11.417Z"
+    }
   },
   "c1780673710962pj5yn": {
     "contactName": "Wayne Mark Griffin",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~119k) focalizzata su sigari cubani con wine/beer come prodotti secondari. Nessuna traccia online, sito in costruzione, nessuna evidenza di interesse specifico per vini italiani.",
+      "analyzed_at": "2026-10-01T05:11:17.308Z"
+    }
   },
   "c1780673710962cyvtk": {
     "contactName": "Stefano Bagnoli",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "si",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda UK con focus esplicito su vini italiani regionali. Sito generico con email placeholder (filler@godaddy.com) suggerisce setup rudimentale. 1 dipendente e fatturato modesto (£705k) indicano micro-impresa; assenza su Google è preoccupante per affidabilità.",
+      "analyzed_at": "2026-10-01T05:11:21.605Z"
+    }
   },
   "c1780673710962w5chg": {
     "contactName": "Geoff Utting",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Micro-realtà locale (1 dipendente, fatturato ~89k€) con sito datato (2016). Coffee house/restaurant con wine shop annesso. Nessuna evidenza online di vini italiani nel portafoglio. Non idoneo per partnership B2B strutturata.",
+      "analyzed_at": "2026-10-01T05:11:26.159Z"
+    }
   },
   "c1780673710962hctii": {
     "contactName": "Simeon Goodman",
-    "contactTitle": "Managing Director"
+    "contactTitle": "Managing Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~170k€) con sito irraggiungibile e nessuna traccia online. Profilo di rischio elevato: impossibile verificare credibilità, portafoglio prodotti o specializzazione italiana.",
+      "analyzed_at": "2026-10-01T05:11:30.248Z"
+    }
   },
   "c1780673710962cjmwj": {
     "contactName": "Lorenzo Naldini",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Portafoglio italiano significativo (521 vini su ~1.300 totali, con focus Toscana e Piemonte). Micro-azienda (1 dipendente, fatturato ~1,7M) con sito funzionante ma assenza totale da Google. Modello B2C puro, non adatto a distribuzione horeca.",
+      "analyzed_at": "2026-10-01T05:11:35.567Z"
+    }
   },
   "c1780673710962xwxwu": {
     "contactName": "Sam Sandbach",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda piccola (1 dipendente) ma con fondatore esperto (WSET Diploma, background Bordeaux/Jerez/Douro). Specializzata in vini da piccoli produttori europei con focus sostenibilità. Sito poco ottimizzato (assente da Google), fatturato modesto. Contattare se interessati a partnership con importatori boutique UK.",
+      "analyzed_at": "2026-10-01T05:11:40.202Z"
+    }
   },
   "c1780673710962qazcc": {
     "contactName": "Sylvain",
-    "contactTitle": "Founder"
+    "contactTitle": "Founder",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Micro-azienda (1 dipendente, fatturato ~430k) con sito e-commerce attivo che dichiara vini italiani e spagnoli. Nessuna traccia online (Google), catalogo visibile ma prevalentemente spagnolo (Rioja). Contattare solo se target è UK retail online con volumi bassi.",
+      "analyzed_at": "2026-10-01T05:11:45.355Z"
+    }
   },
   "c17806737109623n1et": {
     "contactName": "Mike Garland",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda con 1 dipendente e fatturato minimo (£41k). Sito irraggiungibile, nessuna traccia online. Profilo ad altissimo rischio: potrebbe essere inattiva, chiusa o operare in modo informale.",
+      "analyzed_at": "2026-10-01T05:11:49.744Z"
+    }
   },
   "c1780673710962bazw8": {
     "contactName": "Luca Miserere",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "si",
+      "tipo_business": "importatore",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Importatore specializzato in vini piemontesi biologici da piccoli produttori. Micro-azienda (1 dipendente, fatturato ~123k€) con presenza a farmers market e wine festival. Sito poco professionale e assenza online (nessun risultato Google) limitano affidabilità, ma focus su vini italiani di qualità è chiaro.",
+      "analyzed_at": "2026-10-01T05:11:54.515Z"
+    }
   },
   "c1780673710962nijjj": {
     "contactName": "Mark Robertson",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda molto piccola (1 dipendente, fatturato ~227k£) con sito obsoleto e nessuna traccia online. Nessuna menzione esplicita di vini italiani. Profilo non adatto per partnership B2B strutturata.",
+      "analyzed_at": "2026-10-01T05:11:58.541Z"
+    }
   },
   "c1780673710962uq6k6": {
     "contactName": "Alastair Huw Davies",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Azienda micro (1 dipendente, fatturato ~327k GBP) fondata 2018, focalizzata su vini di piccoli produttori con approccio qualitativo. Nessuna traccia online (Google), portafoglio non specifica Italia ma 'contemporary and classical wines' suggerisce diversificazione europea. Target HORECA (bar, hotel, ristoranti) è positivo ma dimensione molto piccola limita capacità distributiva.",
+      "analyzed_at": "2026-10-01T05:12:04.330Z"
+    }
   },
   "c1780673710962nanpr": {
     "contactName": "Mark Presland",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Azienda consolidata (20 anni) con sito funzionante e servizio home delivery. Portafoglio 'World Wines' include probabilmente italiani (Prosecco citato). Micro-impresa (1 dipendente, fatturato modesto) focalizzata su retail privato/online, non su horeca.",
+      "analyzed_at": "2026-10-01T05:12:09.015Z"
+    }
   },
   "c1780673710962we3jc": {
     "contactName": "David McCarthy",
-    "contactTitle": "Independent Business Owner"
+    "contactTitle": "Independent Business Owner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore UK specializzato in piccoli produttori, con vini italiani (Lombardia, Piemonte, Toscana). Azienda micro (1 dipendente, fatturato ~291k£) ma registrata AWRS e con sito funzionante. Nessuna traccia Google suggerisce bassa visibilità; verificare se realmente attiva e interessata a nuovi fornitori.",
+      "analyzed_at": "2026-10-01T05:12:13.817Z"
+    }
   },
   "c1780673710962lw8fc": {
     "contactName": "Laszlo Hesley",
-    "contactTitle": "Owner/ Managing Director"
+    "contactTitle": "Owner/ Managing Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "forse",
+      "note": "Azienda micro (1 dipendente, fatturato ~341k£) con sito irraggiungibile e zero traccia online. Potenziale importatore UK di vini, ma mancano dati per verificare focus su italiani. Contatto diretto consigliato per chiarire portafoglio e affidabilità.",
+      "analyzed_at": "2026-10-01T05:12:19.021Z"
+    }
   },
   "c17806737109622p7az": {
     "contactName": "Michael Morgan",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda micro (1 dipendente, fatturato ~348k£) con siti dichiarati irraggiungibili e nessuna traccia online. Potenziale importatore/distributore UK ma mancano verifiche essenziali su affidabilità e portafoglio vini italiani.",
+      "analyzed_at": "2026-10-01T05:12:23.256Z"
+    }
   },
   "c1780673710962xquie": {
     "contactName": "Deborah Trower",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "importatore",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~96k£) con sito irraggiungibile e zero traccia online. Impossibile verificare portafoglio prodotti e specializzazione vini italiani. Affidabilità molto bassa.",
+      "analyzed_at": "2026-10-01T05:12:27.887Z"
+    }
   },
   "c1780673710962pigat": {
     "contactName": "Mike Hall",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda micro (1 dipendente, fatturato ~720k) con sito irraggiungibile e nessuna traccia online. Portafoglio generico (vino, spirits, spumanti) suggerisce possibile interesse per vini italiani, ma mancano conferme. Verificare contatti diretti prima di investire tempo.",
+      "analyzed_at": "2026-10-01T05:12:32.330Z"
+    }
   },
   "c1780673710962hxj8e": {
     "contactName": "George Nicholson",
-    "contactTitle": "Managing Director"
+    "contactTitle": "Managing Director",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda UK specializzata in vini con focus iniziale su Italia, ora portafoglio internazionale. Dimensione micro (1 dipendente, fatturato ~54k) ma con esperienza dichiarata e accreditamenti. Sito poco ottimizzato (nessun risultato Google) e fatturato molto contenuto limitano affidabilità.",
+      "analyzed_at": "2026-10-01T05:12:37.028Z"
+    }
   },
   "c1780673710962bwgj4": {
     "contactName": "Halle Stephens",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "importatore",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Importatore specializzato in vini canadesi (Okanagan Valley), non italiani. Azienda molto piccola (1 dipendente, fatturato ~50k£), nessuna presenza online verificabile. Non pertinente per portafoglio vini italiani.",
+      "analyzed_at": "2026-10-01T05:12:41.173Z"
+    }
   },
   "c1780673710962679y5": {
     "contactName": "David Morley",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccolo importatore online (1 dipendente, fatturato ~147k) con sito funzionante e storia consolidata (fondato da Mark Pygott MW, gestito da David Morley dal 2012). Focus su vini francesi (Languedoc) ma portafoglio diversificato per paese. Assenza da Google e dimensione micro limitano affidabilità; verificare se includono vini italiani nella selezione.",
+      "analyzed_at": "2026-10-01T05:12:52.584Z"
+    }
   },
   "c1780673710962ttozu": {
     "contactName": "Mark Robert Higgs",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~113k€) con sito irraggiungibile e nessuna traccia online. Profilo di rischio elevato per partnership B2B.",
+      "analyzed_at": "2026-10-01T05:12:57.185Z"
+    }
   },
   "c1780673710962x6pm8": {
     "contactName": "Tony O'Brien",
-    "contactTitle": "Account Manager"
+    "contactTitle": "Account Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda UK con 1 dipendente e fatturato modesto (£434k). Portfolio focalizzato su spirits (rum, tequila), liquori, sciroppi e cibo artigianale - NO vini. Nessuna traccia online, sito generico con carrello vuoto. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-10-01T05:13:01.905Z"
+    }
   },
   "c17806737109622wtxo": {
     "contactName": "Tommaso Corvi Mora",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-realtà (1 dipendente, fatturato ~136k€) con sito obsoleto e nessuna traccia online. Specializzazione in natural wines non garantisce focus su vini italiani. Troppo piccola e poco visibile per partnership B2B strutturata.",
+      "analyzed_at": "2026-10-01T05:13:08.000Z"
+    }
   },
   "c178067371096290u5o": {
     "contactName": "David Alexander Lazaro",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "importatore",
+      "mercato_target": "online",
+      "raccomandato": "forse",
+      "note": "Importatore online specializzato in vini fini con selezione italiana (Puglia, Veneto, Toscana, Piemonte). Micro-azienda (1 dipendente, fatturato ~287k) con sito funzionante ma assenza totale da Google. Contattare solo se target è B2C online puro.",
+      "analyzed_at": "2026-10-01T05:13:12.845Z"
+    }
   },
   "c17806737109621brlk": {
     "contactName": "Jonathan Aurelien Robert Alphandery",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "horeca",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Piccolo ristorante con cantina a Londra (1 dipendente, fatturato ~462k). Sito funzionante ma minime info su portafoglio vini. Nessuna traccia online. Potenziale cliente horeca se interessato a vini premium, ma dimensione molto ridotta.",
+      "analyzed_at": "2026-10-01T05:13:17.513Z"
+    }
   },
   "c178067371096270zfm": {
     "contactName": "Fred Clelland",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Micro-azienda (1 dipendente, fatturato ~77k£) con sito irraggiungibile e zero traccia online. Nessuna conferma di specializzazione in vini italiani. Rischio affidabilità molto alto.",
+      "analyzed_at": "2026-10-01T05:13:21.459Z"
+    }
   },
   "c178067371096245wae": {
     "contactName": "Rui Pereira",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda specializzata esclusivamente in birre artigianali (craft beers), non vini. Nessuna menzione di vini italiani o di qualsiasi tipo di vino nel catalogo. Non pertinente per distribuzione vini.",
+      "analyzed_at": "2026-10-01T05:13:26.079Z"
+    }
   },
   "c178067371096238luy": {
     "contactName": "Matthew Iles",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccolo retailer indipendente UK (1 dipendente, fatturato modesto) con focus su piccoli produttori mondiali. Nessuna menzione esplicita di vini italiani nel sito, ma portafoglio 'Old and New Worlds' suggerisce possibile interesse. Contatto diretto disponibile.",
+      "analyzed_at": "2026-10-01T05:13:30.738Z"
+    }
   },
   "c1780673710962vzms2": {
     "contactName": "William Griggs",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-azienda (1 dipendente, fatturato ~240k£) con sito e-commerce funzionante. Catalogo include Italia tra le regioni, ma nessuna visibilità online (zero risultati Google). Dimensione troppo piccola per partnership B2B significativa.",
+      "analyzed_at": "2026-10-01T05:13:35.873Z"
+    }
   },
   "c1780673710962vevmx": {
     "contactName": "John Mcilvogue",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda specializzata in whisky da collezione/investimento, non vini. Nessuna traccia online, sito non indicizza su Google, 1 dipendente. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-10-01T05:13:40.550Z"
+    }
   },
   "c1780673710962vaegi": {
     "contactName": "Robin Baum",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "misto",
+      "mercato_target": "online",
+      "raccomandato": "forse",
+      "note": "Produttore/importatore di vini italiani con sito poco professionale (template generico con placeholder). Unico dipendente, fatturato modesto. Specialità: affinamento in anfore di ceramica. Assenza di visibilità Google e design web scadente riducono credibilità, ma portafoglio vinicolo italiano autentico (Chianti, Brunello, Etna).",
+      "analyzed_at": "2026-10-01T05:13:48.300Z"
+    }
   },
   "c1780673710962r3onx": {
     "contactName": "Noel Reid",
-    "contactTitle": "Founder"
+    "contactTitle": "Founder",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda molto piccola (1 dipendente, fatturato ~388k£) con sito online attivo ma nessuna traccia Google. Portafoglio include vini italiani (Montelvini Prosecco) ma focus prevalentemente retail B2C. Affidabilità limitata per partnership B2B.",
+      "analyzed_at": "2026-10-01T05:13:53.319Z"
+    }
   },
   "c1780673710962qx0yv": {
     "contactName": "Derek Colin Mayne",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Broker specializzato in Borgogna con sede prestigiosa a Londra. Portafoglio dichiarato 'wide-ranging' ma focus primario su vini francesi; nessuna menzione esplicita di vini italiani. Azienda micro (1 dipendente) con fatturato modesto, assenza di visibilità online.",
+      "analyzed_at": "2026-10-01T05:13:57.684Z"
+    }
   },
   "c1780673710962yerj7": {
     "contactName": "Roley Short",
-    "contactTitle": "Managing Director"
+    "contactTitle": "Managing Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~174k£) gestita da singolo imprenditore. Nessuna traccia online, sito minimalista senza portfolio prodotti. Impossibile verificare se tratta vini italiani specificamente.",
+      "analyzed_at": "2026-10-01T05:14:01.922Z"
+    }
   },
   "c1780673710962tq6di": {
     "contactName": "Richard Woodman",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Specializzata esclusivamente in rosé (britannici, francesi, worldwide) - nessun vino italiano nel portafoglio. Micro-azienda (1 dipendente, fatturato ~68k£) con sito funzionante ma assenza totale da Google e nessuna traccia online verificabile.",
+      "analyzed_at": "2026-10-01T05:14:06.967Z"
+    }
   },
   "c1780673710962zlliy": {
     "contactName": "Mark Bradbury",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~67k€) con sito irraggiungibile e nessuna traccia online. Impossibile verificare se commercializza vini italiani. Rischio affidabilità molto alto.",
+      "analyzed_at": "2026-10-01T05:14:11.181Z"
+    }
   },
   "c1780673710962qxwmq": {
     "contactName": "Thomas Wright",
-    "contactTitle": "Operations Manager"
+    "contactTitle": "Operations Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda UK specializzata in pesce/carne fresca con sezione vino secondaria. Nessuna evidenza di focus su vini italiani; sito mostra solo pesce/carne come core business. Micro-azienda (1 dipendente, fatturato ~358k) non pertinente per distribuzione vini.",
+      "analyzed_at": "2026-10-01T05:14:16.064Z"
+    }
   },
   "c1780673710962nocpn": {
     "contactName": "Séverine Sloboda",
-    "contactTitle": "Director/ Sommelier"
+    "contactTitle": "Director/ Sommelier",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~155k£) specializzata in vini naturali francesi. Nessuna traccia Google, sito poco professionale. Non risulta focus su vini italiani (esempio citato è Beaujolais francese).",
+      "analyzed_at": "2026-10-01T05:14:20.415Z"
+    }
   },
   "c17806737109626ha99": {
     "contactName": "Charlotte Elizabeth Shek",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-azienda (1 dipendente, fatturato ~£203k) senza visibilità Google e sito minimalista. Nessuna evidenza di vini italiani nel portafoglio. Non idonea per partnership B2B.",
+      "analyzed_at": "2026-10-01T05:14:24.847Z"
+    }
   },
   "c17806737109625slp4": {
     "contactName": "Giuseppe Briamonte",
-    "contactTitle": "Founder & Ceo"
+    "contactTitle": "Founder & Ceo",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~137k€) con sito irraggiungibile e nessuna traccia online. Profilo troppo piccolo e instabile per partnership commerciale affidabile.",
+      "analyzed_at": "2026-10-01T05:14:29.004Z"
+    }
   },
   "c1780673710962zu280": {
     "contactName": "Andrew",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda molto piccola (1 dipendente, fatturato ~114k£). Portafoglio prevalentemente spagnolo/tedesco/slavo con menzione generica 'Italy' senza dettagli. Nessuna traccia Google, sito poco professionale. Non prioritario per vini italiani.",
+      "analyzed_at": "2026-10-01T05:14:35.366Z"
+    }
   },
   "c17806737109624aznx": {
     "contactName": "Armagan Zaloglu",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Specializzata in vini greci, non italiani. Azienda micro (1 dipendente, fatturato ~365k) con sito funzionante ma nessuna traccia online; assenza totale su Google è segnale negativo di visibilità/affidabilità.",
+      "analyzed_at": "2026-10-01T05:14:39.633Z"
+    }
   },
   "c1780673710962kad4o": {
     "contactName": "Elise Brugues",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~507k GBP) senza sito web dichiarato né traccia online. Impossibile verificare portafoglio vini italiani o affidabilità. Rischio elevato per partnership B2B.",
+      "analyzed_at": "2026-10-01T05:14:43.713Z"
+    }
   },
   "c1780673710962yatk8": {
     "contactName": "David Connor",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Importatore specializzato ESCLUSIVAMENTE in vini australiani (Western Australia). Nessun collegamento con vini italiani. Micro-azienda (1 dipendente, fatturato ~342k GBP) con sito datato e assenza di visibilità online.",
+      "analyzed_at": "2026-10-01T05:14:47.780Z"
+    }
   },
   "c1780673710962idc9h": {
     "contactName": "Emily-Jane Baiao",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~112k€) con sito irraggiungibile e zero traccia online. Nessuna evidenza di specializzazione in vini italiani. Affidabilità molto bassa.",
+      "analyzed_at": "2026-10-01T05:14:51.891Z"
+    }
   },
   "c1780673710962pzge0": {
     "contactName": "Neils Dubro",
