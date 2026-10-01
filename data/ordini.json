@@ -1521,11 +1521,18 @@
           "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
           "sentAt": 1790740922884,
           "messageId": "<202609300402.38263145203@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegnato",
+          "to": "paulagrezeszak@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1790827315443,
+          "messageId": "<202610010401.63446300803@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1787868152832,
-      "updatedAt": 1790827310220,
+      "updatedAt": 1790827315443,
       "staleAlertDays": 7,
       "staleAlertSince": 1789478391419,
       "track17Registered": true,
