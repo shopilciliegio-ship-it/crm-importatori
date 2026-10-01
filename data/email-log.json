@@ -143,6 +143,15 @@
       "subject": "Your order has been delivered! 🍷 Enjoy!",
       "sentAt": 1790805723704,
       "messageId": "<202609302202.40194732853@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mtc2jbpdl9ln",
+      "customerName": "PAULA GREZESZAK",
+      "type": "consegnato",
+      "to": "paulagrezeszak@gmail.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1790827315443,
+      "messageId": "<202610010401.63446300803@smtp-relay.mailin.fr>"
     }
   ]
 }
