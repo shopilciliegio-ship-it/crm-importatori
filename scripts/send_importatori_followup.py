@@ -54,6 +54,15 @@ WEBSITE      = 'www.sienawine.it'
 PHONE        = '+39 331 1347899'
 
 DAY_MS            = 24 * 3600 * 1000
+
+# Protezione contro gli invii in loop (incidente 26/9-1/10/2026: il passo andava in timeout prima di
+# salvare, e al giro dopo rimandava le stesse email, ~8.000 invii). Tre regole:
+#  1) tetto di invii per giro, 2) budget di tempo, così il salvataggio finale parte sempre prima
+#  del timeout del workflow, 3) salvataggio a blocchi: lo stato è su GitHub ogni SAVE_EVERY invii,
+#  e se un salvataggio fallisce si smette subito di inviare.
+MAX_SENDS_PER_RUN = int(os.environ.get('FOLLOWUP_MAX_PER_RUN', '100'))
+TIME_BUDGET_S     = int(os.environ.get('FOLLOWUP_TIME_BUDGET_S', '360'))
+SAVE_EVERY        = int(os.environ.get('FOLLOWUP_SAVE_EVERY', '20'))
 ACTIVE_STATUSES   = {'sent', 'followup'}
 TERMINAL_STATUSES = {'replied', 'client', 'cold', 'blacklisted'}
 
@@ -701,6 +710,31 @@ def send_daily_digest(contacts: list, log_new: list, now_ms: int,
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 
+def persist_state(contacts: list, base_snap: dict, overrides_loaded_count: int,
+                  log_pending: list, sent_total: int, now_str: str) -> bool:
+    """Salva overrides + log email su GitHub. Ritorna True solo se tutto è stato salvato
+    (se False, il chiamante deve smettere di inviare). Svuota log_pending dopo il salvataggio."""
+    try:
+        new_overrides = build_overrides_diff(contacts, base_snap)
+        new_count = len(new_overrides)
+        if overrides_loaded_count >= 10 and new_count < overrides_loaded_count * 0.5:
+            print(f'✗ Crollo sospetto override: {overrides_loaded_count} → {new_count}. Salvataggio bloccato.')
+            return False
+        gh_put(OVERRIDES_PATH, new_overrides, get_sha(OVERRIDES_PATH),
+               f'Follow-up importatori — {sent_total} email — {now_str}')
+        if log_pending:
+            log_raw, log_sha = gh_get(LOG_PATH)
+            existing = log_raw.get('log', []) if isinstance(log_raw, dict) else []
+            gh_put(LOG_PATH, {'log': existing + log_pending}, log_sha,
+                   f'Email log importatori — {len(log_pending)} entries — {now_str}')
+            log_pending.clear()
+        print(f'  💾 stato salvato ({sent_total} email finora, {new_count} contatti con override)')
+        return True
+    except Exception as e:
+        print(f'✗ Salvataggio stato FALLITO: {e}')
+        return False
+
+
 def main():
     print('=== Follow-up Importatori — Siena Wine ===')
 
@@ -746,8 +780,20 @@ def main():
 
     # ── 2. Send follow-ups ────────────────────────────────────────────────────
     sent, cold_count, log_new = 0, 0, []
+    log_pending = []          # entries del log non ancora salvate su GitHub
+    stopped_early = False
+    started_at = time.time()
+    now_str = datetime.now().strftime('%d/%m/%Y %H:%M')
 
     for c in active:
+        if not test_mode and sent >= MAX_SENDS_PER_RUN:
+            print(f'⏹ Tetto di {MAX_SENDS_PER_RUN} invii per giro raggiunto: il resto al prossimo giro.')
+            stopped_early = True
+            break
+        if time.time() - started_at > TIME_BUDGET_S:
+            print(f'⏹ Budget di tempo ({TIME_BUDGET_S}s) esaurito: il resto al prossimo giro.')
+            stopped_early = True
+            break
         name     = c.get('company') or c.get('name', '?')
         to_email, to_name = step1_target(c)
         print(f'\n  {name} | status={c.get("status")} | evs={len(c.get("brevoEvents") or [])}')
@@ -786,42 +832,34 @@ def main():
                     c.setdefault('log', []).append({'ts': now_ms, 'msg': '❌ Sequenza completata → cold'})
                     cold_count += 1
             sent += 1
-            log_new.append({'contactId': c['id'], 'company': name, 'type': step_label,
-                            'to': to_email, 'subject': subject, 'sentAt': now_ms, 'messageId': msg_id})
+            log_entry = {'contactId': c['id'], 'company': name, 'type': step_label,
+                         'to': to_email, 'subject': subject, 'sentAt': now_ms, 'messageId': msg_id}
+            log_new.append(log_entry)
+            log_pending.append(log_entry)
+
+            # Salvataggio a blocchi: se fallisce, STOP agli invii (niente doppioni al giro dopo).
+            if not test_mode and sent % SAVE_EVERY == 0:
+                if not persist_state(contacts, base_snap, overrides_loaded_count, log_pending, sent, now_str):
+                    stopped_early = True
+                    break
 
         time.sleep(0.6)
-
-    now_str = datetime.now().strftime('%d/%m/%Y %H:%M')
 
     if test_mode:
         print(f'\n🧪 Test: {sent} email → {BCC_EMAIL}. contatti-overrides.json non modificato.')
     else:
-        if sent > 0 or sync_count > 0:
-            new_overrides = build_overrides_diff(contacts, base_snap)
-            new_count     = len(new_overrides)
-            # Guard: blocca il salvataggio se il file crollerebbe drasticamente —
-            # sintomo di un bug (override non applicati in questo run), non di
-            # un'evoluzione legittima. Le email sono già state inviate a questo
-            # punto: non possiamo annullarle, ma almeno non corrompiamo il file.
-            if overrides_loaded_count >= 10 and new_count < overrides_loaded_count * 0.5:
-                print(f'\n✗ Crollo sospetto override: {overrides_loaded_count} → {new_count}. '
-                      f'Salvataggio bloccato (email già inviate, stato non persistito).')
+        if sent > 0 or sync_count > 0 or log_pending:
+            if persist_state(contacts, base_snap, overrides_loaded_count, log_pending, sent, now_str):
+                print(f'\n✓ {sent} email inviate in questo giro, stato salvato.')
             else:
-                fresh_sha = get_sha(OVERRIDES_PATH)
-                gh_put(OVERRIDES_PATH, new_overrides, fresh_sha,
-                       f'Follow-up importatori — {sent} email — {now_str}')
-                print(f'\n✓ {sent} email inviate, contatti-overrides.json aggiornato '
-                      f'({new_count} contatti con override).')
+                print('\n✗ Salvataggio finale fallito: i prossimi giri NON devono inviare finché non è risolto.')
+                raise SystemExit(1)
             if cold_count:
                 print(f'  {cold_count} contatti → cold (sequenza completata)')
-
-        if log_new:
-            log_raw, log_sha = gh_get(LOG_PATH)
-            existing = log_raw.get('log', []) if isinstance(log_raw, dict) else []
-            gh_put(LOG_PATH, {'log': existing + log_new}, log_sha,
-                   f'Email log importatori — {len(log_new)} entries — {now_str}')
         elif sent == 0:
             print('\nNessun follow-up da inviare.')
+        if stopped_early:
+            print('ℹ Giro interrotto in anticipo (tetto/tempo): vedi messaggi sopra.')
 
     if _is_digest_run():
         send_daily_digest(contacts, log_new, now_ms, test_mode, sync_count)
