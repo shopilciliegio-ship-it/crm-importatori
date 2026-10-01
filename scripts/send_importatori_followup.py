@@ -14,9 +14,11 @@ import html
 import json
 import os
 import re
+import sys
 import time
 from collections import Counter
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
 
 import requests
 
@@ -627,6 +629,242 @@ def should_send_followup(c: dict, templates: list, now_ms: int) -> tuple[str | N
     return None, None, 0
 
 
+# ── Piano invii (visibilità + approvazione giornaliera) ───────────────────────
+# Dal 1/10/2026 (dopo l'incidente del loop): il CRM mostra cosa è in coda e quando partirà, e i
+# follow-up partono SOLO se per quel giorno c'è un'approvazione (data/piano-approvato.json, scritto
+# dal CRM col pulsante "Approva il piano di oggi"). Senza approvazione, nessun invio.
+
+PLAN_PATH       = 'data/piano-invii.json'
+APPROVAL_PATH   = 'data/piano-approvato.json'
+RUNS_PER_DAY    = 4            # import_ordini.yml parte alle 0/6/12/18 (ora italiana) dal timer Cloudflare
+PLAN_HORIZON    = 14           # giorni di calendario proiettato
+FOLLOWUP_TYPES  = ('day7', 'day21', 'day35')
+# label → (n_steps già inviati, giorni minimi dal riferimento, giorni massimi: oltre la finestra è scaduta)
+_WINDOWS = {1: ('day7', 7, 14), 2: ('day21', 21, 31), 3: ('day35', 35, 50)}
+ROME = ZoneInfo('Europe/Rome')
+
+
+def followup_window(c: dict) -> dict | None:
+    """Finestra del PROSSIMO follow-up di un contatto: stesse regole di should_send_followup(),
+    ma in forma di date (così si può proiettare nel futuro). Ritorna None se non ne ha uno atteso."""
+    if c.get('status') in TERMINAL_STATUSES:
+        return None
+    evs = sorted(c.get('brevoEvents') or [], key=lambda e: e.get('sentAt', 0))
+    if not evs:
+        return None
+    last_st = get_ev_status(evs[-1])
+    if last_st in ('bounced', 'spam', 'unsubscribed', 'blocked') or \
+       (evs[-1].get('manualStatus') in TERMINAL_STATUSES):
+        return None
+    n_steps = len(evs)
+    if n_steps not in _WINDOWS:
+        return None
+    step1 = next((e for e in evs if (e.get('sequenceStep') or 1) == 1), evs[0])
+    ref   = max(step1.get('sentAt') or 0, c.get('snoozeUntil') or 0)
+    label, dmin, dmax = _WINDOWS[n_steps]
+    return {'label': label, 'n': n_steps, 'ref': ref,
+            'due': ref + dmin * DAY_MS, 'expire': ref + dmax * DAY_MS}
+
+
+def _rome_day_start_ms(d) -> int:
+    return int(datetime(d.year, d.month, d.day, tzinfo=ROME).timestamp() * 1000)
+
+
+def _followup_step_active() -> bool:
+    """Legge import_ordini.yml: il passo "Invia follow-up importatori" è acceso o disattivato (if: false)?"""
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '.github', 'workflows', 'import_ordini.yml')
+    try:
+        lines = open(path, encoding='utf-8').read().splitlines()
+    except OSError:
+        return False
+    for i, ln in enumerate(lines):
+        if 'name: Invia follow-up importatori' in ln:
+            for nxt in lines[i + 1:i + 6]:
+                s = nxt.strip()
+                if s.startswith('if:'):
+                    return not re.search(r'(\$\{\{\s*)?false(\s*\}\})?', s.split('#')[0].split(':', 1)[1])
+                if s.startswith('- name:'):
+                    break
+            return True
+    return False
+
+
+def _log_counts_by_day(log: list, now: datetime) -> dict:
+    """{data ISO: {tipo: n}} per gli ultimi 7 giorni (ora italiana), da email-log-importatori.json."""
+    out = {}
+    first = (now - timedelta(days=6)).date()
+    for e in log:
+        ms = e.get('sentAt')
+        if not ms:
+            continue
+        d = datetime.fromtimestamp(ms / 1000, ROME).date()
+        if d < first:
+            continue
+        out.setdefault(d.isoformat(), {}).setdefault(e.get('type') or 'altro', 0)
+        out[d.isoformat()][e.get('type') or 'altro'] += 1
+    return out
+
+
+def sent_today(log: list, now: datetime) -> int:
+    today = now.date()
+    return sum(1 for e in log if e.get('type') in FOLLOWUP_TYPES and e.get('sentAt')
+               and datetime.fromtimestamp(e['sentAt'] / 1000, ROME).date() == today)
+
+
+def approval_for_today(now: datetime) -> dict | None:
+    """Approvazione valida OGGI (ora italiana) o None."""
+    data, _ = gh_get(APPROVAL_PATH)
+    if isinstance(data, dict) and data.get('date') == now.date().isoformat():
+        return data
+    return None
+
+
+def build_plan(contacts: list, templates: list, log: list, settings: dict, now: datetime) -> dict:
+    now_ms = int(now.timestamp() * 1000)
+    per_giro, per_day = MAX_SENDS_PER_RUN, MAX_SENDS_PER_RUN * RUNS_PER_DAY
+    active = [c for c in contacts if c.get('status') in ACTIVE_STATUSES]
+
+    # Coda: stesse regole dell'invio reale. Verifica incrociata con should_send_followup() per i "pronti ora".
+    pool, no_email = [], 0
+    for c in active:
+        w = followup_window(c)
+        if not w:
+            continue
+        if not step1_target(c)[0]:
+            no_email += 1
+            continue
+        w['id'] = c.get('id')
+        pool.append(w)
+    pool.sort(key=lambda w: w['expire'])   # chi sta per scadere va per primo (stesso ordine dell'invio reale)
+
+    pronte_now = [w for w in pool if w['due'] <= now_ms <= w['expire']]
+    scadute_now = [w for w in pool if w['expire'] < now_ms]
+    import io, contextlib
+    with contextlib.redirect_stdout(io.StringIO()):
+        reali = sum(1 for c in active if should_send_followup(c, templates, now_ms)[0])
+
+    # Proiezione giorno per giorno: ogni giorno parte al massimo per_day mail, chi scade prima va per primo;
+    # dopo un invio il contatto passa alla finestra del passo successivo.
+    giorni, persi = [], 0
+    already = sent_today(log, now)
+    active_pool = [w for w in pool if w['expire'] >= now_ms]
+    for k in range(PLAN_HORIZON):
+        day = (now + timedelta(days=k)).date()
+        d0 = _rome_day_start_ms(day)
+        d1 = d0 + DAY_MS
+        cap = max(per_day - (already if k == 0 else 0), 0)
+        eligible = [w for w in active_pool if w['due'] < d1 and w['expire'] >= max(d0, now_ms if k == 0 else d0)]
+        eligible.sort(key=lambda w: w['expire'])
+        take = eligible[:cap]
+        counts = Counter(w['label'] for w in take)
+        for w in take:
+            active_pool.remove(w)
+            nxt = _WINDOWS.get(w['n'] + 1)
+            if nxt:
+                active_pool.append({'label': nxt[0], 'n': w['n'] + 1, 'ref': w['ref'],
+                                    'due': w['ref'] + nxt[1] * DAY_MS, 'expire': w['ref'] + nxt[2] * DAY_MS})
+        lost = [w for w in active_pool if w['expire'] < d1]
+        active_pool = [w for w in active_pool if w['expire'] >= d1]
+        persi += len(lost)
+        giorni.append({
+            'data': day.isoformat(), 'giorno': ['lun', 'mar', 'mer', 'gio', 'ven', 'sab', 'dom'][day.weekday()],
+            'daInviare': len(take), 'day7': counts.get('day7', 0), 'day21': counts.get('day21', 0),
+            'day35': counts.get('day35', 0), 'scadonoSenzaInvio': len(lost),
+            'inCodaAFineGiorno': len([w for w in active_pool if w['due'] < d1]),
+        })
+
+    today_plan = giorni[0]['daInviare'] if giorni else 0
+    return {
+        'generatoAt': now_ms,
+        'generatoIl': now.strftime('%d/%m/%Y %H:%M'),
+        'followupPassoAttivo': _followup_step_active(),
+        'invioAutomatico': bool(settings.get('emailAutoSendImportatori', False)),
+        'testMode': bool(settings.get('testModeImportatori', True)),
+        'tetto': {'perGiro': per_giro, 'giriAlGiorno': RUNS_PER_DAY, 'perGiorno': per_day},
+        'contattiAttivi': len(active),
+        'pronteOra': {'totale': len(pronte_now), 'day7': sum(1 for w in pronte_now if w['label'] == 'day7'),
+                      'day21': sum(1 for w in pronte_now if w['label'] == 'day21'),
+                      'day35': sum(1 for w in pronte_now if w['label'] == 'day35'),
+                      'verificaCodiceInvio': reali},
+        'scaduteGia': len(scadute_now),
+        'senzaCasellaValida': no_email,
+        'giorni': giorni,
+        'perseNelPeriodo': persi,
+        'oggi': {'inviate': already, 'limiteProposto': already + today_plan},
+        'registro7Giorni': _log_counts_by_day(log, now),
+        'crediti': brevo_credits(),
+    }
+
+
+def brevo_credits() -> dict:
+    try:
+        r = requests.get('https://api.brevo.com/v3/account', headers=_BREVO_HEADERS, timeout=20)
+        r.raise_for_status()
+        plans = r.json().get('plan') or []
+        send = [p.get('credits') for p in plans if p.get('creditsType') == 'sendLimit' and p.get('credits') is not None]
+        return {'email': sum(send) if send else None}
+    except Exception as e:
+        print(f'⚠ Crediti Brevo non letti: {e}')
+        return {'email': None}
+
+
+def send_approval_reminder(plan: dict, now: datetime) -> None:
+    g0 = plan['giorni'][0] if plan['giorni'] else {}
+    n = g0.get('daInviare', 0)
+    html_content = f"""<html><body style="font-family:Arial,sans-serif;background:#f4f4f4;padding:20px">
+<table width="560" style="background:#fff;border-radius:8px;padding:24px;margin:auto"><tr><td>
+<h2 style="margin:0 0 12px;color:{ACCENT}">Piano follow-up di oggi: serve la tua approvazione</h2>
+<p style="font-size:15px;line-height:1.5">Oggi sono pronti <b>{plan['pronteOra']['totale']}</b> follow-up importatori
+(day7: {plan['pronteOra']['day7']}, day21: {plan['pronteOra']['day21']}, day35: {plan['pronteOra']['day35']}).<br>
+Con il tetto attuale oggi ne partirebbero <b>{n}</b>.</p>
+<p style="font-size:15px;line-height:1.5">Senza il tuo OK <b>non parte nessuna mail</b>. Apri il CRM, scheda <b>Programmato</b>,
+e premi <b>Approva il piano di oggi</b>.</p>
+<p><a href="https://shopilciliegio-ship-it.github.io/crm-importatori/" style="display:inline-block;background:{ACCENT};color:#fff;
+padding:10px 18px;border-radius:6px;text-decoration:none">Apri il CRM</a></p>
+<p style="color:#999;font-size:11px">Siena Wine CRM — promemoria automatico</p>
+</td></tr></table></body></html>"""
+    r = requests.post('https://api.brevo.com/v3/smtp/email', headers=_BREVO_HEADERS, json={
+        'sender': {'name': SENDER_NAME, 'email': SENDER_EMAIL},
+        'to': [{'email': DIGEST_RECIPIENT, 'name': 'Luca'}],
+        'subject': f'⏰ Approva il piano follow-up di oggi ({plan["pronteOra"]["totale"]} pronti)',
+        'htmlContent': html_content,
+        'textContent': f'Follow-up pronti: {plan["pronteOra"]["totale"]}, oggi partirebbero {n}. '
+                       f'Senza approvazione non parte nulla: CRM > Programmato > Approva il piano di oggi.',
+        'tags': ['wine-crm', 'importatori-piano-promemoria'],
+        'trackClicks': False, 'trackOpens': False,
+    }, timeout=20)
+    print('✓ Promemoria approvazione inviato' if r.ok else f'⚠ Promemoria fallito: {r.status_code} {r.text[:100]}')
+
+
+def run_plan_mode() -> None:
+    """--piano: calcola il piano, lo salva in data/piano-invii.json (letto dalla scheda "Programmato"
+    del CRM) e, se il passo di invio è acceso e manca l'approvazione, manda il promemoria. NON invia follow-up."""
+    print('=== Piano invii importatori ===')
+    settings, _ = gh_get(SETTINGS_PATH)
+    contacts, _snap, overrides_ok, _n = load_contacts_with_overrides()
+    if not overrides_ok:
+        print('✗ override non caricati: piano non aggiornato.')
+        return
+    tpls_raw, _ = gh_get(TEMPLATES_PATH)
+    templates = tpls_raw if isinstance(tpls_raw, list) else []
+    log_raw, _ = gh_get(LOG_PATH)
+    log = log_raw.get('log', []) if isinstance(log_raw, dict) else []
+    now = datetime.now(ROME)
+
+    plan = build_plan(contacts, templates, log, settings, now)
+    appr = approval_for_today(now)
+    plan['approvazione'] = {'oggi': bool(appr), 'limite': (appr or {}).get('limit'), 'approvatoAt': (appr or {}).get('approvedAt')}
+    print(f'Pronte ora: {plan["pronteOra"]["totale"]} (codice invio: {plan["pronteOra"]["verificaCodiceInvio"]}) | '
+          f'oggi partirebbero {plan["giorni"][0]["daInviare"]} | approvato oggi: {bool(appr)} | passo attivo: {plan["followupPassoAttivo"]}')
+    if plan['pronteOra']['totale'] != plan['pronteOra']['verificaCodiceInvio']:
+        print('⚠ ATTENZIONE: il conteggio del piano e quello del codice di invio non coincidono — controllare.')
+    gh_put(PLAN_PATH, plan, get_sha(PLAN_PATH), f'Piano invii — {now.strftime("%d/%m/%Y %H:%M")}')
+
+    # Promemoria: solo se il passo di invio è davvero acceso, c'è roba da inviare e manca l'OK. Ai giri delle 6 e delle 12.
+    if plan['followupPassoAttivo'] and not appr and plan['pronteOra']['totale'] > 0 and now.hour in (6, 7, 12, 13):
+        send_approval_reminder(plan, now)
+
+
 # ── Daily digest ──────────────────────────────────────────────────────────────
 
 def send_daily_digest(contacts: list, log_new: list, now_ms: int,
@@ -736,6 +974,9 @@ def persist_state(contacts: list, base_snap: dict, overrides_loaded_count: int,
 
 
 def main():
+    if '--piano' in sys.argv:
+        run_plan_mode()
+        return
     print('=== Follow-up Importatori — Siena Wine ===')
 
     settings, _ = gh_get(SETTINGS_PATH)
@@ -748,10 +989,25 @@ def main():
             send_daily_digest([], [], 0, test_mode, 0)
         return
 
+    run_cap = MAX_SENDS_PER_RUN
     if test_mode:
         print(f'🧪 TEST MODE — email a {BCC_EMAIL}')
     else:
         print('👥 Produzione — email ai contatti reali')
+        # Approvazione giornaliera: senza l'OK di Luca dal CRM ("Approva il piano di oggi") non parte nulla.
+        today_it = datetime.now(ROME)
+        appr = approval_for_today(today_it)
+        if not appr:
+            print('⏸ Piano di oggi NON approvato dal CRM: nessun follow-up inviato.')
+            return
+        log_raw, _ = gh_get(LOG_PATH)
+        done_today = sent_today(log_raw.get('log', []) if isinstance(log_raw, dict) else [], today_it)
+        remaining = int(appr.get('limit') or 0) - done_today
+        if remaining <= 0:
+            print(f'⏹ Limite approvato per oggi ({appr.get("limit")}) già raggiunto ({done_today} inviati).')
+            return
+        run_cap = min(MAX_SENDS_PER_RUN, remaining)
+        print(f'✅ Piano approvato: limite {appr.get("limit")}, già inviati oggi {done_today}, in questo giro al massimo {run_cap}.')
 
     contacts, base_snap, overrides_ok, overrides_loaded_count = load_contacts_with_overrides()
     tpls_raw, _ = gh_get(TEMPLATES_PATH)
@@ -785,9 +1041,11 @@ def main():
     started_at = time.time()
     now_str = datetime.now().strftime('%d/%m/%Y %H:%M')
 
+    # chi sta per uscire dalla finestra va per primo (stesso ordine usato dal piano)
+    active.sort(key=lambda c: (followup_window(c) or {'expire': float('inf')})['expire'])
     for c in active:
-        if not test_mode and sent >= MAX_SENDS_PER_RUN:
-            print(f'⏹ Tetto di {MAX_SENDS_PER_RUN} invii per giro raggiunto: il resto al prossimo giro.')
+        if not test_mode and sent >= run_cap:
+            print(f'⏹ Tetto di {run_cap} invii per questo giro raggiunto: il resto al prossimo giro.')
             stopped_early = True
             break
         if time.time() - started_at > TIME_BUDGET_S:

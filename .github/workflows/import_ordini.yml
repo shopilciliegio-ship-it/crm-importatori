@@ -143,6 +143,17 @@ jobs:
           GH_REPO:       ${{ github.repository }}
         run: python scripts/send_importatori_followup.py
 
+      # Piano invii: calcola coda/calendario dei follow-up e lo salva in data/piano-invii.json (scheda "Programmato"
+      # del CRM). NON invia follow-up. Se il passo di invio sopra è acceso e manca l'approvazione, manda il promemoria.
+      - name: Aggiorna piano invii importatori
+        timeout-minutes: 8
+        continue-on-error: true
+        env:
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          GH_TOKEN:      ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO:       ${{ github.repository }}
+        run: python scripts/send_importatori_followup.py --piano
+
       - name: Salva screenshot debug MBE
         if: always()
         uses: actions/upload-artifact@v4
