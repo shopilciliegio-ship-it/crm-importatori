@@ -96,6 +96,8 @@ async function init(){
       otherLoads.push(loadSettingsFromGH().catch(e=>console.warn('loadSettingsFromGH:',e)));
     if(typeof loadResearchConfigFromGH==='function')
       otherLoads.push(loadResearchConfigFromGH().catch(e=>console.warn('loadResearchConfigFromGH:',e)));
+    if(typeof loadPianoInvii==='function')
+      otherLoads.push(loadPianoInvii().catch(e=>console.warn('loadPianoInvii:',e)));
     if(typeof refreshRisposteBanner==='function')
       otherLoads.push(refreshRisposteBanner().catch(e=>console.warn('refreshRisposteBanner:',e)));
 
