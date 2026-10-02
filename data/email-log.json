@@ -179,6 +179,15 @@
       "subject": "Your wine is out for delivery! 🍷",
       "sentAt": 1790956935838,
       "messageId": "<202610021602.26051126665@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mtyj4v9z6p73",
+      "customerName": "MINNELLIS MERCADO DE LUCAS",
+      "type": "consegnato",
+      "to": "minnellis@icloud.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1790978528996,
+      "messageId": "<202610022202.40142689337@smtp-relay.mailin.fr>"
     }
   ]
 }
