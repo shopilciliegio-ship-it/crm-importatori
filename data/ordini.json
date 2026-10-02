@@ -59,10 +59,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "jesusjoserubio@gmail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1790956935838,
+          "messageId": "<202610021602.79997049822@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1790956915164,
-      "updatedAt": 1790956915164
+      "updatedAt": 1790956935838
     },
     {
       "id": "ord_mupd72by879e",
@@ -648,7 +656,9 @@
       ],
       "notes": "",
       "createdAt": 1790352034253,
-      "updatedAt": 1790352047717
+      "updatedAt": 1790956935838,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1790352034253
     },
     {
       "id": "ord_muh5divhqc01",
@@ -710,7 +720,9 @@
       ],
       "notes": "",
       "createdAt": 1790352034253,
-      "updatedAt": 1790352047717
+      "updatedAt": 1790956935838,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1790352034253
     },
     {
       "id": "ord_muadni1jn7fk",
@@ -907,11 +919,18 @@
           "subject": "Your order is going through customs",
           "sentAt": 1790481659551,
           "messageId": "<202609270400.10804451621@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "in_consegna",
+          "to": "minnellis@icloud.com",
+          "subject": "Your wine is out for delivery! 🍷",
+          "sentAt": 1790956935838,
+          "messageId": "<202610021602.26051126665@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1789226287702,
-      "updatedAt": 1790956931576,
+      "updatedAt": 1790956935838,
       "staleAlertDays": 7,
       "staleAlertSince": 1789226287702,
       "track17Registered": true
