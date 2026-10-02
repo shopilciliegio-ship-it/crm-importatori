@@ -1,6 +1,70 @@
 {
   "orders": [
     {
+      "id": "ord_mur5i7z0lts6",
+      "customerName": "JESUS RUBIO",
+      "customerEmail": "jesusjoserubio@gmail.com",
+      "customerPhone": "+14322884565",
+      "amount": 159.7,
+      "currency": "EUR",
+      "orderDate": 1790942841000,
+      "emailSubject": "🍷 New Order — JESUS RUBIO — 159.70 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "5308 RAILEA CT, 79703 MIDLAND, TEXAS (MIDLAND COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202610021207.71668091934@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
+          "qty": 2,
+          "value": 20.0
+        },
+        {
+          "description": "SPARKLING WINE CILIEGIO IN FIORE ROSÉ",
+          "qty": 1,
+          "value": 10.0
+        },
+        {
+          "description": "POGGIO ORLANDO 2024 CHIANTI COLLI SENE..",
+          "qty": 1,
+          "value": 12.0
+        },
+        {
+          "description": "INFERNACCIO RED WINE IGT 2022",
+          "qty": 1,
+          "value": 16.0
+        },
+        {
+          "description": "VIN SANTO DEL CHIANTI DOC 2019",
+          "qty": 1,
+          "value": 19.0
+        }
+      ],
+      "customsDuties": 7.7,
+      "shippingCostCustomer": 75.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1790956915164,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1790956915164,
+      "updatedAt": 1790956915164
+    },
+    {
       "id": "ord_mupd72by879e",
       "customerName": "NEIL ROBERTS",
       "customerEmail": "neilrob4060@gmail.com",
@@ -10557,5 +10621,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1790848899214
+  "lastImportedAt": 1790956915164
 }
