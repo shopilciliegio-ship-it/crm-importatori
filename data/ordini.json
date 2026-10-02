@@ -863,7 +863,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1790002675059,
-      "status": "dogana",
+      "status": "in_consegna",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -879,6 +879,11 @@
           "status": "dogana",
           "date": 1790481653763,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "in_consegna",
+          "date": 1790956931576,
+          "note": "Auto 17Track (era: dogana): Buford, GA, United States — Out for Delivery, Out For Delivery Today"
         }
       ],
       "emailsSent": [
@@ -906,7 +911,7 @@
       ],
       "notes": "",
       "createdAt": 1789226287702,
-      "updatedAt": 1790481659551,
+      "updatedAt": 1790956931576,
       "staleAlertDays": 7,
       "staleAlertSince": 1789226287702,
       "track17Registered": true
