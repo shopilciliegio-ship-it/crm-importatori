@@ -161,6 +161,24 @@
       "subject": "Thank you for your order! 🍷",
       "sentAt": 1790848917736,
       "messageId": "<202610011001.99413404689@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mur5i7z0lts6",
+      "customerName": "JESUS RUBIO",
+      "type": "order_received",
+      "to": "jesusjoserubio@gmail.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1790956935838,
+      "messageId": "<202610021602.79997049822@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mtyj4v9z6p73",
+      "customerName": "MINNELLIS MERCADO DE LUCAS",
+      "type": "in_consegna",
+      "to": "minnellis@icloud.com",
+      "subject": "Your wine is out for delivery! 🍷",
+      "sentAt": 1790956935838,
+      "messageId": "<202610021602.26051126665@smtp-relay.mailin.fr>"
     }
   ]
 }
