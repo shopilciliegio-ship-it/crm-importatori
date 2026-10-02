@@ -931,11 +931,18 @@
           "subject": "Your wine is out for delivery! 🍷",
           "sentAt": 1790956935838,
           "messageId": "<202610021602.26051126665@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegnato",
+          "to": "minnellis@icloud.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1790978528996,
+          "messageId": "<202610022202.40142689337@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1789226287702,
-      "updatedAt": 1790978522342,
+      "updatedAt": 1790978528996,
       "staleAlertDays": 7,
       "staleAlertSince": 1789226287702,
       "track17Registered": true
