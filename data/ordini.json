@@ -594,7 +594,9 @@
       ],
       "notes": "",
       "createdAt": 1790438445179,
-      "updatedAt": 1790438458226
+      "updatedAt": 1791043287213,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1790438445179
     },
     {
       "id": "ord_muh5divi7env",
