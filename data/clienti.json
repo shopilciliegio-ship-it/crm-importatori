@@ -321515,11 +321515,36 @@
       "registeredAt": 1782821146000,
       "importedAt": 1783337040560,
       "source": "spottywifi",
-      "waveStatus": null,
-      "emailsSent": [],
+      "waveStatus": "wave1_sent",
+      "emailsSent": [
+        {
+          "type": "wave1",
+          "sentAt": 1791183685425,
+          "messageId": "<202610050701.75873338762@smtp-relay.mailin.fr>",
+          "toEmail": "drbarajas@hotmail.es"
+        }
+      ],
       "blacklisted": false,
       "notes": "",
-      "status": "new"
+      "status": "sent",
+      "brevoEvents": [
+        {
+          "messageId": "<202610050701.75873338762@smtp-relay.mailin.fr>",
+          "subject": "A special thought for you from Il Ciliegio 🍷",
+          "sentAt": 1791183685425,
+          "toEmail": "drbarajas@hotmail.es",
+          "toName": "Grecia Palafox",
+          "brand": "ilciliegio",
+          "sequenceStep": 1,
+          "delivered": false,
+          "opened": false,
+          "clicked": false,
+          "bounced": false,
+          "spam": false,
+          "unsubscribed": false,
+          "blocked": false
+        }
+      ]
     },
     {
       "id": "cli_341a11f814",
@@ -321537,11 +321562,36 @@
       "registeredAt": 1782823610000,
       "importedAt": 1783337040560,
       "source": "spottywifi",
-      "waveStatus": null,
-      "emailsSent": [],
+      "waveStatus": "wave1_sent",
+      "emailsSent": [
+        {
+          "type": "wave1",
+          "sentAt": 1791183685425,
+          "messageId": "<202610050701.74939578304@smtp-relay.mailin.fr>",
+          "toEmail": "newfernanda10@gmail.com"
+        }
+      ],
       "blacklisted": false,
       "notes": "",
-      "status": "new"
+      "status": "sent",
+      "brevoEvents": [
+        {
+          "messageId": "<202610050701.74939578304@smtp-relay.mailin.fr>",
+          "subject": "A special thought for you from Il Ciliegio 🍷",
+          "sentAt": 1791183685425,
+          "toEmail": "newfernanda10@gmail.com",
+          "toName": "Maria fernanda Suarez Rodriguez",
+          "brand": "ilciliegio",
+          "sequenceStep": 1,
+          "delivered": false,
+          "opened": false,
+          "clicked": false,
+          "bounced": false,
+          "spam": false,
+          "unsubscribed": false,
+          "blocked": false
+        }
+      ]
     },
     {
       "id": "cli_6242cb6052",
@@ -321559,11 +321609,36 @@
       "registeredAt": 1782824210000,
       "importedAt": 1783337040560,
       "source": "spottywifi",
-      "waveStatus": null,
-      "emailsSent": [],
+      "waveStatus": "wave1_sent",
+      "emailsSent": [
+        {
+          "type": "wave1",
+          "sentAt": 1791183685425,
+          "messageId": "<202610050701.97266566157@smtp-relay.mailin.fr>",
+          "toEmail": "nyenigezer@gmail.com"
+        }
+      ],
       "blacklisted": false,
       "notes": "",
-      "status": "new"
+      "status": "sent",
+      "brevoEvents": [
+        {
+          "messageId": "<202610050701.97266566157@smtp-relay.mailin.fr>",
+          "subject": "A special thought for you from Il Ciliegio 🍷",
+          "sentAt": 1791183685425,
+          "toEmail": "nyenigezer@gmail.com",
+          "toName": "Nihan Topçuoğlu",
+          "brand": "ilciliegio",
+          "sequenceStep": 1,
+          "delivered": false,
+          "opened": false,
+          "clicked": false,
+          "bounced": false,
+          "spam": false,
+          "unsubscribed": false,
+          "blocked": false
+        }
+      ]
     },
     {
       "id": "cli_d5be69c833",
@@ -321605,11 +321680,36 @@
       "registeredAt": 1782919508000,
       "importedAt": 1783337040561,
       "source": "spottywifi",
-      "waveStatus": null,
-      "emailsSent": [],
+      "waveStatus": "wave1_sent",
+      "emailsSent": [
+        {
+          "type": "wave1",
+          "sentAt": 1791183685425,
+          "messageId": "<202610050701.19345342924@smtp-relay.mailin.fr>",
+          "toEmail": "arthur.gregorian@icloud.com"
+        }
+      ],
       "blacklisted": false,
       "notes": "",
-      "status": "new"
+      "status": "sent",
+      "brevoEvents": [
+        {
+          "messageId": "<202610050701.19345342924@smtp-relay.mailin.fr>",
+          "subject": "A special thought for you from Il Ciliegio 🍷",
+          "sentAt": 1791183685425,
+          "toEmail": "arthur.gregorian@icloud.com",
+          "toName": "Arthur Gregorian",
+          "brand": "ilciliegio",
+          "sequenceStep": 1,
+          "delivered": false,
+          "opened": false,
+          "clicked": false,
+          "bounced": false,
+          "spam": false,
+          "unsubscribed": false,
+          "blocked": false
+        }
+      ]
     },
     {
       "id": "cli_0b1e61a7ad",
@@ -321627,11 +321727,36 @@
       "registeredAt": 1782922347000,
       "importedAt": 1783337040561,
       "source": "spottywifi",
-      "waveStatus": null,
-      "emailsSent": [],
+      "waveStatus": "wave1_sent",
+      "emailsSent": [
+        {
+          "type": "wave1",
+          "sentAt": 1791183685425,
+          "messageId": "<202610050701.86375577649@smtp-relay.mailin.fr>",
+          "toEmail": "elenapolavets@yandex.by"
+        }
+      ],
       "blacklisted": false,
       "notes": "",
-      "status": "new"
+      "status": "sent",
+      "brevoEvents": [
+        {
+          "messageId": "<202610050701.86375577649@smtp-relay.mailin.fr>",
+          "subject": "A special thought for you from Il Ciliegio 🍷",
+          "sentAt": 1791183685425,
+          "toEmail": "elenapolavets@yandex.by",
+          "toName": "Alena Poplavets",
+          "brand": "ilciliegio",
+          "sequenceStep": 1,
+          "delivered": false,
+          "opened": false,
+          "clicked": false,
+          "bounced": false,
+          "spam": false,
+          "unsubscribed": false,
+          "blocked": false
+        }
+      ]
     },
     {
       "id": "cli_0ea6617fae",
@@ -321649,11 +321774,36 @@
       "registeredAt": 1782993438000,
       "importedAt": 1783337040561,
       "source": "spottywifi",
-      "waveStatus": null,
-      "emailsSent": [],
+      "waveStatus": "wave1_sent",
+      "emailsSent": [
+        {
+          "type": "wave1",
+          "sentAt": 1791183685425,
+          "messageId": "<202610050701.50140385661@smtp-relay.mailin.fr>",
+          "toEmail": "magiediabolique@icloud.com"
+        }
+      ],
       "blacklisted": false,
       "notes": "",
-      "status": "new"
+      "status": "sent",
+      "brevoEvents": [
+        {
+          "messageId": "<202610050701.50140385661@smtp-relay.mailin.fr>",
+          "subject": "A special thought for you from Il Ciliegio 🍷",
+          "sentAt": 1791183685425,
+          "toEmail": "magiediabolique@icloud.com",
+          "toName": "Stephane Giasson",
+          "brand": "ilciliegio",
+          "sequenceStep": 1,
+          "delivered": false,
+          "opened": false,
+          "clicked": false,
+          "bounced": false,
+          "spam": false,
+          "unsubscribed": false,
+          "blocked": false
+        }
+      ]
     },
     {
       "id": "cli_18d089b8b4",
@@ -321671,11 +321821,36 @@
       "registeredAt": 1782995181000,
       "importedAt": 1783337040561,
       "source": "spottywifi",
-      "waveStatus": null,
-      "emailsSent": [],
+      "waveStatus": "wave1_sent",
+      "emailsSent": [
+        {
+          "type": "wave1",
+          "sentAt": 1791183685425,
+          "messageId": "<202610050701.73591007552@smtp-relay.mailin.fr>",
+          "toEmail": "eng.nataliabarbosas@gmail.com"
+        }
+      ],
       "blacklisted": false,
       "notes": "",
-      "status": "new"
+      "status": "sent",
+      "brevoEvents": [
+        {
+          "messageId": "<202610050701.73591007552@smtp-relay.mailin.fr>",
+          "subject": "A special thought for you from Il Ciliegio 🍷",
+          "sentAt": 1791183685425,
+          "toEmail": "eng.nataliabarbosas@gmail.com",
+          "toName": "Natália Aguiar",
+          "brand": "ilciliegio",
+          "sequenceStep": 1,
+          "delivered": false,
+          "opened": false,
+          "clicked": false,
+          "bounced": false,
+          "spam": false,
+          "unsubscribed": false,
+          "blocked": false
+        }
+      ]
     },
     {
       "id": "cli_44be1c8ce6",
@@ -321693,11 +321868,36 @@
       "registeredAt": 1782995223000,
       "importedAt": 1783337040561,
       "source": "spottywifi",
-      "waveStatus": null,
-      "emailsSent": [],
+      "waveStatus": "wave1_sent",
+      "emailsSent": [
+        {
+          "type": "wave1",
+          "sentAt": 1791183685425,
+          "messageId": "<202610050701.65102698886@smtp-relay.mailin.fr>",
+          "toEmail": "mastermisa884@gmail.com"
+        }
+      ],
       "blacklisted": false,
       "notes": "",
-      "status": "new"
+      "status": "sent",
+      "brevoEvents": [
+        {
+          "messageId": "<202610050701.65102698886@smtp-relay.mailin.fr>",
+          "subject": "A special thought for you from Il Ciliegio 🍷",
+          "sentAt": 1791183685425,
+          "toEmail": "mastermisa884@gmail.com",
+          "toName": "Misael Aguiar Gomes",
+          "brand": "ilciliegio",
+          "sequenceStep": 1,
+          "delivered": false,
+          "opened": false,
+          "clicked": false,
+          "bounced": false,
+          "spam": false,
+          "unsubscribed": false,
+          "blocked": false
+        }
+      ]
     },
     {
       "id": "cli_654b064bec",
@@ -321715,11 +321915,36 @@
       "registeredAt": 1783071413000,
       "importedAt": 1783337040561,
       "source": "spottywifi",
-      "waveStatus": null,
-      "emailsSent": [],
+      "waveStatus": "wave1_sent",
+      "emailsSent": [
+        {
+          "type": "wave1",
+          "sentAt": 1791183685425,
+          "messageId": "<202610050701.69960861077@smtp-relay.mailin.fr>",
+          "toEmail": "ghanmi.ouissal97@gmail.com"
+        }
+      ],
       "blacklisted": false,
       "notes": "",
-      "status": "new"
+      "status": "sent",
+      "brevoEvents": [
+        {
+          "messageId": "<202610050701.69960861077@smtp-relay.mailin.fr>",
+          "subject": "Un pensiero speciale per te da Il Ciliegio 🍷",
+          "sentAt": 1791183685425,
+          "toEmail": "ghanmi.ouissal97@gmail.com",
+          "toName": "Ouissal Ghanmi",
+          "brand": "ilciliegio",
+          "sequenceStep": 1,
+          "delivered": false,
+          "opened": false,
+          "clicked": false,
+          "bounced": false,
+          "spam": false,
+          "unsubscribed": false,
+          "blocked": false
+        }
+      ]
     },
     {
       "id": "cli_82392d1064",
@@ -321737,11 +321962,36 @@
       "registeredAt": 1783079975000,
       "importedAt": 1783337040561,
       "source": "spottywifi",
-      "waveStatus": null,
-      "emailsSent": [],
+      "waveStatus": "wave1_sent",
+      "emailsSent": [
+        {
+          "type": "wave1",
+          "sentAt": 1791183685425,
+          "messageId": "<202610050701.52926842630@smtp-relay.mailin.fr>",
+          "toEmail": "joshuawklim@gmail.com"
+        }
+      ],
       "blacklisted": false,
       "notes": "",
-      "status": "new"
+      "status": "sent",
+      "brevoEvents": [
+        {
+          "messageId": "<202610050701.52926842630@smtp-relay.mailin.fr>",
+          "subject": "A special thought for you from Il Ciliegio 🍷",
+          "sentAt": 1791183685425,
+          "toEmail": "joshuawklim@gmail.com",
+          "toName": "Josh Lim",
+          "brand": "ilciliegio",
+          "sequenceStep": 1,
+          "delivered": false,
+          "opened": false,
+          "clicked": false,
+          "bounced": false,
+          "spam": false,
+          "unsubscribed": false,
+          "blocked": false
+        }
+      ]
     },
     {
       "id": "cli_01e96251b7",
@@ -321759,11 +322009,36 @@
       "registeredAt": 1783080426000,
       "importedAt": 1783337040561,
       "source": "spottywifi",
-      "waveStatus": null,
-      "emailsSent": [],
+      "waveStatus": "wave1_sent",
+      "emailsSent": [
+        {
+          "type": "wave1",
+          "sentAt": 1791183685425,
+          "messageId": "<202610050701.89194787864@smtp-relay.mailin.fr>",
+          "toEmail": "drweberej@hotmail.com"
+        }
+      ],
       "blacklisted": false,
       "notes": "",
-      "status": "new"
+      "status": "sent",
+      "brevoEvents": [
+        {
+          "messageId": "<202610050701.89194787864@smtp-relay.mailin.fr>",
+          "subject": "A special thought for you from Il Ciliegio 🍷",
+          "sentAt": 1791183685425,
+          "toEmail": "drweberej@hotmail.com",
+          "toName": "Esteban Jose Weber",
+          "brand": "ilciliegio",
+          "sequenceStep": 1,
+          "delivered": false,
+          "opened": false,
+          "clicked": false,
+          "bounced": false,
+          "spam": false,
+          "unsubscribed": false,
+          "blocked": false
+        }
+      ]
     },
     {
       "id": "cli_59015c077c",
@@ -321781,11 +322056,36 @@
       "registeredAt": 1783081081000,
       "importedAt": 1783337040561,
       "source": "spottywifi",
-      "waveStatus": null,
-      "emailsSent": [],
+      "waveStatus": "wave1_sent",
+      "emailsSent": [
+        {
+          "type": "wave1",
+          "sentAt": 1791183685425,
+          "messageId": "<202610050701.78522456372@smtp-relay.mailin.fr>",
+          "toEmail": "patriciaesanz@gmail.com"
+        }
+      ],
       "blacklisted": false,
       "notes": "",
-      "status": "new"
+      "status": "sent",
+      "brevoEvents": [
+        {
+          "messageId": "<202610050701.78522456372@smtp-relay.mailin.fr>",
+          "subject": "A special thought for you from Il Ciliegio 🍷",
+          "sentAt": 1791183685425,
+          "toEmail": "patriciaesanz@gmail.com",
+          "toName": "Patricia Sanz",
+          "brand": "ilciliegio",
+          "sequenceStep": 1,
+          "delivered": false,
+          "opened": false,
+          "clicked": false,
+          "bounced": false,
+          "spam": false,
+          "unsubscribed": false,
+          "blocked": false
+        }
+      ]
     },
     {
       "id": "cli_736e9cb876",
@@ -321803,11 +322103,36 @@
       "registeredAt": 1783081085000,
       "importedAt": 1783337040561,
       "source": "spottywifi",
-      "waveStatus": null,
-      "emailsSent": [],
+      "waveStatus": "wave1_sent",
+      "emailsSent": [
+        {
+          "type": "wave1",
+          "sentAt": 1791183685425,
+          "messageId": "<202610050701.49138176044@smtp-relay.mailin.fr>",
+          "toEmail": "claudio.jorge.alvarez@gmail.com"
+        }
+      ],
       "blacklisted": false,
       "notes": "",
-      "status": "new"
+      "status": "sent",
+      "brevoEvents": [
+        {
+          "messageId": "<202610050701.49138176044@smtp-relay.mailin.fr>",
+          "subject": "A special thought for you from Il Ciliegio 🍷",
+          "sentAt": 1791183685425,
+          "toEmail": "claudio.jorge.alvarez@gmail.com",
+          "toName": "Claudio Alvarez",
+          "brand": "ilciliegio",
+          "sequenceStep": 1,
+          "delivered": false,
+          "opened": false,
+          "clicked": false,
+          "bounced": false,
+          "spam": false,
+          "unsubscribed": false,
+          "blocked": false
+        }
+      ]
     },
     {
       "id": "cli_5b11944044",
@@ -321825,11 +322150,36 @@
       "registeredAt": 1783081530000,
       "importedAt": 1783337040561,
       "source": "spottywifi",
-      "waveStatus": null,
-      "emailsSent": [],
+      "waveStatus": "wave1_sent",
+      "emailsSent": [
+        {
+          "type": "wave1",
+          "sentAt": 1791183685425,
+          "messageId": "<202610050701.88440106860@smtp-relay.mailin.fr>",
+          "toEmail": "tndouvhada@roncon.co.za"
+        }
+      ],
       "blacklisted": false,
       "notes": "",
-      "status": "new"
+      "status": "sent",
+      "brevoEvents": [
+        {
+          "messageId": "<202610050701.88440106860@smtp-relay.mailin.fr>",
+          "subject": "A special thought for you from Il Ciliegio 🍷",
+          "sentAt": 1791183685425,
+          "toEmail": "tndouvhada@roncon.co.za",
+          "toName": "Tshifhiwa Ndouvhada",
+          "brand": "ilciliegio",
+          "sequenceStep": 1,
+          "delivered": false,
+          "opened": false,
+          "clicked": false,
+          "bounced": false,
+          "spam": false,
+          "unsubscribed": false,
+          "blocked": false
+        }
+      ]
     },
     {
       "id": "cli_afd7d5554a",
@@ -321847,11 +322197,36 @@
       "registeredAt": 1783081638000,
       "importedAt": 1783337040561,
       "source": "spottywifi",
-      "waveStatus": null,
-      "emailsSent": [],
+      "waveStatus": "wave1_sent",
+      "emailsSent": [
+        {
+          "type": "wave1",
+          "sentAt": 1791183685425,
+          "messageId": "<202610050701.34439933960@smtp-relay.mailin.fr>",
+          "toEmail": "ronewa.lindani@gmail.com"
+        }
+      ],
       "blacklisted": false,
       "notes": "",
-      "status": "new"
+      "status": "sent",
+      "brevoEvents": [
+        {
+          "messageId": "<202610050701.34439933960@smtp-relay.mailin.fr>",
+          "subject": "A special thought for you from Il Ciliegio 🍷",
+          "sentAt": 1791183685425,
+          "toEmail": "ronewa.lindani@gmail.com",
+          "toName": "Ronewa Ndouvhada",
+          "brand": "ilciliegio",
+          "sequenceStep": 1,
+          "delivered": false,
+          "opened": false,
+          "clicked": false,
+          "bounced": false,
+          "spam": false,
+          "unsubscribed": false,
+          "blocked": false
+        }
+      ]
     },
     {
       "id": "cli_4556a80e5e",
@@ -321869,11 +322244,36 @@
       "registeredAt": 1783081644000,
       "importedAt": 1783337040561,
       "source": "spottywifi",
-      "waveStatus": null,
-      "emailsSent": [],
+      "waveStatus": "wave1_sent",
+      "emailsSent": [
+        {
+          "type": "wave1",
+          "sentAt": 1791183685425,
+          "messageId": "<202610050701.89944235051@smtp-relay.mailin.fr>",
+          "toEmail": "konetn@gmail.com"
+        }
+      ],
       "blacklisted": false,
       "notes": "",
-      "status": "new"
+      "status": "sent",
+      "brevoEvents": [
+        {
+          "messageId": "<202610050701.89944235051@smtp-relay.mailin.fr>",
+          "subject": "A special thought for you from Il Ciliegio 🍷",
+          "sentAt": 1791183685425,
+          "toEmail": "konetn@gmail.com",
+          "toName": "Kone Ndouvhada",
+          "brand": "ilciliegio",
+          "sequenceStep": 1,
+          "delivered": false,
+          "opened": false,
+          "clicked": false,
+          "bounced": false,
+          "spam": false,
+          "unsubscribed": false,
+          "blocked": false
+        }
+      ]
     },
     {
       "id": "cli_19869ff73b",
@@ -321939,11 +322339,36 @@
       "registeredAt": 1783082534000,
       "importedAt": 1783337040561,
       "source": "spottywifi",
-      "waveStatus": null,
-      "emailsSent": [],
+      "waveStatus": "wave1_sent",
+      "emailsSent": [
+        {
+          "type": "wave1",
+          "sentAt": 1791183685425,
+          "messageId": "<202610050701.21065213482@smtp-relay.mailin.fr>",
+          "toEmail": "pehart02@gmail.com"
+        }
+      ],
       "blacklisted": false,
       "notes": "",
-      "status": "new"
+      "status": "sent",
+      "brevoEvents": [
+        {
+          "messageId": "<202610050701.21065213482@smtp-relay.mailin.fr>",
+          "subject": "A special thought for you from Il Ciliegio 🍷",
+          "sentAt": 1791183685425,
+          "toEmail": "pehart02@gmail.com",
+          "toName": "Paris Hart",
+          "brand": "ilciliegio",
+          "sequenceStep": 1,
+          "delivered": false,
+          "opened": false,
+          "clicked": false,
+          "bounced": false,
+          "spam": false,
+          "unsubscribed": false,
+          "blocked": false
+        }
+      ]
     },
     {
       "id": "cli_290e4daafd",
@@ -321961,11 +322386,36 @@
       "registeredAt": 1783082966000,
       "importedAt": 1783337040561,
       "source": "spottywifi",
-      "waveStatus": null,
-      "emailsSent": [],
+      "waveStatus": "wave1_sent",
+      "emailsSent": [
+        {
+          "type": "wave1",
+          "sentAt": 1791183685425,
+          "messageId": "<202610050701.41969570901@smtp-relay.mailin.fr>",
+          "toEmail": "marcelolyriocunha@gmail.com"
+        }
+      ],
       "blacklisted": false,
       "notes": "",
-      "status": "new"
+      "status": "sent",
+      "brevoEvents": [
+        {
+          "messageId": "<202610050701.41969570901@smtp-relay.mailin.fr>",
+          "subject": "A special thought for you from Il Ciliegio 🍷",
+          "sentAt": 1791183685425,
+          "toEmail": "marcelolyriocunha@gmail.com",
+          "toName": "Marcelo Cunha",
+          "brand": "ilciliegio",
+          "sequenceStep": 1,
+          "delivered": false,
+          "opened": false,
+          "clicked": false,
+          "bounced": false,
+          "spam": false,
+          "unsubscribed": false,
+          "blocked": false
+        }
+      ]
     },
     {
       "id": "cli_9fb64bdcf5",
@@ -321983,11 +322433,36 @@
       "registeredAt": 1783083093000,
       "importedAt": 1783337040561,
       "source": "spottywifi",
-      "waveStatus": null,
-      "emailsSent": [],
+      "waveStatus": "wave1_sent",
+      "emailsSent": [
+        {
+          "type": "wave1",
+          "sentAt": 1791183685425,
+          "messageId": "<202610050701.64574911952@smtp-relay.mailin.fr>",
+          "toEmail": "mdeddens4@gmail.com"
+        }
+      ],
       "blacklisted": false,
       "notes": "",
-      "status": "new"
+      "status": "sent",
+      "brevoEvents": [
+        {
+          "messageId": "<202610050701.64574911952@smtp-relay.mailin.fr>",
+          "subject": "A special thought for you from Il Ciliegio 🍷",
+          "sentAt": 1791183685425,
+          "toEmail": "mdeddens4@gmail.com",
+          "toName": "Mailen Deddens",
+          "brand": "ilciliegio",
+          "sequenceStep": 1,
+          "delivered": false,
+          "opened": false,
+          "clicked": false,
+          "bounced": false,
+          "spam": false,
+          "unsubscribed": false,
+          "blocked": false
+        }
+      ]
     },
     {
       "id": "cli_ae6349357d",
@@ -322005,11 +322480,36 @@
       "registeredAt": 1783083262000,
       "importedAt": 1783337040561,
       "source": "spottywifi",
-      "waveStatus": null,
-      "emailsSent": [],
+      "waveStatus": "wave1_sent",
+      "emailsSent": [
+        {
+          "type": "wave1",
+          "sentAt": 1791183685425,
+          "messageId": "<202610050701.48761520532@smtp-relay.mailin.fr>",
+          "toEmail": "marinalyrioc@gmail.com.br"
+        }
+      ],
       "blacklisted": false,
       "notes": "",
-      "status": "new"
+      "status": "sent",
+      "brevoEvents": [
+        {
+          "messageId": "<202610050701.48761520532@smtp-relay.mailin.fr>",
+          "subject": "A special thought for you from Il Ciliegio 🍷",
+          "sentAt": 1791183685425,
+          "toEmail": "marinalyrioc@gmail.com.br",
+          "toName": "Marina Cunha",
+          "brand": "ilciliegio",
+          "sequenceStep": 1,
+          "delivered": false,
+          "opened": false,
+          "clicked": false,
+          "bounced": false,
+          "spam": false,
+          "unsubscribed": false,
+          "blocked": false
+        }
+      ]
     },
     {
       "id": "cli_af92482392",
@@ -322027,11 +322527,36 @@
       "registeredAt": 1783177662000,
       "importedAt": 1783337040561,
       "source": "spottywifi",
-      "waveStatus": null,
-      "emailsSent": [],
+      "waveStatus": "wave1_sent",
+      "emailsSent": [
+        {
+          "type": "wave1",
+          "sentAt": 1791183685425,
+          "messageId": "<202610050701.52148645301@smtp-relay.mailin.fr>",
+          "toEmail": "lady.gaga@gmail.com"
+        }
+      ],
       "blacklisted": false,
       "notes": "",
-      "status": "new"
+      "status": "sent",
+      "brevoEvents": [
+        {
+          "messageId": "<202610050701.52148645301@smtp-relay.mailin.fr>",
+          "subject": "A special thought for you from Il Ciliegio 🍷",
+          "sentAt": 1791183685425,
+          "toEmail": "lady.gaga@gmail.com",
+          "toName": "Lady Gaga",
+          "brand": "ilciliegio",
+          "sequenceStep": 1,
+          "delivered": false,
+          "opened": false,
+          "clicked": false,
+          "bounced": false,
+          "spam": false,
+          "unsubscribed": false,
+          "blocked": false
+        }
+      ]
     },
     {
       "id": "cli_185007323c",
@@ -322049,11 +322574,36 @@
       "registeredAt": 1783341915000,
       "importedAt": 1783337040561,
       "source": "spottywifi",
-      "waveStatus": null,
-      "emailsSent": [],
+      "waveStatus": "wave1_sent",
+      "emailsSent": [
+        {
+          "type": "wave1",
+          "sentAt": 1791183685425,
+          "messageId": "<202610050701.92514054508@smtp-relay.mailin.fr>",
+          "toEmail": "rubinho.castioni@gmail.com"
+        }
+      ],
       "blacklisted": false,
       "notes": "",
-      "status": "new"
+      "status": "sent",
+      "brevoEvents": [
+        {
+          "messageId": "<202610050701.92514054508@smtp-relay.mailin.fr>",
+          "subject": "A special thought for you from Il Ciliegio 🍷",
+          "sentAt": 1791183685425,
+          "toEmail": "rubinho.castioni@gmail.com",
+          "toName": "Rubens Santos",
+          "brand": "ilciliegio",
+          "sequenceStep": 1,
+          "delivered": false,
+          "opened": false,
+          "clicked": false,
+          "bounced": false,
+          "spam": false,
+          "unsubscribed": false,
+          "blocked": false
+        }
+      ]
     },
     {
       "id": "cli_d216897d4e",
@@ -322071,11 +322621,36 @@
       "registeredAt": 1783342725000,
       "importedAt": 1783337040561,
       "source": "spottywifi",
-      "waveStatus": null,
-      "emailsSent": [],
+      "waveStatus": "wave1_sent",
+      "emailsSent": [
+        {
+          "type": "wave1",
+          "sentAt": 1791183685425,
+          "messageId": "<202610050701.57653310030@smtp-relay.mailin.fr>",
+          "toEmail": "eduardo.perelli@eperelli.com.ar"
+        }
+      ],
       "blacklisted": false,
       "notes": "",
-      "status": "new"
+      "status": "sent",
+      "brevoEvents": [
+        {
+          "messageId": "<202610050701.57653310030@smtp-relay.mailin.fr>",
+          "subject": "A special thought for you from Il Ciliegio 🍷",
+          "sentAt": 1791183685425,
+          "toEmail": "eduardo.perelli@eperelli.com.ar",
+          "toName": "Ed Perelli",
+          "brand": "ilciliegio",
+          "sequenceStep": 1,
+          "delivered": false,
+          "opened": false,
+          "clicked": false,
+          "bounced": false,
+          "spam": false,
+          "unsubscribed": false,
+          "blocked": false
+        }
+      ]
     },
     {
       "id": "cli_49fb503045",
@@ -322093,11 +322668,36 @@
       "registeredAt": 1783342771000,
       "importedAt": 1783337040561,
       "source": "spottywifi",
-      "waveStatus": null,
-      "emailsSent": [],
+      "waveStatus": "wave1_sent",
+      "emailsSent": [
+        {
+          "type": "wave1",
+          "sentAt": 1791183685425,
+          "messageId": "<202610050701.18732946749@smtp-relay.mailin.fr>",
+          "toEmail": "baileyjwall@gmail.com"
+        }
+      ],
       "blacklisted": false,
       "notes": "",
-      "status": "new"
+      "status": "sent",
+      "brevoEvents": [
+        {
+          "messageId": "<202610050701.18732946749@smtp-relay.mailin.fr>",
+          "subject": "A special thought for you from Il Ciliegio 🍷",
+          "sentAt": 1791183685425,
+          "toEmail": "baileyjwall@gmail.com",
+          "toName": "Bailey Wall",
+          "brand": "ilciliegio",
+          "sequenceStep": 1,
+          "delivered": false,
+          "opened": false,
+          "clicked": false,
+          "bounced": false,
+          "spam": false,
+          "unsubscribed": false,
+          "blocked": false
+        }
+      ]
     },
     {
       "id": "cli_8b549df7f0",
@@ -322115,11 +322715,36 @@
       "registeredAt": 1783342774000,
       "importedAt": 1783337040561,
       "source": "spottywifi",
-      "waveStatus": null,
-      "emailsSent": [],
+      "waveStatus": "wave1_sent",
+      "emailsSent": [
+        {
+          "type": "wave1",
+          "sentAt": 1791183685425,
+          "messageId": "<202610050701.22183640568@smtp-relay.mailin.fr>",
+          "toEmail": "cassmith126@gmail.com"
+        }
+      ],
       "blacklisted": false,
       "notes": "",
-      "status": "new"
+      "status": "sent",
+      "brevoEvents": [
+        {
+          "messageId": "<202610050701.22183640568@smtp-relay.mailin.fr>",
+          "subject": "A special thought for you from Il Ciliegio 🍷",
+          "sentAt": 1791183685425,
+          "toEmail": "cassmith126@gmail.com",
+          "toName": "Cassady Smith",
+          "brand": "ilciliegio",
+          "sequenceStep": 1,
+          "delivered": false,
+          "opened": false,
+          "clicked": false,
+          "bounced": false,
+          "spam": false,
+          "unsubscribed": false,
+          "blocked": false
+        }
+      ]
     },
     {
       "id": "cli_17668f0497",
@@ -322137,11 +322762,36 @@
       "registeredAt": 1783342966000,
       "importedAt": 1783337040561,
       "source": "spottywifi",
-      "waveStatus": null,
-      "emailsSent": [],
+      "waveStatus": "wave1_sent",
+      "emailsSent": [
+        {
+          "type": "wave1",
+          "sentAt": 1791183685425,
+          "messageId": "<202610050701.40266827559@smtp-relay.mailin.fr>",
+          "toEmail": "rubens.tcc08@gmail.com"
+        }
+      ],
       "blacklisted": false,
       "notes": "",
-      "status": "new"
+      "status": "sent",
+      "brevoEvents": [
+        {
+          "messageId": "<202610050701.40266827559@smtp-relay.mailin.fr>",
+          "subject": "A special thought for you from Il Ciliegio 🍷",
+          "sentAt": 1791183685425,
+          "toEmail": "rubens.tcc08@gmail.com",
+          "toName": "Rubens Santos",
+          "brand": "ilciliegio",
+          "sequenceStep": 1,
+          "delivered": false,
+          "opened": false,
+          "clicked": false,
+          "bounced": false,
+          "spam": false,
+          "unsubscribed": false,
+          "blocked": false
+        }
+      ]
     },
     {
       "id": "cli_2cd22ecfad",
@@ -322159,11 +322809,36 @@
       "registeredAt": 1783344585000,
       "importedAt": 1783937866602,
       "source": "spottywifi",
-      "waveStatus": null,
-      "emailsSent": [],
+      "waveStatus": "wave1_sent",
+      "emailsSent": [
+        {
+          "type": "wave1",
+          "sentAt": 1791183685425,
+          "messageId": "<202610050701.79574557070@smtp-relay.mailin.fr>",
+          "toEmail": "joel.sto1@hotmail.com"
+        }
+      ],
       "blacklisted": false,
       "notes": "",
-      "status": "new"
+      "status": "sent",
+      "brevoEvents": [
+        {
+          "messageId": "<202610050701.79574557070@smtp-relay.mailin.fr>",
+          "subject": "A special thought for you from Il Ciliegio 🍷",
+          "sentAt": 1791183685425,
+          "toEmail": "joel.sto1@hotmail.com",
+          "toName": "Joel St-Onge",
+          "brand": "ilciliegio",
+          "sequenceStep": 1,
+          "delivered": false,
+          "opened": false,
+          "clicked": false,
+          "bounced": false,
+          "spam": false,
+          "unsubscribed": false,
+          "blocked": false
+        }
+      ]
     },
     {
       "id": "cli_3c4e568628",
@@ -322181,11 +322856,36 @@
       "registeredAt": 1783345166000,
       "importedAt": 1783937866602,
       "source": "spottywifi",
-      "waveStatus": null,
-      "emailsSent": [],
+      "waveStatus": "wave1_sent",
+      "emailsSent": [
+        {
+          "type": "wave1",
+          "sentAt": 1791183685425,
+          "messageId": "<202610050701.26399249459@smtp-relay.mailin.fr>",
+          "toEmail": "renatacastioni@gmail.com"
+        }
+      ],
       "blacklisted": false,
       "notes": "",
-      "status": "new"
+      "status": "sent",
+      "brevoEvents": [
+        {
+          "messageId": "<202610050701.26399249459@smtp-relay.mailin.fr>",
+          "subject": "A special thought for you from Il Ciliegio 🍷",
+          "sentAt": 1791183685425,
+          "toEmail": "renatacastioni@gmail.com",
+          "toName": "Renata Castioni",
+          "brand": "ilciliegio",
+          "sequenceStep": 1,
+          "delivered": false,
+          "opened": false,
+          "clicked": false,
+          "bounced": false,
+          "spam": false,
+          "unsubscribed": false,
+          "blocked": false
+        }
+      ]
     },
     {
       "id": "cli_f6c4cdebe4",
