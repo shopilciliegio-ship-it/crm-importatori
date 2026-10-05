@@ -1,6 +1,60 @@
 {
   "orders": [
     {
+      "id": "ord_muvsp44v2xyj",
+      "customerName": "VINCENZO ALCARO",
+      "customerEmail": "vincenzoalcaro01@gmail.com",
+      "customerPhone": "+393339961209",
+      "amount": 108.15,
+      "currency": "EUR",
+      "orderDate": 1791218444000,
+      "emailSubject": "🍷 New Order — VINCENZO ALCARO — 108.15 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "VIA GIOVANNI JANNONI, 51, 88100 CATANZARO, CALABRIA (CATANZARO)",
+      "numberOfCartons": null,
+      "shippingType": null,
+      "gmailMessageId": "<202610051640.79828330978@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "INFERNACCIO RED WINE IGT 2022",
+          "qty": 4,
+          "value": 64.0
+        },
+        {
+          "description": "ARTICHOKE LIQUOR 500 ML",
+          "qty": 1,
+          "value": 20.0
+        },
+        {
+          "description": "VIN SANTO DEL CHIANTI DOC 2019",
+          "qty": 1,
+          "value": 19.0
+        }
+      ],
+      "customsDuties": null,
+      "shippingCostCustomer": 0.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1791237732655,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1791237732655,
+      "updatedAt": 1791237732655
+    },
+    {
       "id": "ord_mur5i7z0lts6",
       "customerName": "JESUS RUBIO",
       "customerEmail": "jesusjoserubio@gmail.com",
@@ -10687,5 +10741,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1790956915164
+  "lastImportedAt": 1791237732655
 }
