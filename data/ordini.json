@@ -200,12 +200,12 @@
       "currency": "EUR",
       "orderDate": 1790709251000,
       "emailSubject": "🍷 New Order — SUSAN DAUBLE — 249.20 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "DAUBLES",
       "shippingAddress": "161 RANDOLPH AVE, 07628 DUMONT, NEW JERSEY (BERGEN COUNTY)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202609291914.34561325722@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A897437876",
       "carrier": "MBE",
       "products": [
         {
@@ -231,13 +231,18 @@
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1791216188179,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1790719291118,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1791216188179,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -251,7 +256,7 @@
       ],
       "notes": "",
       "createdAt": 1790719291118,
-      "updatedAt": 1790719304442
+      "updatedAt": 1791216188179
     },
     {
       "id": "ord_mun81432zjm3",
@@ -329,12 +334,12 @@
       "currency": "EUR",
       "orderDate": 1790670891000,
       "emailSubject": "🍷 New Order — CRISTINA BENITEZ — 67.00 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "BENITEZC",
       "shippingAddress": "CALLE DOS DE MAYO 25, 1º, 14500 PUENTE GENIL, CÓRDOBA",
       "numberOfCartons": null,
       "shippingType": null,
       "gmailMessageId": "<891e32f5-fb88-4b4c-a600-ec9bd44d8173@smtp-relay.sendinblue.com>",
-      "trackingNumber": "",
+      "trackingNumber": "1Z50X8766891081621",
       "carrier": "MBE",
       "products": [
         {
@@ -355,13 +360,18 @@
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1791216188179,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1790676146326,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1791216188179,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -375,7 +385,7 @@
       ],
       "notes": "",
       "createdAt": 1790676146326,
-      "updatedAt": 1790676166245
+      "updatedAt": 1791216188179
     },
     {
       "id": "ord_mul2w5h7op36",
