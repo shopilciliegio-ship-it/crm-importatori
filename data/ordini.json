@@ -49,10 +49,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "vincenzoalcaro01@gmail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1791237772850,
+          "messageId": "<202610052202.58554415011@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1791237732655,
-      "updatedAt": 1791237732655
+      "updatedAt": 1791237772850
     },
     {
       "id": "ord_mur5i7z0lts6",
@@ -1111,11 +1119,18 @@
           "subject": "Your order is going through customs",
           "sentAt": 1790481659551,
           "messageId": "<202609270401.86218022636@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "in_consegna",
+          "to": "julianag1811@gmail.com",
+          "subject": "Your wine is out for delivery! 🍷",
+          "sentAt": 1791237772850,
+          "messageId": "<202610052202.40232577886@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1789143073839,
-      "updatedAt": 1791237770093,
+      "updatedAt": 1791237772850,
       "staleAlertDays": 7,
       "staleAlertSince": 1790481653763,
       "track17Registered": true
