@@ -99,13 +99,20 @@ def gh_put(path, data, sha, message):
     return r.json()['content']['sha']
 
 
+def safe_decode(payload, charset):
+    try:
+        return payload.decode(charset or 'utf-8', errors='replace')
+    except LookupError:  # charset sconosciuto (es. unknown-8bit)
+        return payload.decode('utf-8', errors='replace')
+
+
 def decode_header(raw):
     if not raw:
         return ''
     parts = email.header.decode_header(raw)
     out = ''
     for part, enc in parts:
-        out += part.decode(enc or 'utf-8', errors='replace') if isinstance(part, bytes) else part
+        out += safe_decode(part, enc) if isinstance(part, bytes) else part
     return out
 
 
@@ -148,7 +155,7 @@ def extract_body_text(msg, max_chars=2500):
                 if payload is None:
                     continue
                 charset = part.get_content_charset() or 'utf-8'
-                text = payload.decode(charset, errors='replace')
+                text = safe_decode(payload, charset)
             except Exception:
                 continue
             if ctype == 'text/plain' and not plain:
@@ -159,7 +166,7 @@ def extract_body_text(msg, max_chars=2500):
         try:
             payload = msg.get_payload(decode=True)
             charset = msg.get_content_charset() or 'utf-8'
-            text = payload.decode(charset, errors='replace') if payload else ''
+            text = safe_decode(payload, charset) if payload else ''
         except Exception:
             text = ''
         if msg.get_content_type() == 'text/html':
