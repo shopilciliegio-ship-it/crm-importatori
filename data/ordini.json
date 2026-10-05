@@ -1067,7 +1067,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1790002675059,
-      "status": "dogana",
+      "status": "in_consegna",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1083,6 +1083,11 @@
           "status": "dogana",
           "date": 1790481653763,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "in_consegna",
+          "date": 1791237770093,
+          "note": "Auto 17Track (era: dogana): Stevens Point, WI, United States — Out for Delivery, Out For Delivery Today"
         }
       ],
       "emailsSent": [
@@ -1110,7 +1115,7 @@
       ],
       "notes": "",
       "createdAt": 1789143073839,
-      "updatedAt": 1791086523242,
+      "updatedAt": 1791237770093,
       "staleAlertDays": 7,
       "staleAlertSince": 1790481653763,
       "track17Registered": true
