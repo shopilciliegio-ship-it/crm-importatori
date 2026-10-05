@@ -252,11 +252,18 @@
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1790719304442,
           "messageId": "<202609292201.95564089853@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "day0",
+          "to": "suedauble@verizon.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1791216197900,
+          "messageId": "<202610051603.94793498340@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1790719291118,
-      "updatedAt": 1791216193939,
+      "updatedAt": 1791216197900,
       "track17Registered": true
     },
     {
@@ -382,11 +389,18 @@
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1790676166245,
           "messageId": "<202609291002.11211767669@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "day0",
+          "to": "cbenitezberral@gmail.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1791216197900,
+          "messageId": "<202610051603.92456323047@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1790676146326,
-      "updatedAt": 1791216193939,
+      "updatedAt": 1791216197900,
       "track17Registered": true
     },
     {
