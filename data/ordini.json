@@ -1,6 +1,104 @@
 {
   "orders": [
     {
+      "id": "ord_mux84ibk0d73",
+      "customerName": "KIMBERLY  HEBERT",
+      "customerEmail": "kimberly.hebert@yahoo.com",
+      "customerPhone": "+13372882308",
+      "amount": 98.0,
+      "currency": "EUR",
+      "orderDate": 1791311293000,
+      "emailSubject": "🍷 New Order — KIMBERLY  HEBERT — 98.00 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "523 TRACY CIRCLE, 70503 LAFAYETTE, LOUISIANA (LAFAYETTE PARISH)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202610061828.40024695796@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
+          "qty": 3,
+          "value": 30.0
+        }
+      ],
+      "customsDuties": 3.0,
+      "shippingCostCustomer": 65.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1791324111296,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1791324111296,
+      "updatedAt": 1791324111296
+    },
+    {
+      "id": "ord_mux84ibk0v78",
+      "customerName": "VERONICA REED",
+      "customerEmail": "vickiar1860@gmail.com",
+      "customerPhone": "+13377728331",
+      "amount": 259.1,
+      "currency": "EUR",
+      "orderDate": 1791311094000,
+      "emailSubject": "🍷 New Order — VERONICA REED — 259.10 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "307 MANOR HOUSE LINE, 70507 LAFAYETTE PARISH, LOUISIANA (LAFAYETTE PARISH)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202610061824.47453217735@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "INFERNACCIO RED WINE IGT 2022",
+          "qty": 5,
+          "value": 80.0
+        },
+        {
+          "description": "LE FORCACCE WHITE WINE IGT 2024 VIOGNI..",
+          "qty": 6,
+          "value": 51.0
+        },
+        {
+          "description": "CHIANTI STRADE BIANCHE 2025 LIM. ED.",
+          "qty": 1,
+          "value": 0.0
+        }
+      ],
+      "customsDuties": 13.1,
+      "shippingCostCustomer": 115.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1791324111296,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1791324111296,
+      "updatedAt": 1791324111296
+    },
+    {
       "id": "ord_muwif4xwc76j",
       "customerName": "CONNOR SMITH",
       "customerEmail": "connor.smith4355@gmail.com",
@@ -10847,5 +10945,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1791280937156
+  "lastImportedAt": 1791324111296
 }
