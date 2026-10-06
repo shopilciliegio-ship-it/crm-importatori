@@ -1,6 +1,70 @@
 {
   "orders": [
     {
+      "id": "ord_muwif4xwc76j",
+      "customerName": "CONNOR SMITH",
+      "customerEmail": "connor.smith4355@gmail.com",
+      "customerPhone": "+15089420380",
+      "amount": 145.95,
+      "currency": "EUR",
+      "orderDate": 1791276399000,
+      "emailSubject": "🍷 New Order — CONNOR SMITH — 145.95 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "552 VICTORY RD, APT 432, 02171 QUINCY, MASSACHUSETTS (NORFOLK COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202610060846.92724120883@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "1 LT EXTRA VIRGIN OLIVE OIL 2025",
+          "qty": 1,
+          "value": 21.0
+        },
+        {
+          "description": "POGGIO ORLANDO 2024 CHIANTI COLLI SENE..",
+          "qty": 1,
+          "value": 12.0
+        },
+        {
+          "description": "INFERNACCIO RED WINE IGT 2022",
+          "qty": 1,
+          "value": 16.0
+        },
+        {
+          "description": "RED WINE IGT 2024",
+          "qty": 1,
+          "value": 7.0
+        },
+        {
+          "description": "LE FORCACCE WHITE WINE IGT 2024 VIOGNI..",
+          "qty": 1,
+          "value": 8.5
+        }
+      ],
+      "customsDuties": 6.45,
+      "shippingCostCustomer": 75.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1791280937156,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1791280937156,
+      "updatedAt": 1791280937156
+    },
+    {
       "id": "ord_muvsp44v2xyj",
       "customerName": "VINCENZO ALCARO",
       "customerEmail": "vincenzoalcaro01@gmail.com",
@@ -10775,5 +10839,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1791237732655
+  "lastImportedAt": 1791280937156
 }
