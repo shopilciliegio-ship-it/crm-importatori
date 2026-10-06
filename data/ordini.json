@@ -1075,7 +1075,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1790002675059,
-      "status": "in_consegna",
+      "status": "consegna_fallita",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1096,6 +1096,11 @@
           "status": "in_consegna",
           "date": 1791237770093,
           "note": "Auto 17Track (era: dogana): Stevens Point, WI, United States — Out for Delivery, Out For Delivery Today"
+        },
+        {
+          "status": "consegna_fallita",
+          "date": 1791259353599,
+          "note": "Auto 17Track (era: in_consegna): Delivery Attempted, The receiver was not available for delivery. We'll make a second attempt the next business day."
         }
       ],
       "emailsSent": [
@@ -1130,10 +1135,12 @@
       ],
       "notes": "",
       "createdAt": 1789143073839,
-      "updatedAt": 1791237772850,
+      "updatedAt": 1791259353599,
       "staleAlertDays": 7,
       "staleAlertSince": 1790481653763,
-      "track17Registered": true
+      "track17Registered": true,
+      "deliveryFailureCount": 1,
+      "lastDeliveryFailureEventAt": "2026-10-05T16:56:00Z"
     },
     {
       "id": "ord_mtvq0wusqke9",
