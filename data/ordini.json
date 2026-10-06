@@ -59,10 +59,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "connor.smith4355@gmail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1791280957922,
+          "messageId": "<202610061002.24744502058@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1791280937156,
-      "updatedAt": 1791280937156
+      "updatedAt": 1791280957922
     },
     {
       "id": "ord_muvsp44v2xyj",
