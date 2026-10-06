@@ -44,6 +44,15 @@
       "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
       "sentAt": 1791259356302,
       "messageId": "<202610060402.87340411591@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_muwif4xwc76j",
+      "customerName": "CONNOR SMITH",
+      "type": "order_received",
+      "to": "connor.smith4355@gmail.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1791280957922,
+      "messageId": "<202610061002.24744502058@smtp-relay.mailin.fr>"
     }
   ]
 }
