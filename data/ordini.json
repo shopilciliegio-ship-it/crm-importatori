@@ -1131,11 +1131,18 @@
           "subject": "Your wine is out for delivery! 🍷",
           "sentAt": 1791237772850,
           "messageId": "<202610052202.40232577886@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegna_fallita",
+          "to": "julianag1811@gmail.com",
+          "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+          "sentAt": 1791259356302,
+          "messageId": "<202610060402.87340411591@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1789143073839,
-      "updatedAt": 1791259353599,
+      "updatedAt": 1791259356302,
       "staleAlertDays": 7,
       "staleAlertSince": 1790481653763,
       "track17Registered": true,
