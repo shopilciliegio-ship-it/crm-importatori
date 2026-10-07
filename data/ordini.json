@@ -1,6 +1,55 @@
 {
   "orders": [
     {
+      "id": "ord_muyaqajaovfm",
+      "customerName": "CONG LIN",
+      "customerEmail": "lisalinmiraggio76@gmail.com",
+      "customerPhone": "+16315619668",
+      "amount": 278.02,
+      "currency": "EUR",
+      "orderDate": 1791375584000,
+      "emailSubject": "🍷 New Order — CONG LIN — 278.02 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "77 HILLTOP DR, 11789 SOUND BEACH, NEW YORK (SUFFOLK COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202610071219.82393761505@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
+          "qty": 6,
+          "value": 60.0
+        },
+        {
+          "description": "INFERNACCIO RED WINE IGT 2022",
+          "qty": 6,
+          "value": 96.0
+        }
+      ],
+      "customsDuties": 14.82,
+      "shippingCostCustomer": 115.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1791388953046,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1791388953046,
+      "updatedAt": 1791388953046
+    },
+    {
       "id": "ord_muxkzdkv4if8",
       "customerName": "FRANK BONANNO",
       "customerEmail": "fbonannojr22@gmail.com",
@@ -11053,5 +11102,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1791345706879
+  "lastImportedAt": 1791388953046
 }
