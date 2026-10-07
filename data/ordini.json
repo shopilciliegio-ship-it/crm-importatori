@@ -253,7 +253,7 @@
       "shippingType": null,
       "gmailMessageId": "<202610051640.79828330978@smtp-relay.mailin.fr>",
       "trackingNumber": "",
-      "carrier": "MBE",
+      "carrier": "TNT EXPRESS",
       "products": [
         {
           "description": "INFERNACCIO RED WINE IGT 2022",
@@ -278,13 +278,18 @@
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1791367316293,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1791237732655,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1791367316293,
+          "note": "Auto SpedirePro: aggiornamento stato (rif. ALCAROV)"
         }
       ],
       "emailsSent": [
@@ -298,7 +303,9 @@
       ],
       "notes": "",
       "createdAt": 1791237732655,
-      "updatedAt": 1791237772850
+      "updatedAt": 1791367316293,
+      "trackingUrl": "https://www.spedire.com/tracking/WS01777275",
+      "spedireproReference": "ALCAROV"
     },
     {
       "id": "ord_mur5i7z0lts6",
