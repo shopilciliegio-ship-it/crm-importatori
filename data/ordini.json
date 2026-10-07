@@ -1,6 +1,50 @@
 {
   "orders": [
     {
+      "id": "ord_muxkzdkv4if8",
+      "customerName": "FRANK BONANNO",
+      "customerEmail": "fbonannojr22@gmail.com",
+      "customerPhone": "",
+      "amount": 220.6,
+      "currency": "EUR",
+      "orderDate": 1791331210000,
+      "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio FRANK BONANNO",
+      "shipmentCode": "",
+      "shippingAddress": "2202 Dolphin Lane apt 2202, 11741 Holbrook- NEW YORK - U.S.A. (NY), United States, +16315237574",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<CAOmk=KaGLx8DxQusm+Q+65S2k4ttCdRYC5xPc7-T0h7wCJP-JA@mail.gmail.com>",
+      "trackingNumber": "",
+      "carrier": "- U.S.A. Wine Corriere Std",
+      "products": [
+        {
+          "description": "CHIANTI COLLI SENESI DOCG POGGIO ORLANDO 2024",
+          "qty": 8,
+          "value": 96.0
+        }
+      ],
+      "customsDuties": 9.6,
+      "shippingCostCustomer": 115.0,
+      "shippingCostMos": null,
+      "source": "shop",
+      "language": "en",
+      "orderNumber": "#1463",
+      "paymentType": "Carte Di Credito/Bancomat",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1791345706879,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1791345706879,
+      "updatedAt": 1791345706879
+    },
+    {
       "id": "ord_mux84ibk0d73",
       "customerName": "KIMBERLY  HEBERT",
       "customerEmail": "kimberly.hebert@yahoo.com",
@@ -10963,5 +11007,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1791324111296
+  "lastImportedAt": 1791345706879
 }
