@@ -734,7 +734,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1791216188179,
-      "status": "in_consegna",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -750,6 +750,11 @@
           "status": "in_consegna",
           "date": 1791367318820,
           "note": "Auto 17Track (era: in_transito): Guarroman, Spain — Out for Delivery, Out For Delivery Today"
+        },
+        {
+          "status": "consegnato",
+          "date": 1791388965969,
+          "note": "Auto 17Track (era: in_consegna): PUENTE GENIL, ES — Delivered, DELIVERED"
         }
       ],
       "emailsSent": [
@@ -777,7 +782,7 @@
       ],
       "notes": "",
       "createdAt": 1790676146326,
-      "updatedAt": 1791367320797,
+      "updatedAt": 1791388965969,
       "track17Registered": true
     },
     {
