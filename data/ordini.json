@@ -44,10 +44,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "lisalinmiraggio76@gmail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1791388968215,
+          "messageId": "<202610071602.30446649599@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1791388953046,
-      "updatedAt": 1791388953046
+      "updatedAt": 1791388968215
     },
     {
       "id": "ord_muxkzdkv4if8",
@@ -552,7 +560,9 @@
       ],
       "notes": "",
       "createdAt": 1790784124892,
-      "updatedAt": 1790784143580
+      "updatedAt": 1791388968215,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1790784124892
     },
     {
       "id": "ord_mun81432rajr",
@@ -778,11 +788,18 @@
           "subject": "Your wine is out for delivery! 🍷",
           "sentAt": 1791367320797,
           "messageId": "<202610071002.39169483108@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegnato",
+          "to": "cbenitezberral@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1791388968215,
+          "messageId": "<202610071602.50896915134@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1790676146326,
-      "updatedAt": 1791388965969,
+      "updatedAt": 1791388968215,
       "track17Registered": true
     },
     {
