@@ -39,10 +39,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "fbonannojr22@gmail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1791345723912,
+          "messageId": "<202610070402.40498611900@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1791345706879,
-      "updatedAt": 1791345709853
+      "updatedAt": 1791345723912
     },
     {
       "id": "ord_mux84ibk0d73",
@@ -1375,11 +1383,18 @@
           "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
           "sentAt": 1791259356302,
           "messageId": "<202610060402.87340411591@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegna_fallita",
+          "to": "julianag1811@gmail.com",
+          "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+          "sentAt": 1791345723912,
+          "messageId": "<202610070402.78803986013@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1789143073839,
-      "updatedAt": 1791345721721,
+      "updatedAt": 1791345723912,
       "staleAlertDays": 7,
       "staleAlertSince": 1790481653763,
       "track17Registered": true,
