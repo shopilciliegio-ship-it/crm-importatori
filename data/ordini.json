@@ -299,11 +299,18 @@
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1791237772850,
           "messageId": "<202610052202.58554415011@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "day0",
+          "to": "vincenzoalcaro01@gmail.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1791367320797,
+          "messageId": "<202610071002.77091438457@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1791237732655,
-      "updatedAt": 1791367316293,
+      "updatedAt": 1791367320797,
       "trackingUrl": "https://www.spedire.com/tracking/WS01777275",
       "spedireproReference": "ALCAROV"
     },
@@ -710,11 +717,18 @@
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1791216197900,
           "messageId": "<202610051603.92456323047@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "in_consegna",
+          "to": "cbenitezberral@gmail.com",
+          "subject": "Your wine is out for delivery! 🍷",
+          "sentAt": 1791367320797,
+          "messageId": "<202610071002.39169483108@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1790676146326,
-      "updatedAt": 1791367318820,
+      "updatedAt": 1791367320797,
       "track17Registered": true
     },
     {
