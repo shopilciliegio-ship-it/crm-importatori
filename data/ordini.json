@@ -9,9 +9,9 @@
       "currency": "EUR",
       "orderDate": 1791331210000,
       "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio FRANK BONANNO",
-      "shipmentCode": "",
+      "shipmentCode": "BONANNOF",
       "shippingAddress": "2202 Dolphin Lane apt 2202, 11741 Holbrook- NEW YORK - U.S.A. (NY), United States, +16315237574",
-      "numberOfCartons": null,
+      "numberOfCartons": 2,
       "shippingType": "standard",
       "gmailMessageId": "<CAOmk=KaGLx8DxQusm+Q+65S2k4ttCdRYC5xPc7-T0h7wCJP-JA@mail.gmail.com>",
       "trackingNumber": "",
@@ -20,12 +20,12 @@
         {
           "description": "CHIANTI COLLI SENESI DOCG POGGIO ORLANDO 2024",
           "qty": 8,
-          "value": 96.0
+          "value": 96
         }
       ],
       "customsDuties": 9.6,
-      "shippingCostCustomer": 115.0,
-      "shippingCostMos": null,
+      "shippingCostCustomer": 115,
+      "shippingCostMos": 105,
       "source": "shop",
       "language": "en",
       "orderNumber": "#1463",
@@ -42,14 +42,14 @@
       "emailsSent": [],
       "notes": "",
       "createdAt": 1791345706879,
-      "updatedAt": 1791345706879
+      "updatedAt": 1791345709853
     },
     {
       "id": "ord_mux84ibk0d73",
       "customerName": "KIMBERLY  HEBERT",
       "customerEmail": "kimberly.hebert@yahoo.com",
       "customerPhone": "+13372882308",
-      "amount": 98.0,
+      "amount": 98,
       "currency": "EUR",
       "orderDate": 1791311293000,
       "emailSubject": "🍷 New Order — KIMBERLY  HEBERT — 98.00 EUR",
@@ -64,11 +64,11 @@
         {
           "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
           "qty": 3,
-          "value": 30.0
+          "value": 30
         }
       ],
-      "customsDuties": 3.0,
-      "shippingCostCustomer": 65.0,
+      "customsDuties": 3,
+      "shippingCostCustomer": 65,
       "shippingCostMos": null,
       "source": "fieramente",
       "language": "en",
@@ -116,21 +116,21 @@
         {
           "description": "INFERNACCIO RED WINE IGT 2022",
           "qty": 5,
-          "value": 80.0
+          "value": 80
         },
         {
           "description": "LE FORCACCE WHITE WINE IGT 2024 VIOGNI..",
           "qty": 6,
-          "value": 51.0
+          "value": 51
         },
         {
           "description": "CHIANTI STRADE BIANCHE 2025 LIM. ED.",
           "qty": 1,
-          "value": 0.0
+          "value": 0
         }
       ],
       "customsDuties": 13.1,
-      "shippingCostCustomer": 115.0,
+      "shippingCostCustomer": 115,
       "shippingCostMos": null,
       "source": "fieramente",
       "language": "en",
@@ -178,22 +178,22 @@
         {
           "description": "1 LT EXTRA VIRGIN OLIVE OIL 2025",
           "qty": 1,
-          "value": 21.0
+          "value": 21
         },
         {
           "description": "POGGIO ORLANDO 2024 CHIANTI COLLI SENE..",
           "qty": 1,
-          "value": 12.0
+          "value": 12
         },
         {
           "description": "INFERNACCIO RED WINE IGT 2022",
           "qty": 1,
-          "value": 16.0
+          "value": 16
         },
         {
           "description": "RED WINE IGT 2024",
           "qty": 1,
-          "value": 7.0
+          "value": 7
         },
         {
           "description": "LE FORCACCE WHITE WINE IGT 2024 VIOGNI..",
@@ -202,7 +202,7 @@
         }
       ],
       "customsDuties": 6.45,
-      "shippingCostCustomer": 75.0,
+      "shippingCostCustomer": 75,
       "shippingCostMos": null,
       "source": "fieramente",
       "language": "en",
@@ -250,21 +250,21 @@
         {
           "description": "INFERNACCIO RED WINE IGT 2022",
           "qty": 4,
-          "value": 64.0
+          "value": 64
         },
         {
           "description": "ARTICHOKE LIQUOR 500 ML",
           "qty": 1,
-          "value": 20.0
+          "value": 20
         },
         {
           "description": "VIN SANTO DEL CHIANTI DOC 2019",
           "qty": 1,
-          "value": 19.0
+          "value": 19
         }
       ],
       "customsDuties": null,
-      "shippingCostCustomer": 0.0,
+      "shippingCostCustomer": 0,
       "shippingCostMos": null,
       "source": "fieramente",
       "language": "en",
@@ -312,31 +312,31 @@
         {
           "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
           "qty": 2,
-          "value": 20.0
+          "value": 20
         },
         {
           "description": "SPARKLING WINE CILIEGIO IN FIORE ROSÉ",
           "qty": 1,
-          "value": 10.0
+          "value": 10
         },
         {
           "description": "POGGIO ORLANDO 2024 CHIANTI COLLI SENE..",
           "qty": 1,
-          "value": 12.0
+          "value": 12
         },
         {
           "description": "INFERNACCIO RED WINE IGT 2022",
           "qty": 1,
-          "value": 16.0
+          "value": 16
         },
         {
           "description": "VIN SANTO DEL CHIANTI DOC 2019",
           "qty": 1,
-          "value": 19.0
+          "value": 19
         }
       ],
       "customsDuties": 7.7,
-      "shippingCostCustomer": 75.0,
+      "shippingCostCustomer": 75,
       "shippingCostMos": null,
       "source": "fieramente",
       "language": "en",
@@ -384,16 +384,16 @@
         {
           "description": "POGGIO ORLANDO 2024 CHIANTI COLLI SENE..",
           "qty": 11,
-          "value": 132.0
+          "value": 132
         },
         {
           "description": "CHIANTI STRADE BIANCHE 2025 LIM. ED.",
           "qty": 1,
-          "value": 0.0
+          "value": 0
         }
       ],
       "customsDuties": 13.2,
-      "shippingCostCustomer": 115.0,
+      "shippingCostCustomer": 115,
       "shippingCostMos": null,
       "source": "fieramente",
       "language": "en",
@@ -441,21 +441,21 @@
         {
           "description": "INFERNACCIO RED WINE IGT 2022",
           "qty": 1,
-          "value": 16.0
+          "value": 16
         },
         {
           "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
           "qty": 1,
-          "value": 19.0
+          "value": 19
         },
         {
           "description": "VIN SANTO DEL CHIANTI DOC 2019",
           "qty": 1,
-          "value": 19.0
+          "value": 19
         }
       ],
       "customsDuties": 5.4,
-      "shippingCostCustomer": 65.0,
+      "shippingCostCustomer": 65,
       "shippingCostMos": null,
       "source": "fieramente",
       "language": "en",
@@ -503,21 +503,21 @@
         {
           "description": "MARIO RED WINE IGT 2019",
           "qty": 3,
-          "value": 84.0
+          "value": 84
         },
         {
           "description": "LE FORCACCE WHITE WINE IGT 2024 VIOGNI..",
           "qty": 2,
-          "value": 17.0
+          "value": 17
         },
         {
           "description": "1 LT EXTRA VIRGIN OLIVE OIL 2025",
           "qty": 1,
-          "value": 21.0
+          "value": 21
         }
       ],
       "customsDuties": 12.2,
-      "shippingCostCustomer": 115.0,
+      "shippingCostCustomer": 115,
       "shippingCostMos": null,
       "source": "fieramente",
       "language": "en",
@@ -563,7 +563,7 @@
       "customerName": "MARYLOU BRAI",
       "customerEmail": "mlbrai924@gmail.com",
       "customerPhone": "+17324569436",
-      "amount": 174.0,
+      "amount": 174,
       "currency": "EUR",
       "orderDate": 1790708825000,
       "emailSubject": "🍷 New Order — MARYLOU BRAI — 174.00 EUR",
@@ -578,26 +578,26 @@
         {
           "description": "MARIO RED WINE IGT 2019",
           "qty": 1,
-          "value": 28.0
+          "value": 28
         },
         {
           "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
           "qty": 1,
-          "value": 10.0
+          "value": 10
         },
         {
           "description": "SPARKLING WINE CILIEGIO IN FIORE ROSÉ",
           "qty": 1,
-          "value": 10.0
+          "value": 10
         },
         {
           "description": "1 LT EXTRA VIRGIN OLIVE OIL 2025",
           "qty": 2,
-          "value": 42.0
+          "value": 42
         }
       ],
-      "customsDuties": 9.0,
-      "shippingCostCustomer": 75.0,
+      "customsDuties": 9,
+      "shippingCostCustomer": 75,
       "shippingCostMos": null,
       "source": "fieramente",
       "language": "en",
@@ -632,7 +632,7 @@
       "customerName": "CRISTINA BENITEZ",
       "customerEmail": "cbenitezberral@gmail.com",
       "customerPhone": "+34649512871",
-      "amount": 67.0,
+      "amount": 67,
       "currency": "EUR",
       "orderDate": 1790670891000,
       "emailSubject": "🍷 New Order — CRISTINA BENITEZ — 67.00 EUR",
@@ -647,16 +647,16 @@
         {
           "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
           "qty": 2,
-          "value": 20.0
+          "value": 20
         },
         {
           "description": "100 ML EXTRA VIRGIN OLIVE OIL 2025",
           "qty": 1,
-          "value": 5.0
+          "value": 5
         }
       ],
       "customsDuties": null,
-      "shippingCostCustomer": 42.0,
+      "shippingCostCustomer": 42,
       "shippingCostMos": null,
       "source": "fieramente",
       "language": "en",
@@ -717,16 +717,16 @@
         {
           "description": "POGGIO ORLANDO 2024 CHIANTI COLLI SENE..",
           "qty": 6,
-          "value": 72.0
+          "value": 72
         },
         {
           "description": "SPARKLING WINE CILIEGIO IN FIORE ROSÉ",
           "qty": 6,
-          "value": 60.0
+          "value": 60
         }
       ],
       "customsDuties": 12.54,
-      "shippingCostCustomer": 115.0,
+      "shippingCostCustomer": 115,
       "shippingCostMos": null,
       "source": "fieramente",
       "language": "en",
