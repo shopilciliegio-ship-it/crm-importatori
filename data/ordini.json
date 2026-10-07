@@ -1333,6 +1333,11 @@
           "status": "consegna_fallita",
           "date": 1791259353599,
           "note": "Auto 17Track (era: in_consegna): Delivery Attempted, The receiver was not available for delivery. We'll make a second attempt the next business day."
+        },
+        {
+          "status": "consegna_fallita",
+          "date": 1791345721721,
+          "note": "Auto 17Track (era: consegna_fallita): Delivery Attempted, The receiver was not available for delivery. We'll make a second attempt the next business day."
         }
       ],
       "emailsSent": [
@@ -1374,12 +1379,12 @@
       ],
       "notes": "",
       "createdAt": 1789143073839,
-      "updatedAt": 1791259356302,
+      "updatedAt": 1791345721721,
       "staleAlertDays": 7,
       "staleAlertSince": 1790481653763,
       "track17Registered": true,
-      "deliveryFailureCount": 1,
-      "lastDeliveryFailureEventAt": "2026-10-05T16:56:00Z"
+      "deliveryFailureCount": 2,
+      "lastDeliveryFailureEventAt": "2026-10-06T20:44:17Z"
     },
     {
       "id": "ord_mtvq0wusqke9",
