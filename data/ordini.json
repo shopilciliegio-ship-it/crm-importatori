@@ -678,7 +678,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1791216188179,
-      "status": "in_transito",
+      "status": "in_consegna",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -689,6 +689,11 @@
           "status": "in_transito",
           "date": 1791216188179,
           "note": "Auto Fieramente (era: preparazione)"
+        },
+        {
+          "status": "in_consegna",
+          "date": 1791367318820,
+          "note": "Auto 17Track (era: in_transito): Guarroman, Spain — Out for Delivery, Out For Delivery Today"
         }
       ],
       "emailsSent": [
@@ -709,7 +714,7 @@
       ],
       "notes": "",
       "createdAt": 1790676146326,
-      "updatedAt": 1791216197900,
+      "updatedAt": 1791367318820,
       "track17Registered": true
     },
     {
