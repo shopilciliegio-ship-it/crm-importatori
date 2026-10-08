@@ -11,6 +11,7 @@ env:
 
 jobs:
   send:
+    if: false   # SOSPESO 8/10/2026 su richiesta di Luca: riattivare solo su suo ok
     runs-on: ubuntu-latest
     timeout-minutes: 300   # margine ampio per batch grandi (2000 contatti * ~2s + checkpoint)
     steps:
