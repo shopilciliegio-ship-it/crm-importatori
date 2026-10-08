@@ -1,5 +1,5 @@
 {
-  "lastUid": 482,
+  "lastUid": 483,
   "pending": [
     {
       "id": "ir_422",
@@ -1103,6 +1103,25 @@
       "confidence": "ai",
       "dataRientro": null,
       "emailAlternativa": null
+    },
+    {
+      "id": "ir_483",
+      "uid": 483,
+      "contactId": null,
+      "nonCollegato": true,
+      "company": "Paolo Massobrio",
+      "from": "segreteriagolosaria@golosarioegolosaria.it",
+      "mittenteNome": "Paolo Massobrio",
+      "subject": "Invito a Golosaria Milano 2026 (31 ottobre – 2 novembre, Fiera Milano Rho)",
+      "date": "2026-10-08T08:30:04+00:00",
+      "snippet": "<https://customer47471.musvc3.net/e/r?q=L7%3dA3L8L_1sks_B3_0tbr_J9_1sks_A8vZmYs.8v31E2H.uHv_JivY_Tx9_1sks_A80Gu.3AI7_JivY_Tx_KZuh_VoA29_1sks_B6BP7OEP7..93_KZuh_VmI_v0-_1sks_B6CK4PJXjY_0tbr_K4l_JivY_Uv_KZuh_VjAQW_1sks_AXF_KZuh_VmH8_KZuh_UEOE0.G7ID.k_JivY_TN_KZuh_Uo_JivY_UsD_.C9_0tbr_K74QHI3pUoV%265%3dLZCYI%267%3dvMAOlU.683%26AA%3dUHYKW%26u%3dV%266%3daATP%26H%3d0bPWFV%26B%3dTGTMcH3s4jVOZI&mupckp=mup",
+      "riassunto": "Paolo Massobrio per la segreteria di Golosaria invita Siena Wine alla 21ª edizione di Golosaria Milano (31 ottobre - 2 novembre, Fiera Milano Rho), un evento dedicato a produttori artigianali d'eccellenza del panorama agroalimentare italiano, chiedendo conferma di partecipazione e numero di accrediti necessari.",
+      "rispostaDiretta": false,
+      "suggestedStatus": null,
+      "reason": "Email di invito a una fiera/evento commerciale, non una risposta alla nostra proposta di distribuzione vini.",
+      "confidence": "ai",
+      "dataRientro": null,
+      "emailAlternativa": "segreteriagolosaria@golosarioegolosaria.it"
     }
   ],
   "risolte": [
