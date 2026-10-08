@@ -511,12 +511,12 @@
       "currency": "EUR",
       "orderDate": 1790770239000,
       "emailSubject": "🍷 New Order — SCOTT BOCKETTI — 124.40 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "BOCKETTIS",
       "shippingAddress": "34 MERGNER RD, 12070 FORT JOHNSON, NEW YORK (MONTGOMERY COUNTY)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202609301210.15435564892@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A897155162",
       "carrier": "MBE",
       "products": [
         {
@@ -542,13 +542,18 @@
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1791496932916,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1790784124892,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1791496932916,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -562,7 +567,7 @@
       ],
       "notes": "",
       "createdAt": 1790784124892,
-      "updatedAt": 1791388968215,
+      "updatedAt": 1791496932916,
       "staleAlertDays": 7,
       "staleAlertSince": 1790784124892
     },
@@ -650,12 +655,12 @@
       "currency": "EUR",
       "orderDate": 1790708825000,
       "emailSubject": "🍷 New Order — MARYLOU BRAI — 174.00 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "BRAIM",
       "shippingAddress": "3007 SMOKE HOUSE COURT, 07728 FREEHOLD TOWNSHIP, NEW JERSEY (MONMOUTH COUNTY)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202609291907.36417486153@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A818746074",
       "carrier": "MBE",
       "products": [
         {
@@ -686,13 +691,18 @@
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1791496932916,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1790719291118,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1791496932916,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -706,7 +716,7 @@
       ],
       "notes": "",
       "createdAt": 1790719291118,
-      "updatedAt": 1791324124278,
+      "updatedAt": 1791496932916,
       "staleAlertDays": 7,
       "staleAlertSince": 1790719291118
     },
@@ -813,12 +823,12 @@
       "currency": "EUR",
       "orderDate": 1790586185000,
       "emailSubject": "🍷 New Order — ROBERT  LEAVITT  — 252.94 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "LEAVITTR",
       "shippingAddress": "3181 ZIPPERER WAY, 32163 THE VILLAGES, FLORIDA (SUMTER COUNTY)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202609280903.26626967111@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A896611223",
       "carrier": "MBE",
       "products": [
         {
@@ -839,13 +849,18 @@
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1791496932916,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1790589729211,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1791496932916,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -859,7 +874,7 @@
       ],
       "notes": "",
       "createdAt": 1790589729211,
-      "updatedAt": 1791194537789,
+      "updatedAt": 1791496932916,
       "staleAlertDays": 7,
       "staleAlertSince": 1790589729211
     },
@@ -982,12 +997,12 @@
       "currency": "EUR",
       "orderDate": 1790431003000,
       "emailSubject": "🍷 New Order — ILLIANA BEVERLY — 141.00 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "BEVERLYI",
       "shippingAddress": "497 WALMAR DRIVE, 44140 BAY VILLAGE, OHIO (CUYAHOGA COUNTY)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202609261356.70039162934@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A805434701",
       "carrier": "MBE",
       "products": [
         {
@@ -1003,13 +1018,18 @@
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1791496932916,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1790438445179,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1791496932916,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -1023,7 +1043,7 @@
       ],
       "notes": "",
       "createdAt": 1790438445179,
-      "updatedAt": 1791043287213,
+      "updatedAt": 1791496932916,
       "staleAlertDays": 7,
       "staleAlertSince": 1790438445179
     },
@@ -1036,12 +1056,12 @@
       "currency": "EUR",
       "orderDate": 1790338849000,
       "emailSubject": "🍷 New Order — EMILY PEACH — 158.60 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "PEACHE",
       "shippingAddress": "223 REVILLION WAY, 30188 WOODSTOCK , GEORGIA (CHEROKEE COUNTY)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202609251220.46020309110@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A808706126",
       "carrier": "MBE",
       "products": [
         {
@@ -1067,13 +1087,18 @@
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1791496932916,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1790352034253,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1791496932916,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -1087,7 +1112,7 @@
       ],
       "notes": "",
       "createdAt": 1790352034253,
-      "updatedAt": 1790956935838,
+      "updatedAt": 1791496932916,
       "staleAlertDays": 7,
       "staleAlertSince": 1790352034253
     },
@@ -1100,12 +1125,12 @@
       "currency": "EUR",
       "orderDate": 1790338560000,
       "emailSubject": "🍷 New Order — JESSICA COOK — 160.80 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "COOKJ",
       "shippingAddress": "9838 NW 2ND COURT, 33324 PLANTATION, FLORIDA (BROWARD COUNTY)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202609251215.34038238327@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A895025645",
       "carrier": "MBE",
       "products": [
         {
@@ -1131,13 +1156,18 @@
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1791496932916,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1790352034253,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1791496932916,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -1151,7 +1181,7 @@
       ],
       "notes": "",
       "createdAt": 1790352034253,
-      "updatedAt": 1790956935838,
+      "updatedAt": 1791496932916,
       "staleAlertDays": 7,
       "staleAlertSince": 1790352034253
     },
