@@ -336,7 +336,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1791367316293,
-      "status": "in_transito",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -346,6 +346,11 @@
         {
           "status": "in_transito",
           "date": 1791367316293,
+          "note": "Auto SpedirePro: aggiornamento stato (rif. ALCAROV)"
+        },
+        {
+          "status": "consegnato",
+          "date": 1791540134845,
           "note": "Auto SpedirePro: aggiornamento stato (rif. ALCAROV)"
         }
       ],
@@ -367,7 +372,7 @@
       ],
       "notes": "",
       "createdAt": 1791237732655,
-      "updatedAt": 1791367320797,
+      "updatedAt": 1791540134845,
       "trackingUrl": "https://www.spedire.com/tracking/WS01777275",
       "spedireproReference": "ALCAROV"
     },
