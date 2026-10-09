@@ -160693,14 +160693,15 @@
         "toName": "",
         "brand": "sienawine",
         "sequenceStep": 2,
-        "delivered": false,
+        "delivered": true,
         "opened": false,
         "clicked": false,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
-        "manualStatus": null
+        "manualStatus": null,
+        "deliveredAt": "2026-09-26T00:05:29.000+02:00"
       }
     ],
     "research": {
