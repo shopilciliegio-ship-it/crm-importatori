@@ -368,11 +368,18 @@
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1791367320797,
           "messageId": "<202610071002.77091438457@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegnato",
+          "to": "vincenzoalcaro01@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1791540139081,
+          "messageId": "<202610091002.71004711360@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1791237732655,
-      "updatedAt": 1791540134845,
+      "updatedAt": 1791540139081,
       "trackingUrl": "https://www.spedire.com/tracking/WS01777275",
       "spedireproReference": "ALCAROV"
     },
