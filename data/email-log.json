@@ -179,6 +179,15 @@
       "subject": "Your wine is on its way! 🍷",
       "sentAt": 1791496940286,
       "messageId": "<202610082202.16058969957@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_muvsp44v2xyj",
+      "customerName": "VINCENZO ALCARO",
+      "type": "consegnato",
+      "to": "vincenzoalcaro01@gmail.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1791540139081,
+      "messageId": "<202610091002.71004711360@smtp-relay.mailin.fr>"
     }
   ]
 }
