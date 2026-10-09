@@ -1,5 +1,5 @@
 {
-  "lastUid": 483,
+  "lastUid": 485,
   "pending": [
     {
       "id": "ir_422",
@@ -1122,6 +1122,44 @@
       "confidence": "ai",
       "dataRientro": null,
       "emailAlternativa": "segreteriagolosaria@golosarioegolosaria.it"
+    },
+    {
+      "id": "ir_484",
+      "uid": 484,
+      "contactId": null,
+      "nonCollegato": true,
+      "company": "Servizio Clienti",
+      "from": "luca@sienawine.it",
+      "mittenteNome": "Servizio Clienti",
+      "subject": "⚠️ Sospensione immediata: il tuo dominio sienawine.it è scaduto",
+      "date": "2026-10-08T16:04:10+00:00",
+      "snippet": "Avviso di sospensione immediata \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n\r\n \r\n \r\n \r\n \r\n Gentile Cliente,\r\n \n\r\n\r\n \r\n Il dominio associato al tuo account risulta scaduto . La sospensione del servizio &egrave; immediata : sito web, caselle e-mail e servizi collegati non sono pi&ugrave; raggiungibili.\r\n \n\r\n\r\n \r\n \r\n \r\n \r\n \r\n Dominio: &nbsp;&nbsp; sienawine.it \r\n \n\r\n \r\n Stato: &nbsp;&nbsp; Sospeso \r\n \n\r",
+      "riassunto": "Notifica automatica di sospensione del dominio sienawine.it per scadenza. Il servizio è sospeso immediatamente e deve essere rinnovato entro 24 ore per evitare la perdita del dominio.",
+      "rispostaDiretta": false,
+      "suggestedStatus": null,
+      "reason": "È una notifica tecnica automatica di un registrar di domini, non una risposta a una proposta commerciale di vini.",
+      "confidence": "ai",
+      "dataRientro": null,
+      "emailAlternativa": "supporto@tuodominio.it"
+    },
+    {
+      "id": "ir_485",
+      "uid": 485,
+      "contactId": null,
+      "nonCollegato": true,
+      "company": "Simone Marcis (Hillebrand Gori IT)",
+      "from": "simone.marcis@hillebrandgori.com",
+      "mittenteNome": "Simone Marcis (Hillebrand Gori IT)",
+      "subject": "R: Introduction to the next stage/ Siena Wine SRL",
+      "date": "2026-10-09T10:59:30+00:00",
+      "snippet": "Ciao Luca,\r\nsovrascrivi e  manda  un  foglio  per  ciascun articolo.\r\nMandami  i dati per il  ritiro  così procediamo subito,\r\n\r\ngrazie.\r\n\r\nSimone Marcis\r\n\r\nOps-EXP-CG-US Vendor-Managed Inventory-Hillebrand Gori Italy SRL\r\n\r\n\r\n\r\n[signature_3407931170]\r\n\r\n\r\nInterporto Toscana A.Vespucci - Strada interna VII\r\nVia Delle Colline, 100 - Loc.Guasticce\r\n57014  COLLESALVETTI ( LI )\r\nItaly\r\n\r\nSimone.Marcis",
+      "riassunto": "Simone Marcis di Hillebrand Gori Italy (logistica/magazzino) risponde a una comunicazione interna di Luca (Siena Wine) chiedendo di mandare un foglio per ciascun articolo e i dati per il ritiro della merce, per procedere subito con lo stoccaggio.",
+      "rispostaDiretta": false,
+      "suggestedStatus": null,
+      "reason": "È una comunicazione operativa di una controparte logistica (Hillebrand Gori) che sta già gestendo il ritiro e lo stoccaggio dei vini Siena Wine, quindi rappresenta un impegno commerciale concreto in corso.",
+      "confidence": "ai",
+      "dataRientro": null,
+      "emailAlternativa": null
     }
   ],
   "risolte": [
