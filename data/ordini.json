@@ -2365,7 +2365,7 @@
       "orderDate": 1787828586000,
       "emailSubject": "🍷 New Order — AARON DORFMAN — 137.15 EUR",
       "shipmentCode": "DORFMANA",
-      "shippingAddress": "STATE, COUNTRY, CITY ZIP CODE",
+      "shippingAddress": "158 SAGAMORE DR, 11803 TOWN OF OYSTER BAY, NEW YORK",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202608271103.11935514151@smtp-relay.mailin.fr>",
@@ -2477,12 +2477,14 @@
       ],
       "notes": "",
       "createdAt": 1787868152832,
-      "updatedAt": 1789685084932,
+      "updatedAt": 1791550136488,
       "staleAlertDays": 7,
       "staleAlertSince": 1788537811037,
       "track17Registered": true,
       "deliveryFailureCount": 1,
-      "lastDeliveryFailureEventAt": "2026-09-16T21:42:58Z"
+      "lastDeliveryFailureEventAt": "2026-09-16T21:42:58Z",
+      "trackingUrl": "",
+      "destCountry": "US"
     },
     {
       "id": "ord_mta3q0nwlz70",
