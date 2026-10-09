@@ -1,6 +1,6 @@
 {
-  "generatoAt": 1791561730119,
-  "generatoIl": "09/10/2026 18:02",
+  "generatoAt": 1791583337742,
+  "generatoIl": "10/10/2026 00:02",
   "followupPassoAttivo": false,
   "invioAutomatico": true,
   "testMode": false,
@@ -11,28 +11,28 @@
   },
   "contattiAttivi": 1870,
   "pronteOra": {
-    "totale": 432,
+    "totale": 550,
     "day7": 2,
-    "day21": 430,
+    "day21": 548,
     "day35": 0,
-    "verificaCodiceInvio": 432
+    "verificaCodiceInvio": 550
   },
   "scaduteGia": 660,
   "senzaCasellaValida": 0,
   "giorni": [
     {
-      "data": "2026-10-09",
-      "giorno": "ven",
+      "data": "2026-10-10",
+      "giorno": "sab",
       "daInviare": 400,
       "day7": 2,
       "day21": 398,
       "day35": 0,
       "scadonoSenzaInvio": 0,
-      "inCodaAFineGiorno": 148
+      "inCodaAFineGiorno": 628
     },
     {
-      "data": "2026-10-10",
-      "giorno": "sab",
+      "data": "2026-10-11",
+      "giorno": "dom",
       "daInviare": 400,
       "day7": 0,
       "day21": 400,
@@ -41,21 +41,11 @@
       "inCodaAFineGiorno": 228
     },
     {
-      "data": "2026-10-11",
-      "giorno": "dom",
+      "data": "2026-10-12",
+      "giorno": "lun",
       "daInviare": 228,
       "day7": 0,
       "day21": 228,
-      "day35": 0,
-      "scadonoSenzaInvio": 0,
-      "inCodaAFineGiorno": 0
-    },
-    {
-      "data": "2026-10-12",
-      "giorno": "lun",
-      "daInviare": 0,
-      "day7": 0,
-      "day21": 0,
       "day35": 0,
       "scadonoSenzaInvio": 0,
       "inCodaAFineGiorno": 0
@@ -159,6 +149,16 @@
       "day35": 0,
       "scadonoSenzaInvio": 0,
       "inCodaAFineGiorno": 0
+    },
+    {
+      "data": "2026-10-23",
+      "giorno": "ven",
+      "daInviare": 400,
+      "day7": 0,
+      "day21": 0,
+      "day35": 400,
+      "scadonoSenzaInvio": 0,
+      "inCodaAFineGiorno": 146
     }
   ],
   "perseNelPeriodo": 0,
@@ -168,7 +168,7 @@
   },
   "registro7Giorni": {},
   "crediti": {
-    "email": 9564
+    "email": 9562
   },
   "approvazione": {
     "oggi": false,
