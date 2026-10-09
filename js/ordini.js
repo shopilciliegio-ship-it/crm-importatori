@@ -444,6 +444,37 @@ function _buildTimeline(order){
 }
 
 /* ─ Render lista ordini ─ */
+// Esporta in CSV (separatore ";", decimali con la virgola, BOM: si apre in Excel italiano con doppio clic)
+// gli ordini attualmente mostrati (stessi filtri di ricerca/stato) con dazi e spese di spedizione, per
+// confrontare quanto addebitato ai clienti con quanto fatturato dal corriere. Campi vuoti = dato non inserito.
+function exportOrdiniCSV(){
+  const sq=(document.getElementById('ord-sq')?.value||'').toLowerCase();
+  const sf=document.getElementById('ord-ss')?.value||'';
+  let orders=[...dbO.orders].sort((a,b)=>a.orderDate-b.orderDate);
+  if(sq) orders=orders.filter(o=>(o.customerName||'').toLowerCase().includes(sq)||(o.trackingNumber||'').toLowerCase().includes(sq)||(o.customerEmail||'').toLowerCase().includes(sq));
+  if(sf) orders=orders.filter(o=>o.status===sf);
+  if(!orders.length){ alert('Nessun ordine da esportare con i filtri attuali.'); return; }
+  const num=v=>(v==null||v==='')?'':Number(v).toFixed(2).replace('.',',');
+  const txt=v=>{ const t=String(v==null?'':v).replace(/\r?\n/g,' '); return /[";]/.test(t)?'"'+t.replace(/"/g,'""')+'"':t; };
+  const head=['Data ordine','Cliente (nome e cognome)','Email','Paese','N. ordine','Codice spedizione','Tracking','Corriere','Tipo spedizione','Stato','Importo ordine','Valuta','Dazi doganali','Spedizione pagata dal cliente','Spedizione costo MOS (corriere)','Differenza spedizione (cliente - MOS)'];
+  const rows=orders.map(o=>{
+    const cli=o.shippingCostCustomer, mos=o.shippingCostMos;
+    const diff=(cli!=null&&cli!==''&&mos!=null&&mos!=='')?Number(cli)-Number(mos):'';
+    return [
+      new Date(o.orderDate).toLocaleDateString('it-IT'),
+      txt(o.customerName), txt(o.customerEmail), txt(orderDestCountry(o)||''), txt(o.orderNumber), txt(o.shipmentCode), txt(o.trackingNumber),
+      txt(o.carrier), txt(o.shippingType), txt(o.status),
+      num(o.amount), txt(o.currency||'EUR'), num(o.customsDuties), num(cli), num(mos), num(diff)
+    ].join(';');
+  });
+  const csv='\uFEFF'+head.join(';')+'\r\n'+rows.join('\r\n')+'\r\n';
+  const url=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));
+  const a=document.createElement('a');
+  a.href=url; a.download='ordini-dazi-spedizioni-'+new Date().toISOString().slice(0,10)+'.csv';
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
+
 function renderOrdini(){
   renderEmailToggle();
   renderGmailStatus();
