@@ -1,6 +1,109 @@
 {
   "orders": [
     {
+      "id": "ord_mv15l05wb6ou",
+      "customerName": "SEAN GOODALE",
+      "customerEmail": "sean.goodale@gmail.com",
+      "customerPhone": "18303774716",
+      "amount": 170.7,
+      "currency": "EUR",
+      "orderDate": 1791548128000,
+      "emailSubject": "🍷 New Order — SEAN GOODALE — 170.70 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "8791 WHITECLOVER ST, 80125 LITTLETON, COLORADO (DOUGLAS COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202610091215.93529190312@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "POGGIO ORLANDO 2024 CHIANTI COLLI SENE..",
+          "qty": 3,
+          "value": 36.0
+        },
+        {
+          "description": "INFERNACCIO RED WINE IGT 2022",
+          "qty": 2,
+          "value": 32.0
+        },
+        {
+          "description": "VIN SANTO DEL CHIANTI DOC 2019",
+          "qty": 1,
+          "value": 19.0
+        }
+      ],
+      "customsDuties": 8.7,
+      "shippingCostCustomer": 75.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1791561706772,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1791561706772,
+      "updatedAt": 1791561706772
+    },
+    {
+      "id": "ord_mv15l05wuuh7",
+      "customerName": "JOHN WILLIAMSON",
+      "customerEmail": "jwllmsn@gmail.com",
+      "customerPhone": "4053157244",
+      "amount": 190.5,
+      "currency": "EUR",
+      "orderDate": 1791548088000,
+      "emailSubject": "🍷 New Order — JOHN WILLIAMSON — 190.50 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "533 GRAY FOX RUN, 73003 EDMOND, OKLAHOMA",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202610091214.71648271947@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "INFERNACCIO RED WINE IGT 2022",
+          "qty": 3,
+          "value": 48.0
+        },
+        {
+          "description": "VIN SANTO DEL CHIANTI DOC 2019",
+          "qty": 3,
+          "value": 57.0
+        }
+      ],
+      "customsDuties": 10.5,
+      "shippingCostCustomer": 75.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1791561706772,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1791561706772,
+      "updatedAt": 1791561706772
+    },
+    {
       "id": "ord_muyaqajaovfm",
       "customerName": "CONG LIN",
       "customerEmail": "lisalinmiraggio76@gmail.com",
@@ -11318,5 +11421,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1791388953046
+  "lastImportedAt": 1791561706772
 }
