@@ -66150,7 +66150,7 @@
     }
   },
   "c1780673710735grjx6": {
-    "status": "followup",
+    "status": "replied",
     "log": [
       {
         "ts": 1780673710716,
@@ -66163,6 +66163,10 @@
       {
         "ts": 1790866855393,
         "msg": "⚡ Auto day7 recuperato dal log Brevo (1/10/2026): per un errore di invio questa email è stata ricevuta 18 volte tra il 26/9 e il 1/10"
+      },
+      {
+        "ts": 1791637848076,
+        "msg": "Stato → Risposto"
       }
     ],
     "brevoEvents": [
