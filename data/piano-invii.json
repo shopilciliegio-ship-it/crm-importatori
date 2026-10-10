@@ -1,6 +1,6 @@
 {
-  "generatoAt": 1791626509311,
-  "generatoIl": "10/10/2026 12:01",
+  "generatoAt": 1791648123510,
+  "generatoIl": "10/10/2026 18:02",
   "followupPassoAttivo": false,
   "invioAutomatico": true,
   "testMode": false,
@@ -9,7 +9,7 @@
     "giriAlGiorno": 4,
     "perGiorno": 400
   },
-  "contattiAttivi": 1870,
+  "contattiAttivi": 1868,
   "pronteOra": {
     "totale": 571,
     "day7": 2,
@@ -28,7 +28,7 @@
       "day21": 398,
       "day35": 0,
       "scadonoSenzaInvio": 0,
-      "inCodaAFineGiorno": 628
+      "inCodaAFineGiorno": 626
     },
     {
       "data": "2026-10-11",
@@ -38,14 +38,14 @@
       "day21": 400,
       "day35": 0,
       "scadonoSenzaInvio": 0,
-      "inCodaAFineGiorno": 228
+      "inCodaAFineGiorno": 226
     },
     {
       "data": "2026-10-12",
       "giorno": "lun",
-      "daInviare": 228,
+      "daInviare": 226,
       "day7": 0,
-      "day21": 228,
+      "day21": 226,
       "day35": 0,
       "scadonoSenzaInvio": 0,
       "inCodaAFineGiorno": 0
