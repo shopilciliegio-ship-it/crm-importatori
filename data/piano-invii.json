@@ -1,6 +1,6 @@
 {
-  "generatoAt": 1791648123510,
-  "generatoIl": "10/10/2026 18:02",
+  "generatoAt": 1791669709951,
+  "generatoIl": "11/10/2026 00:01",
   "followupPassoAttivo": false,
   "invioAutomatico": true,
   "testMode": false,
@@ -11,18 +11,18 @@
   },
   "contattiAttivi": 1868,
   "pronteOra": {
-    "totale": 571,
+    "totale": 1026,
     "day7": 2,
-    "day21": 569,
+    "day21": 1024,
     "day35": 0,
-    "verificaCodiceInvio": 571
+    "verificaCodiceInvio": 1026
   },
   "scaduteGia": 660,
   "senzaCasellaValida": 0,
   "giorni": [
     {
-      "data": "2026-10-10",
-      "giorno": "sab",
+      "data": "2026-10-11",
+      "giorno": "dom",
       "daInviare": 400,
       "day7": 2,
       "day21": 398,
@@ -31,8 +31,8 @@
       "inCodaAFineGiorno": 626
     },
     {
-      "data": "2026-10-11",
-      "giorno": "dom",
+      "data": "2026-10-12",
+      "giorno": "lun",
       "daInviare": 400,
       "day7": 0,
       "day21": 400,
@@ -41,21 +41,11 @@
       "inCodaAFineGiorno": 226
     },
     {
-      "data": "2026-10-12",
-      "giorno": "lun",
+      "data": "2026-10-13",
+      "giorno": "mar",
       "daInviare": 226,
       "day7": 0,
       "day21": 226,
-      "day35": 0,
-      "scadonoSenzaInvio": 0,
-      "inCodaAFineGiorno": 0
-    },
-    {
-      "data": "2026-10-13",
-      "giorno": "mar",
-      "daInviare": 0,
-      "day7": 0,
-      "day21": 0,
       "day35": 0,
       "scadonoSenzaInvio": 0,
       "inCodaAFineGiorno": 0
@@ -159,6 +149,16 @@
       "day35": 400,
       "scadonoSenzaInvio": 0,
       "inCodaAFineGiorno": 146
+    },
+    {
+      "data": "2026-10-24",
+      "giorno": "sab",
+      "daInviare": 400,
+      "day7": 0,
+      "day21": 0,
+      "day35": 400,
+      "scadonoSenzaInvio": 0,
+      "inCodaAFineGiorno": 224
     }
   ],
   "perseNelPeriodo": 0,
