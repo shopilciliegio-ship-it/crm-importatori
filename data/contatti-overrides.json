@@ -2605,7 +2605,7 @@
     "contactTitle": "Sales Manager"
   },
   "c1780673710717hhu8b": {
-    "status": "followup",
+    "status": "cold",
     "log": [
       {
         "ts": 1780673710716,
@@ -2626,6 +2626,10 @@
       {
         "ts": 1790866855393,
         "msg": "⚡ Auto day7 recuperato dal log Brevo (1/10/2026): per un errore di invio questa email è stata ricevuta 19 volte tra il 26/9 e il 1/10"
+      },
+      {
+        "ts": 1791637744675,
+        "msg": "Stato → Non interessato"
       }
     ],
     "brevoEvents": [
