@@ -54784,7 +54784,11 @@
         "manualStatus": null,
         "ricevutaVolte": 18,
         "deliveredAt": "2026-09-27T00:07:43.000+02:00",
-        "clickedAt": "2026-09-27T00:08:05.000+02:00"
+        "clickedAt": "2026-09-27T00:08:05.000+02:00",
+        "clickedLinks": [
+          "https://www.sienawine.it/smallvineyardsinternational",
+          "https://www.sienawine.it"
+        ]
       }
     ],
     "research": {
@@ -57087,7 +57091,11 @@
         "ricevutaVolte": 18,
         "deliveredAt": "2026-09-27T00:08:01.000+02:00",
         "openedAt": "2026-09-27T00:08:12.000+02:00",
-        "clickedAt": "2026-09-27T00:08:05.000+02:00"
+        "clickedAt": "2026-09-27T00:08:05.000+02:00",
+        "clickedLinks": [
+          "https://www.sienawine.it",
+          "https://www.sienawine.it/brochure"
+        ]
       }
     ],
     "research": {
@@ -57226,7 +57234,11 @@
         "ricevutaVolte": 18,
         "deliveredAt": "2026-09-27T00:08:04.000+02:00",
         "openedAt": "2026-09-27T00:08:13.000+02:00",
-        "clickedAt": "2026-09-27T00:08:09.000+02:00"
+        "clickedAt": "2026-09-27T00:08:09.000+02:00",
+        "clickedLinks": [
+          "https://www.sienawine.it/brochure",
+          "https://www.sienawine.it"
+        ]
       }
     ],
     "research": {
@@ -61003,6 +61015,10 @@
       {
         "ts": 1790866855393,
         "msg": "⚡ Auto day7 recuperato dal log Brevo (1/10/2026): per un errore di invio questa email è stata ricevuta 18 volte tra il 26/9 e il 1/10"
+      },
+      {
+        "ts": 1790516799000,
+        "msg": "⚠ Bounce: Have you ever heard of Small Vineyards International? Not yet?"
       }
     ],
     "brevoEvents": [
@@ -61034,13 +61050,14 @@
         "delivered": true,
         "opened": false,
         "clicked": false,
-        "bounced": false,
+        "bounced": true,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
         "manualStatus": null,
         "ricevutaVolte": 18,
-        "deliveredAt": "2026-09-29T18:12:34.000+02:00"
+        "deliveredAt": "2026-09-29T18:12:34.000+02:00",
+        "bouncedAt": "2026-09-27T15:46:39.000+02:00"
       }
     ],
     "research": {
