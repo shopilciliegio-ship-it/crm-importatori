@@ -1,5 +1,5 @@
 {
-  "lastUid": 485,
+  "lastUid": 486,
   "pending": [
     {
       "id": "ir_422",
@@ -1157,6 +1157,25 @@
       "rispostaDiretta": false,
       "suggestedStatus": null,
       "reason": "È una comunicazione operativa di una controparte logistica (Hillebrand Gori) che sta già gestendo il ritiro e lo stoccaggio dei vini Siena Wine, quindi rappresenta un impegno commerciale concreto in corso.",
+      "confidence": "ai",
+      "dataRientro": null,
+      "emailAlternativa": null
+    },
+    {
+      "id": "ir_486",
+      "uid": 486,
+      "contactId": null,
+      "nonCollegato": true,
+      "company": "Rachel Pisarz",
+      "from": "rlpisarz9@gmail.com",
+      "mittenteNome": "Rachel Pisarz",
+      "subject": "Re: ⚠ Delivery attempt unsuccessful — action may be needed",
+      "date": "2026-10-09T22:25:47+00:00",
+      "snippet": "Yes I don’t want to pay for this \n\n I already paid the shipping tax and fees when I was at store\n \n\n This is not right\n Sent from my iPhone\n \n On Oct 9, 2026, at 9:20 AM, luca@sienawine.it wrote:\n\n \n ﻿ \r\n \r\n \r\n \r\n \r\n Hi, Rachel! \n &nbsp; \n I’m sorry for the delay in replying, but I was carefully checking your situation with our courier. \n Unfortunately, neither I nor the courier can do much about ",
+      "riassunto": "Rachel Pisarz, cliente di Siena Wine, protesta perché le è stato addebitato un dazio doganale di $61,70 su un ordine di olio e vino spedito negli USA; sostiene di aver già pagato le tasse di spedizione in negozio e rifiuta di pagare ulteriori importi.",
+      "rispostaDiretta": false,
+      "suggestedStatus": null,
+      "reason": "È una cliente esistente che ha effettuato un acquisto e sta comunicando un problema concreto relativo al suo ordine; sebbene sia una lamentela, rappresenta un'interazione commerciale attiva con un cliente reale.",
       "confidence": "ai",
       "dataRientro": null,
       "emailAlternativa": null
