@@ -1,6 +1,55 @@
 {
   "orders": [
     {
+      "id": "ord_mv40gh2w9y7v",
+      "customerName": "LORIANO CAMPINOTI",
+      "customerEmail": "loriano.campinoti@icloud.com",
+      "customerPhone": "3663911629",
+      "amount": 124.0,
+      "currency": "EUR",
+      "orderDate": 1791724546000,
+      "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio LORIANO CAMPINOTI",
+      "shipmentCode": "",
+      "shippingAddress": "Via Dante, 129, 50054 FUCECCHIO (FI), Italy",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<CAOmk=KYA=+FVPAJqYJR4gUAyiPM5aC8HwUbdHH+jwdD_XrZH9g@mail.gmail.com>",
+      "trackingNumber": "",
+      "carrier": "Corriere Italia Gratis Oltre 100 € Di Ordine",
+      "products": [
+        {
+          "description": "CHIANTI COLLI SENESI DOCG POGGIO ORLANDO 2024",
+          "qty": 4,
+          "value": 48.0
+        },
+        {
+          "description": "VIN SANTO DEL CHIANTI DOC 2019",
+          "qty": 4,
+          "value": 76.0
+        }
+      ],
+      "customsDuties": null,
+      "shippingCostCustomer": null,
+      "shippingCostMos": null,
+      "source": "shop",
+      "language": "it",
+      "orderNumber": "#1465",
+      "paymentType": "Carte Di Credito/Bancomat",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1791734495864,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1791734495864,
+      "updatedAt": 1791734495864
+    },
+    {
       "id": "ord_mv15l05wb6ou",
       "customerName": "SEAN GOODALE",
       "customerEmail": "sean.goodale@gmail.com",
@@ -11439,5 +11488,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1791561706772
+  "lastImportedAt": 1791734495864
 }
