@@ -44,10 +44,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "loriano.campinoti@icloud.com",
+          "subject": "Grazie per il tuo ordine! 🍷",
+          "sentAt": 1791734513751,
+          "messageId": "<202610111601.25728138464@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1791734495864,
-      "updatedAt": 1791734499743
+      "updatedAt": 1791734513751
     },
     {
       "id": "ord_mv15l05wb6ou",
