@@ -5,13 +5,13 @@
       "customerName": "LORIANO CAMPINOTI",
       "customerEmail": "loriano.campinoti@icloud.com",
       "customerPhone": "3663911629",
-      "amount": 124.0,
+      "amount": 124,
       "currency": "EUR",
       "orderDate": 1791724546000,
       "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio LORIANO CAMPINOTI",
-      "shipmentCode": "",
+      "shipmentCode": "CAMPINOTIL",
       "shippingAddress": "Via Dante, 129, 50054 FUCECCHIO (FI), Italy",
-      "numberOfCartons": null,
+      "numberOfCartons": 2,
       "shippingType": "standard",
       "gmailMessageId": "<CAOmk=KYA=+FVPAJqYJR4gUAyiPM5aC8HwUbdHH+jwdD_XrZH9g@mail.gmail.com>",
       "trackingNumber": "",
@@ -20,17 +20,17 @@
         {
           "description": "CHIANTI COLLI SENESI DOCG POGGIO ORLANDO 2024",
           "qty": 4,
-          "value": 48.0
+          "value": 48
         },
         {
           "description": "VIN SANTO DEL CHIANTI DOC 2019",
           "qty": 4,
-          "value": 76.0
+          "value": 76
         }
       ],
       "customsDuties": null,
       "shippingCostCustomer": null,
-      "shippingCostMos": null,
+      "shippingCostMos": 0,
       "source": "shop",
       "language": "it",
       "orderNumber": "#1465",
@@ -47,7 +47,7 @@
       "emailsSent": [],
       "notes": "",
       "createdAt": 1791734495864,
-      "updatedAt": 1791734495864
+      "updatedAt": 1791734499743
     },
     {
       "id": "ord_mv15l05wb6ou",
@@ -69,21 +69,21 @@
         {
           "description": "POGGIO ORLANDO 2024 CHIANTI COLLI SENE..",
           "qty": 3,
-          "value": 36.0
+          "value": 36
         },
         {
           "description": "INFERNACCIO RED WINE IGT 2022",
           "qty": 2,
-          "value": 32.0
+          "value": 32
         },
         {
           "description": "VIN SANTO DEL CHIANTI DOC 2019",
           "qty": 1,
-          "value": 19.0
+          "value": 19
         }
       ],
       "customsDuties": 8.7,
-      "shippingCostCustomer": 75.0,
+      "shippingCostCustomer": 75,
       "shippingCostMos": null,
       "source": "fieramente",
       "language": "en",
@@ -131,16 +131,16 @@
         {
           "description": "INFERNACCIO RED WINE IGT 2022",
           "qty": 3,
-          "value": 48.0
+          "value": 48
         },
         {
           "description": "VIN SANTO DEL CHIANTI DOC 2019",
           "qty": 3,
-          "value": 57.0
+          "value": 57
         }
       ],
       "customsDuties": 10.5,
-      "shippingCostCustomer": 75.0,
+      "shippingCostCustomer": 75,
       "shippingCostMos": null,
       "source": "fieramente",
       "language": "en",
