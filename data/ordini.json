@@ -49,10 +49,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "mlambrus@gmail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1791820975235,
+          "messageId": "<202610121602.74546743564@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1791820959833,
-      "updatedAt": 1791820959833
+      "updatedAt": 1791820975235
     },
     {
       "id": "ord_mv40gh2w9y7v",
