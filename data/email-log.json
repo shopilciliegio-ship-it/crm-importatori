@@ -215,6 +215,15 @@
       "subject": "Grazie per il tuo ordine! 🍷",
       "sentAt": 1791734513751,
       "messageId": "<202610111601.25728138464@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mun81432rajr",
+      "customerName": "SUSAN DAUBLE",
+      "type": "dogana",
+      "to": "suedauble@verizon.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1791777715584,
+      "messageId": "<202610120401.38130607416@smtp-relay.mailin.fr>"
     }
   ]
 }
