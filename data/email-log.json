@@ -224,6 +224,15 @@
       "subject": "Your order is going through customs",
       "sentAt": 1791777715584,
       "messageId": "<202610120401.38130607416@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mv5fxp3udr7s",
+      "customerName": "MARY AMBRUS",
+      "type": "order_received",
+      "to": "mlambrus@gmail.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1791820975235,
+      "messageId": "<202610121602.74546743564@smtp-relay.mailin.fr>"
     }
   ]
 }
