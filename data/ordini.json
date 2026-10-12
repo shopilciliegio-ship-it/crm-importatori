@@ -1,6 +1,60 @@
 {
   "orders": [
     {
+      "id": "ord_mv5fxp3udr7s",
+      "customerName": "MARY AMBRUS",
+      "customerEmail": "mlambrus@gmail.com",
+      "customerPhone": "+19085813149",
+      "amount": 328.4,
+      "currency": "EUR",
+      "orderDate": 1791807343000,
+      "emailSubject": "🍷 New Order — MARY AMBRUS — 328.40 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "36 POINTS WEST, 28804 ASHEVILLE, NORTH CAROLINA (BUNCOMBE COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202610121215.81970980940@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
+          "qty": 6,
+          "value": 114.0
+        },
+        {
+          "description": "INFERNACCIO RED WINE IGT 2022",
+          "qty": 5,
+          "value": 80.0
+        },
+        {
+          "description": "CHIANTI STRADE BIANCHE 2025 LIM. ED.",
+          "qty": 1,
+          "value": 0.0
+        }
+      ],
+      "customsDuties": 19.4,
+      "shippingCostCustomer": 115.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1791820959833,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1791820959833,
+      "updatedAt": 1791820959833
+    },
+    {
       "id": "ord_mv40gh2w9y7v",
       "customerName": "LORIANO CAMPINOTI",
       "customerEmail": "loriano.campinoti@icloud.com",
@@ -11508,5 +11562,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1791734495864
+  "lastImportedAt": 1791820959833
 }
