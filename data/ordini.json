@@ -870,11 +870,18 @@
           "messageId": "<202610051603.94793498340@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-10-05T18:03:18.558+02:00"
+        },
+        {
+          "type": "dogana",
+          "to": "suedauble@verizon.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1791777715584,
+          "messageId": "<202610120401.38130607416@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1790719291118,
-      "updatedAt": 1791777707681,
+      "updatedAt": 1791777715584,
       "track17Registered": true
     },
     {
