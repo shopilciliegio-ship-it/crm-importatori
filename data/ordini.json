@@ -1,6 +1,85 @@
 {
   "orders": [
     {
+      "id": "ord_mv6gzi1hiuvf",
+      "customerName": "ASHLEIGH COLE",
+      "customerEmail": "thecolefamily1@att.net",
+      "customerPhone": "8649061783",
+      "amount": 0.0,
+      "currency": "EUR",
+      "orderDate": 1791762842000,
+      "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio ASHLEIGH COLE",
+      "shipmentCode": "",
+      "shippingAddress": "106 Steeplechase, 29627 BELTON - S.CAROLINA - U.S.A. (SC), United States",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<CAOmk=Ka0jFoKb9vpn=yF53BLhHZ54BP8KROyrUN3kY0hA8rm3Q@mail.gmail.com>",
+      "trackingNumber": "",
+      "carrier": "- U.S.A. Wine Corriere Std",
+      "products": [
+        {
+          "description": "EXTRA VIRGIN OLIVE OIL 2025 ML 250",
+          "qty": 1,
+          "value": 9.0
+        },
+        {
+          "description": "EXTRA VIRGIN OLIVE OIL 2025 LT 1",
+          "qty": 1,
+          "value": 21.0
+        },
+        {
+          "description": "CHIANTI COLLI SENESI DOCG POGGIO ORLANDO RISERVA 2021",
+          "qty": 10,
+          "value": 190.0
+        },
+        {
+          "description": "CHIANTI COLLI SENESI DOCG POGGIO ORLANDO 2024",
+          "qty": 10,
+          "value": 120.0
+        },
+        {
+          "description": "CILIEGIO IN FIORE SWEET SPARKLING WINE",
+          "qty": 8,
+          "value": 80.0
+        },
+        {
+          "description": "CHIANTI GRAN FONDO STRADE BIANCHE LIMITED EDITION",
+          "qty": 6,
+          "value": 120.0
+        },
+        {
+          "description": "CILIEGIO IN FIORE ROSE' SPARKLING WINE",
+          "qty": 1,
+          "value": 10.0
+        },
+        {
+          "description": "WHITE WINE IGT 2025",
+          "qty": 3,
+          "value": 21.0
+        }
+      ],
+      "customsDuties": 57.1,
+      "shippingCostCustomer": 385.0,
+      "shippingCostMos": null,
+      "source": "shop",
+      "language": "en",
+      "orderNumber": "#1469",
+      "paymentType": "Carte Di Credito/Bancomat",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1791883189781,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1791883189781,
+      "updatedAt": 1791883189781
+    },
+    {
       "id": "ord_mv5fxp3udr7s",
       "customerName": "MARY AMBRUS",
       "customerEmail": "mlambrus@gmail.com",
@@ -11570,5 +11649,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1791820959833
+  "lastImportedAt": 1791883189781
 }
