@@ -708,10 +708,17 @@ def main():
                  'products', 'customsDuties', 'shippingCostCustomer', 'shippingCostMos')
 
     for o in new_orders_raw:
+        # Stesso oggetto mail = stesso ordine SOLO se le date sono vicine (inoltri/ripetizioni
+        # della stessa mail). L'oggetto degli ordini Shop Online contiene solo il nome del cliente
+        # ("Invio Ordine ... ASHLEIGH COLE"): senza il limite di date, il secondo ordine di un cliente
+        # già presente (12/10/2026, Ashleigh Cole, primo ordine 18/06) veniva scartato come duplicato
+        # e non arrivava mai il MOS.
+        SAME_SUBJECT_WINDOW_MS = 3 * 24 * 3600 * 1000
         existing_rec = next(
             (ex for ex in existing if
              (ex.get('gmailMessageId') and ex['gmailMessageId'] == o['gmailMessageId'])
-             or ex.get('emailSubject') == o.get('emailSubject')),
+             or (ex.get('emailSubject') == o.get('emailSubject')
+                 and abs((ex.get('orderDate') or 0) - (o.get('orderDate') or 0)) <= SAME_SUBJECT_WINDOW_MS)),
             None
         )
 
