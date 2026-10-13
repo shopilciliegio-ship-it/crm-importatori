@@ -261,6 +261,8 @@ def main():
     for o in orders:
         if o.get('status') in TERMINAL_STATUSES:
             continue
+        if o.get('manualTracking'):   # tracking gestito a mano (es. due spedizioni con lo stesso riferimento)
+            continue
         for code in {customer_code(o.get('customerName', '')), order_number_code(o.get('orderNumber', ''))}:
             if code:
                 pending_by_code.setdefault(code, []).append(o)
