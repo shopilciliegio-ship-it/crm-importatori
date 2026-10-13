@@ -251,6 +251,24 @@
       "subject": "Grazie per il tuo ordine! 🍷",
       "sentAt": 1791907016397,
       "messageId": "<202610131556.95028830585@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mv40gh2w9y7v",
+      "customerName": "LORIANO CAMPINOTI",
+      "type": "day0",
+      "to": "loriano.campinoti@icloud.com",
+      "subject": "Il tuo vino è in viaggio! 🍷",
+      "sentAt": 1791928909490,
+      "messageId": "<202610132201.37765618110@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mtx5lb1re0j5",
+      "customerName": "JULIANA GOSKA",
+      "type": "consegnato",
+      "to": "julianag1811@gmail.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1791928909490,
+      "messageId": "<202610132201.53303684229@smtp-relay.mailin.fr>"
     }
   ]
 }
