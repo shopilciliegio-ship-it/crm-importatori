@@ -300,11 +300,18 @@
           "type": "Spedito",
           "sentAt": 1791907776553,
           "messageId": "<202610131609.31790433656@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "day0",
+          "to": "loriano.campinoti@icloud.com",
+          "subject": "Il tuo vino è in viaggio! 🍷",
+          "sentAt": 1791928909490,
+          "messageId": "<202610132201.37765618110@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "⚠ Conflitto SpedirePro: codice \"CAMPINOTIL\" condiviso tra 2 ordine/i CRM e 2 spedizione/i — verificare manualmente.\n⚠ Conflitto SpedirePro: codice \"CAMPINOTIL\" condiviso tra 1 ordine/i CRM e 2 spedizione/i — verificare manualmente.",
       "createdAt": 1791734495864,
-      "updatedAt": 1791907776553,
+      "updatedAt": 1791928909490,
       "trackingUrl": "",
       "destCountry": "IT"
     },
@@ -2117,11 +2124,18 @@
           "messageId": "<202610070402.78803986013@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-10-07T06:02:05.000+02:00"
+        },
+        {
+          "type": "consegnato",
+          "to": "julianag1811@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1791928909490,
+          "messageId": "<202610132201.53303684229@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1789143073839,
-      "updatedAt": 1791928901880,
+      "updatedAt": 1791928909490,
       "staleAlertDays": 7,
       "staleAlertSince": 1790481653763,
       "track17Registered": true,
