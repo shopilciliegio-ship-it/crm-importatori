@@ -5,13 +5,13 @@
       "customerName": "LORIANO CAMPINOTI",
       "customerEmail": "loriano.campinoti@icloud.com",
       "customerPhone": "3663911629",
-      "amount": 177.0,
+      "amount": 177,
       "currency": "EUR",
       "orderDate": 1791724998000,
       "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio LORIANO CAMPINOTI",
-      "shipmentCode": "",
+      "shipmentCode": "CAMPINOTIL2",
       "shippingAddress": "Via Dante, 129, 50054 FUCECCHIO (FI), Italy",
-      "numberOfCartons": null,
+      "numberOfCartons": 3,
       "shippingType": "standard",
       "gmailMessageId": "<CAOmk=KavC3_Jg63WWS9uutdg3TRVx8GDwtFKtYT7Cb7Epopa1g@mail.gmail.com>",
       "trackingNumber": "",
@@ -20,42 +20,42 @@
         {
           "description": "FARRO DECORTICATO 500 GR",
           "qty": 1,
-          "value": 3.0
+          "value": 3
         },
         {
           "description": "CANTUCCINI DELLA MAMMA 250 GR",
           "qty": 2,
-          "value": 13.0
+          "value": 13
         },
         {
           "description": "CECI DI CAMPO 500 GR",
           "qty": 2,
-          "value": 6.0
+          "value": 6
         },
         {
           "description": "LENTICCHIE 500 GR",
           "qty": 2,
-          "value": 8.0
+          "value": 8
         },
         {
           "description": "OLIO EXTRA VERGINE DI OLIVA 2025 ML 500",
           "qty": 2,
-          "value": 23.0
+          "value": 23
         },
         {
           "description": "CILIEGIO IN FIORE SPUMANTE DOLCE",
           "qty": 1,
-          "value": 10.0
+          "value": 10
         },
         {
           "description": "VIN SANTO DEL CHIANTI DOC 2019",
           "qty": 6,
-          "value": 114.0
+          "value": 114
         }
       ],
       "customsDuties": null,
       "shippingCostCustomer": null,
-      "shippingCostMos": null,
+      "shippingCostMos": 0,
       "source": "shop",
       "language": "it",
       "orderNumber": "#1467",
@@ -72,7 +72,7 @@
       "emailsSent": [],
       "notes": "",
       "createdAt": 1791907002265,
-      "updatedAt": 1791907002265
+      "updatedAt": 1791907006152
     },
     {
       "id": "ord_mv6gzi1hiuvf",
