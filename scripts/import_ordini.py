@@ -737,11 +737,22 @@ def main():
         # già presente (12/10/2026, Ashleigh Cole, primo ordine 18/06) veniva scartato come duplicato
         # e non arrivava mai il MOS.
         SAME_SUBJECT_WINDOW_MS = 3 * 24 * 3600 * 1000
+        # Eccezione (13/10/2026, Loriano Campinoti, due ordini in 20 minuti): se entrambi gli importi
+        # sono noti e diversi, sono due ordini distinti anche con lo stesso oggetto.
+        def _same_subject_same_order(ex):
+            if ex.get('emailSubject') != o.get('emailSubject'):
+                return False
+            if abs((ex.get('orderDate') or 0) - (o.get('orderDate') or 0)) > SAME_SUBJECT_WINDOW_MS:
+                return False
+            a, b = ex.get('amount') or 0, o.get('amount') or 0
+            if a > 0 and b > 0 and abs(a - b) > 0.005:
+                return False
+            return True
+
         existing_rec = next(
             (ex for ex in existing if
              (ex.get('gmailMessageId') and ex['gmailMessageId'] == o['gmailMessageId'])
-             or (ex.get('emailSubject') == o.get('emailSubject')
-                 and abs((ex.get('orderDate') or 0) - (o.get('orderDate') or 0)) <= SAME_SUBJECT_WINDOW_MS)),
+             or _same_subject_same_order(ex)),
             None
         )
 
