@@ -140,6 +140,10 @@ def _get_body_info(msg) -> tuple[str, list[str]]:
     n_parts = 0
     for part in msg.walk():
         n_parts += 1
+        # i CSV per Mexal allegati alle mail d'ordine interne non fanno parte del testo della mail
+        # (se un client li dichiarasse text/plain finirebbero nel corpo e il parsing darebbe campi sbagliati)
+        if (part.get_filename() or '').lower().endswith('.csv'):
+            continue
         ct = part.get_content_type()
         payload = part.get_payload(decode=True)
         if not payload:
