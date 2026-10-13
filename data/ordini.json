@@ -628,7 +628,9 @@
       ],
       "notes": "",
       "createdAt": 1791280937156,
-      "updatedAt": 1791280957922
+      "updatedAt": 1791885764008,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1791280937156
     },
     {
       "id": "ord_muvsp44v2xyj",
