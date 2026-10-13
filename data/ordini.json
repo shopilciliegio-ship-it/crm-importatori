@@ -70,9 +70,9 @@
         }
       ],
       "emailsSent": [],
-      "notes": "",
+      "notes": "⚠ Conflitto SpedirePro: codice \"CAMPINOTIL\" condiviso tra 2 ordine/i CRM e 2 spedizione/i — verificare manualmente.",
       "createdAt": 1791907002265,
-      "updatedAt": 1791907006152
+      "updatedAt": 1791907012358
     },
     {
       "id": "ord_mv6gzi1hiuvf",
@@ -276,9 +276,9 @@
           "messageId": "<202610111601.25728138464@smtp-relay.mailin.fr>"
         }
       ],
-      "notes": "⚠ Conflitto SpedirePro: codice \"CAMPINOTIL\" condiviso tra 1 ordine/i CRM e 2 spedizione/i — verificare manualmente.",
+      "notes": "⚠ Conflitto SpedirePro: codice \"CAMPINOTIL\" condiviso tra 2 ordine/i CRM e 2 spedizione/i — verificare manualmente.\n⚠ Conflitto SpedirePro: codice \"CAMPINOTIL\" condiviso tra 1 ordine/i CRM e 2 spedizione/i — verificare manualmente.",
       "createdAt": 1791734495864,
-      "updatedAt": 1791906338775
+      "updatedAt": 1791907012358
     },
     {
       "id": "ord_mv15l05wb6ou",
