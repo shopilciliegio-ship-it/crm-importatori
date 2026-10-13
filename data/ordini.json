@@ -5,13 +5,13 @@
       "customerName": "ASHLEIGH COLE",
       "customerEmail": "thecolefamily1@att.net",
       "customerPhone": "8649061783",
-      "amount": 0.0,
+      "amount": 0,
       "currency": "EUR",
       "orderDate": 1791762842000,
       "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio ASHLEIGH COLE",
-      "shipmentCode": "",
+      "shipmentCode": "COLEA2",
       "shippingAddress": "106 Steeplechase, 29627 BELTON - S.CAROLINA - U.S.A. (SC), United States",
-      "numberOfCartons": null,
+      "numberOfCartons": 7,
       "shippingType": "standard",
       "gmailMessageId": "<CAOmk=Ka0jFoKb9vpn=yF53BLhHZ54BP8KROyrUN3kY0hA8rm3Q@mail.gmail.com>",
       "trackingNumber": "",
@@ -20,47 +20,47 @@
         {
           "description": "EXTRA VIRGIN OLIVE OIL 2025 ML 250",
           "qty": 1,
-          "value": 9.0
+          "value": 9
         },
         {
           "description": "EXTRA VIRGIN OLIVE OIL 2025 LT 1",
           "qty": 1,
-          "value": 21.0
+          "value": 21
         },
         {
           "description": "CHIANTI COLLI SENESI DOCG POGGIO ORLANDO RISERVA 2021",
           "qty": 10,
-          "value": 190.0
+          "value": 190
         },
         {
           "description": "CHIANTI COLLI SENESI DOCG POGGIO ORLANDO 2024",
           "qty": 10,
-          "value": 120.0
+          "value": 120
         },
         {
           "description": "CILIEGIO IN FIORE SWEET SPARKLING WINE",
           "qty": 8,
-          "value": 80.0
+          "value": 80
         },
         {
           "description": "CHIANTI GRAN FONDO STRADE BIANCHE LIMITED EDITION",
           "qty": 6,
-          "value": 120.0
+          "value": 120
         },
         {
           "description": "CILIEGIO IN FIORE ROSE' SPARKLING WINE",
           "qty": 1,
-          "value": 10.0
+          "value": 10
         },
         {
           "description": "WHITE WINE IGT 2025",
           "qty": 3,
-          "value": 21.0
+          "value": 21
         }
       ],
       "customsDuties": 57.1,
-      "shippingCostCustomer": 385.0,
-      "shippingCostMos": null,
+      "shippingCostCustomer": 385,
+      "shippingCostMos": 375,
       "source": "shop",
       "language": "en",
       "orderNumber": "#1469",
@@ -77,7 +77,7 @@
       "emailsSent": [],
       "notes": "",
       "createdAt": 1791883189781,
-      "updatedAt": 1791883189781
+      "updatedAt": 1791883194390
     },
     {
       "id": "ord_mv5fxp3udr7s",
@@ -99,21 +99,21 @@
         {
           "description": "POGGIO ORLANDO RISERVA 2021 CHIANTI CO..",
           "qty": 6,
-          "value": 114.0
+          "value": 114
         },
         {
           "description": "INFERNACCIO RED WINE IGT 2022",
           "qty": 5,
-          "value": 80.0
+          "value": 80
         },
         {
           "description": "CHIANTI STRADE BIANCHE 2025 LIM. ED.",
           "qty": 1,
-          "value": 0.0
+          "value": 0
         }
       ],
       "customsDuties": 19.4,
-      "shippingCostCustomer": 115.0,
+      "shippingCostCustomer": 115,
       "shippingCostMos": null,
       "source": "fieramente",
       "language": "en",
