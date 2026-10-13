@@ -75,13 +75,14 @@
           "to": "loriano.campinoti@icloud.com",
           "subject": "Grazie per il tuo ordine! 🍷",
           "sentAt": 1791907016397,
-          "messageId": "<202610131556.95028830585@smtp-relay.mailin.fr>"
+          "messageId": "<202610131556.95028830585@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-10-13T17:56:56.989+02:00"
         }
       ],
-      "notes": "",
+      "notes": "⚠ Conflitto SpedirePro: codice \"CAMPINOTIL\" condiviso tra 2 ordine/i CRM e 2 spedizione/i — verificare manualmente.",
       "createdAt": 1791907002265,
-      "updatedAt": 1791907016397,
-      "manualTracking": true
+      "updatedAt": 1791907016397
     },
     {
       "id": "ord_mv6gzi1hiuvf",
@@ -163,7 +164,9 @@
           "to": "thecolefamily1@att.net",
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1791883210975,
-          "messageId": "<202610130920.56317920866@smtp-relay.mailin.fr>"
+          "messageId": "<202610130920.56317920866@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-10-13T11:20:14.000+02:00"
         }
       ],
       "notes": "",
@@ -225,7 +228,9 @@
           "to": "mlambrus@gmail.com",
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1791820975235,
-          "messageId": "<202610121602.74546743564@smtp-relay.mailin.fr>"
+          "messageId": "<202610121602.74546743564@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-10-12T18:02:58.000+02:00"
         }
       ],
       "notes": "",
@@ -267,13 +272,18 @@
       "language": "it",
       "orderNumber": "#1465",
       "paymentType": "Carte Di Credito/Bancomat",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1791907776221,
+      "status": "spedito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1791734495864,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "spedito",
+          "date": 1791907776221,
+          "note": ""
         }
       ],
       "emailsSent": [
@@ -282,13 +292,21 @@
           "to": "loriano.campinoti@icloud.com",
           "subject": "Grazie per il tuo ordine! 🍷",
           "sentAt": 1791734513751,
-          "messageId": "<202610111601.25728138464@smtp-relay.mailin.fr>"
+          "messageId": "<202610111601.25728138464@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-10-11T18:05:09.000+02:00"
+        },
+        {
+          "type": "Spedito",
+          "sentAt": 1791907776553,
+          "messageId": "<202610131609.31790433656@smtp-relay.mailin.fr>"
         }
       ],
-      "notes": "",
+      "notes": "⚠ Conflitto SpedirePro: codice \"CAMPINOTIL\" condiviso tra 2 ordine/i CRM e 2 spedizione/i — verificare manualmente.\n⚠ Conflitto SpedirePro: codice \"CAMPINOTIL\" condiviso tra 1 ordine/i CRM e 2 spedizione/i — verificare manualmente.",
       "createdAt": 1791734495864,
-      "updatedAt": 1791907012358,
-      "manualTracking": true
+      "updatedAt": 1791907776553,
+      "trackingUrl": "",
+      "destCountry": "IT"
     },
     {
       "id": "ord_mv15l05wb6ou",
@@ -345,7 +363,9 @@
           "to": "sean.goodale@gmail.com",
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1791561721231,
-          "messageId": "<202610091602.42446549119@smtp-relay.mailin.fr>"
+          "messageId": "<202610091602.42446549119@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-10-09T18:02:04.000+02:00"
         }
       ],
       "notes": "",
@@ -402,7 +422,9 @@
           "to": "jwllmsn@gmail.com",
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1791561721231,
-          "messageId": "<202610091602.44069262444@smtp-relay.mailin.fr>"
+          "messageId": "<202610091602.44069262444@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-10-09T18:02:05.000+02:00"
         }
       ],
       "notes": "",
@@ -1111,7 +1133,9 @@
           "to": "suedauble@verizon.com",
           "subject": "Your order is going through customs",
           "sentAt": 1791777715584,
-          "messageId": "<202610120401.38130607416@smtp-relay.mailin.fr>"
+          "messageId": "<202610120401.38130607416@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-10-12T06:01:56.248+02:00"
         }
       ],
       "notes": "",
