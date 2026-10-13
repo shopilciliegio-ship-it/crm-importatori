@@ -340,8 +340,8 @@ function _productsSummaryHtml(o){
   if(!o.products||!o.products.length) return '';
   const rows=o.products.map(p=>
     `<tr><td style="padding:2px 10px 2px 0">${esc(p.description||'—')}</td>`+
-    `<td style="padding:2px 10px;text-align:center">${p.qty!=null?p.qty:''}</td>`+
-    `<td style="padding:2px 0;text-align:right">${p.value!=null?'€'+Number(p.value).toFixed(2):''}</td></tr>`
+    `<td style="padding:2px 10px;text-align:center;white-space:nowrap">${p.qty!=null?p.qty:''}</td>`+
+    `<td style="padding:2px 0;text-align:right;white-space:nowrap">${p.value!=null?'€'+Number(p.value).toFixed(2):''}</td></tr>`
   ).join('');
   const tot=o.products.reduce((s,p)=>s+(Number(p.value)||0),0);
   return `<table style="font-size:12px;border-collapse:collapse;width:100%">${rows}</table>`+
