@@ -278,7 +278,10 @@ def main():
     # sola volta per run anche se ENTRAMBI trovano una spedizione corrispondente.
     processed_ids: set[str] = set()
 
-    for code, crm_matches in pending_by_code.items():
+    # I codici numerici (numero ordine) vengono prima: sono univoci. Cosi' due ordini dello stesso
+    # cliente (es. CAMPINOTIL, 13/10/2026) si distinguono se su SpedirePro uno dei due ha come
+    # riferimento il numero ordine; il codice COGNOME+iniziale resta per l'altro.
+    for code, crm_matches in sorted(pending_by_code.items(), key=lambda kv: (not kv[0].isdigit(), kv[0])):
         crm_matches = [o for o in crm_matches if o.get('id') not in processed_ids]
         if not crm_matches:
             continue
