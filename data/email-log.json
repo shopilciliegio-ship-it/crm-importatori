@@ -242,6 +242,15 @@
       "subject": "Thank you for your order! 🍷",
       "sentAt": 1791883210975,
       "messageId": "<202610130920.56317920866@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mv6v5vvdj77h",
+      "customerName": "LORIANO CAMPINOTI",
+      "type": "order_received",
+      "to": "loriano.campinoti@icloud.com",
+      "subject": "Grazie per il tuo ordine! 🍷",
+      "sentAt": 1791907016397,
+      "messageId": "<202610131556.95028830585@smtp-relay.mailin.fr>"
     }
   ]
 }
