@@ -1,5 +1,5 @@
 {
-  "lastUid": 490,
+  "lastUid": 491,
   "pending": [
     {
       "id": "ir_422",
@@ -1252,6 +1252,25 @@
       "rispostaDiretta": true,
       "suggestedStatus": "replied",
       "reason": "Email di inoltro interno che conferma ricezione e coinvolgimento del team competente; segnale positivo di interesse procedurale.",
+      "confidence": "ai",
+      "dataRientro": null,
+      "emailAlternativa": null
+    },
+    {
+      "id": "ir_491",
+      "uid": 491,
+      "contactId": null,
+      "nonCollegato": true,
+      "company": "Simone Marcis (Hillebrand Gori IT)",
+      "from": "simone.marcis@hillebrandgori.com",
+      "mittenteNome": "Simone Marcis (Hillebrand Gori IT)",
+      "subject": "R: Introduction to the next stage/ Siena Wine SRL",
+      "date": "2026-10-12T15:31:31+00:00",
+      "snippet": "Dear  all,\r\npick  up  should  be  on 10/14  from Siena Wine.\r\n\r\nThanks  and regards,\r\n\r\nSimone Marcis\r\n\r\nOps-EXP-CG-US Vendor-Managed Inventory-Hillebrand Gori Italy SRL\r\n\r\n\r\n\r\n[signature_3407931170]\r\n\r\n\r\nInterporto Toscana A.Vespucci - Strada interna VII\r\nVia Delle Colline, 100 - Loc.Guasticce\r\n57014  COLLESALVETTI ( LI )\r\nItaly\r\n\r\nSimone.Marcis@hillebrandgori.com<mailto:Simone.Marcis@hillebrandg",
+      "riassunto": "Simone Marcis di Hillebrand Gori Italy comunica che il ritiro dei vini da Siena Wine è previsto per il 14/10. L'email fa parte di una conversazione tra Siena Wine (Luca Pattaro), August Imports (Antonio Sanguineti e Luisa Dowd) e il fornitore logistico Hillebrand Gori riguardante l'imbottigliamento e la consegna di Chianti Luchi e Nessun Dorma.",
+      "rispostaDiretta": false,
+      "suggestedStatus": null,
+      "reason": "È una comunicazione operativa all'interno di una transazione commerciale già avviata tra Siena Wine e August Imports (importatore estero), che conferma l'avanzamento della fornitura e la logistica di consegna.",
       "confidence": "ai",
       "dataRientro": null,
       "emailAlternativa": null
