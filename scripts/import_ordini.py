@@ -714,6 +714,10 @@ def main():
     else:
         from_dt = datetime.now(timezone.utc) - timedelta(days=30)
 
+    _force = os.environ.get('IMPORT_FROM_DATE', '').strip()
+    if _force:
+        from_dt = datetime.strptime(_force, '%Y-%m-%d').replace(tzinfo=timezone.utc)
+
     print(f'Cerco email dal: {from_dt.strftime("%d/%m/%Y")}')
 
     # Fetch da Gmail
