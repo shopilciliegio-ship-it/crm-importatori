@@ -227,7 +227,7 @@ def _parse_body(text: str, mailto_emails: list[str] | None = None) -> dict:
     m = re.search(r'FINAL\s+TOTAL\s*:\s*[€$£]?\s*([\d,.]+)', text, re.I)
     if m:
         try:
-            amount = float(m.group(1).replace(',', '.'))
+            amount = _parse_amount(m.group(1))
             if amount > 0:
                 result['amount'] = amount
         except ValueError:
@@ -244,7 +244,7 @@ def _parse_body(text: str, mailto_emails: list[str] | None = None) -> dict:
         qty = int(pm.group(1))
         desc = pm.group(2).strip()
         price_m = re.search(r'(\d+(?:[.,]\d+)?)', pm.group(3))
-        unit_price = float(price_m.group(1).replace(',', '.')) if price_m else 0.0
+        unit_price = _parse_amount(price_m.group(1)) if price_m else 0.0
         products.append({'description': desc, 'qty': qty, 'value': round(qty * unit_price, 2)})
     if products:
         result['products'] = products
@@ -253,7 +253,7 @@ def _parse_body(text: str, mailto_emails: list[str] | None = None) -> dict:
     m = re.search(r'Import\s+Duties[^:]*:\s*[€$£]?\s*([\d.,]+)', text, re.I)
     if m:
         try:
-            result['customsDuties'] = float(m.group(1).replace(',', '.'))
+            result['customsDuties'] = _parse_amount(m.group(1))
         except ValueError:
             pass
 
@@ -261,11 +261,30 @@ def _parse_body(text: str, mailto_emails: list[str] | None = None) -> dict:
     m = re.search(r'Shipping\s*\([^)]*\)\s*:\s*[€$£]?\s*([\d.,]+)', text, re.I)
     if m:
         try:
-            result['shippingCostCustomer'] = float(m.group(1).replace(',', '.'))
+            result['shippingCostCustomer'] = _parse_amount(m.group(1))
         except ValueError:
             pass
 
     return result
+
+
+def _parse_amount(raw: str) -> float:
+    """Importo con separatori misti: '171,15' / '234.35' / '1,013.10' / '1.013,10' / '1,013'.
+    Prima si faceva solo replace(',', '.'): '1,013.10' diventava '1.013.10' -> ValueError e il totale
+    restava a 0 (ordine Cole #1469, 12/10/2026, totale sopra i 1.000 EUR)."""
+    raw = raw.strip().strip('.,')
+    if ',' in raw and '.' in raw:
+        if raw.rfind(',') > raw.rfind('.'):          # 1.013,10 (formato europeo)
+            raw = raw.replace('.', '').replace(',', '.')
+        else:                                         # 1,013.10 (formato inglese)
+            raw = raw.replace(',', '')
+    elif ',' in raw:
+        head, _, tail = raw.rpartition(',')
+        raw = head.replace(',', '') + tail if (len(tail) == 3 and head) else raw.replace(',', '.')
+    elif raw.count('.') > 1:
+        head, _, tail = raw.rpartition('.')
+        raw = head.replace('.', '') + '.' + tail
+    return float(raw)
 
 
 def _parse_shop_order_body(text: str) -> dict:
@@ -347,7 +366,7 @@ def _parse_shop_order_body(text: str) -> dict:
     m = re.search(r'(?i:Tipo\s+di\s+Spedizione|Shipping\s+type)\s*\n?\s*([^\n]+)', text)
     if m:
         raw_ship = m.group(1).strip()
-        result['carrier'] = raw_ship.title()
+        result['carrier'] = re.sub(r'^[\s\-–]+', '', raw_ship).title()
         if re.search(r'\bSTD\b', raw_ship, re.I):
             result['shippingType'] = 'standard'
         elif re.search(r'\bEXPR', raw_ship, re.I):
@@ -363,7 +382,7 @@ def _parse_shop_order_body(text: str) -> dict:
     if m:
         raw = m.group(1) or m.group(2)
         try:
-            amount = float(raw.replace(',', '.'))
+            amount = _parse_amount(raw)
             if amount > 0:
                 result['amount'] = amount
         except ValueError:
@@ -390,7 +409,7 @@ def _parse_shop_order_body(text: str) -> dict:
         m_qty = re.search(r'(?:Quantity|Qt[aà])\s+(\d+)', block, re.I)
         qty = int(m_qty.group(1)) if m_qty else 1
         m_tot = re.search(r'(?:Total\s+row|Totale\s+Riga)\s*\n?\s*€?\s*([\d.,]+)', block, re.I)
-        value = float(m_tot.group(1).replace(',', '.')) if m_tot else 0.0
+        value = _parse_amount(m_tot.group(1)) if m_tot else 0.0
         if has_code:
             products.append({'description': name, 'qty': qty, 'value': value})
         elif re.search(r'\bTAX\b|DAZI|DAZIO|DUTY|DOGAN', name, re.I):
@@ -408,7 +427,7 @@ def _parse_shop_order_body(text: str) -> dict:
     m = re.search(r'(?:Transport\s+expenses|Spese\s+(?:di\s+)?Trasporto)\s+€?\s*([\d.,]+)', text, re.I)
     if m:
         try:
-            result['shippingCostCustomer'] = float(m.group(1).replace(',', '.'))
+            result['shippingCostCustomer'] = _parse_amount(m.group(1))
         except ValueError:
             pass
     print(f'      [prof] transport: {time.monotonic()-t0:.1f}s')
@@ -469,7 +488,7 @@ def _parse_email(msg) -> dict | None:
         return None
 
     customer_name = m.group(1).strip()
-    amount        = float(m.group(2).replace(',', '.')) if m.group(2) else 0.0
+    amount        = _parse_amount(m.group(2)) if m.group(2) else 0.0
     currency      = (m.group(3) or 'EUR').upper()
 
     # Corpo email
@@ -603,7 +622,7 @@ def parse_fieramente_pdf(pdf_bytes: bytes) -> dict:
     m_sc = re.search(r'TOTAL\s+SHIPPING\s+CHARGES\s*\n?\s*€?\s*([\d.,]+)', text, re.I)
     if m_sc:
         try:
-            shipping_cost_mos = float(m_sc.group(1).replace(',', '.'))
+            shipping_cost_mos = _parse_amount(m_sc.group(1))
         except ValueError:
             pass
 
