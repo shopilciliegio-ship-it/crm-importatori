@@ -1,6 +1,80 @@
 {
   "orders": [
     {
+      "id": "ord_mv6v5vvdj77h",
+      "customerName": "LORIANO CAMPINOTI",
+      "customerEmail": "loriano.campinoti@icloud.com",
+      "customerPhone": "3663911629",
+      "amount": 177.0,
+      "currency": "EUR",
+      "orderDate": 1791724998000,
+      "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio LORIANO CAMPINOTI",
+      "shipmentCode": "",
+      "shippingAddress": "Via Dante, 129, 50054 FUCECCHIO (FI), Italy",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<CAOmk=KavC3_Jg63WWS9uutdg3TRVx8GDwtFKtYT7Cb7Epopa1g@mail.gmail.com>",
+      "trackingNumber": "",
+      "carrier": "Corriere Italia Gratis Oltre 100 € Di Ordine",
+      "products": [
+        {
+          "description": "FARRO DECORTICATO 500 GR",
+          "qty": 1,
+          "value": 3.0
+        },
+        {
+          "description": "CANTUCCINI DELLA MAMMA 250 GR",
+          "qty": 2,
+          "value": 13.0
+        },
+        {
+          "description": "CECI DI CAMPO 500 GR",
+          "qty": 2,
+          "value": 6.0
+        },
+        {
+          "description": "LENTICCHIE 500 GR",
+          "qty": 2,
+          "value": 8.0
+        },
+        {
+          "description": "OLIO EXTRA VERGINE DI OLIVA 2025 ML 500",
+          "qty": 2,
+          "value": 23.0
+        },
+        {
+          "description": "CILIEGIO IN FIORE SPUMANTE DOLCE",
+          "qty": 1,
+          "value": 10.0
+        },
+        {
+          "description": "VIN SANTO DEL CHIANTI DOC 2019",
+          "qty": 6,
+          "value": 114.0
+        }
+      ],
+      "customsDuties": null,
+      "shippingCostCustomer": null,
+      "shippingCostMos": null,
+      "source": "shop",
+      "language": "it",
+      "orderNumber": "#1467",
+      "paymentType": "Carte Di Credito/Bancomat",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1791907002265,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1791907002265,
+      "updatedAt": 1791907002265
+    },
+    {
       "id": "ord_mv6gzi1hiuvf",
       "customerName": "ASHLEIGH COLE",
       "customerEmail": "thecolefamily1@att.net",
@@ -11659,5 +11733,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1791883189781
+  "lastImportedAt": 1791907002265
 }
