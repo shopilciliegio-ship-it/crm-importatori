@@ -81633,7 +81633,11 @@
         "ricevutaVolte": 2,
         "deliveredAt": "2026-09-30T12:11:57.000+02:00",
         "openedAt": "2026-09-30T12:12:09.000+02:00",
-        "clickedAt": "2026-09-30T12:12:01.000+02:00"
+        "clickedAt": "2026-09-30T12:12:01.000+02:00",
+        "clickedLinks": [
+          "https://www.sienawine.it",
+          "https://www.sienawine.it/brochure"
+        ]
       }
     ],
     "research": {
@@ -81675,6 +81679,14 @@
       {
         "ts": 1790866855393,
         "msg": "⚡ Auto day7 recuperato dal log Brevo (1/10/2026): per un errore di invio questa email è stata ricevuta 2 volte tra il 26/9 e il 1/10"
+      },
+      {
+        "ts": 1790924238645,
+        "msg": "🔗 Click: Have you ever heard of Small Vineyards International? Not yet?"
+      },
+      {
+        "ts": 1790919243601,
+        "msg": "👁 Aperta: Have you ever heard of Small Vineyards International? Not yet?"
       }
     ],
     "brevoEvents": [
@@ -81704,15 +81716,21 @@
         "brand": "sienawine",
         "sequenceStep": 2,
         "delivered": true,
-        "opened": false,
-        "clicked": false,
+        "opened": true,
+        "clicked": true,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
         "manualStatus": null,
         "ricevutaVolte": 2,
-        "deliveredAt": "2026-09-30T12:24:30.000+02:00"
+        "deliveredAt": "2026-09-30T12:24:30.000+02:00",
+        "clickedLinks": [
+          "https://www.sienawine.it",
+          "https://www.sienawine.it/smallvineyardsinternational"
+        ],
+        "clickedAt": "2026-10-02T08:57:18.645+02:00",
+        "openedAt": "2026-10-02T07:34:03.601+02:00"
       }
     ],
     "research": {
@@ -81821,7 +81839,10 @@
         "ricevutaVolte": 2,
         "deliveredAt": "2026-09-30T12:11:59.000+02:00",
         "openedAt": "2026-09-30T12:12:15.000+02:00",
-        "clickedAt": "2026-09-30T12:12:16.000+02:00"
+        "clickedAt": "2026-09-30T12:12:16.000+02:00",
+        "clickedLinks": [
+          "https://www.sienawine.it/brochure"
+        ]
       }
     ],
     "research": {
@@ -81889,7 +81910,11 @@
         "ricevutaVolte": 2,
         "deliveredAt": "2026-09-30T12:11:59.000+02:00",
         "openedAt": "2026-09-30T12:12:05.000+02:00",
-        "clickedAt": "2026-09-30T12:12:01.000+02:00"
+        "clickedAt": "2026-09-30T12:12:01.000+02:00",
+        "clickedLinks": [
+          "https://www.sienawine.it",
+          "https://www.sienawine.it/brochure"
+        ]
       }
     ],
     "research": {
@@ -82519,6 +82544,14 @@
       {
         "ts": 1790866855393,
         "msg": "⚡ Auto day7 recuperato dal log Brevo (1/10/2026): per un errore di invio questa email è stata ricevuta 1 volte tra il 26/9 e il 1/10"
+      },
+      {
+        "ts": 1790927868733,
+        "msg": "🔗 Click: Have you ever heard of Small Vineyards International? Not yet?"
+      },
+      {
+        "ts": 1790920163609,
+        "msg": "👁 Aperta: Have you ever heard of Small Vineyards International? Not yet?"
       }
     ],
     "brevoEvents": [
@@ -82548,15 +82581,21 @@
         "brand": "sienawine",
         "sequenceStep": 2,
         "delivered": true,
-        "opened": false,
-        "clicked": false,
+        "opened": true,
+        "clicked": true,
         "bounced": false,
         "spam": false,
         "unsubscribed": false,
         "blocked": false,
         "manualStatus": null,
         "ricevutaVolte": 1,
-        "deliveredAt": "2026-10-01T06:12:07.000+02:00"
+        "deliveredAt": "2026-10-01T06:12:07.000+02:00",
+        "clickedLinks": [
+          "https://www.sienawine.it/smallvineyardsinternational",
+          "https://www.sienawine.it"
+        ],
+        "clickedAt": "2026-10-02T09:57:48.733+02:00",
+        "openedAt": "2026-10-02T07:49:23.609+02:00"
       }
     ],
     "research": {
