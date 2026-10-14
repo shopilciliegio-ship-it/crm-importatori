@@ -447,12 +447,12 @@
       "currency": "EUR",
       "orderDate": 1791375584000,
       "emailSubject": "🍷 New Order — CONG LIN — 278.02 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "LINC",
       "shippingAddress": "77 HILLTOP DR, 11789 SOUND BEACH, NEW YORK (SUFFOLK COUNTY)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202610071219.82393761505@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A817146063",
       "carrier": "MBE",
       "products": [
         {
@@ -473,13 +473,18 @@
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1791972107944,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1791388953046,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1791972107944,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -495,7 +500,7 @@
       ],
       "notes": "",
       "createdAt": 1791388953046,
-      "updatedAt": 1791388968215
+      "updatedAt": 1791972107944
     },
     {
       "id": "ord_muxkzdkv4if8",
@@ -511,7 +516,7 @@
       "numberOfCartons": 2,
       "shippingType": "standard",
       "gmailMessageId": "<CAOmk=KaGLx8DxQusm+Q+65S2k4ttCdRYC5xPc7-T0h7wCJP-JA@mail.gmail.com>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A819354727",
       "carrier": "- U.S.A. Wine Corriere Std",
       "products": [
         {
@@ -527,13 +532,18 @@
       "language": "en",
       "orderNumber": "#1463",
       "paymentType": "Carte Di Credito/Bancomat",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1791972107944,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1791345706879,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1791972107944,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -549,7 +559,7 @@
       ],
       "notes": "",
       "createdAt": 1791345706879,
-      "updatedAt": 1791950510489,
+      "updatedAt": 1791972107944,
       "staleAlertDays": 7,
       "staleAlertSince": 1791345706879
     },
@@ -562,12 +572,12 @@
       "currency": "EUR",
       "orderDate": 1791311293000,
       "emailSubject": "🍷 New Order — KIMBERLY  HEBERT — 98.00 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "HEBERTK",
       "shippingAddress": "523 TRACY CIRCLE, 70503 LAFAYETTE, LOUISIANA (LAFAYETTE PARISH)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202610061828.40024695796@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A898191504",
       "carrier": "MBE",
       "products": [
         {
@@ -583,13 +593,18 @@
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1791972107944,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1791324111296,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1791972107944,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -605,7 +620,7 @@
       ],
       "notes": "",
       "createdAt": 1791324111296,
-      "updatedAt": 1791950510489,
+      "updatedAt": 1791972107944,
       "staleAlertDays": 7,
       "staleAlertSince": 1791324111296
     },
@@ -618,12 +633,12 @@
       "currency": "EUR",
       "orderDate": 1791311094000,
       "emailSubject": "🍷 New Order — VERONICA REED — 259.10 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "REEDV",
       "shippingAddress": "307 MANOR HOUSE LINE, 70507 LAFAYETTE PARISH, LOUISIANA (LAFAYETTE PARISH)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202610061824.47453217735@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A897156090",
       "carrier": "MBE",
       "products": [
         {
@@ -649,13 +664,18 @@
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1791972107944,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1791324111296,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1791972107944,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -671,7 +691,7 @@
       ],
       "notes": "",
       "createdAt": 1791324111296,
-      "updatedAt": 1791950510489,
+      "updatedAt": 1791972107944,
       "staleAlertDays": 7,
       "staleAlertSince": 1791324111296
     },
@@ -684,12 +704,12 @@
       "currency": "EUR",
       "orderDate": 1791276399000,
       "emailSubject": "🍷 New Order — CONNOR SMITH — 145.95 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "SMITHC",
       "shippingAddress": "552 VICTORY RD, APT 432, 02171 QUINCY, MASSACHUSETTS (NORFOLK COUNTY)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202610060846.92724120883@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A895050662",
       "carrier": "MBE",
       "products": [
         {
@@ -725,13 +745,18 @@
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1791972107944,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1791280937156,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1791972107944,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -747,7 +772,7 @@
       ],
       "notes": "",
       "createdAt": 1791280937156,
-      "updatedAt": 1791885764008,
+      "updatedAt": 1791972107944,
       "staleAlertDays": 7,
       "staleAlertSince": 1791280937156
     },
@@ -854,12 +879,12 @@
       "currency": "EUR",
       "orderDate": 1790942841000,
       "emailSubject": "🍷 New Order — JESUS RUBIO — 159.70 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "RUBIOJ",
       "shippingAddress": "5308 RAILEA CT, 79703 MIDLAND, TEXAS (MIDLAND COUNTY)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202610021207.71668091934@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A895049674",
       "carrier": "MBE",
       "products": [
         {
@@ -895,13 +920,18 @@
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1791972107944,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1790956915164,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1791972107944,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -917,7 +947,7 @@
       ],
       "notes": "",
       "createdAt": 1790956915164,
-      "updatedAt": 1791561721231,
+      "updatedAt": 1791972107944,
       "staleAlertDays": 7,
       "staleAlertSince": 1790956915164
     },
