@@ -549,7 +549,9 @@
       ],
       "notes": "",
       "createdAt": 1791345706879,
-      "updatedAt": 1791345723912
+      "updatedAt": 1791950510489,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1791345706879
     },
     {
       "id": "ord_mux84ibk0d73",
@@ -603,7 +605,9 @@
       ],
       "notes": "",
       "createdAt": 1791324111296,
-      "updatedAt": 1791324124278
+      "updatedAt": 1791950510489,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1791324111296
     },
     {
       "id": "ord_mux84ibk0v78",
@@ -667,7 +671,9 @@
       ],
       "notes": "",
       "createdAt": 1791324111296,
-      "updatedAt": 1791324124278
+      "updatedAt": 1791950510489,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1791324111296
     },
     {
       "id": "ord_muwif4xwc76j",
