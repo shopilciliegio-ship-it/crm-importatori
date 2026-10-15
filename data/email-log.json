@@ -323,6 +323,60 @@
       "subject": "Your wine is on its way! 🍷",
       "sentAt": 1791972116948,
       "messageId": "<202610141002.82917993296@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_muoamq58xfbh",
+      "customerName": "SCOTT BOCKETTI",
+      "type": "dogana",
+      "to": "scottbocketti@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1792036915381,
+      "messageId": "<202610150401.58278145006@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mun81432zjm3",
+      "customerName": "MARYLOU BRAI",
+      "type": "dogana",
+      "to": "mlbrai924@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1792036915381,
+      "messageId": "<202610150401.40283204435@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mul2w5h7op36",
+      "customerName": "ROBERT  LEAVITT",
+      "type": "dogana",
+      "to": "rleavitt@icloud.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1792036915381,
+      "messageId": "<202610150401.97628961490@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_muiktlyzttpy",
+      "customerName": "ILLIANA BEVERLY",
+      "type": "dogana",
+      "to": "lonibeverly@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1792036915381,
+      "messageId": "<202610150401.28800991776@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_muh5divi7env",
+      "customerName": "EMILY PEACH",
+      "type": "dogana",
+      "to": "embosela@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1792036915381,
+      "messageId": "<202610150401.55684961215@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_muh5divhqc01",
+      "customerName": "JESSICA COOK",
+      "type": "dogana",
+      "to": "jlcook315@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1792036915381,
+      "messageId": "<202610150401.97872872848@smtp-relay.mailin.fr>"
     }
   ]
 }
