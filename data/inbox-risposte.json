@@ -1,5 +1,5 @@
 {
-  "lastUid": 492,
+  "lastUid": 493,
   "pending": [
     {
       "id": "ir_422",
@@ -1293,6 +1293,25 @@
       "confidence": "ai",
       "dataRientro": null,
       "emailAlternativa": "segreteriagolosaria@golosarioegolosaria.it"
+    },
+    {
+      "id": "ir_493",
+      "uid": 493,
+      "contactId": null,
+      "nonCollegato": true,
+      "company": "Segugio.it",
+      "from": "news@news.segugio.it",
+      "mittenteNome": "Segugio.it",
+      "subject": "📢RC in calo? Segugio ti aiuta a verificarlo",
+      "date": "2026-10-15T07:40:05+00:00",
+      "snippet": "Segugio.it \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n Confronta su Segugio i prezzi delle migliori assicurazioni auto e moto: trova l'offerta perfetta per te e risparmia. Trova in pochi click anche tariffe luce, gas, internet casa, mobile prestiti e mutui. \r\n \r\n \r\n \r\n\r\n \r\n \r\n \r\n Se non visualizzi correttamente questa email, clicca qui \r\n \r\n \r\n \r\n\n ",
+      "riassunto": "Newsletter commerciale di Segugio.it (comparatore di assicurazioni e servizi finanziari) che propone offerte su RC auto, assicurazioni moto, van, polizze viaggio, luce e gas.",
+      "rispostaDiretta": false,
+      "suggestedStatus": null,
+      "reason": "Email di marketing generico da un servizio di comparazione assicurativo, completamente scollegata dalla proposta commerciale di distribuzione vini.",
+      "confidence": "ai",
+      "dataRientro": null,
+      "emailAlternativa": null
     }
   ],
   "risolte": [
