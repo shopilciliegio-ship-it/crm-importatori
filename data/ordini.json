@@ -20,16 +20,16 @@
         {
           "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
           "qty": 3,
-          "value": 30.0
+          "value": 30
         },
         {
           "description": "1 LT EXTRA VIRGIN OLIVE OIL 2025",
           "qty": 2,
-          "value": 42.0
+          "value": 42
         }
       ],
       "customsDuties": 7.2,
-      "shippingCostCustomer": 75.0,
+      "shippingCostCustomer": 75,
       "shippingCostMos": null,
       "source": "fieramente",
       "language": "en",
@@ -69,16 +69,16 @@
         {
           "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
           "qty": 3,
-          "value": 30.0
+          "value": 30
         },
         {
           "description": "1 LT EXTRA VIRGIN OLIVE OIL 2025",
           "qty": 2,
-          "value": 42.0
+          "value": 42
         }
       ],
       "customsDuties": 7.2,
-      "shippingCostCustomer": 75.0,
+      "shippingCostCustomer": 75,
       "shippingCostMos": null,
       "source": "fieramente",
       "language": "en",
@@ -103,7 +103,7 @@
       "customerName": "DON COWIN",
       "customerEmail": "donnie_cowin@hotmail.com",
       "customerPhone": "+17073928888",
-      "amount": 98.0,
+      "amount": 98,
       "currency": "EUR",
       "orderDate": 1792152291000,
       "emailSubject": "🍷 New Order — DON COWIN — 98.00 EUR",
@@ -118,11 +118,11 @@
         {
           "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
           "qty": 3,
-          "value": 30.0
+          "value": 30
         }
       ],
-      "customsDuties": 3.0,
-      "shippingCostCustomer": 65.0,
+      "customsDuties": 3,
+      "shippingCostCustomer": 65,
       "shippingCostMos": null,
       "source": "fieramente",
       "language": "en",
@@ -147,13 +147,13 @@
       "customerName": "Massimiliano Pillon",
       "customerEmail": "maci.macinho@gmail.com",
       "customerPhone": "3896769763",
-      "amount": 138.0,
+      "amount": 138,
       "currency": "EUR",
       "orderDate": 1792148217000,
       "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio Massimiliano Pillon",
-      "shipmentCode": "",
+      "shipmentCode": "PILLONM",
       "shippingAddress": "VIA DANTE 30, 39100 BOLZANO (BZ), Italy",
-      "numberOfCartons": null,
+      "numberOfCartons": 2,
       "shippingType": "standard",
       "gmailMessageId": "<CAOmk=KaiCywWxV6Gdtv_sCzT-WvLgwPrehNh2vkn=oFHcDYzbg@mail.gmail.com>",
       "trackingNumber": "",
@@ -162,22 +162,22 @@
         {
           "description": "INFERNACCIO ROSSO IGT 2022",
           "qty": 6,
-          "value": 96.0
+          "value": 96
         },
         {
           "description": "BIANCO IGT 2025",
           "qty": 3,
-          "value": 21.0
+          "value": 21
         },
         {
           "description": "ROSSO IGT 2025",
           "qty": 3,
-          "value": 21.0
+          "value": 21
         }
       ],
       "customsDuties": null,
       "shippingCostCustomer": null,
-      "shippingCostMos": null,
+      "shippingCostMos": 0,
       "source": "shop",
       "language": "it",
       "orderNumber": "#1473",
@@ -194,7 +194,7 @@
       "emailsSent": [],
       "notes": "",
       "createdAt": 1792166470460,
-      "updatedAt": 1792166470460
+      "updatedAt": 1792166473868
     },
     {
       "id": "ord_mv6v5vvdj77h",
