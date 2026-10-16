@@ -39,10 +39,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "donnie_cowin@hotmail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1792188094468,
+          "messageId": "<202610162201.64357476344@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1792188055969,
-      "updatedAt": 1792188055969
+      "updatedAt": 1792188094468
     },
     {
       "id": "ord_mvb5n6t8dhmr",
@@ -673,7 +681,9 @@
       ],
       "notes": "",
       "createdAt": 1791561706772,
-      "updatedAt": 1791561721231
+      "updatedAt": 1792188094468,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1791561706772
     },
     {
       "id": "ord_mv15l05wuuh7",
@@ -732,7 +742,9 @@
       ],
       "notes": "",
       "createdAt": 1791561706772,
-      "updatedAt": 1791561721231
+      "updatedAt": 1792188094468,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1791561706772
     },
     {
       "id": "ord_muyaqajaovfm",
