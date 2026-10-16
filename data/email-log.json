@@ -431,6 +431,15 @@
       "subject": "Grazie per il tuo ordine! 🍷",
       "sentAt": 1792166487015,
       "messageId": "<202610161601.71052039370@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mvbihuapamvj",
+      "customerName": "DON COWIN",
+      "type": "order_received",
+      "to": "donnie_cowin@hotmail.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1792188094468,
+      "messageId": "<202610162201.64357476344@smtp-relay.mailin.fr>"
     }
   ]
 }
