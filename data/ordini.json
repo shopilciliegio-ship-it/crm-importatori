@@ -44,10 +44,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "brian.peterson.bkp@gmail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1792166487015,
+          "messageId": "<202610161601.91243038012@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1792166470460,
-      "updatedAt": 1792166470460
+      "updatedAt": 1792166487015
     },
     {
       "id": "ord_mvb5n6t8w70m",
@@ -93,10 +101,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "donnie_cowin@hotmail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1792166487015,
+          "messageId": "<202610161601.87179711853@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1792166470460,
-      "updatedAt": 1792166470460
+      "updatedAt": 1792166487015
     },
     {
       "id": "ord_mvb5n6t8vz6e",
@@ -137,10 +153,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "donnie_cowin@hotmail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1792166487015,
+          "messageId": "<202610161601.77118039860@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1792166470460,
-      "updatedAt": 1792166470460
+      "updatedAt": 1792166487015
     },
     {
       "id": "ord_mvb5n6t8ziod",
@@ -191,10 +215,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "maci.macinho@gmail.com",
+          "subject": "Grazie per il tuo ordine! 🍷",
+          "sentAt": 1792166487015,
+          "messageId": "<202610161601.71052039370@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1792166470460,
-      "updatedAt": 1792166473868
+      "updatedAt": 1792166487015
     },
     {
       "id": "ord_mv6v5vvdj77h",
