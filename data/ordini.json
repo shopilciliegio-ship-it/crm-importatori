@@ -305,7 +305,7 @@
       "orderNumber": "#1465",
       "paymentType": "Carte Di Credito/Bancomat",
       "shippingDate": 1791907776221,
-      "status": "in_consegna",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -320,6 +320,11 @@
         {
           "status": "in_consegna",
           "date": 1792144629823,
+          "note": ""
+        },
+        {
+          "status": "consegnato",
+          "date": 1792165308752,
           "note": ""
         }
       ],
@@ -357,11 +362,22 @@
           "messageId": "<202610161001.46843847548@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-10-16T12:05:38.000+02:00"
+        },
+        {
+          "type": "consegnato",
+          "sentAt": 1792165308752,
+          "messageId": "manual-skip",
+          "manual": true
+        },
+        {
+          "type": "Consegnato",
+          "sentAt": 1792165309065,
+          "messageId": "<202610161541.68231603582@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "⚠ Conflitto SpedirePro: codice \"CAMPINOTIL\" condiviso tra 2 ordine/i CRM e 2 spedizione/i — verificare manualmente.\n⚠ Conflitto SpedirePro: codice \"CAMPINOTIL\" condiviso tra 1 ordine/i CRM e 2 spedizione/i — verificare manualmente.",
       "createdAt": 1791734495864,
-      "updatedAt": 1792144879017,
+      "updatedAt": 1792165309066,
       "trackingUrl": "",
       "destCountry": "IT"
     },
