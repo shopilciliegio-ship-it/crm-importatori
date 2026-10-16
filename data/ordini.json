@@ -1,6 +1,202 @@
 {
   "orders": [
     {
+      "id": "ord_mvb5n6t8dhmr",
+      "customerName": "BRIAN PETERSON",
+      "customerEmail": "brian.peterson.bkp@gmail.com",
+      "customerPhone": "+13524279334",
+      "amount": 154.2,
+      "currency": "EUR",
+      "orderDate": 1792153396000,
+      "emailSubject": "🍷 New Order — BRIAN PETERSON — 154.20 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "5420 SW 133 CT, 34481 OCALA, FLORIDA (MARION COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202610161223.48936008434@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
+          "qty": 3,
+          "value": 30.0
+        },
+        {
+          "description": "1 LT EXTRA VIRGIN OLIVE OIL 2025",
+          "qty": 2,
+          "value": 42.0
+        }
+      ],
+      "customsDuties": 7.2,
+      "shippingCostCustomer": 75.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1792166470460,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1792166470460,
+      "updatedAt": 1792166470460
+    },
+    {
+      "id": "ord_mvb5n6t8w70m",
+      "customerName": "DON COWIN",
+      "customerEmail": "donnie_cowin@hotmail.com",
+      "customerPhone": "+17073928888",
+      "amount": 154.2,
+      "currency": "EUR",
+      "orderDate": 1792152425000,
+      "emailSubject": "🍷 New Order — DON COWIN — 154.20 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "736 FOX CREEK DRIVE, 63026 FENTON, MISSOURI (SAINT LOUIS COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202610161207.18098438078@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
+          "qty": 3,
+          "value": 30.0
+        },
+        {
+          "description": "1 LT EXTRA VIRGIN OLIVE OIL 2025",
+          "qty": 2,
+          "value": 42.0
+        }
+      ],
+      "customsDuties": 7.2,
+      "shippingCostCustomer": 75.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1792166470460,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1792166470460,
+      "updatedAt": 1792166470460
+    },
+    {
+      "id": "ord_mvb5n6t8vz6e",
+      "customerName": "DON COWIN",
+      "customerEmail": "donnie_cowin@hotmail.com",
+      "customerPhone": "+17073928888",
+      "amount": 98.0,
+      "currency": "EUR",
+      "orderDate": 1792152291000,
+      "emailSubject": "🍷 New Order — DON COWIN — 98.00 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "736 FOX CREEK DRIVE, 63026 FENTON, MISSOURI (SAINT LOUIS COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202610161204.44232504538@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
+          "qty": 3,
+          "value": 30.0
+        }
+      ],
+      "customsDuties": 3.0,
+      "shippingCostCustomer": 65.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1792166470460,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1792166470460,
+      "updatedAt": 1792166470460
+    },
+    {
+      "id": "ord_mvb5n6t8ziod",
+      "customerName": "Massimiliano Pillon",
+      "customerEmail": "maci.macinho@gmail.com",
+      "customerPhone": "3896769763",
+      "amount": 138.0,
+      "currency": "EUR",
+      "orderDate": 1792148217000,
+      "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio Massimiliano Pillon",
+      "shipmentCode": "",
+      "shippingAddress": "VIA DANTE 30, 39100 BOLZANO (BZ), Italy",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<CAOmk=KaiCywWxV6Gdtv_sCzT-WvLgwPrehNh2vkn=oFHcDYzbg@mail.gmail.com>",
+      "trackingNumber": "",
+      "carrier": "Corriere Italia Gratis Oltre 100 € Di Ordine",
+      "products": [
+        {
+          "description": "INFERNACCIO ROSSO IGT 2022",
+          "qty": 6,
+          "value": 96.0
+        },
+        {
+          "description": "BIANCO IGT 2025",
+          "qty": 3,
+          "value": 21.0
+        },
+        {
+          "description": "ROSSO IGT 2025",
+          "qty": 3,
+          "value": 21.0
+        }
+      ],
+      "customsDuties": null,
+      "shippingCostCustomer": null,
+      "shippingCostMos": null,
+      "source": "shop",
+      "language": "it",
+      "orderNumber": "#1473",
+      "paymentType": "Bonifico",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1792166470460,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1792166470460,
+      "updatedAt": 1792166470460
+    },
+    {
       "id": "ord_mv6v5vvdj77h",
       "customerName": "LORIANO CAMPINOTI",
       "customerEmail": "loriano.campinoti@icloud.com",
@@ -12034,5 +12230,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1791907002265
+  "lastImportedAt": 1792166470460
 }
