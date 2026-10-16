@@ -61,7 +61,7 @@
       "orderNumber": "#1467",
       "paymentType": "Carte Di Credito/Bancomat",
       "shippingDate": null,
-      "status": "in_consegna",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -71,6 +71,11 @@
         {
           "status": "in_consegna",
           "date": 1792144649016,
+          "note": ""
+        },
+        {
+          "status": "consegnato",
+          "date": 1792165299592,
           "note": ""
         }
       ],
@@ -89,12 +94,25 @@
           "to": "loriano.campinoti@icloud.com",
           "subject": "Il tuo ordine è in consegna! 🍷",
           "sentAt": 1792144879017,
-          "messageId": "<202610161001.18269538029@smtp-relay.mailin.fr>"
+          "messageId": "<202610161001.18269538029@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-10-16T12:14:36.000+02:00"
+        },
+        {
+          "type": "consegnato",
+          "sentAt": 1792165299592,
+          "messageId": "manual-skip",
+          "manual": true
+        },
+        {
+          "type": "Consegnato",
+          "sentAt": 1792165299883,
+          "messageId": "<202610161541.43749596363@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "⚠ Conflitto SpedirePro: codice \"CAMPINOTIL\" condiviso tra 2 ordine/i CRM e 2 spedizione/i — verificare manualmente.",
       "createdAt": 1791907002265,
-      "updatedAt": 1792144879017,
+      "updatedAt": 1792165299883,
       "trackingUrl": "",
       "destCountry": "IT"
     },
@@ -336,7 +354,9 @@
           "to": "loriano.campinoti@icloud.com",
           "subject": "Il tuo ordine è in consegna! 🍷",
           "sentAt": 1792144879017,
-          "messageId": "<202610161001.46843847548@smtp-relay.mailin.fr>"
+          "messageId": "<202610161001.46843847548@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-10-16T12:05:38.000+02:00"
         }
       ],
       "notes": "⚠ Conflitto SpedirePro: codice \"CAMPINOTIL\" condiviso tra 2 ordine/i CRM e 2 spedizione/i — verificare manualmente.\n⚠ Conflitto SpedirePro: codice \"CAMPINOTIL\" condiviso tra 1 ordine/i CRM e 2 spedizione/i — verificare manualmente.",
