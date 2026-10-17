@@ -280044,443 +280044,1433 @@
   },
   "c1780673710938e1vsf": {
     "contactName": "Ignasi Aragonès Oriol",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente) con fatturato modesto. Sito irraggiungibile e nessuna traccia online. Impossibile verificare portafoglio vini italiani o affidabilità commerciale.",
+      "analyzed_at": "2026-10-17T05:00:46.404Z"
+    }
   },
   "c1780673710938f0a9m": {
     "contactName": "Cervera Subirana Carlos",
-    "contactTitle": "Administrator"
+    "contactTitle": "Administrator",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "forse",
+      "note": "Azienda spagnola con fatturato modesto (673k€) e 1 solo dipendente. Sito non raggiungibile e assenza totale di tracce online. Profilo coerente con piccolo importatore locale, ma affidabilità molto bassa per mancanza di verifica.",
+      "analyzed_at": "2026-10-17T05:00:51.680Z"
+    }
   },
   "c178067371093854gdj": {
     "contactName": "Fabrice Chaumontet",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Azienda con 1 dipendente e fatturato molto basso (84k€). Sito web poco professionale e dati incoerenti (città Arona vs Santa Cruz de Tenerife). Catalogo menciona Francia, Spagna e 'Mondo' ma nessun riferimento esplicito a vini italiani. Verificare affidabilità prima di contattare.",
+      "analyzed_at": "2026-10-17T05:00:57.495Z"
+    }
   },
   "c1780673710938b1lq8": {
     "contactName": "Rodrigo Fajardo Barreras",
-    "contactTitle": "Founding Partner"
+    "contactTitle": "Founding Partner",
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~38k€) con sito irraggiungibile e zero traccia online. Nessuna evidenza di vini italiani nel portafoglio. Rischio affidabilità molto alto.",
+      "analyzed_at": "2026-10-17T05:01:02.281Z"
+    }
   },
   "c17806737109387fsjk": {
     "contactName": "Monica Oliva",
-    "contactTitle": "General Manager"
+    "contactTitle": "General Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccolo retailer online barcelonese (1 dipendente, ~1.2M€ fatturato) con catalogo ampio che include vini italiani (Vega Sicilia). Sito funzionante ma assenza totale da Google suggerisce visibilità limitata. Contatto possibile solo per partnership retail/online, non per distribuzione.",
+      "analyzed_at": "2026-10-17T05:01:07.750Z"
+    }
   },
   "c17806737109383z2mi": {
     "contactName": "Juan José Revilla Carramiñana",
-    "contactTitle": "Administrator"
+    "contactTitle": "Administrator",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Distributore spagnolo con 1 dipendente e fatturato modesto (~1.4M€). Sito poco professionale, nessuna traccia online. Portafoglio generico (vini, champagne, licori, conserve) senza evidenza di specializzazione italiana. Contattare solo se interessati a fornitori locali spagnoli per horeca.",
+      "analyzed_at": "2026-10-17T05:01:14.350Z"
+    }
   },
   "c17806737109387tfx2": {
     "contactName": "Luis Fernandez Almeida",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "misto",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Azienda spagnola specializzata in prodotti galiziani (vini spagnoli, carni, oli). Fatturato minimo (141k€), 1 dipendente, nessuna traccia online. Non commercializza vini italiani.",
+      "analyzed_at": "2026-10-17T05:01:19.621Z"
+    }
   },
   "c1780673710938i5fm4": {
     "contactName": "Abel Monguilod",
-    "contactTitle": "Representative"
+    "contactTitle": "Representative",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda spagnola con storia consolidata (dagli anni '50) e sito funzionante, ma assenza totale di visibilità online e informazioni vaghe su portafoglio vini. Un solo dipendente e fatturato modesto suggeriscono dimensione micro. Verificare se effettivamente distribuisce vini italiani.",
+      "analyzed_at": "2026-10-17T05:01:25.140Z"
+    }
   },
   "c1780673710938rx0vd": {
     "contactName": "Elena Bakun",
-    "contactTitle": "Commercial Director"
+    "contactTitle": "Commercial Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda spagnola specializzata in vini spagnoli, non italiani. Dimensione micro (1 dipendente, fatturato ~18k€) e assenza di tracce online rendono il profilo poco affidabile per partnership commerciale.",
+      "analyzed_at": "2026-10-17T05:01:31.380Z"
+    }
   },
   "c1780673710938ke4lq": {
     "contactName": "Johnny Hartwright",
-    "contactTitle": "Partner"
+    "contactTitle": "Partner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda spagnola specializzata in vini di Rioja e altre regioni spagnole, non italiani. Micro-impresa (1 dipendente, fatturato ~300k€) con sito e-commerce poco professionale; nessuna traccia online.",
+      "analyzed_at": "2026-10-17T05:01:37.510Z"
+    }
   },
   "c178067371093844tn2": {
     "contactName": "Valeria García Le Pera",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda spagnola (Valencia) con fatturato minimo (73k€) e 1 dipendente. Sito generico di gourmet/delicatessen con sezione vini che include solo categorie spagnole (Jerez, Cavas). Nessuna menzione di vini italiani nel catalogo.",
+      "analyzed_at": "2026-10-17T05:01:43.127Z"
+    }
   },
   "c1780673710938huhu9": {
     "contactName": "Pedro Francisco Muñoz Lorite",
-    "contactTitle": "Ceo"
+    "contactTitle": "Ceo",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "forse",
+      "note": "Azienda spagnola con fatturato significativo (20M€) e storia dal 1995, ma solo 1 dipendente è anomalo. Portafoglio mediterraneo (oli, vini, vinagres) suggerisce possibile interesse per vini italiani, ma non esplicitamente confermato. Assenza da Google è preoccupante.",
+      "analyzed_at": "2026-10-17T05:01:47.962Z"
+    }
   },
   "c1780673710938gyjdd": {
     "contactName": "Javier Martín",
-    "contactTitle": "Commercial Director"
+    "contactTitle": "Commercial Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda con fatturato significativo (5.8M€) ma solo 1 dipendente: struttura anomala. Sito irraggiungibile e nessuna traccia Google. Verificare se ancora attiva prima di contattare.",
+      "analyzed_at": "2026-10-17T05:01:52.600Z"
+    }
   },
   "c1780673710938ryvrv": {
     "contactName": "Dan Olsson",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda con 1 dipendente e fatturato modesto (267k€). Sito poco professionale, nessuna traccia Google. Distribuisce vini italiani (Brunello, Ripasso, Amarone) ma focus principale su Spagna. Attiva in horeca Costa del Sol e retail, con attività secondaria di event/golf.",
+      "analyzed_at": "2026-10-17T05:01:58.219Z"
+    }
   },
   "c1780673710938lw0ld": {
     "contactName": "Igor Gorostarzu González",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-azienda (1 dipendente, fatturato 85k€) con focus locale su Paesi Baschi. Nessuna evidenza di vini italiani nel catalogo; sito poco professionale e assenza online. Non idonea per partnership commerciale.",
+      "analyzed_at": "2026-10-17T05:02:03.531Z"
+    }
   },
   "c1780673710938pe88y": {
     "contactName": "Cristina Aldea",
-    "contactTitle": "Co-founder"
+    "contactTitle": "Co-founder",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda spagnola specializzata in vini spagnoli (DO Calatayud, La Rioja, Campo de Borja). Non pertinente per distribuzione vini italiani. Micro-azienda (1 dipendente, fatturato ~109k€) con sito poco professionale e nessuna traccia online.",
+      "analyzed_at": "2026-10-17T05:02:10.745Z"
+    }
   },
   "c17806737109388xa1c": {
     "contactName": "Yann Silistrini",
-    "contactTitle": "Principal Chief Executive Officer"
+    "contactTitle": "Principal Chief Executive Officer",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda spagnola specializzata esclusivamente in vini francesi e cidre bretone. Nessuna traccia di vini italiani nel portafoglio. Micro-impresa (1 dipendente, fatturato ~125k€) con sito online poco professionale e assenza di risultati Google.",
+      "analyzed_at": "2026-10-17T05:02:15.847Z"
+    }
   },
   "c17806737109389w0ea": {
     "contactName": "Del Moral Lopez Sergio Enrique",
-    "contactTitle": "Administrator"
+    "contactTitle": "Administrator",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Azienda molto piccola (1 dipendente, fatturato ~288k€) focalizzata su distribuzione urgente locale a Madrid. Nessuna traccia online, sito basic. Portfolio generico (spirits, birre, refreschi) senza evidenza di specializzazione vini italiani. Non idonea per partnership commerciale.",
+      "analyzed_at": "2026-10-17T05:02:21.701Z"
+    }
   },
   "c1780673710938q4f2m": {
     "contactName": "Ángel Manuel Navazo Prieto",
-    "contactTitle": "Product Manager"
+    "contactTitle": "Product Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~90k€) con sito irraggiungibile e nessuna traccia online. Impossibile verificare se commercializza vini italiani. Rischio affidabilità molto alto.",
+      "analyzed_at": "2026-10-17T05:02:26.453Z"
+    }
   },
   "c1780673710938vi099": {
     "contactName": "Richard del Rincón",
-    "contactTitle": "Partner / Director"
+    "contactTitle": "Partner / Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Azienda molto piccola (1 dipendente, fatturato ~260k€) senza sito web e assente su Google. Nessuna traccia online di attività o specializzazione in vini italiani. Rischi di affidabilità elevati.",
+      "analyzed_at": "2026-10-17T05:02:30.899Z"
+    }
   },
   "c1780673710938tmpiv": {
     "contactName": "Jose Maria Lopez Sanchez",
-    "contactTitle": "Administrator"
+    "contactTitle": "Administrator",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "forse",
+      "note": "E-commerce con portafoglio multiregioneale (Italia, Francia, Spagna, Argentina, Cile, Germania). Solo 1 dipendente e fatturato modesto (344k€) suggeriscono operazione piccola. Nessuna traccia Google e sito con problemi di rendering. Contattare solo se target specifico è retail online B2C.",
+      "analyzed_at": "2026-10-17T05:02:37.269Z"
+    }
   },
   "c1780673710938gafpg": {
     "contactName": "Javier Gamazo",
-    "contactTitle": "In Charge"
+    "contactTitle": "In Charge",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-azienda (1 dipendente, fatturato ~311k€) con sito minimalista e assenza totale di visibilità online. Nessuna traccia su Google, portfolio non specificato. Rischio affidabilità elevato.",
+      "analyzed_at": "2026-10-17T05:02:41.906Z"
+    }
   },
   "c1780673710938vi7pg": {
     "contactName": "Miguel-Angel Pacheco",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Azienda con 1 solo dipendente e fatturato minimo (28k€). Sito dichiarato irraggiungibile, nessuna traccia online. Profilo non verificabile e non affidabile per partnership commerciale.",
+      "analyzed_at": "2026-10-17T05:02:48.509Z"
+    }
   },
   "c1780673710938yehw2": {
     "contactName": "Alfonso Montana",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-azienda (1 dipendente, fatturato ~119k€) senza sito web né traccia online. Assenza totale di visibilità digitale e impossibilità di verificare portafoglio prodotti. Rischio affidabilità molto alto.",
+      "analyzed_at": "2026-10-17T05:02:52.713Z"
+    }
   },
   "c1780673710938tyzxs": {
     "contactName": "Ingrid Buff",
-    "contactTitle": "Co-Founder"
+    "contactTitle": "Co-Founder",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Micro-azienda (1 dipendente, fatturato ~90k€) con sito irraggiungibile e nessuna traccia online. Profilo troppo piccolo e inaffidabile per partnership B2B strutturata.",
+      "analyzed_at": "2026-10-17T05:02:57.669Z"
+    }
   },
   "c1780673710938ltfz3": {
     "contactName": "Pedro Ruiz Belda",
-    "contactTitle": "Sommelier Manager"
+    "contactTitle": "Sommelier Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore spagnolo con portfolio mediterraneo/europeo che cita 'migliori bodegas di Spagna e resto del mondo'. Azienda molto piccola (1 dipendente, fatturato ~386k€), nessuna traccia Google, sito datato con eventi passati. Potenziale per vini italiani ma affidabilità limitata.",
+      "analyzed_at": "2026-10-17T05:03:02.962Z"
+    }
   },
   "c17806737109384n0ao": {
     "contactName": "Eusebio Vaquero",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~132k€) con sito irraggiungibile e nessuna traccia online. Impossibile verificare portafoglio prodotti e specializzazione vini italiani. Rischio affidabilità elevato.",
+      "analyzed_at": "2026-10-17T05:03:07.879Z"
+    }
   },
   "c17806737109382ij05": {
     "contactName": "Pablo Vilchez Möller",
-    "contactTitle": "Commercial Agent"
+    "contactTitle": "Commercial Agent",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda spagnola (Barcelona) specializzata in vini spagnoli e cava, non italiani. Sito in costruzione, 1 solo dipendente, fatturato modesto. Non pertinente per portafoglio vini italiani.",
+      "analyzed_at": "2026-10-17T05:03:13.410Z"
+    }
   },
   "c1780673710938bczqw": {
     "contactName": "Julio González Sánchez",
-    "contactTitle": "Sommelier"
+    "contactTitle": "Sommelier",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccola vinoteca online spagnola con catalogo ampio (1000+ vini) e sezione 'Internazionali' che potrebbe includere italiani. Azienda micro (1 dipendente, fatturato ~107k€) con sito funzionante ma assenza totale da Google. Contattare solo se target è distribuzione B2B a retailer online iberico.",
+      "analyzed_at": "2026-10-17T05:03:19.584Z"
+    }
   },
   "c1780673710938z8wic": {
     "contactName": "Manuel Fernández Gato",
-    "contactTitle": "Ceo"
+    "contactTitle": "Ceo",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda spagnola specializzata in vini spagnoli e piccoli produttori. Nessuna menzione di vini italiani nel portafoglio. Micro-realtà (1 dipendente, fatturato ~73k€) con focus locale/nazionale.",
+      "analyzed_at": "2026-10-17T05:03:26.375Z"
+    }
   },
   "c1780673710938f8jtb": {
     "contactName": "David Diaz Gonzalez",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Azienda spagnola specializzata in vini gallegos (Spagna nord-ovest), non italiani. Micro-impresa con 1 dipendente, fatturato modesto, focalizzata su distribuzione horeca locale a Madrid. Non pertinente per portafoglio vini italiani.",
+      "analyzed_at": "2026-10-17T05:03:31.501Z"
+    }
   },
   "c1780673710938gsk55": {
     "contactName": "David González Martín",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~224k€) con sito irraggiungibile e nessuna traccia online. Impossibile verificare portafoglio vini italiani. Rischio affidabilità elevato.",
+      "analyzed_at": "2026-10-17T05:03:36.130Z"
+    }
   },
   "c1780673710938rv1s1": {
     "contactName": "Francisco Garcia",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "E-commerce spagnolo specializzato in vini iberici (Rioja, Ribera del Duero, Montsant) e distillati. Nessuna traccia di vini italiani nel catalogo; focus esclusivo su prodotti spagnoli. Azienda micro (1 dipendente, fatturato ~90k€) senza visibilità online.",
+      "analyzed_at": "2026-10-17T05:03:43.313Z"
+    }
   },
   "c1780673710938hyvkg": {
     "contactName": "Fernandez Lopez Maria Gloria",
-    "contactTitle": "Administrator"
+    "contactTitle": "Administrator",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato modesto ~538k€) con sito irraggiungibile e nessuna traccia online. Profilo di rischio elevato per affidabilità commerciale e continuità operativa.",
+      "analyzed_at": "2026-10-17T05:03:48.193Z"
+    }
   },
   "c1780673710938q1ktp": {
     "contactName": "Carlos Lallana Fernandez",
-    "contactTitle": "Purchasing Director"
+    "contactTitle": "Purchasing Director",
+    "research": {
+      "affidabilita": 5,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "si",
+      "note": "Carrefour è una delle maggiori catene retail europee con fatturato multimiliardario. Distribuisce vini (inclusi potenzialmente italiani) attraverso canali online e fisici. Contatto strategico per penetrazione mercato spagnolo.",
+      "analyzed_at": "2026-10-17T05:07:53.879Z"
+    }
   },
   "c17806737109388hmdb": {
     "contactName": "Andrea Michielazzo Fontana",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Catena supermercati spagnola (La Despensa) con e-commerce. Vende vino tra altri prodotti ma sito mostra prevalentemente alimentari. Nessuna info su dipendenti/fatturato. Contattare se interessati a distribuzione retail in Spagna.",
+      "analyzed_at": "2026-10-17T05:07:58.925Z"
+    }
   },
   "c1780673710938lioa5": {
     "contactName": "Jose Carlos Diaz Garcia",
-    "contactTitle": "Buyer"
+    "contactTitle": "Buyer",
+    "research": {
+      "affidabilita": 5,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "si",
+      "note": "El Corte Inglés è la maggiore catena retail spagnola con forte presenza online e offline. Portfolio ampio include vini; alta probabilità di vini italiani nel catalogo data la posizione geografica e dimensione. Contatto prioritario per distribuzione retail/online.",
+      "analyzed_at": "2026-10-17T05:08:03.204Z"
+    }
   },
   "c1780673710938zpyui": {
     "contactName": "Juan Antonio Brao Encinas",
-    "contactTitle": "Head of Purchasing"
+    "contactTitle": "Head of Purchasing",
+    "research": {
+      "affidabilita": 5,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Lidl è grande catena retail spagnola con fatturato significativo (7,1B€) e portafoglio vini/bevande. Tuttavia, come discount retailer, ha processi di sourcing centralizzati e margini ridotti; contatto utile solo per volumi importanti e distribuzioni nazionali.",
+      "analyzed_at": "2026-10-17T05:08:08.464Z"
+    }
   },
   "c178067371093862ex7": {
     "contactName": "Andreu Jordá Jordá",
-    "contactTitle": "Administration Coordinator"
+    "contactTitle": "Administration Coordinator",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore spagnolo consolidato (dal 1999) con portafoglio vini/spumanti/distillati in Canarie e Baleari. Sito funzionante ma senza dettagli su marche italiane specifiche; nessuna traccia Google limita verifica affidabilità.",
+      "analyzed_at": "2026-10-17T05:08:14.061Z"
+    }
   },
   "c1780673710938488tx": {
     "contactName": "David Blanco",
-    "contactTitle": "Commercial Manager"
+    "contactTitle": "Commercial Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "si",
+      "note": "Makro è distributore mayorista spagnolo di grande dimensione (fatturato ~1,9B€) con portafoglio vini diversificato. Serve retail chains e canale online. Probabile interesse per vini italiani data la categoria 'Wine' nel mix prodotti.",
+      "analyzed_at": "2026-10-17T05:08:18.677Z"
+    }
   },
   "c1780673710938gazs6": {
     "contactName": "Sebastian Martinez Caicedo",
-    "contactTitle": "Purchasing Manager"
+    "contactTitle": "Purchasing Manager",
+    "research": {
+      "affidabilita": 5,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "si",
+      "note": "Mercadona è la principale catena retail spagnola con fatturato ~37 miliardi. Distribuisce vini, birre e spirits in oltre 1.600 punti vendita. Opportunità significativa per vini italiani nel segmento retail iberico.",
+      "analyzed_at": "2026-10-17T05:08:23.066Z"
+    }
   },
   "c1780673710938dp6et": {
     "contactName": "Oane Rijpma",
-    "contactTitle": "Director & Co-owner"
+    "contactTitle": "Director & Co-owner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Distributore premium focalizzato su horeca nelle Baleari con sito professionale ma portfolio non specificato. Assenza di risultati Google e dati finanziari limitano valutazione; contattare per verificare se includono vini italiani nel catalogo.",
+      "analyzed_at": "2026-10-17T05:08:28.508Z"
+    }
   },
   "c1780673710938dwmqq": {
     "contactName": "Javier Rodriguez Rodríguez",
-    "contactTitle": "Business Development Manager"
+    "contactTitle": "Business Development Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda spagnola (Asturias) specializzata in prodotti locali asturianos (carni, formaggi, conserve). Vini presenti ma non italiani; focus su gastronomia regionale spagnola, non su vino italiano.",
+      "analyzed_at": "2026-10-17T05:08:39.201Z"
+    }
   },
   "c17806737109384ysul": {
     "contactName": "Alfonso Castrejón Hernández",
-    "contactTitle": "Buyer"
+    "contactTitle": "Buyer",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Ahorramas è una catena di supermercati spagnola con fatturato significativo (2,3 miliardi) e canale online. Vende vino tra le categorie, ma non è specializzata. Nessuna evidenza di focus su vini italiani nel sito.",
+      "analyzed_at": "2026-10-17T05:08:46.482Z"
+    }
   },
   "c1780673710938av49i": {
     "contactName": "Pedro Pastor",
-    "contactTitle": "Founder"
+    "contactTitle": "Founder",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda spagnola (Orihuela) focalizzata su prodotti gourmet locali e generici. Nessuna evidenza di specializzazione in vini italiani; catalogo orientato a prodotti spagnoli/mediterranei. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-10-17T05:08:53.728Z"
+    }
   },
   "c1780673710938mayh6": {
     "contactName": "Lorenzo Iannelli Oliva",
-    "contactTitle": "Sales/ Purchasing Manager"
+    "contactTitle": "Sales/ Purchasing Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Alimerka è una catena di supermercati spagnola consolidata (fatturato ~906M€) con portafoglio vini. Assenza di Google results e info limitate su specializzazione vini italiani specifici; focus principale su retail locale. Contattare solo se strategia include distribuzione retail iberico.",
+      "analyzed_at": "2026-10-17T05:08:59.374Z"
+    }
   },
   "c1780673710938m3glh": {
     "contactName": "Guilhem Millat",
-    "contactTitle": "Co-founder and Director"
+    "contactTitle": "Co-founder and Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Sito irraggiungibile, nessuna traccia Google, dati aziendali assenti (dipendenti/fatturato). Impossibile verificare se commercializza vini italiani o affidabilità della piattaforma.",
+      "analyzed_at": "2026-10-17T05:09:04.173Z"
+    }
   },
   "c17806737109381ubzi": {
     "contactName": "Bruno Jeanroy",
-    "contactTitle": "General Manager"
+    "contactTitle": "General Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Importatore spagnolo specializzato esclusivamente in vini francesi (Borgogna, Bordeaux, Beaujolais). Nessuna menzione di vini italiani. Sito in costruzione, assenza totale da Google, dati aziendali mancanti.",
+      "analyzed_at": "2026-10-17T05:09:09.806Z"
+    }
   },
   "c17806737109383e597": {
     "contactName": "Valeria Valdebenito",
-    "contactTitle": "Sommelier / Ceo"
+    "contactTitle": "Sommelier / Ceo",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Distributore online spagnolo con focus su vini artigianali e biologici. Portafoglio include produttori europei (Gravner, Vodopivec suggeriscono italiani). Sito funzionante ma info limitate su dimensione aziendale. Contatti disponibili (tel, whatsapp, email).",
+      "analyzed_at": "2026-10-17T05:09:15.854Z"
+    }
   },
   "c1780673710938hzxhb": {
     "contactName": "Alfonso Molina Haro",
-    "contactTitle": "Wine Specialist"
+    "contactTitle": "Wine Specialist",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda spagnola (Granada) focalizzata su vini locali spagnoli, oli e birre artigianali. Nessuna traccia di vini italiani nel portafoglio. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-10-17T05:09:25.105Z"
+    }
   },
   "c17806737109384qrhk": {
     "contactName": "Rohan Kumar Achantani Arora",
-    "contactTitle": "Ceo"
+    "contactTitle": "Ceo",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda spagnola specializzata in vini spagnoli e liquori internazionali. Nessuna traccia di vini italiani nel catalogo (focus su Cava, Corpinnat, vini spagnoli). Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-10-17T05:09:29.961Z"
+    }
   },
   "c1780673710938l3vb7": {
     "contactName": "Lucio José Rey Iglesias",
-    "contactTitle": "Commercial"
+    "contactTitle": "Commercial",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "no",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Distributore spagnolo specializzato in vini locali e nazionali spagnoli (Burgos). Non commercializza vini italiani; focus esclusivo su mercato horeca locale/regionale spagnolo.",
+      "analyzed_at": "2026-10-17T05:09:36.470Z"
+    }
   },
   "c1780673710938ut40q": {
     "contactName": "Marc Parrilla",
-    "contactTitle": "Purchasing"
+    "contactTitle": "Purchasing",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Bon Preu è una grande catena di supermercati spagnola (fatturato ~2,4B€) con e-commerce. Vende vino tra altri prodotti, ma nessuna evidenza di focus su vini italiani. Contatto possibile solo se target è distribuzione retail in Spagna.",
+      "analyzed_at": "2026-10-17T05:09:42.200Z"
+    }
   },
   "c1780673710938ff52j": {
     "contactName": "Manuel Angel Fernandez Campo",
-    "contactTitle": "Commercial"
+    "contactTitle": "Commercial",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore spagnolo consolidato dal 1988 con portafoglio ampio (vini, liquori, birre). Assenza di Google results e info su dipendenti/fatturato limitano valutazione. Catalogo generico europeo: vini italiani probabili ma non esplicitati.",
+      "analyzed_at": "2026-10-17T05:09:47.486Z"
+    }
   },
   "c17806737109382ft6j": {
     "contactName": "Luis González Riesgo",
-    "contactTitle": "Business Development Manager"
+    "contactTitle": "Business Development Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore spagnolo di dimensioni significative (fatturato ~64M€) con portafoglio wine/beer/spirits. Siti web non raggiungibili e assenza di risultati Google riducono verificabilità. Contattare per confermare specializzazione vini italiani e disponibilità a collaborazioni.",
+      "analyzed_at": "2026-10-17T05:09:51.892Z"
+    }
   },
   "c1780673710938scikc": {
     "contactName": "Lluis Boniquet Parés",
-    "contactTitle": "Purchase Manager"
+    "contactTitle": "Purchase Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore consolidato (45+ anni) con portafoglio diversificato (80+ marche internazionali) e copertura retail 95% in Spagna/Portogallo. Fatturato significativo (38,5M€). Assenza di Google results e info specifiche su vini italiani nel portfolio rendono necessaria verifica diretta.",
+      "analyzed_at": "2026-10-17T05:09:58.198Z"
+    }
   },
   "c1780673710938on97b": {
     "contactName": "Carlos Milián López",
-    "contactTitle": "General Director"
+    "contactTitle": "General Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore spagnolo (Barcellona) con portafoglio vini, birre e spumanti. Siti dichiarati irraggiungibili e nessuna traccia Google: verificare contatti diretti prima di investire tempo. Potenziale per mercato horeca/retail locale.",
+      "analyzed_at": "2026-10-17T05:10:02.500Z"
+    }
   },
   "c1780673710938ar55o": {
     "contactName": "Luis Miguel Sanchez Gomez",
-    "contactTitle": "Purchasing Manager"
+    "contactTitle": "Purchasing Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Coviran è una cooperativa spagnola solida con fatturato significativo (605M€) e rete retail consolidata. Distribuisce vini ma focus primario è retail/supermercati. Contatto utile solo se si mira a canale GDO spagnolo; probabilità vini italiani nel portafoglio non confermata.",
+      "analyzed_at": "2026-10-17T05:10:07.798Z"
+    }
   },
   "c1780673710938o64nh": {
     "contactName": "Jesús Del",
-    "contactTitle": "Manager And Founder"
+    "contactTitle": "Manager And Founder",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda spagnola specializzata esclusivamente in vini spagnoli (D.O. iberiche) e prodotti gourmet. Nessuna traccia di vini italiani nel catalogo. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-10-17T05:10:14.355Z"
+    }
   },
   "c1780673710938bhwg5": {
     "contactName": "Javier Pastor Campos",
-    "contactTitle": "Commercial Director"
+    "contactTitle": "Commercial Director",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Distributore spagnolo consolidato (40+ anni) con fatturato significativo (€69,9M). Portafoglio include vini e spumanti ma focus prevalente su birre nazionali e bevande. Mercato HORECA valenciano. Vini italiani non esplicitamente citati nel catalogo visibile.",
+      "analyzed_at": "2026-10-17T05:10:20.849Z"
+    }
   },
   "c1780673710938ketgn": {
     "contactName": "Pere Monsech Ayguaviva",
-    "contactTitle": "Commercial"
+    "contactTitle": "Commercial",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore spagnolo consolidato (fatturato 67M€) con portafoglio bevande e alimentari. Sito funzionante ma poco dettagliato su vini italiani specifici. Assenza su Google suggerisce focus locale/regionale (Catalogna). Vale la pena contattare per verificare disponibilità vini italiani.",
+      "analyzed_at": "2026-10-17T05:10:31.077Z"
+    }
   },
   "c1780673710938bqjyk": {
     "contactName": "Manel Martin",
-    "contactTitle": "Ceo"
+    "contactTitle": "Ceo",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore spagnolo con fatturato significativo (95M€) ma sito irraggiungibile e assenza totale di tracce online. Portafoglio include vino ma non confermato se italiano. Verificare contatti diretti prima di investire tempo.",
+      "analyzed_at": "2026-10-17T05:10:35.461Z"
+    }
   },
   "c1780673710938m8tc1": {
     "contactName": "David Bello Medal",
-    "contactTitle": "Commercial And Sales"
+    "contactTitle": "Commercial And Sales",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Distributore spagnolo focalizzato su vini ibérici (D.O. spagnole e portoghesi) e prodotti alimentari regionali. Nessuna menzione di vini italiani nel portafoglio.",
+      "analyzed_at": "2026-10-17T05:10:41.647Z"
+    }
   },
   "c1780673710938pdr39": {
     "contactName": "Agustín Polo Romero",
-    "contactTitle": "Founding Partner & Ceo"
+    "contactTitle": "Founding Partner & Ceo",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Distributore spagnolo attivo dal 1982 (riapertura 2012) con portafoglio vini, birre e prodotti horeca. Sito funzionante ma senza info dettagliate su marche italiane specifiche; nessuna traccia Google. Contatto diretto disponibile.",
+      "analyzed_at": "2026-10-17T05:10:46.813Z"
+    }
   },
   "c1780673710938h4xw1": {
     "contactName": "Manoli López Puente",
-    "contactTitle": "Administrator"
+    "contactTitle": "Administrator",
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Sito non funzionante (solo cookie banner). Nessun risultato Google. Impossibile verificare catalogo, credibilità o focus su vini italiani. Azienda non tracciabile.",
+      "analyzed_at": "2026-10-17T05:10:52.094Z"
+    }
   },
   "c1780673710938jg0z3": {
     "contactName": "Andres Blanco Montenegro",
-    "contactTitle": "Director of Management and Development"
+    "contactTitle": "Director of Management and Development",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Froiz è un grossista-retailer spagnolo di dimensioni significative (fatturato ~946M€) con portafoglio wine/beer/spirits. Sito non raggiungibile al momento della verifica, ma azienda consolidata. Potenziale cliente per vini italiani data la vicinanza geografica e il mix di canali (horeca+retail).",
+      "analyzed_at": "2026-10-17T05:10:56.772Z"
+    }
   },
   "c17806737109381lmgb": {
     "contactName": "Dorry De Meuter",
-    "contactTitle": "Founder And Coo"
+    "contactTitle": "Founder And Coo",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo retailer locale nelle Canarie (Tenerife) con catalogo limitato a vini spagnoli e prodotti delicatessen. Nessuna evidenza di vini italiani nel portafoglio; assenza di dati aziendali (dipendenti, fatturato) e scarsa visibilità online.",
+      "analyzed_at": "2026-10-17T05:11:01.752Z"
+    }
   },
   "c17806737109389kdpf": {
     "contactName": "Josep Maria Valentí Piazuelo",
-    "contactTitle": "Sales Director"
+    "contactTitle": "Sales Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "forse",
+      "note": "Distributore spagnolo di vini, vermouth e distillati con sito minimalista. Assenza di risultati Google e info su dipendenti/fatturato suggerisce piccola realtà locale. Verificare se importa vini italiani prima di contattare.",
+      "analyzed_at": "2026-10-17T05:11:06.543Z"
+    }
   },
   "c1780673710938bu2hx": {
     "contactName": "Ricardo Vidal Solana",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "forse",
+      "note": "Azienda spagnola (Murcia) che dichiara di importare vino, birra e spirits. Sito irraggiungibile e nessuna traccia online. Verificare contatti diretti prima di investire tempo.",
+      "analyzed_at": "2026-10-17T05:11:11.073Z"
+    }
   },
   "c1780673710938gmawq": {
     "contactName": "Idoia Alegria Berganzo",
-    "contactTitle": "Purchasing Manager"
+    "contactTitle": "Purchasing Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Eroski è grande retailer spagnolo (fatturato 2,1B€) con canali distribuzione e online. Vende vino ma sito non raggiungibile per verificare portafoglio italiano. Potenziale interessante se hanno sezione vini italiani, ma richiede verifica diretta.",
+      "analyzed_at": "2026-10-17T05:11:15.828Z"
+    }
   },
   "c1780673710938v9ekp": {
     "contactName": "Iker Yañez Erkoreka",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Distributore spagnolo con fatturato solido (6,4M€) che vende vino e spirits in Spagna settentrionale. Sito poco aggiornato e nessuna traccia online; portafoglio generico (olio, cacao, formaggi) non evidenzia focus su vini italiani.",
+      "analyzed_at": "2026-10-17T05:11:21.459Z"
+    }
   },
   "c17806737109381zx16": {
     "contactName": "Pascual Campos Rus",
-    "contactTitle": "General Director"
+    "contactTitle": "General Director",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Catena retail spagnola con 7 punti vendita a Madrid. Sito funzionante ma nessuna visibilità online su Google. Vende vino tra le categorie, ma portafoglio non specificato; probabile mix di vini europei/italiani. Contattare per verificare interesse e volume.",
+      "analyzed_at": "2026-10-17T05:11:27.442Z"
+    }
   },
   "c178067371093891jce": {
     "contactName": "Christian Mattsson",
-    "contactTitle": "Partner & Wine Advisor"
+    "contactTitle": "Partner & Wine Advisor",
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Sito irraggiungibile, nessuna traccia Google, dati aziendali assenti (dipendenti/fatturato). Impossibile verificare se commercializza vini italiani o affidabilità della realtà.",
+      "analyzed_at": "2026-10-17T05:11:31.678Z"
+    }
   },
   "c1780673710938s3e2w": {
     "contactName": "Nerea Nerea",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Retailer/distributore spagnolo con sito funzionante, tienda fisica a San Sebastián e e-commerce. Portafoglio prevalentemente spagnolo (Rioja, Ribera del Duero, Cava, Getariako Txakolina) ma include anche francese (Champagne, Borgogna) e ungherese (Tokaj). Vini italiani non esplicitamente citati nel testo disponibile. Contatto diretto: info@ardoteka.com, 943 21 15 97.",
+      "analyzed_at": "2026-10-17T05:11:38.918Z"
+    }
   },
   "c17806737109386s68k": {
     "contactName": "Emilio José De La Horra García",
-    "contactTitle": "Purchasing Manager"
+    "contactTitle": "Purchasing Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Grossista spagnolo con fatturato significativo (529M€) e portafoglio vini, ma assenza totale di web presence e dati verificabili. Potenziale cliente per distribuzione, ma richiede verifica diretta prima di contatto.",
+      "analyzed_at": "2026-10-17T05:11:43.273Z"
+    }
   },
   "c17806737109388o6c2": {
     "contactName": "Ricardo Jose Herrera Gutierrez",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Distributore andaluso di prodotti italiani (formaggi, salumi, latticini) con flotta propria in Andalusia. Sito menziona 'vini italiani' ma focus principale su alimentari; nessuna info su volumi vino o catalogo specifico. Contatto disponibile ma assenza dati aziendali (dipendenti, fatturato) riduce affidabilità.",
+      "analyzed_at": "2026-10-17T05:11:49.507Z"
+    }
   },
   "c17806737109381vp0n": {
     "contactName": "Sabrina Grau Palomares",
-    "contactTitle": "Wine Manager And Sommelier"
+    "contactTitle": "Wine Manager And Sommelier",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore online spagnolo con portafoglio vino/spirits. Sito irraggiungibile e nessuna traccia Google: verificare attualità azienda prima di contattare. Potenziale se operativo, ma affidabilità da confermare.",
+      "analyzed_at": "2026-10-17T05:11:55.119Z"
+    }
   },
   "c1780673710938iouaw": {
     "contactName": "Antoni Porta",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore|distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda spagnola che importa/distribuisce bevande premium in UE, incluso vino. Sito molto basilare senza info su portafoglio specifico, fatturato o dipendenti. Nessuna traccia online (Google). Contattare per verificare se trattano vini italiani e solidità aziendale.",
+      "analyzed_at": "2026-10-17T05:12:02.996Z"
+    }
   },
   "c1780673710938sir8d": {
     "contactName": "Artur Yuste i Tarragó",
-    "contactTitle": "General Director"
+    "contactTitle": "General Director",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Distributore spagnolo consolidato (150+ anni, fatturato ~202M€) con portafoglio wine/beer/spirits. Sito poco aggiornato e nessuna traccia online di vini italiani specifici; focus apparente su prodotti locali/castagni. Verificare se hanno linea italiana prima di contattare.",
+      "analyzed_at": "2026-10-17T05:12:08.408Z"
+    }
   },
   "c1780673710938zxroq": {
     "contactName": "Joan Josep Jane Bido",
-    "contactTitle": "Ceo"
+    "contactTitle": "Ceo",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore spagnolo consolidato (fondato 1945, 3ª generazione, ~50 dipendenti) con forte presenza locale (Tarragona) e portfolio ampio (vini, spirits, birra). Rappresenta marche internazionali prestigiose ma focus primario su vini spagnoli/catalani. Potenziale interesse per vini italiani tramite canale distribuzione, ma non esplicitamente citati.",
+      "analyzed_at": "2026-10-17T05:12:13.735Z"
+    }
   },
   "c1780673710938murqi": {
     "contactName": "Antonio Martínez Cárdenas",
-    "contactTitle": "Administrator"
+    "contactTitle": "Administrator",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Catena di supermercati locale barcellonese con focus su prodotti freschi e autoservizio. Nessuna evidenza di specializzazione vinicola italiana; assortimento generico vino/birra/spirits. Contatto difficile per distribuzione B2B.",
+      "analyzed_at": "2026-10-17T05:12:19.328Z"
+    }
   },
   "c1780673710938ipj8l": {
     "contactName": "Virginia Tardío",
-    "contactTitle": "Commercial Director"
+    "contactTitle": "Commercial Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Distributore spagnolo (Badajoz) con portafoglio vini nazionali e birre (Mahou-San Miguel). Sito poco professionale, nessuna traccia online. Potenziale interesse per vini italiani ma non esplicitamente citati; mercato locale/regionale.",
+      "analyzed_at": "2026-10-17T05:12:24.733Z"
+    }
   },
   "c1780673710938sk7fp": {
     "contactName": "Ricardo Herrera",
-    "contactTitle": "Founder"
+    "contactTitle": "Founder",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer spagnolo con sito funzionante e sommelier dedicato (Ricardo Herrera). Portafoglio 'vini nazionali e internazionali' suggerisce possibile presenza di italiani, ma non confermato esplicitamente. Nessuna traccia Google; dimensione locale (mercato centenario). Contattare solo se target è distribuzione retail in Spagna.",
+      "analyzed_at": "2026-10-17T05:12:32.668Z"
+    }
   },
   "c1780673710938y4kva": {
     "contactName": "Luis Ureña Galán",
-    "contactTitle": "Owner - Manager"
+    "contactTitle": "Owner - Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Azienda spagnola (Marbella) con modello misto: negozio gourmet + ristorante dal 2019. Sito funzionante ma senza dettagli su provenienza vini. Catalogo vini non consultabile online. Potenziale cliente horeca/retail, ma non confermato focus su vini italiani.",
+      "analyzed_at": "2026-10-17T05:12:37.472Z"
+    }
   },
   "c1780673710938wr2i0": {
     "contactName": "Daniel Gomez Mato",
-    "contactTitle": "Administrator"
+    "contactTitle": "Administrator",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore gourmet spagnolo con focus su produttori tradizionali e artigianali. Serve horeca e retail a livello nazionale. Portafoglio non esplicitamente focalizzato su vini italiani ma menzione di 'sabores premium' e distribuzione nazionale suggerisce possibile interesse. Sito poco informativo e nessuna traccia Google riduce affidabilità.",
+      "analyzed_at": "2026-10-17T05:12:43.813Z"
+    }
   },
   "c1780673710938jp4o7": {
     "contactName": "Aurora Pérez-Seoane",
-    "contactTitle": "General Manager/ Co-owner"
+    "contactTitle": "General Manager/ Co-owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda spagnola focalizzata su birra artigianale (nome e contenuto sito lo confermano). Nessuna traccia online, sito con problemi tecnici. Non è un partner strategico per vini italiani.",
+      "analyzed_at": "2026-10-17T05:12:49.087Z"
+    }
   },
   "c17806737109389m6qu": {
     "contactName": "Gloria Marín",
-    "contactTitle": "Commercial Director"
+    "contactTitle": "Commercial Director",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "E-commerce spagnolo consolidato (75+ anni, fatturato 14,5M€) con portafoglio mediterraneo/europeo. Catalogo visibile include vini spagnoli (Loxarel, Cava) e internazionali. Assenza da Google risultati è anomala per azienda di questa dimensione.",
+      "analyzed_at": "2026-10-17T05:12:54.147Z"
+    }
   },
   "c1780673710938eq2dk": {
     "contactName": "Roberto Aguado Morante",
-    "contactTitle": "Commercial Director"
+    "contactTitle": "Commercial Director",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Lavinia è distributore/retailer/online spagnolo con portafoglio wine & spirits. Sito dichiarato non raggiungibile al momento. Assenza di dati su dipendenti/fatturato e risultati Google limitano valutazione affidabilità. Contattare per verificare se commercializza vini italiani.",
+      "analyzed_at": "2026-10-17T05:12:58.623Z"
+    }
   },
   "c1780673710939gfdt1": {
     "contactName": "Sergi Bertran Querol",
-    "contactTitle": "Wine & Spirits Specialist"
+    "contactTitle": "Wine & Spirits Specialist",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Distributore spagnolo (Barcelona) con focus horeca e cash&carry. Portafoglio include vini ma nessuna evidenza specifica di vini italiani. Sito poco informativo (solo cookie policy visibile), nessun dato su dimensione/fatturato.",
+      "analyzed_at": "2026-10-17T05:13:06.938Z"
+    }
   },
   "c1780673710939f7agq": {
     "contactName": "Pepa Alarcon",
-    "contactTitle": "Sales And Marketing Manager"
+    "contactTitle": "Sales And Marketing Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda spagnola con profilo distributore/online store per vino e spirits. Sito non raggiungibile e assenza totale di risultati Google suggeriscono bassa visibilità o inattività. Nessuna conferma di focus su vini italiani.",
+      "analyzed_at": "2026-10-17T05:13:11.215Z"
+    }
   },
   "c1780673710939726bt": {
     "contactName": "Lukas Lundgren",
-    "contactTitle": "Assistant Import Manager"
+    "contactTitle": "Assistant Import Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "importatore|distributore",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "forse",
+      "note": "Azienda spagnola (Palma) che dichiara attività di import/distribuzione di vini biologici, ma assenza totale di web presence e dati verificabili. Impossibile confermare portafoglio prodotti o specializzazione su vini italiani. Richiede verifica diretta prima di contatto.",
+      "analyzed_at": "2026-10-17T05:13:15.671Z"
+    }
   },
   "c1780673710939ljnsf": {
     "contactName": "Francisco J. Luis",
-    "contactTitle": "Sales Manager"
+    "contactTitle": "Sales Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore|distributore",
+      "mercato_target": "horeca|retail",
+      "raccomandato": "forse",
+      "note": "Distributore consolidato nelle Canarie con infrastrutture logistiche solide (3 sedi, magazzini refrigerati). Portafoglio include vini e spumanti ma non specifica origine italiana. Assenza da Google e dati finanziari limitano valutazione affidabilità.",
+      "analyzed_at": "2026-10-17T05:13:22.317Z"
+    }
   },
   "c1780673710939qotwk": {
     "contactName": "Marta Sànchez Rombouts",
-    "contactTitle": "Sommelier"
+    "contactTitle": "Sommelier",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda spagnola (Barcelona) con e-shop, bar e corsi di degustazione. Portafoglio vini naturali e artigianali europei (francesi, greci visibili). Nessuna traccia online esterna; sito poco professionale. Potenziale interesse per vini italiani naturali, ma richiede verifica diretta.",
+      "analyzed_at": "2026-10-17T05:13:29.912Z"
+    }
   },
   "c1780673710939uk8dl": {
     "contactName": "Adam Perkal",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore|distributore",
+      "mercato_target": "retail|horeca",
+      "raccomandato": "forse",
+      "note": "Distributore spagnolo con portafoglio internazionale che include vini italiani (Toscana, Piamonte, Sicilia, Puglia, Veneto). Sito funzionante ma nessuna traccia Google; mancano dati su dimensione aziendale (dipendenti/fatturato). Verificare affidabilità prima di contattare.",
+      "analyzed_at": "2026-10-17T05:13:35.613Z"
+    }
   },
   "c1780673710939bacy9": {
     "contactName": "Ander Goncalves Trigo",
-    "contactTitle": "Sales Department"
+    "contactTitle": "Sales Department",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore spagnolo con fatturato solido (14M€) e canali misto (B2B+online). Siti non raggiungibili e assenza di risultati Google limitano verifica. Portafoglio include vino ma non confermato se italiano.",
+      "analyzed_at": "2026-10-17T05:13:39.854Z"
+    }
   },
   "c1780673710939zd9q2": {
     "contactName": "David Fernandez García",
-    "contactTitle": "Sales Manager"
+    "contactTitle": "Sales Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "no",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Distributore spagnolo focalizzato su vini iberici (Ribera del Duero, Rioja, Rueda) e bevande locali. Portfolio esclusivamente spagnolo/portoghese, nessun vino italiano nel catalogo. Non pertinente per strategie di export vini italiani.",
+      "analyzed_at": "2026-10-17T05:13:45.776Z"
+    }
   },
   "c1780673710939xeikc": {
     "contactName": "Mònica Sanmartí Tur",
-    "contactTitle": "Founder"
+    "contactTitle": "Founder",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda spagnola (Valle d'Aran) specializzata in prodotti locali pirenaici e gourmet. Catalogo include vini ma sono prevalentemente spagnoli/regionali. Nessuna traccia online, sito basic senza info aziendali, dipendenti o fatturato. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-10-17T05:13:51.148Z"
+    }
   },
   "c1780673710939djkpi": {
     "contactName": "Roser Rodriguez",
-    "contactTitle": "Management And Administration"
+    "contactTitle": "Management And Administration",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Distributore spagnolo (Catalogna) con 25 anni di esperienza e 25 dipendenti, serve horeca/retail in provincia Lleida. Portafoglio generico (10.000 prodotti) include vini ma non specifica italiani. Sito poco professionale e nessuna traccia online.",
+      "analyzed_at": "2026-10-17T05:13:56.860Z"
+    }
   },
   "c1780673710939ifkys": {
     "contactName": "José Luis Pérez Cuesta",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "distributore",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "forse",
+      "note": "Distributore spagnolo di vino e birra, ma sito irraggiungibile e nessuna traccia online. Mancano dati su portafoglio prodotti, dimensione aziendale e specializzazione geografica. Verificare contatti diretti prima di investire tempo.",
+      "analyzed_at": "2026-10-17T05:14:01.816Z"
+    }
   },
   "c17806737109399ox4h": {
     "contactName": "Marisol Herrera",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore spagnolo (Málaga) con portafoglio vino/birra/spirits. Siti dichiarati irraggiungibili e nessuna traccia online. Potenziale cliente per vini italiani ma affidabilità bassa: verificare contatti diretti prima di investire tempo.",
+      "analyzed_at": "2026-10-17T05:14:06.191Z"
+    }
   },
   "c1780673710939vzwu0": {
     "contactName": "Carlos Rodriguez Senaris",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda spagnola specializzata in prodotti galiziani (formaggi, vini spagnoli, cibo locale). Nessuna traccia di vini italiani nel catalogo; focus esclusivo su prodotti regionali spagnoli. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-10-17T05:14:11.533Z"
+    }
   },
   "c1780673710939n0jxh": {
     "contactName": "Maria Perles Huerta",
-    "contactTitle": "Sales Manager"
+    "contactTitle": "Sales Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore spagnolo con 25+ anni di esperienza in Cadice, focalizzato su bevande e alimentazione. Sito presente ma scarsi dettagli su portafoglio vini italiani; citano Mahou San Miguel (birra spagnola). Potenziale per distribuzione in Spagna meridionale, ma necessita verifica diretta su interesse per vini italiani.",
+      "analyzed_at": "2026-10-17T05:14:18.447Z"
+    }
   },
   "c17806737109394q47d": {
     "contactName": "Javier Aristegui",
-    "contactTitle": "General Manager"
+    "contactTitle": "General Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Cooperativa solida con fatturato significativo (76M€) e rete distributiva consolidata in Navarra/Paesi Baschi. Citano 'vini freschi di Inurrieta' ma non esplicitano portafoglio italiano. Focalizzati su horeca locale con servizio delivery.",
+      "analyzed_at": "2026-10-17T05:14:24.528Z"
+    }
   },
   "c1780673710939tv51r": {
     "contactName": "José Manuel Suárez Añón",
-    "contactTitle": "Business Development And Sales"
+    "contactTitle": "Business Development And Sales",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Cooperativa spagnola con profilo multi-canale (distribuzione, retail, online). Siti dichiarati irraggiungibili e assenza di risultati Google suggeriscono bassa visibilità digitale. Potenziale interesse per vini italiani data la categoria merceologica, ma affidabilità non verificabile.",
+      "analyzed_at": "2026-10-17T05:14:28.848Z"
+    }
   },
   "c1780673710939jodzp": {
     "contactName": "Josep Ferrer",
-    "contactTitle": "Sales"
+    "contactTitle": "Sales",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda spagnola con profilo multi-canale (distributor, retailer, online). Sito irraggiungibile e nessuna traccia Google rendono difficile verificare solidità e portafoglio vini. Potrebbe distribuire vini italiani ma richiede verifica diretta.",
+      "analyzed_at": "2026-10-17T05:14:33.270Z"
+    }
   },
   "c17806737109392esrj": {
     "contactName": "Ben Pearce",
-    "contactTitle": "Store Manager"
+    "contactTitle": "Store Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda spagnola che vende principalmente prodotti alimentari e bevande generiche (salsas, cereali, golosinas, prodotti pulizia). Nessuna menzione esplicita di vini italiani nel catalogo. Assenza totale di risultati Google e dati aziendali (dipendenti, fatturato). Non è un partner strategico per vini italiani.",
+      "analyzed_at": "2026-10-17T05:14:41.078Z"
+    }
   },
   "c17806737109399k47q": {
     "contactName": "Roberto Lorente Ucar",
-    "contactTitle": "Co-owner"
+    "contactTitle": "Co-owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda spagnola con profilo multi-canale (importatore, distributore, online). Sito irraggiungibile e nessuna traccia Google rendono difficile verificare solidità e portafoglio prodotti. Potrebbe distribuire vini italiani ma mancano conferme.",
+      "analyzed_at": "2026-10-17T05:14:46.125Z"
+    }
   },
   "c1780673710939vsxaf": {
     "contactName": "Dámaso Peinado",
-    "contactTitle": "Purchasing Manager Wines and Sparkling"
+    "contactTitle": "Purchasing Manager Wines and Sparkling",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Transgourmet è distributore wholesale di grandi dimensioni (fatturato >1.2B€) con portafoglio vino/spumante. Assenza di risultati Google e sito irraggiungibile riducono verificabilità, ma marchio Transgourmet è noto nel settore food&beverage iberico. Contattare per verificare effettiva disponibilità vini italiani nel catalogo.",
+      "analyzed_at": "2026-10-17T05:14:50.909Z"
+    }
   },
   "c1780673710939w6uue": {
     "contactName": "Rubén N.",
-    "contactTitle": "Ceo"
+    "contactTitle": "Ceo",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Catena di supermercati spagnola con fatturato significativo (22M€) e sito funzionante. Vende vino ma non specifica provenienza. Assenza di Google results e info su dipendenti/struttura riducono affidabilità. Contattare solo se target è distribuzione retail in Spagna.",
+      "analyzed_at": "2026-10-17T05:14:58.037Z"
+    }
   },
   "c1780673710939riub6": {
     "contactName": "Paz Fernández Vega",
-    "contactTitle": "Commercial Director"
+    "contactTitle": "Commercial Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore spagnolo con portafoglio vini/bevande vario. Sito funzionante ma nessuna traccia online (Google), dati aziendali assenti. Contattare per verificare effettiva distribuzione di vini italiani e solidità operativa.",
+      "analyzed_at": "2026-10-17T05:15:03.456Z"
+    }
   },
   "c1780673710939lvvx7": {
     "contactName": "Silvia Camacho",
@@ -368280,5 +369270,445 @@
   "c1791797451415ibdp6": {
     "contactName": "Jessica Contreras",
     "contactTitle": "Founder/ Ceo"
+  },
+  "c178067371093855m6v": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-retailer spagnolo (1 dipendente, fatturato modesto) con sito irraggiungibile e nessuna traccia online. Impossibile verificare portafoglio vini italiani o affidabilità commerciale.",
+      "analyzed_at": "2026-10-17T05:03:55.350Z"
+    }
+  },
+  "c1780673710938xyjih": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Sito web non funzionante (errore frames obsoleto), nessuna traccia online, azienda micro (1 dipendente). Impossibile verificare portafoglio prodotti e affidabilità.",
+      "analyzed_at": "2026-10-17T05:03:59.893Z"
+    }
+  },
+  "c17806737109380as27": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda spagnola (Santoña) con 1 dipendente e fatturato minimo (175k). Sito generico di prodotti gourmet spagnoli (anchoas, jamón, conserve); sezione vini presente ma non specifica origine. Nessuna traccia online, nessuna indicazione di specializzazione vinicola italiana.",
+      "analyzed_at": "2026-10-17T05:04:10.351Z"
+    }
+  },
+  "c17806737109382351r": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Micro-azienda (1 dipendente, fatturato ~64k€) con e-commerce gourmet generico. Vino è solo una categoria tra 50+. Nessuna traccia online, assenza di specializzazione vinicola italiana.",
+      "analyzed_at": "2026-10-17T05:04:15.719Z"
+    }
+  },
+  "c1780673710938gt0iw": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "E-commerce spagnolo specializzato in vini iberici e francesi (Champagne, Bordeaux). Nessuna menzione di vini italiani nel catalogo. Microazienda (1 dipendente) con fatturato modesto, non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-10-17T05:04:21.295Z"
+    }
+  },
+  "c1780673710938rndo6": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~86k€) con siti non raggiungibili e nessuna traccia online. Nessuna evidenza di focus su vini italiani. Profilo non verificabile.",
+      "analyzed_at": "2026-10-17T05:04:25.425Z"
+    }
+  },
+  "c17806737109388zq6f": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-azienda spagnola (1 dipendente, fatturato ~53k€) con sito basic su Odoo. Nessuna traccia online, assenza di portfolio prodotti visibile. Non è un partner strategico per distribuzione vini italiani.",
+      "analyzed_at": "2026-10-17T05:04:30.606Z"
+    }
+  },
+  "c1780673710938p5zaj": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-azienda (1 dipendente, fatturato ~218k€) con sito gourmet generico. Vini presenti ma non specificamente italiani; nessuna traccia online (Google). Profilo da gift retailer, non distributore B2B.",
+      "analyzed_at": "2026-10-17T05:04:36.790Z"
+    }
+  },
+  "c1780673710938ix9zg": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda spagnola (Barcellona) focalizzata su vini catalani e spagnoli, non italiani. Micro-realtà con 1 dipendente e fatturato molto basso (119k€); sito poco indicizzato su Google e assenza di visibilità online significativa.",
+      "analyzed_at": "2026-10-17T05:04:44.459Z"
+    }
+  },
+  "c1780673710938vehbm": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Enotienda specializzata spagnola con 16 anni di storia e 500+ riferimenti. Focus su vini spagnoli (20+ DO), ma portafoglio descritto come 'nazionale e internazionale'. Micro-azienda (1 dipendente, fatturato ~232k€) con sito funzionante ma assenza online su Google. Contattare solo se interessati a distribuire in Spagna meridionale.",
+      "analyzed_at": "2026-10-17T05:04:50.318Z"
+    }
+  },
+  "c1780673710938w5ql7": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Micro-azienda (1 dipendente, fatturato ~49k€) con focus su distribuzione locale in Spagna. Nessuna menzione esplicita di vini italiani; portafoglio generico (birra, acqua, succhi, vini non specificati). Sito web datato e assenza di visibilità online riducono affidabilità.",
+      "analyzed_at": "2026-10-17T05:04:55.453Z"
+    }
+  },
+  "c1780673710938cvi0q": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Azienda spagnola (Alicante) specializzata in vini spagnoli e internazionali, non italiani. Micro-impresa (1 dipendente, fatturato 85k€) con sito poco professionale e nessuna traccia online. Non pertinente per portafoglio vini italiani.",
+      "analyzed_at": "2026-10-17T05:05:00.675Z"
+    }
+  },
+  "c1780673710938nvp8j": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Retailer spagnolo online specializzato in vini iberici (Rioja, Alicante, ecc.). Azienda micro (1 dipendente, fatturato ~126k€) senza visibilità Google. Non commercializza vini italiani.",
+      "analyzed_at": "2026-10-17T05:05:09.251Z"
+    }
+  },
+  "c1780673710938sypqu": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato modesto) con sito non indicizzato da Google e contenuti minimi. Nessuna evidenza di specializzazione in vini italiani. Rischio affidabilità elevato.",
+      "analyzed_at": "2026-10-17T05:05:14.732Z"
+    }
+  },
+  "c17806737109386pz4k": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Sito irraggiungibile, nessuna traccia online, 1 solo dipendente. Impossibile verificare se commercializza vini italiani o se è affidabile. Fatturato modesto (637k€) suggerisce piccola realtà locale.",
+      "analyzed_at": "2026-10-17T05:05:20.380Z"
+    }
+  },
+  "c1780673710938lxwo5": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "E-commerce spagnolo focalizzato su vini iberici e spirits internazionali. Nessuna traccia di vini italiani nel catalogo; 1 dipendente e fatturato minimo (231k€) indicano micro-realtà. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-10-17T05:05:26.376Z"
+    }
+  },
+  "c1780673710938tkpew": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Azienda micro (1 dipendente, fatturato ~60k€) fondata 2016, focalizzata su vini naturali/biologici spagnoli e francesi. Nessuna traccia online (Google), sito presente ma con contenuti incompleti. Potenziale interesse per vini italiani biologici, ma dimensione molto ridotta e affidabilità difficile da verificare.",
+      "analyzed_at": "2026-10-17T05:05:32.921Z"
+    }
+  },
+  "c1780673710938yknon": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda molto piccola (1 dipendente, fatturato ~411k€) con sito irraggiungibile. Nessuna traccia online né informazioni sul portafoglio prodotti. Impossibile verificare se distribuisce vini italiani.",
+      "analyzed_at": "2026-10-17T05:05:37.026Z"
+    }
+  },
+  "c1780673710938wjm9t": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-azienda (1 dipendente, fatturato ~183k€) con focus esclusivo su vini spagnoli e bevande generiche. Nessuna traccia di vini italiani nel catalogo; assenza di risultati Google suggerisce visibilità molto limitata.",
+      "analyzed_at": "2026-10-17T05:05:43.031Z"
+    }
+  },
+  "c17806737109386i108": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-retailer online spagnolo (1 dipendente) specializzato in mini bottiglie e spirits. Nessuna traccia di vini italiani nel catalogo visibile; focus su miniature generiche e cava. Fatturato modesto (434k€) e assenza totale da Google suggeriscono scarsa visibilità e affidabilità.",
+      "analyzed_at": "2026-10-17T05:05:50.661Z"
+    }
+  },
+  "c1780673710938xvlwd": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~224k€) con sito irraggiungibile e nessuna traccia online. Impossibile verificare se commercializza vini italiani. Rischio affidabilità elevato.",
+      "analyzed_at": "2026-10-17T05:05:55.738Z"
+    }
+  },
+  "c1780673710938oawdd": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda spagnola specializzata in vini iberici (Rioja, Murcia, Penedès). Nessuna traccia di vini italiani nel catalogo. Micro-impresa (1 dipendente, fatturato ~130k€) con e-commerce locale.",
+      "analyzed_at": "2026-10-17T05:06:02.797Z"
+    }
+  },
+  "c1780673710938gxnne": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda spagnola (Madrid) che vende prodotti gourmet ibérici e spagnoli, non italiani. Micro-impresa (1 dipendente, fatturato ~50k€) con sito basic e nessuna traccia online. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-10-17T05:06:07.977Z"
+    }
+  },
+  "c1780673710938ls3uq": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "no",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Distributore spagnolo specializzato in vini SPAGNOLI (Rioja, Castilla y León, Galicia) e prodotti gourmet. Portfolio esclusivamente iberico/mediterraneo, nessun vino italiano. Target: horeca di Mallorca e yacht.",
+      "analyzed_at": "2026-10-17T05:06:13.404Z"
+    }
+  },
+  "c17806737109380o1tj": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda spagnola (Canarie) specializzata in vini spagnoli (Valdelana, Valderiz, Sierra Norte). Micro-impresa con 1 dipendente e fatturato molto basso. Nessuna traccia online su Google, sito poco professionale. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-10-17T05:06:21.670Z"
+    }
+  },
+  "c17806737109386oao0": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~43k€) senza sito web, assente su Google e con dati minimi. Impossibile verificare portafoglio prodotti o specializzazione vini italiani. Affidabilità molto bassa.",
+      "analyzed_at": "2026-10-17T05:06:25.966Z"
+    }
+  },
+  "c1780673710938iwy0l": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-retailer spagnolo (1 dipendente, fatturato 73.5k€) con sito irraggiungibile e nessuna traccia online. Nessuna evidenza di focus su vini italiani. Non pertinente per strategie di distribuzione.",
+      "analyzed_at": "2026-10-17T05:06:30.806Z"
+    }
+  },
+  "c1780673710938qf4nm": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda con 1 solo dipendente e fatturato modesto (~1M€). Portafoglio focalizzato su spirits e champagne, non su vini italiani. Assenza totale da Google e sito generico senza verifiche di affidabilità.",
+      "analyzed_at": "2026-10-17T05:06:38.652Z"
+    }
+  },
+  "c1780673710938hhg0n": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-azienda (1 dipendente, fatturato ~493k€) con sito funzionante ma assenza totale di visibilità online (zero risultati Google). Portfolio include Italia tra i paesi, ma focus prevalente su Spagna. Troppo piccola e poco affidabile per partnership B2B.",
+      "analyzed_at": "2026-10-17T05:06:43.715Z"
+    }
+  },
+  "c1780673710938eael4": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda spagnola specializzata in vini della Rioja, non italiani. Micro-impresa (1 dipendente, fatturato ~35k€) senza visibilità Google; non pertinente per portafoglio vini italiani.",
+      "analyzed_at": "2026-10-17T05:06:51.664Z"
+    }
+  },
+  "c178067371093811x44": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Micro-azienda (1 dipendente, fatturato ~83k€) con sito irraggiungibile e nessuna traccia online. Profilo troppo piccolo e poco verificabile per partnership commerciale.",
+      "analyzed_at": "2026-10-17T05:06:56.743Z"
+    }
+  },
+  "c1780673710938j1qid": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda catalana (non italiana) specializzata in prodotti gourmet locali e regali. Fatturato molto basso (280k€) con 1 solo dipendente. Nessuna traccia online né menzione esplicita di vini italiani nel catalogo.",
+      "analyzed_at": "2026-10-17T05:07:04.572Z"
+    }
+  },
+  "c1780673710938skuve": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda molto piccola (1 dipendente, fatturato ~5.4k€) con sito poco informativo e nessuna traccia online. Catalogo vini non specificato (potrebbe includere italiani ma non confermato). Affidabilità bassa per partnership commerciale.",
+      "analyzed_at": "2026-10-17T05:07:10.493Z"
+    }
+  },
+  "c1780673710938if0tz": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda con 1 solo dipendente, nessun sito web, assente su Google, fatturato sconosciuto. Impossibile verificare affidabilità o interesse per vini italiani. Contatto non consigliato.",
+      "analyzed_at": "2026-10-17T05:07:14.728Z"
+    }
+  },
+  "c1780673710938zwn8p": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "misto",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda spagnola (Guijuelo) specializzata esclusivamente in vini spagnoli e spirits. Portfolio focalizzato su DO spagnole (Ribera del Duero, Rioja, Toro, ecc.). Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-10-17T05:07:21.058Z"
+    }
+  },
+  "c1780673710938bpoy1": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Vinoteca locale spagnola specializzata in vini riojani e prodotti locali. Nessuna indicazione di interesse per vini italiani; focus esclusivo su Rioja. Dimensione micro (1 dipendente, fatturato ~206k€) non rappresenta opportunità commerciale significativa per esportatori italiani.",
+      "analyzed_at": "2026-10-17T05:07:27.800Z"
+    }
+  },
+  "c17806737109383gppr": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-azienda (1 dipendente, ~688k€ fatturato) con sito basic e nessuna visibilità online. Catalogo generico (vini spagnoli, australiani, nessun focus italiano evidente). Non pertinente per distribuzione B2B.",
+      "analyzed_at": "2026-10-17T05:07:33.109Z"
+    }
+  },
+  "c1780673710938pp2w9": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-azienda (1 dipendente, fatturato ~387k€) con sito basic e nessuna traccia online. Posizionamento retail/enoturismo locale a Mallorca, non distributore B2B. Portafoglio generico (vini di qualità da vari produttori) senza focus italiano dichiarato.",
+      "analyzed_at": "2026-10-17T05:07:38.635Z"
+    }
+  },
+  "c1780673710938dhku6": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-azienda (1 dipendente, fatturato ~130k€) con focus su vini spagnoli e internazionali. Sezione ITALIA presente ma non evidenziata. Nessuna traccia Google, sito basic. Non idonea per partnership B2B.",
+      "analyzed_at": "2026-10-17T05:07:44.957Z"
+    }
+  },
+  "c1780673710938qhwdt": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "forse",
+      "note": "Micro-azienda (1 dipendente) con fatturato modesto. Sito non raggiungibile e assenza totale di risultati Google suggeriscono bassa visibilità online. Portafoglio generico (vino, spirits, spumanti) non specifica se include vini italiani.",
+      "analyzed_at": "2026-10-17T05:07:49.667Z"
+    }
   }
 }
