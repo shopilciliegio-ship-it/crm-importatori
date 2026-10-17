@@ -1,5 +1,5 @@
 {
-  "lastUid": 493,
+  "lastUid": 495,
   "pending": [
     {
       "id": "ir_422",
@@ -1309,6 +1309,44 @@
       "rispostaDiretta": false,
       "suggestedStatus": null,
       "reason": "Email di marketing generico da un servizio di comparazione assicurativo, completamente scollegata dalla proposta commerciale di distribuzione vini.",
+      "confidence": "ai",
+      "dataRientro": null,
+      "emailAlternativa": null
+    },
+    {
+      "id": "ir_494",
+      "uid": 494,
+      "contactId": null,
+      "nonCollegato": true,
+      "company": "Azienda",
+      "from": "azienda@ilciliegio.com",
+      "mittenteNome": "Azienda",
+      "subject": "I: Label (Trucking Order); Customer: August Imports; Customer Ref:\r\n CONTO DEP SIENA 1; Our Ref: ITL082602/T01[jobITL36941877]",
+      "date": "2026-10-16T16:12:34+00:00",
+      "snippet": "Da: info@sienawine.it <info@sienawine.it>\r\nInviato: mercoledì 14 ottobre 2026 16:29\r\nA: Azienda <azienda@ilciliegio.com>\r\nOggetto: I: Label (Trucking Order); Customer: August Imports; Customer Ref: CONTO DEP SIENA 1; Our Ref: ITL082602/T01[jobITL36941877]\r\n\r\n\r\n\r\nDa: Andrea Cavaciocchi <ritiri@hillebrandgori.com<mailto:ritiri@hillebrandgori.com>>\r\nInviato: martedì 13 ottobre 2026 11:34\r\nA: info@sie",
+      "riassunto": "Andrea Cavaciocchi di Hillebrand Gori (società di logistica/trasporto, parte di DHL) invia un documento di etichetta/ordine di trasporto per una spedizione verso August Imports con riferimento 'CONTO DEP SIENA 1'. È una notifica operativa di logistica.",
+      "rispostaDiretta": false,
+      "suggestedStatus": null,
+      "reason": "Email di natura logistica/operativa da un fornitore di trasporto, non collegata a una proposta commerciale di distribuzione vini e non pertinente alla campagna di importatori.",
+      "confidence": "ai",
+      "dataRientro": null,
+      "emailAlternativa": "ritiri@hillebrandgori.com"
+    },
+    {
+      "id": "ir_495",
+      "uid": 495,
+      "contactId": null,
+      "nonCollegato": true,
+      "company": "Massimiliano Pillon",
+      "from": "maci.macinho@gmail.com",
+      "mittenteNome": "Massimiliano Pillon",
+      "subject": "Re: Grazie per il tuo ordine! 🍷",
+      "date": "2026-10-17T10:21:27+00:00",
+      "snippet": "Buongiorno, effettivamente volevo chiedere quando effettuare il bonifico a\r\nVs favore.\r\nGrazie.\r\nMassimiliano Pillon\r\n\r\nIl giorno ven 16 ott 2026 alle ore 18:01 Il Ciliegio — Azienda Agricola <\r\nluca@sienawine.it> ha scritto:\r\n\r\n> [image: Il Ciliegio]\r\n>\r\n>\r\n> Caro Massimiliano,\r\n> grazie mille per il tuo ordine! Siamo felicissimi di averti come cliente.\r\n>\r\n> Abbiamo ricevuto il tuo ordine e il n",
+      "riassunto": "Massimiliano Pillon risponde a una conferma d'ordine chiedendo quando effettuare il bonifico per pagare l'acquisto di vini.",
+      "rispostaDiretta": false,
+      "suggestedStatus": null,
+      "reason": "È un cliente che ha già ordinato e vuole procedere con il pagamento, mostrando impegno concreto nella transazione.",
       "confidence": "ai",
       "dataRientro": null,
       "emailAlternativa": null
