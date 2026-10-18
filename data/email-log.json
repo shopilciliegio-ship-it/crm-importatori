@@ -440,6 +440,15 @@
       "subject": "Thank you for your order! 🍷",
       "sentAt": 1792188094468,
       "messageId": "<202610162201.64357476344@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mve0iddf16wz",
+      "customerName": "Rita Rampollo",
+      "type": "order_received",
+      "to": "cremar60@gmail.com",
+      "subject": "Grazie per il tuo ordine! 🍷",
+      "sentAt": 1792339263599,
+      "messageId": "<202610181601.84556187108@smtp-relay.mailin.fr>"
     }
   ]
 }
