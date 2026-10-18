@@ -1,5 +1,5 @@
 {
-  "lastUid": 495,
+  "lastUid": 496,
   "pending": [
     {
       "id": "ir_422",
@@ -1347,6 +1347,25 @@
       "rispostaDiretta": false,
       "suggestedStatus": null,
       "reason": "È un cliente che ha già ordinato e vuole procedere con il pagamento, mostrando impegno concreto nella transazione.",
+      "confidence": "ai",
+      "dataRientro": null,
+      "emailAlternativa": null
+    },
+    {
+      "id": "ir_496",
+      "uid": 496,
+      "contactId": null,
+      "nonCollegato": true,
+      "company": "Loriano Campinoti",
+      "from": "loriano.campinoti@icloud.com",
+      "mittenteNome": "Loriano Campinoti",
+      "subject": "Re: Il tuo ordine è stato consegnato! 🍷 Buona degustazione!",
+      "date": "2026-10-17T14:44:54+00:00",
+      "snippet": "Buonasera Luca,\r\ngli ordini sono stati consegnati ieri: tutto a posto. Un caro saluto a Te ed a tutta la famiglia Pattaro che, presumo parteciperà ancora attivamente sia al Ristorante che all'Azienda agricola. Un saluto anche da parte di Matteo a cui parte della merce è destinata.\r\nLoriano Campinoti\r\n\r\n> Il giorno 16 ott 2026, alle ore 17:41, Luca Pattaro | Siena Wine Srl <luca@sienawine.it> ha sc",
+      "riassunto": "Loriano Campinoti conferma la ricezione dell'ordine di vini consegnato ieri e invia saluti a Luca Pattaro e alla famiglia, menzionando anche Matteo come destinatario di parte della merce.",
+      "rispostaDiretta": false,
+      "suggestedStatus": null,
+      "reason": "È un cliente che ha già effettuato un ordine e lo ha ricevuto; la comunicazione è di conferma e soddisfazione post-acquisto.",
       "confidence": "ai",
       "dataRientro": null,
       "emailAlternativa": null
