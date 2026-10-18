@@ -1,6 +1,50 @@
 {
   "orders": [
     {
+      "id": "ord_mve0iddf16wz",
+      "customerName": "Rita Rampollo",
+      "customerEmail": "cremar60@gmail.com",
+      "customerPhone": "3890819234",
+      "amount": 24.0,
+      "currency": "EUR",
+      "orderDate": 1792333195000,
+      "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio Rita Rampollo",
+      "shipmentCode": "",
+      "shippingAddress": "Località Casa Lourdes 4, 37069 Villafranca Di Verona (VR), Italy",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<CAOmk=Ka1K2kPfUCZQE03aLr-4FwgRhiabqSx7jrTRKM7ppsg2g@mail.gmail.com>",
+      "trackingNumber": "",
+      "carrier": "Corriere Italia",
+      "products": [
+        {
+          "description": "CHIANTI COLLI SENESI DOCG POGGIO ORLANDO 2024",
+          "qty": 1,
+          "value": 12.0
+        }
+      ],
+      "customsDuties": null,
+      "shippingCostCustomer": 12.0,
+      "shippingCostMos": null,
+      "source": "shop",
+      "language": "it",
+      "orderNumber": "#1475",
+      "paymentType": "Carte Di Credito/Bancomat",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1792339246131,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1792339246131,
+      "updatedAt": 1792339246131
+    },
+    {
       "id": "ord_mvbihuapamvj",
       "customerName": "DON COWIN",
       "customerEmail": "donnie_cowin@hotmail.com",
@@ -12276,5 +12320,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1792188055969
+  "lastImportedAt": 1792339246131
 }
