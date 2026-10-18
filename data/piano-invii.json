@@ -1,6 +1,6 @@
 {
-  "generatoAt": 1792339271609,
-  "generatoIl": "18/10/2026 18:01",
+  "generatoAt": 1792360852419,
+  "generatoIl": "19/10/2026 00:00",
   "followupPassoAttivo": false,
   "invioAutomatico": true,
   "testMode": false,
@@ -21,33 +21,23 @@
   "senzaCasellaValida": 0,
   "giorni": [
     {
-      "data": "2026-10-18",
-      "giorno": "dom",
-      "daInviare": 400,
-      "day7": 0,
-      "day21": 400,
-      "day35": 0,
-      "scadonoSenzaInvio": 0,
-      "inCodaAFineGiorno": 624
-    },
-    {
       "data": "2026-10-19",
       "giorno": "lun",
       "daInviare": 400,
       "day7": 0,
       "day21": 400,
       "day35": 0,
-      "scadonoSenzaInvio": 0,
-      "inCodaAFineGiorno": 224
+      "scadonoSenzaInvio": 146,
+      "inCodaAFineGiorno": 478
     },
     {
       "data": "2026-10-20",
       "giorno": "mar",
-      "daInviare": 224,
+      "daInviare": 400,
       "day7": 0,
-      "day21": 224,
+      "day21": 400,
       "day35": 0,
-      "scadonoSenzaInvio": 0,
+      "scadonoSenzaInvio": 78,
       "inCodaAFineGiorno": 0
     },
     {
@@ -78,7 +68,7 @@
       "day21": 0,
       "day35": 400,
       "scadonoSenzaInvio": 0,
-      "inCodaAFineGiorno": 146
+      "inCodaAFineGiorno": 0
     },
     {
       "data": "2026-10-24",
@@ -88,15 +78,15 @@
       "day21": 0,
       "day35": 400,
       "scadonoSenzaInvio": 0,
-      "inCodaAFineGiorno": 224
+      "inCodaAFineGiorno": 0
     },
     {
       "data": "2026-10-25",
       "giorno": "dom",
-      "daInviare": 224,
+      "daInviare": 0,
       "day7": 0,
       "day21": 0,
-      "day35": 224,
+      "day35": 0,
       "scadonoSenzaInvio": 0,
       "inCodaAFineGiorno": 0
     },
@@ -159,16 +149,26 @@
       "day35": 0,
       "scadonoSenzaInvio": 0,
       "inCodaAFineGiorno": 0
+    },
+    {
+      "data": "2026-11-01",
+      "giorno": "dom",
+      "daInviare": 0,
+      "day7": 0,
+      "day21": 0,
+      "day35": 0,
+      "scadonoSenzaInvio": 0,
+      "inCodaAFineGiorno": 0
     }
   ],
-  "perseNelPeriodo": 0,
+  "perseNelPeriodo": 224,
   "oggi": {
     "inviate": 0,
     "limiteProposto": 400
   },
   "registro7Giorni": {},
   "crediti": {
-    "email": 19997
+    "email": 19996
   },
   "approvazione": {
     "oggi": false,
