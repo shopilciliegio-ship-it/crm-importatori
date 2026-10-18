@@ -5,13 +5,13 @@
       "customerName": "Rita Rampollo",
       "customerEmail": "cremar60@gmail.com",
       "customerPhone": "3890819234",
-      "amount": 24.0,
+      "amount": 24,
       "currency": "EUR",
       "orderDate": 1792333195000,
       "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio Rita Rampollo",
-      "shipmentCode": "",
+      "shipmentCode": "RAMPOLLOR",
       "shippingAddress": "Località Casa Lourdes 4, 37069 Villafranca Di Verona (VR), Italy",
-      "numberOfCartons": null,
+      "numberOfCartons": 1,
       "shippingType": "standard",
       "gmailMessageId": "<CAOmk=Ka1K2kPfUCZQE03aLr-4FwgRhiabqSx7jrTRKM7ppsg2g@mail.gmail.com>",
       "trackingNumber": "",
@@ -20,12 +20,12 @@
         {
           "description": "CHIANTI COLLI SENESI DOCG POGGIO ORLANDO 2024",
           "qty": 1,
-          "value": 12.0
+          "value": 12
         }
       ],
       "customsDuties": null,
-      "shippingCostCustomer": 12.0,
-      "shippingCostMos": null,
+      "shippingCostCustomer": 12,
+      "shippingCostMos": 2,
       "source": "shop",
       "language": "it",
       "orderNumber": "#1475",
@@ -42,14 +42,14 @@
       "emailsSent": [],
       "notes": "",
       "createdAt": 1792339246131,
-      "updatedAt": 1792339246131
+      "updatedAt": 1792339249540
     },
     {
       "id": "ord_mvbihuapamvj",
       "customerName": "DON COWIN",
       "customerEmail": "donnie_cowin@hotmail.com",
       "customerPhone": "+17073928888",
-      "amount": 98.0,
+      "amount": 98,
       "currency": "EUR",
       "orderDate": 1792152291000,
       "emailSubject": "🍷 New Order — DON COWIN — 98.00 EUR",
@@ -64,11 +64,11 @@
         {
           "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
           "qty": 3,
-          "value": 30.0
+          "value": 30
         }
       ],
-      "customsDuties": 3.0,
-      "shippingCostCustomer": 65.0,
+      "customsDuties": 3,
+      "shippingCostCustomer": 65,
       "shippingCostMos": null,
       "source": "fieramente",
       "language": "en",
