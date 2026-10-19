@@ -568,7 +568,7 @@
       "numberOfCartons": 7,
       "shippingType": "standard",
       "gmailMessageId": "<CAOmk=Ka0jFoKb9vpn=yF53BLhHZ54BP8KROyrUN3kY0hA8rm3Q@mail.gmail.com>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A806678152",
       "carrier": "U.S.A. Wine Corriere Std",
       "products": [
         {
@@ -619,13 +619,18 @@
       "language": "en",
       "orderNumber": "#1469",
       "paymentType": "Carte Di Credito/Bancomat",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1792425651818,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1791883189781,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1792425651818,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -641,7 +646,7 @@
       ],
       "notes": "",
       "createdAt": 1791883189781,
-      "updatedAt": 1791883210975
+      "updatedAt": 1792425651818
     },
     {
       "id": "ord_mv5fxp3udr7s",
@@ -652,12 +657,12 @@
       "currency": "EUR",
       "orderDate": 1791807343000,
       "emailSubject": "🍷 New Order — MARY AMBRUS — 328.40 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "AMBRUSM",
       "shippingAddress": "36 POINTS WEST, 28804 ASHEVILLE, NORTH CAROLINA (BUNCOMBE COUNTY)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202610121215.81970980940@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A895451238",
       "carrier": "MBE",
       "products": [
         {
@@ -683,13 +688,18 @@
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1792425651818,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1791820959833,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1792425651818,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -705,7 +715,7 @@
       ],
       "notes": "",
       "createdAt": 1791820959833,
-      "updatedAt": 1791820975235
+      "updatedAt": 1792425651818
     },
     {
       "id": "ord_mv40gh2w9y7v",
@@ -830,12 +840,12 @@
       "currency": "EUR",
       "orderDate": 1791548128000,
       "emailSubject": "🍷 New Order — SEAN GOODALE — 170.70 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "GOODALES",
       "shippingAddress": "8791 WHITECLOVER ST, 80125 LITTLETON, COLORADO (DOUGLAS COUNTY)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202610091215.93529190312@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1Z9376E1A830775412",
       "carrier": "MBE",
       "products": [
         {
@@ -861,13 +871,18 @@
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1792425651818,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1791561706772,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1792425651818,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -883,7 +898,7 @@
       ],
       "notes": "",
       "createdAt": 1791561706772,
-      "updatedAt": 1792188094468,
+      "updatedAt": 1792425651818,
       "staleAlertDays": 7,
       "staleAlertSince": 1791561706772
     },
@@ -896,12 +911,12 @@
       "currency": "EUR",
       "orderDate": 1791548088000,
       "emailSubject": "🍷 New Order — JOHN WILLIAMSON — 190.50 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "WILLIAMSONJ",
       "shippingAddress": "533 GRAY FOX RUN, 73003 EDMOND, OKLAHOMA",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202610091214.71648271947@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1Z9376E1A806188781",
       "carrier": "MBE",
       "products": [
         {
@@ -922,13 +937,18 @@
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1792425651818,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1791561706772,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1792425651818,
+          "note": "Auto Fieramente (era: preparazione)"
         }
       ],
       "emailsSent": [
@@ -944,7 +964,7 @@
       ],
       "notes": "",
       "createdAt": 1791561706772,
-      "updatedAt": 1792188094468,
+      "updatedAt": 1792425651818,
       "staleAlertDays": 7,
       "staleAlertSince": 1791561706772
     },
@@ -7759,7 +7779,7 @@
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<DB9PR08MB6682E21A24DCDADBD2926A73BFE32@DB9PR08MB6682.eurprd08.prod.outlook.com>",
-      "trackingNumber": "1ZRY6787A816048402",
+      "trackingNumber": "1ZRY6787A806678152",
       "carrier": "- U.S.A. Wine Corriere Std",
       "source": "shop",
       "language": "en",
@@ -7836,7 +7856,7 @@
       ],
       "notes": "",
       "createdAt": 1781777258914,
-      "updatedAt": 1785249706412,
+      "updatedAt": 1792425651818,
       "trackingUrl": "",
       "staleAlertDays": 7,
       "staleAlertSince": 1782565638211,
@@ -11140,7 +11160,7 @@
       "emailSubject": "",
       "shopifyOrderId": "",
       "gmailMessageId": "",
-      "trackingNumber": "1ZRY6787A816048402",
+      "trackingNumber": "1ZRY6787A806678152",
       "mbeTrackingNumber": "IT3299-8V-0000005ZFY",
       "carrier": "UPS",
       "shippingDate": "2026-04-09",
@@ -11186,7 +11206,7 @@
       "notes": "",
       "source": "mbe",
       "createdAt": 1780415614441,
-      "updatedAt": 1782471335525,
+      "updatedAt": 1792425651818,
       "shippingType": "standard",
       "shipmentCode": "COLEA"
     },
