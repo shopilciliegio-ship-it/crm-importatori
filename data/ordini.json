@@ -5,13 +5,13 @@
       "customerName": "Kimberly Camerlo",
       "customerEmail": "kcamerlo@gmail.com",
       "customerPhone": "3035480886",
-      "amount": 119.0,
+      "amount": 119,
       "currency": "EUR",
       "orderDate": 1792365107000,
       "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio Kimberly Camerlo",
-      "shipmentCode": "",
+      "shipmentCode": "CAMERLOK",
       "shippingAddress": "12625 Wolff Street, 80020-5733 Broomfield (CO), United States",
-      "numberOfCartons": null,
+      "numberOfCartons": 1,
       "shippingType": "standard",
       "gmailMessageId": "<CAOmk=KaA8kw5TB5D0_tCc7aUvAgvehB70WT8uffnu1S-6vYiBQ@mail.gmail.com>",
       "trackingNumber": "",
@@ -20,12 +20,12 @@
         {
           "description": "CILIEGIO IN FIORE SWEET SPARKLING WINE",
           "qty": 4,
-          "value": 40.0
+          "value": 40
         }
       ],
-      "customsDuties": 4.0,
-      "shippingCostCustomer": 75.0,
-      "shippingCostMos": null,
+      "customsDuties": 4,
+      "shippingCostCustomer": 75,
+      "shippingCostMos": 65,
       "source": "shop",
       "language": "en",
       "orderNumber": "#1477",
@@ -42,7 +42,7 @@
       "emailsSent": [],
       "notes": "",
       "createdAt": 1792382452134,
-      "updatedAt": 1792382452134
+      "updatedAt": 1792382456172
     },
     {
       "id": "ord_mve0iddf16wz",
