@@ -1669,8 +1669,10 @@
       ],
       "notes": "",
       "createdAt": 1790719291118,
-      "updatedAt": 1791777715584,
-      "track17Registered": true
+      "updatedAt": 1792404055768,
+      "track17Registered": true,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1791777707681
     },
     {
       "id": "ord_mun81432zjm3",
