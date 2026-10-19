@@ -449,6 +449,15 @@
       "subject": "Grazie per il tuo ordine! 🍷",
       "sentAt": 1792339263599,
       "messageId": "<202610181601.84556187108@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mveq8fc6ip8i",
+      "customerName": "Kimberly Camerlo",
+      "type": "order_received",
+      "to": "kcamerlo@gmail.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1792382479743,
+      "messageId": "<202610190401.48996891029@smtp-relay.mailin.fr>"
     }
   ]
 }
