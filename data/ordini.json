@@ -39,10 +39,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "kcamerlo@gmail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1792382479743,
+          "messageId": "<202610190401.48996891029@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1792382452134,
-      "updatedAt": 1792382456172
+      "updatedAt": 1792382479743
     },
     {
       "id": "ord_mve0iddf16wz",
