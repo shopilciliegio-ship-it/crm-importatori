@@ -1,6 +1,104 @@
 {
   "orders": [
     {
+      "id": "ord_mvffy52qip60",
+      "customerName": "NATHAN HOLDRIDGE",
+      "customerEmail": "mannycollazo@gmail.com",
+      "customerPhone": "+16786894740",
+      "amount": 76.0,
+      "currency": "EUR",
+      "orderDate": 1792406108000,
+      "emailSubject": "🍷 New Order — NATHAN HOLDRIDGE — 76.00 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "7196 OAK TREE PLACE, 93940 MONTEREY, CALIFORNIA (MONTEREY COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202610191035.76316131075@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "SPARKLING WINE CILIEGIO IN FIORE ROSÉ",
+          "qty": 1,
+          "value": 10.0
+        }
+      ],
+      "customsDuties": 1.0,
+      "shippingCostCustomer": 65.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1792425642289,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1792425642289,
+      "updatedAt": 1792425642289
+    },
+    {
+      "id": "ord_mvffy52q8al4",
+      "customerName": "NINA H. VESTAL",
+      "customerEmail": "nvestal@emory.edu",
+      "customerPhone": "+14042374879",
+      "amount": 106.25,
+      "currency": "EUR",
+      "orderDate": 1792404832000,
+      "emailSubject": "🍷 New Order — NINA H. VESTAL — 106.25 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "1205 ST.CHARLES AV. #205, 70130 NEW ORLEANS, LOUISIANA (ORLEANS PARISH)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202610191013.68560936480@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "VIN SANTO DEL CHIANTI DOC 2020",
+          "qty": 1,
+          "value": 19.0
+        },
+        {
+          "description": "LE FORCACCE WHITE WINE IGT 2025 VIOGNI..",
+          "qty": 1,
+          "value": 8.5
+        },
+        {
+          "description": "SPARKLING WINE CILIEGIO IN FIORE ROSÉ",
+          "qty": 1,
+          "value": 10.0
+        }
+      ],
+      "customsDuties": 3.75,
+      "shippingCostCustomer": 65.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1792425642289,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1792425642289,
+      "updatedAt": 1792425642289
+    },
+    {
       "id": "ord_mveq8fc6ip8i",
       "customerName": "Kimberly Camerlo",
       "customerEmail": "kcamerlo@gmail.com",
@@ -12382,5 +12480,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1792382452134
+  "lastImportedAt": 1792425642289
 }
