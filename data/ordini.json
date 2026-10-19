@@ -39,10 +39,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "mannycollazo@gmail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1792425658912,
+          "messageId": "<202610191600.52531175769@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1792425642289,
-      "updatedAt": 1792425642289
+      "updatedAt": 1792425658912
     },
     {
       "id": "ord_mvffy52q8al4",
@@ -93,10 +101,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "nvestal@emory.edu",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1792425658912,
+          "messageId": "<202610191600.52505058730@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1792425642289,
-      "updatedAt": 1792425642289
+      "updatedAt": 1792425658912
     },
     {
       "id": "ord_mveq8fc6ip8i",
@@ -642,11 +658,18 @@
           "messageId": "<202610130920.56317920866@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-10-13T11:20:14.000+02:00"
+        },
+        {
+          "type": "day0",
+          "to": "thecolefamily1@att.net",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1792425658912,
+          "messageId": "<202610191600.83816583873@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1791883189781,
-      "updatedAt": 1792425655867,
+      "updatedAt": 1792425658912,
       "track17Registered": true
     },
     {
@@ -712,11 +735,18 @@
           "messageId": "<202610121602.74546743564@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-10-12T18:02:58.000+02:00"
+        },
+        {
+          "type": "day0",
+          "to": "mlambrus@gmail.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1792425658912,
+          "messageId": "<202610191601.73942066660@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1791820959833,
-      "updatedAt": 1792425655867,
+      "updatedAt": 1792425658912,
       "track17Registered": true
     },
     {
@@ -896,11 +926,18 @@
           "messageId": "<202610091602.42446549119@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-10-09T18:02:04.000+02:00"
+        },
+        {
+          "type": "day0",
+          "to": "sean.goodale@gmail.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1792425658912,
+          "messageId": "<202610191601.85501256156@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1791561706772,
-      "updatedAt": 1792425655867,
+      "updatedAt": 1792425658912,
       "staleAlertDays": 7,
       "staleAlertSince": 1791561706772,
       "track17Registered": true
@@ -963,11 +1000,18 @@
           "messageId": "<202610091602.44069262444@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-10-09T18:02:05.000+02:00"
+        },
+        {
+          "type": "day0",
+          "to": "jwllmsn@gmail.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1792425658912,
+          "messageId": "<202610191601.46192755984@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1791561706772,
-      "updatedAt": 1792425655867,
+      "updatedAt": 1792425658912,
       "staleAlertDays": 7,
       "staleAlertSince": 1791561706772,
       "track17Registered": true
