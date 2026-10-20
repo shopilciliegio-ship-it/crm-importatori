@@ -1,6 +1,114 @@
 {
   "orders": [
     {
+      "id": "ord_mvh891btqvn6",
+      "customerName": "ERIN LEVITSKY",
+      "customerEmail": "elevitsky520@gmail.com",
+      "customerPhone": "+16314164861",
+      "amount": 174.0,
+      "currency": "EUR",
+      "orderDate": 1792523479000,
+      "emailSubject": "🍷 New Order — ERIN LEVITSKY — 174.00 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "26 GRACE PARK DR, 11725 COMMACK, NEW YORK (SUFFOLK COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202610201911.80286446757@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "CHIANTI STRADE BIANCHE 2025 LIM. ED.",
+          "qty": 1,
+          "value": 20.0
+        },
+        {
+          "description": "INFERNACCIO RED WINE IGT 2022",
+          "qty": 1,
+          "value": 16.0
+        },
+        {
+          "description": "WHITE WINE IGT 2025",
+          "qty": 1,
+          "value": 7.0
+        },
+        {
+          "description": "MARIO RED WINE IGT 2019",
+          "qty": 1,
+          "value": 28.0
+        },
+        {
+          "description": "VIN SANTO DEL CHIANTI DOC 2020",
+          "qty": 1,
+          "value": 19.0
+        }
+      ],
+      "customsDuties": 9.0,
+      "shippingCostCustomer": 75.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1792533646072,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1792533646072,
+      "updatedAt": 1792533646072
+    },
+    {
+      "id": "ord_mvh891bte9mn",
+      "customerName": "VALERIE FOX",
+      "customerEmail": "vfox026@gmail.com",
+      "customerPhone": "+14053085953",
+      "amount": 198.2,
+      "currency": "EUR",
+      "orderDate": 1792520754000,
+      "emailSubject": "🍷 New Order — VALERIE FOX — 198.20 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "1017 NW 17TH ST, 73106 OKLAHOMA CITY, OKLAHOMA (OKLAHOMA COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202610201825.87580664497@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "MARIO RED WINE IGT 2019",
+          "qty": 4,
+          "value": 112.0
+        }
+      ],
+      "customsDuties": 11.2,
+      "shippingCostCustomer": 75.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1792533646072,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1792533646072,
+      "updatedAt": 1792533646072
+    },
+    {
       "id": "ord_mvffy52qip60",
       "customerName": "NATHAN HOLDRIDGE",
       "customerEmail": "mannycollazo@gmail.com",
@@ -12548,5 +12656,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1792425642289
+  "lastImportedAt": 1792533646072
 }
