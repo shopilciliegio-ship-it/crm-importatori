@@ -1,5 +1,5 @@
 {
-  "lastUid": 496,
+  "lastUid": 498,
   "pending": [
     {
       "id": "ir_422",
@@ -1366,6 +1366,44 @@
       "rispostaDiretta": false,
       "suggestedStatus": null,
       "reason": "È un cliente che ha già effettuato un ordine e lo ha ricevuto; la comunicazione è di conferma e soddisfazione post-acquisto.",
+      "confidence": "ai",
+      "dataRientro": null,
+      "emailAlternativa": null
+    },
+    {
+      "id": "ir_497",
+      "uid": 497,
+      "contactId": null,
+      "nonCollegato": true,
+      "company": "noreply@mbeglobal.com",
+      "from": "noreply@mbeglobal.com",
+      "mittenteNome": "noreply@mbeglobal.com",
+      "subject": "Inserimento richiesta di ritiro.",
+      "date": "2026-10-19T13:43:50+00:00",
+      "snippet": "Cliente: SIENA WINE SRL \n\r\n Persona di riferimento: \n\r\n Telefono: \n\r\n Indirizzo e-mail: luca@sienawine.it \n\r\n Data ritiro: 20/10/2026 \n\r\n Orario ritiro: 14:00 \n\r\n Orario massimo ritiro: 21:00 \n\r\n Numero colli da ritirare: 6 \n\r\n Note:",
+      "riassunto": "Un modulo di richiesta di ritiro interno per Siena Wine Srl, datato 20/10/2026 alle 14:00, per 6 colli da ritirare entro le 21:00.",
+      "rispostaDiretta": false,
+      "suggestedStatus": null,
+      "reason": "È un modulo amministrativo interno di ritiro merce, non una risposta a una proposta commerciale di distribuzione vini.",
+      "confidence": "ai",
+      "dataRientro": null,
+      "emailAlternativa": null
+    },
+    {
+      "id": "ir_498",
+      "uid": 498,
+      "contactId": null,
+      "nonCollegato": true,
+      "company": "Ufficio Cavriglia - Mail Boxes Etc.",
+      "from": "mbe2529@mbe.it",
+      "mittenteNome": "Ufficio Cavriglia - Mail Boxes Etc.",
+      "subject": "RITIRO 20/10",
+      "date": "2026-10-19T13:45:15+00:00",
+      "snippet": "Salve,\r\n\r\nconfermo ritiro per domani.\r\n\r\n\r\nsaluti,\r\n\r\n\r\n *Marco De Vito*\r\n\r\n\r\n[image: FIERAMENTE]\r\n------------------------------\r\nUFFICIO CAVRIGLIA\r\nStore Cavriglia\r\n🏠\r\nVia delle Miniere, 3/D\r\n52022 Cavriglia (AR)\r\n📞 +39 055 9850095 <+39-055-9850095>\r\n✉️ mbe2529@mbe.it",
+      "riassunto": "Marco De Vito (Ufficio Cavriglia) conferma un ritiro per il giorno successivo.",
+      "rispostaDiretta": false,
+      "suggestedStatus": null,
+      "reason": "Email relativa a un ritiro logistico/operativo, non collegata a proposta commerciale di distribuzione vini.",
       "confidence": "ai",
       "dataRientro": null,
       "emailAlternativa": null
