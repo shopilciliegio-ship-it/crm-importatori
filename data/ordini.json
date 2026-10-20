@@ -59,10 +59,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "elevitsky520@gmail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1792533663952,
+          "messageId": "<202610202201.37716744968@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1792533646072,
-      "updatedAt": 1792533646072
+      "updatedAt": 1792533663952
     },
     {
       "id": "ord_mvh891bte9mn",
@@ -103,10 +111,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "vfox026@gmail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1792533663952,
+          "messageId": "<202610202201.54817633428@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1792533646072,
-      "updatedAt": 1792533646072
+      "updatedAt": 1792533663952
     },
     {
       "id": "ord_mvffy52qip60",
@@ -1849,11 +1865,18 @@
           "messageId": "<202610150401.58278145006@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-10-15T06:01:57.000+02:00"
+        },
+        {
+          "type": "in_consegna",
+          "to": "scottbocketti@gmail.com",
+          "subject": "Your wine is out for delivery! 🍷",
+          "sentAt": 1792533663952,
+          "messageId": "<202610202201.37671607896@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1790784124892,
-      "updatedAt": 1792533660631,
+      "updatedAt": 1792533663952,
       "staleAlertDays": 7,
       "staleAlertSince": 1790784124892,
       "track17Registered": true
@@ -1949,11 +1972,18 @@
           "messageId": "<202610120401.38130607416@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-10-12T06:01:56.248+02:00"
+        },
+        {
+          "type": "in_consegna",
+          "to": "suedauble@verizon.com",
+          "subject": "Your wine is out for delivery! 🍷",
+          "sentAt": 1792533663952,
+          "messageId": "<202610202201.56094369730@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1790719291118,
-      "updatedAt": 1792533660631,
+      "updatedAt": 1792533663952,
       "track17Registered": true,
       "staleAlertDays": 7,
       "staleAlertSince": 1791777707681
@@ -2054,11 +2084,18 @@
           "messageId": "<202610150401.40283204435@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-10-15T06:01:57.000+02:00"
+        },
+        {
+          "type": "in_consegna",
+          "to": "mlbrai924@gmail.com",
+          "subject": "Your wine is out for delivery! 🍷",
+          "sentAt": 1792533663952,
+          "messageId": "<202610202201.88762319281@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1790719291118,
-      "updatedAt": 1792533660631,
+      "updatedAt": 1792533663952,
       "staleAlertDays": 7,
       "staleAlertSince": 1790719291118,
       "track17Registered": true
