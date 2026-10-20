@@ -1799,7 +1799,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1791496932916,
-      "status": "dogana",
+      "status": "in_consegna",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1815,6 +1815,11 @@
           "status": "dogana",
           "date": 1792036909054,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "in_consegna",
+          "date": 1792533660631,
+          "note": "Auto 17Track (era: dogana): Gloversville, NY, United States — Out for Delivery, Out For Delivery Today"
         }
       ],
       "emailsSent": [
@@ -1848,7 +1853,7 @@
       ],
       "notes": "",
       "createdAt": 1790784124892,
-      "updatedAt": 1792036915381,
+      "updatedAt": 1792533660631,
       "staleAlertDays": 7,
       "staleAlertSince": 1790784124892,
       "track17Registered": true
@@ -1894,7 +1899,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1791216188179,
-      "status": "dogana",
+      "status": "in_consegna",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1910,6 +1915,11 @@
           "status": "dogana",
           "date": 1791777707681,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "in_consegna",
+          "date": 1792533660631,
+          "note": "Auto 17Track (era: dogana): Saddle Brook, NJ, United States — Out for Delivery, Out For Delivery Today"
         }
       ],
       "emailsSent": [
@@ -1943,7 +1953,7 @@
       ],
       "notes": "",
       "createdAt": 1790719291118,
-      "updatedAt": 1792404055768,
+      "updatedAt": 1792533660631,
       "track17Registered": true,
       "staleAlertDays": 7,
       "staleAlertSince": 1791777707681
@@ -1994,7 +2004,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1791496932916,
-      "status": "dogana",
+      "status": "in_consegna",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -2010,6 +2020,11 @@
           "status": "dogana",
           "date": 1792036909054,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "in_consegna",
+          "date": 1792533660631,
+          "note": "Auto 17Track (era: dogana): Tinton Falls, NJ, United States — Out for Delivery, Out For Delivery Today"
         }
       ],
       "emailsSent": [
@@ -2043,7 +2058,7 @@
       ],
       "notes": "",
       "createdAt": 1790719291118,
-      "updatedAt": 1792036915381,
+      "updatedAt": 1792533660631,
       "staleAlertDays": 7,
       "staleAlertSince": 1790719291118,
       "track17Registered": true
