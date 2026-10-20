@@ -512,6 +512,51 @@
       "subject": "Your wine is on its way! 🍷",
       "sentAt": 1792425658912,
       "messageId": "<202610191601.46192755984@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mvh891btqvn6",
+      "customerName": "ERIN LEVITSKY",
+      "type": "order_received",
+      "to": "elevitsky520@gmail.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1792533663952,
+      "messageId": "<202610202201.37716744968@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mvh891bte9mn",
+      "customerName": "VALERIE FOX",
+      "type": "order_received",
+      "to": "vfox026@gmail.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1792533663952,
+      "messageId": "<202610202201.54817633428@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_muoamq58xfbh",
+      "customerName": "SCOTT BOCKETTI",
+      "type": "in_consegna",
+      "to": "scottbocketti@gmail.com",
+      "subject": "Your wine is out for delivery! 🍷",
+      "sentAt": 1792533663952,
+      "messageId": "<202610202201.37671607896@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mun81432rajr",
+      "customerName": "SUSAN DAUBLE",
+      "type": "in_consegna",
+      "to": "suedauble@verizon.com",
+      "subject": "Your wine is out for delivery! 🍷",
+      "sentAt": 1792533663952,
+      "messageId": "<202610202201.56094369730@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mun81432zjm3",
+      "customerName": "MARYLOU BRAI",
+      "type": "in_consegna",
+      "to": "mlbrai924@gmail.com",
+      "subject": "Your wine is out for delivery! 🍷",
+      "sentAt": 1792533663952,
+      "messageId": "<202610202201.88762319281@smtp-relay.mailin.fr>"
     }
   ]
 }
