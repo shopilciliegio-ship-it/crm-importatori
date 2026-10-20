@@ -362,6 +362,7 @@ function _phaseDots(order){
 
   const phases=[
     {type:'order_received'},
+    {type:'courier',manual:true},
     {type:'day0'},
     {type:'day10'},
     {type:'day20',hideExpress:true},
@@ -382,6 +383,16 @@ function _phaseDots(order){
 
   const dots=phases.filter(p=>!(p.hideExpress&&isExpress)).map(p=>{
     let bg, title='', dateLabel='';
+    if(p.manual){
+      // Consegna al corriere: segnata a mano con lo stato "Spedito", nessuna email
+      const cd=order.courierDate?+order.courierDate:null;
+      bg=cd?'#2a9d5c':'var(--brd2)';
+      title=cd?'Consegnato al corriere':'Consegna al corriere (stato Spedito)';
+      return `<div style="display:flex;flex-direction:column;align-items:center;gap:1px;min-width:16px">
+      <span style="font-size:8px;color:var(--text3);line-height:1">${cd?_fmtDM(cd):'&nbsp;'}</span>
+      <span title="${esc(title)}" style="display:inline-block;width:7px;height:7px;border-radius:50%;background:${bg}"></span>
+    </div>`;
+    }
     const sched=(typeof REMINDER_SCHEDULE!=='undefined'?REMINDER_SCHEDULE:[]).find(r=>r.type===p.type);
     const sentEntry=(order.emailsSent||[]).find(e=>e.type===p.type&&!e.manual);
     if(bounced.has(p.type)){
@@ -588,6 +599,7 @@ function openOrdineDetail(id){
     ${o.trackingNumber?dr('Tracking', `<span style="font-family:monospace">${esc(o.trackingNumber)}</span> ${trackingLink}`):(trackingLink?dr('Tracking', trackingLink):'')}
     ${spedireproSearchBtn?dr('SpedirePro', spedireproSearchBtn):''}
     ${(()=>{const stl={standard:'Standard',express:'Express'};const v=o.shippingType?`<span class="badge" style="background:var(--blue-bg);color:var(--blue-tx)">${stl[o.shippingType]||o.shippingType}</span>`:'<span style="color:var(--amber);font-size:12px">⚠ tipo non specificato</span>';return dr('Tipologia spedizione',v);})()}
+    ${o.courierDate?dr('Consegnato al corriere', new Date(o.courierDate).toLocaleDateString('it-IT',{day:'numeric',month:'long',year:'numeric'})):''}
     ${o.shippingDate?dr('Data spedizione', new Date(o.shippingDate).toLocaleDateString('it-IT',{day:'numeric',month:'long',year:'numeric'})):''}
     ${(()=>{const dc=orderDestCountry(o);const label=dc?(ORDER_COUNTRIES.find(c=>c.iso2===dc)?.label||dc):'';const v=dc?`<span class="badge" style="background:var(--blue-bg);color:var(--blue-tx)">${esc(dc)}</span> ${esc(label)}${!o.destCountry?' <span style="color:var(--text3);font-size:11px">(dedotto dall\'indirizzo)</span>':''}`:'<span style="color:var(--amber);font-size:12px">⚠ non rilevabile dall\'indirizzo — impostalo qui sotto</span>';return dr('Paese di destinazione',v);})()}
     ${o.shippingAddress?dr('Indirizzo spedizione', `<span style="font-size:12px;color:var(--text2)">${esc(o.shippingAddress)}</span>`):''}
@@ -603,7 +615,7 @@ function openOrdineDetail(id){
     <div style="font-size:11px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">Aggiorna ordine</div>
     <div class="fg2">
       <div class="fg"><label>Nuovo stato</label>
-        <select id="ord-new-status">${statusOptions}</select>
+        <select id="ord-new-status" onchange="if(this.value==='spedito'){const c=document.getElementById('ord-send-email');if(c)c.checked=false;}">${statusOptions}</select>
       </div>
       <div class="fg"><label>Importo</label>
         <input id="ord-amount" type="number" step="0.01" min="0" placeholder="0.00" value="${o.amount!=null?o.amount:''}">
@@ -746,7 +758,9 @@ async function saveOrdineUpdate(id){
     o.status=newStatus;
     o.statusHistory=o.statusHistory||[];
     o.statusHistory.push({status:newStatus, date:Date.now(), note:note||''});
-    if(['spedito','in_transito'].includes(newStatus)&&!o.shippingDate) o.shippingDate=Date.now();
+    // "Spedito" = consegnato al corriere: data a parte, NON shippingDate (da cui partono day0 e reminder)
+    if(newStatus==='spedito'&&!o.courierDate) o.courierDate=Date.now();
+    if(['in_transito'].includes(newStatus)&&!o.shippingDate) o.shippingDate=Date.now();
     if(['consegnato','annullato'].includes(newStatus)){
       const alreadySkipped=(o.emailsSent||[]).some(e=>e.type===newStatus);
       if(!alreadySkipped){
