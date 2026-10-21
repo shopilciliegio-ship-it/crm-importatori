@@ -339,7 +339,7 @@
       "shippingType": "standard",
       "gmailMessageId": "<CAOmk=Ka1K2kPfUCZQE03aLr-4FwgRhiabqSx7jrTRKM7ppsg2g@mail.gmail.com>",
       "trackingNumber": "",
-      "carrier": "Corriere Italia",
+      "carrier": "UPS EXPRESS ITALIA",
       "products": [
         {
           "description": "CHIANTI COLLI SENESI DOCG POGGIO ORLANDO 2024",
@@ -354,13 +354,18 @@
       "language": "it",
       "orderNumber": "#1475",
       "paymentType": "Carte Di Credito/Bancomat",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1792598459386,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1792339246131,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1792598459386,
+          "note": "Auto SpedirePro: aggiornamento stato (rif. RAMPOLLOR)"
         }
       ],
       "emailsSent": [
@@ -376,7 +381,9 @@
       ],
       "notes": "",
       "createdAt": 1792339246131,
-      "updatedAt": 1792339263599
+      "updatedAt": 1792598459386,
+      "trackingUrl": "https://www.spedire.com/tracking/1Z71V28R6899155969",
+      "spedireproReference": "RAMPOLLOR"
     },
     {
       "id": "ord_mvbihuapamvj",
@@ -565,7 +572,7 @@
       "shippingType": "standard",
       "gmailMessageId": "<CAOmk=KaiCywWxV6Gdtv_sCzT-WvLgwPrehNh2vkn=oFHcDYzbg@mail.gmail.com>",
       "trackingNumber": "",
-      "carrier": "Corriere Italia Gratis Oltre 100 € Di Ordine",
+      "carrier": "TNT EXPRESS",
       "products": [
         {
           "description": "INFERNACCIO ROSSO IGT 2022",
@@ -590,13 +597,18 @@
       "language": "it",
       "orderNumber": "#1473",
       "paymentType": "Bonifico",
-      "shippingDate": null,
-      "status": "preparazione",
+      "shippingDate": 1792598459386,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1792166470460,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "in_transito",
+          "date": 1792598459386,
+          "note": "Auto SpedirePro: aggiornamento stato (rif. PILLONM)"
         }
       ],
       "emailsSent": [
@@ -612,7 +624,9 @@
       ],
       "notes": "",
       "createdAt": 1792166470460,
-      "updatedAt": 1792166487015
+      "updatedAt": 1792598459386,
+      "trackingUrl": "https://www.spedire.com/tracking/WS02218985",
+      "spedireproReference": "PILLONM"
     },
     {
       "id": "ord_mv6v5vvdj77h",
