@@ -1815,7 +1815,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1791496932916,
-      "status": "in_consegna",
+      "status": "consegna_fallita",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1836,6 +1836,11 @@
           "status": "in_consegna",
           "date": 1792533660631,
           "note": "Auto 17Track (era: dogana): Gloversville, NY, United States — Out for Delivery, Out For Delivery Today"
+        },
+        {
+          "status": "consegna_fallita",
+          "date": 1792555256759,
+          "note": "Auto 17Track (era: in_consegna): Delivery Attempted, We were unable to deliver your package. It's on the way to a UPS Access Point™ location next business day for pick up."
         }
       ],
       "emailsSent": [
@@ -1876,10 +1881,12 @@
       ],
       "notes": "",
       "createdAt": 1790784124892,
-      "updatedAt": 1792533663952,
+      "updatedAt": 1792555256759,
       "staleAlertDays": 7,
       "staleAlertSince": 1790784124892,
-      "track17Registered": true
+      "track17Registered": true,
+      "deliveryFailureCount": 1,
+      "lastDeliveryFailureEventAt": "2026-10-20T21:07:30Z"
     },
     {
       "id": "ord_mun81432rajr",
