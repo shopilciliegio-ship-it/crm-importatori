@@ -159,12 +159,17 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": null,
-      "status": "preparazione",
+      "status": "spedito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1792425642289,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "spedito",
+          "date": 1792568337234,
+          "note": ""
         }
       ],
       "emailsSent": [
@@ -180,7 +185,10 @@
       ],
       "notes": "",
       "createdAt": 1792425642289,
-      "updatedAt": 1792425658912
+      "updatedAt": 1792568337234,
+      "trackingUrl": "",
+      "destCountry": "US",
+      "courierDate": 1792568337234
     },
     {
       "id": "ord_mvffy52q8al4",
