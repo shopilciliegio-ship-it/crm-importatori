@@ -277,12 +277,17 @@
       "orderNumber": "#1477",
       "paymentType": "Carte Di Credito/Bancomat",
       "shippingDate": null,
-      "status": "preparazione",
+      "status": "spedito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1792382452134,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "spedito",
+          "date": 1792568299202,
+          "note": ""
         }
       ],
       "emailsSent": [
@@ -298,7 +303,10 @@
       ],
       "notes": "",
       "createdAt": 1792382452134,
-      "updatedAt": 1792382479743
+      "updatedAt": 1792568299202,
+      "trackingUrl": "",
+      "destCountry": "US",
+      "courierDate": 1792568299202
     },
     {
       "id": "ord_mve0iddf16wz",
