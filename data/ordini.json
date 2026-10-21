@@ -1922,7 +1922,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1791216188179,
-      "status": "in_consegna",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1943,6 +1943,11 @@
           "status": "in_consegna",
           "date": 1792533660631,
           "note": "Auto 17Track (era: dogana): Saddle Brook, NJ, United States — Out for Delivery, Out For Delivery Today"
+        },
+        {
+          "status": "consegnato",
+          "date": 1792555250342,
+          "note": "Auto Fieramente (era: in_consegna)"
         }
       ],
       "emailsSent": [
@@ -1983,7 +1988,7 @@
       ],
       "notes": "",
       "createdAt": 1790719291118,
-      "updatedAt": 1792533663952,
+      "updatedAt": 1792555250342,
       "track17Registered": true,
       "staleAlertDays": 7,
       "staleAlertSince": 1791777707681
@@ -2034,7 +2039,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1791496932916,
-      "status": "in_consegna",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -2055,6 +2060,11 @@
           "status": "in_consegna",
           "date": 1792533660631,
           "note": "Auto 17Track (era: dogana): Tinton Falls, NJ, United States — Out for Delivery, Out For Delivery Today"
+        },
+        {
+          "status": "consegnato",
+          "date": 1792555250342,
+          "note": "Auto Fieramente (era: in_consegna)"
         }
       ],
       "emailsSent": [
@@ -2095,7 +2105,7 @@
       ],
       "notes": "",
       "createdAt": 1790719291118,
-      "updatedAt": 1792533663952,
+      "updatedAt": 1792555250342,
       "staleAlertDays": 7,
       "staleAlertSince": 1790719291118,
       "track17Registered": true
