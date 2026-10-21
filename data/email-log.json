@@ -602,6 +602,24 @@
       "subject": "Il tuo vino è in viaggio! 🍷",
       "sentAt": 1792598464553,
       "messageId": "<202610211601.59596317427@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_muiktlyzttpy",
+      "customerName": "ILLIANA BEVERLY",
+      "type": "in_consegna",
+      "to": "lonibeverly@gmail.com",
+      "subject": "Your wine is out for delivery! 🍷",
+      "sentAt": 1792620053747,
+      "messageId": "<202610212200.51792353219@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_muh5divi7env",
+      "customerName": "EMILY PEACH",
+      "type": "consegnato",
+      "to": "embosela@gmail.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1792620053747,
+      "messageId": "<202610212200.50016616498@smtp-relay.mailin.fr>"
     }
   ]
 }
