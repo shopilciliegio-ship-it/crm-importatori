@@ -1877,11 +1877,18 @@
           "subject": "Your wine is out for delivery! 🍷",
           "sentAt": 1792533663952,
           "messageId": "<202610202201.37671607896@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegna_fallita",
+          "to": "scottbocketti@gmail.com",
+          "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+          "sentAt": 1792555261231,
+          "messageId": "<202610210401.21306055682@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1790784124892,
-      "updatedAt": 1792555256759,
+      "updatedAt": 1792555261231,
       "staleAlertDays": 7,
       "staleAlertSince": 1790784124892,
       "track17Registered": true,
@@ -1991,11 +1998,18 @@
           "subject": "Your wine is out for delivery! 🍷",
           "sentAt": 1792533663952,
           "messageId": "<202610202201.56094369730@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegnato",
+          "to": "suedauble@verizon.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1792555261231,
+          "messageId": "<202610210401.93709313941@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1790719291118,
-      "updatedAt": 1792555250342,
+      "updatedAt": 1792555261231,
       "track17Registered": true,
       "staleAlertDays": 7,
       "staleAlertSince": 1791777707681
@@ -2108,11 +2122,18 @@
           "subject": "Your wine is out for delivery! 🍷",
           "sentAt": 1792533663952,
           "messageId": "<202610202201.88762319281@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegnato",
+          "to": "mlbrai924@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1792555261231,
+          "messageId": "<202610210401.42299359585@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1790719291118,
-      "updatedAt": 1792555250342,
+      "updatedAt": 1792555261231,
       "staleAlertDays": 7,
       "staleAlertSince": 1790719291118,
       "track17Registered": true
