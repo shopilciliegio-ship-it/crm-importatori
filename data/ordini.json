@@ -5,7 +5,7 @@
       "customerName": "ERIN LEVITSKY",
       "customerEmail": "elevitsky520@gmail.com",
       "customerPhone": "+16314164861",
-      "amount": 174.0,
+      "amount": 174,
       "currency": "EUR",
       "orderDate": 1792523479000,
       "emailSubject": "🍷 New Order — ERIN LEVITSKY — 174.00 EUR",
@@ -20,31 +20,31 @@
         {
           "description": "CHIANTI STRADE BIANCHE 2025 LIM. ED.",
           "qty": 1,
-          "value": 20.0
+          "value": 20
         },
         {
           "description": "INFERNACCIO RED WINE IGT 2022",
           "qty": 1,
-          "value": 16.0
+          "value": 16
         },
         {
           "description": "WHITE WINE IGT 2025",
           "qty": 1,
-          "value": 7.0
+          "value": 7
         },
         {
           "description": "MARIO RED WINE IGT 2019",
           "qty": 1,
-          "value": 28.0
+          "value": 28
         },
         {
           "description": "VIN SANTO DEL CHIANTI DOC 2020",
           "qty": 1,
-          "value": 19.0
+          "value": 19
         }
       ],
-      "customsDuties": 9.0,
-      "shippingCostCustomer": 75.0,
+      "customsDuties": 9,
+      "shippingCostCustomer": 75,
       "shippingCostMos": null,
       "source": "fieramente",
       "language": "en",
@@ -65,7 +65,9 @@
           "to": "elevitsky520@gmail.com",
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1792533663952,
-          "messageId": "<202610202201.37716744968@smtp-relay.mailin.fr>"
+          "messageId": "<202610202201.37716744968@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-10-21T00:02:21.000+02:00"
         }
       ],
       "notes": "",
@@ -92,11 +94,11 @@
         {
           "description": "MARIO RED WINE IGT 2019",
           "qty": 4,
-          "value": 112.0
+          "value": 112
         }
       ],
       "customsDuties": 11.2,
-      "shippingCostCustomer": 75.0,
+      "shippingCostCustomer": 75,
       "shippingCostMos": null,
       "source": "fieramente",
       "language": "en",
@@ -117,7 +119,9 @@
           "to": "vfox026@gmail.com",
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1792533663952,
-          "messageId": "<202610202201.54817633428@smtp-relay.mailin.fr>"
+          "messageId": "<202610202201.54817633428@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-10-21T00:02:20.000+02:00"
         }
       ],
       "notes": "",
@@ -129,7 +133,7 @@
       "customerName": "NATHAN HOLDRIDGE",
       "customerEmail": "mannycollazo@gmail.com",
       "customerPhone": "+16786894740",
-      "amount": 76.0,
+      "amount": 76,
       "currency": "EUR",
       "orderDate": 1792406108000,
       "emailSubject": "🍷 New Order — NATHAN HOLDRIDGE — 76.00 EUR",
@@ -144,11 +148,11 @@
         {
           "description": "SPARKLING WINE CILIEGIO IN FIORE ROSÉ",
           "qty": 1,
-          "value": 10.0
+          "value": 10
         }
       ],
-      "customsDuties": 1.0,
-      "shippingCostCustomer": 65.0,
+      "customsDuties": 1,
+      "shippingCostCustomer": 65,
       "shippingCostMos": null,
       "source": "fieramente",
       "language": "en",
@@ -169,7 +173,9 @@
           "to": "mannycollazo@gmail.com",
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1792425658912,
-          "messageId": "<202610191600.52531175769@smtp-relay.mailin.fr>"
+          "messageId": "<202610191600.52531175769@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-10-19T18:01:24.000+02:00"
         }
       ],
       "notes": "",
@@ -196,7 +202,7 @@
         {
           "description": "VIN SANTO DEL CHIANTI DOC 2020",
           "qty": 1,
-          "value": 19.0
+          "value": 19
         },
         {
           "description": "LE FORCACCE WHITE WINE IGT 2025 VIOGNI..",
@@ -206,11 +212,11 @@
         {
           "description": "SPARKLING WINE CILIEGIO IN FIORE ROSÉ",
           "qty": 1,
-          "value": 10.0
+          "value": 10
         }
       ],
       "customsDuties": 3.75,
-      "shippingCostCustomer": 65.0,
+      "shippingCostCustomer": 65,
       "shippingCostMos": null,
       "source": "fieramente",
       "language": "en",
@@ -231,7 +237,9 @@
           "to": "nvestal@emory.edu",
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1792425658912,
-          "messageId": "<202610191600.52505058730@smtp-relay.mailin.fr>"
+          "messageId": "<202610191600.52505058730@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-10-19T18:01:04.000+02:00"
         }
       ],
       "notes": "",
@@ -283,7 +291,9 @@
           "to": "kcamerlo@gmail.com",
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1792382479743,
-          "messageId": "<202610190401.48996891029@smtp-relay.mailin.fr>"
+          "messageId": "<202610190401.48996891029@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-10-19T06:01:21.000+02:00"
         }
       ],
       "notes": "",
@@ -335,7 +345,9 @@
           "to": "cremar60@gmail.com",
           "subject": "Grazie per il tuo ordine! 🍷",
           "sentAt": 1792339263599,
-          "messageId": "<202610181601.84556187108@smtp-relay.mailin.fr>"
+          "messageId": "<202610181601.84556187108@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-10-18T18:01:39.000+02:00"
         }
       ],
       "notes": "",
@@ -387,7 +399,9 @@
           "to": "donnie_cowin@hotmail.com",
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1792188094468,
-          "messageId": "<202610162201.64357476344@smtp-relay.mailin.fr>"
+          "messageId": "<202610162201.64357476344@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-10-17T00:01:40.000+02:00"
         }
       ],
       "notes": "",
@@ -788,7 +802,9 @@
           "to": "thecolefamily1@att.net",
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1792425658912,
-          "messageId": "<202610191600.83816583873@smtp-relay.mailin.fr>"
+          "messageId": "<202610191600.83816583873@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-10-19T19:23:44.000+02:00"
         }
       ],
       "notes": "",
@@ -865,7 +881,9 @@
           "to": "mlambrus@gmail.com",
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1792425658912,
-          "messageId": "<202610191601.73942066660@smtp-relay.mailin.fr>"
+          "messageId": "<202610191601.73942066660@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-10-19T18:01:23.000+02:00"
         }
       ],
       "notes": "",
@@ -1056,7 +1074,9 @@
           "to": "sean.goodale@gmail.com",
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1792425658912,
-          "messageId": "<202610191601.85501256156@smtp-relay.mailin.fr>"
+          "messageId": "<202610191601.85501256156@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-10-19T18:01:34.000+02:00"
         }
       ],
       "notes": "",
@@ -1130,7 +1150,9 @@
           "to": "jwllmsn@gmail.com",
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1792425658912,
-          "messageId": "<202610191601.46192755984@smtp-relay.mailin.fr>"
+          "messageId": "<202610191601.46192755984@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-10-19T18:01:33.000+02:00"
         }
       ],
       "notes": "",
@@ -1749,12 +1771,17 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": null,
-      "status": "preparazione",
+      "status": "spedito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1790848899214,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "spedito",
+          "date": 1792567782690,
+          "note": ""
         }
       ],
       "emailsSent": [
@@ -1770,9 +1797,12 @@
       ],
       "notes": "",
       "createdAt": 1790848899214,
-      "updatedAt": 1792058515848,
+      "updatedAt": 1792567782690,
       "staleAlertDays": 14,
-      "staleAlertSince": 1790848899214
+      "staleAlertSince": 1790848899214,
+      "trackingUrl": "",
+      "destCountry": "US",
+      "courierDate": 1792567782690
     },
     {
       "id": "ord_muoamq58xfbh",
@@ -1876,14 +1906,18 @@
           "to": "scottbocketti@gmail.com",
           "subject": "Your wine is out for delivery! 🍷",
           "sentAt": 1792533663952,
-          "messageId": "<202610202201.37671607896@smtp-relay.mailin.fr>"
+          "messageId": "<202610202201.37671607896@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-10-21T00:02:23.000+02:00"
         },
         {
           "type": "consegna_fallita",
           "to": "scottbocketti@gmail.com",
           "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
           "sentAt": 1792555261231,
-          "messageId": "<202610210401.21306055682@smtp-relay.mailin.fr>"
+          "messageId": "<202610210401.21306055682@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-10-21T06:01:41.000+02:00"
         }
       ],
       "notes": "",
@@ -1997,14 +2031,18 @@
           "to": "suedauble@verizon.com",
           "subject": "Your wine is out for delivery! 🍷",
           "sentAt": 1792533663952,
-          "messageId": "<202610202201.56094369730@smtp-relay.mailin.fr>"
+          "messageId": "<202610202201.56094369730@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-10-21T00:01:06.236+02:00"
         },
         {
           "type": "consegnato",
           "to": "suedauble@verizon.com",
           "subject": "Your order has been delivered! 🍷 Enjoy!",
           "sentAt": 1792555261231,
-          "messageId": "<202610210401.93709313941@smtp-relay.mailin.fr>"
+          "messageId": "<202610210401.93709313941@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-10-21T06:01:01.784+02:00"
         }
       ],
       "notes": "",
@@ -2121,14 +2159,18 @@
           "to": "mlbrai924@gmail.com",
           "subject": "Your wine is out for delivery! 🍷",
           "sentAt": 1792533663952,
-          "messageId": "<202610202201.88762319281@smtp-relay.mailin.fr>"
+          "messageId": "<202610202201.88762319281@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-10-21T00:02:23.000+02:00"
         },
         {
           "type": "consegnato",
           "to": "mlbrai924@gmail.com",
           "subject": "Your order has been delivered! 🍷 Enjoy!",
           "sentAt": 1792555261231,
-          "messageId": "<202610210401.42299359585@smtp-relay.mailin.fr>"
+          "messageId": "<202610210401.42299359585@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-10-21T06:01:42.000+02:00"
         }
       ],
       "notes": "",
