@@ -2577,7 +2577,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1791496932916,
-      "status": "dogana",
+      "status": "in_consegna",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -2593,6 +2593,11 @@
           "status": "dogana",
           "date": 1792036909054,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "in_consegna",
+          "date": 1792620051357,
+          "note": "Auto 17Track (era: dogana): Middleburg Heights, OH, United States — Out for Delivery, Out For Delivery Today"
         }
       ],
       "emailsSent": [
@@ -2626,7 +2631,7 @@
       ],
       "notes": "",
       "createdAt": 1790438445179,
-      "updatedAt": 1792036915381,
+      "updatedAt": 1792620051357,
       "staleAlertDays": 7,
       "staleAlertSince": 1790438445179,
       "track17Registered": true
@@ -2672,7 +2677,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1791496932916,
-      "status": "dogana",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -2688,6 +2693,11 @@
           "status": "dogana",
           "date": 1792036909054,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "consegnato",
+          "date": 1792620051357,
+          "note": "Auto 17Track (era: dogana): WOODSTOCK, GA, US — Delivered, DELIVERED"
         }
       ],
       "emailsSent": [
@@ -2721,7 +2731,7 @@
       ],
       "notes": "",
       "createdAt": 1790352034253,
-      "updatedAt": 1792036915381,
+      "updatedAt": 1792620051357,
       "staleAlertDays": 7,
       "staleAlertSince": 1790352034253,
       "track17Registered": true
