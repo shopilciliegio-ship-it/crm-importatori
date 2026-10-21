@@ -584,6 +584,24 @@
       "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
       "sentAt": 1792555261231,
       "messageId": "<202610210401.21306055682@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mve0iddf16wz",
+      "customerName": "Rita Rampollo",
+      "type": "day0",
+      "to": "cremar60@gmail.com",
+      "subject": "Il tuo vino è in viaggio! 🍷",
+      "sentAt": 1792598464553,
+      "messageId": "<202610211601.82163233121@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mvb5n6t8ziod",
+      "customerName": "Massimiliano Pillon",
+      "type": "day0",
+      "to": "maci.macinho@gmail.com",
+      "subject": "Il tuo vino è in viaggio! 🍷",
+      "sentAt": 1792598464553,
+      "messageId": "<202610211601.59596317427@smtp-relay.mailin.fr>"
     }
   ]
 }
