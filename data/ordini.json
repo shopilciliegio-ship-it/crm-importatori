@@ -377,11 +377,18 @@
           "messageId": "<202610181601.84556187108@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-10-18T18:01:39.000+02:00"
+        },
+        {
+          "type": "day0",
+          "to": "cremar60@gmail.com",
+          "subject": "Il tuo vino è in viaggio! 🍷",
+          "sentAt": 1792598464553,
+          "messageId": "<202610211601.82163233121@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1792339246131,
-      "updatedAt": 1792598459386,
+      "updatedAt": 1792598464553,
       "trackingUrl": "https://www.spedire.com/tracking/1Z71V28R6899155969",
       "spedireproReference": "RAMPOLLOR"
     },
@@ -620,11 +627,18 @@
           "messageId": "<202610161601.71052039370@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-10-16T18:01:41.000+02:00"
+        },
+        {
+          "type": "day0",
+          "to": "maci.macinho@gmail.com",
+          "subject": "Il tuo vino è in viaggio! 🍷",
+          "sentAt": 1792598464553,
+          "messageId": "<202610211601.59596317427@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1792166470460,
-      "updatedAt": 1792598459386,
+      "updatedAt": 1792598464553,
       "trackingUrl": "https://www.spedire.com/tracking/WS02218985",
       "spedireproReference": "PILLONM"
     },
@@ -1271,8 +1285,10 @@
       ],
       "notes": "",
       "createdAt": 1791388953046,
-      "updatedAt": 1791972116948,
-      "track17Registered": true
+      "updatedAt": 1792598464553,
+      "track17Registered": true,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1791972107944
     },
     {
       "id": "ord_muxkzdkv4if8",
@@ -1340,9 +1356,9 @@
       ],
       "notes": "",
       "createdAt": 1791345706879,
-      "updatedAt": 1791972116948,
+      "updatedAt": 1792598464553,
       "staleAlertDays": 7,
-      "staleAlertSince": 1791345706879,
+      "staleAlertSince": 1791972107944,
       "track17Registered": true
     },
     {
@@ -1411,9 +1427,9 @@
       ],
       "notes": "",
       "createdAt": 1791324111296,
-      "updatedAt": 1791972116948,
+      "updatedAt": 1792598464553,
       "staleAlertDays": 7,
-      "staleAlertSince": 1791324111296,
+      "staleAlertSince": 1791972107944,
       "track17Registered": true
     },
     {
@@ -1492,9 +1508,9 @@
       ],
       "notes": "",
       "createdAt": 1791324111296,
-      "updatedAt": 1791972116948,
+      "updatedAt": 1792598464553,
       "staleAlertDays": 7,
-      "staleAlertSince": 1791324111296,
+      "staleAlertSince": 1791972107944,
       "track17Registered": true
     },
     {
@@ -1583,9 +1599,9 @@
       ],
       "notes": "",
       "createdAt": 1791280937156,
-      "updatedAt": 1791972116948,
+      "updatedAt": 1792598464553,
       "staleAlertDays": 7,
-      "staleAlertSince": 1791280937156,
+      "staleAlertSince": 1791972107944,
       "track17Registered": true
     },
     {
@@ -1768,9 +1784,9 @@
       ],
       "notes": "",
       "createdAt": 1790956915164,
-      "updatedAt": 1791972116948,
+      "updatedAt": 1792598464553,
       "staleAlertDays": 7,
-      "staleAlertSince": 1790956915164,
+      "staleAlertSince": 1791972107944,
       "track17Registered": true
     },
     {
