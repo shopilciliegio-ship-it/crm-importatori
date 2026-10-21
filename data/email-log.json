@@ -557,6 +557,33 @@
       "subject": "Your wine is out for delivery! 🍷",
       "sentAt": 1792533663952,
       "messageId": "<202610202201.88762319281@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mun81432rajr",
+      "customerName": "SUSAN DAUBLE",
+      "type": "consegnato",
+      "to": "suedauble@verizon.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1792555261231,
+      "messageId": "<202610210401.93709313941@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mun81432zjm3",
+      "customerName": "MARYLOU BRAI",
+      "type": "consegnato",
+      "to": "mlbrai924@gmail.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1792555261231,
+      "messageId": "<202610210401.42299359585@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_muoamq58xfbh",
+      "customerName": "SCOTT BOCKETTI",
+      "type": "consegna_fallita",
+      "to": "scottbocketti@gmail.com",
+      "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+      "sentAt": 1792555261231,
+      "messageId": "<202610210401.21306055682@smtp-relay.mailin.fr>"
     }
   ]
 }
