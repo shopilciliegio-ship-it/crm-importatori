@@ -3099,11 +3099,18 @@
           "messageId": "<202610150401.97872872848@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-10-15T06:01:58.000+02:00"
+        },
+        {
+          "type": "consegna_fallita",
+          "to": "jlcook315@gmail.com",
+          "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+          "sentAt": 1792706461159,
+          "messageId": "<202610222201.94077373485@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1790352034253,
-      "updatedAt": 1792706457702,
+      "updatedAt": 1792706461159,
       "staleAlertDays": 7,
       "staleAlertSince": 1792036909054,
       "track17Registered": true,
