@@ -1899,7 +1899,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1791496932916,
-      "status": "consegna_fallita",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1925,6 +1925,11 @@
           "status": "consegna_fallita",
           "date": 1792555256759,
           "note": "Auto 17Track (era: in_consegna): Delivery Attempted, We were unable to deliver your package. It's on the way to a UPS Access Point™ location next business day for pick up."
+        },
+        {
+          "status": "consegnato",
+          "date": 1792641661522,
+          "note": "Auto Fieramente (era: consegna_fallita)"
         }
       ],
       "emailsSent": [
@@ -1976,7 +1981,7 @@
       ],
       "notes": "",
       "createdAt": 1790784124892,
-      "updatedAt": 1792555261231,
+      "updatedAt": 1792641661522,
       "staleAlertDays": 7,
       "staleAlertSince": 1790784124892,
       "track17Registered": true,
