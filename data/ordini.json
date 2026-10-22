@@ -1977,11 +1977,18 @@
           "messageId": "<202610210401.21306055682@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-10-21T06:01:41.000+02:00"
+        },
+        {
+          "type": "consegnato",
+          "to": "scottbocketti@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1792641668688,
+          "messageId": "<202610220401.21707360755@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1790784124892,
-      "updatedAt": 1792641661522,
+      "updatedAt": 1792641668688,
       "staleAlertDays": 7,
       "staleAlertSince": 1790784124892,
       "track17Registered": true,
@@ -2644,11 +2651,18 @@
           "subject": "Your wine is out for delivery! 🍷",
           "sentAt": 1792620053747,
           "messageId": "<202610212200.51792353219@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegna_fallita",
+          "to": "lonibeverly@gmail.com",
+          "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+          "sentAt": 1792641668688,
+          "messageId": "<202610220401.29240972861@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1790438445179,
-      "updatedAt": 1792641666321,
+      "updatedAt": 1792641668688,
       "staleAlertDays": 7,
       "staleAlertSince": 1790438445179,
       "track17Registered": true,
