@@ -638,6 +638,15 @@
       "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
       "sentAt": 1792641668688,
       "messageId": "<202610220401.29240972861@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mvb5n6t8ziod",
+      "customerName": "Massimiliano Pillon",
+      "type": "in_consegna",
+      "to": "maci.macinho@gmail.com",
+      "subject": "Il tuo ordine è in consegna! 🍷",
+      "sentAt": 1792663277178,
+      "messageId": "<202610221001.91301239325@smtp-relay.mailin.fr>"
     }
   ]
 }
