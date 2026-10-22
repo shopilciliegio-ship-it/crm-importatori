@@ -647,6 +647,51 @@
       "subject": "Il tuo ordine è in consegna! 🍷",
       "sentAt": 1792663277178,
       "messageId": "<202610221001.91301239325@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mvjqa2sdzkpz",
+      "customerName": "ROGER DIROCCO",
+      "type": "order_received",
+      "to": "shirleydirocco1@gmail.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1792684877324,
+      "messageId": "<202610221601.82559537278@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mvjqa2sd8r0n",
+      "customerName": "LAWRENCE RINALDI",
+      "type": "order_received",
+      "to": "mpr3353@gmail.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1792684877324,
+      "messageId": "<202610221601.14884395383@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mvjqa2sdy8by",
+      "customerName": "DENISE SACHS",
+      "type": "order_received",
+      "to": "denisechap16@gmail.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1792684877324,
+      "messageId": "<202610221601.85121333161@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mvb5n6t8ziod",
+      "customerName": "Massimiliano Pillon",
+      "type": "consegnato",
+      "to": "maci.macinho@gmail.com",
+      "subject": "Il tuo ordine è stato consegnato! 🍷 Buona degustazione!",
+      "sentAt": 1792684877324,
+      "messageId": "<202610221601.93436343195@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mul2w5h7op36",
+      "customerName": "ROBERT  LEAVITT",
+      "type": "in_consegna",
+      "to": "rleavitt@icloud.com",
+      "subject": "Your wine is out for delivery! 🍷",
+      "sentAt": 1792684877324,
+      "messageId": "<202610221601.80784491853@smtp-relay.mailin.fr>"
     }
   ]
 }
