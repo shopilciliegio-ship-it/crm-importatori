@@ -620,6 +620,24 @@
       "subject": "Your order has been delivered! 🍷 Enjoy!",
       "sentAt": 1792620053747,
       "messageId": "<202610212200.50016616498@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_muoamq58xfbh",
+      "customerName": "SCOTT BOCKETTI",
+      "type": "consegnato",
+      "to": "scottbocketti@gmail.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1792641668688,
+      "messageId": "<202610220401.21707360755@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_muiktlyzttpy",
+      "customerName": "ILLIANA BEVERLY",
+      "type": "consegna_fallita",
+      "to": "lonibeverly@gmail.com",
+      "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
+      "sentAt": 1792641668688,
+      "messageId": "<202610220401.29240972861@smtp-relay.mailin.fr>"
     }
   ]
 }
