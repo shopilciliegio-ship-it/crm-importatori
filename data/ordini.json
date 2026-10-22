@@ -777,7 +777,7 @@
       "orderNumber": "#1473",
       "paymentType": "Bonifico",
       "shippingDate": 1792598459386,
-      "status": "in_consegna",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -792,6 +792,11 @@
         {
           "status": "in_consegna",
           "date": 1792663271322,
+          "note": "Auto SpedirePro: aggiornamento stato (rif. PILLONM)"
+        },
+        {
+          "status": "consegnato",
+          "date": 1792684872067,
           "note": "Auto SpedirePro: aggiornamento stato (rif. PILLONM)"
         }
       ],
@@ -822,7 +827,7 @@
       ],
       "notes": "",
       "createdAt": 1792166470460,
-      "updatedAt": 1792663277178,
+      "updatedAt": 1792684872067,
       "trackingUrl": "https://www.spedire.com/tracking/WS02218985",
       "spedireproReference": "PILLONM"
     },
