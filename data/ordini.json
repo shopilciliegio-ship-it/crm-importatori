@@ -2582,7 +2582,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1791496932916,
-      "status": "in_consegna",
+      "status": "consegna_fallita",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -2603,6 +2603,11 @@
           "status": "in_consegna",
           "date": 1792620051357,
           "note": "Auto 17Track (era: dogana): Middleburg Heights, OH, United States — Out for Delivery, Out For Delivery Today"
+        },
+        {
+          "status": "consegna_fallita",
+          "date": 1792641666321,
+          "note": "Auto 17Track (era: in_consegna): Delivery Attempted, The receiver was not available for delivery. We'll make a second attempt the next business day."
         }
       ],
       "emailsSent": [
@@ -2643,10 +2648,12 @@
       ],
       "notes": "",
       "createdAt": 1790438445179,
-      "updatedAt": 1792620053747,
+      "updatedAt": 1792641666321,
       "staleAlertDays": 7,
       "staleAlertSince": 1790438445179,
-      "track17Registered": true
+      "track17Registered": true,
+      "deliveryFailureCount": 1,
+      "lastDeliveryFailureEventAt": "2026-10-21T19:35:20Z"
     },
     {
       "id": "ord_muh5divi7env",
