@@ -2575,7 +2575,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1791496932916,
-      "status": "dogana",
+      "status": "in_consegna",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -2591,6 +2591,11 @@
           "status": "dogana",
           "date": 1792036909054,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "in_consegna",
+          "date": 1792684874818,
+          "note": "Auto 17Track (era: dogana): Leesburg, FL, United States — Out for Delivery, Out For Delivery Today"
         }
       ],
       "emailsSent": [
@@ -2624,7 +2629,7 @@
       ],
       "notes": "",
       "createdAt": 1790589729211,
-      "updatedAt": 1792663277178,
+      "updatedAt": 1792684874818,
       "staleAlertDays": 7,
       "staleAlertSince": 1792036909054,
       "track17Registered": true
