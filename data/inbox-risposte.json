@@ -1,5 +1,5 @@
 {
-  "lastUid": 501,
+  "lastUid": 502,
   "pending": [
     {
       "id": "ir_422",
@@ -1461,6 +1461,25 @@
       "rispostaDiretta": false,
       "suggestedStatus": null,
       "reason": "Email interna/tra partner che formalizza un accordo commerciale già in corso: condivide contratto di mandato, listino prezzi, e conferma l'impegno concreto di inserire i vini del Ciliegio nella distribuzione.",
+      "confidence": "ai",
+      "dataRientro": null,
+      "emailAlternativa": null
+    },
+    {
+      "id": "ir_502",
+      "uid": 502,
+      "contactId": null,
+      "nonCollegato": true,
+      "company": "antonio@sienawine.it",
+      "from": "antonio@sienawine.it",
+      "mittenteNome": "antonio@sienawine.it",
+      "subject": "FW: Vendita vini  Siena Wine in provincie FI-SI-GR tramite Leonardo Flamini",
+      "date": "2026-10-22T08:04:57+00:00",
+      "snippet": "Buongiorno Luca e Leonardo.\r\n\r\n \r\n\r\nIn seguito alla riunione di ieri ho aggiornato il file COSTRUZIONE LISTINO\r\nSIENA WINE PER AGENTE LEONARDO FLAMINI mettendo un 20% di margine per Siena\r\nWine ( ch include un 5% per me ) , diminuendo al 45% la massima\r\nflessibilita sui prezzi finali.\r\n\r\n \r\n\r\nHo anche aggiunto un Rosato di Toscana ed un Supertuscan Bianco ( Vincero )\r\ndel marchio Sanguineti\r\n\r",
+      "riassunto": "Antonio Sanguineti (Business Developer di Siena Wine) comunica internamente a Luca e Leonardo Flamini l'aggiornamento del listino prezzi per la distribuzione dei vini Siena Wine nelle province FI-SI-GR, con margini definiti, e rimane in attesa dei vini del Ciliegio da inserire nel catalogo.",
+      "rispostaDiretta": false,
+      "suggestedStatus": null,
+      "reason": "Email interna di coordinamento tra colleghi di Siena Wine, non una risposta esterna a una nostra proposta commerciale.",
       "confidence": "ai",
       "dataRientro": null,
       "emailAlternativa": null
