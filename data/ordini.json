@@ -639,11 +639,18 @@
           "subject": "Il tuo vino è in viaggio! 🍷",
           "sentAt": 1792598464553,
           "messageId": "<202610211601.59596317427@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "in_consegna",
+          "to": "maci.macinho@gmail.com",
+          "subject": "Il tuo ordine è in consegna! 🍷",
+          "sentAt": 1792663277178,
+          "messageId": "<202610221001.91301239325@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1792166470460,
-      "updatedAt": 1792663271322,
+      "updatedAt": 1792663277178,
       "trackingUrl": "https://www.spedire.com/tracking/WS02218985",
       "spedireproReference": "PILLONM"
     },
@@ -2440,9 +2447,9 @@
       ],
       "notes": "",
       "createdAt": 1790589729211,
-      "updatedAt": 1792036915381,
+      "updatedAt": 1792663277178,
       "staleAlertDays": 7,
-      "staleAlertSince": 1790589729211,
+      "staleAlertSince": 1792036909054,
       "track17Registered": true
     },
     {
@@ -2871,9 +2878,9 @@
       ],
       "notes": "",
       "createdAt": 1790352034253,
-      "updatedAt": 1792036915381,
+      "updatedAt": 1792663277178,
       "staleAlertDays": 7,
-      "staleAlertSince": 1790352034253,
+      "staleAlertSince": 1792036909054,
       "track17Registered": true
     },
     {
