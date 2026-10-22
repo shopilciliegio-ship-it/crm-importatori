@@ -59,10 +59,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "shirleydirocco1@gmail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1792684877324,
+          "messageId": "<202610221601.82559537278@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1792684860060,
-      "updatedAt": 1792684860060
+      "updatedAt": 1792684877324
     },
     {
       "id": "ord_mvjqa2sd8r0n",
@@ -118,10 +126,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "mpr3353@gmail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1792684877324,
+          "messageId": "<202610221601.14884395383@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1792684860060,
-      "updatedAt": 1792684860060
+      "updatedAt": 1792684877324
     },
     {
       "id": "ord_mvjqa2sdy8by",
@@ -167,10 +183,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "denisechap16@gmail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1792684877324,
+          "messageId": "<202610221601.85121333161@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1792684860060,
-      "updatedAt": 1792684860060
+      "updatedAt": 1792684877324
     },
     {
       "id": "ord_mvh891btqvn6",
@@ -823,11 +847,18 @@
           "subject": "Il tuo ordine è in consegna! 🍷",
           "sentAt": 1792663277178,
           "messageId": "<202610221001.91301239325@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegnato",
+          "to": "maci.macinho@gmail.com",
+          "subject": "Il tuo ordine è stato consegnato! 🍷 Buona degustazione!",
+          "sentAt": 1792684877324,
+          "messageId": "<202610221601.93436343195@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1792166470460,
-      "updatedAt": 1792684872067,
+      "updatedAt": 1792684877324,
       "trackingUrl": "https://www.spedire.com/tracking/WS02218985",
       "spedireproReference": "PILLONM"
     },
@@ -2625,11 +2656,18 @@
           "messageId": "<202610150401.97628961490@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-10-15T06:03:39.000+02:00"
+        },
+        {
+          "type": "in_consegna",
+          "to": "rleavitt@icloud.com",
+          "subject": "Your wine is out for delivery! 🍷",
+          "sentAt": 1792684877324,
+          "messageId": "<202610221601.80784491853@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1790589729211,
-      "updatedAt": 1792684874818,
+      "updatedAt": 1792684877324,
       "staleAlertDays": 7,
       "staleAlertSince": 1792036909054,
       "track17Registered": true
