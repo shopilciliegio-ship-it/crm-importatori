@@ -1,6 +1,178 @@
 {
   "orders": [
     {
+      "id": "ord_mvjqa2sdzkpz",
+      "customerName": "ROGER DIROCCO",
+      "customerEmail": "shirleydirocco1@gmail.com",
+      "customerPhone": "+16105056212",
+      "amount": 142.65,
+      "currency": "EUR",
+      "orderDate": 1792675238000,
+      "emailSubject": "🍷 New Order — ROGER DIROCCO — 142.65 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "368WESTFIELD DR, 19008 MARPLE TOWNSHIP, PENNSYLVANIA (DELAWARE COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202610221320.47932558712@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "LE FORCACCE WHITE WINE IGT 2025 VIOGNI..",
+          "qty": 1,
+          "value": 8.5
+        },
+        {
+          "description": "POGGIO ORLANDO 2024 CHIANTI COLLI SENE..",
+          "qty": 1,
+          "value": 12.0
+        },
+        {
+          "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
+          "qty": 1,
+          "value": 10.0
+        },
+        {
+          "description": "SPARKLING WINE CILIEGIO IN FIORE ROSÉ",
+          "qty": 1,
+          "value": 10.0
+        },
+        {
+          "description": "1 LT EXTRA VIRGIN OLIVE OIL 2025",
+          "qty": 1,
+          "value": 21.0
+        }
+      ],
+      "customsDuties": 6.15,
+      "shippingCostCustomer": 75.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1792684860060,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1792684860060,
+      "updatedAt": 1792684860060
+    },
+    {
+      "id": "ord_mvjqa2sd8r0n",
+      "customerName": "LAWRENCE RINALDI",
+      "customerEmail": "mpr3353@gmail.com",
+      "customerPhone": "+16094173831",
+      "amount": 886.6,
+      "currency": "EUR",
+      "orderDate": 1792674921000,
+      "emailSubject": "🍷 New Order — LAWRENCE RINALDI — 886.60 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "505 SCOTTY BLVD, 08242 MIDDLE TOWNSHIP, NEW JERSEY (CAPE MAY COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202610221315.15107303706@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "SPARKLING WINE CILIEGIO IN FIORE ROSÉ",
+          "qty": 12,
+          "value": 120.0
+        },
+        {
+          "description": "LE FORCACCE WHITE WINE IGT 2025 VIOGNI..",
+          "qty": 12,
+          "value": 102.0
+        },
+        {
+          "description": "VIN SANTO DEL CHIANTI DOC 2020",
+          "qty": 6,
+          "value": 114.0
+        },
+        {
+          "description": "POGGIO ORLANDO 2024 CHIANTI COLLI SENE..",
+          "qty": 12,
+          "value": 144.0
+        }
+      ],
+      "customsDuties": 45.6,
+      "shippingCostCustomer": 385.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1792684860060,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1792684860060,
+      "updatedAt": 1792684860060
+    },
+    {
+      "id": "ord_mvjqa2sdy8by",
+      "customerName": "DENISE SACHS",
+      "customerEmail": "denisechap16@gmail.com",
+      "customerPhone": "+16099297451",
+      "amount": 178.4,
+      "currency": "EUR",
+      "orderDate": 1792674516000,
+      "emailSubject": "🍷 New Order — DENISE SACHS — 178.40 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "534 BARBADOS DRIVE, 08094 WILLIAMSTOWN, NEW JERSEY (GLOUCESTER)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202610221308.89892636358@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "VIN SANTO DEL CHIANTI DOC 2020",
+          "qty": 4,
+          "value": 76.0
+        },
+        {
+          "description": "250 ML EXTRA VIRGIN OLIVE OIL 2025",
+          "qty": 2,
+          "value": 18.0
+        }
+      ],
+      "customsDuties": 9.4,
+      "shippingCostCustomer": 75.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1792684860060,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1792684860060,
+      "updatedAt": 1792684860060
+    },
+    {
       "id": "ord_mvh891btqvn6",
       "customerName": "ERIN LEVITSKY",
       "customerEmail": "elevitsky520@gmail.com",
@@ -12904,5 +13076,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1792533646072
+  "lastImportedAt": 1792684860060
 }
