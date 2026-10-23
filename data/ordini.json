@@ -665,7 +665,9 @@
       ],
       "notes": "",
       "createdAt": 1792166470460,
-      "updatedAt": 1792166487015
+      "updatedAt": 1792792887285,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1792166470460
     },
     {
       "id": "ord_mvb5n6t8w70m",
@@ -724,7 +726,9 @@
       ],
       "notes": "",
       "createdAt": 1792166470460,
-      "updatedAt": 1792166487015
+      "updatedAt": 1792792887285,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1792166470460
     },
     {
       "id": "ord_mvb5n6t8ziod",
