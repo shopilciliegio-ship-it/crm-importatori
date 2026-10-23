@@ -593,11 +593,18 @@
           "messageId": "<202610211601.82163233121@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-10-21T18:02:48.000+02:00"
+        },
+        {
+          "type": "consegnato",
+          "to": "cremar60@gmail.com",
+          "subject": "Il tuo ordine è stato consegnato! 🍷 Buona degustazione!",
+          "sentAt": 1792771258532,
+          "messageId": "<202610231600.21473978288@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1792339246131,
-      "updatedAt": 1792771253812,
+      "updatedAt": 1792771258532,
       "trackingUrl": "https://www.spedire.com/tracking/1Z71V28R6899155969",
       "spedireproReference": "RAMPOLLOR"
     },
