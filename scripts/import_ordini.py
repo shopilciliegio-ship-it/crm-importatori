@@ -485,7 +485,7 @@ def _parse_email(msg) -> dict | None:
 
     # Supporta sia "New Order" che "New Paid Order"; amount opzionale nel soggetto
     m = re.search(
-        r'New(?:\s+Paid)?\s+Order\s*[—\-–]+\s*(.+?)(?:\s*[—\-–]+\s*([\d.,]+)\s*(EUR|USD|GBP)?)?$',
+        r'New(?:\s+Paid)?\s+Order(?:\s+[TA]\d+)?\s*[—\-–]+\s*(.+?)(?:\s*[—\-–]+\s*([\d.,]+)\s*(EUR|USD|GBP)?)?$',
         subject, re.I
     )
     if not m:

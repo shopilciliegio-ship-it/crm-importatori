@@ -166,7 +166,7 @@ function _mkOrder({customerName,customerEmail='',customerPhone='',amount=0,curre
 function parseOrderFromSubject(subject){
   // Rimuove prefissi di forward/risposta (Gmail IT usa "I:" per inoltro)
   const s = subject.trim().replace(/^(I:|Fw:|Fwd:|R:|Re:|Inoltrato:)\s+/i,'').trim();
-  const m = s.match(/New\s+Order\s*[—\-–]+\s*([^—\-–]+?)(?:\s*[—\-–]+\s*([\d.,]+)\s*(EUR|USD|GBP)?)?$/i);
+  const m = s.match(/New\s+Order(?:\s+[TA]\d+)?\s*[—\-–]+\s*([^—\-–]+?)(?:\s*[—\-–]+\s*([\d.,]+)\s*(EUR|USD|GBP)?)?$/i);
   if(!m||!m[1]) return null;
   const customerName = m[1].trim();
   if(!customerName) return null;
