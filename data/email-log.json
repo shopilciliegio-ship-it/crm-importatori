@@ -701,6 +701,69 @@
       "subject": "⚠ Delivery attempt unsuccessful — action may be needed",
       "sentAt": 1792706461159,
       "messageId": "<202610222201.94077373485@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_muyaqajaovfm",
+      "customerName": "CONG LIN",
+      "type": "dogana",
+      "to": "lisalinmiraggio76@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1792728057835,
+      "messageId": "<202610230400.26621640984@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_muxkzdkv4if8",
+      "customerName": "FRANK BONANNO",
+      "type": "dogana",
+      "to": "fbonannojr22@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1792728057835,
+      "messageId": "<202610230400.43386055572@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mux84ibk0d73",
+      "customerName": "KIMBERLY  HEBERT",
+      "type": "dogana",
+      "to": "kimberly.hebert@yahoo.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1792728057835,
+      "messageId": "<202610230400.19157179317@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mux84ibk0v78",
+      "customerName": "VERONICA REED",
+      "type": "dogana",
+      "to": "vickiar1860@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1792728057835,
+      "messageId": "<202610230400.57676197379@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_muwif4xwc76j",
+      "customerName": "CONNOR SMITH",
+      "type": "dogana",
+      "to": "connor.smith4355@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1792728057835,
+      "messageId": "<202610230400.28750780422@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mur5i7z0lts6",
+      "customerName": "JESUS RUBIO",
+      "type": "dogana",
+      "to": "jesusjoserubio@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1792728057835,
+      "messageId": "<202610230401.45925728280@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mul2w5h7op36",
+      "customerName": "ROBERT  LEAVITT",
+      "type": "consegnato",
+      "to": "rleavitt@icloud.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1792728057835,
+      "messageId": "<202610230401.87000959637@smtp-relay.mailin.fr>"
     }
   ]
 }
