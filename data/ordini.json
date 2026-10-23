@@ -557,7 +557,7 @@
       "orderNumber": "#1475",
       "paymentType": "Carte Di Credito/Bancomat",
       "shippingDate": 1792598459386,
-      "status": "in_transito",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -567,6 +567,11 @@
         {
           "status": "in_transito",
           "date": 1792598459386,
+          "note": "Auto SpedirePro: aggiornamento stato (rif. RAMPOLLOR)"
+        },
+        {
+          "status": "consegnato",
+          "date": 1792771253812,
           "note": "Auto SpedirePro: aggiornamento stato (rif. RAMPOLLOR)"
         }
       ],
@@ -592,7 +597,7 @@
       ],
       "notes": "",
       "createdAt": 1792339246131,
-      "updatedAt": 1792598464553,
+      "updatedAt": 1792771253812,
       "trackingUrl": "https://www.spedire.com/tracking/1Z71V28R6899155969",
       "spedireproReference": "RAMPOLLOR"
     },
