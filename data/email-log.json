@@ -764,6 +764,15 @@
       "subject": "Your order has been delivered! 🍷 Enjoy!",
       "sentAt": 1792728057835,
       "messageId": "<202610230401.87000959637@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mve0iddf16wz",
+      "customerName": "Rita Rampollo",
+      "type": "consegnato",
+      "to": "cremar60@gmail.com",
+      "subject": "Il tuo ordine è stato consegnato! 🍷 Buona degustazione!",
+      "sentAt": 1792771258532,
+      "messageId": "<202610231600.21473978288@smtp-relay.mailin.fr>"
     }
   ]
 }
