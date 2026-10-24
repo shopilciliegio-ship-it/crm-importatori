@@ -2977,11 +2977,18 @@
           "messageId": "<202610220401.29240972861@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-10-22T06:01:10.000+02:00"
+        },
+        {
+          "type": "consegnato",
+          "to": "lonibeverly@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1792879281922,
+          "messageId": "<202610242201.76554701921@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1790438445179,
-      "updatedAt": 1792879278335,
+      "updatedAt": 1792879281922,
       "staleAlertDays": 7,
       "staleAlertSince": 1790438445179,
       "track17Registered": true,
