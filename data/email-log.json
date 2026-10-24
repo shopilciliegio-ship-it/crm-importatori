@@ -773,6 +773,15 @@
       "subject": "Il tuo ordine è stato consegnato! 🍷 Buona degustazione!",
       "sentAt": 1792771258532,
       "messageId": "<202610231600.21473978288@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_muiktlyzttpy",
+      "customerName": "ILLIANA BEVERLY",
+      "type": "consegnato",
+      "to": "lonibeverly@gmail.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1792879281922,
+      "messageId": "<202610242201.76554701921@smtp-relay.mailin.fr>"
     }
   ]
 }
