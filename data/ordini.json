@@ -2899,7 +2899,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1791496932916,
-      "status": "consegna_fallita",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -2925,6 +2925,11 @@
           "status": "consegna_fallita",
           "date": 1792641666321,
           "note": "Auto 17Track (era: in_consegna): Delivery Attempted, The receiver was not available for delivery. We'll make a second attempt the next business day."
+        },
+        {
+          "status": "consegnato",
+          "date": 1792879278335,
+          "note": "Auto 17Track (era: consegna_fallita): BAY VILLAGE, OH, US — Delivered, DELIVERED"
         }
       ],
       "emailsSent": [
@@ -2976,7 +2981,7 @@
       ],
       "notes": "",
       "createdAt": 1790438445179,
-      "updatedAt": 1792641668688,
+      "updatedAt": 1792879278335,
       "staleAlertDays": 7,
       "staleAlertSince": 1790438445179,
       "track17Registered": true,
