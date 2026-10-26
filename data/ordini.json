@@ -1059,8 +1059,10 @@
       ],
       "notes": "",
       "createdAt": 1791883189781,
-      "updatedAt": 1792425658912,
-      "track17Registered": true
+      "updatedAt": 1793034095563,
+      "track17Registered": true,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1792425651818
     },
     {
       "id": "ord_mv5fxp3udr7s",
@@ -1138,8 +1140,10 @@
       ],
       "notes": "",
       "createdAt": 1791820959833,
-      "updatedAt": 1792425658912,
-      "track17Registered": true
+      "updatedAt": 1793034095563,
+      "track17Registered": true,
+      "staleAlertDays": 7,
+      "staleAlertSince": 1792425651818
     },
     {
       "id": "ord_mv40gh2w9y7v",
@@ -1331,9 +1335,9 @@
       ],
       "notes": "",
       "createdAt": 1791561706772,
-      "updatedAt": 1792425658912,
+      "updatedAt": 1793034095563,
       "staleAlertDays": 7,
-      "staleAlertSince": 1791561706772,
+      "staleAlertSince": 1792425651818,
       "track17Registered": true
     },
     {
@@ -1407,9 +1411,9 @@
       ],
       "notes": "",
       "createdAt": 1791561706772,
-      "updatedAt": 1792425658912,
+      "updatedAt": 1793034095563,
       "staleAlertDays": 7,
-      "staleAlertSince": 1791561706772,
+      "staleAlertSince": 1792425651818,
       "track17Registered": true
     },
     {
