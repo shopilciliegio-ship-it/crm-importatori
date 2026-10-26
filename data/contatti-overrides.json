@@ -129868,603 +129868,1953 @@
   },
   "c17806737108092ru0e": {
     "contactName": "Thomas Turner",
-    "contactTitle": "Founder"
+    "contactTitle": "Founder",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "forse",
+      "note": "Piccolo retailer online francese (2 dipendenti, ~542k€ fatturato) con sito irraggiungibile e nessuna traccia Google. Potenziale cliente per vini italiani ma affidabilità bassa; verificare contatti diretti prima di investire tempo.",
+      "analyzed_at": "2026-10-26T06:01:12.233Z"
+    }
   },
   "c17806737108094gdur": {
     "contactName": "Alexandra Troonin",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-azienda (2 dipendenti, fatturato ~31k€) specializzata in vini bio/nature francesi. Nessuna traccia online, focus esclusivo su retail locale a Rueil-Malmaison. Non è importatore di vini italiani.",
+      "analyzed_at": "2026-10-26T06:01:18.172Z"
+    }
   },
   "c1780673710809x19my": {
     "contactName": "Jo Spay",
-    "contactTitle": "Wine Merchant"
+    "contactTitle": "Wine Merchant",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Sito irraggiungibile, nessuna traccia online, fatturato molto basso (155k€) con 2 dipendenti. Specializzazione Beaujolais (Francia) suggerisce focus su vini francesi, non italiani. Affidabilità insufficiente per partnership.",
+      "analyzed_at": "2026-10-26T06:01:26.790Z"
+    }
   },
   "c1780673710809p4p7w": {
     "contactName": "Bonito Ajavon",
-    "contactTitle": "President"
+    "contactTitle": "President",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda molto piccola (2 dipendenti, fatturato basso) con sito generico su import-export mondiale. Nessuna traccia online, nessuna specializzazione su vini italiani specifici. Profilo troppo vago e poco affidabile per partnership seria.",
+      "analyzed_at": "2026-10-26T06:01:33.211Z"
+    }
   },
   "c1780673710809n8zam": {
     "contactName": "Boris Sarazino",
-    "contactTitle": "Sommelier"
+    "contactTitle": "Sommelier",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "misto",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda francese focalizzata su vini francesi (Provenza, Borgogna). Nessuna menzione di vini italiani. Dimensione micro (2 dipendenti, fatturato ~32k€) e assenza di risultati Google suggeriscono scarsa visibilità.",
+      "analyzed_at": "2026-10-26T06:01:42.256Z"
+    }
   },
   "c1780673710809an408": {
     "contactName": "David",
-    "contactTitle": "Sommelier"
+    "contactTitle": "Sommelier",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccola enoteca francese (2 dipendenti) con 80 riferimenti di vini italiani nel portafoglio. Sito con problemi tecnici ma attivo. Fatturato modesto (~1M€) suggerisce clientela locale/regionale, non adatto come distributore ma potenziale cliente retail per vini premium italiani.",
+      "analyzed_at": "2026-10-26T06:01:48.343Z"
+    }
   },
   "c1780673710809neb74": {
     "contactName": "Bénédicte Senechal Pauly",
-    "contactTitle": "Partner"
+    "contactTitle": "Partner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda francese specializzata esclusivamente in champagne della Côte des Bar. Non commercializza vini italiani; focus su direct-to-consumer di champagne francese. Non pertinente per distributori di vino italiano.",
+      "analyzed_at": "2026-10-26T06:01:53.602Z"
+    }
   },
   "c1780673710809lxsu7": {
     "contactName": "Christophe Caillaud",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Sito non raggiungibile, nessuna traccia online, fatturato molto basso (32k€). Impossibile verificare affidabilità o portafoglio vini.",
+      "analyzed_at": "2026-10-26T06:01:57.857Z"
+    }
   },
   "c1780673710809q7cxg": {
     "contactName": "Virginie Ferragu",
-    "contactTitle": "Managing Partner"
+    "contactTitle": "Managing Partner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccolo caviste francese (2 dipendenti) con sito funzionante e catalogo vini francesi (Loire, Provence, Bordeaux, Languedoc). Nessuna menzione esplicita di vini italiani nel menu visibile, ma portafoglio europeo suggerisce possibile interesse. Fatturato modesto (32k€) indica realtà locale.",
+      "analyzed_at": "2026-10-26T06:02:04.983Z"
+    }
   },
   "c1780673710809vhwm2": {
     "contactName": "Jeremie Barberon",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Sito irraggiungibile, nessuna traccia online, fatturato molto basso (32k€) con 2 dipendenti. Impossibile verificare portafoglio prodotti e affidabilità commerciale.",
+      "analyzed_at": "2026-10-26T06:02:22.034Z"
+    }
   },
   "c17806737108098my7q": {
     "contactName": "Bruno Charpentier",
-    "contactTitle": "Wine merchant - Sommelier"
+    "contactTitle": "Wine merchant - Sommelier",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccola enoteca indipendente a Toulouse (2 dipendenti, fatturato modesto). Sito funzionante ma nessuna visibilità Google. Enfasi su selezione rigorosa e terroir suggerisce apertura a vini italiani, ma non esplicitamente confermato.",
+      "analyzed_at": "2026-10-26T06:02:27.083Z"
+    }
   },
   "c17806737108090dne4": {
     "contactName": "Despres Eric",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Caviste indipendente di qualità riconosciuta (Top 100 Francia, Qualité Tourisme). Piccola struttura (2 dipendenti) focalizzata su retail locale. Portafoglio ampio (vini, spirits, birre) ma nessuna menzione esplicita di vini italiani nel testo disponibile.",
+      "analyzed_at": "2026-10-26T06:02:32.527Z"
+    }
   },
   "c1780673710809th14b": {
     "contactName": "Julien Bernier",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccolo retailer francese (2 dipendenti, ~543k€ fatturato) con portafoglio vini generico. Sito non raggiungibile e assenza totale di presenze online rendono difficile verificare se commercializza vini italiani. Contatto possibile solo se target è distribuzione Francia.",
+      "analyzed_at": "2026-10-26T06:02:37.964Z"
+    }
   },
   "c17806737108090nlbc": {
     "contactName": "Victor Lr",
-    "contactTitle": "Wine Merchant"
+    "contactTitle": "Wine Merchant",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Caviste francese specializzato in vini naturali e prodotti locali bretoni (cidre, distillerie). Portafoglio focalizzato su Francia (Loire, Borgogna, Languedoc, Champagne). Nessuna traccia di vini italiani nel catalogo.",
+      "analyzed_at": "2026-10-26T06:02:44.452Z"
+    }
   },
   "c1780673710809h51zz": {
     "contactName": "Dominique Bernard",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Piccola cave francese (2 dipendenti) con portafoglio generico (vino, birra, spirits). Siti non raggiungibili e assenza di risultati Google riducono verificabilità. Potenziale interesse solo se target include distribuzione Francia/piccoli retailer locali.",
+      "analyzed_at": "2026-10-26T06:02:48.839Z"
+    }
   },
   "c17806737108099uh2h": {
     "contactName": "Jean Pierre Mattei",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Retailer francese con focus su vini regionali PACA e francesi. Nessuna menzione di vini italiani nel catalogo; target locale (Marsiglia) con 2 dipendenti e fatturato modesto. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-10-26T06:02:53.970Z"
+    }
   },
   "c1780673710809wa2w6": {
     "contactName": "Tegwen Naveos",
-    "contactTitle": "Ceo"
+    "contactTitle": "Ceo",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "E-commerce francese specializzato in vini naturali/bio con portafoglio ampio (Francia + estero inclusa Italia). Piccola struttura (2 dipendenti, ~1M€ fatturato) ma sito funzionante. Assenza da Google e Trustpilot limita verifica affidabilità.",
+      "analyzed_at": "2026-10-26T06:03:00.018Z"
+    }
   },
   "c1780673710809tbskg": {
     "contactName": "Damien Piquet",
-    "contactTitle": "President"
+    "contactTitle": "President",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo retailer francese (2 dipendenti) senza sito web né traccia online. Impossibile verificare portafoglio vini italiani o affidabilità. Contatto non prioritario.",
+      "analyzed_at": "2026-10-26T06:03:04.167Z"
+    }
   },
   "c17806737108096b1kh": {
     "contactName": "Claire Kolasa-De Bisschop",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Piccola enoteca francese (2 dipendenti) con portafoglio vini francesi ben strutturato (Alsazia, Borgogna, Bordeaux, Loire, ecc.). Nessuna menzione esplicita di vini italiani nel sito, ma categoria 'Mondo' suggerisce apertura. Fatturato modesto (32k€) indica business locale/retail puro.",
+      "analyzed_at": "2026-10-26T06:03:09.633Z"
+    }
   },
   "c1780673710809ztm6q": {
     "contactName": "Théva Babin",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-realtà parigina (2 dipendenti, fatturato ~31k€) con focus su wine bar e retail. Nessuna traccia online oltre sito basic. Specializzazione in vini naturali/biologici non garantisce portafoglio italiano significativo.",
+      "analyzed_at": "2026-10-26T06:03:14.563Z"
+    }
   },
   "c17806737108093xiv9": {
     "contactName": "Guy Rouquet",
-    "contactTitle": "Founder"
+    "contactTitle": "Founder",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "importatore|distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Specializzati in vini italiani con partnership diretta con produttori e certificazione biologica ECOCERT. Azienda molto piccola (2 dipendenti, fatturato ~31k€) con sito funzionante ma assenza totale da Google; verificare solidità finanziaria prima di contattare.",
+      "analyzed_at": "2026-10-26T06:03:20.825Z"
+    }
   },
   "c1780673710809yrjb4": {
     "contactName": "Thomas Sebben",
-    "contactTitle": "Founding Director"
+    "contactTitle": "Founding Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda francese specializzata esclusivamente in vini francesi (Borgogna, Champagne, Rhône, Provenza, Languedoc, Bordeaux). Nessun vino italiano nel portafoglio. Assenza totale da Google e sito con contenuti incompleti/template generico suggeriscono bassa affidabilità.",
+      "analyzed_at": "2026-10-26T06:03:26.134Z"
+    }
   },
   "c1780673710809riqwb": {
     "contactName": "Patrick Gardair",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda molto piccola (2 dipendenti, fatturato ~32k€) con sito irraggiungibile e nessuna traccia online. Profilo generico di importatore/retailer, ma impossibile verificare specializzazione su vini italiani o affidabilità commerciale.",
+      "analyzed_at": "2026-10-26T06:03:30.623Z"
+    }
   },
   "c17806737108096ibgq": {
     "contactName": "Damien Herve",
-    "contactTitle": "Managing Partner"
+    "contactTitle": "Managing Partner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo retailer francese (2 dipendenti, fatturato ~32k€) con sito irraggiungibile e nessuna traccia online. Impossibile verificare portafoglio vini italiani o affidabilità commerciale.",
+      "analyzed_at": "2026-10-26T06:03:35.589Z"
+    }
   },
   "c178067371080929l94": {
     "contactName": "Lionel Michelin",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda parigina storica (dal 1994) specializzata in vini pregiati, ma ha chiuso la sede fisica a settembre 2024. Micro-realtà (2 dipendenti) orientata al retail/e-commerce. Nessuna traccia online attuale e fatturato modesto suggeriscono difficoltà operative.",
+      "analyzed_at": "2026-10-26T06:03:41.198Z"
+    }
   },
   "c1780673710809zh8p6": {
     "contactName": "Loïc Boulanger",
-    "contactTitle": "Ceo"
+    "contactTitle": "Ceo",
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "distributore",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Sito non raggiungibile, nessuna traccia online, fatturato minimo (151k€) con soli 2 dipendenti. Profilo non verificabile e potenzialmente inaffidabile.",
+      "analyzed_at": "2026-10-26T06:03:45.413Z"
+    }
   },
   "c1780673710809ptcuc": {
     "contactName": "Anne Monterrubio",
-    "contactTitle": "Managing Partner"
+    "contactTitle": "Managing Partner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccola enoteca francese (2 dipendenti) con selezione vini da vignerons indipendenti francesi e esteri. Nessuna menzione esplicita di vini italiani, ma portafoglio europeo suggerisce possibile interesse. Fatturato modesto (33k€) indica attività locale di nicchia.",
+      "analyzed_at": "2026-10-26T06:03:50.711Z"
+    }
   },
   "c178067371080973s1z": {
     "contactName": "Yann Dufouleur",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Azienda molto piccola (2 dipendenti, fatturato ~541k€) con sito minimalista e nessuna traccia online. Impossibile verificare portafoglio vini o specializzazione italiana. Rischio affidabilità elevato.",
+      "analyzed_at": "2026-10-26T06:03:56.199Z"
+    }
   },
   "c1780673710809au950": {
     "contactName": "Else Decker",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "importatore",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda specializzata in vini argentini e sudamericani, non italiani. Micro-impresa (2 dipendenti, fatturato ~31k€) con sito poco professionale e nessuna traccia online. Non pertinente per portafoglio vini italiani.",
+      "analyzed_at": "2026-10-26T06:04:01.067Z"
+    }
   },
   "c1780673710809dd705": {
     "contactName": "Eric Duroy",
-    "contactTitle": "President/ Founder"
+    "contactTitle": "President/ Founder",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda francese (Provence) specializzata in prodotti regionali provenzali e vini locali. Nessuna menzione di vini italiani nel portafoglio. Dimensione micro (2 dipendenti, fatturato ~32k€) e assenza da Google suggeriscono scarsa visibilità.",
+      "analyzed_at": "2026-10-26T06:04:07.521Z"
+    }
   },
   "c17806737108097j6rt": {
     "contactName": "Julien Estrade",
-    "contactTitle": "Managing Partner"
+    "contactTitle": "Managing Partner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-retailer francese senza sito web, assenza totale di traccia online e nessuna informazione sul portafoglio vini. Impossibile verificare se commercializza vini italiani.",
+      "analyzed_at": "2026-10-26T06:04:11.594Z"
+    }
   },
   "c1780673710809mvsd5": {
     "contactName": "Benoît Nicolas Gigon",
-    "contactTitle": "Managing Director"
+    "contactTitle": "Managing Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda molto piccola (2 dipendenti, fatturato ~32k€) senza sito web né traccia online. Impossibile verificare portafoglio prodotti e affidabilità. Non pertinente per partnership commerciale.",
+      "analyzed_at": "2026-10-26T06:04:15.857Z"
+    }
   },
   "c1780673710809hr77m": {
     "contactName": "Benoit Delaby",
-    "contactTitle": "Managing Partner"
+    "contactTitle": "Managing Partner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo retailer francese (2 dipendenti, ~542k€ fatturato) con sito irraggiungibile e nessuna traccia online. Impossibile verificare portafoglio vini e specializzazione italiana.",
+      "analyzed_at": "2026-10-26T06:04:20.510Z"
+    }
   },
   "c1780673710809w2hb1": {
     "contactName": "Elizabeth Yger",
-    "contactTitle": "Managing Partner"
+    "contactTitle": "Managing Partner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccola enoteca francese (2 dipendenti, fatturato ~33k€) focalizzata su vini francesi e alcoli internazionali. Nessuna menzione esplicita di vini italiani nel sito; focus su prodotti locali normanni e francesi. Non è un target rilevante per esportatori di vino italiano.",
+      "analyzed_at": "2026-10-26T06:04:25.468Z"
+    }
   },
   "c1780673710809b5p8b": {
     "contactName": "Cécile Mulé",
-    "contactTitle": "Founder"
+    "contactTitle": "Founder",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccola enoteca francese (2 dipendenti, fatturato ~32k€) focalizzata su vini francesi (Champagne, Bordeaux, Borgogna). Nessuna traccia di vini italiani nel catalogo. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-10-26T06:04:30.382Z"
+    }
   },
   "c1780673710809yvf7n": {
     "contactName": "Atilla Budda",
-    "contactTitle": "Managing Partner"
+    "contactTitle": "Managing Partner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "si",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "forse",
+      "note": "Azienda molto piccola (2 dipendenti, fatturato basso) con sito online che include vini italiani (Bellavista, Tenuta San Guido, Gaja). Assenza totale da Google e sito con protezione contenuti suggerisce operatività limitata o recente. Verificare affidabilità prima di contattare.",
+      "analyzed_at": "2026-10-26T06:04:35.317Z"
+    }
   },
   "c17806737108098cqny": {
     "contactName": "Eric Fourault",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "no",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Distributore francese specializzato in vini francesi (Bordeaux, Borgogna, Champagne, Loire, Rhone) e spirits. Non commercializza vini italiani. Piccola struttura (2 dipendenti) con fatturato modesto, focalizzata su mercati esteri (Nord America, Nord Europa, Asia SE) come agente esclusivo.",
+      "analyzed_at": "2026-10-26T06:04:40.979Z"
+    }
   },
   "c1780673710809rw052": {
     "contactName": "Frederic Schaaf",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo caviste locale (2 dipendenti, fatturato ~31k€) a Lione con sito basic su Jimdo. Nessuna traccia online di portafoglio vini italiani specifico. Non è un partner B2B rilevante per distribuzione.",
+      "analyzed_at": "2026-10-26T06:04:46.689Z"
+    }
   },
   "c1780673710809b34u6": {
     "contactName": "Yann Moulira",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccola enoteca retail (2 dipendenti, fatturato ~130k€) focalizzata su birre craft, champagne e whisky. Nessuna menzione esplicita di vini italiani nel sito; assenza online (nessun risultato Google) suggerisce scarsa visibilità e capacità distributiva.",
+      "analyzed_at": "2026-10-26T06:04:52.347Z"
+    }
   },
   "c1780673710809cjlc1": {
     "contactName": "Geoffroy Gamba",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Azienda francese con 15+ anni esperienza, focalizzata su vini premium per horeca (ristoranti, caviste) in Costa Azzurra. Cita esplicitamente 'Sélection Vins Italiens' ma senza dettagli. Piccola struttura (2 dipendenti), fatturato modesto; assenza Google risultati e sito con info incomplete riducono affidabilità.",
+      "analyzed_at": "2026-10-26T06:04:57.777Z"
+    }
   },
   "c1780673710809c82oe": {
     "contactName": "Raphael Tardio",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda francese (Montrouge) che vende online prodotti gourmet generici (foie gras, tartufi, vini, spirits). Catalogo ampio ma generico, nessuna specializzazione su vini italiani. Assenza totale da Google e sito poco professionale suggeriscono bassa affidabilità.",
+      "analyzed_at": "2026-10-26T06:05:05.135Z"
+    }
   },
   "c17806737108091t4am": {
     "contactName": "Clara Jouet",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda francese con focus editoriale/media su vini francesi (Loire, Borgogna, Bordeaux). Non è un distributore/retailer commerciale ma un progetto di content marketing. Nessun interesse per vini italiani.",
+      "analyzed_at": "2026-10-26T06:05:11.011Z"
+    }
   },
   "c1780673710809mzn6u": {
     "contactName": "Guy Fabrice",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Caviste francese specializzato in vini francesi (Languedoc, Borgogna, Rodano, Bordeaux, Corsica, Roussillon). Portafoglio esclusivamente francese, nessun vino italiano. Azienda piccola (2 dipendenti) con fatturato modesto.",
+      "analyzed_at": "2026-10-26T06:05:19.578Z"
+    }
   },
   "c1780673710809idwii": {
     "contactName": "Émilie Sarago Rocher",
-    "contactTitle": "Wine Merchant"
+    "contactTitle": "Wine Merchant",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccolo caviste indipendente in Francia (2 dipendenti, fatturato ~32k€) con sito funzionante ma scarsa visibilità online. Seleziona vini francesi (Anjou/Touraine) e prodotti locali; portafoglio probabilmente include vini europei ma nessuna conferma esplicita su vini italiani. Contatto possibile solo per distribuzione retail locale.",
+      "analyzed_at": "2026-10-26T06:05:25.845Z"
+    }
   },
   "c1780673710809quba5": {
     "contactName": "Maxime Paon",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccola caviste francese (2 dipendenti) con focus su vini biologici/biodinamici e spiritosi. Nessuna menzione esplicita di vini italiani nel testo, ma portafoglio europeo suggerisce possibile interesse. Assenza da Google e fatturato modesto (33k€) indicano realtà locale molto piccola.",
+      "analyzed_at": "2026-10-26T06:05:32.988Z"
+    }
   },
   "c17806737108093kj5u": {
     "contactName": "Qingyang Tian",
-    "contactTitle": "President"
+    "contactTitle": "President",
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "horeca",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Azienda dichiarata come distributore a Parigi, ma sito rimanda a wine bar a Shenzhen (Cina). Nessuna traccia online, dati incoerenti e inconsistenti. Non è un distributore affidabile.",
+      "analyzed_at": "2026-10-26T06:05:37.479Z"
+    }
   },
   "c1780673710809xr9s9": {
     "contactName": "Adrien Boi",
-    "contactTitle": "President"
+    "contactTitle": "President",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Caviste francese con selezione curata direttamente da vigneron, focus su vini naturali/bio. Piccola struttura (2 dipendenti) con due punti vendita in Alsazia e e-commerce. Probabile interesse per vini italiani naturali, ma non esplicitamente citati.",
+      "analyzed_at": "2026-10-26T06:05:42.664Z"
+    }
   },
   "c1780673710809t1k0f": {
     "contactName": "Enrique Juste",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Caviste indipendente francese con selezione di vini fini e gran cru dal 2012. Portafoglio ampio (vini, spirits, birra) suggerisce possibile interesse per vini italiani, ma nessuna menzione esplicita. Piccola struttura (2 dipendenti, ~1M€ fatturato) con focus retail locale.",
+      "analyzed_at": "2026-10-26T06:05:49.546Z"
+    }
   },
   "c1780673710809qqpmo": {
     "contactName": "Aymeric Auberton",
-    "contactTitle": "President"
+    "contactTitle": "President",
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Sito irraggiungibile, nessuna traccia online, fatturato molto basso (35k€) con 2 dipendenti. Impossibile verificare se commercializza vini italiani. Profilo ad alto rischio.",
+      "analyzed_at": "2026-10-26T06:06:06.019Z"
+    }
   },
   "c1780673710809cu8fh": {
     "contactName": "Gaëtan Picard",
-    "contactTitle": "Business Manager"
+    "contactTitle": "Business Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Caviste specializzato in vini naturali con focus su Francia, Spagna e prodotti artigianali. Portafoglio ampio (vini, birre, spirits) ma nessuna menzione esplicita di vini italiani nei contenuti disponibili. Micro-azienda (2 dipendenti, fatturato modesto) con engagement locale forte.",
+      "analyzed_at": "2026-10-26T06:06:13.091Z"
+    }
   },
   "c17806737108091affd": {
     "contactName": "Nathalie Besnard",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Piccola épicerie provenzale (2 dipendenti, fatturato ~32k€) con sezione vini generica. Nessuna menzione esplicita di vini italiani; catalogo online vuoto/non indicizzato. Non è un player rilevante per distribuzione vini italiani.",
+      "analyzed_at": "2026-10-26T06:06:18.387Z"
+    }
   },
   "c17806737108090a6w4": {
     "contactName": "Jean Bernard Legrand",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-azienda (2 dipendenti, fatturato ~33k€) con sito poco indicizzato. Nessuna menzione esplicita di vini italiani nel testo; focus su caviste locale e eventi. Troppo piccola e geograficamente limitata (Haute-Savoie) per partnership B2B significativa.",
+      "analyzed_at": "2026-10-26T06:06:24.571Z"
+    }
   },
   "c1780673710809v5wyk": {
     "contactName": "Fanny Marchais",
-    "contactTitle": "President"
+    "contactTitle": "President",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer francese con 3 punti vendita e ~10 dipendenti (non 2). Sito funzionante ma nessuna traccia online. Portafoglio diversificato (vini, birre, spirits, caffè) suggerisce selezione europea, ma nessuna menzione esplicita di vini italiani. Piccola dimensione e focus locale (Nord Francia) limitano potenziale.",
+      "analyzed_at": "2026-10-26T06:06:31.347Z"
+    }
   },
   "c1780673710809tlz6l": {
     "contactName": "Ambard Frederic",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda francese (Provenza) che produce e vende vini francesi (AOP Côtes de Provence, IGP). Non commercializza vini italiani. Sito funzionante ma nessuna traccia online; fatturato modesto per 2 dipendenti suggerisce operazione locale/regionale.",
+      "analyzed_at": "2026-10-26T06:06:37.230Z"
+    }
   },
   "c1780673710809lmmnz": {
     "contactName": "Patrick Parisot",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccola enoteca locale (2 dipendenti, ~541k€ fatturato) senza visibilità online. Sito minimalista senza catalogo prodotti visibile. Nessuna menzione esplicita di vini italiani nel materiale disponibile.",
+      "analyzed_at": "2026-10-26T06:06:42.000Z"
+    }
   },
   "c17806737108099023m": {
     "contactName": "Doriane Derome",
-    "contactTitle": "President/ Manager"
+    "contactTitle": "President/ Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccola enoteca locale (2 dipendenti, fatturato modesto) con selezione vini Francia e mondo + corsi degustazione. Nessuna traccia online (Google), sito basic ma funzionale. Potenziale limitato come cliente B2B per importatore italiano.",
+      "analyzed_at": "2026-10-26T06:06:47.690Z"
+    }
   },
   "c1780673710809u3xbp": {
     "contactName": "Olivier Braise",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccola enoteca francese (2 dipendenti, fatturato modesto) con selezione di 1000 riferimenti vini, champagne e spiritueux. Portafoglio probabilmente include vini italiani ma non esplicitamente citati. Contatto retail locale, non distributore.",
+      "analyzed_at": "2026-10-26T06:06:53.768Z"
+    }
   },
   "c1780673710809gahl9": {
     "contactName": "Benjamin Poussardin",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccolo caviste francese specializzato in vini naturali/biologici, aperto dal 2018. Fatturato modesto (30k€) e 2 dipendenti suggeriscono realtà micro. Nessuna menzione esplicita di vini italiani nel sito, ma portafoglio europeo/naturale potrebbe includerli.",
+      "analyzed_at": "2026-10-26T06:06:59.434Z"
+    }
   },
   "c17806737108091phdi": {
     "contactName": "César Meynard",
-    "contactTitle": "Founder and Manager"
+    "contactTitle": "Founder and Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccola enoteca francese (2 dipendenti) con focus su vini, champagne e spiritueux. Nessuna menzione esplicita di vini italiani nel sito, ma portafoglio europeo suggerisce possibile interesse. Assenza da Google e fatturato modesto limitano affidabilità.",
+      "analyzed_at": "2026-10-26T06:07:04.160Z"
+    }
   },
   "c1780673710809kmjtt": {
     "contactName": "Thibaut Gilbert Daniel Baraton",
-    "contactTitle": "President"
+    "contactTitle": "President",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccolo retailer francese (2 dipendenti, ~32k€ fatturato) con sito funzionante e offerta vini/spiriti. Nessuna menzione esplicita di vini italiani nel testo estratto, focus su regioni francesi. Contatto possibile solo se strategia include Francia.",
+      "analyzed_at": "2026-10-26T06:07:10.794Z"
+    }
   },
   "c1780673710809kjoyh": {
     "contactName": "Jean-yves Fallot",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccola caviste online francese (2 dipendenti, fatturato ~39k€) focalizzata su vini francesi e produttori indipendenti. Catalogo include sezione Italia ma non è core business. Nessuna traccia online (Google), sito basic, non è partner B2B strategico.",
+      "analyzed_at": "2026-10-26T06:07:16.177Z"
+    }
   },
   "c1780673710809xjomg": {
     "contactName": "Guillaume Guillin",
-    "contactTitle": "Managing Partner"
+    "contactTitle": "Managing Partner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccola enoteca francese (2 dipendenti) con portafoglio ampio di vini europei inclusi italiani (Bordeaux, Borgogna, Valle del Rodano, ecc.). Sito funzionante ma nessuna visibilità Google. Fatturato modesto (540k€) suggerisce business locale/regionale.",
+      "analyzed_at": "2026-10-26T06:07:22.678Z"
+    }
   },
   "c17806737108094h6h7": {
     "contactName": "Fabrice Gunia",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo retailer francese (2 dipendenti) con focus locale (Megève). Portafoglio generico (vini, birre, spirits) senza evidenza di specializzazione italiana. Non è un canale di distribuzione rilevante per esportatori di vino italiano.",
+      "analyzed_at": "2026-10-26T06:07:27.942Z"
+    }
   },
   "c17806737108095f5lz": {
     "contactName": "David Robert",
-    "contactTitle": "Founder - Wine Merchant Sommelier"
+    "contactTitle": "Founder - Wine Merchant Sommelier",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccola enoteca francese (2 dipendenti, fatturato ~31k€) con selezione vini 'da qui e da altrove'. Nessuna menzione esplicita di vini italiani nel testo. Non è un buyer B2B rilevante per fornitori di vino italiano.",
+      "analyzed_at": "2026-10-26T06:07:33.914Z"
+    }
   },
   "c17806737108095baf7": {
     "contactName": "Jean Philippe Venck",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Caviste francese consolidato (dal 1987) con sito funzionante e gestione professionale (oenologue). Focus su vini europei e spiritueux; non esplicita vini italiani ma portafoglio ampio suggerisce possibile interesse. Piccola struttura (2 dipendenti), mercato locale/online limitato.",
+      "analyzed_at": "2026-10-26T06:07:39.962Z"
+    }
   },
   "c1780673710809oz5zz": {
     "contactName": "Steve Sawczuk",
-    "contactTitle": "Sommelier"
+    "contactTitle": "Sommelier",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccolo retailer francese (2 dipendenti) con focus su vini francesi regionali e prodotti diversificati. Sito funzionante ma nessuna traccia online; fatturato modesto suggerisce operatività locale limitata. Vini italiani non esplicitamente citati ma categoria 'Vins du monde' potrebbe includerli.",
+      "analyzed_at": "2026-10-26T06:07:45.476Z"
+    }
   },
   "c1780673710809zfpyp": {
     "contactName": "Duffort Olivier",
-    "contactTitle": "President"
+    "contactTitle": "President",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda francese di piccole dimensioni (2 dipendenti, fatturato ~32k€). Sito non raggiungibile e assenza totale di risultati Google suggeriscono scarsa visibilità online. Nessuna evidenza di focus su vini italiani.",
+      "analyzed_at": "2026-10-26T06:08:01.956Z"
+    }
   },
   "c1780673710809bmpmq": {
     "contactName": "Jean Yves Tessier",
-    "contactTitle": "Managing Partner"
+    "contactTitle": "Managing Partner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo retailer locale (2 dipendenti, fatturato ~32k€) con sito basic e nessuna visibilità online. Portafoglio generico (vini francesi, champagne, birra, spirits) senza evidenza di vini italiani. Non è un interlocutore strategico per distribuzione.",
+      "analyzed_at": "2026-10-26T06:08:06.852Z"
+    }
   },
   "c1780673710809l4d6b": {
     "contactName": "Thierry Felez",
-    "contactTitle": "Wine Merchant"
+    "contactTitle": "Wine Merchant",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer francese con focus esclusivo su vini francesi (Provence, Bordeaux, Borgogna, ecc.) e spirits. Nessuna menzione di vini italiani nel catalogo. Piccola struttura (2 dipendenti, fatturato modesto) con bistrot annesso.",
+      "analyzed_at": "2026-10-26T06:08:11.548Z"
+    }
   },
   "c17806737108097fj8g": {
     "contactName": "Patrick Moene",
-    "contactTitle": "Wine Merchant"
+    "contactTitle": "Wine Merchant",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Caviste francese specializzato in vini francesi (240 vini, 70% bio). Nessuna menzione di vini italiani nel portafoglio. Azienda molto piccola (2 dipendenti, fatturato ~31k€) con focus locale/regionale.",
+      "analyzed_at": "2026-10-26T06:08:17.446Z"
+    }
   },
   "c1780673710810b6ss9": {
     "contactName": "Isabelle Blanche Bernadette Haffner",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "horeca",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Piccolo ristorante-vinoteca locale nel Gers (Francia) con 2 dipendenti e fatturato minimo. Focus su cucina occitana e vini regionali francesi, nessuna menzione di vini italiani. Non è un distributore/importatore di vini.",
+      "analyzed_at": "2026-10-26T06:08:23.127Z"
+    }
   },
   "c1780673710810qkiy1": {
     "contactName": "Jérôme Ferrer",
-    "contactTitle": "Co-manager"
+    "contactTitle": "Co-manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda francese specializzata in vini del Rodano. Nessuna traccia online, sito irraggiungibile, fatturato modesto per 2 dipendenti. Non pertinente per vini italiani.",
+      "analyzed_at": "2026-10-26T06:08:27.366Z"
+    }
   },
   "c178067371081087sad": {
     "contactName": "Dominique Guisse",
-    "contactTitle": "Managing Partner"
+    "contactTitle": "Managing Partner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda francese con sito funzionante che vende vini (categoria generica 'VINS TRANQUILLES'), birre, spirits. Piccola struttura (2 dipendenti, ~1M€ fatturato). Nessuna menzione esplicita di vini italiani, ma portafoglio europeo suggerisce possibilità. Assenza da Google e info limitate riducono affidabilità.",
+      "analyzed_at": "2026-10-26T06:08:32.826Z"
+    }
   },
   "c1780673710810psiw9": {
     "contactName": "Arnaud Maillard",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccolo retailer francese (2 dipendenti) specializzato in vini biologici/naturali con 1000+ referenze. Nessuna menzione esplicita di vini italiani, ma portafoglio europeo suggerisce possibile interesse. Contatto diretto disponibile.",
+      "analyzed_at": "2026-10-26T06:08:38.030Z"
+    }
   },
   "c1780673710810gq3xl": {
     "contactName": "Santiago L'Huillier",
-    "contactTitle": "Managing Director"
+    "contactTitle": "Managing Director",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "importatore",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccola azienda (2 dipendenti, fatturato ~32k€) specializzata in importazione vini italiani ed esteri. Sito funzionante con certificazione BIO. Assenza su Google e fatturato molto modesto suggeriscono operatività limitata; verificare effettiva capacità distributiva prima di contattare.",
+      "analyzed_at": "2026-10-26T06:08:43.812Z"
+    }
   },
   "c1780673710810dicey": {
     "contactName": "François-Xavier Bossart",
-    "contactTitle": "Co-manager"
+    "contactTitle": "Co-manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccola caviste francese (2 dipendenti, ~521k€ fatturato) senza menzione esplicita di vini italiani nel portafoglio. Sito basic e nessuna traccia online; non è un interlocutore strategico per distribuzione vini italiani.",
+      "analyzed_at": "2026-10-26T06:08:49.090Z"
+    }
   },
   "c1780673710810aw8ba": {
     "contactName": "Lylian Vignau",
-    "contactTitle": "President"
+    "contactTitle": "President",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda duty-free con sito irraggiungibile e nessuna traccia online. Fatturato molto basso (32k€) e soli 2 dipendenti suggeriscono struttura minima. Impossibile verificare portafoglio vini italiani.",
+      "analyzed_at": "2026-10-26T06:08:53.528Z"
+    }
   },
   "c1780673710810x3561": {
     "contactName": "Manon Di Martino",
-    "contactTitle": "Founder"
+    "contactTitle": "Founder",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo caviste francese (2 dipendenti, fatturato ~32k€) con focus su vini generici, formaggi e charcuterie. Nessuna menzione esplicita di vini italiani nel sito. Non è un target prioritario per distribuzione italiana.",
+      "analyzed_at": "2026-10-26T06:08:59.465Z"
+    }
   },
   "c1780673710810mnipb": {
     "contactName": "Louis Navarre",
-    "contactTitle": "Co-manager"
+    "contactTitle": "Co-manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer boutique a Bordeaux con focus su vini francesi (Châteaux bordelesi) e spirits. Piccola struttura (2 dipendenti, fatturato ~188k€). Assenza da Google suggerisce bassa visibilità online; sito funzionante ma non indica esplicitamente vini italiani nel portafoglio principale.",
+      "analyzed_at": "2026-10-26T06:09:04.852Z"
+    }
   },
   "c1780673710810jd7q0": {
     "contactName": "Maud Marchal",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Specializzato in prodotti greci (vini greci, olio d'oliva, epicerie fine). Azienda piccola (2 dipendenti, fatturato ~526k€) con focus esclusivo su Grecia. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-10-26T06:09:10.425Z"
+    }
   },
   "c1780673710810j938r": {
     "contactName": "Hervé Buzzolini",
-    "contactTitle": "Wine Merchant"
+    "contactTitle": "Wine Merchant",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccolo retailer online in Francia (2 dipendenti, fatturato ~52k€) con portafoglio prevalentemente francese (Borgogna, Bordeaux, Savoie, Rhône). Cita genericamente 'vini del mondo' ma nessuna menzione esplicita di vini italiani. Assenza da Google e sito basic suggeriscono operazione locale/micro. Contattare solo se target è distribuzione Francia/Chamonix.",
+      "analyzed_at": "2026-10-26T06:09:18.338Z"
+    }
   },
   "c178067371081087fs7": {
     "contactName": "Jean François Vincens",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda molto piccola (2 dipendenti, fatturato ~32k€) con sito irraggiungibile e nessuna traccia online. Impossibile verificare portafoglio vini italiani o affidabilità commerciale.",
+      "analyzed_at": "2026-10-26T06:09:23.413Z"
+    }
   },
   "c1780673710810wcisx": {
     "contactName": "Olivier Gueret",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccola enoteca francese (2 dipendenti, fatturato ~32k€) specializzata in vini naturali con focus Loire/Francia. Selezione di 900 vini suggerisce apertura a etichette estere, ma nessuna menzione esplicita di vini italiani. Contatto possibile solo se portfolio include naturali italiani.",
+      "analyzed_at": "2026-10-26T06:09:28.307Z"
+    }
   },
   "c17806737108108vanc": {
     "contactName": "Sin Graal",
-    "contactTitle": "President"
+    "contactTitle": "President",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Cavista indipendente consolidata a Lyon (30+ anni), specializzata in rhum/whisky ma con 1500+ vini in portafoglio. Piccola struttura (2 dipendenti), focus locale/retail. Vini italiani non esplicitamente citati ma probabile nella selezione generale.",
+      "analyzed_at": "2026-10-26T06:09:34.505Z"
+    }
   },
   "c17806737108105cgq0": {
     "contactName": "Jj Barberet",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "misto",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda francese (Sens) specializzata esclusivamente in vini francesi (Borgogna, Bordeaux, Champagne, Loire). Micro-realtà con 2 dipendenti e fatturato minimo. Nessuna traccia online (Google). Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-10-26T06:09:41.669Z"
+    }
   },
   "c1780673710810pzqal": {
     "contactName": "Valentin Naudin",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Sito irraggiungibile, nessuna traccia online, micro-azienda (2 dipendenti). Impossibile verificare portafoglio vini e affidabilità. Non consigliato contattare senza validazione preliminare.",
+      "analyzed_at": "2026-10-26T06:09:47.592Z"
+    }
   },
   "c17806737108106oy8j": {
     "contactName": "Kevin Tribot",
-    "contactTitle": "Managing Partner"
+    "contactTitle": "Managing Partner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccolo retailer francese (2 dipendenti, ~963k€ fatturato) con portafoglio vini generico. Siti dichiarati irraggiungibili e nessuna traccia online: verificare contatti diretti prima di investire tempo.",
+      "analyzed_at": "2026-10-26T06:09:51.879Z"
+    }
   },
   "c178067371081062jga": {
     "contactName": "Raphaël Bertolino",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccola enoteca francese (2 dipendenti, fatturato ~31k€) focalizzata su vini locali e prodotti enogastronomici regionali. Nessuna evidenza di specializzazione in vini italiani; sito poco professionale e nessuna traccia online.",
+      "analyzed_at": "2026-10-26T06:09:57.650Z"
+    }
   },
   "c1780673710810fs3f9": {
     "contactName": "Laurent Mersier",
-    "contactTitle": "Founding Manager"
+    "contactTitle": "Founding Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Piccolo retailer online francese (2 dipendenti, ~529k€ fatturato) specializzato in vini francesi (Rhône, Borgogna, Bordeaux). Catalogo italiano presente ma marginale. Nessuna traccia Google, sito basic. Non è partner strategico per esportazione vini italiani.",
+      "analyzed_at": "2026-10-26T06:10:03.798Z"
+    }
   },
   "c1780673710810kcvrl": {
     "contactName": "Patrick Dedoity",
-    "contactTitle": "General Manager"
+    "contactTitle": "General Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda francese specializzata in vini francesi (Bordeaux, Borgogna, Champagne, Rhône). Nessuna menzione di vini italiani nel catalogo. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-10-26T06:10:11.386Z"
+    }
   },
   "c1780673710810f6ulx": {
     "contactName": "Gilles Grandvallet",
-    "contactTitle": "Wine Merchant"
+    "contactTitle": "Wine Merchant",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccola cave francese (2 dipendenti) con selezione ampia (850 vini) e attività di community engagement. Portafoglio generico europeo senza menzione esplicita di vini italiani; fatturato modesto (32k€) suggerisce volume limitato. Vale verificare se include italiani nella selezione.",
+      "analyzed_at": "2026-10-26T06:10:18.001Z"
+    }
   },
   "c17806737108108ayfg": {
     "contactName": "Sébastien Georges Jolivet",
-    "contactTitle": "President"
+    "contactTitle": "President",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Distributore francese multi-categoria (vini, birre, spirits) con focus su professionisti (horeca/caviste). Portafoglio generico senza menzione esplicita di vini italiani. Micro-azienda (2 dipendenti) con sito poco aggiornato e assenza di tracce online.",
+      "analyzed_at": "2026-10-26T06:10:22.936Z"
+    }
   },
   "c1780673710810a1dtt": {
     "contactName": "Catherine Noel",
-    "contactTitle": "President"
+    "contactTitle": "President",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda francese specializzata in spumanti metodo tradizionale auvergnati (Gamay/Chardonnay), non commercializza vini italiani. Micro-realtà locale (2 dipendenti, fatturato ~32k€) con sito basic e nessuna visibilità online.",
+      "analyzed_at": "2026-10-26T06:10:28.828Z"
+    }
   },
   "c17806737108101ib6w": {
     "contactName": "Christian Alexandre Teisseyre",
-    "contactTitle": "President"
+    "contactTitle": "President",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-retailer francese senza sito web, nessuna traccia online e fatturato modesto (537k€). Impossibile verificare portafoglio prodotti e interesse per vini italiani.",
+      "analyzed_at": "2026-10-26T06:10:32.919Z"
+    }
   },
   "c17806737108104p6rg": {
     "contactName": "Cedric Piolot",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-azienda (2 dipendenti, fatturato ~35k€) con sito irraggiungibile e nessuna traccia online. Impossibile verificare se commercializza vini italiani. Troppo piccola e poco affidabile per partnership B2B.",
+      "analyzed_at": "2026-10-26T06:10:49.546Z"
+    }
   },
   "c1780673710810booh5": {
     "contactName": "Demaria Frédéric",
-    "contactTitle": "President"
+    "contactTitle": "President",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda francese specializzata in vini naturali francesi (nessun vino italiano nel catalogo). Micro-realtà (2 dipendenti, fatturato ~24k€) senza visibilità Google e focalizzata su e-commerce B2C. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-10-26T06:10:55.069Z"
+    }
   },
   "c1780673710810sua5h": {
     "contactName": "Aurélien Chutaux",
-    "contactTitle": "Wine Merchant/ Manager/ Founder"
+    "contactTitle": "Wine Merchant/ Manager/ Founder",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Caviste indipendente francese con focus su vini francesi e spirits internazionali. Micro-azienda (2 dipendenti, fatturato ~32k€) senza visibilità Google. Non è distributore/importatore di vini italiani.",
+      "analyzed_at": "2026-10-26T06:11:00.288Z"
+    }
   },
   "c1780673710810kckgh": {
     "contactName": "Antoine Laurent",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccolo retailer parigino (2 dipendenti, ~526k€ fatturato) con sito non raggiungibile e nessuna traccia online. Potenziale cliente retail per vini italiani, ma affidabilità bassa e difficile verificare portafoglio attuale.",
+      "analyzed_at": "2026-10-26T06:11:05.488Z"
+    }
   },
   "c1780673710810wc4er": {
     "contactName": "Joël Simon Jean Dulon",
-    "contactTitle": "President"
+    "contactTitle": "President",
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda francese specializzata in vini francesi, non italiani. Siti non raggiungibili, nessuna traccia online, fatturato minimo (32k€) con 2 dipendenti: profilo non affidabile per partnership vini italiani.",
+      "analyzed_at": "2026-10-26T06:11:09.782Z"
+    }
   },
   "c1780673710810zo7bv": {
     "contactName": "Alexandra Moiroud",
-    "contactTitle": "Managing Partner"
+    "contactTitle": "Managing Partner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccola caviste francese (2 dipendenti, fatturato ~31k€) focalizzata su prodotti regionali francesi e terroir locale. Nessuna menzione di vini italiani nel portafoglio. Non è un distributore/importatore di vini italiani.",
+      "analyzed_at": "2026-10-26T06:11:15.042Z"
+    }
   },
   "c1780673710810v89hx": {
     "contactName": "Laurent Perez",
-    "contactTitle": "Senior Manager"
+    "contactTitle": "Senior Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccola enoteca indipendente francese (2 dipendenti, fatturato modesto) con 10+ anni esperienza. Seleziona vini da piccoli produttori ma nessuna menzione esplicita di vini italiani nel testo. Contatto possibile solo se target è distribuzione a piccoli retailer francesi.",
+      "analyzed_at": "2026-10-26T06:11:20.131Z"
+    }
   },
   "c17806737108101ov14": {
     "contactName": "Mohamed Ben Chagra",
-    "contactTitle": "President And Ceo"
+    "contactTitle": "President And Ceo",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer online francese specializzato in vini francesi (Champagne, Languedoc). Nessuna traccia di vini italiani nel catalogo. Micro-azienda (2 dipendenti, fatturato ~32k€) senza visibilità Google - non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-10-26T06:11:26.285Z"
+    }
   },
   "c1780673710810uu227": {
     "contactName": "Malo Le Coarer",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-azienda (2 dipendenti, fatturato ~34k€) senza sito web né traccia online. Impossibile verificare portafoglio prodotti e specializzazione vini italiani. Affidabilità molto bassa.",
+      "analyzed_at": "2026-10-26T06:11:30.509Z"
+    }
   },
   "c17806737108107t4tx": {
     "contactName": "Gunther Filmont",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore francese specializzato in vini, champagne e spirits con 600+ clienti attivi (horeca, caviste, grandi account). Portafoglio non specifica vini italiani ma menzione di 'maisons professionali' suggerisce selezione qualitativa. Azienda piccola (2 dipendenti) ma con esperienza consolidata dal 2008 e track record solido nel B2B francese.",
+      "analyzed_at": "2026-10-26T06:11:36.798Z"
+    }
   },
   "c1780673710810ororn": {
     "contactName": "Pierre Leblanc",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "E-commerce francese specializzato in vini di Borgogna (solo francesi). Azienda molto piccola (2 dipendenti, fatturato ~32k€), nessuna traccia online, non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-10-26T06:11:42.576Z"
+    }
   },
   "c1780673710810ripju": {
     "contactName": "Olivier Pannetier",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Wine Notes è una enoteca retail con degustazioni, non un importatore/distributore B2B. Solo 2 dipendenti, fatturato minimo (32k€). Nessuna traccia online di attività commerciale all'ingrosso verso horeca/distributori.",
+      "analyzed_at": "2026-10-26T06:11:48.691Z"
+    }
   },
   "c1780673710810k3o67": {
     "contactName": "Pascale Chevalier",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Azienda molto piccola (2 dipendenti, fatturato ~32k€) senza sito web e completamente assente online. Impossibile verificare se commercializza vini italiani o affidabilità operativa.",
+      "analyzed_at": "2026-10-26T06:11:52.876Z"
+    }
   },
   "c1780673710810uv0wh": {
     "contactName": "Anne Cochepin",
-    "contactTitle": "Wine Merchant"
+    "contactTitle": "Wine Merchant",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Caviste indipendente in Alsazia con formazione enologica solida (Diplôme National d'Œnologue). Piccola struttura (2 dipendenti, fatturato ~32k€) focalizzata su retail locale. Nessuna visibilità online (Google) ma sito funzionante. Portafoglio generico (vini, spiritueux, épicerie) - non specifica se include vini italiani.",
+      "analyzed_at": "2026-10-26T06:12:01.645Z"
+    }
   },
   "c1780673710810o67or": {
     "contactName": "Paul François Noël Peraldi",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore corso storico (dal 1885) con focus su vini corsi e continentali europei. Piccola struttura (2 dipendenti) ma con esperienza consolidata. Assenza da Google e sito basic suggeriscono bassa visibilità digitale; potenziale cliente per vini italiani data posizione geografica e portafoglio mediterraneo.",
+      "analyzed_at": "2026-10-26T06:12:08.752Z"
+    }
   },
   "c1780673710810su2if": {
     "contactName": "Simone Pratesi",
-    "contactTitle": "Managing Director"
+    "contactTitle": "Managing Director",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "importatore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Importatore specializzato in vini italiani in esclusiva per Francia (11 domini, 6 regioni). Piccola struttura (2 dipendenti), sito funzionale ma assenza totale da Google. Target HORECA (ristoranti, hotel, caviste) con consegna 48h in Île-de-France. Verificare affidabilità e capacità distributiva prima di contattare.",
+      "analyzed_at": "2026-10-26T06:12:14.182Z"
+    }
   },
   "c1780673710810fivcw": {
     "contactName": "Guy Hiblot",
-    "contactTitle": "Senior Manager"
+    "contactTitle": "Senior Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo retailer francese (2 dipendenti, fatturato ~31k€) specializzato in vini francesi e champagne. Nessuna menzione esplicita di vini italiani nel portafoglio; focus su Bordeaux e regioni francesi. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-10-26T06:12:19.476Z"
+    }
   },
   "c1780673710810phdh6": {
     "contactName": "Yannick Gevaux",
-    "contactTitle": "Founder & President"
+    "contactTitle": "Founder & President",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda micro (2 dipendenti, fatturato ~31k€) con sito irraggiungibile e zero traccia online. Nessuna conferma di specializzazione in vini italiani. Rischio affidabilità molto alto.",
+      "analyzed_at": "2026-10-26T06:12:24.519Z"
+    }
   },
   "c1780673710810zvy8t": {
     "contactName": "Triphonoff Alexis",
-    "contactTitle": "General Manager"
+    "contactTitle": "General Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda francese (Chinon) fondata 2006, specializzata in export/import verso mercati internazionali (Canada, Norvegia, Est Europa, Giappone, Cina). Solo 2 dipendenti ma opera con rete di 20+ agenti. Modello commissionale su vendite. Nessuna traccia online (Google) e sito minimalista riducono affidabilità percepita.",
+      "analyzed_at": "2026-10-26T06:12:29.592Z"
+    }
   },
   "c17806737108101ovny": {
     "contactName": "Etienne Aubron",
-    "contactTitle": "Ceo"
+    "contactTitle": "Ceo",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Caviste parigino specializzato in vini naturali con sito funzionante e negozio fisico. Portafoglio prevalentemente francese (Borgogna, Alsazia, Rodano); nessuna evidenza esplicita di vini italiani nel catalogo visibile. Micro-azienda (2 dipendenti, fatturato modesto) - contattare solo se target è distribuzione Francia/vini naturali.",
+      "analyzed_at": "2026-10-26T06:12:35.207Z"
+    }
   },
   "c1780673710810serly": {
     "contactName": "Daniel Craker",
-    "contactTitle": "Owner/ Manager"
+    "contactTitle": "Owner/ Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Caviste indipendente a Bordeaux dal 2012 con portafoglio vini europei (inclusi italiani: Piemonte, Veneto, Toscana, Campania/Puglia, Sardegna/Sicilia). Micro-azienda (2 dipendenti, fatturato ~180k€) con e-commerce e wine bar. Nessuna visibilità Google; affidabilità limitata da dimensione ridotta.",
+      "analyzed_at": "2026-10-26T06:12:40.885Z"
+    }
   },
   "c1780673710810sq986": {
     "contactName": "Tyrone Thiboust",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo negozio di vini e gastronomia (2 dipendenti, fatturato ~168k€) in Francia. Portafoglio generico (vini, birre, spirits) senza focus esplicito su vini italiani. Non pertinente per distribuzione italiana.",
+      "analyzed_at": "2026-10-26T06:12:46.063Z"
+    }
   },
   "c178067371081061hdp": {
     "contactName": "Serpil Rodrigues",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda francese focalizzata su prodotti del terroir francese e 100% francesi. Nessuna menzione di vini italiani nel portafoglio. Dimensione molto piccola (2 dipendenti, fatturato ~31k€) e assenza di visibilità online (nessun risultato Google).",
+      "analyzed_at": "2026-10-26T06:12:51.915Z"
+    }
   },
   "c17806737108100ql9v": {
     "contactName": "Gerrit Jan Hero Van Der Smit",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda storica (dal 1990) specializzata in sourcing diretto da produttori, ma assenza totale da Google e sito incompleto (telefono tagliato) sono segnali preoccupanti. Portafoglio principalmente francese/spagnolo; vini italiani non esplicitamente citati ma possibili data la natura dell'attività.",
+      "analyzed_at": "2026-10-26T06:12:59.267Z"
+    }
   },
   "c17806737108100167i": {
     "contactName": "Marc Hoefler",
-    "contactTitle": "President"
+    "contactTitle": "President",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "no",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Distributore francese specializzato in vini francesi da vigneron indépendants. Azienda molto piccola (2 dipendenti, fatturato ~31k€), focalizzata su mercato locale horeca con degustazioni. Non commercializza vini italiani.",
+      "analyzed_at": "2026-10-26T06:13:04.304Z"
+    }
   },
   "c17806737108104y297": {
     "contactName": "Raphael Taconet",
-    "contactTitle": "President"
+    "contactTitle": "President",
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Sito dichiarato è heritage-whisky.fr (whisky, non vino). Nessuna traccia online, fatturato minimo (121k€), 2 dipendenti. Profilo non verificabile e non pertinente al vino italiano.",
+      "analyzed_at": "2026-10-26T06:13:09.351Z"
+    }
   },
   "c1780673710810y61rc": {
     "contactName": "Sandrine (Roman) De Faria",
-    "contactTitle": "Managing Partner"
+    "contactTitle": "Managing Partner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccolo retailer online francese (2 dipendenti, fatturato ~32k€) con buona reputazione (4,9/5 stelle). Vende vini ma catalogo non specifico su italiani; focus su epicerie fine e gift boxes. Contatto possibile solo se target è Francia/online.",
+      "analyzed_at": "2026-10-26T06:13:15.307Z"
+    }
   },
   "c1780673710810h15hw": {
     "contactName": "Jacques Margier",
-    "contactTitle": "Managing Partner"
+    "contactTitle": "Managing Partner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda molto piccola (2 dipendenti, fatturato ~32k€) con sito irraggiungibile e nessuna traccia online. Impossibile verificare se commercializza vini italiani. Rischio affidabilità elevato.",
+      "analyzed_at": "2026-10-26T06:13:33.919Z"
+    }
   },
   "c1780673710810oms50": {
     "contactName": "Benoît Serge Saadi",
-    "contactTitle": "President"
+    "contactTitle": "President",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Piccolo wholesaler/retailer francese (2 dipendenti, ~542k€ fatturato) con portafoglio vini generico. Sito irraggiungibile e nessuna traccia online: difficile verificare specializzazione su vini italiani. Contattare solo se target è distribuzione locale Francia.",
+      "analyzed_at": "2026-10-26T06:13:39.092Z"
+    }
   },
   "c1780673710810hha4j": {
     "contactName": "Pascal Giraud",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccola enoteca francese (2 dipendenti, fatturato ~32k€) specializzata esclusivamente in vini francesi e spirits. Nessuna menzione di vini italiani nel portafoglio. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-10-26T06:13:44.155Z"
+    }
   },
   "c17806737108101fwq6": {
     "contactName": "Guillaume du Foussat",
-    "contactTitle": "Founder & Ceo"
+    "contactTitle": "Founder & Ceo",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "E-commerce francese specializzato in vini primeurs e grandi cru, con catalogo prevalentemente francese (Bordeaux, Borgogna, Champagne) ma con sezione dedicata a vini italiani. Piccola struttura (2 dipendenti) con fatturato modesto; sito funzionante ma assenza online (nessun risultato Google) suggerisce visibilità limitata.",
+      "analyzed_at": "2026-10-26T06:13:49.964Z"
+    }
   },
   "c1780673710810z6rdh": {
     "contactName": "Dominique Delbart",
-    "contactTitle": "Managing Partner"
+    "contactTitle": "Managing Partner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-retailer francese (2 dipendenti, fatturato ~33k€) con sito irraggiungibile e nessuna traccia online. Troppo piccolo e poco affidabile per partnership commerciale.",
+      "analyzed_at": "2026-10-26T06:13:54.795Z"
+    }
   },
   "c178067371081070tbf": {
     "contactName": "Katia Font",
-    "contactTitle": "Managing Partner"
+    "contactTitle": "Managing Partner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Piccola cave francese (2 dipendenti) con storia dal 1992, offre vini generici senza focus esplicito su italiani. Assenza da Google e fatturato modesto suggeriscono operatività locale. Vale verificare se interessati a vini italiani per retail/horeca.",
+      "analyzed_at": "2026-10-26T06:14:00.396Z"
+    }
   },
   "c1780673710810o527n": {
     "contactName": "Cyrille Gérard",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Caviste francese con sito e-commerce attivo dal 2006, portafoglio vini francesi ampio (Bordeaux, Borgogna, Loire, ecc.). Nessuna menzione esplicita di vini italiani nel menu, ma categoria 'Vins du Monde' potrebbe includerli. Piccola struttura (2 dipendenti), fatturato modesto.",
+      "analyzed_at": "2026-10-26T06:14:07.559Z"
+    }
   },
   "c1780673710810tekba": {
     "contactName": "Fabrice Germain",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "no",
+      "tipo_business": "horeca",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "È un ristorante in Borgogna, non un retailer/distributore di vini. Specializzato in vini francesi (Santenay) con sommelier locale. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-10-26T06:14:13.582Z"
+    }
   },
   "c1780673710810ijb0l": {
     "contactName": "Philippe Le Boursico",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda molto piccola (2 dipendenti, fatturato ~31k€) con sito su Blogspot non raggiungibile. Nessuna traccia online, impossibile verificare portafoglio vini italiani. Troppo piccola e poco affidabile per partnership commerciale.",
+      "analyzed_at": "2026-10-26T06:14:18.327Z"
+    }
   },
   "c1780673710810j4tjv": {
     "contactName": "Philippe Charles Jean Lafon",
-    "contactTitle": "Managing Partner"
+    "contactTitle": "Managing Partner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "forse",
+      "note": "Piccola azienda francese (2 dipendenti, ~541k€ fatturato) con sito dichiarato irraggiungibile e nessuna traccia online. Potenziale retailer di vini ma impossibile verificare portafoglio prodotti e specializzazione italiana. Contattare solo se interessati a piccoli distributori locali francesi.",
+      "analyzed_at": "2026-10-26T06:14:23.233Z"
+    }
   },
   "c1780673710810i6zmr": {
     "contactName": "Joris Chaillol",
-    "contactTitle": "Co-founder/ Managing Partner"
+    "contactTitle": "Co-founder/ Managing Partner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda francese molto piccola (2 dipendenti, fatturato ~33k€) specializzata in vini locali francesi (Isère, Savoie). Nessuna traccia di vini italiani nel portafoglio. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-10-26T06:14:29.413Z"
+    }
   },
   "c1780673710810a9um3": {
     "contactName": "Bertrand Didier Maurice Balin",
-    "contactTitle": "President"
+    "contactTitle": "President",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccola enoteca indipendente francese (2 dipendenti, ~536k€ fatturato) con sito funzionante e focus su qualità/consulenza. Portafoglio generico (vini, spiriti, birre) senza menzione esplicita di vini italiani, ma potenziale cliente per importatori italiani data la filosofia di selezione curata.",
+      "analyzed_at": "2026-10-26T06:14:34.225Z"
+    }
   },
   "c1780673710810f0x7s": {
     "contactName": "Sébastien Chaumet",
-    "contactTitle": "President"
+    "contactTitle": "President",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "no",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Azienda francese specializzata esclusivamente in vini di Bordeaux e Francia. Portfolio non include vini italiani; non pertinente per chi cerca fornitori di vino italiano.",
+      "analyzed_at": "2026-10-26T06:14:38.999Z"
+    }
   },
   "c178067371081041d31": {
     "contactName": "Eric Esnault",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccola enoteca indipendente (2 dipendenti) specializzata in vini autentici e naturali delle Alpi, con focus su educazione e degustazione. Portafoglio ampio ma non esplicitamente focalizzato su vini italiani; potrebbe includere etichette alpine italiane ma non confermato.",
+      "analyzed_at": "2026-10-26T06:14:46.961Z"
+    }
   },
   "c1780673710810g3wjk": {
     "contactName": "Julien Dizay",
-    "contactTitle": "Independent Commercial Agent"
+    "contactTitle": "Independent Commercial Agent",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "no",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda francese specializzata in vini francesi (Bordeaux, Borgogna, Valle della Loira, Sud-Ovest). Portfolio esclusivamente francese, nessun vino italiano. Non pertinente per chi cerca distributori di vini italiani.",
+      "analyzed_at": "2026-10-26T06:14:52.731Z"
+    }
   },
   "c1780673710810ayq4m": {
     "contactName": "Francois Garnier",
-    "contactTitle": "Managing Partner"
+    "contactTitle": "Managing Partner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Distributore francese piccolo (2 dipendenti) con focus locale su Meuse/Lorraine. Clientela horeca (bar, ristoranti) e retail. Menziona vini genericamente ma non specifica italiani; portafoglio probabilmente francese/europeo. Sito funzionante ma minimalista.",
+      "analyzed_at": "2026-10-26T06:14:58.131Z"
+    }
   },
   "c1780673710810wm5sv": {
     "contactName": "Alain Albert",
-    "contactTitle": "Managing Partner"
+    "contactTitle": "Managing Partner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-azienda (2 dipendenti, fatturato ~32k€) con sito funzionante ma nessuna visibilità online. Portafoglio prevalentemente francese; vini italiani presenti ma non prioritari. Non idonea per partnership B2B.",
+      "analyzed_at": "2026-10-26T06:15:04.779Z"
+    }
   },
   "c1780673710810d0r32": {
     "contactName": "Solenne Dabrowski",
-    "contactTitle": "Managing Partner"
+    "contactTitle": "Managing Partner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo negozio fisico (2 dipendenti, fatturato ~31k€) a Roscoff specializzato in vini francesi e prodotti locali per turisti/ferry. Nessuna traccia online, catalogo focalizzato su francesi (Bordeaux, Languedoc, Provenza). Non è un canale strategico per vini italiani.",
+      "analyzed_at": "2026-10-26T06:15:10.409Z"
+    }
   },
   "c1780673710810wegio": {
     "contactName": "Gaetan Turner",
-    "contactTitle": "President & Founder"
+    "contactTitle": "President & Founder",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "forse",
+      "note": "Azienda piccola (2 dipendenti) con siti dichiarati irraggiungibili e nessuna traccia online. Nome suggerisce focus su vini non europei. Verificare contatti diretti prima di investire tempo.",
+      "analyzed_at": "2026-10-26T06:15:14.716Z"
+    }
   },
   "c1780673710810rl6sb": {
     "contactName": "Stephane Tastet",
-    "contactTitle": "Managing Partner"
+    "contactTitle": "Managing Partner",
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Sito non raggiungibile/non funzionante, nessuna traccia Google, fatturato minimo (31k€), 2 dipendenti. Impossibile verificare portafoglio prodotti o specializzazione vini italiani.",
+      "analyzed_at": "2026-10-26T06:15:19.551Z"
+    }
   },
   "c1780673710810xp5ql": {
     "contactName": "Marc Moignoux",
-    "contactTitle": "Managing Partner"
+    "contactTitle": "Managing Partner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "forse",
+      "note": "Azienda piccola (2 dipendenti, fatturato ~525k€) con sito minimalista e nessuna traccia online. Potenziale importatore francese di vini, ma mancano informazioni sul portafoglio prodotti e mercato target. Verificare direttamente contatti.",
+      "analyzed_at": "2026-10-26T06:15:24.968Z"
+    }
   },
   "c17806737108105xwgg": {
     "contactName": "Carla Culié",
-    "contactTitle": "Administrative"
+    "contactTitle": "Administrative",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda molto piccola (2 dipendenti), sito con problemi tecnici (JavaScript/cookies disabilitati), nessuna traccia Google. Portafoglio generico multi-paese con alcuni vini italiani (Tuscany region citata), ma focus su discount e offerte. Affidabilità molto bassa.",
+      "analyzed_at": "2026-10-26T06:15:30.325Z"
+    }
   },
   "c1780673710810axl3h": {
     "contactName": "Camille Relandeau",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Agenzia francese specializzata in export/sourcing di vini con esperienza consolidata (25 anni nel settore, oenologa qualificata). Nessuna menzione esplicita di vini italiani nel portafoglio; focus su produttori francesi. Micro-azienda (1 persona + staff) con fatturato modesto: contattare solo se interessati a partnership per distribuzione vini francesi in UK/mercati esteri.",
+      "analyzed_at": "2026-10-26T06:15:36.453Z"
+    }
   },
   "c1780673710810jc4ut": {
     "contactName": "Noël Aimé Boyaval",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "sconosciuto",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Sito in costruzione (OVHcloud placeholder), nessuna presenza online verificabile. Fatturato minimo (32k€) e 2 dipendenti suggeriscono attività non operativa o in fase iniziale. Non contattare.",
+      "analyzed_at": "2026-10-26T06:15:42.215Z"
+    }
   },
   "c1780673710810j50tj": {
     "contactName": "Stephan Drms",
-    "contactTitle": "Managing Partner"
+    "contactTitle": "Managing Partner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda molto piccola (2 dipendenti) senza sito web né traccia online. Nessuna evidenza di specializzazione in vini italiani. Affidabilità bassa per partnership commerciale.",
+      "analyzed_at": "2026-10-26T06:15:46.299Z"
+    }
   },
   "c1780673710810i91qt": {
     "contactName": "Gildas Launay",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "distributore",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Azienda molto piccola (2 dipendenti, fatturato basso) con sito irraggiungibile e nessuna traccia online. Impossibile verificare portafoglio prodotti e specializzazione vini italiani.",
+      "analyzed_at": "2026-10-26T06:16:02.665Z"
+    }
   },
   "c1780673710810cjk0n": {
     "contactName": "Marie-dominique Bradford",
-    "contactTitle": "Founder"
+    "contactTitle": "Founder",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda francese specializzata in vini francesi da piccoli produttori in abbonamento. Non commercializza vini italiani; focus esclusivo su viticultura sostenibile francese. Non pertinente per distributori di vini italiani.",
+      "analyzed_at": "2026-10-26T06:16:08.329Z"
+    }
   },
   "c1780673710810h0a1f": {
     "contactName": "Benoît Renardet",
-    "contactTitle": "Wine Cellar Assistant"
+    "contactTitle": "Wine Cellar Assistant",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Siti dichiarati irraggiungibili, nessuna traccia online (Google), azienda molto piccola (2 dipendenti). Impossibile verificare portafoglio vini e affidabilità.",
+      "analyzed_at": "2026-10-26T06:16:12.513Z"
+    }
   },
   "c1780673710810j94qy": {
     "contactName": "Anthony Mandirac",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda piccola (2 dipendenti) con fatturato modesto. Sito dichiarato non raggiungibile e assenza di risultati Google suggeriscono bassa visibilità online. Portafoglio generico (vini, spumanti, biologici) non specifica italiani. Verificare direttamente contatti.",
+      "analyzed_at": "2026-10-26T06:16:29.415Z"
+    }
   },
   "c17806737108104jljj": {
     "contactName": "Emilie Tietto",
