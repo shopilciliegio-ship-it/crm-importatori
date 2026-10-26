@@ -1,5 +1,5 @@
 {
-  "lastUid": 502,
+  "lastUid": 503,
   "pending": [
     {
       "id": "ir_422",
@@ -1480,6 +1480,25 @@
       "rispostaDiretta": false,
       "suggestedStatus": null,
       "reason": "Email interna di coordinamento tra colleghi di Siena Wine, non una risposta esterna a una nostra proposta commerciale.",
+      "confidence": "ai",
+      "dataRientro": null,
+      "emailAlternativa": null
+    },
+    {
+      "id": "ir_503",
+      "uid": 503,
+      "contactId": null,
+      "nonCollegato": true,
+      "company": "Antonio Sanguineti",
+      "from": "antonio@terraevinariae.com",
+      "mittenteNome": "Antonio Sanguineti",
+      "subject": "Re: Vendita vini  Siena Wine in provincie FI-SI-GR tramite Leonardo\r\n Flamini",
+      "date": "2026-10-26T12:04:33+00:00",
+      "snippet": "Ok !\r\nAntonio\r\n\r\n\r\n[image002.jpg]\r\nAntonio Sanguineti\r\nGeneral Manager\r\nTerrae Vinariae Srl\r\n\r\nTelefono USA: +1(303)6688971\r\nCellulare: +39 3356268224\r\nEmail: antonio@terraevinariae.com<mailto:antonio@terraevinariae.com>\r\n\r\nC/o Studio Frezzotti , Via del Romitorio 3\r\n53100 Siena SI\r\n\r\n\r\n[image004.png]\r\n\r\n\r\n________________________________\r\nFrom: luca@sienawine.it <luca@sienawine.it>\r\nSent: Monday,",
+      "riassunto": "Antonio Sanguineti (General Manager di Terrae Vinariae, collaboratore di Siena Wine) risponde brevemente \"Ok!\" a una catena di email interna di Siena Wine riguardante l'accordo commerciale per la vendita di vini Siena Wine e del Ciliegio tramite l'agente Leonardo Flamini nelle province FI-SI-GR.",
+      "rispostaDiretta": true,
+      "suggestedStatus": null,
+      "reason": "È una risposta pertinente a una comunicazione interna su un accordo commerciale già in corso di definizione che coinvolge i vini del Ciliegio/Siena Wine.",
       "confidence": "ai",
       "dataRientro": null,
       "emailAlternativa": null
