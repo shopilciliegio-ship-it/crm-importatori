@@ -599,7 +599,9 @@
           "to": "cremar60@gmail.com",
           "subject": "Il tuo ordine è stato consegnato! 🍷 Buona degustazione!",
           "sentAt": 1792771258532,
-          "messageId": "<202610231600.21473978288@smtp-relay.mailin.fr>"
+          "messageId": "<202610231600.21473978288@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-10-23T18:01:13.000+02:00"
         }
       ],
       "notes": "",
@@ -2928,8 +2930,8 @@
         },
         {
           "status": "consegnato",
-          "date": 1792879278335,
-          "note": "Auto 17Track (era: consegna_fallita): BAY VILLAGE, OH, US — Delivered, DELIVERED"
+          "date": 1793007207974,
+          "note": ""
         }
       ],
       "emailsSent": [
@@ -2980,20 +2982,26 @@
         },
         {
           "type": "consegnato",
-          "to": "lonibeverly@gmail.com",
-          "subject": "Your order has been delivered! 🍷 Enjoy!",
-          "sentAt": 1792879281922,
-          "messageId": "<202610242201.76554701921@smtp-relay.mailin.fr>"
+          "sentAt": 1793007207974,
+          "messageId": "manual-skip",
+          "manual": true
+        },
+        {
+          "type": "Consegnato",
+          "sentAt": 1793007208322,
+          "messageId": "<202610260933.32976505033@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1790438445179,
-      "updatedAt": 1792879281922,
+      "updatedAt": 1793007208322,
       "staleAlertDays": 7,
       "staleAlertSince": 1790438445179,
       "track17Registered": true,
       "deliveryFailureCount": 1,
-      "lastDeliveryFailureEventAt": "2026-10-21T19:35:20Z"
+      "lastDeliveryFailureEventAt": "2026-10-21T19:35:20Z",
+      "trackingUrl": "",
+      "destCountry": "US"
     },
     {
       "id": "ord_muh5divi7env",
