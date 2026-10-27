@@ -1060,11 +1060,18 @@
           "messageId": "<202610191600.83816583873@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-10-19T19:23:44.000+02:00"
+        },
+        {
+          "type": "dogana",
+          "to": "thecolefamily1@att.net",
+          "subject": "Your order is going through customs",
+          "sentAt": 1793077297661,
+          "messageId": "<202610270501.51442539138@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1791883189781,
-      "updatedAt": 1793077292114,
+      "updatedAt": 1793077297661,
       "track17Registered": true,
       "staleAlertDays": 7,
       "staleAlertSince": 1792425651818
@@ -1146,11 +1153,18 @@
           "messageId": "<202610191601.73942066660@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-10-19T18:01:23.000+02:00"
+        },
+        {
+          "type": "dogana",
+          "to": "mlambrus@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1793077297661,
+          "messageId": "<202610270501.60262590795@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1791820959833,
-      "updatedAt": 1793077292114,
+      "updatedAt": 1793077297661,
       "track17Registered": true,
       "staleAlertDays": 7,
       "staleAlertSince": 1792425651818
@@ -1346,11 +1360,18 @@
           "messageId": "<202610191601.85501256156@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-10-19T18:01:34.000+02:00"
+        },
+        {
+          "type": "dogana",
+          "to": "sean.goodale@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1793077297661,
+          "messageId": "<202610270501.92112729187@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1791561706772,
-      "updatedAt": 1793077292114,
+      "updatedAt": 1793077297661,
       "staleAlertDays": 7,
       "staleAlertSince": 1792425651818,
       "track17Registered": true
@@ -1427,11 +1448,18 @@
           "messageId": "<202610191601.46192755984@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-10-19T18:01:33.000+02:00"
+        },
+        {
+          "type": "dogana",
+          "to": "jwllmsn@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1793077297661,
+          "messageId": "<202610270501.43649917268@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1791561706772,
-      "updatedAt": 1793077292114,
+      "updatedAt": 1793077297661,
       "staleAlertDays": 7,
       "staleAlertSince": 1792425651818,
       "track17Registered": true
