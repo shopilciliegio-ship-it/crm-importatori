@@ -656,12 +656,17 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": null,
-      "status": "preparazione",
+      "status": "spedito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1792166470460,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "spedito",
+          "date": 1793204415313,
+          "note": ""
         }
       ],
       "emailsSent": [
@@ -677,9 +682,12 @@
       ],
       "notes": "",
       "createdAt": 1792166470460,
-      "updatedAt": 1792792887285,
+      "updatedAt": 1793204415313,
       "staleAlertDays": 7,
-      "staleAlertSince": 1792166470460
+      "staleAlertSince": 1792166470460,
+      "trackingUrl": "",
+      "destCountry": "US",
+      "courierDate": 1793204415313
     },
     {
       "id": "ord_mvb5n6t8w70m",
@@ -3067,7 +3075,9 @@
         {
           "type": "Consegnato",
           "sentAt": 1793007208322,
-          "messageId": "<202610260933.32976505033@smtp-relay.mailin.fr>"
+          "messageId": "<202610260933.32976505033@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-10-26T10:33:27.000+01:00"
         }
       ],
       "notes": "",
