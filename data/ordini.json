@@ -717,12 +717,17 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": null,
-      "status": "preparazione",
+      "status": "spedito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1792166470460,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "spedito",
+          "date": 1793204407782,
+          "note": ""
         }
       ],
       "emailsSent": [
@@ -738,9 +743,12 @@
       ],
       "notes": "",
       "createdAt": 1792166470460,
-      "updatedAt": 1792792887285,
+      "updatedAt": 1793204407782,
       "staleAlertDays": 7,
-      "staleAlertSince": 1792166470460
+      "staleAlertSince": 1792166470460,
+      "trackingUrl": "",
+      "destCountry": "US",
+      "courierDate": 1793204407782
     },
     {
       "id": "ord_mvb5n6t8ziod",
@@ -1076,7 +1084,9 @@
           "to": "thecolefamily1@att.net",
           "subject": "Your order is going through customs",
           "sentAt": 1793077297661,
-          "messageId": "<202610270501.51442539138@smtp-relay.mailin.fr>"
+          "messageId": "<202610270501.51442539138@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-10-27T06:01:41.000+01:00"
         }
       ],
       "notes": "",
@@ -1169,7 +1179,9 @@
           "to": "mlambrus@gmail.com",
           "subject": "Your order is going through customs",
           "sentAt": 1793077297661,
-          "messageId": "<202610270501.60262590795@smtp-relay.mailin.fr>"
+          "messageId": "<202610270501.60262590795@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-10-27T06:01:39.000+01:00"
         }
       ],
       "notes": "",
@@ -1376,7 +1388,9 @@
           "to": "sean.goodale@gmail.com",
           "subject": "Your order is going through customs",
           "sentAt": 1793077297661,
-          "messageId": "<202610270501.92112729187@smtp-relay.mailin.fr>"
+          "messageId": "<202610270501.92112729187@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-10-27T06:01:39.000+01:00"
         }
       ],
       "notes": "",
@@ -1464,7 +1478,9 @@
           "to": "jwllmsn@gmail.com",
           "subject": "Your order is going through customs",
           "sentAt": 1793077297661,
-          "messageId": "<202610270501.43649917268@smtp-relay.mailin.fr>"
+          "messageId": "<202610270501.43649917268@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-10-27T06:01:40.000+01:00"
         }
       ],
       "notes": "",
