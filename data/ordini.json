@@ -317,12 +317,17 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": null,
-      "status": "preparazione",
+      "status": "spedito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1792533646072,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "spedito",
+          "date": 1793204437378,
+          "note": ""
         }
       ],
       "emailsSent": [
@@ -338,9 +343,12 @@
       ],
       "notes": "",
       "createdAt": 1792533646072,
-      "updatedAt": 1793142100242,
+      "updatedAt": 1793204437378,
       "staleAlertDays": 7,
-      "staleAlertSince": 1792533646072
+      "staleAlertSince": 1792533646072,
+      "trackingUrl": "",
+      "destCountry": "US",
+      "courierDate": 1793204437378
     },
     {
       "id": "ord_mvffy52qip60",
