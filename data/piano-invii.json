@@ -1,6 +1,6 @@
 {
-  "generatoAt": 1793206911693,
-  "generatoIl": "28/10/2026 18:01",
+  "generatoAt": 1793228494588,
+  "generatoIl": "29/10/2026 00:01",
   "followupPassoAttivo": false,
   "invioAutomatico": true,
   "testMode": false,
@@ -20,16 +20,6 @@
   "scaduteGia": 1686,
   "senzaCasellaValida": 0,
   "giorni": [
-    {
-      "data": "2026-10-28",
-      "giorno": "mer",
-      "daInviare": 0,
-      "day7": 0,
-      "day21": 0,
-      "day35": 0,
-      "scadonoSenzaInvio": 0,
-      "inCodaAFineGiorno": 0
-    },
     {
       "data": "2026-10-29",
       "giorno": "gio",
@@ -153,6 +143,16 @@
     {
       "data": "2026-11-10",
       "giorno": "mar",
+      "daInviare": 0,
+      "day7": 0,
+      "day21": 0,
+      "day35": 0,
+      "scadonoSenzaInvio": 0,
+      "inCodaAFineGiorno": 0
+    },
+    {
+      "data": "2026-11-11",
+      "giorno": "mer",
       "daInviare": 0,
       "day7": 0,
       "day21": 0,
