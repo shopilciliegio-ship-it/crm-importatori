@@ -1,6 +1,6 @@
 {
-  "generatoAt": 1793293312390,
-  "generatoIl": "29/10/2026 18:01",
+  "generatoAt": 1793314914622,
+  "generatoIl": "30/10/2026 00:01",
   "followupPassoAttivo": false,
   "invioAutomatico": true,
   "testMode": false,
@@ -20,16 +20,6 @@
   "scaduteGia": 1686,
   "senzaCasellaValida": 0,
   "giorni": [
-    {
-      "data": "2026-10-29",
-      "giorno": "gio",
-      "daInviare": 0,
-      "day7": 0,
-      "day21": 0,
-      "day35": 0,
-      "scadonoSenzaInvio": 0,
-      "inCodaAFineGiorno": 0
-    },
     {
       "data": "2026-10-30",
       "giorno": "ven",
@@ -159,6 +149,16 @@
       "day35": 0,
       "scadonoSenzaInvio": 0,
       "inCodaAFineGiorno": 0
+    },
+    {
+      "data": "2026-11-12",
+      "giorno": "gio",
+      "daInviare": 0,
+      "day7": 0,
+      "day21": 0,
+      "day35": 0,
+      "scadonoSenzaInvio": 0,
+      "inCodaAFineGiorno": 0
     }
   ],
   "perseNelPeriodo": 0,
@@ -168,7 +168,7 @@
   },
   "registro7Giorni": {},
   "crediti": {
-    "email": 19882
+    "email": 19881
   },
   "approvazione": {
     "oggi": false,
