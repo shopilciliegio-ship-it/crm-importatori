@@ -827,6 +827,15 @@
       "subject": "Your order has been delivered! 🍷 Enjoy!",
       "sentAt": 1793466105884,
       "messageId": "<202610311701.73118872865@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_muxkzdkv4if8",
+      "customerName": "FRANK BONANNO",
+      "type": "in_consegna",
+      "to": "fbonannojr22@gmail.com",
+      "subject": "Your wine is out for delivery! 🍷",
+      "sentAt": 1793487706804,
+      "messageId": "<202610312301.15024081742@smtp-relay.mailin.fr>"
     }
   ]
 }
