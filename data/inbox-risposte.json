@@ -1,5 +1,5 @@
 {
-  "lastUid": 507,
+  "lastUid": 508,
   "pending": [
     {
       "id": "ir_422",
@@ -1575,6 +1575,25 @@
       "rispostaDiretta": true,
       "suggestedStatus": null,
       "reason": "È una risposta pertinente e costruttiva da parte di un partner/distributore che sta collaborando alla preparazione di materiale commerciale e listino per la vendita dei vini Siena Wine.",
+      "confidence": "ai",
+      "dataRientro": null,
+      "emailAlternativa": null
+    },
+    {
+      "id": "ir_508",
+      "uid": 508,
+      "contactId": null,
+      "nonCollegato": true,
+      "company": "Servizio Hosting",
+      "from": "",
+      "mittenteNome": "Servizio Hosting",
+      "subject": "Attenzione: il tuo hosting sienawine.it è stato sospeso – Rinnova ora",
+      "date": "2026-10-31T04:27:16+00:00",
+      "snippet": "Gentile Cliente\r\nCiao,Sieavvisatcheliltdominiolrelativolatquestoiaccountidi postaielettronicalscadr&agrave;iiniidata !je11/01/2026.ckljnncsjcjoicsj\r\nViiricordiamoiche,iqualoraiilidominioinonivengairinnovatotentrotiltterminetstabilito,itutti itserviziiassociati,lcompresetletcasellexdixposta,xsarannoxdisattivatixexnon potrannoxpi&ugrave;xesserexutilizzatixperxl&rsquo;invioxexlaxricezionedixmessaggi.",
+      "riassunto": "Notifica di scadenza del dominio sienawine.it con richiesta di rinnovo entro il 11/01/2026 per 9,90 € + IVA. Il messaggio contiene caratteri corrotti e formattazione anomala, tipico di email di phishing o spam.",
+      "rispostaDiretta": false,
+      "suggestedStatus": null,
+      "reason": "Email di notifica tecnica (rinnovo dominio) non collegata alla campagna commerciale vini; presenta inoltre segnali di phishing/spam (caratteri corrotti, formattazione anomala, link sospetti).",
       "confidence": "ai",
       "dataRientro": null,
       "emailAlternativa": null
