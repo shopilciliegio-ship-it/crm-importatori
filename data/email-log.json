@@ -818,6 +818,15 @@
       "subject": "Your order is going through customs",
       "sentAt": 1793077297661,
       "messageId": "<202610270501.43649917268@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_muwif4xwc76j",
+      "customerName": "CONNOR SMITH",
+      "type": "consegnato",
+      "to": "connor.smith4355@gmail.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1793466105884,
+      "messageId": "<202610311701.73118872865@smtp-relay.mailin.fr>"
     }
   ]
 }
