@@ -1994,11 +1994,18 @@
           "messageId": "<202610230400.28750780422@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-10-23T06:01:01.000+02:00"
+        },
+        {
+          "type": "consegnato",
+          "to": "connor.smith4355@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1793466105884,
+          "messageId": "<202610311701.73118872865@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1791280937156,
-      "updatedAt": 1793466102951,
+      "updatedAt": 1793466105884,
       "staleAlertDays": 7,
       "staleAlertSince": 1792728051519,
       "track17Registered": true
