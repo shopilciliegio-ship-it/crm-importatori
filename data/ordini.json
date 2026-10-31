@@ -1944,7 +1944,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1791972107944,
-      "status": "dogana",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1960,6 +1960,11 @@
           "status": "dogana",
           "date": 1792728051519,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "consegnato",
+          "date": 1793466102951,
+          "note": "Auto 17Track (era: dogana): QUINCY, MA, US — Delivered, DELIVERED"
         }
       ],
       "emailsSent": [
@@ -1993,7 +1998,7 @@
       ],
       "notes": "",
       "createdAt": 1791280937156,
-      "updatedAt": 1793336520499,
+      "updatedAt": 1793466102951,
       "staleAlertDays": 7,
       "staleAlertSince": 1792728051519,
       "track17Registered": true
