@@ -1709,11 +1709,18 @@
           "messageId": "<202610230400.43386055572@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-10-23T06:01:00.000+02:00"
+        },
+        {
+          "type": "in_consegna",
+          "to": "fbonannojr22@gmail.com",
+          "subject": "Your wine is out for delivery! 🍷",
+          "sentAt": 1793487706804,
+          "messageId": "<202610312301.15024081742@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1791345706879,
-      "updatedAt": 1793487704404,
+      "updatedAt": 1793487706804,
       "staleAlertDays": 7,
       "staleAlertSince": 1792728051519,
       "track17Registered": true
