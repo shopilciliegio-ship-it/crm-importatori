@@ -1721,11 +1721,18 @@
           "subject": "Your wine is out for delivery! 🍷",
           "sentAt": 1793487706804,
           "messageId": "<202610312301.15024081742@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegnato",
+          "to": "fbonannojr22@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1793509303663,
+          "messageId": "<202611010501.86391323989@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1791345706879,
-      "updatedAt": 1793509296571,
+      "updatedAt": 1793509303663,
       "staleAlertDays": 7,
       "staleAlertSince": 1792728051519,
       "track17Registered": true
