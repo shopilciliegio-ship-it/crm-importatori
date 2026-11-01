@@ -3391,7 +3391,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1791496932916,
-      "status": "consegna_fallita",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -3412,6 +3412,11 @@
           "status": "consegna_fallita",
           "date": 1792706457702,
           "note": "Auto 17Track (era: dogana): Delivery Attempted, We were unable to deliver your package. It's on the way to a UPS Access Point™ location next business day for pick up."
+        },
+        {
+          "status": "consegnato",
+          "date": 1793574071487,
+          "note": "Auto 17Track (era: consegna_fallita): PLANTATION, FL, US — Delivered, DELIVERED"
         }
       ],
       "emailsSent": [
@@ -3454,7 +3459,7 @@
       ],
       "notes": "",
       "createdAt": 1790352034253,
-      "updatedAt": 1793314908003,
+      "updatedAt": 1793574071487,
       "staleAlertDays": 7,
       "staleAlertSince": 1792706457702,
       "track17Registered": true,
