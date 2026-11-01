@@ -1659,7 +1659,7 @@
       "orderNumber": "#1463",
       "paymentType": "Carte Di Credito/Bancomat",
       "shippingDate": 1791972107944,
-      "status": "in_consegna",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1680,6 +1680,11 @@
           "status": "in_consegna",
           "date": 1793487704404,
           "note": "Auto 17Track (era: dogana): Farmingville, NY, United States — Out for Delivery, Out For Delivery Today"
+        },
+        {
+          "status": "consegnato",
+          "date": 1793509296571,
+          "note": "Auto Fieramente (era: in_consegna)"
         }
       ],
       "emailsSent": [
@@ -1720,7 +1725,7 @@
       ],
       "notes": "",
       "createdAt": 1791345706879,
-      "updatedAt": 1793487706804,
+      "updatedAt": 1793509296571,
       "staleAlertDays": 7,
       "staleAlertSince": 1792728051519,
       "track17Registered": true
