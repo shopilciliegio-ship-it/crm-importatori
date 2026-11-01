@@ -69,10 +69,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "christen.nickel@gmail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1793574074193,
+          "messageId": "<202611012301.61525875611@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1793574051504,
-      "updatedAt": 1793574055481
+      "updatedAt": 1793574074193
     },
     {
       "id": "ord_mvjqa2sdzkpz",
@@ -3455,11 +3463,18 @@
           "messageId": "<202610222201.94077373485@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-10-23T00:01:03.000+02:00"
+        },
+        {
+          "type": "consegnato",
+          "to": "jlcook315@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1793574074193,
+          "messageId": "<202611012301.28046145700@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1790352034253,
-      "updatedAt": 1793574071487,
+      "updatedAt": 1793574074193,
       "staleAlertDays": 7,
       "staleAlertSince": 1792706457702,
       "track17Registered": true,
