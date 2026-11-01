@@ -845,6 +845,24 @@
       "subject": "Your order has been delivered! 🍷 Enjoy!",
       "sentAt": 1793509303663,
       "messageId": "<202611010501.86391323989@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mvyfojao4q4d",
+      "customerName": "Christen Nickel",
+      "type": "order_received",
+      "to": "christen.nickel@gmail.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1793574074193,
+      "messageId": "<202611012301.61525875611@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_muh5divhqc01",
+      "customerName": "JESSICA COOK",
+      "type": "consegnato",
+      "to": "jlcook315@gmail.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1793574074193,
+      "messageId": "<202611012301.28046145700@smtp-relay.mailin.fr>"
     }
   ]
 }
