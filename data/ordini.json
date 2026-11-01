@@ -1,6 +1,80 @@
 {
   "orders": [
     {
+      "id": "ord_mvyfojao4q4d",
+      "customerName": "Christen Nickel",
+      "customerEmail": "christen.nickel@gmail.com",
+      "customerPhone": "7202019359",
+      "amount": 247.55,
+      "currency": "EUR",
+      "orderDate": 1793564514000,
+      "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio Christen Nickel",
+      "shipmentCode": "",
+      "shippingAddress": "731 Tyler St, 80521 Fort Collins (CO), United States",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<CAOmk=KY2Krjz5Xd-MXZYhV=OmGZWpCj3MTtd8XPbQ9X_8xjsoA@mail.gmail.com>",
+      "trackingNumber": "",
+      "carrier": "U.S.A. Wine Corriere Std",
+      "products": [
+        {
+          "description": "INFERNACCIO RED WINE IGT 2022",
+          "qty": 1,
+          "value": 16.0
+        },
+        {
+          "description": "CILIEGIO IN FIORE ROSE' SPARKLING WINE",
+          "qty": 1,
+          "value": 10.0
+        },
+        {
+          "description": "CHIANTI COLLI SENESI DOCG POGGIO ORLANDO 2024",
+          "qty": 5,
+          "value": 60.0
+        },
+        {
+          "description": "RED WINE IGT 2025",
+          "qty": 2,
+          "value": 14.0
+        },
+        {
+          "description": "THEIA WHITE TABLE WINE",
+          "qty": 1,
+          "value": 5.0
+        },
+        {
+          "description": "LE FORCACCE WHITE WINE IGT 2025 VIOGNIER 100%",
+          "qty": 1,
+          "value": 8.5
+        },
+        {
+          "description": "WHITE WINE IGT 2025",
+          "qty": 1,
+          "value": 7.0
+        }
+      ],
+      "customsDuties": 12.05,
+      "shippingCostCustomer": 115.0,
+      "shippingCostMos": null,
+      "source": "shop",
+      "language": "en",
+      "orderNumber": "#1482",
+      "paymentType": "Carte Di Credito/Bancomat",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1793574051504,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1793574051504,
+      "updatedAt": 1793574051504
+    },
+    {
       "id": "ord_mvjqa2sdzkpz",
       "customerName": "ROGER DIROCCO",
       "customerEmail": "shirleydirocco1@gmail.com",
@@ -13408,5 +13482,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1792684860060
+  "lastImportedAt": 1793574051504
 }
