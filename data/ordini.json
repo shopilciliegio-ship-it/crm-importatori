@@ -9,9 +9,9 @@
       "currency": "EUR",
       "orderDate": 1793564514000,
       "emailSubject": "Invio Ordine Azienda Agricola Il Ciliegio Christen Nickel",
-      "shipmentCode": "",
+      "shipmentCode": "NICKELC",
       "shippingAddress": "731 Tyler St, 80521 Fort Collins (CO), United States",
-      "numberOfCartons": null,
+      "numberOfCartons": 2,
       "shippingType": "standard",
       "gmailMessageId": "<CAOmk=KY2Krjz5Xd-MXZYhV=OmGZWpCj3MTtd8XPbQ9X_8xjsoA@mail.gmail.com>",
       "trackingNumber": "",
@@ -20,27 +20,27 @@
         {
           "description": "INFERNACCIO RED WINE IGT 2022",
           "qty": 1,
-          "value": 16.0
+          "value": 16
         },
         {
           "description": "CILIEGIO IN FIORE ROSE' SPARKLING WINE",
           "qty": 1,
-          "value": 10.0
+          "value": 10
         },
         {
           "description": "CHIANTI COLLI SENESI DOCG POGGIO ORLANDO 2024",
           "qty": 5,
-          "value": 60.0
+          "value": 60
         },
         {
           "description": "RED WINE IGT 2025",
           "qty": 2,
-          "value": 14.0
+          "value": 14
         },
         {
           "description": "THEIA WHITE TABLE WINE",
           "qty": 1,
-          "value": 5.0
+          "value": 5
         },
         {
           "description": "LE FORCACCE WHITE WINE IGT 2025 VIOGNIER 100%",
@@ -50,12 +50,12 @@
         {
           "description": "WHITE WINE IGT 2025",
           "qty": 1,
-          "value": 7.0
+          "value": 7
         }
       ],
       "customsDuties": 12.05,
-      "shippingCostCustomer": 115.0,
-      "shippingCostMos": null,
+      "shippingCostCustomer": 115,
+      "shippingCostMos": 105,
       "source": "shop",
       "language": "en",
       "orderNumber": "#1482",
@@ -72,7 +72,7 @@
       "emailsSent": [],
       "notes": "",
       "createdAt": 1793574051504,
-      "updatedAt": 1793574051504
+      "updatedAt": 1793574055481
     },
     {
       "id": "ord_mvjqa2sdzkpz",
