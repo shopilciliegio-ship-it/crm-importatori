@@ -1,5 +1,5 @@
 {
-  "lastUid": 508,
+  "lastUid": 509,
   "pending": [
     {
       "id": "ir_422",
@@ -1594,6 +1594,25 @@
       "rispostaDiretta": false,
       "suggestedStatus": null,
       "reason": "Email di notifica tecnica (rinnovo dominio) non collegata alla campagna commerciale vini; presenta inoltre segnali di phishing/spam (caratteri corrotti, formattazione anomala, link sospetti).",
+      "confidence": "ai",
+      "dataRientro": null,
+      "emailAlternativa": null
+    },
+    {
+      "id": "ir_509",
+      "uid": 509,
+      "contactId": null,
+      "nonCollegato": true,
+      "company": "Supporto A﻿r﻿u﻿b﻿а",
+      "from": "supporto.aruba-eljsqvm9bpvc@paulbeskers.de",
+      "mittenteNome": "Supporto A﻿r﻿u﻿b﻿а",
+      "subject": "sienawine.it - Avviso di rinnovo del servizio",
+      "date": "2026-11-02T01:40:34+00:00",
+      "snippet": "data:image/png;Cinchonine Papa! Gerichtsstand Gliair Demobilisierung konjugieren blumen Geom. Drogengier Erfahrungen unbemerkt Tragekomfort Teecups Corydalis überflüssig Fictioneering verdrahtet Serenenesse ultraexklusiv Totköpfe Pikas Sor. abgebaut Mikrogame nichtindustriell Strandköpfe Hayfork Expositionen Sesamoide Isoton;base64,iVBORw0KGgoAAAANSUhEUgAAAI8AAAA5CAMAAAA4LojJAAAAA3NCSVQICAjb4U/gAA",
+      "riassunto": "Email tecnica con oggetto relativo a sienawine.it e rinnovo servizio, ma il corpo contiene solo dati corrotti (immagine base64 e testo casuale in tedesco). Non è possibile estrarre un messaggio significativo.",
+      "rispostaDiretta": false,
+      "suggestedStatus": null,
+      "reason": "Email corrotta o spam automatico, non contiene un messaggio umano pertinente alla proposta commerciale.",
       "confidence": "ai",
       "dataRientro": null,
       "emailAlternativa": null
