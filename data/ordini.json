@@ -91,12 +91,12 @@
       "currency": "EUR",
       "orderDate": 1792675238000,
       "emailSubject": "🍷 New Order — ROGER DIROCCO — 142.65 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "SDIROCCOR",
       "shippingAddress": "368WESTFIELD DR, 19008 MARPLE TOWNSHIP, PENNSYLVANIA (DELAWARE COUNTY)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202610221320.47932558712@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A896409201",
       "carrier": "MBE",
       "products": [
         {
@@ -132,8 +132,8 @@
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "spedito",
+      "shippingDate": 1793617257813,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -144,6 +144,11 @@
           "status": "spedito",
           "date": 1793204473379,
           "note": ""
+        },
+        {
+          "status": "in_transito",
+          "date": 1793617257813,
+          "note": "Auto Fieramente (era: spedito)"
         }
       ],
       "emailsSent": [
@@ -159,7 +164,7 @@
       ],
       "notes": "",
       "createdAt": 1792684860060,
-      "updatedAt": 1793204473379,
+      "updatedAt": 1793617257813,
       "trackingUrl": "",
       "destCountry": "US",
       "courierDate": 1793204473379
@@ -173,12 +178,12 @@
       "currency": "EUR",
       "orderDate": 1792674921000,
       "emailSubject": "🍷 New Order — LAWRENCE RINALDI — 886.60 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "SRINALDIL",
       "shippingAddress": "505 SCOTTY BLVD, 08242 MIDDLE TOWNSHIP, NEW JERSEY (CAPE MAY COUNTY)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202610221315.15107303706@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A895893163",
       "carrier": "MBE",
       "products": [
         {
@@ -209,8 +214,8 @@
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "spedito",
+      "shippingDate": 1793617257813,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -221,6 +226,11 @@
           "status": "spedito",
           "date": 1793204458006,
           "note": ""
+        },
+        {
+          "status": "in_transito",
+          "date": 1793617257813,
+          "note": "Auto Fieramente (era: spedito)"
         }
       ],
       "emailsSent": [
@@ -236,7 +246,7 @@
       ],
       "notes": "",
       "createdAt": 1792684860060,
-      "updatedAt": 1793204458006,
+      "updatedAt": 1793617257813,
       "trackingUrl": "",
       "destCountry": "US",
       "courierDate": 1793204458006
@@ -250,12 +260,12 @@
       "currency": "EUR",
       "orderDate": 1792674516000,
       "emailSubject": "🍷 New Order — DENISE SACHS — 178.40 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "SSACHSD",
       "shippingAddress": "534 BARBADOS DRIVE, 08094 WILLIAMSTOWN, NEW JERSEY (GLOUCESTER)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202610221308.89892636358@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A897241283",
       "carrier": "MBE",
       "products": [
         {
@@ -276,8 +286,8 @@
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "spedito",
+      "shippingDate": 1793617257813,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -288,6 +298,11 @@
           "status": "spedito",
           "date": 1793204449045,
           "note": ""
+        },
+        {
+          "status": "in_transito",
+          "date": 1793617257813,
+          "note": "Auto Fieramente (era: spedito)"
         }
       ],
       "emailsSent": [
@@ -303,7 +318,7 @@
       ],
       "notes": "",
       "createdAt": 1792684860060,
-      "updatedAt": 1793204449045,
+      "updatedAt": 1793617257813,
       "trackingUrl": "",
       "destCountry": "US",
       "courierDate": 1793204449045
@@ -317,12 +332,12 @@
       "currency": "EUR",
       "orderDate": 1792523479000,
       "emailSubject": "🍷 New Order — ERIN LEVITSKY — 174.00 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "SLEVITSKYE",
       "shippingAddress": "26 GRACE PARK DR, 11725 COMMACK, NEW YORK (SUFFOLK COUNTY)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202610201911.80286446757@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A899057309",
       "carrier": "MBE",
       "products": [
         {
@@ -358,8 +373,8 @@
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "spedito",
+      "shippingDate": 1793617257813,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -370,6 +385,11 @@
           "status": "spedito",
           "date": 1793204428062,
           "note": ""
+        },
+        {
+          "status": "in_transito",
+          "date": 1793617257813,
+          "note": "Auto Fieramente (era: spedito)"
         }
       ],
       "emailsSent": [
@@ -385,7 +405,7 @@
       ],
       "notes": "",
       "createdAt": 1792533646072,
-      "updatedAt": 1793204428062,
+      "updatedAt": 1793617257813,
       "staleAlertDays": 7,
       "staleAlertSince": 1792533646072,
       "trackingUrl": "",
@@ -401,12 +421,12 @@
       "currency": "EUR",
       "orderDate": 1792520754000,
       "emailSubject": "🍷 New Order — VALERIE FOX — 198.20 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "SFOXV",
       "shippingAddress": "1017 NW 17TH ST, 73106 OKLAHOMA CITY, OKLAHOMA (OKLAHOMA COUNTY)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202610201825.87580664497@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1Z9376E1A811022878",
       "carrier": "MBE",
       "products": [
         {
@@ -422,8 +442,8 @@
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "spedito",
+      "shippingDate": 1793617257813,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -434,6 +454,11 @@
           "status": "spedito",
           "date": 1793204437378,
           "note": ""
+        },
+        {
+          "status": "in_transito",
+          "date": 1793617257813,
+          "note": "Auto Fieramente (era: spedito)"
         }
       ],
       "emailsSent": [
@@ -449,7 +474,7 @@
       ],
       "notes": "",
       "createdAt": 1792533646072,
-      "updatedAt": 1793204437378,
+      "updatedAt": 1793617257813,
       "staleAlertDays": 7,
       "staleAlertSince": 1792533646072,
       "trackingUrl": "",
@@ -751,12 +776,12 @@
       "currency": "EUR",
       "orderDate": 1792153396000,
       "emailSubject": "🍷 New Order — BRIAN PETERSON — 154.20 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "SPETERSONB",
       "shippingAddress": "5420 SW 133 CT, 34481 OCALA, FLORIDA (MARION COUNTY)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202610161223.48936008434@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A899357897",
       "carrier": "MBE",
       "products": [
         {
@@ -777,8 +802,8 @@
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "spedito",
+      "shippingDate": 1793617257813,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -789,6 +814,11 @@
           "status": "spedito",
           "date": 1793204415313,
           "note": ""
+        },
+        {
+          "status": "in_transito",
+          "date": 1793617257813,
+          "note": "Auto Fieramente (era: spedito)"
         }
       ],
       "emailsSent": [
@@ -804,7 +834,7 @@
       ],
       "notes": "",
       "createdAt": 1792166470460,
-      "updatedAt": 1793204415313,
+      "updatedAt": 1793617257813,
       "staleAlertDays": 7,
       "staleAlertSince": 1792166470460,
       "trackingUrl": "",
@@ -820,12 +850,12 @@
       "currency": "EUR",
       "orderDate": 1792152425000,
       "emailSubject": "🍷 New Order — DON COWIN — 154.20 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "SCOWIND2",
       "shippingAddress": "736 FOX CREEK DRIVE, 63026 FENTON, MISSOURI (SAINT LOUIS COUNTY)",
       "numberOfCartons": null,
       "shippingType": "standard",
       "gmailMessageId": "<202610161207.18098438078@smtp-relay.mailin.fr>",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A800062327",
       "carrier": "MBE",
       "products": [
         {
@@ -846,8 +876,8 @@
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
-      "shippingDate": null,
-      "status": "spedito",
+      "shippingDate": 1793617257813,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -858,6 +888,11 @@
           "status": "spedito",
           "date": 1793204407782,
           "note": ""
+        },
+        {
+          "status": "in_transito",
+          "date": 1793617257813,
+          "note": "Auto Fieramente (era: spedito)"
         }
       ],
       "emailsSent": [
@@ -873,7 +908,7 @@
       ],
       "notes": "",
       "createdAt": 1792166470460,
-      "updatedAt": 1793204407782,
+      "updatedAt": 1793617257813,
       "staleAlertDays": 7,
       "staleAlertSince": 1792166470460,
       "trackingUrl": "",
