@@ -161555,7 +161555,7 @@
           "toEmail": "luoquis@gmail.com"
         }
       ],
-      "blacklisted": false,
+      "blacklisted": true,
       "notes": "",
       "status": "sent",
       "region": "Nord America",
@@ -161575,9 +161575,20 @@
           "clicked": false,
           "bounced": false,
           "spam": false,
-          "unsubscribed": false,
+          "unsubscribed": true,
           "blocked": false,
-          "deliveredAt": "2026-06-16T23:10:09.772+02:00"
+          "deliveredAt": "2026-06-16T23:10:09.772+02:00",
+          "unsubscribedAt": "2026-11-03T18:31:25.276+01:00"
+        }
+      ],
+      "log": [
+        {
+          "ts": 1793746822481,
+          "msg": "🚫 Disiscritto: Wave 1"
+        },
+        {
+          "ts": 1793746822986,
+          "msg": "🚫 Contatto inserito in blacklist (spam/disiscrizione/bloccata)"
         }
       ]
     },
