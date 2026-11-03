@@ -1,5 +1,5 @@
 {
-  "lastUid": 509,
+  "lastUid": 510,
   "pending": [
     {
       "id": "ir_422",
@@ -1613,6 +1613,25 @@
       "rispostaDiretta": false,
       "suggestedStatus": null,
       "reason": "Email corrotta o spam automatico, non contiene un messaggio umano pertinente alla proposta commerciale.",
+      "confidence": "ai",
+      "dataRientro": null,
+      "emailAlternativa": null
+    },
+    {
+      "id": "ir_510",
+      "uid": 510,
+      "contactId": null,
+      "nonCollegato": true,
+      "company": "Ashleigh Cole",
+      "from": "thecolefamily1@att.net",
+      "mittenteNome": "Ashleigh Cole",
+      "subject": "Re: Your wine is on its way! 🍷",
+      "date": "2026-11-03T03:08:17+00:00",
+      "snippet": "I’m not able to see tracking- can you please advise when it should arrive? Gratzie! Sent from my iPhone\n \n On Oct 19, 2026, at 1:23 PM, Il Ciliegio — Azienda Agricola &lt;luca@sienawine.it&gt; wrote:\n\n \n ﻿ \r\n\r\n \r\n \r\n \r\n \r\n \r\n \r\n &nbsp; \r\n Dear ASHLEIGH,\nyour order has been shipped and is now on its way to you!\nFor your convenience Tracking number: 1ZRY6787A806678152 — 🔗 Track your shipment live \n ",
+      "riassunto": "Ashleigh risponde a una notifica di spedizione del nostro ordine dicendo che non riesce a vedere il tracking e chiede quando arriverà il pacco.",
+      "rispostaDiretta": true,
+      "suggestedStatus": null,
+      "reason": "È un cliente che ha già effettuato un ordine e sta seguendo la spedizione, richiedendo assistenza sul tracking.",
       "confidence": "ai",
       "dataRientro": null,
       "emailAlternativa": null
