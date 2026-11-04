@@ -5,6 +5,11 @@ on:
   # oppure a mano. Il cron `schedule` di GitHub è stato tolto il 23/9/2026: partiva con ore di ritardo
   # e faceva solo run doppi. Se il timer si ferma, lanciare a mano da GitHub UI.
   workflow_dispatch:        # trigger manuale dal CRM o da GitHub UI
+    inputs:
+      limite:
+        description: 'Quota ridotta per una prova (es. 20). Vuoto = quota normale della configurazione'
+        required: false
+        default: ''
 
 permissions:
   contents: write
@@ -37,4 +42,6 @@ jobs:
           BREVO_API_KEY:  ${{ secrets.BREVO_API_KEY }}
           GH_TOKEN:       ${{ secrets.GITHUB_TOKEN }}
           GH_REPO:        ${{ github.repository }}
+          RICERCA_LIMITE: ${{ github.event.inputs.limite }}
+          PYTHONUNBUFFERED: '1'
         run: python scripts/research_ai.py
