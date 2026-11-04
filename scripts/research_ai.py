@@ -114,7 +114,29 @@ def gh_put(path, data, sha, message):
     return r.json()['content']['sha']
 
 
+def salva_overrides(overrides, sha, message, nostri_ids):
+    """Salva gli override; se nel frattempo il CRM li ha modificati (409/422 sha non aggiornato) rilegge la versione
+    remota, ci riapplica SOLO i risultati di ricerca di questa esecuzione e riprova. Ritorna (overrides, nuovo_sha)."""
+    for tentativo in range(3):
+        try:
+            return overrides, gh_put(OVERRIDES_PATH, overrides, sha, message)
+        except requests.HTTPError as e:
+            code = e.response.status_code if e.response is not None else None
+            if code not in (409, 422) or tentativo == 2:
+                raise
+            print(f'  ↻ override modificati nel frattempo dal CRM (HTTP {code}) — rileggo e riunisco', flush=True)
+            remoto, sha = gh_get(OVERRIDES_PATH)
+            remoto = remoto or {}
+            for cid in nostri_ids:
+                if (overrides.get(cid) or {}).get('research'):
+                    remoto.setdefault(cid, {})['research'] = overrides[cid]['research']
+            overrides = remoto
+
+
 # ── Ricerca: Serper (Google), sito web, Claude ────────────────────────────────
+
+SERPER_STATS = {'ok': 0, 'errori': 0}
+
 
 def serper_search(company, country):
     if not SERPER_API_KEY:
@@ -125,7 +147,11 @@ def serper_search(company, country):
             json={'q': f'"{company}" wine importer {country}', 'num': 6, 'gl': 'us', 'hl': 'en'},
             timeout=20)
         if not r.ok:
+            SERPER_STATS['errori'] += 1
+            if SERPER_STATS['errori'] <= 3:
+                print(f'  ⚠ Serper HTTP {r.status_code}: {r.text[:200]}')
             return ''
+        SERPER_STATS['ok'] += 1
         data = r.json()
         parts = []
         kg = data.get('knowledgeGraph')
@@ -357,6 +383,13 @@ def main():
         config = DEFAULT_CONFIG
     queue       = config.get('queue') or []
     daily_limit = config.get('dailyLimit') or DEFAULT_CONFIG['dailyLimit']
+    # Lancio di prova a mano: RICERCA_LIMITE=20 riduce la quota di questa sola esecuzione (non tocca la config)
+    try:
+        if int(os.environ.get('RICERCA_LIMITE') or 0) > 0:
+            daily_limit = int(os.environ['RICERCA_LIMITE'])
+            print(f'🧪 Quota ridotta per questa esecuzione: {daily_limit}')
+    except ValueError:
+        pass
     completed_countries = set(config.get('completedCountries') or [])
 
     if config.get('paused'):
@@ -459,6 +492,7 @@ def main():
     successes = 0              # analisi riuscite (quello che conta davvero, non i tentativi)
     errors    = 0
     overrides_changed = False
+    nostri_ids = set()
     fatal_error = None
 
     for country, contacts_list in plan:
@@ -480,9 +514,16 @@ def main():
                 now_iso = datetime.now(timezone.utc).isoformat(timespec='milliseconds').replace('+00:00', 'Z')
                 entry = overrides.setdefault(c['id'], {})
                 entry['research'] = {**analysis, 'analyzed_at': now_iso}
+                nostri_ids.add(c['id'])
                 overrides_changed = True
                 country_successes += 1
                 successes += 1
+                if successes % 10 == 0:
+                    # Salvataggio intermedio: se il runner viene interrotto non si perde tutto il lavoro
+                    overrides, overrides_sha = salva_overrides(overrides, overrides_sha,
+                                           f'Ricerca AI — salvataggio intermedio ({successes} analizzati)', nostri_ids)
+                    overrides_changed = False
+                    print(f'  💾 salvataggio intermedio: {successes} analizzati', flush=True)
 
                 rec = analysis.get('raccomandato')
                 if rec == 'si':
@@ -502,10 +543,11 @@ def main():
         if fatal_error:
             break
 
+    print(f"Serper: {SERPER_STATS['ok']} ricerche ok, {SERPER_STATS['errori']} in errore", flush=True)
     countries_label = '+'.join(analyzed_by_country.keys())
 
     if overrides_changed:
-        gh_put(OVERRIDES_PATH, overrides, overrides_sha, f'Ricerca AI — {countries_label} ({successes} analizzati)')
+        overrides, overrides_sha = salva_overrides(overrides, overrides_sha, f'Ricerca AI — {countries_label} ({successes} analizzati)', nostri_ids)
         print(f'✓ {successes} risultati salvati in {OVERRIDES_PATH} ({errors} errori)')
     else:
         print(f'⚠ Nessun risultato salvato in questa run ({errors} errori, 0 successi) — override non modificato')
