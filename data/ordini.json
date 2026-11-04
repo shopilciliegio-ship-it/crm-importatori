@@ -578,11 +578,11 @@
       ],
       "notes": "",
       "createdAt": 1792425642289,
-      "updatedAt": 1793185291078,
+      "updatedAt": 1793790057028,
       "trackingUrl": "",
       "destCountry": "US",
       "courierDate": 1792568337234,
-      "staleAlertDays": 7,
+      "staleAlertDays": 14,
       "staleAlertSince": 1792568337234
     },
     {
@@ -652,11 +652,11 @@
       ],
       "notes": "",
       "createdAt": 1792425642289,
-      "updatedAt": 1793185291078,
+      "updatedAt": 1793790057028,
       "trackingUrl": "",
       "destCountry": "US",
       "courierDate": 1792568354114,
-      "staleAlertDays": 7,
+      "staleAlertDays": 14,
       "staleAlertSince": 1792568354114
     },
     {
@@ -716,11 +716,11 @@
       ],
       "notes": "",
       "createdAt": 1792382452134,
-      "updatedAt": 1793185291078,
+      "updatedAt": 1793790057028,
       "trackingUrl": "",
       "destCountry": "US",
       "courierDate": 1792568299202,
-      "staleAlertDays": 7,
+      "staleAlertDays": 14,
       "staleAlertSince": 1792568299202
     },
     {
@@ -2468,8 +2468,8 @@
       ],
       "notes": "",
       "createdAt": 1790848899214,
-      "updatedAt": 1793185291078,
-      "staleAlertDays": 7,
+      "updatedAt": 1793790057028,
+      "staleAlertDays": 14,
       "staleAlertSince": 1792567782690,
       "trackingUrl": "",
       "destCountry": "US",
