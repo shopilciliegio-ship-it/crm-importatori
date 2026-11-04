@@ -388198,5 +388198,115 @@
   "c1791797451415ibdp6": {
     "contactName": "Jessica Contreras",
     "contactTitle": "Founder/ Ceo"
+  },
+  "c17806737108147qlnl": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-retailer locale (1 dipendente, fatturato ~32k€) con sito basic e nessuna visibilità online. Portafoglio generico (vini, formaggi, birre, spirits) senza focus su vini italiani. Non idonea per partnership B2B.",
+      "analyzed_at": "2026-11-04T15:33:55.064Z"
+    }
+  },
+  "c1780673710814d7ho7": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~32k€) specializzata in gastronomia spagnola (charcuterie, tapas, paella). Nessuna menzione esplicita di vini italiani nel sito; focus su prodotti iberici. Non è un importatore/distributore di vini ma un retailer/tratteur locale.",
+      "analyzed_at": "2026-11-04T15:33:59.702Z"
+    }
+  },
+  "c17806737108142z5ws": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-realtà (1 dipendente, fatturato ~32k€) con sito poco professionale e nessuna traccia online. Specializzata in vini bio/naturali francesi; nessuna menzione esplicita di vini italiani. Non idonea per partnership commerciale.",
+      "analyzed_at": "2026-11-04T15:34:04.738Z"
+    }
+  },
+  "c1780673710814n6zgw": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~31k€) con sito irraggiungibile e nessuna traccia online. Impossibile verificare se commercializza vini italiani. Affidabilità molto bassa.",
+      "analyzed_at": "2026-11-04T15:34:18.809Z"
+    }
+  },
+  "c17806737108142jgw1": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Micro-azienda (1 dipendente, fatturato ~341k€) con sito online poco professionale e nessuna traccia Google. Catalogo prevalentemente francese (Loire, Bordeaux, Rhône); vini italiani presenti ma non prioritari. Non idonea per partnership B2B strutturata.",
+      "analyzed_at": "2026-11-04T15:34:25.024Z"
+    }
+  },
+  "c1780673710814up9ro": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccola enoteca specializzata in vini francesi (Beaujolais, Rhône, Lyonnais) con proprietario sommelier esperto. Nessuna menzione esplicita di vini italiani, ma portafoglio potenzialmente aperto. Micro-azienda (1 dipendente) con fatturato modesto: contattare solo se target è Francia/enoteca specializzata.",
+      "analyzed_at": "2026-11-04T15:34:30.412Z"
+    }
+  },
+  "c17806737108143wbuv": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-realtà francese (1 dipendente, fatturato modesto) focalizzata su retail locale. Nessuna menzione esplicita di vini italiani nel sito; selezione generica di vini/champagne/spirits. Non pertinente per partnership B2B italiana.",
+      "analyzed_at": "2026-11-04T15:34:36.126Z"
+    }
+  },
+  "c17806737108148gw94": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-azienda (1 dipendente, fatturato ~32k€) specializzata in vini francesi del Sud (Provence, Rhône, Languedoc) e spirits. Nessuna traccia di vini italiani nel catalogo. Non pertinente per distribuzione italiana.",
+      "analyzed_at": "2026-11-04T15:34:41.308Z"
+    }
+  },
+  "c1780673710814gma13": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-azienda (1 dipendente, fatturato 32k€) con sito generico. Nessuna menzione esplicita di vini italiani nel portafoglio. Assenza di visibilità online (nessun risultato Google) suggerisce operatività locale molto limitata.",
+      "analyzed_at": "2026-11-04T15:34:47.109Z"
+    }
+  },
+  "c1780673710814x6qfa": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "E-commerce francese specializzato in vini francesi (Borgogna, Champagne, Bordeaux, Loire, ecc.). Portfolio esclusivamente francese e internazionale, nessun vino italiano. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-11-04T15:34:53.352Z"
+    }
   }
 }
