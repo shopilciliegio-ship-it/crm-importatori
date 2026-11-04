@@ -1,5 +1,5 @@
 {
-  "lastUid": 510,
+  "lastUid": 512,
   "pending": [
     {
       "id": "ir_422",
@@ -1632,6 +1632,44 @@
       "rispostaDiretta": true,
       "suggestedStatus": null,
       "reason": "È un cliente che ha già effettuato un ordine e sta seguendo la spedizione, richiedendo assistenza sul tracking.",
+      "confidence": "ai",
+      "dataRientro": null,
+      "emailAlternativa": null
+    },
+    {
+      "id": "ir_511",
+      "uid": 511,
+      "contactId": null,
+      "nonCollegato": true,
+      "company": "Angela Nigrelli",
+      "from": "anigrelli@augustimports.com",
+      "mittenteNome": "Angela Nigrelli",
+      "subject": "Richiesta fatt PO 3749 per il 05/11",
+      "date": "2026-11-03T14:36:04+00:00",
+      "snippet": "Buongiorno,\r\nPer favore inviate la Vs fattura sul PO 3749 entro il 05/11 alle 13,00.\r\n\r\nGrazie\r\n\r\nAngela\r\n\r\n\r\n\r\n\r\n\r\n\r\n__________________________________\r\nAngela Nigrelli\r\nItalian Office:  Vineyard Services\r\nAUGUSTIMPORTS | Small Vineyards\r\n+39.345.521.6273 | ANigrelli@AugustImports.com<mailto:ANigrelli@AugustImports.com>",
+      "riassunto": "Angela Nigrelli di August Imports (Vineyard Services) richiede l'invio della fattura relativa al PO 3749 entro il 05/11 alle 13:00.",
+      "rispostaDiretta": false,
+      "suggestedStatus": null,
+      "reason": "È una richiesta operativa da un cliente/importatore che ha già un ordine in corso (PO 3749) e chiede l'emissione della fattura, indicando un rapporto commerciale attivo.",
+      "confidence": "ai",
+      "dataRientro": null,
+      "emailAlternativa": null
+    },
+    {
+      "id": "ir_512",
+      "uid": 512,
+      "contactId": null,
+      "nonCollegato": true,
+      "company": "Ashleigh Cole",
+      "from": "thecolefamily1@att.net",
+      "mittenteNome": "Ashleigh Cole",
+      "subject": "Re: Your wine is on its way! 🍷",
+      "date": "2026-11-03T17:06:43+00:00",
+      "snippet": "Thanks, as always!! Hope you all are doing well! Sent from my iPhone\n \n On Nov 3, 2026, at 11:29 AM, luca@sienawine.it wrote:\n\n \n ﻿ \r\n \r\n \r\n \r\n \r\n Hello, Ashleigh! \n &nbsp; \n The tracking from UPS is https://t.17track.net/en#nums=1ZRY6787A806678152 and will be updated as soon as your package will leave the customs. \n Your package is at customs since 27/10/2026. \n Normally the process takes 5 to 7 ",
+      "riassunto": "Ashleigh Cole ringrazia per l'aggiornamento sulla spedizione del suo ordine di vino e conferma di aver ricevuto le informazioni di tracciamento da Luca Pattaro di Siena Wine.",
+      "rispostaDiretta": false,
+      "suggestedStatus": null,
+      "reason": "È un cliente esistente che ha già effettuato un ordine e sta seguendo la spedizione; la comunicazione è relativa a un rapporto commerciale già consolidato, non a una proposta di distribuzione.",
       "confidence": "ai",
       "dataRientro": null,
       "emailAlternativa": null
