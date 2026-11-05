@@ -2103,7 +2103,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1791972107944,
-      "status": "dogana",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -2119,6 +2119,11 @@
           "status": "dogana",
           "date": 1792728051519,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "consegnato",
+          "date": 1793919672881,
+          "note": "Auto 17Track (era: dogana): LAFAYETTE, LA, US — Delivered, DELIVERED"
         }
       ],
       "emailsSent": [
@@ -2152,7 +2157,7 @@
       ],
       "notes": "",
       "createdAt": 1791324111296,
-      "updatedAt": 1793336520499,
+      "updatedAt": 1793919672881,
       "staleAlertDays": 7,
       "staleAlertSince": 1792728051519,
       "track17Registered": true
