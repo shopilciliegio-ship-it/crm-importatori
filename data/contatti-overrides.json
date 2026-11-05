@@ -558582,43 +558582,133 @@
   },
   "c17806737109674dhqr": {
     "contactName": "Kassandra Brown",
-    "contactTitle": "Sales Manager"
+    "contactTitle": "Sales Manager",
+    "research": {
+      "affidabilita": 5,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Grande catena retail USA (18k dipendenti, ~491M fatturato) con portafoglio beverage diversificato. Nessuna menzione esplicita di vini italiani, ma come grande retailer potrebbe essere interessata. Contatto difficile: decisioni centralizzate a livello Kroger Co.",
+      "analyzed_at": "2026-11-05T21:13:46.739Z"
+    }
   },
   "c1780673710967z5lno": {
     "contactName": "Camille Harding",
-    "contactTitle": "Buyer"
+    "contactTitle": "Buyer",
+    "research": {
+      "affidabilita": 5,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "retail",
+      "raccomandato": "si",
+      "note": "Catena retail USA di grandi dimensioni (18k dipendenti, ~780M fatturato) con portafoglio vini diversificato. Hanno programma fornitori strutturato e distribuzione capillare. Contattare tramite supplier community ufficiale.",
+      "analyzed_at": "2026-11-05T21:14:04.220Z"
+    }
   },
   "c17806737109679zdls": {
     "contactName": "Susan Schlander",
-    "contactTitle": "General Manger"
+    "contactTitle": "General Manger",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer USA di grandi dimensioni (14.844 dipendenti) specializzato in bevande alcoliche. Nessuna evidenza di focus su vini italiani; portafoglio generico wine/beer/spirits. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-11-05T21:14:09.676Z"
+    }
   },
   "c1780673710967ddtdp": {
     "contactName": "Lee Baker",
-    "contactTitle": "Category Manager"
+    "contactTitle": "Category Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "RNDC ha avviato procedura Chapter 11 a luglio 2026 con liquidazione ordinata. Secondo distributore USA per vini premium, ma situazione finanziaria critica rende contatto non opportuno al momento.",
+      "analyzed_at": "2026-11-05T21:14:17.514Z"
+    }
   },
   "c1780673710967l6ulb": {
     "contactName": "Olivier Kielwasser",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "research": {
+      "affidabilita": 5,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Grande catena retail USA (12.600 dipendenti, ~1,9B$ fatturato) con sezione Wine & Beer consolidata. Offre vini organici e spumanti, ma nessuna evidenza specifica di focus su vini italiani. Contatto potenziale solo se si ha strategia di distribuzione negli USA.",
+      "analyzed_at": "2026-11-05T21:14:23.519Z"
+    }
   },
   "c1780673710967mg6ku": {
     "contactName": "Rafael Zurbano",
-    "contactTitle": "Import Wine Manager"
+    "contactTitle": "Import Wine Manager",
+    "research": {
+      "affidabilita": 5,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "si",
+      "note": "Largest wine & spirits distributor USA (10.300 dipendenti, ~7.2B fatturato). Portafoglio globale premium con 47 mercati USA + Canada/Caraibi. Contatto strategico per vini italiani, ma richiede approccio B2B strutturato.",
+      "analyzed_at": "2026-11-05T21:14:29.758Z"
+    }
   },
   "c1780673710967i0cra": {
     "contactName": "Oscar Romero",
-    "contactTitle": "Buyer"
+    "contactTitle": "Buyer",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Catena retail USA con 8000 dipendenti e fatturato significativo (2.2B$). Vende vino ma sito non raggiungibile e nessuna evidenza di focus su vini italiani. Potenziale come distributore retail, ma richiede verifica diretta sulla composizione del portafoglio vini.",
+      "analyzed_at": "2026-11-05T21:14:36.421Z"
+    }
   },
   "c1780673710967i3que": {
     "contactName": "Paul Stoffel",
-    "contactTitle": "Buyer"
+    "contactTitle": "Buyer",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Catena retail USA consolidata (7000 dipendenti, ~1B fatturato) con sezione vini online. Assortimento generico di vini/spirits senza focus esplicito su italiani. Contatto potenziale solo se target è distribuzione USA su larga scala.",
+      "analyzed_at": "2026-11-05T21:14:41.847Z"
+    }
   },
   "c1780673710967k7cta": {
     "contactName": "Josh Laner",
-    "contactTitle": "Vice President- Distributor Management"
+    "contactTitle": "Vice President- Distributor Management",
+    "research": {
+      "affidabilita": 5,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Colosso USA (2,1B$ fatturato, 6445 dipendenti) leader nel vino californiano e importatore globale. Probabile interesse per vini italiani data la strategia di importazione internazionale, ma focus primario su vini americani e australiani.",
+      "analyzed_at": "2026-11-05T21:14:48.298Z"
+    }
   },
   "c17806737109678euw2": {
     "contactName": "Linda Juarez",
-    "contactTitle": "Wine Buyer"
+    "contactTitle": "Wine Buyer",
+    "research": {
+      "affidabilita": 5,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Catena retail USA massiccia (661 store, ~$14-15B fatturato) con portafoglio vini diversificato. Buyer centralizzato difficile da raggiungere; contatto utile solo se si ha già distribuzione USA consolidata.",
+      "analyzed_at": "2026-11-05T21:14:53.790Z"
+    }
   },
   "c1780673710967b83tc": {
     "contactName": "Seferino Perez Superior",
