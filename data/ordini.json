@@ -1382,7 +1382,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1792425651818,
-      "status": "dogana",
+      "status": "in_consegna",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1398,6 +1398,11 @@
           "status": "dogana",
           "date": 1793077292114,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "in_consegna",
+          "date": 1793898050138,
+          "note": "Auto 17Track (era: dogana): Asheville, NC, United States — Out for Delivery, Out For Delivery Today"
         }
       ],
       "emailsSent": [
@@ -1431,7 +1436,7 @@
       ],
       "notes": "",
       "createdAt": 1791820959833,
-      "updatedAt": 1793077297661,
+      "updatedAt": 1793898050138,
       "track17Registered": true,
       "staleAlertDays": 7,
       "staleAlertSince": 1792425651818
@@ -1969,7 +1974,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1791972107944,
-      "status": "dogana",
+      "status": "in_consegna",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1985,6 +1990,11 @@
           "status": "dogana",
           "date": 1792728051519,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "in_consegna",
+          "date": 1793898050138,
+          "note": "Auto 17Track (era: dogana): Lafayette, LA, United States — Out for Delivery, Out For Delivery Today"
         }
       ],
       "emailsSent": [
@@ -2018,7 +2028,7 @@
       ],
       "notes": "",
       "createdAt": 1791324111296,
-      "updatedAt": 1793336520499,
+      "updatedAt": 1793898050138,
       "staleAlertDays": 7,
       "staleAlertSince": 1792728051519,
       "track17Registered": true
