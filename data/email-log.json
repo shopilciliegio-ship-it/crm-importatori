@@ -944,6 +944,42 @@
       "subject": "Your wine is out for delivery! 🍷",
       "sentAt": 1793898053904,
       "messageId": "<202611051700.85855155506@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mv6gzi1hiuvf",
+      "customerName": "ASHLEIGH COLE",
+      "type": "consegnato",
+      "to": "thecolefamily1@att.net",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1793919675351,
+      "messageId": "<202611052301.37368253722@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mv5fxp3udr7s",
+      "customerName": "MARY AMBRUS",
+      "type": "consegnato",
+      "to": "mlambrus@gmail.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1793919675351,
+      "messageId": "<202611052301.50571573837@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mux84ibk0d73",
+      "customerName": "KIMBERLY  HEBERT",
+      "type": "consegnato",
+      "to": "kimberly.hebert@yahoo.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1793919675351,
+      "messageId": "<202611052301.69515576555@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mux84ibk0v78",
+      "customerName": "VERONICA REED",
+      "type": "consegnato",
+      "to": "vickiar1860@gmail.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1793919675351,
+      "messageId": "<202611052301.65797194404@smtp-relay.mailin.fr>"
     }
   ]
 }
