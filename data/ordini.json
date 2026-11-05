@@ -1337,11 +1337,18 @@
           "messageId": "<202610270501.51442539138@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-10-27T06:01:41.000+01:00"
+        },
+        {
+          "type": "consegnato",
+          "to": "thecolefamily1@att.net",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1793919675351,
+          "messageId": "<202611052301.37368253722@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1791883189781,
-      "updatedAt": 1793919667322,
+      "updatedAt": 1793919675351,
       "track17Registered": true,
       "staleAlertDays": 7,
       "staleAlertSince": 1793077292114
@@ -1449,11 +1456,18 @@
           "subject": "Your wine is out for delivery! 🍷",
           "sentAt": 1793898053904,
           "messageId": "<202611051700.54721825336@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegnato",
+          "to": "mlambrus@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1793919675351,
+          "messageId": "<202611052301.50571573837@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1791820959833,
-      "updatedAt": 1793919667322,
+      "updatedAt": 1793919675351,
       "track17Registered": true,
       "staleAlertDays": 7,
       "staleAlertSince": 1792425651818
@@ -2053,11 +2067,18 @@
           "subject": "Your wine is out for delivery! 🍷",
           "sentAt": 1793898053904,
           "messageId": "<202611051700.85855155506@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegnato",
+          "to": "kimberly.hebert@yahoo.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1793919675351,
+          "messageId": "<202611052301.69515576555@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1791324111296,
-      "updatedAt": 1793919667322,
+      "updatedAt": 1793919675351,
       "staleAlertDays": 7,
       "staleAlertSince": 1792728051519,
       "track17Registered": true
@@ -2153,11 +2174,18 @@
           "messageId": "<202610230400.57676197379@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-10-23T06:00:59.478+02:00"
+        },
+        {
+          "type": "consegnato",
+          "to": "vickiar1860@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1793919675351,
+          "messageId": "<202611052301.65797194404@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1791324111296,
-      "updatedAt": 1793919672881,
+      "updatedAt": 1793919675351,
       "staleAlertDays": 7,
       "staleAlertSince": 1792728051519,
       "track17Registered": true
