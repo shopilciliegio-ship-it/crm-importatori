@@ -139354,9 +139354,128 @@
       "analyzed_at": "2026-10-30T06:15:49.241Z"
     }
   },
+  "c17806737108147qlnl": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-retailer locale (1 dipendente, fatturato ~32k€) con sito basic e nessuna visibilità online. Portafoglio generico (vini, formaggi, birre, spirits) senza focus su vini italiani. Non idonea per partnership B2B.",
+      "analyzed_at": "2026-11-04T15:33:55.064Z"
+    }
+  },
+  "c1780673710814d7ho7": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~32k€) specializzata in gastronomia spagnola (charcuterie, tapas, paella). Nessuna menzione esplicita di vini italiani nel sito; focus su prodotti iberici. Non è un importatore/distributore di vini ma un retailer/tratteur locale.",
+      "analyzed_at": "2026-11-04T15:33:59.702Z"
+    }
+  },
+  "c17806737108142z5ws": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-realtà (1 dipendente, fatturato ~32k€) con sito poco professionale e nessuna traccia online. Specializzata in vini bio/naturali francesi; nessuna menzione esplicita di vini italiani. Non idonea per partnership commerciale.",
+      "analyzed_at": "2026-11-04T15:34:04.738Z"
+    }
+  },
+  "c1780673710814n6zgw": {
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda micro (1 dipendente, fatturato ~31k€) con sito irraggiungibile e nessuna traccia online. Impossibile verificare se commercializza vini italiani. Affidabilità molto bassa.",
+      "analyzed_at": "2026-11-04T15:34:18.809Z"
+    }
+  },
+  "c17806737108142jgw1": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Micro-azienda (1 dipendente, fatturato ~341k€) con sito online poco professionale e nessuna traccia Google. Catalogo prevalentemente francese (Loire, Bordeaux, Rhône); vini italiani presenti ma non prioritari. Non idonea per partnership B2B strutturata.",
+      "analyzed_at": "2026-11-04T15:34:25.024Z"
+    }
+  },
+  "c1780673710814up9ro": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccola enoteca specializzata in vini francesi (Beaujolais, Rhône, Lyonnais) con proprietario sommelier esperto. Nessuna menzione esplicita di vini italiani, ma portafoglio potenzialmente aperto. Micro-azienda (1 dipendente) con fatturato modesto: contattare solo se target è Francia/enoteca specializzata.",
+      "analyzed_at": "2026-11-04T15:34:30.412Z"
+    }
+  },
+  "c17806737108143wbuv": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-realtà francese (1 dipendente, fatturato modesto) focalizzata su retail locale. Nessuna menzione esplicita di vini italiani nel sito; selezione generica di vini/champagne/spirits. Non pertinente per partnership B2B italiana.",
+      "analyzed_at": "2026-11-04T15:34:36.126Z"
+    }
+  },
+  "c17806737108148gw94": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "no",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-azienda (1 dipendente, fatturato ~32k€) specializzata in vini francesi del Sud (Provence, Rhône, Languedoc) e spirits. Nessuna traccia di vini italiani nel catalogo. Non pertinente per distribuzione italiana.",
+      "analyzed_at": "2026-11-04T15:34:41.308Z"
+    }
+  },
+  "c1780673710814gma13": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Micro-azienda (1 dipendente, fatturato 32k€) con sito generico. Nessuna menzione esplicita di vini italiani nel portafoglio. Assenza di visibilità online (nessun risultato Google) suggerisce operatività locale molto limitata.",
+      "analyzed_at": "2026-11-04T15:34:47.109Z"
+    }
+  },
+  "c1780673710814x6qfa": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "E-commerce francese specializzato in vini francesi (Borgogna, Champagne, Bordeaux, Loire, ecc.). Portfolio esclusivamente francese e internazionale, nessun vino italiano. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-11-04T15:34:53.352Z"
+    }
+  },
+  "c1780673710814z206x": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "no",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Négociant francese specializzato in vini francesi (Bordeaux, Burgundy, Rhône, Alsace). Non commercializza vini italiani. Azienda micro (1 dipendente) con fatturato modesto; sito basic su Wix senza visibilità Google.",
+      "analyzed_at": "2026-11-04T15:35:03.388Z"
+    }
+  },
   "c17806737108144gfj3": {
-    "contactName": "Marc Russilly",
-    "contactTitle": "Agent Haute-Savoie",
     "research": {
       "affidabilita": 3,
       "vino_italiano": "probabile",
@@ -139365,11 +139484,11 @@
       "raccomandato": "forse",
       "note": "Azienda francese con focus horeca (ristoranti, bar a vino, cave) a Chamonix. Portfolio ampio (1500+ vini, 300 alcoli) suggerisce possibile presenza di italiani, ma nessuna conferma esplicita. Fatturato solido (2.1M€) ma assenza da Google e info limitate riducono affidabilità.",
       "analyzed_at": "2026-11-04T15:35:09.917Z"
-    }
+    },
+    "contactName": "Marc Russilly",
+    "contactTitle": "Agent Haute-Savoie"
   },
   "c1780673710814cpq7c": {
-    "contactName": "Phoebe Roth",
-    "contactTitle": "Wine Consultant",
     "research": {
       "affidabilita": 2,
       "vino_italiano": "forse",
@@ -139378,11 +139497,11 @@
       "raccomandato": "forse",
       "note": "Azienda francese che dichiara di importare vini, ma siti non raggiungibili e assenza totale di risultati Google. Impossibile verificare se tratta vini italiani o solidità aziendale. Contattare solo se si dispone di referenze dirette.",
       "analyzed_at": "2026-11-04T15:35:14.342Z"
-    }
+    },
+    "contactName": "Phoebe Roth",
+    "contactTitle": "Wine Consultant"
   },
   "c1780673710814teolt": {
-    "contactName": "Valentin Wartelle",
-    "contactTitle": "Senior Buyer",
     "research": {
       "affidabilita": 5,
       "vino_italiano": "probabile",
@@ -139391,11 +139510,11 @@
       "raccomandato": "no",
       "note": "Lidl è una grande catena di distribuzione europea (non un importatore specializzato). Sebbene venda vini, non è un partner strategico per posizionare vini italiani premium - target è mass market a prezzi bassi.",
       "analyzed_at": "2026-11-04T15:35:19.601Z"
-    }
+    },
+    "contactName": "Valentin Wartelle",
+    "contactTitle": "Senior Buyer"
   },
   "c1780673710814uxli6": {
-    "contactName": "Sylvain Jude",
-    "contactTitle": "Managing Partner",
     "research": {
       "affidabilita": 2,
       "vino_italiano": "non_risulta",
@@ -139404,11 +139523,11 @@
       "raccomandato": "no",
       "note": "Sito irraggiungibile, nessuna traccia Google, URL malformato. Fatturato modesto (551k€) non verifica affidabilità. Impossibile confermare portafoglio vini italiani.",
       "analyzed_at": "2026-11-04T15:35:23.876Z"
-    }
+    },
+    "contactName": "Sylvain Jude",
+    "contactTitle": "Managing Partner"
   },
   "c1780673710814clfis": {
-    "contactName": "Laura Berquier",
-    "contactTitle": "Sales Assistant",
     "research": {
       "affidabilita": 4,
       "vino_italiano": "probabile",
@@ -139417,11 +139536,11 @@
       "raccomandato": "forse",
       "note": "Retailer online francese specializzato in Grands Crus (Bordeaux, Borgogna, Champagne) dal 1995. Catalogo include vini italiani nella sezione 'Vins du Monde'. Sito professionale ma nessuna traccia Google; fatturato sconosciuto. Contattare se interessati a distribuire in Francia online.",
       "analyzed_at": "2026-11-04T15:35:29.264Z"
-    }
+    },
+    "contactName": "Laura Berquier",
+    "contactTitle": "Sales Assistant"
   },
   "c1780673710814bgtbu": {
-    "contactName": "Valette Bleynie",
-    "contactTitle": "Commercial",
     "research": {
       "affidabilita": 2,
       "vino_italiano": "no",
@@ -139430,11 +139549,11 @@
       "raccomandato": "no",
       "note": "Azienda francese specializzata in foie gras e prodotti gourmet del Périgord. Vini presenti in catalogo ma solo francesi (bianchi, rossi, champagne, rosé). Nessun riferimento a vini italiani. Non pertinente per distribuzione vini italiani.",
       "analyzed_at": "2026-11-04T15:35:36.480Z"
-    }
+    },
+    "contactName": "Valette Bleynie",
+    "contactTitle": "Commercial"
   },
   "c1780673710814cj1ve": {
-    "contactName": "Guillaume Coudiere",
-    "contactTitle": "Director",
     "research": {
       "affidabilita": 3,
       "vino_italiano": "probabile",
@@ -139443,11 +139562,11 @@
       "raccomandato": "forse",
       "note": "Azienda francese con modello ibrido (caviste + grossista + agente commerciale). Portafoglio generico 'grands domaines et petits producteurs' senza menzione esplicita di vini italiani. Assenza di Google results e dati finanziari limita valutazione affidabilità.",
       "analyzed_at": "2026-11-04T15:35:41.148Z"
-    }
+    },
+    "contactName": "Guillaume Coudiere",
+    "contactTitle": "Director"
   },
   "c178067371081461a76": {
-    "contactName": "Pierre Jouanny",
-    "contactTitle": "Buyer",
     "research": {
       "affidabilita": 4,
       "vino_italiano": "probabile",
@@ -139456,11 +139575,11 @@
       "raccomandato": "forse",
       "note": "Broker di vini fini con fatturato solido (34,7M€) e storia consolidata dal 1983. Specializzato in vini rari/d'eccezione per professionisti e collezionisti. Non cita esplicitamente vini italiani ma portafoglio 'grandi domaines' suggerisce copertura europea. Assenza su Google e scarsa visibilità online sono punti deboli.",
       "analyzed_at": "2026-11-04T15:35:49.531Z"
-    }
+    },
+    "contactName": "Pierre Jouanny",
+    "contactTitle": "Buyer"
   },
   "c178067371081469nyq": {
-    "contactName": "Laurent Lanz",
-    "contactTitle": "Purchasing Director",
     "research": {
       "affidabilita": 4,
       "vino_italiano": "no",
@@ -139469,7 +139588,9 @@
       "raccomandato": "no",
       "note": "Azienda francese solida (50 dipendenti, 3M bottiglie in stock, 30 anni esperienza) specializzata esclusivamente in vini francesi. Non pertinente per fornitori di vino italiano.",
       "analyzed_at": "2026-11-04T15:35:54.837Z"
-    }
+    },
+    "contactName": "Laurent Lanz",
+    "contactTitle": "Purchasing Director"
   },
   "c17806737108143ylk1": {
     "contactName": "Clélia Mouillon",
@@ -194806,16 +194927,7 @@
       }
     },
     "contactName": "Andrew Cheong",
-    "contactTitle": "General Sales Manager",
-    "research_v1": {
-      "affidabilita": 4,
-      "vino_italiano": "probabile",
-      "tipo_business": "misto",
-      "mercato_target": "misto",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T16:59:04.055Z",
-      "note": "Azienda consolidata (fondata 1999) con 106 dipendenti, opera come importatore/distributore/retailer online in Malaysia. Portafoglio generico (vini, spirits, spumanti) senza conferma esplicita di vini "
-    }
+    "contactTitle": "General Sales Manager"
   },
   "c1780673710885fi3nu": {
     "research": {
@@ -194837,16 +194949,7 @@
       }
     },
     "contactName": "Michelle Loh",
-    "contactTitle": "Managing Director",
-    "research_v1": {
-      "affidabilita": 4,
-      "vino_italiano": "forse",
-      "tipo_business": "importatore|distributore",
-      "mercato_target": "misto",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T16:59:14.977Z",
-      "note": "Azienda solida (dal 1968, 87 dipendenti, fatturato significativo) e leader in Malaysia. Importa vini ma sito attualmente in manutenzione. Nessuna evidenza esplicita di vini italiani nel portafoglio; v"
-    }
+    "contactTitle": "Managing Director"
   },
   "c1780673710885cj9ll": {
     "research": {
@@ -194868,16 +194971,7 @@
       }
     },
     "contactName": "Kc Chua",
-    "contactTitle": "Owner",
-    "research_v1": {
-      "affidabilita": 3,
-      "vino_italiano": "forse",
-      "tipo_business": "importatore|distributore",
-      "mercato_target": "misto",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T16:59:21.108Z",
-      "note": "Azienda malese con 80 dipendenti e fatturato significativo (52M). Portafoglio include vini, ma sito irraggiungibile limita verifica. Potenziale per vini italiani in mercato SE asiatico, ma richiede co"
-    }
+    "contactTitle": "Owner"
   },
   "c1780673710885acvuu": {
     "research": {
@@ -194899,16 +194993,7 @@
       }
     },
     "contactName": "Albert Tan",
-    "contactTitle": "Owner",
-    "research_v1": {
-      "affidabilita": 4,
-      "vino_italiano": "probabile",
-      "tipo_business": "misto",
-      "mercato_target": "misto",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T16:59:27.815Z",
-      "note": "Importatore consolidato malese dal 1992 con 70 dipendenti e e-commerce attivo. Portafoglio ampio (vini, spirits, birra) ma nessuna menzione esplicita di vini italiani nel materiale disponibile. Mercat"
-    }
+    "contactTitle": "Owner"
   },
   "c1780673710885fnse9": {
     "research": {
@@ -194930,16 +195015,7 @@
       }
     },
     "contactName": "Kok Foon Wong",
-    "contactTitle": "Sales Manager",
-    "research_v1": {
-      "affidabilita": 3,
-      "vino_italiano": "forse",
-      "tipo_business": "distributore",
-      "mercato_target": "misto",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T16:59:35.125Z",
-      "note": "Distributore FMCG in Malaysia con 70 dipendenti e fatturato solido (14,5M). Sito generico senza dettagli su portafoglio vini. Nessuna evidenza esplicita di vini italiani; potenziale cliente se importa"
-    }
+    "contactTitle": "Sales Manager"
   },
   "c1780673710885vbstg": {
     "research": {
@@ -194961,16 +195037,7 @@
       }
     },
     "contactName": "Jimmy Ng",
-    "contactTitle": "Sales Manager",
-    "research_v1": {
-      "affidabilita": 4,
-      "vino_italiano": "forse",
-      "tipo_business": "misto",
-      "mercato_target": "misto",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T16:59:41.430Z",
-      "note": "Distributore consolidato in Malaysia (dal 1990) con 60 dipendenti e fatturato solido. Importa vini e spirits, ma nessuna evidenza specifica di vini italiani nel portafoglio. Vale la pena verificare di"
-    }
+    "contactTitle": "Sales Manager"
   },
   "c1780673710885hqggy": {
     "research": {
@@ -194992,16 +195059,7 @@
       }
     },
     "contactName": "Kenneth Soh",
-    "contactTitle": "Managing Director",
-    "research_v1": {
-      "affidabilita": 4,
-      "vino_italiano": "forse",
-      "tipo_business": "misto",
-      "mercato_target": "misto",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T16:59:47.143Z",
-      "note": "Distributore solido in Malaysia (59 dipendenti, ~5M USD import annui) con portafoglio wine&spirits diversificato. Nessuna evidenza esplicita di vini italiani nel portfolio; siti web non raggiungibili "
-    }
+    "contactTitle": "Managing Director"
   },
   "c17806737108856bwb3": {
     "research": {
@@ -195023,16 +195081,7 @@
       }
     },
     "contactName": "Chee Tan",
-    "contactTitle": "Sales Manager",
-    "research_v1": {
-      "affidabilita": 4,
-      "vino_italiano": "probabile",
-      "tipo_business": "importatore",
-      "mercato_target": "misto",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T16:59:55.077Z",
-      "note": "Azienda solida fondata nel 1998, leader in Malaysia con 52 dipendenti e portafoglio globale (Francia, Italia, Spagna, Portogallo, ecc.). Serve sia horeca premium (Marriott, Four Seasons, Ritz-Carlton)"
-    }
+    "contactTitle": "Sales Manager"
   },
   "c17806737108852auuz": {
     "research": {
@@ -195054,16 +195103,7 @@
       }
     },
     "contactName": "Ang Yi",
-    "contactTitle": "Senior Manager",
-    "research_v1": {
-      "affidabilita": 4,
-      "vino_italiano": "forse",
-      "tipo_business": "retailer",
-      "mercato_target": "retail",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T17:00:01.395Z",
-      "note": "Retailer premium malese (Village Grocer, Big, Bites) acquisito da CP Group tailandese. Vende vino ma no conferma esplicita di vini italiani. Dimensione solida (50 dipendenti, fatturato ~256M) ma focus"
-    }
+    "contactTitle": "Senior Manager"
   },
   "c1780673710885ufsml": {
     "log": [
@@ -280502,16 +280542,7 @@
       }
     },
     "contactName": "Hye-eun Kim",
-    "contactTitle": "Global Buying Managing Director",
-    "research_v1": {
-      "affidabilita": 5,
-      "vino_italiano": "forse",
-      "tipo_business": "online",
-      "mercato_target": "online",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-05T21:28:55.686Z",
-      "note": "Grande azienda di e-commerce con fatturato elevato, ma non ci sono informazioni dirette sui vini italiani nel portafoglio"
-    }
+    "contactTitle": "Global Buying Managing Director"
   },
   "c1780673710931egpu2": {
     "research": {
@@ -280533,16 +280564,7 @@
       }
     },
     "contactName": "Hyojin Kim",
-    "contactTitle": "Assistant Buyer",
-    "research_v1": {
-      "affidabilita": 4,
-      "vino_italiano": "forse",
-      "tipo_business": "retailer",
-      "mercato_target": "retail",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-06T14:12:08.378Z",
-      "note": "Grande catena di retail con ampia gamma di prodotti, compresi vini. Nessuna informazione specifica su vini italiani, ma potenziale interesse."
-    }
+    "contactTitle": "Assistant Buyer"
   },
   "c1780673710931b104r": {
     "research": {
@@ -280564,16 +280586,7 @@
       }
     },
     "contactName": "Sang D Joe",
-    "contactTitle": "Chief Executive Officer",
-    "research_v1": {
-      "affidabilita": 5,
-      "vino_italiano": "forse",
-      "tipo_business": "importatore",
-      "mercato_target": "horeca",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-05T21:28:59.534Z",
-      "note": "Azienda solida con storia consolidata, leader nel mercato del vino in Corea del Sud, ma non si trovano informazioni specifiche sui vini italiani"
-    }
+    "contactTitle": "Chief Executive Officer"
   },
   "c1780673710931yilqx": {
     "research": {
@@ -280595,16 +280608,7 @@
       }
     },
     "contactName": "Hyunbin Jo",
-    "contactTitle": "Liquor Buyer",
-    "research_v1": {
-      "affidabilita": 4,
-      "vino_italiano": "forse",
-      "tipo_business": "misto",
-      "mercato_target": "misto",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-06T14:12:21.011Z",
-      "note": "Azienda solida con fatturato elevato, ma informazioni parziali sul portafoglio di vini italiani. Vale la pena verificare ulteriormente."
-    }
+    "contactTitle": "Liquor Buyer"
   },
   "c1780673710931nyrah": {
     "research": {
@@ -280626,16 +280630,7 @@
       }
     },
     "contactName": "SungJae Lee",
-    "contactTitle": "Chief Executive Officer",
-    "research_v1": {
-      "affidabilita": 5,
-      "vino_italiano": "forse",
-      "tipo_business": "misto",
-      "mercato_target": "misto",
-      "raccomandato": "si",
-      "analyzed_at": "2026-06-06T14:12:31.993Z",
-      "note": "Importatore e distributore di vini e alcolici in Corea del Sud, con un fatturato significativo e una storia consolidata. Leader nel mercato coreano."
-    }
+    "contactTitle": "Chief Executive Officer"
   },
   "c17806737109316eccw": {
     "research": {
@@ -280657,16 +280652,7 @@
       }
     },
     "contactName": "Seungryeol (Brian) Lee",
-    "contactTitle": "Liquor & Tobacco Senior Buyer",
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "forse",
-      "tipo_business": "retailer",
-      "mercato_target": "retail",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-06T14:12:42.946Z",
-      "note": "Azienda con sede in Corea del Sud, presente online e retail, ma senza informazioni sul portafoglio di vini italiani"
-    }
+    "contactTitle": "Liquor & Tobacco Senior Buyer"
   },
   "c178067371093156jto": {
     "research": {
@@ -280688,16 +280674,7 @@
       }
     },
     "contactName": "Kim Hwan",
-    "contactTitle": "Director",
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "forse",
-      "tipo_business": "distributore",
-      "mercato_target": "sconosciuto",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-06T14:12:55.761Z",
-      "note": "Distributore di vino, birra e spirits in Corea del Sud, ma nessuna informazione specifica su vini italiani. Sito web non raggiungibile."
-    }
+    "contactTitle": "Director"
   },
   "c17806737109317zc33": {
     "research": {
@@ -280719,16 +280696,7 @@
       }
     },
     "contactName": "Young Bo Shim",
-    "contactTitle": "Director",
-    "research_v1": {
-      "affidabilita": 4,
-      "vino_italiano": "forse",
-      "tipo_business": "misto",
-      "mercato_target": "misto",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-06T14:12:59.602Z",
-      "note": "Distributore di vini e birre in Corea del Sud, con un portafoglio che include vini italiani come Rocca di Montegrossi, ma non solo."
-    }
+    "contactTitle": "Director"
   },
   "c1780673710931qmkls": {
     "research": {
@@ -280750,16 +280718,7 @@
       }
     },
     "contactName": "Yongbin Choi",
-    "contactTitle": "Managing Director",
-    "research_v1": {
-      "affidabilita": 4,
-      "vino_italiano": "forse",
-      "tipo_business": "importatore",
-      "mercato_target": "horeca",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-06T14:13:12.545Z",
-      "note": "Azienda solida con storia consolidata, importa vini di marca mondiale, ma non è chiaro se include vini italiani nel proprio portafoglio"
-    }
+    "contactTitle": "Managing Director"
   },
   "c1780673710931gn81k": {
     "research": {
@@ -280781,16 +280740,7 @@
       }
     },
     "contactName": "Shin-Kyu Kang",
-    "contactTitle": "Ceo",
-    "research_v1": {
-      "affidabilita": 3,
-      "vino_italiano": "forse",
-      "tipo_business": "importatore",
-      "mercato_target": "horeca",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-06T14:13:25.087Z",
-      "note": "Importatore di vini, birre e spiriti in Corea del Sud, con un fatturato significativo e un numero di dipendenti considerevole. Tuttavia, non ci sono informazioni disponibili sul sito web e non è chiar"
-    }
+    "contactTitle": "Ceo"
   },
   "c1780673710931smmv8": {
     "research": {
@@ -280812,16 +280762,7 @@
       }
     },
     "contactName": "Kim Jin Seop",
-    "contactTitle": "Ceo",
-    "research_v1": {
-      "affidabilita": 4,
-      "vino_italiano": "probabile",
-      "tipo_business": "misto",
-      "mercato_target": "misto",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T13:17:01.481Z",
-      "note": "Azienda solida con 70 dipendenti e fatturato significativo, presente in directory internazionali (Kompass, DNB). Distribuisce vini da varie regioni (citati Prophet's Rock dalla Nuova Zelanda, St. Supé"
-    }
+    "contactTitle": "Ceo"
   },
   "c1780673710931cn6rk": {
     "research": {
@@ -280843,16 +280784,7 @@
       }
     },
     "contactName": "Shin Dong",
-    "contactTitle": "Representative",
-    "research_v1": {
-      "affidabilita": 1,
-      "vino_italiano": "no",
-      "tipo_business": "sconosciuto",
-      "mercato_target": "sconosciuto",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T15:05:13.467Z",
-      "note": "Discrepanza critica: Raon Co. risulta specializzata in tessuti/materiali (hemp, fabrics PU) su Kompass, non in vino. Siti dichiarati irraggiungibili. Possibile omonimia o dati BWI errati."
-    }
+    "contactTitle": "Representative"
   },
   "c1780673710931cbz0f": {
     "research": {
@@ -280872,15 +280804,6 @@
           "affidabilita": 2
         }
       }
-    },
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "non_risulta",
-      "tipo_business": "distributore",
-      "mercato_target": "misto",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T15:05:29.681Z",
-      "note": "Azienda sudcoreana senza traccia online (sito irraggiungibile, nessun risultato Google). Nessuna evidenza di focus su vini italiani. Dimensione modesta (54 dipendenti) e difficile verificare affidabil"
     }
   },
   "c1780673710931ic8ue": {
@@ -280903,16 +280826,7 @@
       }
     },
     "contactName": "Bae Sang- Hyun",
-    "contactTitle": "Ceo",
-    "research_v1": {
-      "affidabilita": 3,
-      "vino_italiano": "forse",
-      "tipo_business": "distributore",
-      "mercato_target": "horeca",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T15:05:36.935Z",
-      "note": "Distributore coreano multi-categoria (birra, vino, spirits, sake) con 48 dipendenti e fatturato ~19,5M. Sito funzionante ma in coreano; catalogo generico include vini ma non specifica origine italiana"
-    }
+    "contactTitle": "Ceo"
   },
   "c1780673710931akb21": {
     "research": {
@@ -280934,16 +280848,7 @@
       }
     },
     "contactName": "Won-Oh Kim",
-    "contactTitle": "Ceo",
-    "research_v1": {
-      "affidabilita": 4,
-      "vino_italiano": "probabile",
-      "tipo_business": "importatore",
-      "mercato_target": "misto",
-      "raccomandato": "si",
-      "analyzed_at": "2026-06-07T15:05:51.223Z",
-      "note": "Importatore consolidato in Corea del Sud con 39 dipendenti e fatturato solido (~7.7M). Citato in report ufficiali come uno dei principali player; distribuisce a horeca e retail. Probabile interesse pe"
-    }
+    "contactTitle": "Ceo"
   },
   "c1780673710931u53p0": {
     "research": {
@@ -280965,16 +280870,7 @@
       }
     },
     "contactName": "Songhyun Noah",
-    "contactTitle": "Brand Manager",
-    "research_v1": {
-      "affidabilita": 4,
-      "vino_italiano": "forse",
-      "tipo_business": "importatore",
-      "mercato_target": "horeca",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-06T14:30:22.750Z",
-      "note": "Importatore di vino con sede in Corea del Sud, presente in elenchi di distributori di vini di alta qualità, ma non si trovano informazioni specifiche su vini italiani"
-    }
+    "contactTitle": "Brand Manager"
   },
   "c1780673710931s0v0a": {
     "research": {
@@ -280996,16 +280892,7 @@
       }
     },
     "contactName": "Lee Kun Goo",
-    "contactTitle": "Head Brand Manager",
-    "research_v1": {
-      "affidabilita": 4,
-      "vino_italiano": "probabile",
-      "tipo_business": "importatore",
-      "mercato_target": "horeca",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T15:06:00.417Z",
-      "note": "Importatore coreano consolidato (31 dipendenti, ~11M fatturato) specializzato in vini artigianali. Nessuna menzione esplicita di vini italiani, ma portafoglio europeo (Côte des Bar). Mercato HORECA pr"
-    }
+    "contactTitle": "Head Brand Manager"
   },
   "c1780673710931c9rsc": {
     "research": {
@@ -281027,16 +280914,7 @@
       }
     },
     "contactName": "David Choi",
-    "contactTitle": "Import Manger",
-    "research_v1": {
-      "affidabilita": 5,
-      "vino_italiano": "forse",
-      "tipo_business": "importatore",
-      "mercato_target": "horeca",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T10:48:32.762Z",
-      "note": "Azienda solida con storia consolidata, importa vini di alta qualità, ma non è chiaro se include vini italiani nel proprio portafoglio"
-    }
+    "contactTitle": "Import Manger"
   },
   "c17806737109314spyg": {
     "research": {
@@ -281058,16 +280936,7 @@
       }
     },
     "contactName": "Jeounghan Kim",
-    "contactTitle": "General Manager",
-    "research_v1": {
-      "affidabilita": 3,
-      "vino_italiano": "no",
-      "tipo_business": "importatore",
-      "mercato_target": "horeca",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T15:06:14.734Z",
-      "note": "Azienda coreana specializzata in sake giapponese e spirits, non in vini italiani. Siti dichiarati non raggiungibili; presenze su social e festival confermano attività ma focus completamente su mercato"
-    }
+    "contactTitle": "General Manager"
   },
   "c1780673710931q3ucg": {
     "research": {
@@ -281089,16 +280958,7 @@
       }
     },
     "contactName": "Hae - Gang Jeong",
-    "contactTitle": "Representative",
-    "research_v1": {
-      "affidabilita": 4,
-      "vino_italiano": "forse",
-      "tipo_business": "misto",
-      "mercato_target": "misto",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T15:06:28.971Z",
-      "note": "Importatore sudcoreano consolidato (25 dipendenti, ~3.4M fatturato) con referenze internazionali (Starmont Wines). Portafoglio non specificamente focalizzato su vini italiani; contatti verificati e si"
-    }
+    "contactTitle": "Representative"
   },
   "c17806737109315ecmm": {
     "research": {
@@ -281120,16 +280980,7 @@
       }
     },
     "contactName": "Byungwoo (bret) Yoo",
-    "contactTitle": "President",
-    "research_v1": {
-      "affidabilita": 4,
-      "vino_italiano": "probabile",
-      "tipo_business": "importatore",
-      "mercato_target": "retail",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T15:06:43.442Z",
-      "note": "Importatore coreano consolidato (24 dipendenti, fatturato ~8.2M) di vini premium da tutto il mondo. Nessuna menzione esplicita di vini italiani, ma portafoglio internazionale suggerisce possibile inte"
-    }
+    "contactTitle": "President"
   },
   "c1780673710931s6mep": {
     "research": {
@@ -281151,16 +281002,7 @@
       }
     },
     "contactName": "Sang-ae Yoon",
-    "contactTitle": "Representative",
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "forse",
-      "tipo_business": "retailer",
-      "mercato_target": "online",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-06T14:45:57.627Z",
-      "note": "Dati scarsi, sito web non raggiungibile, nessuna informazione sui vini italiani"
-    }
+    "contactTitle": "Representative"
   },
   "c1780673710931lv68n": {
     "research": {
@@ -281182,16 +281024,7 @@
       }
     },
     "contactName": "Sangseok Oh",
-    "contactTitle": "Managing Director",
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "non_risulta",
-      "tipo_business": "distributore",
-      "mercato_target": "sconosciuto",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T15:06:54.078Z",
-      "note": "Azienda sudcoreana piccola (19 dipendenti) con sito non raggiungibile. Nessuna evidenza di specializzazione in vini italiani; risultati Google mostrano attività generiche di import/export. Non pertine"
-    }
+    "contactTitle": "Managing Director"
   },
   "c1780673710931c2qrh": {
     "research": {
@@ -281213,16 +281046,7 @@
       }
     },
     "contactName": "Choi Jae Hoon",
-    "contactTitle": "Ceo",
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "forse",
-      "tipo_business": "distributore",
-      "mercato_target": "misto",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T15:06:59.203Z",
-      "note": "Azienda sudcoreana con sito web non funzionante/non raggiungibile. Nessuna evidenza di specializzazione in vini italiani; portafoglio generico (vino, birra, spirits). Fatturato modesto e dimensione pi"
-    }
+    "contactTitle": "Ceo"
   },
   "c1780673710931ubzlv": {
     "research": {
@@ -281244,16 +281068,7 @@
       }
     },
     "contactName": "Keon Yeong Lee",
-    "contactTitle": "President",
-    "research_v1": {
-      "affidabilita": 4,
-      "vino_italiano": "si",
-      "tipo_business": "misto",
-      "mercato_target": "misto",
-      "raccomandato": "si",
-      "analyzed_at": "2026-06-07T15:07:13.105Z",
-      "note": "Importatore specializzato in vini italiani dal 2002, leader nel mercato coreano. Azienda solida (18 dipendenti, fatturato ~7.5M) con presenza online e distribuzione multi-canale (horeca+retail)."
-    }
+    "contactTitle": "President"
   },
   "c1780673710931ythr7": {
     "research": {
@@ -281275,16 +281090,7 @@
       }
     },
     "contactName": "Jung Hee Lee",
-    "contactTitle": "President",
-    "research_v1": {
-      "affidabilita": 4,
-      "vino_italiano": "forse",
-      "tipo_business": "misto",
-      "mercato_target": "horeca",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T11:06:06.767Z",
-      "note": "Azienda con sito web e informazioni disponibili, ma nessuna menzione esplicita di vini italiani. Dimensione media con 16 dipendenti e fatturato di 6,996,544"
-    }
+    "contactTitle": "President"
   },
   "c1780673710931qlest": {
     "research": {
@@ -281306,16 +281112,7 @@
       }
     },
     "contactName": "Tae Seung Lee",
-    "contactTitle": "Wine Brand Manager",
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "forse",
-      "tipo_business": "misto",
-      "mercato_target": "sconosciuto",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-06T15:00:14.743Z",
-      "note": "Dati scarsi, sito web non raggiungibile. Importatore e distributore di vino in Corea del Sud con 16 dipendenti e fatturato modesto."
-    }
+    "contactTitle": "Wine Brand Manager"
   },
   "c1780673710931pquqq": {
     "research": {
@@ -281337,16 +281134,7 @@
       }
     },
     "contactName": "Kim Jong Myoung",
-    "contactTitle": "Ceo",
-    "research_v1": {
-      "affidabilita": 3,
-      "vino_italiano": "forse",
-      "tipo_business": "importatore",
-      "mercato_target": "misto",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T15:07:18.891Z",
-      "note": "Importatore sudcoreano con portafoglio diversificato (birra USA, rum filippino, vini generici). Nessuna evidenza di focus su vini italiani; catalogo mostra Monte La Reina, Château Juliet, Carolina San"
-    }
+    "contactTitle": "Ceo"
   },
   "c17806737109318brkv": {
     "research": {
@@ -281368,16 +281156,7 @@
       }
     },
     "contactName": "Mr. Soon-hak Hong",
-    "contactTitle": "Owner",
-    "research_v1": {
-      "affidabilita": 4,
-      "vino_italiano": "forse",
-      "tipo_business": "importatore",
-      "mercato_target": "misto",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T15:07:26.069Z",
-      "note": "Importatore solido (dal 1990, 35 anni esperienza) con portafoglio diversificato (sake, whisky, birra, vini). Catalogo include vini francesi e cileni ma nessuna menzione esplicita di vini italiani. Mer"
-    }
+    "contactTitle": "Owner"
   },
   "c1780673710931pt51m": {
     "research": {
@@ -281399,16 +281178,7 @@
       }
     },
     "contactName": "Minha Kim",
-    "contactTitle": "Manager - Sourcing Department",
-    "research_v1": {
-      "affidabilita": 4,
-      "vino_italiano": "probabile",
-      "tipo_business": "importatore",
-      "mercato_target": "retail",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T15:07:40.529Z",
-      "note": "Importatore coreano consolidato (14 dipendenti, fatturato ~38M) specializzato in vini europei di qualità. Presenze verificate su fonti autorevoli (Korea Herald, Fancy Food Show). Manca conferma esplic"
-    }
+    "contactTitle": "Manager - Sourcing Department"
   },
   "c1780673710931cegf2": {
     "research": {
@@ -281430,16 +281200,7 @@
       }
     },
     "contactName": "Dongmyung Hong",
-    "contactTitle": "Owner",
-    "research_v1": {
-      "affidabilita": 3,
-      "vino_italiano": "probabile",
-      "tipo_business": "importatore",
-      "mercato_target": "misto",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T15:07:54.714Z",
-      "note": "Importatore/distributore coreano consolidato (14 dipendenti, fatturato ~2.8M USD) con contatti verificati in documenti ufficiali IVV. Sito irraggiungibile limita valutazione; portfolio generico (vino/"
-    }
+    "contactTitle": "Owner"
   },
   "c178067371093170itb": {
     "research": {
@@ -281461,16 +281222,7 @@
       }
     },
     "contactName": "James Lee",
-    "contactTitle": "Wine Director",
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "forse",
-      "tipo_business": "importatore",
-      "mercato_target": "sconosciuto",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-06T15:14:37.699Z",
-      "note": "Importatore di vino con sede in Corea del Sud, ma mancano informazioni sul sito web e sui prodotti specifici, compresi i vini italiani."
-    }
+    "contactTitle": "Wine Director"
   },
   "c1780673710931uqw23": {
     "research": {
@@ -281492,16 +281244,7 @@
       }
     },
     "contactName": "Sunjeong Hwang",
-    "contactTitle": "Manager",
-    "research_v1": {
-      "affidabilita": 4,
-      "vino_italiano": "si",
-      "tipo_business": "importatore",
-      "mercato_target": "misto",
-      "raccomandato": "si",
-      "analyzed_at": "2026-06-07T15:08:04.373Z",
-      "note": "Distributore coreano consolidato con portafoglio internazionale che include esplicitamente vini italiani (Barbera, Nebbiolo, Sangiovese). Sito professionale, 11 dipendenti, numero di registrazione ver"
-    }
+    "contactTitle": "Manager"
   },
   "c1780673710931jqnqu": {
     "research": {
@@ -281521,15 +281264,6 @@
           "affidabilita": 4
         }
       }
-    },
-    "research_v1": {
-      "affidabilita": 4,
-      "vino_italiano": "forse",
-      "tipo_business": "importatore",
-      "mercato_target": "misto",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T15:08:18.684Z",
-      "note": "Importatore sudcoreano consolidato con storico di importazioni da Francia (Château Giscours) e Portogallo (José Maria da Fonseca). Sito non raggiungibile ma presenze verificate in database commerciali"
     }
   },
   "c1780673710931i16r1": {
@@ -281552,16 +281286,7 @@
       }
     },
     "contactName": "Kim Il-ju",
-    "contactTitle": "Representative",
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "forse",
-      "tipo_business": "retailer",
-      "mercato_target": "retail",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T11:24:14.104Z",
-      "note": "Azienda con dimensioni ridotte, nessuna informazione sul sito web, ma presenza di vino nel portafoglio prodotti"
-    }
+    "contactTitle": "Representative"
   },
   "c17806737109319gwiy": {
     "research": {
@@ -281583,16 +281308,7 @@
       }
     },
     "contactName": "Pierre André Doucet",
-    "contactTitle": "Ceo",
-    "research_v1": {
-      "affidabilita": 3,
-      "vino_italiano": "si",
-      "tipo_business": "importatore",
-      "mercato_target": "misto",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T15:08:25.141Z",
-      "note": "Importatore coreano con portafoglio europeo che include vini italiani (Toscana, Piemonte, Puglia, Sicilia). Fatturato modesto (489k) e team piccolo (10 dipendenti) suggeriscono operazione di nicchia. "
-    }
+    "contactTitle": "Ceo"
   },
   "c1780673710931e0se0": {
     "research": {
@@ -281612,15 +281328,6 @@
           "affidabilita": 2
         }
       }
-    },
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "non_risulta",
-      "tipo_business": "importatore/distributore",
-      "mercato_target": "sconosciuto",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T15:08:39.885Z",
-      "note": "Azienda sudcoreana con profilo importatore/distributore di vino, ma sito irraggiungibile e nessuna traccia online. Dimensione piccola (10 dipendenti). Verificare affidabilità prima di contattare; pote"
     }
   },
   "c1780673710931f3wfu": {
@@ -281643,16 +281350,7 @@
       }
     },
     "contactName": "KyungHwa Lee",
-    "contactTitle": "Ceo",
-    "research_v1": {
-      "affidabilita": 3,
-      "vino_italiano": "probabile",
-      "tipo_business": "importatore",
-      "mercato_target": "misto",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T15:08:54.297Z",
-      "note": "Importatore coreano consolidato (citato in studi di mercato 2013-2024), ma sito non raggiungibile e info limitate. Fatturato modesto (3,6M) con 9 dipendenti suggerisce PMI. Verificare se specializzato"
-    }
+    "contactTitle": "Ceo"
   },
   "c1780673710931zuthu": {
     "research": {
@@ -281674,16 +281372,7 @@
       }
     },
     "contactName": "Park Myung - Jin",
-    "contactTitle": "Representant",
-    "research_v1": {
-      "affidabilita": 4,
-      "vino_italiano": "forse",
-      "tipo_business": "importatore",
-      "mercato_target": "horeca",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-06T15:34:58.721Z",
-      "note": "Azienda consolidata con storia di 24 anni, importatore di vini, ma non si trovano informazioni specifiche su vini italiani nel portafoglio"
-    }
+    "contactTitle": "Representant"
   },
   "c1780673710931xp3xg": {
     "research": {
@@ -281705,16 +281394,7 @@
       }
     },
     "contactName": "Kim Hee-gyu",
-    "contactTitle": "President",
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "non_risulta",
-      "tipo_business": "distributore",
-      "mercato_target": "sconosciuto",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T15:08:59.318Z",
-      "note": "Azienda piccola (8 dipendenti) con fatturato modesto. Sito irraggiungibile e nessuna traccia online. Impossibile verificare se commercializza vini italiani o se ha credibilità nel mercato coreano."
-    }
+    "contactTitle": "President"
   },
   "c17806737109312q27s": {
     "research": {
@@ -281736,16 +281416,7 @@
       }
     },
     "contactName": "Cohen Aknine Matthias",
-    "contactTitle": "Ceo",
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "non_risulta",
-      "tipo_business": "misto",
-      "mercato_target": "misto",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T15:09:06.124Z",
-      "note": "Sito poco professionale e confuso (mix di coreano/inglese, layout disordinato). Nessuna menzione esplicita di vini italiani; catalogo generico (wine, beer, cider, juice). Assenza di risultati Google e"
-    }
+    "contactTitle": "Ceo"
   },
   "c17806737109314qovz": {
     "research": {
@@ -281767,16 +281438,7 @@
       }
     },
     "contactName": "Eun Uk Lee",
-    "contactTitle": "Ceo",
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "forse",
-      "tipo_business": "importatore",
-      "mercato_target": "sconosciuto",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T11:39:22.694Z",
-      "note": "Dati scarsi, sito web non raggiungibile, nessuna informazione sui vini italiani"
-    }
+    "contactTitle": "Ceo"
   },
   "c1780673710931iglbv": {
     "research": {
@@ -281798,16 +281460,7 @@
       }
     },
     "contactName": "Byun Hyeon-ju",
-    "contactTitle": "Representative",
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "non_risulta",
-      "tipo_business": "misto",
-      "mercato_target": "misto",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T15:09:11.029Z",
-      "note": "Azienda sudcoreana piccola (8 dipendenti) che distribuisce vini sudafricani. Nessuna evidenza di interesse per vini italiani; sito non raggiungibile. Scarsa affidabilità e fit con portafoglio italiano"
-    }
+    "contactTitle": "Representative"
   },
   "c1780673710931gfeox": {
     "research": {
@@ -281827,15 +281480,6 @@
           "affidabilita": 2
         }
       }
-    },
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "non_risulta",
-      "tipo_business": "misto",
-      "mercato_target": "misto",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T15:09:16.498Z",
-      "note": "Azienda piccola (8 dipendenti) operante in Corea del Sud come importatore/distributore/retailer. Sito non raggiungibile e nessuna evidenza di specializzazione su vini italiani. Fatturato modesto (~1M "
     }
   },
   "c1780673710931r52d0": {
@@ -281856,15 +281500,6 @@
           "affidabilita": 2
         }
       }
-    },
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "forse",
-      "tipo_business": "importatore",
-      "mercato_target": "sconosciuto",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-06T15:50:35.604Z",
-      "note": "Dati scarsi, nessun risultato su Google, sito web non raggiungibile"
     }
   },
   "c1780673710931zcah9": {
@@ -281887,16 +281522,7 @@
       }
     },
     "contactName": "Shin Ji-won",
-    "contactTitle": "Representative",
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "forse",
-      "tipo_business": "importatore",
-      "mercato_target": "online",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T15:09:31.135Z",
-      "note": "Importatore online sudcoreano con fatturato modesto (4.7M). Sito irraggiungibile e assenza totale di tracce Google rendono difficile verificare specializzazione in vini italiani. Contattare solo se in"
-    }
+    "contactTitle": "Representative"
   },
   "c1780673710931yd2y2": {
     "research": {
@@ -281916,15 +281542,6 @@
           "affidabilita": 2
         }
       }
-    },
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "no",
-      "tipo_business": "importatore",
-      "mercato_target": "online",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T15:09:35.949Z",
-      "note": "Importatore sudcoreano specializzato in vini americani (California). Nessuna traccia di vini italiani nel portafoglio; sito funzionante ma piccola realtà (7 dipendenti, fatturato modesto)."
     }
   },
   "c1780673710931u4udu": {
@@ -281945,15 +281562,6 @@
           "affidabilita": 3
         }
       }
-    },
-    "research_v1": {
-      "affidabilita": 3,
-      "vino_italiano": "si",
-      "tipo_business": "importatore",
-      "mercato_target": "retail",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T15:09:41.916Z",
-      "note": "Importatore sudcoreano con portafoglio diversificato che include vini italiani (Le Trame, Cantina Tollo, Tintero). Sito funzionante ma con scarsa visibilità online (nessun risultato Google). Dimension"
     }
   },
   "c17806737109323njbs": {
@@ -281974,15 +281582,6 @@
           "affidabilita": 2
         }
       }
-    },
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "forse",
-      "tipo_business": "misto",
-      "mercato_target": "sconosciuto",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T11:54:54.701Z",
-      "note": "Dati scarsi, sito web non raggiungibile. Importatore e distributore di vino in Corea del Sud con fatturato modesto."
     }
   },
   "c17806737109321hl4q": {
@@ -282005,16 +281604,7 @@
       }
     },
     "contactName": "Kim Soo -han",
-    "contactTitle": "Representative",
-    "research_v1": {
-      "affidabilita": 3,
-      "vino_italiano": "forse",
-      "tipo_business": "importatore",
-      "mercato_target": "misto",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T15:09:55.491Z",
-      "note": "Importatore coreano di vini con 6 dipendenti, citato in report ufficiali portoghesi su mercato vinicolo sudcoreano. Sito non raggiungibile limita verifica. Potenziale interessante se specializzato in "
-    }
+    "contactTitle": "Representative"
   },
   "c1780673710932fy981": {
     "research": {
@@ -282034,15 +281624,6 @@
           "affidabilita": 4
         }
       }
-    },
-    "research_v1": {
-      "affidabilita": 4,
-      "vino_italiano": "forse",
-      "tipo_business": "importatore",
-      "mercato_target": "horeca",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-06T16:06:46.033Z",
-      "note": "Importatore di vini con sede in Corea del Sud, presente su siti web di produttori di vino francese. Nessuna informazione diretta su vini italiani."
     }
   },
   "c17806737109326yota": {
@@ -282065,16 +281646,7 @@
       }
     },
     "contactName": "Jaeyong Koh",
-    "contactTitle": "Ceo",
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "non_risulta",
-      "tipo_business": "misto",
-      "mercato_target": "sconosciuto",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T15:10:00.550Z",
-      "note": "Azienda sudcoreana con sito irraggiungibile e zero traccia online. Fatturato molto basso (782k) per 5 dipendenti. Impossibile verificare se commercializza vini italiani."
-    }
+    "contactTitle": "Ceo"
   },
   "c178067371093286hvc": {
     "research": {
@@ -282096,16 +281668,7 @@
       }
     },
     "contactName": "Christopher Kwon",
-    "contactTitle": "Owner",
-    "research_v1": {
-      "affidabilita": 3,
-      "vino_italiano": "forse",
-      "tipo_business": "importatore",
-      "mercato_target": "misto",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T15:10:05.556Z",
-      "note": "Importatore coreano di vini e spirits con 5 dipendenti. Partecipa a fiere internazionali (SIWSE 2025). Sito dichiarato non raggiungibile; info limitate su portafoglio specifico e focus su vini italian"
-    }
+    "contactTitle": "Owner"
   },
   "c1780673710932od7kl": {
     "research": {
@@ -282127,16 +281690,7 @@
       }
     },
     "contactName": "Jac Damen",
-    "contactTitle": "Owner And Executive Manager",
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "forse",
-      "tipo_business": "importatore",
-      "mercato_target": "sconosciuto",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T15:10:19.727Z",
-      "note": "Piccola azienda coreana (5 dipendenti) che dichiara importazione vini. Sito irraggiungibile e nessuna traccia online. Fatturato modesto (~2.7M). Verificare affidabilità prima di contattare."
-    }
+    "contactTitle": "Owner And Executive Manager"
   },
   "c1780673710932lmll2": {
     "research": {
@@ -282158,16 +281712,7 @@
       }
     },
     "contactName": "Jaewook Lee",
-    "contactTitle": "Ceo",
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "non_risulta",
-      "tipo_business": "online",
-      "mercato_target": "online",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T15:10:34.374Z",
-      "note": "Azienda sudcoreana con presenze frammentarie online. Risultati Google mostrano attività in settori eterogenei (chimica, ginseng, food generico). Nessuna evidenza di specializzazione in vini italiani; "
-    }
+    "contactTitle": "Ceo"
   },
   "c1780673710932fcwa2": {
     "research": {
@@ -282189,16 +281734,7 @@
       }
     },
     "contactName": "Pyeong Jeom Park",
-    "contactTitle": "Ceo",
-    "research_v1": {
-      "affidabilita": 3,
-      "vino_italiano": "probabile",
-      "tipo_business": "importatore",
-      "mercato_target": "horeca",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T15:10:50.682Z",
-      "note": "Importatore coreano con fatturato modesto (2,6M) e piccolo team (5 dipendenti). Presenze su social e wine events suggeriscono attività reale, ma siti dichiarati non raggiungibili. Contatti con produtt"
-    }
+    "contactTitle": "Ceo"
   },
   "c1780673710932a711x": {
     "research": {
@@ -282220,16 +281756,7 @@
       }
     },
     "contactName": "Hwan-Ho Jung",
-    "contactTitle": "Ceo",
-    "research_v1": {
-      "affidabilita": 4,
-      "vino_italiano": "forse",
-      "tipo_business": "importatore",
-      "mercato_target": "horeca",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T15:11:04.630Z",
-      "note": "Importatore sudcoreano consolidato con partnership con cantine internazionali (Au Bon Climat, Delta Estate Wines). Portafoglio focalizzato su vini esteri (California, Nuova Zelanda). Nessuna evidenza "
-    }
+    "contactTitle": "Ceo"
   },
   "c17806737109323feug": {
     "research": {
@@ -282251,16 +281778,7 @@
       }
     },
     "contactName": "Sung-Hyun Kim",
-    "contactTitle": "Commercial Director",
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "forse",
-      "tipo_business": "importatore",
-      "mercato_target": "sconosciuto",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-06T16:25:23.712Z",
-      "note": "Importatore di vini europei, ma non si trova conferma di vini italiani. Dimensioni aziendali ridotte."
-    }
+    "contactTitle": "Commercial Director"
   },
   "c1780673710932lbd73": {
     "research": {
@@ -282282,16 +281800,7 @@
       }
     },
     "contactName": "Carlos Vera",
-    "contactTitle": "In Charge",
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "non_risulta",
-      "tipo_business": "online",
-      "mercato_target": "online",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T15:11:14.634Z",
-      "note": "Azienda sudcoreana di piccole dimensioni (5 dipendenti, fatturato modesto). Sito irraggiungibile e nessuna traccia online. Impossibile verificare se commercializza vini italiani o se rappresenta un pa"
-    }
+    "contactTitle": "In Charge"
   },
   "c1780673710932vebg9": {
     "research": {
@@ -282311,15 +281820,6 @@
           "affidabilita": 3
         }
       }
-    },
-    "research_v1": {
-      "affidabilita": 3,
-      "vino_italiano": "probabile",
-      "tipo_business": "importatore",
-      "mercato_target": "misto",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T15:11:20.940Z",
-      "note": "Importatore coreano attivo dal 2007 con portafoglio europeo (Francia, Spagna, Italia citata). Sito funzionante ma nessuna traccia Google. Fatturato modesto (492k) e team piccolo (5 dipendenti) suggeri"
     }
   },
   "c1780673710932ank8c": {
@@ -282340,15 +281840,6 @@
           "affidabilita": 2
         }
       }
-    },
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "forse",
-      "tipo_business": "importatore",
-      "mercato_target": "retail",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T15:11:31.656Z",
-      "note": "Azienda sudcoreana di piccole dimensioni (5 dipendenti) con sito minimalista e nessuna traccia Google. Portfolio generico (birra, spirits, spumante) senza evidenza di vini italiani. Affidabilità bassa"
     }
   },
   "c1780673710932n4184": {
@@ -282369,15 +281860,6 @@
           "affidabilita": 2
         }
       }
-    },
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "non_risulta",
-      "tipo_business": "importatore|distributore",
-      "mercato_target": "misto",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T15:11:37.695Z",
-      "note": "Azienda sudcoreana piccola (5 dipendenti, fatturato ~776k USD) senza evidenze di specializzazione in vini italiani. Sito web minimalista e non funzionante in inglese; nessuna informazione sul portafog"
     }
   },
   "c17806737109321vs0k": {
@@ -282400,16 +281882,7 @@
       }
     },
     "contactName": "Jooyong Kim",
-    "contactTitle": "Ceo",
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "forse",
-      "tipo_business": "retailer",
-      "mercato_target": "retail",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-06T16:37:59.817Z",
-      "note": "Dati scarsi, sito web non raggiungibile, nessuna informazione sui vini italiani"
-    }
+    "contactTitle": "Ceo"
   },
   "c178067371093214189": {
     "research": {
@@ -282431,16 +281904,7 @@
       }
     },
     "contactName": "Chan Woo Jeong",
-    "contactTitle": "President",
-    "research_v1": {
-      "affidabilita": 4,
-      "vino_italiano": "probabile",
-      "tipo_business": "importatore",
-      "mercato_target": "misto",
-      "raccomandato": "si",
-      "analyzed_at": "2026-06-07T15:11:51.961Z",
-      "note": "Importatore coreano consolidato dal 2008 con contatti verificati in fonti autorevoli (Contucci, Sensory). Citato come distributore di vini europei; probabilità alta di interesse per vini italiani. Con"
-    }
+    "contactTitle": "President"
   },
   "c1780673710932nlnlz": {
     "research": {
@@ -282462,16 +281926,7 @@
       }
     },
     "contactName": "Kim Seok Woo",
-    "contactTitle": "Manager",
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "probabile",
-      "tipo_business": "retailer",
-      "mercato_target": "retail",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T15:11:58.776Z",
-      "note": "Piccolo retailer coreano (4 dipendenti) con portafoglio multi-paese (Cile, USA, Francia, Italia, Spagna). Sito datato (ultimi aggiornamenti 2016), nessuna traccia online. Non è distributore/importator"
-    }
+    "contactTitle": "Manager"
   },
   "c1780673710932c8k03": {
     "research": {
@@ -282493,16 +281948,7 @@
       }
     },
     "contactName": "Sangok Han",
-    "contactTitle": "Representative",
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "forse",
-      "tipo_business": "importatore",
-      "mercato_target": "sconosciuto",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T15:12:13.217Z",
-      "note": "Piccolo importatore coreano (4 dipendenti, fatturato modesto). Sito non raggiungibile e assenza di tracce online rendono difficile verificare specializzazione in vini italiani. Contatto possibile solo"
-    }
+    "contactTitle": "Representative"
   },
   "c17806737109325jk9e": {
     "research": {
@@ -282524,16 +281970,7 @@
       }
     },
     "contactName": "Jeong Hyeon-sik",
-    "contactTitle": "President",
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "non_risulta",
-      "tipo_business": "importatore",
-      "mercato_target": "online",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T15:12:28.579Z",
-      "note": "Azienda piccola (4 dipendenti) con sito irraggiungibile e nessuna traccia online. Impossibile verificare se importa vini italiani. Alto rischio di affidabilità."
-    }
+    "contactTitle": "President"
   },
   "c1780673710932bmpm2": {
     "research": {
@@ -282555,16 +281992,7 @@
       }
     },
     "contactName": "Lee Seung-hoon",
-    "contactTitle": "Manager",
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "forse",
-      "tipo_business": "misto",
-      "mercato_target": "sconosciuto",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-06T16:52:16.625Z",
-      "note": "Dati scarsi, sito web non raggiungibile, nessuna informazione sui vini italiani"
-    }
+    "contactTitle": "Manager"
   },
   "c178067371093286sid": {
     "research": {
@@ -282586,16 +282014,7 @@
       }
     },
     "contactName": "Taehoon Seong",
-    "contactTitle": "Ceo",
-    "research_v1": {
-      "affidabilita": 3,
-      "vino_italiano": "forse",
-      "tipo_business": "misto",
-      "mercato_target": "misto",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T15:12:43.198Z",
-      "note": "Importatore riconosciuto in Corea del Sud (citato in report ufficiali portoghesi), ma sito irraggiungibile e fatturato molto basso (179k). Verificare se ancora attivo e se importa vini italiani oltre "
-    }
+    "contactTitle": "Ceo"
   },
   "c1780673710932fqgky": {
     "research": {
@@ -282617,16 +282036,7 @@
       }
     },
     "contactName": "Kang Ho-jun",
-    "contactTitle": "Representative",
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "no",
-      "tipo_business": "importatore|distributore",
-      "mercato_target": "horeca|retail",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T15:12:58.134Z",
-      "note": "Azienda focalizzata su birre belghe e spirits premium, non su vini italiani. Sito non raggiungibile; solo 3 dipendenti e fatturato molto modesto (293k) suggeriscono operazione di piccola scala."
-    }
+    "contactTitle": "Representative"
   },
   "c1780673710932occ3h": {
     "research": {
@@ -282648,16 +282058,7 @@
       }
     },
     "contactName": "Han Jong - Min",
-    "contactTitle": "Ceo",
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "probabile",
-      "tipo_business": "importatore",
-      "mercato_target": "misto",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T15:13:04.946Z",
-      "note": "Importatore coreano con sito datato e poco professionale. Portafoglio include vini europei (Riesling, Moscato, Carmenere) ma nessuna menzione esplicita di vini italiani. Solo 3 dipendenti, fatturato s"
-    }
+    "contactTitle": "Ceo"
   },
   "c1780673710932yn8kn": {
     "research": {
@@ -282679,16 +282080,7 @@
       }
     },
     "contactName": "Dohyeong Kim",
-    "contactTitle": "In Charge",
-    "research_v1": {
-      "affidabilita": 1,
-      "vino_italiano": "non_risulta",
-      "tipo_business": "importatore",
-      "mercato_target": "sconosciuto",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T15:13:20.086Z",
-      "note": "Azienda micro (3 dipendenti, fatturato molto basso) con sito irraggiungibile e zero traccia online. Impossibile verificare se importa vini italiani o la solidità commerciale."
-    }
+    "contactTitle": "In Charge"
   },
   "c17806737109324vwem": {
     "research": {
@@ -282710,16 +282102,7 @@
       }
     },
     "contactName": "Moon Bo-seon",
-    "contactTitle": "Representative",
-    "research_v1": {
-      "affidabilita": 1,
-      "vino_italiano": "non_risulta",
-      "tipo_business": "importatore",
-      "mercato_target": "sconosciuto",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T15:13:26.482Z",
-      "note": "Sito inaccessibile (blocco CAPTCHA), nessuna traccia Google, azienda micro (3 dipendenti). Impossibile verificare credibilità o portafoglio vini italiani."
-    }
+    "contactTitle": "Representative"
   },
   "c1780673710932i42f3": {
     "research": {
@@ -282741,16 +282124,7 @@
       }
     },
     "contactName": "Dong Young Gwak",
-    "contactTitle": "Founder & Ceo",
-    "research_v1": {
-      "affidabilita": 3,
-      "vino_italiano": "forse",
-      "tipo_business": "importatore",
-      "mercato_target": "retail",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T15:13:41.299Z",
-      "note": "Importatore coreano specializzato in vini naturali con buona reputazione locale (citato in report Australia e guide Seoul). Sito non raggiungibile al momento. Piccola struttura (3 dipendenti) con fatt"
-    }
+    "contactTitle": "Founder & Ceo"
   },
   "c1780673710932lm9o7": {
     "research": {
@@ -282772,16 +282146,7 @@
       }
     },
     "contactName": "Hanyeol Choi",
-    "contactTitle": "Manager",
-    "research_v1": {
-      "affidabilita": 3,
-      "vino_italiano": "probabile",
-      "tipo_business": "retailer",
-      "mercato_target": "online",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T15:13:48.213Z",
-      "note": "Retailer online coreano con sito funzionante che cita esplicitamente Italia (Toscana, Piemonte) e vitigni italiani (Sangiovese, Nebbiolo). Piccola struttura (3 dipendenti, fatturato modesto ~316k). As"
-    }
+    "contactTitle": "Manager"
   },
   "c17806737109320ps0c": {
     "research": {
@@ -282803,16 +282168,7 @@
       }
     },
     "contactName": "Kim Jeong-ho",
-    "contactTitle": "In Charge",
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "forse",
-      "tipo_business": "importatore",
-      "mercato_target": "sconosciuto",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-06T17:13:40.760Z",
-      "note": "Informazioni scarse, sito web non raggiungibile. Importatore di vino e spirits in Corea del Sud, ma non è chiaro se importano vini italiani."
-    }
+    "contactTitle": "In Charge"
   },
   "c1780673710932pvmax": {
     "research": {
@@ -282832,15 +282188,6 @@
           "affidabilita": 3
         }
       }
-    },
-    "research_v1": {
-      "affidabilita": 3,
-      "vino_italiano": "probabile",
-      "tipo_business": "misto",
-      "mercato_target": "misto",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T15:14:03.559Z",
-      "note": "Importatore/distributore sudcoreano con 3 dipendenti e fatturato modesto (~370k). Citato in report ufficiali portoghesi e indiani come player nel mercato vini coreano; sito non raggiungibile. Verifica"
     }
   },
   "c1780673710932cgsn3": {
@@ -282861,15 +282208,6 @@
           "affidabilita": 2
         }
       }
-    },
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "non_risulta",
-      "tipo_business": "importatore",
-      "mercato_target": "sconosciuto",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T15:14:18.976Z",
-      "note": "Azienda micro (2 dipendenti, fatturato ~675k USD) con sito irraggiungibile e zero traccia online. Nessuna evidenza di focus su vini italiani. Affidabilità molto bassa."
     }
   },
   "c17806737109325u5j1": {
@@ -282892,16 +282230,7 @@
       }
     },
     "contactName": "Joohan Kim",
-    "contactTitle": "Buyer",
-    "research_v1": {
-      "affidabilita": 5,
-      "vino_italiano": "probabile",
-      "tipo_business": "retailer",
-      "mercato_target": "retail",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T15:14:34.251Z",
-      "note": "Emart è il principale retailer coreano (spun-off da Shinsegae) con divisione Wine & Liquor consolidata. Importa vini e ha affiliate negli USA. Tuttavia, 1 dipendente nel record BWI suggerisce dati inc"
-    }
+    "contactTitle": "Buyer"
   },
   "c1780673710932f58ud": {
     "research": {
@@ -282921,15 +282250,6 @@
           "affidabilita": 4
         }
       }
-    },
-    "research_v1": {
-      "affidabilita": 4,
-      "vino_italiano": "probabile",
-      "tipo_business": "misto",
-      "mercato_target": "misto",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T15:14:40.843Z",
-      "note": "Azienda solida (15 dipendenti, fatturato ~5.6M USD) con sito professionale e presenti su Kompass come importatore/distributore/retailer. Citata in ricerche per vini italiani DOC ma portafoglio ampio ("
     }
   },
   "c1780673710932uvoya": {
@@ -282952,16 +282272,7 @@
       }
     },
     "contactName": "Kim Jun-wan",
-    "contactTitle": "Ceo",
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "forse",
-      "tipo_business": "importatore",
-      "mercato_target": "sconosciuto",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-06T17:25:59.788Z",
-      "note": "Dipendenti pochi, fatturato modesto, sito web non raggiungibile. Importatore di vino, ma non è chiaro se include vini italiani."
-    }
+    "contactTitle": "Ceo"
   },
   "c1780673710932v5jla": {
     "research": {
@@ -282981,15 +282292,6 @@
           "affidabilita": 1
         }
       }
-    },
-    "research_v1": {
-      "affidabilita": 1,
-      "vino_italiano": "non_risulta",
-      "tipo_business": "importatore",
-      "mercato_target": "retail",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T15:14:57.006Z",
-      "note": "Azienda micro (1 dipendente, fatturato minimo) con sito irraggiungibile e zero traccia online. Nessuna evidenza di specializzazione in vini italiani. Rischio affidabilità molto elevato."
     }
   },
   "c1780673710932k7wqd": {
@@ -283012,16 +282314,7 @@
       }
     },
     "contactName": "Yoo Ji-chan",
-    "contactTitle": "Ceo",
-    "research_v1": {
-      "affidabilita": 4,
-      "vino_italiano": "probabile",
-      "tipo_business": "misto",
-      "mercato_target": "misto",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T15:15:03.153Z",
-      "note": "Azienda consolidata (dal 2013) con presenze in directory internazionali e contatti documentati. Importa vini e sake in Corea del Sud, ma nessuna evidenza esplicita di focus su vini italiani. Sito dich"
-    }
+    "contactTitle": "Ceo"
   },
   "c1780673710932r7nzy": {
     "research": {
@@ -283043,16 +282336,7 @@
       }
     },
     "contactName": "Go Myeong-jin",
-    "contactTitle": "Representative",
-    "research_v1": {
-      "affidabilita": 1,
-      "vino_italiano": "non_risulta",
-      "tipo_business": "retailer",
-      "mercato_target": "retail",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T15:15:18.317Z",
-      "note": "Azienda sudcoreana con sito irraggiungibile e nessuna traccia online. Impossibile verificare credibilità, portafoglio prodotti o interesse specifico per vini italiani. Non prioritaria per contatti B2B"
-    }
+    "contactTitle": "Representative"
   },
   "c1780673710932jdz78": {
     "research": {
@@ -283074,16 +282358,7 @@
       }
     },
     "contactName": "Jung Yong Cho",
-    "contactTitle": "President",
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "forse",
-      "tipo_business": "importatore",
-      "mercato_target": "horeca",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T16:44:40.650Z",
-      "note": "Importatore con sito Wix minimalista, proprietario Jung Yong Cho identificato su Instagram. Nessuna info su fatturato/dipendenti. Citato in report 2024 ma portfolio non chiaramente documentato online."
-    }
+    "contactTitle": "President"
   },
   "c17806737109327cfms": {
     "research": {
@@ -283105,16 +282380,7 @@
       }
     },
     "contactName": "Kee Kasper Olsen",
-    "contactTitle": "Co-owner",
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "no",
-      "tipo_business": "retailer",
-      "mercato_target": "online",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T16:44:46.763Z",
-      "note": "Azienda di consegna fiori e regali in Corea del Sud, non importatore/distributore di vino. Vini sono prodotto secondario (gift items). Non pertinente per partnership vini italiani."
-    }
+    "contactTitle": "Co-owner"
   },
   "c178067371093278yxe": {
     "research": {
@@ -283136,16 +282402,7 @@
       }
     },
     "contactName": "Eunsuk Jung",
-    "contactTitle": "Representative",
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "forse",
-      "tipo_business": "retailer",
-      "mercato_target": "retail",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-05T21:42:58.640Z",
-      "note": "Informazioni scarse, sito web non raggiungibile. Non ci sono riferimenti a vini italiani."
-    }
+    "contactTitle": "Representative"
   },
   "c1780673710932nteay": {
     "research": {
@@ -283167,16 +282424,7 @@
       }
     },
     "contactName": "Sohee Hyung",
-    "contactTitle": "Ceo",
-    "research_v1": {
-      "affidabilita": 1,
-      "vino_italiano": "non_risulta",
-      "tipo_business": "sconosciuto",
-      "mercato_target": "sconosciuto",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T16:44:51.825Z",
-      "note": "Azienda non verificabile: nessun sito web, dati insufficienti (dipendenti/fatturato assenti). Risultati Google confusi (ristoranti, whisky giapponese, collezioni francesi). Nessuna evidenza di attivit"
-    }
+    "contactTitle": "Ceo"
   },
   "c178067371093223l91": {
     "research": {
@@ -283198,16 +282446,7 @@
       }
     },
     "contactName": "Kim Hak Gyun",
-    "contactTitle": "Representative",
-    "research_v1": {
-      "affidabilita": 4,
-      "vino_italiano": "probabile",
-      "tipo_business": "importatore",
-      "mercato_target": "misto",
-      "raccomandato": "si",
-      "analyzed_at": "2026-06-07T16:44:57.823Z",
-      "note": "Distributore sudcoreano consolidato con partnership con cantine europee prestigiose (Sottimano, Rudolf Fürst, Muré, Leeuwin Estate, Giovanni Rosso). Sito funzionante e contatti verificati; focus su vi"
-    }
+    "contactTitle": "Representative"
   },
   "c1780673710932yjaq3": {
     "research": {
@@ -283229,16 +282468,7 @@
       }
     },
     "contactName": "Pavlos Chang",
-    "contactTitle": "Ceo",
-    "research_v1": {
-      "affidabilita": 4,
-      "vino_italiano": "non_risulta",
-      "tipo_business": "importatore",
-      "mercato_target": "horeca",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-06T17:47:34.669Z",
-      "note": "Azienda con storia consolidata, importa vini greci in Corea del Sud, sito web non raggiungibile"
-    }
+    "contactTitle": "Ceo"
   },
   "c1780673710932t37gd": {
     "research": {
@@ -283260,16 +282490,7 @@
       }
     },
     "contactName": "Son Sang-hoon",
-    "contactTitle": "Director",
-    "research_v1": {
-      "affidabilita": 1,
-      "vino_italiano": "non_risulta",
-      "tipo_business": "importatore",
-      "mercato_target": "sconosciuto",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T16:45:03.357Z",
-      "note": "Sito irraggiungibile, nessuna traccia online, dominio focalizzato su sake giapponese. Impossibile verificare credibilità o interesse per vini italiani."
-    }
+    "contactTitle": "Director"
   },
   "c17806737109320ixpx": {
     "research": {
@@ -283291,16 +282512,7 @@
       }
     },
     "contactName": "Lee Sang-min",
-    "contactTitle": "Representative",
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "non_risulta",
-      "tipo_business": "online",
-      "mercato_target": "retail",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T16:45:09.302Z",
-      "note": "Sito irraggiungibile e informazioni frammentarie. Citata in studio 2018 su mercato bevande Corea, ma nessuna evidenza di specializzazione in vini italiani. Dati insufficienti per valutazione affidabil"
-    }
+    "contactTitle": "Representative"
   },
   "c1780673710932i32kr": {
     "research": {
@@ -283322,16 +282534,7 @@
       }
     },
     "contactName": "Park Jeong-jin",
-    "contactTitle": "Ceo",
-    "research_v1": {
-      "affidabilita": 3,
-      "vino_italiano": "non_risulta",
-      "tipo_business": "online",
-      "mercato_target": "retail",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T16:45:17.773Z",
-      "note": "Azienda coreana (cooperativa consumatori vini) focalizzata su vini sostenibili/green wine. Nessuna evidenza di interesse per vini italiani; mercato target è il consumatore finale coreano. Non pertinen"
-    }
+    "contactTitle": "Ceo"
   },
   "c1780673710932xisep": {
     "research": {
@@ -283353,16 +282556,7 @@
       }
     },
     "contactName": "Lee Do-yoon",
-    "contactTitle": "Representative",
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "non_risulta",
-      "tipo_business": "misto",
-      "mercato_target": "misto",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T16:45:23.880Z",
-      "note": "Azienda sudcoreana (Seoul) con sito poco informativo e nessuna traccia online. Nessuna menzione esplicita di vini italiani nel portafoglio. Assenza di dati su dipendenti/fatturato e scarsa visibilità "
-    }
+    "contactTitle": "Representative"
   },
   "c17806737109328r81g": {
     "research": {
@@ -283384,16 +282578,7 @@
       }
     },
     "contactName": "Cha Hyo-sim",
-    "contactTitle": "Manager",
-    "research_v1": {
-      "affidabilita": 4,
-      "vino_italiano": "no",
-      "tipo_business": "online",
-      "mercato_target": "retail",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T16:45:30.768Z",
-      "note": "Azienda sudcoreana specializzata in alcolici tradizionali coreani (soju, makgeolli, liquori). Non commercializza vini italiani né europei. Non pertinente per distribuzione vini italiani."
-    }
+    "contactTitle": "Manager"
   },
   "c17806737109325e7kx": {
     "research": {
@@ -283415,16 +282600,7 @@
       }
     },
     "contactName": "Sang-ho Hwang",
-    "contactTitle": "Ceo",
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "probabile",
-      "tipo_business": "online",
-      "mercato_target": "retail",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T16:45:38.881Z",
-      "note": "Retailer online coreano con sito funzionante ma nessuna evidenza di vini italiani specifici nel catalogo (Francia, Cile, Argentina, USA, Australia prevalenti). Nessun dato su dipendenti/fatturato; ris"
-    }
+    "contactTitle": "Ceo"
   },
   "c1780673710932ii6qk": {
     "research": {
@@ -283446,16 +282622,7 @@
       }
     },
     "contactName": "Junyoung Seol",
-    "contactTitle": "Representative",
-    "research_v1": {
-      "affidabilita": 4,
-      "vino_italiano": "forse",
-      "tipo_business": "online",
-      "mercato_target": "online",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-06T18:07:39.871Z",
-      "note": "Azienda online di vino con sede in Corea del Sud, menzionata in articoli e video come rivenditore di vini di alta qualità, ma non si trovano informazioni specifiche sui vini italiani"
-    }
+    "contactTitle": "Representative"
   },
   "c1780673710932ekzz3": {
     "research": {
@@ -283477,16 +282644,7 @@
       }
     },
     "contactName": "Ian Ashworth",
-    "contactTitle": "Chief Executive Officer",
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "forse",
-      "tipo_business": "misto",
-      "mercato_target": "retail",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T16:45:44.259Z",
-      "note": "Azienda piccola senza sito web ufficiale; attiva su social/community (Facebook, Reddit) con servizi di wine tasting, subscription e catering. Nessuna evidenza di focus su vini italiani (citati unghere"
-    }
+    "contactTitle": "Chief Executive Officer"
   },
   "c1780673710932lup3o": {
     "research": {
@@ -283508,16 +282666,7 @@
       }
     },
     "contactName": "Miyoung Son",
-    "contactTitle": "Representative",
-    "research_v1": {
-      "affidabilita": 1,
-      "vino_italiano": "non_risulta",
-      "tipo_business": "online",
-      "mercato_target": "online",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T16:45:50.163Z",
-      "note": "Sito irraggiungibile, nessuna traccia online, dati aziendali assenti. Impossibile verificare credibilità o portafoglio prodotti."
-    }
+    "contactTitle": "Representative"
   },
   "c1780673710932mb59o": {
     "research": {
@@ -283539,16 +282688,7 @@
       }
     },
     "contactName": "Chul Hyoung Lee",
-    "contactTitle": "Ceo",
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "forse",
-      "tipo_business": "importatore|online",
-      "mercato_target": "online",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T16:45:54.898Z",
-      "note": "Importatore online coreano con portafoglio vini generici. Sito non raggiungibile e assenza totale di risultati Google suggeriscono bassa visibilità o inattività. Verificare contattabilità prima di inv"
-    }
+    "contactTitle": "Ceo"
   },
   "c1780673710932wq5mt": {
     "research": {
@@ -283570,16 +282710,7 @@
       }
     },
     "contactName": "Park Jong-ki",
-    "contactTitle": "Manager",
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "non_risulta",
-      "tipo_business": "retailer",
-      "mercato_target": "online",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T16:46:01.224Z",
-      "note": "Sito non accessibile (errore CAPTCHA), nessuna traccia Google, dati aziendali assenti. Impossibile verificare portafoglio prodotti e affidabilità."
-    }
+    "contactTitle": "Manager"
   },
   "c1780673710932bz0ll": {
     "research": {
@@ -283601,16 +282732,7 @@
       }
     },
     "contactName": "Lee Kwang-young",
-    "contactTitle": "Ceo",
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "forse",
-      "tipo_business": "distributore",
-      "mercato_target": "sconosciuto",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-06T18:21:42.598Z",
-      "note": "nessuna informazione disponibile, sito web irraggiungibile"
-    }
+    "contactTitle": "Ceo"
   },
   "c1780673710932zhrqz": {
     "research": {
@@ -283630,15 +282752,6 @@
           "affidabilita": 1
         }
       }
-    },
-    "research_v1": {
-      "affidabilita": 1,
-      "vino_italiano": "non_risulta",
-      "tipo_business": "online",
-      "mercato_target": "online",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T16:46:07.765Z",
-      "note": "Sito non raggiungibile/non funzionante, nessuna traccia Google, nessuna info su prodotti o portafoglio vini. Impossibile verificare affidabilità o specializzazione in vini italiani."
     }
   },
   "c1780673710932xdg9t": {
@@ -283659,15 +282772,6 @@
           "affidabilita": 2
         }
       }
-    },
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "no",
-      "tipo_business": "online",
-      "mercato_target": "online",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T16:46:14.436Z",
-      "note": "Importatore sudcoreano specializzato in vini americani (California). Nessuna traccia di vini italiani nel portafoglio; sito funzionante ma assenza totale di risultati Google suggerisce dimensione rido"
     }
   },
   "c1780673710932r5c4u": {
@@ -283688,15 +282792,6 @@
           "affidabilita": 2
         }
       }
-    },
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "non_risulta",
-      "tipo_business": "retailer",
-      "mercato_target": "retail",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T16:46:19.730Z",
-      "note": "Sito non raggiungibile, nessuna traccia online, dati aziendali assenti. Impossibile verificare portafoglio prodotti e affidabilità. Non contattare senza ulteriori verifiche."
     }
   },
   "c17806737109327swl6": {
@@ -283717,15 +282812,6 @@
           "affidabilita": 2
         }
       }
-    },
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "probabile",
-      "tipo_business": "retailer",
-      "mercato_target": "retail",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T16:46:27.699Z",
-      "note": "Retailer coreano con catalogo generico (Francia, Australia, Italia). Nessuna traccia online, sito basic senza info aziendali. Non è partner B2B rilevante per distribuzione italiana."
     }
   },
   "c1780673710932o3lmg": {
@@ -283746,15 +282832,6 @@
           "affidabilita": 2
         }
       }
-    },
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "non_risulta",
-      "tipo_business": "importatore",
-      "mercato_target": "sconosciuto",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T16:46:32.747Z",
-      "note": "Azienda sudcoreana senza sito web raggiungibile. Nessuna evidenza di focus su vini italiani; portafoglio orientato a craft beverages internazionali generici. Dati insufficienti per valutazione affidab"
     }
   },
   "c17806737109322s3t4": {
@@ -283775,15 +282852,6 @@
           "affidabilita": 3
         }
       }
-    },
-    "research_v1": {
-      "affidabilita": 3,
-      "vino_italiano": "forse",
-      "tipo_business": "retailer",
-      "mercato_target": "retail",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-07T16:46:38.942Z",
-      "note": "Retailer sudcoreano consolidato nel mercato wine di Seoul, citato in fonti autorevoli (Wine Australia, SMR Wines). Portafoglio diversificato (vini, spirits) con focus su importazioni. Sito non raggiun"
     }
   },
   "c1780673710932wthgr": {
@@ -283804,15 +282872,6 @@
           "affidabilita": 2
         }
       }
-    },
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "forse",
-      "tipo_business": "misto",
-      "mercato_target": "sconosciuto",
-      "raccomandato": "forse",
-      "analyzed_at": "2026-06-06T18:40:02.623Z",
-      "note": "Importatore e distributore di vino in Corea del Sud, sito web non raggiungibile"
     }
   },
   "c17806737109327xksn": {
@@ -283833,15 +282892,6 @@
           "affidabilita": 2
         }
       }
-    },
-    "research_v1": {
-      "affidabilita": 2,
-      "vino_italiano": "non_risulta",
-      "tipo_business": "importatore",
-      "mercato_target": "retail",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T16:46:43.494Z",
-      "note": "Importatore sudcoreano specializzato in vini sudafricani (Arniston Bay). Nessuna evidenza di interesse per vini italiani. Sito non raggiungibile, dati aziendali scarsi."
     }
   },
   "c17806737109324uesm": {
@@ -283862,15 +282912,6 @@
           "affidabilita": 1
         }
       }
-    },
-    "research_v1": {
-      "affidabilita": 1,
-      "vino_italiano": "non_risulta",
-      "tipo_business": "retailer",
-      "mercato_target": "retail",
-      "raccomandato": "no",
-      "analyzed_at": "2026-06-07T16:46:50.251Z",
-      "note": "Sito non raggiungibile (dominio Naver modoo chiuso a giugno 2025). Nessuna traccia online, assenza di informazioni su portafoglio vini italiani. Azienda non verificabile."
     }
   },
   "c1780673710932ugyya": {
@@ -390439,126 +389480,5 @@
   "c1791797451415ibdp6": {
     "contactName": "Jessica Contreras",
     "contactTitle": "Founder/ Ceo"
-  },
-  "c17806737108147qlnl": {
-    "research": {
-      "affidabilita": 2,
-      "vino_italiano": "forse",
-      "tipo_business": "retailer",
-      "mercato_target": "retail",
-      "raccomandato": "no",
-      "note": "Micro-retailer locale (1 dipendente, fatturato ~32k€) con sito basic e nessuna visibilità online. Portafoglio generico (vini, formaggi, birre, spirits) senza focus su vini italiani. Non idonea per partnership B2B.",
-      "analyzed_at": "2026-11-04T15:33:55.064Z"
-    }
-  },
-  "c1780673710814d7ho7": {
-    "research": {
-      "affidabilita": 2,
-      "vino_italiano": "forse",
-      "tipo_business": "retailer",
-      "mercato_target": "retail",
-      "raccomandato": "no",
-      "note": "Azienda micro (1 dipendente, fatturato ~32k€) specializzata in gastronomia spagnola (charcuterie, tapas, paella). Nessuna menzione esplicita di vini italiani nel sito; focus su prodotti iberici. Non è un importatore/distributore di vini ma un retailer/tratteur locale.",
-      "analyzed_at": "2026-11-04T15:33:59.702Z"
-    }
-  },
-  "c17806737108142z5ws": {
-    "research": {
-      "affidabilita": 2,
-      "vino_italiano": "forse",
-      "tipo_business": "retailer",
-      "mercato_target": "retail",
-      "raccomandato": "no",
-      "note": "Micro-realtà (1 dipendente, fatturato ~32k€) con sito poco professionale e nessuna traccia online. Specializzata in vini bio/naturali francesi; nessuna menzione esplicita di vini italiani. Non idonea per partnership commerciale.",
-      "analyzed_at": "2026-11-04T15:34:04.738Z"
-    }
-  },
-  "c1780673710814n6zgw": {
-    "research": {
-      "affidabilita": 1,
-      "vino_italiano": "non_risulta",
-      "tipo_business": "retailer",
-      "mercato_target": "online",
-      "raccomandato": "no",
-      "note": "Azienda micro (1 dipendente, fatturato ~31k€) con sito irraggiungibile e nessuna traccia online. Impossibile verificare se commercializza vini italiani. Affidabilità molto bassa.",
-      "analyzed_at": "2026-11-04T15:34:18.809Z"
-    }
-  },
-  "c17806737108142jgw1": {
-    "research": {
-      "affidabilita": 2,
-      "vino_italiano": "probabile",
-      "tipo_business": "retailer",
-      "mercato_target": "online",
-      "raccomandato": "no",
-      "note": "Micro-azienda (1 dipendente, fatturato ~341k€) con sito online poco professionale e nessuna traccia Google. Catalogo prevalentemente francese (Loire, Bordeaux, Rhône); vini italiani presenti ma non prioritari. Non idonea per partnership B2B strutturata.",
-      "analyzed_at": "2026-11-04T15:34:25.024Z"
-    }
-  },
-  "c1780673710814up9ro": {
-    "research": {
-      "affidabilita": 3,
-      "vino_italiano": "probabile",
-      "tipo_business": "retailer",
-      "mercato_target": "retail",
-      "raccomandato": "forse",
-      "note": "Piccola enoteca specializzata in vini francesi (Beaujolais, Rhône, Lyonnais) con proprietario sommelier esperto. Nessuna menzione esplicita di vini italiani, ma portafoglio potenzialmente aperto. Micro-azienda (1 dipendente) con fatturato modesto: contattare solo se target è Francia/enoteca specializzata.",
-      "analyzed_at": "2026-11-04T15:34:30.412Z"
-    }
-  },
-  "c17806737108143wbuv": {
-    "research": {
-      "affidabilita": 2,
-      "vino_italiano": "forse",
-      "tipo_business": "retailer",
-      "mercato_target": "retail",
-      "raccomandato": "no",
-      "note": "Micro-realtà francese (1 dipendente, fatturato modesto) focalizzata su retail locale. Nessuna menzione esplicita di vini italiani nel sito; selezione generica di vini/champagne/spirits. Non pertinente per partnership B2B italiana.",
-      "analyzed_at": "2026-11-04T15:34:36.126Z"
-    }
-  },
-  "c17806737108148gw94": {
-    "research": {
-      "affidabilita": 2,
-      "vino_italiano": "no",
-      "tipo_business": "retailer",
-      "mercato_target": "retail",
-      "raccomandato": "no",
-      "note": "Micro-azienda (1 dipendente, fatturato ~32k€) specializzata in vini francesi del Sud (Provence, Rhône, Languedoc) e spirits. Nessuna traccia di vini italiani nel catalogo. Non pertinente per distribuzione italiana.",
-      "analyzed_at": "2026-11-04T15:34:41.308Z"
-    }
-  },
-  "c1780673710814gma13": {
-    "research": {
-      "affidabilita": 2,
-      "vino_italiano": "forse",
-      "tipo_business": "retailer",
-      "mercato_target": "retail",
-      "raccomandato": "no",
-      "note": "Micro-azienda (1 dipendente, fatturato 32k€) con sito generico. Nessuna menzione esplicita di vini italiani nel portafoglio. Assenza di visibilità online (nessun risultato Google) suggerisce operatività locale molto limitata.",
-      "analyzed_at": "2026-11-04T15:34:47.109Z"
-    }
-  },
-  "c1780673710814x6qfa": {
-    "research": {
-      "affidabilita": 4,
-      "vino_italiano": "no",
-      "tipo_business": "online",
-      "mercato_target": "retail",
-      "raccomandato": "no",
-      "note": "E-commerce francese specializzato in vini francesi (Borgogna, Champagne, Bordeaux, Loire, ecc.). Portfolio esclusivamente francese e internazionale, nessun vino italiano. Non pertinente per distribuzione vini italiani.",
-      "analyzed_at": "2026-11-04T15:34:53.352Z"
-    }
-  },
-  "c1780673710814z206x": {
-    "research": {
-      "affidabilita": 3,
-      "vino_italiano": "no",
-      "tipo_business": "importatore",
-      "mercato_target": "misto",
-      "raccomandato": "no",
-      "note": "Négociant francese specializzato in vini francesi (Bordeaux, Burgundy, Rhône, Alsace). Non commercializza vini italiani. Azienda micro (1 dipendente) con fatturato modesto; sito basic su Wix senza visibilità Google.",
-      "analyzed_at": "2026-11-04T15:35:03.388Z"
-    }
   }
 }
