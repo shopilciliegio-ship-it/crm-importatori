@@ -150,6 +150,10 @@ def serper_search(company, country):
             SERPER_STATS['errori'] += 1
             if SERPER_STATS['errori'] <= 3:
                 print(f'  ⚠ Serper HTTP {r.status_code}: {r.text[:200]}')
+            # Crediti Serper finiti o chiave non valida: NON proseguire senza Google (le analisi
+            # senza ricerca sono poco affidabili: è già successo dal 21/6 al 4/11/2026).
+            if r.status_code in (401, 402, 403) or (r.status_code == 400 and 'credit' in r.text.lower()):
+                raise FatalAPIError(f'Serper: HTTP {r.status_code} {r.text[:150]} (crediti finiti o chiave non valida)')
             return ''
         SERPER_STATS['ok'] += 1
         data = r.json()
@@ -160,6 +164,8 @@ def serper_search(company, country):
         for i in (data.get('organic') or [])[:5]:
             parts.append(f"[{i.get('title','')}] {i.get('snippet','')} ({i.get('link','')})")
         return '\n'.join(parts)
+    except FatalAPIError:
+        raise
     except Exception as e:
         print(f'  ⚠ Serper error: {e}')
         return ''
@@ -501,9 +507,9 @@ def main():
         for i, c in enumerate(contacts_list, 1):
             print(f'  [{i}/{len(contacts_list)}] {(c.get("company","") or "")[:50]}')
 
-            search_text = serper_search(c.get('company', ''), country)
-            web_text    = fetch_website(c.get('website', '')) if c.get('website') else ''
             try:
+                search_text = serper_search(c.get('company', ''), country)
+                web_text    = fetch_website(c.get('website', '')) if c.get('website') else ''
                 analysis = claude_analyze(c, search_text, web_text)
             except FatalAPIError as e:
                 fatal_error = e
@@ -556,16 +562,16 @@ def main():
         config['paused']       = True
         config['pausedReason'] = str(fatal_error)[:300]
         config['pausedAt']     = datetime.now(timezone.utc).isoformat(timespec='milliseconds').replace('+00:00', 'Z')
-        gh_put(CONFIG_PATH, config, config_sha, 'Ricerca AI sospesa — errore account Claude')
+        gh_put(CONFIG_PATH, config, config_sha, 'Ricerca AI sospesa — errore account (Claude o Serper)')
         print(f'🚨 Ricerca AI sospesa automaticamente: {fatal_error}')
 
         rows = queue_progress(queue, by_country, overrides)
         extra = f'<br><br>({successes} contatti comunque salvati prima dell\'errore.)' if successes else ''
         send_report(
             'BLOCCATA — richiede intervento',
-            f'🚨 <b>Ricerca AI sospesa automaticamente.</b><br>Errore Claude non recuperabile: '
+            f'🚨 <b>Ricerca AI sospesa automaticamente.</b><br>Errore non recuperabile (Claude o Serper): '
             f'<code>{html.escape(str(fatal_error)[:300])}</code><br><br>'
-            f'Probabile causa: crediti Anthropic esauriti o chiave API non valida/revocata sull\'account collegato a questo repo. '
+            f'Probabile causa: crediti Serper o Anthropic esauriti, oppure chiave API non valida/revocata sull\'account collegato a questo repo. '
             f'Controlla <b>console.anthropic.com → Plans &amp; Billing</b>.<br><br>'
             f'Le esecuzioni automatiche restano <b>sospese</b> finché non resetti manualmente <code>paused</code> in '
             f'<code>data/research-config.json</code> e riattivi lo schedule del workflow su GitHub.' + extra,
