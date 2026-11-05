@@ -61,12 +61,17 @@
       "orderNumber": "#1482",
       "paymentType": "Carte Di Credito/Bancomat",
       "shippingDate": null,
-      "status": "preparazione",
+      "status": "spedito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1793574051504,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "spedito",
+          "date": 1793897186022,
+          "note": ""
         }
       ],
       "emailsSent": [
@@ -75,12 +80,17 @@
           "to": "christen.nickel@gmail.com",
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1793574074193,
-          "messageId": "<202611012301.61525875611@smtp-relay.mailin.fr>"
+          "messageId": "<202611012301.61525875611@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-11-02T00:01:15.000+01:00"
         }
       ],
       "notes": "",
       "createdAt": 1793574051504,
-      "updatedAt": 1793574074193
+      "updatedAt": 1793897186022,
+      "trackingUrl": "",
+      "destCountry": "US",
+      "courierDate": 1793897186022
     },
     {
       "id": "ord_mvjqa2sdzkpz",
@@ -166,7 +176,9 @@
           "to": "shirleydirocco1@gmail.com",
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1793617267843,
-          "messageId": "<202611021101.33149714765@smtp-relay.mailin.fr>"
+          "messageId": "<202611021101.33149714765@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-11-02T12:01:48.000+01:00"
         }
       ],
       "notes": "",
@@ -256,7 +268,9 @@
           "to": "mpr3353@gmail.com",
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1793617267843,
-          "messageId": "<202611021101.94590930087@smtp-relay.mailin.fr>"
+          "messageId": "<202611021101.94590930087@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-11-02T12:01:48.000+01:00"
         }
       ],
       "notes": "",
@@ -336,7 +350,9 @@
           "to": "denisechap16@gmail.com",
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1793617267843,
-          "messageId": "<202611021101.65047757050@smtp-relay.mailin.fr>"
+          "messageId": "<202611021101.65047757050@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-11-02T12:01:49.000+01:00"
         }
       ],
       "notes": "",
@@ -431,7 +447,9 @@
           "to": "elevitsky520@gmail.com",
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1793617267843,
-          "messageId": "<202611021101.72497351846@smtp-relay.mailin.fr>"
+          "messageId": "<202611021101.72497351846@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-11-02T12:01:48.000+01:00"
         }
       ],
       "notes": "",
@@ -508,7 +526,9 @@
           "to": "vfox026@gmail.com",
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1793617267843,
-          "messageId": "<202611021101.70235720905@smtp-relay.mailin.fr>"
+          "messageId": "<202611021101.70235720905@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-11-02T12:01:48.000+01:00"
         }
       ],
       "notes": "",
@@ -578,11 +598,11 @@
       ],
       "notes": "",
       "createdAt": 1792425642289,
-      "updatedAt": 1793790057028,
+      "updatedAt": 1793185291078,
       "trackingUrl": "",
       "destCountry": "US",
       "courierDate": 1792568337234,
-      "staleAlertDays": 14,
+      "staleAlertDays": 7,
       "staleAlertSince": 1792568337234
     },
     {
@@ -652,11 +672,11 @@
       ],
       "notes": "",
       "createdAt": 1792425642289,
-      "updatedAt": 1793790057028,
+      "updatedAt": 1793185291078,
       "trackingUrl": "",
       "destCountry": "US",
       "courierDate": 1792568354114,
-      "staleAlertDays": 14,
+      "staleAlertDays": 7,
       "staleAlertSince": 1792568354114
     },
     {
@@ -716,11 +736,11 @@
       ],
       "notes": "",
       "createdAt": 1792382452134,
-      "updatedAt": 1793790057028,
+      "updatedAt": 1793185291078,
       "trackingUrl": "",
       "destCountry": "US",
       "courierDate": 1792568299202,
-      "staleAlertDays": 14,
+      "staleAlertDays": 7,
       "staleAlertSince": 1792568299202
     },
     {
@@ -876,7 +896,9 @@
           "to": "brian.peterson.bkp@gmail.com",
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1793617267843,
-          "messageId": "<202611021101.37846418183@smtp-relay.mailin.fr>"
+          "messageId": "<202611021101.37846418183@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-11-02T12:01:48.000+01:00"
         }
       ],
       "notes": "",
@@ -958,7 +980,9 @@
           "to": "donnie_cowin@hotmail.com",
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1793617267843,
-          "messageId": "<202611021101.29714261743@smtp-relay.mailin.fr>"
+          "messageId": "<202611021101.29714261743@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-11-02T12:37:26.000+01:00"
         }
       ],
       "notes": "",
@@ -1312,10 +1336,10 @@
       ],
       "notes": "",
       "createdAt": 1791883189781,
-      "updatedAt": 1793703662117,
+      "updatedAt": 1793077297661,
       "track17Registered": true,
       "staleAlertDays": 7,
-      "staleAlertSince": 1793077292114
+      "staleAlertSince": 1792425651818
     },
     {
       "id": "ord_mv5fxp3udr7s",
@@ -1407,10 +1431,10 @@
       ],
       "notes": "",
       "createdAt": 1791820959833,
-      "updatedAt": 1793703662117,
+      "updatedAt": 1793077297661,
       "track17Registered": true,
       "staleAlertDays": 7,
-      "staleAlertSince": 1793077292114
+      "staleAlertSince": 1792425651818
     },
     {
       "id": "ord_mv40gh2w9y7v",
@@ -1616,9 +1640,9 @@
       ],
       "notes": "",
       "createdAt": 1791561706772,
-      "updatedAt": 1793703662117,
+      "updatedAt": 1793077297661,
       "staleAlertDays": 7,
-      "staleAlertSince": 1793077292114,
+      "staleAlertSince": 1792425651818,
       "track17Registered": true
     },
     {
@@ -1706,9 +1730,9 @@
       ],
       "notes": "",
       "createdAt": 1791561706772,
-      "updatedAt": 1793703662117,
+      "updatedAt": 1793077297661,
       "staleAlertDays": 7,
-      "staleAlertSince": 1793077292114,
+      "staleAlertSince": 1792425651818,
       "track17Registered": true
     },
     {
@@ -1893,14 +1917,18 @@
           "to": "fbonannojr22@gmail.com",
           "subject": "Your wine is out for delivery! 🍷",
           "sentAt": 1793487706804,
-          "messageId": "<202610312301.15024081742@smtp-relay.mailin.fr>"
+          "messageId": "<202610312301.15024081742@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-11-01T00:01:49.000+01:00"
         },
         {
           "type": "consegnato",
           "to": "fbonannojr22@gmail.com",
           "subject": "Your order has been delivered! 🍷 Enjoy!",
           "sentAt": 1793509303663,
-          "messageId": "<202611010501.86391323989@smtp-relay.mailin.fr>"
+          "messageId": "<202611010501.86391323989@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-11-01T06:01:45.000+01:00"
         }
       ],
       "notes": "",
@@ -2197,7 +2225,9 @@
           "to": "connor.smith4355@gmail.com",
           "subject": "Your order has been delivered! 🍷 Enjoy!",
           "sentAt": 1793466105884,
-          "messageId": "<202610311701.73118872865@smtp-relay.mailin.fr>"
+          "messageId": "<202610311701.73118872865@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-10-31T18:01:47.000+01:00"
         }
       ],
       "notes": "",
@@ -2468,8 +2498,8 @@
       ],
       "notes": "",
       "createdAt": 1790848899214,
-      "updatedAt": 1793790057028,
-      "staleAlertDays": 14,
+      "updatedAt": 1793185291078,
+      "staleAlertDays": 7,
       "staleAlertSince": 1792567782690,
       "trackingUrl": "",
       "destCountry": "US",
@@ -3560,7 +3590,9 @@
           "to": "jlcook315@gmail.com",
           "subject": "Your order has been delivered! 🍷 Enjoy!",
           "sentAt": 1793574074193,
-          "messageId": "<202611012301.28046145700@smtp-relay.mailin.fr>"
+          "messageId": "<202611012301.28046145700@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-11-02T00:01:16.000+01:00"
         }
       ],
       "notes": "",
