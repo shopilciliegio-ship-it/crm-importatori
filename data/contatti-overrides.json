@@ -558452,43 +558452,133 @@
   },
   "c1780673710967sqyhd": {
     "contactName": "Alexis Stamm",
-    "contactTitle": "Buyer - Wine"
+    "contactTitle": "Buyer - Wine",
+    "research": {
+      "affidabilita": 5,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "si",
+      "note": "Target è la maggiore catena retail USA (106B$ fatturato, 440k dipendenti) con sezione vini consolidata e programmi di sourcing attivi. Opportunità per fornitori di vini italiani tramite supplier intake form ufficiale.",
+      "analyzed_at": "2026-11-05T21:12:32.538Z"
+    }
   },
   "c1780673710967000vm": {
     "contactName": "Chrissy Edrozo",
-    "contactTitle": "Wine And Spirits Buyer"
+    "contactTitle": "Wine And Spirits Buyer",
+    "research": {
+      "affidabilita": 5,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Costco è un gigante retail USA (254B$ fatturato, 333k dipendenti) con sezione vini consolidata. Tuttavia: accesso difficile per piccoli produttori italiani (richiede distributori USA autorizzati), processo di vendor inquiry formale e selettivo. Contattare solo se si ha già distribuzione negli USA.",
+      "analyzed_at": "2026-11-05T21:12:39.179Z"
+    }
   },
   "c1780673710967sgr3p": {
     "contactName": "Thavy Ek",
-    "contactTitle": "Procurement Buyer"
+    "contactTitle": "Procurement Buyer",
+    "research": {
+      "affidabilita": 5,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "si",
+      "note": "Gigante retail USA con 285k dipendenti e fatturato 80+ miliardi. Categoria vino attiva con wine steward dedicati e private label (Bee Lightly). Portafoglio ampio include vini europei/mediterranei: opportunità per vini italiani premium.",
+      "analyzed_at": "2026-11-05T21:12:45.338Z"
+    }
   },
   "c1780673710967gueyl": {
     "contactName": "Elliott Schaum",
-    "contactTitle": "Senior Director, Wine & Spirits"
+    "contactTitle": "Senior Director, Wine & Spirits",
+    "research": {
+      "affidabilita": 5,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Sam's Club è una catena retail massiccia (90k dipendenti, ~943M fatturato) con portafoglio vini/spirits ampio. Vende vini importati ma non è chiaro il focus su italiani. Contatto difficile: buyer centralizzato, non adatto a piccoli produttori.",
+      "analyzed_at": "2026-11-05T21:12:51.457Z"
+    }
   },
   "c1780673710967fh9co": {
     "contactName": "Rickey Etter",
-    "contactTitle": "Asst Produce Purchasing Specialist"
+    "contactTitle": "Asst Produce Purchasing Specialist",
+    "research": {
+      "affidabilita": 5,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Grande catena retail USA (73k dipendenti, $13.5B fatturato) con 570+ store nel Midwest. Vende vino ma non emerge focus su vini italiani. Contatto utile solo se si ha distribuzione negli stati Midwest (Iowa, Illinois, Kansas, Indiana).",
+      "analyzed_at": "2026-11-05T21:12:57.823Z"
+    }
   },
   "c17806737109679lvtt": {
     "contactName": "Brian Anderson",
-    "contactTitle": "Buying Manager"
+    "contactTitle": "Buying Manager",
+    "research": {
+      "affidabilita": 5,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Aldi è una grande catena retail USA con 55k dipendenti e fatturato ~9 miliardi. Vende vino tra i prodotti, ha vinto premi USA Wine Ratings 2021. Tuttavia, come retailer generico non è il target ideale per esportatori di vini italiani specializzati - meglio contattare solo se si ha portafoglio premium/biologico.",
+      "analyzed_at": "2026-11-05T21:13:07.629Z"
+    }
   },
   "c17806737109675mpao": {
     "contactName": "Brandi Shawver",
-    "contactTitle": "Wine Manager"
+    "contactTitle": "Wine Manager",
+    "research": {
+      "affidabilita": 5,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Grande catena retail USA (114 store, 54k dipendenti, ~10.8B$ fatturato) con categoria vini strutturata e Wine Category Merchant dedicato. Probabile interesse per vini italiani, ma accesso difficile per piccoli produttori italiani: richiede distributore USA e compliance normative complesse.",
+      "analyzed_at": "2026-11-05T21:13:13.233Z"
+    }
   },
   "c1780673710967oj8wj": {
     "contactName": "Jessica Eskeets",
-    "contactTitle": "Buyer"
+    "contactTitle": "Buyer",
+    "research": {
+      "affidabilita": 5,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Sprouts è una grande catena retail USA (35k dipendenti, ~7.7B$ fatturato) con sezione vini, ma focalizzata su prodotti biologici/healthy. Non è un importatore specializzato di vini italiani e opera esclusivamente nel mercato retail americano.",
+      "analyzed_at": "2026-11-05T21:13:19.173Z"
+    }
   },
   "c1780673710967si8d9": {
     "contactName": "Brian Bednarz",
-    "contactTitle": "Senior Vice President, Operations"
+    "contactTitle": "Senior Vice President, Operations",
+    "research": {
+      "affidabilita": 5,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Circle K è una grande catena di convenience store (29.250 dipendenti, fatturato 11+ miliardi) con portafoglio bevande alcoliche generico. Non specializzata in vini italiani; focus su distribuzione di massa in convenience store, non adatto per vini premium/specialty.",
+      "analyzed_at": "2026-11-05T21:13:25.861Z"
+    }
   },
   "c1780673710967jg79e": {
     "contactName": "Brenda Spalding",
-    "contactTitle": "Procurement, Manager"
+    "contactTitle": "Procurement, Manager",
+    "research": {
+      "affidabilita": 5,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "7-Eleven è una catena retail massiccia (27.8k dipendenti, $17B fatturato) con selezione vini private label. Non è un importatore/distributore specializzato in vini italiani, bensì un convenience retailer che vende vini generici. Non è il canale appropriato per fornitori di vini italiani premium.",
+      "analyzed_at": "2026-11-05T21:13:32.294Z"
+    }
   },
   "c17806737109674dhqr": {
     "contactName": "Kassandra Brown",
