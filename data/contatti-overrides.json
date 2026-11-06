@@ -559076,15 +559076,42 @@
   },
   "c1780673710967dndrc": {
     "contactName": "Robert Sanchez",
-    "contactTitle": "Buyer"
+    "contactTitle": "Buyer",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda solida (550 dipendenti, ~33M fatturato, dal 1984) ma specializzata in prodotti freschi/specialty produce. Vino è categoria minore nel portfolio; nessuna evidenza di focus su vini italiani.",
+      "analyzed_at": "2026-11-06T06:04:59.858Z"
+    }
   },
   "c17806737109671rj37": {
     "contactName": "Fumihiko Nakatani",
-    "contactTitle": "Purchasing Agent"
+    "contactTitle": "Purchasing Agent",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "importatore|distributore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda solida (518 dipendenti, fatturato 191M$, fondata 1926) ma portfolio focalizzato su Giappone e Francia. Nessuna evidenza di vini italiani nel portafoglio.",
+      "analyzed_at": "2026-11-06T06:05:07.433Z"
+    }
   },
   "c17806737109677ha4i": {
     "contactName": "Clay Clarkson",
-    "contactTitle": "Director of Sales & Marketing"
+    "contactTitle": "Director of Sales & Marketing",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore USA consolidato (dal 1983) con 500 dipendenti e 2 sedi (Knoxville, Memphis). Portafoglio ampio (birra, spirits, wine) ma nessuna menzione esplicita di vini italiani. Contatto valido per esplorare partnership su vini premium europei/italiani nel mercato horeca e retail del Tennessee.",
+      "analyzed_at": "2026-11-06T06:05:17.697Z"
+    }
   },
   "c1780673710967tpgsk": {
     "research": {
@@ -559110,27 +559137,81 @@
   },
   "c1780673710967qlqkr": {
     "contactName": "Carey Cooper",
-    "contactTitle": "Director Of Wine"
+    "contactTitle": "Director Of Wine",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Distributore USA solido (475 dipendenti, storia dal 1938) con portafoglio wine/spirits/beer in 3 stati. Portfolio include marchi europei (Champagne Ayala, Boizel) ma nessuna menzione esplicita di vini italiani. Mercato locale (GA, AL, TN), non online.",
+      "analyzed_at": "2026-11-06T06:05:25.987Z"
+    }
   },
   "c17806737109674tq42": {
     "contactName": "Harry Kohlmann",
-    "contactTitle": "Ceo"
+    "contactTitle": "Ceo",
+    "research": {
+      "affidabilita": 5,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore|distributore",
+      "mercato_target": "misto",
+      "raccomandato": "si",
+      "note": "Azienda solida con 458 dipendenti e fatturato ~60M$. Distributore nazionale USA specializzato in wine & spirits con servizi completi (compliance, logistics, retail). Portafoglio internazionale: contattare per verificare interesse specifico su vini italiani.",
+      "analyzed_at": "2026-11-06T06:05:35.047Z"
+    }
   },
   "c178067371096725p8c": {
     "contactName": "Caitlin Seifert",
-    "contactTitle": "Purchasing Coordinator"
+    "contactTitle": "Purchasing Coordinator",
+    "research": {
+      "affidabilita": 5,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Distributore solido (fondato 1922, 450 dipendenti, ~83M fatturato) con licenze federali TTB e copertura 58 contee Ohio. Portafoglio ampio (birra, vino, spirits) ma nessuna menzione esplicita di vini italiani; mercato prevalentemente retail locale (13.000+ retailer). Contatto possibile per esplorare partnership, ma richiede verifica su interesse specifico per vini italiani.",
+      "analyzed_at": "2026-11-06T06:05:44.514Z"
+    }
   },
   "c17806737109674vgpg": {
     "contactName": "Terry Daniels",
-    "contactTitle": "President"
+    "contactTitle": "President",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Catena di supermercati locale (Janesville/Walworth, WI) con 450 dipendenti e fatturato modesto. Vende vino/birra/spirits come categoria tra molte altre (alimentari, carni, prodotti freschi). Nessuna evidenza di focus su vini italiani o partnership con importatori specializzati.",
+      "analyzed_at": "2026-11-06T06:05:50.024Z"
+    }
   },
   "c1780673710967j248m": {
     "contactName": "Kasia Kutryba",
-    "contactTitle": "Wine Consultant"
+    "contactTitle": "Wine Consultant",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "si",
+      "note": "Azienda solida (400 dipendenti, ~25M fatturato) che opera come distributore/retailer/online. Gestisce Binny's Beverage Depot, catena importante a Chicago. Portafoglio ampio (vino, birra, spirits) suggerisce probabilità di vini italiani nel mix. Contattare per verificare focus su vini italiani.",
+      "analyzed_at": "2026-11-06T06:05:59.374Z"
+    }
   },
   "c1780673710967dd80g": {
     "contactName": "Marie Jones",
-    "contactTitle": "Purchasing Manager"
+    "contactTitle": "Purchasing Manager",
+    "research": {
+      "affidabilita": 5,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "si",
+      "note": "Distributore solido con 80+ anni di storia, 397 dipendenti, fatturato 174M$. Copre 4 stati USA (GA, TN, NC, CO) con portafoglio wine/spirits premium. Backing Berkshire Hathaway. Probabile interesse per vini italiani data strategia brand internazionali.",
+      "analyzed_at": "2026-11-06T06:06:11.150Z"
+    }
   },
   "c1780673710967enb35": {
     "contactName": "Lindsey Mitchell",
@@ -609401,6 +609482,17 @@
       "raccomandato": "no",
       "note": "Exit 76 Corporation/J&H Family Stores è una catena di convenience store con 600 dipendenti focalizzata su carburante, snack e servizi locali in Michigan. Vino presente ma non prioritario nel mix produttivo; nessuna evidenza di interesse specifico per vini italiani.",
       "analyzed_at": "2026-11-06T06:04:20.323Z"
+    }
+  },
+  "c178067371096727unv": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Sito irraggiungibile, nessuna traccia Google, fatturato molto basso per 400 dipendenti (dato incoerente). Impossibile verificare se commercializza vini italiani.",
+      "analyzed_at": "2026-11-06T06:06:04.438Z"
     }
   }
 }
