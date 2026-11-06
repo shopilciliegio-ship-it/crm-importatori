@@ -2454,7 +2454,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1791972107944,
-      "status": "dogana",
+      "status": "consegnato",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -2470,6 +2470,11 @@
           "status": "dogana",
           "date": 1792728051519,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "consegnato",
+          "date": 1793941234774,
+          "note": "Auto Fieramente (era: dogana)"
         }
       ],
       "emailsSent": [
@@ -2503,7 +2508,7 @@
       ],
       "notes": "",
       "createdAt": 1790956915164,
-      "updatedAt": 1793336520499,
+      "updatedAt": 1793941234774,
       "staleAlertDays": 7,
       "staleAlertSince": 1792728051519,
       "track17Registered": true
