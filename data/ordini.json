@@ -1856,9 +1856,9 @@
       ],
       "notes": "",
       "createdAt": 1791388953046,
-      "updatedAt": 1793336520499,
+      "updatedAt": 1793941241929,
       "track17Registered": true,
-      "staleAlertDays": 7,
+      "staleAlertDays": 14,
       "staleAlertSince": 1792728051519
     },
     {
@@ -2504,11 +2504,18 @@
           "messageId": "<202610230401.45925728280@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-10-23T06:01:01.000+02:00"
+        },
+        {
+          "type": "consegnato",
+          "to": "jesusjoserubio@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1793941241929,
+          "messageId": "<202611060500.66056508011@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1790956915164,
-      "updatedAt": 1793941234774,
+      "updatedAt": 1793941241929,
       "staleAlertDays": 7,
       "staleAlertSince": 1792728051519,
       "track17Registered": true
