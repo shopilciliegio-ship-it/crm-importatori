@@ -559462,43 +559462,133 @@
   },
   "c1780673710967limlv": {
     "contactName": "Brandon Dodge",
-    "contactTitle": "Wine & Spirits Manager"
+    "contactTitle": "Wine & Spirits Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Catena di supermercati locale (Milwaukee) con 290 dipendenti e fatturato solido (~34M$). Vende vino ma come categoria secondaria in grocery store generico. Nessuna evidenza di focus su vini italiani o relazioni B2B con produttori.",
+      "analyzed_at": "2026-11-06T06:09:13.386Z"
+    }
   },
   "c1780673710967vb19a": {
     "contactName": "Jeffrey Ball",
-    "contactTitle": "Corporate Purchasing And Inventory Manager"
+    "contactTitle": "Corporate Purchasing And Inventory Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore wholesale consolidato (dal 1957) con 285 dipendenti, serve Georgia con vini, birre e spirits. Portafoglio generico senza menzione esplicita di vini italiani; contatto potenziale se si mira al mercato USA, ma richiede verifica su effettivo interesse per prodotti italiani.",
+      "analyzed_at": "2026-11-06T06:09:21.477Z"
+    }
   },
   "c1780673710967n8fzz": {
     "contactName": "Tracy Murphy",
-    "contactTitle": "Spirits Sales Off Premise"
+    "contactTitle": "Spirits Sales Off Premise",
+    "research": {
+      "affidabilita": 5,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Distributore solido e storico (dal 1948) con 280 dipendenti e ~21M$ fatturato. Portafoglio ampio (wine, beer, spirits) ma nessuna menzione esplicita di vini italiani nei risultati. Mercato Las Vegas/Nevada, prevalentemente horeca. Vale la pena verificare se hanno interesse per importazioni italiane.",
+      "analyzed_at": "2026-11-06T06:09:29.101Z"
+    }
   },
   "c17806737109673b13l": {
     "contactName": "Travis Nebel",
-    "contactTitle": "Sales Manager"
+    "contactTitle": "Sales Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Distributore USA solido (280 dipendenti, ~13M fatturato) con portafoglio wine&spirits, ma focus prevalente su birra (Anheuser-Busch) e bevande non alcoliche. Vini italiani non citati esplicitamente nel sito; mercato locale Orange County (California).",
+      "analyzed_at": "2026-11-06T06:09:36.849Z"
+    }
   },
   "c1780673710967xufl3": {
     "contactName": "Lukas Kinnison",
-    "contactTitle": "Vice President Of Sales"
+    "contactTitle": "Vice President Of Sales",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Distributore USA consolidato (dal 1933) con 275 dipendenti e fatturato solido. Portfolio focalizzato su birra (Anheuser-Busch, craft) e vini importati generici. Nessuna menzione esplicita di vini italiani nel materiale disponibile.",
+      "analyzed_at": "2026-11-06T06:09:44.046Z"
+    }
   },
   "c1780673710967qhr27": {
     "contactName": "Sean Rose",
-    "contactTitle": "Ceo"
+    "contactTitle": "Ceo",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Clare Rose è stata acquisita da Southern Glazer's Wine & Spirits (chiusura dell'acquisizione confermata). Non è più un'entità indipendente; contattare direttamente Southern Glazer's per opportunità di distribuzione.",
+      "analyzed_at": "2026-11-06T06:09:53.603Z"
+    }
   },
   "c1780673710967dha88": {
     "contactName": "Carlos Cabrera",
-    "contactTitle": "Distribution Manager"
+    "contactTitle": "Distribution Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Azienda solida (260 dipendenti, ~$32M fatturato) con e-commerce consolidato. Catalogo include vini italiani ('Tour of Italy Gift Basket', riferimenti a Francia/Italia) ma focus principale su gift baskets gourmet. Non è importatore diretto di vini italiani.",
+      "analyzed_at": "2026-11-06T06:10:02.541Z"
+    }
   },
   "c1780673710967cir2g": {
     "contactName": "Connor Ring",
-    "contactTitle": "Executive Director"
+    "contactTitle": "Executive Director",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Catena di supermercati locale (Aberdeen, South Dakota) con 260 dipendenti. Vende vino/birra/spirits ma come retailer generico, non specializzato. Nessuna evidenza di focus su vini italiani o rapporti B2B con importatori.",
+      "analyzed_at": "2026-11-06T06:10:07.942Z"
+    }
   },
   "c1780673710967duc4v": {
     "contactName": "Jacqueline Archer",
-    "contactTitle": "President"
+    "contactTitle": "President",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Distributore USA solido (250 dipendenti, ~41M fatturato, fondato 1938) con portafoglio wine/beer. Copre 49 contee Virginia con 4 sedi. Non cita esplicitamente vini italiani nel materiale disponibile; portfolio generico su wine. Vale la pena verificare se importano italiani.",
+      "analyzed_at": "2026-11-06T06:10:17.395Z"
+    }
   },
   "c17806737109677wwj6": {
     "contactName": "Brandon Blaser",
-    "contactTitle": "Account Manager"
+    "contactTitle": "Account Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Distributore consolidato (250 dipendenti) nel mercato beverage USA con portfolio ampio (vino, birra, spirits). Portafoglio non specifica vini italiani ma come importatore/distributore potrebbe averne. Mercato locale Tampa Bay, contatto diretto disponibile.",
+      "analyzed_at": "2026-11-06T06:10:25.766Z"
+    }
   },
   "c1780673710967l877j": {
     "contactName": "Charlie Maresh",
