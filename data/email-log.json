@@ -980,6 +980,15 @@
       "subject": "Your order has been delivered! 🍷 Enjoy!",
       "sentAt": 1793919675351,
       "messageId": "<202611052301.65797194404@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mur5i7z0lts6",
+      "customerName": "JESUS RUBIO",
+      "type": "consegnato",
+      "to": "jesusjoserubio@gmail.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1793941241929,
+      "messageId": "<202611060500.66056508011@smtp-relay.mailin.fr>"
     }
   ]
 }
