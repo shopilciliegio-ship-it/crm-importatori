@@ -561433,35 +561433,107 @@
   },
   "c1780673710968lq1r4": {
     "contactName": "Eric Stewart",
-    "contactTitle": "President & Owner"
+    "contactTitle": "President & Owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Azienda in crisi: procedura fallimentare 363 sale novembre 2022. Distributore regionale USA (Ohio, Kentucky, Indiana) con portafoglio vini artigianali europei, ma situazione finanziaria compromessa rende contatto non opportuno.",
+      "analyzed_at": "2026-11-07T06:08:03.395Z"
+    }
   },
   "c17806737109686tllv": {
     "contactName": "Curt Deufel",
-    "contactTitle": "Sales"
+    "contactTitle": "Sales",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Distributore USA consolidato (80 dipendenti, ~8.8M fatturato) con sito professionale e portafoglio multi-categoria (vino, birra, spirits). Focalizzato su Chicago area con approccio total beverage. Nessuna evidenza esplicita di vini italiani nel materiale disponibile; richiede verifica diretta del portafoglio.",
+      "analyzed_at": "2026-11-07T06:08:09.092Z"
+    }
   },
   "c1780673710968ufyep": {
     "contactName": "Joby Yobe",
-    "contactTitle": "Partner"
+    "contactTitle": "Partner",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer USA con 79 dipendenti e fatturato modesto (~2M). Portafoglio vini include Italia (Pinot Grigio, Tuscany) ma è retailer locale, non importatore/distributore. Non pertinente per B2B wine trade.",
+      "analyzed_at": "2026-11-07T06:08:26.073Z"
+    }
   },
   "c1780673710968tw6d9": {
     "contactName": "Perry Riddle",
-    "contactTitle": "Brand Manager"
+    "contactTitle": "Brand Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore|distributore",
+      "mercato_target": "horeca|retail",
+      "raccomandato": "forse",
+      "note": "Azienda solida dal 1974, 78 dipendenti, fatturato ~9.6M$. Distribuisce vini da Italia, Francia e altri paesi europei tramite partner come Louis/Dressner. Serve Alabama e Mississippi (horeca+retail). Sito funzionante ma non specifica dettagli su vini italiani specifici.",
+      "analyzed_at": "2026-11-07T06:08:32.779Z"
+    }
   },
   "c1780673710968e5kob": {
     "contactName": "Sherrie Glynn",
-    "contactTitle": "Purchasing Director"
+    "contactTitle": "Purchasing Director",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore|distributore",
+      "mercato_target": "horeca|retail",
+      "raccomandato": "forse",
+      "note": "Azienda consolidata dal 1976, importatore/distributore Connecticut con portafoglio fine wine & spirits. Nessuna menzione esplicita di vini italiani nel sito, ma importa da fornitori europei (Francia documentata). Mercato limitato a clienti licensiati Connecticut.",
+      "analyzed_at": "2026-11-07T06:08:41.387Z"
+    }
   },
   "c1780673710968q9bbg": {
     "contactName": "Mike Burmil",
-    "contactTitle": "Chief Strategy Officer"
+    "contactTitle": "Chief Strategy Officer",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Distributore USA specializzato in birra artigianale e import (craft beer focus primario). Sezione vini presente ma non dettagliata; nessuna evidenza di specializzazione in vini italiani. Mercato locale NYC/Long Island, non rilevante per export italiano.",
+      "analyzed_at": "2026-11-07T06:08:46.739Z"
+    }
   },
   "c1780673710968um02o": {
     "contactName": "Alan Tenenholtz",
-    "contactTitle": "President"
+    "contactTitle": "President",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore|distributore",
+      "mercato_target": "retail|horeca",
+      "raccomandato": "forse",
+      "note": "Distributore USA consolidato (dal 1960) con 77 dipendenti e fatturato ~10.5M$. Importa vini e spirits, ma nessuna menzione esplicita di vini italiani nel materiale disponibile. Contatto potenziale per espandere portafoglio europeo/italiano nel mercato retail e horeca USA.",
+      "analyzed_at": "2026-11-07T06:08:52.526Z"
+    }
   },
   "c1780673710968yhg2o": {
     "contactName": "Caley Scott",
-    "contactTitle": "Purchasing Coordinator"
+    "contactTitle": "Purchasing Coordinator",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore USA solido (75 dipendenti, ~10M fatturato) con portafoglio wine/beer/spirits. Sito funzionante ma non specifica vini italiani. Presente in liste ufficiali NBWA. Vale la pena verificare se importa vini italiani nel portfolio.",
+      "analyzed_at": "2026-11-07T06:08:57.748Z"
+    }
   },
   "c17806737109688jo5f": {
     "contactName": "Chris Davis",
@@ -611037,6 +611109,28 @@
       "raccomandato": "forse",
       "note": "Retailer consolidato (50 anni) con buona reputazione locale e copertura media nazionale. Vende vino ma non specifica provenienza; potenziale cliente per vini italiani premium, ma richiede verifica diretta su portafoglio attuale.",
       "analyzed_at": "2026-11-07T06:04:09.028Z"
+    }
+  },
+  "c17806737109688tqv2": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer USA consolidato (70 anni, 80 dipendenti) con sito professionale e portafoglio vini importati. Non emerge focus specifico su vini italiani; mercato prevalentemente domestico/retail. Contattare solo se strategia include distribuzione USA retail.",
+      "analyzed_at": "2026-11-07T06:08:15.024Z"
+    }
+  },
+  "c1780673710968aznpm": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer consolidato a Naples (FL) con 80 dipendenti e buona reputazione locale. Menzione esplicita di importatore italiano (Anna Ciccarone) e vini italiani su Instagram suggerisce interesse per categoria. Tuttavia, focus principale su vini spagnoli e argentini; fatturato modesto (878k) limita potenziale ordini.",
+      "analyzed_at": "2026-11-07T06:08:20.433Z"
     }
   }
 }
