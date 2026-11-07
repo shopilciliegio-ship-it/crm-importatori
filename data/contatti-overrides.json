@@ -561888,43 +561888,133 @@
   },
   "c1780673710968e5okd": {
     "contactName": "Paul R. Anderson",
-    "contactTitle": "General Manager"
+    "contactTitle": "General Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Catena retail USA consolidata (15 store, ~150 dipendenti, dal 1962) con focus su wine/spirits/beer. Nessuna evidenza di interesse specifico per vini italiani; mercato locale Shreveport/Bossier City, non target per esportatori italiani.",
+      "analyzed_at": "2026-11-07T06:12:46.367Z"
+    }
   },
   "c17806737109684wtnq": {
     "contactName": "Jonathan Sulca",
-    "contactTitle": "Purchasing"
+    "contactTitle": "Purchasing",
+    "research": {
+      "affidabilita": 5,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore|distributore",
+      "mercato_target": "misto",
+      "raccomandato": "si",
+      "note": "Azienda storica (dal 1920) con 61 dipendenti e fatturato solido. Importatore specializzato in prodotti italiani (caffè, pasta, olio). Citata tra i top 25 importatori di Amarone USA. Cliente ideale per vini italiani premium.",
+      "analyzed_at": "2026-11-07T06:12:53.224Z"
+    }
   },
   "c17806737109683n3io": {
     "contactName": "John Dicairano",
-    "contactTitle": "Sales Manager"
+    "contactTitle": "Sales Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "distributore",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Distributore USA specializzato in craft beer e spirits, nessuna evidenza di vini italiani nel portfolio. Focus su mercato locale (Hudson Valley, Capital Region, Adirondacks NY) - non pertinente per esportatori italiani.",
+      "analyzed_at": "2026-11-07T06:12:58.786Z"
+    }
   },
   "c178067371096979m00": {
     "contactName": "Mandy Wallace",
-    "contactTitle": "General Manager"
+    "contactTitle": "General Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer USA con 60 dipendenti e multiple licenze in Indiana. Sito basic senza info su portafoglio vini italiani specifici. Non è target prioritario per esportatori italiani (mercato retail locale).",
+      "analyzed_at": "2026-11-07T06:13:05.018Z"
+    }
   },
   "c1780673710969chegv": {
     "contactName": "Anita Kupcho",
-    "contactTitle": "Purchasing"
+    "contactTitle": "Purchasing",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda con segnali di instabilità finanziaria (procedura fallimentare rilevata). Sito non raggiungibile. Distributore generico USA senza evidenza specifica di focus su vini italiani.",
+      "analyzed_at": "2026-11-07T06:13:10.137Z"
+    }
   },
   "c1780673710969fku9r": {
     "contactName": "Russell Derby",
-    "contactTitle": "Business Development Manager"
+    "contactTitle": "Business Development Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore USA consolidato (60 dipendenti, ~5.6M fatturato) con portafoglio wine/beer/spirits. Presente in directory nazionali e partner Radeberger. Nessuna conferma esplicita su vini italiani nel portafoglio; sito non raggiungibile per verifica.",
+      "analyzed_at": "2026-11-07T06:13:16.169Z"
+    }
   },
   "c1780673710969sqgl1": {
     "contactName": "Ryan Youmans",
-    "contactTitle": "Key Account Manager"
+    "contactTitle": "Key Account Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Distributore USA consolidato (60 dipendenti, ~$8.8M fatturato) con licenze in WA e FL. Portafoglio ampio (vini, birre, spirits) ma nessuna menzione esplicita di vini italiani. Coinvolto in contenzioso legale 2023 con Crown Imports (potenziale rischio reputazionale). Mercato retail/horeca locale, non specializzato in import italiano.",
+      "analyzed_at": "2026-11-07T06:13:22.541Z"
+    }
   },
   "c1780673710969ndmtt": {
     "contactName": "Michelle Lehman",
-    "contactTitle": "Wine Buyer"
+    "contactTitle": "Wine Buyer",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Sito non raggiungibile/non funzionante. Nessuna informazione sul portafoglio prodotti o focus su vini italiani. Dati limitati a registrazioni fiscali Ohio; impossibile verificare specializzazione vinicola.",
+      "analyzed_at": "2026-11-07T06:13:27.407Z"
+    }
   },
   "c1780673710969tsv4x": {
     "contactName": "Brock Muller",
-    "contactTitle": "General Sales Manager"
+    "contactTitle": "General Sales Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Distributore wholesale consolidato dal 1933 in Illinois con 60 dipendenti e ~9M fatturato. Portafoglio ampio (vini, birre, spirits) ma sito generico non specifica vini italiani. Segnali di rischio: menzioni in procedimenti fallimentari (Chapter 11) richiedono verifica dello stato attuale.",
+      "analyzed_at": "2026-11-07T06:13:33.749Z"
+    }
   },
   "c1780673710969oe0q3": {
     "contactName": "Margaret Jabour",
-    "contactTitle": "Owner/ Executive Vice President"
+    "contactTitle": "Owner/ Executive Vice President",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Catena retail solida con ~100 locali in Texas, fatturato significativo e figura dedicata (Wine Buyer). Assenza di info esplicita su vini italiani nel portafoglio; verificare se interessati a fornitori europei/italiani.",
+      "analyzed_at": "2026-11-07T06:13:39.743Z"
+    }
   },
   "c17806737109698oip6": {
     "contactName": "Will Nadzam",
