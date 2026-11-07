@@ -561303,43 +561303,133 @@
   },
   "c17806737109688ij7k": {
     "contactName": "Kirk Trevena",
-    "contactTitle": "General Manager"
+    "contactTitle": "General Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "E-commerce USA consolidato (85 dipendenti, ~13.5M$ fatturato) con focus retail online. Citano importatori di vini esteri ma no conferma esplicita su vini italiani. Contatto potenziale se si vuole penetrare mercato online americano.",
+      "analyzed_at": "2026-11-07T06:06:54.549Z"
+    }
   },
   "c1780673710968j28vz": {
     "contactName": "Bob Cavanagh",
-    "contactTitle": "Director Of Sales"
+    "contactTitle": "Director Of Sales",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore USA consolidato (85 dipendenti, ~$10M fatturato) con portafoglio wine/beer/spirits. Recentemente acquisito da Mancini Beverage. Nessuna evidenza esplicita di vini italiani nel portfolio; contatto possibile ma richiede verifica diretta su specializzazione vini europei/italiani.",
+      "analyzed_at": "2026-11-07T06:06:59.903Z"
+    }
   },
   "c1780673710968bkris": {
     "contactName": "Eric Rodriguez",
-    "contactTitle": "Purchasing & Logistics"
+    "contactTitle": "Purchasing & Logistics",
+    "research": {
+      "affidabilita": 5,
+      "vino_italiano": "si",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "si",
+      "note": "Importatore consolidato USA (84 dipendenti, ~9.2M$ fatturato) con portfolio di 51 produttori, esplicitamente importa da Italia. Sito e-commerce professionale, records doganali verificati, distribuisce in OH, NY, CA.",
+      "analyzed_at": "2026-11-07T06:07:06.511Z"
+    }
   },
   "c1780673710968s66ja": {
     "contactName": "Meagan Gerosa",
-    "contactTitle": "Director, Corporate Sales and Concierge"
+    "contactTitle": "Director, Corporate Sales and Concierge",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "forse",
+      "note": "Retailer online USA consolidato (82 dipendenti, ~4M fatturato) con portafoglio wine/spirits/champagne. Nessuna menzione esplicita di vini italiani nel materiale disponibile, ma catalogo 'Shop by Country' suggerisce varietà geografica. Non è distributore B2B tradizionale.",
+      "analyzed_at": "2026-11-07T06:07:12.682Z"
+    }
   },
   "c1780673710968vcgt7": {
     "contactName": "Matt Delucchi",
-    "contactTitle": "Wine Buyer"
+    "contactTitle": "Wine Buyer",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore|distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda solida con 80 dipendenti e fatturato ~$10M, presente su Knowledge Graph e fonti autorevoli (Bloomberg, ZoomInfo). Importatore/distributore di vini fini, spirits e sake con sede a Napa. Portafoglio include vini biologici ma non confermato focus su vini italiani specificamente.",
+      "analyzed_at": "2026-11-07T06:07:18.660Z"
+    }
   },
   "c1780673710968c3iog": {
     "contactName": "Mary E. C.",
-    "contactTitle": "Buyer"
+    "contactTitle": "Buyer",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore USA solido (dal 1959, 80 dipendenti, ~19M$ fatturato) con portafoglio wine/beer/spirits in CT e RI. Non cita esplicitamente vini italiani ma come distributore totale potrebbe rappresentarli. Contatto utile se si mira al mercato nord-est USA, ma verificare prima se già hanno fornitori italiani.",
+      "analyzed_at": "2026-11-07T06:07:24.585Z"
+    }
   },
   "c1780673710968s7jml": {
     "contactName": "Harris English",
-    "contactTitle": "Vice President Of Sales And Marketing"
+    "contactTitle": "Vice President Of Sales And Marketing",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Distributore consolidato (dal 1995) con 80 dipendenti e fatturato solido (~11M$) in Florida. Portafoglio ampio (300+ brand) ma sito non specifica vini italiani; focus principale su birra (Anheuser-Busch). Vale verificare se importano vini europei/italiani.",
+      "analyzed_at": "2026-11-07T06:07:30.064Z"
+    }
   },
   "c1780673710968nnsth": {
     "contactName": "Richard Armanino",
-    "contactTitle": "Director of Sales & Purchasing"
+    "contactTitle": "Director of Sales & Purchasing",
+    "research": {
+      "affidabilita": 5,
+      "vino_italiano": "si",
+      "tipo_business": "importatore|distributore",
+      "mercato_target": "misto",
+      "raccomandato": "si",
+      "note": "Azienda consolidata (40+ anni nel Bay Area), 80 dipendenti, fatturato ~17.4M$. Importa esplicitamente vini italiani (rossi, bianchi, spumanti) con portafoglio ampio di prodotti food italiani. Sito professionale e verificato.",
+      "analyzed_at": "2026-11-07T06:07:36.053Z"
+    }
   },
   "c1780673710968me1ln": {
     "contactName": "Adam Sami",
-    "contactTitle": "General Manager"
+    "contactTitle": "General Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "si",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Gary's Wine & Marketplace è un retailer consolidato (80 dipendenti, ~5.2M fatturato) con sito professionale e catalogo ampio che include vini italiani (Nebbiolo, Pinot Grigio, Tuscany region). Tuttavia, focus principale è retail/online consumer, non B2B horeca/distributore.",
+      "analyzed_at": "2026-11-07T06:07:41.751Z"
+    }
   },
   "c1780673710968beq99": {
     "contactName": "Michael LeViseur",
-    "contactTitle": "Sales Representative"
+    "contactTitle": "Sales Representative",
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "sconosciuto",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Il sito dichiarato (thegreatestbeverages.com) rimanda a Merisign, agenzia di web development. Nessuna traccia di attività vinicola. Dati contraddittori: ExporterIQ cita importatore/esportatore vini dal 1968, ma il sito è completamente diverso. Possibile cambio proprietà, chiusura o errore nei dati.",
+      "analyzed_at": "2026-11-07T06:07:50.438Z"
+    }
   },
   "c1780673710968lq1r4": {
     "contactName": "Eric Stewart",
