@@ -1,5 +1,5 @@
 {
-  "lastUid": 518,
+  "lastUid": 520,
   "pending": [
     {
       "id": "ir_422",
@@ -1784,6 +1784,44 @@
       "rispostaDiretta": false,
       "suggestedStatus": null,
       "reason": "Email relativa a una transazione commerciale già in corso (fatturazione) tra due aziende diverse da Il Ciliegio/Siena Wine; non è una risposta alla nostra proposta di distribuzione.",
+      "confidence": "ai",
+      "dataRientro": null,
+      "emailAlternativa": null
+    },
+    {
+      "id": "ir_519",
+      "uid": 519,
+      "contactId": null,
+      "nonCollegato": true,
+      "company": "Angela Matilde Farkas",
+      "from": "angelamatildefarkas@gmail.com",
+      "mittenteNome": "Angela Matilde Farkas",
+      "subject": "AUTOCANDIDATURA COMMERCIALE ESTERO",
+      "date": "2026-11-06T19:47:06+00:00",
+      "snippet": "Buongiorno,\r\n\r\nmi chiamo Matilde Farkas e desidero sottoporre alla vostra attenzione la\r\nmia candidatura per un'eventuale opportunità professionale all'interno del\r\nvostro reparto commerciale ed export.\r\n\r\nIl mio obiettivo è intraprendere un percorso professionale nel commercio\r\ninternazionale del vino, mettendo a disposizione le competenze\r\nlinguistiche, organizzative e gestionali che ho sviluppa",
+      "riassunto": "Matilde Farkas invia una candidatura spontanea per una posizione nel reparto commerciale ed export dell'azienda. Ha esperienza nella ristorazione nel Chianti, competenze linguistiche (italiano, ungherese, inglese C1, spagnolo B1) e disponibilità a ruoli di supporto commerciale e gestione clienti internazionali.",
+      "rispostaDiretta": false,
+      "suggestedStatus": null,
+      "reason": "È una candidatura per una posizione lavorativa interna, non una risposta a una proposta commerciale di distribuzione vini.",
+      "confidence": "ai",
+      "dataRientro": null,
+      "emailAlternativa": null
+    },
+    {
+      "id": "ir_520",
+      "uid": 520,
+      "contactId": null,
+      "nonCollegato": true,
+      "company": "Rachel Pisarz",
+      "from": "rlpisarz9@gmail.com",
+      "mittenteNome": "Rachel Pisarz",
+      "subject": "Re: ⚠ Delivery attempt unsuccessful — action may be needed",
+      "date": "2026-11-07T12:06:05+00:00",
+      "snippet": "Thank you&nbsp; \n\n I never paid anything - thanks for the update&nbsp;\n \n\n Rachel&nbsp;\n Sent from my iPhone\n \n On Nov 2, 2026, at 5:27 AM, luca@sienawine.it wrote:\n\n \n ﻿ \r\n \r\n \r\n \r\n \r\n Hi, Rachel. \n I’m writing to you again via email. \n &nbsp; \n I really hope you didn’t pay those customs duties—the ones you emailed me a picture of. \n I really hope so. \n Today I finally received a response from th",
+      "riassunto": "Rachel Pisarz, cliente di Siena Wine, risponde a Luca confermando che non ha pagato le presunte tasse doganali (che si sono rivelate una truffa). Luca le aveva scritto per avvertirla di non pagare, dopo aver scoperto dalla compagnia di spedizione che il messaggio era fraudolento.",
+      "rispostaDiretta": false,
+      "suggestedStatus": null,
+      "reason": "È una cliente esistente che ha già effettuato un ordine e sta comunicando direttamente con l'azienda riguardo a un problema di consegna/pagamento; la conversazione è relativa a un rapporto commerciale già attivo.",
       "confidence": "ai",
       "dataRientro": null,
       "emailAlternativa": null
