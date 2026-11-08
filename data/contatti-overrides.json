@@ -562596,31 +562596,94 @@
   },
   "c17806737109698vrtf": {
     "contactName": "Ernest DeLoach",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer USA (St. Augustine, FL) con portafoglio generico wine/beer/spirits. Sito non raggiungibile, nessuna evidenza di focus su vini italiani. Dimensione piccola (47 dipendenti, ~4M$ fatturato) e mercato locale non strategico per esportatori italiani.",
+      "analyzed_at": "2026-11-08T06:01:16.678Z"
+    }
   },
   "c1780673710969kbp7x": {
     "contactName": "Charlie MacDoogal",
-    "contactTitle": "Owner/ General Manager"
+    "contactTitle": "Owner/ General Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Siti dichiarati irraggiungibili; nessuna evidenza di specializzazione in vini italiani. Retailer generico USA con fatturato modesto (~1M$). Non idoneo per partnership B2B con produttori italiani.",
+      "analyzed_at": "2026-11-08T06:01:22.329Z"
+    }
   },
   "c1780673710969pcfhw": {
     "contactName": "Mike Hopkins Jr.",
-    "contactTitle": "President"
+    "contactTitle": "President",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Azienda USA (Texas) con fatturato modesto (~2.5M$) e 47 dipendenti. Segnale negativo: procedura fallimentare rilevata (2025). Nessuna evidenza di focus su vini italiani nel portafoglio.",
+      "analyzed_at": "2026-11-08T06:01:31.309Z"
+    }
   },
   "c17806737109690x4ab": {
     "contactName": "Candace Kiersky",
-    "contactTitle": "Sales Account Manager"
+    "contactTitle": "Sales Account Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Distributore consolidato nello stato di Washington dal 1981, con 46 dipendenti e fatturato solido (~4.6M$). Focalizzato su horeca locale (ristoranti/retailer WA). Nessuna menzione esplicita di vini italiani nel materiale disponibile; portafoglio sembra orientato a vini regionali USA/Oregon.",
+      "analyzed_at": "2026-11-08T06:01:54.170Z"
+    }
   },
   "c1780673710969s6el6": {
     "contactName": "Teresa Murray",
-    "contactTitle": "Operations Manager, Fine Wine"
+    "contactTitle": "Operations Manager, Fine Wine",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer USA con 45 dipendenti, storia consolidata (dal 1943). Portafoglio include vini italiani (Tuscany, Piedmont) ma è negozio al dettaglio locale, non distributore/importatore. Non pertinente per B2B wine trade.",
+      "analyzed_at": "2026-11-08T06:02:00.046Z"
+    }
   },
   "c1780673710969a8i3h": {
     "contactName": "Jesse St Laurent",
-    "contactTitle": "General Manager"
+    "contactTitle": "General Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda USA (Maine) con focus su birra, spirits e bevande generiche. Nessuna menzione di vini italiani nel portafoglio. Modello business locale (retail + wholesale per horeca) non pertinente per esportatori di vino italiano.",
+      "analyzed_at": "2026-11-08T06:02:06.311Z"
+    }
   },
   "c1780673710969zaw69": {
     "contactName": "Kyle DeCorso",
-    "contactTitle": "Vice President- Chief Operating Officer"
+    "contactTitle": "Vice President- Chief Operating Officer",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore USA solido (30 anni, 44 dipendenti, ~7M$ fatturato) con portafoglio vini generico. Non emerge focus su vini italiani specifici; catalogo orientato a Molson Coors e craft beers. Contattare solo se interessati a distribuire in Utah/mercato USA.",
+      "analyzed_at": "2026-11-08T06:02:12.235Z"
+    }
   },
   "c1780673710969sjghu": {
     "contactName": "Chris Denton",
@@ -611866,5 +611929,38 @@
   "c1791797451415ibdp6": {
     "contactName": "Jessica Contreras",
     "contactTitle": "Founder/ Ceo"
+  },
+  "c1780673710969int4t": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer USA con licenza attiva (PACA) e 48 dipendenti. Portafoglio generico (vino, birra, spirits). Nessuna evidenza esplicita di focus su vini italiani; siti web non raggiungibili per verifica. Contattare solo se strategia include mercato retail USA.",
+      "analyzed_at": "2026-11-08T06:01:11.238Z"
+    }
+  },
+  "c178067371096902py3": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Bright Cellars è un e-commerce di vino USA consolidato (47 dipendenti, ~16M fatturato) con portafoglio mediterraneo che include Italia. Tuttavia, opera esclusivamente online B2C diretto al consumatore, non è un importatore/distributore tradizionale per canali horeca/retail.",
+      "analyzed_at": "2026-11-08T06:01:37.637Z"
+    }
+  },
+  "c1780673710969xiiun": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer USA locale (New Jersey) con ~47 dipendenti e fatturato modesto. Catalogo generico multi-categoria (vino, birra, spirits) con Italia tra i paesi listati, ma nessuna specializzazione vini italiani. Non è un partner B2B rilevante per esportatori italiani.",
+      "analyzed_at": "2026-11-08T06:01:43.898Z"
+    }
   }
 }
