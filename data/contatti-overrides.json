@@ -564091,27 +564091,81 @@
   },
   "c17806737109690jo6d": {
     "contactName": "Timothy Leyes",
-    "contactTitle": "Wine Buyer"
+    "contactTitle": "Wine Buyer",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer USA di piccole dimensioni (25 dipendenti, ~1.45M fatturato) con focus locale. Sito irraggiungibile e nessuna evidenza di specializzazione in vini italiani; portafoglio generico (wine, beer, spirits). Violazioni storiche registrate (2014).",
+      "analyzed_at": "2026-11-08T06:16:28.276Z"
+    }
   },
   "c1780673710969lzw7s": {
     "contactName": "Doug Allie",
-    "contactTitle": "General Manager"
+    "contactTitle": "General Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Distributore locale USA (Michigan) consolidato dal 1961, 25 dipendenti, fatturato ~5M$. Portafoglio generico (beer, wine, spirits) senza focus su vini italiani dichiarato. Mercato prevalentemente retail locale/horeca regionale.",
+      "analyzed_at": "2026-11-08T06:16:35.521Z"
+    }
   },
   "c178067371096993ln4": {
     "contactName": "Adam Quentrill",
-    "contactTitle": "Sales Specialist"
+    "contactTitle": "Sales Specialist",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda con permesso TTB federale come importatore e 25 dipendenti (dimensione piccola-media). Sito poco informativo su portafoglio vini specifici; nessuna menzione esplicita di vini italiani. Contatto possibile per verificare se importano vini europei/italiani.",
+      "analyzed_at": "2026-11-08T06:16:41.096Z"
+    }
   },
   "c1780673710969069mi": {
     "contactName": "Ronnie Bertellotti",
-    "contactTitle": "Director of Operations"
+    "contactTitle": "Director of Operations",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda solida (24 dipendenti, ~1.2M fatturato) specializzata in cocktail kit DTC con partnership major (Bacardi, Wild Turkey). Focus esclusivo su spirits/cocktail, nessuna traccia di vini italiani nel portafoglio.",
+      "analyzed_at": "2026-11-08T06:17:11.334Z"
+    }
   },
   "c1780673710969qwbv3": {
     "contactName": "Devyn Dugger",
-    "contactTitle": "President"
+    "contactTitle": "President",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore USA (Ohio) con portafoglio wine/beer/spirits e rating BBB A+. Sito non raggiungibile e nessuna evidenza esplicita di vini italiani nel portafoglio. Recenti notizie di ristrutturazione aziendale (layoffs/vendita) suggeriscono instabilità.",
+      "analyzed_at": "2026-11-08T06:17:28.524Z"
+    }
   },
   "c1780673710969pafgw": {
     "contactName": "Terry Brown",
-    "contactTitle": "Wine Manager"
+    "contactTitle": "Wine Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "si",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer online consolidato (cellar.com) con 362 vini italiani in catalogo e fatturato ~1.1M$. Piccola dimensione (24 dipendenti), focus B2C retail/online, non distributore wholesale. Contattare solo se target è vendita diretta al consumatore finale.",
+      "analyzed_at": "2026-11-08T06:17:34.583Z"
+    }
   },
   "c1780673710970y5ppj": {
     "contactName": "Kurt Sebo",
@@ -613065,6 +613119,50 @@
       "raccomandato": "no",
       "note": "Catena retail locale (8 negozi Louisiana) specializzata in tabacco/sigari con vini generici. Fatturato modesto (757k$), nessuna evidenza di focus su vini italiani o importazione diretta. Non è un importatore/distributore B2B.",
       "analyzed_at": "2026-11-08T06:14:54.087Z"
+    }
+  },
+  "c1780673710969o4ha3": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Sito non raggiungibile, nessuna info su portafoglio vini. Retailer USA di piccole dimensioni (25 dipendenti, fatturato ~666k) senza evidenza di focus su vini italiani o importazioni.",
+      "analyzed_at": "2026-11-08T06:16:46.200Z"
+    }
+  },
+  "c1780673710969u44dw": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Sito irraggiungibile, nessuna traccia online, piccolo supermarket locale (25 dipendenti). Impossibile verificare se commercializza vini italiani o se rappresenta un'opportunità reale di distribuzione.",
+      "analyzed_at": "2026-11-08T06:16:51.929Z"
+    }
+  },
+  "c17806737109693hxtn": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo retailer USA (25 dipendenti, fatturato ~419k) con sito basic. Nessuna menzione esplicita di vini italiani; portafoglio generico 'imported and domestic'. Non è canale strategico per esportatori italiani.",
+      "analyzed_at": "2026-11-08T06:16:57.693Z"
+    }
+  },
+  "c1780673710969f9jnu": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Negozio di alimentari cooperativo locale (Chicago) focalizzato su prodotti biologici e locali. Nessuna evidenza di specializzazione in vini italiani; fatturato molto modesto (731k$) e assenza di visibilità online suggeriscono scarso interesse per importazioni di qualità.",
+      "analyzed_at": "2026-11-08T06:17:05.426Z"
     }
   }
 }
