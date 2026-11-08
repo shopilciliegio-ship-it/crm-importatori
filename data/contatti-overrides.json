@@ -564169,35 +564169,107 @@
   },
   "c1780673710970y5ppj": {
     "contactName": "Kurt Sebo",
-    "contactTitle": "General Manager"
+    "contactTitle": "General Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Distributore USA (Wisconsin) focalizzato su birra e spirits locali/americani. Nessuna evidenza di importazione vini italiani nei documenti fiscali consultati. Siti dichiarati non raggiungibili.",
+      "analyzed_at": "2026-11-08T06:17:47.244Z"
+    }
   },
   "c1780673710970xfdsn": {
     "contactName": "Norma Taviani",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Distributore wholesale consolidato in Louisiana con 24 dipendenti e ~4M fatturato. Portafoglio generico (vino, birra, spirits) senza conferma esplicita di vini italiani. Mercato B2B horeca/retail locale, non online.",
+      "analyzed_at": "2026-11-08T06:17:56.899Z"
+    }
   },
   "c1780673710970mvvnw": {
     "contactName": "Brent Bloom",
-    "contactTitle": "Wine Manager"
+    "contactTitle": "Wine Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Catena retail consolidata (dal 1945, 7 locations, 24 dipendenti) con sito professionale. Tuttavia: non importa/distribuisce vini italiani (è retailer puro), non spedisce alcol, target esclusivamente consumer retail locale (Milwaukee area).",
+      "analyzed_at": "2026-11-08T06:18:03.058Z"
+    }
   },
   "c1780673710970nyxsu": {
     "contactName": "Bruno Delgado",
-    "contactTitle": "Buyer"
+    "contactTitle": "Buyer",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer consolidato (dal 1937) con reparto wine&spirits e 24 dipendenti. Sito professionale e presenze verificate. Tuttavia nessuna menzione esplicita di vini italiani nel materiale disponibile; portafoglio generico. Contatto possibile per esplorare partnership retail locale.",
+      "analyzed_at": "2026-11-08T06:18:09.297Z"
+    }
   },
   "c1780673710970fvca8": {
     "contactName": "Gus (Louis) Olah",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "si",
+      "tipo_business": "misto",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Azienda storica (dal 1940) con divisione import/wholesale (Mystic Vine). Sito retail professionale con vini italiani in catalogo (Tuscany, Pinot Grigio). Fatturato modesto (891k$) e 24 dipendenti suggeriscono piccolo retailer locale; non è chiaro il peso dell'import di vini italiani nel business.",
+      "analyzed_at": "2026-11-08T06:18:16.306Z"
+    }
   },
   "c1780673710970gicgj": {
     "contactName": "Daniel Hodge",
-    "contactTitle": "General Manager"
+    "contactTitle": "General Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "si",
+      "tipo_business": "importatore",
+      "mercato_target": "horeca",
+      "raccomandato": "si",
+      "note": "Importatore USA consolidato con 23 dipendenti e ~2M$ fatturato. Portfolio esplicito su vini italiani (Piemonte citato). Distribuisce a horeca con 100+ etichette approvate da Francia, Italia e Cile.",
+      "analyzed_at": "2026-11-08T06:18:33.203Z"
+    }
   },
   "c1780673710970q3ie8": {
     "contactName": "Roberta Masciarelli",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "si",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "si",
+      "note": "Importatore consolidato dal 1987 con portfolio italiano (Sartirano Figli, Guido Natalino). 23 dipendenti e fatturato ~2.3M$ indicano solidità. Sito professionale e storia familiare credibile.",
+      "analyzed_at": "2026-11-08T06:18:38.774Z"
+    }
   },
   "c1780673710970y6dif": {
     "contactName": "Mark Massimi",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer online/fisico USA con 3 location (NYC, SF, Chicago) e 23 dipendenti. Focalizzato su vini artigianali e low-intervention; portafoglio probabilmente include italiani ma non confermato esplicitamente. Contatto potenziale per distribuzione wholesale, ma primariamente B2C.",
+      "analyzed_at": "2026-11-08T06:18:44.453Z"
+    }
   },
   "c1780673710970edkeo": {
     "contactName": "Adam Shulman",
@@ -613163,6 +613235,28 @@
       "raccomandato": "no",
       "note": "Negozio di alimentari cooperativo locale (Chicago) focalizzato su prodotti biologici e locali. Nessuna evidenza di specializzazione in vini italiani; fatturato molto modesto (731k$) e assenza di visibilità online suggeriscono scarso interesse per importazioni di qualità.",
       "analyzed_at": "2026-11-08T06:17:05.426Z"
+    }
+  },
+  "c1780673710970nfvyq": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore USA consolidato (24 dipendenti, ~4.7M$ fatturato) con portafoglio vini, birre e spirits. Nessuna menzione esplicita di vini italiani nel materiale disponibile; sito poco informativo. Vale la pena verificare direttamente il loro catalogo prodotti.",
+      "analyzed_at": "2026-11-08T06:18:21.824Z"
+    }
+  },
+  "c17806737109707vi1l": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer USA locale (Wisconsin) con 3 punti vendita e ~4.5M fatturato. Nessuna menzione esplicita di vini italiani nel sito; portafoglio generico spirits/beer/wine. Non è canale di distribuzione per esportatori italiani.",
+      "analyzed_at": "2026-11-08T06:18:26.727Z"
     }
   }
 }
