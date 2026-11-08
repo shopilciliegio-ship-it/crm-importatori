@@ -563753,35 +563753,107 @@
   },
   "c1780673710969k4ji1": {
     "contactName": "Shany Cruz",
-    "contactTitle": "Vice President Acquisitions"
+    "contactTitle": "Vice President Acquisitions",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Azienda solida (28 dipendenti, ~7.7M fatturato) specializzata in sourcing per airlines/cruise lines. Importa vini internazionali ma focus primario è beverage management per settore travel, non retail tradizionale. Contattare solo se target è horeca premium (compagnie aeree/navi).",
+      "analyzed_at": "2026-11-08T06:12:48.917Z"
+    }
   },
   "c1780673710969ejgt8": {
     "contactName": "Brian Cho",
-    "contactTitle": "Sales Representative"
+    "contactTitle": "Sales Representative",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore|distributore",
+      "mercato_target": "horeca|retail",
+      "raccomandato": "forse",
+      "note": "Importatore consolidato sulla East Coast USA con 28 dipendenti e ~4.7M$ fatturato. Portafoglio diversificato (vini, spirits) ma nessuna menzione esplicita di vini italiani nei risultati. Storico di importazioni da fornitori vari (Peru, etc.). Vale la pena verificare se hanno interesse per portfolio italiano.",
+      "analyzed_at": "2026-11-08T06:12:57.746Z"
+    }
   },
   "c1780673710969n0xjm": {
     "contactName": "Brad Morley",
-    "contactTitle": "Founder And Ceo"
+    "contactTitle": "Founder And Ceo",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "forse",
+      "note": "Retailer online USA specializzato in bourbon/whiskey e vini rari con 20+ anni esperienza (fondatore Brad Morley). Fatturato molto basso (105k) per 28 dipendenti suggerisce dati errati o azienda in difficoltà. Nessuna menzione esplicita di vini italiani nel portafoglio.",
+      "analyzed_at": "2026-11-08T06:13:04.266Z"
+    }
   },
   "c1780673710969cfay6": {
     "contactName": "Domenico Giovinazzo",
-    "contactTitle": "Retail Operations Manager"
+    "contactTitle": "Retail Operations Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Distributore USA specializzato in wine & spirits con infrastruttura solida (300k sqft, fondato 2014). Serve principalmente NY/NJ ma non emerge focus specifico su vini italiani. Contatto utile solo se si cerca distribuzione negli USA Northeast.",
+      "analyzed_at": "2026-11-08T06:13:18.779Z"
+    }
   },
   "c1780673710969m1cb4": {
     "contactName": "Giovanni Pecora",
-    "contactTitle": "Ceo"
+    "contactTitle": "Ceo",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "si",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "si",
+      "note": "Importatore italiano-centrico con portfolio solido (VOGA Italia, Luna Di Luna, Ca' Montini, etc.). Azienda consolidata dal 2013, 27 dipendenti, sito professionale e riconoscimenti (Sommeliers Choice Awards 2025). Contatti disponibili e attivi.",
+      "analyzed_at": "2026-11-08T06:13:27.035Z"
+    }
   },
   "c1780673710969ccfba": {
     "contactName": "Bruce Dierking",
-    "contactTitle": "General Manager"
+    "contactTitle": "General Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer USA con sito professionale e 27 dipendenti. Catalogo vini include Italia (Tuscany) ma focus prevalente su mercato domestico americano e New Zealand. Non è canale B2B per esportatori italiani.",
+      "analyzed_at": "2026-11-08T06:13:32.929Z"
+    }
   },
   "c1780673710969qtvhw": {
     "contactName": "Brian Umbach",
-    "contactTitle": "Vice President"
+    "contactTitle": "Vice President",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "si",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "si",
+      "note": "Importatore consolidato (4 generazioni) con portafoglio internazionale che include esplicitamente vini italiani (Bel Vento Pinot Grigio). Distribuito in 40+ stati USA, 27 dipendenti, fatturato solido. Sito funzionante con e-commerce attivo.",
+      "analyzed_at": "2026-11-08T06:13:39.169Z"
+    }
   },
   "c1780673710969sv9y0": {
     "contactName": "RIch Duffy",
-    "contactTitle": "Sales Director"
+    "contactTitle": "Sales Director",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "si",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "si",
+      "note": "Importatore USA consolidato con 27 dipendenti e portafoglio internazionale che include esplicitamente vini italiani (Nicola Biscardo Selections). Serve horeca e retail con sito professionale e partnership strutturate.",
+      "analyzed_at": "2026-11-08T06:13:45.755Z"
+    }
   },
   "c1780673710969bhsj9": {
     "contactName": "Giovanni Caveggia",
@@ -612787,6 +612859,28 @@
       "raccomandato": "forse",
       "note": "Retailer USA consolidato (dal 1982, 30 dipendenti, ~2M fatturato) con sito professionale. Portafoglio generico (vini, spirits, sigari, import) senza focus esplicito su vini italiani. Contatto potenziale solo se si ha strategia di distribuzione retail USA.",
       "analyzed_at": "2026-11-08T06:12:13.199Z"
+    }
+  },
+  "c17806737109693kdk8": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Retailer + wholesale con 28 dipendenti e fatturato modesto (~865k). Cita 'Mary Taylor Sicilia Rosso' (vino italiano) come wine of the month. Sito funzionante ma senza info dettagliate su portafoglio vini italiani. Serve horeca locale (Maine) e retail.",
+      "analyzed_at": "2026-11-08T06:13:09.862Z"
+    }
+  },
+  "c17806737109695mu40": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Distributore consolidato (dal 1984) con 27 dipendenti e fatturato ~2.3M$, attivo in MD/DC/DE. Portfolio globale di vini indipendenti e family-owned, ma nessuna menzione esplicita di vini italiani. Mercato prevalentemente horeca. Verificare se rappresentano etichette italiane prima di contattare.",
+      "analyzed_at": "2026-11-08T06:13:52.266Z"
     }
   }
 }
