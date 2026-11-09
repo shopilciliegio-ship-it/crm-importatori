@@ -565427,43 +565427,133 @@
   },
   "c1780673710970q93wb": {
     "contactName": "Julie A. Ruckman",
-    "contactTitle": "Director of Sales & Marketing"
+    "contactTitle": "Director of Sales & Marketing",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Distributore USA con portafoglio internazionale (Francia, Italia, Spagna, Argentina). Citano esplicitamente vini italiani nel menu. Piccola realtà (17 dipendenti, ~$1.6M fatturato) focalizzata su horeca locale Indiana. Sito professionale ma poche info su volumi/clienti.",
+      "analyzed_at": "2026-11-09T06:11:03.743Z"
+    }
   },
   "c1780673710970fl5mm": {
     "contactName": "Kevin Conley",
-    "contactTitle": "Wine Specialist"
+    "contactTitle": "Wine Specialist",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Distributore consolidato (fondato 1984) specializzato in vini artigianali e luxury in Ohio. Portfolio non esplicitamente focalizzato su vini italiani, ma come distributore fine wine potrebbe avere interesse. Dimensione piccola (17 dipendenti, fatturato ~255k) suggerisce focus locale/regionale.",
+      "analyzed_at": "2026-11-09T06:11:09.378Z"
+    }
   },
   "c1780673710970bommb": {
     "contactName": "Charles (Chuck) Bowe",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Sito irraggiungibile, nessuna traccia online, fatturato molto modesto (528k$). Impossibile verificare se commercializza vini italiani. Azienda di piccole dimensioni senza visibilità digitale.",
+      "analyzed_at": "2026-11-09T06:11:15.314Z"
+    }
   },
   "c1780673710970emf8i": {
     "contactName": "Judy Ransford",
-    "contactTitle": "Chief Executive Officer"
+    "contactTitle": "Chief Executive Officer",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda solida (51-200 dipendenti, fatturato ~4.5M) specializzata in gift baskets e specialty food. Vini solo come componente secondaria di cesti regalo, non importatore di vini italiani.",
+      "analyzed_at": "2026-11-09T06:11:21.519Z"
+    }
   },
   "c1780673710970b3vo0": {
     "contactName": "Garrett Willyard",
-    "contactTitle": "Imports & Operations"
+    "contactTitle": "Imports & Operations",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Distributore consolidato in Colorado (30+ anni) con portafoglio ampio (wine, spirits, cider). Partecipa a Vinitaly e lavora con importatori italiani (Allora Wine Group, Frederick Wildman). Fatturato modesto (4.8M$) e team piccolo (17 dipendenti) suggeriscono focus locale/regionale. Verificare se interessati a nuovi produttori italiani.",
+      "analyzed_at": "2026-11-09T06:11:27.889Z"
+    }
   },
   "c1780673710970dhqbm": {
     "contactName": "Matt Rhodes",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Retailer USA con wine bar e tap room, portafoglio generico (wine/beer). Nessuna menzione esplicita di vini italiani nel sito. Dimensione piccola (17 dipendenti, ~915k fatturato) ma operazione consolidata localmente. Vale la pena verificare se importano italiani.",
+      "analyzed_at": "2026-11-09T06:11:34.803Z"
+    }
   },
   "c1780673710970l7vbj": {
     "contactName": "Maria Romanello",
-    "contactTitle": "Import/ Logistics"
+    "contactTitle": "Import/ Logistics",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "si",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "si",
+      "note": "Importatore specializzato in prodotti italiani dal 2007 con 17 dipendenti e fatturato solido (~2.9M$). Clientela diversificata (foodservice, retail, online). Sito professionale e traccia verificabile su fonti autorevoli (FDA, ImportGenius).",
+      "analyzed_at": "2026-11-09T06:11:41.079Z"
+    }
   },
   "c1780673710970lzipt": {
     "contactName": "Joann Klich",
-    "contactTitle": "Director of Sales"
+    "contactTitle": "Director of Sales",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore|distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore/distributore USA con licenza attiva e fatturato modesto (~3.5M). Siti dichiarati non raggiungibili. Nessuna evidenza esplicita di vini italiani nel portafoglio; importa da fornitori europei (es. Germania). Verificare direttamente se trattano vini italiani prima di contattare.",
+      "analyzed_at": "2026-11-09T06:11:46.416Z"
+    }
   },
   "c1780673710970qrg18": {
     "contactName": "Ethan E. Perk",
-    "contactTitle": "Vice President Sales & Marketing"
+    "contactTitle": "Vice President Sales & Marketing",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore consolidato (17 dipendenti, ~4M fatturato) con portfolio wine/spirits e presence nei Caraibi/Centro America. Nessuna menzione esplicita di vini italiani; focus geografico su mercati caraibici suggerisce portafoglio generico. Vale verificare se importano italiani.",
+      "analyzed_at": "2026-11-09T06:11:52.906Z"
+    }
   },
   "c1780673710970xkscs": {
     "contactName": "Ian Smythe",
-    "contactTitle": "Fine Wine Market Specialist"
+    "contactTitle": "Fine Wine Market Specialist",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore USA consolidato (17 dipendenti, ~$3-10M fatturato) con portafoglio vini e bevande. Sito non raggiungibile limita verifica. Nessuna evidenza esplicita di vini italiani nel portafoglio; potenziale cliente se importa da Europa.",
+      "analyzed_at": "2026-11-09T06:11:58.231Z"
+    }
   },
   "c17806737109701megl": {
     "contactName": "Jeff Dolin",
