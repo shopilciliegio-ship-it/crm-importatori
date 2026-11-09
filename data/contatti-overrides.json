@@ -564868,43 +564868,133 @@
   },
   "c17806737109707nput": {
     "contactName": "Victor Lebel",
-    "contactTitle": "Director of Operations"
+    "contactTitle": "Director of Operations",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore registrato nello stato di New York con 20 dipendenti e fatturato modesto (~1,7M$). Sito dichiarato non raggiungibile. Portafoglio generico (wine, sparkling wine) senza conferma esplicita di vini italiani. Verificare direttamente contatti e specializzazioni.",
+      "analyzed_at": "2026-11-09T06:04:49.192Z"
+    }
   },
   "c1780673710970p4n15": {
     "contactName": "Sarah Timbrook-Nugent",
-    "contactTitle": "Account Manager"
+    "contactTitle": "Account Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore|distributore",
+      "mercato_target": "horeca|retail",
+      "raccomandato": "forse",
+      "note": "Azienda family-owned dal 1984, solida con 20 dipendenti e fatturato ~2.4M$. Importa da 11 paesi e 200+ produttori; portafoglio mediterraneo/europeo suggerisce probabilità di vini italiani, ma non esplicitamente confermato. Contattare per verificare se hanno interesse in vini italiani specifici.",
+      "analyzed_at": "2026-11-09T06:04:56.359Z"
+    }
   },
   "c17806737109705yehl": {
     "contactName": "Allison De",
-    "contactTitle": "General Manager"
+    "contactTitle": "General Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "forse",
+      "note": "Retailer online USA con sito professionale e catalogo vini diversificato (Francia, Italia, Spagna, USA). Citano Italia tra i paesi di provenienza ma non emerge focus specifico su vini italiani. Dimensione piccola (20 dipendenti), mercato B2C online.",
+      "analyzed_at": "2026-11-09T06:05:02.816Z"
+    }
   },
   "c1780673710970fwtrw": {
     "contactName": "Daniel Fields",
-    "contactTitle": "Operations Manager"
+    "contactTitle": "Operations Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer USA consolidato (dal 1978) con 9 store in Minnesota e 20 dipendenti. Portafoglio generico (beer, wine, spirits) senza menzione esplicita di vini italiani. Non è canale di distribuzione per produttori italiani.",
+      "analyzed_at": "2026-11-09T06:05:08.816Z"
+    }
   },
   "c1780673710970vbljg": {
     "contactName": "Jeff Neidert",
-    "contactTitle": "Purchasing Manager"
+    "contactTitle": "Purchasing Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Distributore consolidato (73 anni, 4ª generazione) con fatturato solido e 20 dipendenti. Portafoglio ampio (vino, birra, spirits) ma nessuna menzione esplicita di vini italiani nel materiale disponibile. Mercato NY retail/horeca.",
+      "analyzed_at": "2026-11-09T06:05:14.391Z"
+    }
   },
   "c178067371097074cq3": {
     "contactName": "Vincent Becker",
-    "contactTitle": "Buyer"
+    "contactTitle": "Buyer",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo retailer locale (20 dipendenti, fatturato ~400k) con sito non raggiungibile. Portafoglio generico (vini, birre, spirits) senza evidenza di specializzazione italiana. Non idoneo per partnership B2B.",
+      "analyzed_at": "2026-11-09T06:05:19.963Z"
+    }
   },
   "c17806737109707qpkn": {
     "contactName": "Lin Pracht",
-    "contactTitle": "Purchasing"
+    "contactTitle": "Purchasing",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore|distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore/distributore consolidato nel Mid-Atlantic (Virginia) con fatturato solido (~10.5M$) e 20 dipendenti. Portfolio non specifica vini italiani ma gestisce importazioni europee. Modello B2B wholesale + logistics potrebbe essere interessante per fornitori italiani.",
+      "analyzed_at": "2026-11-09T06:05:26.445Z"
+    }
   },
   "c1780673710970vpk33": {
     "contactName": "Kari Simons",
-    "contactTitle": "Director of Operations"
+    "contactTitle": "Director of Operations",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore USA solido (20 dipendenti, ~8.5M fatturato) con distribuzione nazionale. Specializzato in wine & spirits import/logistics, ma nessuna conferma esplicita di vini italiani nel portafoglio. Contattare per verificare interesse specifico su etichette italiane.",
+      "analyzed_at": "2026-11-09T06:05:31.970Z"
+    }
   },
   "c17806737109703qakf": {
     "contactName": "Nick Poulos",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Retailer con online store consolidato (20 dipendenti, ~762k fatturato). Catalogo include Italia tra le regioni (Tuscany), ma focus prevalente su Francia/Spagna. Contatto possibile per distribuzioni retail locali nel NY.",
+      "analyzed_at": "2026-11-09T06:05:38.247Z"
+    }
   },
   "c1780673710970hn5jm": {
     "contactName": "Timothy English",
-    "contactTitle": "Chief Executive Officer"
+    "contactTitle": "Chief Executive Officer",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore|distributore",
+      "mercato_target": "horeca|retail",
+      "raccomandato": "forse",
+      "note": "Azienda consolidata (20 dipendenti) con sito professionale e distribuzione multi-stato. Blog recente cita Rivetti Massimo (Piemonte), suggerendo portafoglio italiano. Target horeca e retail ben definito, ma fatturato sconosciuto limita valutazione affidabilità.",
+      "analyzed_at": "2026-11-09T06:05:45.055Z"
+    }
   },
   "c1780673710970570ta": {
     "contactName": "Chris Parth",
