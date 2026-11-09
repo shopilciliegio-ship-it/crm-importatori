@@ -564738,43 +564738,133 @@
   },
   "c1780673710970nzjoe": {
     "contactName": "Steve Lorenz",
-    "contactTitle": "Portfolio Manager"
+    "contactTitle": "Portfolio Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Distributore regionale USA (Iowa/South Dakota) con 21 dipendenti e fatturato modesto (~2,4M$). Portfolio diversificato di 3.500 vini, ma nessuna menzione esplicita di vini italiani. Contatto potenziale solo se target è mercato americano midwest.",
+      "analyzed_at": "2026-11-09T06:03:39.112Z"
+    }
   },
   "c178067371097052ng4": {
     "contactName": "Bob Kreston",
-    "contactTitle": "President"
+    "contactTitle": "President",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer online USA con portafoglio vini internazionali (Italia citata tra le regioni). Fatturato modesto (~2.1M$) e 21 dipendenti indicano piccola realtà locale. Non è importatore/distributore B2B, quindi non adatto per fornitori di vini italiani.",
+      "analyzed_at": "2026-11-09T06:03:46.545Z"
+    }
   },
   "c1780673710970lft4d": {
     "contactName": "Meena Sethi",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer online con sito funzionante e catalogo che include Italia (Tuscany, Italian spirits). Fatturato modesto (459k) e 21 dipendenti suggeriscono piccola realtà locale Miami. Nessuna traccia Google è preoccupante; verificare affidabilità prima di contattare.",
+      "analyzed_at": "2026-11-09T06:03:51.978Z"
+    }
   },
   "c1780673710970ijuit": {
     "contactName": "Taylor Cope",
-    "contactTitle": "Business Development Manager"
+    "contactTitle": "Business Development Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Distributore wholesale consolidato in Florida (60+ anni di storia, licenza attiva). Focus su horeca indipendente (ristoranti, wine bar, hotel). Portfolio non specifica vini italiani ma copre range da value a fine wine. Fatturato modesto (1,8M$) e team piccolo (20 dipendenti) suggerisce operatività locale/regionale.",
+      "analyzed_at": "2026-11-09T06:03:58.427Z"
+    }
   },
   "c178067371097021d8y": {
     "contactName": "Mathew Booker",
-    "contactTitle": "President"
+    "contactTitle": "President",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Sito non raggiungibile, nessuna info su portafoglio vini italiani. Risultati Google mostrano controversie legali (causa vs The Secret Garden). Dimensione piccola (20 dipendenti, ~2.4M fatturato) ma affidabilità compromessa.",
+      "analyzed_at": "2026-11-09T06:04:04.132Z"
+    }
   },
   "c1780673710970ndv51": {
     "contactName": "Ryan Mcfeely",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore/distributore regolarmente licenziato in Florida (FL-I-21457) con 20 dipendenti e fatturato ~1.9M$. Sito generico su vini artigianali e spirits, nessuna menzione esplicita di vini italiani; portfolio non visibile online. Contatto possibile ma richiede verifica diretta.",
+      "analyzed_at": "2026-11-09T06:04:10.724Z"
+    }
   },
   "c1780673710970hjnw1": {
     "contactName": "Chiara Sorgente",
-    "contactTitle": "Senior Sales Wine Coordinator"
+    "contactTitle": "Senior Sales Wine Coordinator",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Azienda solida specializzata in beverage per travel industry (airlines, cruise lines). Importa vini ma focus principale è travel/duty-free, non retail tradizionale. Verificare se interessati a vini italiani specifici per segmento premium.",
+      "analyzed_at": "2026-11-09T06:04:16.692Z"
+    }
   },
   "c1780673710970lvs49": {
     "contactName": "Alexandre Tronel",
-    "contactTitle": "Field Sales Manager"
+    "contactTitle": "Field Sales Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "no",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Importatore solido (fondato 2010, 20 dipendenti, ~8.2M fatturato) specializzato esclusivamente in vini francesi premium (Barton & Guestier, Patriarche, Listel). Portfolio completamente francese, nessun vino italiano nel portafoglio.",
+      "analyzed_at": "2026-11-09T06:04:23.198Z"
+    }
   },
   "c1780673710970rwa0e": {
     "contactName": "Renaldo Robinson",
-    "contactTitle": "Assistant Manager"
+    "contactTitle": "Assistant Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "si",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer USA con sito professionale e catalogo strutturato che include esplicitamente vini italiani (Tuscany, Pinot Grigio). Piccola dimensione (20 dipendenti, fatturato ~474k) e focus retail/online non allineato a distribuzione B2B italiana.",
+      "analyzed_at": "2026-11-09T06:04:30.315Z"
+    }
   },
   "c1780673710970tyose": {
     "contactName": "Greg Livengood",
-    "contactTitle": "Partner / President"
+    "contactTitle": "Partner / President",
+    "research": {
+      "affidabilita": 5,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Ciatti è il maggior broker mondiale di vini sfusi (dal 1971), con 20 dipendenti e rete globale in 10 paesi. Gestisce vini europei inclusa Italia, ma focus primario è bulk wine/grapes per industria, non retail. Contatto utile solo se si vende vino sfuso o si cercano partner per distribuzione B2B.",
+      "analyzed_at": "2026-11-09T06:04:36.681Z"
+    }
   },
   "c17806737109707nput": {
     "contactName": "Victor Lebel",
