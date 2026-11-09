@@ -565193,39 +565193,120 @@
   },
   "c1780673710970cgg7p": {
     "contactName": "Bill Nosan",
-    "contactTitle": "Buyer/ Manager"
+    "contactTitle": "Buyer/ Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo retailer online USA (19 dipendenti, fatturato ~784k) con portafoglio generico wine/beer/spirits. Nessuna evidenza di specializzazione su vini italiani; sito non raggiungibile per verifica. Non idoneo per partnership B2B.",
+      "analyzed_at": "2026-11-09T06:08:27.860Z"
+    }
   },
   "c1780673710970q5xyp": {
     "contactName": "Dina Delacerda",
-    "contactTitle": "Beer & Wine Buyer"
+    "contactTitle": "Beer & Wine Buyer",
+    "research": {
+      "affidabilita": 5,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "H-E-B è una grande catena di supermercati texana consolidata dal 1905 con forte presenza retail. Vende vino ma non risulta specializzazione in vini italiani; contatto utile solo se si ha strategia di distribuzione USA su larga scala.",
+      "analyzed_at": "2026-11-09T06:08:33.107Z"
+    }
   },
   "c1780673710970dwlrf": {
     "contactName": "Jason Schneider",
-    "contactTitle": "Store Manager and Spirits Buyer"
+    "contactTitle": "Store Manager and Spirits Buyer",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer USA con sito professionale (est. 1990) e buona selezione di vini europei inclusi italiani (Nebbiolo, Sangiovese, Nero d'Avola). Tuttavia: focus mercato locale California, non importatore/distributore B2B, non adatto per fornitori di vini italiani.",
+      "analyzed_at": "2026-11-09T06:08:40.127Z"
+    }
   },
   "c1780673710970s2hxn": {
     "contactName": "Craig Perrone",
-    "contactTitle": "Owner/ President"
+    "contactTitle": "Owner/ President",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore USA con licenza ufficiale (ABC California) e fatturato modesto (~3M). Sito non raggiungibile limita verifica. Portafoglio generico (vino, birra, sidro) senza conferma esplicita di vini italiani. Piccola struttura (19 dipendenti) suggerisce mercato locale/regionale.",
+      "analyzed_at": "2026-11-09T06:08:58.005Z"
+    }
   },
   "c1780673710970g5h19": {
     "contactName": "Robin Spicer",
-    "contactTitle": "Sales Manager"
+    "contactTitle": "Sales Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore|distributore",
+      "mercato_target": "horeca|retail",
+      "raccomandato": "forse",
+      "note": "Azienda solida (dal 1994, 19 dipendenti, ~4.4M fatturato) con sito professionale e presença social. Importatore/distributore mid-Atlantic USA. Portafoglio generico 'fine wine from around the world' - non specifica vini italiani ma potenziale cliente per importazioni europee/mediterranee.",
+      "analyzed_at": "2026-11-09T06:09:05.091Z"
+    }
   },
   "c1780673710970n6tu2": {
     "contactName": "John Vego",
-    "contactTitle": "Wine Manager"
+    "contactTitle": "Wine Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer USA con sito funzionante che cita Italia tra i paesi di provenienza vini (Tuscany, Pinot Grigio). Piccola dimensione (19 dipendenti, ~932k fatturato) e focus retail locale limitano potenziale B2B. Verificare se interessati a fornitori diretti.",
+      "analyzed_at": "2026-11-09T06:09:12.063Z"
+    }
   },
   "c1780673710970rtqfc": {
     "contactName": "Riggins Keith",
-    "contactTitle": "President/ General Manager"
+    "contactTitle": "President/ General Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore consolidato USA (dal 1938) con fatturato solido e struttura multi-regionale. Portafoglio generico wine/spirits/beer senza menzione esplicita di vini italiani; contatto potenziale solo se si ha già una linea di prodotti italiani da proporre al loro network retail/horeca.",
+      "analyzed_at": "2026-11-09T06:09:18.181Z"
+    }
   },
   "c1780673710970ox3dj": {
     "contactName": "Nick Frei",
-    "contactTitle": "General Sales Manager"
+    "contactTitle": "General Sales Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Distributore USA consolidato (dal 2004) con portafoglio globale e certificazioni statali. Portfolio non specifica vini italiani ma approccio 'globally inspired' suggerisce potenziale. Dimensione piccola (18 dipendenti, ~4.9M fatturato) ma stabile; verificare se hanno linee italiane.",
+      "analyzed_at": "2026-11-09T06:09:31.323Z"
+    }
   },
   "c1780673710970fidvy": {
     "contactName": "Andrew Scherer",
-    "contactTitle": "Wine Director"
+    "contactTitle": "Wine Director",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "misto",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Azienda solida (dal 1995, 1120 recensioni Yelp, 18 dipendenti) ma è un ristorante-café con wine shop annesso focalizzato su vini locali californiani. Non risultano vini italiani nel portafoglio; target è clientela locale horeca/retail, non importatori di vini italiani.",
+      "analyzed_at": "2026-11-09T06:09:38.403Z"
+    }
   },
   "c17806737109703037w": {
     "contactName": "David Gangitano",
@@ -613811,6 +613892,17 @@
       "raccomandato": "forse",
       "note": "Retailer consolidato a Somerville (Boston) con 20 dipendenti e fatturato modesto (~635k). Portafoglio include vini italiani (Montepulciano d'Abruzzo in evidenza). Sito professionale, wine tastings settimanali, delivery attivo. Non è importatore/distributore: difficile per partnership B2B diretta.",
       "analyzed_at": "2026-11-09T06:08:14.891Z"
+    }
+  },
+  "c17806737109709fapf": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "si",
+      "tipo_business": "misto",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer Boston con sito professionale e catalogo strutturato che include esplicitamente vini italiani (Tuscany, Pinot Grigio). Fatturato modesto (~1M$) e 19 dipendenti suggeriscono negozio locale consolidato. Non è importatore/distributore, quindi contatto utile solo se si cerca canale retail diretto negli USA.",
+      "analyzed_at": "2026-11-09T06:09:25.363Z"
     }
   }
 }
