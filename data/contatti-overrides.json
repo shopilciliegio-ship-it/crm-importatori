@@ -565921,43 +565921,133 @@
   },
   "c1780673710970cw8lo": {
     "contactName": "Alex Murray",
-    "contactTitle": "Wine Director"
+    "contactTitle": "Wine Director",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer USA con sito professionale e catalogo strutturato che include vini italiani (Tuscany, Pinot Grigio). Piccola dimensione (15 dipendenti, fatturato limitato) e focus retail/online locale non ideale per esportatori italiani.",
+      "analyzed_at": "2026-11-09T06:15:31.118Z"
+    }
   },
   "c1780673710970rbfw4": {
     "contactName": "Joe Kluchinsky",
-    "contactTitle": "Buyer"
+    "contactTitle": "Buyer",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "si",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda solida con licenza importatore DC e sito professionale. Catalogo include esplicitamente vini italiani (Piemonte, Toscana). Però fatturato dichiarato (1,5M) non corrisponde a fonti (0,93M DNB); dipendenti incoerenti (15 vs 25-49). Verificare dati prima di contattare.",
+      "analyzed_at": "2026-11-09T06:15:37.690Z"
+    }
   },
   "c1780673710970rvrqv": {
     "contactName": "Alysse Holman",
-    "contactTitle": "Operations Manager"
+    "contactTitle": "Operations Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "no",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Importatore solido (dal 1993) specializzato in vini australiani e internazionali. Portfolio non include vini italiani; recente acquisizione da Total Beverage Solution (ott 2025) indica transizione aziendale.",
+      "analyzed_at": "2026-11-09T06:15:45.942Z"
+    }
   },
   "c1780673710970vpsoe": {
     "contactName": "Tanya Theriot",
-    "contactTitle": "Director of Operations"
+    "contactTitle": "Director of Operations",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore USA con permesso attivo (LA-I-21020) e portafoglio europeo che include Italia. Fatturato modesto (~956k$) con 15 dipendenti suggerisce nicchia premium. Sito professionale ma info limitate su clientela specifica (horeca vs retail).",
+      "analyzed_at": "2026-11-09T06:15:54.052Z"
+    }
   },
   "c1780673710970eqn76": {
     "contactName": "Judson Carroll",
-    "contactTitle": "Regional Sales Manager"
+    "contactTitle": "Regional Sales Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "no",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda solida (fondata 1985, ~15 dipendenti, fatturato stabile) specializzata esclusivamente in Port, Madeira e Douro DOC portoghesi. Non importa vini italiani, quindi non pertinente per strategie focalizzate su Italia.",
+      "analyzed_at": "2026-11-09T06:15:59.458Z"
+    }
   },
   "c178067371097060jfj": {
     "contactName": "Cristian Soare",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore specializzato in vini romeni con portfolio diversificato (Francia, Italia, Spagna, Sudafrica). Azienda solida (15 dipendenti, ~2.5M fatturato) con sito professionale. Italia presente nel menu ma non enfatizzata; focus principale su Romania. Contattare se interessati a distribuire in Missouri/USA.",
+      "analyzed_at": "2026-11-09T06:16:08.123Z"
+    }
   },
   "c1780673710970obpr2": {
     "contactName": "Chris Creech",
-    "contactTitle": "Co-owner"
+    "contactTitle": "Co-owner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda focalizzata su birra artigianale (beer lab) con taproom e retail. Vini presenti nel portafoglio ma non sono core business. Dimensione piccola (15 dipendenti, fatturato ~362k USD) e orientamento locale Durham/RTP.",
+      "analyzed_at": "2026-11-09T06:16:13.535Z"
+    }
   },
   "c1780673710970kc5mf": {
     "contactName": "Zino Mezoui",
-    "contactTitle": "Director Of Operations"
+    "contactTitle": "Director Of Operations",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore USA consolidato dal 1989 con 40+ produttori europei rappresentati. Specializzato in Madeira e vini premium, ma nessuna menzione esplicita di vini italiani nel materiale disponibile. Modello B2B/B2C con focus su clientela privata e trade.",
+      "analyzed_at": "2026-11-09T06:16:20.613Z"
+    }
   },
   "c1780673710970q2a9u": {
     "contactName": "Trinie Thai-Parker",
-    "contactTitle": "Owner & Managing Partner"
+    "contactTitle": "Owner & Managing Partner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "importatore",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Azienda senza sito web, nessuna traccia online, fatturato modesto (~1.1M$). Impossibile verificare portafoglio prodotti e specializzazione geografica. Contatto ad alto rischio.",
+      "analyzed_at": "2026-11-09T06:16:25.616Z"
+    }
   },
   "c1780673710970c36d0": {
     "contactName": "Teresa Navarro",
-    "contactTitle": "Imports And Logistics Coordinator"
+    "contactTitle": "Imports And Logistics Coordinator",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Importatore USA solido con 15 dipendenti e ~$1.3M fatturato, specializzato in distribuzione nazionale. Portafoglio generico (non esplicita vini italiani), ma gestisce 666+ shipment e ~1M casi/anno. Contattare per verificare interesse specifico per vini italiani.",
+      "analyzed_at": "2026-11-09T06:16:32.318Z"
+    }
   },
   "c1780673710970awoky": {
     "contactName": "Chloë Syrah Schwartz",
