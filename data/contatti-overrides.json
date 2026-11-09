@@ -564608,43 +564608,133 @@
   },
   "c17806737109705hkqm": {
     "contactName": "Gretchen Dec",
-    "contactTitle": "Chief Operating Officer"
+    "contactTitle": "Chief Operating Officer",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "forse",
+      "note": "Azienda consolidata (est. 2002) con 22 dipendenti, ma fatturato modesto (~500k). Focus su fine wine (Bordeaux, Burgundy, Champagne) non esplicita vini italiani. Sito non raggiungibile al momento dell'analisi.",
+      "analyzed_at": "2026-11-09T06:02:25.121Z"
+    }
   },
   "c1780673710970ptf3g": {
     "contactName": "Marion Dauner",
-    "contactTitle": "General Sales Manager"
+    "contactTitle": "General Sales Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore|distributore",
+      "mercato_target": "horeca|retail",
+      "raccomandato": "forse",
+      "note": "Distributore wholesale consolidato (22 dipendenti, ~4.7M fatturato) con focus su craft/specialty brands internazionali. Nessuna menzione esplicita di vini italiani, ma portafoglio globale suggerisce possibile interesse. Contattare per verificare se rappresentano etichette italiane.",
+      "analyzed_at": "2026-11-09T06:02:31.464Z"
+    }
   },
   "c1780673710970d634v": {
     "contactName": "Aaron Konen",
-    "contactTitle": "Co-founder/ Co-owner"
+    "contactTitle": "Co-founder/ Co-owner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer USA con 4 negozi fisici e ~10.000 SKU, ma fatturato basso (508k) suggerisce dati incompleti. Nessuna menzione esplicita di vini italiani nel sito; portafoglio generico wine/beer/spirits. Contatto possibile solo se target è distribuzione wholesale a retailer USA.",
+      "analyzed_at": "2026-11-09T06:02:38.026Z"
+    }
   },
   "c1780673710970j5n28": {
     "contactName": "Nita Miller",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "horeca",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Azienda solida (22 dipendenti, fatturato ~2M$) con sito professionale e storia consolidata dal 2008. È un wine bar/restaurant con enoteca, non un importatore/distributore. Portafoglio vini non specificato online, ma lista di 2.500+ bottiglie suggerisce apertura a vini europei/italiani.",
+      "analyzed_at": "2026-11-09T06:02:46.873Z"
+    }
   },
   "c17806737109702a2t7": {
     "contactName": "John Phelan",
-    "contactTitle": "Vice President Of Sales"
+    "contactTitle": "Vice President Of Sales",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore|distributore",
+      "mercato_target": "horeca|retail",
+      "raccomandato": "forse",
+      "note": "Importatore/distributore USA consolidato (21 dipendenti, ~2.4M$ fatturato) con traccia di importazioni da Europa (Francia). Sito non raggiungibile limita verifica. Nessuna conferma esplicita di vini italiani nel portafoglio.",
+      "analyzed_at": "2026-11-09T06:02:52.236Z"
+    }
   },
   "c17806737109700lfb8": {
     "contactName": "Bill Turrentine",
-    "contactTitle": "Chairman"
+    "contactTitle": "Chairman",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Amervin/Turrentine Brokerage è broker consolidato (50 anni) specializzato in bulk wine e wine grapes, non in vini finiti. Fatturato modesto (~1.8M$) e focus su B2B wholesale/brokerage, non su distribuzione retail di vini italiani confezionati.",
+      "analyzed_at": "2026-11-09T06:02:58.711Z"
+    }
   },
   "c1780673710970pw9j6": {
     "contactName": "Justin Hammer",
-    "contactTitle": "Coo & Owner"
+    "contactTitle": "Coo & Owner",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Azienda solida (75+ anni, family-owned, ~2.3M fatturato, 21 dipendenti) con sito professionale e ampia selezione vini/spirits. Catalogo internazionale ma nessuna evidenza esplicita di focus su vini italiani; mercato prevalentemente retail online USA, non horeca.",
+      "analyzed_at": "2026-11-09T06:03:06.416Z"
+    }
   },
   "c1780673710970w14y2": {
     "contactName": "Rich Hickey",
-    "contactTitle": "Vice President/ General Manager"
+    "contactTitle": "Vice President/ General Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Distributore wholesale consolidato (21 dipendenti, ~4.4M$ fatturato) con sito professionale e portafoglio vini. Serve McHenry County e Illinois. Manca info esplicita su vini italiani nel portfolio; contattare per verificare disponibilità e interesse.",
+      "analyzed_at": "2026-11-09T06:03:12.765Z"
+    }
   },
   "c1780673710970ug61z": {
     "contactName": "Geoff Hansen",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda USA di piccole dimensioni (21 dipendenti, ~$2.2M fatturato). Sito irraggiungibile e nessuna traccia online. Impossibile verificare se commercializza vini italiani o se rappresenta un partner affidabile.",
+      "analyzed_at": "2026-11-09T06:03:17.556Z"
+    }
   },
   "c178067371097098dhv": {
     "contactName": "Doug Hinson",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer locale USA (Rock Hill, SC) con selezione vini che include Italia, ma focus prevalente su mercato retail/consumer. Fatturato molto modesto (229k) e 21 dipendenti indicano piccola realtà locale. Non è importatore/distributore B2B.",
+      "analyzed_at": "2026-11-09T06:03:25.729Z"
+    }
   },
   "c1780673710970nzjoe": {
     "contactName": "Steve Lorenz",
