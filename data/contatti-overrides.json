@@ -566181,23 +566181,68 @@
   },
   "c1780673710970va3l2": {
     "contactName": "Debra D.",
-    "contactTitle": "Fine Wine Buyer"
+    "contactTitle": "Fine Wine Buyer",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "forse",
+      "note": "Piccolo retailer online con fatturato modesto (~650k$). Siti dichiarati non raggiungibili e assenza di risultati Google suggeriscono bassa visibilità. Potenziale cliente per vini italiani, ma verificare affidabilità prima di contattare.",
+      "analyzed_at": "2026-11-09T06:18:23.269Z"
+    }
   },
   "c17806737109719n9p8": {
     "contactName": "Jason Rairigh",
-    "contactTitle": "Sales Manager/ Brand Manager"
+    "contactTitle": "Sales Manager/ Brand Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore|distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda storica (1972) con portafoglio internazionale che include Italia. Dimensione piccola (14 dipendenti, ~5M fatturato) suggerisce focus su nicchia premium. Sito datato ma presenza consolidata; verificare se interessati a partnership con produttori italiani specifici.",
+      "analyzed_at": "2026-11-09T06:18:29.297Z"
+    }
   },
   "c1780673710971arank": {
     "contactName": "Keith Nelson",
-    "contactTitle": "Director of Sales"
+    "contactTitle": "Director of Sales",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Importatore USA consolidato (14 dipendenti, ~4M fatturato) con distribuzione multi-stato e certificazione biologica. Portfolio selettivo di vini fini, ma nessuna menzione esplicita di vini italiani nel sito; Menabrea suggerisce interesse per brand europei. Contattare per verificare se rappresentano etichette italiane.",
+      "analyzed_at": "2026-11-09T06:18:36.402Z"
+    }
   },
   "c1780673710971f9ixz": {
     "contactName": "Carlos Carreras",
-    "contactTitle": "Ceo"
+    "contactTitle": "Ceo",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore USA con portafoglio che include Luna Nuda (vini italiani da Castelfeder e Montelliana). Fatturato modesto (~1.1M$) e team piccolo (14 dipendenti) suggeriscono operazione di nicchia. Sito funzionante ma info limitate su canali distribuzione e clientela.",
+      "analyzed_at": "2026-11-09T06:18:41.750Z"
+    }
   },
   "c1780673710971j4jz6": {
     "contactName": "Madison Wentz",
-    "contactTitle": "Store Manager"
+    "contactTitle": "Store Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo retailer USA (14 dipendenti, fatturato ~197k) senza sito funzionante. Nessuna evidenza di interesse per vini italiani; focus su discount liquor locale. Non pertinente per distribuzione vini premium italiani.",
+      "analyzed_at": "2026-11-09T06:18:46.654Z"
+    }
   },
   "c1780673710971w4aja": {
     "contactName": "Buddy Weitzman",
@@ -614539,6 +614584,61 @@
       "raccomandato": "no",
       "note": "Azienda piccola (17 dipendenti, fatturato ~582k$) con siti non raggiungibili e nessuna traccia online. Impossibile verificare se commercializza vini italiani. Affidabilità insufficiente per partnership.",
       "analyzed_at": "2026-11-09T06:12:51.402Z"
+    }
+  },
+  "c17806737109707d9sn": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore wholesale NJ consolidato (dal 2010) con portafoglio diversificato che include Italia tra i paesi rappresentati. Serve horeca e retail locali; fatturato modesto (2.5M$) suggerisce focus regionale limitato.",
+      "analyzed_at": "2026-11-09T06:17:54.128Z"
+    }
+  },
+  "c1780673710970eaxdb": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer specializzato con selezione curata di vini (natural wines, tasting events regolari). Dimensione piccola (15 dipendenti, ~2.2M fatturato) ma orientato a qualità premium. Contatto possibile per distribuzioni locali/regionali di vini italiani selezionati.",
+      "analyzed_at": "2026-11-09T06:18:00.265Z"
+    }
+  },
+  "c1780673710970xjrno": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore USA con licenza ufficiale (ABC California) e presenze online multiple. Fatturato modesto (449k$) e pochi dipendenti suggeriscono piccola operazione. Nessuna conferma esplicita di vini italiani nel portafoglio; verificare catalogo prima di contattare.",
+      "analyzed_at": "2026-11-09T06:18:05.435Z"
+    }
+  },
+  "c1780673710970qn4vr": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "si",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Azienda USA consolidata (15 dipendenti, ~4.5M fatturato) con sito professionale e registrazione FDA come importatore. Catalogo include esplicitamente 'Italian Wines' ma focus principale è gift basket B2C online, non distribuzione wholesale.",
+      "analyzed_at": "2026-11-09T06:18:11.842Z"
+    }
+  },
+  "c1780673710970lotpp": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Sito non raggiungibile; nessuna evidenza di focus su vini italiani. Piccolo retailer USA (15 dipendenti, ~844k fatturato) con portafoglio generico (vino, spirits, cider). Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-11-09T06:18:17.247Z"
     }
   }
 }
