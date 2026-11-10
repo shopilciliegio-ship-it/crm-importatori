@@ -1,5 +1,5 @@
 {
-  "lastUid": 530,
+  "lastUid": 531,
   "pending": [
     {
       "id": "ir_422",
@@ -2012,6 +2012,25 @@
       "rispostaDiretta": false,
       "suggestedStatus": null,
       "reason": "Email riguarda un ritiro logistico/operativo interno, completamente scollegata dalla proposta commerciale di distribuzione vini.",
+      "confidence": "ai",
+      "dataRientro": null,
+      "emailAlternativa": null
+    },
+    {
+      "id": "ir_531",
+      "uid": 531,
+      "contactId": null,
+      "nonCollegato": true,
+      "company": "Angela Nigrelli",
+      "from": "anigrelli@augustimports.com",
+      "mittenteNome": "Angela Nigrelli",
+      "subject": "August Imports Producer Order - 3756",
+      "date": "2026-11-09T21:03:36+00:00",
+      "snippet": "Attached is a new order on container 3756",
+      "riassunto": "Un'azienda (August Imports) comunica l'arrivo di un nuovo ordine su container 3756 e allega la documentazione.",
+      "rispostaDiretta": false,
+      "suggestedStatus": null,
+      "reason": "Email di notifica logistica/ordine interno non collegata alla proposta commerciale di distribuzione vini Il Ciliegio.",
       "confidence": "ai",
       "dataRientro": null,
       "emailAlternativa": null
