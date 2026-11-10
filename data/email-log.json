@@ -1142,6 +1142,15 @@
       "subject": "Your order is going through customs",
       "sentAt": 1794330109015,
       "messageId": "<202611101701.81586998569@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mv15l05wb6ou",
+      "customerName": "SEAN GOODALE",
+      "type": "in_consegna",
+      "to": "sean.goodale@gmail.com",
+      "subject": "Your wine is out for delivery! 🍷",
+      "sentAt": 1794351701752,
+      "messageId": "<202611102301.80778896811@smtp-relay.mailin.fr>"
     }
   ]
 }
