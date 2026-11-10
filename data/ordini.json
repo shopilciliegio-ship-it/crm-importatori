@@ -13,18 +13,18 @@
       "shippingAddress": "",
       "numberOfCartons": null,
       "gmailMessageId": "",
-      "trackingNumber": "",
+      "trackingNumber": "1ZRY6787A817146063",
       "trackingUrl": "",
       "carrier": "MBE",
       "language": "en",
       "shippingType": "standard",
-      "shippingDate": null,
+      "shippingDate": 1794330097639,
       "destCountry": "US",
       "products": [],
       "customsDuties": null,
       "shippingCostMos": null,
       "shippingCostCustomer": null,
-      "status": "spedito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "ricevuto",
@@ -35,12 +35,17 @@
           "status": "spedito",
           "date": 1794315380014,
           "note": ""
+        },
+        {
+          "status": "dogana",
+          "date": 1794330097639,
+          "note": "Auto Fieramente (era: spedito)"
         }
       ],
       "emailsSent": [],
       "notes": "",
       "createdAt": 1794315299178,
-      "updatedAt": 1794315380014,
+      "updatedAt": 1794330097639,
       "courierDate": 1794315380014
     },
     {
@@ -100,7 +105,7 @@
       "numberOfCartons": 2,
       "shippingType": "standard",
       "gmailMessageId": "<CAOmk=KY2Krjz5Xd-MXZYhV=OmGZWpCj3MTtd8XPbQ9X_8xjsoA@mail.gmail.com>",
-      "trackingNumber": "",
+      "trackingNumber": "1Z9376E1A820345324",
       "carrier": "U.S.A. Wine Corriere Std",
       "products": [
         {
@@ -146,8 +151,8 @@
       "language": "en",
       "orderNumber": "#1482",
       "paymentType": "Carte Di Credito/Bancomat",
-      "shippingDate": null,
-      "status": "spedito",
+      "shippingDate": 1794330097639,
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -158,6 +163,11 @@
           "status": "spedito",
           "date": 1793897186022,
           "note": ""
+        },
+        {
+          "status": "in_transito",
+          "date": 1794330097639,
+          "note": "Auto Fieramente (era: spedito)"
         }
       ],
       "emailsSent": [
@@ -173,7 +183,7 @@
       ],
       "notes": "",
       "createdAt": 1793574051504,
-      "updatedAt": 1793897186022,
+      "updatedAt": 1794330097639,
       "trackingUrl": "",
       "destCountry": "US",
       "courierDate": 1793897186022
@@ -229,7 +239,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1793617257813,
-      "status": "in_transito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -245,6 +255,11 @@
           "status": "in_transito",
           "date": 1793617257813,
           "note": "Auto Fieramente (era: spedito)"
+        },
+        {
+          "status": "dogana",
+          "date": 1794330097639,
+          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -269,7 +284,7 @@
       ],
       "notes": "",
       "createdAt": 1792684860060,
-      "updatedAt": 1793617267843,
+      "updatedAt": 1794330097639,
       "trackingUrl": "",
       "destCountry": "US",
       "courierDate": 1793204473379,
@@ -321,7 +336,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1793617257813,
-      "status": "in_transito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -337,6 +352,11 @@
           "status": "in_transito",
           "date": 1793617257813,
           "note": "Auto Fieramente (era: spedito)"
+        },
+        {
+          "status": "dogana",
+          "date": 1794330097639,
+          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -361,7 +381,7 @@
       ],
       "notes": "",
       "createdAt": 1792684860060,
-      "updatedAt": 1793617267843,
+      "updatedAt": 1794330097639,
       "trackingUrl": "",
       "destCountry": "US",
       "courierDate": 1793204458006,
@@ -403,7 +423,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1793617257813,
-      "status": "in_transito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -419,6 +439,11 @@
           "status": "in_transito",
           "date": 1793617257813,
           "note": "Auto Fieramente (era: spedito)"
+        },
+        {
+          "status": "dogana",
+          "date": 1794330097639,
+          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -443,7 +468,7 @@
       ],
       "notes": "",
       "createdAt": 1792684860060,
-      "updatedAt": 1793617267843,
+      "updatedAt": 1794330097639,
       "trackingUrl": "",
       "destCountry": "US",
       "courierDate": 1793204449045,
@@ -500,7 +525,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1793617257813,
-      "status": "in_transito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -516,6 +541,11 @@
           "status": "in_transito",
           "date": 1793617257813,
           "note": "Auto Fieramente (era: spedito)"
+        },
+        {
+          "status": "dogana",
+          "date": 1794330097639,
+          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -540,7 +570,7 @@
       ],
       "notes": "",
       "createdAt": 1792533646072,
-      "updatedAt": 1793617267843,
+      "updatedAt": 1794330097639,
       "staleAlertDays": 7,
       "staleAlertSince": 1792533646072,
       "trackingUrl": "",
@@ -579,7 +609,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1793617257813,
-      "status": "in_transito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -595,6 +625,11 @@
           "status": "in_transito",
           "date": 1793617257813,
           "note": "Auto Fieramente (era: spedito)"
+        },
+        {
+          "status": "dogana",
+          "date": 1794330097639,
+          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -619,7 +654,7 @@
       ],
       "notes": "",
       "createdAt": 1792533646072,
-      "updatedAt": 1793617267843,
+      "updatedAt": 1794330097639,
       "staleAlertDays": 7,
       "staleAlertSince": 1792533646072,
       "trackingUrl": "",
@@ -949,7 +984,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1793617257813,
-      "status": "in_transito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -965,6 +1000,11 @@
           "status": "in_transito",
           "date": 1793617257813,
           "note": "Auto Fieramente (era: spedito)"
+        },
+        {
+          "status": "dogana",
+          "date": 1794330097639,
+          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -989,7 +1029,7 @@
       ],
       "notes": "",
       "createdAt": 1792166470460,
-      "updatedAt": 1793617267843,
+      "updatedAt": 1794330097639,
       "staleAlertDays": 7,
       "staleAlertSince": 1792166470460,
       "trackingUrl": "",
@@ -1033,7 +1073,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1793617257813,
-      "status": "in_transito",
+      "status": "dogana",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1049,6 +1089,11 @@
           "status": "in_transito",
           "date": 1793617257813,
           "note": "Auto Fieramente (era: spedito)"
+        },
+        {
+          "status": "dogana",
+          "date": 1794330097639,
+          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -1073,7 +1118,7 @@
       ],
       "notes": "",
       "createdAt": 1792166470460,
-      "updatedAt": 1793617267843,
+      "updatedAt": 1794330097639,
       "staleAlertDays": 7,
       "staleAlertSince": 1792166470460,
       "trackingUrl": "",
