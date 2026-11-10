@@ -24,18 +24,24 @@
       "customsDuties": null,
       "shippingCostMos": null,
       "shippingCostCustomer": null,
-      "status": "ricevuto",
+      "status": "spedito",
       "statusHistory": [
         {
           "status": "ricevuto",
           "date": 1794315135814,
           "note": "Importato da email"
+        },
+        {
+          "status": "spedito",
+          "date": 1794315154173,
+          "note": ""
         }
       ],
       "emailsSent": [],
       "notes": "",
       "createdAt": 1794315135814,
-      "updatedAt": 1794315135814
+      "updatedAt": 1794315154173,
+      "courierDate": 1794315154173
     },
     {
       "id": "ord_mvyfojao4q4d",
