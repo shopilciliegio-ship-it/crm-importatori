@@ -1052,6 +1052,96 @@
       "subject": "Your order is going through customs",
       "sentAt": 1794286863177,
       "messageId": "<202611100501.29846402623@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mwap01nuae44",
+      "customerName": "LIN CONG",
+      "type": "day0",
+      "to": "lisalinmiraggio76@gmail.com",
+      "subject": "Your wine is on its way! 🍷",
+      "sentAt": 1794330109015,
+      "messageId": "<202611101701.89759899870@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mwap01nuae44",
+      "customerName": "LIN CONG",
+      "type": "dogana",
+      "to": "lisalinmiraggio76@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1794330109015,
+      "messageId": "<202611101701.65430886749@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mvyfojao4q4d",
+      "customerName": "Christen Nickel",
+      "type": "day0",
+      "to": "christen.nickel@gmail.com",
+      "subject": "Your wine is on its way! 🍷",
+      "sentAt": 1794330109015,
+      "messageId": "<202611101701.44177182159@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mvjqa2sdzkpz",
+      "customerName": "ROGER DIROCCO",
+      "type": "dogana",
+      "to": "shirleydirocco1@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1794330109015,
+      "messageId": "<202611101701.76952093736@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mvjqa2sd8r0n",
+      "customerName": "LAWRENCE RINALDI",
+      "type": "dogana",
+      "to": "mpr3353@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1794330109015,
+      "messageId": "<202611101701.59097993427@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mvjqa2sdy8by",
+      "customerName": "DENISE SACHS",
+      "type": "dogana",
+      "to": "denisechap16@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1794330109015,
+      "messageId": "<202611101701.81884581676@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mvh891btqvn6",
+      "customerName": "ERIN LEVITSKY",
+      "type": "dogana",
+      "to": "elevitsky520@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1794330109015,
+      "messageId": "<202611101701.28527106816@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mvh891bte9mn",
+      "customerName": "VALERIE FOX",
+      "type": "dogana",
+      "to": "vfox026@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1794330109015,
+      "messageId": "<202611101701.17444083674@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mvb5n6t8dhmr",
+      "customerName": "BRIAN PETERSON",
+      "type": "dogana",
+      "to": "brian.peterson.bkp@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1794330109015,
+      "messageId": "<202611101701.23509683293@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mvb5n6t8w70m",
+      "customerName": "DON COWIN",
+      "type": "dogana",
+      "to": "donnie_cowin@hotmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1794330109015,
+      "messageId": "<202611101701.81586998569@smtp-relay.mailin.fr>"
     }
   ]
 }
