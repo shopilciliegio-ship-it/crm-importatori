@@ -3,13 +3,13 @@
     {
       "id": "ord_mwap01nuae44",
       "customerName": "LIN CONG",
-      "customerEmail": "",
-      "customerPhone": "",
+      "customerEmail": "lisalinmiraggio76@gmail.com",
+      "customerPhone": "+16315619668",
       "amount": 0,
       "currency": "EUR",
       "orderDate": 1794315299177,
       "emailSubject": "🍷 New Order — LIN CONG — 0 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "LINC2",
       "shippingAddress": "",
       "numberOfCartons": null,
       "gmailMessageId": "",
@@ -17,9 +17,9 @@
       "trackingUrl": "",
       "carrier": "MBE",
       "language": "en",
-      "shippingType": null,
+      "shippingType": "standard",
       "shippingDate": null,
-      "destCountry": null,
+      "destCountry": "US",
       "products": [],
       "customsDuties": null,
       "shippingCostMos": null,
@@ -35,7 +35,7 @@
       "emailsSent": [],
       "notes": "",
       "createdAt": 1794315299178,
-      "updatedAt": 1794315299178
+      "updatedAt": 1794315370647
     },
     {
       "id": "ord_mwaowjly9jup",
