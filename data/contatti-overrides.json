@@ -567384,43 +567384,133 @@
   },
   "c1780673710971n4302": {
     "contactName": "Brian Natzel",
-    "contactTitle": "Sales and Marketing Manager"
+    "contactTitle": "Sales and Marketing Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Distributore wholesale consolidato (dal 1960) nel Michigan con portafoglio vini ampio ma generico (Gallo, Constellation, Trinchero). Nessuna menzione esplicita di vini italiani; focus su brand USA/internazionali mainstream. Dimensione piccola (11 dipendenti) ma solida per mercato locale.",
+      "analyzed_at": "2026-11-10T06:12:36.204Z"
+    }
   },
   "c1780673710971b8yko": {
     "contactName": "Erin Ledezma",
-    "contactTitle": "Sales Manager"
+    "contactTitle": "Sales Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Distributore regionale (Oklahoma) con portafoglio ampio (vino, spirits, birra). Sito funzionante ma non evidenzia specificamente vini italiani. Fatturato modesto (475k$) e team piccolo (11 dipendenti) suggeriscono focus locale/regionale.",
+      "analyzed_at": "2026-11-10T06:12:42.240Z"
+    }
   },
   "c1780673710971pvj41": {
     "contactName": "Ronnie Sanders",
-    "contactTitle": "President"
+    "contactTitle": "President",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore consolidato (attivo, Pennsylvania incorporated) con portafoglio internazionale che include Italia. Dimensione piccola (11 dipendenti, ~1.7M fatturato) ma sito professionale e distribuzione nazionale. Verificare se specializzato in vini italiani o solo portfolio generico.",
+      "analyzed_at": "2026-11-10T06:12:47.955Z"
+    }
   },
   "c1780673710971neubj": {
     "contactName": "Dhaval Thakkar",
-    "contactTitle": "President"
+    "contactTitle": "President",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo retailer USA (11 dipendenti, fatturato ~467k) con sito irraggiungibile. Nessuna evidenza di specializzazione in vini italiani; portafoglio generico (wine/beer/spirits). Non idoneo per distribuzione vini premium italiani.",
+      "analyzed_at": "2026-11-10T06:12:53.707Z"
+    }
   },
   "c1780673710971o9dlj": {
     "contactName": "Justin Shadowens",
-    "contactTitle": "General Manager"
+    "contactTitle": "General Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo retailer locale (11 dipendenti, ~503k fatturato) focalizzato su vendita al dettaglio e online nel Tennessee. Nessuna evidenza di importazione vini italiani; portafoglio generico beer/wine/spirits. Non è un buyer strategico per fornitori di vini premium italiani.",
+      "analyzed_at": "2026-11-10T06:12:59.814Z"
+    }
   },
   "c1780673710971tacbb": {
     "contactName": "Tim Mulcahy",
-    "contactTitle": "Managing Owner"
+    "contactTitle": "Managing Owner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer USA con focus su specialty foods e prodotti locali Wisconsin. Vini presenti ma non specificati; nessuna evidenza di importazione diretta di vini italiani. Fatturato modesto (708k$) e dimensione piccola (11 dipendenti) non giustificano contatto B2B.",
+      "analyzed_at": "2026-11-10T06:13:05.941Z"
+    }
   },
   "c1780673710971myng7": {
     "contactName": "Carmen Wyatt",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer USA locale (Crossville, TN) con fatturato molto modesto (~61k$). Catalogo generico multi-categoria (vino, birra, spirits). Cita Italia tra i paesi, ma focus prevalente su mercato retail locale, non su importazione/distribuzione di vini italiani.",
+      "analyzed_at": "2026-11-10T06:13:11.847Z"
+    }
   },
   "c1780673710971p3qb8": {
     "contactName": "Tom Jacob",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer USA con fatturato molto basso (445k$) e 11 dipendenti. Segnali di instabilità: riferimenti a procedure fallimentari e donazioni politiche datate. Portafoglio generico (Francia, Italia, Spagna) ma non specializzato in vini italiani. Non è canale di distribuzione rilevante per esportatori.",
+      "analyzed_at": "2026-11-10T06:13:17.972Z"
+    }
   },
   "c178067371097135ro4": {
     "contactName": "Jamie Wolff",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "si",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "forse",
+      "note": "Retailer online specializzato in vini naturali e artigianali con forte focus su Italia (Piedmont, Campania, Loire). Piccolo ma consolidato (incorporato 2000). Tuttavia: mercato retail online USA, non distributore B2B per horeca/retail italiano.",
+      "analyzed_at": "2026-11-10T06:13:25.025Z"
+    }
   },
   "c1780673710971amiuk": {
     "contactName": "Katrina Carter",
-    "contactTitle": "General Manager"
+    "contactTitle": "General Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda familiare con permesso TTB federale e focus esplicito su vini italiani artigianali. Fatturato modesto (911k$) e sito non raggiungibile limitano valutazione; verificare contatti diretti per confermare attività e portafoglio attuale.",
+      "analyzed_at": "2026-11-10T06:13:30.791Z"
+    }
   },
   "c1780673710971d2nma": {
     "contactName": "Shenan Davidson",
