@@ -16,10 +16,10 @@
       "trackingNumber": "",
       "trackingUrl": "",
       "carrier": "MBE",
-      "language": "en",
-      "shippingType": null,
+      "language": "it",
+      "shippingType": "standard",
       "shippingDate": null,
-      "destCountry": null,
+      "destCountry": "IT",
       "products": [],
       "customsDuties": null,
       "shippingCostMos": null,
@@ -40,7 +40,7 @@
       "emailsSent": [],
       "notes": "",
       "createdAt": 1794315135814,
-      "updatedAt": 1794315154173,
+      "updatedAt": 1794315196986,
       "courierDate": 1794315154173
     },
     {
