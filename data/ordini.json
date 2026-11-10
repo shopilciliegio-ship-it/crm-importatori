@@ -3,13 +3,13 @@
     {
       "id": "ord_mwaowjly9jup",
       "customerName": "GIUSEPPE MARUCA",
-      "customerEmail": "",
-      "customerPhone": "",
+      "customerEmail": "giuseppemaruca.33@gmail.com",
+      "customerPhone": "+393371000965",
       "amount": 176.5,
       "currency": "EUR",
       "orderDate": 1794315135813,
       "emailSubject": "🍷 New Order — GIUSEPPE MARUCA — 176.50 EUR",
-      "shipmentCode": "",
+      "shipmentCode": "MARUCAG",
       "shippingAddress": "",
       "numberOfCartons": null,
       "gmailMessageId": "",
@@ -23,7 +23,7 @@
       "products": [],
       "customsDuties": null,
       "shippingCostMos": null,
-      "shippingCostCustomer": null,
+      "shippingCostCustomer": 48,
       "status": "spedito",
       "statusHistory": [
         {
@@ -40,7 +40,7 @@
       "emailsSent": [],
       "notes": "",
       "createdAt": 1794315135814,
-      "updatedAt": 1794315196986,
+      "updatedAt": 1794315253963,
       "courierDate": 1794315154173
     },
     {
