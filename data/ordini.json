@@ -1836,7 +1836,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1792425651818,
-      "status": "dogana",
+      "status": "in_consegna",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1852,6 +1852,11 @@
           "status": "dogana",
           "date": 1793077292114,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "in_consegna",
+          "date": 1794351697986,
+          "note": "Auto 17Track (era: dogana): Englewood, CO, United States — Out for Delivery, Out For Delivery Today"
         }
       ],
       "emailsSent": [
@@ -1885,7 +1890,7 @@
       ],
       "notes": "",
       "createdAt": 1791561706772,
-      "updatedAt": 1794330109015,
+      "updatedAt": 1794351697986,
       "staleAlertDays": 14,
       "staleAlertSince": 1793077292114,
       "track17Registered": true
