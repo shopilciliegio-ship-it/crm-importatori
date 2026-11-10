@@ -42,10 +42,25 @@
           "note": "Auto Fieramente (era: spedito)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "day0",
+          "to": "lisalinmiraggio76@gmail.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1794330109015,
+          "messageId": "<202611101701.89759899870@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "dogana",
+          "to": "lisalinmiraggio76@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1794330109015,
+          "messageId": "<202611101701.65430886749@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1794315299178,
-      "updatedAt": 1794330097639,
+      "updatedAt": 1794330109015,
       "courierDate": 1794315380014
     },
     {
@@ -179,11 +194,18 @@
           "messageId": "<202611012301.61525875611@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-11-02T00:01:15.000+01:00"
+        },
+        {
+          "type": "day0",
+          "to": "christen.nickel@gmail.com",
+          "subject": "Your wine is on its way! 🍷",
+          "sentAt": 1794330109015,
+          "messageId": "<202611101701.44177182159@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1793574051504,
-      "updatedAt": 1794330104122,
+      "updatedAt": 1794330109015,
       "trackingUrl": "",
       "destCountry": "US",
       "courierDate": 1793897186022,
@@ -281,11 +303,18 @@
           "messageId": "<202611021101.33149714765@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-11-02T12:01:48.000+01:00"
+        },
+        {
+          "type": "dogana",
+          "to": "shirleydirocco1@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1794330109015,
+          "messageId": "<202611101701.76952093736@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1792684860060,
-      "updatedAt": 1794330097639,
+      "updatedAt": 1794330109015,
       "trackingUrl": "",
       "destCountry": "US",
       "courierDate": 1793204473379,
@@ -378,11 +407,18 @@
           "messageId": "<202611021101.94590930087@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-11-02T12:01:48.000+01:00"
+        },
+        {
+          "type": "dogana",
+          "to": "mpr3353@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1794330109015,
+          "messageId": "<202611101701.59097993427@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1792684860060,
-      "updatedAt": 1794330097639,
+      "updatedAt": 1794330109015,
       "trackingUrl": "",
       "destCountry": "US",
       "courierDate": 1793204458006,
@@ -465,11 +501,18 @@
           "messageId": "<202611021101.65047757050@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-11-02T12:01:49.000+01:00"
+        },
+        {
+          "type": "dogana",
+          "to": "denisechap16@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1794330109015,
+          "messageId": "<202611101701.81884581676@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1792684860060,
-      "updatedAt": 1794330097639,
+      "updatedAt": 1794330109015,
       "trackingUrl": "",
       "destCountry": "US",
       "courierDate": 1793204449045,
@@ -567,11 +610,18 @@
           "messageId": "<202611021101.72497351846@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-11-02T12:01:48.000+01:00"
+        },
+        {
+          "type": "dogana",
+          "to": "elevitsky520@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1794330109015,
+          "messageId": "<202611101701.28527106816@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1792533646072,
-      "updatedAt": 1794330097639,
+      "updatedAt": 1794330109015,
       "staleAlertDays": 7,
       "staleAlertSince": 1792533646072,
       "trackingUrl": "",
@@ -651,11 +701,18 @@
           "messageId": "<202611021101.70235720905@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-11-02T12:01:48.000+01:00"
+        },
+        {
+          "type": "dogana",
+          "to": "vfox026@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1794330109015,
+          "messageId": "<202611101701.17444083674@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1792533646072,
-      "updatedAt": 1794330097639,
+      "updatedAt": 1794330109015,
       "staleAlertDays": 7,
       "staleAlertSince": 1792533646072,
       "trackingUrl": "",
@@ -1026,11 +1083,18 @@
           "messageId": "<202611021101.37846418183@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-11-02T12:01:48.000+01:00"
+        },
+        {
+          "type": "dogana",
+          "to": "brian.peterson.bkp@gmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1794330109015,
+          "messageId": "<202611101701.23509683293@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1792166470460,
-      "updatedAt": 1794330097639,
+      "updatedAt": 1794330109015,
       "staleAlertDays": 7,
       "staleAlertSince": 1792166470460,
       "trackingUrl": "",
@@ -1115,11 +1179,18 @@
           "messageId": "<202611021101.29714261743@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-11-02T12:37:26.000+01:00"
+        },
+        {
+          "type": "dogana",
+          "to": "donnie_cowin@hotmail.com",
+          "subject": "Your order is going through customs",
+          "sentAt": 1794330109015,
+          "messageId": "<202611101701.81586998569@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1792166470460,
-      "updatedAt": 1794330097639,
+      "updatedAt": 1794330109015,
       "staleAlertDays": 7,
       "staleAlertSince": 1792166470460,
       "trackingUrl": "",
@@ -1814,8 +1885,8 @@
       ],
       "notes": "",
       "createdAt": 1791561706772,
-      "updatedAt": 1793898053904,
-      "staleAlertDays": 7,
+      "updatedAt": 1794330109015,
+      "staleAlertDays": 14,
       "staleAlertSince": 1793077292114,
       "track17Registered": true
     },
@@ -1904,8 +1975,8 @@
       ],
       "notes": "",
       "createdAt": 1791561706772,
-      "updatedAt": 1793898053904,
-      "staleAlertDays": 7,
+      "updatedAt": 1794330109015,
+      "staleAlertDays": 14,
       "staleAlertSince": 1793077292114,
       "track17Registered": true
     },
