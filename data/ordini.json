@@ -1,6 +1,43 @@
 {
   "orders": [
     {
+      "id": "ord_mwaowjly9jup",
+      "customerName": "GIUSEPPE MARUCA",
+      "customerEmail": "",
+      "customerPhone": "",
+      "amount": 176.5,
+      "currency": "EUR",
+      "orderDate": 1794315135813,
+      "emailSubject": "🍷 New Order — GIUSEPPE MARUCA — 176.50 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "",
+      "numberOfCartons": null,
+      "gmailMessageId": "",
+      "trackingNumber": "",
+      "trackingUrl": "",
+      "carrier": "MBE",
+      "language": "en",
+      "shippingType": null,
+      "shippingDate": null,
+      "destCountry": null,
+      "products": [],
+      "customsDuties": null,
+      "shippingCostMos": null,
+      "shippingCostCustomer": null,
+      "status": "ricevuto",
+      "statusHistory": [
+        {
+          "status": "ricevuto",
+          "date": 1794315135814,
+          "note": "Importato da email"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1794315135814,
+      "updatedAt": 1794315135814
+    },
+    {
       "id": "ord_mvyfojao4q4d",
       "customerName": "Christen Nickel",
       "customerEmail": "christen.nickel@gmail.com",
@@ -143,7 +180,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1793617257813,
-      "status": "dogana",
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -159,11 +196,6 @@
           "status": "in_transito",
           "date": 1793617257813,
           "note": "Auto Fieramente (era: spedito)"
-        },
-        {
-          "status": "dogana",
-          "date": 1794286856202,
-          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -184,24 +216,15 @@
           "messageId": "<202611021101.33149714765@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-11-02T12:01:48.000+01:00"
-        },
-        {
-          "type": "dogana",
-          "to": "shirleydirocco1@gmail.com",
-          "subject": "Your order is going through customs",
-          "sentAt": 1794286863177,
-          "messageId": "<202611100501.63170753971@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1792684860060,
-      "updatedAt": 1794286863177,
+      "updatedAt": 1793617267843,
       "trackingUrl": "",
       "destCountry": "US",
       "courierDate": 1793204473379,
-      "track17Registered": true,
-      "staleAlertDays": 7,
-      "staleAlertSince": 1793617257813
+      "track17Registered": true
     },
     {
       "id": "ord_mvjqa2sd8r0n",
@@ -249,7 +272,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1793617257813,
-      "status": "dogana",
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -265,11 +288,6 @@
           "status": "in_transito",
           "date": 1793617257813,
           "note": "Auto Fieramente (era: spedito)"
-        },
-        {
-          "status": "dogana",
-          "date": 1794286856202,
-          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -290,24 +308,15 @@
           "messageId": "<202611021101.94590930087@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-11-02T12:01:48.000+01:00"
-        },
-        {
-          "type": "dogana",
-          "to": "mpr3353@gmail.com",
-          "subject": "Your order is going through customs",
-          "sentAt": 1794286863177,
-          "messageId": "<202611100501.67289948907@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1792684860060,
-      "updatedAt": 1794286863177,
+      "updatedAt": 1793617267843,
       "trackingUrl": "",
       "destCountry": "US",
       "courierDate": 1793204458006,
-      "track17Registered": true,
-      "staleAlertDays": 7,
-      "staleAlertSince": 1793617257813
+      "track17Registered": true
     },
     {
       "id": "ord_mvjqa2sdy8by",
@@ -345,7 +354,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1793617257813,
-      "status": "dogana",
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -361,11 +370,6 @@
           "status": "in_transito",
           "date": 1793617257813,
           "note": "Auto Fieramente (era: spedito)"
-        },
-        {
-          "status": "dogana",
-          "date": 1794286856202,
-          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -386,24 +390,15 @@
           "messageId": "<202611021101.65047757050@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-11-02T12:01:49.000+01:00"
-        },
-        {
-          "type": "dogana",
-          "to": "denisechap16@gmail.com",
-          "subject": "Your order is going through customs",
-          "sentAt": 1794286863177,
-          "messageId": "<202611100501.95561646210@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1792684860060,
-      "updatedAt": 1794286863177,
+      "updatedAt": 1793617267843,
       "trackingUrl": "",
       "destCountry": "US",
       "courierDate": 1793204449045,
-      "track17Registered": true,
-      "staleAlertDays": 7,
-      "staleAlertSince": 1793617257813
+      "track17Registered": true
     },
     {
       "id": "ord_mvh891btqvn6",
@@ -456,7 +451,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1793617257813,
-      "status": "dogana",
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -472,11 +467,6 @@
           "status": "in_transito",
           "date": 1793617257813,
           "note": "Auto Fieramente (era: spedito)"
-        },
-        {
-          "status": "dogana",
-          "date": 1794286856202,
-          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -497,20 +487,13 @@
           "messageId": "<202611021101.72497351846@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-11-02T12:01:48.000+01:00"
-        },
-        {
-          "type": "dogana",
-          "to": "elevitsky520@gmail.com",
-          "subject": "Your order is going through customs",
-          "sentAt": 1794286863177,
-          "messageId": "<202611100501.74382072802@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1792533646072,
-      "updatedAt": 1794286863177,
+      "updatedAt": 1793617267843,
       "staleAlertDays": 7,
-      "staleAlertSince": 1793617257813,
+      "staleAlertSince": 1792533646072,
       "trackingUrl": "",
       "destCountry": "US",
       "courierDate": 1793204428062,
@@ -547,7 +530,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1793617257813,
-      "status": "dogana",
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -563,11 +546,6 @@
           "status": "in_transito",
           "date": 1793617257813,
           "note": "Auto Fieramente (era: spedito)"
-        },
-        {
-          "status": "dogana",
-          "date": 1794286856202,
-          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -588,20 +566,13 @@
           "messageId": "<202611021101.70235720905@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-11-02T12:01:48.000+01:00"
-        },
-        {
-          "type": "dogana",
-          "to": "vfox026@gmail.com",
-          "subject": "Your order is going through customs",
-          "sentAt": 1794286863177,
-          "messageId": "<202611100501.76503238216@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1792533646072,
-      "updatedAt": 1794286863177,
+      "updatedAt": 1793617267843,
       "staleAlertDays": 7,
-      "staleAlertSince": 1793617257813,
+      "staleAlertSince": 1792533646072,
       "trackingUrl": "",
       "destCountry": "US",
       "courierDate": 1793204437378,
@@ -929,7 +900,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1793617257813,
-      "status": "dogana",
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -945,11 +916,6 @@
           "status": "in_transito",
           "date": 1793617257813,
           "note": "Auto Fieramente (era: spedito)"
-        },
-        {
-          "status": "dogana",
-          "date": 1794286856202,
-          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -970,20 +936,13 @@
           "messageId": "<202611021101.37846418183@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-11-02T12:01:48.000+01:00"
-        },
-        {
-          "type": "dogana",
-          "to": "brian.peterson.bkp@gmail.com",
-          "subject": "Your order is going through customs",
-          "sentAt": 1794286863177,
-          "messageId": "<202611100501.12342378016@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1792166470460,
-      "updatedAt": 1794286863177,
+      "updatedAt": 1793617267843,
       "staleAlertDays": 7,
-      "staleAlertSince": 1793617257813,
+      "staleAlertSince": 1792166470460,
       "trackingUrl": "",
       "destCountry": "US",
       "courierDate": 1793204415313,
@@ -1025,7 +984,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1793617257813,
-      "status": "dogana",
+      "status": "in_transito",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -1041,11 +1000,6 @@
           "status": "in_transito",
           "date": 1793617257813,
           "note": "Auto Fieramente (era: spedito)"
-        },
-        {
-          "status": "dogana",
-          "date": 1794286856202,
-          "note": "Auto Fieramente (era: in_transito)"
         }
       ],
       "emailsSent": [
@@ -1066,20 +1020,13 @@
           "messageId": "<202611021101.29714261743@smtp-relay.mailin.fr>",
           "delivered": true,
           "deliveredAt": "2026-11-02T12:37:26.000+01:00"
-        },
-        {
-          "type": "dogana",
-          "to": "donnie_cowin@hotmail.com",
-          "subject": "Your order is going through customs",
-          "sentAt": 1794286863177,
-          "messageId": "<202611100501.29846402623@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1792166470460,
-      "updatedAt": 1794286863177,
+      "updatedAt": 1793617267843,
       "staleAlertDays": 7,
-      "staleAlertSince": 1793617257813,
+      "staleAlertSince": 1792166470460,
       "trackingUrl": "",
       "destCountry": "US",
       "courierDate": 1793204407782,
@@ -1433,7 +1380,9 @@
           "to": "thecolefamily1@att.net",
           "subject": "Your order has been delivered! 🍷 Enjoy!",
           "sentAt": 1793919675351,
-          "messageId": "<202611052301.37368253722@smtp-relay.mailin.fr>"
+          "messageId": "<202611052301.37368253722@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-11-06T07:01:21.000+01:00"
         }
       ],
       "notes": "",
@@ -1545,14 +1494,18 @@
           "to": "mlambrus@gmail.com",
           "subject": "Your wine is out for delivery! 🍷",
           "sentAt": 1793898053904,
-          "messageId": "<202611051700.54721825336@smtp-relay.mailin.fr>"
+          "messageId": "<202611051700.54721825336@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-11-05T18:01:36.000+01:00"
         },
         {
           "type": "consegnato",
           "to": "mlambrus@gmail.com",
           "subject": "Your order has been delivered! 🍷 Enjoy!",
           "sentAt": 1793919675351,
-          "messageId": "<202611052301.50571573837@smtp-relay.mailin.fr>"
+          "messageId": "<202611052301.50571573837@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-11-06T00:01:17.000+01:00"
         }
       ],
       "notes": "",
@@ -1766,8 +1719,8 @@
       ],
       "notes": "",
       "createdAt": 1791561706772,
-      "updatedAt": 1794308460501,
-      "staleAlertDays": 14,
+      "updatedAt": 1793898053904,
+      "staleAlertDays": 7,
       "staleAlertSince": 1793077292114,
       "track17Registered": true
     },
@@ -1856,8 +1809,8 @@
       ],
       "notes": "",
       "createdAt": 1791561706772,
-      "updatedAt": 1794308460501,
-      "staleAlertDays": 14,
+      "updatedAt": 1793898053904,
+      "staleAlertDays": 7,
       "staleAlertSince": 1793077292114,
       "track17Registered": true
     },
@@ -2156,14 +2109,18 @@
           "to": "kimberly.hebert@yahoo.com",
           "subject": "Your wine is out for delivery! 🍷",
           "sentAt": 1793898053904,
-          "messageId": "<202611051700.85855155506@smtp-relay.mailin.fr>"
+          "messageId": "<202611051700.85855155506@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-11-05T18:01:27.000+01:00"
         },
         {
           "type": "consegnato",
           "to": "kimberly.hebert@yahoo.com",
           "subject": "Your order has been delivered! 🍷 Enjoy!",
           "sentAt": 1793919675351,
-          "messageId": "<202611052301.69515576555@smtp-relay.mailin.fr>"
+          "messageId": "<202611052301.69515576555@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-11-06T00:01:20.000+01:00"
         }
       ],
       "notes": "",
@@ -2270,7 +2227,9 @@
           "to": "vickiar1860@gmail.com",
           "subject": "Your order has been delivered! 🍷 Enjoy!",
           "sentAt": 1793919675351,
-          "messageId": "<202611052301.65797194404@smtp-relay.mailin.fr>"
+          "messageId": "<202611052301.65797194404@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-11-06T00:01:17.581+01:00"
         }
       ],
       "notes": "",
@@ -2600,7 +2559,9 @@
           "to": "jesusjoserubio@gmail.com",
           "subject": "Your order has been delivered! 🍷 Enjoy!",
           "sentAt": 1793941241929,
-          "messageId": "<202611060500.66056508011@smtp-relay.mailin.fr>"
+          "messageId": "<202611060500.66056508011@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-11-06T06:00:43.000+01:00"
         }
       ],
       "notes": "",
@@ -13799,5 +13760,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1793574051504
+  "lastImportedAt": 1794315135813
 }
