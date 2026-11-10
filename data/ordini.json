@@ -1,6 +1,43 @@
 {
   "orders": [
     {
+      "id": "ord_mwap01nuae44",
+      "customerName": "LIN CONG",
+      "customerEmail": "",
+      "customerPhone": "",
+      "amount": 0,
+      "currency": "EUR",
+      "orderDate": 1794315299177,
+      "emailSubject": "🍷 New Order — LIN CONG — 0 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "",
+      "numberOfCartons": null,
+      "gmailMessageId": "",
+      "trackingNumber": "",
+      "trackingUrl": "",
+      "carrier": "MBE",
+      "language": "en",
+      "shippingType": null,
+      "shippingDate": null,
+      "destCountry": null,
+      "products": [],
+      "customsDuties": null,
+      "shippingCostMos": null,
+      "shippingCostCustomer": null,
+      "status": "ricevuto",
+      "statusHistory": [
+        {
+          "status": "ricevuto",
+          "date": 1794315299178,
+          "note": "Importato da email"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1794315299178,
+      "updatedAt": 1794315299178
+    },
+    {
       "id": "ord_mwaowjly9jup",
       "customerName": "GIUSEPPE MARUCA",
       "customerEmail": "giuseppemaruca.33@gmail.com",
@@ -13766,5 +13803,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1794315135813
+  "lastImportedAt": 1794315299177
 }
