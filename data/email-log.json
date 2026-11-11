@@ -1160,6 +1160,123 @@
       "subject": "Your order has been delivered! 🍷 Enjoy!",
       "sentAt": 1794373296889,
       "messageId": "<202611110501.73037147216@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mwcd8wsu2xpr",
+      "customerName": "TAMI RICHER",
+      "type": "order_received",
+      "to": "tlricher@twcny.rr.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1794416505655,
+      "messageId": "<202611111701.80608385686@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mwcd8wsuiy6o",
+      "customerName": "SUSAN MARTEL",
+      "type": "order_received",
+      "to": "sdmartel@uvm.edu",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1794416505655,
+      "messageId": "<202611111701.28851040105@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mwcd8wsuf0rc",
+      "customerName": "LORRAINE SIEFFERT",
+      "type": "order_received",
+      "to": "gingerscreations@gmail.com",
+      "subject": "Thank you for your order! 🍷",
+      "sentAt": 1794416505655,
+      "messageId": "<202611111701.28610624033@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mvyfojao4q4d",
+      "customerName": "Christen Nickel",
+      "type": "day0",
+      "to": "christen.nickel@gmail.com",
+      "subject": "Your wine is on its way! 🍷",
+      "sentAt": 1794416505655,
+      "messageId": "<202611111701.31024842117@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mvjqa2sdzkpz",
+      "customerName": "ROGER DIROCCO",
+      "type": "dogana",
+      "to": "shirleydirocco1@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1794416505655,
+      "messageId": "<202611111701.18158612076@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mvjqa2sd8r0n",
+      "customerName": "LAWRENCE RINALDI",
+      "type": "dogana",
+      "to": "mpr3353@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1794416505655,
+      "messageId": "<202611111701.27061687100@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mvjqa2sdy8by",
+      "customerName": "DENISE SACHS",
+      "type": "dogana",
+      "to": "denisechap16@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1794416505655,
+      "messageId": "<202611111701.74507118049@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mvh891btqvn6",
+      "customerName": "ERIN LEVITSKY",
+      "type": "dogana",
+      "to": "elevitsky520@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1794416505655,
+      "messageId": "<202611111701.10923018486@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mvh891bte9mn",
+      "customerName": "VALERIE FOX",
+      "type": "dogana",
+      "to": "vfox026@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1794416505655,
+      "messageId": "<202611111701.71861688492@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mvb5n6t8dhmr",
+      "customerName": "BRIAN PETERSON",
+      "type": "dogana",
+      "to": "brian.peterson.bkp@gmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1794416505655,
+      "messageId": "<202611111701.58288078643@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mvb5n6t8w70m",
+      "customerName": "DON COWIN",
+      "type": "dogana",
+      "to": "donnie_cowin@hotmail.com",
+      "subject": "Your order is going through customs",
+      "sentAt": 1794416505655,
+      "messageId": "<202611111701.85153826206@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mv15l05wb6ou",
+      "customerName": "SEAN GOODALE",
+      "type": "consegnato",
+      "to": "sean.goodale@gmail.com",
+      "subject": "Your order has been delivered! 🍷 Enjoy!",
+      "sentAt": 1794416505655,
+      "messageId": "<202611111701.24805795346@smtp-relay.mailin.fr>"
+    },
+    {
+      "orderId": "ord_mv15l05wuuh7",
+      "customerName": "JOHN WILLIAMSON",
+      "type": "in_consegna",
+      "to": "jwllmsn@gmail.com",
+      "subject": "Your wine is out for delivery! 🍷",
+      "sentAt": 1794416505655,
+      "messageId": "<202611111701.48168738651@smtp-relay.mailin.fr>"
     }
   ]
 }
