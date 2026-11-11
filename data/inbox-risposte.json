@@ -1,5 +1,5 @@
 {
-  "lastUid": 531,
+  "lastUid": 532,
   "pending": [
     {
       "id": "ir_422",
@@ -2031,6 +2031,25 @@
       "rispostaDiretta": false,
       "suggestedStatus": null,
       "reason": "Email di notifica logistica/ordine interno non collegata alla proposta commerciale di distribuzione vini Il Ciliegio.",
+      "confidence": "ai",
+      "dataRientro": null,
+      "emailAlternativa": null
+    },
+    {
+      "id": "ir_532",
+      "uid": 532,
+      "contactId": null,
+      "nonCollegato": true,
+      "company": "Simone Marcis (Hillebrand Gori IT)",
+      "from": "simone.marcis@hillebrandgori.com",
+      "mittenteNome": "Simone Marcis (Hillebrand Gori IT)",
+      "subject": "3749 richiesta fattura entro il 12/11",
+      "date": "2026-11-10T17:50:46+00:00",
+      "snippet": "Grazie\r\n\r\nSimone Marcis\r\n\r\nOps-EXP-CG-US Vendor-Managed Inventory-Hillebrand Gori Italy SRL\r\n\r\n\r\n\r\n[signature_3407931170]\r\n\r\n\r\nInterporto Toscana A.Vespucci - Strada interna VII\r\nVia Delle Colline, 100 - Loc.Guasticce\r\n57014  COLLESALVETTI ( LI )\r\nItaly\r\n\r\nSimone.Marcis@hillebrandgori.com<mailto:Simone.Marcis@hillebrandgori.com>\r\n\r\nwww.hillebrandgori.com<http://www.hillebrandgori.com/>\r\n\r\nPhone: +",
+      "riassunto": "Simone Marcis di Hillebrand Gori Italy SRL (azienda di logistica e gestione inventario) richiede una fattura entro il 12/11, presumibilmente relativa a una fornitura o servizio già in corso.",
+      "rispostaDiretta": false,
+      "suggestedStatus": null,
+      "reason": "L'email riguarda una richiesta amministrativa interna (fattura) e non è collegata a nessuna proposta commerciale di distribuzione vini da parte nostra.",
       "confidence": "ai",
       "dataRientro": null,
       "emailAlternativa": null
