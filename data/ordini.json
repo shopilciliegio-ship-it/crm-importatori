@@ -1,6 +1,193 @@
 {
   "orders": [
     {
+      "id": "ord_mwcd8wsu2xpr",
+      "customerName": "TAMI RICHER",
+      "customerEmail": "tlricher@twcny.rr.com",
+      "customerPhone": "+13152440662",
+      "amount": 139.35,
+      "currency": "EUR",
+      "orderDate": 1794404605000,
+      "emailSubject": "🍷 New Order T1562 — TAMI RICHER — 139.35 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "PO BOX 1, 13669 OGDENSBURG, NY (ST LAWRENCE)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202611111343.19098082097@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
+          "qty": 3,
+          "value": 30.0
+        },
+        {
+          "description": "SPARKLING WINE CILIEGIO IN FIORE ROSÉ",
+          "qty": 2,
+          "value": 20.0
+        },
+        {
+          "description": "LE FORCACCE WHITE WINE IGT 2025 VIOGNI..",
+          "qty": 1,
+          "value": 8.5
+        }
+      ],
+      "customsDuties": 5.85,
+      "shippingCostCustomer": 75.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1794416489742,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1794416489742,
+      "updatedAt": 1794416489742
+    },
+    {
+      "id": "ord_mwcd8wsuiy6o",
+      "customerName": "SUSAN MARTEL",
+      "customerEmail": "sdmartel@uvm.edu",
+      "customerPhone": "+18025785479",
+      "amount": 97.13,
+      "currency": "EUR",
+      "orderDate": 1794403425000,
+      "emailSubject": "🍷 New Order A1561 — SUSAN MARTEL — 97.13 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "227 MARTEL EXTENSION, 05495 WILLISTON, VERMONT (CHITTENDEN COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202611111323.99029426831@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
+          "qty": 1,
+          "value": 10.0
+        },
+        {
+          "description": "SPARKLING WINE CILIEGIO IN FIORE ROSÉ",
+          "qty": 1,
+          "value": 10.0
+        },
+        {
+          "description": "100 ML EXTRA VIRGIN OLIVE OIL 2026",
+          "qty": 1,
+          "value": 5.0
+        }
+      ],
+      "customsDuties": 2.5,
+      "shippingCostCustomer": 65.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1794416489742,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1794416489742,
+      "updatedAt": 1794416489742
+    },
+    {
+      "id": "ord_mwcd8wsuf0rc",
+      "customerName": "LORRAINE SIEFFERT",
+      "customerEmail": "gingerscreations@gmail.com",
+      "customerPhone": "+18604900883",
+      "amount": 331.85,
+      "currency": "EUR",
+      "orderDate": 1794400978000,
+      "emailSubject": "🍷 New Order A1560 — LORRAINE SIEFFERT — 331.85 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "65 HEMLOCK RD, 05495 WILLISTON, VERMONT (CHITTENDEN COUNTY)",
+      "numberOfCartons": null,
+      "shippingType": "standard",
+      "gmailMessageId": "<202611111242.65423072384@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "500 ML EXTRA VIRGIN OLIVE OIL 2026",
+          "qty": 3,
+          "value": 34.5
+        },
+        {
+          "description": "CHIANTI STRADE BIANCHE 2025 LIM. ED.",
+          "qty": 3,
+          "value": 60.0
+        },
+        {
+          "description": "POGGIO ORLANDO 2024 CHIANTI COLLI SENE..",
+          "qty": 1,
+          "value": 12.0
+        },
+        {
+          "description": "WHITE WINE IGT 2025",
+          "qty": 1,
+          "value": 7.0
+        },
+        {
+          "description": "THEIA WHITE WINE",
+          "qty": 1,
+          "value": 5.0
+        },
+        {
+          "description": "RED WINE IGT 2025",
+          "qty": 1,
+          "value": 7.0
+        },
+        {
+          "description": "DURUM WHEAT FLOUR SENATORE CAPPELLI KG..",
+          "qty": 2,
+          "value": 8.0
+        },
+        {
+          "description": "CHIANTI STRADE BIANCHE 2025 LIM. ED.",
+          "qty": 1,
+          "value": 0.0
+        }
+      ],
+      "customsDuties": 13.35,
+      "shippingCostCustomer": 185.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1794416489742,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1794416489742,
+      "updatedAt": 1794416489742
+    },
+    {
       "id": "ord_mwaowjly9jup",
       "customerName": "GIUSEPPE MARUCA",
       "customerEmail": "giuseppemaruca.33@gmail.com",
@@ -13766,5 +13953,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1794315299177
+  "lastImportedAt": 1794416489742
 }
