@@ -568875,43 +568875,133 @@
   },
   "c1780673710972uh75x": {
     "contactName": "Brendan Quigley",
-    "contactTitle": "Owner / President"
+    "contactTitle": "Owner / President",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "si",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda solida (BBB A+, SEC filing, 10 dipendenti) con portfolio internazionale che include esplicitamente vini italiani. Modello business diversificato (import/wholesale/retail/online) con tasting room a San Diego. Fatturato modesto (~1M) suggerisce focus locale/regionale piuttosto che nazionale.",
+      "analyzed_at": "2026-11-11T06:10:04.046Z"
+    }
   },
   "c1780673710972zm33d": {
     "contactName": "Marshall Rimann",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer USA di piccole dimensioni (10 dipendenti, fatturato ~64k) senza presenze online verificabili. Nessuna evidenza esplicita di focus su vini italiani nel portafoglio. Non è un interlocutore strategico per esportatori italiani.",
+      "analyzed_at": "2026-11-11T06:10:09.200Z"
+    }
   },
   "c17806737109721dqwy": {
     "contactName": "Lisa French Runyan",
-    "contactTitle": "Regional Manager"
+    "contactTitle": "Regional Manager",
+    "research": {
+      "affidabilita": 5,
+      "vino_italiano": "si",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "si",
+      "note": "Importatore esclusivo ufficiale Santa Margherita negli USA dal 2016. Azienda storica (fondata 1935), sito professionale, portafoglio premium di vini italiani (Pinot Grigio, Prosecco, Chianti). Contattare con priorità per partnership.",
+      "analyzed_at": "2026-11-11T06:10:15.277Z"
+    }
   },
   "c17806737109724hzyi": {
     "contactName": "Tony Marchetti",
-    "contactTitle": "Owner & Sales"
+    "contactTitle": "Owner & Sales",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "si",
+      "tipo_business": "importatore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Importatore consolidato (attivo dal 2008) con portfolio italiano (Barbera Nizza, Santapietra). Piccola struttura (10 dipendenti, ~1M fatturato) focalizzata su horeca. Sito poco aggiornato e discrepanze tra nomi aziendali (Scoperta vs Marchetti) riducono affidabilità percepita.",
+      "analyzed_at": "2026-11-11T06:10:22.133Z"
+    }
   },
   "c1780673710972lqivu": {
     "contactName": "Michael Young",
-    "contactTitle": "Sales Director"
+    "contactTitle": "Sales Director",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore USA consolidato (10 anni di storia, 10 dipendenti) con portafoglio europeo e sudamericano. Portfolio include marchi italiani (Tenuta Novare, Terre del Palio, San Leonino, I Magredi) ma non è specializzato in vini italiani. Fatturato modesto (182k$) suggerisce piccola-media dimensione; mercato prevalentemente retail/online negli USA.",
+      "analyzed_at": "2026-11-11T06:10:28.800Z"
+    }
   },
   "c1780673710972kqbhj": {
     "contactName": "Adalbert Yanick Arakelov",
-    "contactTitle": "Ceo / Owner"
+    "contactTitle": "Ceo / Owner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "no",
+      "tipo_business": "importatore",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda specializzata esclusivamente in vini georgiani, non italiani. Piccola realtà (10 dipendenti, fatturato ~393k USD) con focus online e direct-to-consumer. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-11-11T06:10:38.936Z"
+    }
   },
   "c1780673710972kajt7": {
     "contactName": "Sylvia Romero",
-    "contactTitle": "Sales Manager"
+    "contactTitle": "Sales Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore USA consolidato con distribuzione multi-stato e portfolio che include esplicitamente Italia. Fatturato modesto (349k$) e team piccolo (10 dipendenti) suggeriscono nicchia specializzata. Verificare se hanno capacità di acquisto significative e se cercano nuovi fornitori italiani.",
+      "analyzed_at": "2026-11-11T06:10:44.868Z"
+    }
   },
   "c1780673710972v0iy9": {
     "contactName": "Ronald Frame",
-    "contactTitle": "Wine Manager"
+    "contactTitle": "Wine Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer online USA con sito professionale e catalogo strutturato. Cita Italia tra le regioni vinicole, ma focus prevalente su spirits e vini USA/Francia. Piccola dimensione (10 dipendenti, fatturato ~370k) limita potenziale B2B.",
+      "analyzed_at": "2026-11-11T06:10:50.842Z"
+    }
   },
   "c1780673710972fan8w": {
     "contactName": "Robin Schulze",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer USA (Parma, Ohio) con 1000+ bottiglie da tutto il mondo, ma nessuna menzione esplicita di vini italiani. Focus su esperienza (wine bar, craft, yoga) piuttosto che su importazione/distribuzione. Non è un buyer B2B per fornitori italiani.",
+      "analyzed_at": "2026-11-11T06:10:59.790Z"
+    }
   },
   "c1780673710972w2xwp": {
     "contactName": "Cathy Denham",
-    "contactTitle": "Managing Partner"
+    "contactTitle": "Managing Partner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer locale USA (Pleasanton, CA) con focus su vini small production globali e locali. Nessuna evidenza di specializzazione in vini italiani; portafoglio generico internazionale. Fatturato molto basso (200k) e 10 dipendenti indicano piccolo negozio retail, non partner B2B rilevante per esportatori italiani.",
+      "analyzed_at": "2026-11-11T06:11:06.446Z"
+    }
   },
   "c1780673710972no0au": {
     "contactName": "Matt Tramonte",
