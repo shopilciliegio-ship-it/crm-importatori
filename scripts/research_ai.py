@@ -117,12 +117,21 @@ def gh_put(path, data, sha, message):
 def salva_overrides(overrides, sha, message, nostri_ids):
     """Salva gli override; se nel frattempo il CRM li ha modificati (409/422 sha non aggiornato) rilegge la versione
     remota, ci riapplica SOLO i risultati di ricerca di questa esecuzione e riprova. Ritorna (overrides, nuovo_sha)."""
-    for tentativo in range(3):
+    for tentativo in range(5):
         try:
             return overrides, gh_put(OVERRIDES_PATH, overrides, sha, message)
         except requests.HTTPError as e:
             code = e.response.status_code if e.response is not None else None
-            if code not in (409, 422) or tentativo == 2:
+            if code in (403, 429) and tentativo < 4:
+                # Limite anti-abuso/rate limit di GitHub sulle scritture ravvicinate: si aspetta e si riprova
+                corpo = ' '.join((e.response.text or '')[:300].split()) if e.response is not None else ''
+                attesa = 60 * (tentativo + 1)
+                print(f'  ⏳ GitHub HTTP {code} sul salvataggio ({corpo}) — attendo {attesa}s e riprovo', flush=True)
+                time.sleep(attesa)
+                continue
+            if code not in (409, 422) or tentativo == 4:
+                if e.response is not None:
+                    print(f'  🚨 Salvataggio fallito: HTTP {code} — {(e.response.text or "")[:300]}', flush=True)
                 raise
             print(f'  ↻ override modificati nel frattempo dal CRM (HTTP {code}) — rileggo e riunisco', flush=True)
             remoto, sha = gh_get(OVERRIDES_PATH)
@@ -524,7 +533,7 @@ def main():
                 overrides_changed = True
                 country_successes += 1
                 successes += 1
-                if successes % 10 == 0:
+                if successes % 20 == 0:
                     # Salvataggio intermedio: se il runner viene interrotto non si perde tutto il lavoro
                     overrides, overrides_sha = salva_overrides(overrides, overrides_sha,
                                            f'Ricerca AI — salvataggio intermedio ({successes} analizzati)', nostri_ids)
