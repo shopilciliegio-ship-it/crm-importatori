@@ -568095,43 +568095,133 @@
   },
   "c1780673710971geafh": {
     "contactName": "Clement Cariot",
-    "contactTitle": "Manager And Sommelier"
+    "contactTitle": "Manager And Sommelier",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Retailer con online store a Naples (FL) specializzato in vini francesi (Bordeaux/Burgundy). Piccola struttura (10 dipendenti, fatturato ~484k). Portafoglio non esplicitamente italiano; siti dichiarati irraggiungibili. Vale verificare se interessati a vini italiani.",
+      "analyzed_at": "2026-11-11T06:02:39.346Z"
+    }
   },
   "c1780673710971k2frs": {
     "contactName": "Randall Mocarski",
-    "contactTitle": "Assistant Beer Manager"
+    "contactTitle": "Assistant Beer Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer USA con 10 dipendenti e 3 location in Ohio. Portafoglio vini internazionali generico, nessuna menzione esplicita di vini italiani. Non è distributore/importatore, quindi non è target per fornitori di vini italiani.",
+      "analyzed_at": "2026-11-11T06:02:45.870Z"
+    }
   },
   "c17806737109715trqj": {
     "contactName": "Rich Ricci",
-    "contactTitle": "Wine Director"
+    "contactTitle": "Wine Director",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer USA consolidato (50+ anni) con online store e tasting room. Vende vini europei (es. Rioja spagnolo) ma non emerge focus specifico su vini italiani. Piccola dimensione (10 dipendenti, fatturato ~250k) limita potenziale partnership B2B.",
+      "analyzed_at": "2026-11-11T06:02:51.918Z"
+    }
   },
   "c1780673710971fuobo": {
     "contactName": "Kris Johnston",
-    "contactTitle": "Operations And International Shipping Manager"
+    "contactTitle": "Operations And International Shipping Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore USA consolidato (10 anni attività, ~10 dipendenti, fatturato 1.3M$) con portfolio mondiale. Portafoglio include vini europei (Spagna citata), ma non emerge focus specifico su vini italiani. Contatto potenziale se si cerca distribuzione negli USA, ma verificare prima se hanno linee italiane.",
+      "analyzed_at": "2026-11-11T06:02:57.982Z"
+    }
   },
   "c17806737109716vh2d": {
     "contactName": "Konstantin Khizder",
-    "contactTitle": "Founder, President And Ceo"
+    "contactTitle": "Founder, President And Ceo",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda consolidata (dal 2001) con portafoglio ampio e distribuzioni in 26 stati USA. Cita esplicitamente vini italiani nel menu. Fatturato modesto (922k) e 10 dipendenti suggeriscono nicchia specializzata. Verificare se focus su vini italiani o solo parte del portfolio generico.",
+      "analyzed_at": "2026-11-11T06:03:04.967Z"
+    }
   },
   "c1780673710971u0fx5": {
     "contactName": "Doug Alberhasky",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer USA (Iowa City) con storia consolidata dal 1948, sito professionale e eventi di degustazione. Però: fatturato modesto (~528k$), 10 dipendenti, nessuna evidenza di interesse specifico per vini italiani - portafoglio generico (Paso Robles, Cedar Ridge spirits). Non è distributore/importatore.",
+      "analyzed_at": "2026-11-11T06:03:11.392Z"
+    }
   },
   "c1780673710971hdqms": {
     "contactName": "Nate Redner",
-    "contactTitle": "Champagne Inspector"
+    "contactTitle": "Champagne Inspector",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore specializzato con portfolio europeo (Italia inclusa). Piccola struttura (10 dipendenti, fatturato modesto ~96k) ma orientata a horeca e retail con approccio qualitativo. Sito professionale e registrato ufficialmente. Verificare se Italia è prioritaria nel portafoglio.",
+      "analyzed_at": "2026-11-11T06:03:17.341Z"
+    }
   },
   "c1780673710971h42b5": {
     "contactName": "Travis Brown",
-    "contactTitle": "Sales Representative"
+    "contactTitle": "Sales Representative",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore e distributore consolidato in Oregon con licenze TTB verificate e ~10 dipendenti. Portafoglio non specificato ma operano su horeca e retail; sito non raggiungibile limita valutazione su focus vini italiani.",
+      "analyzed_at": "2026-11-11T06:03:24.139Z"
+    }
   },
   "c1780673710971vkum0": {
     "contactName": "Raimondo Boggia",
-    "contactTitle": "President"
+    "contactTitle": "President",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "si",
+      "tipo_business": "importatore",
+      "mercato_target": "horeca",
+      "raccomandato": "si",
+      "note": "Importatore USA consolidato con 10 dipendenti e ~2M$ fatturato. Traccia doganale confermata di importazioni da fornitori italiani (Agri Girardi). CEO con esperienza hospitality. Specializzato in vini biologici/naturali.",
+      "analyzed_at": "2026-11-11T06:03:30.021Z"
+    }
   },
   "c1780673710971rvcjn": {
     "contactName": "Ben Doren",
-    "contactTitle": "President and Co-Founder"
+    "contactTitle": "President and Co-Founder",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Importatore USA specializzato in vini artigianali e spirits da produttori piccoli/indipendenti. Portfolio internazionale (CA, Pacific NW, Francia) ma nessuna menzione esplicita di vini italiani. Dimensione piccola (10 dipendenti, fatturato ~730k) ma operativo dal 2013 con buona reputazione nel segmento premium/naturale.",
+      "analyzed_at": "2026-11-11T06:03:36.690Z"
+    }
   },
   "c17806737109712ml8e": {
     "contactName": "Dean Alexander",
