@@ -1998,7 +1998,7 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": 1792425651818,
-      "status": "dogana",
+      "status": "in_consegna",
       "statusHistory": [
         {
           "status": "preparazione",
@@ -2014,6 +2014,11 @@
           "status": "dogana",
           "date": 1793077292114,
           "note": "Auto Fieramente (era: in_transito)"
+        },
+        {
+          "status": "in_consegna",
+          "date": 1794416503112,
+          "note": "Auto 17Track (era: dogana): Oklahoma City, OK, United States — Out for Delivery, Out For Delivery Today"
         }
       ],
       "emailsSent": [
@@ -2047,7 +2052,7 @@
       ],
       "notes": "",
       "createdAt": 1791561706772,
-      "updatedAt": 1793898053904,
+      "updatedAt": 1794416503112,
       "staleAlertDays": 7,
       "staleAlertSince": 1793077292114,
       "track17Registered": true
