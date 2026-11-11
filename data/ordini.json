@@ -1898,11 +1898,18 @@
           "subject": "Your wine is out for delivery! 🍷",
           "sentAt": 1794351701752,
           "messageId": "<202611102301.80778896811@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegnato",
+          "to": "sean.goodale@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1794373296889,
+          "messageId": "<202611110501.73037147216@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1791561706772,
-      "updatedAt": 1794373289856,
+      "updatedAt": 1794373296889,
       "staleAlertDays": 14,
       "staleAlertSince": 1793077292114,
       "track17Registered": true
