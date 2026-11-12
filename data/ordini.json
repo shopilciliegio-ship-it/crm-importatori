@@ -20,22 +20,22 @@
         {
           "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
           "qty": 12,
-          "value": 120.0
+          "value": 120
         },
         {
           "description": "PURPLE GRAPES - SWEET RED WINE IGT 202..",
           "qty": 3,
-          "value": 24.0
+          "value": 24
         },
         {
           "description": "CHIANTI STRADE BIANCHE 2025 LIM. ED.",
           "qty": 1,
-          "value": 0.0
+          "value": 0
         },
         {
           "description": "LIMONCELLO LIQUOR 500 ML",
           "qty": 1,
-          "value": 15.0
+          "value": 15
         },
         {
           "description": "GRAPPA DEL CHIANTI RISERVA 500 ML",
@@ -44,7 +44,7 @@
         }
       ],
       "customsDuties": null,
-      "shippingCostCustomer": 120.0,
+      "shippingCostCustomer": 120,
       "shippingCostMos": null,
       "source": "fieramente",
       "language": "en",
@@ -65,7 +65,9 @@
           "to": "antonovici@hotmail.com",
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1794459747566,
-          "messageId": "<202611120502.79969665626@smtp-relay.mailin.fr>"
+          "messageId": "<202611120502.79969665626@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-11-12T06:02:31.000+01:00"
         }
       ],
       "notes": "",
@@ -92,12 +94,12 @@
         {
           "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
           "qty": 3,
-          "value": 30.0
+          "value": 30
         },
         {
           "description": "SPARKLING WINE CILIEGIO IN FIORE ROSÉ",
           "qty": 2,
-          "value": 20.0
+          "value": 20
         },
         {
           "description": "LE FORCACCE WHITE WINE IGT 2025 VIOGNI..",
@@ -106,7 +108,7 @@
         }
       ],
       "customsDuties": 5.85,
-      "shippingCostCustomer": 75.0,
+      "shippingCostCustomer": 75,
       "shippingCostMos": null,
       "source": "fieramente",
       "language": "en",
@@ -127,7 +129,9 @@
           "to": "tlricher@twcny.rr.com",
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1794416505655,
-          "messageId": "<202611111701.80608385686@smtp-relay.mailin.fr>"
+          "messageId": "<202611111701.80608385686@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-11-11T18:01:49.000+01:00"
         }
       ],
       "notes": "",
@@ -154,21 +158,21 @@
         {
           "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
           "qty": 1,
-          "value": 10.0
+          "value": 10
         },
         {
           "description": "SPARKLING WINE CILIEGIO IN FIORE ROSÉ",
           "qty": 1,
-          "value": 10.0
+          "value": 10
         },
         {
           "description": "100 ML EXTRA VIRGIN OLIVE OIL 2026",
           "qty": 1,
-          "value": 5.0
+          "value": 5
         }
       ],
       "customsDuties": 2.5,
-      "shippingCostCustomer": 65.0,
+      "shippingCostCustomer": 65,
       "shippingCostMos": null,
       "source": "fieramente",
       "language": "en",
@@ -189,7 +193,9 @@
           "to": "sdmartel@uvm.edu",
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1794416505655,
-          "messageId": "<202611111701.28851040105@smtp-relay.mailin.fr>"
+          "messageId": "<202611111701.28851040105@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-11-11T18:01:49.000+01:00"
         }
       ],
       "notes": "",
@@ -221,53 +227,58 @@
         {
           "description": "CHIANTI STRADE BIANCHE 2025 LIM. ED.",
           "qty": 3,
-          "value": 60.0
+          "value": 60
         },
         {
           "description": "POGGIO ORLANDO 2024 CHIANTI COLLI SENE..",
           "qty": 1,
-          "value": 12.0
+          "value": 12
         },
         {
           "description": "WHITE WINE IGT 2025",
           "qty": 1,
-          "value": 7.0
+          "value": 7
         },
         {
           "description": "THEIA WHITE WINE",
           "qty": 1,
-          "value": 5.0
+          "value": 5
         },
         {
           "description": "RED WINE IGT 2025",
           "qty": 1,
-          "value": 7.0
+          "value": 7
         },
         {
           "description": "DURUM WHEAT FLOUR SENATORE CAPPELLI KG..",
           "qty": 2,
-          "value": 8.0
+          "value": 8
         },
         {
           "description": "CHIANTI STRADE BIANCHE 2025 LIM. ED.",
           "qty": 1,
-          "value": 0.0
+          "value": 0
         }
       ],
       "customsDuties": 13.35,
-      "shippingCostCustomer": 185.0,
+      "shippingCostCustomer": 185,
       "shippingCostMos": null,
       "source": "fieramente",
       "language": "en",
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": null,
-      "status": "preparazione",
+      "status": "spedito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1794416489742,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "spedito",
+          "date": 1794477446473,
+          "note": ""
         }
       ],
       "emailsSent": [
@@ -276,12 +287,17 @@
           "to": "gingerscreations@gmail.com",
           "subject": "Thank you for your order! 🍷",
           "sentAt": 1794416505655,
-          "messageId": "<202611111701.28610624033@smtp-relay.mailin.fr>"
+          "messageId": "<202611111701.28610624033@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-11-11T18:01:48.000+01:00"
         }
       ],
       "notes": "",
       "createdAt": 1794416489742,
-      "updatedAt": 1794416505655
+      "updatedAt": 1794477446473,
+      "trackingUrl": "",
+      "destCountry": "US",
+      "courierDate": 1794477446473
     },
     {
       "id": "ord_mwaowjly9jup",
@@ -420,7 +436,9 @@
           "to": "christen.nickel@gmail.com",
           "subject": "Your wine is on its way! 🍷",
           "sentAt": 1794416505655,
-          "messageId": "<202611111701.31024842117@smtp-relay.mailin.fr>"
+          "messageId": "<202611111701.31024842117@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-11-11T18:01:48.000+01:00"
         }
       ],
       "notes": "",
@@ -528,7 +546,9 @@
           "to": "shirleydirocco1@gmail.com",
           "subject": "Your order is going through customs",
           "sentAt": 1794416505655,
-          "messageId": "<202611111701.18158612076@smtp-relay.mailin.fr>"
+          "messageId": "<202611111701.18158612076@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-11-11T18:01:49.000+01:00"
         }
       ],
       "notes": "",
@@ -632,7 +652,9 @@
           "to": "mpr3353@gmail.com",
           "subject": "Your order is going through customs",
           "sentAt": 1794416505655,
-          "messageId": "<202611111701.27061687100@smtp-relay.mailin.fr>"
+          "messageId": "<202611111701.27061687100@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-11-11T18:01:49.000+01:00"
         }
       ],
       "notes": "",
@@ -726,7 +748,9 @@
           "to": "denisechap16@gmail.com",
           "subject": "Your order is going through customs",
           "sentAt": 1794416505655,
-          "messageId": "<202611111701.74507118049@smtp-relay.mailin.fr>"
+          "messageId": "<202611111701.74507118049@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-11-11T18:01:49.000+01:00"
         }
       ],
       "notes": "",
@@ -835,7 +859,9 @@
           "to": "elevitsky520@gmail.com",
           "subject": "Your order is going through customs",
           "sentAt": 1794416505655,
-          "messageId": "<202611111701.10923018486@smtp-relay.mailin.fr>"
+          "messageId": "<202611111701.10923018486@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-11-11T18:01:49.000+01:00"
         }
       ],
       "notes": "",
@@ -926,7 +952,9 @@
           "to": "vfox026@gmail.com",
           "subject": "Your order is going through customs",
           "sentAt": 1794416505655,
-          "messageId": "<202611111701.71861688492@smtp-relay.mailin.fr>"
+          "messageId": "<202611111701.71861688492@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-11-11T18:01:49.000+01:00"
         }
       ],
       "notes": "",
@@ -1308,7 +1336,9 @@
           "to": "brian.peterson.bkp@gmail.com",
           "subject": "Your order is going through customs",
           "sentAt": 1794416505655,
-          "messageId": "<202611111701.58288078643@smtp-relay.mailin.fr>"
+          "messageId": "<202611111701.58288078643@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-11-11T18:01:50.000+01:00"
         }
       ],
       "notes": "",
@@ -1404,7 +1434,9 @@
           "to": "donnie_cowin@hotmail.com",
           "subject": "Your order is going through customs",
           "sentAt": 1794416505655,
-          "messageId": "<202611111701.85153826206@smtp-relay.mailin.fr>"
+          "messageId": "<202611111701.85153826206@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-11-11T18:01:52.000+01:00"
         }
       ],
       "notes": "",
@@ -2111,7 +2143,9 @@
           "to": "sean.goodale@gmail.com",
           "subject": "Your order has been delivered! 🍷 Enjoy!",
           "sentAt": 1794416505655,
-          "messageId": "<202611111701.24805795346@smtp-relay.mailin.fr>"
+          "messageId": "<202611111701.24805795346@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-11-11T18:01:51.000+01:00"
         }
       ],
       "notes": "",
@@ -2218,14 +2252,18 @@
           "to": "jwllmsn@gmail.com",
           "subject": "Your wine is out for delivery! 🍷",
           "sentAt": 1794416505655,
-          "messageId": "<202611111701.48168738651@smtp-relay.mailin.fr>"
+          "messageId": "<202611111701.48168738651@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-11-11T18:01:51.000+01:00"
         },
         {
           "type": "consegnato",
           "to": "jwllmsn@gmail.com",
           "subject": "Your order has been delivered! 🍷 Enjoy!",
           "sentAt": 1794459747566,
-          "messageId": "<202611120502.15837246011@smtp-relay.mailin.fr>"
+          "messageId": "<202611120502.15837246011@smtp-relay.mailin.fr>",
+          "delivered": true,
+          "deliveredAt": "2026-11-12T06:02:29.000+01:00"
         }
       ],
       "notes": "",
