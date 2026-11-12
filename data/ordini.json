@@ -59,10 +59,18 @@
           "note": "Importato da Gmail (GitHub Actions)"
         }
       ],
-      "emailsSent": [],
+      "emailsSent": [
+        {
+          "type": "order_received",
+          "to": "antonovici@hotmail.com",
+          "subject": "Thank you for your order! 🍷",
+          "sentAt": 1794459747566,
+          "messageId": "<202611120502.79969665626@smtp-relay.mailin.fr>"
+        }
+      ],
       "notes": "",
       "createdAt": 1794459732043,
-      "updatedAt": 1794459732043
+      "updatedAt": 1794459747566
     },
     {
       "id": "ord_mwcd8wsu2xpr",
@@ -2211,11 +2219,18 @@
           "subject": "Your wine is out for delivery! 🍷",
           "sentAt": 1794416505655,
           "messageId": "<202611111701.48168738651@smtp-relay.mailin.fr>"
+        },
+        {
+          "type": "consegnato",
+          "to": "jwllmsn@gmail.com",
+          "subject": "Your order has been delivered! 🍷 Enjoy!",
+          "sentAt": 1794459747566,
+          "messageId": "<202611120502.15837246011@smtp-relay.mailin.fr>"
         }
       ],
       "notes": "",
       "createdAt": 1791561706772,
-      "updatedAt": 1794459742443,
+      "updatedAt": 1794459747566,
       "staleAlertDays": 7,
       "staleAlertSince": 1793077292114,
       "track17Registered": true
