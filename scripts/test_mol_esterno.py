@@ -48,20 +48,70 @@ def digest_recipient():
 
 
 # ───────────────────────── Prova B: login + spedizioni ─────────────────────────
+def _shipkey(s):
+    return str(s.get('id') or s.get('mbeTracking') or s.get('shipmentTrackingNumber') or id(s))
+
+
+def _fetch_tagged(m, token):
+    """Come fetch_all_shipments ma tiene traccia della lista di provenienza."""
+    headers = {
+        'Authorization': f'Bearer {token}',
+        'Content-Type': 'application/json;charset=UTF-8',
+        'baseurl': 'www.mbeonline.it',
+        'source': 'Online',
+        'x-teleport-tenant': '1',
+    }
+    body = {'and': [{'field': 'customerId', 'type': 'INTEGER', 'operation': '=', 'values': [m.CUSTOMER_ID]}]}
+    out = {}
+    for ep in m.MBE_ENDPOINTS:
+        items, page = [], 0
+        while True:
+            url = f'{m.MBE_API_BASE}/shipments/search/{ep}?page={page}&pageSize=100&sortBy=creationDate+desc'
+            r = requests.post(url, headers=headers, json=body, timeout=30)
+            r.raise_for_status()
+            data = r.json()
+            items.extend(data.get('content', []))
+            if data.get('last', True):
+                break
+            page += 1
+        out[ep] = items
+    return out
+
+
 def prova_b(orders):
-    rep('=== PROVA B: login MBE Online + spedizioni ===')
+    rep('=== PROVA B (v2): login MBE Online + spedizioni ===')
     try:
         import fetch_mbe_tracking as m
         token = m.get_token()
         log('B: login OK')
         rep('Login: OK')
-        ships = m.fetch_all_shipments(token)
+        per_ep = _fetch_tagged(m, token)
     except Exception as e:
         log(f'B: FALLITA ({type(e).__name__})')
         rep(f'FALLITA: {type(e).__name__}: {str(e)[:400]}')
         return
-    log(f'B: spedizioni lette da MBE: {len(ships)}')
-    rep(f'Spedizioni lette: {len(ships)}')
+
+    # --- conteggi per lista, duplicati, date ---
+    keys = {}
+    for ep, items in per_ep.items():
+        ks = [_shipkey(s) for s in items]
+        keys[ep] = set(ks)
+        dates = sorted(str(s.get('creationDate') or s.get('shipmentDate') or '')[:10] for s in items)
+        log(f'B: lista {ep}: {len(items)} righe, {len(set(ks))} uniche')
+        rep(f'Lista {ep}: {len(items)} righe, {len(set(ks))} uniche, dal {dates[0] if dates else "-"} al {dates[-1] if dates else "-"}')
+    eps = list(per_ep)
+    if len(eps) == 2:
+        comuni = keys[eps[0]] & keys[eps[1]]
+        log(f'B: spedizioni presenti in ENTRAMBE le liste: {len(comuni)}')
+        rep(f'In entrambe le liste: {len(comuni)}')
+
+    uniche = {}
+    for items in per_ep.values():
+        for s in items:
+            uniche.setdefault(_shipkey(s), s)
+    ships = list(uniche.values())
+    log(f'B: spedizioni UNICHE su MBE: {len(ships)}')
+    rep(f'Spedizioni uniche: {len(ships)}')
     if not ships:
         return
 
@@ -70,48 +120,59 @@ def prova_b(orders):
     rep(f'Campi spedizione: {sorted(s0.keys())}')
     rep(f'Campi collo: {sorted(pk0.keys())}')
 
-    by_trk = {}
     by_name = {}
     for s in ships:
-        for k in (s.get('mbeTracking'), s.get('shipmentTrackingNumber')):
-            if k:
-                by_trk[str(k)] = s
         n = norm((s.get('addressTo') or {}).get('companyName'))
-        if n and n not in by_name:
-            by_name[n] = s
+        if n:
+            by_name.setdefault(n, []).append(s)
 
+    def ups_of(s):
+        return str(s.get('shipmentTrackingNumber') or '').strip()
+
+    # --- ordini aperti SENZA numero UPS: cosa trova MOL ---
     aperti = [o for o in orders if o.get('status') not in ('consegnato', 'annullato')]
-    log(f'B: ordini CRM ancora aperti: {len(aperti)}')
-    piu_avanti = 0
-    non_trovati = 0
-    rep(f'\nOrdini CRM aperti: {len(aperti)}')
-    for o in aperti:
-        s = (by_trk.get(str(o.get('mbeTrackingNumber') or ''))
-             or by_trk.get(str(o.get('trackingNumber') or ''))
-             or by_name.get(norm(o.get('customerName'))))
-        if not s:
-            non_trovati += 1
-            rep(f"- {o.get('customerName')} | CRM={o.get('status')} | NON trovato su MBE")
-            continue
-        pk = (s.get('shipmentPackages') or [{}])[0]
-        deliv = bool(s.get('delivered'))
-        if deliv:
-            piu_avanti += 1
-        rep(f"- {o.get('customerName')} | CRM={o.get('status')} | MBE delivered={deliv} "
-            f"ultimo_stato_id={pk.get('trackingLastStatusMbeId')} "
-            f"desc={pk.get('trackingLastStatusDescription') or pk.get('trackingLastStatus')}")
-    log(f'B: aperti nel CRM ma CONSEGNATI su MBE: {piu_avanti}; non trovati su MBE: {non_trovati}')
+    senza = [o for o in aperti if not o.get('trackingNumber')]
+    trovati = 0
+    rep(f'\nOrdini aperti senza numero UPS nel CRM: {len(senza)}')
+    for o in senza:
+        c = by_name.get(norm(o.get('customerName'))) or []
+        if c:
+            trovati += 1
+            rep(f"- {o.get('customerName')} | CRM={o.get('status')} | MOL: " +
+                '; '.join(f"UPS={ups_of(s)} mbe={s.get('mbeTracking')} creata={str(s.get('creationDate'))[:10]}" for s in c[:3]))
+        else:
+            rep(f"- {o.get('customerName')} | CRM={o.get('status')} | NON ancora su MOL")
+    log(f'B: ordini aperti senza UPS: {len(senza)}; di cui trovati su MOL con un numero: {trovati}')
 
-    crm_trk = {str(o.get('mbeTrackingNumber')) for o in orders if o.get('mbeTrackingNumber')} | \
-              {str(o.get('trackingNumber')) for o in orders if o.get('trackingNumber')}
+    # --- tutti gli ordini col numero UPS: coincide con quello di MOL? ---
+    uguali = diversi = nonmol = 0
+    rep('\nControllo numero UPS CRM vs MOL (tutti gli ordini con numero UPS):')
+    for o in orders:
+        t = str(o.get('trackingNumber') or '').strip()
+        if not t:
+            continue
+        c = by_name.get(norm(o.get('customerName'))) or []
+        if not c:
+            nonmol += 1
+            continue
+        if any(ups_of(s) == t for s in c):
+            uguali += 1
+        else:
+            diversi += 1
+            rep(f"- DIVERSO: {o.get('customerName')} | CRM={t} | MOL=" + ','.join(ups_of(s) for s in c[:3]))
+    log(f'B: numero UPS uguale CRM/MOL: {uguali}; diverso: {diversi}; ordine non trovato su MOL: {nonmol}')
+    rep(f'Uguali: {uguali}; diversi: {diversi}; non trovati su MOL: {nonmol}')
+
+    # --- spedizioni MOL (uniche) senza ordine nel CRM ---
     crm_names = {norm(o.get('customerName')) for o in orders}
+    crm_ups = {str(o.get('trackingNumber')) for o in orders if o.get('trackingNumber')}
     orfane = [s for s in ships
-              if str(s.get('mbeTracking')) not in crm_trk and str(s.get('shipmentTrackingNumber')) not in crm_trk
-              and norm((s.get('addressTo') or {}).get('companyName')) not in crm_names]
-    log(f'B: spedizioni MBE senza ordine nel CRM: {len(orfane)}')
-    rep(f'\nSpedizioni MBE senza ordine nel CRM: {len(orfane)} (prime 10)')
-    for s in orfane[:10]:
-        rep(f"- {(s.get('addressTo') or {}).get('companyName')} | {s.get('shipmentTrackingNumber')} | delivered={s.get('delivered')}")
+              if norm((s.get('addressTo') or {}).get('companyName')) not in crm_names and ups_of(s) not in crm_ups]
+    log(f'B: spedizioni MOL uniche senza ordine nel CRM: {len(orfane)}')
+    rep(f'\nSpedizioni MOL uniche senza ordine nel CRM: {len(orfane)}')
+    for s in orfane[:40]:
+        rep(f"- {(s.get('addressTo') or {}).get('companyName')} | UPS={ups_of(s)} | creata={str(s.get('creationDate'))[:10]} | delivered={s.get('delivered')}")
+
 
 
 # ───────────────────────── Prova A: API e-link ─────────────────────────
