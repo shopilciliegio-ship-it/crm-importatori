@@ -1,6 +1,70 @@
 {
   "orders": [
     {
+      "id": "ord_mwd2zqrv6nqt",
+      "customerName": "IOAN ANTONOVICI",
+      "customerEmail": "antonovici@hotmail.com",
+      "customerPhone": "+40744472087",
+      "amount": 298.5,
+      "currency": "EUR",
+      "orderDate": 1794438867000,
+      "emailSubject": "🍷 New Order A1563 — IOAN ANTONOVICI  — 298.50 EUR",
+      "shipmentCode": "",
+      "shippingAddress": "PEPENARIEI 16, 725400 RĂDĂUȚI, ROMANIA (SUCEAVA)",
+      "numberOfCartons": null,
+      "shippingType": null,
+      "gmailMessageId": "<202611112314.35142637967@smtp-relay.mailin.fr>",
+      "trackingNumber": "",
+      "carrier": "MBE",
+      "products": [
+        {
+          "description": "SWEET SPARKLING WINE CILIEGIO IN FIORE",
+          "qty": 12,
+          "value": 120.0
+        },
+        {
+          "description": "PURPLE GRAPES - SWEET RED WINE IGT 202..",
+          "qty": 3,
+          "value": 24.0
+        },
+        {
+          "description": "CHIANTI STRADE BIANCHE 2025 LIM. ED.",
+          "qty": 1,
+          "value": 0.0
+        },
+        {
+          "description": "LIMONCELLO LIQUOR 500 ML",
+          "qty": 1,
+          "value": 15.0
+        },
+        {
+          "description": "GRAPPA DEL CHIANTI RISERVA 500 ML",
+          "qty": 1,
+          "value": 19.5
+        }
+      ],
+      "customsDuties": null,
+      "shippingCostCustomer": 120.0,
+      "shippingCostMos": null,
+      "source": "fieramente",
+      "language": "en",
+      "orderNumber": "",
+      "paymentType": "",
+      "shippingDate": null,
+      "status": "preparazione",
+      "statusHistory": [
+        {
+          "status": "preparazione",
+          "date": 1794459732043,
+          "note": "Importato da Gmail (GitHub Actions)"
+        }
+      ],
+      "emailsSent": [],
+      "notes": "",
+      "createdAt": 1794459732043,
+      "updatedAt": 1794459732043
+    },
+    {
       "id": "ord_mwcd8wsu2xpr",
       "customerName": "TAMI RICHER",
       "customerEmail": "tlricher@twcny.rr.com",
@@ -14097,5 +14161,5 @@
       "shipmentCode": "ABRAIRAD"
     }
   ],
-  "lastImportedAt": 1794416489742
+  "lastImportedAt": 1794459732043
 }
