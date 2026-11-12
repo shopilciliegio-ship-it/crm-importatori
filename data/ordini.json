@@ -115,12 +115,17 @@
       "orderNumber": "",
       "paymentType": "",
       "shippingDate": null,
-      "status": "preparazione",
+      "status": "spedito",
       "statusHistory": [
         {
           "status": "preparazione",
           "date": 1794416489742,
           "note": "Importato da Gmail (GitHub Actions)"
+        },
+        {
+          "status": "spedito",
+          "date": 1794477465585,
+          "note": ""
         }
       ],
       "emailsSent": [
@@ -136,7 +141,10 @@
       ],
       "notes": "",
       "createdAt": 1794416489742,
-      "updatedAt": 1794416505655
+      "updatedAt": 1794477465585,
+      "trackingUrl": "",
+      "destCountry": null,
+      "courierDate": 1794477465585
     },
     {
       "id": "ord_mwcd8wsuiy6o",
