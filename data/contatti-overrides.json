@@ -570304,23 +570304,68 @@
   },
   "c1780673710972935eu": {
     "contactName": "Arwen Buchholz",
-    "contactTitle": "General Manager"
+    "contactTitle": "General Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore|distributore",
+      "mercato_target": "horeca|retail",
+      "raccomandato": "forse",
+      "note": "Azienda piccola (9 dipendenti) con attività consolidata di import/distribuzione vini negli USA (North Carolina). Sito non raggiungibile al momento, ma presenti tracce di attività legittima (job postings, FDA registration). Manca conferma esplicita su vini italiani nel portafoglio.",
+      "analyzed_at": "2026-11-12T06:17:11.554Z"
+    }
   },
   "c1780673710972hm6w4": {
     "contactName": "Carina Barrera",
-    "contactTitle": "Director Of Operations"
+    "contactTitle": "Director Of Operations",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda USA (St. Helena, CA) con sito online attivo ma dati obsoleti (registrazione Oregon 2013). Nessuna menzione di vini italiani nel portafoglio. Fatturato molto basso (~463k$) e solo 9 dipendenti suggeriscono operazione piccola e poco strutturata. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-11-12T06:17:17.298Z"
+    }
   },
   "c17806737109723qy66": {
     "contactName": "Ryan Rickelman",
-    "contactTitle": "Fine Wine and Spirits Sales"
+    "contactTitle": "Fine Wine and Spirits Sales",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "si",
+      "tipo_business": "misto",
+      "mercato_target": "horeca",
+      "raccomandato": "si",
+      "note": "Importatore consolidato (25 anni) con divisione Cream Imports dedicata a Italia, Spagna e Francia. Portfolio focalizzato su produttori artigianali e biologici. Mercato primario HORECA in Illinois, dimensione media (9 dipendenti, ~2.1M fatturato).",
+      "analyzed_at": "2026-11-12T06:17:33.880Z"
+    }
   },
   "c1780673710972uz6b3": {
     "contactName": "David Devine",
-    "contactTitle": "Executive Vice President"
+    "contactTitle": "Executive Vice President",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Distributore consolidato (40+ anni) con portafoglio globale di 10K+ vini e licenze federali/statali. Specializzato in airlines, cruise lines e duty-free (B2B horeca). Non cita esplicitamente vini italiani ma catalogo internazionale suggerisce possibile presenza. Fatturato modesto (2.8M$) per dimensione mercato USA.",
+      "analyzed_at": "2026-11-12T06:17:39.244Z"
+    }
   },
   "c178067371097238ogj": {
     "contactName": "Mark Abkin",
-    "contactTitle": "Vice President Of Sales"
+    "contactTitle": "Vice President Of Sales",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore USA consolidato con licenze federali e statali (Oregon). Portafoglio Old World/New World include Italia. Piccola struttura (9 dipendenti, ~3.3M fatturato) focalizzata su vini artigianali premium. Verificare se distribuisce a horeca o solo retail/online.",
+      "analyzed_at": "2026-11-12T06:17:46.312Z"
+    }
   },
   "c1780673710972xeq69": {
     "contactName": "Marc Carreon",
@@ -617731,6 +617776,171 @@
       "raccomandato": "no",
       "note": "Piccolo retailer USA (10 dipendenti, fatturato ~240k) con sito non raggiungibile. Nessuna evidenza di focus su vini italiani; profilo generico wine/beer/spirits. Non idoneo per partnership B2B italiana.",
       "analyzed_at": "2026-11-12T06:15:38.540Z"
+    }
+  },
+  "c1780673710972zao4d": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer online + 3 store fisici (Northampton, Amherst, Longmeadow). Portafoglio vini globale con menzione esplicita di 'Italian Platter'. Fatturato modesto (127k) ma sito professionale e attivo. Contattare se interessati a retail/horeca locale USA.",
+      "analyzed_at": "2026-11-12T06:15:50.665Z"
+    }
+  },
+  "c1780673710972w5jot": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo retailer USA (10 dipendenti, fatturato ~364k) senza evidenza di vini italiani nel portafoglio. Sito generico con focus su promozioni locali (Maker's Mark, whiskey). Non è un importatore/distributore di vini italiani.",
+      "analyzed_at": "2026-11-12T06:15:55.776Z"
+    }
+  },
+  "c1780673710972aq5mu": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda USA (Sonoma) specializzata in wine club e vini boutique americani. Nessuna evidenza di focus su vini italiani; portafoglio orientato a piccoli produttori locali/americani. Non è un importatore/distributore di vini italiani.",
+      "analyzed_at": "2026-11-12T06:16:01.306Z"
+    }
+  },
+  "c17806737109720kywy": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer USA locale (Hot Springs, AR) con ~10 dipendenti e fatturato modesto. Nessuna evidenza di focus su vini italiani; portafoglio generico wine/beer/spirits. Non è un importatore/distributore B2B.",
+      "analyzed_at": "2026-11-12T06:16:06.625Z"
+    }
+  },
+  "c1780673710972bb028": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "E-commerce USA affidabile (sito professionale, 10 dipendenti, fatturato stabile) con portafoglio vini generico. Non emerge focus su vini italiani specifici. Contatto utile solo se interessati a distribuzione online negli USA con logistica consolidata.",
+      "analyzed_at": "2026-11-12T06:16:12.559Z"
+    }
+  },
+  "c1780673710972mu2a2": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Sito irraggiungibile, nessuna traccia online, fatturato modesto (776k$). Impossibile verificare se commercializza vini italiani. Contatto non consigliato senza validazione preliminare.",
+      "analyzed_at": "2026-11-12T06:16:17.556Z"
+    }
+  },
+  "c1780673710972kdfs7": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Sito non raggiungibile, nessuna conferma di specializzazione in vini italiani. Azienda molto piccola (10 dipendenti, fatturato ~181k USD) con profilo generico wine/beer/sparkling. Risultati Google non confermano identità aziendale.",
+      "analyzed_at": "2026-11-12T06:16:22.632Z"
+    }
+  },
+  "c1780673710972pgcl9": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccolo retailer NYC (10 dipendenti, fatturato modesto) con catalogo che include Italia tra le opzioni. Sito funzionante ma assenza totale da Google e info limitate suggeriscono operatività locale/nicchia. Contattare solo se target specifico è NYC retail.",
+      "analyzed_at": "2026-11-12T06:16:28.358Z"
+    }
+  },
+  "c17806737109729vzoa": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda locale USA (Walden) con fatturato modesto (~950k$) e 10 dipendenti. Nessuna traccia online, siti non raggiungibili, assenza di informazioni su portafoglio vini. Non risulta specializzazione in vini italiani.",
+      "analyzed_at": "2026-11-12T06:16:35.088Z"
+    }
+  },
+  "c1780673710972qttcn": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo retailer locale (10 dipendenti, fatturato ~100k) senza presenza online rilevabile. Nessuna evidenza di focus su vini italiani; portafoglio generico (beer, spirits, liqueurs). Non è un canale strategico per distribuzione vini premium.",
+      "analyzed_at": "2026-11-12T06:16:40.409Z"
+    }
+  },
+  "c1780673710972d9kk8": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer USA (Knoxville) con 30+ anni di storia locale, focus su bourbon allocato e selezione generale vini/spirits. Nessuna evidenza di importazione diretta di vini italiani; non è canale B2B pertinente per produttori italiani.",
+      "analyzed_at": "2026-11-12T06:16:45.294Z"
+    }
+  },
+  "c1780673710972wm1f2": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo retailer locale (10 dipendenti, fatturato ~138k) con focus su pontoon boat rentals e liquori generici. Nessuna evidenza di interesse specifico per vini italiani; profilo non adatto a partnership B2B.",
+      "analyzed_at": "2026-11-12T06:16:50.616Z"
+    }
+  },
+  "c1780673710972ljj7p": {
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "no",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda affidabile specializzata in vini portoghesi (Kopke, Cálem, Quinta da Boavista). Non importa vini italiani, quindi non pertinente per una strategia focalizzata su vini italiani.",
+      "analyzed_at": "2026-11-12T06:16:55.908Z"
+    }
+  },
+  "c1780673710972zhmm4": {
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo retailer locale (10 dipendenti, fatturato ~206k USD) specializzato in vino/spirits per consumatore finale. Nessuna evidenza di importazione diretta di vini italiani; sito non raggiungibile per verifica. Non è un buyer B2B rilevante.",
+      "analyzed_at": "2026-11-12T06:17:01.335Z"
+    }
+  },
+  "c1780673710972d1ut1": {
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo retailer USA (10 dipendenti, fatturato ~168k) senza traccia online di vini italiani. Sito dichiarato irraggiungibile; nessuna evidenza di specializzazione nel vino italiano o partnership commerciali rilevanti.",
+      "analyzed_at": "2026-11-12T06:17:06.287Z"
     }
   }
 }
