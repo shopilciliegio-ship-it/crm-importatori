@@ -569342,83 +569342,263 @@
   },
   "c1780673710972p5z1e": {
     "contactName": "Joe",
-    "contactTitle": "General Manager"
+    "contactTitle": "General Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccolo retailer USA (10 dipendenti, ~470k fatturato) con e-commerce attivo. Presenti Birra Moretti e altri brand europei/italiani, ma portafoglio generico. Contatto possibile per distribuzioni locali Colorado, ma dimensione limitata.",
+      "analyzed_at": "2026-11-12T06:03:48.093Z"
+    }
   },
   "c1780673710972mggzo": {
     "contactName": "Brian Duax",
-    "contactTitle": "Vice President"
+    "contactTitle": "Vice President",
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "no",
+      "tipo_business": "sconosciuto",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Sito web completamente compromesso (mostra categorie generiche: fotocamere, abbigliamento, giochi). Dati aziendali incoerenti (Des Moines vs Hagerstown MD). Nessuna traccia di attività vinicola reale.",
+      "analyzed_at": "2026-11-12T06:03:56.027Z"
+    }
   },
   "c1780673710972qp1ch": {
     "contactName": "Jerry Roumayah",
-    "contactTitle": "President"
+    "contactTitle": "President",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer locale (Michigan) con buona reputazione online (4.8★, 125 recensioni) e 10 dipendenti. Sito non raggiungibile limita verifica. Portafoglio generico (vini, birre, spirits) - nessuna conferma su focus vini italiani.",
+      "analyzed_at": "2026-11-12T06:04:01.435Z"
+    }
   },
   "c17806737109726xml9": {
     "contactName": "Jagjit Singh",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Retailer online con catalogo che include Italia (Tuscany, Pinot Grigio). Sito funzionante ma fatturato modesto (240k$) e 10 dipendenti suggeriscono piccola realtà locale. Nessuna traccia Google limita verifica affidabilità.",
+      "analyzed_at": "2026-11-12T06:04:06.557Z"
+    }
   },
   "c17806737109726oz27": {
     "contactName": "Kenn Brodmerkel",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Piccolo retailer USA (10 dipendenti) con sito funzionante che cita Italia tra i paesi di provenienza vini. Assenza da Google e fatturato modesto (54k) suggeriscono dimensione locale limitata; verificare se interessati a importazioni dirette.",
+      "analyzed_at": "2026-11-12T06:04:12.220Z"
+    }
   },
   "c17806737109722r7gw": {
     "contactName": "Mitch Mathews",
-    "contactTitle": "Store Manager"
+    "contactTitle": "Store Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo retailer USA (10 dipendenti, ~309k fatturato) senza evidenza di focus su vini italiani. Sito incompleto e generico; nessun catalogo consultabile online. Non è un canale strategico per esportatori italiani.",
+      "analyzed_at": "2026-11-12T06:04:17.604Z"
+    }
   },
   "c1780673710972ytgaf": {
     "contactName": "Jim Harmon",
-    "contactTitle": "General Manager"
+    "contactTitle": "General Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda USA di piccole dimensioni (10 dipendenti, fatturato molto basso). Sito non raggiungibile e nessuna traccia online. Impossibile verificare portafoglio vini italiani o affidabilità commerciale.",
+      "analyzed_at": "2026-11-12T06:04:23.314Z"
+    }
   },
   "c17806737109721y0fy": {
     "contactName": "Peter Athanasopoulos",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer USA piccolo (10 dipendenti) focalizzato su whiskey/bourbon e craft beer con barrel picks esclusivi. Nessuna menzione di vini italiani nel portafoglio; non è un canale di distribuzione pertinente per produttori italiani.",
+      "analyzed_at": "2026-11-12T06:04:28.655Z"
+    }
   },
   "c1780673710972qpsju": {
     "contactName": "Brian Ciske",
-    "contactTitle": "President"
+    "contactTitle": "President",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Azienda focalizzata su spirits (Scotch, Bourbon, Tequila, Rum) non su vini. Sito dichiarato non funzionante/minimalista. Nessuna evidenza di portafoglio vini italiani.",
+      "analyzed_at": "2026-11-12T06:04:33.901Z"
+    }
   },
   "c1780673710972dwo68": {
     "contactName": "Linda Flick",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo retailer USA (10 dipendenti, fatturato ~280k) con selezione generica di vini, birre e spirits. Nessuna menzione esplicita di vini italiani nel sito. Non è un buyer strategico per esportatori italiani.",
+      "analyzed_at": "2026-11-12T06:04:39.433Z"
+    }
   },
   "c1780673710972w3nrd": {
     "contactName": "Eric Cruz",
-    "contactTitle": "Merchandise Buyer"
+    "contactTitle": "Merchandise Buyer",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "forse",
+      "note": "Retailer online con sezione dedicata ai vini italiani nel catalogo. Dimensione piccola (10 dipendenti, ~1M fatturato) ma sito funzionante. Assenza di risultati Google e fatturato modesto suggeriscono visibilità limitata; verificare se interessati a fornitori diretti.",
+      "analyzed_at": "2026-11-12T06:04:47.305Z"
+    }
   },
   "c1780673710972jsoqn": {
     "contactName": "Sean Barry",
-    "contactTitle": "Spirits Guide"
+    "contactTitle": "Spirits Guide",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "forse",
+      "note": "Retailer online solido con sito professionale e riconoscimenti locali (Retailer of the Year). Catalogo include Italia (Tuscany, vini italiani). Limitazione: spedisce solo in Massachusetts, fatturato modesto (~240k), 10 dipendenti. Non è importatore diretto.",
+      "analyzed_at": "2026-11-12T06:04:52.974Z"
+    }
   },
   "c1780673710972xht47": {
     "contactName": "Jimmy Hand",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo retailer locale (10 dipendenti, fatturato ~416k USD) senza traccia online. Sito non raggiungibile e nessuna info su portafoglio vini. Difficile valutare interesse per vini italiani.",
+      "analyzed_at": "2026-11-12T06:04:58.099Z"
+    }
   },
   "c1780673710972poe08": {
     "contactName": "Mark Soporowski",
-    "contactTitle": "Owner/ Operator"
+    "contactTitle": "Owner/ Operator",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo retailer USA (10 dipendenti, fatturato ~175k) con portafoglio generico wine/beer/spirits. Nessuna menzione esplicita di vini italiani; sito non raggiungibile. Non è target B2B per esportatori italiani.",
+      "analyzed_at": "2026-11-12T06:05:03.710Z"
+    }
   },
   "c178067371097253sfd": {
     "contactName": "Brendan Doyle",
-    "contactTitle": "Sales Manager"
+    "contactTitle": "Sales Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Azienda consolidata (fondata 1992) con sito professionale e 43 shipment di import da 29 fornitori. Portafoglio vini internazionali (Canary Island, California). Nessuna menzione esplicita di vini italiani nel materiale disponibile; potrebbe essere opportunità se hanno già relazioni con importatori europei.",
+      "analyzed_at": "2026-11-12T06:05:10.185Z"
+    }
   },
   "c1780673710972rbf0k": {
     "contactName": "James Kraft",
-    "contactTitle": "President"
+    "contactTitle": "President",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo retailer USA (10 dipendenti, fatturato $231k) con sito e-commerce. Catalogo include vini italiani (Tuscany, Pinot Grigio) ma è rivenditore locale, non importatore/distributore. Non pertinente per strategie B2B di esportazione vini italiani.",
+      "analyzed_at": "2026-11-12T06:05:17.329Z"
+    }
   },
   "c1780673710972vqseu": {
     "contactName": "Dan Keyport",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Sito irraggiungibile, nessuna traccia Google, fatturato molto basso (148k$) per 10 dipendenti. Impossibile verificare credibilità o portafoglio vini italiani.",
+      "analyzed_at": "2026-11-12T06:05:32.129Z"
+    }
   },
   "c1780673710972bf1mf": {
     "contactName": "Jennifer Donahoe",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda USA di piccole dimensioni (10 dipendenti, fatturato ~417k). Sito dichiarato irraggiungibile e nessuna traccia online. Nessuna evidenza di focus su vini italiani. Non pertinente per distribuzione italiana.",
+      "analyzed_at": "2026-11-12T06:05:37.294Z"
+    }
   },
   "c1780673710972ezedj": {
     "contactName": "Wendy Mcclanahan",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda molto piccola (10 dipendenti, fatturato ~300k USD) con sito irraggiungibile e nessuna traccia online. Impossibile verificare se commercializza vini italiani. Profilo ad alto rischio.",
+      "analyzed_at": "2026-11-12T06:05:42.107Z"
+    }
   },
   "c1780673710972h1yt4": {
     "contactName": "Michael Albin",
-    "contactTitle": "Owner, Wine Consultant"
+    "contactTitle": "Owner, Wine Consultant",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda USA di piccole dimensioni (10 dipendenti, fatturato ~234k). Siti dichiarati non raggiungibili e nessuna traccia online. Impossibile verificare portafoglio vini italiani o affidabilità commerciale.",
+      "analyzed_at": "2026-11-12T06:05:46.811Z"
+    }
   },
   "c178067371097270mld": {
     "contactName": "Tom Jiaras",
