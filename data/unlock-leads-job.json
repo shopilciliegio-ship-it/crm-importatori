@@ -1,16 +1,32 @@
 {
-  "companyId": "c1780673710718o99od",
-  "company": "Aldi Australia",
-  "maxCredits": 10,
-  "status": "done",
-  "createdAt": 1790267123392,
-  "startedAt": "2026-09-24T16:25:28.535728+00:00",
-  "finishedAt": "2026-09-24T16:25:43.290315+00:00",
-  "result": {
-    "unlocked": 3,
-    "spent": 3,
-    "failed": 0,
-    "skipped": 0,
-    "stopReason": null
-  }
+  "raccomandato": "si",
+  "stelle": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "maxCredits": 30,
+  "regioni": [
+    "Altro",
+    "Caraibi",
+    "Medio Oriente",
+    "Africa",
+    "Oceania",
+    "Sud America",
+    "Asia"
+  ],
+  "paesiEsclusi": [
+    "Italy",
+    "United States",
+    "Canada",
+    "Germany",
+    "Japan",
+    "Sweden",
+    "Norway",
+    "Finland"
+  ],
+  "status": "pending",
+  "createdAt": 1794591767578
 }

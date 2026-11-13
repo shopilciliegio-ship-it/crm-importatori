@@ -204,13 +204,18 @@ def unlock_lead(headers, comp_id, lead_id, lead_type):
 
 # ── Selezione contatti target ────────────────────────────────────────────────
 
-def target_contacts(contacts, raccomandato, stelle_set):
+def target_contacts(contacts, raccomandato, stelle_set, regioni=None, paesi_esclusi=None):
     """Aziende che matchano raccomandato+stelle, hanno almeno una persona in scheda, e NESSUNA
     con email già nota (mai sbloccata prima — non rispende crediti inutilmente)."""
     out = []
     for c in contacts:
         research = c.get('research') or {}
         if research.get('raccomandato') != raccomandato:
+            continue
+        # Filtri opzionali del job (13/11/2026): solo certe regioni e/o paesi esclusi (es. fuori Europa, senza Italia/USA)
+        if regioni and c.get('region') not in regioni:
+            continue
+        if paesi_esclusi and c.get('country') in paesi_esclusi:
             continue
         if research.get('affidabilita') not in stelle_set:
             continue
@@ -393,7 +398,7 @@ def main():
         targets = []
         print(f'🎯 Una sola scheda: {by_id[company_id].get("company","?")}, budget {max_credits} crediti.')
     else:
-        targets = target_contacts(list(by_id.values()), raccomandato, stelle_set)
+        targets = target_contacts(list(by_id.values()), raccomandato, stelle_set, job.get('regioni'), job.get('paesiEsclusi'))
         print(f'🎯 {len(targets)} aziende target ("{raccomandato}", stelle {sorted(stelle_set)}), '
               f'budget {max_credits} crediti.')
 
