@@ -27,7 +27,15 @@
     "Norway",
     "Finland"
   ],
-  "status": "running",
+  "status": "done",
   "createdAt": 1794591767578,
-  "startedAt": "2026-11-13T17:43:07.435571+00:00"
+  "startedAt": "2026-11-13T17:43:07.435571+00:00",
+  "finishedAt": "2026-11-13T17:44:00.091082+00:00",
+  "result": {
+    "unlocked": 31,
+    "spent": 30,
+    "failed": 0,
+    "skipped": 7,
+    "stopReason": "budget di 30 crediti raggiunto"
+  }
 }
