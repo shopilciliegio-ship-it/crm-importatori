@@ -161,8 +161,7 @@ def get_recent_companies(endpoint):
         if r.status_code == 400:
             # Dal 13/10 circa la nuova interfaccia BWI rispondeva 400 e il sync settimanale importava 0 aziende senza errore:
             # ora il run FALLISCE e si vede.
-            print(f"
-❌ customSearch HTTP 400: {r.text[:300]} — il formato della richiesta e' cambiato, serve un intervento.")
+            print(f"❌ customSearch HTTP 400: {r.text[:300]} — il formato della richiesta è cambiato, serve un intervento.")
             raise SystemExit(1)
         try:
             data     = r.json()
