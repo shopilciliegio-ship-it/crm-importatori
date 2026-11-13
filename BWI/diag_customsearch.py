@@ -13,6 +13,13 @@ def main():
     crm = json.load(open(os.path.join(os.path.dirname(__file__), '..', 'data', 'contatti.json'), encoding='utf-8'))['contacts']
     crm_ids = {str(c.get('bwiCompId')) for c in crm if c.get('bwiCompId')}
     print(f'CRM: {len(crm)} aziende, {len(crm_ids)} con bwiCompId')
+    # prova varianti del campo "filters" (il formato vecchio ora da 400 "Invalid search filters")
+    for nome, filt in (('filters={}', {}), ('filters=assente', None), ('filters=liste vuote + keyword stringa', {**FILTRI, 'FilterKeyword': ''})):
+        pl = {"nocache": True, "startAt": 0, "endAt": 5, "sortBy": "Created", "sortDir": "DESC", "id": None, "name": None, "date": None}
+        if filt is not None:
+            pl["filters"] = filt
+        r = sess.post(f"{BASE_URL}/customSearch/", json=pl, headers=headers, timeout=60)
+        print(f'VARIANTE {nome}: HTTP {r.status_code} | {r.text[:160]!r}')
     for sort in ('Created', 'Updated'):
         print(f'\n===== customSearch sortBy={sort} DESC =====')
         payload = {"nocache": True, "startAt": 0, "endAt": 50, "sortBy": sort, "sortDir": "DESC",
