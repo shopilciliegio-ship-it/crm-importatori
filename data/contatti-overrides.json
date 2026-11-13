@@ -571210,83 +571210,263 @@
   },
   "c1780673710973vgnei": {
     "contactName": "Jesse Warner- Levine",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "online",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer online con selezione curata che include vini italiani (Scopa Pinot Grigio Sicily). Piccola struttura (9 dipendenti, fatturato ~510k$) con approccio premium. Nessuna traccia Google limita verifica affidabilità; potenziale cliente per distribuzione B2B limitato.",
+      "analyzed_at": "2026-11-13T06:03:05.797Z"
+    }
   },
   "c178067371097390870": {
     "contactName": "Dennis Carson",
-    "contactTitle": "President"
+    "contactTitle": "President",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer USA consolidato (66 anni di attività, 3ª-4ª generazione familiare) con sito professionale. Però: fatturato molto basso (187k$), solo 9 dipendenti, nessuna menzione esplicita di vini italiani nel portafoglio. Non è un distributore/importatore.",
+      "analyzed_at": "2026-11-13T06:03:11.218Z"
+    }
   },
   "c17806737109732vmlj": {
     "contactName": "William Peterson",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer USA di piccole dimensioni (9 dipendenti, fatturato ~166k) senza presenze online verificabili. Nessuna menzione esplicita di vini italiani nel sito; portafoglio generico wine/spirits. Non è un target B2B per esportatori italiani.",
+      "analyzed_at": "2026-11-13T06:03:16.200Z"
+    }
   },
   "c1780673710973wf3nm": {
     "contactName": "John Dix",
-    "contactTitle": "Chief Executive Officer And Owner"
+    "contactTitle": "Chief Executive Officer And Owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Azienda USA di piccole dimensioni (9 dipendenti, ~1.8M fatturato). Siti non raggiungibili e nessuna traccia online. Impossibile verificare se commercializza vini italiani o se rappresenta un partner affidabile.",
+      "analyzed_at": "2026-11-13T06:03:21.274Z"
+    }
   },
   "c1780673710973aby0l": {
     "contactName": "Russ Abbott",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo negozio di generi alimentari e liquori in Michigan (9 dipendenti, fatturato ~362k). Nessuna evidenza di interesse per vini italiani; portafoglio generico (Corona, birre artigianali). Non è un buyer strategico per esportatori di vino italiano.",
+      "analyzed_at": "2026-11-13T06:03:26.757Z"
+    }
   },
   "c1780673710973ovfos": {
     "contactName": "Shirley Boynton",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Importatore artigianale con portafoglio europeo che include Italia. Piccola struttura (9 dipendenti, fatturato ~367k$) con licenza federale valida. Dati doganali confermano importazioni da Austria; sito generico senza catalogo funzionante limita valutazione.",
+      "analyzed_at": "2026-11-13T06:03:31.904Z"
+    }
   },
   "c1780673710973gv3jn": {
     "contactName": "Brandi Pollock",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "si",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer USA consolidato (dal 1980) con selezione vini italiani (Veneto, Tuscany, Piedmont). Piccola dimensione (9 dipendenti, fatturato ~466k) e mercato locale (Grand Junction, CO) limitano potenziale partnership B2B per esportatori italiani.",
+      "analyzed_at": "2026-11-13T06:03:37.709Z"
+    }
   },
   "c1780673710973c3mpb": {
     "contactName": "Tom Flickinger",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "forse",
+      "note": "Retailer online consolidato (11 anni di attività) con permesso direct shipper in Oregon. Portafoglio ampio (Francia, Italia, Spagna, USA, etc.) ma focus prevalente su vini francesi premium. Piccola struttura (9 dipendenti, ~1M fatturato) - contattare se interessati a partnership online/retail.",
+      "analyzed_at": "2026-11-13T06:03:44.694Z"
+    }
   },
   "c1780673710973fcdpc": {
     "contactName": "Dan Granato",
-    "contactTitle": "Vice President - General Manager"
+    "contactTitle": "Vice President - General Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore|distributore",
+      "mercato_target": "horeca|retail",
+      "raccomandato": "forse",
+      "note": "Distributore bevande consolidato (47 anni) con portafoglio wine/beer/spirits, ma sito poco informativo su vini italiani specifici. Serve area Chicago (Cook, DuPage). Vale la pena contattare per verificare se hanno linee italiane.",
+      "analyzed_at": "2026-11-13T06:03:50.139Z"
+    }
   },
   "c1780673710973bqhxq": {
     "contactName": "Paul Petros",
-    "contactTitle": "Co-owner"
+    "contactTitle": "Co-owner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer locale Portland con 2 punti vendita e sito funzionante. Vende vino ma nessuna evidenza specifica di vini italiani nel portafoglio. Dimensione piccola (9 dipendenti, ~450k fatturato) limita potenziale ordini.",
+      "analyzed_at": "2026-11-13T06:03:55.158Z"
+    }
   },
   "c1780673710973w647u": {
     "contactName": "Abbie Batchelder",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda molto piccola (9 dipendenti, fatturato ~40k USD) con sito non accessibile. Nessuna evidenza di focus su vini italiani. Profilo insufficiente per partnership B2B.",
+      "analyzed_at": "2026-11-13T06:04:01.027Z"
+    }
   },
   "c178067371097335mxj": {
     "contactName": "Bert George",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "no",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "no",
+      "note": "Azienda focalizzata esclusivamente su vini californiani e americani. Nessuna traccia di vini italiani nel portafoglio. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-11-13T06:04:05.889Z"
+    }
   },
   "c17806737109731x1yz": {
     "contactName": "Larry Galateo",
-    "contactTitle": "General Manager, Owner"
+    "contactTitle": "General Manager, Owner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo retailer USA (9 dipendenti, ~439k fatturato) con 2 negozi fisici in Illinois. Nessuna evidenza di focus su vini italiani nel sito. Non è canale di distribuzione strategico per esportatori italiani.",
+      "analyzed_at": "2026-11-13T06:04:11.500Z"
+    }
   },
   "c1780673710973atev9": {
     "contactName": "Dean Rose",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo retailer USA (9 dipendenti, fatturato ~387k$) senza presenze web funzionanti. Nessuna evidenza di focus su vini italiani o importazione. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-11-13T06:04:16.930Z"
+    }
   },
   "c1780673710973efk12": {
     "contactName": "Marla Morris",
-    "contactTitle": "Wine Buyer"
+    "contactTitle": "Wine Buyer",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer/distributor locale USA con 9 dipendenti e fatturato modesto (~820k). Nessuna menzione esplicita di vini italiani nel sito. Focus su spirits e store picks, non su importazione di vini premium europei.",
+      "analyzed_at": "2026-11-13T06:04:22.436Z"
+    }
   },
   "c1780673710973smrjw": {
     "contactName": "Kent Starr",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer consolidato in Arkansas con selezione ampia (4.000 mq vini, 15.000 mq totali). Cita esplicitamente Italia tra le regioni vinicole. Piccolo (9 dipendenti, fatturato modesto) ma con buona reputazione locale e newsletter attiva. Non è importatore diretto.",
+      "analyzed_at": "2026-11-13T06:04:28.437Z"
+    }
   },
   "c1780673710973zymfn": {
     "contactName": "Chris Minervino",
-    "contactTitle": "Managing Partner"
+    "contactTitle": "Managing Partner",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "si",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer USA consolidato con sito professionale e presenze online (Instagram, Yelp). Catalogo esplicito di vini italiani (Nebbiolo, Sangiovese, Tuscany, Piemonte). Fatturato modesto (208k$) e team piccolo (9 dipendenti) suggeriscono negozio locale Boston-area, non distributore B2B.",
+      "analyzed_at": "2026-11-13T06:04:36.180Z"
+    }
   },
   "c1780673710973rqu3g": {
     "contactName": "Kenneth Kirk",
-    "contactTitle": "General Manager/ Wine Director"
+    "contactTitle": "General Manager/ Wine Director",
+    "research": {
+      "affidabilita": 1,
+      "vino_italiano": "no",
+      "tipo_business": "sconosciuto",
+      "mercato_target": "sconosciuto",
+      "raccomandato": "no",
+      "note": "Sito compromesso/hackerato (contiene contenuti spam SOJU88 e template video). Nessuna traccia online di attività legittima. Non contattare.",
+      "analyzed_at": "2026-11-13T06:04:41.655Z"
+    }
   },
   "c1780673710973tbbbc": {
     "contactName": "Martin Rezelj",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore|distributore",
+      "mercato_target": "horeca|retail",
+      "raccomandato": "forse",
+      "note": "Importatore/distributore consolidato in Ohio e Kentucky con portafoglio internazionale che include Italia. Piccola struttura (9 dipendenti, ~804k fatturato) focalizzata su vini boutique di qualità. Sito funzionante ma datato; nessuna evidenza diretta di vini italiani nel testo, ma Italia è citata tra i paesi rappresentati.",
+      "analyzed_at": "2026-11-13T06:04:47.423Z"
+    }
   },
   "c178067371097364rxh": {
     "contactName": "Mary Michiels",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer consolidato (dal 1955) con sito professionale e delivery locale a LA. Portafoglio vini europei (Alois Lageder italiano), ma focus retail/consumer end non B2B. Dimensione piccola (9 dipendenti, ~500k fatturato) non adatta a partnership distributive.",
+      "analyzed_at": "2026-11-13T06:04:53.231Z"
+    }
   },
   "c1780673710973kzbhi": {
     "contactName": "Mark Middlebrook",
