@@ -19,6 +19,8 @@ def main():
                    "filters": FILTRI, "id": None, "name": None, "date": None}
         r = sess.post(f"{BASE_URL}/customSearch/", json=payload, headers=headers, timeout=60)
         print('HTTP', r.status_code, '| bytes', len(r.content))
+        if r.status_code != 200:
+            print('CORPO RISPOSTA:', r.text[:400])
         try:
             data = r.json()
         except Exception as e:
