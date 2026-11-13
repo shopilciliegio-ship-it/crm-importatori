@@ -571730,83 +571730,263 @@
   },
   "c1780673710973gyiga": {
     "contactName": "Patrice Elia",
-    "contactTitle": "Office Manager"
+    "contactTitle": "Office Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Piccolo negozio di alimentari locale (8 dipendenti) con sezione liquori generica. Nessuna evidenza di focus su vini italiani; portafoglio non specificato. Non è un buyer strategico per esportatori di vino italiano.",
+      "analyzed_at": "2026-11-13T06:09:08.984Z"
+    }
   },
   "c1780673710973eohkq": {
     "contactName": "Kevin Neitzel",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Azienda USA (Manhattan, Kansas) con portafoglio vini internazionali che include Italia (Tuscany citata), ma focus primario su mercato domestico americano. Non è target rilevante per esportatori italiani di vino.",
+      "analyzed_at": "2026-11-13T06:09:15.648Z"
+    }
   },
   "c1780673710973v3irh": {
     "contactName": "Thomas Jung",
-    "contactTitle": "Regional Sales Manager"
+    "contactTitle": "Regional Sales Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "no",
+      "tipo_business": "importatore",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Importatore specializzato in vini sudamericani (Cile, Argentina, Uruguay), non italiani. Piccola struttura (8 dipendenti, fatturato ~409k USD) con focus su mercato USA. Non pertinente per distribuzione vini italiani.",
+      "analyzed_at": "2026-11-13T06:09:22.332Z"
+    }
   },
   "c1780673710973sxi2f": {
     "contactName": "Neil King",
-    "contactTitle": "Director of Operations"
+    "contactTitle": "Director of Operations",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "si",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer online consolidato (est. 2012) con selezione vini italiani (Veneto, Tuscany, Piedmont). Piccola dimensione (8 dipendenti, ~450k fatturato) limita potenziale ordini bulk, ma mercato retail/online potrebbe essere interessante per distribuzioni mirate.",
+      "analyzed_at": "2026-11-13T06:09:28.689Z"
+    }
   },
   "c17806737109735fscw": {
     "contactName": "Sunil Khanna",
-    "contactTitle": "Managing Partner"
+    "contactTitle": "Managing Partner",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "si",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "si",
+      "note": "Importatore USA con licenza federale attiva, portafoglio che include vini italiani (Francia, Spagna, Italia, Argentina). 8-11 dipendenti, sede Virginia. Sito non raggiungibile ma tracce solide di operatività e registrazioni ufficiali.",
+      "analyzed_at": "2026-11-13T06:09:35.521Z"
+    }
   },
   "c1780673710973655yk": {
     "contactName": "Michael Besich",
-    "contactTitle": "Vice President Operations"
+    "contactTitle": "Vice President Operations",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "online",
+      "mercato_target": "online",
+      "raccomandato": "forse",
+      "note": "Azienda solida (fatturato ~$5M, 8 dipendenti) con sito professionale e licenze federali verificate. Portfolio globale (Francia, Spagna, Portogallo, Cile, Argentina, California) ma nessuna menzione esplicita di vini italiani nel catalogo visibile. Modello B2C online puro, non adatto a partnership B2B tradizionali.",
+      "analyzed_at": "2026-11-13T06:09:41.920Z"
+    }
   },
   "c17806737109737evgl": {
     "contactName": "Michael Smart",
-    "contactTitle": "Owner/ General Manager"
+    "contactTitle": "Owner/ General Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Distributore USA consolidato (8 dipendenti, ~1M fatturato) con sito professionale e licenze regolari in Kentucky. Portfolio generico wine/spirits senza menzione esplicita di vini italiani; focus su horeca locale. Vale la pena verificare se importano etichette italiane.",
+      "analyzed_at": "2026-11-13T06:09:47.624Z"
+    }
   },
   "c1780673710973j8yaw": {
     "contactName": "Francesca M.",
-    "contactTitle": "Wine Sales Representative"
+    "contactTitle": "Wine Sales Representative",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "si",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "si",
+      "note": "Distributore specializzato in vini italiani (Franciacorta, Tinazzi, Poggio le Volpi, Tenuta Argentiera). Attivo nel segmento HORECA con eventi wine dinner regolari. Piccola struttura (8 dipendenti) ma consolidata nel mercato Houston.",
+      "analyzed_at": "2026-11-13T06:09:54.557Z"
+    }
   },
   "c1780673710973ulwv3": {
     "contactName": "Jimm Brumley",
-    "contactTitle": "Wine Buyer"
+    "contactTitle": "Wine Buyer",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer consolidato dal 1966 con sito funzionante e presenza social. Piccola dimensione (8 dipendenti, fatturato ~138k) limita potenziale ordini. Nessuna menzione esplicita di vini italiani nel materiale disponibile.",
+      "analyzed_at": "2026-11-13T06:09:59.541Z"
+    }
   },
   "c17806737109739drx3": {
     "contactName": "Benjamin Hatch",
-    "contactTitle": "Business Development Manager"
+    "contactTitle": "Business Development Manager",
+    "research": {
+      "affidabilita": 2,
+      "vino_italiano": "forse",
+      "tipo_business": "misto",
+      "mercato_target": "misto",
+      "raccomandato": "no",
+      "note": "Sito generico senza dettagli su portafoglio prodotti o clienti specifici. Nessuna menzione esplicita di vini italiani. Piccola azienda (8 dipendenti, $3.5M fatturato) con scarsa visibilità online e assenza di risultati Google.",
+      "analyzed_at": "2026-11-13T06:10:05.104Z"
+    }
   },
   "c1780673710973516s2": {
     "contactName": "Stacy Sherman",
-    "contactTitle": "President"
+    "contactTitle": "President",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "si",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "si",
+      "note": "Importatore USA specializzato in vini italiani con sede a Firenze e Houston. Fatturato solido (~5.2M$), 8 dipendenti, portfolio su vini biologici e spumanti. Contatti verificati e presenti su database import.",
+      "analyzed_at": "2026-11-13T06:10:10.675Z"
+    }
   },
   "c1780673710973zhic0": {
     "contactName": "Howie Rubin",
-    "contactTitle": "General Manager"
+    "contactTitle": "General Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer online con sito funzionante e catalogo che include Italia (Tuscany, Pinot Grigio). Piccola dimensione (8 dipendenti, fatturato ~258k$) limita potenziale. Nessuna traccia Google suggerisce bassa visibilità; verificare se interessati a fornitori diretti.",
+      "analyzed_at": "2026-11-13T06:10:17.783Z"
+    }
   },
   "c1780673710973l8fsi": {
     "contactName": "Edward Mulvihill",
-    "contactTitle": "Managing Partner/ Director Of Sales & Marketing"
+    "contactTitle": "Managing Partner/ Director Of Sales & Marketing",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Retailer consolidato (122 anni in business) con BBB A+, catalogo wine include Italia tra le categorie. Fatturato modesto (~212k) e 8 dipendenti suggeriscono negozio locale di piccole dimensioni, non target prioritario per esportatori italiani.",
+      "analyzed_at": "2026-11-13T06:10:24.097Z"
+    }
   },
   "c1780673710973wx2da": {
     "contactName": "Kelly McGraw",
-    "contactTitle": "National Sales Manager"
+    "contactTitle": "National Sales Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda consolidata dal 1997 con licenza TTB/ATF, ma sito web minimale e portafoglio poco trasparente. Citano 'Chateau Diana' (vino?) ma focus principale su whiskey e private label. Piccola dimensione (8 dipendenti, fatturato ~454k$) suggerisce nicchia specializzata. Vale verificare se distribuiscono effettivamente vini italiani.",
+      "analyzed_at": "2026-11-13T06:10:30.970Z"
+    }
   },
   "c1780673710973f4k4n": {
     "contactName": "Dmitrii Curbet",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore|distributore",
+      "mercato_target": "misto",
+      "raccomandato": "forse",
+      "note": "Azienda consolidata (dal 2008) con attività import documentata, ma portafoglio generico globale senza focus esplicito su vini italiani. Fatturato modesto (955k$) e team piccolo (8 dipendenti) suggeriscono nicchia di mercato. Vale verificare se rappresentano produttori italiani.",
+      "analyzed_at": "2026-11-13T06:10:36.723Z"
+    }
   },
   "c1780673710973ev6kc": {
     "contactName": "James Levens",
-    "contactTitle": "General Manager"
+    "contactTitle": "General Manager",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "non_risulta",
+      "tipo_business": "importatore",
+      "mercato_target": "horeca",
+      "raccomandato": "no",
+      "note": "Importatore boutique USA specializzato in vini naturali francesi e di Svevia, non italiani. Sito poco informativo e portafoglio focalizzato su Francia.",
+      "analyzed_at": "2026-11-13T06:10:42.618Z"
+    }
   },
   "c1780673710973g5qpd": {
     "contactName": "Elizabeth Corsini",
-    "contactTitle": "Owner/ Sales Manager"
+    "contactTitle": "Owner/ Sales Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "forse",
+      "tipo_business": "importatore|distributore",
+      "mercato_target": "horeca|retail",
+      "raccomandato": "forse",
+      "note": "Azienda solida (fondata 2006, 8 dipendenti, ~1.8M fatturato) con licenze federali e statali valide. Portfolio focalizzato su vini domestici USA e spirits; nessuna menzione esplicita di vini italiani nel sito. Contattare solo se interessati a distribuire negli USA, non per esportare vini italiani.",
+      "analyzed_at": "2026-11-13T06:10:48.810Z"
+    }
   },
   "c1780673710973dm5uu": {
     "contactName": "Bill Miller",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "research": {
+      "affidabilita": 3,
+      "vino_italiano": "probabile",
+      "tipo_business": "retailer",
+      "mercato_target": "retail",
+      "raccomandato": "no",
+      "note": "Retailer online/fisico USA con fatturato modesto (~950k$) e 8 dipendenti. Portafoglio generico (vino, birra, spirits) con alcuni riferimenti a vini europei (Châteauneuf du Pape, Sicilia) ma nessuna specializzazione italiana evidente. Non è un importatore/distributore B2B.",
+      "analyzed_at": "2026-11-13T06:10:55.789Z"
+    }
   },
   "c1780673710973lq03w": {
     "contactName": "Sasha Burekovic",
-    "contactTitle": "Founder/ Ceo"
+    "contactTitle": "Founder/ Ceo",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "importatore",
+      "mercato_target": "retail",
+      "raccomandato": "forse",
+      "note": "Importatore specializzato in vini artigianali europei dal 2011, focus su vini naturali/biologici. Portafoglio non esplicitamente italiano ma europeo (menzione Spagna). Piccola struttura (8 dipendenti, fatturato ~549k$) orientata a retail online; verificare se include vini italiani nel catalogo.",
+      "analyzed_at": "2026-11-13T06:11:03.942Z"
+    }
   },
   "c17806737109733kk7y": {
     "contactName": "Rachel Hillis",
-    "contactTitle": "Sales Manager"
+    "contactTitle": "Sales Manager",
+    "research": {
+      "affidabilita": 4,
+      "vino_italiano": "probabile",
+      "tipo_business": "distributore",
+      "mercato_target": "horeca",
+      "raccomandato": "forse",
+      "note": "Distributore consolidato in Colorado (dal 2013) con 20 anni di esperienza nel settore. Portfolio internazionale di piccoli produttori, ma non esplicita vini italiani. Dimensione piccola (8 dipendenti, fatturato modesto) limita potenziale, ma owner ha background solido (Massanois Imports).",
+      "analyzed_at": "2026-11-13T06:11:11.109Z"
+    }
   },
   "c1780673710973c7aai": {
     "contactName": "Tracy Maxon",
