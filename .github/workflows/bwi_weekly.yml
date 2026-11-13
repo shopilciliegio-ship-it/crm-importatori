@@ -57,3 +57,13 @@ jobs:
           git diff --staged --quiet || git commit -m "BWI sync — $(date -u '+%Y-%m-%d %H:%M') UTC"
           git pull --rebase --autostash
           git push
+
+      - name: Mail di allarme se il sync è fallito
+        if: failure()
+        env:
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          curl -s -X POST https://api.brevo.com/v3/smtp/email \
+            -H "api-key: $BREVO_API_KEY" -H "Content-Type: application/json" \
+            -d "{\"sender\":{\"email\":\"luca@sienawine.it\",\"name\":\"Siena Wine CRM\"},\"to\":[{\"email\":\"luca@ilciliegio.com\",\"name\":\"Luca\"}],\"subject\":\"BWI Sync FALLITO - controllare\",\"htmlContent\":\"<p>Il sync settimanale BWI e' fallito. Dettagli: <a href='$RUN_URL'>$RUN_URL</a></p><p>Le aziende nuove e aggiornate non sono state importate.</p>\"}" || true
