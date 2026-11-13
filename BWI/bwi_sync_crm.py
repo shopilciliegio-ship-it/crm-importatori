@@ -343,9 +343,12 @@ def send_digest(stats: dict):
     if not BREVO_API_KEY:
         print("  (Brevo API key non configurata — digest non inviato)")
         return
-    if stats["new"] == 0 and stats["updated"] == 0:
-        print("  (Nessun cambiamento — digest non inviato)")
-        return
+    nessun_cambiamento = stats["new"] == 0 and stats["updated"] == 0
+    # 13/11/2026: prima con 0 nuove e 0 aggiornate la mail NON partiva, e quando BWI ha cambiato il formato
+    # delle richieste (dal 13/10) il sync ha importato 0 aziende per 5 settimane senza che nessuno se ne accorgesse:
+    # la mail che non arrivava era l'unico segnale, e nessuno guarda una mail che manca. Ora parte SEMPRE.
+    if nessun_cambiamento:
+        print("  ATTENZIONE: nessun cambiamento — invio comunque la mail di controllo")
 
     new_list_html = "".join(
         f"<li>{n}</li>" for n in stats["new_list"][:30]
@@ -388,7 +391,9 @@ def send_digest(stats: dict):
     payload = {
         "sender": {"email": SENDER_EMAIL, "name": SENDER_NAME},
         "to":     [{"email": DIGEST_TO_EMAIL, "name": DIGEST_TO_NAME}],
-        "subject": f"BWI Sync {today} — {stats['new']} nuovi, {stats['updated']} aggiornati",
+        "subject": (f"⚠ BWI Sync {today} — 0 nuovi e 0 aggiornati: CONTROLLARE (di solito ne arrivano 60-200 a settimana)"
+                    if nessun_cambiamento else
+                    f"BWI Sync {today} — {stats['new']} nuovi, {stats['updated']} aggiornati"),
         "htmlContent": html,
         "trackClicks": False,
         "trackOpens":  False,
