@@ -2206,6 +2206,10 @@
       {
         "ts": 1794591794597,
         "msg": "⚠ Email sbloccata via BWI con dominio diverso dall'azienda: Walter Palacios <walter_palacios@carrefour.com> — da verificare, NON usata per gli invii"
+      },
+      {
+        "ts": 1794592363888,
+        "msg": "✅ Email BWI con dominio diverso dall'azienda promossa a destinatario invii da Luca (13/11): Walter Palacios <walter_palacios@carrefour.com>"
       }
     ],
     "research": {
@@ -2231,10 +2235,10 @@
       {
         "name": "Walter Palacios",
         "title": "Head of Purchasing",
-        "email": "",
+        "email": "walter_palacios@carrefour.com",
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/walter-palacios-31446944/",
-        "emailSospetta": "walter_palacios@carrefour.com"
+        "sbloccato": true
       },
       {
         "name": "Lorena Oneto",
@@ -2265,7 +2269,8 @@
         "linkedin": "https://www.linkedin.com/in/victor-pablo-benicio-561110149/"
       }
     ],
-    "contactTitle": "Head of Purchasing"
+    "contactTitle": "Head of Purchasing",
+    "contactEmail": "walter_palacios@carrefour.com"
   },
   "c1780673710716e8ys4": {
     "status": "followup",
@@ -84217,6 +84222,10 @@
       {
         "ts": 1794591794597,
         "msg": "⚠ Email sbloccata via BWI con dominio diverso dall'azienda: Nicolas Quercia <nicolas_quercia@carrefour.com> — da verificare, NON usata per gli invii"
+      },
+      {
+        "ts": 1794592363888,
+        "msg": "✅ Email BWI con dominio diverso dall'azienda promossa a destinatario invii da Luca (13/11): Nicolas Quercia <nicolas_quercia@carrefour.com>"
       }
     ],
     "research": {
@@ -84242,10 +84251,10 @@
       {
         "name": "Nicolas Quercia",
         "title": "Global Sourcing Manager Beverages",
-        "email": "",
+        "email": "nicolas_quercia@carrefour.com",
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/nicolas-quercia-97542a37/",
-        "emailSospetta": "nicolas_quercia@carrefour.com"
+        "sbloccato": true
       },
       {
         "name": "Samara Kuraoka",
@@ -84262,7 +84271,8 @@
         "linkedin": "https://www.linkedin.com/in/rodrigo-pereiro-80810885/"
       }
     ],
-    "contactTitle": "Global Sourcing Manager Beverages"
+    "contactTitle": "Global Sourcing Manager Beverages",
+    "contactEmail": "nicolas_quercia@carrefour.com"
   },
   "c1780673710734q85gx": {
     "status": "followup",
@@ -114612,6 +114622,10 @@
       {
         "ts": 1794591794597,
         "msg": "⚠ Email sbloccata via BWI con dominio diverso dall'azienda: Roberto Hernandez <roberto.hernandez0@walmart.com> — da verificare, NON usata per gli invii"
+      },
+      {
+        "ts": 1794592363888,
+        "msg": "✅ Email BWI con dominio diverso dall'azienda promossa a destinatario invii da Luca (13/11): Roberto Hernandez <roberto.hernandez0@walmart.com>"
       }
     ],
     "research": {
@@ -114637,10 +114651,10 @@
       {
         "name": "Roberto Hernandez",
         "title": "Buyer",
-        "email": "",
+        "email": "roberto.hernandez0@walmart.com",
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/roberto-hernandez-aa946797/",
-        "emailSospetta": "roberto.hernandez0@walmart.com"
+        "sbloccato": true
       },
       {
         "name": "Icilma Lira Marskman",
@@ -114657,7 +114671,8 @@
         "linkedin": "https://www.linkedin.com/in/cristian-barrientos-pozo-1441388/"
       }
     ],
-    "contactTitle": "Buyer"
+    "contactTitle": "Buyer",
+    "contactEmail": "roberto.hernandez0@walmart.com"
   },
   "c1780673710741znnum": {
     "research": {
@@ -122864,6 +122879,10 @@
       {
         "ts": 1794591794597,
         "msg": "⚠ Email sbloccata via BWI con dominio diverso dall'azienda: Riccardo Trentini <rt@maestri.co> — da verificare, NON usata per gli invii"
+      },
+      {
+        "ts": 1794592363888,
+        "msg": "✅ Email BWI con dominio diverso dall'azienda promossa a destinatario invii da Luca (13/11): Riccardo Trentini <rt@maestri.co>"
       }
     ],
     "research": {
@@ -122889,10 +122908,10 @@
       {
         "name": "Riccardo Trentini",
         "title": "President & Founder",
-        "email": "",
+        "email": "rt@maestri.co",
         "phone": "*",
         "linkedin": "https://www.linkedin.com/in/riccardo-trentini-1a4a7550/",
-        "emailSospetta": "rt@maestri.co"
+        "sbloccato": true
       },
       {
         "name": "Sebastián Ferreira",
@@ -122902,7 +122921,8 @@
         "linkedin": ""
       }
     ],
-    "contactTitle": "President & Founder"
+    "contactTitle": "President & Founder",
+    "contactEmail": "rt@maestri.co"
   },
   "c1780673710744noi62": {
     "status": "sent",
