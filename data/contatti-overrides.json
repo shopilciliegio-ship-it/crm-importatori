@@ -17974,7 +17974,17 @@
       }
     },
     "contactName": "Ripa Poghosyan",
-    "contactTitle": "Head Management"
+    "contactTitle": "Head Management",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592404925,
+        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
+      }
+    ]
   },
   "c17806737107185sd6l": {
     "research": {
@@ -18565,7 +18575,28 @@
       }
     },
     "contactName": "Patrick Dekker",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "contactEmail": "patrick@bomawines.com",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592404925,
+        "msg": "🔓 Email sbloccata via BWI: Patrick Dekker <patrick@bomawines.com> (Director)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Patrick Dekker",
+        "title": "Director",
+        "email": "patrick@bomawines.com",
+        "phone": "*",
+        "linkedin": "",
+        "sbloccato": true
+      }
+    ]
   },
   "c1780673710718y9q4a": {
     "status": "sent",
@@ -22552,6 +22583,10 @@
       {
         "ts": 1790438464990,
         "msg": "👁 Aperta: Have you ever heard of Small Vineyards International? Not yet?"
+      },
+      {
+        "ts": 1794592404925,
+        "msg": "🔓 Email sbloccata via BWI: Steven Milic <steve@winestockvic.com.au> (Wine Sales Specialist)"
       }
     ],
     "brevoEvents": [
@@ -22616,7 +22651,25 @@
       }
     },
     "contactName": "Steven Milic",
-    "contactTitle": "Wine Sales Specialist"
+    "contactTitle": "Wine Sales Specialist",
+    "contactEmail": "steve@winestockvic.com.au",
+    "contacts": [
+      {
+        "name": "Steven Milic",
+        "title": "Wine Sales Specialist",
+        "email": "steve@winestockvic.com.au",
+        "phone": "",
+        "linkedin": "Https://www.linkedin.com/in/steven-milic-7870b413/",
+        "sbloccato": true
+      },
+      {
+        "name": "Vince Pignatelli",
+        "title": "Managing Director",
+        "email": "",
+        "phone": "",
+        "linkedin": "Https://www.linkedin.com/in/vince-pignatelli-2445b693/"
+      }
+    ]
   },
   "c1780673710718xt1m4": {
     "status": "followup",
@@ -22644,6 +22697,10 @@
       {
         "ts": 1790373902337,
         "msg": "🔗 Click: Have you ever heard of Small Vineyards International? Not yet?"
+      },
+      {
+        "ts": 1794592404925,
+        "msg": "🔓 Email sbloccata via BWI: David Sharp <david.sharp@purewine.co> (Account Manager)"
       }
     ],
     "brevoEvents": [
@@ -22711,8 +22768,82 @@
         }
       }
     },
-    "contactName": "Tim Hampton",
-    "contactTitle": "National Imports Manager"
+    "contactName": "David Sharp",
+    "contactTitle": "Account Manager",
+    "contactEmail": "david.sharp@purewine.co",
+    "contacts": [
+      {
+        "name": "Tim Hampton",
+        "title": "National Imports Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/tim-hampton-1bba8b221/"
+      },
+      {
+        "name": "Ryan Hancock",
+        "title": "Agent & Market Manager - Europe",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/ryan-hancock-25a88b2a/"
+      },
+      {
+        "name": "Nick Barlow",
+        "title": "Business Development Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/nick-barlow-598523103/"
+      },
+      {
+        "name": "Richard Favretto",
+        "title": "General Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/richard-favretto-2111a271"
+      },
+      {
+        "name": "Patrick Missotten",
+        "title": "Warehouse & Logistics Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/patrick-missotten/"
+      },
+      {
+        "name": "David Sharp",
+        "title": "Account Manager",
+        "email": "david.sharp@purewine.co",
+        "phone": "*",
+        "linkedin": "https://www.linkedin.com/in/david-sharp-b79b31109/",
+        "sbloccato": true
+      },
+      {
+        "name": "Ben Copeman-Hill",
+        "title": "General Manager of National Business Sales",
+        "email": "",
+        "phone": "*",
+        "linkedin": "https://www.linkedin.com/in/ben-copeman-hill/"
+      },
+      {
+        "name": "Narelle Clark",
+        "title": "Key Account Executive",
+        "email": "",
+        "phone": "*",
+        "linkedin": "https://www.linkedin.com/in/narelle-clark-aa149343/"
+      },
+      {
+        "name": "Georgie Leach",
+        "title": "Marketing & Brand Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/georgie-leach-8777111a/"
+      },
+      {
+        "name": "Elle Lang",
+        "title": "Trade Marketing Executive",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/ellen-lang/"
+      }
+    ]
   },
   "c178067371071854fcm": {
     "status": "followup",
@@ -22728,6 +22859,10 @@
       {
         "ts": 1790373658355,
         "msg": "⚡ Auto day7: \"#2b — Follow-up not opened (day 7) - Importer Siena Wine\""
+      },
+      {
+        "ts": 1794592404925,
+        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
       }
     ],
     "brevoEvents": [
@@ -22976,6 +23111,10 @@
       {
         "ts": 1790373658355,
         "msg": "⚡ Auto day7: \"#2b — Follow-up not opened (day 7) - Importer Siena Wine\""
+      },
+      {
+        "ts": 1794592404925,
+        "msg": "🔓 Email sbloccata via BWI: Mathieu Smeysters <mathieu@eastendcellars.com.au> (General Manager And Head Wine Buyer)"
       }
     ],
     "brevoEvents": [
@@ -23038,7 +23177,32 @@
       }
     },
     "contactName": "Mathieu Smeysters",
-    "contactTitle": "General Manager And Head Wine Buyer"
+    "contactTitle": "General Manager And Head Wine Buyer",
+    "contactEmail": "mathieu@eastendcellars.com.au",
+    "contacts": [
+      {
+        "name": "Mathieu Smeysters",
+        "title": "General Manager And Head Wine Buyer",
+        "email": "mathieu@eastendcellars.com.au",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/mathieu-smeysters-02817b105/",
+        "sbloccato": true
+      },
+      {
+        "name": "Michael Andrewartha",
+        "title": "Co-owner/ Director",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/michael-andrewartha-0a10ab27/"
+      },
+      {
+        "name": "Kennedy Simpson",
+        "title": "Wine Consultant",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/kennedy-simpson-9475bb70/"
+      }
+    ]
   },
   "c1780673710718wh47y": {
     "status": "followup",
@@ -23054,6 +23218,10 @@
       {
         "ts": 1790373658355,
         "msg": "⚡ Auto day7: \"#2b — Follow-up not opened (day 7) - Importer Siena Wine\""
+      },
+      {
+        "ts": 1794592404925,
+        "msg": "🔓 Email sbloccata via BWI: Lachlan Mclean <lach@lsb.net.au> (Director)"
       }
     ],
     "brevoEvents": [
@@ -23112,7 +23280,32 @@
       }
     },
     "contactName": "Lachlan Mclean",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "contactEmail": "lach@lsb.net.au",
+    "contacts": [
+      {
+        "name": "Lachlan Mclean",
+        "title": "Director",
+        "email": "lach@lsb.net.au",
+        "phone": "*",
+        "linkedin": "https://www.linkedin.com/in/lachlanmclean/",
+        "sbloccato": true
+      },
+      {
+        "name": "Brenton Jull",
+        "title": "Sales Manager",
+        "email": "",
+        "phone": "*",
+        "linkedin": ""
+      },
+      {
+        "name": "Naomi McNulty",
+        "title": "General Manager",
+        "email": "",
+        "phone": "*",
+        "linkedin": ""
+      }
+    ]
   },
   "c178067371071819k2q": {
     "status": "followup",
@@ -23831,6 +24024,10 @@
       {
         "ts": 1790373658355,
         "msg": "⚡ Auto day7: \"#2b — Follow-up not opened (day 7) - Importer Siena Wine\""
+      },
+      {
+        "ts": 1794592404925,
+        "msg": "🔓 Email sbloccata via BWI: Davide Capozzi <davide@enoteca.com.au> (Key Account Manager)"
       }
     ],
     "brevoEvents": [
@@ -23894,7 +24091,25 @@
       }
     },
     "contactName": "Davide Capozzi",
-    "contactTitle": "Key Account Manager"
+    "contactTitle": "Key Account Manager",
+    "contactEmail": "davide@enoteca.com.au",
+    "contacts": [
+      {
+        "name": "Davide Capozzi",
+        "title": "Key Account Manager",
+        "email": "davide@enoteca.com.au",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/davide-capozzi/",
+        "sbloccato": true
+      },
+      {
+        "name": "Richard Wearing",
+        "title": "Account Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/richard-wearing-3b89a8164/"
+      }
+    ]
   },
   "c1780673710718nbw7x": {
     "status": "followup",
@@ -25571,6 +25786,10 @@
       {
         "ts": 1790395261636,
         "msg": "⚡ Auto day7: \"#2b — Follow-up not opened (day 7) - Importer Siena Wine\""
+      },
+      {
+        "ts": 1794592404925,
+        "msg": "🔓 Email sbloccata via BWI: Stuart Leece <stu@singlevineyards.com> (Director)"
       }
     ],
     "brevoEvents": [
@@ -25629,7 +25848,25 @@
       }
     },
     "contactName": "Stuart Leece",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "contactEmail": "stu@singlevineyards.com",
+    "contacts": [
+      {
+        "name": "Stuart Leece",
+        "title": "Director",
+        "email": "stu@singlevineyards.com",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/stuart-leece-1016a020/",
+        "sbloccato": true
+      },
+      {
+        "name": "Gemma Sadd",
+        "title": "Business Development Representative",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/gemma-sadd-ba767a180/"
+      }
+    ]
   },
   "c17806737107188tbxi": {
     "status": "followup",
@@ -511969,7 +512206,17 @@
       }
     },
     "contactName": "Peeradesh Santipongsak",
-    "contactTitle": "Sales Manager/ Branch Manager"
+    "contactTitle": "Sales Manager/ Branch Manager",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592404925,
+        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
+      }
+    ]
   },
   "c1780673710952fk6k5": {
     "research": {
@@ -512615,7 +512862,28 @@
       }
     },
     "contactName": "Ronavish Chulajata",
-    "contactTitle": "Founder"
+    "contactTitle": "Founder",
+    "contactEmail": "ronavish.c@estellawine.com",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592404925,
+        "msg": "🔓 Email sbloccata via BWI: Ronavish Chulajata <ronavish.c@estellawine.com> (Founder)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Ronavish Chulajata",
+        "title": "Founder",
+        "email": "ronavish.c@estellawine.com",
+        "phone": "",
+        "linkedin": "https://th.linkedin.com/in/ronavish-chulajata-12126027",
+        "sbloccato": true
+      }
+    ]
   },
   "c1780673710952ctslv": {
     "research": {
@@ -513023,7 +513291,35 @@
       }
     },
     "contactName": "Suttha Nakvachara",
-    "contactTitle": "Co-founder"
+    "contactTitle": "Co-founder",
+    "contactEmail": "suttha.n@wine-now.com",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592404925,
+        "msg": "🔓 Email sbloccata via BWI: Suttha Nakvachara <suttha.n@wine-now.com> (Co-founder)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Suttha Nakvachara",
+        "title": "Co-founder",
+        "email": "suttha.n@wine-now.com",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/suttha-nakvachara-301a6a44/",
+        "sbloccato": true
+      },
+      {
+        "name": "Pawin Chantaphakul",
+        "title": "Co-founder",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/pawin-chantaphakul-209b5071/"
+      }
+    ]
   },
   "c1780673710952zak7s": {
     "research": {
@@ -514115,8 +514411,54 @@
         }
       }
     },
-    "contactName": "Nesli Uslu",
-    "contactTitle": "Wine Category Executive"
+    "contactName": "Benedykt Pacholczyk",
+    "contactTitle": "Sales and Operations Director",
+    "contactEmail": "b.pacholczyk@metro-tr.com",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1785759870139,
+        "msg": "BWI sync: aggiornato (contatti)"
+      },
+      {
+        "ts": 1794592404925,
+        "msg": "🔓 Email sbloccata via BWI: Benedykt Pacholczyk <b.pacholczyk@metro-tr.com> (Sales and Operations Director)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Nesli Uslu",
+        "title": "Wine Category Executive",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/nesli-uslu-247a44137/"
+      },
+      {
+        "name": "Ekrem Altin",
+        "title": "Head Of Food Category Management",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/ekrem-altin/"
+      },
+      {
+        "name": "Inanc Akturk",
+        "title": "Wine Sales Senior Executive",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/inanc-akturk/"
+      },
+      {
+        "name": "Benedykt Pacholczyk",
+        "title": "Sales and Operations Director",
+        "email": "b.pacholczyk@metro-tr.com",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/benedykt-pacholczyk-938122131/",
+        "sbloccato": true
+      }
+    ]
   },
   "c1780673710953f3iqa": {
     "research": {
@@ -514674,7 +515016,42 @@
       }
     },
     "contactName": "Nüket Taş",
-    "contactTitle": "Purchasing"
+    "contactTitle": "Purchasing",
+    "contactEmail": "ntas@carrefoursa.com",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592404925,
+        "msg": "🔓 Email sbloccata via BWI: Nüket Taş <ntas@carrefoursa.com> (Purchasing)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Nüket Taş",
+        "title": "Purchasing",
+        "email": "ntas@carrefoursa.com",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/n%c3%bcket-ta%c5%9f-31a713142/",
+        "sbloccato": true
+      },
+      {
+        "name": "Sali̇h Demi̇rperçi̇n",
+        "title": "Purchase",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/salih-demirper%c3%a7in-32a154b4/"
+      },
+      {
+        "name": "G.Gözde Ozan",
+        "title": "Purchasing Executive",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/g-g%c3%b6zde-ozan-168b8720a/"
+      }
+    ]
   },
   "c1780673710953gxo4h": {
     "research": {
@@ -514995,7 +515372,35 @@
       }
     },
     "contactName": "Bharat Bhagra",
-    "contactTitle": "General Manager Supply Chain And Procurement"
+    "contactTitle": "General Manager Supply Chain And Procurement",
+    "contactEmail": "bharatbhagra@truebell.org",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592404925,
+        "msg": "🔓 Email sbloccata via BWI: Bharat Bhagra <bharatbhagra@truebell.org> (General Manager Supply Chain And Procurement)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Bharat Bhagra",
+        "title": "General Manager Supply Chain And Procurement",
+        "email": "bharatbhagra@truebell.org",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/bharat-bhagra-50a43536/",
+        "sbloccato": true
+      },
+      {
+        "name": "Bharat Asarpota",
+        "title": "Key Account Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/bharat-asarpota-35953762/"
+      }
+    ]
   },
   "c1780673710953gtlbv": {
     "research": {
@@ -515017,7 +515422,35 @@
       }
     },
     "contactName": "Laura Lindley",
-    "contactTitle": "Senior Procurement Manager"
+    "contactTitle": "Senior Procurement Manager",
+    "contactEmail": "laural@i-d-s.com",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592404925,
+        "msg": "🔓 Email sbloccata via BWI: Laura Lindley <laural@i-d-s.com> (Senior Procurement Manager)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Laura Lindley",
+        "title": "Senior Procurement Manager",
+        "email": "laural@i-d-s.com",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/laura-lindley-1197a91b/",
+        "sbloccato": true
+      },
+      {
+        "name": "Louise Price",
+        "title": "Senior Procurement Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/louise-price-a2327798"
+      }
+    ]
   },
   "c1780673710953uelzn": {
     "research": {
@@ -515288,8 +515721,64 @@
         }
       }
     },
-    "contactName": "Yashwant Dhuri",
-    "contactTitle": "Whisky Specialist"
+    "contactName": "Rohini Barua",
+    "contactTitle": "Category Manager - Group Spirits ( American Whiskey, Vodka & Gin)",
+    "contactEmail": "rohinib@mmi.ae",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592404925,
+        "msg": "🔓 Email sbloccata via BWI: Rohini Barua <rohinib@mmi.ae> (Category Manager - Group Spirits ( American Whiskey, Vodka & Gin))"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Yashwant Dhuri",
+        "title": "Whisky Specialist",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/yashwant-dhuri-20444778/"
+      },
+      {
+        "name": "Rohini Barua",
+        "title": "Category Manager - Group Spirits ( American Whiskey, Vodka & Gin)",
+        "email": "rohinib@mmi.ae",
+        "phone": "",
+        "linkedin": "Http://www.linkedin.com/in/rohini-barua-09611950",
+        "sbloccato": true
+      },
+      {
+        "name": "Jakub Grabowski",
+        "title": "Category Manager - Luxury Spirits",
+        "email": "",
+        "phone": "",
+        "linkedin": "Https://www.linkedin.com/in/jakub-grabowski-15566761/"
+      },
+      {
+        "name": "Karina Varigina",
+        "title": "Brand Manager Bacardi",
+        "email": "",
+        "phone": "",
+        "linkedin": "Https://www.linkedin.com/in/karina-varigina/"
+      },
+      {
+        "name": "James Rantall",
+        "title": "Category Manager - Bacardi Martini",
+        "email": "",
+        "phone": "",
+        "linkedin": "Https://www.linkedin.com/in/jamesrantall/"
+      },
+      {
+        "name": "Tony Dodds",
+        "title": "General Manager Wine, Champagne & Sake",
+        "email": "",
+        "phone": "",
+        "linkedin": "Https://www.linkedin.com/in/tony-dodds-a045695/"
+      }
+    ]
   },
   "c1780673710953n0kwo": {
     "research": {
@@ -606163,7 +606652,17 @@
       }
     },
     "contactName": "Luis Alberto Martínez García",
-    "contactTitle": "Head of Tasting Planning and Coordination / Sommelier"
+    "contactTitle": "Head of Tasting Planning and Coordination / Sommelier",
+    "log": [
+      {
+        "ts": 1786959960995,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592404925,
+        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
+      }
+    ]
   },
   "c17869599610175n260": {
     "research": {
@@ -606551,7 +607050,17 @@
       }
     },
     "contactName": "Davide Cavetti",
-    "contactTitle": "Area Sales Manager"
+    "contactTitle": "Area Sales Manager",
+    "log": [
+      {
+        "ts": 1787565175550,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592404925,
+        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
+      }
+    ]
   },
   "c1787565175566ivalw": {
     "research": {
@@ -613576,7 +614085,17 @@
       }
     },
     "contactName": "Giovanni Orlotti",
-    "contactTitle": "Chief Executive Officer"
+    "contactTitle": "Chief Executive Officer",
+    "log": [
+      {
+        "ts": 1789400396361,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592404925,
+        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
+      }
+    ]
   },
   "c1789400396381yss9f": {
     "status": "sent",
