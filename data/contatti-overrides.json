@@ -125156,7 +125156,21 @@
       }
     },
     "contactName": "Karen Cardenas",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1791797451382,
+        "msg": "BWI sync: aggiornato (contatti)"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
+      }
+    ]
   },
   "c1780673710744tvm1f": {
     "status": "sent",
@@ -126072,7 +126086,35 @@
       }
     },
     "contactName": "Felipe Marquez",
-    "contactTitle": "Sommelier"
+    "contactTitle": "Sommelier",
+    "contactEmail": "fmarquez@vinosdelrio.com",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "🔓 Email sbloccata via BWI: Felipe Marquez <fmarquez@vinosdelrio.com> (Sommelier)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Felipe Marquez",
+        "title": "Sommelier",
+        "email": "fmarquez@vinosdelrio.com",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/felipe-marquez-85aa8b67/",
+        "sbloccato": true
+      },
+      {
+        "name": "Isabel Mejia",
+        "title": "Commercial and Legal Director",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/mejia-isabel/"
+      }
+    ]
   },
   "c1780673710744541q4": {
     "status": "sent",
@@ -128269,7 +128311,35 @@
       }
     },
     "contactName": "Priscilla Meneses",
-    "contactTitle": "Category Buyer"
+    "contactTitle": "Category Buyer",
+    "contactEmail": "pmeneses@megasuper.com",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "🔓 Email sbloccata via BWI: Priscilla Meneses <pmeneses@megasuper.com> (Category Buyer)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Priscilla Meneses",
+        "title": "Category Buyer",
+        "email": "pmeneses@megasuper.com",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/priscilla-meneses-561b281a/",
+        "sbloccato": true
+      },
+      {
+        "name": "Mauricio Lepiz Solis",
+        "title": "Commercial Vice President",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/mauricio-lepiz-solis-76bb6675/"
+      }
+    ]
   },
   "c1780673710745c8jw3": {
     "research": {
@@ -128401,7 +128471,35 @@
       }
     },
     "contactName": "Jeffrey Zamora",
-    "contactTitle": "Sommelier"
+    "contactTitle": "Sommelier",
+    "contactEmail": "jzamora@alpiste.co.cr",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "🔓 Email sbloccata via BWI: Jeffrey Zamora <jzamora@alpiste.co.cr> (Sommelier)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Jeffrey Zamora",
+        "title": "Sommelier",
+        "email": "jzamora@alpiste.co.cr",
+        "phone": "",
+        "linkedin": "Https://www.linkedin.com/in/jeffrey-zamora-67157831/",
+        "sbloccato": true
+      },
+      {
+        "name": "Pietro Poma Murialdo",
+        "title": "Owner",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/pietro-poma-murialdo-3365b149/"
+      }
+    ]
   },
   "c1780673710745fn43i": {
     "status": "sent",
@@ -171331,7 +171429,35 @@
       }
     },
     "contactName": "Yesenia Rosario",
-    "contactTitle": "Purchasing Manager"
+    "contactTitle": "Purchasing Manager",
+    "contactEmail": "yeseniarosario@mercatodo.com",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "🔓 Email sbloccata via BWI: Yesenia Rosario <yeseniarosario@mercatodo.com> (Purchasing Manager)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Yesenia Rosario",
+        "title": "Purchasing Manager",
+        "email": "yeseniarosario@mercatodo.com",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/yesenia-rosario-389651a1/",
+        "sbloccato": true
+      },
+      {
+        "name": "Hector Olivier",
+        "title": "Logistics Director",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/hector-olivier-183719110/"
+      }
+    ]
   },
   "c17806737108018xpo0": {
     "research": {
@@ -171633,7 +171759,35 @@
       }
     },
     "contactName": "Eduardo García Díaz",
-    "contactTitle": "Co-founder and Commercial Director"
+    "contactTitle": "Co-founder and Commercial Director",
+    "contactEmail": "egarcia@sembravinos.com",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "🔓 Email sbloccata via BWI: Eduardo García Díaz <egarcia@sembravinos.com> (Co-founder and Commercial Director)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Eduardo García Díaz",
+        "title": "Co-founder and Commercial Director",
+        "email": "egarcia@sembravinos.com",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/eduardo-garc%C3%ADa-d%C3%ADaz-78214922",
+        "sbloccato": true
+      },
+      {
+        "name": "Geraldine Reyes",
+        "title": "On Trade Sales Representative",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/geraldine-reyes-1742a061/"
+      }
+    ]
   },
   "c1780673710801rkc9p": {
     "research": {
@@ -172468,7 +172622,35 @@
       }
     },
     "contactName": "Patricia Armas",
-    "contactTitle": "Category Manager"
+    "contactTitle": "Category Manager",
+    "contactEmail": "parmas@dibeal.com",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "🔓 Email sbloccata via BWI: Patricia Armas <parmas@dibeal.com> (Category Manager)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Patricia Armas",
+        "title": "Category Manager",
+        "email": "parmas@dibeal.com",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/patricia-armas-a1868b17a/",
+        "sbloccato": true
+      },
+      {
+        "name": "Marcela Padilla",
+        "title": "Sales Executive",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/marcela-padilla-14b9a5173"
+      }
+    ]
   },
   "c1780673710801v6kqe": {
     "status": "sent",
@@ -172658,6 +172840,10 @@
       {
         "ts": 1789910349366,
         "msg": "🔧 Recuperato da Brevo — invio reale del 18-19/09 inviato ma non salvato nel CRM per interruzione di sessione (ricostruito il 20/09/2026 incrociando gli eventi Brevo)"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "🔓 Email sbloccata via BWI: Jorge Castellanos <jorgecastellanos@epb.ec> (General Manager)"
       }
     ],
     "brevoEvents": [
@@ -172698,7 +172884,25 @@
       }
     },
     "contactName": "Jorge Castellanos",
-    "contactTitle": "General Manager"
+    "contactTitle": "General Manager",
+    "contactEmail": "jorgecastellanos@epb.ec",
+    "contacts": [
+      {
+        "name": "Jorge Castellanos",
+        "title": "General Manager",
+        "email": "jorgecastellanos@epb.ec",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/jorge-castellanos-510a471b/",
+        "sbloccato": true
+      },
+      {
+        "name": "Fernando Vivanco",
+        "title": "Spirits Brand Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/vivancofernando/"
+      }
+    ]
   },
   "c1780673710801bhrqh": {
     "research": {
@@ -172920,7 +173124,17 @@
       }
     },
     "contactName": "Margarita Ledesma Neira",
-    "contactTitle": "Manager/ Owner"
+    "contactTitle": "Manager/ Owner",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
+      }
+    ]
   },
   "c178067371080169hj0": {
     "status": "sent",
@@ -174090,8 +174304,50 @@
         }
       }
     },
-    "contactName": "Andres Zablah",
-    "contactTitle": "Chief Executive Officer"
+    "contactName": "Andrea Torrento",
+    "contactTitle": "Brand Manager",
+    "contactEmail": "atorrento@disna.com.sv",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "🔓 Email sbloccata via BWI: Andrea Torrento <atorrento@disna.com.sv> (Brand Manager)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Andres Zablah",
+        "title": "Chief Executive Officer",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/andres-zablah-b722651/"
+      },
+      {
+        "name": "Andrea Torrento",
+        "title": "Brand Manager",
+        "email": "atorrento@disna.com.sv",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/andrea-torrento-b676729b/",
+        "sbloccato": true
+      },
+      {
+        "name": "Nora Sepúlveda",
+        "title": "Brand Manager Wines and Spirits",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/nora-sep%C3%BAlveda-b1aa5857/"
+      },
+      {
+        "name": "Ana Mercedes Gomez Guzman",
+        "title": "Import Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/ana-mercedes-gomez-guzman-b50894153/"
+      }
+    ]
   },
   "c17806737108018id2u": {
     "status": "sent",
@@ -174258,8 +174514,54 @@
         }
       }
     },
-    "contactName": "Monserrat Serrano",
-    "contactTitle": "Brand Manager - Liquors"
+    "contactName": "Laura Martínez",
+    "contactTitle": "Brand Manager",
+    "contactEmail": "martinez.laura@crio.com.sv",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1780924272611,
+        "msg": "BWI sync: aggiornato (contatti)"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "🔓 Email sbloccata via BWI: Laura Martínez <martinez.laura@crio.com.sv> (Brand Manager)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Monserrat Serrano",
+        "title": "Brand Manager - Liquors",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/monserrat-serrano-480863201/"
+      },
+      {
+        "name": "Nancy Mercedes Martinez Mendez",
+        "title": "Administrative Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/nancy-mercedes-martinez-mendez-43154a39/"
+      },
+      {
+        "name": "Laura Martínez",
+        "title": "Brand Manager",
+        "email": "martinez.laura@crio.com.sv",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/laura-mart%C3%ADnez-a0b021b3/",
+        "sbloccato": true
+      },
+      {
+        "name": "Carlos Enrique Palomo Alvarez",
+        "title": "Operations Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/carlos-enrique-palomo-alvarez-294a92190/"
+      }
+    ]
   },
   "c17806737108011q59s": {
     "status": "sent",
@@ -240291,7 +240593,34 @@
       }
     },
     "contactName": "David Recinos",
-    "contactTitle": "Commercial Manager of Imported Products"
+    "contactTitle": "Commercial Manager of Imported Products",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "⚠ Email sbloccata via BWI con dominio diverso dall'azienda: David Recinos <drecinos@unisupergt.com> — da verificare, NON usata per gli invii"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "David Recinos",
+        "title": "Commercial Manager of Imported Products",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/david-recinos-79232679/",
+        "emailSospetta": "drecinos@unisupergt.com"
+      },
+      {
+        "name": "Raúl Artemio Cabrera Miranda",
+        "title": "Commercial Executive",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/ra%C3%BAl-artemio-cabrera-miranda-1196b22a/"
+      }
+    ]
   },
   "c1780673710853i470x": {
     "status": "sent",
@@ -240367,7 +240696,42 @@
       }
     },
     "contactName": "Luis Javier Galindo",
-    "contactTitle": "Category Manager Wine"
+    "contactTitle": "Category Manager Wine",
+    "contactEmail": "luis.galindo@alcazaren.com.gt",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "🔓 Email sbloccata via BWI: Luis Javier Galindo <luis.galindo@alcazaren.com.gt> (Category Manager Wine)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Luis Javier Galindo",
+        "title": "Category Manager Wine",
+        "email": "luis.galindo@alcazaren.com.gt",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/luis-javier-galindo-228349130/",
+        "sbloccato": true
+      },
+      {
+        "name": "Eduardo Castro Pérez",
+        "title": "Commercial Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "Https://www.linkedin.com/in/eduardo-c-90051826/"
+      },
+      {
+        "name": "Jessica Arriola",
+        "title": "Wine Brand Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "Https://www.linkedin.com/in/jessica-arriola-b8b2b342/"
+      }
+    ]
   },
   "c1780673710853x5sg4": {
     "research": {
@@ -240389,7 +240753,17 @@
       }
     },
     "contactName": "Edgar Orantes",
-    "contactTitle": "Sales Executive"
+    "contactTitle": "Sales Executive",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
+      }
+    ]
   },
   "c1780673710853jyf0s": {
     "research": {
@@ -240411,7 +240785,17 @@
       }
     },
     "contactName": "Mirna Meza",
-    "contactTitle": "Senior Business Unit Manager"
+    "contactTitle": "Senior Business Unit Manager",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
+      }
+    ]
   },
   "c1780673710853kvdkz": {
     "research": {
@@ -240432,8 +240816,50 @@
         }
       }
     },
-    "contactName": "Henry Saúl Pérez Lucero",
-    "contactTitle": "General Manager of Operations"
+    "contactName": "Emilio de Jesus Gualim Pinto",
+    "contactTitle": "Commercial Manager",
+    "contactEmail": "e.gualim@marcasmundiales.com.gt",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "🔓 Email sbloccata via BWI: Emilio de Jesus Gualim Pinto <e.gualim@marcasmundiales.com.gt> (Commercial Manager)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Henry Saúl Pérez Lucero",
+        "title": "General Manager of Operations",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/henry-sa%c3%bal-p%c3%a9rez-lucero-260695282/"
+      },
+      {
+        "name": "Rodolfo Macal",
+        "title": "Commercial Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/rodolfo-macal-232a7062/"
+      },
+      {
+        "name": "Emilio de Jesus Gualim Pinto",
+        "title": "Commercial Manager",
+        "email": "e.gualim@marcasmundiales.com.gt",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/emiliogualim72/",
+        "sbloccato": true
+      },
+      {
+        "name": "Nicholas Dorion",
+        "title": "President",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/nicholas-dorion-367a2b36/"
+      }
+    ]
   },
   "c178067371085333opc": {
     "research": {
@@ -240477,7 +240903,35 @@
       }
     },
     "contactName": "Sebastian Morales Gallio",
-    "contactTitle": "Brand Development Manager"
+    "contactTitle": "Brand Development Manager",
+    "contactEmail": "sebastian@plusmarkas.com.gt",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "🔓 Email sbloccata via BWI: Sebastian Morales Gallio <sebastian@plusmarkas.com.gt> (Brand Development Manager)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Sebastian Morales Gallio",
+        "title": "Brand Development Manager",
+        "email": "sebastian@plusmarkas.com.gt",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/sebastian-morales-gallio-5519b1102",
+        "sbloccato": true
+      },
+      {
+        "name": "Mario Gallio",
+        "title": "Owner",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/mario-gallio-4933528/"
+      }
+    ]
   },
   "c1780673710853vjnn9": {
     "research": {
@@ -240499,7 +240953,17 @@
       }
     },
     "contactName": "Omar Alvarado",
-    "contactTitle": "Sommelier"
+    "contactTitle": "Sommelier",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
+      }
+    ]
   },
   "c178067371085332dln": {
     "research": {
@@ -243042,7 +243506,35 @@
       }
     },
     "contactName": "Michele Bernacchia",
-    "contactTitle": "General Manager"
+    "contactTitle": "General Manager",
+    "contactEmail": "michele@brightview.com.hk",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "🔓 Email sbloccata via BWI: Michele Bernacchia <michele@brightview.com.hk> (General Manager)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Michele Bernacchia",
+        "title": "General Manager",
+        "email": "michele@brightview.com.hk",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/michele-bernacchia-4638b723",
+        "sbloccato": true
+      },
+      {
+        "name": "Rachel Ip",
+        "title": "Sales Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/rachel-ip-38079aa3/"
+      }
+    ]
   },
   "c1780673710853v8abf": {
     "research": {
@@ -243192,7 +243684,56 @@
       }
     },
     "contactName": "Richard Paine",
-    "contactTitle": "Managing Director"
+    "contactTitle": "Managing Director",
+    "contactEmail": "r.paine@finevintage.com.hk",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "🔓 Email sbloccata via BWI: Richard Paine <r.paine@finevintage.com.hk> (Managing Director)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Richard Paine",
+        "title": "Managing Director",
+        "email": "r.paine@finevintage.com.hk",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/richard-paine-a2ab0537/",
+        "sbloccato": true
+      },
+      {
+        "name": "Andrew Ford",
+        "title": "Chief Executive Officer",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/andrew-ford-1670bb1/"
+      },
+      {
+        "name": "Kevin Stephen",
+        "title": "Managing Director",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/kevin-stephen-86b733b/"
+      },
+      {
+        "name": "Stéphanie Srey",
+        "title": "Sales Marketing Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/st%C3%A9phanie-srey-63233b14b/"
+      },
+      {
+        "name": "Vince Hung",
+        "title": "Senior Sales And Marketing Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/vince-hung-a4a85214b/"
+      }
+    ]
   },
   "c1780673710854ydtbr": {
     "research": {
