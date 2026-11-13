@@ -2213,7 +2213,59 @@
       }
     },
     "contactName": "Walter Palacios",
-    "contactTitle": "Head of Purchasing"
+    "contactTitle": "Head of Purchasing",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1781537452525,
+        "msg": "BWI sync: aggiornato (contatti)"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "⚠ Email sbloccata via BWI con dominio diverso dall'azienda: Walter Palacios <walter_palacios@carrefour.com> — da verificare, NON usata per gli invii"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Walter Palacios",
+        "title": "Head of Purchasing",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/walter-palacios-31446944/",
+        "emailSospetta": "walter_palacios@carrefour.com"
+      },
+      {
+        "name": "Lorena Oneto",
+        "title": "Head of Purchasing",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/lorena-oneto-475ba794/"
+      },
+      {
+        "name": "Ricardo Arismendi",
+        "title": "Purchasing Manager Beverages",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/ricardo-arismendi-a1811260/"
+      },
+      {
+        "name": "Fiamma Lamas",
+        "title": "Head of Purchasing",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/fiammalamas/"
+      },
+      {
+        "name": "Victor Pablo Benicio",
+        "title": "Sales Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/victor-pablo-benicio-561110149/"
+      }
+    ]
   },
   "c1780673710716e8ys4": {
     "status": "followup",
@@ -17867,7 +17919,35 @@
       }
     },
     "contactName": "Arman Avetisyan",
-    "contactTitle": "Import & Brand Manager"
+    "contactTitle": "Import & Brand Manager",
+    "contactEmail": "arman.avetisyan@andaco.am",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Email sbloccata via BWI: Arman Avetisyan <arman.avetisyan@andaco.am> (Import & Brand Manager)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Arman Avetisyan",
+        "title": "Import & Brand Manager",
+        "email": "arman.avetisyan@andaco.am",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/arman-avetisyan-914a86a",
+        "sbloccato": true
+      },
+      {
+        "name": "Hrach Yeritsyan",
+        "title": "Wine Brand Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "Https://www.linkedin.com/in/hrach-yeritsyan-863694b6/"
+      }
+    ]
   },
   "c1780673710718rc3kq": {
     "research": {
@@ -18979,6 +19059,10 @@
       {
         "ts": 1790373658355,
         "msg": "⚡ Auto day7: \"#2b — Follow-up not opened (day 7) - Importer Siena Wine\""
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Email sbloccata via BWI: Lidija Fargher <lidija.fargher@coles.com.au> (Buyer)"
       }
     ],
     "brevoEvents": [
@@ -19037,7 +19121,39 @@
       }
     },
     "contactName": "Lidija Fargher",
-    "contactTitle": "Buyer"
+    "contactTitle": "Buyer",
+    "contactEmail": "lidija.fargher@coles.com.au",
+    "contacts": [
+      {
+        "name": "Lidija Fargher",
+        "title": "Buyer",
+        "email": "lidija.fargher@coles.com.au",
+        "phone": "",
+        "linkedin": "https://au.linkedin.com/in/lidija-fargher-166b436",
+        "sbloccato": true
+      },
+      {
+        "name": "Olivia van den Berg",
+        "title": "Category Manager Wine",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/oliviavandenberg/"
+      },
+      {
+        "name": "Mills Alexander",
+        "title": "Store Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/mills-alexander/"
+      },
+      {
+        "name": "Daniel Parrott",
+        "title": "Wine Buyer",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/daniel-parrott-39b19319/"
+      }
+    ]
   },
   "c17806737107181n0x8": {
     "status": "followup",
@@ -20620,6 +20736,10 @@
       {
         "ts": 1790373658355,
         "msg": "⚡ Auto day7: \"#2a — Follow-up opened (day 7) - Importer Siena Wine\""
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Email sbloccata via BWI: Joe Alessi <jalessi@alessibeverages.com.au> (Managing Director)"
       }
     ],
     "brevoEvents": [
@@ -20683,7 +20803,25 @@
       }
     },
     "contactName": "Joe Alessi",
-    "contactTitle": "Managing Director"
+    "contactTitle": "Managing Director",
+    "contactEmail": "jalessi@alessibeverages.com.au",
+    "contacts": [
+      {
+        "name": "Joe Alessi",
+        "title": "Managing Director",
+        "email": "jalessi@alessibeverages.com.au",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/joe-alessi-a8145928/",
+        "sbloccato": true
+      },
+      {
+        "name": "Antonella Alessi",
+        "title": "Sales Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "Https://www.linkedin.com/in/antonella-alessi-0456a2200/"
+      }
+    ]
   },
   "c17806737107186sf7u": {
     "status": "followup",
@@ -25655,7 +25793,56 @@
       }
     },
     "contactName": "Chris Munck",
-    "contactTitle": "Purchasing"
+    "contactTitle": "Purchasing",
+    "contactEmail": "chris@francaboutwine.com",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Email sbloccata via BWI: Chris Munck <chris@francaboutwine.com> (Purchasing)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Chris Munck",
+        "title": "Purchasing",
+        "email": "chris@francaboutwine.com",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/chris-munck-1832a052/",
+        "sbloccato": true
+      },
+      {
+        "name": "Elina Hannuksela",
+        "title": "Account Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/elina-hannuksela-41492417/"
+      },
+      {
+        "name": "Neil Thomson",
+        "title": "Director",
+        "email": "",
+        "phone": "*",
+        "linkedin": ""
+      },
+      {
+        "name": "Ana Savio",
+        "title": "Marketing Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/ana-savio-2412516b/"
+      },
+      {
+        "name": "Jasmine Wren",
+        "title": "Office Administration Assistant",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/jasmine-wren-08083a209/"
+      }
+    ]
   },
   "c17806737107180ymyx": {
     "log": [
@@ -25804,7 +25991,35 @@
       }
     },
     "contactName": "Rebecca Webb",
-    "contactTitle": "Wine Sales & Marketing"
+    "contactTitle": "Wine Sales & Marketing",
+    "contactEmail": "rwebb@fww.com.au",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Email sbloccata via BWI: Rebecca Webb <rwebb@fww.com.au> (Wine Sales & Marketing)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Rebecca Webb",
+        "title": "Wine Sales & Marketing",
+        "email": "rwebb@fww.com.au",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/rebecca-webb-59041196/",
+        "sbloccato": true
+      },
+      {
+        "name": "Ashley Bond",
+        "title": "General Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/ashley-bond-9b387627/"
+      }
+    ]
   },
   "c17806737107186ae1a": {
     "research": {
@@ -25848,7 +26063,35 @@
       }
     },
     "contactName": "Joe Molinari",
-    "contactTitle": "General Manager"
+    "contactTitle": "General Manager",
+    "contactEmail": "joem@combinedwines.com.au",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Email sbloccata via BWI: Joe Molinari <joem@combinedwines.com.au> (General Manager)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Joe Molinari",
+        "title": "General Manager",
+        "email": "joem@combinedwines.com.au",
+        "phone": "",
+        "linkedin": "https://au.linkedin.com/pub/joe-molinari/23/38b/494/en",
+        "sbloccato": true
+      },
+      {
+        "name": "Ninel Molinari",
+        "title": "Managing Director",
+        "email": "",
+        "phone": "",
+        "linkedin": ""
+      }
+    ]
   },
   "c1780673710718rt05g": {
     "research": {
@@ -27404,7 +27647,35 @@
       }
     },
     "contactName": "Jim Pilakis",
-    "contactTitle": "General Manager"
+    "contactTitle": "General Manager",
+    "contactEmail": "jimp@floxwines.com.au",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Email sbloccata via BWI: Jim Pilakis <jimp@floxwines.com.au> (General Manager)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Jim Pilakis",
+        "title": "General Manager",
+        "email": "jimp@floxwines.com.au",
+        "phone": "",
+        "linkedin": "https://au.linkedin.com/pub/jim-pilakis/6/b41/866/en",
+        "sbloccato": true
+      },
+      {
+        "name": "Kathy Palmarella",
+        "title": "Office Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/kathy-palmarella-1b781b79/"
+      }
+    ]
   },
   "c17806737107198jix4": {
     "research": {
@@ -36911,7 +37182,35 @@
       }
     },
     "contactName": "David Ridge",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "contactEmail": "david@davidridgewines.com.au",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Email sbloccata via BWI: David Ridge <david@davidridgewines.com.au> (Owner)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "David Ridge",
+        "title": "Owner",
+        "email": "david@davidridgewines.com.au",
+        "phone": "*",
+        "linkedin": "",
+        "sbloccato": true
+      },
+      {
+        "name": "Tyler Austin",
+        "title": "Co-owner",
+        "email": "",
+        "phone": "*",
+        "linkedin": ""
+      }
+    ]
   },
   "c1780673710721lqzmt": {
     "research": {
@@ -37936,8 +38235,36 @@
         }
       }
     },
-    "contactName": "Stefano Atzeni",
-    "contactTitle": "Owner/ Director"
+    "contactName": "Rachel Atzeni",
+    "contactTitle": "In Charge",
+    "contactEmail": "rachel@chentannos.com.au",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Email sbloccata via BWI: Rachel Atzeni <rachel@chentannos.com.au> (Manager)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Stefano Atzeni",
+        "title": "Owner/ Director",
+        "email": "",
+        "phone": "*",
+        "linkedin": "https://www.linkedin.com/in/stefano-atzeni-72a01455/"
+      },
+      {
+        "name": "Rachel Atzeni",
+        "title": "In Charge",
+        "email": "rachel@chentannos.com.au",
+        "phone": "*",
+        "linkedin": "",
+        "sbloccato": true
+      }
+    ]
   },
   "c1780673710722f2pof": {
     "log": [
@@ -83901,7 +84228,41 @@
       }
     },
     "contactName": "Nicolas Quercia",
-    "contactTitle": "Global Sourcing Manager Beverages"
+    "contactTitle": "Global Sourcing Manager Beverages",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "⚠ Email sbloccata via BWI con dominio diverso dall'azienda: Nicolas Quercia <nicolas_quercia@carrefour.com> — da verificare, NON usata per gli invii"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Nicolas Quercia",
+        "title": "Global Sourcing Manager Beverages",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/nicolas-quercia-97542a37/",
+        "emailSospetta": "nicolas_quercia@carrefour.com"
+      },
+      {
+        "name": "Samara Kuraoka",
+        "title": "Product Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/samara-kuraoka/"
+      },
+      {
+        "name": "Rodrigo Pereiro",
+        "title": "Purchasing Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/rodrigo-pereiro-80810885/"
+      }
+    ]
   },
   "c1780673710734q85gx": {
     "status": "followup",
@@ -84140,7 +84501,21 @@
       }
     },
     "contactName": "Pedro Matulo",
-    "contactTitle": "Buyer"
+    "contactTitle": "Buyer",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1786959960995,
+        "msg": "BWI sync: aggiornato (contatti)"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
+      }
+    ]
   },
   "c1780673710734gzn8i": {
     "research": {
@@ -84184,7 +84559,17 @@
       }
     },
     "contactName": "Ana Carolina Laytynher",
-    "contactTitle": "Commercial Manager"
+    "contactTitle": "Commercial Manager",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
+      }
+    ]
   },
   "c1780673710734adrzj": {
     "research": {
@@ -86026,7 +86411,17 @@
       }
     },
     "contactName": "Jonas Silva",
-    "contactTitle": "Sommelier"
+    "contactTitle": "Sommelier",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
+      }
+    ]
   },
   "c1780673710734uv7x4": {
     "research": {
@@ -114228,7 +114623,41 @@
       }
     },
     "contactName": "Roberto Hernandez",
-    "contactTitle": "Buyer"
+    "contactTitle": "Buyer",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "⚠ Email sbloccata via BWI con dominio diverso dall'azienda: Roberto Hernandez <roberto.hernandez0@walmart.com> — da verificare, NON usata per gli invii"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Roberto Hernandez",
+        "title": "Buyer",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/roberto-hernandez-aa946797/",
+        "emailSospetta": "roberto.hernandez0@walmart.com"
+      },
+      {
+        "name": "Icilma Lira Marskman",
+        "title": "Category Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/icilma-lira/"
+      },
+      {
+        "name": "Cristian Barrientos Pozo",
+        "title": "Chief Executive Officer Ceo And President",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/cristian-barrientos-pozo-1441388/"
+      }
+    ]
   },
   "c1780673710741znnum": {
     "research": {
@@ -119328,7 +119757,17 @@
       }
     },
     "contactName": "Scott Ren",
-    "contactTitle": "Regional Manager"
+    "contactTitle": "Regional Manager",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
+      }
+    ]
   },
   "c1780673710742uivwp": {
     "research": {
@@ -119660,7 +120099,35 @@
       }
     },
     "contactName": "Edward Liu",
-    "contactTitle": "General Manager"
+    "contactTitle": "General Manager",
+    "contactEmail": "edward.liu@sinodrink.com",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Email sbloccata via BWI: Edward Liu <edward.liu@sinodrink.com> (General Manager)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Edward Liu",
+        "title": "General Manager",
+        "email": "edward.liu@sinodrink.com",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/edward-liu-00b33665/",
+        "sbloccato": true
+      },
+      {
+        "name": "Tony Zhang",
+        "title": "Sales Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/tony-zhang-71904178/"
+      }
+    ]
   },
   "c1780673710742zayjd": {
     "research": {
@@ -122408,7 +122875,34 @@
       }
     },
     "contactName": "Riccardo Trentini",
-    "contactTitle": "President & Founder"
+    "contactTitle": "President & Founder",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "⚠ Email sbloccata via BWI con dominio diverso dall'azienda: Riccardo Trentini <rt@maestri.co> — da verificare, NON usata per gli invii"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Riccardo Trentini",
+        "title": "President & Founder",
+        "email": "",
+        "phone": "*",
+        "linkedin": "https://www.linkedin.com/in/riccardo-trentini-1a4a7550/",
+        "emailSospetta": "rt@maestri.co"
+      },
+      {
+        "name": "Sebastián Ferreira",
+        "title": "Orders",
+        "email": "",
+        "phone": "*",
+        "linkedin": ""
+      }
+    ]
   },
   "c1780673710744noi62": {
     "status": "sent",
@@ -169367,7 +169861,35 @@
       }
     },
     "contactName": "Ghislaine Pfiffner",
-    "contactTitle": "Brand Manager"
+    "contactTitle": "Brand Manager",
+    "contactEmail": "gpfiffner@elcatador.com",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Email sbloccata via BWI: Ghislaine Pfiffner <gpfiffner@elcatador.com> (Brand Manager)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Ghislaine Pfiffner",
+        "title": "Brand Manager",
+        "email": "gpfiffner@elcatador.com",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/ghislaine-pfiffner-400aab281/",
+        "sbloccato": true
+      },
+      {
+        "name": "Giuseppe Bonarelli",
+        "title": "Executive Chairman/ Ceo",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/giuseppe-bonarelli-1a2bb544/"
+      }
+    ]
   },
   "c178067371080148fe0": {
     "research": {
@@ -240505,7 +241027,35 @@
       }
     },
     "contactName": "Mingming Hon",
-    "contactTitle": "Senior Sales Manager"
+    "contactTitle": "Senior Sales Manager",
+    "contactEmail": "mingming@altayawines.com",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Email sbloccata via BWI: Mingming Hon <mingming@altayawines.com> (Senior Sales Manager)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Mingming Hon",
+        "title": "Senior Sales Manager",
+        "email": "mingming@altayawines.com",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/mingming-hon-252908b4/",
+        "sbloccato": true
+      },
+      {
+        "name": "Calvin Fu",
+        "title": "Senior Sales Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/calvin-fu-01aba7219/"
+      }
+    ]
   },
   "c1780673710853dx235": {
     "research": {
