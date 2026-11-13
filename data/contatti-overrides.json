@@ -25956,6 +25956,10 @@
       {
         "ts": 1790395261636,
         "msg": "⚡ Auto day7: \"#2b — Follow-up not opened (day 7) - Importer Siena Wine\""
+      },
+      {
+        "ts": 1794592534219,
+        "msg": "🔓 Email sbloccata via BWI (recuperata dal log dell'Action del 13/11, checkpoint fallito): Ignazio Ian Deiana <ian@twelvebottles.com.au>"
       }
     ],
     "brevoEvents": [
@@ -26013,7 +26017,18 @@
       }
     },
     "contactName": "Ignazio Ian Deiana",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "contacts": [
+      {
+        "name": "Ignazio Ian Deiana",
+        "title": "Owner",
+        "email": "ian@twelvebottles.com.au",
+        "phone": "",
+        "linkedin": "https://au.linkedin.com/in/ignazio-ian-deiana-34764a33",
+        "sbloccato": true
+      }
+    ],
+    "contactEmail": "ian@twelvebottles.com.au"
   },
   "c1780673710718xw4f5": {
     "log": [
@@ -26995,7 +27010,24 @@
       }
     },
     "contactName": "Riccardo Rossi",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "contacts": [
+      {
+        "name": "Riccardo Rossi",
+        "title": "Manager",
+        "email": "richard@distilleryworks.com.au",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/riccardo-rossi-16b457b/?originalSubdomain=au",
+        "sbloccato": true
+      }
+    ],
+    "contactEmail": "richard@distilleryworks.com.au",
+    "log": [
+      {
+        "ts": 1794592534219,
+        "msg": "🔓 Email sbloccata via BWI (recuperata dal log dell'Action del 13/11, checkpoint fallito): Riccardo Rossi <richard@distilleryworks.com.au>"
+      }
+    ]
   },
   "c17806737107195mw8t": {
     "research": {
@@ -28416,7 +28448,31 @@
       }
     },
     "contactName": "Chris Newton-Smith",
-    "contactTitle": "National Sales Manager"
+    "contactTitle": "National Sales Manager",
+    "contacts": [
+      {
+        "name": "Chris Newton-Smith",
+        "title": "National Sales Manager",
+        "email": "chris@vinifywineco.com.au",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/chris-newton-smith-133685247/",
+        "sbloccato": true
+      },
+      {
+        "name": "Jesse Button",
+        "title": "Purchasing Officer",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/jesse-button-9b8050235/"
+      }
+    ],
+    "contactEmail": "chris@vinifywineco.com.au",
+    "log": [
+      {
+        "ts": 1794592534219,
+        "msg": "🔓 Email sbloccata via BWI (recuperata dal log dell'Action del 13/11, checkpoint fallito): Chris Newton-Smith <chris@vinifywineco.com.au>"
+      }
+    ]
   },
   "c178067371071945dlg": {
     "research": {
@@ -28700,7 +28756,31 @@
       }
     },
     "contactName": "Kirk Denne",
-    "contactTitle": "Sales"
+    "contactTitle": "Sales",
+    "contacts": [
+      {
+        "name": "Kirk Denne",
+        "title": "Sales",
+        "email": "kirk@highwaterdistro.co",
+        "phone": "*",
+        "linkedin": "",
+        "sbloccato": true
+      },
+      {
+        "name": "Mark Delanty",
+        "title": "Sales",
+        "email": "",
+        "phone": "*",
+        "linkedin": ""
+      }
+    ],
+    "contactEmail": "kirk@highwaterdistro.co",
+    "log": [
+      {
+        "ts": 1794592534219,
+        "msg": "🔓 Email sbloccata via BWI (recuperata dal log dell'Action del 13/11, checkpoint fallito): Kirk Denne <kirk@highwaterdistro.co>"
+      }
+    ]
   },
   "c1780673710719zqcpc": {
     "research": {
@@ -29490,7 +29570,24 @@
       }
     },
     "contactName": "Dan Clark",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "contacts": [
+      {
+        "name": "Dan Clark",
+        "title": "Director",
+        "email": "dan@addleyclarkfinewines.com.au",
+        "phone": "",
+        "linkedin": "https://au.linkedin.com/pub/dan-clark/30/b47/512",
+        "sbloccato": true
+      }
+    ],
+    "contactEmail": "dan@addleyclarkfinewines.com.au",
+    "log": [
+      {
+        "ts": 1794592534219,
+        "msg": "🔓 Email sbloccata via BWI (recuperata dal log dell'Action del 13/11, checkpoint fallito): Dan Clark <dan@addleyclarkfinewines.com.au>"
+      }
+    ]
   },
   "c1780673710719rndh1": {
     "research": {
@@ -29679,8 +29776,39 @@
         }
       }
     },
-    "contactName": "Michelle Singarella",
-    "contactTitle": "Founder And Director"
+    "contactName": "Marco Singarella",
+    "contactTitle": "Owner",
+    "contacts": [
+      {
+        "name": "Michelle Singarella",
+        "title": "Founder And Director",
+        "email": "",
+        "phone": "*",
+        "linkedin": "Https://www.linkedin.com/in/michelle-singarella-5184b738/"
+      },
+      {
+        "name": "Marco Singarella",
+        "title": "Owner",
+        "email": "mark@vinobambino.com.au",
+        "phone": "*",
+        "linkedin": "https://www.linkedin.com/in/marco-singarella-67a84214/",
+        "sbloccato": true
+      },
+      {
+        "name": "Sunday Grundle",
+        "title": "Sales Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/sunday-grundle-9785231b1"
+      }
+    ],
+    "contactEmail": "mark@vinobambino.com.au",
+    "log": [
+      {
+        "ts": 1794592534219,
+        "msg": "🔓 Email sbloccata via BWI (recuperata dal log dell'Action del 13/11, checkpoint fallito): Marco Singarella <mark@vinobambino.com.au>"
+      }
+    ]
   },
   "c1780673710720tklwf": {
     "research": {
@@ -30098,7 +30226,31 @@
       }
     },
     "contactName": "Alissia Durbridge",
-    "contactTitle": "Sales & Business Development Manager"
+    "contactTitle": "Sales & Business Development Manager",
+    "contacts": [
+      {
+        "name": "Alissia Durbridge",
+        "title": "Sales & Business Development Manager",
+        "email": "alissia@terroir-selections.com.au",
+        "phone": "*",
+        "linkedin": "https://www.linkedin.com/in/alissia-durbridge/",
+        "sbloccato": true
+      },
+      {
+        "name": "Helen Mcgahan",
+        "title": "Sales Manager",
+        "email": "",
+        "phone": "*",
+        "linkedin": "https://www.linkedin.com/in/helen-mcgahan-753694149/"
+      }
+    ],
+    "contactEmail": "alissia@terroir-selections.com.au",
+    "log": [
+      {
+        "ts": 1794592534219,
+        "msg": "🔓 Email sbloccata via BWI (recuperata dal log dell'Action del 13/11, checkpoint fallito): Alissia Durbridge <alissia@terroir-selections.com.au>"
+      }
+    ]
   },
   "c1780673710720zu2x8": {
     "research": {
@@ -30456,7 +30608,24 @@
       }
     },
     "contactName": "Paolo Sandri",
-    "contactTitle": "Managing Director"
+    "contactTitle": "Managing Director",
+    "contacts": [
+      {
+        "name": "Paolo Sandri",
+        "title": "Managing Director",
+        "email": "paolo@conviviumwine.com.au",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/paolo-sandri-596a0948/",
+        "sbloccato": true
+      }
+    ],
+    "contactEmail": "paolo@conviviumwine.com.au",
+    "log": [
+      {
+        "ts": 1794592534219,
+        "msg": "🔓 Email sbloccata via BWI (recuperata dal log dell'Action del 13/11, checkpoint fallito): Paolo Sandri <paolo@conviviumwine.com.au>"
+      }
+    ]
   },
   "c1780673710720dwppt": {
     "research": {
@@ -32379,7 +32548,24 @@
       }
     },
     "contactName": "Filippo D'Arrò",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "contacts": [
+      {
+        "name": "Filippo D'Arrò",
+        "title": "Director",
+        "email": "fil@italiquore.com.au",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/filippo-d-arro-275a93217/",
+        "sbloccato": true
+      }
+    ],
+    "contactEmail": "fil@italiquore.com.au",
+    "log": [
+      {
+        "ts": 1794592534219,
+        "msg": "🔓 Email sbloccata via BWI (recuperata dal log dell'Action del 13/11, checkpoint fallito): Filippo D'Arrò <fil@italiquore.com.au>"
+      }
+    ]
   },
   "c1780673710720yb3qr": {
     "research": {
@@ -33664,8 +33850,39 @@
         }
       }
     },
-    "contactName": "John Caporaso",
-    "contactTitle": "Managing Director"
+    "contactName": "Nick Bergin",
+    "contactTitle": "Executive Chef",
+    "contacts": [
+      {
+        "name": "John Caporaso",
+        "title": "Managing Director",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/john-caporaso-4760044b/"
+      },
+      {
+        "name": "Kieran Noell",
+        "title": "Sales Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/kieran-noell-51656a8a/"
+      },
+      {
+        "name": "Nick Bergin",
+        "title": "Executive Chef",
+        "email": "nickb@mercato.com.au",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/nick-bergin-81332645/",
+        "sbloccato": true
+      }
+    ],
+    "contactEmail": "nickb@mercato.com.au",
+    "log": [
+      {
+        "ts": 1794592534219,
+        "msg": "🔓 Email sbloccata via BWI (recuperata dal log dell'Action del 13/11, checkpoint fallito): Nick Bergin <nickb@mercato.com.au>"
+      }
+    ]
   },
   "c1780673710720dot2y": {
     "log": [
@@ -33735,8 +33952,32 @@
         }
       }
     },
-    "contactName": "Natasha Johns",
-    "contactTitle": "Manager"
+    "contactName": "Peter Johns",
+    "contactTitle": "Manager",
+    "contacts": [
+      {
+        "name": "Natasha Johns",
+        "title": "Manager",
+        "email": "",
+        "phone": "*",
+        "linkedin": ""
+      },
+      {
+        "name": "Peter Johns",
+        "title": "Manager",
+        "email": "peter@primaveraselections.com.au",
+        "phone": "*",
+        "linkedin": "",
+        "sbloccato": true
+      }
+    ],
+    "contactEmail": "peter@primaveraselections.com.au",
+    "log": [
+      {
+        "ts": 1794592534219,
+        "msg": "🔓 Email sbloccata via BWI (recuperata dal log dell'Action del 13/11, checkpoint fallito): Peter Johns <peter@primaveraselections.com.au>"
+      }
+    ]
   },
   "c1780673710720946hz": {
     "research": {
@@ -34372,7 +34613,24 @@
       }
     },
     "contactName": "Laurie I.",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "contacts": [
+      {
+        "name": "Laurie I.",
+        "title": "Owner",
+        "email": "laurie@mycantina.com.au",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/mycantina/",
+        "sbloccato": true
+      }
+    ],
+    "contactEmail": "laurie@mycantina.com.au",
+    "log": [
+      {
+        "ts": 1794592534219,
+        "msg": "🔓 Email sbloccata via BWI (recuperata dal log dell'Action del 13/11, checkpoint fallito): Laurie I. <laurie@mycantina.com.au>"
+      }
+    ]
   },
   "c17806737107217xn1t": {
     "research": {
@@ -38644,7 +38902,31 @@
       }
     },
     "contactName": "Lucy Howard",
-    "contactTitle": "General Manager"
+    "contactTitle": "General Manager",
+    "contacts": [
+      {
+        "name": "Lucy Howard",
+        "title": "General Manager",
+        "email": "lucy@dortodoor.com",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/lucy-howard-15496258/",
+        "sbloccato": true
+      },
+      {
+        "name": "Jeremy Holmes",
+        "title": "Owner",
+        "email": "",
+        "phone": "",
+        "linkedin": ""
+      }
+    ],
+    "contactEmail": "lucy@dortodoor.com",
+    "log": [
+      {
+        "ts": 1794592534219,
+        "msg": "🔓 Email sbloccata via BWI (recuperata dal log dell'Action del 13/11, checkpoint fallito): Lucy Howard <lucy@dortodoor.com>"
+      }
+    ]
   },
   "c1780673710722tip0t": {
     "research": {
@@ -38666,7 +38948,31 @@
       }
     },
     "contactName": "Umberto Ianni",
-    "contactTitle": "Wine Sales Representative"
+    "contactTitle": "Wine Sales Representative",
+    "contacts": [
+      {
+        "name": "Umberto Ianni",
+        "title": "Wine Sales Representative",
+        "email": "umberto@enotecasydney.com.au",
+        "phone": "",
+        "linkedin": "https://au.linkedin.com/in/umberto-ianni-987b65156/",
+        "sbloccato": true
+      },
+      {
+        "name": "andreas Puhar",
+        "title": "Director",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/andreas-puhar-5b66a525"
+      }
+    ],
+    "contactEmail": "umberto@enotecasydney.com.au",
+    "log": [
+      {
+        "ts": 1794592534219,
+        "msg": "🔓 Email sbloccata via BWI (recuperata dal log dell'Action del 13/11, checkpoint fallito): Umberto Ianni <umberto@enotecasydney.com.au>"
+      }
+    ]
   },
   "c1780673710722qgig9": {
     "research": {
@@ -38952,7 +39258,31 @@
       }
     },
     "contactName": "Blair Hill",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "contacts": [
+      {
+        "name": "Blair Hill",
+        "title": "Director",
+        "email": "blair@vfwd.com.au",
+        "phone": "*",
+        "linkedin": "https://www.linkedin.com/in/jblairhill08/",
+        "sbloccato": true
+      },
+      {
+        "name": "Vicki Gordon",
+        "title": "Account Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/vicki-gordon-60673945/"
+      }
+    ],
+    "contactEmail": "blair@vfwd.com.au",
+    "log": [
+      {
+        "ts": 1794592534219,
+        "msg": "🔓 Email sbloccata via BWI (recuperata dal log dell'Action del 13/11, checkpoint fallito): Blair Hill <blair@vfwd.com.au>"
+      }
+    ]
   },
   "c1780673710722smapr": {
     "log": [
@@ -39017,7 +39347,31 @@
       }
     },
     "contactName": "Todd Lichti",
-    "contactTitle": "Managing Director"
+    "contactTitle": "Managing Director",
+    "contacts": [
+      {
+        "name": "Todd Lichti",
+        "title": "Managing Director",
+        "email": "todd@vintagewineco.com.au",
+        "phone": "",
+        "linkedin": "",
+        "sbloccato": true
+      },
+      {
+        "name": "Krisdianne Shimmin",
+        "title": "General Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": ""
+      }
+    ],
+    "contactEmail": "todd@vintagewineco.com.au",
+    "log": [
+      {
+        "ts": 1794592534219,
+        "msg": "🔓 Email sbloccata via BWI (recuperata dal log dell'Action del 13/11, checkpoint fallito): Todd Lichti <todd@vintagewineco.com.au>"
+      }
+    ]
   },
   "c1780673710722ullkz": {
     "research": {
@@ -85380,8 +85734,32 @@
         }
       }
     },
-    "contactName": "Alexandre Kaufman",
-    "contactTitle": "Commercial Manager"
+    "contactName": "Marcel Almeida",
+    "contactTitle": "Sales Manager",
+    "contacts": [
+      {
+        "name": "Alexandre Kaufman",
+        "title": "Commercial Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/alexandre-kaufman-a83b35b6"
+      },
+      {
+        "name": "Marcel Almeida",
+        "title": "Sales Manager",
+        "email": "marcel.almeida@interfood.com.br",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/marcel-almeida-2692b3/",
+        "sbloccato": true
+      }
+    ],
+    "contactEmail": "marcel.almeida@interfood.com.br",
+    "log": [
+      {
+        "ts": 1794592534219,
+        "msg": "🔓 Email sbloccata via BWI (recuperata dal log dell'Action del 13/11, checkpoint fallito): Marcel Almeida <marcel.almeida@interfood.com.br>"
+      }
+    ]
   },
   "c1780673710734kuu6h": {
     "status": "followup",

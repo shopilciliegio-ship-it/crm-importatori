@@ -27,7 +27,13 @@
     "Norway",
     "Finland"
   ],
-  "status": "running",
-  "createdAt": 1794592379998,
-  "startedAt": "2026-11-13T17:53:18.092271+00:00"
+  "status": "done",
+  "createdAt": 1794940000000,
+  "result": {
+    "unlocked": 47,
+    "spent": 47,
+    "failed": 0,
+    "skipped": 16,
+    "stopReason": "errore 403 al 3o checkpoint: 17 email recuperate a mano dal log dell'Action (13/11)"
+  }
 }
