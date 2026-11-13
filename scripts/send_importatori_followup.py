@@ -160,7 +160,7 @@ def get_sha(path: str) -> str | None:
 # 23/9/2026 teneva solo status/notes/log/brevoEvents/research — un invio avrebbe cancellato email
 # sbloccate, standby e caselle bloccate. Ora: questi campi si aggiornano se cambiati, e qualunque altro
 # campo già presente negli override viene ricopiato così com'è.
-EXTRA_OV_FIELDS = ('contacts', 'contactEmail', 'contactName', 'contactTitle', 'snoozeUntil', 'emailBloccate')
+EXTRA_OV_FIELDS = ('contacts', 'contactEmail', 'contactName', 'contactTitle', 'snoozeUntil', 'emailBloccate', 'restartAt')
 TRACKED_OV_FIELDS = ('status', 'notes', 'log', 'brevoEvents', 'research')
 _LOADED_OV = {}
 
@@ -270,6 +270,27 @@ def select_contact(c: dict) -> tuple[str, str]:
     return fallback_email, (c.get('contactName') or c.get('name', ''))
 
 
+def seq_events(c: dict) -> list:
+    """Eventi di invio della sequenza ATTUALE del contatto, in ordine di data. Se il contatto e' stato fatto
+    ripartire da zero (campo restartAt, es. dopo lo sblocco di una persona diretta, 13/11/2026), contano solo
+    gli invii dal restart in poi: i vecchi restano in brevoEvents (storico, risposte, registro) ma non pesano
+    sul conteggio dei passi ne' sul destinatario dei follow-up."""
+    evs = sorted(c.get('brevoEvents') or [], key=lambda e: e.get('sentAt', 0))
+    ra = c.get('restartAt') or 0
+    return [e for e in evs if (e.get('sentAt') or 0) >= ra] if ra else evs
+
+
+def addr_owners(contacts: list) -> dict:
+    """Registro globale degli indirizzi gia' contattati: {indirizzo minuscolo: {id contatti che l'hanno ricevuto}}."""
+    out = {}
+    for ct in contacts:
+        for e in (ct.get('brevoEvents') or []):
+            a = (e.get('toEmail') or '').strip().lower()
+            if a:
+                out.setdefault(a, set()).add(ct.get('id'))
+    return out
+
+
 def step1_target(c: dict) -> tuple[str, str]:
     """A chi è stata mandata la prima email — i follow-up vanno SEMPRE alla stessa persona/
     indirizzo (continuità del filo: il template dice letteralmente "ti riscrivo riguardo alla mia
@@ -277,7 +298,7 @@ def step1_target(c: dict) -> tuple[str, str]:
     discussione 22/9/2026, prima veniva ri-scelto il "miglior" contatto ad ogni run). Se
     l'indirizzo bloccato nel frattempo (provaAltraCasella → emailBloccate), NON continua a
     scrivere lì: ripiega su select_contact() per trovare un'alternativa valida."""
-    evs = sorted(c.get('brevoEvents') or [], key=lambda e: e.get('sentAt', 0))
+    evs = seq_events(c)
     step1 = next((e for e in evs if (e.get('sequenceStep') or 1) == 1), evs[0] if evs else None)
     blocked = {(e or '').strip().lower() for e in (c.get('emailBloccate') or [])}
     if step1 and step1.get('toEmail') and step1['toEmail'].strip().lower() not in blocked:
@@ -582,7 +603,7 @@ def should_send_followup(c: dict, templates: list, now_ms: int) -> tuple[str | N
     if snooze_until and now_ms < snooze_until:
         return None, None, 0
 
-    evs = sorted(c.get('brevoEvents') or [], key=lambda e: e.get('sentAt', 0))
+    evs = seq_events(c)
     if not evs:
         return None, None, 0
 
@@ -649,7 +670,7 @@ def followup_window(c: dict) -> dict | None:
     ma in forma di date (così si può proiettare nel futuro). Ritorna None se non ne ha uno atteso."""
     if c.get('status') in TERMINAL_STATUSES:
         return None
-    evs = sorted(c.get('brevoEvents') or [], key=lambda e: e.get('sentAt', 0))
+    evs = seq_events(c)
     if not evs:
         return None
     last_st = get_ev_status(evs[-1])
@@ -1026,6 +1047,7 @@ def main():
     now_ms = int(datetime.now(timezone.utc).timestamp() * 1000)
     active = [c for c in contacts if c.get('status') in ACTIVE_STATUSES]
     print(f'Contatti attivi (sent/followup): {len(active)} / {len(contacts)}')
+    ADDR_OWNERS = addr_owners(contacts)  # registro globale indirizzi gia' contattati (anti-duplicati)
 
     # ── 1. Sync Brevo events ──────────────────────────────────────────────────
     sync_count = 0
@@ -1064,6 +1086,10 @@ def main():
             continue
         if not to_email:
             print(f'    ⚠ nessuna casella valida per {name} (tutte bloccate/mancanti) — salto')
+            continue
+        altri = ADDR_OWNERS.get(to_email.strip().lower(), set()) - {c.get('id')}
+        if altri:  # registro globale: questo indirizzo ha già ricevuto mail come ALTRA azienda
+            print(f'    ⏭ {to_email} ha già ricevuto mail come altro contatto ({len(altri)}) — salto (duplicato globale)')
             continue
 
         print(f'    → {step_label} | tpl={tpl.get("id","?")} "{tpl.get("name","")[:40]}"')

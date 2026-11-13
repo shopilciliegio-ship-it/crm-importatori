@@ -144,7 +144,7 @@ def get_sha(path: str):
 # 23/9/2026 teneva solo status/notes/log/brevoEvents/research — un invio avrebbe cancellato email
 # sbloccate, standby e caselle bloccate. Ora: questi campi si aggiornano se cambiati, e qualunque altro
 # campo già presente negli override viene ricopiato così com'è.
-EXTRA_OV_FIELDS = ('contacts', 'contactEmail', 'contactName', 'contactTitle', 'snoozeUntil', 'emailBloccate')
+EXTRA_OV_FIELDS = ('contacts', 'contactEmail', 'contactName', 'contactTitle', 'snoozeUntil', 'emailBloccate', 'restartAt')
 TRACKED_OV_FIELDS = ('status', 'notes', 'log', 'brevoEvents', 'research')
 _LOADED_OV = {}
 
@@ -521,11 +521,24 @@ def main():
     sent = failed = skipped = 0
     since_checkpoint = 0
 
+    # Registro globale degli indirizzi gia' contattati (13/11/2026): un indirizzo che ha già ricevuto una mail
+    # (da qualunque azienda, o dalla stessa) non riceve di nuovo il primo contatto. Si aggiorna a ogni invio.
+    sent_addrs = set()
+    for _ct in contacts:
+        for _e in (_ct.get('brevoEvents') or []):
+            _a = (_e.get('toEmail') or '').strip().lower()
+            if _a:
+                sent_addrs.add(_a)
+
     for i, cid in enumerate(target_ids):
         c = by_id[cid]
         to_email, to_name = select_send_email(c)
         if not to_email:
             # Nessuna casella valida: tutte bloccate, o nessuna email da nessuna parte in scheda.
+            skipped += 1
+            continue
+        if to_email.strip().lower() in sent_addrs:
+            print(f'  [{i+1}/{total}] {c.get("company","?")} ⏭ {to_email} ha già ricevuto una mail — salto (duplicato globale)')
             skipped += 1
             continue
 
@@ -547,11 +560,12 @@ def main():
                 c.setdefault('brevoEvents', []).append({
                     'messageId': msg_id, 'subject': subject, 'sentAt': c['updatedAt'],
                     'toEmail': to_email, 'toName': to_name, 'brand': brand,
-                    'sequenceStep': len(c.get('brevoEvents', [])) + 1,
+                    'sequenceStep': len([e for e in c.get('brevoEvents', []) if (e.get('sentAt') or 0) >= (c.get('restartAt') or 0)]) + 1,
                     'delivered': False, 'opened': False, 'clicked': False,
                     'bounced': False, 'spam': False, 'unsubscribed': False, 'blocked': False,
                 })
             sent += 1
+            sent_addrs.add(to_email.strip().lower())
         else:
             failed += 1
 
