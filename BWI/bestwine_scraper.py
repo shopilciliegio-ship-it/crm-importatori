@@ -148,7 +148,7 @@ def get_recent_companies(endpoint):
             "endAt":   start + batch,
             "sortBy":  sort_field,
             "sortDir": "DESC",
-            "filters": FILTRI,
+            "filters": {k: v for k, v in FILTRI.items() if v},  # {} = nessun filtro: dal 13/10 il vecchio formato "liste vuote" da 400 "Invalid search filters"
             "id": None, "name": None, "date": None
         }
         r, err = call_api(f"{BASE_URL}/customSearch/", payload, timeout_sec=15)
@@ -157,6 +157,12 @@ def get_recent_companies(endpoint):
             break
         if r.status_code in (401, 403):
             print("\n❌ AUTENTICAZIONE SCADUTA — aggiorna COOKIE e rilancia.")
+            raise SystemExit(1)
+        if r.status_code == 400:
+            # Dal 13/10 circa la nuova interfaccia BWI rispondeva 400 e il sync settimanale importava 0 aziende senza errore:
+            # ora il run FALLISCE e si vede.
+            print(f"
+❌ customSearch HTTP 400: {r.text[:300]} — il formato della richiesta e' cambiato, serve un intervento.")
             raise SystemExit(1)
         try:
             data     = r.json()
@@ -273,7 +279,7 @@ def get_batch(start, end):
         "endAt": end,
         "sortBy": "",
         "sortDir": "",
-        "filters": FILTRI,
+        "filters": {k: v for k, v in FILTRI.items() if v},  # {} = nessun filtro: dal 13/10 il vecchio formato "liste vuote" da 400 "Invalid search filters"
         "id": None,
         "name": None,
         "date": None
