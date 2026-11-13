@@ -140,10 +140,16 @@ def _priority_score(title: str) -> int:
 # ── GitHub Contents API ─────────────────────────────────────────────────────────
 
 def _gh_request(method, url, **kwargs):
-    for attempt in range(3):
+    # 13/11/2026: il 3° checkpoint del giorno e' andato in 403 (limite secondario di GitHub sulle scritture
+    # ravvicinate di un file da 26 MB) e lo script e' morto DOPO aver speso i crediti BWI: 17 email perse,
+    # recuperate a mano dal log. Ora su 403/429 si aspetta e si riprova (30/90/180/300 s).
+    for attempt in range(5):
         r = requests.request(method, url, **kwargs)
-        if r.status_code in (502, 503, 504) and attempt < 2:
+        if r.status_code in (502, 503, 504) and attempt < 4:
             time.sleep(2 ** attempt)
+            continue
+        if r.status_code in (403, 429) and attempt < 4:
+            time.sleep((30, 90, 180, 300)[attempt])
             continue
         return r
 
