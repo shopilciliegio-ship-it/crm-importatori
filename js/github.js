@@ -266,6 +266,8 @@ function _computeLocalOverrides(){
     // Standby follow-up (fuori sede rilevato in js/risposte.js) — vedi fuIndicator() in js/brevo.js
     // e should_send_followup() in scripts/send_importatori_followup.py.
     if((c.snoozeUntil||null)!==(snap.snoozeUntil||null))     diff.snoozeUntil=c.snoozeUntil||null;
+    // Ripartenza da zero della sequenza (restartAt, 13/11/2026): vedi seq_events() in scripts/send_importatori_followup.py
+    if((c.restartAt||null)!==(snap.restartAt||null))         diff.restartAt=c.restartAt||null;
     // "Casella sbagliata" (js/risposte.js → provaAltraCasella()): cambio email di contatto +
     // lista indirizzi da non riprovare più per questo contatto.
     if((c.contactEmail||'')!==(snap.contactEmail||''))       diff.contactEmail=c.contactEmail||'';

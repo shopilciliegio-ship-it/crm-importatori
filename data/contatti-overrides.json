@@ -19082,7 +19082,7 @@
     }
   },
   "c1780673710718aynjq": {
-    "status": "followup",
+    "status": "new",
     "log": [
       {
         "ts": 1780673710716,
@@ -19099,6 +19099,10 @@
       {
         "ts": 1794591794597,
         "msg": "🔓 Email sbloccata via BWI: Lidija Fargher <lidija.fargher@coles.com.au> (Buyer)"
+      },
+      {
+        "ts": 1794592972358,
+        "msg": "🔄 Sequenza ripartita da zero (13/11): sbloccata la persona diretta lidija.fargher@coles.com.au; i 2 invii precedenti (alla mail generica) restano nello storico ma non contano piu'"
       }
     ],
     "brevoEvents": [
@@ -19189,7 +19193,8 @@
         "linkedin": "https://www.linkedin.com/in/daniel-parrott-39b19319/"
       }
     ],
-    "contactTitle": "Buyer"
+    "contactTitle": "Buyer",
+    "restartAt": 1794592972358
   },
   "c17806737107181n0x8": {
     "status": "followup",
@@ -20751,7 +20756,7 @@
     }
   },
   "c178067371071863gea": {
-    "status": "followup",
+    "status": "new",
     "log": [
       {
         "ts": 1780673710716,
@@ -20776,6 +20781,10 @@
       {
         "ts": 1794591794597,
         "msg": "🔓 Email sbloccata via BWI: Joe Alessi <jalessi@alessibeverages.com.au> (Managing Director)"
+      },
+      {
+        "ts": 1794592972358,
+        "msg": "🔄 Sequenza ripartita da zero (13/11): sbloccata la persona diretta jalessi@alessibeverages.com.au; i 2 invii precedenti (alla mail generica) restano nello storico ma non contano piu'"
       }
     ],
     "brevoEvents": [
@@ -20857,7 +20866,8 @@
         "linkedin": "Https://www.linkedin.com/in/antonella-alessi-0456a2200/"
       }
     ],
-    "contactTitle": "Managing Director"
+    "contactTitle": "Managing Director",
+    "restartAt": 1794592972358
   },
   "c17806737107186sf7u": {
     "status": "followup",
@@ -21132,7 +21142,7 @@
     "contactTitle": "Founder"
   },
   "c1780673710718pr0od": {
-    "status": "followup",
+    "status": "new",
     "log": [
       {
         "ts": 1780673710716,
@@ -21149,6 +21159,10 @@
       {
         "ts": 1790373658355,
         "msg": "⚡ Auto day7: \"#2b — Follow-up not opened (day 7) - Importer Siena Wine\""
+      },
+      {
+        "ts": 1794592972358,
+        "msg": "🔄 Sequenza ripartita da zero (13/11): sbloccata la persona diretta dreberger@kemenys.com; i 2 invii precedenti (alla mail generica) restano nello storico ma non contano piu'"
       }
     ],
     "brevoEvents": [
@@ -21225,7 +21239,8 @@
         "linkedin": "Https://www.linkedin.com/in/andrew-kemeny-4a00361/"
       }
     ],
-    "contactTitle": "General Manager"
+    "contactTitle": "General Manager",
+    "restartAt": 1794592972358
   },
   "c1780673710718h8x6n": {
     "status": "followup",
@@ -21869,7 +21884,7 @@
     "contactTitle": "General Manager"
   },
   "c1780673710718vvrn2": {
-    "status": "followup",
+    "status": "new",
     "log": [
       {
         "ts": 1780673710716,
@@ -21894,6 +21909,10 @@
       {
         "ts": 1790554502225,
         "msg": "👁 Aperta: Bibendum Wine Co Pty Ltd — a few more reasons to consider us"
+      },
+      {
+        "ts": 1794592972358,
+        "msg": "🔄 Sequenza ripartita da zero (13/11): sbloccata la persona diretta boconnor@bibendum.com.au; i 2 invii precedenti (alla mail generica) restano nello storico ma non contano piu'"
       }
     ],
     "brevoEvents": [
@@ -21972,7 +21991,8 @@
         "linkedin": "https://www.linkedin.com/in/tal-thorne-368217163/"
       }
     ],
-    "contactTitle": "Account Manager"
+    "contactTitle": "Account Manager",
+    "restartAt": 1794592972358
   },
   "c1780673710718urq12": {
     "status": "followup",
@@ -22373,7 +22393,7 @@
     "contactTitle": "Trade Manager Wine & Spirits"
   },
   "c1780673710718pumzk": {
-    "status": "followup",
+    "status": "new",
     "log": [
       {
         "ts": 1780673710716,
@@ -22398,6 +22418,10 @@
       {
         "ts": 1790438464990,
         "msg": "🔗 Click: Have you ever heard of Small Vineyards International? Not yet?"
+      },
+      {
+        "ts": 1794592972358,
+        "msg": "🔄 Sequenza ripartita da zero (13/11): sbloccata la persona diretta ronnie@trialiafoods.com.au; i 2 invii precedenti (alla mail generica) restano nello storico ma non contano piu'"
       }
     ],
     "brevoEvents": [
@@ -22477,7 +22501,8 @@
         "sbloccato": true
       }
     ],
-    "contactTitle": "Managing Director"
+    "contactTitle": "Managing Director",
+    "restartAt": 1794592972358
   },
   "c1780673710718lfcn8": {
     "status": "followup",
@@ -22562,7 +22587,7 @@
     }
   },
   "c1780673710718fe4pa": {
-    "status": "followup",
+    "status": "new",
     "log": [
       {
         "ts": 1780673710716,
@@ -22587,6 +22612,10 @@
       {
         "ts": 1794592404925,
         "msg": "🔓 Email sbloccata via BWI: Steven Milic <steve@winestockvic.com.au> (Wine Sales Specialist)"
+      },
+      {
+        "ts": 1794592972358,
+        "msg": "🔄 Sequenza ripartita da zero (13/11): sbloccata la persona diretta steve@winestockvic.com.au; i 2 invii precedenti (alla mail generica) restano nello storico ma non contano piu'"
       }
     ],
     "brevoEvents": [
@@ -22669,10 +22698,11 @@
         "phone": "",
         "linkedin": "Https://www.linkedin.com/in/vince-pignatelli-2445b693/"
       }
-    ]
+    ],
+    "restartAt": 1794592972358
   },
   "c1780673710718xt1m4": {
-    "status": "followup",
+    "status": "new",
     "log": [
       {
         "ts": 1780673710716,
@@ -22701,6 +22731,10 @@
       {
         "ts": 1794592404925,
         "msg": "🔓 Email sbloccata via BWI: David Sharp <david.sharp@purewine.co> (Account Manager)"
+      },
+      {
+        "ts": 1794592972358,
+        "msg": "🔄 Sequenza ripartita da zero (13/11): sbloccata la persona diretta david.sharp@purewine.co; i 2 invii precedenti (alla mail generica) restano nello storico ma non contano piu'"
       }
     ],
     "brevoEvents": [
@@ -22843,7 +22877,8 @@
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/ellen-lang/"
       }
-    ]
+    ],
+    "restartAt": 1794592972358
   },
   "c178067371071854fcm": {
     "status": "followup",
@@ -22924,7 +22959,7 @@
     "contactTitle": "Vice President"
   },
   "c1780673710718yta65": {
-    "status": "followup",
+    "status": "new",
     "log": [
       {
         "ts": 1780673710716,
@@ -22945,6 +22980,10 @@
       {
         "ts": 1790373658355,
         "msg": "⚡ Auto day7: \"#2b — Follow-up not opened (day 7) - Importer Siena Wine\""
+      },
+      {
+        "ts": 1794592972358,
+        "msg": "🔄 Sequenza ripartita da zero (13/11): sbloccata la persona diretta pisconeri.albert@pisconeri.com.au; i 2 invii precedenti (alla mail generica) restano nello storico ma non contano piu'"
       }
     ],
     "brevoEvents": [
@@ -23019,7 +23058,8 @@
         "sbloccato": true
       }
     ],
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "restartAt": 1794592972358
   },
   "c17806737107185zvme": {
     "status": "followup",
@@ -23094,7 +23134,7 @@
     }
   },
   "c17806737107181l75a": {
-    "status": "followup",
+    "status": "new",
     "log": [
       {
         "ts": 1780673710716,
@@ -23115,6 +23155,10 @@
       {
         "ts": 1794592404925,
         "msg": "🔓 Email sbloccata via BWI: Mathieu Smeysters <mathieu@eastendcellars.com.au> (General Manager And Head Wine Buyer)"
+      },
+      {
+        "ts": 1794592972358,
+        "msg": "🔄 Sequenza ripartita da zero (13/11): sbloccata la persona diretta mathieu@eastendcellars.com.au; i 2 invii precedenti (alla mail generica) restano nello storico ma non contano piu'"
       }
     ],
     "brevoEvents": [
@@ -23202,10 +23246,11 @@
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/kennedy-simpson-9475bb70/"
       }
-    ]
+    ],
+    "restartAt": 1794592972358
   },
   "c1780673710718wh47y": {
-    "status": "followup",
+    "status": "new",
     "log": [
       {
         "ts": 1780673710716,
@@ -23222,6 +23267,10 @@
       {
         "ts": 1794592404925,
         "msg": "🔓 Email sbloccata via BWI: Lachlan Mclean <lach@lsb.net.au> (Director)"
+      },
+      {
+        "ts": 1794592972358,
+        "msg": "🔄 Sequenza ripartita da zero (13/11): sbloccata la persona diretta lach@lsb.net.au; i 2 invii precedenti (alla mail generica) restano nello storico ma non contano piu'"
       }
     ],
     "brevoEvents": [
@@ -23305,7 +23354,8 @@
         "phone": "*",
         "linkedin": ""
       }
-    ]
+    ],
+    "restartAt": 1794592972358
   },
   "c178067371071819k2q": {
     "status": "followup",
@@ -24007,7 +24057,7 @@
     "contactTitle": "Business Development Manager"
   },
   "c1780673710718vse36": {
-    "status": "followup",
+    "status": "new",
     "log": [
       {
         "ts": 1780673710716,
@@ -24028,6 +24078,10 @@
       {
         "ts": 1794592404925,
         "msg": "🔓 Email sbloccata via BWI: Davide Capozzi <davide@enoteca.com.au> (Key Account Manager)"
+      },
+      {
+        "ts": 1794592972358,
+        "msg": "🔄 Sequenza ripartita da zero (13/11): sbloccata la persona diretta davide@enoteca.com.au; i 2 invii precedenti (alla mail generica) restano nello storico ma non contano piu'"
       }
     ],
     "brevoEvents": [
@@ -24109,7 +24163,8 @@
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/richard-wearing-3b89a8164/"
       }
-    ]
+    ],
+    "restartAt": 1794592972358
   },
   "c1780673710718nbw7x": {
     "status": "followup",
@@ -24407,7 +24462,7 @@
     "contactTitle": "Managing Director"
   },
   "c17806737107183tvsw": {
-    "status": "followup",
+    "status": "new",
     "log": [
       {
         "ts": 1780673710716,
@@ -24432,6 +24487,10 @@
       {
         "ts": 1790395471830,
         "msg": "🔗 Click: Have you ever heard of Small Vineyards International? Not yet?"
+      },
+      {
+        "ts": 1794592972358,
+        "msg": "🔄 Sequenza ripartita da zero (13/11): sbloccata la persona diretta andrew.clarke@hofw.com.au; i 2 invii precedenti (alla mail generica) restano nello storico ma non contano piu'"
       }
     ],
     "brevoEvents": [
@@ -24523,7 +24582,8 @@
         "linkedin": ""
       }
     ],
-    "contactTitle": "Sales Manager"
+    "contactTitle": "Sales Manager",
+    "restartAt": 1794592972358
   },
   "c1780673710718ohfud": {
     "status": "followup",
@@ -25215,7 +25275,7 @@
     "contactTitle": "General Manager"
   },
   "c1780673710718tf1u8": {
-    "status": "followup",
+    "status": "new",
     "log": [
       {
         "ts": 1780673710716,
@@ -25232,6 +25292,10 @@
       {
         "ts": 1790395261636,
         "msg": "⚡ Auto day7: \"#2b — Follow-up not opened (day 7) - Importer Siena Wine\""
+      },
+      {
+        "ts": 1794592972358,
+        "msg": "🔄 Sequenza ripartita da zero (13/11): sbloccata la persona diretta nik@winewomanww.com; i 2 invii precedenti (alla mail generica) restano nello storico ma non contano piu'"
       }
     ],
     "brevoEvents": [
@@ -25308,7 +25372,8 @@
         "linkedin": ""
       }
     ],
-    "contactTitle": "Managing Director"
+    "contactTitle": "Managing Director",
+    "restartAt": 1794592972358
   },
   "c17806737107183xgee": {
     "status": "followup",
@@ -25773,7 +25838,7 @@
     "contactTitle": "Area Sales Manager"
   },
   "c1780673710718esk47": {
-    "status": "followup",
+    "status": "new",
     "log": [
       {
         "ts": 1780673710716,
@@ -25790,6 +25855,10 @@
       {
         "ts": 1794592404925,
         "msg": "🔓 Email sbloccata via BWI: Stuart Leece <stu@singlevineyards.com> (Director)"
+      },
+      {
+        "ts": 1794592972358,
+        "msg": "🔄 Sequenza ripartita da zero (13/11): sbloccata la persona diretta stu@singlevineyards.com; i 2 invii precedenti (alla mail generica) restano nello storico ma non contano piu'"
       }
     ],
     "brevoEvents": [
@@ -25866,7 +25935,8 @@
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/gemma-sadd-ba767a180/"
       }
-    ]
+    ],
+    "restartAt": 1794592972358
   },
   "c17806737107188tbxi": {
     "status": "followup",
@@ -25943,7 +26013,7 @@
     "contactTitle": "Chief Executive Officer"
   },
   "c1780673710718hz016": {
-    "status": "followup",
+    "status": "new",
     "log": [
       {
         "ts": 1780673710716,
@@ -25960,6 +26030,10 @@
       {
         "ts": 1794592534219,
         "msg": "🔓 Email sbloccata via BWI (recuperata dal log dell'Action del 13/11, checkpoint fallito): Ignazio Ian Deiana <ian@twelvebottles.com.au>"
+      },
+      {
+        "ts": 1794592972358,
+        "msg": "🔄 Sequenza ripartita da zero (13/11): sbloccata la persona diretta ian@twelvebottles.com.au; i 2 invii precedenti (alla mail generica) restano nello storico ma non contano piu'"
       }
     ],
     "brevoEvents": [
@@ -26028,7 +26102,8 @@
         "sbloccato": true
       }
     ],
-    "contactEmail": "ian@twelvebottles.com.au"
+    "contactEmail": "ian@twelvebottles.com.au",
+    "restartAt": 1794592972358
   },
   "c1780673710718xw4f5": {
     "log": [
@@ -172831,7 +172906,7 @@
     "contactTitle": "Sales"
   },
   "c1780673710801qt4kj": {
-    "status": "sent",
+    "status": "new",
     "log": [
       {
         "ts": 1780673710716,
@@ -172844,6 +172919,10 @@
       {
         "ts": 1794592854606,
         "msg": "🔓 Email sbloccata via BWI: Jorge Castellanos <jorgecastellanos@epb.ec> (General Manager)"
+      },
+      {
+        "ts": 1794592972358,
+        "msg": "🔄 Sequenza ripartita da zero (13/11): sbloccata la persona diretta jorgecastellanos@epb.ec; i 1 invii precedenti (alla mail generica) restano nello storico ma non contano piu'"
       }
     ],
     "brevoEvents": [
@@ -172902,7 +172981,8 @@
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/vivancofernando/"
       }
-    ]
+    ],
+    "restartAt": 1794592972358
   },
   "c1780673710801bhrqh": {
     "research": {
