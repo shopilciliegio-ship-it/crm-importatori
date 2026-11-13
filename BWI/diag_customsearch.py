@@ -23,7 +23,7 @@ def main():
     for sort in ('Created', 'Updated'):
         print(f'\n===== customSearch sortBy={sort} DESC =====')
         payload = {"nocache": True, "startAt": 0, "endAt": 50, "sortBy": sort, "sortDir": "DESC",
-                   "filters": FILTRI, "id": None, "name": None, "date": None}
+                   "filters": {}, "id": None, "name": None, "date": None}
         r = sess.post(f"{BASE_URL}/customSearch/", json=payload, headers=headers, timeout=60)
         print('HTTP', r.status_code, '| bytes', len(r.content))
         if r.status_code != 200:
