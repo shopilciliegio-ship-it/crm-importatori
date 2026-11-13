@@ -2194,6 +2194,20 @@
     "contactTitle": "Buyer"
   },
   "c1780673710716nqnng": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1781537452525,
+        "msg": "BWI sync: aggiornato (contatti)"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "⚠ Email sbloccata via BWI con dominio diverso dall'azienda: Walter Palacios <walter_palacios@carrefour.com> — da verificare, NON usata per gli invii"
+      }
+    ],
     "research": {
       "affidabilita": 5,
       "vino_italiano": "forse",
@@ -2213,21 +2227,6 @@
       }
     },
     "contactName": "Walter Palacios",
-    "contactTitle": "Head of Purchasing",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1781537452525,
-        "msg": "BWI sync: aggiornato (contatti)"
-      },
-      {
-        "ts": 1794591794597,
-        "msg": "⚠ Email sbloccata via BWI con dominio diverso dall'azienda: Walter Palacios <walter_palacios@carrefour.com> — da verificare, NON usata per gli invii"
-      }
-    ],
     "contacts": [
       {
         "name": "Walter Palacios",
@@ -2265,7 +2264,8 @@
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/victor-pablo-benicio-561110149/"
       }
-    ]
+    ],
+    "contactTitle": "Head of Purchasing"
   },
   "c1780673710716e8ys4": {
     "status": "followup",
@@ -17900,6 +17900,16 @@
     "contactTitle": "Category Manager"
   },
   "c1780673710718x7krq": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Email sbloccata via BWI: Arman Avetisyan <arman.avetisyan@andaco.am> (Import & Brand Manager)"
+      }
+    ],
     "research": {
       "affidabilita": 5,
       "vino_italiano": "si",
@@ -17918,19 +17928,8 @@
         }
       }
     },
-    "contactName": "Arman Avetisyan",
-    "contactTitle": "Import & Brand Manager",
     "contactEmail": "arman.avetisyan@andaco.am",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1794591794597,
-        "msg": "🔓 Email sbloccata via BWI: Arman Avetisyan <arman.avetisyan@andaco.am> (Import & Brand Manager)"
-      }
-    ],
+    "contactName": "Arman Avetisyan",
     "contacts": [
       {
         "name": "Arman Avetisyan",
@@ -17947,7 +17946,8 @@
         "phone": "",
         "linkedin": "Https://www.linkedin.com/in/hrach-yeritsyan-863694b6/"
       }
-    ]
+    ],
+    "contactTitle": "Import & Brand Manager"
   },
   "c1780673710718rc3kq": {
     "research": {
@@ -19120,9 +19120,8 @@
         }
       }
     },
-    "contactName": "Lidija Fargher",
-    "contactTitle": "Buyer",
     "contactEmail": "lidija.fargher@coles.com.au",
+    "contactName": "Lidija Fargher",
     "contacts": [
       {
         "name": "Lidija Fargher",
@@ -19153,7 +19152,8 @@
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/daniel-parrott-39b19319/"
       }
-    ]
+    ],
+    "contactTitle": "Buyer"
   },
   "c17806737107181n0x8": {
     "status": "followup",
@@ -20802,9 +20802,8 @@
         }
       }
     },
-    "contactName": "Joe Alessi",
-    "contactTitle": "Managing Director",
     "contactEmail": "jalessi@alessibeverages.com.au",
+    "contactName": "Joe Alessi",
     "contacts": [
       {
         "name": "Joe Alessi",
@@ -20821,7 +20820,8 @@
         "phone": "",
         "linkedin": "Https://www.linkedin.com/in/antonella-alessi-0456a2200/"
       }
-    ]
+    ],
+    "contactTitle": "Managing Director"
   },
   "c17806737107186sf7u": {
     "status": "followup",
@@ -25774,6 +25774,16 @@
     "contactTitle": "Owner"
   },
   "c1780673710718xw4f5": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Email sbloccata via BWI: Chris Munck <chris@francaboutwine.com> (Purchasing)"
+      }
+    ],
     "research": {
       "affidabilita": 5,
       "vino_italiano": "si",
@@ -25792,19 +25802,8 @@
         }
       }
     },
-    "contactName": "Chris Munck",
-    "contactTitle": "Purchasing",
     "contactEmail": "chris@francaboutwine.com",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1794591794597,
-        "msg": "🔓 Email sbloccata via BWI: Chris Munck <chris@francaboutwine.com> (Purchasing)"
-      }
-    ],
+    "contactName": "Chris Munck",
     "contacts": [
       {
         "name": "Chris Munck",
@@ -25842,7 +25841,8 @@
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/jasmine-wren-08083a209/"
       }
-    ]
+    ],
+    "contactTitle": "Purchasing"
   },
   "c17806737107180ymyx": {
     "log": [
@@ -25972,6 +25972,16 @@
     "contactTitle": "Owner"
   },
   "c1780673710718xl26l": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Email sbloccata via BWI: Rebecca Webb <rwebb@fww.com.au> (Wine Sales & Marketing)"
+      }
+    ],
     "research": {
       "affidabilita": 5,
       "vino_italiano": "probabile",
@@ -25990,19 +26000,8 @@
         }
       }
     },
-    "contactName": "Rebecca Webb",
-    "contactTitle": "Wine Sales & Marketing",
     "contactEmail": "rwebb@fww.com.au",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1794591794597,
-        "msg": "🔓 Email sbloccata via BWI: Rebecca Webb <rwebb@fww.com.au> (Wine Sales & Marketing)"
-      }
-    ],
+    "contactName": "Rebecca Webb",
     "contacts": [
       {
         "name": "Rebecca Webb",
@@ -26019,7 +26018,8 @@
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/ashley-bond-9b387627/"
       }
-    ]
+    ],
+    "contactTitle": "Wine Sales & Marketing"
   },
   "c17806737107186ae1a": {
     "research": {
@@ -26044,6 +26044,16 @@
     "contactTitle": "Sales Representative"
   },
   "c1780673710718lakgl": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Email sbloccata via BWI: Joe Molinari <joem@combinedwines.com.au> (General Manager)"
+      }
+    ],
     "research": {
       "affidabilita": 5,
       "vino_italiano": "si",
@@ -26062,19 +26072,8 @@
         }
       }
     },
-    "contactName": "Joe Molinari",
-    "contactTitle": "General Manager",
     "contactEmail": "joem@combinedwines.com.au",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1794591794597,
-        "msg": "🔓 Email sbloccata via BWI: Joe Molinari <joem@combinedwines.com.au> (General Manager)"
-      }
-    ],
+    "contactName": "Joe Molinari",
     "contacts": [
       {
         "name": "Joe Molinari",
@@ -26091,7 +26090,8 @@
         "phone": "",
         "linkedin": ""
       }
-    ]
+    ],
+    "contactTitle": "General Manager"
   },
   "c1780673710718rt05g": {
     "research": {
@@ -27628,6 +27628,16 @@
     }
   },
   "c1780673710719ueji5": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Email sbloccata via BWI: Jim Pilakis <jimp@floxwines.com.au> (General Manager)"
+      }
+    ],
     "research": {
       "affidabilita": 5,
       "vino_italiano": "probabile",
@@ -27646,19 +27656,8 @@
         }
       }
     },
-    "contactName": "Jim Pilakis",
-    "contactTitle": "General Manager",
     "contactEmail": "jimp@floxwines.com.au",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1794591794597,
-        "msg": "🔓 Email sbloccata via BWI: Jim Pilakis <jimp@floxwines.com.au> (General Manager)"
-      }
-    ],
+    "contactName": "Jim Pilakis",
     "contacts": [
       {
         "name": "Jim Pilakis",
@@ -27675,7 +27674,8 @@
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/kathy-palmarella-1b781b79/"
       }
-    ]
+    ],
+    "contactTitle": "General Manager"
   },
   "c17806737107198jix4": {
     "research": {
@@ -37163,6 +37163,16 @@
     }
   },
   "c1780673710721fgmco": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Email sbloccata via BWI: David Ridge <david@davidridgewines.com.au> (Owner)"
+      }
+    ],
     "research": {
       "affidabilita": 5,
       "vino_italiano": "si",
@@ -37181,19 +37191,8 @@
         }
       }
     },
-    "contactName": "David Ridge",
-    "contactTitle": "Owner",
     "contactEmail": "david@davidridgewines.com.au",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1794591794597,
-        "msg": "🔓 Email sbloccata via BWI: David Ridge <david@davidridgewines.com.au> (Owner)"
-      }
-    ],
+    "contactName": "David Ridge",
     "contacts": [
       {
         "name": "David Ridge",
@@ -37210,7 +37209,8 @@
         "phone": "*",
         "linkedin": ""
       }
-    ]
+    ],
+    "contactTitle": "Owner"
   },
   "c1780673710721lqzmt": {
     "research": {
@@ -38217,6 +38217,16 @@
     "contactTitle": "Director"
   },
   "c1780673710722q5wbz": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Email sbloccata via BWI: Rachel Atzeni <rachel@chentannos.com.au> (Manager)"
+      }
+    ],
     "research": {
       "affidabilita": 5,
       "vino_italiano": "si",
@@ -38235,19 +38245,8 @@
         }
       }
     },
-    "contactName": "Rachel Atzeni",
-    "contactTitle": "In Charge",
     "contactEmail": "rachel@chentannos.com.au",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1794591794597,
-        "msg": "🔓 Email sbloccata via BWI: Rachel Atzeni <rachel@chentannos.com.au> (Manager)"
-      }
-    ],
+    "contactName": "Rachel Atzeni",
     "contacts": [
       {
         "name": "Stefano Atzeni",
@@ -38264,7 +38263,8 @@
         "linkedin": "",
         "sbloccato": true
       }
-    ]
+    ],
+    "contactTitle": "In Charge"
   },
   "c1780673710722f2pof": {
     "log": [
@@ -84209,6 +84209,16 @@
     "contactTitle": "Marketing Manager"
   },
   "c1780673710734f9l9u": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "⚠ Email sbloccata via BWI con dominio diverso dall'azienda: Nicolas Quercia <nicolas_quercia@carrefour.com> — da verificare, NON usata per gli invii"
+      }
+    ],
     "research": {
       "affidabilita": 5,
       "vino_italiano": "probabile",
@@ -84228,17 +84238,6 @@
       }
     },
     "contactName": "Nicolas Quercia",
-    "contactTitle": "Global Sourcing Manager Beverages",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1794591794597,
-        "msg": "⚠ Email sbloccata via BWI con dominio diverso dall'azienda: Nicolas Quercia <nicolas_quercia@carrefour.com> — da verificare, NON usata per gli invii"
-      }
-    ],
     "contacts": [
       {
         "name": "Nicolas Quercia",
@@ -84262,7 +84261,8 @@
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/rodrigo-pereiro-80810885/"
       }
-    ]
+    ],
+    "contactTitle": "Global Sourcing Manager Beverages"
   },
   "c1780673710734q85gx": {
     "status": "followup",
@@ -84482,6 +84482,20 @@
     "contactTitle": "General Manager"
   },
   "c1780673710734azkc9": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1786959960995,
+        "msg": "BWI sync: aggiornato (contatti)"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
+      }
+    ],
     "research": {
       "affidabilita": 5,
       "vino_italiano": "probabile",
@@ -84501,21 +84515,7 @@
       }
     },
     "contactName": "Pedro Matulo",
-    "contactTitle": "Buyer",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1786959960995,
-        "msg": "BWI sync: aggiornato (contatti)"
-      },
-      {
-        "ts": 1794591794597,
-        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
-      }
-    ]
+    "contactTitle": "Buyer"
   },
   "c1780673710734gzn8i": {
     "research": {
@@ -84540,6 +84540,16 @@
     "contactTitle": "Purchasing Manager"
   },
   "c1780673710734umono": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
+      }
+    ],
     "research": {
       "affidabilita": 5,
       "vino_italiano": "probabile",
@@ -84559,17 +84569,7 @@
       }
     },
     "contactName": "Ana Carolina Laytynher",
-    "contactTitle": "Commercial Manager",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1794591794597,
-        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
-      }
-    ]
+    "contactTitle": "Commercial Manager"
   },
   "c1780673710734adrzj": {
     "research": {
@@ -86392,6 +86392,16 @@
     "contactTitle": "Sales Representative"
   },
   "c1780673710734rxyh6": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
+      }
+    ],
     "research": {
       "affidabilita": 5,
       "vino_italiano": "si",
@@ -86411,17 +86421,7 @@
       }
     },
     "contactName": "Jonas Silva",
-    "contactTitle": "Sommelier",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1794591794597,
-        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
-      }
-    ]
+    "contactTitle": "Sommelier"
   },
   "c1780673710734uv7x4": {
     "research": {
@@ -114604,6 +114604,16 @@
     "contactTitle": "President"
   },
   "c17806737107416iar2": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "⚠ Email sbloccata via BWI con dominio diverso dall'azienda: Roberto Hernandez <roberto.hernandez0@walmart.com> — da verificare, NON usata per gli invii"
+      }
+    ],
     "research": {
       "affidabilita": 5,
       "vino_italiano": "forse",
@@ -114623,17 +114633,6 @@
       }
     },
     "contactName": "Roberto Hernandez",
-    "contactTitle": "Buyer",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1794591794597,
-        "msg": "⚠ Email sbloccata via BWI con dominio diverso dall'azienda: Roberto Hernandez <roberto.hernandez0@walmart.com> — da verificare, NON usata per gli invii"
-      }
-    ],
     "contacts": [
       {
         "name": "Roberto Hernandez",
@@ -114657,7 +114656,8 @@
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/cristian-barrientos-pozo-1441388/"
       }
-    ]
+    ],
+    "contactTitle": "Buyer"
   },
   "c1780673710741znnum": {
     "research": {
@@ -119738,6 +119738,16 @@
     "contactTitle": "Manager"
   },
   "c1780673710742mb21d": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
+      }
+    ],
     "research": {
       "affidabilita": 5,
       "vino_italiano": "probabile",
@@ -119757,17 +119767,7 @@
       }
     },
     "contactName": "Scott Ren",
-    "contactTitle": "Regional Manager",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1794591794597,
-        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
-      }
-    ]
+    "contactTitle": "Regional Manager"
   },
   "c1780673710742uivwp": {
     "research": {
@@ -120080,6 +120080,16 @@
     "contactTitle": "Senior Brand Manager/ Marketing Director"
   },
   "c1780673710742hugxg": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Email sbloccata via BWI: Edward Liu <edward.liu@sinodrink.com> (General Manager)"
+      }
+    ],
     "research": {
       "affidabilita": 5,
       "vino_italiano": "si",
@@ -120098,19 +120108,8 @@
         }
       }
     },
-    "contactName": "Edward Liu",
-    "contactTitle": "General Manager",
     "contactEmail": "edward.liu@sinodrink.com",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1794591794597,
-        "msg": "🔓 Email sbloccata via BWI: Edward Liu <edward.liu@sinodrink.com> (General Manager)"
-      }
-    ],
+    "contactName": "Edward Liu",
     "contacts": [
       {
         "name": "Edward Liu",
@@ -120127,7 +120126,8 @@
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/tony-zhang-71904178/"
       }
-    ]
+    ],
+    "contactTitle": "General Manager"
   },
   "c1780673710742zayjd": {
     "research": {
@@ -122856,6 +122856,16 @@
     }
   },
   "c17806737107447gnk6": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "⚠ Email sbloccata via BWI con dominio diverso dall'azienda: Riccardo Trentini <rt@maestri.co> — da verificare, NON usata per gli invii"
+      }
+    ],
     "research": {
       "affidabilita": 5,
       "vino_italiano": "si",
@@ -122875,17 +122885,6 @@
       }
     },
     "contactName": "Riccardo Trentini",
-    "contactTitle": "President & Founder",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1794591794597,
-        "msg": "⚠ Email sbloccata via BWI con dominio diverso dall'azienda: Riccardo Trentini <rt@maestri.co> — da verificare, NON usata per gli invii"
-      }
-    ],
     "contacts": [
       {
         "name": "Riccardo Trentini",
@@ -122902,7 +122901,8 @@
         "phone": "*",
         "linkedin": ""
       }
-    ]
+    ],
+    "contactTitle": "President & Founder"
   },
   "c1780673710744noi62": {
     "status": "sent",
@@ -169842,6 +169842,16 @@
     }
   },
   "c1780673710801j3snc": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Email sbloccata via BWI: Ghislaine Pfiffner <gpfiffner@elcatador.com> (Brand Manager)"
+      }
+    ],
     "research": {
       "affidabilita": 5,
       "vino_italiano": "si",
@@ -169860,19 +169870,8 @@
         }
       }
     },
-    "contactName": "Ghislaine Pfiffner",
-    "contactTitle": "Brand Manager",
     "contactEmail": "gpfiffner@elcatador.com",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1794591794597,
-        "msg": "🔓 Email sbloccata via BWI: Ghislaine Pfiffner <gpfiffner@elcatador.com> (Brand Manager)"
-      }
-    ],
+    "contactName": "Ghislaine Pfiffner",
     "contacts": [
       {
         "name": "Ghislaine Pfiffner",
@@ -169889,7 +169888,8 @@
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/giuseppe-bonarelli-1a2bb544/"
       }
-    ]
+    ],
+    "contactTitle": "Brand Manager"
   },
   "c178067371080148fe0": {
     "research": {
@@ -241008,6 +241008,16 @@
     "contactTitle": "Managing Director"
   },
   "c1780673710853j80tm": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Email sbloccata via BWI: Mingming Hon <mingming@altayawines.com> (Senior Sales Manager)"
+      }
+    ],
     "research": {
       "affidabilita": 5,
       "vino_italiano": "si",
@@ -241026,19 +241036,8 @@
         }
       }
     },
-    "contactName": "Mingming Hon",
-    "contactTitle": "Senior Sales Manager",
     "contactEmail": "mingming@altayawines.com",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1794591794597,
-        "msg": "🔓 Email sbloccata via BWI: Mingming Hon <mingming@altayawines.com> (Senior Sales Manager)"
-      }
-    ],
+    "contactName": "Mingming Hon",
     "contacts": [
       {
         "name": "Mingming Hon",
@@ -241055,9 +241054,20 @@
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/calvin-fu-01aba7219/"
       }
-    ]
+    ],
+    "contactTitle": "Senior Sales Manager"
   },
   "c1780673710853dx235": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Email sbloccata via BWI: Benny Leung <benny.leung@ponti-tdg.com> (Buyer)"
+      }
+    ],
     "research": {
       "affidabilita": 5,
       "vino_italiano": "probabile",
@@ -241076,19 +241086,8 @@
         }
       }
     },
-    "contactName": "Benny Leung",
-    "contactTitle": "Buyer",
     "contactEmail": "benny.leung@ponti-tdg.com",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1794591794597,
-        "msg": "🔓 Email sbloccata via BWI: Benny Leung <benny.leung@ponti-tdg.com> (Buyer)"
-      }
-    ],
+    "contactName": "Benny Leung",
     "contacts": [
       {
         "name": "Benny Leung",
@@ -241105,7 +241104,8 @@
         "phone": "",
         "linkedin": "Https://www.linkedin.com/in/antonio-koo-2121856/"
       }
-    ]
+    ],
+    "contactTitle": "Buyer"
   },
   "c1780673710853y9d7p": {
     "research": {
@@ -241218,6 +241218,16 @@
     "contactTitle": "Vice President"
   },
   "c1780673710853w3y78": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Email sbloccata via BWI: Gina Li <ginali@metrowine.com.hk> (Sales and Marketing Director)"
+      }
+    ],
     "research": {
       "affidabilita": 5,
       "vino_italiano": "si",
@@ -241236,19 +241246,8 @@
         }
       }
     },
-    "contactName": "Gina Li",
-    "contactTitle": "Sales and Marketing Director",
     "contactEmail": "ginali@metrowine.com.hk",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1794591794597,
-        "msg": "🔓 Email sbloccata via BWI: Gina Li <ginali@metrowine.com.hk> (Sales and Marketing Director)"
-      }
-    ],
+    "contactName": "Gina Li",
     "contacts": [
       {
         "name": "Gina Li",
@@ -241258,7 +241257,8 @@
         "linkedin": "https://www.linkedin.com/in/gina-li-51713322",
         "sbloccato": true
       }
-    ]
+    ],
+    "contactTitle": "Sales and Marketing Director"
   },
   "c1780673710853qcb8b": {
     "research": {
@@ -241837,6 +241837,16 @@
     "contactTitle": "Director of Procurement"
   },
   "c1780673710854jpkh2": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Email sbloccata via BWI: Edward Lau <edward.lau@pinewoodwine.com> (Managing Director)"
+      }
+    ],
     "research": {
       "affidabilita": 5,
       "vino_italiano": "si",
@@ -241855,19 +241865,8 @@
         }
       }
     },
-    "contactName": "Edward Lau",
-    "contactTitle": "Managing Director",
     "contactEmail": "edward.lau@pinewoodwine.com",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1794591794597,
-        "msg": "🔓 Email sbloccata via BWI: Edward Lau <edward.lau@pinewoodwine.com> (Managing Director)"
-      }
-    ],
+    "contactName": "Edward Lau",
     "contacts": [
       {
         "name": "Edward Lau",
@@ -241884,7 +241883,8 @@
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/michael-cheung-52431388/"
       }
-    ]
+    ],
+    "contactTitle": "Managing Director"
   },
   "c1780673710854fjdcg": {
     "research": {
@@ -245969,6 +245969,16 @@
     "contactTitle": "Ceo"
   },
   "c1780673710855k9a2w": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Email sbloccata via BWI: Lee Carrie <carrie@vinoveritas.biz> (Managing Director)"
+      }
+    ],
     "research": {
       "affidabilita": 5,
       "vino_italiano": "si",
@@ -245987,19 +245997,8 @@
         }
       }
     },
-    "contactName": "Lee Carrie",
-    "contactTitle": "Managing Director",
     "contactEmail": "carrie@vinoveritas.biz",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1794591794597,
-        "msg": "🔓 Email sbloccata via BWI: Lee Carrie <carrie@vinoveritas.biz> (Managing Director)"
-      }
-    ],
+    "contactName": "Lee Carrie",
     "contacts": [
       {
         "name": "Lee Carrie",
@@ -246016,7 +246015,8 @@
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/sarah-purdon-29467843/"
       }
-    ]
+    ],
+    "contactTitle": "Managing Director"
   },
   "c1780673710855dypx3": {
     "research": {
@@ -247179,6 +247179,16 @@
     "contactTitle": "Sales And Marketing Executive"
   },
   "c1780673710855d4f24": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Email sbloccata via BWI: Dicky Mok <dicky_mok@enoteca.com.hk> (General Sales Manager)"
+      }
+    ],
     "research": {
       "affidabilita": 5,
       "vino_italiano": "probabile",
@@ -247197,19 +247207,8 @@
         }
       }
     },
-    "contactName": "Dicky Mok",
-    "contactTitle": "General Sales Manager",
     "contactEmail": "dicky_mok@enoteca.com.hk",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1794591794597,
-        "msg": "🔓 Email sbloccata via BWI: Dicky Mok <dicky_mok@enoteca.com.hk> (General Sales Manager)"
-      }
-    ],
+    "contactName": "Dicky Mok",
     "contacts": [
       {
         "name": "Dicky Mok",
@@ -247226,7 +247225,8 @@
         "phone": "",
         "linkedin": "https://hk.linkedin.com/in/nick-chan-4556bb22"
       }
-    ]
+    ],
+    "contactTitle": "General Sales Manager"
   },
   "c1780673710855225ed": {
     "research": {
@@ -247493,6 +247493,16 @@
     "contactTitle": "Co-founder & Managing Partner"
   },
   "c1780673710855bg1hr": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Email sbloccata via BWI: Franco Lee <franchise@winepassions.com> (Founder & Senior Partner)"
+      }
+    ],
     "research": {
       "affidabilita": 5,
       "vino_italiano": "si",
@@ -247511,19 +247521,8 @@
         }
       }
     },
-    "contactName": "Franco Lee",
-    "contactTitle": "Founder & Senior Partner",
     "contactEmail": "franchise@winepassions.com",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1794591794597,
-        "msg": "🔓 Email sbloccata via BWI: Franco Lee <franchise@winepassions.com> (Founder & Senior Partner)"
-      }
-    ],
+    "contactName": "Franco Lee",
     "contacts": [
       {
         "name": "Franco Lee",
@@ -247540,7 +247539,8 @@
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/adam-tai-4a070364/"
       }
-    ]
+    ],
+    "contactTitle": "Founder & Senior Partner"
   },
   "c178067371085582gai": {
     "research": {
@@ -247719,6 +247719,16 @@
     "contactTitle": "Ambassador And Distributor"
   },
   "c1780673710855f1erj": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Email sbloccata via BWI: Memi Lam <memi@dutyzero.com.hk> (Assistant Operations Manager)"
+      }
+    ],
     "research": {
       "affidabilita": 5,
       "vino_italiano": "probabile",
@@ -247737,19 +247747,8 @@
         }
       }
     },
-    "contactName": "Memi Lam",
-    "contactTitle": "Assistant Operations Manager",
     "contactEmail": "memi@dutyzero.com.hk",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1794591794597,
-        "msg": "🔓 Email sbloccata via BWI: Memi Lam <memi@dutyzero.com.hk> (Assistant Operations Manager)"
-      }
-    ],
+    "contactName": "Memi Lam",
     "contacts": [
       {
         "name": "Memi Lam",
@@ -247759,7 +247758,8 @@
         "linkedin": "https://www.linkedin.com/in/memi-lam-a17288188/",
         "sbloccato": true
       }
-    ]
+    ],
+    "contactTitle": "Assistant Operations Manager"
   },
   "c1780673710855twm6a": {
     "research": {
@@ -253367,6 +253367,16 @@
     "contactTitle": "Senior Manager Buying"
   },
   "c1780673710857gppbq": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
+      }
+    ],
     "research": {
       "affidabilita": 5,
       "vino_italiano": "probabile",
@@ -253386,17 +253396,7 @@
       }
     },
     "contactName": "Singh Sukhdev",
-    "contactTitle": "Purchase Manager",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1794591794597,
-        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
-      }
-    ]
+    "contactTitle": "Purchase Manager"
   },
   "c1780673710857p77gw": {
     "research": {
@@ -253839,6 +253839,16 @@
     "contactTitle": "Co-founder And Manging Director"
   },
   "c1780673710857gbbo0": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Email sbloccata via BWI: Kadambari Kapoor <kay@gustoimports.com> (Founder)"
+      }
+    ],
     "research": {
       "affidabilita": 5,
       "vino_italiano": "si",
@@ -253857,19 +253867,8 @@
         }
       }
     },
-    "contactName": "Kadambari Kapoor",
-    "contactTitle": "Founder",
     "contactEmail": "kay@gustoimports.com",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1794591794597,
-        "msg": "🔓 Email sbloccata via BWI: Kadambari Kapoor <kay@gustoimports.com> (Founder)"
-      }
-    ],
+    "contactName": "Kadambari Kapoor",
     "contacts": [
       {
         "name": "Kadambari Kapoor",
@@ -253886,7 +253885,8 @@
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/ashish-agarwal-baa530/"
       }
-    ]
+    ],
+    "contactTitle": "Founder"
   },
   "c1780673710857s8u5b": {
     "research": {
@@ -259151,6 +259151,16 @@
     }
   },
   "c1780673710858iakzu": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Email sbloccata via BWI: Zvika Goldstein <zvikag@hacarem.com> (Sales Manager)"
+      }
+    ],
     "research": {
       "affidabilita": 5,
       "vino_italiano": "probabile",
@@ -259169,19 +259179,8 @@
         }
       }
     },
-    "contactName": "Zvika Goldstein",
-    "contactTitle": "Sales Manager",
     "contactEmail": "zvikag@hacarem.com",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1794591794597,
-        "msg": "🔓 Email sbloccata via BWI: Zvika Goldstein <zvikag@hacarem.com> (Sales Manager)"
-      }
-    ],
+    "contactName": "Zvika Goldstein",
     "contacts": [
       {
         "name": "Zvika Goldstein",
@@ -259198,7 +259197,8 @@
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/usha-palker-b1a716a/"
       }
-    ]
+    ],
+    "contactTitle": "Sales Manager"
   },
   "c17806737108583xvms": {
     "research": {
@@ -261974,6 +261974,16 @@
     }
   },
   "c17806737108588hvfk": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Email sbloccata via BWI: Eyal Shelef <eyal@winesil.com> (Owner)"
+      }
+    ],
     "research": {
       "affidabilita": 5,
       "vino_italiano": "si",
@@ -261992,19 +262002,8 @@
         }
       }
     },
-    "contactName": "Eyal Shelef",
-    "contactTitle": "Owner",
     "contactEmail": "eyal@winesil.com",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1794591794597,
-        "msg": "🔓 Email sbloccata via BWI: Eyal Shelef <eyal@winesil.com> (Owner)"
-      }
-    ],
+    "contactName": "Eyal Shelef",
     "contacts": [
       {
         "name": "Eyal Shelef",
@@ -262014,7 +262013,8 @@
         "linkedin": "",
         "sbloccato": true
       }
-    ]
+    ],
+    "contactTitle": "Owner"
   },
   "c17806737108589u4h6": {
     "status": "followup",
@@ -262497,6 +262497,16 @@
     "contactTitle": "Sales Manager"
   },
   "c1780673710859ceyj3": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
+      }
+    ],
     "research": {
       "affidabilita": 5,
       "vino_italiano": "si",
@@ -262516,17 +262526,7 @@
       }
     },
     "contactName": "Oren T.",
-    "contactTitle": "Chief Executive Officer",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1794591794597,
-        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
-      }
-    ]
+    "contactTitle": "Chief Executive Officer"
   },
   "c17806737108599mq2m": {
     "status": "followup",
@@ -300449,6 +300449,16 @@
     "contactTitle": "Representative Director"
   },
   "c17806737108822vjpf": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Email sbloccata via BWI: Zeid Khalaf Nisheiwat <zeid@khalafstores.com> (Partner)"
+      }
+    ],
     "research": {
       "affidabilita": 5,
       "vino_italiano": "probabile",
@@ -300467,19 +300477,8 @@
         }
       }
     },
-    "contactName": "Zeid Khalaf Nisheiwat",
-    "contactTitle": "Partner",
     "contactEmail": "zeid@khalafstores.com",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1794591794597,
-        "msg": "🔓 Email sbloccata via BWI: Zeid Khalaf Nisheiwat <zeid@khalafstores.com> (Partner)"
-      }
-    ],
+    "contactName": "Zeid Khalaf Nisheiwat",
     "contacts": [
       {
         "name": "Zeyad Abu Al-haija'a",
@@ -300517,7 +300516,8 @@
         "phone": "",
         "linkedin": "Https://www.linkedin.com/in/fares-sawalha-473b5a194/"
       }
-    ]
+    ],
+    "contactTitle": "Partner"
   },
   "c1780673710883nzrae": {
     "research": {
@@ -305380,6 +305380,16 @@
     "contactTitle": "Marketing and Sales Coordinator"
   },
   "c17806737108832qmac": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Email sbloccata via BWI: Gaby Bou Najm <gaby@interal-lb.com> (Managing Director)"
+      }
+    ],
     "research": {
       "affidabilita": 5,
       "vino_italiano": "si",
@@ -305398,19 +305408,8 @@
         }
       }
     },
-    "contactName": "Gaby Bou Najm",
-    "contactTitle": "Managing Director",
     "contactEmail": "gaby@interal-lb.com",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1794591794597,
-        "msg": "🔓 Email sbloccata via BWI: Gaby Bou Najm <gaby@interal-lb.com> (Managing Director)"
-      }
-    ],
+    "contactName": "Gaby Bou Najm",
     "contacts": [
       {
         "name": "Karla Najjar",
@@ -305434,7 +305433,8 @@
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/claudine-bou-najm-010b14151/"
       }
-    ]
+    ],
+    "contactTitle": "Managing Director"
   },
   "c1780673710883xmacz": {
     "research": {
@@ -311135,6 +311135,16 @@
     "contactTitle": "Managing Director"
   },
   "c17806737108856bwb3": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Email sbloccata via BWI: Tiffany Gwee <tiffany@muihua.com> (Commercial Director)"
+      }
+    ],
     "research": {
       "affidabilita": 5,
       "vino_italiano": "probabile",
@@ -311153,19 +311163,8 @@
         }
       }
     },
-    "contactName": "Tiffany Gwee",
-    "contactTitle": "Commercial Director",
     "contactEmail": "tiffany@muihua.com",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1794591794597,
-        "msg": "🔓 Email sbloccata via BWI: Tiffany Gwee <tiffany@muihua.com> (Commercial Director)"
-      }
-    ],
+    "contactName": "Tiffany Gwee",
     "contacts": [
       {
         "name": "Chee Tan",
@@ -311182,7 +311181,8 @@
         "linkedin": "https://www.linkedin.com/in/tiffanygwee/",
         "sbloccato": true
       }
-    ]
+    ],
+    "contactTitle": "Commercial Director"
   },
   "c17806737108852auuz": {
     "research": {
@@ -313153,6 +313153,16 @@
     }
   },
   "c1780673710885u0j04": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Email sbloccata via BWI: Khail Van Niekerk <khail.vanniekerk@grapeexpectations.com.mv> (Head Of Business Development)"
+      }
+    ],
     "research": {
       "affidabilita": 5,
       "vino_italiano": "si",
@@ -313171,19 +313181,8 @@
         }
       }
     },
-    "contactName": "Khail Van Niekerk",
-    "contactTitle": "Head Of Business Development",
     "contactEmail": "khail.vanniekerk@grapeexpectations.com.mv",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1794591794597,
-        "msg": "🔓 Email sbloccata via BWI: Khail Van Niekerk <khail.vanniekerk@grapeexpectations.com.mv> (Head Of Business Development)"
-      }
-    ],
+    "contactName": "Khail Van Niekerk",
     "contacts": [
       {
         "name": "Khail Van Niekerk",
@@ -313200,9 +313199,20 @@
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/cherielyn-e-b568736a/"
       }
-    ]
+    ],
+    "contactTitle": "Head Of Business Development"
   },
   "c1780673710885cmff7": {
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794591794597,
+        "msg": "🔓 Email sbloccata via BWI: Shaanee Olegard <shaanee@naveanmaldives.com> (Owner)"
+      }
+    ],
     "research": {
       "affidabilita": 5,
       "vino_italiano": "probabile",
@@ -313221,19 +313231,8 @@
         }
       }
     },
-    "contactName": "Shaanee Olegard",
-    "contactTitle": "Owner",
     "contactEmail": "shaanee@naveanmaldives.com",
-    "log": [
-      {
-        "ts": 1780673710716,
-        "msg": "Importato da BWI"
-      },
-      {
-        "ts": 1794591794597,
-        "msg": "🔓 Email sbloccata via BWI: Shaanee Olegard <shaanee@naveanmaldives.com> (Owner)"
-      }
-    ],
+    "contactName": "Shaanee Olegard",
     "contacts": [
       {
         "name": "Shaanee Olegard",
@@ -313250,7 +313249,8 @@
         "phone": "",
         "linkedin": ""
       }
-    ]
+    ],
+    "contactTitle": "Owner"
   },
   "c1780673710885u2wr6": {
     "research": {
