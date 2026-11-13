@@ -501,18 +501,13 @@ def main():
             same['title'] = position
         name_crm = same.get('name') or full_name  # il nome completo del CRM vince su quello troncato di BWI
         if _email_sospetta(c, email):
-            # Dominio che non c'entra con l'azienda: la teniamo in scheda ma NON la usiamo per gli invii.
-            same['emailSospetta'] = email
-            c['contacts'] = people
+            # 13/11/2026, scelta di Luca: dominio diverso dall'azienda (catene come Carrefour/Walmart, gruppi familiari...)
+            # NON e' un motivo per scartarla: si salva e si usa lo stesso, con una nota nel registro.
             c.setdefault('log', []).append({
                 'ts': now_ms,
-                'msg': f'⚠ Email sbloccata via BWI con dominio diverso dall\'azienda: {name_crm} <{email}> '
-                       f'— da verificare, NON usata per gli invii',
+                'msg': f'ℹ Email BWI con dominio diverso dall\'azienda, usata lo stesso: {name_crm} <{email}>',
             })
-            print(f'  ⚠ {c.get("company","?")}: {name_crm} <{email}> — dominio sospetto, non usata')
-            unlocked += 1
-            since_checkpoint += 1
-            continue
+            print(f'  ℹ {c.get("company","?")}: {name_crm} <{email}> — dominio diverso dall\'azienda, usata lo stesso')
         same['email'] = email
         same['sbloccato'] = True
         c['contacts']     = people
