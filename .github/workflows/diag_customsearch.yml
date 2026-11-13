@@ -21,4 +21,4 @@ jobs:
         env:
           BWI_EMAIL:    ${{ secrets.BWI_EMAIL }}
           BWI_PASSWORD: ${{ secrets.BWI_PASSWORD }}
-        run: python diag_customsearch.py
+        run: python diag_customsearch.py --arretrato

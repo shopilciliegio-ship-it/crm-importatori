@@ -47,5 +47,36 @@ def main():
                 print(f"  {cid} | {c.get('CompanyName')} | {c.get('Country')} | Created={c.get('Created')} | Updated={c.get('Updated')} | nel CRM: {nel_crm}")
         print(f'-> su {len(comps)} aziende (le prime per {sort}), NON presenti nel CRM: {mancanti}')
 
-if __name__ == '__main__':
+if __name__ == '__main__' and '--arretrato' not in sys.argv:
     main()
+
+
+def conta_arretrato():
+    """Quante aziende create/aggiornate dopo il 12/10/2026 mancano al CRM (sola lettura, 0 crediti)."""
+    sess, headers = do_login()
+    crm = json.load(open(os.path.join(os.path.dirname(__file__), '..', 'data', 'contatti.json'), encoding='utf-8'))['contacts']
+    crm_ids = {str(c.get('bwiCompId')) for c in crm if c.get('bwiCompId')}
+    for sort in ('Created', 'Updated'):
+        tot = manc = 0; per_paese = {}; prima = ''
+        for start in range(0, 3000, 50):
+            pl = {"nocache": True, "startAt": start, "endAt": start + 50, "sortBy": sort, "sortDir": "DESC",
+                  "filters": {}, "id": None, "name": None, "date": None}
+            r = sess.post(f"{BASE_URL}/customSearch/", json=pl, headers=headers, timeout=60)
+            comps = (r.json().get('resListComp') or []) if r.status_code == 200 else []
+            if not comps:
+                break
+            stop = False
+            for c in comps:
+                d = (c.get(sort) or '')[:10]
+                if d < '2026-10-12':
+                    stop = True; break
+                tot += 1; prima = d
+                if str(c.get('CompId')) not in crm_ids:
+                    manc += 1; per_paese[c.get('Country')] = per_paese.get(c.get('Country'), 0) + 1
+            if stop:
+                break
+        top = sorted(per_paese.items(), key=lambda x: -x[1])[:10]
+        print(f'ARRETRATO {sort}: {tot} aziende con {sort} >= 12/10/2026 (fino a {prima}); NON nel CRM: {manc}; per paese: {top}')
+
+if __name__ == '__main__' and '--arretrato' in sys.argv:
+    conta_arretrato()
