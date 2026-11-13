@@ -7,7 +7,7 @@
     4,
     5
   ],
-  "maxCredits": 100,
+  "maxCredits": 53,
   "regioni": [
     "Altro",
     "Caraibi",
@@ -27,13 +27,6 @@
     "Norway",
     "Finland"
   ],
-  "status": "done",
-  "createdAt": 1794940000000,
-  "result": {
-    "unlocked": 47,
-    "spent": 47,
-    "failed": 0,
-    "skipped": 16,
-    "stopReason": "errore 403 al 3o checkpoint: 17 email recuperate a mano dal log dell'Action (13/11)"
-  }
+  "status": "pending",
+  "createdAt": 1794592830575
 }
