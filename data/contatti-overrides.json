@@ -98421,7 +98421,35 @@
       }
     },
     "contactName": "Melville Ross Oliveira",
-    "contactTitle": "Commercial Director"
+    "contactTitle": "Commercial Director",
+    "contactEmail": "melville@cavessantacruz.com.br",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "🔓 Email sbloccata via BWI: Melville Ross Oliveira <melville@cavessantacruz.com.br> (Commercial Director)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Melville Ross Oliveira",
+        "title": "Commercial Director",
+        "email": "melville@cavessantacruz.com.br",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/melville-ross-oliveira-sommelier-ab35463a/",
+        "sbloccato": true
+      },
+      {
+        "name": "Acacio Ferreira",
+        "title": "Director",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/acacio-ferreira-57bb7887/"
+      }
+    ]
   },
   "c17806737107352yfxx": {
     "research": {
@@ -98788,8 +98816,54 @@
         }
       }
     },
-    "contactName": "Thiago Pereira",
-    "contactTitle": "Sales Manager"
+    "contactName": "Valéria Silva",
+    "contactTitle": "Purchasing Assistant",
+    "contactEmail": "valeria@dorigem.com.br",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1784548388771,
+        "msg": "BWI sync: aggiornato (contatti)"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "🔓 Email sbloccata via BWI: Valéria Silva <valeria@dorigem.com.br> (Purchasing Assistant)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Thiago Pereira",
+        "title": "Sales Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/thiago-pereira-1b47851b2"
+      },
+      {
+        "name": "Daniel Sousa",
+        "title": "Sommelier",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/daniel-sousa-29b62511b/"
+      },
+      {
+        "name": "Valéria Silva",
+        "title": "Purchasing Assistant",
+        "email": "valeria@dorigem.com.br",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/val%C3%A9ria-silva-888763155/",
+        "sbloccato": true
+      },
+      {
+        "name": "Gabriel Gomes",
+        "title": "Sales Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/gabrielgomeseu/"
+      }
+    ]
   },
   "c1780673710735z5yjx": {
     "status": "followup",
@@ -98886,7 +98960,34 @@
       }
     },
     "contactName": "Jones Valduga",
-    "contactTitle": "Commercial And Import Director"
+    "contactTitle": "Commercial And Import Director",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "⚠ Email sbloccata via BWI con dominio diverso dall'azienda: Jones Valduga <jones.valduga@famigliavalduga.com.br> — da verificare, NON usata per gli invii"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Jones Valduga",
+        "title": "Commercial And Import Director",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/jones-valduga-24629a136/",
+        "emailSospetta": "jones.valduga@famigliavalduga.com.br"
+      },
+      {
+        "name": "Niciane Parcianello",
+        "title": "Sales Consultant",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/niciane-parcianello-b0b126235/"
+      }
+    ]
   },
   "c1780673710735f2hel": {
     "research": {
@@ -98908,7 +99009,17 @@
       }
     },
     "contactName": "Eduardo Caron",
-    "contactTitle": "Sommelier"
+    "contactTitle": "Sommelier",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
+      }
+    ]
   },
   "c1780673710735w4cs7": {
     "research": {
@@ -98930,7 +99041,35 @@
       }
     },
     "contactName": "Alejandro Alvarez",
-    "contactTitle": "Wine Consultant"
+    "contactTitle": "Wine Consultant",
+    "contactEmail": "alejandro@galeriadosvinhos.com.br",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "🔓 Email sbloccata via BWI: Alejandro Alvarez <alejandro@galeriadosvinhos.com.br> (Wine Consultant)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Alejandro Alvarez",
+        "title": "Wine Consultant",
+        "email": "alejandro@galeriadosvinhos.com.br",
+        "phone": "*",
+        "linkedin": "https://www.linkedin.com/in/mileale/",
+        "sbloccato": true
+      },
+      {
+        "name": "Bruce Lobo",
+        "title": "Sommelier/ Commercial Representative",
+        "email": "",
+        "phone": "",
+        "linkedin": "Https://www.linkedin.com/in/bruce-lobo-a2a6ab22/"
+      }
+    ]
   },
   "c17806737107356gnsd": {
     "status": "followup",
@@ -99685,7 +99824,35 @@
       }
     },
     "contactName": "Tatiana Forner",
-    "contactTitle": "Sommelier"
+    "contactTitle": "Sommelier",
+    "contactEmail": "tatiana@obraprimaimportadora.com.br",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "🔓 Email sbloccata via BWI: Tatiana Forner <tatiana@obraprimaimportadora.com.br> (Sommelier)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Tatiana Forner",
+        "title": "Sommelier",
+        "email": "tatiana@obraprimaimportadora.com.br",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/tatiana-forner-873937109/",
+        "sbloccato": true
+      },
+      {
+        "name": "Karine Ivanovski",
+        "title": "Director",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/karineivanovski/"
+      }
+    ]
   },
   "c1780673710735j0k9p": {
     "research": {
@@ -100082,7 +100249,35 @@
       }
     },
     "contactName": "Eduardo Osti",
-    "contactTitle": "Commercial Manager"
+    "contactTitle": "Commercial Manager",
+    "contactEmail": "eduardo.osti@italiamais.com.br",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "🔓 Email sbloccata via BWI: Eduardo Osti <eduardo.osti@italiamais.com.br> (Commercial Manager)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Eduardo Osti",
+        "title": "Commercial Manager",
+        "email": "eduardo.osti@italiamais.com.br",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/eduardo-osti-020731b1/",
+        "sbloccato": true
+      },
+      {
+        "name": "Alexandro Paesani",
+        "title": "Ceo",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/alexandro-paesani-007752143/"
+      }
+    ]
   },
   "c1780673710735z7huv": {
     "status": "followup",
@@ -100630,7 +100825,35 @@
       }
     },
     "contactName": "André Zangerolamo",
-    "contactTitle": "Sommelier"
+    "contactTitle": "Sommelier",
+    "contactEmail": "andre.zangerolamo@worldwine.com.br",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "🔓 Email sbloccata via BWI: André Zangerolamo <andre.zangerolamo@worldwine.com.br> (Sommelier)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "André Zangerolamo",
+        "title": "Sommelier",
+        "email": "andre.zangerolamo@worldwine.com.br",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/andré-zangerolamo-04488a66/",
+        "sbloccato": true
+      },
+      {
+        "name": "Livia Silva",
+        "title": "Sommelière And Wine Consultant",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/livia-silva-1bb911165/"
+      }
+    ]
   },
   "c17806737107356539q": {
     "research": {
@@ -102879,7 +103102,17 @@
       }
     },
     "contactName": "Suely Milagre Cavalcante",
-    "contactTitle": "Sales And Marketing Executive"
+    "contactTitle": "Sales And Marketing Executive",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
+      }
+    ]
   },
   "c1780673710735uf4gh": {
     "research": {
@@ -103920,7 +104153,17 @@
       }
     },
     "contactName": "Paulo Alves",
-    "contactTitle": "Store Manager"
+    "contactTitle": "Store Manager",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
+      }
+    ]
   },
   "c1780673710736uiqd5": {
     "status": "sent",
@@ -112416,7 +112659,17 @@
       }
     },
     "contactName": "Fabio Leget Pilliat",
-    "contactTitle": "Sales Operations Manager"
+    "contactTitle": "Sales Operations Manager",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
+      }
+    ]
   },
   "c17806737107378rkjt": {
     "research": {
@@ -112460,7 +112713,17 @@
       }
     },
     "contactName": "Luca De Benedictis",
-    "contactTitle": "General Manager"
+    "contactTitle": "General Manager",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
+      }
+    ]
   },
   "c178067371073770525": {
     "research": {
@@ -116294,7 +116557,35 @@
       }
     },
     "contactName": "María Ignacia Mercado Morgan",
-    "contactTitle": "Brand Manager"
+    "contactTitle": "Brand Manager",
+    "contactEmail": "mariaignacia.mercado@globeitalia.cl",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "🔓 Email sbloccata via BWI: María Ignacia Mercado Morgan <mariaignacia.mercado@globeitalia.cl> (Brand Manager)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "María Ignacia Mercado Morgan",
+        "title": "Brand Manager",
+        "email": "mariaignacia.mercado@globeitalia.cl",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/mar%c3%ada-ignacia-mercado-morgan-31250391/",
+        "sbloccato": true
+      },
+      {
+        "name": "Cristian Rojas Martinez",
+        "title": "Sales Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/cristian-rojas-martinez-337976169/"
+      }
+    ]
   },
   "c1780673710741ghm4t": {
     "status": "followup",
@@ -121400,7 +121691,17 @@
       }
     },
     "contactName": "Wen Yu",
-    "contactTitle": "Purchaser"
+    "contactTitle": "Purchaser",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
+      }
+    ]
   },
   "c1780673710742a398q": {
     "research": {
@@ -122854,7 +123155,17 @@
       }
     },
     "contactName": "Liao Zhihuang",
-    "contactTitle": "Director"
+    "contactTitle": "Director",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
+      }
+    ]
   },
   "c1780673710744f8vcg": {
     "research": {
@@ -122876,7 +123187,17 @@
       }
     },
     "contactName": "Corrado Schinelli",
-    "contactTitle": "Owner"
+    "contactTitle": "Owner",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
+      }
+    ]
   },
   "c1780673710744393jg": {
     "research": {
@@ -123364,7 +123685,17 @@
       }
     },
     "contactName": "Hannia Arias Naranjo",
-    "contactTitle": "Brand Manager"
+    "contactTitle": "Brand Manager",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "🔓 Sblocco BWI senza email: nessuna persona con email su BWI (verificato senza spendere crediti)"
+      }
+    ]
   },
   "c1780673710744bkd86": {
     "research": {
@@ -123386,7 +123717,34 @@
       }
     },
     "contactName": "Paul Pico",
-    "contactTitle": "National Sales Manager"
+    "contactTitle": "National Sales Manager",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "⚠ Email sbloccata via BWI con dominio diverso dall'azienda: Paul Pico <ppico@marpico.com.co> — da verificare, NON usata per gli invii"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Paul Pico",
+        "title": "National Sales Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/paul-pico-74377773/",
+        "emailSospetta": "ppico@marpico.com.co"
+      },
+      {
+        "name": "Edwin Vega",
+        "title": "Regional Commercial Manager",
+        "email": "",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/edwin-vega-0696281b3/"
+      }
+    ]
   },
   "c1780673710744c2xf6": {
     "status": "sent",
@@ -123616,7 +123974,28 @@
       }
     },
     "contactName": "Juan Camilo Ortiz Farfan",
-    "contactTitle": "General Manager"
+    "contactTitle": "General Manager",
+    "contactEmail": "juanortiz@clubdelvino.com.co",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "🔓 Email sbloccata via BWI: Juan Camilo Ortiz Farfan <juanortiz@clubdelvino.com.co> (General Manager)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Juan Camilo Ortiz Farfan",
+        "title": "General Manager",
+        "email": "juanortiz@clubdelvino.com.co",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/juan-camilo-ortiz-farfan-8a9907b6/",
+        "sbloccato": true
+      }
+    ]
   },
   "c1780673710744yp5i4": {
     "status": "sent",
@@ -123910,7 +124289,28 @@
       }
     },
     "contactName": "Nancy Reynales",
-    "contactTitle": "Manager"
+    "contactTitle": "Manager",
+    "contactEmail": "nreynales@vinzeta.com",
+    "log": [
+      {
+        "ts": 1780673710716,
+        "msg": "Importato da BWI"
+      },
+      {
+        "ts": 1794592854606,
+        "msg": "🔓 Email sbloccata via BWI: Nancy Reynales <nreynales@vinzeta.com> (Manager)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Nancy Reynales",
+        "title": "Manager",
+        "email": "nreynales@vinzeta.com",
+        "phone": "",
+        "linkedin": "https://www.linkedin.com/in/nancy-reynales-5b80652a/",
+        "sbloccato": true
+      }
+    ]
   },
   "c1780673710744q1ne4": {
     "status": "sent",
