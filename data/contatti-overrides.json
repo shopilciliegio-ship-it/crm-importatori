@@ -99044,16 +99044,20 @@
       {
         "ts": 1794592854606,
         "msg": "⚠ Email sbloccata via BWI con dominio diverso dall'azienda: Jones Valduga <jones.valduga@famigliavalduga.com.br> — da verificare, NON usata per gli invii"
+      },
+      {
+        "ts": 1794593581932,
+        "msg": "✅ Email BWI con dominio diverso dall'azienda promossa a destinatario invii (13/11, scelta di Luca: promuovere sempre): Jones Valduga <jones.valduga@famigliavalduga.com.br>"
       }
     ],
     "contacts": [
       {
         "name": "Jones Valduga",
         "title": "Commercial And Import Director",
-        "email": "",
+        "email": "jones.valduga@famigliavalduga.com.br",
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/jones-valduga-24629a136/",
-        "emailSospetta": "jones.valduga@famigliavalduga.com.br"
+        "sbloccato": true
       },
       {
         "name": "Niciane Parcianello",
@@ -99062,7 +99066,8 @@
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/niciane-parcianello-b0b126235/"
       }
-    ]
+    ],
+    "contactEmail": "jones.valduga@famigliavalduga.com.br"
   },
   "c1780673710735f2hel": {
     "research": {
@@ -123801,16 +123806,20 @@
       {
         "ts": 1794592854606,
         "msg": "⚠ Email sbloccata via BWI con dominio diverso dall'azienda: Paul Pico <ppico@marpico.com.co> — da verificare, NON usata per gli invii"
+      },
+      {
+        "ts": 1794593581932,
+        "msg": "✅ Email BWI con dominio diverso dall'azienda promossa a destinatario invii (13/11, scelta di Luca: promuovere sempre): Paul Pico <ppico@marpico.com.co>"
       }
     ],
     "contacts": [
       {
         "name": "Paul Pico",
         "title": "National Sales Manager",
-        "email": "",
+        "email": "ppico@marpico.com.co",
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/paul-pico-74377773/",
-        "emailSospetta": "ppico@marpico.com.co"
+        "sbloccato": true
       },
       {
         "name": "Edwin Vega",
@@ -123819,7 +123828,8 @@
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/edwin-vega-0696281b3/"
       }
-    ]
+    ],
+    "contactEmail": "ppico@marpico.com.co"
   },
   "c1780673710744c2xf6": {
     "status": "sent",
@@ -240682,16 +240692,20 @@
       {
         "ts": 1794592854606,
         "msg": "⚠ Email sbloccata via BWI con dominio diverso dall'azienda: David Recinos <drecinos@unisupergt.com> — da verificare, NON usata per gli invii"
+      },
+      {
+        "ts": 1794593581932,
+        "msg": "✅ Email BWI con dominio diverso dall'azienda promossa a destinatario invii (13/11, scelta di Luca: promuovere sempre): David Recinos <drecinos@unisupergt.com>"
       }
     ],
     "contacts": [
       {
         "name": "David Recinos",
         "title": "Commercial Manager of Imported Products",
-        "email": "",
+        "email": "drecinos@unisupergt.com",
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/david-recinos-79232679/",
-        "emailSospetta": "drecinos@unisupergt.com"
+        "sbloccato": true
       },
       {
         "name": "Raúl Artemio Cabrera Miranda",
@@ -240700,7 +240714,8 @@
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/ra%C3%BAl-artemio-cabrera-miranda-1196b22a/"
       }
-    ]
+    ],
+    "contactEmail": "drecinos@unisupergt.com"
   },
   "c1780673710853i470x": {
     "status": "sent",
@@ -511375,8 +511390,8 @@
         }
       }
     },
-    "contactName": "Ju-Yi Lucy",
-    "contactTitle": "Category Manager",
+    "contactName": "Lawrence Wang",
+    "contactTitle": "Ceo",
     "log": [
       {
         "ts": 1780673710716,
@@ -511385,6 +511400,10 @@
       {
         "ts": 1794592404925,
         "msg": "⚠ Email sbloccata via BWI con dominio diverso dall'azienda: Lawrence Wang <lawrence_wang@carrefour.com> — da verificare, NON usata per gli invii"
+      },
+      {
+        "ts": 1794593581932,
+        "msg": "✅ Email BWI con dominio diverso dall'azienda promossa a destinatario invii (13/11, scelta di Luca: promuovere sempre): Lawrence Wang <lawrence_wang@carrefour.com>"
       }
     ],
     "contacts": [
@@ -511398,10 +511417,10 @@
       {
         "name": "Lawrence Wang",
         "title": "Ceo",
-        "email": "",
+        "email": "lawrence_wang@carrefour.com",
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/lawrence-wang-4751678a/",
-        "emailSospetta": "lawrence_wang@carrefour.com"
+        "sbloccato": true
       },
       {
         "name": "Emily Yang",
@@ -511424,7 +511443,8 @@
         "phone": "",
         "linkedin": "https://www.linkedin.com/in/samuel-tsai-3b4a7b1a5/"
       }
-    ]
+    ],
+    "contactEmail": "lawrence_wang@carrefour.com"
   },
   "c17806737109516j4x9": {
     "research": {
