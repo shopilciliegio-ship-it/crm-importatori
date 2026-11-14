@@ -1,0 +1,56 @@
+name: Campagna Natale clienti (Ciliegio Selection)
+
+on:
+  # Solo a mano (GitHub UI o API). Nessun orario automatico: la campagna si lancia a blocchi, con l'ok di Luca.
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: 'Quante email inviare in questo blocco'
+        default: '300'
+      solo_italia:
+        description: 'Solo contatti italiani (true/false)'
+        default: 'false'
+      modalita:
+        description: 'prova = solo conteggi | test = 2 mail a hokutazzo@gmail.com | invio = invio vero'
+        default: 'prova'
+
+permissions:
+  contents: write
+
+# Un solo blocco alla volta.
+concurrency:
+  group: clienti-natale
+  cancel-in-progress: false
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  natale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Installa dipendenze
+        run: pip install requests
+
+      - name: Campagna Natale
+        env:
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          GH_TOKEN:      ${{ secrets.GITHUB_TOKEN }}
+          GH_OWNER:      ${{ github.repository_owner }}
+          GH_REPO:       ${{ github.event.repository.name }}
+          LIMIT:         ${{ github.event.inputs.limit }}
+          SOLO_ITALIA:   ${{ github.event.inputs.solo_italia }}
+          MODALITA:      ${{ github.event.inputs.modalita }}
+        run: |
+          ARGS="--limit ${LIMIT:-300}"
+          if [ "$SOLO_ITALIA" = "true" ]; then ARGS="$ARGS --solo-italia"; fi
+          if [ "$MODALITA" = "test" ]; then ARGS="$ARGS --test"; fi
+          if [ "$MODALITA" = "prova" ] || [ -z "$MODALITA" ]; then ARGS="$ARGS --prova"; fi
+          echo "python scripts/send_clienti_natale.py $ARGS"
+          python scripts/send_clienti_natale.py $ARGS
