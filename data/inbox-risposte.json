@@ -1,5 +1,5 @@
 {
-  "lastUid": 536,
+  "lastUid": 537,
   "pending": [
     {
       "id": "ir_422",
@@ -2107,6 +2107,25 @@
       "rispostaDiretta": false,
       "suggestedStatus": null,
       "reason": "È una notifica tecnica automatica di autenticazione, completamente estranea alla proposta commerciale di vini.",
+      "confidence": "ai",
+      "dataRientro": null,
+      "emailAlternativa": null
+    },
+    {
+      "id": "ir_537",
+      "uid": 537,
+      "contactId": null,
+      "nonCollegato": true,
+      "company": "antonio@sienawine.it",
+      "from": "antonio@sienawine.it",
+      "mittenteNome": "antonio@sienawine.it",
+      "subject": "RE: Vendita vini  Siena Wine in provincie FI-SI-GR tramite Leonardo Flamini",
+      "date": "2026-11-13T16:20:36+00:00",
+      "snippet": "Ciao Luca.\r\n\r\n \r\n\r\nGrazie per avere stampato le brochure.\r\n\r\n \r\n\r\nFaro’ arrivare una campionatura di 2 casse per tipo da te dei miei vini ad oggi disponibili cosi’ Leonardo puo’ avere i campioni da lasciare .\r\n\r\nAppena arrivano gli ordini e vediamo che tipo di esigenza c’e’ , allora decideremo se prendere/ritirare/spedire i vini direttamente dal magazzino di Istia di Ombrone ( GR ) oppure portare ",
+      "riassunto": "Antonio Sanguineti (Business Developer Siena Wine) comunica a Luca che invierà una campionatura di 2 casse per tipo dei suoi vini disponibili tramite Leonardo Flamini, e propone di decidere successivamente se ritirare i vini dal magazzino di Istia di Ombrone o mantenere un quantitativo minimo presso la sede di Luca, in base agli ordini ricevuti.",
+      "rispostaDiretta": false,
+      "suggestedStatus": null,
+      "reason": "Email interna tra colleghi di Siena Wine che discutono dell'organizzazione logistica e commerciale della distribuzione tramite Leonardo Flamini; è pertinente alla proposta commerciale ma non è una risposta diretta a un nostro invio esterno.",
       "confidence": "ai",
       "dataRientro": null,
       "emailAlternativa": null
