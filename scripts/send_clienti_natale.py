@@ -177,6 +177,7 @@ def main():
     ap.add_argument('--solo-italia', action='store_true')
     ap.add_argument('--test', action='store_true')
     ap.add_argument('--prova', action='store_true')
+    ap.add_argument('--reale-a', default='', help='invio REALE a indirizzi dati: lingua:email:Nome,lingua:email:Nome (nessun salvataggio nel CRM)')
     a = ap.parse_args()
 
     print('=' * 56)
@@ -198,6 +199,14 @@ def main():
     if not (tpl_en and tpl_it):
         print('✗ Template "natale" e/o "natale_it" non trovati in clienti.json: non invio niente.')
         sys.exit(1)
+
+    if a.reale_a:
+        for item in a.reale_a.split(','):
+            lang, email, name = (item.strip().split(':') + [''])[:3]
+            tpl = tpl_it if lang == 'it' else tpl_en
+            msg_id, err = send_one(email, name, fill(tpl['subject'], name), fill(tpl['body'], name), 'reale-prova', False, lang)
+            print(f'    {"✓" if msg_id else "✗"} REALE {lang} -> {email} {err or msg_id}')
+        return
 
     prev, _ = w.gh_get(SENT_PATH)
     prev = prev if isinstance(prev, list) else []

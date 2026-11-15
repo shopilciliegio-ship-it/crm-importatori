@@ -13,6 +13,9 @@ on:
       modalita:
         description: 'prova = solo conteggi | test = 2 mail a hokutazzo@gmail.com | invio = invio vero'
         default: 'prova'
+      reale_a:
+        description: 'Invio reale a indirizzi dati (lingua:email:Nome,...) - solo prove'
+        default: ''
 
 permissions:
   contents: write
@@ -47,10 +50,12 @@ jobs:
           LIMIT:         ${{ github.event.inputs.limit }}
           SOLO_ITALIA:   ${{ github.event.inputs.solo_italia }}
           MODALITA:      ${{ github.event.inputs.modalita }}
+          REALE_A:       ${{ github.event.inputs.reale_a }}
         run: |
           ARGS="--limit ${LIMIT:-300}"
           if [ "$SOLO_ITALIA" = "true" ]; then ARGS="$ARGS --solo-italia"; fi
           if [ "$MODALITA" = "test" ]; then ARGS="$ARGS --test"; fi
           if [ "$MODALITA" = "prova" ] || [ -z "$MODALITA" ]; then ARGS="$ARGS --prova"; fi
+          if [ -n "$REALE_A" ]; then ARGS="--reale-a $REALE_A"; fi
           echo "python scripts/send_clienti_natale.py $ARGS"
           python scripts/send_clienti_natale.py $ARGS
