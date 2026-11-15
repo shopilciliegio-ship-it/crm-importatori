@@ -140,7 +140,8 @@ jobs:
         run: python scripts/send_reminders.py
 
       - name: Invia follow-up importatori
-        if: ${{ false }}   # DISATTIVATO 1/10/2026: andava in timeout a ogni giro e rimandava le stesse email (10.000 invii). Riattivare solo con tetto e salvataggio a blocchi.
+        # RIATTIVATO 15/11/2026 su richiesta di Luca: parte SOLO con l'approvazione del giorno (CRM > Programmato > Approva il piano di oggi),
+        # tetto 100 invii a giro, budget 6 minuti, salvataggio ogni 20 invii (dopo l'incidente loop del 1/10).
         timeout-minutes: 10
         continue-on-error: true
         env:
