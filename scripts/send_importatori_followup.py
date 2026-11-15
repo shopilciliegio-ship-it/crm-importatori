@@ -441,6 +441,9 @@ def _body_to_html(plain: str) -> str:
     return ''.join(parts)
 
 
+UNSUB = '{{ unsubscribe }}'   # segnaposto Brevo: link di disiscrizione (aggiunto 15/11/2026)
+
+
 def build_html_email(body_text: str) -> str:
     body_html = _body_to_html(body_text)
     return f"""<!DOCTYPE html>
@@ -460,8 +463,9 @@ def build_html_email(body_text: str) -> str:
     <p style="margin:0 0 8px;color:#ffffff;font-size:13px;font-weight:bold;letter-spacing:1px;text-transform:uppercase">Siena Wine</p>
     <p style="margin:0 0 12px;color:{ACCENT};font-size:12px;font-style:italic">Small Vineyards International</p>
     <p style="margin:0;font-size:12px;color:#999;line-height:1.8">
-      <a href="https://{WEBSITE}" style="color:#ccc;text-decoration:none">{WEBSITE}</a>&nbsp;|&nbsp;<span style="color:#999">{PHONE}</span>
+      <a href="https://{WEBSITE}" style="color:#e0c36a;text-decoration:underline">{WEBSITE}</a>&nbsp;|&nbsp;<span style="color:#999">{PHONE}</span>
     </p>
+    <p style="margin:14px 0 0;font-size:11px;color:#999">If you do not wish to receive our emails anymore, <a href="{UNSUB}" style="color:#cccccc;text-decoration:underline">unsubscribe</a>.</p>
   </td></tr>
 </table>
 </td></tr>

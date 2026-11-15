@@ -79,7 +79,7 @@ BRANDS = {
     'ciliegio': {
         'name': 'Il Ciliegio', 'senderEmail': 'luca@sienawine.it',
         'senderName': 'Il Ciliegio — Azienda Agricola',
-        'logoUrl': 'https://shopilciliegio-ship-it.github.io/crm-importatori/assets/logo_ciliegio.png',
+        'logoUrl': 'https://shopilciliegio-ship-it.github.io/crm-importatori/assets/logo_ciliegio_fondo_nero.png',
         'logoAlt': 'Il Ciliegio — Azienda Agricola', 'logoWidth': '180',
         'accentColor': '#B8941A', 'bgColor': '#2c2c2c',
         'website': 'https://www.ilciliegio.com', 'phone': '+39 331 1347899',
@@ -351,6 +351,9 @@ def _linkify(text: str, accent: str) -> str:
     return re.sub(r'@@LINK(\d+)@@', lambda m: placeholders[int(m.group(1))], text)
 
 
+UNSUB = '{{ unsubscribe }}'   # segnaposto Brevo: link di disiscrizione (aggiunto 15/11/2026)
+
+
 def build_html_email(body: str, brand: str) -> str:
     b = BRANDS.get(brand, BRANDS['sienawine'])
     paras = [p.strip() for p in body.split('\n\n') if p.strip()]
@@ -387,8 +390,9 @@ def build_html_email(body: str, brand: str) -> str:
     <p style="margin:0 0 8px;color:#ffffff;font-size:13px;font-weight:bold;letter-spacing:1px;text-transform:uppercase">{b['name']}</p>
     <p style="margin:0 0 12px;color:{b['accentColor']};font-size:12px;font-style:italic">{b['tagline']}</p>
     <p style="margin:0;font-size:12px;color:#999;line-height:1.8">
-      <a href="{b['website']}" style="color:#ccc;text-decoration:none">{b['website'].replace('https://','')}</a>&nbsp;|&nbsp;<span style="color:#999">{b['phone']}</span>
+      <a href="{b['website']}" style="color:#e0c36a;text-decoration:underline">{b['website'].replace('https://','')}</a>&nbsp;|&nbsp;<span style="color:#999">{b['phone']}</span>
     </p>
+    <p style="margin:14px 0 0;font-size:11px;color:#999">If you do not wish to receive our emails anymore, <a href="{UNSUB}" style="color:#cccccc;text-decoration:underline">unsubscribe</a>.</p>
   </td></tr>
 </table>
 </td></tr>
