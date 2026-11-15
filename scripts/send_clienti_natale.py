@@ -37,6 +37,7 @@ import send_clienti_wave2 as w   # noqa: E402  (riuso: GitHub API, build_html, m
 
 SENT_PATH = 'data/natale-invii.json'
 TAG = 'natale'
+LOGO_NERO_URL = 'https://shopilciliegio-ship-it.github.io/crm-importatori/assets/logo_ciliegio_fondo_nero.png'
 FOUR_MONTHS_MS = 120 * 24 * 3600 * 1000
 CHECKPOINT_EVERY = 25
 MAX_CONSECUTIVE_ERRORS = 5
@@ -103,6 +104,7 @@ def candidates(contacts, settings, already, only_italy, now_ms):
 def add_footer_links(html, lang):
     """Sito cliccabile e ben visibile + link di disiscrizione Brevo ({{ unsubscribe }}) nel piede della mail."""
     html = html.replace('color:#cccccc;text-decoration:none', f'color:{w.ACCENT};text-decoration:underline')
+    html = html.replace(w.LOGO_URL, LOGO_NERO_URL)
     link = 'style="color:#cccccc;text-decoration:underline"'
     if lang == 'it':
         txt = f"Non vuoi più ricevere le nostre email? <a href=\"{{{{ unsubscribe }}}}\" {link}>Annulla l'iscrizione</a>"
