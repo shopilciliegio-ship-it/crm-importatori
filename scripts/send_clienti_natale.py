@@ -100,10 +100,26 @@ def candidates(contacts, settings, already, only_italy, now_ms):
     return out
 
 
+def add_footer_links(html, lang):
+    """Sito cliccabile e ben visibile + link di disiscrizione Brevo ({{ unsubscribe }}) nel piede della mail."""
+    html = html.replace('color:#cccccc;text-decoration:none', f'color:{w.ACCENT};text-decoration:underline')
+    link = 'style="color:#cccccc;text-decoration:underline"'
+    if lang == 'it':
+        txt = f"Non vuoi più ricevere le nostre email? <a href=\"{{{{ unsubscribe }}}}\" {link}>Annulla l'iscrizione</a>"
+    else:
+        txt = f"Don't want to receive our emails anymore? <a href=\"{{{{ unsubscribe }}}}\" {link}>Unsubscribe</a>"
+    nl = chr(10)
+    marker = w.PHONE + '</span>' + nl + '    </p>'
+    assert marker in html, 'footer non trovato'
+    extra = nl + '    <p style="margin:14px 0 0;font-size:11px;color:#999">' + txt + '</p>'
+    return html.replace(marker, marker + extra, 1)
+
+
 def send_one(to_email, to_name, subject, body, contact_id, test_mode, lang):
     actual_to = w.BCC_EMAIL if test_mode else to_email
     actual_subj = f'[TEST → {to_email}] {subject}' if test_mode else subject
     html = w.build_html(body, actual_subj).replace('<html lang="it">', f'<html lang="{lang}">')
+    html = add_footer_links(html, lang)
     payload = {
         'sender': {'name': w.SENDER_NAME, 'email': w.SENDER_EMAIL},
         'to': [{'email': actual_to, **({'name': to_name.strip()} if (to_name or '').strip() else {})}],
@@ -177,12 +193,21 @@ def main():
     ap.add_argument('--solo-italia', action='store_true')
     ap.add_argument('--test', action='store_true')
     ap.add_argument('--prova', action='store_true')
+    ap.add_argument('--eventi', default='', help='mostra gli eventi Brevo (ultimi 2 giorni) per gli indirizzi dati, separati da virgola')
     ap.add_argument('--reale-a', default='', help='invio REALE a indirizzi dati: lingua:email:Nome,lingua:email:Nome (nessun salvataggio nel CRM)')
     a = ap.parse_args()
 
     print('=' * 56)
     print(f'send_clienti_natale.py — {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
     print('=' * 56)
+    if a.eventi:
+        for em in a.eventi.split(','):
+            r = requests.get('https://api.brevo.com/v3/smtp/statistics/events', headers=w._BREVO_HEADERS, timeout=20,
+                             params={'email': em.strip(), 'days': 2, 'limit': 20, 'sort': 'desc'})
+            print(em, r.status_code)
+            for e in (r.json().get('events') or []) if r.ok else []:
+                print('   ', e.get('date'), e.get('event'), (e.get('subject') or '')[:50], e.get('reason') or '')
+        return
     settings, _ = w.gh_get(w.SETTINGS_PATH)
     if not settings.get('emailAutoSendClienti', False):
         print('⏸ Invio clienti disabilitato (toggle OFF nel CRM). Nessuna email inviata.')
