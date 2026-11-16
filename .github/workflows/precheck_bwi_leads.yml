@@ -1,0 +1,58 @@
+name: Pre-controllo email BWI (gratuito)
+
+on:
+  workflow_dispatch:
+    inputs:
+      max_minutes:
+        description: 'Durata massima del giro (minuti)'
+        default: '330'
+      min_delay:
+        description: 'Pausa minima tra due chiamate (s)'
+        default: '3'
+      max_delay:
+        description: 'Pausa massima tra due chiamate (s)'
+        default: '6'
+      fasi:
+        description: 'Fasi: 1=sì, 2=forse 5 stelle, 3=forse 4 stelle'
+        default: '1,2,3'
+      paesi:
+        description: 'Solo questi paesi (vuoto = tutti), separati da virgola'
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: precheck-bwi
+  cancel-in-progress: false
+
+env:
+  PYTHONUNBUFFERED: "1"
+
+jobs:
+  precheck:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Installa dipendenze
+        run: pip install requests
+
+      - name: Pre-controllo lead BWI (nessun credito speso)
+        env:
+          BWI_EMAIL:    ${{ secrets.BWI_EMAIL }}
+          BWI_PASSWORD: ${{ secrets.BWI_PASSWORD }}
+          GH_TOKEN:     ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO:      ${{ github.repository }}
+          MAX_MINUTES:  ${{ github.event.inputs.max_minutes }}
+          MIN_DELAY:    ${{ github.event.inputs.min_delay }}
+          MAX_DELAY:    ${{ github.event.inputs.max_delay }}
+          FASI:         ${{ github.event.inputs.fasi }}
+          PAESI:        ${{ github.event.inputs.paesi }}
+        run: python scripts/precheck_bwi_leads.py
