@@ -97,7 +97,7 @@ def candidates(contacts, settings, already, only_italy, now_ms):
         if only_italy and not w.is_italian(c):
             continue
         out.append(c)
-    out.sort(key=lambda c: (0 if w.is_italian(c) else 1, last_contact(c) or ts_ms(c.get('registeredAt')) or 0))
+    out.sort(key=lambda c: (0 if w.is_italian(c) else (1 if w.country_display_name(c) in ('United States', 'USA', 'United States of America') else 2), last_contact(c) or ts_ms(c.get('registeredAt')) or 0))
     return out
 
 
