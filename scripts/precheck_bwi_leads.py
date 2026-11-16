@@ -107,7 +107,10 @@ def salva(out, sha, messaggio):
 
 def lead_list(sess_headers, comp_id):
     """Ritorna (leads, http_status). leads = None se la chiamata non e' andata a buon fine."""
-    r = requests.post(LEADS_URL, json={'compID': comp_id}, headers=sess_headers, timeout=20)
+    try:
+        r = requests.post(LEADS_URL, json={'compID': comp_id}, headers=sess_headers, timeout=45)
+    except requests.RequestException:
+        return None, 0                                  # timeout/rete: conta come errore, non ferma il giro
     if not r.ok:
         return None, r.status_code
     data = r.json()
