@@ -78,11 +78,16 @@ def fill(text, name):
 
 def candidates(contacts, settings, already, only_italy, now_ms):
     excluded = set(settings.get('excludedCountriesClienti', []))
+    try:
+        with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data', 'natale-escludi.json'), encoding='utf-8') as f:
+            skip = {x.lower() for x in json.load(f)}
+    except Exception:
+        skip = set()
     out = []
     for c in contacts:
         if not c.get('email') or c.get('quality') != 'valid' or c.get('shippable') is not True:
             continue
-        if c.get('blacklisted'):
+        if c.get('blacklisted') or c['email'].strip().lower() in skip:
             continue
         if w.country_display_name(c) in excluded:
             continue
