@@ -13,7 +13,8 @@ function _migrateTemplatesIfNeeded(){
   if(hasOld || missingCTA){
     // Imposta default solo se non caricati da GitHub
     if(!ghSha.templates) db.templates = defTplImportatori();
-    saveDB();
+    // v213: per gli importatori saveDB() salvava 30 MB di override a OGNI apertura (i template si salvano con saveTemplatesToGH): solo per i clienti.
+    if(isClienti()) saveDB();
     console.log('Template importatori migrati ai nuovi Siena Wine');
   }
 }
