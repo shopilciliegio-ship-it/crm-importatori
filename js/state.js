@@ -17,6 +17,9 @@ let dbC={contacts:[],templates:[]};    // clienti privati
 let dbO={orders:[],lastImportedAt:null}; // ordini
 let dbRemT={};                         // template email reminder
 let layer='importatori';               // layer attivo
+// Dal 19/11/2026 i dati stanno nel repo PRIVATO (DATA_REPO); i workflow (Actions) restano nel repo pubblico (WF_REPO).
+const WF_REPO='crm-importatori';
+const DATA_REPO='crm-importatori-dati';
 let ghs={};
 let brv={};
 let rschCfg={queue:[],dailyLimit:150,completedCountries:[]}; // coda paesi per ricerca AI automatica server-side

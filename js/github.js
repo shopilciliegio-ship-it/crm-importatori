@@ -450,7 +450,7 @@ async function triggerBwiSync(){
   const btn=document.getElementById('bwi-sync-btn');
   if(btn){ btn.disabled=true; btn.textContent='⏳ Avvio…'; }
 
-  const dispatchUrl=`https://api.github.com/repos/${owner}/${repo}/actions/workflows/bwi_weekly.yml/dispatches`;
+  const dispatchUrl=`https://api.github.com/repos/${owner}/${WF_REPO}/actions/workflows/bwi_weekly.yml/dispatches`;
   try{
     const r=await fetch(dispatchUrl,{
       method:'POST',
@@ -473,7 +473,7 @@ async function triggerBwiSync(){
 
 async function _pollBwiWorkflow(btn, maxAttempts=20){
   const{token,owner,repo}=ghs;
-  const runsUrl=`https://api.github.com/repos/${owner}/${repo}/actions/runs?workflow_id=bwi_weekly.yml&per_page=1`;
+  const runsUrl=`https://api.github.com/repos/${owner}/${WF_REPO}/actions/runs?workflow_id=bwi_weekly.yml&per_page=1`;
   let elapsed=0;
 
   for(let i=0;i<maxAttempts;i++){
@@ -520,7 +520,7 @@ async function triggerClientiWave(){
   const btn=document.getElementById('cli-wave-btn');
   if(btn){ btn.disabled=true; btn.textContent='⏳ Avvio…'; }
 
-  const dispatchUrl=`https://api.github.com/repos/${owner}/${repo}/actions/workflows/spotty_weekly.yml/dispatches`;
+  const dispatchUrl=`https://api.github.com/repos/${owner}/${WF_REPO}/actions/workflows/spotty_weekly.yml/dispatches`;
   try{
     const r=await fetch(dispatchUrl,{
       method:'POST',
@@ -543,7 +543,7 @@ async function triggerClientiWave(){
 
 async function _pollClientiWaveWorkflow(btn, maxAttempts=20){
   const{token,owner,repo}=ghs;
-  const runsUrl=`https://api.github.com/repos/${owner}/${repo}/actions/runs?workflow_id=spotty_weekly.yml&per_page=1`;
+  const runsUrl=`https://api.github.com/repos/${owner}/${WF_REPO}/actions/runs?workflow_id=spotty_weekly.yml&per_page=1`;
   let elapsed=0;
 
   for(let i=0;i<maxAttempts;i++){
@@ -627,7 +627,7 @@ async function _fetchBulkJobImportatori(){
 async function triggerImportatoriBulkWorkflow(){
   const{token,owner,repo}=ghs;
   if(!token||!owner||!repo){ toast('⚙ Configura GitHub nelle Impostazioni'); return false; }
-  const dispatchUrl=`https://api.github.com/repos/${owner}/${repo}/actions/workflows/send_importatori_bulk.yml/dispatches`;
+  const dispatchUrl=`https://api.github.com/repos/${owner}/${WF_REPO}/actions/workflows/send_importatori_bulk.yml/dispatches`;
   try{
     const r=await fetch(dispatchUrl,{
       method:'POST',
@@ -644,7 +644,7 @@ async function triggerImportatoriBulkWorkflow(){
 // server — non è un errore, solo un timeout del polling lato browser).
 async function pollImportatoriBulkWorkflow(onProgress, maxAttempts=80){
   const{token,owner,repo}=ghs;
-  const runsUrl=`https://api.github.com/repos/${owner}/${repo}/actions/runs?workflow_id=send_importatori_bulk.yml&per_page=1`;
+  const runsUrl=`https://api.github.com/repos/${owner}/${WF_REPO}/actions/runs?workflow_id=send_importatori_bulk.yml&per_page=1`;
 
   for(let i=0;i<maxAttempts;i++){
     const wait = i===0 ? 8000 : 15000;
@@ -708,7 +708,7 @@ async function _fetchUnlockJob(){
 async function triggerUnlockWorkflow(){
   const{token,owner,repo}=ghs;
   if(!token||!owner||!repo){ toast('⚙ Configura GitHub nelle Impostazioni'); return false; }
-  const dispatchUrl=`https://api.github.com/repos/${owner}/${repo}/actions/workflows/unlock_leads_bulk.yml/dispatches`;
+  const dispatchUrl=`https://api.github.com/repos/${owner}/${WF_REPO}/actions/workflows/unlock_leads_bulk.yml/dispatches`;
   try{
     const r=await fetch(dispatchUrl,{
       method:'POST',
@@ -723,7 +723,7 @@ async function triggerUnlockWorkflow(){
 // scade maxAttempts (il workflow continua comunque sul server, può girare a lungo su tanti sblocchi).
 async function pollUnlockWorkflow(maxAttempts=200){
   const{token,owner,repo}=ghs;
-  const runsUrl=`https://api.github.com/repos/${owner}/${repo}/actions/runs?workflow_id=unlock_leads_bulk.yml&per_page=1`;
+  const runsUrl=`https://api.github.com/repos/${owner}/${WF_REPO}/actions/runs?workflow_id=unlock_leads_bulk.yml&per_page=1`;
 
   for(let i=0;i<maxAttempts;i++){
     const wait = i===0 ? 10000 : 15000;
@@ -822,7 +822,7 @@ async function triggerWaveTrackingSync(){
   const btn=document.getElementById('cli-wave-sync-btn');
   if(btn){ btn.disabled=true; btn.textContent='⏳ Avvio…'; }
 
-  const dispatchUrl=`https://api.github.com/repos/${owner}/${repo}/actions/workflows/sync_wave_tracking.yml/dispatches`;
+  const dispatchUrl=`https://api.github.com/repos/${owner}/${WF_REPO}/actions/workflows/sync_wave_tracking.yml/dispatches`;
   try{
     const r=await fetch(dispatchUrl,{
       method:'POST',
@@ -845,7 +845,7 @@ async function triggerWaveTrackingSync(){
 
 async function _pollWaveTrackingWorkflow(btn, maxAttempts=20){
   const{token,owner,repo}=ghs;
-  const runsUrl=`https://api.github.com/repos/${owner}/${repo}/actions/runs?workflow_id=sync_wave_tracking.yml&per_page=1`;
+  const runsUrl=`https://api.github.com/repos/${owner}/${WF_REPO}/actions/runs?workflow_id=sync_wave_tracking.yml&per_page=1`;
   let elapsed=0;
 
   for(let i=0;i<maxAttempts;i++){
@@ -913,7 +913,7 @@ function openSettings(){
         <input id="go" autocomplete="off" placeholder="shopilciliegio-ship-it" value="${esc(ghs.owner||'shopilciliegio-ship-it')}">
       </div>
       <div class="fg"><label>Repository</label>
-        <input id="gr" autocomplete="off" placeholder="crm-importatori" value="${esc(ghs.repo||'crm-importatori')}">
+        <input id="gr" autocomplete="off" value="${esc(DATA_REPO)}" disabled title="Repo privato dei dati (fisso). Le Actions girano su crm-importatori.">
       </div>
     </div>
 
@@ -945,7 +945,7 @@ function openSettings(){
 }
 
 function saveSettings(){
-  ghs={token:gv('gt'),owner:gv('go'),repo:gv('gr')};
+  ghs={token:gv('gt'),owner:gv('go'),repo:DATA_REPO};
   localStorage.setItem('ghcfg_crm-importatori',JSON.stringify(ghs));
   brv={apiKey:gv('bk'),senderEmail:gv('be'),senderName:gv('bn')};
   localStorage.setItem('brvcfg_crm-importatori',JSON.stringify(brv));

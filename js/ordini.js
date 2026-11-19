@@ -1049,7 +1049,7 @@ async function triggerGmailImport(){
   const{token,owner,repo}=ghs;
   if(!token||!owner||!repo){ toast('⚙ Configura GitHub nelle Impostazioni'); return; }
 
-  const url=`https://api.github.com/repos/${owner}/${repo}/actions/workflows/import_ordini.yml/dispatches`;
+  const url=`https://api.github.com/repos/${owner}/${WF_REPO}/actions/workflows/import_ordini.yml/dispatches`;
   try{
     const r = await fetch(url,{
       method:'POST',

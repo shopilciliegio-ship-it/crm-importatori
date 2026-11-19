@@ -72,6 +72,7 @@ async function init(){
     let r=localStorage.getItem('ghcfg_crm-importatori');
     if(!r) r=localStorage.getItem('ghcfg'); // migrazione una tantum dalla vecchia chiave condivisa
     if(r)ghs=JSON.parse(r);
+    if(ghs&&ghs.token)ghs.repo=DATA_REPO; // i dati sono nel repo privato (le impostazioni vecchie indicavano crm-importatori)
   }catch(e){}
   try{
     let r=localStorage.getItem('brvcfg_crm-importatori');
