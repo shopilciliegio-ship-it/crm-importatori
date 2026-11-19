@@ -33,7 +33,7 @@ jobs:
       - name: Backfill + sync aperture/click/bounce wave clienti
         env:
           BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
-          GH_TOKEN:      ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN:      ${{ secrets.DATA_REPO_TOKEN }}
           GH_OWNER:      ${{ github.repository_owner }}
-          GH_REPO:       ${{ github.event.repository.name }}
+          GH_REPO:       crm-importatori-dati
         run: python scripts/sync_wave_brevo_events.py

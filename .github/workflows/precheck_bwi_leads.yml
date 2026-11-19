@@ -48,8 +48,8 @@ jobs:
         env:
           BWI_EMAIL:    ${{ secrets.BWI_EMAIL }}
           BWI_PASSWORD: ${{ secrets.BWI_PASSWORD }}
-          GH_TOKEN:     ${{ secrets.GITHUB_TOKEN }}
-          GH_REPO:      ${{ github.repository }}
+          GH_TOKEN:     ${{ secrets.DATA_REPO_TOKEN }}
+          GH_REPO:      ${{ github.repository_owner }}/crm-importatori-dati
           MAX_MINUTES:  ${{ github.event.inputs.max_minutes }}
           MIN_DELAY:    ${{ github.event.inputs.min_delay }}
           MAX_DELAY:    ${{ github.event.inputs.max_delay }}

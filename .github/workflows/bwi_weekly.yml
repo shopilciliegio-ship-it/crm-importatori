@@ -25,6 +25,21 @@ jobs:
         with:
           fetch-depth: 1
 
+      - name: Scarica i dati dal repo privato
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository_owner }}/crm-importatori-dati
+          token: ${{ secrets.DATA_REPO_TOKEN }}
+          path: _priv
+          fetch-depth: 1
+
+      - name: Copia i dati nella cartella di lavoro
+        run: |
+          mkdir -p data BWI/bestwine_output Spotty
+          cp -r _priv/data/. data/
+          cp -r _priv/BWI/bestwine_output/. BWI/bestwine_output/
+          cp _priv/Spotty/*.csv Spotty/ 2>/dev/null || true
+
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -49,15 +64,16 @@ jobs:
           BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
         run: python bwi_sync_crm.py
 
-      - name: Commit aggiornamenti
+      - name: Commit aggiornamenti (repo privato)
         run: |
+          cp data/contatti.json _priv/data/; cp -r BWI/bestwine_output/. _priv/BWI/bestwine_output/
+          cd _priv
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add BWI/bestwine_output/ data/contatti.json
+          git add -A
           git diff --staged --quiet || git commit -m "BWI sync — $(date -u '+%Y-%m-%d %H:%M') UTC"
           git pull --rebase --autostash
           git push
-
       - name: Mail di allarme se il sync è fallito
         if: failure()
         env:
