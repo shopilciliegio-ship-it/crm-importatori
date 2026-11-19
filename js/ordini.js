@@ -220,24 +220,39 @@ async function loadOrdiniFromGH(){
   const{token,owner,repo}=ghs;
   if(!token||!owner||!repo) return;
   const url=`https://api.github.com/repos/${owner}/${repo}/contents/data/ordini.json`;
-  try{
-    const r=await fetch(url,{headers:{'Authorization':`token ${token}`,'Accept':'application/vnd.github.v3+json'}});
-    if(r.status===404) return;
-    if(!r.ok) return;
-    const d=await r.json();
-    ghSha.ordini=d.sha;
-    const raw=d.content.replace(/\n/g,'');
-    let jsonStr;
-    try{ jsonStr=decodeURIComponent(Array.from(atob(raw),c=>'%'+c.charCodeAt(0).toString(16).padStart(2,'0')).join('')); }
-    catch(e){ jsonStr=atob(raw); }
-    if(!jsonStr||jsonStr.trim()==='{}') return;
-    const parsed=JSON.parse(jsonStr);
-    if(parsed.orders&&Array.isArray(parsed.orders)){
-      dbO=parsed;
-      renderOrdini();
-      console.log(`✓ ${parsed.orders.length} ordini caricati da GitHub`);
+  // fino a 3 tentativi: prima il caricamento a volte falliva in silenzio e gli ordini restavano a 0 fino a F5
+  for(let tent=1; tent<=3; tent++){
+    try{
+      const r=await fetch(url,{headers:{'Authorization':`token ${token}`,'Accept':'application/vnd.github.v3+json'},cache:'no-store'});
+      if(r.status===404) return;
+      if(!r.ok) throw new Error('HTTP '+r.status);
+      const d=await r.json();
+      ghSha.ordini=d.sha;
+      let jsonStr;
+      if(d.content){
+        const raw=d.content.replace(/\n/g,'');
+        try{ jsonStr=decodeURIComponent(Array.from(atob(raw),c=>'%'+c.charCodeAt(0).toString(16).padStart(2,'0')).join('')); }
+        catch(e){ jsonStr=atob(raw); }
+      } else {
+        const r2=await fetch(url,{headers:{'Authorization':`token ${token}`,'Accept':'application/vnd.github.raw+json'},cache:'no-store'});
+        if(!r2.ok) throw new Error('raw HTTP '+r2.status);
+        jsonStr=await r2.text();
+      }
+      if(!jsonStr||jsonStr.trim()==='{}') return;
+      const parsed=JSON.parse(jsonStr);
+      if(parsed.orders&&Array.isArray(parsed.orders)){
+        dbO=parsed;
+        renderOrdini();
+        console.log(`✓ ${parsed.orders.length} ordini caricati da GitHub`);
+        return;
+      }
+      throw new Error('formato ordini inatteso');
+    }catch(e){
+      console.warn(`loadOrdiniFromGH tentativo ${tent}/3:`,e);
+      if(tent<3) await new Promise(res=>setTimeout(res,1500*tent));
+      else if(typeof toast==='function') toast('⚠ Ordini non caricati da GitHub — premi F5');
     }
-  }catch(e){ console.warn('loadOrdiniFromGH error:',e); }
+  }
 }
 
 /* ─ GitHub: salva ordini ─ */
