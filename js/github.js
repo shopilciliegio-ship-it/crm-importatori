@@ -83,6 +83,21 @@ function getActiveDB(){ return isClienti()?dbC:db; }
 
 function setActiveContacts(arr){ if(isClienti()) dbC.contacts=arr; else db.contacts=arr; }
 
+/* File > 1 MB: la Contents API non restituisce il contenuto. Si usa download_url; nei repo PRIVATI quel link è temporaneo
+   (token a scadenza) e il browser può riusare una risposta in cache con il link scaduto → 404. In quel caso si rilegge
+   lo stesso file dall'API in formato raw, autenticata e senza cache (v214). */
+async function _ghBigText(apiUrl,token,d){
+  try{
+    const r=await fetch(d.download_url,{cache:'no-store'});
+    if(r.ok) return await r.text();
+    console.warn('download_url HTTP',r.status,'— provo con API raw');
+  }catch(e){ console.warn('download_url errore:',e); }
+  const r2=await fetch(apiUrl,{headers:{'Authorization':`token ${token}`,'Accept':'application/vnd.github.raw+json'},cache:'no-store'});
+  if(!r2.ok) throw new Error(`Download diretto: ${r2.status}`);
+  return await r2.text();
+}
+
+
 function updGh(s){
   const d=document.getElementById('gh-dot'),l=document.getElementById('gh-lbl');
   if(!d)return;
@@ -101,7 +116,7 @@ async function _loadImportatoriOverrides(token,owner,repo,contacts){
   _overridesLoadOk=false;
   const url=`https://api.github.com/repos/${owner}/${repo}/contents/${OVERRIDES_PATH}`;
   try{
-    const r=await fetch(url,{headers:{'Authorization':`token ${token}`,'Accept':'application/vnd.github.v3+json'}});
+    const r=await fetch(url,{headers:{'Authorization':`token ${token}`,'Accept':'application/vnd.github.v3+json'},cache:'no-store'});
     if(r.status===404){ghSha.overrides=null;_ovLoaded={};_overridesLoadOk=true;return;} // nessun override ancora
     if(!r.ok){ console.warn('_loadImportatoriOverrides: HTTP',r.status); return; }
     const d=await r.json();
@@ -110,9 +125,7 @@ async function _loadImportatoriOverrides(token,owner,repo,contacts){
     let jsonStr;
     if(!raw&&d.download_url){
       // File > 1 MB: GitHub Contents API restituisce content vuoto — usa download_url (stesso pattern di loadFromGH)
-      const rawR=await fetch(d.download_url);
-      if(!rawR.ok){ console.warn('_loadImportatoriOverrides: download_url HTTP',rawR.status); return; }
-      jsonStr=await rawR.text();
+      jsonStr=await _ghBigText(url,token,d);
     } else if(!raw){
       _overridesLoadOk=true; return; // file davvero vuoto
     } else {
@@ -191,9 +204,7 @@ async function _fetchOverridesNow(token,owner,repo,knownSha){
   const raw=(d.content||'').replace(/\n/g,'');
   let jsonStr;
   if(!raw&&d.download_url){
-    const rawR=await fetch(d.download_url,{cache:'no-store'});
-    if(!rawR.ok) throw new Error('download override HTTP '+rawR.status);
-    jsonStr=await rawR.text();
+    jsonStr=await _ghBigText(url,token,d);
   } else {
     try{ jsonStr=decodeURIComponent(Array.from(atob(raw),c=>'%'+c.charCodeAt(0).toString(16).padStart(2,'0')).join('')); }
     catch(e){ jsonStr=atob(raw); }
@@ -374,7 +385,7 @@ async function loadFromGH(){
   const url=`https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
   updGh('saving');
   try{
-    const r=await fetch(url,{headers:{'Authorization':`token ${token}`,'Accept':'application/vnd.github.v3+json'}});
+    const r=await fetch(url,{headers:{'Authorization':`token ${token}`,'Accept':'application/vnd.github.v3+json'},cache:'no-store'});
     if(r.status===404){updGh('saved');refreshAll();_layersLoaded.add(layer);toast('GitHub connesso — database vuoto, pronto per import');return;}
     if(!r.ok){
       const err=await r.json().catch(()=>({}));
@@ -388,9 +399,7 @@ async function loadFromGH(){
     if(!raw&&d.download_url){
       // download_url non vuole Authorization: causa CORS preflight su raw.githubusercontent.com
       // I repo privati hanno già il token embedded nella URL; i pubblici non ne hanno bisogno
-      const rawR=await fetch(d.download_url);
-      if(!rawR.ok) throw new Error(`Download diretto: ${rawR.status}`);
-      jsonStr=await rawR.text();
+      jsonStr=await _ghBigText(url,token,d);
     } else {
       try{
         jsonStr=decodeURIComponent(Array.from(atob(raw),c=>'%'+c.charCodeAt(0).toString(16).padStart(2,'0')).join(''));
