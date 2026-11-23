@@ -1,0 +1,19 @@
+name: Brevo dettaglio Natale (sola lettura)
+on:
+  workflow_dispatch:
+    inputs:
+      start: { description: 'Da (YYYY-MM-DD)', default: '2026-11-16' }
+      end: { description: 'A (YYYY-MM-DD)', default: '2026-11-23' }
+jobs:
+  dettaglio:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests
+      - env:
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          START: ${{ inputs.start }}
+          END: ${{ inputs.end }}
+        run: python scripts/brevo_dettaglio_natale.py
